@@ -1,52 +1,51 @@
-# Machine Learning Street Talk (MLST)
+# Machine Learning Street Talk
 
-> The only AI podcast that seriously questions whether the LLM path is even right. Academic depth meets philosophical rigor.
+> The most intellectually rigorous AI podcast — where AI meets neuroscience, philosophy, and cognitive science.
 
 ## Info
 
 | | |
 |---|---|
 | **Hosts** | Tim Scarfe (ML PhD) + Keith Duggar (MIT Philosophy PhD) |
-| **Focus** | AI + cognitive science + neuroscience + philosophy of mind |
-| **Format** | Deep technical/philosophical interviews, 2–4 hours |
+| **Focus** | Academic deep-tech AI + cognitive science + philosophy of mind |
+| **Format** | Technical roundtables and interviews, 1.5–3 hours |
 | **Release** | Weekly |
-| **Platform** | YouTube / Apple / Spotify |
+| **Platform** | YouTube / Apple / Spotify / Substack ([mlst.substack.com](https://mlst.substack.com)) |
+
+## 🇨🇳 中文简介
+
+10 个播客里学术密度最高的一档。Tim 和 Keith 一个是 ML 博士、一个是哲学博士，对话风格更接近顶级研究生组会而不是访谈节目。嘉宾包括 Karl Friston（自由能量原理提出者）、Stephen Wolfram、Yudkowsky、François Chollet 这种研究员级别的人物。MLST 是少数公开持"LLM 怀疑论"立场的播客——大部分 AI 播客在讨论"LLM 能走多远"，MLST 经常讨论"LLM 这条路本身是不是错的"。不适合作为入门播客，但当你听遍主流叙事觉得"为什么大家都在说同一件事"的时候，MLST 会让你看到另一种可能。
 
 ## Why It Matters
 
-MLST is the most academically dense podcast in this entire list. Tim and Keith — one an ML PhD, the other a Philosophy PhD — have conversations that resemble top-tier graduate research seminars, not talk shows.
+MLST is the most academically dense podcast on this list. Tim (ML PhD) and Keith (Philosophy PhD) host conversations that feel more like **top-tier grad seminars** than typical interview shows. Guests include Karl Friston (free energy principle), Stephen Wolfram, Eliezer Yudkowsky, and François Chollet — actual researchers, not executives.
 
-### Guest List (Academic Tier)
+### The LLM Skeptic
 
-- **Karl Friston** — inventor of the Free Energy Principle, one of the most cited neuroscientists alive
-- **Stephen Wolfram** — creator of Wolfram Language, cellular automata pioneer
-- **Eliezer Yudkowsky** — MIRI founder, alignment theory godfather
-- **Francois Chollet** — Keras creator, ARC Prize founder, intelligence measurement skeptic
-- **Blaise Aguera y Arcas** — artificial life researcher, Google fellow
-
-### The Counter-Narrative Value
-
-MLST is one of the few prominent AI podcasts that maintains a **publicly skeptical stance on LLMs.** While most AI podcasts discuss "how far can LLMs go?", MLST regularly asks **"is the LLM path fundamentally wrong?"**
-
-This contrarian position creates a valuable counterpoint to the "AI inevitably leads to AGI" narrative that dominates the English AI podcast space. Listening to MLST alongside the others builds a more independent, critical perspective.
+One of the very few English AI podcasts that publicly maintains a **skeptical position on LLMs**. While most AI podcasts discuss "how far can LLMs go?", MLST regularly questions "is the LLM path itself wrong?" This counter-narrative is invaluable for training your own independent judgment in an echo chamber of "AGI is inevitable."
 
 ## Essential Episodes
 
-- **Karl Friston on Free Energy Principle** — One of the most mind-expanding AI-adjacent episodes anywhere
-- **Blaise Aguera y Arcas on artificial life** — A completely different view of intelligence
-- **Francois Chollet on intelligence measurement** — Why he created ARC and why he thinks LLMs aren't the path
+- **Karl Friston — Free Energy Principle** — One of the most cited frameworks in neuroscience, applied to AI
+- **Blaise Agüera y Arcas — Artificial Life** — Rethinking intelligence from first principles
+- **François Chollet — Intelligence Metrics** — The ARC challenge, what intelligence really means
+- **Stephen Wolfram** — Computational thinking, cellular automata, and fundamental physics
 
-## Caveats
+## Quick Subscribe
 
-- **Not for beginners.** Requires familiarity with ML concepts, ideally some background in cognitive science.
-- **The skepticism can feel contrarian.** Use it as a check on groupthink, not as your sole source.
-- **Episodes can wander.** The academic seminar format means less structured editing.
+| Platform | Link |
+|----------|------|
+| 📺 YouTube | Search "Machine Learning Street Talk" |
+| 🎧 Apple Podcasts | Search "Machine Learning Street Talk" |
+| 🔵 Spotify | Search "Machine Learning Street Talk" |
+| 📧 Substack | [mlst.substack.com](https://mlst.substack.com) |
 
 ## Best For
 
-- ML researchers and grad students
-- People who already understand the mainstream AI narrative and want counter-arguments
-- Anyone interested in the deeper questions: what is intelligence, can machines think, is the LLM path viable
+- ML researchers and PhD students
+- People who want foundational understanding, not just industry news
+- Anyone feeling the "echo chamber" and wanting alternative perspectives
+- Those interested in the intersection of AI, neuroscience, and philosophy
 
 ## Summary
 
@@ -54,6 +53,6 @@ This contrarian position creates a valuable counterpoint to the "AI inevitably l
 |---|---|
 | Academic Rigor | ★★★★★ (best in class) |
 | Beginner Friendliness | ★ |
+| Critical Perspective | ★★★★★ (unique) |
+| Cross-Disciplinary Reach | ★★★★★ |
 | Production Quality | ★★★ |
-| Guest Caliber | ★★★★★ |
-| Counter-Narrative Value | ★★★★★ (unique) |

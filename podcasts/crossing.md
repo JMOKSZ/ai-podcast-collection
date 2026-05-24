@@ -32,6 +32,13 @@ Koji 同时也是 AI Hacker House 的发起人，所以新一代 AI 创业者基
 - **Agent Harness 专题** — 探讨 AI Agent 工程化的实际挑战
 - **各种早期 AI 创业者对话** — 每一期都有独特的信息增量
 
+## 快速订阅
+
+| 平台 | 方式 |
+|------|------|
+| 🎧 小宇宙 | 搜索「十字路口 Crossing」 |
+| 🍎 Apple Podcasts | 搜索「十字路口 Crossing」 |
+
 ## 适合人群
 
 - AI 创业者、想做 AI 产品的人

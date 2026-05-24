@@ -12,6 +12,10 @@
 | **Release** | Weekly |
 | **Platform** | YouTube / Apple / Spotify / Substack ([latent.space](https://latent.space)) |
 
+## 🇨🇳 中文简介
+
+英文圈最深的 AI 工程实战播客。Dwarkesh 聊的是"AI 会改变世界吗"，Latent Space 聊的是"下周给 Anthropic API 加缓存层怎么做最快"。主播 swyx 是 AI Engineer 大会的发起人，旧金山所有 AI 创业公司的 CTO 他都认识，请的嘉宾几乎全是 OpenAI、Anthropic、Meta、Databricks 的一线工程师。每年底的 "State of AI Engineering" 报告是 AI 工程领域事实上的年度基准。适合做 AI 工程、评估技术栈选型的从业者。
+
 ## Why It Matters
 
 Where Dwarkesh asks "will AI change the world?", Latent Space asks **"how do I build the caching layer for Anthropic's API next week?"** — the latter is far more useful for engineers.
@@ -29,6 +33,15 @@ Every year they publish the **"State of AI Engineering"** report — the de fact
 - **State of AI Engineering (annual special)** — The year's most comprehensive review of the AI engineering landscape
 - **Agent infrastructure deep-dives** — Any episode on agent frameworks, RAG systems, or inference optimization
 - **OpenAI / Anthropic / Meta engineers** — Direct from the teams building the infrastructure
+
+## Quick Subscribe
+
+| Platform | Link |
+|----------|------|
+| 📺 YouTube | Search "Latent Space Podcast" |
+| 🎧 Apple Podcasts | Search "Latent Space" |
+| 🔵 Spotify | Search "Latent Space" |
+| 📧 Substack | [latent.space](https://latent.space) |
 
 ## Best For
 

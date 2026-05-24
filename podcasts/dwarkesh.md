@@ -12,6 +12,10 @@
 | **Platform** | YouTube / Apple / Spotify / Substack ([dwarkesh.substack.com](https://dwarkesh.substack.com)) |
 | **Substack** | 80,000+ paid subscribers |
 
+## 🇨🇳 中文简介
+
+英文圈最深度的 AI 访谈节目，没有之一。Dwarkesh Patel 是 TIME 2024 百大 AI 影响力人物，每期节目前他会读完嘉宾的所有论文、内部报告和过去 5 年的公开访谈，带着 80 个细节问题入场。嘉宾包括 Dario Amodei（Anthropic CEO）、Demis Hassabis（Google DeepMind CEO）、Mira Murati、Karpathy、Ilya 等——全是这个量级的人物。单集 3–5 小时，信息密度极高，不适合通勤听，适合专门腾出时间。
+
 ## Why It Matters
 
 Dwarkesh is the best-prepared interviewer in the English AI podcast space — period.
@@ -37,6 +41,15 @@ The result is guest quality and depth that no other podcast matches:
 - **Dario Amodei** — Anthropic's CEO on the "2027" scenario, safety strategy, and why Anthropic exists.
 - **Mira Murati** — Her first deep dive after leaving OpenAI. Insight into OpenAI's internal culture and the Thinking Machines Lab vision.
 - **Demis Hassabis** — Gemini 3 strategy, AlphaFold, and DeepMind's approach to AGI.
+
+## Quick Subscribe
+
+| Platform | Link |
+|----------|------|
+| 📺 YouTube | Search "Dwarkesh Podcast" |
+| 🎧 Apple Podcasts | Search "Dwarkesh Podcast" |
+| 🔵 Spotify | Search "Dwarkesh Podcast" |
+| 📧 Substack | [dwarkesh.substack.com](https://dwarkesh.substack.com) — 80K+ paid subscribers, publishes full transcripts with hand-written summaries |
 
 ## Best For
 
