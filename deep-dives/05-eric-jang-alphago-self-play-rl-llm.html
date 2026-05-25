@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度复述 · Eric Jang：重建AlphaGo教给我们的RL与LLM未来</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5; color: #1a1a1a; line-height: 1.85; -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #27ae60; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title { font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a; }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #27ae60; background: #f5fcf7; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem; margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .concept-box {
+    background: #fafffe; border: 1px solid #c8e6d0; padding: 1.2rem 1.5rem; margin: 1rem 0;
+  }
+  .concept-box h4 { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem; color: #1b5e20; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a href="../index.html" class="back-link">← 返回播客日报</a>
+  <div class="ep-num">Dwarkesh Podcast · 2026年5月</div>
+  <h1>重建AlphaGo教会我们什么：Self-Play、RL与LLM的未来</h1>
+  <div class="meta">
+    <span class="tag">★ 强推</span><br>
+    📅 2026年5月15日 · ⏱ 约2小时20分钟<br>
+    🎙 主持人：Dwarkesh Patel · 嘉宾：Eric Jang（前Google Brain研究员）
+  </div>
+</header>
+
+<div class="section-title">一、嘉宾背景：从Google Brain到独立研究者</div>
+
+<p><span class="speaker">Eric Jang</span> 是前 Google Brain 研究员，在机器人学习和强化学习领域有深厚积累。他在 Google Brain 期间参与了多个重要项目。在离开 Google 后，他一直在思考一个核心问题：</p>
+
+<blockquote class="strong">如果我们今天重新构建 AlphaGo，它对 LLM 的未来意味着什么？</blockquote>
+
+<p>这场对话由此展开，最终指向一个关键洞察：RL（强化学习）+ self-play（自我博弈）+ MCTS（蒙特卡洛树搜索）不仅是 AlphaGo 成功的原因，更可能是驱动下一代 LLM 进化的核心引擎。</p>
+
+<div class="section-title">二、AlphaGo 的根本创新：我们到底学到了什么</div>
+
+<div class="sub-title">2.1 AlphaGo 不只是"围棋AI"</div>
+
+<p>Eric Jang 首先澄清了一个普遍的误解：AlphaGo 的意义不在于它会下围棋。它的真正意义在于证明了<strong>一种全新的训练范式</strong>——通过自我博弈让 AI 超越人类数据。</p>
+
+<p>AlphaGo 的三阶段训练：</p>
+<ol>
+  <li><strong>监督学习阶段</strong>：用人类棋谱训练模型模仿人类下棋。这就像 LLM 的 Pre-train 阶段——从人类数据中学习。</li>
+  <li><strong>强化学习 / Self-play 阶段</strong>：模型与自己（或另一个版本自己）对弈，通过胜负信号不断改进。这是关键——<strong>模型开始产生自己的训练数据</strong>。</li>
+  <li><strong>MCTS 推理阶段</strong>：在推理时使用蒙特卡洛树搜索，前瞻性地评估未来的棋步。这对应了 LLM 的推理时计算（Inference-time Compute）。</li>
+</ol>
+
+<div class="sub-title">2.2 为什么 Self-play 如此强大</div>
+
+<p>Self-play 的核心优势：</p>
+<ul>
+  <li><strong>数据飞轮</strong>：不需要人类标注数据，AI 自己产生训练数据。每次对弈都是新的训练样本。</li>
+  <li><strong>自动课程学习</strong>：随着模型变强，对手也变强——训练难度自然递增。不会出现"学完了"的情况。</li>
+  <li><strong>超越人类天花板</strong>：人类棋谱只能让模型达到人类水平。Self-play 让模型发现了人类从未见过的策略。</li>
+</ul>
+
+<p>Eric Jang 指出，这就是为什么 AlphaGo 能够下出"神之一手"（Move 37）——那不是从人类棋谱中学到的，而是从 self-play 中涌现的。</p>
+
+<div class="section-title">三、MCTS 如何解决信用分配问题——全场最关键的技术洞察</div>
+
+<div class="concept-box">
+  <h4>🔑 核心概念：信用分配问题（Credit Assignment Problem）</h4>
+  <p>在强化学习中，信用分配问题指的是：当 Agent 执行了一系列动作并最终获得奖励时，它如何判断这个过程中的每一步分别贡献了多少？</p>
+  <p>例如：下棋时，你走了50步后赢了。是第3步的妙招让你赢的？还是第47步？还是对手在第30步犯了错？</p>
+  <p>对于 LLM 来说，这个问题更加困难——一个 Coding Agent 可能执行数百步操作，最终成功或失败，但如何判断每一步的功过？</p>
+</div>
+
+<p><strong>MCTS 的解决方案</strong>：</p>
+
+<p>MCTS（蒙特卡洛树搜索）通过一种优雅的方式绕过了信用分配问题：</p>
+<ul>
+  <li>在每个决策点，MCTS 会模拟多条可能的未来路径</li>
+  <li>通过统计每条路径的最终结果，它为<strong>每一个中间步骤</strong>提供了<strong>明确的改进目标</strong></li>
+  <li>这本质上是一种"暴力求解"——用大量模拟来为每一步提供可靠的反馈信号</li>
+</ul>
+
+<blockquote class="strong">"MCTS 提供了每一步的改进目标，绕过了 LLM RL 中难以解决的信用分配问题。"——这是理解 RL 在 LLM 上为何还未完全发力的钥匙。</blockquote>
+
+<p><strong>为什么 LLM 的 RL 这么难</strong>：</p>
+<ul>
+  <li>LLM 的任务通常是开放式的（写代码、回答问题、写文章）——没有像围棋那样的明确胜负判断</li>
+  <li>动作空间巨大——每一步的下一个 token 选择有数万种可能——不像围棋只有361个落子位置</li>
+  <li>没有廉价的前向模拟器——不能用一台机器快速模拟未来的多种可能</li>
+</ul>
+
+<p>但 Eric Jang 认为，这些问题正在被逐步解决。尤其是随着 Coding 任务越来越标准化（可以通过测试用例判断成功/失败），RL 的适用范围正在扩大。</p>
+
+<div class="section-title">四、自动化研究循环：AI 做科研的现实与挑战</div>
+
+<div class="sub-title">4.1 什么是 Autoresearch Loop</div>
+
+<p>Eric Jang 描述了当前 AI 研究的前沿：<strong>模型已经能够实现和运行实验</strong>。具体来说：</p>
+<ul>
+  <li>模型可以提出假设</li>
+  <li>编写代码来测试假设</li>
+  <li>运行实验并收集结果</li>
+  <li>分析结果并调整下一步方向</li>
+</ul>
+
+<p>这形成了一个闭环——AI 不需要人类在每一步都介入。</p>
+
+<div class="sub-title">4.2 当前的两个关键障碍</div>
+
+<p>然而，Eric Jang 指出两个尚未解决的难题：</p>
+<ol>
+  <li><strong>选择正确的问题</strong>：AI 可以跑实验，但如何决定"应该研究什么问题"？这需要研究判断力和对领域全局的理解——目前仍是人类研究员的核心价值。</li>
+  <li><strong>跳出死胡同</strong>：当研究走入死胡同时，人类可以灵活转向。AI 目前仍然倾向于在错误的路径上死磕——因为在它看来，继续跑实验才算"在做事"。</li>
+</ol>
+
+<p>这指向一个更深层的观点：<strong>当前 AI 最需要的能力不是更强的推理，而是更好的元认知——知道什么时候该放弃当前路径。</strong></p>
+
+<div class="section-title">五、Self-play 驱动下一代 LLM 的路线图</div>
+
+<p>Eric Jang 的核心论点是：</p>
+
+<blockquote class="strong">Self-play 将是驱动下一代 LLM 进化的核心引擎。</blockquote>
+
+<p>具体路线图：</p>
+<ol>
+  <li><strong>Coding 作为"围棋棋盘"</strong>：代码有明确的正确性判断（测试通过/失败），这使 Coding 成为 LLM 最自然的 self-play 环境。两个版本的模型可以互相出题、解题、验证——就像 AlphaGo 的两个副本互相对弈。</li>
+  <li><strong>从 Coding → Reasoning</strong>：数学证明、逻辑推理等形式化领域，同样可以通过 self-play 训练——模型尝试证明，验证器判断对错。</li>
+  <li><strong>从 Reasoning → 通用能力</strong>：一旦模型在形式化领域通过 self-play 获得了超人类的推理能力，这些能力可能会"外溢"到更开放的领域。</li>
+  <li><strong>验证器（Verifier）比生成器（Generator）先成熟</strong>：在 self-play 中，你不需要一个完美的生成器——你只需要一个可靠的验证器（判断对错）。而"判断对错"通常比"自己做出正确答案"更容易。这是一个关键的杠杆。</li>
+</ol>
+
+<div class="section-title">六、对 LLM 训练范式的启示</div>
+
+<div class="sub-title">6.1 Pre-train 的尽头在哪里</div>
+
+<p>Eric Jang 分享了对预训练前景的看法：</p>
+<ul>
+  <li>Pre-train（从人类数据中学习）仍然有提升空间，但天花板正在显现</li>
+  <li>当人类数据被"吃光"时，<strong>合成数据 + self-play</strong> 将成为唯一的前进方向</li>
+  <li>这也是为什么 RL 在 2026 年突然变得如此重要——不是因为它刚被发明，而是因为 Pre-train 的红利正在耗尽</li>
+</ul>
+
+<div class="sub-title">6.2 RLHF 的局限与 RL 的回归</div>
+
+<p>Eric Jang 对当前的 RLHF（人类反馈强化学习）方法提出了批判：</p>
+<ul>
+  <li>RLHF 本质上是"人类偏好"的拟合器——它让模型变得更听话、更符合人类期望</li>
+  <li>但它<strong>不直接提升模型的真实能力</strong>——只是让已有能力的输出更对齐</li>
+  <li>真正提升能力的是<strong>基于结果的 RL</strong>（Outcome-based RL）——就像 AlphaGo 通过胜负信号来提升棋力</li>
+  <li>OpenAI 的 o1/o3 系列和 Anthropic 的 Opus 4.5/4.6 正是在这个方向上的突破</li>
+</ul>
+
+<div class="section-title">七、从 AlphaGo 到 AlphaFold 到 LLM：一条统一的线索</div>
+
+<p>Eric Jang 提出了一个统一的视角来看待 AI 的进步：</p>
+
+<div class="highlight-box">
+  <h3>AI 进步的三个范式</h3>
+  <p><strong>AlphaGo（2016）</strong>：在明确规则、明确胜负的游戏中超越人类 → Proof of Concept</p>
+  <p><strong>AlphaFold（2020）</strong>：在"半结构化"的科学问题中超越人类 → 从游戏到科学</p>
+  <p><strong>Self-play LLM（2025-2026）</strong>：在开放式的认知任务中通过自博弈不断进化 → 从科学到通用智能</p>
+</div>
+
+<p>这条线索的核心是：<strong>从规则清晰 → 规则模糊 → 规则自生成的进化路径。</strong>每一步都在扩大 AI 能够自我改进的领域范围。</p>
+
+<div class="section-title">八、关键引用</div>
+
+<blockquote>"MCTS gives you a target for improvement at every step — it solves the credit assignment problem that makes LLM RL so hard."</blockquote>
+
+<blockquote>"The models can already implement and run experiments. The remaining challenge is choosing the right problems and knowing when to quit a dead end."</blockquote>
+
+<blockquote>"Self-play is going to be the core engine driving the next generation of LLM evolution."</blockquote>
+
+<hr>
+
+<div class="highlight-box">
+  <h3>🏁 一句话总结</h3>
+  <p>Eric Jang 通过重新审视 AlphaGo 的成功密码，揭示了一条清晰的路线图：Self-play + MCTS 不仅能训练出超越人类的围棋 AI，还能驱动下一代 LLM 的进化。核心瓶颈——信用分配问题——正在通过 Coding 的"可验证性"被逐步突破。当 AI 能够自己产生训练数据、自己评估结果、自己迭代改进时，我们正在从"教 AI 学习"走向"让 AI 自学"。</p>
+</div>
+
+<footer>
+  <p>深度复述稿 · 基于 Dwarkesh Podcast 对 Eric Jang 的访谈</p>
+  <p>原始播客：<a href="https://www.youtube.com/@DwarkeshPatel">Dwarkesh Patel YouTube</a> · 2026-05-15</p>
+  <p>复述生成时间：2026-05-25</p>
+</footer>
+
+</div>
+</body>
+</html>

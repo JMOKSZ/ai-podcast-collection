@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度复述 · 罗福莉：AI范式已然巨变</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a href="../index.html" class="back-link">← 返回播客日报</a>
+  <div class="ep-num">张小珺商业访谈录 · Ep.138</div>
+  <h1>AI范式已然巨变！——对罗福莉的3.5小时深度访谈</h1>
+  <div class="meta">
+    <span class="tag">★ 本周必听</span><br>
+    📅 2026年4月24日录制 · ⏱ 约3.5小时<br>
+    🎙 主持人：张小珺 · 嘉宾：罗福莉（小米大模型团队负责人）
+  </div>
+</header>
+
+<!-- 开场 -->
+<div class="section-title">一、嘉宾背景</div>
+
+<p><span class="speaker">罗福莉</span>，人工智能研究员，曾供职阿里达摩院、DeepSeek，目前是<strong>小米大模型团队负责人</strong>，主导研发了 MiMo-V2 系列模型。她在网络空间有很多标签——"AI天才少女"——但她明确表示不喜欢这个称呼。这是她的<strong>第一次长时间技术访谈</strong>。</p>
+
+<p>2026年，大模型战争全面升级，掀开了第二幕——从 Pre-train（预训练）主导的 Chat 时代，转向 Post-train（后训练）主导的 Agent 时代。这场访谈系统性地讨论了由 Claude Opus 4.6、OpenClaw 等技术变量所触发的 AI 巨震，以及后续结构性影响。</p>
+
+<div class="section-title">二、核心论题：AI范式从 Chat → Agent 第二幕</div>
+
+<div class="sub-title">2.1 OpenClaw 引发的巨震</div>
+
+<p>访谈从 OpenClaw 这个技术变量切入。罗福莉认为，2026年最大的变化就是 AI 的范式正在发生根本性的切换：</p>
+<ul>
+  <li><strong>过去（Chat 时代）</strong>：以预训练为核心，追求更大的模型参数量、更多的训练数据。系统的核心是"以 Rollout 推理引擎为中心"。</li>
+  <li><strong>现在（Agent 时代）</strong>：以 Agent 为核心，系统变得远比过去复杂。不再是单纯的 token 预测，而是要处理多步推理、工具调用、环境交互。</li>
+</ul>
+
+<p>这个转变的催化事件是 Anthropic 的 Claude Opus 4.6 以及 OpenClaw 的出现。它们证明了 Agent 范式不仅是可行的，而且正在迅速成为主流。用罗福莉的话说，这是"2026年由 Claude Opus 4.6 和 OpenClaw 等技术变量所触发的 AI 巨震"。</p>
+
+<div class="sub-title">2.2 Anthropic 路径正确——这是当下共识</div>
+
+<p>罗福莉明确表示：<strong>Anthropic 的技术路径是正确的，这已经成为行业共识。</strong>在路径更清晰的情况下，国内大模型团队进入加速追赶的状态。核心判断：</p>
+<ul>
+  <li><strong>Pre-train 代差基本没有</strong>：各团队在预训练上的差距已经非常接近，追平的难度比2023年小得多。</li>
+  <li><strong>真正的战场在 Post-train</strong>：现在大家像2023年追平 Pre-train 差距一样 all in，要去做好 Agent 的 Post-train。更具体说，是在 Agent 上怎么做好 RL 的 scaling。</li>
+</ul>
+
+<blockquote class="strong">"接下来两三个月会非常精彩。"——罗福莉</blockquote>
+
+<div class="section-title">三、系统架构的巨变</div>
+
+<div class="sub-title">3.1 从推理引擎到 Agent 系统</div>
+
+<p>罗福莉详细描述了系统架构正在经历的根本性变化：</p>
+<ul>
+  <li><strong>旧架构</strong>：以 Rollout 推理引擎为核心。模型的主要工作是一次性生成答案，系统的复杂度有限。</li>
+  <li><strong>新架构</strong>：以 Agent 为核心的更复杂系统。Agent 需要与环境持续交互、使用工具、进行多步规划和推理。这对基础设施提出了更高的要求——团队必须具备足够的敏捷性，能够快速开发出适配当前时代的 RL Infra 系统。</li>
+</ul>
+
+<p>接下两三个月，各团队怎么适应这种变化，将成为考验团队整体研究水平、技术敏捷程度，以及怎么拥抱新范式来做研究的关键。</p>
+
+<div class="sub-title">3.2 卡的分配比例——从 3:5:1 到 1:1</div>
+
+<p>这是全访谈中最具操作性的数据之一：</p>
+<ul>
+  <li><strong>Chat 时代的用卡比例</strong>：研究 : Pre-train : Post-train ≈ <span class="data-point">3 : 5 : 1</span>。预训练占据了绝对的 GPU 资源大头。</li>
+  <li><strong>现在合理的比例</strong>：<span class="data-point">3 : 1 : 1</span>。Post-train 的地位大幅上升。</li>
+  <li><strong>顶尖团队的现状</strong>：预训练和后训练的比例已经接近 <span class="data-point">1 : 1</span>。</li>
+</ul>
+
+<p>这个数字变化本身就说明了行业的重心转移。后训练不再是预训练的附庸，而是和预训练平起平坐的核心环节。罗福莉判断，这是今年可能发生的最大变化。</p>
+
+<div class="section-title">四、Agent 的自进化与自迭代</div>
+
+<p>这是整个访谈中最令人震撼的部分之一。罗福莉坦承：</p>
+
+<blockquote class="strong">"我之前认为我们自己做的工作已经足够有创造力、足够不会被 Skill 化、不会被 Workflow 化。但我现在发现，它竟然也能！那它可不可以训出更强的模型？自己左脚踩右脚就提升了？——这是这一两年会发生的事情。"</blockquote>
+
+<p>这段话的深层含义是：<strong>AI 研究者自己的工作 —— 训练模型、调参、设计 RL 环境 —— 也开始被 AI 本身自动化了。</strong>当一个 Agent 可以优化另一个 Agent 的训练过程时，"左脚踩右脚"的自迭代循环就可能形成。</p>
+
+<p>罗福莉对此既有兴奋也有危机感。在生产力大爆炸的时代，人人都有危机感——哪怕对于亲手训练模型的研究者来说也是如此。当人类的知识与智慧内化为模型能力，未来的人类去做什么？这个宏大的时代命题，她坦言"不得而知"。</p>
+
+<div class="section-title">五、MiMo-V2：觉醒与伏击</div>
+
+<div class="sub-title">5.1 小米的 MiMo-V2 系列</div>
+
+<p>罗福莉详细回顾了 MiMo-V2 系列的研发历程。关键参数：</p>
+<ul>
+  <li>MiMo-V2-Flash：309B 总参数，15B 激活参数</li>
+  <li>在 SWE-Bench Multilingual 上跑过了 GPT-5</li>
+  <li>这是一个"小模型"对"大模型"的经典伏击案例</li>
+</ul>
+
+<p>罗福莉分享了团队如何在资源相对有限的情况下，通过精准的技术路线选择和工程优化，实现了在小参数规模上的突破性性能。这背后是"群体智能"的研发方法论——扁平、跨职能、限制规模、不打卡、靠群体智能滚研究。</p>
+
+<div class="sub-title">5.2 雷军花千万年薪买的是什么</div>
+
+<p>有评论指出，雷军花千万年薪买的"不是一个 researcher，是一套已经被 DeepSeek 验证过的组织模板：扁平、跨职能、限制规模、不打卡、靠群体智能滚研究"。罗福莉把这套模板带过来，小米才有可能在 12 月发布会上把 MiMo-V2-Flash 在 SWE-Bench Multilingual 上跑过 GPT-5。</p>
+
+<p>"模型可以挖人，组织模板挖不来，得靠人重建。"</p>
+
+<div class="section-title">六、1T 模型只是入场券</div>
+
+<p>罗福莉提出了一个更长期的判断：</p>
+<ul>
+  <li><strong>1T 参数模型只是入场券</strong>，不会在这个水平上走太久。</li>
+  <li>如果要拿到下一个阶段的领先，就要寻求更大规模 scaling。</li>
+  <li>关键决策点：到底是去 scaling 模型的参数量？还是去 scaling 什么东西？以及要在什么样的芯片上去 scaling？</li>
+  <li>这是当下立即需要去决策和判断的——<strong>这才决定了大半年过后谁更领先</strong>。</li>
+</ul>
+
+<p>这个判断意味深长。它意味着当前还在 1T 级别的玩家，如果不快速做出更大规模的决策和投入，半年后可能就已经被甩开了。</p>
+
+<div class="section-title">七、组织平权</div>
+
+<p>在组织层面，罗福莉分享了小米大模型团队的运作方式：</p>
+<ul>
+  <li><strong>后训练需要 diversity（多样性）</strong>：这是当前一个重要的范式变化。做后训练不能只有一种思路。</li>
+  <li><strong>让预训练的人做后训练是很好的补充</strong>：预训练背景的人带来不同的思维角度。</li>
+  <li><strong>扁平化结构</strong>：限制规模、不打卡，通过群体智能推动研究进展。</li>
+</ul>
+
+<p>罗福莉强调，当面临一次巨大技术范式转折时，一家 AI Lab 内部在技术押注、资源调配、组织与人员等诸多方面的系列举措，其根基是<strong>文化与价值观的成型</strong>。</p>
+
+<div class="section-title">八、训练细节与另类架构</div>
+
+<div class="sub-title">8.1 Code 数据的独特价值</div>
+
+<p>罗福莉在访谈中提出了一个被很多稿件忽略但极其重要的观点：</p>
+
+<blockquote>"真正能达到 128K 到一兆长度的数据，大概只有两类：一类是 Code 数据，一类是书籍。书籍的信号太发散，Code 的文件之间的关联更强。"</blockquote>
+
+<p>这个观察解释了为什么 Coding 会成为 Agent 时代最重要的能力——<strong>Code 是唯一又长又密的训练数据</strong>。书籍虽然长度够，但信号发散；而代码文件之间有着紧密的逻辑关联，天然适合长上下文训练。</p>
+
+<div class="sub-title">8.2 MoE + RL 的不稳定性</div>
+
+<p>罗福莉提到，MoE（混合专家模型）结合 RL 训练的不稳定性已经成为多条独立研究路径的共同关注点。这在 Agent 时代变得更加关键，因为 Agent 系统本身就是复杂的多步推理链条，任何不稳定性都会被放大。</p>
+
+<div class="section-title">九、AI 没有生存危机——每天在否认昨天的自己</div>
+
+<p>这部分讨论了一个更哲学的问题：AI 是否会有"生存危机"？罗福莉的答案是明确的否定。AI 不存在自我意识层面的焦虑，但这并不意味着 AI 研究者的工作就轻松——</p>
+
+<blockquote>"每天在否认昨天的自己。"</blockquote>
+
+<p>这句话道出了 AI 研究最残酷也最迷人的本质：今天的 SOTA 模型，就是 3-6 个月后的市场平均水平。昨天的突破今天就成了基线。研究人员必须持续自我否定、自我迭代。</p>
+
+<div class="section-title">十、过去三年 AI 进化史回顾</div>
+
+<p>罗福莉以一个亲历者的视角回顾了过去三年 AI 领域的关键节点：</p>
+<ol>
+  <li><strong>2023年</strong>：ChatGPT 引爆大模型浪潮，Pre-train 是绝对核心，所有人都在追模型规模。</li>
+  <li><strong>2024年</strong>：RL 和 Post-train 的地位上升，Agent 概念开始萌芽。OpenAI o1 系列证明了推理时计算的价值。</li>
+  <li><strong>2025年</strong>：Coding Agent 开始实用化，Claude Code 等产品证明了 Agent 的商业可行性。</li>
+  <li><strong>2026年</strong>：Agent 范式全面爆发，系统架构从推理引擎转向 Agent 中心化。组织和文化成为核心竞争壁垒。</li>
+</ol>
+
+<div class="section-title">十一、当下共识与竞争格局</div>
+
+<p>罗福莉对当下的竞争格局有一个清晰判断：</p>
+<ul>
+  <li><strong>共识</strong>：Anthropic 路径正确，Agent Post-train 是主战场。</li>
+  <li><strong>中国团队的追赶</strong>：Pre-train 代差已基本消除，在路径清晰的情况下加速追赶。</li>
+  <li><strong>关键变量</strong>：接下来两三个月的变化，将考验团队整体研究水平和技术敏捷程度。</li>
+  <li><strong>长期变量</strong>：更大规模 scaling 的决策——参数量、芯片选择、架构设计。</li>
+</ul>
+
+<hr>
+
+<div class="highlight-box">
+  <h3>🏁 一句话总结</h3>
+  <p>AI 正在从"训练一个聪明的聊天模型"变成"训练一个能干活、能自我迭代、能在复杂环境中完成多步任务的 Agent"。这个转变的深度可能不亚于从移动互联网到 AI 时代的转变。而在这个过程中，组织文化和技术敏捷性，正在成为比算力更重要的竞争壁垒。</p>
+</div>
+
+<footer>
+  <p>深度复述稿 · 基于张小珺商业访谈录 Ep.138</p>
+  <p>原始播客：小宇宙 / Apple Podcasts / Bilibili 均可收听完整版</p>
+  <p>复述生成时间：2026-05-25</p>
+</footer>
+
+</div>
+</body>
+</html>

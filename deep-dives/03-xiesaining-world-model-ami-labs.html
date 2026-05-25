@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度复述 · 谢赛宁：世界模型、逃出硅谷、AMI Labs</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5; color: #1a1a1a; line-height: 1.85; -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8e44ad; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title { font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a; }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #8e44ad; background: #faf5fc; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem; margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a href="../index.html" class="back-link">← 返回播客日报</a>
+  <div class="ep-num">张小珺商业访谈录 · Ep.133</div>
+  <h1>对谢赛宁的7小时马拉松访谈：世界模型、逃出硅谷、AMI Labs、两次拒绝Ilya、杨立昆、李飞飞和42</h1>
+  <div class="meta">
+    <span class="tag">★ 必听</span><br>
+    📅 2026年3月16日 · ⏱ 约7小时<br>
+    🎙 主持人：张小珺 · 嘉宾：谢赛宁（AMI Labs 联合创始人兼CSO）
+  </div>
+</header>
+
+<div class="section-title">一、嘉宾画像：谢赛宁是谁</div>
+
+<p><span class="speaker">谢赛宁（Saining Xie）</span>，1990年生，华人科学家。他的履历本身就是一部当代 AI 研究简史：</p>
+<ul>
+  <li>纽约大学教授</li>
+  <li>前 Google DeepMind / FAIR（Meta AI）研究员</li>
+  <li><strong>论文引用近10万次</strong></li>
+  <li>共同提出<strong>Diffusion Transformers（DiT）</strong>——这一架构是现代图像/视频生成模型的基础</li>
+  <li>与图灵奖得主杨立昆（Yann LeCun）等人联合创立<strong>AMI Labs</strong>（Advanced Machine Intelligence Labs），任联合创始人兼首席科学家（CSO）</li>
+</ul>
+
+<p>AMI Labs 的融资数据本身就说明了一切：<strong>仅25人团队、无产品、10.3亿美元种子轮、投前估值35亿美元</strong>。这在硅谷历史上都是极为罕见的。</p>
+
+<p>这场访谈长达7小时，张小珺将其称为"马拉松访谈"——从一个华人科学家的童年记忆，到学术选择，到科研哲学，到对 AI 未来的根本性判断。</p>
+
+<div class="section-title">二、童年、交大与学术启蒙</div>
+
+<p>访谈从谢赛宁的童年开始。张小珺从他的家庭环境切入，探讨了童年经历对其性格和学术道路的塑造：</p>
+<ul>
+  <li>在交大 ACM 班的学习经历——这是中国计算机科学精英培养的传奇班级之一</li>
+  <li>早期对计算机视觉的兴趣如何在本科阶段萌芽</li>
+  <li>从"做工程"到"做研究"的心态转变</li>
+</ul>
+
+<p>这部分展现了谢赛宁作为研究者的"人文底色"——他不是那种纯粹的工程驱动型研究者，而是对科研的本质、问题的定义有持续思考的人。</p>
+
+<div class="section-title">三、博士申请与导师陶哲文</div>
+
+<p>谢赛宁分享了他在博士申请阶段的关键选择：</p>
+<ul>
+  <li>选择导师的思考过程——为什么选择陶哲文（其导师），而非其他更知名的实验室</li>
+  <li>博士期间如何在计算机视觉领域确立自己的研究方向</li>
+  <li>在深度学习浪潮兴起时的判断和位置选择</li>
+</ul>
+
+<p>这段回忆折射出一个关键主题：<strong>在正确的时刻站在正确的位置上</strong>。谢赛宁的很多选择后来看都是"对的"，但他强调这不是简单的运气——而是研究品味（Research Taste）在起作用。</p>
+
+<div class="section-title">四、实习经历与 DeepMind 见闻</div>
+
+<p>谢赛宁详细回顾了他在 Google DeepMind 和 FAIR 的实习经历：</p>
+<ul>
+  <li>DeepMind 的科研文化：高强度、高期望、对"解决大问题"的执着</li>
+  <li>FAIR（Meta AI Research）的不同气质：更开放、更多元的研究方向</li>
+  <li>两种文化对其研究风格的塑造</li>
+</ul>
+
+<p>这段经历也为他后来选择"离开硅谷"埋下了伏笔——他对硅谷的 AI 研究文化有深入的第一手观察。</p>
+
+<div class="section-title">五、职业选择与拒绝 OpenAI</div>
+
+<p>这是访谈中最引人注目的细节之一：</p>
+
+<blockquote class="strong">谢赛宁透露他曾<strong>两次拒绝 Ilya Sutskever</strong>（OpenAI 联合创始人兼首席科学家）的邀约。</blockquote>
+
+<p>这个细节之所以引起大量讨论，是因为 Ilya 在 AI 圈的地位无可撼动——他是 AlexNet 的共同作者、GPT 系列的核心推动者、OpenAI 的灵魂人物之一。拒绝 Ilya 的邀约，意味着谢赛宁对自己要走的路有极为清晰的判断。</p>
+
+<p>他拒绝的理由，本质上指向一个根本性的方向分歧：<strong>谢赛宁认为 LLM（大语言模型）不是通向 AGI 的正确路径，世界模型才是。</strong></p>
+
+<div class="section-title">六、研究哲学与影响力</div>
+
+<p>这可能是整场访谈中最深刻的部分。谢赛宁系统性地阐述了他的研究哲学：</p>
+
+<div class="sub-title">6.1 如何定义一个好问题</div>
+
+<ul>
+  <li><strong>定义问题比解决问题更重要</strong>：太多研究者忙着解决已经被定义好的问题，而不是去思考哪些问题值得被解决。</li>
+  <li><strong>不做 me-too research</strong>：如果你的研究和主流方向的唯一区别是"我做得更好一点"，那本质上就不是真正的研究创新。</li>
+  <li><strong>表征学习（Representation Learning）</strong>：这是谢赛宁博士期间的核心方向，也是他后来提出 DiT 的学术基础。</li>
+</ul>
+
+<div class="sub-title">6.2 专注力、核心圈与吸引力法则</div>
+
+<p>谢赛宁分享了他对科研生产力的看法：</p>
+<ul>
+  <li><strong>专注力是最稀缺的资源</strong>：在信息泛滥的时代，能长时间深度思考一个问题的能力比智商更稀缺。</li>
+  <li><strong>核心圈的重要性</strong>：与谁一起讨论问题，决定了你的研究品位上限。谢赛宁将杨立昆、李飞飞等人视为关键影响者。</li>
+  <li><strong>吸引力法则</strong>：当你真的深入一个真正重要的问题时，优秀的人会被吸引过来。</li>
+</ul>
+
+<div class="section-title">七、世界模型 vs LLM：路线之争</div>
+
+<p>这是全场最核心的论点。谢赛宁对硅谷当前的 AI 方向提出了尖锐批评：</p>
+
+<blockquote class="strong">"Silicon Valley is very LLM-pilled. 硅谷已经深陷于大语言模型，完全被它催眠了。"</blockquote>
+
+<div class="sub-title">7.1 为什么 LLM 不够</div>
+
+<ul>
+  <li><strong>数据驱动的模仿者</strong>：LLM 无论多强，本质上是数据驱动的模式匹配器。它们可以模仿推理，但不真正理解物理世界。</li>
+  <li><strong>缺乏真正的推理和预判</strong>："真正强的智能，需要能自己推理和做预判"，而不是靠海量数据拟合出来的条件概率分布。</li>
+  <li><strong>语言是毒药</strong>（Language is Poison）：这是谢赛宁最激进的观点之一——过度依赖语言作为智能的载体，可能反而阻碍了真正的智能发展。语言只是一层薄薄的符号系统，世界远比语言丰富。</li>
+</ul>
+
+<div class="sub-title">7.2 什么是世界模型</div>
+
+<p>世界模型（World Model）是谢赛宁和杨立昆共同押注的方向：</p>
+<ul>
+  <li>一个能够<strong>内化物理世界规律</strong>的模型——不只是在文本层面理解，而是能预测物理世界会发生什么</li>
+  <li>就像人类婴儿通过观察和互动来学习世界模型一样，不需要海量标注文本</li>
+  <li><strong>表征的世界</strong>：智能的本质是对世界的内部表征，而不是对语言的处理</li>
+</ul>
+
+<div class="sub-title">7.3 中国AI的"世界模型缺位"</div>
+
+<p>张小珺在访谈中追问中国 AI 人才和产业在世界模型方向上的缺失。谢赛宁分析：</p>
+<ul>
+  <li>中国 AI 界整体跟随 LLM 路径，对世界模型的投入严重不足</li>
+  <li>部分原因是世界模型方向的研究门槛更高，需要跨学科背景</li>
+  <li>但这也是一个巨大的<strong>非共识机会</strong>——当所有人都在追 LLM 时，世界模型可能成为弯道超车的方向</li>
+</ul>
+
+<div class="section-title">八、AMI Labs：25人的10亿美元赌注</div>
+
+<div class="sub-title">8.1 为什么只有25人</div>
+
+<p>AMI Labs 的团队规模只有25人——这是一个刻意选择：</p>
+<ul>
+  <li>谢赛宁和杨立昆相信，<strong>小团队才能做出真正突破性的研究</strong></li>
+  <li>大规模团队天然倾向于做增量改进，而非范式创新</li>
+  <li>25人的团队意味着每个人都是精心挑选的，没有"搭便车"的空间</li>
+</ul>
+
+<div class="sub-title">8.2 没有产品，只有研究</div>
+
+<p>10.3亿美元的种子轮投给一家没有产品的公司，这在任何时代都是疯狂的。投资人的逻辑是什么？</p>
+<ul>
+  <li><strong>赌的是方向</strong>：世界模型如果是对的，市场价值远超10亿</li>
+  <li><strong>赌的是人</strong>：杨立昆（图灵奖得主）+ 谢赛宁（DiT 提出者）的组合</li>
+  <li><strong>赌的是时机</strong>：LLM 路线出现天花板的时候，就是世界模型证明价值的时候</li>
+</ul>
+
+<div class="sub-title">8.3 "逃出硅谷"</div>
+
+<p>AMI Labs 的选址不在硅谷，这是谢赛宁刻意的选择：</p>
+<ul>
+  <li>硅谷的 AI 文化已经被 LLM 和商业化"催眠"</li>
+  <li>离开硅谷的地理位置，也象征着<strong>离开硅谷的思维定式</strong></li>
+  <li>在非硅谷的地方，更容易保持独立思考和非共识判断</li>
+</ul>
+
+<div class="section-title">九、"42"哲学：从技术到《金刚经》</div>
+
+<p>标题中的"42"别有深意。在道格拉斯·亚当斯的《银河系漫游指南》中，42是"生命、宇宙与一切"的终极答案。谢赛宁用这个数字来隐喻：</p>
+<ul>
+  <li>技术探索的终极目的不仅仅是技术本身</li>
+  <li>在对话中他多次引用《金刚经》的思想——关于表征、真实与虚幻的哲学讨论</li>
+  <li><strong>Research Taste（研究品味）</strong>：超越纯技术判断的审美层面——什么问题是美的、什么是值得追求的</li>
+</ul>
+
+<p>谢赛宁对"命运"的思考也贯穿访谈。他不认为自己的成功是纯粹的个人努力结果——时代、机遇、遇到的导师和合作者，都在其中扮演了角色。</p>
+
+<div class="section-title">十、争议与思考</div>
+
+<div class="sub-title">10.1 天价估值是否合理</div>
+
+<p>AMI Labs 在没有产品、只有25人的情况下获得10.3亿美元种子轮，估值35亿美元。这个估值在业内引发了大量讨论：</p>
+<ul>
+  <li><strong>支持方</strong>：如果世界模型是对的，这估值低了。LLM 赛道头部的估值已经是千亿级别。</li>
+  <li><strong>质疑方</strong>：没有产品、没有商业验证，纯靠团队和愿景估值，存在巨大泡沫风险。</li>
+</ul>
+
+<div class="sub-title">10.2 世界模型的路线风险</div>
+
+<p>谢赛宁押注世界模型，但这个选择也有风险：</p>
+<ul>
+  <li><strong>时间窗口</strong>：世界模型可能还需要数年才能达到实用水平</li>
+  <li><strong>LLM 融合</strong>：LLM 可能会通过多模态能力逐步发展出世界理解能力</li>
+  <li><strong>工程化难度</strong>：世界模型的训练比 LLM 更复杂，数据需求完全不同</li>
+</ul>
+
+<hr>
+
+<div class="highlight-box">
+  <h3>🏁 一句话总结</h3>
+  <p>谢赛宁代表了 AI 界最重要的"反派"立场——在一个被 LLM 统治的世界里，他坚持世界模型才是通往 AGI 的正确道路。他的选择——拒绝 Ilya、离开硅谷、25人拿10亿美元——不是叛逆，而是一个科学家对自己研究信仰的极度自信。无论你同不同意他的路线，这场7小时的对话都是一次对 AI 根本方向的深度拷问。</p>
+</div>
+
+<footer>
+  <p>深度复述稿 · 基于张小珺商业访谈录 Ep.133</p>
+  <p>原始播客：小宇宙 / Apple Podcasts / YouTube 均可收听完整版</p>
+  <p>复述生成时间：2026-05-25</p>
+</footer>
+
+</div>
+</body>
+</html>
