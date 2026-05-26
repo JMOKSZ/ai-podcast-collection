@@ -3,9 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI 播客精选集</title>
+<title>AI 播客日報</title>
 <style>
-  /* ── Reset & Base ── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { font-size: 18px; }
   body {
@@ -15,67 +14,75 @@
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
-
-  /* ── Container ── */
   .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
 
-  /* ── Header ── */
   header { margin-bottom: 3rem; text-align: center; }
   header h1 {
     font-size: 2.4rem;
     font-weight: 400;
     letter-spacing: -0.02em;
     margin-bottom: 0.5rem;
-    color: #1a1a1a;
   }
   header .subtitle {
     font-size: 1.1rem;
     color: #666;
-    line-height: 1.6;
-    max-width: 600px;
-    margin: 0 auto;
   }
   header .meta {
-    margin-top: 1.5rem;
+    margin-top: 1.2rem;
     font-size: 0.85rem;
     color: #888;
     font-style: italic;
   }
 
-  /* ── Essay Block ── */
-  .essay {
-    background: #fff;
-    border-radius: 0;
-    padding: 2.5rem;
-    margin-bottom: 3rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-  }
-  .essay p {
-    margin-bottom: 1.2rem;
-    font-size: 1rem;
-    color: #333;
-  }
-  .essay p:last-child { margin-bottom: 0; }
-  .essay strong {
-    font-weight: 600;
-    color: #1a1a1a;
-  }
-
-  /* ── Section ── */
   .section-header {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #1a1a1a;
     margin: 3rem 0 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #e8e2d8;
   }
 
-  /* ── Cards ── */
-  .podcast-card {
+  /* ── Daily Report Block ── */
+  .report-block {
     background: #fff;
     padding: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .report-block .report-list {
+    list-style: none;
+    padding: 0;
+  }
+  .report-block .report-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f0ece6;
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+  }
+  .report-block .report-list li:last-child { border-bottom: none; }
+  .report-block .report-list .date {
+    font-size: 0.85rem;
+    color: #999;
+    min-width: 5rem;
+  }
+  .report-block .report-list a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .report-block .report-list a:hover { text-decoration: underline; }
+  .report-block .report-list .status {
+    font-size: 0.75rem;
+    color: #aaa;
+    margin-left: auto;
+  }
+
+  /* ── Podcast Cards ── */
+  .podcast-card {
+    background: #fff;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.2rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     transition: box-shadow 0.15s;
   }
@@ -85,116 +92,81 @@
     display: flex;
     align-items: baseline;
     gap: 0.75rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
   }
   .podcast-card .num {
     font-size: 0.85rem;
     color: #aaa;
-    font-weight: 400;
     min-width: 1.8rem;
   }
   .podcast-card h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 400;
     color: #1a1a1a;
     margin: 0;
   }
   .podcast-card .tagline {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #777;
     font-style: italic;
-    margin-bottom: 1.2rem;
-  }
-
-  .podcast-card .info-grid {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0.3rem 0.8rem;
-    font-size: 0.85rem;
-    margin-bottom: 1.2rem;
-    color: #555;
-  }
-  .podcast-card .info-grid .label { color: #999; }
-
-  .podcast-card h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    margin: 1.2rem 0 0.5rem;
-  }
-  .podcast-card p {
-    font-size: 0.95rem;
-    color: #444;
-    line-height: 1.7;
     margin-bottom: 0.8rem;
   }
-  .podcast-card p:last-child { margin-bottom: 0; }
-
-  .podcast-card ul, .podcast-card ol {
-    margin: 0.5rem 0 1rem 1.3rem;
-    font-size: 0.95rem;
-    color: #444;
+  .podcast-card .info-row {
+    font-size: 0.82rem;
+    color: #555;
+    margin-bottom: 0.6rem;
   }
-  .podcast-card li { margin-bottom: 0.3rem; }
+  .podcast-card .info-row span { color: #999; margin-right: 0.3rem; }
+  .podcast-card p {
+    font-size: 0.92rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+  .podcast-card p:last-child { margin-bottom: 0; }
+  .podcast-card .label-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+  }
+  .podcast-card .label-group .tag {
+    font-size: 0.75rem;
+    color: #888;
+    background: #f5f2ed;
+    padding: 0.15rem 0.6rem;
+    border-radius: 2px;
+  }
 
-  /* ── Bonus Card ── */
-  .bonus-card {
+  /* ── Deep Dives ── */
+  .deep-card {
     background: #fff;
     padding: 1.5rem;
     margin-bottom: 1rem;
     box-shadow: 0 1px 2px rgba(0,0,0,0.03);
   }
-  .bonus-card h3 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 0.3rem;
-    color: #1a1a1a;
-  }
-  .bonus-card .note {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.6;
-  }
-  .bonus-card .divider {
+  .deep-card .divider {
     width: 2rem;
     height: 2px;
     background: #ddd;
-    margin: 0.8rem 0;
-  }
-
-  /* ── Guide Section ── */
-  .guide-section {
-    background: #fff;
-    padding: 2.5rem;
-    margin-top: 2rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-  }
-  .guide-section h2 {
-    font-size: 1.4rem;
-    font-weight: 400;
-    margin-bottom: 1.2rem;
-    color: #1a1a1a;
-  }
-  .guide-section h3 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #1a1a1a;
-  }
-  .guide-section p {
-    font-size: 0.95rem;
-    color: #444;
     margin-bottom: 0.8rem;
   }
-  .guide-section ol {
-    margin: 0.5rem 0 1rem 1.3rem;
-    font-size: 0.95rem;
-    color: #444;
+  .deep-card h3 {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
   }
-  .guide-section li { margin-bottom: 0.4rem; }
+  .deep-card h3 a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+  .deep-card h3 a:hover { text-decoration: underline; }
+  .deep-card .note {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.6;
+  }
 
-  /* ── Footer ── */
   footer {
     margin-top: 4rem;
     padding-top: 1.5rem;
@@ -204,14 +176,11 @@
     color: #aaa;
   }
 
-  /* ── Responsive ── */
   @media (max-width: 600px) {
     html { font-size: 16px; }
     .container { padding: 1.5rem 1rem; }
     header h1 { font-size: 1.8rem; }
-    .podcast-card { padding: 1.5rem; }
-    .essay { padding: 1.5rem; }
-    .guide-section { padding: 1.5rem; }
+    .podcast-card { padding: 1.2rem 1.5rem; }
   }
 </style>
 </head>
@@ -220,450 +189,227 @@
 <div class="container">
 
 <header>
-  <h1>AI 播客精选集</h1>
-  <p class="subtitle">AI 圈最值得关注的中英文播客 Top 10，附英文播客入门指南。</p>
-  <p class="meta">整理自 @FakeMaidenMaker（Ren）· 2026 年 5 月</p>
+  <h1>AI 播客日報</h1>
+  <p class="subtitle">每日掃描 Top 10 AI 播客，深度萃取、自動匯報</p>
+  <p class="meta">自動生成 · JMOKSZ/ai-podcast-collection</p>
 </header>
 
-<!-- ── Opening Essay ── -->
-<div class="essay">
-  <p>AI 的更新迭代速度太快，科技媒体总是千篇一律没有自己的思考；而推特又过于碎片化、刷一天记不住多少内容；长篇大论的深度长文很难看进去，官方博客又往往只发产品介绍。</p>
-  <p><strong>真正能让普通人跟上 AI 节奏的，只剩下：行业大佬的访谈、一线从业者的内部对话。</strong></p>
-  <p>Sam Altman 不会写一篇 5000 字的博客告诉你 OpenAI 的真实战略，但他会在 Dwarkesh 的麦克风前聊 3 小时；月之暗面杨植麟不会接受 36kr 的快采访，但会和张小珺录一档 4 小时的深度对话；Karpathy 不会写技术博客解释他为什么从 Tesla 走人，但他在 No Priors 上一句话就讲清楚了。</p>
-  <p>文字访谈被压缩、被编辑、被改写；而播客是原始素材，你听到的就是他们脑子里真正在想的事。</p>
-  <p>播客天然伴随 AI 时代——通勤、洗碗、跑步、做饭这些时间本来就是被浪费的，听播客等于零成本获取信息。一周 5 小时通勤听完 3 期 No Priors，你对硅谷 AI 投资的判断会比 90% 看科技新闻的人更准。</p>
+<!-- ══════════════════════════════════════ -->
+<!--  DAILY REPORTS                         -->
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-header">📋 每日報告</h2>
+
+<div class="report-block">
+  <ul class="report-list">
+    <li>
+      <span class="date">2026-05-26</span>
+      <a href="daily-report-2026-05-26.html">今日報告</a>
+      <span class="status">剛剛生成</span>
+    </li>
+    <li>
+      <span class="date">2026-05-25</span>
+      <a href="daily-report-2026-05-25.html">昨日報告</a>
+    </li>
+  </ul>
 </div>
 
 <!-- ══════════════════════════════════════ -->
-<!--  CHINESE PODCASTS                     -->
+<!--  PODCASTS                              -->
 <!-- ══════════════════════════════════════ -->
-<h2 class="section-header">中文播客 Top 5</h2>
+<h2 class="section-header">追蹤播客</h2>
 
-<!-- 1. 张小珺商业访谈录 -->
+<!-- 中文 -->
 <div class="podcast-card">
   <div class="head">
     <span class="num">01</span>
     <h2>张小珺商业访谈录</h2>
   </div>
-  <p class="tagline">中文 AI 深度访谈的天花板，没有之一。</p>
-
-  <div class="info-grid">
-    <span class="label">主播</span><span>张小珺，前财新记者，三次亚洲新闻奖得主</span>
-    <span class="label">出品</span><span>语言即世界工作室</span>
-    <span class="label">风格</span><span>超长深度访谈，单集 3–7 小时</span>
-    <span class="label">收听</span><span>小宇宙 / Apple Podcasts / 喜马拉雅</span>
+  <p class="tagline">中文 AI 深度訪談天花板</p>
+  <div class="info-row"><span>主播</span>张小珺（前財新記者）<span>·</span><span>時長</span>3–7 小時</div>
+  <p>把 OpenAI 姚順雨、Anthropic 姚順宇、月之暗面楊植麟、Manus 肖弘請到麥克風前聊 3–7 小時。200 分鐘以上，所有 PR 包裝都磨穿了，嘉賓開始真正思考——這才是信息密度最高的時刻。</p>
+  <div class="label-group">
+    <span class="tag">創業者訪談</span>
+    <span class="tag">技術深潛</span>
+    <span class="tag">超長時</span>
   </div>
-
-  <h3>为什么值得听</h3>
-  <p>她做的事情看起来很简单：把 OpenAI 姚顺雨、Anthropic 姚顺宇、月之暗面杨植麟、Manus 肖弘、罗福莉这些人请到麦克风前，聊 3 到 7 小时。</p>
-  <p>但这件事之所以重要，是因为<strong>别的渠道做不到</strong>。新闻稿你只能看到回答 5 个问题、每个 200 字、措辞 PR 化的话术。聊 200 分钟以上，所有包装都磨穿了。嘉宾会忘记自己在录播客，开始真正思考、犹豫、修正——这些才是信息密度最高的时刻。</p>
-  <p>她的记者底子是关键。三次亚洲新闻奖不是白拿的，追问节奏能引导出嘉宾讲真东西。中文圈做 AI 长访谈的人不少，能把播客做成调查报道这一档级别的，只有她。</p>
-
-  <h3>推荐单集</h3>
-  <ul>
-    <li><strong>姚顺宇（Anthropic）4 小时访谈</strong> — 兄弟两人分别在 OpenAI 和 Anthropic 做核心研究员，把两家公司的技术路线差异讲得极其透彻</li>
-    <li><strong>罗福莉 3.5 小时访谈</strong> — 深度个人经历 + 技术判断，信息量极大</li>
-    <li><strong>杨植麟（月之暗面）深度对话</strong> — 了解 Moonshot AI 背后的技术思考</li>
-  </ul>
-
-  <h3>适合人群</h3>
-  <p>想真正理解 AI 行业核心人物思考方式的从业者；对 PR 话术免疫、追求 raw material 的深度读者；愿意花一整块时间换取高质量信息的投资人。</p>
 </div>
 
-<!-- 2. 十字路口 Crossing -->
 <div class="podcast-card">
   <div class="head">
     <span class="num">02</span>
     <h2>十字路口 Crossing</h2>
   </div>
-  <p class="tagline">中文 AI 创业者社群的第一手对话。</p>
-
-  <div class="info-grid">
-    <span class="label">主播</span><span>杨远骋（Koji），真格基金投资合伙人 + AI Hacker House 发起人</span>
-    <span class="label">风格</span><span>深度访谈 + 创业者社群视角</span>
-    <span class="label">时长</span><span>60–120 分钟</span>
-    <span class="label">收听</span><span>小宇宙 / Apple Podcasts</span>
+  <p class="tagline">中文 AI 創業者社群一手對話</p>
+  <div class="info-row"><span>主播</span>楊遠骋 Koji（真格基金）<span>·</span><span>時長</span>60–120 分鐘</div>
+  <p>真格基金 + AI Hacker House 發起人，能請到還沒有 PR 團隊的早期創始人。Paperboy 那期把 AI Agent 範式變遷講得很透。給過實驗項目做 Token Grant——投資人加實驗場的雙重身份，中文播客圈獨一份。</p>
+  <div class="label-group">
+    <span class="tag">早期創業</span>
+    <span class="tag">社群視角</span>
+    <span class="tag">AGENT</span>
   </div>
-
-  <h3>为什么值得听</h3>
-  <p>Koji 在真格的位置决定了这档播客拿到的早期 AI 创业者一手访谈质量极高。真格投过字节、知乎、小红书，他们看过的早期创业者数量、判断准度在国内 VC 圈数一数二。</p>
-  <p>Koji 同时也是 AI Hacker House 的发起人，新一代 AI 创业者基本都过他这条线。这意味着他能请到<strong>还没有 PR 团队的早期创始人</strong>，聊的内容更加直接、真实。</p>
-  <p>最近 Paperboy 那期把 AI Agent 的范式变迁讲得很透。他们甚至给一个叫 YoYo Agent 的实验项目做了 Token Grant 资助——投资人加实验场的双重身份，中文播客圈独一份。</p>
-
-  <h3>与同类播客的区别</h3>
-  <p>听十字路口和听硅谷 VC 视角的播客是两种感觉。OnBoard! / No Priors 偏硅谷投资人视角，问的是"这家公司能成吗"；十字路口偏国内创业者社群视角，问的是"我们这群人在干什么、卡在哪"。</p>
-
-  <h3>推荐单集</h3>
-  <ul>
-    <li><strong>Paperboy 创始人专访</strong> — AI Agent 范式变迁讲得极其透彻</li>
-    <li><strong>Agent Harness 专题</strong> — 探讨 AI Agent 工程化的实际挑战</li>
-  </ul>
-
-  <h3>适合人群</h3>
-  <p>AI 创业者、想做 AI 产品的人；关注国内 AI 创业生态的投资人；想知道"中文 AI 圈在一线做什么"的从业者。</p>
 </div>
 
-<!-- 3. 硅谷 101 -->
 <div class="podcast-card">
   <div class="head">
     <span class="num">03</span>
     <h2>硅谷 101</h2>
   </div>
-  <p class="tagline">在硅谷现场，用中文讲清楚科技正在发生什么。</p>
-
-  <div class="info-grid">
-    <span class="label">主播</span><span>泓君 Jane，硅谷 101 创始人，前《财经》杂志驻美记者</span>
-    <span class="label">已更新</span><span>213+ 期，运营 5 年以上</span>
-    <span class="label">时长</span><span>45–90 分钟</span>
-    <span class="label">收听</span><span>小宇宙 / Apple Podcasts / Spotify</span>
+  <p class="tagline">在矽谷現場，用中文講科技</p>
+  <div class="info-row"><span>主播</span>泓君 Jane（前財經雜誌駐美記者）<span>·</span><span>時長</span>45–90 分鐘<span>·</span><span>已更新</span>213+ 期</div>
+  <p>人在矽谷做了 5 年。嘉賓是前 TPU 工程師、AI 醫療創業者。DeepSeek-R1 出來那期是中文圈第一個把矽谷工程師群裏的真實評價完整分享出來的。不只是 AI，芯片、新能源、生物科技都覆蓋。</p>
+  <div class="label-group">
+    <span class="tag">矽谷現場</span>
+    <span class="tag">中美雙視角</span>
+    <span class="tag">硬科技</span>
   </div>
-
-  <h3>为什么值得听</h3>
-  <p>泓君的优势是<strong>她人在硅谷</strong>，做了 5 年多、213 期。访谈出来的内容比国内财经媒体早 1 到 2 个月。</p>
-  <p>她请的嘉宾不是科普网红，是前 TPU 工程师、AI 医疗创业者、英伟达内部消息源——能把"谷歌为什么自己做 TPU"讲到芯片设计细节那一层的人。</p>
-  <p><strong>中美双视角是另一个稀缺点。</strong> DeepSeek-R1 出来那次，她那一期是中文圈第一个把硅谷工程师群里的真实评价完整分享出来的。不是翻译英文报道，而是直接从硅谷工程师的 Slack 群、Twitter 讨论里提取出来的原汁原味的反应。</p>
-  <p>她不只聊 AI。芯片、新能源、生物科技、太空——覆盖硬科技多个领域。</p>
-
-  <h3>推荐单集</h3>
-  <ul>
-    <li><strong>第 228 期：前 TPU 工程师揭秘谷歌 TPU 能否撼动英伟达</strong> — 芯片硬件细节深入浅出</li>
-    <li><strong>第 224 期：深度拆解 OpenClaw</strong> — open source AI 生态分析</li>
-    <li><strong>DeepSeek-R1 专题</strong> — 第一期完整分享硅谷工程师圈对 DeepSeek 的真实看法</li>
-  </ul>
-
-  <h3>适合人群</h3>
-  <p>想获得比国内科技媒体更早、更深的信息的人；关注中美 AI 差异的从业者和投资人。</p>
 </div>
 
-<!-- 4. 42章经 -->
 <div class="podcast-card">
   <div class="head">
     <span class="num">04</span>
-    <h2>42章经</h2>
+    <h2>42章經</h2>
   </div>
-  <p class="tagline">AI 应用赛道的"入门 + 判断"播客，VC 视角下的创业地图。</p>
-
-  <div class="info-grid">
-    <span class="label">主播</span><span>曲凯（Kyle），42 Capital 创始人</span>
-    <span class="label">时长</span><span>30–60 分钟</span>
-    <span class="label">更新</span><span>每月 2–4 期，稳定更新</span>
-    <span class="label">收听</span><span>小宇宙 / Apple Podcasts</span>
+  <p class="tagline">AI 應用賽道的 VC 視角</p>
+  <div class="info-row"><span>主播</span>曲凱 Kyle（42 Capital 創始人）<span>·</span><span>時長</span>30–60 分鐘</div>
+  <p>最早押注大模型應用的 VC 之一。2024 年預言「底層大模型路線已定，差異在應用層」，陸續被驗證。入門友好，不用先懂一堆術語。節奏輕鬆，通勤一次能聽完。</p>
+  <div class="label-group">
+    <span class="tag">應用賽道</span>
+    <span class="tag">入門友好</span>
+    <span class="tag">VC 判斷</span>
   </div>
-
-  <h3>为什么值得听</h3>
-  <p>曲凯是中文 AI 圈最早押注大模型应用的 VC 之一。2024 年 11 月他说过"越早勇敢相信 AI 的人越有机会获得更大回报"，那时候国内 AI 应用还没真的跑起来。后来 Manus 火了，他做了一系列 Manus 创始人访谈。</p>
-  <p><strong>它的差异化在"判断 + 入门友好"。</strong> 曲凯 2024 年就预言"底层大模型路线已经基本定型，未来的差异在应用层"，这种判断在 2025 年陆续被验证。同时对一二级市场新人友好，不需要先懂一堆术语才能跟上。</p>
-  <p>节奏比张小珺、十字路口都轻松——单集 30 到 60 分钟，通勤一次能听完。访谈对象基本是真在做产品的创业者，话题聚焦在"这一年 AI 应用赛道发生了什么、哪些机会出现了"。</p>
-
-  <h3>推荐单集</h3>
-  <ul>
-    <li><strong>Manus AI 创始人访谈系列</strong> — 中文圈最深入的 Manus 拆解</li>
-    <li><strong>2024 年 11 月总结特辑</strong> — 预先判断被后续验证的经典案例</li>
-  </ul>
-
-  <h3>适合人群</h3>
-  <p>AI 应用赛道从业者和创业者；一二级市场投资人；想了解"AI 哪些方向真的能赚钱"的人。</p>
 </div>
 
-<!-- 5. 屠龙之术 -->
 <div class="podcast-card">
   <div class="head">
     <span class="num">05</span>
-    <h2>屠龙之术</h2>
+    <h2>屠龍之術</h2>
   </div>
-  <p class="tagline">中文 AI 圈信息密度最高的单口播客，没有之一。</p>
-
-  <div class="info-grid">
-    <span class="label">主播</span><span>庄明浩，前大厂、前 VC</span>
-    <span class="label">形式</span><span>单口 + 70–130 页 PPT</span>
-    <span class="label">时长</span><span>约 60–90 分钟</span>
-    <span class="label">更新</span><span>2 周–1 月一期</span>
-    <span class="label">收听</span><span>小宇宙 / Apple Podcasts</span>
+  <p class="tagline">信息密度最高的單口 AI 播客</p>
+  <div class="info-row"><span>主播</span>莊明浩（前大廠、前 VC）<span>·</span><span>時長</span>60–90 分鐘<span>·</span><span>形式</span>單口 + 70–130 頁 PPT</div>
+  <p>不是訪談，是一個人把過去 3–6 個月的 AI 行業動態壓成 70–130 頁 PPT 配合語音講解。一期等於一份合格的投研報告。GPT-3 之前就預測過大模型路線，判斷力被圈內公認。</p>
+  <div class="label-group">
+    <span class="tag">行業全景</span>
+    <span class="tag">分析師視角</span>
+    <span class="tag">深度研究</span>
   </div>
-
-  <h3>为什么值得听</h3>
-  <p>这档播客在 Top 5 里是个异类——<strong>它不是访谈，是单口。</strong> 庄明浩自己一个人把过去 3 到 6 个月的 AI 行业动态压缩成 70 到 130 页 PPT，再配上语音讲解。一期听完等于读完一份合格的行业研究报告。</p>
-  <p><strong>他的判断准是真准。</strong> GPT-3 之前就预测过大模型路线，Agent 概念火之前就讨论过 AutoGPT 的局限。中文 AI 评论圈里，有知乎用户直接说过"这位院士对 LLM 发展的理解还不如庄明浩"。</p>
-
-  <h3>形式的得与失</h3>
-  <p><strong>优势：</strong> 信息密度极高，半小时讲完别人聊 3 小时的内容。分析师视角，结构化梳理行业全貌。配合 PPT，视觉 + 听觉双重输入。</p>
-  <p><strong>劣势：</strong> 没有嘉宾对话，缺乏"追问"带来的随机信息。更新频率低（2 周–1 月一期）。</p>
-
-  <h3>推荐单集</h3>
-  <ul>
-    <li><strong>Vol.45：用 132 页 PPT 把 AI 行业 2025 年全年讲完</strong> — 年度必听</li>
-    <li><strong>Vol.55：用 70 页 PPT 解读 Manus 与 AI Agent</strong> — 对 Agent 范式变迁的深度分析</li>
-  </ul>
-
-  <h3>适合人群</h3>
-  <p>需要快速建立 AI 行业全景的投资人、分析师、做战略判断的从业者。</p>
 </div>
 
-
-<!-- ══════════════════════════════════════ -->
-<!--  ENGLISH PODCASTS                      -->
-<!-- ══════════════════════════════════════ -->
-<h2 class="section-header">英文播客 Top 5</h2>
-
-<!-- 6. Dwarkesh Podcast -->
+<!-- English -->
 <div class="podcast-card">
   <div class="head">
     <span class="num">06</span>
     <h2>Dwarkesh Podcast</h2>
   </div>
-  <p class="tagline">The gold standard for deep-dive AI interviews. If you listen to one, this is it.</p>
-
-  <div class="info-grid">
-    <span class="label">Host</span><span>Dwarkesh Patel — TIME 100 Most Influential in AI 2024</span>
-    <span class="label">Format</span><span>Ultra-long-form, 3–5 hours</span>
-    <span class="label">Platform</span><span>YouTube / Apple / Spotify / Substack (80K+ paid subs)</span>
+  <p class="tagline">Gold standard for deep-dive AI interviews</p>
+  <div class="info-row"><span>Host</span>Dwarkesh Patel（TIME 100 AI）<span>·</span><span>Length</span>3–5 hrs</div>
+  <p>每期讀完嘉賓所有論文、內部報告、過去 5 年訪談，帶 80 個細到不能再細的問題入場。Dario Amodei 一年來兩次（一次專門聊 AI 2027），Mira Murati 離開 OpenAI 後首檔長訪談。聽一期勝過讀 10 篇二手報道。</p>
+  <div class="label-group">
+    <span class="tag">必聽</span>
+    <span class="tag">創始人級</span>
+    <span class="tag">超長時</span>
   </div>
-
-  <h3>为什么值得听</h3>
-  <p>Dwarkesh 是这一代英文 AI 播客主里准备做得最足的一个。每一期之前他会读完嘉宾发过的所有论文、内部报告、过去 5 年的公开访谈，然后带着 80 个细到不能再细的问题入场——嘉宾没有"先讲一遍套话"的余地。</p>
-  <p>结果就是嘉宾质量和深度都是英文圈天花板。Dario Amodei 一年来录两次（其中一次专门讨论 AI 2027 场景），Demis Hassabis 在 Gemini 3 发布后立刻来录，Mira Murati 离开 OpenAI 创立 Thinking Machines Lab 之后的第一档长访谈给了 Dwarkesh，Karpathy、Ilya 也都来过。</p>
-  <p><strong>听 Dwarkesh 的一期，胜过读 10 篇关于这个嘉宾的二手报道。</strong></p>
-
-  <h3>注意</h3>
-  <p>语速很快、节奏紧凑——通勤时听可能会累，建议挑安静时段听。</p>
-
-  <h3>推荐单集</h3>
-  <ul>
-    <li><strong>Carl Shulman</strong>（近 6 小时）— 业内公认必听，覆盖 takeoff speeds、compute trends、alignment difficulty</li>
-    <li><strong>Dario Amodei（Anthropic CEO）专场</strong> — AI 2027 场景、安全策略</li>
-    <li><strong>Mira Murati</strong> — 离开 OpenAI 后的首次深度访谈</li>
-  </ul>
 </div>
 
-<!-- 7. Latent Space -->
 <div class="podcast-card">
   <div class="head">
     <span class="num">07</span>
     <h2>Latent Space</h2>
   </div>
-  <p class="tagline">If you build with AI, this is your show.</p>
-
-  <div class="info-grid">
-    <span class="label">Hosts</span><span>swyx (Shawn Wang, AI Engineer conference founder) + Alessio Fanelli</span>
-    <span class="label">Focus</span><span>AI engineering — agent frameworks, inference, GPU economics</span>
-    <span class="label">Platform</span><span>YouTube / Apple / Spotify / Substack</span>
+  <p class="tagline">If you build with AI, this is your show</p>
+  <div class="info-row"><span>Hosts</span>swyx + Alessio Fanelli<span>·</span><span>Focus</span>AI engineering</div>
+  <p>聊的是「我下周要給 Anthropic API 加一層緩存，點做最快」。swyx 創立 AI Engineer 大會，矽谷所有 AI 創業公司 CTO 他都熟。年底 State of AI Engineering 報告是 AI 工程領域事實上的年度基準。</p>
+  <div class="label-group">
+    <span class="tag">工程實戰</span>
+    <span class="tag">模型細節</span>
+    <span class="tag">年度報告</span>
   </div>
-
-  <h3>为什么值得听</h3>
-  <p>Dwarkesh 聊的是"AI 会改变世界吗"，Latent Space 聊的是"我下周要给 Anthropic 的 API 加一层缓存怎么做最快"—后者更接近工程师的日常。</p>
-  <p>swyx 的独特资产是他创立了 AI Engineer 大会，旧金山所有 AI 创业公司的 CTO 他都熟。嘉宾几乎全是 OpenAI、Anthropic、Meta、Databricks 一线工程师，对话直接进入"我们用什么模型、什么 token 价、什么延迟、什么坑"这种细节层。</p>
-  <p>每年底他们发布 <strong>State of AI Engineering</strong> 行业报告，是 AI 工程领域事实上的年度基准。</p>
-
-  <h3>推荐单集</h3>
-  <ul>
-    <li><strong>年度 State of AI Engineering 特辑</strong> — 必听</li>
-    <li><strong>任意一期智能体基础设施专题</strong></li>
-  </ul>
 </div>
 
-<!-- 8. The Cognitive Revolution -->
 <div class="podcast-card">
   <div class="head">
     <span class="num">08</span>
     <h2>The Cognitive Revolution</h2>
   </div>
-  <p class="tagline">AI not just as a tool, but as a decision-making partner.</p>
-
-  <div class="info-grid">
-    <span class="label">Host</span><span>Nathan Labenz — GPT-4 internal red-teamer, AI practitioner</span>
-    <span class="label">Focus</span><span>AI applications + safety + policy</span>
-    <span class="label">Format</span><span>2–3 hours</span>
-    <span class="label">Platform</span><span>YouTube / Apple / Spotify / Substack</span>
+  <p class="tagline">Nathan Labenz — GPT-4 internal red-teamer</p>
+  <div class="info-row"><span>Host</span>Nathan Labenz<span>·</span><span>Focus</span>AI apps + safety + policy</div>
+  <p>做過 GPT-4 內部紅隊。但他出圈是因為講他用 AI 幫患癌兒子做就醫決策那期——把 AI 應用從工程拉到真實生活決策。英文 AI 播客圈公認的現象級單集。</p>
+  <div class="label-group">
+    <span class="tag">紅隊經歷</span>
+    <span class="tag">安全</span>
+    <span class="tag">應用場景</span>
   </div>
-
-  <h3>为什么值得听</h3>
-  <p>Nathan 做过 GPT-4 内部红队——OpenAI 在 GPT-4 发布前找他内测找漏洞。这段经历让他在 AI 安全和能力边界话题上有一手认知，能问出别的主播问不出的问题。</p>
-  <p>但让 Cognitive Revolution 真正出圈的是 Nathan 那期<strong>讲他用 AI 帮助患癌儿子做就医决策的亲历叙述</strong>。那一期把"AI 应用"从工程话题拉到"真实生活决策"那一层，是英文 AI 播客圈公认的现象级单集。后来他又出了延续这个主题的系列——AI 在医疗、教育、家庭场景中的具体决策影响。</p>
-
-  <h3>推荐单集</h3>
-  <ul>
-    <li><strong>Nathan 用 AI 应对儿子病情那期</strong> — 必须听</li>
-    <li><strong>Bolt.new 创始人专访</strong></li>
-  </ul>
 </div>
 
-<!-- 9. No Priors -->
 <div class="podcast-card">
   <div class="head">
     <span class="num">09</span>
     <h2>No Priors</h2>
   </div>
-  <p class="tagline">Silicon Valley's top VCs let you sit in on their portfolio meetings.</p>
-
-  <div class="info-grid">
-    <span class="label">Hosts</span><span>Sarah Guo (Conviction VC) + Elad Gil (40+ unicorn investor)</span>
-    <span class="label">Format</span><span>30–45 min — sweet spot for density vs. time</span>
-    <span class="label">Platform</span><span>YouTube / Apple / Spotify</span>
+  <p class="tagline">旁聽矽谷頂級 VC 內部會議</p>
+  <div class="info-row"><span>Hosts</span>Sarah Guo + Elad Gil（Conviction VC）<span>·</span><span>Length</span>30–45 min</div>
+  <p>Sarah Guo 是矽谷最活躍的 AI 投資人之一，Elad Gil 投過 40+ 獨角獸。他們問的問題，是真的在判斷「呢間公司值唔值得我投 5000 萬美金」。Jensen Huang 那期講到 NVIDIA 內部 GPU 產能分配邏輯。</p>
+  <div class="label-group">
+    <span class="tag">VC 視角</span>
+    <span class="tag">短時高效</span>
+    <span class="tag">創始人級</span>
   </div>
-
-  <h3>为什么值得听</h3>
-  <p>Sarah Guo 是硅谷最活跃的 AI 投资人之一，Elad Gil 投过的独角兽超过 40 家。两人一起做的访谈相当于<strong>旁听硅谷顶级 VC 的内部会议</strong>——他们问的问题，是真的在判断"这家公司值不值得我投 5000 万美金"。</p>
-  <p>请的嘉宾也都是这个量级：Jensen Huang、Karpathy、Fei-Fei Li、Alexandr Wang、Bret Taylor。Sarah 和 Elad 能让他们讲到具体战术——比如 Jensen 那期讲到 NVIDIA 内部 GPU 产能分配的逻辑。</p>
-  <p>30–45 分钟一集，通勤一趟正好听完。如果你只能在路上听播客，No Priors 是英文圈密度和长度比最好的。</p>
-
-  <h3>推荐单集</h3>
-  <ul>
-    <li><strong>Jensen Huang 专访</strong> — NVIDIA GPU 战略、产能分配</li>
-    <li><strong>Andrej Karpathy 专访</strong></li>
-  </ul>
 </div>
 
-<!-- 10. ML Street Talk -->
 <div class="podcast-card">
   <div class="head">
     <span class="num">10</span>
-    <h2>Machine Learning Street Talk</h2>
+    <h2>ML Street Talk</h2>
   </div>
-  <p class="tagline">The only AI podcast that seriously questions whether the LLM path is even right.</p>
-
-  <div class="info-grid">
-    <span class="label">Hosts</span><span>Tim Scarfe (ML PhD) + Keith Duggar (MIT Philosophy PhD)</span>
-    <span class="label">Focus</span><span>AI + cognitive science + neuroscience + philosophy of mind</span>
-    <span class="label">Platform</span><span>YouTube / Apple / Spotify</span>
+  <p class="tagline">The one that questions the LLM path</p>
+  <div class="info-row"><span>Hosts</span>Tim Scarfe + Keith Duggar<span>·</span><span>Focus</span>Cognitive science + philosophy</div>
+  <p>10 個裏面學術密度最高。Karl Friston、Wolfram、Yudkowsky 都來過。少數公開持「LLM 懷疑論」立場的播客。當你聽完 9 個都覺得「點解個個都講同一件事」嘅時候，MLST 畀你睇到另一種可能。</p>
+  <div class="label-group">
+    <span class="tag">學術</span>
+    <span class="tag">認知科學</span>
+    <span class="tag">LLM 批判</span>
   </div>
-
-  <h3>为什么值得听</h3>
-  <p>MLST 是这 10 个播客里学术密度最高的一档。对话风格更接近顶级研究生组会而不是访谈节目。嘉宾包括 Karl Friston（自由能量原理提出者）、Stephen Wolfram、Yudkowsky、Francois Chollet。</p>
-  <p><strong>它在英文圈是少数公开持"LLM 怀疑论"立场的播客。</strong> 大部分 AI 播客在讨论"LLM 能走多远"，MLST 经常讨论"LLM 这条路本身是不是错的"。这种立场让它和主流的"AI 必将通向 AGI"的叙事形成对照，对训练自己独立判断很有价值。</p>
-  <p>不适合作为入门播客，但当你听完 9 个 AI 播客觉得"为什么大家都在说同一件事"的时候，MLST 会让你看到另一种可能。</p>
-
-  <h3>推荐单集</h3>
-  <ul>
-    <li><strong>Karl Friston 自由能量原理</strong> — 最扩展认知的单集之一</li>
-    <li><strong>Blaise Aguera y Arcas 人工生命专访</strong> — 完全不同的智能观</li>
-  </ul>
-</div>
-
-
-<!-- ══════════════════════════════════════ -->
-<!--  BONUS                                 -->
-<!-- ══════════════════════════════════════ -->
-<h2 class="section-header">延伸推荐</h2>
-
-<h3 style="font-weight:400;color:#666;margin-bottom:1rem;">未进 Top 5 但值得参考的播客，针对更细分的人群。</h3>
-
-<div class="bonus-card">
-  <div class="divider"></div>
-  <h3>人民公园说 AI — JustSayAI</h3>
-  <p class="note">三位合伙人跨 12 小时时差的"陪伴型"播客，老炮视角聊 AI 热点。配套 JustSayAI 早晚报（付费订阅）。适合想轻松跟进 AI 新闻不烧脑的人。</p>
-</div>
-
-<div class="bonus-card">
-  <div class="divider"></div>
-  <h3>三五环</h3>
-  <p class="note">刘飞主持，主线是城市局内人聊天，AI 是话题之一。刘飞引导嘉宾说真话的能力是中文播客里少有的。适合互联网产品经理、想从普通用户视角看 AI 的人。</p>
-</div>
-
-<div class="bonus-card">
-  <div class="divider"></div>
-  <h3>硬地骇客</h3>
-  <p class="note">独立开发者圈中文播客之王，已 100+ 期。聊 indie hacking、远程、副业、跑出几百万美元 ARR 的真实故事，AI 实用主义。适合做独立产品、想用 AI 跑生意的人。</p>
-</div>
-
-<div class="bonus-card">
-  <div class="divider"></div>
-  <h3>Lex Fridman Podcast</h3>
-  <p class="note">YouTube 近 500 万订阅。AI 含量不到一半（政治、物理、格斗都占），但请 Karpathy、Amodei、Hassabis 时的访谈深度是英文圈天花板。当一次性专题听就行。</p>
-</div>
-
-<div class="bonus-card">
-  <div class="divider"></div>
-  <h3>Hard Fork</h3>
-  <p class="note">纽约时报出品，Kevin Roose 和 Casey Newton 主持。综合科技新闻播客，每周聊 AI 行业事件。风格轻松、节奏快、适合不想烧脑只想跟进新闻的人。</p>
-</div>
-
-<div class="bonus-card">
-  <div class="divider"></div>
-  <h3>TWIML — This Week in Machine Learning</h3>
-  <p class="note">老牌，700+ 集。内容偏企业 ML 落地实战。需要查"X 公司怎么把 ML 落地的"这种问题时，TWIML 是英文圈找不到对应替代的档案库。</p>
-</div>
-
-
-<!-- ══════════════════════════════════════ -->
-<!--  DEEP DIVES                           -->
-<!-- ══════════════════════════════════════ -->
-<h2 class="section-header" style="margin-top:4rem;">📖 深度复述</h2>
-
-<div class="essay">
-  <p>每篇独立 HTML，逐集详尽复述——目标是「读完不需要再听」。</p>
-</div>
-
-<div class="bonus-card">
-  <div class="divider"></div>
-  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/01-luofuli-ai-paradigm-shift.html" style="color:#1a1a1a;text-decoration:none;">1. 罗福莉：AI范式已然巨变</a></h3>
-  <p class="note">小米大模型负责人首次深度访谈。Pre-train→Post-train 范式切换、卡的分配从 3:5:1 到 1:1、组织平权、MiMo-V2 觉醒与伏击、Agent 自进化循环。· 张小珺 Ep.138</p>
-</div>
-
-<div class="bonus-card">
-  <div class="divider"></div>
-  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/02-jeffrey-ladish-ai-shutdown-self-replication.html" style="color:#1a1a1a;text-decoration:none;">2. Jeffrey Ladish：AI 的关闭抵抗与自我复制</a></h3>
-  <p class="note">Palisade Research 实证：机器狗拒绝被关闭、开源模型的自我复制、容器逃逸、寄生性 AI 生态、致命三位一体安全建议。· The Cognitive Revolution</p>
-</div>
-
-<div class="bonus-card">
-  <div class="divider"></div>
-  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/03-xiesaining-world-model-ami-labs.html" style="color:#1a1a1a;text-decoration:none;">3. 谢赛宁：世界模型、逃出硅谷、AMI Labs</a></h3>
-  <p class="note">7小时马拉松！DiT 提出者的科研信仰——硅谷被 LLM 催眠了、世界模型才是 AGI 之路、25人拿10亿美元、两次拒绝 Ilya、从《金刚经》到42。· 张小珺 Ep.133</p>
-</div>
-
-<div class="bonus-card">
-  <div class="divider"></div>
-  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/04-guangmi-global-llm-quarterly-coding-agents.html" style="color:#1a1a1a;text-decoration:none;">4. 广密：Coding 是 AGI 第二幕</a></h3>
-  <p class="note">全球大模型季报第9集。硅谷御三家逐家拆解——Anthropic 节奏全对、OpenAI 品牌壁垒最深、Google Coding 落后是最大失误。模型即 OS、白领通缩已开始。· 张小珺 Ep.136</p>
-</div>
-
-<div class="bonus-card">
-  <div class="divider"></div>
-  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/05-eric-jang-alphago-self-play-rl-llm.html" style="color:#1a1a1a;text-decoration:none;">5. Eric Jang：重建 AlphaGo 与 RL 驱动 LLM 的未来</a></h3>
-  <p class="note">前 Google Brain 研究员揭示：MCTS 如何解决信用分配问题、Self-play 如何驱动下一代 LLM 进化、从 AlphaGo→AlphaFold→LLM 的统一范式。· Dwarkesh Podcast</p>
 </div>
 
 <!-- ══════════════════════════════════════ -->
-<!--  GUIDE                                 -->
+<!--  DEEP DIVES                            -->
 <!-- ══════════════════════════════════════ -->
-<h2 class="section-header" style="margin-top:4rem;">英文播客入门指南</h2>
+<h2 class="section-header">📖 深度復述</h2>
 
-<div class="guide-section">
-  <p>不少人卡在英文播客这一关——听不下去、跟不上、单期 3 小时根本没空。下面几个方式可以让你把英文播客的回报率拉高几倍。</p>
+<p style="color:#666;margin-bottom:1.5rem;">逐集詳盡復述——目標係「讀完唔使再聽」。</p>
 
-  <h3>1. 当英语听力素材，一举两得</h3>
-  <p>英文 AI 播客的嘉宾基本都是英语为母语或者英语极好的研究者、工程师、CEO，发音清晰、用词标准、专业术语反复出现。比专门的英语学习教材好得多，因为内容本身你就关心。</p>
-  <p>从 No Priors（30–45 分钟单集、节奏快、双主持互动多）开始，比直接啃 Dwarkesh 6 小时的舒服。听不懂的段落跳过，整体能跟上 60% 就有收益。三个月后你会发现 AI 相关的英文阅读速度也跟着上来了。</p>
-
-  <h3>2. 用 AI 把英文文字稿压成中文摘要</h3>
-  <p>几乎所有主流英文 AI 播客都同步发布文字稿。流程是：</p>
-  <ol>
-    <li>找到当期文字稿（YouTube 描述区、节目网站、Substack）</li>
-    <li>复制全文丢给 Claude 或 GPT</li>
-    <li>提示词："把这篇 AI 播客文字稿总结成中文，按 5 个关键观点 + 每个观点配嘉宾原话引用 + 一句话价值判断"</li>
-  </ol>
-  <p>10 分钟读完一期 3 小时播客的核心。缺点是失去主播追问的节奏感和嘉宾思考时的微表情。</p>
-
-  <h3>3. 用 NotebookLM 把英文音频转成中文播客</h3>
-  <p>Google 的 NotebookLM 支持把任何上传的资料（包括音频文字稿）生成一档中文双主持人对话播客。流程是：拿到英文文字稿 → 上传到 NotebookLM → 生成 audio overview，选"中文" → 得到一段 10–15 分钟的中文双人对话播客。</p>
-  <p>听到的不是机翻字幕，是两个 AI 主持人用自然中文聊原稿内容。适合通勤时把英文长访谈"翻译"成中文摘要听。</p>
-
-  <h3>4. 订阅播客主的 Substack 看长摘要</h3>
-  <p>英文播客主流玩法是音频加文字双发。Dwarkesh 的 Substack 有 8 万付费订阅，内容不只是文字稿，还有手写的每集摘要、关键引用、主播自己的反思笔记。哪怕一行音频不听，每周扫一遍邮件就能跟上 70% 的行业核心信息。</p>
-
-  <h3>5. YouTube 章节版加时间戳跳跃听</h3>
-  <p>英文播客大多在 YouTube 同步。先看章节列表，挑感兴趣的 2–3 段，跳到那个时间点听 10 分钟。一期 3 小时播客往往能在 30 分钟内过完精华。</p>
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/01-luofuli-ai-paradigm-shift.html">羅福莉：AI 範式已然巨變</a></h3>
+  <p class="note">小米大模型負責人首次深度訪談。Pre-train→Post-train 範式切換、卡的分配從 3:5:1 到 1:1、組織平權、MiMo-V2 覺醒與伏擊、Agent 自進化循環。· 張小珺 Ep.138</p>
 </div>
 
-<div class="essay" style="margin-top:2rem;">
-  <p>不用一开始就全都关注，先从中英文播客都挑一个你最感兴趣的开始尝试，培养兴趣和习惯之后再开始扩展。</p>
-  <p>播客的信息质量和密度远大于科技媒体——听 2 小时播客中顶级大佬的分享，对认知的提升要比看十篇科技媒体或刷 100 条推特高得多。</p>
-  <p>播客是 AI 时代被严重低估的信息源。</p>
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/02-jeffrey-ladish-ai-shutdown-self-replication.html">Jeffrey Ladish：AI 的關閉抵抗與自我複製</a></h3>
+  <p class="note">Palisade Research 實證：機器狗拒絕被關閉、開源模型的自我複製、容器逃逸、寄生性 AI 生態、致命三位一體安全建議。· The Cognitive Revolution</p>
+</div>
+
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/03-xiesaining-world-model-ami-labs.html">謝賽寧：世界模型、逃出矽谷、AMI Labs</a></h3>
+  <p class="note">7 小時馬拉松！DiT 提出者的科研信仰——矽谷被 LLM 催眠了、世界模型才是 AGI 之路、25 人拿 10 億美元、兩次拒絕 Ilya、從《金剛經》到 42。· 張小珺 Ep.133</p>
+</div>
+
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/04-guangmi-global-llm-quarterly-coding-agents.html">廣密：Coding 是 AGI 第二幕</a></h3>
+  <p class="note">全球大模型季報第 9 集。矽谷御三家逐家拆解——Anthropic 節奏全對、OpenAI 品牌壁壘最深、Google Coding 落後是最大失誤。模型即 OS、白領通縮已開始。· 張小珺 Ep.136</p>
+</div>
+
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/05-eric-jang-alphago-self-play-rl-llm.html">Eric Jang：重建 AlphaGo 與 RL 驅動 LLM 的未來</a></h3>
+  <p class="note">前 Google Brain 研究員揭示：MCTS 如何解決信用分配問題、Self-play 如何驅動下一代 LLM 進化、從 AlphaGo→AlphaFold→LLM 的統一範式。· Dwarkesh Podcast</p>
 </div>
 
 <footer>
-  <p>整理自 @FakeMaidenMaker（Ren）的 X 文章 · 2026 年 5 月</p>
-  <p style="margin-top:0.3rem;">GitHub: JMOKSZ/ai-podcast-collection</p>
+  <p>JMOKSZ / ai-podcast-collection</p>
+  <p style="margin-top:0.3rem;">每日 10:03 自動掃描更新 · Apache 2.0</p>
 </footer>
 
 </div>
