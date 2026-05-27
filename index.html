@@ -78,6 +78,37 @@
     margin-left: auto;
   }
 
+  /* ── Collapsible Past Reports ── */
+  .collapse-toggle {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0;
+    color: #1a1a1a;
+    font-size: 1rem;
+    transition: color 0.15s;
+  }
+  .collapse-toggle:hover { color: #555; }
+  .collapse-toggle .arrow {
+    font-size: 0.8rem;
+    transition: transform 0.2s;
+    color: #aaa;
+  }
+  .collapse-toggle .arrow.open { transform: rotate(90deg); }
+  .collapse-toggle .count {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-left: auto;
+  }
+  .collapse-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .collapse-content.open { max-height: 500px; }
+
   /* ── Podcast Cards ── */
   .podcast-card {
     background: #fff;
@@ -206,16 +237,35 @@
       <a href="daily-report-2026-05-27.html">今日報告</a>
       <span class="status">剛剛生成</span>
     </li>
-    <li>
-      <span class="date">2026-05-26</span>
-      <a href="daily-report-2026-05-26.html">昨日報告</a>
-    </li>
-    <li>
-      <span class="date">2026-05-25</span>
-      <a href="daily-report-2026-05-25.html">昨日報告</a>
-    </li>
   </ul>
+
+  <div class="collapse-toggle" onclick="togglePastReports()">
+    <span class="arrow" id="pastArrow">▶</span>
+    往期報告
+    <span class="count" id="pastCount">2 份</span>
+  </div>
+  <div class="collapse-content" id="pastReports">
+    <ul class="report-list">
+      <li>
+        <span class="date">2026-05-26</span>
+        <a href="daily-report-2026-05-26.html">每日報告</a>
+      </li>
+      <li>
+        <span class="date">2026-05-25</span>
+        <a href="daily-report-2026-05-25.html">每日報告</a>
+      </li>
+    </ul>
+  </div>
 </div>
+
+<script>
+function togglePastReports() {
+  const content = document.getElementById('pastReports');
+  const arrow = document.getElementById('pastArrow');
+  content.classList.toggle('open');
+  arrow.classList.toggle('open');
+}
+</script>
 
 <!-- ══════════════════════════════════════ -->
 <!--  PODCASTS                              -->
