@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度复述 · Latent Space：ESMFold2 — 苦涩教训降临蛋白质</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5; color: #1a1a1a; line-height: 1.85; -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #1a5e2a; color: #fff; border-radius: 2px; font-weight: 500; }
+  .tag-red { background: #c0392b; }
+  .section-title { font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a; }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #1a5e2a; background: #f2f9f0; }
+  blockquote.english { border-left-color: #2c5282; background: #f0f5fc; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem; margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .concept-box {
+    background: #f0f7ff; border: 1px solid #c8dae8; padding: 1.2rem 1.5rem; margin: 1rem 0;
+  }
+  .concept-box h4 { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem; color: #1a4b6e; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #edf2f7; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; color: #2c5282; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+  th, td { border: 1px solid #e0dbd4; padding: 0.5rem 0.8rem; text-align: left; }
+  th { background: #f5f2ed; font-weight: 500; color: #444; }
+  td { color: #555; }
+  .model-tag { display: inline-block; font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px; font-weight: 500; color: #fff; }
+  .model-open { background: #27ae60; }
+  .model-closed { background: #c0392b; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a href="../index.html" class="back-link">← 返回播客日报</a>
+  <div class="ep-num">Latent Space · 2026年5月27日</div>
+  <h1>ESMFold2：The Bitter Lesson is Coming for Proteins</h1>
+  <div class="meta">
+    📅 2026年5月27日 · ⏱ 1小时10分钟<br>
+    🎙 主持人：swyx + Alessio Fanelli · 嘉宾：<span class="speaker">Alex Rives</span>（Chan Zuckerberg BioHub 首席科学家）<br>
+    <span style="margin-top:0.3rem;display:inline-block;">🔬 同日发布 ESMFold2 + ESMC 世界模型 + 68亿蛋白质图谱</span>
+  </div>
+</header>
+
+<p>如果 AlphaFold2 是結構生物學的 ImageNet 時刻，ESMFold2 就是它的 Bitter Lesson 時刻。這期 Latent Space 與其說是一場訪談，不如說是 Alex Rives 對整個計算生物學領域的範式宣言：vanilla BERT-like transformer + 足夠大和多樣化的數據 + 放棄手工歸納偏置 = 在蛋白質相互作用（尤其是抗體）上擊敗專門設計的模型。這句話讀起來像一篇 ML 經典論文的摘要——而這恰好就是重點。</p>
+
+<div class="section-title">一、嘉賓與背景</div>
+
+<p><span class="speaker">Alex Rives</span>，Chan Zuckerberg BioHub 首席科學家。此前他創立了 EvoScale（EvolutionaryScale），2024 年以驚人的 <span class="data-point">1.42 億美元</span> 種子輪登場（領投：Nat Friedman、Daniel Gross、Lux Capital），而後被 CZ BioHub 收購。這是 Priscilla Chan 和 Mark Zuckerberg「all in AI-powered biology」戰略的關鍵一步。</p>
+
+<p>Rives 的團隊在 ESM-1 時代就以最簡單的「預測隨機遮蔽的氨基酸」任務訓練蛋白質語言模型，意外發現這些模型學會了從未被明確展示的生物學結構和功能——而且這種能力隨算力可預測地擴展。這個發現奠定了 ESM 系列的哲學基礎。</p>
+
+<p>今天（2026年5月27日）的發布涵蓋三項核心資產：</p>
+<ul>
+  <li><strong>ESMC 世界模型</strong>：訓練於 <span class="data-point">28 億</span> 蛋白質序列</li>
+  <li><strong>ESMFold2 結構預測引擎</strong>：引入 Cryo-EM 數據 + 推理時擴展</li>
+  <li><strong>ESM Atlas</strong>：<span class="data-point">68 億</span> 蛋白質、<span class="data-point">11 億</span> 預測結構——超越 AlphaFold 數據庫 8 億+ 條目</li>
+</ul>
+
+<p>所有模型開源：<span class="model-tag model-open">MIT 許可證</span>，商業和非商業均可使用。</p>
+
+<div class="section-title">二、Bitter Lesson 在蛋白質領域的降臨</div>
+
+<p>Rich Sutton 2019 年的經典文章《The Bitter Lesson》有一個核心論斷：AI 研究中，靠手工特徵和人類知識注入的方法短期有效，但長期一定打不過靠算力和通用方法 scaling 的路線。這個論斷在計算機視覺（ConvNet → ViT）、NLP（特徵工程 → Transformer）、棋類遊戲（手寫評估函數 → AlphaZero）中已被反覆驗證。</p>
+
+<p>ESMFold2 的發布意味著：<strong>這條規律正在延伸到計算生物學。</strong></p>
+
+<blockquote class="english">「Vanilla BERT-like transformer models trained on sufficiently large and diverse data sets can beat specialized models like AlphaFold3 on some of the hardest protein-related problems.」</blockquote>
+
+<p>注意這裡的關鍵詞是「specialized models」。AlphaFold2/3 包含了大量精心設計的歸納偏置——最著名的就是 MSA（多序列比對）。MSA 的洞察是：如果多個物種共同進化出成對的突變，這些突變對應的氨基酸在 3D 空間中位置相近。這是一個極其巧妙的生物學觀察。但它是一個歸納偏置——而歸納偏置的壞處是限制泛化。</p>
+
+<div class="concept-box">
+  <h4>🧬 MSA 的雙面刃</h4>
+  <p><strong>巧妙一面</strong>：AlphaFold2 用 MSA 在蛋白質折疊上取得了諾貝爾獎級別的突破（John Jumper 和 Demis Hassabis，2024 年諾貝爾化學獎）。<br><br>
+  <strong>限制一面</strong>：抗體突變極快，無法積累足夠的 MSA 信號。AlphaFold 在抗體預測上表現不佳。ESM 團隊在 AlphaFold2 發布後仍然堅持「不用 MSA」的路線——這需要極大的 scale hypothesis 信念。</p>
+</div>
+
+<div class="section-title">三、World Model 範式：ESMC + ESMFold2</div>
+
+<p>Rives 在訪談中將「世界模型」定義得非常清楚：</p>
+
+<blockquote class="english">「Use unsupervised training to learn abstract patterns from the data… The abstraction should be semantic, compositional, and support generalization. Once you have a world model, you can attach 'heads' for downstream tasks.」</blockquote>
+
+<p>這個定義和語言模型領域的「基礎模型」範式幾乎一模一樣：用無監督預訓練學習一個通用表徵空間，然後為特定任務接上適配頭。ESM 團隊的實現是：</p>
+
+<ul>
+  <li><strong>世界模型 = ESMC</strong>：訓練於 28 億序列的蛋白質語言模型。學習蛋白質的「語法」——氨基酸的組合規律、進化約束、結構與功能的隱含關係。</li>
+  <li><strong>結構預測頭 = ESMFold2</strong>：基於 ESMC 表徵進行原子級別的三維結構預測，引入 Cryo-EM 數據提升精度，支持推理時擴展。</li>
+</ul>
+
+<p>值得注意的一個細節：ESMC 的訓練數據中包含了用 AlphaFold2 生成的數據——這使 ESMC 某種程度上成為 AlphaFold 的蒸餾產物。Rives 坦率地承認了這一事實。但 ESMFold2 在推理時不再需要 MSA，這就是最大的優勢。</p>
+
+<div class="section-title">四、推理時擴展：從 LLM 到蛋白質</div>
+
+<p>o1 系列模型證明了推理時擴展（inference time scaling）對語言推理的有效性。ESMFold2 展示了同樣的現象在蛋白質結構預測中也成立：</p>
+
+<ul>
+  <li><strong>方法</strong>：使用 looped transformer 架構，允許在推理時動態增加計算量</li>
+  <li><strong>驗證</strong>：在 <span class="data-point">5 個癌症和免疫學靶點</span>上，增加推理計算量持續提升預測質量</li>
+  <li><strong>意義</strong>：過去蛋白質預測是「一次推理得到一個結果」，現在你可以說「多花 10 倍計算量給我更準確的結果」——這解鎖了計算-精度的權衡空間</li>
+</ul>
+
+<p>這也解釋了為什麼 looped transformer 架構被選擇：它天然支持在推理時擴展計算，同時避免了有限實驗數據下的過擬合風險。</p>
+
+<div class="section-title">五、SAE 特徵：從世界模型解讀生物學語法</div>
+
+<p>這是整期訪談中技術上最令人驚嘆的部分。Rives 的團隊使用稀疏自編碼器（Sparse Autoencoders）從 ESMC 世界模型中提取語義特徵——類似於 Anthropic 在語言模型中做的那樣，但在蛋白質領域有了全新的發現。</p>
+
+<p>SAE 特徵表現出清晰的<span class="data-point">層次化組成</span>：</p>
+
+<table>
+  <tr>
+    <th>尺度</th>
+    <th>範圍</th>
+    <th>學到的特徵</th>
+  </tr>
+  <tr>
+    <td>局部</td>
+    <td>1–3 個殘基</td>
+    <td>氨基酸生化特性（疏水/極性/帶電）</td>
+  </tr>
+  <tr>
+    <td>短程</td>
+    <td>5–10 個殘基</td>
+    <td>二級結構（α-螺旋、β-摺疊、β-轉角）</td>
+  </tr>
+  <tr>
+    <td>中程</td>
+    <td>10–30 個殘基</td>
+    <td>超二級結構（β-髮夾、螺旋-轉角-螺旋、β-α-β 單元）</td>
+  </tr>
+  <tr>
+    <td>長程</td>
+    <td>全蛋白結構域</td>
+    <td>完整結構域（免疫球蛋白摺疊、Rossmann 摺疊等）</td>
+  </tr>
+</table>
+
+<p>更令人驚訝的是功能層面的特徵：</p>
+<ul>
+  <li><strong>DNA 結合特徵</strong>：在不同 DNA 結合蛋白（螺旋-轉角-螺旋、鋅指、亮氨酸拉鏈）中被一致激活——即使序列完全不相似。</li>
+  <li><strong>膜整合特徵</strong>：跨膜片段（無論 GPCR、轉運蛋白還是離子通道）共享同一特徵。</li>
+  <li><strong>二硫鍵特徵</strong>：區分參與二硫鍵的半胱氨酸和游離半胱氨酸。</li>
+</ul>
+<blockquote class="strong">「SAE 將 <span class="data-point">686 個特徵</span>（約 5-10% 的 feature budget）分配給了固有無序區域（IDRs）。IDR 本身沒有可預測的結構，但模型將『無序』本身表示為一個概念，包含不同 IDR 亞類的子特徵——多聚電解質域、極性束、類朊蛋白域。」</blockquote>
+<p>這是最令人震撼的一點：模型不僅學會了有序結構，還學會了「無序」本身——並將其分解為不同的風味。</p>
+
+<div class="section-title">六、從「可預測」到「可設計」：抗體設計實戰</div>
+
+<p>理論夠硬，但落地怎麼樣？預印本中的數據令人印象深刻：</p>
+
+<ul>
+  <li>ESMFold2 針對 <span class="data-point">5 個癌症/免疫學靶點</span> 設計高親和力蛋白結合子：EFGR、PDGFRβ、PD-L1、CTLA-4、CD45</li>
+  <li><strong>小型 mini-binder 命中率</strong>：<span class="data-point">36–88%</span></li>
+  <li><strong>抗體衍生格式命中率</strong>：<span class="data-point">15–29%</span></li>
+  <li>納摩爾級結合親和力、高特異性、穩定的穩定性輪廓</li>
+  <li><strong>PD-L1 結合子</strong>：在實驗室測試中恢復了 T 細胞信號——與已批准的檢查點療法路徑一致</li>
+</ul>
+
+<p>特別值得強調的是：這些設計不是在計算機上誇誇其談——Rives 團隊把它們送進了濕實驗室驗證。從 AI 預測到濕實驗室確認的閉環，這就是「可編程生物學」的雛形。</p>
+
+<div class="section-title">七、「可編程生物學」：一個新的計算抽象</div>
+
+<p>訪談中有一個令人難忘的比喻：</p>
+
+<blockquote class="english">「You can think of the cell nucleus as a storage device, the ribosome as a JIT-compiler and runtime, and the semantic features from SAEs as functions—proteins as processes interacting together in workflows to produce phenotypes.」</blockquote>
+
+<p>這個比喻把生物學拉到了計算機科學的熟悉框架中：</p>
+<ul>
+  <li><strong>細胞核</strong> = 存儲設備/存儲控制器（存放基因代碼）</li>
+  <li><strong>核糖體</strong> = JIT 編譯器和運行時（把基因代碼翻譯成蛋白質執行體）</li>
+  <li><strong>SAE 語義特徵</strong> = 函數（可組合、可復用、可調用）</li>
+  <li><strong>蛋白質相互作用</strong> = 進程間協作工作流 → 產生表型輸出</li>
+</ul>
+
+<p>一旦接受這個視角，「可編程生物學」就不再是口號：學會組合這些 SAE 特徵來設計新型蛋白質，就相當於用高級語言編寫生物學程序。這比傳統的「基因 → RNA → 蛋白質 → 表型」線性模型強太多了。</p>
+
+<div class="section-title">八、競爭格局：AlphaFold 之後的戰場</div>
+
+<table>
+  <tr>
+    <th>模型</th>
+    <th>發布年份</th>
+    <th>關鍵技術</th>
+    <th>開源</th>
+    <th>核心局限</th>
+  </tr>
+  <tr>
+    <td>AlphaFold2</td>
+    <td>2020</td>
+    <td>MSA 歸納偏置</td>
+    <td><span class="model-tag model-open">部分開源</span></td>
+    <td>抗體區表現差</td>
+  </tr>
+  <tr>
+    <td>AlphaFold3</td>
+    <td>2024</td>
+    <td>擴展到蛋白質-配體</td>
+    <td><span class="model-tag model-closed">非商業限制</span></td>
+    <td>仍依賴 MSA 架構</td>
+  </tr>
+  <tr>
+    <td>Chai-1</td>
+    <td>2025</td>
+    <td>擴散模型</td>
+    <td><span class="model-tag model-open">開源</span></td>
+    <td>複雜複合物預測</td>
+  </tr>
+  <tr>
+    <td>Boltz-1</td>
+    <td>2025</td>
+    <td>MIT 團隊</td>
+    <td><span class="model-tag model-open">開源</span></td>
+    <td>數據多樣性</td>
+  </tr>
+  <tr>
+    <td><strong>ESMFold2</strong></td>
+    <td><strong>2026</strong></td>
+    <td><strong>World Model + BERT + 推理時擴展</strong></td>
+    <td><span class="model-tag model-open">MIT 開源</span></td>
+    <td><strong>間接依賴 MSA（蒸餾）</strong></td>
+  </tr>
+</table>
+
+<p><em>數據來源：預印本 Benchmarks 及 Nature 報道（2026-05-28）</em></p>
+
+<div class="section-title">九、BioHub 的 Vision：從蛋白質到細胞</div>
+
+<p>Rives 在訪談中透露了更宏大的路線圖：</p>
+<ul>
+  <li><strong>不是孤立的蛋白質，而是整個細胞</strong>：團隊正在研究如何建模整個細胞，而非孤立蛋白質。新發布的 TranscriptFormer（同期發表於 Science）是這個方向的重要一步。</li>
+  <li><strong>500 億美元虛擬生物學倡議</strong>：BioHub 五年計劃，加速建立多模態數據集和預測模型。</li>
+  <li><strong>與 Arc Institute、Tahoe Therapeutics 合作</strong>：構建最大的單細胞化學擾動數據集。</li>
+</ul>
+<blockquote>「我們正在建造生物的數字表徵——分子、基因組、細胞、生命系統。ESM 是這個拼圖中最關鍵的一塊。」</blockquote>
+
+<div class="section-title">十、為什麼這期值得聽（以及值得對讀什麼）</div>
+
+<p>這不是一期普通的 AI 論文解讀播客。它是對計算生物學範式的一次重新定義：</p>
+<ul>
+  <li><strong>Bitter Lesson 的跨領域驗證</strong>：Protein folding 加入了 CV、NLP、棋類遊戲的行列——通用方法 + 更大數據 + 更多算力 > 手工歸納偏置。</li>
+  <li><strong>World Model 走出 NLP</strong>：世界模型從來不是 NLP 的專利。ESMC 展示了蛋白質領域的「基礎模型」可以多強大。</li>
+  <li><strong>SAE 在生物學中的應用示範</strong>：機械可解釋性不只在語言模型中有用——它可能是解讀生命密碼的關鍵工具。</li>
+  <li><strong>可編程生物學的實證</strong>：從預測到設計再到濕實驗驗證的閉環已經跑通。</li>
+  <li><strong>680 萬美元到 500 億</strong>：一家非營利機構正在以超越多數營利公司的速度推動開放科學。</li>
+</ul>
+
+<div class="highlight-box">
+  <h3>🎯 一句話總結</h3>
+  <p>ESMFold2 不只是另一個蛋白質折疊工具——它是一場範式宣言：在生物學中，通用方法 + 大規模無監督學習 + 放棄歸納偏置同樣有效。當你可以用 SAE 從世界模型中提取「無序」的 686 個子特徵時，你已經不是在預測蛋白質了——你在解讀生命的語法。而 MIT 許可證意味著，世界上的每一個生物學實驗室都可以用這些工具來讀寫這個語法。</p>
+</div>
+
+<div class="section-title">🔁 對讀建議</div>
+<p>如果你對背景感興趣，這集對應的 <a href="https://www.latent.space/p/biohub">Latent Space 首期 Science 系列</a> 包含了 Priscilla Chan 和 Mark Zuckerberg 對 BioHub 願景的完整討論。而在我們已有的 Deep Dive 中，<a href="03-xiesaining-world-model-ami-labs.html">謝賽寧聊世界模型</a> 那期提供了 AI 研究員對 World Model 範式的另一種視角——雖然在完全不同領域（視覺生成），但它們共享「用無監督學習發現世界結構」的核心信念。</p>
+
+<footer>
+  <p>深度復述稿 · 基於 Latent Space 對 Alex Rives 的訪談</p>
+  <p>原始播客：<a href="https://www.latent.space/p/esmfold2">Latent Space Show Notes</a> · <a href="https://www.youtube.com/@LatentSpacePodcast">YouTube</a></p>
+  <p>相關閱讀：<a href="https://biohub.ai/esm/protein/about">BioHub ESM 官方頁面</a> · <a href="https://www.nature.com/articles/d41586-026-01686-3">Nature 報道</a></p>
+  <p>復述生成時間：2026-05-28</p>
+</footer>
+
+</div>
+</body>
+</html>
