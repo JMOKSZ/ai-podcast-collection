@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 洪樂潼：AI for Math —— 24 歲登月者與數學天書的證明</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Serif SC', Georgia, 'Source Han Serif SC', serif;
+    background: #faf8f5;
+    color: #2c2c2c;
+    line-height: 1.9;
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 32px;
+    color: #999;
+    font-size: 0.85em;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .back-link:hover { color: #555; }
+  .meta-block {
+    margin-bottom: 40px;
+  }
+  .meta-block .podcast-name {
+    font-size: 0.9em;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .meta-block h1 {
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.4;
+    margin: 8px 0 16px;
+  }
+  .meta-block .info {
+    font-size: 0.85em;
+    color: #999;
+    line-height: 1.7;
+  }
+  .meta-block .info strong { color: #666; }
+  hr.divider {
+    border: none;
+    border-top: 1px solid #e6dfd6;
+    margin: 40px 0;
+  }
+  h2 {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 40px 0 16px;
+    border-left: 3px solid #d4a373;
+    padding-left: 14px;
+  }
+  h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+    margin: 28px 0 10px;
+  }
+  p {
+    margin: 12px 0;
+    font-size: 0.95em;
+    color: #3a3a3a;
+    text-indent: 2em;
+  }
+  p.no-indent { text-indent: 0; }
+  blockquote {
+    border-left: 3px solid #d4a373;
+    margin: 16px 0;
+    padding: 12px 20px;
+    color: #555;
+    background: #f6f1ec;
+    font-style: italic;
+    font-size: 0.9em;
+    line-height: 1.7;
+  }
+  blockquote.strong {
+    border-left: 4px solid #b8845a;
+    background: #f4ede4;
+    font-style: normal;
+    font-weight: 500;
+    color: #3a3a3a;
+  }
+  .data-point {
+    display: inline-block;
+    background: #f4ede4;
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: #8b6914;
+    font-weight: 600;
+  }
+  ul, ol {
+    margin: 12px 0;
+    padding-left: 24px;
+  }
+  li {
+    margin: 8px 0;
+    font-size: 0.95em;
+    color: #3a3a3a;
+  }
+  .highlight-box {
+    background: #fffcf6;
+    border: 1px solid #e8dfd3;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .highlight-box h4 {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #8b6914;
+    margin-bottom: 8px;
+  }
+  .highlight-box p {
+    text-indent: 0;
+    font-size: 0.9em;
+  }
+  .math-block {
+    background: #f9f6f0;
+    border: 1px solid #e6dfd6;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 0.9em;
+    font-style: italic;
+    color: #555;
+  }
+  footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #e6dfd6;
+    font-size: 0.75em;
+    color: #bbb;
+    text-align: center;
+    line-height: 1.6;
+  }
+  @media (max-width: 600px) {
+    body { padding: 24px 16px; }
+    .meta-block h1 { font-size: 1.3em; }
+  }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">← 返回播客日報</a>
+
+<div class="meta-block">
+  <div class="podcast-name">張小珺商業訪談錄 · Ep.137</div>
+  <h1>AI for Math —— 24 歲登月者洪樂潼與數學天書的證明</h1>
+  <div class="info">
+    <strong>日期</strong> 2026-04-20 · <strong>時長</strong> 4h 00m · <strong>主持</strong> 張小珺 · <strong>嘉賓</strong> 洪樂潼 Carina（Axiom 創始人兼 CEO，00 後 MIT 數學天才）
+  </div>
+</div>
+
+<hr class="divider">
+
+<h2>一、最不應該創業的創業者</h2>
+
+<p>2026 年，美國誕生了一系列 Neo Labs——由頂級 AI 研究者創立、以基礎模型或新一代智能體系為目標、融資規模巨大、研究導向極強的新型 AI 實驗室。上一集的謝賽寧（AMI Labs）是其中一個代表人物。而這一集的嘉賓，是另外一位。</p>
+
+<p>她是《商業訪談錄》至今最年輕的嘉賓：洪樂潼 Carina，一位 00 後華人女孩，網絡上有人叫她「數學少女」。她創辦的公司叫 Axiom（公理），剛完成 <span class="data-point">2 億美元 A 輪融資，估值 16 億美元</span>。方向：AI for Math。</p>
+
+<p>真正讓大眾關注她的，是一則新聞：57 歲的維吉尼亞大學終身教授小野肯（Ken Ono）——全球頂尖數論學家——辭職加入了她的公司。</p>
+
+<blockquote class="strong">「57 歲美國終身教授小野肯突然辭職，去給 24 歲的華人女孩打工。」——這就是洪樂潼登上頭條的方式。</blockquote>
+
+<p>但洪樂潼說，她是最不可能創業的創業者。她不是 Business Person，沒有讀過 MBA，甚至不喜歡社交。她選擇創業的唯一理由是：這件事非做不可。</p>
+
+<h2>二、被創造的 vs 被發現的數學</h2>
+
+<p>整場 4 小時訪談，話題從宇宙深處開始。洪樂潼和張小珺談論了數學的本體論問題——數學到底是人類發明的工具，還是宇宙客觀存在的語言？</p>
+
+<p>這個看似哲學的問題，實際上是 Axiom 公司方向的基礎假設。如果數學是被發現的（Platonism），那麼 AI 去「發現」新數學就有了意義——就像天文學家用望遠鏡發現新星一樣。如果數學是被創造的（Formalism），那麼 AI 的任務就是幫助數學家更高效地構建和驗證形式系統。</p>
+
+<p>洪樂潼的立場介於兩者之間。她相信數學的某些部分是真實存在的（比如素數的分佈規律），但也有大量空間留給人類的創造力——而 AI 的潛力，在於同時服務於這兩個面向。</p>
+
+<div class="highlight-box">
+  <h4>📌 AI for Math 的兩條路</h4>
+  <p>一條是讓 AI 幫助數學家證明定理（AI-assisted proof），一條是讓 AI 自己發現新的數學結構（AI-discovered math）。Axiom 正在兩條路上同時發力。</p>
+</div>
+
+<h2>三、Bounded vs Free Attention</h2>
+
+<p>洪樂潼提出了一個非常有趣的認知框架：<strong>Bounded Attention（有限注意力）</strong> 與 <strong>Free Attention（自由注意力）</strong>。</p>
+
+<p>Bounded Attention 是你被迫投放注意力的場景——比如開會、回郵件、看手機通知、處理日常瑣事。Free Attention 是你主動選擇投放注意力的場景——比如閱讀、思考、證明。對數學家來說，Free Attention 才是真正產生創造力的狀態。</p>
+
+<p>問題在於，現代生活正在持續侵蝕 Free Attention。太多通知、太多會議、太多社交媒體，讓我們的大腦始終處於 bounded 模式。洪樂潼說，管理注意力的能力——尤其是保護 Free Attention 的能力——可能是 AI 時代數學家的核心競爭力。</p>
+
+<blockquote>「Free Attention 是你主動選擇投放注意力的場景——比如閱讀、思考、證明。對數學家來說，Free Attention 才是真正產生創造力的狀態。」</blockquote>
+
+<p>這個框架不僅適用於數學。對於任何需要創造性思考的工作者，如何保護自己的 Free Attention，可能是比時間管理更根本的問題。而 Axiom 的 AI 工具，某種程度上就是為了把數學家從 bounded attention 的雜務中解放出來——讓他們可以專注於真正的數學。</p>
+
+<h2>四、對苦難上癮：數學家的心流</h2>
+
+<p>訪談中有一個很動人的段落：洪樂潼談到數學家的心流狀態時，用了一個令人意外的詞彙——「對苦難上癮」。</p>
+
+<p>她描述了一種「被數學折磨」的愉悅感：幾個月甚至幾年解不開一個問題，每一天都不舒服，大腦在潛意識中持續運轉，最終在某個瞬間突然「看到」了答案——那種感覺像是一個黑箱子被點亮。</p>
+
+<p>這種描述不是誇張。數學史上充滿了這樣的例子——Andrew Wiles 花了 7 年證明費馬最後定理，Grigori Perelman 花了 8 年解決龐加萊猜想然後隱居。對他們來說，數學不是「解題」，而是一種生活方式——一場與自己的注意力、情感、自我懷疑的長期戰爭。</p>
+
+<blockquote>「你解一個數學問題幾個月，每一天都不舒服，突然有一天你看到答案了——時間感消失了，周圍的一切都消失了，你和問題合為一體。」</blockquote>
+
+<p>洪樂潼說，她喜歡數學的一個原因是，數學沒有中間態。不是對就是錯。不像學術政治的勾心鬥角，不像創業中的灰色地帶——數學的純粹性給了她一種智力上的安全感。</p>
+
+<h2>五、數論多美啊！</h2>
+
+<p>洪樂潼對數論的熱愛貫穿了整場訪談。她提到了一些非數學家也能感受到美的數論結果——比如素數定理（素數在大數範圍內的分佈規律），比如模形式的神秘對稱性，比如拉馬努金那些「從天而降」的公式。</p>
+
+<p><strong>數論是數學中最古老、最純粹的分支</strong>——它研究的對象（整數）是任何文明都能理解的，但在其上建立起來的理論卻涵蓋了人類智慧最精妙的構造。黎曼猜想、哥德巴赫猜想、孿生素數猜想——這些問題之所以迷人，不是因為它們有實際用途，而是因為它們挑戰了人類對秩序和規律的理解極限。</p>
+
+<p>洪樂潼說，她對 AI for Math 的終極願景不是讓 AI 幫人類解所有數學題，而是讓 AI 幫助人類看到數學中那些尚未被發現的美麗結構——</p>
+
+<blockquote class="strong">「數學天書中的證明已經存在了，問題是我們能不能找到它們。」</blockquote>
+
+<p>這句話讓人想到 Paul Erdős 的著名隱喻：「上帝有一本數學天書，裡面是所有定理的最優美證明。你不一定需要相信上帝，但作為數學家，你應該相信這本書存在。」</p>
+
+<h2>六、小野肯的郵件</h2>
+
+<p>洪樂潼講述了一個令人難忘的故事。她收到了小野肯（Ken Ono）——維吉尼亞大學的終身教授、全球頂尖數論學家——的郵件。郵件內容很簡單：小野肯說他在網絡上看到了她的工作，問她是否願意聊聊。</p>
+
+<p>見面之後，小野肯告訴她：他想辭職加入她的公司。一位已經獲得終身教職的 57 歲教授，願意放棄學術界的一切穩定保障，加入一個 24 歲女孩還沒有產品的初創公司。</p>
+
+<p>這個故事引發的討論遠遠超出了個人選擇。它觸及了一個更深刻的問題：在 AI 時代，什麼樣的工作值得頂尖學者放棄終身教職？對於小野肯這樣的數學家來說，如果 AI for Math 真的可以改變數學研究的範式——如果它可以讓數學家發現原本無法發現的定理——那麼這確實比繼續發論文、帶學生、參加學術會議更有吸引力。</p>
+
+<div class="highlight-box">
+  <h4>📌 Neo Labs 群像</h4>
+  <p>洪樂潼的 Axiom 與謝賽寧的 AMI Labs 代表了同一波 Neo Labs 浪潮：頂尖研究者以基礎目標為導向、融資規模巨大、研究重於產品。這個現象的出現本身，說明了 AI 基礎研究正在從大公司回流到創業生態。</p>
+</div>
+
+<h2>七、AI for Math：把數學變成 Lean</h2>
+
+<p>技術層面，Axiom 的核心方法之一是用 <strong>Lean 定理證明器</strong>將數學形式化。Lean 是一種交互式定理證明語言——數學家可以用它來編寫完全形式化的證明，這些證明可以被計算機逐行驗證。</p>
+
+<p>但當前的問題是，將數學證明轉化為 Lean 代碼極其耗時——它在很大程度上是一個人類工作量問題，而不是 AI 能力問題。Axiom 的切入點，是用 AI 來自動化這個轉化過程。</p>
+
+<p>這個方向的潛力是巨大的：如果能用 AI 把任意數學證明自動翻譯為 Lean 形式，那麼人類就能建立一個可驗證的、可搜索的、可互相引用的形式化數學知識庫——這不是一個工具，而是一個全新的數學基礎設施。</p>
+
+<blockquote>「把數學變成 Lean。AI 來做形式化的苦工，數學家來做創造性的思考。」</blockquote>
+
+<p>洪樂潼還討論了數學家直覺的本質——那種「知道對但還不能嚴格證明」的感覺。她認為，AI 可以在兩方面幫助數學家：一部分是替代繁重的計算和驗證工作，另一部分是輔助直覺——通過大規模的模式識別來提示數學家「這裡可能有東西」。</p>
+
+<h2>八、登月：要麼成功，要麼失敗</h2>
+
+<p>洪樂潼對 Axiom 的定位是清晰的：這是一次登月。不是增量式的改進——每年發幾篇論文、賣幾個 SaaS 席位——而是「要麼成功，要麼失敗，沒有中間態」。</p>
+
+<p>這和她對數學的態度一致。數學沒有可能主義，要麼證明成立，要麼不對。她選擇創業的時候，也採用了同樣的框架。</p>
+
+<p>「沒有人喜歡融資」——她坦言融資過程對她來說是痛苦的。一個不擅長社交、不讀 MBA、不喜歡包裝自己的數學家，不得不在投資人面前講一個充滿不確定性的科學故事。但同時，行業的反饋也是明確的：在 AI for Math 這個賽道上，頂級投資者願意為登月級別的願景買單。</p>
+
+<blockquote>「登月要麼成功，要麼失敗，沒有中間態。」</blockquote>
+
+<h2>九、與數學家共進晚餐</h2>
+
+<p>訪談的最後一個章節，洪樂潼和張小珺討論了一個輕鬆但意味深長的話題：和數學家一起吃飯是什麼體驗？答案是——數學家會在飯桌上聊數學，不是因為他們沒有其他話題，而是因為數學本身對他們來說就是最有趣的話題。</p>
+
+<p>這讓整集訪談有了一個溫暖的收尾：數學對她來說，不是一個冰冷的職業選擇，而是一種生活方式、一種與世界打交道的方式。AI for Math 的本質，不是用 AI 取代數學家，而是用 AI 幫助更多人體驗到數學家對數學的那種熱愛——那種「每個問題都值得被認真對待」的態度。</p>
+
+<hr class="divider">
+
+<h2>速覽關鍵時刻</h2>
+
+<ul>
+  <li><strong>00:02:14</strong> — 被創造的與被發現的數學：AI for Math 的底層假設</li>
+  <li><strong>00:14:38</strong> — Bounded vs Free Attention：數學家認知框架的核心</li>
+  <li><strong>00:32:14</strong> — 對苦難上癮：被數學折磨的愉悅感</li>
+  <li><strong>00:50:21</strong> — 數論多美啊！素數定理到拉馬努金公式</li>
+  <li><strong>01:16:23</strong> — 最不可能創業的創業者：從數學家到 CEO 的悖論</li>
+  <li><strong>02:07:17</strong> — 小野肯的郵件：終身教授辭職加入 24 歲初創</li>
+  <li><strong>02:19:51</strong> — 數學天書中的證明：Erdős 的上帝與美學</li>
+  <li><strong>02:24:38</strong> — AI for Math：Axiom 的技術路線</li>
+  <li><strong>03:03:50</strong> — 把數學變成 Lean：定理證明器的形式化工程</li>
+  <li><strong>03:09:59</strong> — 數學家的直覺：AI 如何輔助而非取代</li>
+  <li><strong>03:26:18</strong> — 登月：要麼成功，要麼失敗</li>
+  <li><strong>03:54:17</strong> — 與數學家共進晚餐</li>
+</ul>
+
+<hr class="divider">
+
+<h2>尾聲：最年輕的 Neo Labs 創始人</h2>
+
+<p>洪樂潼的故事不是一個天才少年的傳奇——至少她本人不這麼認為。她反覆強調自己「不是 business person」，不喜歡社交，不喜歡融資。她創辦 Axiom 的原因很簡單：如果在數學和 AI 的交叉點上存在一個可以改變整個學科的機會，而沒有人去做，那就必須是她。</p>
+
+<p>這種「責任感」而非「野心」，是 Neo Labs 創始人的共同特質。在謝賽寧身上看到過，在洪樂潼身上又看到了——他們不是在追逐一個商業機會，而是在回應一個智力使命。</p>
+
+<blockquote class="strong">「數學天書中的證明已經存在了，問題是我們能不能找到它們。」</blockquote>
+
+<p>對於一個 24 歲、正在建構「AI 數學家」的創始人來說，沒有比這更適合的人生信條了。</p>
+
+<footer>
+  深度復述 · 來源：<a href="https://podcasts.apple.com/cn/podcast/137-%E5%AF%B9%E6%B4%AA%E4%B9%90%E6%BD%BC%E7%9A%844%E5%B0%8F%E6%97%B6%E8%AE%BF%E8%B0%88-ai-for-math-%E6%8A%8A%E6%95%B0%E5%AD%A6%E5%8F%98%E6%88%90lean-%E6%95%B0%E5%AD%A6%E5%A4%A9%E4%B9%A6%E4%B8%AD%E7%9A%84%E8%AF%81%E6%98%8E-%E7%9B%B4%E8%A7%89-%E8%A2%AB%E5%88%9B%E9%80%A0%E4%B8%8E%E8%A2%AB%E5%8F%91%E7%8E%B0%E7%9A%84/id1634356920?i=1000762327701" style="color:#888;">Apple Podcasts</a> · 生成 2026-05-28 · Vee Mok 🪸
+</footer>
+
+</body>
+</html>
