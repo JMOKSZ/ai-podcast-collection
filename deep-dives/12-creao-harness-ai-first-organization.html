@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Harness 時代——從信任人到信任 AI</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  @media (max-width: 600px) { html { font-size: 16px; } .container { padding: 1.5rem 1rem; } header h1 { font-size: 1.6rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a href="../index.html" class="back-link">← 返回播客日报</a>
+  <div class="ep-num">硅谷101 · E238</div>
+  <h1>Harness 時代——從信任人到信任 AI</h1>
+  <div class="meta">
+    <span class="tag">★ 必读</span><br>
+    📅 2026年5月26日发布 · ⏱ 约65分钟<br>
+    🎙 主播：泓君 · 嘉宾：Kai（CEO）、Peter（CTO）、Clark（CPO）· CreaoAI
+  </div>
+</header>
+
+<div class="section-title">一、導讀：當 25 人團隊跑出 100 人的效率</div>
+
+<p>這是一集我認為每個在「認真思考 AI 怎麼落地」的人都應該聽的播客。不是因为里面的观点有多激进——事实上很多观点你已经在 X/Twitter 上看到零散碎片了——而是因为 <strong>Creao 三位创始人是目前公开讲话的人里，为数不多真正把「AI-First 组织」跑通了的团队</strong>。</p>
+
+<p>硅谷 101 的主播泓君用一個非常具體的場景打開了話題：Creao 的 CTO Peter Pang 在 X 上有一篇百萬閱讀的帖子，說他們 25 人的公司，99% 代碼由 AI 完成，早上 10 點寫功能、中午 A/B 測試、下午 3 點根據數據砍掉一半、5 點重寫更好的版本。傳統產品流程是 6 周，他們是 1 天。</p>
+
+<p>這些數字太嚇人了，以至於很多人第一反應是「吹牛」或者「不可複製」。但 Creao 的三位創始人在這場對話中，用極其具體的細節拆解了這個系統是怎麼工作的——不是科幻小說，是 2026 年正在發生的工程實踐。</p>
+
+<div class="section-title">二、什麼是 Harness Engineering？</div>
+
+<p>Peter 的定義非常清晰：Harness 不是 Prompt Engineering，也不是 Context Engineering。Prompt 關注的是「怎麼跟模型說話」，Context 關注的是「怎麼給模型餵上下文」，而 Harness 關注的是「怎麼馴化一個通用系統」——包括沙箱架構、宿主服務交互、工具鏈設計、延遲優化、啟動時間控制。</p>
+
+<blockquote class="strong">
+<p>「很多人認為 Harness 是靜態的，就是開發配套系統發揮 LLM 優勢。但我們認為它是一個動態的過程——系統能夠自我優化，不停地適配來自市場、產品、用戶的各種信號。這是很多人還沒有意識到的一點。」</p>
+<span class="attr">— Peter Pang，Creao CTO</span>
+</blockquote>
+
+<p>Clark 做了一個更生動的比喻：</p>
+
+<blockquote>
+<p>「我們要把 AI 當成一個系統來看，而不是一個智能。當系統出錯時，不要想著糾正這個智能，而要想著彌補這個系統。這個成長的方式就好像你在養一個孩子，讓它在一個規則內越來越好。」</p>
+<span class="attr">— Clark，Creao CPO</span>
+</blockquote>
+
+<p>這個概念轉變極其重要。大部分人對 AI 的不滿來自於「它怎麼連這個都做不對」——這就是把 AI 當成智能來期待。把 AI 當成系統，你的問題就變成了「我的系統哪個環節出了問題，怎麼改進這個環節」。兩者導向完全不同的行動。</p>
+
+<div class="section-title">三、六周變一天：開發流程的範式重構</div>
+
+<div class="sub-title">3.1 傳統流程 vs AI-First 流程</div>
+
+<p>Creao 展示了這個對比：</p>
+<ul>
+  <li><strong>傳統</strong>：產品經理寫 PRD → 設計師做稿 → 工程師編碼 → QA 測試 → 部署。一個功能迭代 6 周。</li>
+  <li><strong>Creao 模式</strong>：架構師設定 Agent 架構 → AI 規劃並生成代碼 → AI 驅動 CI/CD 測試 → 即時 A/B 測試 → 數據驅動決策（繼續/砍掉/重寫）。一個功能迭代 <strong>1 天</strong>。</li>
+</ul>
+
+<p>關鍵差異不是 AI 寫代碼更快，而是 <strong>整個決策鏈條從人驅動變成了數據驅動</strong>。回到傳統流程的瓶頸——不在於寫代碼花了多長時間，而在於「產品經理決定做什麼 → 工程師理解需求 → 做完等部署 → 部署完等人 review → review 完等人批準」這條鏈條上的每一個對接環節。</p>
+
+<blockquote>
+<p>「我們在之前很長一段時間裡，每一個工程師都在用 AI 寫代碼，每一個產品經理都在用 AI 寫 PRD，每一個設計師都在用 AI 做圖。但其實並沒有增加我們的效率，反而導致每一個人的工作進度和節奏不一樣之後，我們的對齊成本變得非常高。」</p>
+<span class="attr">— Clark，Creao CPO</span>
+</blockquote>
+
+<div class="sub-title">3.2 那個代表性的 1 天</div>
+
+<p>「早上 10 點寫功能，中午 A/B 測試，下午 3 點根據數據砍掉部分功能，5 點重寫更好版本」——這個節奏背後是兩套 Agent 系統在運轉：</p>
+
+<ol>
+  <li><strong>Agent-driven CI/CD 系統</strong>：AI 持續監控代碼庫，自動跑回歸測試、端到端測試，確保發布質量。</li>
+  <li><strong>Agent-driven Bug Triage 系統</strong>：發現 bug 只需 <strong class="data-point">1-2 分鐘</strong>，指派給工程師幾秒鐘，工程師用 Agent 調查提出方案約 <strong class="data-point">1-2 小時</strong>（對比之前需一周）。</li>
+</ol>
+
+<blockquote>
+<p>「我們以前有一個功能願望清單，很長，又有一個 bug 清單，有很多 bug 要修復。以前市場和產品還有工程師總是討論來討論去：到底是先修 bug 還是先做功能？現在這兩個清單都沒有了。bug 及時發現，及時修復。feature 的數量遠遠多過於我們所需要的數量。」</p>
+<span class="attr">— Clark</span>
+</blockquote>
+
+<p>Peter 補充了一個重要數字：<strong class="data-point">50% 以上的問題</strong>現在通過 auto-fixing 系統自動修復，只需要工程師簡單批准即可發布。</p>
+
+<div class="section-title">四、AI-First ≠ 使用 AI</div>
+
+<p>這是整場對話的核心論點。Kai（CEO）把它說得最透：</p>
+
+<blockquote class="strong">
+<p>「如果還把 AI 當成一個提升效率的工具，那使用者的效率提升最多可能就是 10 倍，因為人最多每天可能就工作 24 小時。如果希望效率提升 100 倍、1000 倍，你不能說你是那個工具的使用者，而是 AI 應該是所有生產力的主導。」</p>
+<span class="attr">— Kai，Creao CEO</span>
+</blockquote>
+
+<p>這句話在邏輯上非常樸素，但它的含義是深刻的：</p>
+
+<ul>
+  <li><strong>10 倍優化</strong>：人用 AI 工具 -> 人仍是中心 -> 瓶頸還是人的時間</li>
+  <li><strong>100 倍優化</strong>：AI 主導生產 -> 系統是中心 -> 瓶頸變成信號質量和系統設計</li>
+</ul>
+
+<p>大部份公司的 AI 策略停留在第一層——給員工買 Copilot、用 Cursor 寫代碼、用 AI 做圖——然後發現效率提升有限。因為個體效率提升之後，對齊成本沒有降下來，甚至因為大家節奏不一致反而升高了。</p>
+
+<div class="section-title">五、組織結構的劇變</div>
+
+<div class="sub-title">5.1 產品經理被解構了</div>
+
+<p>Creao 沒有單獨的產品經理。Kai 的解釋是：</p>
+
+<blockquote>
+<p>「產品經理同時要跟市場溝通，跟開發溝通。大量的對齊成本都發生在產品經理的角色上面。但你當把這個角色拿掉之後，你會發現，對齊的成本反而有時候可能會更低。」</p>
+<span class="attr">— Kai</span>
+</blockquote>
+
+<p>這不是說產品經理這個角色沒有價值了。Kai 強調「未來產品經理職位的很多權力會分散在開發團隊的各個人身上」。當每一個開發團隊成員在 AI 幫助下都能夠有產品觀念時，組織上就不需要一個單獨的對齊樞紐。</p>
+
+<div class="sub-title">5.2 初級工程師 vs 資深工程師</div>
+
+<p>Peter 觀察到一個反直覺的現象：<strong>初級工程師比資深工程師更適應 AI 環境</strong>。</p>
+
+<blockquote>
+<p>「初級工程師的技術債務或思想束縛通常來說比較小，他能夠接受擴展他的範圍，不僅是作為一個工程師，也要融入到一些產品的設計之中。但資深工程師因為比較專精——比如你是做基礎設施的，傳統環境中你不關心代碼發布之後發生的事情——轉變這個思維的成本要高很多。」</p>
+<span class="attr">— Peter</span>
+</blockquote>
+
+<p>這句話會讓很多資深工程師不舒服。但 Peter 緊接著澄清：資深工程師的真正價值不是寫代碼，而是「找到 AI Planning 的缺陷」。AI 的規劃能力已經從一年前的 <span class="data-point">50 分</span> 提升到現在的 <span class="data-point">90 分</span>，但安全的隱患、延遲的隱患、架構上的缺陷——這些還是需要「系統架構的能力」來把關。</p>
+
+<div class="highlight-box">
+<h3>🔑 人的新角色</h3>
+<p>Peter 總結了 AI-First 環境下兩類關鍵角色：</p>
+<ul>
+  <li><strong>架構師（Architect）</strong>：決定 Agent 系統的整體架構——沙箱和宿主如何交互、工具鏈如何設計、安全邊界在哪。這是現在人最有價值的角色。</li>
+  <li><strong>操作者（Operator）</strong>：運維、監控、給系統餵信號。價值相對較低，但需求量仍然存在。</li>
+</ul>
+<p>以 Creao 為例：以前搭建 Agent 系統需要 10-20 人團隊數月，現在只需要 1 個架構師，在 1 周內完成。</p>
+</div>
+
+<div class="section-title">六、信任：轉型最難的一步</div>
+
+<p>Kai 反覆提到一個詞——<strong>信任</strong>。他認為組織 AI-First 轉型的第一道門檻不是技術，而是「你能不能信任你的 AI 做決策或執行任務」。</p>
+
+<blockquote>
+<p>「原來你組織信任的是人，但現在當你把 AI 拿進來之後，你要先解決一個問題：就是你能不能信任你的 AI。」</p>
+<span class="attr">— Kai</span>
+</blockquote>
+
+<p>這個信任不是盲目的。Harness 系統就是為了解決信任問題——「我們得有很多 guardrails（護欄）和機制，去保障 AI 做的所有工作能夠被人信任」。這是一個循環：好的 Harness → 更可靠的 AI 輸出 → 更高的信任度 → 更願意讓 AI 承擔更多 → 更好的 Harness。</p>
+
+<div class="section-title">七、超前市場的技術團隊</div>
+
+<p>Kai 說了一句非常有意思的話：</p>
+
+<blockquote>
+<p>「傳統軟件時代，銷售團隊的概念會超前產品 4-5 個月。現在反過來了，技術團隊反過來超前了市場團隊 4-5 個月。市場團隊在追趕開發的功能。」</p>
+<span class="attr">— Kai</span>
+</blockquote>
+
+<p>這是一個深刻的角色反轉。傳統 SaaS 公司的節奏是：銷售和市場發現需求 → 產品定義功能 → 工程實現。現在 Creao 的節奏是：工程快速產出 → 功能過剩 → 市場和銷售反過來要搞清楚這些功能能賣給誰。</p>
+
+<p>Clark 從市場角度補充了另外一個困惑點的觀察：工程有明確的評估指標（代碼質量、部署頻率、bug 率），但 go-to-market 的評估相對主觀。「每個人都有自己對價值的判斷——我們怎麼樣把這些主觀的判斷變成一種信號？」這個問題目前在 Creao 內部仍在探索中。</p>
+
+<div class="section-title">八、SaaS 產品的 Agent 化改造</div>
+
+<p>Peter 觀察到一個正在發生的平台遷移：</p>
+
+<blockquote>
+<p>「以前很多 SaaS 產品，它需要一個給人去看、去管理的 dashboard。但現在我們在管理任務的時候，更關心的是 Agent 能不能『看到』並優先級排序這些任務。所以我們會去看這些任務管理產品有沒有好的 MCP 和 API 提供給我們的 Agent 使用。」</p>
+<span class="attr">— Peter</span>
+</blockquote>
+
+<p>這個觀察的深意是：<strong>如果 SaaS 產品的消費者正在從人變成 Agent</strong>，那麼 UI/UX 的投資回報率在下降，API/MCP 的投資回報率在上升。這不是一個未來預測，是 Creao 當前在選型時的真實決策邏輯。</p>
+
+<p>Clark 更激進地推到了市場營銷層面：</p>
+
+<blockquote>
+<p>「我們發的這些內容，未來的受眾可能並不一定是人。比如市場物料從人的審美上去看並不好，但實際上你把它投向市場的時候，你會發現讀這篇文章或這個圖片的是一個 Agent。以後可能買東西是由 Agent 買、訂報紙是由 Agent 訂——那你的廣告是發給 Agent 看，還是發給人看？」</p>
+<span class="attr">— Clark</span>
+</blockquote>
+
+<div class="section-title">九、大企業為甚麼難轉型？</div>
+
+<p>Creao 的目標客戶主要是 SMB（中小企業），不是大企業。原因很直白：</p>
+
+<blockquote>
+<p>「越大的企業合規的問題越多，還有很多的『人』的因素，會導致這個過程非常艱難。但如果一家公司沒有太多合規問題，沒有傳統的遺留系統，你就是第一批最容易做這個轉型的公司。」</p>
+<span class="attr">— Kai</span>
+</blockquote>
+
+<p>大企業的 AI 策略普遍是把 AI 做成一個功能集成到現有產品中。「這個本質上沒有搞清楚——如果你要做這樣的轉型，可能你原來的產品架構是不支持把最新 AI 能力集成進來的，因為你的數據庫不符合要求，你的交互也不是未來的方式。你要做的是整體產品的重構。」</p>
+
+<div class="section-title">十、反思與啓示</div>
+
+<p>這集播客最珍貴的地方，不是 Creao 展示的極致效率——畢竟 25 人團隊做到這個程度有天時地利人和的偶然成分。真正有價值的是三個創始人對轉型過程中「人的因素」的誠實描述：</p>
+
+<ul>
+  <li><strong>轉型需要信仰</strong>：Kai 明確說創始人得搞清楚這個轉型代表什麼。不只是一套新工具、新流程，而是整個組織圍繞 AI 的運作邏輯的重構。</li>
+  <li><strong>市場還不知道這種工作方式存在</strong>：Peter 說「現在的挑戰不是市場不能接受，而是市場不知道」。這個信息鴻溝是 Creao 級創業公司最大的機會，也是最大的挑戰。</li>
+  <li><strong>複合型人才崛起</strong>：Peter 反覆強調「通用的人」在 AI 環境下茁壯成長——工程師有產品感知和市場感知，產品經理有實現能力。只懂一件事的人在 AI-First 組織中的生存空間在收窄。</li>
+  <li><strong>AI 寫代碼能力已超人類</strong>：Peter 直接說「2026 年我就沒有寫過一行代碼」。這不是炫耀——這是 AI Agent 對工程團隊角色的根本性重塑。</li>
+</ul>
+
+<blockquote class="strong">
+<p>「作為一個架構師的價值，就是找到 AI Planning 的缺陷。現在 AI 的規劃還是有缺陷的——可能一開始給我的規劃有安全的缺陷、延遲的缺陷——那我根據我之前的架構經驗，怎麼去評判它、質疑它，讓它進一步提升。」</p>
+<span class="attr">— Peter</span>
+</blockquote>
+
+<p>這句話可能是在 AI 時代對「資深工程師的價值」最好的總結。不是寫代碼的速度（這個 AI 已經贏了），是「看出 AI 設計的缺陷」的能力——而這個能力恰恰來自於過去十年踩過的每一個坑。</p>
+
+<div class="section-title">十一、前後脈絡</div>
+
+<p>這集與最近幾個關鍵內容形成了有趣的對話：</p>
+<ul>
+  <li><strong>Latent Space - Async Agents（Cognition 的 Walden Yan）</strong>：都討論了「人不在環路」的開發模式。但側重不同——Latent Space 側重技術架構（完整 VM、記憶循環、Async Agent 設計），硅谷 101 這集深入到組織層面（角色定義、信任機制、市場節奏）</li>
+  <li><strong>張小珺 × 張月光 Ep.130</strong>：張月光提出「從流程設計到上下文設計」，與 Creao 的 Harness 思維形成互補。如果說張月光是從產品設計角度討論 AI Native 的「上下文」，Creao 是從工程和組織角度討論怎麼把這個上下文落地為一個可運行的系統。</li>
+  <li><strong>Cursor 的「第三時代」</strong>：Cursor 團隊最近提出不再主要是關於寫代碼，而是建造「軟體工廠」。Creao 的實踐是這個論斷最有力的實證。他們不只是在用 AI 寫代碼，他們在建造一個 AI 主導的軟體工廠。</li>
+</ul>
+
+<footer>
+  <p>來源：<a href="https://www.xiaoyuzhoufm.com/podcast/5e5c52c9418a84a04625e6cc" style="color:#888;">硅谷101 · 小宇宙</a> · <a href="https://podcasts.apple.com/hk/podcast/%E7%A1%85%E8%B0%B7101/id1498541229" style="color:#888;">Apple Podcasts</a></p>
+  <p>文字稿參考：<a href="https://www.163.com/dy/article/KTROC0NC05566OCK.html" style="color:#888;">網易全文</a></p>
+  <p>生成時間：2026-05-29 14:03 CST</p>
+  <p>JMOKSZ / ai-podcast-collection · Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 姚顺宇：從 Anthropic 到 Gemini——大模型訓練的內部視角</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  @media (max-width: 600px) { html { font-size: 16px; } .container { padding: 1.5rem 1rem; } header h1 { font-size: 1.6rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a href="../index.html" class="back-link">← 返回播客日报</a>
+  <div class="ep-num">张小珺商业访谈录 · Ep.140</div>
+  <h1>「AI 本質是簡單的」——姚順宇從 Anthropic 到 Gemini 的訓練筆記</h1>
+  <div class="meta">
+    <span class="tag">★ 推薦</span><br>
+    📅 2026年3月录制 · ⏱ 4小时<br>
+    🎙 主持人：张小珺 · 嘉宾：姚顺宇（Google DeepMind 研究科学家，前 Anthropic 研究员）
+  </div>
+</header>
+
+<div class="section-title">一、誰是姚順宇？</div>
+
+<p>矽谷有兩位 Yao Shunyu，都是清華同一屆畢業生——姚順雨（2025年從 OpenAI 跳槽到騰訊）和姚順宇。我們這期的嘉賓是後者。</p>
+
+<p>姚順宇的履歷本身就非常不尋常：清華 + 斯坦福，博士方向是理論物理——非厄米系統、量子物理與高能物理。博士畢業後他做了一個極大的跨步：離開深造 9 年的物理，轉行 AI。過去兩年，先後在 Anthropic（參與 Claude 3.7、4.5）和 Google DeepMind（參與 Gemini 3）出任研究科學家。</p>
+
+<p>但這個人一點也不 nerd。他戴一副隨光線變色的茶色眼鏡，第一次見面就對張小珺說：</p>
+
+<blockquote class="strong">
+<p>「我在這個行業又沒有什麼導師，又沒有什麼舊友，我當然想噴誰就噴誰。」</p>
+<span class="attr">— 姚順宇</span>
+</blockquote>
+
+<p>整場 4 小時的對話，就是在這種看似「狂」但每個觀點背後都有紮實工程經驗的張力中展開的。</p>
+
+<div class="section-title">二、「AI 本質是簡單的」</div>
+
+<p>這可能是整場最反直覺的斷言。看看今天 AI 領域的新聞——OpenAI 前員工爆料、安全性爭議、Agent 系統架構日新月異——誰會覺得這是「簡單的事」？</p>
+
+<blockquote>
+<p>「AI 這個事，本來也不太需要腦子——真的不太需要腦子。這個行業最重要的特質，就是靠譜，就是做事細，對自己做的事情負責任。」</p>
+<span class="attr">— 姚順宇</span>
+</blockquote>
+
+<p>這句話需要放在姚順宇的背景下來理解。他做過理論物理——那是真正「需要腦子」的領域：非厄米系統、量子場論、高能物理，數學推導動輒十幾頁。相比之下，他認為 AI 的核心工程挑戰不是數學難度，而是工程紀律——你能不能把每一個細節做到位，能不能持續監控實驗質量，能不能在訓練出現異常時第一時間發現。</p>
+
+<blockquote>
+<p>「你不用太擔心因為自己的觀點而惹到什麼人。只要你的觀點是自洽的，不是說隨便噴人，你是有一套自己的理解。最終你在這個領域做的怎麼樣，是有客觀評價標準的——大家是會尊重你的。」</p>
+<span class="attr">— 姚順宇</span>
+</blockquote>
+
+<div class="section-title">三、Anthropic vs DeepMind：兩種訓練文化</div>
+
+<p>姚順宇先後經歷了 Anthropic（2024-2025）和 Google DeepMind（2025-2026），這是目前矽谷最具代表性的兩家模型實驗室。他的內部視角非常珍貴。</p>
+
+<div class="sub-title">3.1 Anthropic：Underdog 的工程文化</div>
+
+<p>Anthropic 給姚順宇留下最深印象的，是它的工程嚴謹度。Claude 3.7 和 4.5 的訓練過程中，他觀察到一個關鍵特質：</p>
+
+<ul>
+  <li><strong>數據質量優先</strong>：Anthropic 對訓練數據的審查極其嚴格。創始人親自看訓練數據——這在業界極少見。</li>
+  <li><strong>Underdog 文化</strong>：因為資源不及 OpenAI 和 Google，Anthropic 必須在每個細節上做到最好。這種「不夠資源來補質量」的心態形成了獨特的工程紀律。</li>
+  <li><strong>審慎的 Post-training</strong>：Claude 3.7→4.5 的後訓練過程被描述為「硬蒸」——不追求花哨的路線，而是紮紮實實把 RL 的每個環節做透。</li>
+</ul>
+
+<div class="sub-title">3.2 DeepMind：巨人肩上的不同節奏</div>
+
+<p>轉到 DeepMind 後，姚順宇參與了 Gemini 3 的訓練。對比兩家公司，他提到了一些關鍵差異：</p>
+
+<ul>
+  <li><strong>資源充裕度完全不同</strong>：Google 的算力儲備遠超 Anthropic，但資源不是萬能的。</li>
+  <li><strong>組織規模帶來的協調成本</strong>：更大的團隊意味著更多對齊工作，決策鏈更長。</li>
+  <li><strong>Coding 能力的落後是最大戰略失誤</strong>：姚順宇認同這個判斷——Google 在 Coding Agent 能力上的落後不是技術問題，是組織注意力的問題。</li>
+</ul>
+
+<div class="sub-title">3.3 「硬蒸」vs「聰明的蒸」</div>
+
+<p>姚順宇提出了一個在訓練界的經典框架，把模型後訓練的策略分為：</p>
+
+<ul>
+  <li><strong>硬蒸（Hard Distillation）</strong>：用大量數據、大量算力，簡單粗暴地把模型推到極限。效果好，但效率低，成本高。</li>
+  <li><strong>聰明的蒸（Smart Distillation）</strong>：精心設計訓練策略——哪些數據更重要、哪些 reward signal 更有效——以更少的資源達到類似的效果。</li>
+</ul>
+
+<p>他並沒有說哪個路線一定更好，而是指出「這兩種策略的選擇，很大程度上取決於你的算力預算和時間表的約束」。Anthropic 因為算力有限，被迫走「聰明的蒸」路線；Google 有更多算力，可以走「硬蒸」路線。但後者如果缺乏對數據質量的極致關注，同樣會遇到天花板。</p>
+
+<div class="section-title">四、Pre-train 沒有到頭</div>
+
+<p>2025-2026 年業界有一波「Pre-train 遇到天花板」的討論——Scaling Law 放緩、數據撞牆、算力回報遞減。姚順宇在這個問題上立場鮮明：</p>
+
+<blockquote>
+<p>「Pre-train 沒有到頭。」</p>
+<span class="attr">— 姚順宇</span>
+</blockquote>
+
+<p>他的判斷有幾個支撐：</p>
+<ul>
+  <li><strong>Pre-train 也是一種 RL</strong>：他提出了一個統一的視角——把預訓練和後訓練視為同一個 RL 框架下的不同階段。預訓練是最基礎的 reward modeling（預測下一個 token），後訓練是更複雜的 reward modeling（人類偏好、任務完成度）。這個視角下，預訓練的 Scaling 不是在「參數量的增長」，而是在「訓練目標的豐富度」。</li>
+  <li><strong>「Train with finite context, Use as infinite context」</strong>：他預測 2026 年內可以實現——用有限的 context length 訓練，但在使用時可以用非常長甚至接近無限的 context。這個突破將解鎖一大批新應用。</li>
+  <li><strong>1T 參數只是入場券</strong>：他認為不會在 1T 水平上走太久，下一步是在更大規模上做 scaling——但方向可能不是單純的參數增長。</li>
+</ul>
+
+<div class="section-title">五、Coding 的爆發</div>
+
+<p>姚順宇對 Coding Agent 的判斷與廣密（Ep.136）高度一致：Coding 是 AI 從 Chatbot 到 Agent 的第二幕。</p>
+
+<blockquote>
+<p>「代碼是唯一又長又密的訓練數據。」</p>
+<span class="attr">— 引姚順宇原文觀點</span>
+</blockquote>
+
+<p>為什麼 Coding 如此重要？因為：</p>
+<ol>
+  <li><strong>代碼有明確的正確/錯誤標準</strong>——編譯通過還是不通過，測試過還是不過。沒有主觀判斷的模糊地帶。</li>
+  <li><strong>代碼的結構長度天然很長</strong>——一個功能可能需要上千行代碼的連貫輸出，這對模型的連貫推理能力是極好的訓練。</li>
+  <li><strong>Coding 自帶 reward signal</strong>——不需要人類標註，測試結果就是最自然的 reward。</li>
+</ol>
+
+<p>這三條加起來，讓 Coding 成為了 RL 在 LLM 上最好的 playground。姚順宇甚至認為「Coding 就像 Amazon 最早賣書一樣——藉助賣書把整個倉儲物流用戶都拉通了」。用 Coding 來訓模型，本質上是在訓練模型在 long-horizon、multi-step 任務上的核心能力——這個能力遷移到其他領域只是時間問題。</p>
+
+<div class="section-title">六、英雄主義已過去</div>
+
+<p>姚順宇反覆強調一個觀點——這句話值得被引用兩次：</p>
+
+<blockquote>
+<p>「AI 個人英雄主義時代已經過去了。所以也沒有什麼英雄，有時候甚至覺得舊時代英雄有點蠢。」</p>
+<span class="attr">— 姚順宇</span>
+</blockquote>
+
+<blockquote>
+<p>「現在大家都是沖浪的人，本質上是那個浪，而不是你那個沖浪的人。」</p>
+<span class="attr">— 姚順宇</span>
+</blockquote>
+
+<p>這種集體主義的敘事，在一個聊天軟體上都在神化「天才工程師」「獨行俠創始人」的行業裡，顯得有些格格不入。但我認為他的洞察是準確的：2026 年的 AI 前沿已經變成了一個極度複雜的系統工程——Claude 3.7→4.5→4.6、Gemini 3、GPT-5——每一個都是在數千人的組織中協作出來的。過去的「一個人寫出 transformer 論文」式的英雄主義已經不適用於今天的 scale。</p>
+
+<blockquote>
+<p>「沒有哪個老登是你的親屬，所以你覺得他傻，他就是傻，就可以直接說他傻。無所謂的啊。」</p>
+<span class="attr">— 姚順宇（笑）</span>
+</blockquote>
+
+<div class="section-title">七、組織搭建與未來判斷</div>
+
+<p>姚順宇在組織搭建上也給出了有趣的視角：</p>
+
+<ul>
+  <li><strong>毛細血管式的對齊</strong>：後訓練需要「diversity（多樣性）」，讓預訓練的人做後訓練是一個好的補充，但不是全部。</li>
+  <li><strong>卡的分配比例</strong>：呼應羅福莉的觀點——Chat 時代研究:預訓練:後訓練 ≈ 3:5:1，現在合理比例 3:1:1，頂尖團隊已接近 1:1。</li>
+  <li><strong>機器人方向被低估</strong>：姚順宇認為機器人可能是下一個重要的 AI 應用方向，因為它具備 Coding 的「明確 reward signal」屬性——機器人任務的成敗是直接可測量的。</li>
+  <li><strong>在 underdog 之地賭一把</strong>：他推崇在資源有限的環境中「賭一把」的創業文化。Anthropic 的發展歷程本身就是 from underdog to contender 的樣板。</li>
+</ul>
+
+<div class="section-title">八、從物理到 AI：跨界的價值</div>
+
+<p>值得單獨拎出來的一段——姚順宇從物理轉 AI 的經歷。</p>
+
+<p>他的博士方向（非厄米系統、量子物理、高能物理）看起來跟 AI 關係不大，但他認為物理訓練給他帶來了兩個核心能力：</p>
+
+<ol>
+  <li><strong>系統性排查問題的能力</strong>：物理研究中，一個實驗的失敗可能是幾十個因素中的任何一個造成的。這種「從第一性原理一層層排查」的訓練在 AI 訓練中極其有用——當 loss 曲線異常時，能快速定位是數據問題、模型架構問題還是訓練策略問題。</li>
+  <li><strong>對「有客觀評價標準」的追求</strong>：他說他轉行 AI 的動力之一，是尋求「具有客觀評價標準」且「能對世界產生實際影響」的事業。物理學中的對錯是客觀的（理論推導錯了就是錯了），他在 AI 中尋找了類似的工作模式。</li>
+</ol>
+
+<p>這個視角呼應了他「AI 本質是簡單的」的斷言——真正受過嚴謹學術訓練的人，來到 AI 後會發現這裡的核心挑戰不是智力上限，而是工程紀律和責任心。</p>
+
+<div class="section-title">九、反思與啓示</div>
+
+<div class="highlight-box">
+<h3>💡 關鍵啟發</h3>
+<ol>
+  <li><strong>AI 領域的「個人英雄主義」已過時</strong>——最前沿的工作是集體協作出來的。對「天才」「獨行俠」的敘述要保持警惕。</li>
+  <li><strong>Pre-train 沒有到頭</strong>——但不是參數量的無休止增長，而是訓練目標的豐富和框架的統一。</li>
+  <li><strong>「硬蒸」vs「聰明的蒸」</strong>——在算力受限的環境下，數據質量和訓練策略的設計比算力堆砌更重要。</li>
+  <li><strong>「靠譜、細心、負責任」比「聰明」更重要</strong>——這在一個崇拜「天才」的行業裡是最容易被忽略的品質。</li>
+  <li><strong>Coding 是通往 Agent 的必經之路</strong>——不是因為需要更多工程師，是因為 Coding 提供了最好的 RL 訓練環境。</li>
+</ol>
+</div>
+
+<div class="section-title">十、前後脈絡</div>
+
+<p>這期錄製於 2026 年 3 月。錄製結束後，世界發生了許多變化：Meta 對 Manus 的收購被撤銷、Cursor 可能被 SpaceX 收購、xAI 終止獨立運營併入 SpaceX 並更名 SpaceXAI。姚順宇在節目中清楚地說了：「AI 的世界實在變化太快、太出乎意料了。」</p>
+
+<p>與同期其他幾集形成有趣的對話：</p>
+<ul>
+  <li><strong>羅福莉（Ep.138）</strong>：從小米大模型團隊負責人的視角看 Pre-train→Post-train 的範式切換，與姚順宇從訓練一線的視角高度互補</li>
+  <li><strong>廣密（Ep.136）</strong>：從矽谷御三家的產業格局討論 Coding 的重要性，與姚順宇的技術判斷一致</li>
+  <li><strong>謝賽寧（Ep.133）</strong>：世界模型 vs LLM 的路線分歧——姚順宇代表的是在 LLM 陣營內部做技術深化的一方，謝賽寧代表的是跳出 LLM 框架的一方。兩者都有道理。</li>
+</ul>
+
+<footer>
+  <p>來源：<a href="https://www.xiaoyuzhoufm.com/episode/6a00aa051b7bd50295dfe41d" style="color:#888;">张小珺商业访谈录 · 小宇宙</a> · <a href="https://podcasts.apple.com/cn/podcast/140/id1634356920?i=1000767107736" style="color:#888;">Apple Podcasts</a></p>
+  <p>文字稿：<a href="https://mp.weixin.qq.com/s/Vy4IINteDQFrdr9cffKMhA" style="color:#888;">獨家對話姚順宇：請允許我小瘋一下</a></p>
+  <p>生成時間：2026-05-29 14:10 CST</p>
+  <p>JMOKSZ / ai-podcast-collection · Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>
