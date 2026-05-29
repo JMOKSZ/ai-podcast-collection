@@ -2,257 +2,222 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>AI 播客深度日报 — 2026-05-29</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度萃取报告 — 2026-05-29</title>
 <style>
-body {
-  background: #faf8f5;
-  color: #2c2c2c;
-  font-family: Georgia, 'Noto Serif SC', 'Source Han Serif SC', serif;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 24px;
-  font-size: 16px;
-}
-h1 { font-size: 26px; font-weight: 700; border-bottom: 2px solid #e0d8cc; padding-bottom: 12px; margin-bottom: 8px; letter-spacing: 0.5px; }
-.header-meta { color: #8a7e72; font-size: 14px; margin-bottom: 36px; }
-h2 { font-size: 22px; font-weight: 700; margin-top: 44px; margin-bottom: 16px; color: #3d342b; }
-h3 { font-size: 18px; font-weight: 600; margin-top: 28px; margin-bottom: 8px; }
-h4 { font-size: 16px; font-weight: 600; margin-top: 20px; margin-bottom: 6px; color: #5a4e42; }
-.episode { margin-bottom: 48px; }
-.episode-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
-.episode-title .icon { font-style: normal; }
-.episode-meta { color: #8a7e72; font-size: 14px; margin-bottom: 16px; }
-.section-label { font-weight: 700; color: #6b5c4e; margin-top: 16px; margin-bottom: 4px; }
-blockquote { border-left: 4px solid #d4c8ba; padding: 8px 16px; margin: 12px 0; background: #f4efe8; color: #4a3f36; font-style: italic; }
-ul { padding-left: 20px; }
-li { margin-bottom: 6px; }
-hr { border: none; border-top: 1px solid #e0d8cc; margin: 36px 0; }
-.footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #e0d8cc; font-size: 13px; color: #8a7e72; }
-.no-episodes { color: #8a7e72; font-style: italic; }
-strong, b { color: #2c2c2c; }
-code { background: #ede8e0; padding: 1px 5px; font-size: 14px; font-family: 'JetBrains Mono', 'Cascadia Code', monospace; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background-color: #faf8f5;
+    color: #2c2c2c;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3a3a3a;
+    border-bottom: 1px solid #e5ddd5;
+    padding-bottom: 12px;
+    margin-bottom: 6px;
+  }
+  .meta {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #4a4a4a;
+    margin-top: 36px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eee;
+  }
+  h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #555;
+    margin-top: 28px;
+    margin-bottom: 8px;
+  }
+  h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #666;
+    margin-top: 20px;
+    margin-bottom: 6px;
+  }
+  p {
+    margin: 6px 0 12px 0;
+    text-align: justify;
+  }
+  .episode-meta {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  ul, ol {
+    margin: 6px 0 12px 0;
+    padding-left: 24px;
+  }
+  li {
+    margin-bottom: 6px;
+  }
+  blockquote {
+    margin: 12px 0;
+    padding: 10px 18px;
+    background: #f3efe9;
+    border-left: 4px solid #c9b99a;
+    font-style: italic;
+    color: #555;
+  }
+  blockquote p {
+    margin: 0;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #e0d8d0;
+    margin: 32px 0;
+  }
+  .section-label {
+    display: inline-block;
+    background: #e8e0d6;
+    color: #555;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-right: 6px;
+    font-weight: 400;
+  }
+  .footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid #e5ddd5;
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+  }
+  .source-tag {
+    display: inline-block;
+    font-size: 11px;
+    background: #d4c9bc;
+    color: #fff;
+    padding: 1px 7px;
+    border-radius: 10px;
+    margin-right: 4px;
+  }
 </style>
 </head>
 <body>
 
-<h1>🧠 AI 播客深度日报</h1>
-<div class="header-meta">
-  <strong>2026-05-29</strong> · 生成时间 09:32 CST (01:32 UTC) · 
-  新剧集: 2 集<br>
-  涵盖: 10 播客 · 英文 2 新 · 中文 0 新
+<h1>🎙️ AI 播客深度萃取報告</h1>
+<div class="meta">
+  <strong>報告日期</strong>：2026-05-29（週五）&nbsp;|&nbsp;
+  <strong>生成時間</strong>：2026-05-29 10:07 CST&nbsp;（02:07 UTC）&nbsp;|&nbsp;
+  <strong>本期新劇集</strong>：1 集
 </div>
 
-<!-- ============================================================ -->
+<!-- ========================================================= -->
 <!-- 中文播客 -->
-<!-- ============================================================ -->
-<h2>📝 中文播客</h2>
+<!-- ========================================================= -->
+<h2>📖 中文播客</h2>
 
-<p class="no-episodes">本次扫描未发现新的中文播客剧集。</p>
+<!-- 硅谷101 -->
+<h3><span class="source-tag">硅谷101</span> 泓君 Jane</h3>
+<h4>聊聊Harness时代AI-First的组织架构：从信任人到信任AI 🎙️</h4>
+<div class="episode-meta">📅 2026-05-26（週二）&nbsp;|&nbsp;🎤 主播：泓君&nbsp;|&nbsp;👥 嘉賓：Creao 三位創始人 Kai (CEO), Peter (CTO), Clark (CPO)</div>
 
-<p style="margin-top: 12px; color: #5a4e42; font-size: 14px;">
-已扫描的中文播客包括：张小珺商业访谈录、十字路口 Crossing、硅谷 101、42章经、屠龙之术。上一轮（5月28日）已全面覆盖。<br>
-如需补充中文内容，可查阅昨日报告 <code>daily-report-2026-05-28.html</code>，内有姚顺宇、洪乐潼、苏宇、Cognition 融资等丰富内容。
-</p>
+<p><strong>主題</strong>：Harness Engineering（挽具工程）—— 一個正在硅谷成為共識但多數人仍不理解的概念。Creao是一個25人、工程師不到10人的小團隊，卻實現了99%代碼由AI書寫、每天3-8次生產部署、6週產品流程壓縮到一天的極致效率。這場對話深入拆解了從傳統AI輔助到AI-First組織轉型的路徑、障礙和未來。</p>
 
-<!-- ============================================================ -->
+<p><strong>嘉賓背景</strong>：CreaoAI（creao.ai）是一家總部位於硅谷的AI Agent平台公司。三位創始人Kai（CEO）、Peter（CTO）和Clark（CPO）共同打造了一個Harness Agent系統。Peter曾在X上發表〈Why Your "AI-First" Strategy Is Probably Wrong〉獲得百萬級閱讀。</p>
+
+<h4>核心論點</h4>
+
+<ol>
+  <li><strong>Harness ≠ Prompt Engineering</strong>：Harness不是提示詞工程，也不是上下文工程，而是「馴化一個通用系統」的完整工程範疇——包括沙箱架構、宿主服務交互、工具鏈設計、延遲優化、工時啟動時間等。它是一個動態的、能自我進化的系統，而非靜態的配套設施。</li>
+
+  <li><strong>AI-First ≠ 使用AI</strong>：Clark明確指出：「AI-First不是在現有流程上使用AI工具，而是圍繞AI能力重新構建工作流程和組織形態。」很多公司以為買了Copilot、讓員工用AI寫代碼就是AI-First，但這只會導致每個人工作節奏不一致，對齊成本反而升高。</li>
+
+  <li><strong>AI需要被當作系統而非智能</strong>：Clark提出一個關鍵概念轉變——「把AI當成一個系統來看待，而不是一個智能。當系統出錯時，不要想著糾正這個智能，而要想著彌補這個系統。」就像養一個孩子，讓它在規則內不斷成長。</li>
+
+  <li><strong>100倍效率的關鍵：讓AI主導而非輔助</strong>：Kai說如果把AI當成提升效率的工具，人最多提升10倍（因為人每天只能工作24小時）。要提升100倍、1000倍，AI必須成為所有生產力的主導，人的角色從工作者轉變為結果的覆盤者。</li>
+
+  <li><strong>初級工程師比資深工程師更容易適應</strong>：Peter觀察到初級工程師「技術債務或思想束縛更小」，更容易接受擴展自己的職責範圍，融入產品設計。資深工程師的既有經驗在某種程度上成了阻力。</li>
+
+  <li><strong>產品經理角色正在被解構</strong>：Creao沒有單獨的產品經理角色，因為PM是「矛盾最集中的點」——同時對接市場和開發，大量對齊成本都發生在這裡。在AI-First組織中，產品經理的權力被分散到開發團隊每個人身上。</li>
+</ol>
+
+<h4>關鍵數據 & 事實</h4>
+<ul>
+  <li>Creao目前25人，工程師團隊不超過10人</li>
+  <li><strong>99%</strong>的代碼由AI生成</li>
+  <li>每天平均 <strong>3-8次</strong> 生產部署</li>
+  <li>過去6週的產品流程 → 現在 <strong>1天</strong> 跑完</li>
+  <li>早上10點寫功能，中午A/B測試，下午3點根據數據砍掉部分功能，5點重寫更好版本——這是一天的節奏</li>
+  <li>50%以上的bug通過auto-fixing系統自動修復</li>
+  <li>發現一個bug只需1-2分鐘，指派給工程師幾秒鐘，工程師用Agent調查提出方案約1-2小時（對比之前需一週）</li>
+  <li>一年前需100人團隊+4-5個月才能完成的事，現在25人+2週完成第一階段部署</li>
+  <li>Peter承認「2026年我沒有寫過一行代碼」</li>
+  <li>AI的規劃能力從一年前的50分提升到現在的90分（滿分100）</li>
+</ul>
+
+<h4>重點引用</h4>
+
+<blockquote><p>「如果要做到AI-First或者AI Native，它不是在你現有流程上去使用AI工具，而是要圍繞AI能力重新構建工作流程和組織形態。」—— Clark，Creao CPO</p></blockquote>
+
+<blockquote><p>「如果還把AI當成一個提升效率的工具，那使用者的效率提升最多可能就是10倍，因為人最多每天可能就工作24小時。如果希望效率提升100倍、1000倍，你不能說你是那個工具的使用者，而是AI應該是所有生產力的主導。」—— Kai，Creao CEO</p></blockquote>
+
+<blockquote><p>「我們要把AI當成一個系統來看，而不是一個智能。當系統出錯時，不要想著糾正這個智能，而要想著彌補這個系統。」—— Clark</p></blockquote>
+
+<blockquote><p>「作為架構師的價值，就是找到AI Planning的缺陷。現在AI的規劃還是有缺陷的——可能一開始給我的規劃有安全的缺陷、延遲的缺陷——那我根據我之前的架構經驗，怎麼去評判它、質疑它，讓它進一步提升。」—— Peter</p></blockquote>
+
+<blockquote><p>「未來的核心競爭力不再是寫代碼，而是『找到AI Planning的缺陷』和『判斷什麼是有價值的』。」—— Peter（引自文中觀點）</p></blockquote>
+
+<h4>行業Insight</h4>
+
+<ul>
+  <li><strong>Harness將是下一波AI工程的關鍵</strong>：就像從Prompt Engineering進化到Context Engineering，Harness Engineering是再往上一層的抽象。它關心的不是怎麼跟AI說話，而是怎麼搭建一個能讓AI持續自我進化的系統。Anthropic、OpenAI等公司都在探索這一範式。</li>
+
+  <li><strong>大企業轉型更難，SMB率先受益</strong>：Kai指出越大的企業合規問題越多、人為因素越複雜，轉型越艱難。沒有遺留系統和太多合規限制的中小企業是AI-First轉型的第一批受益者。</li>
+
+  <li><strong>SaaS產品正在被AI-native改造</strong>：Peter觀察到SaaS產品從需要人類儀表板（dashboard）轉向需要MCP和API接口讓Agent能「看到」並管理任務。未來軟體產品賣給的對象可能不是人，而是Agent。</li>
+
+  <li><strong>銷售團隊 vs 技術團隊的節奏反轉</strong>：傳統軟件時代，銷售團隊概念超前產品4-5個月。現在Creao的技術團隊反過來超前市場團隊4-5個月，導致市場團隊在拼命追趕開發出來的功能。</li>
+
+  <li><strong>複合型人才崛起</strong>：Peter和Kai一致認為，能兼顧工程、產品、市場感知的「通用型人才」在AI環境下會茁壯成長。UX/UI設計師變得更重要，但前提是具備把想法落地到產品中的執行能力。</li>
+</ul>
+
+<h4>爭議點</h4>
+
+<ul>
+  <li><strong>拿掉產品經理</strong>：Creao直接取消了產品經理崗位，認為這個角色是「對齊成本的集中點」。這在傳統軟件組織中極具爭議——產品經理到底是價值的創造者還是效率的瓶頸？</li>
+
+  <li><strong>給Agent所有權限</strong>：Clark透露他們的Agent幾乎擁有所有數據的讀寫權限。這是為了效率而做的激進設計，但也需要更好的安全和權限技術來支撐。</li>
+
+  <li><strong>內容受眾可能是Agent而非人類</strong>：未來可能買東西的、訂報紙的都是Agent，市場團隊的物料（文章、圖片）需要被Agent「讀懂」和「喜歡」——這對創作的本質提出了根本性挑戰。</li>
+
+  <li><strong>初級 vs 資深工程師</strong>：資深工程師過去十年積累的專長在快速貶值，但他們的真正價值在於「找到AI規劃的缺陷」和「判斷什麼是重要的」——這些是知識積累沉澱出的判斷力，不是簡單的寫代碼能力。</li>
+</ul>
+
+<h4>前後脈絡</h4>
+<p>這一集與最近Latent Space的Async Agents（Cognition的Walden Yan）形成了有趣的對照：兩者都討論了從「人在迴圈中」到「AI主導」的轉變。但側重不同——Latent Space討論的是技術架構（Async Agents、完整VM、記憶循環），硅谷101這集深入到組織層面：當AI真的能主導開發時，公司的組織架構、角色定義、人的價值在哪裡。此外，Creao提到的「市場不知道這種工作方式的存在」呼應了最近Cursor提出的「第三時代」——Cursor不再主要是關於寫代碼，而是建造「軟體工廠」。</p>
+
+<!-- ========================================================= -->
 <!-- 英文播客 -->
-<!-- ============================================================ -->
-<h2>📝 英文播客</h2>
+<!-- ========================================================= -->
+<h2>📖 英文播客</h2>
 
-<!------------------------>
-<!-- 1. Latent Space -->
-<!------------------------>
-<div class="episode">
-  <div class="episode-title">🎙️ The Age of Async Agents — Cognition's Walden Yan & OpenInspect's Cole Murray</div>
-  <div class="episode-meta">
-    Latent Space (swyx + Alessio) · 2026-05-28 18:41 UTC · 约 68 分钟<br>
-    <a href="https://www.latent.space/p/cognition" target="_blank">Show Notes</a> · 
-    <a href="https://www.youtube.com/watch?v=0fgJPhYcbVk" target="_blank">YouTube</a>
-  </div>
+<p class="episode-meta" style="color:#999;">本期無新增加劇集。上期（2026-05-29 01:32 UTC）已掃描內容包括：Latent Space「Async Agents（Cognition Walden Yan & OpenInspect Cole Murray）」和 No Priors「Onyx Security CEO Maxim Bar Kogan」。Dwarkesh 最新為5/22 Reiner Pope專輯（芯片設計），Cognitive Revolution 最新為5/26 Ben Todd/80,000 Hours。本期掃描與上期間隔僅30分鐘，尚未有新劇集上線。</p>
 
-  <div class="section-label">🎯 主题</div>
-  <p>Cognition 联合创始人兼 CPO Walden Yan 与 OpenInspect 创始人 Cole Murray 深度探讨背景 Agent（Background/Cloud Agents）的崛起——从本地 IDE 辅助到云端自主编程 Agent 的历史性转折。重点分析 2025年12月模型拐点如何催生了「Spec-to-PR」生产流程，以及 Cognition 的 Devin 如何在数月内将内部提交占比从 16% 推至 80%。</p>
-
-  <div class="section-label">👤 嘉宾背景</div>
-  <ul>
-    <li><strong>Walden Yan</strong> — Cognition 联合创始人 / CPO。「上下文工程（Context Engineering）」概念提出者。2025年发表《Don't Build Multi-Agents》，2026年4月转变立场，公开承认找到有效多 Agent 方案。</li>
-    <li><strong>Cole Murray</strong> — OpenInspect 创始人。开源背景 Agent 系统构建者，为企业提供可定制云端编码 Agent 基础设施。</li>
-  </ul>
-
-  <div class="section-label">💡 核心论点</div>
-  <ul>
-    <li><strong>三波 Agent 进化论：</strong>
-      <ul>
-        <li>第一波 — <strong>Copilot/补全</strong>：开发者全程在场，IDE内逐补全接受/拒绝，由开发者本地工作流串行瓶颈。</li>
-        <li>第二波 — <strong>本地 Agent</strong>：Claude Code、Windsurf、Cursor Agent 面板——多终端并发运行，但仍锚定在开发者本地环境。</li>
-        <li>第三波 — <strong>异步/背景 Agent</strong>：Agent 不依附于本地 IDE；任务、仓库、沙箱、shell、浏览器、测试、Memory 均在云端，通过 GitHub bot / Slack 集成调用，实现真正的端到端软件开发。</li>
-      </ul>
-    </li>
-    <li><strong>2025年12月模型拐点：</strong>以 Opus 4.5 和 GPT 5.2 为代表的模型达到「从规范到完整 PR」的能力水平。Cole Murray 指出此拐点彻底改变了人机交互模式——人不再需要手把手引导模型，可以给出足够好的 spec 后放手让 Agent 独立完成。</li>
-    <li><strong>心态逆转：</strong>2025年6月 Walden 发文《Don't Build Multi-Agents》，强调上下文工程而非多 Agent 架构；到2026年4月，他已公开承认「很多看似性感的想法仍然不实用，但我们找到了一些真正有效的架构」。</li>
-    <li><strong>Cursor 范式转变：</strong>引用 Cursor 联合创始人 Michael Truell 的《The Third Era》——「Cursor 不再主要是关于写代码，而是帮助开发者构建制造软件的工厂。这个工厂由 Agent 舰队组成，开发者以队友身份交互：给出方向、配备工具、审查成果。」</li>
-  </ul>
-
-  <div class="section-label">📊 关键数据</div>
-  <ul>
-    <li>Cognition 刚完成 <strong>$1B Series D</strong>，估值 <strong>$260亿</strong>，由 Lux Capital、General Catalyst、8VC 领投</li>
-    <li>企业使用量年初至今增长 <strong>10x+</strong>；年化经常性收入（ARR）达到 <strong>$4.92亿</strong></li>
-    <li>Devin 在 Cognition 内部仓库的提交占比从 2026年1月的 <strong>16%</strong> 飙升至 3月的 <strong>80%</strong></li>
-    <li>Merged PR 数量在2-3个月内增长 <strong>7x</strong></li>
-    <li>同期工程团队人数仅增长约 <strong>10%</strong>——Agent 产出与人力增长极度脱钩</li>
-    <li>Agent 预算范围：<strong>$1,000–$5,000/工程师</strong></li>
-  </ul>
-
-  <div class="section-label">📌 重点引用</div>
-  <blockquote>「我们看到了一个转变，时间点大约是2025年12月。Opus 4.5 和 GPT 5.2 达到了一个能力阈值，我们不再需要手把手引导模型——只要 spec 足够好，就可以几乎无摩擦地完成从规范到完整 PR 的流程。」—— Cole Murray</blockquote>
-  <blockquote>「Cursor 不再主要是关于写代码。它是关于帮助开发者构建制造软件的工厂。这个工厂由 Agent 舰队组成，开发者以队友身份交互。」—— Michael Truell / Cursor</blockquote>
-  <blockquote>「我们一直认为它在加速，但今天回头看过去三到四个月，加速甚至更快了。Sonnet 3.7 在当时看起来是一个巨大飞跃，但实际上很多工作只是去掉了 Devin 中不再需要的部分。」—— Walden Yan</blockquote>
-
-  <div class="section-label">🔧 技术细节</div>
-  <ul>
-    <li><strong>Devin 架构：「大脑」与「机器」分离。</strong> 大脑（Agent 逻辑运行处）与执行环境（全 VM / 沙箱）解耦，实现安全隔离和权限精细化。</li>
-    <li><strong>全 VM 方案：</strong> 不仅 Docker——Agent 需要运行真实应用、测试 Android、macOS、Windows 环境，需要嵌套虚拟化。Docker 不够——因为一些真实应用和端到端测试不能在 Docker 容器内运行。</li>
-    <li><strong>Harness In vs Out of the Box：</strong> Agent 执行环境的选择——GPU、存储、计算资源是否打包在一起。</li>
-    <li><strong>视频验证：</strong> Agent 完成后生成测试视频片段，人工审阅确认「我知道它工作」，然后合并。</li>
-    <li><strong>自动记忆生成：</strong> Devin 自动构建项目记忆，但 Memmory pruning（记忆修剪）仍是未解决的难题。</li>
-    <li><strong>MCP 不足：</strong> MCP 协议不足以支撑企业级 Slack 集成等一等公民集成需求。需要更深层集成。</li>
-    <li><strong>多 Agent 编排：</strong> 子 Agent、Meta-Devin 管理，真正的多 Agent 系统架构正在形成。</li>
-  </ul>
-
-  <div class="section-label">🧠 行业 Insight</div>
-  <ul>
-    <li><strong>「每个人都建自己的 Devin」已成趋势：</strong> 从 Shopify、Stripe、Ramp 到 Paradigm、Razorpay，各家都在自建背景 Agent。甚至 Cognition 的「朋友们」也在自建。但 Cognition 并不感到威胁——他们超募。</li>
-    <li><strong>$20/seat 的 Agent 产品是「死亡区」：</strong> Cole Murray 明确表示不想卖 $20/seat——太容易被复制，利润在沙箱层（Daytona、E2b）和模型层，中间层很难货币化。</li>
-    <li><strong>纯 Vibe Coding 的失败模式：</strong> 无管控的自动合并 Vibe Coding 大约「两周后就会崩溃」。代码库会退化到最差工程师的水平——AI code smells、reward hacking 等问题。</li>
-    <li><strong>Windsurf 2.0 的定位：</strong> 本地前台 Agent 与云端后台 Agent 之间的分工和交接——这可能是 IDE 的未来形态。</li>
-    <li><strong>SRE 自动分诊已成现实：</strong> Agent 可作为第一响应人处理工单和事故。</li>
-    <li><strong>非工程师也在用 Agent：</strong> PM、市场人员已可通过 Slack 直接创建 PR。</li>
-  </ul>
-
-  <div class="section-label">🔄 前後脈絡</div>
-  <p>本期是 Latent Space 对 Agent 系列深度的延续。此前已有 Claude Code、Steve Yegge 的 Vibe Coding Manifesto、Windsurf 等多期。Walden 本人的观点演变（2025年6月「别建多 Agent」→ 2026年4月「找到有效方案」）本身就是最佳叙事——代表了整个行业对 Agent 认知的快速成熟。</p>
-</div>
-
-<!------------------------>
-<!-- 2. No Priors -->
-<!------------------------>
-<hr>
-
-<div class="episode">
-  <div class="episode-title">🎙️ Building an AI Guardian for Enterprise with Onyx Security CEO Maxim Bar Kogan</div>
-  <div class="episode-meta">
-    No Priors (Sarah Guo + Elad Gil) · 2026-05-28 10:00 UTC · 约 42 分钟<br>
-    <a href="https://www.youtube.com/watch?v=QDsbFLEt9ro" target="_blank">YouTube</a>
-  </div>
-
-  <div class="section-label">🎯 主题</div>
-  <p>随着 AI Agent 的能力接近可实际运行电网和水资源管理，如何防止它们「失控」成为紧迫问题。Onyx Security 创始人兼 CEO Maxim Bar Kogan 与 Sarah Guo 深入对话，探讨企业级 AI Agent 的监控、安全和治理架构。</p>
-
-  <div class="section-label">👤 嘉宾背景</div>
-  <ul>
-    <li><strong>Maxim Bar Kogan</strong> — Onyx Securities (Onyx) 创始人兼 CEO。前以色列国防军技术背景，公司聚焦于 AI Agent 安全控制面板（AI Control Plane）。自称「全情投入 AGI」的人。</li>
-    <li>公司扎根以色列，利用该国强大的 AI 和安全人才生态。</li>
-  </ul>
-
-  <div class="section-label">💡 核心论点</div>
-  <ul>
-    <li><strong>Agent 安全需要「AI 控制面」而非传统防火墙：</strong> Onyx 的产品本质上是一个 AI 控制面板，监管 Agent 的权限和灵活上下文。它监控 Agent 在「做什么、为何做、环境是否合适」，而不是传统的网络/端点安全。</li>
-    <li><strong>Proxy 模式不适用于 AI Agent：</strong> 传统安全 proxy 拦截流量进行审计，但 Agent 的行为复杂多变，需要实时理解意图和上下文——这超出了 proxy 的能力。</li>
-    <li><strong>Onyx 自己训练模型做安全：</strong> 现成的 LLM 没有足够的安全上下文（context）来理解 Agent 的意图。Onyx 训练自己的安全模型，专门用于监控 Agent 行为。</li>
-    <li><strong>逐步模型部署策略：</strong> 他们采用分阶段部署框架「Glasswing」（玻璃翼）和「Daybreak」（破晓），逐步将更强大的模型推向生产。在不同阶段评估安全风险。</li>
-    <li><strong>需要供应商无关的监管层：</strong> 企业不应该只依赖模型提供商（OpenAI/Anthropic/Google）自身的安全声明。需要一个独立的、跨模型的监管层。</li>
-    <li><strong>可解释性（Mechanistic Interpretability）是关键：</strong> 只有理解模型内部机制，才能真正保证安全。</li>
-  </ul>
-
-  <div class="section-label">📌 重点引用</div>
-  <blockquote>「我们比以往任何时候都更接近这样一个世界：AI Agent 足够聪明，可以运行我们的电网和管理水资源。那么问题来了——我们如何防止它们失控？」—— Sarah Guo（开篇引言）</blockquote>
-
-  <div class="section-label">🔧 技术细节</div>
-  <ul>
-    <li><strong>Onyx 产品 = AI 控制面板：</strong> 可监管 Agent 的权限、上下文、执行环境。需要平衡延迟、成本和可靠性。</li>
-    <li><strong>自我训练的安全模型：</strong> 因为通用模型缺乏 Agent 安全上下文的深度，Onyx 专门训练安全分类/监控模型。</li>
-    <li><strong>Glasswing 和 Daybreak：</strong> 两个命名框架，分别用于不同安全层级的 Agent 逐步部署。</li>
-    <li><strong>机制可解释性：</strong> 他们投资于理解模型内部运作，以从根本上保障安全。</li>
-  </ul>
-
-  <div class="section-label">🧠 行业 Insight</div>
-  <ul>
-    <li><strong>企业还没准备好：</strong> 大型企业对 Agent 安全普遍认识不足。"剩下来的持观望态度的企业"是最大的市场增长空间。</li>
-    <li><strong>以色列的 AI 安全生态正在崛起：</strong> Maxim 强调以色列的安全和创新人才密度是公司核心竞争力。</li>
-    <li><strong>对 AGI 的「all-in」态度：</strong> Maxim 明确表示他是「AGI-pilled」——即坚信 AGI 的到来并将公司定位为 AGI 时代的安全基础设施。</li>
-    <li><strong>实验室的责任边界：</strong> 讨论延伸到模型实验室（OpenAI、Anthropic 等）应承担多少安全责任。Maxim 认为实验室确实需要改进模型信任和治理，但企业不能仅依赖实验室层安全。</li>
-  </ul>
-
-  <div class="section-label">🔄 前後脈絡</div>
-  <p>本期是 No Priors 安全系列的延续。此前有 Baseten CEO Tuhin（推理云）、Cerebras CEO Andrew Feldman（芯片IPO）、Pax Silica 的 Jacob Helberg（地缘供应链）——话题从底层基础设施、芯片、地缘政治，现在上升到 AI Agent 安全治理，显示 AI 行业纵深正在打开新的安全赛道。</p>
-</div>
-
-<!------------------------>
-<!-- Dwarkesh (retro) -->
-<!------------------------>
-<hr>
-
-<div class="episode">
-  <div class="episode-title">🎙️ Reiner Pope – Chip design from the bottom up</div>
-  <div class="episode-meta">
-    Dwarkesh Podcast (Dwarkesh Patel) · 2026-05-22 15:38 UTC · ~90 分钟<br>
-    <a href="https://www.dwarkesh.com/p/reiner-pope-2" target="_blank">Show Notes</a> · <a href="https://youtu.be/oIk3R-sMX5o" target="_blank">YouTube</a>
-    <br><span style="color: #b0a498;">（上轮已收录，本次更新补充完整精华萃取）</span>
-  </div>
-
-  <div class="section-label">🎯 主题</div>
-  <p>Reiner Pope（MatX CEO，前Google TPU架构师）在黑板上从零开始讲解 AI 芯片工作原理：从基础逻辑门出发，逐步构建到 GPU、TPU、FPGA、人脑的各自设计哲学。纯粹的技术性内容，适合硬件从业者和深度技术爱好者。</p>
-
-  <div class="section-label">💡 核心论点</div>
-  <ul>
-    <li><strong>乘累加（Multiply-Accumulate）是 AI 芯片的原始原子操作：</strong> 矩阵乘法的一切都归结为 MAC。每个矩阵乘法步骤 = output[i,k] += input[i,j] × other[j,k]。</li>
-    <li><strong>精度非对称性：</strong> AI 芯片中乘法精度通常低于累加精度——因为乘法只有一次误差，而累加是多次求和，误差累积快。举例：4-bit 乘法 × 8-bit 加法。</li>
-    <li><strong>芯片面积随位宽二次方增长：</strong> 这就是为什么低精度运算在神经网络中如此有效。FP4 面积不是 FP8 的一半，而是 1/4 或更少。</li>
-    <li><strong>Nvidia 已经开始承认精度缩放不是线性：</strong> 历史上每次精度减半（FP8→FP4），FLOP 翻倍。但 B300 及之后，FP4 是 FP8 的 3x 而非 2x。Reiner 指出考虑到二次缩放，理论上应该是 4x——但浮点格式的指数位带来额外开销。</li>
-    <li><strong>GPU 本质是很多很小的 TPU：</strong> GPU 核心与 CPU 核心相比小而多，就是一组微型的专用计算单元。</li>
-    <li><strong>Mux（多路选择器）的成本被软件工程师严重低估：</strong> 一个看似简单的「选择第三个寄存器」操作，在硬件层面需要 n×p 个 AND 门和 (n-1)×p 个 OR 门。数据搬运的成本远超运算本身。</li>
-  </ul>
-
-  <div class="section-label">📊 关键数据/事实</div>
-  <ul>
-    <li>Dadda 乘法器：p-bit × q-bit 整数乘法需要 p×q 个全加器。输入：p×q + p+q 位；输出：p+q 位。</li>
-    <li>4-bit × 4-bit 乘累加 = 16 个 AND 门（生成部分积）+ 16 个全加器（压缩求和）。</li>
-    <li>Nvidia B300 FP4 性能 = FP8 的 3x（理论上应接近 4x，因浮点指数位开销）。</li>
-    <li>CPU Core 面积远大于 GPU Core——因为前者需要复杂控制逻辑（分支预测、乱序执行），后者几乎全是 ALU。</li>
-  </ul>
-
-  <div class="section-label">📌 重点引用</div>
-  <blockquote>「芯片设计中的一个主要选择是：我放多少 FP4 逻辑，放多少 FP8 逻辑？有时从客户需求考虑，有时为了均衡 FP4 和 FP8 的功耗预算。」—— Reiner Pope</blockquote>
-  <blockquote>「每次精度减半，性能翻倍——这个比率其实不太对。因为面积是二次方缩放的，你应该得到比预期更大的加速。Nvidia 在 B300 及以后的产品规格中也开始承认这一点。」—— Reiner Pope</blockquote>
-  <blockquote>「GPU 就是一群很小的 TPU。」—— Reiner Pope</blockquote>
-
-  <div class="section-label">🔧 技术细节</div>
-  <ul>
-    <li><strong>全加器 = 3→2 压缩器：</strong> 三个单 bit 输入 = 两个 bit 输出（和 + 进位）。本质是「数数然后转二进制」。</li>
-    <li><strong>Systolic Array（脉动阵列）：</strong> 数据像心跳一样在芯片上流动，每个计算单元只做非常简单的事，最大化数据复用，最小化内存访问。</li>
-    <li><strong>FPGA vs ASIC：</strong> FPGA 可重配置但慢且功耗高；ASIC 固定但快且省电。AI 训练推广大规模使用 ASIC（GPU/TPU）。</li>
-    <li><strong>Cache vs Scratchpad：</strong> Cache 是硬件自动管理，Scratchpad 需软件显式管理。后者在确定性负载（如矩阵乘法）中更优。</li>
-    <li><strong>时钟周期和流水线寄存器：</strong> 逻辑门之间通过流水线寄存器同步，决定芯片能跑多快的主频。</li>
-  </ul>
-
-  <div class="section-label">🔍 行业 Insight</div>
-  <ul>
-    <li><strong>低精度推理的市场核心：</strong> 几乎所有 AI 推理都用低精度（FP4/FP8/INT8），这是 Nvidia 和创业公司竞争的焦点。MatX 在此战场设计差异化芯片。</li>
-    <li><strong>Crusoe 的差异化：</strong> 广告中提到 Crusoe 是少数达到 SemiAnalysis ClusterMAX 黄金级的 GPU 云，TCO 比白银级低 5-15%。早期故障检测和快速节点替换是隐性但关键的优势。</li>
-    <li><strong>Jane Street 的 AI 态度：</strong> Dwarkesh 与 Jane Street 的对话显示这家低调的量化巨头在积极训练自己的模型，比以往更重视招募技术人才。</li>
-  </ul>
-</div>
-
-<!-- ============================================================ -->
+<!-- ========================================================= -->
 <!-- Footer -->
-<!-- ============================================================ -->
+<!-- ========================================================= -->
 <div class="footer">
-  <p>Apache 2.0 · Generated by Vee Mok · 2026-05-29 01:32 UTC</p>
-  <p>
-    播客覆盖：张小珺商业访谈录 · 十字路口 Crossing · 硅谷101 · 42章经 · 屠龙之术 ·<br>
-    Dwarkesh Podcast · Latent Space · Cognitive Revolution · No Priors · ML Street Talk
-  </p>
+  Apache 2.0 &nbsp;|&nbsp; Vee Mok AI Podcast Daily Scan &nbsp;|&nbsp; 所有萃取內容均來自公開播客/Show Notes/文字稿
 </div>
 
 </body>
