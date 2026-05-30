@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Cerebras $630億 IPO：餐盤上嘅晶片帝國</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  a { color: #8b6f4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">← 返回播客日報</a>
+  <div class="ep-num">No Priors · Cerebras 創辦人 Andrew Feldman</div>
+  <h1>餐盤上嘅晶片帝國：Cerebras $630億 IPO 背後十年孤獨</h1>
+  <div class="meta">
+    2026-05-21 (發布) · ⏱ 30分鐘 · 🎤 Sarah Guo &amp; Elad Gil · 👤 Andrew Feldman (Cerebras CEO)
+  </div>
+</header>
+
+<div class="highlight-box">
+<h3>💡 一句話</h3>
+<p>Cerebras 做咗個餐盤咁大嘅晶片——46,000 mm²，係普通 GPU 嘅 50 幾倍——然後等咗十年，先等到市場發現「快」係有意義嘅。</p>
+</div>
+
+<p>2026年5月，Cerebras Systems 以 <span class="data-point">$630億</span> 市值上市。呢間公司由 Andrew Feldman 喺 2015 年創立，做嘅係全行都話「不可能」嘅嘢：整塊晶圓（wafer）做一粒晶片，唔切開。46,000 平方毫米嘅矽片，大到要特製生產線同散熱方案，畀所有人嘲笑咗 7 年。</p>
+
+<p>呢次 No Priors 嘅訪問，係 Feldman 喺 IPO 之後嘅首個深度專訪。30 分鐘入面，佢冇大談技術細節，反而講咗個更珍貴嘅故仔——點樣喺全世界都話你錯嘅時候，繼續相信自己。</p>
+
+<!-- ========== -->
+<h2 class="section-title">一、市場從不獎勵先驅，只獎勵Timing</h2>
+
+<p>Cerebras 嘅故事最反直覺嘅地方係：<strong>佢哋好早就解決咗最難嘅技術問題，然後發現根本冇人 care。</strong></p>
+
+<p>2019年夏天，Cerebras 團隊喺 Los Altos 一個簡陋嘅辦公室入面，盯著電腦屏幕——晶片第一次成功運作。Feldman 形容：「我哋半個鐘講唔出話。冇人做到過呢樣嘢，而我哋做到了。」</p>
+
+<p>但技術成功並唔等於商業成功。第一代產品賣咗大概 <span class="data-point">12 件</span>，第二代大約 <span class="data-point">300 件</span>。Feldman 自己話：「我哋領先咗市場兩三年，但 absolutely nobody cared。」</p>
+
+<blockquote class="strong">
+「我哋解決咗電腦行業史上最難嘅問題，但冇人關心。第一代，賣咗十幾件。第二代，賣咗三百件。第三代，而家賣緊幾萬件。」
+<span class="attr">—— Andrew Feldman</span>
+</blockquote>
+
+<p>呢個 timing 問題係核心：Cerebras 嘅推理速度比 GPU 快 <span class="data-point">15-20 倍</span>，但直到 2025 年之前，AI 模型嘅能力仲未夠好，用戶唔會 daily use。當 AI 只係 demo 品嘅時候，快啲慢啲冇分別。Feldman 用咗一個絕妙嘅比喻——</p>
+
+<blockquote>
+「慢搜尋嘅市場有幾大？零。慢 dial-up 互聯網嘅市場有幾大？零。慢推理嘅市場就係咁大。但你要等到 AI 聰明到有用嘅程度。」
+<span class="attr">—— Andrew Feldman</span>
+</blockquote>
+
+<p>直到 2025 年，Claude、ChatGPT、Cursor 呢啲產品開始被 daily use，推理速度先變成關鍵 constraint——而你唔會用一個慢嘅 product。</p>
+
+<!-- ========== -->
+<h2 class="section-title">二、極度 contrarian 嘅架構選擇</h2>
+
+<p>Feldman 對 chip architecture 嘅理解非常清晰：<strong>如果你想進步 15-20 倍，你唔可以喺現有架構上小修小改。</strong></p>
+
+<p>GPU 嘅核心設計用咗十幾年，係為 graphics pipeline 優化嘅。Cerebras 從頭做過——唔係另一粒小 chip，而係成塊 wafer 唔切，46,000 mm² 嘅單晶片。佢哋嘅計算方式：4-bit 乘法 + 8-bit 加法嘅 multiply-accumulate（MAC），呢個係 AI 推理嘅核心運算。</p>
+
+<p>行家批評佢哋嘅架構「weird」、「wrong」。Feldman 嘅回應好直接——</p>
+
+<blockquote>
+「如果你要 radical improvement，你嘅設計必須不同。從一開始我哋就揀咗 wafer-scale——成個 dinner plate 咁大嘅晶片。佢哋話我哋癲咗，話永遠唔會 work，列晒所有理由證明點解 impossible。」
+<span class="attr">—— Andrew Feldman</span>
+</blockquote>
+
+<div class="highlight-box">
+<h3>🔬 Wafer-Scale 嘅真正挑戰</h3>
+<p>一般晶片 manufacturing 嘅良率（yield）係關鍵——晶圓上嘅缺陷令你必須切開，逐粒測試，丟棄壞嘅。Cerebras 做一整塊 wafer 唔切，意味住任何一粒 defects 都會影響成品。2017 年中到 2019 年中，成兩年時間，團隊每個月燒緊 <span class="data-point">$800 萬</span>，每六個禮拜一次 board meeting，Feldman 都要報告同一句：「我仲未整好。」</p>
+<p>Gene Amdahl——計算機科學 Mount Rushmore 級別嘅人物——就係喺同樣嘅 wafer-scale 路徑上失敗過。</p>
+</div>
+
+<!-- ========== -->
+<h2 class="section-title">三、G42：穿越鴻溝嘅橋樑</h2>
+
+<p>所有新 hardware architecture 都面對同一個問題：你開始喺 supercomputer 世界賣，因為佢哋鍾意 speed、唔介意 immature software。Cerebras 橫掃咗 Argonne、Lawrence Livermore、Sandia 等國家實驗室，亦贏咗石油天然氣同製藥行業嘅客戶。</p>
+
+<p>但 supercomputer 市場唔夠大。歷史一再證明，new architecture 喺呢度會撞到 <strong>「the chasm」</strong>——從 niche 到 mainstream 嘅死亡之谷。</p>
+
+<p>Cerebras 嘅救星係阿聯酋嘅主權基金 G42。CEO Peng Xiao 同 chairman Sheikh Tahnoon bin Zayed 落咗一個 <span class="data-point">$10 億</span> 嘅訂單。呢張單唔只係錢——佢令 Cerebras 可以重構供應鏈、大規模部署集群、真正 battle-test 自己嘅產品。</p>
+
+<blockquote>
+「One of the challenges in hardware is your QA lab can't be as big as some of the customers you want to deploy to. 你唔可以放一億美金嘅設備喺 QA lab 入面。」
+<span class="attr">—— Andrew Feldman</span>
+</blockquote>
+
+<p>G42 幫佢哋行過咗呢條橋。然後 OpenAI 嘅 $200 億+ deal 同 AWS 嘅合約接踵而至。Feldman 形容：「When OpenAI came along, when AWS came along, we had the capacity. We were ready.」</p>
+
+<p>呢個 path dependence 係 software 世界好難理解嘅——hardware scaling 冇得 overnight。你想產能 double，要搵 manufacturing partner、要搵廠房、要搵 power、要建測試線，每一步都係 real time and effort。</p>
+
+<!-- ========== -->
+<h2 class="section-title">四、從 $0 到 $20B 訂單嘅公司文化</h2>
+
+<p>Cerebras 而家有 <span class="data-point">850 人</span>。Feldman 最擔心嘅唔係競爭——而係公司做大咗之後，<strong>失去「fearless engineering」嘅文化</strong>。</p>
+
+<blockquote class="strong">
+「好多公司去到 1,000-2,000 人規模之後，就唔再敢冒險。佢哋從 fearless engineering culture 變成『呢個 quarter 可以出咩貨？』。我寧願為追求非凡而失敗，都唔願意喺平庸中成功。」
+<span class="attr">—— Andrew Feldman</span>
+</blockquote>
+
+<p>Feldman 形容自己係「professional David」。呢個係佢第五間 startup，每一次都係挑戰 Goliath。Nvidia 而家市值 3 萬億+，但 Feldman 嘅態度係——</p>
+
+<blockquote>
+「If it wasn't for our brains, their muscle would take it in a heartbeat. 如果你唔鍾意做 David，呢條路太長喇。」
+<span class="attr">—— Andrew Feldman</span>
+</blockquote>
+
+<p>佢仲透露咗一個有趣嘅數字：Cerebras 內部喺 AI coding 上嘅投入爆炸性增長——<span class="data-point">8 個月前</span> 每個工程師每月 token 費 <span class="data-point">$1,000</span> 都唔使，而家去到 <span class="data-point">$25,000-30,000</span>。佢觀察到有一班工程師已經從 10x 變成 100x——「佢哋 run 緊 8 到 10 個 agents，7x24，徹底改變咗寫 code 嘅方式。」</p>
+
+<!-- ========== -->
+<h2 class="section-title">五、CEO 嘅孤獨與狂熱</h2>
+
+<p>呢段係全訪問最 candid 嘅部分。Elad Gil 問：「你點樣 keep 住團隊 motivation，當外面完全冇 positive feedback 咁多年？」</p>
+
+<blockquote>
+「做 CEO 係 extremely lonely。你哋知道嘅，leading 係 lonely。尤其係當你淨係想解決其他人話解決唔到嘅問題——你肩膊上嗰粒 chip（chip on your shoulder）就係你嘅燃料。」
+<span class="attr">—— Andrew Feldman</span>
+</blockquote>
+
+<p>Feldman 冇講大道理。佢話就係：<strong>你要享受建造嘅過程本身</strong>。「呢啲嘢太難喇，如果淨係為錢，有太多容易嘅方法。你要真係鍾意 building。」</p>
+
+<p>訪問尾段，佢拋咗個思考框架出嚟——</p>
+
+<blockquote>
+「Netflix 以前係寄 DVD 嘅。當互聯網快咗，佢變成電影公司。呢個先係 speed 帶嚟嘅真正價值——唔係取代舊嘢，而係 opens up entire new business。而家我哋取代 coding、design、SaaS tools。但當開始 fundamentally reorganize around 呢個 speed 嘅時候，你會見到全新嘅 business models。」
+<span class="attr">—— Andrew Feldman</span>
+</blockquote>
+
+<!-- ========== -->
+<h2 class="section-title">💡 我嘅觀察</h2>
+
+<p>Cerebras 呢個 case study 對任何做 deep tech 嘅人嚟講都係一堂課。我見到三個層面嘅 insight：</p>
+
+<ul>
+  <li><strong>「好嘅技術」唔等於「啱嘅時機」</strong>——Cerebras 2019 年就做到 20x 快過 GPU 嘅推理，但直到 2025 年 AI daily use 爆發，速度先變成必須。呢段空窗期差啲 kill 咗間公司。做 infrastructure 嘅人要有心理準備：你嘅 timing 可能唔係你控制嘅。</li>
+
+  <li><strong>Radical ≠ Reckless</strong>——Feldman 嘅 contrarian 係有方法論嘅：新 workload 需要新 architecture，新 architecture 唔可能係 derivative。呢個判斷喺 Nvidia 主導嘅世界入面極難堅持，但佢哋堅持咗。</li>
+
+  <li><strong>G42 嘅角色被低估</strong>——$10 億唔係普通客戶，佢哋係 bridge。Cerebras 可以喺真係有需求之前就有 battle-tested 嘅 deployment 同 supply chain，呢個 strategic 價值遠超數字。好多 hardware startup 死喺創投覺得太早、客戶覺得太新嘅兩頭唔到岸。</li>
+</ul>
+
+<h2 class="section-title">🔗 延伸</h2>
+<ul>
+  <li>Dwarkesh 之前嘅 <a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/05-eric-jang-alphago-self-play-rl-llm.html">Eric Jang</a> 同 <a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/07-reiner-pope-chip-design-bottom-up-matx.html">Reiner Pope (MatX)</a> 深度復述——同為挑戰 Nvidia 嘅 alternative architectures，但 MatX 行嘅係完全不同嘅路線。</li>
+  <li>No Priors 之前嘅 <a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/11-hongyuetong-axiom-ai-for-math.html">洪樂潼</a> 訪問——另一種「被所有人話唔可能」嘅創業故事。</li>
+</ul>
+
+<footer>
+  <p>🎙️ No Priors · The Story Behind Cerebras' $63B IPO with Andrew Feldman</p>
+  <p>深度復述 by Vee Mok · 2026-05-30 | 來源：No Priors / podscripts.co transcript</p>
+  <p>Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>
