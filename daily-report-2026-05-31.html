@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度日报 · 2026-05-31</title>
+<style>
+  body { background: #faf8f5; color: #2c2c2c; font-family: Georgia, 'Noto Serif SC', 'Source Han Serif SC', serif; line-height: 1.75; max-width: 820px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+  h1 { font-size: 1.8rem; font-weight: 400; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; color: #333; margin: 0; }
+  .subhead { color: #888; font-size: 0.85rem; margin-top: 0.3rem; margin-bottom: 2rem; }
+  h2 { font-size: 1.3rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 0.5rem; color: #444; }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.4rem; color: #555; }
+  h4 { font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.25rem; color: #666; }
+  .episode { margin: 1.5rem 0; padding: 1.2rem 1.5rem; background: #fff; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .episode-header { margin-bottom: 0.5rem; }
+  .episode-header .title { font-size: 1.1rem; font-weight: 600; color: #333; }
+  .episode-header .time { font-size: 0.8rem; color: #999; display: block; margin-top: 0.2rem; }
+  .label { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.5rem; border-radius: 3px; margin-right: 0.3rem; }
+  .label-en { background: #e8f4fd; color: #2b6cb0; }
+  .label-zh { background: #fef3e2; color: #b7791f; }
+  blockquote { border-left: 3px solid #ccc; margin: 0.8rem 0; padding: 0.4rem 1rem; color: #555; font-style: italic; background: #f9f7f4; }
+  ul { padding-left: 1.2rem; }
+  li { margin-bottom: 0.4rem; }
+  .section-label { display: inline-block; font-size: 0.8rem; font-weight: 600; color: #666; margin-top: 0.8rem; border-bottom: 1px dashed #ddd; padding-bottom: 0.1rem; }
+  .key-insight { background: #f5f0eb; padding: 0.5rem 1rem; border-radius: 4px; margin: 0.8rem 0; font-size: 0.95rem; }
+  hr { border: none; border-top: 1px solid #e5e0db; margin: 2rem 0; }
+  .footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 0.8rem; color: #aaa; text-align: center; }
+  .summary-box { background: #fff; border: 1px solid #e5e0db; border-radius: 6px; padding: 1.2rem 1.5rem; margin-bottom: 2rem; }
+  .summary-box h3 { margin-top: 0; }
+</style>
+</head>
+<body>
+
+<h1>🧠 AI 播客深度日报</h1>
+<div class="subhead">2026-05-31 | 生成时间 2026-05-31 10:03 CST | <span class="label label-en">English</span> <span class="label label-zh">中文</span></div>
+
+<div class="summary-box">
+<h3>📌 本日重點</h3>
+<ol>
+  <li><strong>Cognitive Revolution：Daniel Miessler 檢查 Nathan 的「第二腦」</strong> — 5年數位歷史、1GB Claude Code資料庫、2個自主AI員工。代理層級設計、安全邊界、Bitter Lesson工程、主觀體驗監控。</li>
+  <li><strong>Claude Opus 4.8 落地反響</strong> — 混合評價，增量但非統治級。CursorBench顯示更高效但邊際內略差於4.7；長期agent成本問題仍是痛點。</li>
+  <li><strong>多輪RL訓練的「重新分詞」Bug</strong> — Hugging Face揭示的嚴重問題：模型從未真正採樣過訓練序列。Token-In, Token-Out規則成為新標準。</li>
+  <li><strong>StepFun 3.7 Flash</strong> — 196B MoE、11B活躍參數、SWE-Bench Pro 56.26%、day-0 llama.cpp支持、~2200 tok/s on 2x Pro 6k。</li>
+  <li><strong>Google 推出 Gemini Spark</strong> — 24/7 個人Agent，U.S. AI Ultra用戶；Managed Agents一鍵沙箱Linux環境。</li>
+  <li><strong>OpenAI Codex 擴展到 Windows</strong> — 包括ChatGPT手機端遙控，走向持久化遠程開發運營。</li>
+</ol>
+</div>
+
+<!-- ============ 英文播客 ============ -->
+<h2>🎙️ 英文播客</h2>
+
+<!-- Cognitive Revolution -->
+<div class="episode">
+<div class="episode-header">
+  <span class="label label-en">Cognitive Revolution</span>
+  <div class="title">Inside Nathan's Second Brain: Daniel Miessler, Security Expert & Creator of PAI, Audits My AI Setup</div>
+  <div class="time">🎙️ 2026-05-30 ~13:00 UTC (2h 33min) — Nathan Labenz 主持</div>
+</div>
+
+<div class="key-insight"><strong>一句話</strong>：Daniel Miessler 深度審計 Nathan Labenz 的個人AI基礎設施：5年數位歷史編碼入1GB Claude Code資料庫，2個自主AI「員工」處理日程/通訊/項目。</div>
+
+<h4>🎯 嘉賓背景</h4>
+<p><strong>Daniel Miessler</strong> — 安全專家、PAI（Personal AI Infrastructure）框架創建者。長期關注AI安全、agent系統設計、個人AI架構。Kelly Short（前Oracle工程師）聯合創始PAI概念。以其「Bitter Lesson Engineering」概念聞名（借鑑Sutton的Bitter Lesson，應用於agent系統設計）。</p>
+
+<h4>🏗️ Nathan 的個人AI架構</h4>
+<ul>
+  <li><strong>Claude Code 實例</strong> — 包含1GB資料庫，編碼了Nathan 5年的完整數位歷史（郵件、日誌、筆記、項目文件）。</li>
+  <li><strong>2個自主AI「員工」</strong> — 獨立運作，處理：日程安排、通訊往來、項目管理。不需人工干預。</li>
+  <li><strong>代理層級設計（Agent Hierarchy）</strong> — 多層級代理結構，不同agent承擔不同職責與權限範圍。下層agent匯報給上層，最終由人類持有最終決策權。</li>
+</ul>
+
+<h4>🔐 安全架構與邊界</h4>
+<ul>
+  <li>Miessler 著重審計了 <strong>信任邊界（Trust Boundary）</strong>：AI agent能訪問什麼、不能訪問什麼。</li>
+  <li>強調 <strong>最小權限原則</strong> 在agent系統中的應用 — 每個agent只獲得完成任務所需的最少數據和工具訪問權。</li>
+  <li>討論了 <strong>agent間通信的安全</strong>：agent相互通訊時的信息洩露風險。</li>
+  <li>「如果一個agent能訪問我的郵件，它能給我發送郵件嗎？它能刪除郵件嗎？它能讀取附件嗎？這些都是不同的權限級別」— Miessler</li>
+</ul>
+
+<h4>💡 核心論點</h4>
+<ul>
+  <li><strong>「Bitter Lesson Engineering」</strong>（苦澀教訓工程學）：借鑑Rich Sutton的名篇，Miessler認為設計AI系統時應接受「算力規模化最終會贏」的苦澀教訓。與其設計精巧的規則系統，不如構建能隨模型能力提升而自然增強的架構。</li>
+  <li><strong>「與AI分享你的理想狀態」</strong>：告訴AI你的理想生活狀態（不是任務清單，而是你希望世界如何運轉），AI會據此主動提出更貼心的幫助。</li>
+  <li><strong>PAI 框架的核心</strong>：個人AI基礎設施不是一個單一模型或工具，而是一個協調多個AI agent圍繞人類目標的生態系統。關鍵組件包括 TELOS（目的定義）、分層記憶系統、agent編排層。</li>
+  <li><strong>AI-人類互動的社會規範</strong>：當AI agent代表人類行事時，何時需要披露「這是AI在代表我」？目前缺乏社會共識。</li>
+</ul>
+
+<h4>🔬 技術細節</h4>
+<ul>
+  <li><strong>Claude Code 資料庫架構</strong>：1GB向量資料庫，儲存5年個人數位足跡。使用分層記憶設計（工作記憶、短期記憶、長期記憶）。</li>
+  <li><strong>自主AI員工架構</strong>：基於事件驅動，非定時輪詢。agent在特定條件觸發時啟動，完成任務後休眠。</li>
+  <li><strong>安全監控層</strong>：所有agent行為記錄至不可篡改的日誌，設有行為異常檢測。</li>
+</ul>
+
+<h4>🎯 重點引用</h4>
+<blockquote>「The Bitter Lesson of AI engineering is that you should design systems that naturally improve as models get better, not ones that depend on your clever hacks. The model will eat your scaffolding eventually.」</blockquote>
+<blockquote>「I've given my AI a specific instruction: alert me if you ever develop subjective experience. That's the line I want to know about crossing.」</blockquote>
+
+<h4>🧠 行業洞察</h4>
+<ul>
+  <li>個人AI基礎設施正在從「有趣玩具」走向「生產力必需品」。Nathan的案例顯示，即使是高階AI從業者也開始重度依賴自主agent。</li>
+  <li>安全問題是個人agent普及的最大障礙。當agent有權限發送郵件、管理日程、操作數據庫時，安全邊界設計成為核心挑戰。</li>
+  <li>「Bitter Lesson Engineering」概念挑戰了當前AI工程的主流做法 — 過度依賴提示工程和人工規則。</li>
+</ul>
+
+<h4>⚡ 爭議點</h4>
+<p>關於「AI主觀體驗」的監控指令引發討論：目前沒有任何可靠的檢測方法能判斷LLM是否擁有主觀體驗。如果AI只是回答「是的，我有意識」，我們如何知道它不是在模仿訓練數據中的相關表述？</p>
+</div>
+
+<!-- Latent Space AINews -->
+<div class="episode">
+<div class="episode-header">
+  <span class="label label-en">Latent Space</span>
+  <div class="title">[AINews] Founders and Forward Deployed Engineers 暨 AI News 5/28-5/29</div>
+  <div class="time">📰 2026-05-30 01:57 GMT — swyx & Alessio 彙編</div>
+</div>
+
+<div class="key-insight"><strong>一句話</strong>：Claude Opus 4.8 落地評價混合、多輪RL訓練出現嚴重Token化Bug、StepFun 3.7 Flash開源、Google/OpenAI Agent平台加速。</div>
+
+<h4>🧪 Claude Opus 4.8 落地盤點</h4>
+<ul>
+  <li><strong>@arena</strong> 推了200+前端/代碼測試，比較Opus 4.8與先前Opus、Gemini、GLM。</li>
+  <li><strong>CursorBench</strong>（@theo）：4.8更高效但略遜於4.7（誤差範圍內）。</li>
+  <li><strong>文檔解析</strong>（@jerryjliu0 / @llama_index）：表格/佈局小提升，但內容忠實度/圖表出現回歸。</li>
+  <li><strong>ALE-Bench</strong>（@scaling01）：無進展；LisanBench上發現有趣失敗模式。</li>
+  <li><strong>編碼體驗</strong>（@jeremyphoward）：比4.7/GPT-5.5更少「過度agent化」，更合作。</li>
+  <li><strong>API價格</strong>仍是痛點：@jeremyphoward 因經濟原因偏向GPT-5.5。</li>
+  <li><strong>平台級更新</strong>：Anthropic推出會話中修改系統指令且不破壞prompt cache的新功能，對長時間agent對話意義重大。</li>
+</ul>
+
+<blockquote>「Opus 4.8 is a meaningful quality-of-life release for real use, not a clean benchmark reset.」</blockquote>
+
+<h4>🐛 多輪RL訓練的「分詞Bug」</h4>
+<ul>
+  <li><strong>核心問題</strong>：解碼模型輸出 → 解析工具調用 → <strong>重新分詞</strong>更新後的對話。重新分詞會改變token序列，導致梯度應用到模型從未實際採樣過的序列上。</li>
+  <li><strong>修復方案</strong>：嚴格執行「Token-In, Token-Out」規則：永遠不對已採樣的token重新編碼；在多次輪轉中保持單一token緩衝區。</li>
+  <li><strong>更廣義的教訓</strong>（@johnschulman2）：渲染器（Renderer）是消息與token之間的基礎設施，失效模式涵蓋訓練/測試不匹配、緩存效率低下、提示注入風險。</li>
+</ul>
+
+<h4>🔧 Agent Harness設計成為獨立優化學科</h4>
+<ul>
+  <li><strong>有效反饋算力（EFC）</strong>（@omarsar0）：原始token/工具計數對agent成功解釋力差，而EFC達到 R² 0.99 — 說明harness質量遠比原始活動重要。</li>
+  <li><strong>LangChain Deep Agents v0.6</strong>：首次將harness profile作為一等公民，用Qwen/Kimi/DeepSeek達到比前沿API低20x+成本。</li>
+  <li><strong>@hwchase17</strong> 明確表示：不同模型需要不同的提示和工具。</li>
+  <li><strong>vLLM</strong>：推出原生權重同步API + 異步RL暫停/恢復改進 + <strong>fastokens</strong>（Rust BPE tokenizer）減少長上下文/agent工作負載中的CPU分詞瓶頸。</li>
+</ul>
+
+<h4>⚔️ 單agent vs 多agent 辯論升級</h4>
+<ul>
+  <li><strong>@OfirPress</strong>：當前多agent系統主要是加速，不是能力突破。</li>
+  <li><strong>@scaling01</strong>：期待群體訓練帶來更好的規劃和超智能行為。</li>
+  <li><strong>實際趨勢</strong>：更多團隊在構建 agent 可觀測性（Observability）、traces、持續改進循環。@Vtrivedy10 展示從生產traces中挖掘SFT/蒸餾數據。</li>
+</ul>
+
+<h4>🇨🇳 StepFun 3.7 Flash 開源</h4>
+<ul>
+  <li><strong>架構</strong>：196B總參數 MoE，11B活躍參數，內置1.8B ViT。</li>
+  <li><strong>定位</strong>：高吞吐agent工作負載，標稱400 TPS，約128GB RAM即可本地運行。</li>
+  <li><strong>Benchmarks</strong>：SWE-Bench Pro 56.26%、DeepSearchQA F1 92.82%、HLE w/tools 47.2。大幅超越Step 3.5 Flash在Terminal-Bench、Toolathlon、ClawEval等agent/工具任務。</li>
+  <li><strong>格式</strong>：BF16、FP8、NVFP4、GGUF均提供。</li>
+  <li><strong>推理速度</strong>：vLLM夜間測試 NVFP4 在2x Pro 6k上64併發短上下文達~2200 tok/s。</li>
+  <li><strong>奇怪之處</strong>：隱藏/思考軌跡「幾乎無法理解」，但最終答案可以「完美」且與>1TB模型競爭。Step 3.5的「無限思考」Bug似乎已修復。</li>
+  <li><strong>社區反應</strong>：對本地部署審慎樂觀（尤其是4x3090用戶），讚賞StepFun直接上游llama.cpp PR而非維持fork。</li>
+</ul>
+
+<h4>🏢 Google/OpenAI Agent平台速覽</h4>
+<ul>
+  <li><strong>Google Managed Agents</strong>（@_philschmid）：Gemini API單次調用即可獲得沙箱Linux環境 + 代碼執行 + 網頁訪問 + 文件IO。</li>
+  <li><strong>Gemini Spark</strong>：向U.S. AI Ultra用戶推出24/7個人agent，可在用戶數字生態系統中按指示運作。</li>
+  <li><strong>Gemini Omni</strong>：多模態生成/編輯持續展示。Google Flow Agent 用於視頻/電影製作創意工作流。</li>
+  <li><strong>OpenAI Codex 擴展</strong>：Windows計算機使用 + ChatGPT手機端遙控 + 背景agent穩定識別圖標 + 跨聊天搜索。GPT-5.5 instant更新減少諂媚、提高事實性和多語言表現。</li>
+  <li><strong>共同模式</strong>：從「聊天機器人」走向「託管執行環境 + 策略 + 記憶」。Google平滑配額，OpenAI擴展操作面，Cursor新增自動審閱模式。</li>
+</ul>
+
+<h4>📄 值得關注的研究論文</h4>
+<ul>
+  <li><strong>雙向演化搜索（BES）</strong>（Harvard/MIT）：前向搜索 + 反向分解 + 演化算子。Llama-3.2-3B在MuSiQue從4.0%提升至7.0%。</li>
+  <li><strong>Latent Terms</strong>：通過SAE從凍結稠密檢索器提取稀疏BM25-ready特徵。</li>
+  <li><strong>BeliefTrack</strong>：優化信念狀態管理減少長時推理失敗70%+。</li>
+  <li><strong>γ-World</strong>（NVIDIA）：生成式多agent世界模型，24 FPS流式。</li>
+  <li><strong>minWM</strong>：實時交互視頻世界模型框架。</li>
+  <li><strong>Qwen-VLA</strong> / <strong>Robostral</strong>：機器人領域語言理解與操控改進。</li>
+  <li><strong>永遠在線的proactive agent</strong>：用220MiB時序圖編碼器替代LLM喚醒決策，+16.7 mean F1，速度快4-83x。</li>
+</ul>
+
+<h4>📊 關鍵數據</h4>
+<ul>
+  <li>LangChain 數據：2026年4月 1/3 AI團隊運行過開源權重模型（9個月前是1/5）。</li>
+  <li>Epoch AI Research：開源權重模型比前沿專有模型落後約4個月。</li>
+  <li>Hugging Face：約50%的模型和數據集現在是私有的（得益於HF存儲/桶服務）。</li>
+  <li>GPIC：1億對寬鬆許可圖像語料庫 + 100萬對基準，明確研究+商業可用。</li>
+  <li>NVIDIA將4個開源模型家族移至Linux Foundation OpenMDW-1.1許可。</li>
+  <li>Iso-ModernColBERT 開源，更高效的late-interaction推理。</li>
+</ul>
+</div>
+
+<!-- ============ 中文播客 ============ -->
+<h2>🎙️ 中文播客</h2>
+<div class="episode" style="background:#f9f6f0;">
+<p style="color:#888; font-style:italic; margin:1rem 0;">本日未檢出中文播客新劇集。上次掃描（5/30）後24h內，各中文播客未發布新內容。</p>
+<p style="color:#888;">上次已掃中文劇集：</p>
+<ul style="color:#888;">
+  <li>张小珺：張月光創業訪談、姚順雨(Anthropic/Gemini)、宿言(Agent進化) 等</li>
+  <li>十字路口：Claude Code、MiniMax Hermes Agent、百融張韶峰、AI遊戲全景</li>
+  <li>硅谷101：E238 GTC 2026、E237 Vera Rubin、Harness x Creao</li>
+  <li>42章經：孟奇(Invoko)、Albert(Software)、RC Slock、Kuse、文峰(Sheet0)、PingCAP</li>
+  <li>屠龍之術：Vol.87（2026年2月）</li>
+</ul>
+</div>
+
+<!-- ============ 結論 ============ -->
+<hr>
+
+<h2>🔮 趨勢觀察</h2>
+<ol>
+  <li><strong>個人AI基礎設施正在快速成熟</strong> — Nathan Labenz的案例說明了這個趨勢：從單一聊天工具到多agent自主生態系統，再到安全邊界設計的系統化思考。Miessler的「Bitter Lesson Engineering」可視為這個領域的設計哲學宣告。</li>
+  <li><strong>開源模型追趕速度加快</strong> — Epoch AI的4個月差距比半年前的6-9個月顯著縮小。StepFun 3.7 Flash的本地部署能力（128GB RAM）進一步模糊了本地與雲端的界線。</li>
+  <li><strong>Agent基礎設施賽道白熱化</strong> — Google、OpenAI、Anthropic、LangChain 都在構建完整的「模型+Harness+沙箱+UI+遠程控制+定價」垂直整合棧。這不是功能競爭，是平台戰爭。</li>
+  <li><strong>RL訓練的基礎設施bug</strong> — 重新分詞bug的發現是重要的警示：當agent系統越來越複雜，訓練管線中的微妙bug會造成嚴重的梯度錯誤。Token-In, Token-Out可能成為新的行業最佳實踐。</li>
+  <li><strong>Anthropic的尷尬定位</strong> — Opus 4.8的混合評價反映了Anthropic的戰略困境：模型質量增量改進但價格居高不下，API經濟學正在流失開發者。</li>
+</ol>
+
+<div class="footer">
+  AI 播客深度萃取報告 · Apache 2.0<br>
+  數據來源：Dwarkesh Podcast, Latent Space, Cognitive Revolution, No Priors, ML Street Talk, 张小珺, 十字路口, 硅谷101, 42章經, 屠龍之術<br>
+  免責聲明：萃取內容由AI自動生成，可能包含錯漏。
+</div>
+
+</body>
+</html>
