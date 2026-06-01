@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>60 年 Agent 技術演進史——從 Logical Agent 到 Language Agent</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #faf8f5;
+      color: #2c2c2c;
+      font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;
+      line-height: 1.9;
+      font-size: 16px;
+    }
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+
+    .back-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      margin-bottom: 32px;
+    }
+    .back-link a {
+      color: #999;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .back-link a:hover { color: #555; }
+    .back-link .arrow { margin-right: 4px; }
+
+    .podcast-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #aaa;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 32px;
+    }
+    .meta span { margin-right: 16px; }
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: #d4c5b0;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 40px 0 16px;
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: #2a2a2a;
+      margin: 28px 0 12px;
+    }
+    p {
+      font-size: 15px;
+      color: #3a3a3a;
+      margin-bottom: 16px;
+      line-height: 1.85;
+    }
+    blockquote {
+      font-style: italic;
+      color: #5a4a3a;
+      background: #f8f4ee;
+      border-left: 3px solid #d4c5b0;
+      padding: 14px 20px;
+      margin: 20px 0;
+      font-size: 14.5px;
+      line-height: 1.8;
+    }
+    blockquote.strong {
+      border-left-color: #c4a67a;
+      background: #faf5eb;
+      font-weight: 500;
+    }
+    .data-point {
+      display: inline-block;
+      background: #f0ece6;
+      padding: 0 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #555;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+    .insight-box {
+      background: #fffcf6;
+      border: 1px solid #e8dfd3;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .insight-box h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #8a7a6a;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .insight-box p {
+      font-size: 14px;
+      margin-bottom: 0;
+      color: #444;
+    }
+    ul {
+      margin: 12px 0 16px;
+      padding-left: 20px;
+    }
+    ul li {
+      font-size: 15px;
+      color: #3a3a3a;
+      line-height: 1.8;
+      margin-bottom: 6px;
+    }
+    .timeline {
+      background: #f8f4ee;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .timeline .era {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #e8e2d8;
+    }
+    .timeline .era:last-child { border-bottom: none; }
+    .timeline .era-year {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #888;
+      min-width: 90px;
+    }
+    .timeline .era-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #2a2a2a;
+      min-width: 160px;
+    }
+    .timeline .era-desc {
+      font-size: 13px;
+      color: #555;
+    }
+
+    .footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #e8e2d8;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #bbb;
+      text-align: center;
+      line-height: 1.8;
+    }
+    .footer a { color: #999; text-decoration: none; }
+    .footer a:hover { color: #555; }
+
+    @media (max-width: 600px) {
+      body { font-size: 15px; }
+      .container { padding: 32px 16px 48px; }
+      h1 { font-size: 22px; }
+      .timeline .era { flex-wrap: wrap; gap: 4px; }
+      .timeline .era-year { min-width: auto; }
+      .timeline .era-name { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="back-link">
+    <a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">
+      <span class="arrow">←</span> 返回播客日報
+    </a>
+  </div>
+
+  <div class="podcast-badge">張小珺商業訪談錄 · Ep.136b</div>
+  <h1>60 年 Agent 技術演進史——從 Logical Agent 到 Language Agent</h1>
+  <div class="meta">
+    <span>📅 2026 年 5 月</span>
+    <span>⏱ ~2 小時 20 分鐘</span>
+    <span>🎙 張小珺</span>
+    <span>👤 蘇煜</span>
+  </div>
+
+  <div class="divider"></div>
+
+  <p>
+    <strong>蘇煜</strong>，俄亥俄州立大學計算機系教授、創業公司 NeoCognition 創始人，2025 年斯隆研究獎得主。佢嘅研究方向係 Language Agent，少數見證過 Agent 完整演化史嘅學者。
+    呢次訪談係一次從 1960 年代到 2026 年嘅 Agent 技術全景掃描——覆蓋 Logical Agent、Neural Agent、Semantic Parsing、Language Agent 四大時代。
+    蘇煜唔只係學者，佢創辦嘅 NeoCognition 剛完成 <span class="data-point">$40M seed round</span>，同時係最早期從 Semantic Parsing 轉型做 Language Agent 嘅研究員之一。
+  </p>
+  <p>
+    如果要用一句話總結成集，就係：<strong>過去三年 Language Agent 嘅發展速度，超過咗過去幾十年嘅總和。</strong>
+  </p>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>一、Agent 技術演進全景</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <div class="timeline">
+    <div class="era">
+      <span class="era-year">1960s–1990s</span>
+      <span class="era-name">Logical Agent</span>
+      <span class="era-desc">符號邏輯、規劃器、定理證明。第一代 AI</span>
+    </div>
+    <div class="era">
+      <span class="era-year">2000s–2010s</span>
+      <span class="era-name">Neural Agent</span>
+      <span class="era-desc">神經網絡 + RL。Deep RL 同遊戲領域</span>
+    </div>
+    <div class="era">
+      <span class="era-year">2010s–2022</span>
+      <span class="era-name">Semantic Parsing</span>
+      <span class="era-desc">自然語言→邏輯形式。Text-to-SQL 等</span>
+    </div>
+    <div class="era">
+      <span class="era-year">2023–now</span>
+      <span class="era-name">Language Agent</span>
+      <span class="era-desc">LLM 作為核心，自然語言對話驅動 Agent</span>
+    </div>
+  </div>
+
+  <h3>Logical Agent 時代（1960s–1990s）</h3>
+  <p>
+    第一代 Agent 完全基於符號邏輯。你俾佢一個目標，佢用邏輯推理去分解成一系列 action。經典工作包括 STRIPS 規劃器、SOAR 架構、定理證明器等。呢個時代嘅 Agent 極度脆弱——世界必須完美建模，任何 uncertainty 都會令成個規劃崩塌。
+  </p>
+  <p>
+    蘇煜指出，呢個時期嘅 Agent 雖然難以落地，但留下咗重要嘅概念遺產：<strong>Planning as Reasoning、Goal-Oriented Decomposition、Means-Ends Analysis</strong>。呢啲概念喺六十年後嘅 Language Agent 中以新嘅形式重生。
+  </p>
+
+  <h3>Neural Agent 時代（2000s–2010s）</h3>
+  <p>
+    神經網絡崛起後，Agent 研究嘅重心轉向 Deep Reinforcement Learning。AlphaGo、DQN 喺遊戲領域取得突破性進展。但呢啲 Agent 嘅限制好明顯：<strong>只能在限定環境中工作</strong>，每一次都要從頭訓練，缺乏泛化能力。
+  </p>
+  <p>
+    蘇煜認為 Neural Agent 嘅核心問題係：<strong>樣本效率極低，且難以融入語言</strong>。一隻打 Atari 遊戲嘅 DQN 耗費上千萬幀訓練，但換個遊戲一切重來。語言作為人類最自然嘅知識傳遞媒介，好難被 neural agent 有效吸收。
+  </p>
+
+  <h3>Semantic Parsing（2010s–2022）：被低估嘅橋樑</h3>
+  <p>
+    呢個時期經常被主流 AI 敘事忽略，但蘇煜認為佢係 Language Agent 嘅直接前身。Semantic Parsing 嘅目標係將自然語言翻譯成機器可執行嘅邏輯形式——例如 Text-to-SQL、WikiTableQuestions 等。
+  </p>
+  <p>
+    蘇煜本人就係呢個領域嘅早期貢獻者之一。佢回憶道：
+  </p>
+
+  <blockquote>
+    我是最早從 Semantic Parsing 轉型做 Language Agent 的學者之一。<br>
+    回頭看，Semantic Parsing 的核心洞見——自然語言可以精確映射到一組結構化操作——<br>
+    正是今天 Language Agent「自然語言→工具調用」範式的前身。
+  </blockquote>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>二、Language Agent 時代：過去三年嘅爆炸式發展</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    蘇煜詳細復盤咗 Language Agent 過去三年嘅關鍵工作：
+  </p>
+
+  <ul>
+    <li><strong>2023 年</strong>：ReAct 推理鏈 + 工具調用範式確立。Agent 開始能夠思考再行動，而唔係直接輸出</li>
+    <li><strong>2024 年</strong>：Code-as-Action 崛起——Claude Code、Codex 等 Coding Agent 展示咗 Agent 嘅真實生產力</li>
+    <li><strong>2025-2026 年</strong>：Agent Harness 概念成熟——Multi-Agent、MCP 協議、記憶自迭代、Agent 基礎設施爆發</li>
+  </ul>
+
+  <p>
+    佢用一個震懾性嘅數字總結：<span class="data-point">過去三年發展速度 > 過去幾十年總和</span>。呢個唔係誇張，而係事實陳述——2023 年之前嘅 Agent 冇辦法喺開放世界中完成有用嘅任務，而家嘅 Agent 可以生產完整代碼、管理項目、執行 research task。
+  </p>
+
+  <blockquote class="strong">
+    At the end of the day，大家想要的就是 universal digital agent。<br>
+    邊界的消弭和 coding 有關。
+  </blockquote>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>三、OpenClaw Moment = ChatGPT Moment</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    蘇煜提出咗一個極有說服力嘅觀察：<strong>OpenClaw Moment 同 ChatGPT Moment 有非常多相似嘅地方</strong>。
+  </p>
+
+  <blockquote>
+    ChatGPT Moment：自然語言輸入→模型直接輸出文本，中間跳過了結構化編程的步驟。<br>
+    OpenClaw Moment：自然語言輸入→模型直接操作電腦，中間跳過了編寫 GUI 或 API 調用代碼的步驟。
+  </blockquote>
+
+  <p>
+    兩者都係「跳過一層抽象」嘅 moment。ChatGPT 跳過咗編寫 SQL query 去查數據庫嘅步驟——你直接講「上個月銷售排行」，佢就出到。OpenClaw 跳過咗編寫腳本去操作文件系統/瀏覽器/IDE——你直接講「幫我整理呢堆文件」，佢就郁手做。
+  </p>
+
+  <div class="insight-box">
+    <h4>💡 Vee 嘅 Insight</h4>
+    <p>
+      「跳過抽象」係技術進化嘅核心 pattern。每個「跳過」都釋放咗下一層嘅生產力——Assembly → C → Python → LLM prompt，每一層都係跳過前一代嘅繁瑣。OpenClaw Moment 跳過嘅係「編寫操作步驟嘅腳本」，直接到「描述你想要嘅結果」。
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>四、中美科技輻射嘅不同 Pattern</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    蘇煜從 Agent 嘅 adoption pattern 觀察到中美之間嘅根本差異：
+  </p>
+
+  <blockquote>
+    中美科技輻射的 pattern 不同——中國更全民化，在應用層的動作更快。
+  </blockquote>
+
+  <p>
+    佢認為呢個差異源於兩國嘅產業結構不同。美國嘅 AI 應用落地由大型科技公司主導，需要經過嚴格的 compliance、security review、contract negotiation。中國嘅中小企業數量龐大、決策鏈短，見到新工具就即刻試。呢個唔係好壞問題，而係 adoption 嘅 S-curve slope 唔同——中國起步斜率更高，但美國嘅持久性可能更長。
+  </p>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>五、NeoCognition：$40M Seed Round 嘅 Agent Infra 初創</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    蘇煜創辦嘅 NeoCognition 剛完成咗 <span class="data-point">$40M seed round</span>。公司嘅定位係 Agent Infrastructure——唔係做一個 Agent 產品，而係做俾 Agent 用嘅 backend 系統。具體方向包括 Continual Learning（模型喺使用中持續更新自己）、世界模型（Agent 對環境嘅內部表徵）、交互範式（GUI vs CLI vs 自然語言界面）。
+  </p>
+  <p>
+    呢個方向嘅假設係：<strong>Agent 普及後，而家嘅雲端基礎設施係為人類用戶設計嘅，唔係為 Agent 用戶設計嘅</strong>。Agent 嘅調用模式、錯誤處理、狀態管理同人類截然不同。NeoCognition 試圖填補呢個 gap。
+  </p>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>六、Agent 嘅最大瓶頸</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    蘇煜認為而家 Agent 嘅最大瓶頸唔係模型能力，而係以下三點：
+  </p>
+
+  <ul>
+    <li><strong>可靠性</strong>：Agent 嘅行爲仲係唔夠可預測，特別係 multi-step task 中 error propagation 問題嚴重</li>
+    <li><strong>記憶管理</strong>：長時間任務中，Agent 嘅 context window 管理同記憶回溯仍然係 open problem</li>
+    <li><strong>評估框架</strong>：我哋仲未有好好嘅方式去評估一個 Agent 做得好唔好——SWE-bench 呢類 benchmark 只能覆蓋 coding，但 Agent 嘅應用場景遠超 coding</li>
+  </ul>
+
+  <blockquote>
+    語言對人類來說是比較晚才發生的事情，<br>
+    但對人類文明來說，語言帶來了指數級發展。<br>
+    對 Agent 來說，自然語言作為交互界面，可能同樣會帶來指數級增長。
+  </blockquote>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>七、各大廠商嘅 Agent Bets</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    蘇煜對各大廠嘅 Agent 策略有一系列判斷：
+  </p>
+  <ul>
+    <li><strong>OpenAI</strong>：因為多年專注 Chatbot，喺 Agent 層面嘅 infrastructure 布局相對落後，但而家全力追趕。佢哋嘅 Codex 其實係另一個路線——直接俾開發者用嘅 coding agent</li>
+    <li><strong>Anthropic</strong>：Agent 路線最清晰——Claude Code + Harness-first 策略。佢哋睇到 Agent 先係真正嘅產品，model 只係一個 component</li>
+    <li><strong>Google DeepMind</strong>：Gemini 嘅優勢係擁有最完整嘅技術棧——從芯片到模型到 Harness。但組織太大，Agent 層面嘅產品化速度慢</li>
+    <li><strong>初創公司</strong>：Agent Infra 係最大機會——OpenAI 同 Anthropic 唔會做 Agent 嘅每一個 middleware layer，呢度有大片空白</li>
+  </ul>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>八、總結：60 年 Agent 進化嘅啟示</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <div class="insight-box">
+    <h4>📌 核心要點</h4>
+    <p>
+      <strong>1. Agent 60 年分四階段</strong> — Logical Agent（飄渺理念）→ Neural Agent（封閉世界）→ Semantic Parsing（被忽略嘅橋樑）→ Language Agent（通用潛力）
+    </p>
+    <p style="margin-top:8px;">
+      <strong>2. 過去三年提速驚人</strong> — Language Agent 三年嘅進步超過前幾十年總和。2023 年 ReAct 範式，2024 年 Code-as-Action，2025-2026 Harness 生態爆發
+    </p>
+    <p style="margin-top:8px;">
+      <strong>3. OpenClaw Moment = ChatGPT Moment</strong> — 都係跳過一層抽象。ChatGPT 跳過 SQL/API，OpenClaw 跳過腳本/操作代碼
+    </p>
+    <p style="margin-top:8px;">
+      <strong>4. 最大瓶頸：可靠性、記憶、評估</strong> — 模型能力追上了，但 Agent 系統工程先係真正 bottleneck
+    </p>
+    <p style="margin-top:8px;">
+      <strong>5. Agent Infra 係下一個大機會</strong> — 現有雲端基礎設施唔係為 Agent 設計嘅，呢個 gap 就係創業機會
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════ -->
+  <div class="footer">
+    <p>來源：<a href="https://www.xiaoyuzhoufm.com/podcast/626b46ea9cbbf0451cf5a962">張小珺商業訪談錄</a> · 小宇宙 / Apple Podcasts</p>
+    <p>深度復述由 Vee Mok 自動生成 · 2026-06-01 14:00 CST</p>
+    <p><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">← 返回播客日報</a></p>
+  </div>
+
+</div>
+</body>
+</html>
