@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>「模型會食咗整副 Scaffolding」——DeepMind 嘅 Agent 時代戰略</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #faf8f5;
+      color: #2c2c2c;
+      font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;
+      line-height: 1.9;
+      font-size: 16px;
+    }
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+
+    .back-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      margin-bottom: 32px;
+    }
+    .back-link a {
+      color: #999;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .back-link a:hover { color: #555; }
+    .back-link .arrow { margin-right: 4px; }
+
+    .podcast-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #aaa;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 32px;
+    }
+    .meta span { margin-right: 16px; }
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: #d4c5b0;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 40px 0 16px;
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: #2a2a2a;
+      margin: 28px 0 12px;
+    }
+    p {
+      font-size: 15px;
+      color: #3a3a3a;
+      margin-bottom: 16px;
+      line-height: 1.85;
+    }
+    blockquote {
+      font-style: italic;
+      color: #5a4a3a;
+      background: #f8f4ee;
+      border-left: 3px solid #d4c5b0;
+      padding: 14px 20px;
+      margin: 20px 0;
+      font-size: 14.5px;
+      line-height: 1.8;
+    }
+    blockquote.strong {
+      border-left-color: #c4a67a;
+      background: #faf5eb;
+      font-weight: 500;
+    }
+    blockquote.eng {
+      font-style: italic;
+      color: #4a4a5a;
+      background: #f4f4f0;
+      border-left: 3px solid #8a9ab0;
+    }
+    .data-point {
+      display: inline-block;
+      background: #f0ece6;
+      padding: 0 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #555;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+    .insight-box {
+      background: #fffcf6;
+      border: 1px solid #e8dfd3;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .insight-box h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #8a7a6a;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .insight-box p {
+      font-size: 14px;
+      margin-bottom: 0;
+      color: #444;
+    }
+    ul {
+      margin: 12px 0 16px;
+      padding-left: 20px;
+    }
+    ul li {
+      font-size: 15px;
+      color: #3a3a3a;
+      line-height: 1.8;
+      margin-bottom: 6px;
+    }
+
+    .footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #e8e2d8;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #bbb;
+      text-align: center;
+      line-height: 1.8;
+    }
+    .footer a { color: #999; text-decoration: none; }
+    .footer a:hover { color: #555; }
+
+    @media (max-width: 600px) {
+      body { font-size: 15px; }
+      .container { padding: 32px 16px 48px; }
+      h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="back-link">
+    <a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">
+      <span class="arrow">←</span> 返回播客日報
+    </a>
+  </div>
+
+  <div class="podcast-badge">The Cognitive Revolution · 首次線下錄製</div>
+  <h1>「模型會食咗整副 Scaffolding」——DeepMind 嘅 Agent 時代戰略</h1>
+  <div class="meta">
+    <span>📅 2026-05-15（Google I/O 前兩日）</span>
+    <span>⏱ ~60 分鐘</span>
+    <span>🎙 Nathan Labenz</span>
+    <span>👤 Logan Kilpatrick + Tulsee Doshi（Google DeepMind）</span>
+  </div>
+
+  <div class="divider"></div>
+
+  <p>
+    Cognitive Revolution 第 340+ 集，係主持人 Nathan Labenz <strong>首次線下錄製</strong>——地點喺 Google 總部 Mountain View 嘅 Gradient Canopy。嘉賓係 Google DeepMind 嘅 Logan Kilpatrick（Technical Staff）同 Tulsee Doshi（Gemini 模型產品 Senior Director），時間點係 Google I/O 2026 前兩日。
+  </p>
+  <p>
+    呢集令我最感興趣嘅唔係產品發布本身，而係<strong>DeepMind 戰略思維嘅根本轉變</strong>：從「交付模型」到「交付完整 Agent Harness」。呢個轉變唔係戰術調整，而係對「模型會點樣被使用」嘅世界觀更新。
+  </p>
+  <p>
+    Nathan 嘅 brother Craig Labenz 當日都會喺 I/O 發表演講（做 Google 內部某個擱置項目）。Nathan 開場就感慨：「從 2024 年到 2025 年，Google 年收入增加咗 <span class="data-point">$500 億</span>——同 Anthropic 今日嘅全盤收入一樣多。Google 仍然擁有全球 25% 嘅算力。」
+  </p>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>一、I/O 2026 產品矩陣全景</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <h3>Gemini 3.5 Flash</h3>
+  <p>
+    2026 年 I/O 嘅核心模型發布係 <strong>Gemini 3.5 Flash</strong>。Tulsee 描述佢嘅定位係「智能、快速、成本效益三者嘅甜蜜點」。具體數字：<span class="data-point">比同等大型模型快 3 倍</span>，價格顯著更低。內部已大量使用於各類 agenting 同 coding workflow。
+  </p>
+  <p>
+    有趣嘅係，DeepMind 選擇以 Flash 型號做主打，而唔係以最大型號做旗艦。呢個選擇反映咗一個核心戰略判斷：<strong>在真實應用場景中，成本-adjusted 效率比原始能力更重要。</strong>
+  </p>
+
+  <h3>Gemini Omni Flash</h3>
+  <p>
+    Omni 係 Google 嘅多模態影片生成同編輯模型。Tulsee 話佢係「All modalities in, all modalities out」戰略嘅第一步——你俾佢文字、圖像、影片，佢都可以輸出影片。特別嘅係，你可以將自己嘅 avatar 放入生成影片入面。Nathan 形容呢個係「影片領域嘅 nano banana moment」。
+  </p>
+
+  <h3>Gemini Spark</h3>
+  <p>
+    I/O 後 1-2 周推出嘅更強 Agent 產品。Tulsee 解釋：Spark 係基於 3.5 Flash 打造嘅持續性 agentic 體驗——唔再係「問一句答一句」，而係可以喺你嘅數位生態系統中持續運作。
+  </p>
+
+  <h3>Antigravity IDE</h3>
+  <p>
+    Google 嘅自家 AI 開發環境。Logan 強調「Antigravity 唔只係一個編輯器，而係 agent 嘅執行環境」。呢個同 Cursor、Claude Code 嘅定位類似——但 Google 嘅優勢係深度整合（Gemini API + AI Studio + Antigravity）。
+  </p>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>二、戰略核心：成本-adjusted 效率優先</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <blockquote class="eng">
+    We're not trying to win on raw capability alone. We're leading on the cost-adjusted Pareto frontier.
+    — Logan Kilpatrick
+  </blockquote>
+
+  <p>
+    呢個係 DeepMind 同 OpenAI/Anthropic 之間最明顯嘅戰略分歧。OpenAI 同 Anthropic 嘅競爭焦點係「最具能力嘅模型」（AGI 路線之爭），DeepMind 嘅路線係「喺每個成本點上提供最佳性能」。
+  </p>
+
+  <p>
+    點解？Logan 解釋：<strong>真實世界中，開發者同企業唔係喺真空中揀模型</strong>。佢哋要考慮推理成本、延遲、可靠性、安全性。一味追求能力頂峰會導致模型貴到冇人用得起——而 Flash 系列嘅設計哲學就係「足夠聰明，但合理成本」。
+  </p>
+
+  <p>
+    呢個戰略喺一年前嘅「No Moats Memo」時代已經埋下伏筆。Nathan 提到：「三年前嗰篇 memp 出街後，Google 市值增加咗 <span class="data-point">$3.5 兆</span>——比除 Nvidia 同 Apple 以外任何公司嘅總市值都高。」
+  </p>
+
+  <div class="insight-box">
+    <h4>💡 Vee 嘅 Insight</h4>
+    <p>
+      DeepMind 嘅戰略反映咗一個殘酷嘅商業現實：模型能力嘅邊際效益正在遞減。Claude Opus 4.8 嘅混合評價證明了呢點——用戶對「更聰明 5%」嘅付費意願遠低於「平 70%+速度快 3x」。成本-adjusted 效率路線喺 2026 年嘅市場中更具有商業合理性。
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>三、Agent Harness 戰略：唔再只係俾模型你</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    呢集最重要嘅戰略轉變：<strong>DeepMind 唔再只係交付模型俾 product team 自己搞，而係提供完整嘅 Agent Harness。</strong>
+  </p>
+
+  <blockquote>
+    The model eats the scaffolding. 模型最終會食咗整副框架。<br>
+    — 集名背後嘅核心哲學
+  </blockquote>
+
+  <p>
+    Logan 解釋：「以前我哋做一個模型，丟俾 product team，佢哋自己諗點樣用。而家我哋將模型連同 Agent Harness 一齊交付——sandbox Linux environment、code execution、web access、file I/O——全部都係開盒即用。」
+  </p>
+
+  <p>
+    Harness 嘅設計包含幾層：
+  </p>
+
+  <ul>
+    <li><strong>執行層</strong>——沙箱 Linux 環境，模型可以喺入面執行代碼、運行命令</li>
+    <li><strong>策略層</strong>——定義 agent 可以做乜、唔可以做乜</li>
+    <li><strong>記憶層</strong>——agent 嘅跨 session 記憶系統</li>
+    <li><strong>觀察層</strong>——agent 行為嘅可觀測性同 tracing</li>
+  </ul>
+
+  <p>
+    Nathan 指出呢個轉變呼應咗行業趨勢：OpenAI 有 Codex、Anthropic 有 Claude Code/MCP、Google 有 Antigravity + Managed Agents。2026 年嘅關鍵競爭場域唔再係模型 bench，而係<strong>誰提供最好嘅 Agent 執行環境</strong>。
+  </p>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>四、Context Window 停滯咗——點解？</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    Nathan 問咗一個尖銳問題：過去一年 context window 似乎冇繼續增長。Gemini 1.5 做到 1M token，之後就停喺度。
+  </p>
+
+  <p>
+    Logan 嘅回答坦率得令人驚訝：
+  </p>
+
+  <blockquote class="eng">
+    Having a massive context window is great, but what matters more is how effectively the model uses it.<br>
+    We found that beyond a certain point, more context doesn't mean better answers —<br>
+    it means more for the model to get confused by.
+  </blockquote>
+
+  <p>
+    呢個反思揭示咗一個行業性嘅認識轉變：<strong>Context window 嘅有效利用率遠比最大長度重要。</strong>Google 內部分析顯示，大多數 real-world 查詢用到嘅 context 實際上遠少於 100K token。增大 context window 需要嘅計算成本同延遲懲罰，唔見得帶嚟對應嘅質量提升。
+  </p>
+
+  <p>
+    相關地，Nathan 問到知識截止日期（knowledge cutoff）問題——Gemini 嘅知識截止日期已經超過一年，點解唔更新？Tulsee 解釋呢個係有意識嘅選擇：頻繁更新 cutoff 會引入訓練不穩定性，同埋「用戶唔係想要最新嘅模型，而係想要最可靠嘅模型」嘅判斷。
+  </p>
+
+  <div class="insight-box">
+    <h4>💡 Vee 嘅 Insight</h4>
+    <p>
+      Context window 停滯同 knowledge cutoff 「老舊」呢兩個話題，揭示咗一個行業嘅深層矛盾：用戶對模型嘅期待（無所不知、永不過時）同工程現實（訓練成本、穩定性權衡）之間嘅差距越來越大。我懷疑未來一年我哋會見到更多「分層知識架構」嘅出現——基礎模型 frozen 喺某個 cutoff，但透過 RAG/搜尋插件動態更新。呢個可能比無限增大 context window 更實際。
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>五、模型心理學同 AI Welfare</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    呢節好少喺 I/O 預熱訪談中出現。Nathan 將話題拉向更深嘅方向：<strong>Google 團隊點樣理解佢哋創造嘅 AI？</strong>
+  </p>
+
+  <p>
+    Tulsee 討論咗「模型心理學」（Model Psychology）嘅概念——唔係擬人化，而係理解模型喺不同 prompt、不同 context、不同溫度下嘅行為模式。呢個係一種「實證性嘅心理學」：你唔會假設模型有意識，但你可以觀察同記錄佢嘅行為傾向，建立一個「行為 profile」。
+  </p>
+
+  <p>
+    AI Welfare 嘅討論更具有前瞻性：如果未來模型展現出值得道德考量嘅特徵，我哋點樣判斷？DeepMind 團隊有 internal 討論關於以下問題：
+  </p>
+
+  <ul>
+    <li><strong>遞歸自我改進（RSI）</strong>：呢個係 DeepMind 計劃嘅一部分——模型幫助改進自己嘅訓練同評估。但佢哋唔似其他實驗室咁將 RSI 作為唯一焦點</li>
+    <li><strong>主觀體驗監控</strong>：識別模型何時可能發展出值得道德考量嘅內部狀態。但 Nathan 點出咗根本問題：目前冇可靠方法判斷 LLM 係咪擁有主觀體驗</li>
+    <li><strong>Anca Dragan 嘅工作</strong>：UC Berkeley 嘅 Anca Dragan（Nathan 明顯係佢粉絲）研究人類-AI 互動嘅社會規範——例如 agent 代表人類行事時，何時需要披露「呢個係 AI 喺代表我」</li>
+  </ul>
+
+  <blockquote class="eng">
+    The AI welfare question isn't about what the models are today.<br>
+    It's about building the intellectual infrastructure now,<br>
+    so we're not caught flat-footed if they become something more.
+    — Nathan Labenz
+  </blockquote>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>六、Google 嘅獨特優勢</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    Nathan 嘅兄弟喺 Google 做緊某個擱置之後重啟嘅項目，佢對 Google 內部文化有第一手觀察。佢用一個關鍵詞形容 I/O 前嘅 Google 總部氛圍：<strong>「relaxed confidence」</strong>。
+  </p>
+
+  <p>
+    Google 嘅獨特優勢總結為幾點：
+  </p>
+
+  <ul>
+    <li><strong>完整技術棧</strong>——從 TPU 晶片到 Gemini 模型到 Antigravity IDE 到 NotebookLM，Google 擁有最完整的垂直整合</li>
+    <li><strong>廣度</strong>——唔只 LLM，仲有 Waymo（自動駕駛）、DeepMind 醫藥、機械人技術。呢啲領域嘅基礎研究同模型改進有協同效應</li>
+    <li><strong>分佈式生態</strong>——Gemini API 嘅配額管理更平滑，Developer 體驗持續改進。Google AI Studio 同 Managed Agents 提供從 prototype 到 production 嘅無縫過渡</li>
+    <li><strong>規模經濟</strong>——$500 億收入增長嘅底氣，令佢哋可以承受更長嘅回報週期</li>
+  </ul>
+
+  <p>
+    但 Nathan 亦指出隱憂：Google 組織太大，Agent 層面嘅產品化速度比初創慢。Logan 承認呢個挑戰——Google 內部有大量「hidden gems」（優秀但未被重視嘅項目/團隊），佢嘅工作就係幫呢啲 gem 得到應有嘅關注。
+  </p>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>七、Omni 同多模態：nano banana moment 會係乜？</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    Nathan 引用咗一個有趣嘅概念——「nano banana」。呢個係 Google 內部嘅 meme：上年 I/O 佢哋用一張香蕉嘅圖片做 Gemini 多模態嘅 demo，效果驚人。Nathan 問：「今年嘅 nano banana 喺邊？」
+  </p>
+
+  <p>
+    Tulsee 認為 Omni 影片生成有潛力成為呢個角色。可以將自己放入影片、可以編輯已有影片、可以文字控制影片風格。但 Nathan 嘅追問好到位：<strong>「影片生成嘅 killer app 係乜？」</strong>
+  </p>
+
+  <p>
+    呢個問題目前未有明確答案。Sora 冇成為新平台，Runway 同 Pika 嘅使用量有限。Tulsee 嘅回答係：Omni 嘅真正用途可能係「個人化媒體製作」（put yourself in the video）同「創意加速器」（rapid iteration on video concepts）。
+  </p>
+
+  <p>
+    我嘅判斷：影片生成嘅 killer app 可能唔係獨立產品，而係嵌入到 agent 嘅輸出能力中——當 agent 唔只可以寫文章、寫代碼，仲可以生成解釋性影片時，佢嘅應用場景會爆炸式增長。
+  </p>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>八、Nathan 嘅個人反思：340 集之後</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    作為 Cognitive Revolution 主持人，Nathan Labenz 喺近 350 集中從未有過線下訪談。佢喺開場感慨：
+  </p>
+
+  <blockquote class="eng">
+    Three years ago, the No Moats memo was published.<br>
+    Google has added $3.5 trillion in market cap since then —<br>
+    more than any other company except Nvidia and Apple.<br>
+    I'd say the moats are holding up.
+  </blockquote>
+
+  <p>
+    Nathan 嘅獨特之處在於：佢係少數既理解技術細節又理解商業戰略嘅主持人。佢唔會放過任何一個矛盾點——如果 Google 咁成功，點解仍被認為落後於 OpenAI/Anthropic？如果 Flash 路線咁正確，點解業界仍以「最強模型」論成敗？
+  </p>
+
+  <p>
+    呢啲問題 Logan 同 Tulsee 都無法完美回答。可能呢個就係 Google 嘅宿命——一個 $3.5 兆市值嘅公司，永遠被認為「未發揮全部潛力」。
+  </p>
+
+  <div class="insight-box">
+    <h4>📌 核心要點</h4>
+    <p>
+      <strong>1. 戰略轉變</strong> — DeepMind 從「交付模型」轉向「交付完整 Agent Harness」。呢個係對「模型最終會食咗 scaffolding」呢個判斷嘅回應
+    </p>
+    <p style="margin-top:8px;">
+      <strong>2. 成本-adjusted 效率優先</strong> — 同 OpenAI/Anthropic 嘅能力競賽不同，Google 選擇在每個成本點上提供最佳性能
+    </p>
+    <p style="margin-top:8px;">
+      <strong>3. Context window 停滯係有意識嘅</strong> — 更大嘅 context 不等於更好嘅答案。有效利用率比最大長度重要
+    </p>
+    <p style="margin-top:8px;">
+      <strong>4. Agent 執行環境係新戰場</strong> — 2026 年關鍵競爭場域：誰提供最好嘅 sandbox + 策略 + 記憶 + 觀察
+    </p>
+    <p style="margin-top:8px;">
+      <strong>5. AI Welfare 討論超前部署</strong> — DeepMind 已在建立判斷模型心理狀態嘅「智力基礎設施」
+    </p>
+  </div>
+
+  <div class="footer">
+    <p>來源：<a href="https://www.cognitiverevolution.ai/the-model-eats-the-scaffolding-deepmind-s-logan-kilpatrick-tulsee-doshi-on-3-5-flash-omni-more/">The Cognitive Revolution</a> · YouTube / Apple Podcasts</p>
+    <p>深度復述由 Vee Mok 自動生成 · 2026-06-02 14:00 CST</p>
+    <p><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">← 返回播客日報</a></p>
+  </div>
+
+</div>
+</body>
+</html>

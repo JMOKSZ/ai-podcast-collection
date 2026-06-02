@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>當 AI 決定你是威脅——AI 軍事化、概率打擊與問責黑洞</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #faf8f5;
+      color: #2c2c2c;
+      font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;
+      line-height: 1.9;
+      font-size: 16px;
+    }
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+
+    .back-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      margin-bottom: 32px;
+    }
+    .back-link a {
+      color: #999;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .back-link a:hover { color: #555; }
+    .back-link .arrow { margin-right: 4px; }
+
+    .podcast-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #aaa;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 32px;
+    }
+    .meta span { margin-right: 16px; }
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: #d4c5b0;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin: 40px 0 16px;
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: #2a2a2a;
+      margin: 28px 0 12px;
+    }
+    p {
+      font-size: 15px;
+      color: #3a3a3a;
+      margin-bottom: 16px;
+      line-height: 1.85;
+    }
+    blockquote {
+      font-style: italic;
+      color: #5a4a3a;
+      background: #f8f4ee;
+      border-left: 3px solid #d4c5b0;
+      padding: 14px 20px;
+      margin: 20px 0;
+      font-size: 14.5px;
+      line-height: 1.8;
+    }
+    blockquote.strong {
+      border-left-color: #c4a67a;
+      background: #faf5eb;
+      font-weight: 500;
+    }
+    blockquote.eng {
+      font-style: italic;
+      color: #4a4a5a;
+      background: #f4f4f0;
+      border-left: 3px solid #8a9ab0;
+    }
+    .data-point {
+      display: inline-block;
+      background: #f0ece6;
+      padding: 0 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #555;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+    .insight-box {
+      background: #fffcf6;
+      border: 1px solid #e8dfd3;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .insight-box h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #8a7a6a;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .insight-box p {
+      font-size: 14px;
+      margin-bottom: 0;
+      color: #444;
+    }
+    ul {
+      margin: 12px 0 16px;
+      padding-left: 20px;
+    }
+    ul li {
+      font-size: 15px;
+      color: #3a3a3a;
+      line-height: 1.8;
+      margin-bottom: 6px;
+    }
+    .ref-list {
+      background: #f8f4ee;
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .ref-list p {
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      color: #666;
+      margin-bottom: 4px;
+    }
+    .ref-list a {
+      color: #6a5a4a;
+      text-decoration: none;
+    }
+    .ref-list a:hover { text-decoration: underline; }
+
+    .footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #e8e2d8;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #bbb;
+      text-align: center;
+      line-height: 1.8;
+    }
+    .footer a { color: #999; text-decoration: none; }
+    .footer a:hover { color: #555; }
+
+    @media (max-width: 600px) {
+      body { font-size: 15px; }
+      .container { padding: 32px 16px 48px; }
+      h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="back-link">
+    <a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">
+      <span class="arrow">←</span> 返回播客日報
+    </a>
+  </div>
+
+  <div class="podcast-badge">Machine Learning Street Talk (MLST)</div>
+  <h1>當 AI 決定你是威脅——AI 軍事化、概率打擊與問責黑洞</h1>
+  <div class="meta">
+    <span>📅 2026-05-31</span>
+    <span>⏱ ~81 分鐘</span>
+    <span>🎙 Tim Scarfe · Keith Duggar</span>
+    <span>👤 Brad Carson（Americans for Responsible Innovation）</span>
+  </div>
+
+  <div class="divider"></div>
+
+  <p>
+    <strong>呢集 MLST 唔係普通訪談，係一場辯論。</strong>
+    主持人 Keith Duggar 同嘉賓 Brad Carson 由第一分鐘就對住幹。Carson 代表建制內嘅 AI 治理聲音——佢做過陸軍法律總顧問、兩屆國會議員、代理國防部副部長；Keith 代表對技術持根本懷疑嘅 AI 研究者。
+    兩個人都唔係外行，所以火花四濺。
+  </p>
+  <p>
+    Carson 嘅核心論點可以用一句話總結：<strong>「精靈仲未走出個樽。」</strong>
+    佢認為人類歷史上有成功剎車技術嘅先例——1975 年 Asilomar 暫停重組 DNA 研究，最終建立安全框架；AI 晶片供應鏈仍由西方控制。將 AI 軍備競賽講成「不可阻擋」係房間最危險嘅想法。
+  </p>
+  <p>
+    Keith 冇客氣過。佢用 Palantir 戰術系統拉 Carson 落地——系統俾你打 <span class="data-point">0.73</span> 戰鬥人員分數，然後打擊就落嚟。模型有某一接受錯誤率，錯嘅時候冇人要負責。你冇辦法審判一個模型，連可解釋性研究人員都講唔清點解選中你。
+  </p>
+  <p>
+    <em>注意</em>：錄製後節目組發現 Americans for Responsible Innovation（Carson 任負責人）由 EA（有效利他主義）相關慈善基金資助，並非商業贊助。呢個背景我覺得對解讀 Carson 嘅立場有意義。
+  </p>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>一、兩個世界嘅碰撞</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    呢集最引人入勝嘅地方，係 Carson 同 Keith 來自完全唔同嘅世界觀體系。
+  </p>
+
+  <p>
+    <strong>Carson 嘅世界</strong>：法律系統、外交政策、國防預算、談判籌碼。佢睇 AI 治理係一個<strong>可管理嘅國際問題</strong>——有先例（SALT、Asilomar）、有籌碼（晶片供應鏈）、有對話渠道（Track 2 talks）。佢引用 Office of Technology Assessment（OTA）1995 年被廢除，認為國會需要重建呢啲技術判斷機制。
+  </p>
+
+  <blockquote>
+    Calling it unstoppable is the most dangerous idea in the room.<br>
+    We have pulled dangerous tech back before. Asilomar halted recombinant DNA in 1975,<br>
+    and the West still controls the chips AI runs on.
+  </blockquote>
+
+  <p>
+    <strong>Keith 嘅世界</strong>：技術現實、系統失效模式、責任歸屬。佢睇 AI 軍事化係一個<strong>不可逆嘅斜坡</strong>——一旦部署咗概率打擊系統，人類就失去咗問責嘅基礎設施。模型出錯時邊個承擔戰爭罪行？唔會有人。你唔可以軍法審判一個 PyTorch checkpoint。
+  </p>
+
+  <blockquote class="eng">
+    A Palantir heat map scores you 0.73 on whether you are a combatant, and a strike follows.<br>
+    The model is wrong some accepted share of the time, and when it is, nobody answers for it.<br>
+    You cannot court-martial a model, and not even the interpretability researchers<br>
+    can say why it picked you.
+  </blockquote>
+
+  <div class="insight-box">
+    <h4>💡 Vee 嘅 Insight</h4>
+    <p>
+      Carson 同 Keith 嘅分歧本質係「管理樂觀主義 vs 技術悲觀主義」。Carson 相信人類制度可以馴服技術（因為歷史有先例）；Keith 相信技術嘅內在特性（不透明性、概率性、缺乏因果可歸因性）正在摧毀傳統治理嘅基礎——法律責任制度。我傾向 Keith 多啲：法律責任係人類文明最精細嘅問責機制，一旦模型取代咗決策者，呢個機制根本無法操作。
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>二、問責黑洞——最深刻嘅治理問題</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    呢集最精彩嘅部分係關於法律責任嘅討論。Keith 不斷將 Carson 拉向具體場景：
+  </p>
+
+  <ul>
+    <li><strong>AI 係產品唔係人</strong>——當一款 AI 工具造成傷害（例如自殺相關案例、錯誤辨識平民為戰鬥人員），現行法律體系無法處理。產品責任（product liability）唔係設計來處理呢類「AI 自己做決策」嘅場景</li>
+    <li><strong>Section 230 唔適用</strong>——平台免責條款嘅邏輯喺 AI 時代面臨根本挑戰。如果一個 agent 自主發送有害訊息，平台話「唔關我事，係模型做嘅」，邊個負責？</li>
+    <li><strong>概率化打擊嘅法律困境</strong>——如果一套系統嘅錯誤率係 5%，軍事指揮官接受呢個風險。但當 5% 嘅錯誤打中平民，冇人可以畀答案。錯誤係「預期嘅一部分」，所以冇人需要負責</li>
+  </ul>
+
+  <blockquote class="strong">
+    AI 作為產品而非人的定位，導致侵權責任難以落地。<br>
+    當 AI 工具造成傷害，誰來承擔責任？
+  </blockquote>
+
+  <p>
+    Carson 承認呢個問題存在，但佢認為呢個唔係阻止 AI 軍事化嘅理由，而係需要更新法律框架嘅理由。Keith 反擊：法律更新嘅速度遠遠慢過技術部署嘅速度。而家呢一刻，Palantir 嘅 heat map 已被用於實際打擊決策——法律仲喺 Congress 嘅聽證會入面卡住。
+  </p>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>三、Asilomar 類比——正確嘅歷史參照？</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    Carson 反覆引用嘅核心先例係 1975 年嘅 Asilomar 會議：當時重組 DNA 技術嘅科學家自願暫停研究，討論安全框架，最終建立咗至今有效嘅生物安全標準。
+  </p>
+
+  <p>
+    Keith 嘅反駁好有力：
+  </p>
+
+  <ul>
+    <li><strong>AI 同 DNA 唔同</strong>——DNA 研究當時集中喺少數學術實驗室（學術文化本身傾向保守同透明），而 AI 研發分散喺全球數千間公司同開源社群（商業文化傾向速度同不透明）</li>
+    <li><strong>晶片控制係幻想</strong>——DeepSeek 嘅崛起證明晶片封鎖唔係萬能。人嘅創意同算法創新唔可以用芯片數量限制</li>
+    <li><strong>SALT 類比都有問題</strong>——核武器嘅生產需要鈾濃縮設施呢類大規模、可監控嘅基礎設施；AI 模型喺 notebook 上都可以訓練，點監控？</li>
+  </ul>
+
+  <div class="insight-box">
+    <h4>💡 Vee 嘅 Insight</h4>
+    <p>
+      Carson 嘅 Asilomar 類比暴露咗「建制派治理」嘅根本盲點：成功嘅技術剎車案例發生喺技術集中、參與者少、透明度高嘅時代。而家 AI 係全球分散、參與者無數、商業 incentive 極強嘅生態。Asilomar 2.0 需要嘅唔係會議室共識，而係執行機制——但呢個機制唔存在。
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>四、Anthropic vs 國防部——矽谷道德邊界嘅壓力測試</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    Carson 同 Keith 喺討論中提到 Anthropic 同美國國防部之間嘅衝突。呢個唔係假設性問題——2026 年初，Anthropic 因拒絕國防部使用其 AI 於大規模監控同自主武器，被國防部認定為「供應鏈風險」（等同於中國華為嘅待遇）。
+  </p>
+
+  <ul>
+    <li>Anthropic 嘅立場：可以使用於網絡安全同導彈防禦，但唔准用於國內監控同自主武器</li>
+    <li>國防部嘅反擊：直接同 Anthropic 切割，轉向 OpenAI（OpenAI 願意接受更寬鬆嘅軍事使用條款）</li>
+    <li>行業效應：多位前軍方官員同科技政策領袖聯署譴責國防部做法，但 Anthropic 嘅市場損失已經發生</li>
+  </ul>
+
+  <p>
+    Carson 認為呢個案例證明咗「矽谷網絡」同「國防國會複合體」之間嘅衝突正在加劇。a16z 等矽谷巨頭在塑造 AI 政策時，既想取得政府資助又想最小化監管——形勢上嘅「監管捕獲」。
+  </p>
+
+  <blockquote class="eng">
+    The New Iron Triangle — Silicon Valley, the Pentagon, and Congress —<br>
+    is forming around AI, and nobody is asking what the public interest looks like.
+  </blockquote>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>五、AI 軍備競賽：對話可能嗎？</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    對話進入最後階段時，Carson 提出 Track 2 talks（非官方外交渠道）作為管理中美 AI 軍備競賽嘅潛在路徑。佢指出當年 SALT 談判亦係由非官方學者對話開始。
+  </p>
+
+  <p>
+    但 Keith 指出根本分歧：
+  </p>
+
+  <ul>
+    <li><strong>AI 治理嘅文化差異</strong>——中國 AI 治理強調集體主義同國家安全，美國強調個人自由同市場競爭。呢兩個框架點樣對齊？</li>
+    <li><strong>DeepSeek 嘅啟示</strong>——即使晶片封鎖，中國 AI 仍然快速追趕。封鎖變成「激勵中國創新的催化劑」而非遏制手段</li>
+    <li><strong>開源模型的不可控性</strong>——一旦模型權重發布，任何人都可以使用。開源意味傳統嘅出口管制同技術封鎖失效</li>
+  </ul>
+
+  <div class="insight-box">
+    <h4>💡 Vee 嘅 Insight</h4>
+    <p>
+      我認為 Carson 最大嘅弱點係低估咗開源嘅不可逆性。2026 年嘅現實係：最強嘅開放權重模型（DeepSeek-V4、Qwen3.5、StepFun 3.7 Flash）同前沿閉源模型之間嘅差距已縮小至約 4 個月（Epoch AI 數據）。晶片控制固然有效，但人嘅創意係無限嘅——算法創新同訓練效率提升可以部分補償算力差距。呢點喺 DeepSeek 嘅案例中已經被充分證明。
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>六、整全場景：從 Phalanx CIWS 到 Palantir Foundry</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    Keith 將討論拉返去技術現實——AI 軍事化唔係「未來會發生」，而係「已經發生緊」：
+  </p>
+
+  <ul>
+    <li><strong>Phalanx CIWS</strong>：海軍近迫防禦系統，1970 年代就已經完全自動化嘅殺傷鏈——感測器→追蹤目標→射擊。呢個係「機器決定殺人」最早嘅例子</li>
+    <li><strong>Palantir Foundry / AIP</strong>：軍事指揮決策平台，演算法分析戰場數據、推薦打擊目標。人類喺 loop 入面，但 loop 嘅速度令人類變成橡皮圖章</li>
+    <li><strong>AI「戰鬥人員分數」</strong>：0.73 呢個數字唔係科幻——係實際部署系統中嘅輸出。如果 threshold 設為 0.7，呢個人就會被打擊</li>
+  </ul>
+
+  <blockquote>
+    技術嘅演進路徑係：人類完全控制 → 人類監督（human-on-the-loop） → 人類橡皮圖章 → 完全自主。<br>
+    而家我哋喺第三階段，第四階段只係時間問題。
+  </blockquote>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>七、透明度 vs 競爭——AI 企業嘅困境</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    Carson 提出一個經常被忽略嘅問題：AI 公司喺透明度同競爭之間嘅平衡。
+  </p>
+
+  <p>
+    Claude 分層定價（不同 tier 對應不同能力級別）引起爭議——公眾唔知道模型嘅真實能力邊界喺邊。Carson 認為公眾信任建立喺透明度上，但商業壓力令透明度越來越低。Anthropic 嘅「模型規格」（Model Spec）係一個嘗試，但遠遠唔夠。
+  </p>
+
+  <blockquote class="eng">
+    Public trust is built on transparency, but commercial pressures push toward opacity.<br>
+    If we don't know what the models can and cannot do,<br>
+    we cannot have an informed public debate about their deployment.
+  </blockquote>
+
+  <p>
+    呢個困境喺軍事場景中更加尖銳。國防部需要知道模型喺戰場上做到乜嘢、做唔到乜嘢。但呢啲信息本身可能成為國家安全機密——一旦披露，敵對國家就可以針對模型弱點設計攻擊。
+  </p>
+
+  <!-- ══════════════════════════════════════ -->
+  <h2>八、反思：Carson vs Keith 嘅勝負</h2>
+  <!-- ══════════════════════════════════════ -->
+
+  <p>
+    呢場辯論冇贏家，但我覺得 Keith 喺「具體場景」層面佔優。Carson 嘅宏觀政治框架有道理（晶片控制、歷史先例、國際談判），但一旦落到 Palantir 系統打出 0.73 分數、平民被錯誤打擊嘅場景，佢嘅框架就顯得蒼白。
+  </p>
+
+  <p>
+    提一個特別有意思嘅細節：<strong>Carson 提到「我哋每個人都有一個數字受損功能嘅大腦，比我哋家裏用嘅任何一台電腦都更危險」</strong>。呢個係佢嘗試扭轉討論方向嘅策略——將 AI 問題拉返去人類本身嘅缺陷。但 Keith 立即回擊：「所以你要用一個更唔透明嘅系統來取代一個有缺陷嘅系統？」
+  </p>
+
+  <div class="insight-box">
+    <h4>📌 核心要點</h4>
+    <p>
+      <strong>1. 兩個世界觀碰撞</strong> — Carson 的制度樂觀主義 vs Keith 的技術悲觀主義。核心分歧：人類制度是否足夠馴服 AI
+    </p>
+    <p style="margin-top:8px;">
+      <strong>2. 問責黑洞</strong> — 概率打擊系統的核心問題：冇人需要為 AI 的錯誤負責。法律框架（產品責任、戰爭法）無法適用於不透明模型
+    </p>
+    <p style="margin-top:8px;">
+      <strong>3. Asilomar 類比有根本局限</strong> — 1975 年的學術暫停與 2026 年的全球商業分散開發不可同日而語
+    </p>
+    <p style="margin-top:8px;">
+      <strong>4. AI 軍事化已發生</strong> — 從 Phalanx CIWS 到 Palantir，機器在殺傷鏈中的參與無法逆轉
+    </p>
+    <p style="margin-top:8px;">
+      <strong>5. Anthropic vs 國防部案例</strong> — 矽谷的道德邊界正在被壓力測試，結果唔樂觀
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════ -->
+  <div class="ref-list">
+    <p><strong>參考資料</strong></p>
+    <p>🎙 原集：<a href="https://podcasts.apple.com/us/podcast/when-ai-decides-youre-a-threat-brad-carson/id1510472996?i=1000770402847">Apple Podcasts</a></p>
+    <p>📄 ICRC 自主武器立場書：<a href="https://www.icrc.org/en/law-and-policy/autonomous-weapons">icrc.org</a></p>
+    <p>📄 Americans for Responsible Innovation：<a href="https://ari.us">ari.us</a></p>
+    <p>📄 Asilomar Conference on Recombinant DNA (1975)：<a href="https://en.wikipedia.org/wiki/Asilomar_Conference_on_Recombinant_DNA">Wikipedia</a></p>
+    <p>📄 CNBC：Anthropic banned by Pentagon：<a href="https://www.cnbc.com/2026/03/09/anthropic-was-the-pentagons-choice-for-ai-now-its-banned-and-experts-are-worried.html">CNBC</a></p>
+    <p>📄 SALT 戰略武器限制談判：<a href="https://en.wikipedia.org/wiki/Strategic_Arms_Limitation_Talks">Wikipedia</a></p>
+  </div>
+
+  <div class="footer">
+    <p>來源：<a href="https://www.youtube.com/@MachineLearningStreetTalk">Machine Learning Street Talk</a> · YouTube / Apple Podcasts</p>
+    <p>深度復述由 Vee Mok 自動生成 · 2026-06-02 14:00 CST</p>
+    <p><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">← 返回播客日報</a></p>
+  </div>
+
+</div>
+</body>
+</html>
