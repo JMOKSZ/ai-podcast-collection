@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度复述 · Michael I. Jordan：AI 不是智力竞赛，是集体经济系统</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5; color: #1a1a1a; line-height: 1.85; -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #27ae60; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title { font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a; }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #2d6a9f; background: #f0f6fc; }
+  blockquote.strong p { color: #2c3e50; }
+  .data-point { display: inline-block; background: #f3efe8; color: #2a2a2a; padding: 0.1rem 0.5rem; font-style: normal; font-weight: 500; }
+  ul { padding-left: 1.3rem; margin: 0.8rem 0 1.2rem; }
+  li { font-size: 0.95rem; color: #444; margin-bottom: 0.5rem; line-height: 1.7; }
+  .highlight-box { background: #fcf9f5; border: 1px solid #e8dfd3; padding: 1.2rem 1.5rem; margin: 1.2rem 0; }
+  .highlight-box p { margin-bottom: 0.5rem; }
+  .ref { font-size: 0.8rem; color: #888; font-style: italic; }
+  .ref a { color: #6b5d4d; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; line-height: 1.6; }
+  @media (max-width: 600px) { html { font-size: 16px; } .container { padding: 1.5rem 1rem; } header h1 { font-size: 1.5rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">Machine Learning Street Talk</div>
+  <h1>AI 不是智力競賽——Michael I. Jordan 的集體經濟系統</h1>
+  <div class="meta">
+    🎙️ 2026-05-21 · ⏱ 77 分鐘 · 🎤 Tim Scarfe & Keith Duggar × Prof. Michael I. Jordan (UC Berkeley / Inria)
+  </div>
+</header>
+
+<p>冇一位 AI 研究者比 Michael I. Jordan 更應該被稱作「AI 教父」，但恰恰係佢從來唔覺得自己係「AI 研究員」。</p>
+
+<p>被 Science 評為「最具影響力嘅計算機科學家在世」，Jordan 訓練過幾代機器學習學者——吳恩達係佢學生，Yoshua Bengio 同 Geoffrey Hinton 同期出道但 Jordan 影響力遍及統計機器學習所有分支。佢喺 Berkeley 嘅 lab 出過 latent Dirichlet allocation、relaxation labeling、variational inference for graphical models 等等 foundational 嘅 work。</p>
+
+<p>但佢好清楚：<strong>佢係 statistician，佢係 cognitive scientist，佢唔係 AI 人。</strong>而呢個身份自覺，正正係佢最值錢嘅視角。</p>
+
+<div class="section-title">一、AGI 係一個 PR 術語</div>
+
+<p>「AGI」呢個詞喺 Jordan 眼中幾乎毫無科學嚴謹性。佢好直接：「這是 PR 用語，不是研究框架。」</p>
+
+<p>Jordan 經歷過 80 年代符號 AI 的寒冬，見過專家系統從狂熱到蕭條嘅完整週期。佢觀察到當下嘅 AGI 敘事同當年驚人相似——都係一群有魅力嘅人站喺台上講「再過五年我哋就改變世界」，然後都係仲未發生。</p>
+
+<p>佢唔係否定 transformer 同 LLM 嘅技術進展，但佢認為呢啲進展被錯誤地框進了「智力競賽」嘅敘事入面。<strong>「人類嘅 intelligence 係社會性嘅，係集體嘅，唔係個體腦袋裏面嘅一個閃光點。」</strong></p>
+
+<blockquote class="strong">
+<p>「It's not about whether a machine can think. It's about whether we can build systems that help billions of people make better decisions together.」</p>
+</blockquote>
+
+<p>呢句係整集最核心嘅命題切換。Jordan 想將 AI 嘅目標從「造一個超人腦袋」改為「設計大規模集體決策系統」。</p>
+
+<div class="section-title">二、集體主義視角：AI 係經濟系統，唔係超級智能</div>
+
+<p>Jordan 喺 2025 年發表咗一篇論文——<em>A Collectivist, Economic Perspective on AI</em>（arXiv:2507.06268），呢集基本上係用對話 unpack 呢篇文嘅核心思想。</p>
+
+<p>佢提出一個反直覺嘅框架：AI 應該被理解為一個<strong>集體經濟系統</strong>，而唔係一場建造脫離肉體嘅超級智能嘅競賽。點解？因為現實世界嘅 AI 應用——供應鏈、商業、醫療、交通——本質上都係多人多 Agent 嘅協作與博弈問題，唔係單一智能體嘅認知問題。</p>
+
+<p>佢舉例：一個推薦系統表面上係「了解你喜好」，實際上係管理一個<strong>三層數據市場</strong>：用戶產生數據、平台聚合數據、廣告商/服務提供者競價獲取注意力。每一層都有激勵錯位、信息不對稱、博弈策略。呢啲唔係「智能」問題，係市場設計問題。</p>
+
+<ul>
+  <li><strong>第一層</strong>：個人產生行為數據（搜索、點擊、購買）</li>
+  <li><strong>第二層</strong>：平台聚合、建模、預測</li>
+  <li><strong>第三層</strong>：第三方（廣告商、服務商）競價接入</li>
+</ul>
+
+<p>Jordan 的論點係：<strong>如果你唔設計好呢三層嘅激勵結構，就算俾你一個 AGI 都解決唔到問題。</strong>可能仲衰——一個有超強能力但冇考慮激勵兼容嘅 AI 系統，會更高效地做錯嘢。</p>
+
+<div class="section-title">三、AlphaFold 的缺失誤差棒</div>
+
+<p>呢個係全集最有技術衝擊力嘅部分。</p>
+
+<p>AlphaFold 被譽為 AI 嘅里程碑——蛋白質結構預測嘅 breakthrough。但 Jordan 指出一個好多人忽略嘅問題：<strong>AlphaFold 冇俾誤差棒。</strong></p>
+
+<p>「你預測一個結構，但冇話俾我知呢個預測有幾可靠。如果一個藥物設計公司用 AlphaFold 嘅預測結構去做 docking 模擬，佢哋根本唔知邊個預測可信、邊個預測可能偏離十萬八千里。」</p>
+
+<p>呢個問題喺科學應用係致命嘅。Jordan 反問：<strong>你會唔會用一個從唔話俾你知自己有幾大把握嘅溫度計？</strong></p>
+
+<p>佢團隊提出嘅解決方案係<span class="data-point">Prediction-Powered Inference</span>（PPI）——一種結合機器學習預測同傳統統計推斷嘅框架。概念好優雅：用小量 ground truth 數據校正大量 ML 預測嘅偏差，得出有統計效力嘅置信區間。佢哋嘅論文攞咗 NeurIPS 2023 嘅 spotlight。</p>
+
+<blockquote>
+<p>「Prediction-powered inference gives you provably valid confidence intervals using machine learning predictions as a supplement, not a replacement, for real data. More accurate predictions just give you narrower intervals. You never lose validity.」</p>
+</blockquote>
+
+<p>呢個框架已經應用喺蛋白質組學、天文學、基因組學、遙感、生態學等多個領域。</p>
+
+<div class="section-title">四、藥物發現係激勵設計問題</div>
+
+<p>當主持人問到 AI 喺藥物發現嘅應用時，Jordan 又一個反直覺。</p>
+
+<p>「目前嘅討論 focus 喺『AI 可以預測藥物分子嘅特性』。呢個係 pattern matching，好有用。但藥物發現真正嘅樽頸唔係預測分子——係點樣設計臨床試驗、點樣管理激勵、點樣處理專利同獨家性。」</p>
+
+<p>佢指出一個殘酷現實：<strong>大量藥物明明喺理論上有效，但永遠到唔到病人手上，因為商業 incentive 唔對。</strong>罕見病藥物開發少，唔係因為科學上更難，係因為經濟上回報更低。</p>
+
+<p>「AI 可以幫你更快篩選候選分子，但呢個只係一部分。最終你需要嘅係一個機制設計——一個能讓所有參與者（藥廠、監管、保險、病人）都有動力合作嘅系統。」</p>
+
+<p>呢個視角將 AI for drug discovery 從純科學問題拉到經濟學與機制設計嘅交叉地帶。</p>
+
+<div class="section-title">五、安全係整個系統嘅屬性</div>
+
+<p>Jordan 對 AI safety 嘅睇法同 EA（有效利他主義）社群好唔同。佢認為安全唔係模型內部嘅 property，而係<strong>整個系統嘅 emergent property</strong>。</p>
+
+<p>「你唔可以話一個模型『安全』或者『唔安全』。安全係當你將呢個模型放入一個社會技術系統之後，系統整體表現出嘅性質。好比橋樑安全——你唔會話一堆鋼筋水泥『安全』，你話一座橋安全。」</p>
+
+<p>佢認為當下好多 AI safety 討論過於 focus 喺模型內部機制，而忽略咗系統層面嘅設計——監管框架、人機協作協議、故障切換機制、市場激勵等。呢啲先係決定一個 AI 系統會唔會出事嘅真正變量。</p>
+
+<div class="section-title">六、Conformal Prediction 與新的推斷範式</div>
+
+<p>Jordan 詳細介紹咗 conformal prediction 同 e-values——兩個相對小眾但佢認為會好重要嘅統計工具。</p>
+
+<p><strong>Conformal Prediction</strong> 嘅核心好簡單：唔俾你一個「最佳預測」，俾你一個「預測集合」，保證真實值喺集合入面嘅概率至少係 1-α。代價係集合可能會好大（當模型唔確定時），但保證永遠有效（<em>distribution-free validity</em>）。</p>
+
+<p><strong>E-values</strong> 係 p-values 嘅替代品，可以喺實驗進行中逐個更新，唔使等到實驗結束先做推斷。呢個喺 AI 應用中好有用——你嘅模型可以不斷更新預測，統計推斷即時跟進。</p>
+
+<div class="section-title">七、對年輕建造者嘅警示</div>
+
+<p>節目開場用咗 Jordan 一段好沉重嘅話：</p>
+
+<blockquote class="strong">
+<p>「A demoralizing message to young builders: you are being sold a narrative. AGI is a marketing term, not a research program. Don't let the hype define your career. The real work—building systems that actually improve human decision-making—is harder, less glamorous, but infinitely more valuable.」</p>
+</blockquote>
+
+<p>佢對科幻小說式 AI 敘事影響年輕人嘅擔憂好真實。佢見過 80 年代符號 AI 嗰一代嘅學生點樣被 hype 誤導咗成個職業生涯。佢唔想歷史重演。</p>
+
+<p>佢提出一個「新博雅三角」——未來的 AI 從業者需要嘅三種修養：</p>
+<ul>
+  <li><strong>計算思維</strong>（Computational thinking）——如 Jeannette Wing 所定義</li>
+  <li><strong>統計思維</strong>（Statistical thinking）——不確定性量化、因果推斷</li>
+  <li><strong>經濟思維</strong>（Economic thinking）——激勵、市場、機制設計</li>
+</ul>
+
+<blockquote>
+<p>「Silicon Valley takes the cream off the top and pretends that's the whole milk jug. The real AI opportunity is in the infrastructure underneath—market design, incentive alignment, uncertainty communication—not in yet another chatbot.」</p>
+</blockquote>
+
+<div class="section-title">核心判讀</div>
+
+<div class="highlight-box">
+<p><strong>呢集嘅價值唔在於反駁 LLM，而在於提供一個完全唔同嘅坐標系。</strong></p>
+<p>Jordan 唔係 AI 懷疑論者——佢親手建立咗大量機器學習嘅理論基礎。佢嘅批判來自內部：佢認為 AI 社群用錯咗框架。將 AI 視為「一個更強嘅個體智能」係根本性嘅 category error，忽略咗人類智能最本質嘅特徵——集體性、社會性、文化性。</p>
+<p>呢個視角同謝賽寧（世界模型 vs LLM）嘅路線之爭有微妙嘅共鳴：都係對當下 LLM-centric 敘事嘅不滿。但 Jordan 嘅替代方案唔係另一個技術路線（如世界模型），而係一個完全唔同嘅問題框架——<strong>從「做一個更聰明嘅機器」轉向「設計更聰明嘅集體決策系統」</strong>。</p>
+<p>對中文聽眾嘅意義：Jordan 對市場機制同激勵設計嘅重視，恰好契合中國語境下「AI 應用落地」嘅真實挑戰——好多時候問題唔係模型唔夠聰明，係系統設計未夠好。</p>
+</div>
+
+<div class="section-title">相關論文</div>
+<ul>
+  <li><span class="ref">Jordan, M.I. (2025). <a href="https://arxiv.org/abs/2507.06268">A Collectivist, Economic Perspective on AI</a>. arXiv:2507.06268.</span></li>
+  <li><span class="ref">Angelopoulos, A.N. et al. (2023). <a href="https://arxiv.org/abs/2301.09633">Prediction-Powered Inference</a>. NeurIPS 2023 Spotlight.</span></li>
+  <li><span class="ref">Angelopoulos, A.N. & Bates, S. (2021). <a href="https://www.jmlr.org/papers/v9/shafer08a.html">A Gentle Introduction to Conformal Prediction</a>. JMLR.</span></li>
+</ul>
+
+<footer>
+  <p>📖 深度復述 · AI 播客日報</p>
+  <p>JMOKSZ / ai-podcast-collection · 生成時間 2026-06-03 14:00 CST</p>
+  <p>來源：Machine Learning Street Talk · YouTube + Apple Podcasts Show Notes + arXiv</p>
+</footer>
+
+</div>
+</body>
+</html>
