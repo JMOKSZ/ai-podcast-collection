@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 越好，經濟份額越小——DeepMind 經濟學家的稀缺悖論</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@400;500&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #faf8f5;
+    color: #2c2c2c;
+    font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;
+    line-height: 1.9;
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 48px 28px;
+    font-size: 16px;
+  }
+  .back-link {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 32px;
+    transition: color 0.15s;
+  }
+  .back-link:hover { color: #555; }
+  .header {
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #e8e2d8;
+  }
+  .header .podcast-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+  .header .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+  }
+  .header .meta span { margin-right: 12px; }
+  .header .tags {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .header .tags .tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #777;
+    background: #f0ece6;
+    padding: 2px 10px;
+    border-radius: 3px;
+  }
+  h2 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 40px 0 12px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #e8e2d8;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 28px 0 8px;
+  }
+  p {
+    margin-bottom: 14px;
+    color: #444;
+    line-height: 1.85;
+  }
+  blockquote {
+    border-left: 3px solid #d4c9b8;
+    margin: 20px 0;
+    padding: 12px 20px;
+    background: #f4efe8;
+    color: #5a4a3a;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.8;
+    border-radius: 0 4px 4px 0;
+  }
+  blockquote.strong {
+    border-left: 4px solid #c0392b;
+    background: #fdf6f0;
+    font-weight: 500;
+  }
+  .data-point {
+    background: #f4f0ea;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .data-point span {
+    font-weight: 600;
+    color: #c0392b;
+  }
+  ul, ol {
+    margin: 12px 0 16px;
+    padding-left: 24px;
+  }
+  li {
+    margin-bottom: 8px;
+    color: #444;
+    line-height: 1.75;
+  }
+  .insight-box {
+    background: #fffcf6;
+    border: 1px solid #e8dfd3;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .insight-box h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  .insight-box p {
+    font-size: 15px;
+    margin-bottom: 0;
+    color: #555;
+  }
+  .footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #e8e2d8;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #bbb;
+    text-align: center;
+    line-height: 1.7;
+  }
+  .footer a { color: #999; text-decoration: none; }
+  .footer a:hover { color: #555; text-decoration: underline; }
+  hr { border: none; border-top: 1px solid #e8e2d8; margin: 32px 0; }
+  @media (max-width: 600px) {
+    body { padding: 24px 16px; font-size: 15px; }
+    .header h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">← 返回播客日報</a>
+
+<div class="header">
+  <div class="podcast-name">Dwarkesh Podcast</div>
+  <h1>AI 越好，經濟份額越小——DeepMind 經濟學家的稀缺悖論</h1>
+  <div class="meta">
+    <span>📅 2026-06-04</span>
+    <span>⏱ 約 1.3 小時</span>
+    <span>🎙 Dwarkesh Patel</span>
+    <span>👤 Alex Imas・Phil Trammell</span>
+  </div>
+  <div class="tags">
+    <span class="tag">AGI 經濟學</span>
+    <span class="tag">勞動份額</span>
+    <span class="tag">稀缺性</span>
+    <span class="tag">稅收分配</span>
+    <span class="tag">關係型部門</span>
+  </div>
+</div>
+
+<p>呢個世界大概分兩種人：一種覺得 AGI 會令大部分人失業、財富集中到極少數人手上；另一種覺得歷史證明咗新工種總會出現，唔使驚。</p>
+
+<p>兩種都啱，又兩種都錯。問題係——經濟學家自己都拗咗 200 年仲未拗完。</p>
+
+<p>今期 Dwarkesh Podcast 請嚟兩位真正嘅專家：<strong>Alex Imas</strong>（Google DeepMind AGI 經濟學總監、芝加哥大學經濟學教授）同 <strong>Phil Trammell</strong>（Epoch AI 經濟學負責人、Stanford 數字經濟研究中心學者）。佢哋冇畀答案——佢哋畀咗一個 <strong>框架</strong>。呢個框架比任何預測都更有用。</p>
+
+<h2>一條 200 年嘅辯論</h2>
+
+<p>1817 年，David Ricardo —— 古典經濟學家，唔係新古典嗰啲——寫咗篇文章話機械化會令所有人失業。佢話得啱。所有佢見過嘅工種，大部份真係俾機器取代咗。</p>
+
+<p>但 Ricardo 冇預測到嘅係：被自動化嘅工種變便宜之後，人類有更多錢去消費 <strong>新嘅服務</strong>。佢冇考慮到經濟結構會改變。2026 年嘅美國，壯年就業率係自 2000 年以嚟嘅第二高點。</p>
+
+<blockquote class="strong">
+  「David Ricardo 嘅預測基本係啱嘅——所有嗰啲工種都被自動化咗。但如果你叫醒佢話『2026 年美國壯年就業率係史上最高之一』，佢會好驚訝。佢冇考慮到被自動化嘅野變平之後，人哋有更多錢去買新服務。呢個就係 Lump-of-Labor Fallacy。」——Alex Imas
+</blockquote>
+
+<div class="data-point">
+  📊 <span>過去數百年勞動份額穩定在 ~60%</span>，資本份額 30–40%。有人擔心勞動份額喺跌——但 Atkinson 嘅研究顯示，如果你用一致嘅會計方法，<span>勞動份額從來未跌過</span>。
+</div>
+
+<h2>「悲觀版摩爾定律」</h2>
+
+<p>Phil Trammell 有一個令人坐直嘅講法：</p>
+
+<blockquote class="strong">
+  「悲觀版本嘅摩爾定律：每 18 個月，計算嘅價值減半。我哋搵唔到足夠多嘅用途嚟消耗計算，快到電腦變便宜嘅速度都追唔上。」——Phil Trammell
+</blockquote>
+
+<p>呢個趨勢可能俾 AI 改變咗：今日租一隻 H100 嘅價錢比三年前更貴。唔係因為技術退步，而係因為模型變得更智能之後，<strong>計算嘅機會成本變高咗</strong>。你唔用嚟訓練，對手就會用。用人類史上第一次，技術進步冇令運算單價下跌。</p>
+
+<p>Imas 補充：呢個就係 Phil 講嘅「品種擴張」。AI 不斷創造出新嘅用途嚟消耗計算，所以計算嘅邊際價值冇跌——仲喺度升。</p>
+
+<h2>蒙古經濟學家嘅思維實驗</h2>
+
+<p>Phil 提出咗一個好有啟發性嘅思想實驗。想像一個 1400 年嘅蒙古經濟學家——佢嘅世界只有馬、氈帳、酸奶同歌手。如果佢問：「有咗更多自動化之後，咩仲會係稀缺？」佢嘅答案可能係：<strong>歌手</strong>。因為馬匹交通會飽和、酸奶會飽和、氈帳會飽和，剩下嘅錢都會用喺歌手身上。</p>
+
+<blockquote>
+  「但事實係，隨住我哋積累更多財富同更先進嘅機器，我哋擴張咗非歌手嘅品類——歌手嘅份額仍然微不足道。呢個就係我對未來嘅核心預測，雖然佢都有可能走向另一個方向。」——Phil Trammell
+</blockquote>
+
+<p>重點：品種擴張（variety expansion）可以無限延遲邊際效用遞減。如果資本部門不斷創造新嘅商品品類——即係好似今日嘅 AI 不斷創造新應用一樣——人類部門嘅份額唔一定會膨脹。</p>
+
+<h2>「關係型部門」：人類嘅稀缺護城河</h2>
+
+<p>Alex Imas 提出咗全場最核心嘅概念：<strong>關係型部門（Relational Sector）</strong>。</p>
+
+<p>定義好簡單：呢類商品或服務嘅價值，部分來自「有人類參與其中」呢件事本身。芭蕾舞者、咖啡師、醫生嘅診斷陪伴、甚至係 podcaster——呢啲嘢，人類參與本身就係價值。人類天然稀缺，所以關係型產品係另一個維度嘅稀缺。</p>
+
+<p>但 Imas 特別強調：唔好將關係型部門簡單等同於「表演者」。今日大部份工作都係由唔同任務組成嘅。一個醫生可能要做保險文書、打電話畀藥廠、見病人、落診斷——見病人只係其中一部份。如果 AI 可以做晒所有文書工作，只留低醫生同病人對話嗰部分，而你願意為「有人類醫生落診斷」呢個服務畀更高嘅錢——</p>
+
+<p><strong>嗰個工作，就係關係型部門嘅一部分。</strong></p>
+
+<div class="data-point">
+  💡 關鍵問題：<span>「如果呢項服務完全由機器完成 vs 呢個任務由人類完成」，你願意俾多幾多錢？</span>呢個叫做 conjoint analysis——經濟學家需要呢啲數據，但 <span>我哋完全冇呢啲數據</span>。
+</div>
+
+<h2>「我哋需要一個數據嘅曼哈頓計劃」</h2>
+
+<p>Imas 反覆強調一個令人不安嘅事實：<strong>經濟學家根本冇足夠數據做預測</strong>。</p>
+
+<ul>
+  <li>消費者需求彈性——唔知</li>
+  <li>工作創造就業追蹤——唔足</li>
+  <li>O*NET 數據庫——過時且質量低劣</li>
+  <li>經濟學家之間嘅預測——分歧極大</li>
+</ul>
+
+<blockquote>
+  「你會發現經濟學家之間有大量分歧，每個方向都有。我哋需要嘅係預測市場（prediction markets）——利用集體智慧做出聚合預測，而唔係個別經濟學家嘅猜測。我哋集體被証明咗係極差嘅預測者。」——Alex Imas
+</blockquote>
+
+<p>佢嘅提議：唔好做個別預測，建立預測市場。而且由今日開始收集消費者嘅 conjoint 數據——知道人類願意為「有人類參與」俾幾多錢，先至可以判斷關係型部門嘅真實規模。</p>
+
+<h2>最大嘅悖論：AI 越好，份額越小</h2>
+
+<p>呢個係全場最反直覺嘅論點。</p>
+
+<p>Phil 提出：如果非人類部門（everything else）嘅自動化速度快到所有呢啲商品都變得接近免費，而人類部門嘅需求增長有限——咁資本份額反而會下跌。點解？因為資本回報會因競爭同邊際效用遞減而下降。更多嘅機器競爭同一批人類顧客嘅錢，利潤率會被壓縮。</p>
+
+<blockquote class="strong">
+  「一個機器人今年變成好多機器人，但芭蕾舞者嘅數量仲係咁多。」——Alex Imas
+</blockquote>
+
+<p>換句話講：<strong>AI 越好，佢喺經濟中嘅份額可能越小</strong>。</p>
+
+<p>當然，呢個只係其中一個 scenario。另一邊係：如果資本部門嘅品種擴張夠快——即係 AI 不斷創造出全新嘅商品類別——咁人類部門嘅份額就會被稀釋，勞動份額反而會跌。邊個 scenario 發生？取決於一個經濟學家答唔到嘅問題：<strong>人類嘅慾望有冇極限？</strong></p>
+
+<h2>稅收與分配：開發中國家如何參與？</h2>
+
+<p>Dwarkesh 問咗一個好實際嘅問題：如果勞動份額崩潰，政府點樣課稅同重新分配 AI 創造嘅財富？</p>
+
+<p>Imas 嘅答案係：呢個問題目前冇好答案。窮國點樣從 AI 供應鏈中獲益？如果一切生產都自動化，傳統嘅「廉價勞動力優勢」就消失——嗰啲國家嘅角色係咩？開發中國家點樣 index into AI gains？呢啲問題仲未有經濟模型好好處理。</p>
+
+<p>Phil 補充：發達國家同開發中國家喺 AI 供應鏈中嘅位置差異，可能會比以往任何技術革命都更大。</p>
+
+<div class="insight-box">
+  <h4>💡 我嘅 Insight</h4>
+  <p>呢期播客嘅核心價值唔在於「答案」，而在於「問題嘅框架」。Imas 同 Trammell 至少做咗三件事令呢集值得反覆聽：</p>
+  <p><strong>第一</strong>，佢哋將 AGI 經濟學從科幻拉返落經濟學嘅硬科學框架——供需曲線、邊際效用、品種擴張呢啲概念比任何 futurology 預測都實在。</p>
+  <p><strong>第二</strong>，佢哋講清楚咗點解 200 年嚟嘅勞動份額冇跌——唔係因為「奇蹟」，而係因為品種擴張同結構性變化呢兩個機制一直在運作。問題係呢兩個機制喺 AGI 時代仲有冇效。</p>
+  <p><strong>第三</strong>，Imas 不斷強調嘅「我哋冇數據」其實係一個好重要嘅信號——DeepMind 專門成立「AGI 經濟學」團隊，本身就反映咗前沿實驗室對呢啲問題嘅重視程度。如果 Google DeepMind 嘅經濟學家都話「我哋乜數據都冇」，咁市面上所有關於 AGI 經濟影響嘅確定性論述——無論係末日論定烏托邦論——都值得以極大嘅懷疑態度看待。</p>
+</div>
+
+<h2>重點引用</h2>
+
+<blockquote>
+  「我哋唔應該做個別預測，我哋應該建立預測市場，利用集體智慧。」——Alex Imas
+</blockquote>
+
+<blockquote>
+  「每 18 個月，計算嘅價值減半。呢個係悲觀版本嘅摩爾定律。」——Phil Trammell
+</blockquote>
+
+<blockquote>
+  「因為人類天然稀缺——如果自動化令其他嘢都唔再稀缺，人類參與嘅嘢仍然會稀缺。」——Alex Imas
+</blockquote>
+
+<h2>節目筆記</h2>
+
+<ul>
+  <li><strong>贊助商</strong>：Jane Street（實習培訓計劃）、Google Gemini Omni（多模態影片生成）、Cursor Composer 2.5（用 RL + textual feedback 訓練）</li>
+  <li><strong>長度</strong>：約 1 小時 16 分（Dwarkesh 近期較短嘅一集——但信息密度極高）</li>
+  <li><strong>YouTube 標題</strong>：「The better AI gets, the smaller its share of the economy might get」——一個本身就係洞察嘅標題</li>
+  <li><strong>相關論文</strong>：Chad Jones (Stanford) — AI and Economic Future；Atkinson — Labor Share 會計方法研究</li>
+</ul>
+
+<div class="footer">
+  <p><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">📖 播客日報</a> · <a href="https://github.com/JMOKSZ/ai-podcast-collection">JMOKSZ/ai-podcast-collection</a></p>
+  <p>來源：Dwarkesh Podcast「Alex Imas and Phil Trammell – What remains scarce after AGI?」</p>
+  <p>生成：2026-06-06 · Apache 2.0</p>
+</div>
+
+</body>
+</html>

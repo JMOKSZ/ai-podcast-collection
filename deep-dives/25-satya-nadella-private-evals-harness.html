@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>私有Eval即IP——Satya Nadella 的 AI 平台戰略完全拆解</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@400;500&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #faf8f5;
+    color: #2c2c2c;
+    font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;
+    line-height: 1.9;
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 48px 28px;
+    font-size: 16px;
+  }
+  .back-link {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 32px;
+    transition: color 0.15s;
+  }
+  .back-link:hover { color: #555; }
+  .header {
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #e8e2d8;
+  }
+  .header .podcast-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+  .header .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+  }
+  .header .meta span { margin-right: 12px; }
+  .header .tags {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .header .tags .tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #777;
+    background: #f0ece6;
+    padding: 2px 10px;
+    border-radius: 3px;
+  }
+  h2 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 40px 0 12px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #e8e2d8;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 28px 0 8px;
+  }
+  p {
+    margin-bottom: 14px;
+    color: #444;
+    line-height: 1.85;
+  }
+  blockquote {
+    border-left: 3px solid #d4c9b8;
+    margin: 20px 0;
+    padding: 12px 20px;
+    background: #f4efe8;
+    color: #5a4a3a;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.8;
+    border-radius: 0 4px 4px 0;
+  }
+  blockquote.strong {
+    border-left: 4px solid #c0392b;
+    background: #fdf6f0;
+    font-weight: 500;
+  }
+  .data-point {
+    background: #f4f0ea;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .data-point span {
+    font-weight: 600;
+    color: #c0392b;
+  }
+  ul, ol {
+    margin: 12px 0 16px;
+    padding-left: 24px;
+  }
+  li {
+    margin-bottom: 8px;
+    color: #444;
+    line-height: 1.75;
+  }
+  .insight-box {
+    background: #fffcf6;
+    border: 1px solid #e8dfd3;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .insight-box h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  .insight-box p {
+    font-size: 15px;
+    margin-bottom: 0;
+    color: #555;
+  }
+  .footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #e8e2d8;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #bbb;
+    text-align: center;
+    line-height: 1.7;
+  }
+  .footer a { color: #999; text-decoration: none; }
+  .footer a:hover { color: #555; text-decoration: underline; }
+  hr { border: none; border-top: 1px solid #e8e2d8; margin: 32px 0; }
+  @media (max-width: 600px) {
+    body { padding: 24px 16px; font-size: 15px; }
+    .header h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">← 返回播客日報</a>
+
+<div class="header">
+  <div class="podcast-name">No Priors × Latent Space 交叉特輯 · Microsoft Build 2026 現場錄製</div>
+  <h1>私有 Eval 即 IP——Satya Nadella 的 AI 平台戰略與 Harness 時代宣言</h1>
+  <div class="meta">
+    <span>📅 2026-06-04</span>
+    <span>⏱ 約 40 分鐘</span>
+    <span>🎙 Sarah Guo・Elad Gil・swyx</span>
+    <span>👤 Satya Nadella（Microsoft CEO）</span>
+  </div>
+  <div class="tags">
+    <span class="tag">私有Eval</span>
+    <span class="tag">多模型Harness</span>
+    <span class="tag">AI平台戰略</span>
+    <span class="tag">MAI模型</span>
+    <span class="tag">SaaS終局</span>
+  </div>
+</div>
+
+<p>Microsoft Build 2026 嘅 Keynote 之後，Satya Nadella 冇去休息——佢直接去咗一個 crossover podcast session，由 No Priors（Sarah Guo + Elad Gil）同 Latent Space（swyx）一齊圍攻。</p>
+
+<p>呢 40 分鐘唔係一個 CEO 嘅公關訪問。Satya 嚟咗真——佢講清楚咗 Microsoft 喺 AI 時代嘅第三條路：唔係 OpenAI 嘅模型第一，唔係 Google 嘅全棧自研，而係 <strong>開源 Harness + 私有 Eval = 企業 AI 平台</strong>。</p>
+
+<p>如果你只可以聽一個科技 CEO 喺 2026 年對 AI 嘅戰略判斷，好大機會係呢個。</p>
+
+<h2>全場最核心一句：私有 Eval 係公司最大嘅 IP</h2>
+
+<p>呢個唔係修辭，係 Satya 嘅戰略核心。</p>
+
+<blockquote class="strong">
+  「每間公司擁有私有評估（private evals）可能係最大嘅 IP。諗下——你有一個私有 eval，你可以用一個前沿模型去 hill climb，而且唔泄漏 traces。呢個可能係未來知識產權最大嘅驅動力。」——Satya Nadella
+</blockquote>
+
+<p>佢仲提出咗一個 <strong>acid test</strong>：</p>
+
+<blockquote>
+  「你有一個私有 eval。你用緊 Model A。你可唔可以 switch 去 Model B，再 climb up？如果可以——你 control。如果唔可以——你唔 control。呢個就係點解 Harness 嘅決策變得咁重要。」——Satya Nadella
+</blockquote>
+
+<p>呢個測試重新定義咗「企業 AI 自主權」。唔係你有冇自己嘅模型，而係<strong>你可唔可以自由切換模型而唔損失你嘅評估能力</strong>。</p>
+
+<h2>Bill Gates Line：生態系 vs 單一平台</h2>
+
+<p>Sarah Guo 問咗全場最好嘅問題之一：Microsoft 嘅角色係平台定係模型公司？</p>
+
+<p>Satya 用咗佢喺 Microsoft 經歷四個平台時代嘅視角嚟回答——由 Windows 到雲端到 AI，不變嘅一條原則：</p>
+
+<blockquote>
+  「一個平台嘅定義，係佢有能力創造更多價值 <em>圍繞住</em> 個平台，而唔係 <em>被</em> 個平台 capture 晒。」——Satya Nadella
+</blockquote>
+
+<p>呢個就係所謂嘅「Bill Gates Line」——Microsoft 嘅生態系統必須令客戶得到嘅價值遠超過 Microsoft 自己 capture 嘅價值。如果唔係，就唔會有開發者喺你上面起嘢。</p>
+
+<p>Satya 仲用咗一個有趣嘅自嘲：「我成日同 Jensen 講——你 build CUDA 喺我哋嘅 DirectX 上面，God，我 got the short end of that。」</p>
+
+<h2>MAI 模型嘅真正策略：乾淨血統 + Hill Climb Scaffold</h2>
+
+<p>Microsoft 宣佈咗 MAI 系列模型——由細到 5B 到大型 frontier 模型。但重點唔係模型本身，而係佢哋點樣 train。</p>
+
+<ul>
+  <li><strong>乾淨血統（Clean Lineage）</strong>：訓練數據嘅質量同消融實驗變得比任何 benchmark 更重要。Satya 話「好多 open weight 模型一兩個 benchmark 好靚，但實戰唔得」——呢個唔單止係批評，係佢哋 design principle 嘅反面教材</li>
+  <li><strong>Hill Climb Scaffold</strong>：模型只係起點。你要圍繞住模型建立「hill climbing scaffold」——一個可以幫助模型喺特定領域爬得更高嘅環境</li>
+  <li><strong>Private Evals + Traces = RLE</strong>：你開始收集 traces，建立自己嘅 reinforcement learning environment（RLE）。呢個 loop 就係每個公司嘅競爭壁壘</li>
+  <li><strong>時間性（Temporality）成為新 frontier</strong>：Satya 用咗一個例子——你可以先用一個強模型（GPT-55）生成一堆 traces，然後用嚟 train 一個 5B reasoning model，令佢喺特定任務上超越大模型</li>
+</ul>
+
+<div class="data-point">
+  💡 關鍵 Insight：<span>模型正在從「產品」變成「原材料」。</span>真正嘅產品係你點樣 hill climb——你嘅 eval、你嘅 trace、你嘅 scaffold。<span>呢個就係點解 Satya 話「私有 Eval 係新 IP」。</span>
+</div>
+
+<h2>代碼太成功了，AI 需要重新定義 IDE</h2>
+
+<p>一個好有趣嘅 paradox。Satya 話：</p>
+
+<blockquote>
+  「Coding 太成功，以至於我哋而家需要 rebuild 個 IDE。你有 100 個 agent sessions 同時運行——佢哋交返嚟嘅 cognitive load 作為人類根本搞唔掂。Chat 作為唯一嘅 artifact 都係唔可能嘅——所以我哋需要 Canvas。」——Satya Nadella
+</blockquote>
+
+<p>呢個 paradox 好深刻：<strong>AI 越幫到你，你越需要新嘅 UI 嚟同 AI 協作</strong>。傳統 IDE 係俾一個人寫 code 嘅——而家係俾一個人管理 100 個 AI 寫 code。介面要完全反思。</p>
+
+<p>Satya 仲講到「glue work」——人類大量時間花嘅係連接唔同系統嘅膠水工作。而家可以用 long-running、durable 嘅 agents 嚟做呢啲 glue work。「六個月後，我哋所有人都會話——嘩，我一晚之間有咁多 autopilots 喺度幫我做嘢。」</p>
+
+<h2>SaaS 嘅終局：Build vs Buy 方程已變</h2>
+
+<p>Elad Gil 問咗一個好敏感嘅問題：SaaS 模式會唔會死？既然任何 workflow 都可以 cheaply generate，咁仲有咩需要用買嘅？</p>
+
+<p>Satya 嘅答案好有層次。佢話傳統 SaaS 嘅做法係：我哋揀一個 business process → 建立 data model → 寫 business logic → 加上 UI → 少少 configuration。呢個模式做咗 20 年。</p>
+
+<p>而家發生嘅係：得 AI 之後，你唔需要買一個完整嘅 SaaS 產品去 capture 一個 workflow——你可以 prompt 一個 agent 去做。但呢個唔代表 SaaS 會死。Satya 嘅觀點係：終局係一個混合體。</p>
+
+<blockquote>
+  「每間公司都會有自己嘅 agents 做緊工，人類做緊工，兩者之間嘅 traces——呢啲先係企業點樣創造價值嘅真正 context。呢啲 traces 返去 train 嘅唔係一個 generalist model，而係 <strong>公司老兵 agent</strong>（company veteran agent）。呢啲嘢要上 balance sheet 㗎。」——Satya Nadella
+</blockquote>
+
+<p>換句話講：<strong>SaaS 唔係死——SaaS 係變成 Agent-as-a-Service</strong>。以前你買一個 CRM 軟件包管理客戶關係，第時你可能買一個「銷售 agent」——佢帶住佢自己嘅 traces 同經驗嚟幫你。</p>
+
+<div class="insight-box">
+  <h4>💡 我嘅 Insight</h4>
+  <p>呢集最好嘅嘢唔係 Satya 講咗咩 specific 產品，而係佢點樣重新定義咗 Microsoft 嘅 AI 戰略框架。</p>
+  <p><strong>第一</strong>，「私有 Eval 係新 IP」呢個概念會改變好多嘢——如果評估能力比模型本身更重要，咁投資者評估 AI 公司嘅方式、企業採購 AI 嘅方式、甚至係學術界發表研究嘅方式，都要重新調整。</p>
+  <p><strong>第二</strong>，Satya 對「平台 vs 模型」嘅取態其實係一個幾高明嘅 positioning——當全世界都喺度拗「邊個模型最好」嘅時候，Microsoft 話「我唔 care——你鍾意用邊個都可以，用我嘅 harness 同 eval infrastructure 就得」。呢個係典型 Microsoft 打法：product 層面唔一定要贏，platform 層面贏就得。</p>
+  <p><strong>第三</strong>，「Can everybody operate at the frontier with their frontier intelligence？」呢個 tagline 背後係一個好大嘅假設——每間公司都有能力建立自己嘅 frontier eval。真係？對於大型企業，可以。對於 startup？可能佢哋需要另一個平台幫佢哋做呢件事。</p>
+  <p>最後——Satya 話「swyx，你知唔知你講緊嘅係 SEC 需要為 token expertise 設立會計標準」嘅時候，佢係認真嘅。呢個唔係講笑。如果 AI agents 嘅 traces 變成可以上 balance sheet 嘅資產，成個企業估值體系都要改。</p>
+</div>
+
+<h2>重點引用</h2>
+
+<blockquote>
+  「如果冇呢個平台承諾——你嚟 build with us，你會得到屬於你 data 嘅 intelligence——我唔知點樣達到穩定均衡。冇咗呢個，直接 worship at the altar of one model 就得，使乜開 developer conference？」——Satya Nadella
+</blockquote>
+
+<blockquote>
+  「人類資本從未可以被放上 balance sheet——因為你冇辦法捕捉 tacit knowledge。而家你可以——透過 agent 隨時間學習嘅 traces。」——Satya Nadella
+</blockquote>
+
+<blockquote>
+  「你可以用 Llama harness，可以用任何 open harness，或者你自己嘅 harness——然後用你嘅 tools、multiple models、你嘅 context 嚟 train。呢個先係我哋嘅 pitch。」——Satya Nadella
+</blockquote>
+
+<h2>節目筆記</h2>
+
+<ul>
+  <li><strong>形式</strong>：No Priors 同 Latent Space 首次 crossover，Microsoft Build 2026 現場錄製</li>
+  <li><strong>長度</strong>：約 40 分鐘（No Priors 標準長度，但內容密度遠超平時）</li>
+  <li><strong>MAI 模型細節</strong>：由 Mustafa Suleyman 喺 Keynote 中介紹，本次 podcast 由 Satya 深入補充訓練哲學</li>
+  <li><strong>MDASH 例子</strong>：Microsoft 安全產品 MDASH launch 時發現咗 Mythic 冇發現嘅漏洞——證明 multi-model harness 喺現實世界可以更高效</li>
+  <li><strong>GitHub Copilot Harness</strong>：被用喺所有 Microsoft 產品線（安全、科學、開發），多模型接入 + tools access + context layer</li>
+</ul>
+
+<div class="footer">
+  <p><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">📖 播客日報</a> · <a href="https://github.com/JMOKSZ/ai-podcast-collection">JMOKSZ/ai-podcast-collection</a></p>
+  <p>來源：No Priors × Latent Space「The Rise of the Full-Stack Builder and Hyper-Leveraged Generalist with Microsoft CEO Satya Nadella」</p>
+  <p>生成：2026-06-06 · Apache 2.0</p>
+</div>
+
+</body>
+</html>
