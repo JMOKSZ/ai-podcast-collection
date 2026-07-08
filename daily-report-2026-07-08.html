@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客日报 · 2026-07-08</title>
+<style>
+  body {
+    background: #faf8f5;
+    color: #1a1a1a;
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", serif;
+    line-height: 1.75;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    border-bottom: 2px solid #e2dcd3;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .meta {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    padding: 0.3rem 0.75rem;
+    background: #edebe7;
+    border-radius: 4px;
+  }
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1rem 0 0.25rem;
+  }
+  .episode-tag {
+    color: #b8860b;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #e2dcd3;
+    margin: 2rem 0;
+  }
+  blockquote {
+    border-left: 3px solid #d4c9b5;
+    margin: 0.75rem 0;
+    padding: 0.5rem 1rem;
+    background: #f3f0ea;
+    color: #3a3a3a;
+    font-style: italic;
+  }
+  ul, ol { margin: 0.5rem 0; padding-left: 1.4rem; }
+  li { margin: 0.3rem 0; }
+  strong { font-weight: 700; }
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2dcd3;
+    color: #888;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  .emoji-section { margin-right: 0.3rem; }
+</style>
+</head>
+<body>
+
+<h1>🎙️ AI 播客日报</h1>
+<p class="meta">2026-07-08（週三）· 報告生成 10:03 CST · 來源 RSS + 搜尋</p>
+
+<!-- ============== BULLET POINTS ============== -->
+<h2>📌 今日重點</h2>
+<ul>
+  <li><strong>AI 自我進化逼近現實</strong>：Apodex 兩位首席科學家預言最快半年跑通完整自我進化閉環，但「遞歸漂移」需2-3年解決 — 硅谷101 E242 深度拆解</li>
+  <li><strong>Liquid AI 邊緣模型崛起</strong>：MIT 團隊的微分方程神經網路，12個液態神經元搞定泊車——Cognitive Revolution 聊 device-native 模型</li>
+  <li><strong>騰訊 Hy3 開源震動業界</strong>：295B MoE / Apache 2.0，vLLM 首日原生支援，推理吞吐最高改善 2.95x — Latent Space 週報</li>
+  <li><strong>Anthropic J-Space 被指發現「工作記憶」</strong>：內部表徵子空間可上報、調製、靈活推理，Neel Nanda 稱「最強證據」</li>
+  <li><strong>MIRA 世界模型可玩 2v2 Rocket League</strong>：General Intuition + Kyutai + Epic，5B 參數單卡 B200 即時 20fps</li>
+  <li><strong>LongCat 2.0 (1.6T) MIT 開源</strong>：美團用國產晶片訓練，BF16 權重佔 3.55TB</li>
+</ul>
+
+<!-- ============== 中文播客 ============== -->
+<h2>🇨🇳 中文播客</h2>
+
+<!-- 硅谷101 -->
+<h3>硅谷 101 <span style="font-weight:normal;font-size:0.85rem;color:#888;">（泓君 Jane）</span></h3>
+
+<h4>E242｜最快半年AI跑通自進化？與陳天橋首席科學家聊聊硅谷模型必爭之地 🎙️ <span class="episode-tag">（2026-07-05）</span></h4>
+
+<p><strong>主題：</strong>AI 自我進化的時間線、技術路徑與風險——從 Anthropic RSI 報告出發，拆解「發現模型」的核心命題。</p>
+
+<p><strong>嘉賓背景：</strong></p>
+<ul>
+  <li><strong>杜少雷（Simon）</strong> — Apodex 推理模型與訓練首席科學家，華盛頓大學計算機學院副教授</li>
+  <li><strong>李輩濱（Beibin）</strong> — Apodex 自我進化與編程首席科學家</li>
+</ul>
+<p>Apodex 由陳天橋出資創立並親自主導，定位只做一件事：<strong>Heavy Duty Solver</strong>——專啃沒有標準答案、人類都不知道從哪下手的難題。他們管自己想做的模型叫 <strong>Discovery Model</strong>：不是從已知信息找答案，而是提出人類還沒想到過的假設，自己去驗證。</p>
+
+<p><strong>核心論點：</strong></p>
+<ul>
+  <li><strong>AI 自我進化不是新概念</strong>，兩三年前就有了。之所以最近 RSI（Recursive Self-Improvement）概念爆火，是因為模型能力變強了，長程任務表現更好了。</li>
+  <li><strong>最快半年能跑通一次完整的自我進化閉環</strong>——但要實現持續可靠的遞歸提升，模型必須具備「自我驗證」能力。</li>
+  <li>自我驗證的關鍵是教會大模型擁有科學家一樣的<strong>品味和判斷力</strong>——不只看答案對不對，還要判斷問題是否有價值。</li>
+  <li><strong>三條自我進化路徑：</strong>預訓練、後訓練、Harness（Agent 層的包裝和工具調用）</li>
+  <li>Apodex 的驗證方法：<strong>多個子 Agent 互相驗證</strong>，代碼領域因為有 compiler 和 test, 相對可控。</li>
+  <li>如何避免大模型「拍馬屁」？遠離大眾偏好。用「AI 憲法」定義性格，頂級科學家數據校準品味。</li>
+</ul>
+
+<p><strong>關鍵數據/事實：</strong></p>
+<ul>
+  <li>DeepResearch 多個榜單第一（Apodex 的 Discoverative 框架）</li>
+  <li>技術范式決定：多個 Agent 組團解決問題，效果好於單個 Agent</li>
+  <li>擴展定律（Scaling Law）在某些領域仍有效，但外推一旦失效，模型就成了開盲盒</li>
+  <li>解決「遞歸漂移」還需要2-3年</li>
+</ul>
+
+<p><strong>重點引用：</strong></p>
+<blockquote>「我們不是把 Token 當生意，我們是要解決人類還沒有被解決的科學難題。」</blockquote>
+
+<p><strong>技術詳情：</strong></p>
+<ul>
+  <li>自我進化的底層能力 = <strong>Coding 能力 + 長程任務能力</strong></li>
+  <li>訓練長程任務需要：算法 + 數據 + Infra 三管齊下</li>
+  <li>AI 自我進化後，垂直領域護城河仍在——因為 domain knowledge + 數據飛輪不可複製</li>
+  <li>防止 AI「走火入魔」的方法目前仍靠人工手調，「自我蒸餾」可能是個方向</li>
+  <li>人類只是 warm start，未來 AI 將形成自我品味，就像 AlphaZero 從零開始超越人類</li>
+</ul>
+
+<p><strong>行業 insight：</strong></p>
+<ul>
+  <li>陳天橋選擇 Heavy Duty Discovery 賽道，不是跟巨頭搶基座模型，而是專門解決「人類不知道答案的問題」</li>
+  <li>巨頭（OpenAI/Anthropic/Google）也都在做科研發現模型，但判斷問題價值仍是核心瓶頸</li>
+  <li>不同於 AI for Science（專注特定領域），Heavy Duty Solver 是通用模型，強調元能力</li>
+</ul>
+
+---
+
+<h3>42章經 <span style="font-weight:normal;font-size:0.85rem;color:#888;">（曲凱 Kyle）</span></h3>
+<p style="color:#888;font-size:0.9rem;">本週無全新劇集（上週已掃：對談魏小康：字節美團組織建設／AI 股票還能買嗎？）</p>
+
+<h3>十字路口 Crossing <span style="font-weight:normal;font-size:0.85rem;color:#888;">（Koji 楊遠骋）</span></h3>
+<p style="color:#888;font-size:0.9rem;">本週無全新劇集（上週已掃 9 集）</p>
+
+<h3>屠龍之術 <span style="font-weight:normal;font-size:0.85rem;color:#888;">（莊明浩）</span></h3>
+<p style="color:#888;font-size:0.9rem;">搜尋配額限制，未獲取到最新劇集。最新已知：Vol.83 「25頁PPT記錄一場中國AI全明星賽」（2026-01）</p>
+
+<h3>張小珺商業訪談錄 <span style="font-weight:normal;font-size:0.85rem;color:#888;">（張小珺）</span></h3>
+<p style="color:#888;font-size:0.9rem;">搜尋配額限制，未獲取到最新劇集</p>
+
+<!-- ============== 英文播客 ============== -->
+<h2>🇬🇧 英文播客</h2>
+
+<!-- Latent Space -->
+<h3>Latent Space <span style="font-weight:normal;font-size:0.85rem;color:#888;">（swyx + Alessio Fanelli）</span></h3>
+
+<h4>[AINews] The Field Guide to Fable 🎙️ <span class="episode-tag">（2026-07-07）</span></h4>
+
+<p><strong>主題：</strong>Thariq 的 Fable 5 Field Guide Keynote + 7/4–7/6 AI 週報。全球等待 GPT-5.6 Sol Ultra 發布，Fable 5 訂閱補貼即將到期。</p>
+
+<p><strong>核心論點（Keynote 四段）：</strong></p>
+<ol>
+  <li><strong>Unhobbling Claude</strong> — 模型的行為限制往往來自於我們自己（harness + prompt）。面對新一類模型，應該移除或改變這些限制來激發新行為。一個典型案例：<strong>HTML 的 unreasonable effectiveness</strong>。</li>
+  <li><strong>Finding Your Unknowns</strong> — 找出你不知道你不知道的東西。技巧包括：blindspot pass、brainstorm wildly different design directions、interview me (/grill-me)、use references、keep implementation-notes.md、quiz me。</li>
+  <li><strong>Dealing with Grief</strong> — 從前花數週的開發工作，現在幾小時完成。直面這種情感轉變。</li>
+  <li><strong>Being Unreasonable</strong> — 「Tradeoffs are not real」因為 Fable 更強，可以更野心勃勃，不接受取捨。<blockquote>「Building is easy, generating value is still hard.」</blockquote></li>
+</ol>
+
+<p><strong>本週 AI 新聞精華：</strong></p>
+
+<p><strong>📊 騰訊 Hy3 開源 — 295B MoE</strong></p>
+<ul>
+  <li>Apache 2.0 發布，<strong>295B 總參數 / 21B 激活</strong>、192 experts / top-8 routing、GQA、256K context、3.8B MTP layer for speculative decoding</li>
+  <li><strong>vLLM 首日原生支援</strong>，Tencent production kernels 已上游到 vLLM main</li>
+  <li>Tencent 新增 load-balanced decode scheduling + fused FP8 MoE serving</li>
+  <li>報告提升：mixed-length decode 最高 <strong>2.95x</strong>、TTFT 降低 ~24%、TPOT 降低 ~17%</li>
+  <li>社區快速將其免費部署在 Nous Portal（兩週）</li>
+  <li>與 GLM-5.2 比較：Hy3 在 vibe test 表現好，但 GLM-5.2 仍被認為是實際最好用的開源模型</li>
+  <li>結論：開源前沿快速收窄，競爭越來越關於部署穩健性而非 raw leaderboard 差距</li>
+</ul>
+
+<p><strong>🤖 Agent 基準測試</strong></p>
+<ul>
+  <li><strong>AutomationBench-AA</strong>：657 tasks × 40 SaaS apps，Claude Fable 5 以 48.6% 領先，Opus 4.8 48.5%，Gemini 3.5 Flash 42.6%，GPT-5.5 42.1%</li>
+  <li>更值得注意的：每個模型仍會破壞業務規則；Gemini 在 objective-per-guardrail-violation 和 cost efficiency 上表現突出</li>
+  <li>開源明顯落後：GLM-5.2 max 最佳僅 27.8%</li>
+  <li>Artificial Analysis 推出六個領域-specific index：金融、法律、醫療、策略與營運、工程、經濟</li>
+  <li>François Chollet 指出：不帶 cost per task 的 benchmark 分數越來越沒意義</li>
+</ul>
+
+<p><strong>🧠 Anthropic J-Space / Global Workspace 研究</strong></p>
+<ul>
+  <li>Anthropic 發表研究稱 Claude 內部存在類似 global workspace 的結構（J-space）</li>
+  <li><strong>不僅是 chain-of-thought 提取</strong>，而是識別出一個特權內部表徵子空間——可上報、調製、靈活推理</li>
+  <li>Neel Nanda 稱之為「迄今最強的工作記憶-like 機制證據」</li>
+  <li>安全維度：該 workspace 可 surface 隱藏概念、檢測 prompt injection、暴露內部 sabotage 特徵</li>
+  <li>但「意識」語言引發爭議——批評者認為 Anthropic 在 conflate privileged latent activation 與 consciousness</li>
+  <li>Anthropic 同步推出 Neuronpedia demo（給 open-weight 模型）</li>
+</ul>
+
+<p><strong>🎮 MIRA 世界模型 — 可玩的 Rocket League</strong></p>
+<ul>
+  <li>General Intuition + Kyutai + Epic Games</li>
+  <li>10,000 小時 bot-collected data 訓練</li>
+  <li><strong>5B 參數模型</strong>，單卡 NVIDIA B200 運行完整 2v2 即時比賽，20fps</li>
+  <li>無顯式物理引擎或渲染引擎——純世界模型模擬</li>
+  <li>視頻/世界模型正從 toy demo 走向 interactive simulator</li>
+</ul>
+
+<p><strong>🔧 推理效率</strong></p>
+<ul>
+  <li><strong>DSpark</strong>：SGLang 新增 confidence-driven 可變長度驗證，DeepSeek-V4-Pro batch=1 達 383.7 tok/s（B300）</li>
+  <li>Jon Durbin：<strong>推理已是「the whole game」</strong>——每個數據管線、RL loop、agent runtime 最終都轉化為 test-time compute</li>
+  <li>MiniMax MSA 和 GatedDeltaNet-2 的 ~7x sparse attention 訓練改善（RTX Pro 6000/SM120）</li>
+  <li>OpenAI 推出 GPT-Realtime-2.1-mini，p95 latency 降低 25%+</li>
+  <li>John Carmack：推論硬體可利用 deterministic access patterns，比 HBM 便宜得多的記憶體層級</li>
+</ul>
+
+<p><strong>🗣️ 語音進展</strong></p>
+<ul>
+  <li><strong>AssemblyAI Universal-3.5 Pro Realtime</strong>：4.1% WER，contextual priming 可 mid-call 更新</li>
+  <li><strong>Speechify Simba 3.2</strong>：Speech Arena 1233 Elo 領先 Gemini 3.1 Flash TTS</li>
+  <li>文件處理管道默認變 multimodal：LlamaIndex + LanceDB 82% any-page-hit@5 on ESG benchmark</li>
+</ul>
+
+<p><strong>📄 LongCat 2.0 開源</strong></p>
+<ul>
+  <li><strong>1.6T 總參數 / ~48B 激活</strong>，MIT license</li>
+  <li>BF16 權重佔 3.55TB / FP8 佔 2.05TB</li>
+  <li><strong>美團以 100% 國產晶片訓練</strong>——供應鏈獨立的地緣意義重大</li>
+</ul>
+
+<p><strong>重點引用（Thariq Keynote）：</strong></p>
+<blockquote>「Tradeoffs are not real. Building is easy, generating value is still hard.」</blockquote>
+
+<hr>
+
+<!-- Cognitive Revolution -->
+<h3>The Cognitive Revolution <span style="font-weight:normal;font-size:0.85rem;color:#888;">（Nathan Labenz）</span></h3>
+
+<h4>Intelligence on the Edge: Liquid AI's Ramin Hasani 🎙️ <span class="episode-tag">（2026-07-04）</span></h4>
+
+<p><strong>主題：</strong>Liquid AI 的 device-native 基礎模型路徑——如何在有限的記憶體和算力下壓榨出最多智慧。</p>
+
+<p><strong>嘉賓：</strong>Ramin Hasani，Liquid AI CEO，MIT 研究員出身。Liquid AI 由 MIT 研究團隊創立，專注 device-native 基礎模型。</p>
+
+<p><strong>核心論點：</strong></p>
+<ul>
+  <li><strong>12 個液態神經元就能搞定泊車</strong>——MIT 時期的微分方程神經網路研究令人震驚，雖然這些系統尚未 scale 到今日能力前沿</li>
+  <li>Liquid 哲學：對神經網路設計和優化採取<strong>中立、實證的方法</strong>，專注於在異構約束下（特別是邊緣設備的有限記憶體和算力）運行</li>
+  <li><strong>全球智慧手機 + 筆記本市場每年 ~8000 億美元</strong>——剛超過全球 AI 數據中心建設總額。推論需求可能將大部分人擠出前沿模型市場，加上隱私和控制需求，edge AI 是巨大市場機會</li>
+  <li>Liquid 持有 Hugging Face 美國區總下載量第五名，合作夥伴包括 Shopify 和 Mercedes-Benz</li>
+  <li>Apollo app（1B 參數模型）可在 iPhone 上快速運行——結合少量 attention layers + gated learned convolution，用於本地文檔搜索和分類</li>
+</ul>
+
+<p><strong>關鍵數據：</strong></p>
+<ul>
+  <li>Hugging Face US total downloads：第 5 名</li>
+  <li>Apollo 1B 模型可流暢運行在 iPhone 上</li>
+  <li>全球智慧手機 + 筆記本市場 ≈ 8000 億美元/年</li>
+</ul>
+
+<p><strong>技術詳情：</strong></p>
+<ul>
+  <li><strong>Network Architecture Search 流程</strong>：代理指標常常誤導，Liquid 現在直接在目標硬體上用真實下遊任務評估模型</li>
+  <li><strong>Attention 架構仍在泛化性上無可替代</strong>，繼續主導前沿</li>
+  <li>用例越具體、算力資源越有限，搜尋流程越容易 landing 在 exotic 架構上——<strong>Mamba 和其他 sub-quadratic 創新在這些場景大放異彩</strong></li>
+  <li>即將推出平台，允許客戶 self-serve fine-tune 小型模型</li>
+</ul>
+
+<p><strong>行業 insight：</strong></p>
+<ul>
+  <li>邊緣推論是緩解前沿模型需求壓力、改善全球 AI 可及性的關鍵路徑</li>
+  <li>device-native 模型 vs 雲端前沿模型的張力將定義未來幾年的 AI 產業格局</li>
+  <li>隱私 + 數據主權 + 成本控制推動企業轉向 edge AI</li>
+</ul>
+
+<p><strong>重點引用：</strong></p>
+<blockquote>「Proxy metrics too often lead the process astray — we now evaluate models on real downstream tasks on the actual target hardware.」</blockquote>
+
+<hr>
+
+<!-- No Priors -->
+<h3>No Priors <span style="font-weight:normal;font-size:0.85rem;color:#888;">（Sarah Guo + Elad Gil）</span></h3>
+<p style="color:#888;font-size:0.9rem;">本週無新完整劇集。最新完整集仍為「How Nuclear Will Unlock Energy Abundance with Valar Atomics Founder Isaiah Taylor」（07-02，已掃）。<br>
+新 Shorts 片段（非完整集）：Priscilla Chan on rare diseases（07-07），Nuclear's SpaceX Moment clip（07-06），NVIDIA AI Chip on Nuclear Power（07-03）。</p>
+
+<!-- Dwarkesh -->
+<h3>Dwarkesh Podcast <span style="font-weight:normal;font-size:0.85rem;color:#888;">（Dwarkesh Patel）</span></h3>
+<p style="color:#888;font-size:0.9rem;">本週無新劇集。最新：The Winning Essays for the Big Questions About AI（07-01，已掃）。Blog Prize 得主論文（Jassi Pannu 生防、Ege Erdil 政策建議、Michael Li MTR 商業模式類比）詳見上期報告。</p>
+
+<!-- ML Street Talk -->
+<h3>Machine Learning Street Talk <span style="font-weight:normal;font-size:0.85rem;color:#888;">（Tim Scarfe + Yannic Kilcher）</span></h3>
+<p style="color:#888;font-size:0.9rem;">搜尋配額限制，未確認最新劇集。已知持續更新 AI startup investments、Anthropic IPO 討論等內容。</p>
+
+<hr>
+
+<h2>📊 數據摘要</h2>
+<ul>
+  <li><strong>掃描範圍</strong>：10 個播客 · 3 獲取新內容</li>
+  <li><strong>新萃取劇集</strong>：3 集（中文 1 + 英文 2）</li>
+  <li><strong>本期最重量級</strong>：Latent Space AINews（Fable Field Guide + Hy3 + J-Space + MIRA）</li>
+  <li><strong>搜尋受阻</strong>：4 個中文播客 + ML Street Talk 因 Brave API 配額限制無法檢索</li>
+</ul>
+
+<h2>🔮 趨勢信號</h2>
+<ol>
+  <li><strong>開源 MoE 軍備競賽加速</strong>—Hy3 (295B) 和 LongCat 2.0 (1.6T) 兩週內先後開源，中國團隊在國產晶片上訓練已成趨勢</li>
+  <li><strong>推理效率 = 新戰略瓶頸</strong>—從 DSpark 到 edge AI，產業共識：推理優化比訓練更重要了</li>
+  <li><strong>世界模型從 demo 走向 Playable</strong>—MIRA 的 20fps Rocket League 里程碑意義大於大多數人意識到</li>
+  <li><strong>AI 自我進化從科幻變工程問題</strong>—Apodex 給出的「半年」時間線務實但令人震驚</li>
+  <li><strong>Benchmark 體系正在崩潰</strong>—Noam Brown → François Chollet → Artificial Analysis 三連擊：沒 cost 的 benchmark 無意義</li>
+</ol>
+
+<div class="footer">
+  <p>Apache 2.0 · Generated by Vee Mok · 2026-07-08 10:03 CST</p>
+</div>
+
+</body>
+</html>
