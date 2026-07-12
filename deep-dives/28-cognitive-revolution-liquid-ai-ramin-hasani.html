@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 智慧壓縮到極限——Liquid AI CEO 的邊緣原生模型</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  a { color: #8b6f4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">← 返回播客日報</a>
+  <div class="ep-num">The Cognitive Revolution · Nathan Labenz 專訪 Ramin Hasani</div>
+  <h1>智慧壓縮到極限——Liquid AI CEO 的邊緣原生模型</h1>
+  <div class="meta">
+    <span>📅 2026-07-10/11</span>
+    <span>⏱ ~90 分鐘</span>
+    <span>🎙 The Cognitive Revolution</span>
+    <span>🏷 <span class="tag">邊緣AI</span> <span class="tag">模型架構</span> <span class="tag">液態神經網絡</span></span>
+  </div>
+</header>
+
+<!-- 引言 -->
+<p>呢個禮拜當全世界都喺度談論 GPT-5.6 嘅 36 種模型變體同 Muse Spark 1.1 嘅性價比衝擊，有一場 90 分鐘嘅對話值得你坐低聽——Nathan Labenz 同 Liquid AI CEO Ramin Hasani 嘅深度對談。主題唔係「下一個 SOTA 模型點做到 500B」，而係一個完全相反嘅問題：<strong>點樣將最大可能嘅智能，壓縮到最小嘅算法格式入面？</strong></p>
+
+<p>Hasani 嘅答案會令你重新思考「規模定律」（Scaling Laws）嘅邊界。佢嘅研究從線蟲嘅 300 個分級神經元開始，到今日奔馳儀表板上嘅 600MB 車載模型，中間嘅 insight 唔單止係技術選擇，而係對整個基礎模型行業「盲目擴張」嘅一種忠誠反對。</p>
+
+<p>呢篇復述會拆解佢嘅四大核心理論：<strong>規模定律定義架構</strong>、<strong>門控即輸入依賴性</strong>、<strong>架構師 Avengers 模式係 broken</strong>、<strong>自動化基礎模型設計（AFMD）</strong>，再加上佢同 Nathan 討論邊緣 AI 市場、CUDA 護城河消失、同人類 vs AI 學習算法多樣性嘅精彩碰撞。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">一、從線蟲到奔馳——液態神經網絡的誕生</h2>
+
+<p>Hasani 的研究起點不在 GPU 集群，而在實驗室裡一隻只有 <span class="data-point">300 個神經元</span> 嘅線蟲（C. elegans）。<strong>呢隻小生物只有 300 個分級（非尖峰、因此可微分）神經元，但可以產生極其靈活、分布外魯棒嘅行為。</strong> 呢個對比好震撼：你嘅智能手機一粒芯片上有幾十億個晶體管，但一個只有 300 個神經元嘅生物神經系統，已經可以導航、覓食、繁殖、學習。</p>
+
+<blockquote class="strong">
+「Our objective function at MIT has always been maximizing the amount of intelligence we can pack into the smallest format of algorithms.」
+  <span class="attr">— Ramin Hasani，Liquid AI CEO</span>
+</blockquote>
+
+<p>Hasani 展示咗一個瘋狂嘅規模遞增：<span class="data-point">12 個神經元</span> 就可以平行泊車、<span class="data-point">19 個神經元</span> 可以駕駛汽車、<span class="data-point">30 個神經元</span> 可以飛行無人機——少量神經元甚至可以為美國空軍駕駛噴射機。呢啲結果來自同一套核心技術：<strong>每個「液態神經元」本質上係一個微分方程，有內部反饋和嵌套非線性</strong>，而唔係深度學習入面嗰啲簡單嘅線性變換 + 激活函數。</p>
+
+<p>關鍵突破發生喺 2022 年 11 月。Hasani 同團隊喺 <strong>Nature Machine Intelligence</strong> 發表咗閉式解（Closed-form Continuous-time, CfC）——以前每個液態神經元需要一個求解器（solver）嚟計算微分方程，複雜度趨向三次方。CfC 搵到閉式表達，無需求解器即可直接計算，原則上可以擴展到數十億神經元。呢個突破令 Liquid AI 從 MIT 實驗室走向商業化。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">二、規模定律定義架構——越大越無結構</h2>
+
+<p>呢個係 Hasani 最核心嘅 insight，值得拎出來細睇：</p>
+
+<blockquote>
+「I believe scaling laws define architecture... the larger the neural network you make — approaching infinite size — the more you want it to become less and less structured.」
+  <span class="attr">— Ramin Hasani</span>
+</blockquote>
+
+<p>佢嘅論證邏輯係咁嘅：</p>
+<ul>
+  <li><strong>當模型趨向無限大</strong>，你希望佢越來越少結構化，越接近純矩陣乘法。呢個就係點解 Attention 喺萬億參數級別表現咁好——Attention 係一個非常「無結構」嘅運算（每個 token 可以同任何其他 token 互動），手工調參嘅成分最少。</li>
+  <li><strong>架構偏置（Architectural Bias）的價值在規模較小時反而不斷上升</strong>——只有喺較小、較專業嘅規模上，額外嘅門控、循環、卷積先有價值。因為佢哋為模型提供咗先驗知識，幫佢喺數據相對少嘅情況下更快學習。</li>
+  <li><strong>呢個推論最激進嘅含義：</strong> Scaling Laws 唔單止決定咗「要幾多數據、幾多參數」，仲決定咗「你用邊種架構係 optimal」。當一個架構喺小規模 work，唔代表佢喺大規模都 optimal。</li>
+</ul>
+
+<p>呢個觀點同主流「architecture still matters」嘅敘事直接矛盾。好多研究者仍然認為架構創新係突破關鍵——Hasani 話其實唔係，你只係未 scale 夠大。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">三、勝出的配方「並不激動人心」——雙門控卷積 + 部分注意力</h2>
+
+<p>Hasani 好坦白：Liquid AI 最終搵到嘅最優架構，其實「並不激動人心」。</p>
+
+<ul>
+  <li><strong>70-80% 係雙門控卷積（short convolutions + gate）</strong>——門控（gating）提供咗輸入依賴性，呢個係 Liquid 喺 Liquid-S4 引入嘅，比 Mamba 早約 18 個月。卷積喺局部特徵提取上好有效率，加上門控之後可以根據輸入動態調整加權。</li>
+  <li><strong>保留約 30% 的注意力層</strong>——用於真正需要 O(N²) 豐富性嘅地方，例如長程依賴建模。</li>
+  <li><strong>關鍵洞察：門控不僅是架構選擇，更是對 Bitter Lesson 的新解讀</strong>——反向傳播中模型學習嘅係動態（dynamics），而不僅僅是權重。反饋路徑可以讓模型在推理時進行類似迭代計算嘅操作。</li>
+</ul>
+
+<blockquote>
+「If you want to write a one-sentence update to 'Attention Is All You Need': Attention is still all you need at large scale, but gated simple convolutions do the rest of the heavy lifting.」
+  <span class="attr">— Ramin Hasani</span>
+</blockquote>
+
+<p>如果用一句話更新佢：Attention 喺大規模時仍然需要，但門控簡單卷積完成咗其餘大部分工作。呢個架構恰好同近期多個研究結果吻合——混合架構正在取代純 Transformer。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">四、「架構師 Avengers 模式」係 broken</h2>
+
+<p>Hasani 呢度講得幾狠。佢話所有基礎模型實驗室都有人手調架構，佢稱之為「Avengers of the architectures」——每個 lab 有一班架構師各自出招，然後靠直覺同經驗決定邊個贏。</p>
+
+<blockquote class="strong">
+「It's genuinely broken in every single foundation model lab. You don't want people doing architectural surgery on these large-scale systems. You want to automate it.」
+  <span class="attr">— Ramin Hasani</span>
+</blockquote>
+
+<p>Liquid AI 嘅解決方案係 <strong>AFMD（Automated Foundation Model Design）</strong>——自動化基礎模型設計：</p>
+<ul>
+  <li>將真實目標硬件加入優化循環（唔係 perplexity 或理論 FLOPs，係真係喺目標硬件上跑嘅 latency/throughput）</li>
+  <li>針對約 <span class="data-point">100 個真實下游 benchmark</span> 進行優化（唔係 perplexity，唔係單一 synthetic benchmark）</li>
+  <li>嚴格遵循 Rich Sutton 的 Bitter Lesson——規模 + 計算力 + 數據 > 人類手工設計</li>
+  <li>自動搜索架構超參數空間：門控數、卷積核大小、注意力層比例、硬件特定內核選擇</li>
+</ul>
+
+<p>呢個做法嘅含義：如果 AFMD 係正確方向，咁各大 AI lab 嘅「首席架構師」呢個角色會逐步被自動化取代。Hasani 嘅邏輯係——Scaling Laws 既然定義咗架構，咁架構搜索本身就應該係一個 AI 問題，唔係人類專家問題。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">五、邊緣智能——萬億美元市場 vs 數據中心思維</h2>
+
+<p>呢度係全場最有商業洞察力嘅部分。Nathan Labenz 問咗一個好問題：如果所有 AI 公司都喺追規模，Liquid 點解走一條完全相反嘅路？</p>
+
+<blockquote>
+「We don't have enough energy on the planet to host all this compute at scale. The real market is outside the data center.」
+  <span class="attr">— Ramin Hasani</span>
+</blockquote>
+
+<p>Hasani 指出咗一個被大部分人忽略嘅事實：</p>
+<ul>
+  <li>全球每年 <span class="data-point">$500B</span> 嘅智能手機市場只係開始</li>
+  <li>加上筆記本電腦、可穿戴設備、汽車——呢個市場規模遠超數據中心</li>
+  <li>奔馳已經簽約，車型將搭載 <span class="data-point">600MB</span> 嘅 Liquid 模型</li>
+  <li>LFM2/LFM2.5 模型喺 Hugging Face 每週超 <span class="data-point">100 萬下載</span>，喺美國排名第五（僅次於 Google, Meta, Microsoft, NVIDIA）</li>
+</ul>
+
+<p>Hasani 嗰句「we don't have enough energy」唔係修辭——係物理學限制。全球所有數據中心嘅用電量已經佔全球發電量嘅 1-2%，而且每年急速增長。如果 AGI 真係到來，推理成本必須下降到每任務幾毫分，呢個只能靠邊緣設備消化大部分推理工作。</p>
+
+<p>關於邊緣 AI，Nathan 問咗一個好實際嘅問題：佢自己想喺個人機器上運行一個五年「深度上下文」數據庫，Liquid 有冇解決方案？Hasani 嘅答覆好務實：<strong>現成嘅 24B 模型仲未夠好，但 Liquid 計劃喺未來幾個月內推出自動化微調平台。</strong> 仲補充咗一句：<strong>有針對性微調（可能由模型自身生成合成數據）可以用「幾十到幾千美元」恢復前沿級性能。</strong></p>
+
+<!-- ============================================ -->
+<h2 class="section-title">六、CUDA 護城河實際上已經消失</h2>
+
+<p>呢個論點好有挑釁性。Hasani 認為：</p>
+
+<blockquote>
+「Agents can now automate kernel-level optimization. Chip manufacturers need to move up to the 'intelligence layer' — whoever can provide an efficient, pre-loaded, self-improving intelligence layer on their chip wins, even if raw specs are slightly weaker.」
+  <span class="attr">— Ramin Hasani</span>
+</blockquote>
+
+<p>佢解釋咗點解 NVIDIA 嘅 Nemotron 戰略（推出自家模型）係一個聰明嘅防守動作——當模型可以自動生成優化嘅 GPU kernel，CUDA 嘅手動優化護城河就消失咗。芯片商需要向上游走到「智能層」，誰能在芯片上提供高效、預裝載、自改進嘅智能層，誰就贏，即使原始規格稍弱。</p>
+
+<p><strong>呢個論點同近期多個跡象吻合：</strong> DeepSeek V4 通過 TileKernels 部分脫離 CUDA 依賴、vLLM 0.20 嘅 TurboQuant 等自動優化工具、以及各大雲廠商推出自家 AI 芯片時都同步推出模型生態。CUDA 嘅開發者生態壁壘仍然存在，但「NVIDIA 硬件 = 最佳 AI 性能」呢個等式正在鬆動。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">七、領域偏置——門控卷積在哪裡真正獲勝？</h2>
+
+<p>Hasani 指出咗幾個門控卷積架構有天然優勢嘅領域：</p>
+<ul>
+  <li><strong>基因組學：</strong> 詞彙表細（4 個鹼基）但序列長達數十億 token。注意力嘅二次成本完全不可接受。卷積嘅局部性匹配生物學嘅局部性（基因調控主要發生在局部序列區域）。</li>
+  <li><strong>視頻：</strong> 擴散模型已經大量使用卷積。時空局部性係視頻嘅本質。</li>
+  <li><strong>音頻：</strong> 循環網絡喺低數據場景極強，Liquid 嘅 CfC 閉式解提供更高效率。</li>
+  <li><strong>物理信息網絡（Simulation / Digital Twin）：</strong> 微分方程嘅內在連續性匹配液態神經網絡嘅連續時間動力學。</li>
+</ul>
+
+<p>有趣嘅係，佢亦承認 Attention 喺語言建模同科學推理上嘅統治地位不可撼動——呢個唔係否定 Attention，而係界定每種架構嘅 optimal regime。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">八、人類 vs AI 的學習算法多樣性</h2>
+
+<p>最後 15 分鐘嘅哲學討論值得一聽。Nathan Labenz 問：如果 Liquid 真係可以做高效嘅邊緣學習模型，噉人類同 AI 嘅學習方式究竟有咩分別？</p>
+
+<p>Hasani 認為當前 AI 嘅上下文學習（in-context learning）本質上只係「<strong>一種算法嘅模糊版本——大致係最小二乘法（least squares）</strong>」：</p>
+
+<blockquote>
+「When our current AI systems do in-context learning, they learned a vague representation of one algorithm — essentially least squares. A mushy version of gradient descent in context.」
+  <span class="attr">— Ramin Hasani</span>
+</blockquote>
+
+<p>而人類運行嘅係更多樣化嘅投資組合：強化學習、心理模擬、貝葉斯推理、因果推理、類比思維。佢認為要到達真正高效嘅智能，需要在訓練開始時植入正確嘅「混淆算法」集（a diverse portfolio of algorithmic priors）。呢個同 Liquid 嘅核心方法呼應——喺小規模下，合適嘅偏置會帶來質變。</p>
+
+<p>Hasani 仲爆咗一句令人印象深刻嘅說話：</p>
+
+<blockquote class="strong">
+「You can't imagine, even right now while we're talking, I'm already training something in the background.」
+  <span class="attr">— Ramin Hasani</span>
+</blockquote>
+
+<p>呢句唔係 show off——係 Liquid 文化嘅濃縮：永遠喺度訓練、永遠喺度優化、永遠唔停。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">九、Insight 總結</h2>
+
+<div class="highlight-box">
+<h3>🎯 核心啟示</h3>
+<ol>
+  <li><strong>規模定律不止決定參數量，還決定架構選擇。</strong> 一樣規模嘅模型，如果選錯架構，你會俾咗好多冤枉 compute。Liquid 嘅 AFMD 方法可能係解決呢個問題嘅終極方案。</li>
+  <li><strong>邊緣 AI 唔係低端市場，係萬億美元市場。</strong> 喺所有人衝向 SOTA benchmark 嘅時候，「把最多智能塞進最小封裝」呢個問題嘅答案可能更值錢。</li>
+  <li><strong>門控卷積 + 部分注意力係目前最優嘅混合配方。</strong> 唔係純 Transformer，唔係純 CNN，而係一個經過自動搜索得出嘅 hybrid。</li>
+  <li><strong>「Avengers 架構」模式需要被自動化取代。</strong> 人手調架構喺 2026 年已經唔再可持續。AFMD 先係未來。</li>
+  <li><strong>CUDA 護城河正在消失。</strong> AI 可以自動優化 kernel，芯片競爭嘅下一個戰場係「智能層」。</li>
+</ol>
+</div>
+
+<!-- ============================================ -->
+<h2 class="section-title">十、爭議點</h2>
+
+<p>Hasani 嘅觀點唔係無懈可擊，有幾個值得質疑嘅地方：</p>
+<ul>
+  <li><strong>「Scaling laws define architecture」呢個講法是否過於決定論？</strong> 好多頂級論文仍然靠架構創新取得突破（例如 Mamba、DeepSeek-V4 嘅 Multi-head Latent Attention）。Scaling 唔係唯一因素。</li>
+  <li><strong>液態網絡能否真正擴展到前沿級？</strong> 目前 LFM 喺智能指數上仍然落後於主流模型（約 51 vs Fable 5 嘅約 60）。「幾十到幾千美元微調即恢復前沿級性能」呢個 claim 仲未有公開驗證。</li>
+  <li><strong>AFMD 自動化搜索嘅計算成本。</strong> 如果你需要訓練 100 個變體嚟揀最好嘅架構，個總成本可能超過人手調一次但接近 optimal 嘅方案。Hasani 未有披露呢方面嘅數字。</li>
+  <li><strong>「所有人都 broken」嘅修辭過於傲慢？</strong> 雖然 Hasani 嘅觀點邏輯自洽，但直接否定所有基礎模型實驗室嘅架構師團隊，可能低估咗人類直覺喺極高維搜索空間中嘅價值。</li>
+</ul>
+
+<hr>
+
+<footer>
+  <p>深度復述 · 2026-07-12 · JMOKSZ/ai-podcast-collection</p>
+  <p style="margin-top:0.3rem;">原文出自 The Cognitive Revolution 第 N 期 · Nathan Labenz 專訪 Ramin Hasani</p>
+  <p style="margin-top:0.3rem;">🎧 原集：<a href="https://www.cognitiverevolution.ai/">The Cognitive Revolution</a></p>
+</footer>
+
+</div>
+</body>
+</html>
