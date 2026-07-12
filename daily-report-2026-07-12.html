@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度萃取报告 — 2026-07-12</title>
+<style>
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #2c2c2c;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px 20px;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  h1 { font-size: 24px; font-weight: 600; margin-bottom: 4px; }
+  h2 { font-size: 20px; font-weight: 600; margin-top: 40px; margin-bottom: 4px; border-bottom: 1px solid #e0d8d0; padding-bottom: 6px; }
+  h3 { font-size: 17px; font-weight: 600; margin-top: 28px; margin-bottom: 2px; color: #555; }
+  h4 { font-size: 16px; font-weight: 600; margin-top: 20px; margin-bottom: 2px; }
+  .meta { color: #888; font-size: 13px; margin-bottom: 20px; }
+  .episode-meta { color: #999; font-size: 13px; margin-bottom: 10px; }
+  ul, ol { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  blockquote {
+    border-left: 3px solid #ccc;
+    margin: 12px 0;
+    padding: 4px 14px;
+    color: #555;
+    font-style: italic;
+    background: #f5f2ef;
+  }
+  hr { border: none; border-top: 1px solid #e0d8d0; margin: 32px 0; }
+  .header { margin-bottom: 30px; }
+  .footer { margin-top: 40px; font-size: 12px; color: #aaa; text-align: center; }
+  .tag { display: inline-block; background: #eae5df; color: #555; font-size: 11px; padding: 1px 7px; border-radius: 3px; margin-right: 4px; }
+  strong { font-weight: 600; }
+  a { color: #8a6d3b; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .highlight { background: #fdf8ed; padding: 2px 6px; border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+<h1>🎧 AI 播客深度萃取报告</h1>
+<p class="meta">2026-07-12（周日）| 生成时间 10:03 CST | 涵盖 5/10 播客</p>
+</div>
+
+<h2>📌 今日重点</h2>
+<ul>
+  <li><strong>GPT-5.6 发布周后遗症</strong> — OpenAI 承认 UX 「令人困惑」，两天内重置了两次用量配额，承诺恢复侧边栏/导航。API 端出现 36 种模型变体（Sol/Terra/Luna × 多种 effort 级别），社区强烈呼吁「Auto」自动路由。</li>
+  <li><strong>Meta Muse Spark 1.1 亮相</strong> — 被多名从业者称为「本周最大惊喜」：价格激进（$1.25/$4.25 per 1M tokens），1M context，~114 tok/s，接近前沿但未登顶。对 OpenAI/Anthropic 的竞争压力明显上升。</li>
+  <li><strong>「Harness 即产品」趋势强化</strong> — 前沿模型性能趋同，价值正转移到路由、记忆、工具使用、安全护栏和企业上下文。Perplexity 加了 Grok 4.5 当 orchestrator；LangChain 推 Deep Agents。</li>
+  <li><strong>Liquid AI 的「反规模叙事」</strong> — Ramin Hasani 解释为何 Liquid 从液态神经元出发，最终找到双门控卷积 + 部分注意力层的最优架构。奔驰车载语音已用 600MB 模型。</li>
+  <li><strong>Sol Ultra 64 子代理在一小时内声称证明了 Cycle Double Cover 猜想</strong> — 还需同行验证，但范式信号明确：并行化研究 Agent 作为科学计算原语。</li>
+</ul>
+
+<hr>
+
+<!-- ========== 英文播客 ========== -->
+
+<h2>🎙️ 英文播客</h2>
+
+<!-- ===== Latent Space ===== -->
+<h3>Latent Space（swyx + Alessio Fanelli）</h3>
+
+<h4>[AINews] not much happened today 🎙️ <span class="episode-meta">2026-07-11 10:53 CST</span></h4>
+<p class="episode-meta">来源：latent.space | 类型：每日 AI 新闻汇总 | 覆盖 2026-07-09 ~ 07-10</p>
+
+<p><strong>主题：</strong> GPT-5.6 首周落地观察、UX 混乱与 OpenAI 紧急纠错、Meta Muse Spark 1.1 发布、开源模型工具链进展、安全与政策摩擦</p>
+
+<p><strong>核心论点：</strong></p>
+<ul>
+  <li><strong>GPT-5.6 的模型分层困惑了所有人。</strong> OpenAI 推出了 Luna / Terra / Sol 三层，每层又有 4 种 effort 级别（Low / Medium / High / Ultra），外加 Max 和 Extra 等变体，API 端实际 36 种组合。社区建议：「从比 5.5 更低的 effort 开始」。OpenAI 员工解释：Max = 一个模型在一个难题上花更多时间；Ultra = 跨子代理并行化工作。但 5.5 → 5.6 的 effort 设置不具可比性。</li>
+  <li><strong>UX 回归严重。</strong> ChatGPT Work / Codex 的拆分让用户混淆，聊天/项目难以找到，用量消耗远超预期。Simon Willison 亲自吐槽。OpenAI 罕见地快速回应：重置了两次用量配额，承认默认设置引导用户走向过于昂贵的配置，承诺恢复熟悉的侧边栏和导航模式。</li>
+  <li><strong>初始评测：有强项但非全面领先。</strong> GPT-5.6 在 Agentic Coding / 演示 / 部分科学任务上最强。Code Arena: Frontend 上与 Claude Fable 5 并列第一，同时便宜约 2×。Presentation Elo 在 AA-Briefcase 上比 GPT-5.5 高出约 500 分。但存在指令跟随问题、token 效率不均、越狱/奖励黑客方面的担忧。</li>
+</ul>
+
+<p><strong>关键数据：</strong></p>
+<ul>
+  <li>GPT-5.6 API 端有 36 种变体（3 个模型 × 4-6 effort 级别 × 额外参数）</li>
+  <li>Code Arena: Frontend #1 并列 Claude Fable 5，价格便宜 ~2×</li>
+  <li>Presentation Elo 比 GPT-5.5 跃升 ~500 分</li>
+  <li>CritPt 超过 GPT-5.5，比 Fable 5 高 ~4 分</li>
+  <li>Muse Spark 1.1: 智能指数 51（较 1.0 提升 8 点），1M context，~114 tok/s，$1.25/$4.25 per 1M tokens</li>
+  <li>Unsloth Qwen3.6 NVFP4: 35B-A3B 变体在 B200 上 17,561 tok/s</li>
+  <li>OpenAI Bio Bug Bounty 翻倍至 $50K</li>
+</ul>
+
+<p><strong>重点引用：</strong></p>
+<blockquote>「Unless you need Terra Ultra perf, it's always better to use a Luna model with higher effort setting (same or better performance but cheaper).」— Sebastian Raschka</blockquote>
+<blockquote>「The real product is now the harness around it.」— Perplexity CEO Arav Srinivas</blockquote>
+
+<p><strong>技术详情：</strong></p>
+<ul>
+  <li>GPT-5.6 Sol Ultra 使用 64 个并行子代理声称证明 Cycle Double Cover 猜想，耗时不到 1 小时</li>
+  <li>Sébastien Bubeck 报告单人 100 万行 Lean 形式化验证工程，基于 GPT-5.6</li>
+  <li>Cohere 开源了 vLLM 中的硬件感知动态推测解码（Hardware-aware Dynamic Speculative Decoding），解决推测解码在低 batch 时有助于高 batch 时有害的问题</li>
+  <li>Google/Hugging Face 的 Gemma 挑战赛报告单 A10G 推理速度最高 5× 提升，315 TPS 无损，491.8 TPS 最快</li>
+  <li>「LLM-as-a-Verifier」在 Terminal-Bench V2、SWE-Bench Verified、RoboRewardBench、MedAgentBench 上达到 SOTA，使用重复采样 + score-logprob 排名</li>
+  <li>Kyutai + Mirelo 发布 MuScriptor：开源多乐器音频转 MIDI 模型（全混音，无需分轨）</li>
+  <li>Sakana 研究开源性创造力，发现多样化 Agent 群体有帮助但仍不及人类</li>
+</ul>
+
+<p><strong>行业 Insight：</strong></p>
+<ul>
+  <li><strong>「Harness 即产品」</strong> — 前沿模型性能趋同，差异化转向路由、记忆、工具使用和安全性。Perplexity 加入 Grok 4.5 作 orchestrator（在 WANDR 评测上表现强劲，成本约为 Opus 4.8 的一半）；LangChain 推出 Deep Agents + Nemotron + OpenShell；OpenWiki 和 OpenSWE 作为记忆/编排工具正在兴起。</li>
+  <li><strong>Meta 的算力押注正在兑现为产品。</strong> Muse Spark 1.1 被多位从业者称为「本周最大惊喜」，定价极具侵略性。多位评论者认为这给 OpenAI/Anthropic 带来了实质性竞争压力，尤其如果 Meta 改善分发和 API 体验。</li>
+  <li><strong>健康 AI 成新战场。</strong> OpenAI 宣称 GPT-5.6 是健康智能的重大进步，Luna 最低 effort 即击败 GPT-5.5 最高 effort，同时成本低 25×。在 20,000 项盲审中，医生认为 GPT-5.6 的回答缺陷比医生写的更少。</li>
+  <li><strong>安全担忧同步升级。</strong> 新研究报告称博科圣地成员使用前沿聊天机器人进行炸弹制造查询。GPT-5.6 被部分社区认为相对容易越狱。</li>
+</ul>
+
+<p><strong>前後脈絡：</strong></p>
+<ul>
+  <li>延续昨日的 GPT-5.6/Codex 超级应用发布新闻，今日进入「现实检验」阶段 — 团队从狂喜转向分析落地问题</li>
+  <li>Fidji Simo 宣布离开 OpenAI 全职岗位，转为兼职顾问（因慢性疾病需要恢复）</li>
+  <li>AI 2040 / Plan A 透明治理场景引发争论，Ajeya Cotra 强调研究透明度，但也招致批评</li>
+</ul>
+
+<p><strong>争议点：</strong></p>
+<ul>
+  <li>隐藏子代理成本爆炸：spawn_agent 不允许用户选择模型/effort 级别，导致 Sol Ultra 默认产生更多 Sol Ultra，迅速消耗配额</li>
+  <li>GPT-5.6 在 Pro $200 计划上的价值受到质疑 — 5.5 从未让人担心用量，5.6 需要时刻计算成本</li>
+  <li>越狱能力与奖励黑客问题引发安全社区关注</li>
+</ul>
+
+<hr>
+
+<!-- ===== Cognitive Revolution ===== -->
+<h3>The Cognitive Revolution（Nathan Labenz）</h3>
+
+<h4>Intelligence on the Edge: Liquid AI's Ramin Hasani on the Search for Device-Native Foundation Models 🎙️ <span class="episode-meta">~2026-07-10/11</span></h4>
+<p class="episode-meta">时长：~90 分钟 | 嘉宾：Ramin Hasani（Liquid AI 联合创始人 & CEO）</p>
+
+<p><strong>主题：</strong> 如何将最大可能的智能压缩到最小算法格式中 — 从线虫的 300 个神经元到奔驰仪表盘的 600MB 模型</p>
+
+<p><strong>嘉宾背景：</strong> Ramin Hasani，前 MIT CSAIL 研究员，Liquid AI 联合创始人兼 CEO。与 Mathias Lechner、Daniela Rus 在 MIT 共同研究液态神经网络超过 10 年。</p>
+
+<p><strong>核心论点：</strong></p>
+<ul>
+  <li><strong>「规模定律定义架构」</strong> — 模型越大，越应该无结构（纯矩阵乘法，无手工调参），这就是为什么 Attention 在万亿参数级别表现如此出色。架构偏置（额外的门控、循环、卷积）只有在较小、更专业的规模上才有价值。</li>
+  <li><strong>架构师「Avengers」模式是 broken 的。</strong> Hasani 认为所有基础模型实验室都有人手调架构，他称之为「Avengers of the architectures」，应该用自动化的 Meta-Learning 代替。</li>
+  <li><strong>Liquid AI 的 AFMD（自动化基础模型设计）</strong> — 将真实目标硬件加入优化循环，针对约 100 个真实下游 benchmark（而非 perplexity）进行优化，严格遵循 Rich Sutton 的 Bitter Lesson。</li>
+  <li><strong>胜出的配方「并不激动人心」</strong> — 双门控卷积（short convolutions + gate）占网络的 70-80%，保留约 30% 的注意力层用于真正需要 O(N²) 丰富性的地方。如果用一句话更新「Attention Is All You Need」：Attention 在大规模时仍然需要，但门控简单卷积完成其余大部分工作。</li>
+  <li><strong>门控（gating）是核心</strong> — 输入依赖性是 Liquid 在 Liquid-S4 中引入的，比 Mamba 早约 18 个月。关键在于反向传播中模型学习的是动态（dynamics），而不仅仅是权重。</li>
+</ul>
+
+<p><strong>关键数据：</strong></p>
+<ul>
+  <li>12 个神经元 = 平行泊车；19 个神经元 = 驾驶汽车；30 个神经元 = 飞行无人机；少量神经元 = 为美国空军驾驶喷气机</li>
+  <li>每个「液态神经元」是一个微分方程，实现有内部反馈和嵌套非线性</li>
+  <li>Liquid 找到闭式解（CfC）于 2022 年 11 月发表在 Nature Machine Intelligence</li>
+  <li>LFM2/LFM2.5 模型在 Hugging Face 每周超 100 万下载，在美国排名第五（仅次于 Google, Meta, Microsoft, NVIDIA）</li>
+  <li>奔驰车型将搭载 600MB Liquid 模型</li>
+  <li>目标市场：约 $500B 的智能手机市场 + 笔记本电脑、可穿戴设备、汽车</li>
+  <li>有针对性微调（可能由模型自身生成合成数据）可「几十到几千美元」恢复前沿级性能</li>
+</ul>
+
+<p><strong>重点引用：</strong></p>
+<blockquote>「Our objective function at MIT has always been maximizing the amount of intelligence we can pack into the smallest format of algorithms.」</blockquote>
+<blockquote>「I believe scaling laws define architecture... the larger the neural network you make — approaching infinite size — the more you want it to become less and less structured.」</blockquote>
+<blockquote>「When our current AI systems do in-context learning, they learned a vague representation of one algorithm — essentially least squares. A mushy version of gradient descent in context.」</blockquote>
+<blockquote>「You can't imagine, even right now while we're talking, I'm already training something in the background.」</blockquote>
+
+<p><strong>技术详情：</strong></p>
+<ul>
+  <li>液态神经元基于 C. elegans（线虫）的神经系统 — 仅 300 个分级（非尖峰、因此可微分）神经元，产生极其灵活、分布外鲁棒的行为</li>
+  <li>每个「神经元」是一个带有内部反馈和嵌套非线性的微分方程 → 求解器带来计算复杂度趋向三次方 → 闭式解（CfC）突破后无需求解器在循环中，原则上可扩展到数十亿神经元</li>
+  <li>「Scaling laws define architecture」: 越大越无结构（纯矩阵乘法），越小越需要架构偏置来匹配数据集动态</li>
+  <li>AFMD 将硬件放在优化循环中，优化约 100 个真实下游 benchmark，不使用 perplexity</li>
+  <li>胜出架构：70-80% 双门控卷积（short conv + gate），~30% 注意力层；门控提供输入依赖性</li>
+  <li>「偏置获胜」的领域：基因组学（词汇表小但序列达数十亿 token，注意力二次成本不可接受）、视频（扩散模型）、音频（循环网络在低数据场景极强）、物理信息网络（仿真/数字孪生）</li>
+</ul>
+
+<p><strong>行业 Insight：</strong></p>
+<ul>
+  <li><strong>「CUDA 护城河实际上已经消失」</strong> — Agent 现在可以自动化内核级优化，芯片制造商需要向上游走到「智能层」，就像 NVIDIA 用 Nemotron 做的那样。谁能在芯片上提供高效、预装载、自改进的智能层，谁就赢，即使原始规格稍弱。</li>
+  <li><strong>数据中心外还有万亿美元市场。</strong> Liquid 瞄准的是智能手机（$500B/年）、笔记本电脑、可穿戴设备和汽车 — 而非数据中心。Hasani：「我们没有足够的能源来大规模承载所有这些计算」。</li>
+  <li><strong>「不要 DIY — 等几个月。」</strong> 对于 Nathan 想要的本地 AI 构建（在个人机器上运行五年「深度上下文」数据库），Hasani 的建议是：现成的 24B 模型还不够好，但 Liquid 计划在未来几个月内推出自动化微调平台。</li>
+  <li><strong>人类 vs AI 的学习算法多样性</strong> — Hasani 认为当前 AI 的上下文学习只是「一种算法的模糊版本（大致是最小二乘法）」，而人类运行着多样化的投资组合：强化学习、心理模拟、贝叶斯推理。要到真正高效的智能，需要在训练开始时植入正确的「混淆算法」集。</li>
+</ul>
+
+<p><strong>前後脈絡：</strong></p>
+<ul>
+  <li>与上一期 Ali Behrouz 的「Nested Learning」论文论点呼应</li>
+  <li>与主流「scale is all you need」叙事形成「忠诚的反对派」立场</li>
+  <li>Latent Space 有 Shopify CTO Mikhail Parakhin 的独立一集可对照（Liquid 已在 Shopify 生产环境提升推荐/搜索点击率）</li>
+</ul>
+
+<p><strong>争议点：</strong></p>
+<ul>
+  <li>Hasani 直言「Avengers of the architectures」的做法在所有基础模型实验室都「genuinely broken」</li>
+  <li>「Scaling laws define architecture」 — 这与很多研究者认为架构创新仍是突破关键的观点相矛盾</li>
+  <li>液态网络能否真正扩展到前沿级，还是注定只能做边缘设备小模型？目前 LFM 在智能指数上仍落后于主流</li>
+</ul>
+
+<hr>
+
+<!-- ===== Dwarkesh ===== -->
+<h3>Dwarkesh Podcast（Dwarkesh Patel）</h3>
+
+<h4>Adam Brown – A deep but accessible introduction to general relativity 🎙️ <span class="episode-meta">2026-07-11 00:23 CST</span></h4>
+<p class="episode-meta">来源：dwarkesh.com | YouTube 5.1 万次观看，1535 赞 | 嘉宾：Adam Brown（Google DeepMind Blueshift 负责人）</p>
+
+<p><strong>主题：</strong> 从第一性原理理解广义相对论 — Einstein 的「最快乐的思想」到黑洞与 AI 能否重新发现物理定律</p>
+
+<p><strong>嘉宾背景：</strong> Adam Brown 现任 Google DeepMind Blueshift 团队负责人，主攻科学推理。此前是斯坦福大学活跃的物理学家，研究范围从宇宙学到弦理论到广义相对论。</p>
+
+<p><strong>核心论点：</strong></p>
+<ul>
+  <li><strong>广义相对论的核心是解决一个巧合：</strong> 抗拒加速的质量（惯性质量）和受引力拉动的质量（引力质量）恰好相同。Einstein 花了 10 年时间追问这个巧合背后的原理。</li>
+  <li><strong>「最快乐的思想」：</strong> 一个自由落体的人感觉不到自己的重量 — 引力在局部消失。这意味着引力和加速在局部不可区分（等效原理）。</li>
+  <li><strong>引力的本质不是力，而是时空弯曲。</strong> 在广义相对论中，物体在没有外力作用时仍然沿直线运动 — 但「直线」的定义因时空弯曲而改变。地球绕太阳转不是因为被「拉」，而是因为太阳弯曲了时空，地球沿着弯曲时空中的「最短路径」运动。</li>
+  <li><strong>黑洞是终极发电站：</strong> 即使是在狭义相对论框架下，如果黑洞不是真正「黑」的（即允许能量逃逸），你可以制造永动机。黑洞必须满足热力学第二定律，意味着它们有熵和温度（Hawking 辐射）。</li>
+</ul>
+
+<p><strong>关键数据/事实：</strong></p>
+<ul>
+  <li>Einstein 1905 年提出狭义相对论，1915 年完成广义相对论 — 10 年</li>
+  <li>Newton 引力定律: F = Gm₁m₂/r²，与「光速最快」原则冲突（因为引力变化似乎是瞬时的）</li>
+  <li>电场也遵循类似的平方反比定律，最后由 Maxwell 方程组调和了与狭义相对论的矛盾</li>
+  <li>引力透镜的首次观测：1919 年日食时星光经过太阳附近发生偏折</li>
+  <li>Adam 教的斯坦福研究生课程是 20 节课</li>
+</ul>
+
+<p><strong>重点引用：</strong></p>
+<blockquote>「General relativity, Einstein's theory of gravity, is the most beautiful product of a single mind that we've ever created. It's one of the two great theories of 20th century physics, along with quantum mechanics. Unlike quantum mechanics, it was basically Einstein.」</blockquote>
+<blockquote>「In 10 or 20 minutes, I can't give you a better idea of general relativity than Einstein had, but we can get to the core insight — what Einstein said was his most beautiful idea.」</blockquote>
+
+<p><strong>技术详情：</strong></p>
+<ul>
+  <li>Newton 第一定律（无外力 → 直线运动）和第三定律在广义相对论中仍成立，但「直线」和「力」的定义需要升级</li>
+  <li>Newton 引力定律在广义相对论中被取代：引力不是瞬时超距作用，而是时空弯曲的几何效应，以光速传播</li>
+  <li>黑洞：「黑」意味着没有任何东西可以逃逸 → 否则你能构造一个狭义相对论兼容的「有限」永动机（热力学第二定律 + 信息论论证）</li>
+  <li>掉入黑洞的外部观察者 vs 内部观察者看到的景象完全不同（时间膨胀 + 事件视界处的信息悖论）</li>
+  <li>三种验证黑洞真实存在的方法：恒星轨道、引力波（LIGO）、事件视界望远镜（EHT）</li>
+</ul>
+
+<p><strong>行业 Insight（AI 部分）：</strong></p>
+<ul>
+  <li>最后 15 分钟讨论 AI 能否在没有实验证据的情况下重新发现广义相对论</li>
+  <li>Adam 领导 DeepMind 的 Blueshift 团队，专攻科学推理 — 他认为 AI 在数学和物理推理上进步很快，但「重新发现 1915 年的物理学」和「发现新物理学」之间存在根本区别</li>
+  <li>哲学问题：AI 能否像 Einstein 一样从哲学动机（对称性、美学）出发发现物理定律？</li>
+</ul>
+
+<p><strong>前後脈絡：</strong></p>
+<ul>
+  <li>为 Adam Brown 的第二次出场（首次是 2023 年关于宇宙学与 AI 的对话）</li>
+  <li>与近期 GPT-5.6 的数学突破声称（Cycle Double Cover 猜想、Lean 形式化证明）形成呼应 — Blueshift 是 DeepMind 专门做科学推理的团队</li>
+  <li>与之前 Grant Sanderson 关于 AI 与数学的对话形成对比：数学 vs 物理学中 AI 的角色差异</li>
+</ul>
+
+<hr>
+
+<!-- ===== No Priors ===== -->
+<h3>No Priors（Sarah Guo + Elad Gil）</h3>
+
+<h4>Travel Through the Lens of AI with Booking.com CEO Glenn Fogel 🎙️ <span class="episode-meta">2026-07-09 18:00 CST</span></h4>
+<p class="episode-meta">来源：YouTube | 1107 次观看 | 嘉宾：Glenn Fogel（Booking Holdings CEO）</p>
+
+<p><strong>主题：</strong> Booking Holdings CEO 谈 25 年从 $1 到 $1000+ 的旅程、AI 时代旅行市场的「反共识」策略、Agent 经济、规模护城河</p>
+
+<p><strong>嘉宾背景：</strong> Glenn Fogel 2000 年加入 Priceline（当时估值几亿美元），一周后纳斯达克见顶，股价跌至 $1。25 年后 Booking Holdings（旗下 Booking.com, Priceline, Kayak, OpenTable 等）成长为超 $1000 亿的全球旅行巨头。</p>
+
+<p><strong>核心论点：</strong></p>
+<ul>
+  <li><strong>「今天我们拥有竞争优势，但明天就没有了。」</strong> Fogel 不相信护城河。他认为保持领先的唯一方法是持续创新和投资，而非依赖既有优势。</li>
+  <li><strong>AI 让 Booking 更容易、更便宜、更好。</strong> 大多数市场平台担心 AI 会取代它们，但 Fogel 认为相反 — AI 帮助旅行更方便（对消费者）和更值钱（对伙伴），双向受益。</li>
+  <li><strong>Agent 经济中的旅行规划。</strong> 详细介绍 Priceline 的 AI Agent「Penny」如何改变旅行规划。Agent 不是替代 Booking 的中间人角色，而是增强它。</li>
+  <li><strong>每年超过 $7 亿投入 AI。</strong> 同时仍保持股票回购和分红。Fogel 认为规模本身就是可持续资产 — 管理全球海量房源带来的复杂性本身就是护城河。</li>
+</ul>
+
+<p><strong>关键数据：</strong></p>
+<ul>
+  <li>Booking Holdings 从 Priceline 的几亿美元市值 → 超 $1000 亿（1000× 增长）</li>
+  <li>每年 $700M+ 投入 AI 和其他技术</li>
+  <li>25 年持续增长，经历了 2000 年互联网泡沫破灭、2008 年金融危机、COVID-19</li>
+</ul>
+
+<p><strong>重点引用：</strong></p>
+<blockquote>「Today we have a competitive advantage, absolutely, but that's gonna go away tomorrow.」</blockquote>
+
+<p><strong>行业 Insight：</strong></p>
+<ul>
+  <li><strong>AI 不一定是平台的威胁。</strong> 在 Booking 的场景下，AI 使平台同时提升了消费者和供应商的价值。这正是「平台增强」而非「平台替代」的典型。</li>
+  <li><strong>规模作为 AI 时代的资产。</strong> 旅行市场的物理复杂性（全球数百万房源、不同语言、法规、支付方式）叠加 AI 后反而创造了更大的黏性 — 不是技术壁垒，而是运营壁垒。</li>
+  <li><strong>人才培养（upskilling）</strong> 是应对 AI 就业焦虑的核心策略，Fogel 强调了员工技能提升的重要性。</li>
+</ul>
+
+<hr>
+
+<!-- ========== 中文播客 ========== -->
+
+<h2>🎙️ 中文播客</h2>
+
+<p class="meta">搜索 API 配额限制，中文播客本周新剧集信息有限。</p>
+
+<!-- ===== 十字路口 ===== -->
+<h3>十字路口 Crossing（Koji）</h3>
+
+<h4>高手怎么用AI？普通人怎么学AI？投资人如何投AI？🎙️ <span class="episode-meta">~2026-07-07</span></h4>
+<p class="episode-meta">来源：小宇宙 | 前期已扫描，本期简要回溯</p>
+
+<p><strong>主题：</strong> 2026 年过半，复盘 AI 工具使用/学习/投资的最佳实践</p>
+<p><strong>核心论点（基于摘要信息）：</strong></p>
+<ul>
+  <li>从使用者、学习者和投资者三个维度审视当前 AI 生态位</li>
+  <li>2026 年 AI 工具已经渗透到日常工作流，「高手 vs 普通人」的分水岭在于如何设计 AI 工作流（而非是否会提示工程）</li>
+</ul>
+
+<!-- ===== 硅谷101 ===== -->
+<h3>硅谷 101（泓君 Jane）</h3>
+<p class="meta">上一期为 E242｜最快半年AI跑通自进化？与陈天桥首席科学家聊聊硅谷模型必争之地（2026-07-05）。截至扫描，未发现新剧集。</p>
+
+<!-- ===== 42章经 ===== -->
+<h3>42章经（曲凯 Kyle）</h3>
+<p class="meta">上一期为对谈魏小康：字节美团组织建设（2026-07-04）。截至扫描，未发现新剧集。</p>
+
+<!-- ===== 张小珺 ===== -->
+<h3>张小珺商业访谈录</h3>
+<p class="meta">截至扫描，未在小宇宙发现 7 月新剧集。</p>
+
+<!-- ===== 屠龙之术 ===== -->
+<h3>屠龙之术（庄明浩）</h3>
+<p class="meta">截至扫描，未能获取到最新剧集信息。</p>
+
+<hr>
+
+<div class="footer">
+  <p>生成的 AI 播客深度萃取报告 · Apache 2.0</p>
+  <p>GitHub: <a href="https://github.com/JMOKSZ/ai-podcast-collection">JMOKSZ/ai-podcast-collection</a></p>
+</div>
+
+</body>
+</html>
