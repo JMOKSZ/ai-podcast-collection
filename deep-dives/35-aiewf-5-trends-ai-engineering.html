@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · AIE 世界博覽會 2026：五大趨勢改寫 AI 工程——從 AutoGPT 到 Harness、Loops、Skills、FDE</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  a { color: #8b6f4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1rem; }
+    header h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/JMOKSZ/openclaw-memory/main/ai-podcast-collection/index.html">← 返回播客日報</a>
+  <div class="ep-num">Latent Space · 專欄（Richard MacManus）</div>
+  <h1>AIE 世界博覽會 2026：五大趨勢改寫 AI 工程——從 AutoGPT 到 Harness、Loops、Skills、FDE</h1>
+  <div class="meta">
+    <span>📅 2026-07-14</span> <span>·</span> <span>🖊 Richard MacManus（編者：swyx）</span> <span>·</span>
+    <span>🏛 AI Engineer World's Fair 2026（6月尾，三藩市）</span>
+  </div>
+  <div>
+    <span class="tag">AI Engineering</span>
+    <span class="tag">Loops</span>
+    <span class="tag">Skills</span>
+    <span class="tag">FDE</span>
+    <span class="tag">Harness</span>
+    <span class="tag">Software Factory</span>
+  </div>
+</header>
+
+<p>2023 年 6 月，swyx 寫咗篇文叫「The Rise of the AI Engineer」，正式為一種新開發者命名。三年後嘅 2026 年 6 月尾，AI Engineer World's Fair 喺三藩市舉行，展示咗呢個領域已經成熟到咩程度。</p>
+
+<p>Richard MacManus（前 ReadWriteWeb 創辦人）為 Latent Space 寫咗呢篇總結，梳理出五大趨勢。唔係逐個 announcement 報——而係畫出 2026 年 AI 工程嘅全景輪廓。</p>
+
+<p>以下係我哋嘅深度萃取。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">一、從 AutoGPT 到 Harness 工程——系統大過模型</h2>
+
+<p>如果用一個 snapshot 概括呢三年嘅演變，最清晰嘅對比係 Lilian Weng（前 OpenAI，現 Thinking Machines Lab）嘅兩篇文章：</p>
+
+<ul>
+  <li><strong>2023 年</strong> — 《LLM Powered Autonomous Agents》：講 agent 嘅 anatomy（planning、memory、tool use），例子係 AutoGPT、BabyAGI。重點係「agent 本身」。</li>
+  <li><strong>2026 年</strong> — 《Harness Engineering for Self-Improvement》：講 model 周圍嘅系統——workflows、context、permissions、evaluation、persistent state。重點係「圍繞 agent 嘅系統」。</li>
+</ul>
+
+<blockquote>
+「Models are grown, not designed.」
+<span class="attr">— Thariq Shihipar (Anthropic)，談 Claude Fable 如同一種有機系統</span>
+</blockquote>
+
+<p>AutoGPT 呢個 2023 年最紅嘅 autonomous agent project，喺 2026 年嘅 AIEWF 甚至冇被提起過。取而代之嘅係 Claude Code、Codex、Gemini CLI、Cursor、Warp——呢啲 coding agents，以及圍繞佢哋嘅 infra。</p>
+
+<p>Anthropic 嘅 Thariq Shihipar 講咗一個重要嘅觀念：Claude Fable 有「capability overhead」——「Claude gets smarter in a spiky way」。模型唔係線性變強，而係突兀地喺某啲維度變勁。呢種非線性正正係 harness 工程必不可少嘅原因。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">二、Loop Engineering（循環工程）——內外雙環，人類喺外</h2>
+
+<p>AIEWF 第一日 keynote 完結之後，所有人都同意「loops」係活動嘅 buzzword du jour。但呢個 buzzword 背後有真實嘅張力：agent 應該有幾多自主權？人類應該留喺邊個位置？</p>
+
+<p>答案正在形成：<strong>內循環（inner loop）+ 外循環（outer loop）</strong>。</p>
+
+<p>Roland Gavrilescu（Introspection CEO，建設自改進系統 infra）：</p>
+<blockquote>
+「內循環是主要系統——與用戶互動、執行工作。外循環是另一個系統——研究並維護主要系統，包括 feedback signals、evals、human input。」
+</blockquote>
+
+<p>OpenClaw 嘅「ClawFather」Peter Steinberger 喺 OpenAI keynote 親自示範：</p>
+<blockquote class="strong">
+「The agent runs the inner execution loop; I set the direction and I make decisions in the outer loop.」
+<span class="attr">— Peter Steinberger（OpenClaw 創始人）</span>
+</blockquote>
+
+<p>Geoffrey Huntley（Ralph Loop 創作者）有一個好正嘅比喻：</p>
+
+<blockquote>
+「[We're] kind of like locomotive engineers now. That's our job: to keep the locomotive on the rails.」
+<span class="attr">— Geoffrey Huntley</span>
+</blockquote>
+
+<p>不過唔係個個都咁樂觀。最後一日嘅辯論環節，Dex Horthy（HumanLayer）話「the hype is outrunning the discipline」——Kubernetes 都係 control loop，但人哋係 deterministic loop。Agent loop 唔係。</p>
+
+<div class="highlight-box">
+<h3>💡 Loop 工程的核心命題</h3>
+<ul>
+  <li>內循環：agent 自主執行工作</li>
+  <li>外循環：人類設定方向 + 監督決策 + 處理例外</li>
+  <li>關鍵：feedback signals、evals、human input</li>
+  <li>風險：loop hype 超越實際 discipline</li>
+</ul>
+</div>
+
+<!-- ============================================ -->
+<h2 class="section-title">三、Forward Deployed Engineer（FDE）——企業落地嘅新角色</h2>
+
+<p>一個新嘅企業角色正在冒起：<strong>前線部署工程師</strong>（Forward Deployed Engineer）。唔係 remote 做 infra，而係直接坐喺客戶隔籬、幫佢哋實施 AI 能力。</p>
+
+<p>Sierra 嘅 FDE 主管 Natalie Meurer：</p>
+<blockquote>
+「每個企業都想知道如何維護其 agentic ecosystem——如何管理所有 integrations 和所有 contributing teams。」
+</blockquote>
+
+<p>Cursor 嘅 Pauline Brunet 分享咗 FDE 嘅目標：</p>
+<blockquote>
+「When we walk away at the end of the engagements... it is a strict ROI for them. That means they're not gonna turn things off when we leave.」
+</blockquote>
+
+<p>關鍵挑戰：<strong>企業 AI 採用仍然集中喺早期採用者</strong>。Brunet 承認「finding the right champions inside an organization」係現階段 FDE 最大嘅難題。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">四、Software Factory（軟件工廠）——選擇自動化咩環節</h2>
+
+<p>「Software factory」係另一個反覆出現嘅詞。Warp CEO Zach Lloyd 嘅表述最清晰：</p>
+
+<blockquote>
+「You choose your repositories, the parts of the software lifecycle you want to automate, and the points where humans should be brought into the loop. Different organizations and codebases will have different preferences.」
+</blockquote>
+
+<p>具體決定包括：</p>
+<ul>
+  <li>完全自動化 code review？定係某啲高風險變更由人睇？</li>
+  <li>長期運行嘅 agent 幫手做成個 SDLC？定係只做某個環節？</li>
+  <li>Context 點樣由 business systems → shared company brain → agents（through MCP、APIs、retrieval）？</li>
+</ul>
+
+<p>Charlie Holtz（Conductor CEO）對「工廠」嘅比喻有保留：</p>
+<blockquote>
+「I don't want the future to be built around factories. I want to feel like a human, I want to be in the flow, I want to be in front of an orchestra, waving my baton.」
+</blockquote>
+
+<p>Geoffrey Huntley 半警告半提醒：</p>
+<blockquote>
+「My biggest concern is that this time next year at the conference, we're going to see a whole bunch of folks saying, our factories failed, our loops failed. These are things that we are still yet to figure out.」
+</blockquote>
+
+<hr>
+
+<h2 class="section-title">五、Skills 工程——Agent 的「技能封裝」</h2>
+
+<p>「Skills」——Anthropic 上年 10 月引入 Claude 嘅概念——已經成為 AIEWF 嘅核心話題。Addy Osmani 嘅定義最扼要：skills「編碼了高級工程師的工作流程、品質關卡和最佳實踐」。</p>
+
+<p><strong>Philipp Schmid（Google DeepMind）</strong> 喺 main stage 展示用 skills 做「agents without code」：</p>
+<blockquote class="strong">
+「Agents are just files. We write markdown files to extend capabilities. Agents can learn from those, can create their own files.」
+<span class="attr">— Philipp Schmid (Google DeepMind)</span>
+</blockquote>
+
+<p>呢個講法同我哋 OpenClaw 嘅哲學不謀而合——skill 唔係 code，而係可讀、可寫、可共享嘅 markdown。</p>
+
+<p><strong>Paul Bakaus（Renaissance Geek）</strong> 進一步創建咗 <a href="https://impeccable.style/">Impeccable</a>——一個開源設計 skill 系統，俾 coding agents 一個改善 UI 嘅詞彙庫。佢甚至倡導「skill engineering」作為獨立學科：</p>
+
+<blockquote>
+「Most skills — and indeed most models — are not very creative. They converge in one direction, and if everybody uses the same skill to do frontend design work, everything ends up looking the same.」
+<span class="attr">— Paul Bakaus</span>
+</blockquote>
+
+<p>Pocock 仲提到「skills hell」嘅概念——同 frameworks hell 類似嘅 developer frustration。建議：寫少啲、寫細啲、結構行先。</p>
+
+<p><strong>Garry Tan（Y Combinator 總裁）</strong> 喺 closing keynote 呼籲創業者擁抱 skills：</p>
+<blockquote>
+「AI native companies encode all of that as skills — written procedures that their agents execute — and they hire engineers whose job is to maintain those skills, to do the work the skills can't do yet.」
+</blockquote>
+
+<p>Tyler Brown 嘅 X 帖文總結得最好：</p>
+<blockquote>
+「Autonomy without structure creates as much slop as leverage.」
+<span class="attr">— Tyler Brown</span>
+</blockquote>
+
+<p>佢仲有一個好嘅比喻：「每個新模型發布就好似由初中升高中——你需要為新模型量身定制 curriculum。」</p>
+
+<hr>
+
+<h2 class="section-title">六、宏觀洞察：AI 工程 2026 嘅本質變化</h2>
+
+<p>呢五大趨勢唔係獨立發生嘅。佢哋指向同一個方向：</p>
+
+<p><strong>AI 工程已經從「用 model 做嘢」進化到「建造圍繞 model 嘅系統」。</strong></p>
+
+<p>三年前嘅問題係：「LLM 可唔可以做到？」<br>
+而家嘅問題係：「我點樣喺 production 可靠運行呢個 agent system？」</p>
+
+<p>呢個 shift 對應三個關鍵變化：</p>
+<ul>
+  <li><strong>評測 = 護城河</strong>：Andrea Konwinski 嘅觀察——「能把自己的價值編碼進 evals 和環境的公司，護城河比靠資本或規模的公司更深」</li>
+  <li><strong>Edge 從玩具走向認真</strong>：愈來愈多 agentic workflow 可以喺本地運行（低 bit weight + optimized harnesses）</li>
+  <li><strong>Skills 降低重複勞動</strong>：markdown-based agent 指令大幅減少 orchestration code</li>
+</ul>
+
+<p>最後，Romain Huet（OpenAI）喺 keynote 講嘅一句話，可能係成個 AIEWF 最佳總結：</p>
+
+<blockquote class="strong">
+「Software ate the world, and then AI ate software, but now what we're here to say is that the AI engineers are eating the world.」
+</blockquote>
+
+<hr>
+
+<div class="highlight-box">
+<h3>🎙 本期提及嘅關鍵人物</h3>
+<ul>
+  <li><strong>swyx</strong> — Latent Space 創辦人，AI Engineer 一詞嘅創造者</li>
+  <li><strong>Lilian Weng</strong> — 前 OpenAI，Thinking Machines Lab 聯合創辦人</li>
+  <li><strong>Richard MacManus</strong> — 獨立分析師，前 ReadWriteWeb 創辦人，本文作者</li>
+  <li><strong>Peter Steinberger</strong> — OpenClaw 創始人（「ClawFather」）</li>
+  <li><strong>Philipp Schmid</strong> — Google DeepMind（「agents are just files」）</li>
+  <li><strong>Garry Tan</strong> — Y Combinator 總裁</li>
+  <li><strong>Pauline Brunet</strong> — Cursor FDE</li>
+  <li><strong>Geoffrey Huntley</strong> — Ralph Loop 創作者</li>
+  <li><strong>Charlie Holtz</strong> — Conductor CEO</li>
+  <li><strong>Paul Bakaus</strong> — Renaissance Geek（Impeccable 創作者）</li>
+  <li><strong>Zach Lloyd</strong> — Warp CEO</li>
+  <li><strong>Thariq Shihipar</strong> — Anthropic</li>
+  <li><strong>Andrew Qu</strong> — Vercel Chief of Software</li>
+</ul>
+</div>
+
+<hr>
+
+<footer>
+  <p>深度復述 · 2026-07-15 · JMOKSZ/ai-podcast-collection</p>
+  <p style="margin-top:0.3rem;">原文出處：Latent Space（swyx 編者注 + Richard MacManus 採訪），2026-07-14</p>
+  <p style="margin-top:0.3rem;">📖 原文：<a href="https://www.latent.space/p/aiewf26trends">5 Trends That Defined AI Engineering at World's Fair 2026</a></p>
+  <p style="margin-top:0.3rem;">Generated: 2026-07-15T06:06 UTC</p>
+</footer>
+
+</div>
+</body>
+</html>
