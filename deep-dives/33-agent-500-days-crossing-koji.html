@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Agent 元年第 500 天：GUI 退場、CLI 復興、Skill 封裝——軟件嘅消亡與再生</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+  th, td { border: 1px solid #e0dbd4; padding: 0.5rem 0.8rem; text-align: left; }
+  th { background: #f8f4ee; color: #3a3a3a; font-weight: 500; }
+  td { color: #444; background: #fff; }
+  a { color: #8b6f4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">← 返回播客日報</a>
+  <div class="ep-num">十字路口 Crossing × 此话当真（真格基金串台）</div>
+  <h1>Agent 元年第 500 天：GUI 退場、CLI 復興、Skill 封裝——軟件嘅消亡與再生</h1>
+  <div class="meta">
+    <span>📅 2026-07-08</span>
+    <span>⏱ ～50 min</span>
+    <span>🎙 十字路口 Crossing</span>
+    <span>👤 主播 Koji × 嘉賓 鍾天杰（真格基金投資總監）/ 歸藏 / 戴雨森（真格管理合夥人）</span>
+    <span>🏷 <span class="tag">Agent</span> <span class="tag">GUI</span> <span class="tag">CLI</span> <span class="tag">Skill</span> <span class="tag">Agentic Economy</span> <span class="tag">OpenClaw</span></span>
+  </div>
+</header>
+
+<!-- 引言 -->
+<p><span class="data-point">2025</span> 年開年，Koji 同戴雨森喺真格基金「此话当真」×「十字路口」嘅串台對談中，大膽拋出一個預測：<strong>2025 係 Agent 元年</strong>。500 天後，呢班人再次聚首——加入咗鍾天杰（真格投資總監）同歸藏（AI 開發者）——回望呢 500 日翻天覆地嘅變化。從 Claude 3.5 Sonnet 到 Manus 爆火，再到 Claude Code 刷屏、概念接連爆炸，但有一條主線逐漸浮出水面：GUI 退場、Headless 上位、CLI 復興、Skills 封裝、Agentic Economy 萌芽。</p>
+
+<p>呢期唔係又一輪概念盤點，而係一次「用一條線串起所有珍珠」嘅嘗試。佢哋問嘅問題係：<strong>在 Agent 元年第 500 天，什麼在消失，什麼在誕生？</strong></p>
+
+<blockquote>
+「消失的可能不是 GUI 本身，而是『人必須在流程裡當傳送帶』的前提；誕生的也不只是新產品型態，而是一整套新的分工與定價方式。」
+  <span class="attr">— 節目 description</span>
+</blockquote>
+
+<!-- ============================================ -->
+<h2 class="section-title">一、核心背景：500 天前，誰在喊 Agent 元年？</h2>
+
+<p>時光倒流到 2025 年初，LLM 熱潮經過 2023–2024 兩年嘅發酵，業界開始從「對話能力」轉向「行動能力」。Koji 同戴雨森喺當時嘅串台對談中，明確提出 <span class="data-point">2025 = Agent 元年</span> 呢個判斷。彼時呢個論斷聽上去仲有啲大膽——Agent 概念喺學術界存在多年，但真正落地嘅產品寥寥可數。</p>
+
+<p>500 天過去，回望呢段時間嘅 key milestones 可以畫出一條好清晰嘅時間線：</p>
+
+<table>
+  <tr><th>時間點</th><th>事件</th><th>意義</th></tr>
+  <tr><td>Day 1（2025 年初）</td><td>Koji × 戴雨森對談：2025 = Agent 元年</td><td>核心預測</td></tr>
+  <tr><td>Day ~100</td><td>Claude 3.5 Sonnet 發佈；Manus 爆火</td><td>Agent 嘅基礎模型成熟 + 現象級產品出圈</td></tr>
+  <tr><td>Day ~300</td><td>Claude Code 全網刷屏</td><td>編碼 Agent 成爲主流工作方式</td></tr>
+  <tr><td>Day ~500</td><td>Concept 持續爆炸：MCP、SKill、Agentic Economy</td><td>概念爆炸但主線浮現</td></tr>
+</table>
+
+<p>呢 500 天嘅變化可以用一句話概括——鍾天杰喺節目入面引用咗佢自己寫嘅文章標題：</p>
+
+<blockquote class="strong">
+「我們也許不該再投資 GUI 思維的軟件公司。」
+  <span class="attr">— 鍾天杰（真格基金投資總監）</span>
+</blockquote>
+
+<p>呢個判斷唔單止係投資觀點，更加係過去 500 天 Agent 演進嘅濃縮。如果話頭 100 天仲係「AI 能對話」，第 300 天變咗「AI 能寫碼」，到第 500 天，核心問題已經變成：<strong>當 AI 唔需要 GUI 就能操作軟件，軟件本身嘅形態會變成點？</strong></p>
+
+<p>節目另一個有意思嘅觀察係：概念雖然不斷爆炸，但有一樣嘢幾乎冇變過——<strong>上下文管理越來越重要</strong>。由第一天到第五百天，呢個技術核心難題始終未變，亦係 Agent 能力嘅最關鍵瓶頸。歸藏喺節目入面嘅判斷直接了當：「上下文就是一切。」</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">二、主線敘事：GUI → Headless → CLI → Skills → Agentic Economy</h2>
+
+<h3 class="sub-title">GUI 係人類認知缺陷嘅補丁</h3>
+
+<p>鍾天杰提出咗一個根本性嘅觀點：<strong>GUI（圖形用戶介面）其實係人類認知缺陷嘅補丁。</strong>人類記唔到複雜嘅命令行參數，所以需要按鈕同窗口嚟降低認知門檻。但對 AI 嚟講，GUI 從來都唔係「為佢哋設計」嘅——按鈕、表單、拖拽呢啲交互方式對模型而言係冗餘嘅中介層。</p>
+
+<blockquote>
+「軟件沒有界面了，只剩數據庫與工具。」
+  <span class="attr">— 鍾天杰</span>
+</blockquote>
+
+<p>呢個觀點直接指向 Agent 時代嘅核心問題：如果 AI Agent 可以繞過 GUI，直接讀寫數據庫、調用 API、執行命令行，咁我哋仲需唔需要嗰層靚靚嘅 UI？答案係：<strong>需要，但係俾人類用，唔係俾 AI 用。</strong></p>
+
+<h3 class="sub-title">Headless 爆發——軟件嘅「斷頭」時代</h3>
+
+<p>Headless（無頭）軟件唔係新概念，但 Agent 嘅出現畀咗佢全新嘅生命。Notion、飛書、Google Suite 呢啲傳統 SaaS 巨頭，以前嘅 API 主要係俾開發者做集成。而家，Agent 可以通過 Codex 授權直接訪問 Gmail——唔係登入網頁版然後點擊，而係直接調用郵件 API 完成操作。</p>
+
+<p>歸藏分享咗一個實際案例：佢用 Claude Code 接入自己嘅 Notion 數據庫，Agent 可以直接查詢、創建、修改頁面，完全唔需要打開 Notion 嘅 web 界面。呢種體驗喺 500 天前仲係科幻，而家已經係日常。</p>
+
+<p>從真格基金嘅投資人視角睇，呢個趨勢尤其重要。鍾天杰指出：<strong>大量公司主動推出 MCP（Model Context Protocol）/CLI</strong>，唔係被逼嘅，而係意識到「如果唔開放，Agent 時代就冇你份」。呢個觀察喺投資層面嘅含義係：</p>
+
+<ul>
+  <li>下一代軟件公司應該「API-first」甚至「Agent-first」</li>
+  <li>傳統 SaaS 公司需要盡快開放 Headless 接入</li>
+  <li>封閉生態系統面臨被 Agent 繞過嘅風險</li>
+</ul>
+
+<h3 class="sub-title">CLI 復興——AI 拯救咗命令列</h3>
+
+<p>節目入面嗰個最反直覺嘅觀察係：<strong>CLI（命令行介面）正在復興。</strong>點解一個喺 GUI 時代被認為「過時」嘅交互方式會翻生？答案好簡單：AI 解決咗 CLI 最大嘅障礙——人類根本記唔到成千上萬條命令。</p>
+
+<p>以前，命令列係專家工具，因為你要記住 `grep`、`awk`、`sed`、`curl` 嘅複雜參數。而家，你只需要用自然語言話俾 Agent 聽你想做乜，Agent 自動生成命令並執行。CLI 嘅純文本本質令佢天然適合 AI 處理——結構化、無歧義、可組合。</p>
+
+<blockquote class="strong">
+「CLI 的核心：命令行執行、純文本、與 AI 天然契合。」
+  <span class="attr">— 節目關鍵詞拆解</span>
+</blockquote>
+
+<h3 class="sub-title">壟斷性軟件嘅防守困境</h3>
+
+<p>節目嘅討論去到一個極具爭議嘅話題：<strong>微信、小紅書、美團等壟斷性軟件至今沒有推出 CLI。</strong>呢唔係技術問題，而係戰略問題。開放 CLI 意味住第三方 Agent 可以直接操作呢啲平台嘅核心功能——發朋友圈、落單、落廣告——呢啲功能一旦開放，平台對用戶行為嘅控制力就會減弱。</p>
+
+<p>但另一方面，如果呢啲平台唔開放，Agent 時代嘅用戶自然會流向開放生態。呢個係一個「開放 CLI 防守兩難」：</p>
+
+<ul>
+  <li><strong>開咗：</strong> 失去對生態嘅絕對控制，可能被 Agent 供應商抽成</li>
+  <li><strong>唔開：</strong> 被 Agent 用戶拋棄，淪為「人類專用」嘅遺留系統</li>
+</ul>
+
+<blockquote>
+「開放 CLI 背後需要極大決心與勇氣。」
+  <span class="attr">— 節目中對壟斷軟件嘅點評</span>
+</blockquote>
+
+<p>Koji 仲提出咗一個有趣嘅反問：如果工具能通過 Agent 更好地找到用戶，咁開放 CLI 其實係「用入口換生態」。呢個判斷喺節目入面引發咗激烈討論。歸藏舉咗一個例子：年輕人已經開始喺抖音上聊天，DAU <span class="data-point">1 個億</span>——呢啲平台本身就係新時代嘅「操作系統」，佢哋點可能輕易開放核心功能？</p>
+
+<h3 class="sub-title">「作為 PM，最重要是定義問題」</h3>
+
+<blockquote>
+「作為 PM 最重要的是定義問題，不要去解上個時代已解決的問題。」
+  <span class="attr">— 節目金句</span>
+</blockquote>
+
+<p>呢句說話指向咗更深層嘅問題：喺 Agent 時代做產品，唔應該諗「用戶點樣喺 GUI 入面操作」，而係「用戶最終想要嘅結果係咩」。如果結果係「發一封郵件俾客戶」——Agent 可以直接做，唔需要用戶打開 Gmail->點「撰寫」->輸入內容->點「發送」。呢個思維轉變，可能係 500 天後最值錢嘅 insight。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">三、Skill 封裝——你的品味下沉到 AI</h2>
+
+<h3 class="sub-title">歸藏嘅 PPT Skill 案例</h3>
+
+<p>節目入面最生動嘅案例嚟自歸藏。佢展示咗點樣用 Claude Code 做一個「PPT Skill」——佢唔係教 Claude 做一個好嘅 PPT，而係將自己對「好 PPT」嘅品味提煉成可複用嘅指令集合。呢個過程唔係寫 prompt 咁簡單，而係一個反覆「拷問」嘅過程：</p>
+
+<blockquote>
+「讓 Claude Code 拷問你的 grill-me——不斷追問你『呢個設計點解好？呢個段落點解要咁寫？』——最終提煉出你自己嘅品味標準。」
+  <span class="attr">— 歸藏</span>
+</blockquote>
+
+<p>呢個方法論嘅核心係：<strong>Skill 唔係教 AI 新嘢，而係將你嘅品味沉澱落去。</strong>每一個 Skill 文件，本質上都係嗰個人在某一領域嘅「品味容器」——入面封裝咗佢嘅判斷標準、風格偏好、質量門檻。</p>
+
+<h3 class="sub-title">Skill 會自我沉澱——品味嘅 moat</h3>
+
+<p>呢度觸及咗一個更深層嘅 insight：<strong>Skill 嘅真正價值唔係「功能」，而係「品味」。</strong>當你一次次迭代你嘅 Skill 文件，佢唔單止係一個 prompt template，而係你作為一個專業人士嘅判斷力外部化。歸藏嘅 PPT Skill 唔單止令 Claude 出到好嘅 PPT，而係令「歸藏風格」嘅好 PPT 可以被複製同迭代。</p>
+
+<blockquote class="strong">
+「Skill 會自我沉澱，把你的品味提煉成可復用的結果。」
+  <span class="attr">— 歸藏</span>
+</blockquote>
+
+<p>呢個諗法極具前瞻性：<strong>當你的 Skill 文件積累到一定規模，佢就變成咗你嘅「數字延伸」</strong>——一個喺 AI 世界入面代表你品味同能力嘅代理資產。呢啲資產嘅累積效應比傳統嘅作品集更強大，因為佢哋係「可執行嘅知識」。</p>
+
+<h3 class="sub-title">共存還是過渡？</h3>
+
+<p>節目對 Skill 嘅長期命運進行咗有意思嘅討論：<strong>Skill 係長期存在定係過渡形態？</strong>歸藏認為，隨住模型能力嘅不斷增強，一部分簡單嘅 Skill 最終會被模型本身消化（模型本身就「知」點樣做好 PPT），但嗰啲高度個人化、承載專業品味嘅複雜 Skill 會長期有價值。</p>
+
+<p>鍾天杰從投資人角度補充：<strong>小紅書 Skill 商店</strong> 如果做得好，可能成為一個新嘅分發平台。創作者唔單止可以賣內容、賣課程，仲可以賣「品味封裝」——即係一組讓 AI 幫你做好某件事嘅 Skill。呢個商業模式而家仲處於極早期，但從平台角度睇，佢嘅想像空間好大。</p>
+
+<p>三位嘉賓仲釐清咗一個重要區分：</p>
+
+<table>
+  <tr><th>概念</th><th>定位</th><th>適用場景</th></tr>
+  <tr><td>CLI</td><td>低層次工具調用協議</td><td>系統級操作、文件處理、環境配置</td></tr>
+  <tr><td>MCP（Model Context Protocol）</td><td>標準化上下文協議</td><td>Model 與外部工具嘅標準化互動</td></tr>
+  <tr><td>Skill</td><td>品味/專業知識封裝</td><td>高質量輸出、個人化風格、專業判斷</td></tr>
+</table>
+
+<p>三者唔係競爭關係，而係唔同抽象層次嘅產物。CLI 係執行層，MCP 係協議層，Skill 係知識層。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">四、Agentic Economy（智能體經濟）萌芽</h2>
+
+<p>如果話前三部分講緊「技術形態點樣變」，呢部分講嘅係「成個經濟系統點樣重構」。節目提出咗一個大胆嘅斷言：<strong>Agentic Economy 嘅基建時代已經開始。</strong></p>
+
+<h3 class="sub-title">To Agent 基礎設施</h3>
+
+<p>當 Agent 成為經濟活動嘅主體，成個基礎設施層需要重做：</p>
+
+<ul>
+  <li><strong>沙箱（Sandbox）：</strong> Agent 執行需要安全隔離嘅運行環境，確保佢哋唔會意外/惡意影響宿主系統</li>
+  <li><strong>記憶系統（Memory）：</strong> Agent 需要持久化記憶，跨越 session 嘅上下文管理——呢個就係歸藏講嘅「上下文就是一切」</li>
+  <li><strong>支付（Payment）：</strong> Agent 之間、Agent 與人類之間點樣結算？呢啲仲未有成熟方案</li>
+</ul>
+
+<blockquote>
+「現在仍是大基建時代，Token 變得越來越智能、越來越便宜是主旋律。」
+  <span class="attr">— 鍾天杰</span>
+</blockquote>
+
+<h3 class="sub-title">Token 經濟學</h3>
+
+<p>節目花咗唔少篇幅討論 Token 嘅經濟屬性。傳統上我哋將 Token 視為「計量單位」——好似電力度數咁。但鍾天杰指出，Token 嘅價格其實會浮動，受多個因素影響：</p>
+
+<ul>
+  <li><strong>能源成本：</strong> 訓練同推理嘅電費佔比會越來越高</li>
+  <li><strong>算力供給：</strong> GPU/NPU 芯片嘅供應鏈瓶頸</li>
+  <li><strong>模型水平：</strong> 更聰明嘅模型可以用更少 Token 完成更多工作（變相降低單位成本）</li>
+  <li><strong>市場供需：</strong> Agent 數量爆炸會推高 Token 需求</li>
+</ul>
+
+<p>呢個分析嘅底層邏輯係：<strong>Token 唔單止係技術概念，佢越來越似一種「計算貨幣」</strong>——有供需曲線、有價格彈性、有替代品。當 Agent 經濟規模達到一定程度，Token 嘅估值模型可能獨立於傳統貨幣體系。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">五、OpenClaw 嘅遺產</h2>
+
+<p>呢期節目特別花咗一節講 OpenClaw——一個由 Koji 團隊主導嘅開源項目。呢個項目喺 <span class="data-point">Day ~100</span> 前後爆火，但到第 500 日，佢嘅熱度已經極速消退。佢哋坦誠地討論咗呢個現象，同時亦梳理咗 OpenClaw 留低咗嘅遺產：</p>
+
+<h3 class="sub-title">100 天熱度極速消退</h3>
+
+<p>OpenClaw 嘅故事係一個典型嘅開源 Agent 項目生命週期：爆紅→迅速增長→遭遇天花板→熱度消退。呢個軌跡唔係失敗嘅標誌，而係揭示咗一個重要嘅規律：<strong>開源 Agent 框架嘅「新鮮感窗口」好短</strong>。新項目一出嚟大家爭住試，但一旦跨過「好奇期」進入「實際使用期」，用戶會好快評估佢嘅真實價值。</p>
+
+<h3 class="sub-title">塑造共識：最大嘅遺產</h3>
+
+<blockquote class="strong">
+「OpenClaw 最大意義是塑造共識，幫大眾完成對 Agent 的認知轉變。」
+  <span class="attr">— 鍾天杰</span>
+</blockquote>
+
+<p>呢個判斷好到位。OpenClaw 嘅產品意義可能唔及佢嘅「文化意義」——佢係第一個讓大量非技術用戶實際體驗「AI Agent 係乜嘢」嘅開源項目。喺 OpenClaw 之前，Agent 係一個抽象概念；喺 OpenClaw 之後，成千上萬嘅人親手用過一個「自己運行嘅 Agent」。</p>
+
+<p>呢種「認知轉變」嘅作用唔好低估。每個技術浪潮都需要一個「入門毒品」——一個低門檻、可體驗嘅產品，幫普羅大眾越過概念門檻。OpenClaw 就係 Agent 浪潮入面嘅那個角色。</p>
+
+<h3 class="sub-title">IM 形態證明</h3>
+
+<p>另一個被低估嘅遺產係：OpenClaw <strong>證明咗 IM（即時通訊）形態嘅價值</strong>。用戶唔需要一個新嘅 IDE、一個新嘅 Dashboard——佢哋想要嘅係喺熟悉嘅界面（微信/Telegram/Discord）入面同 AI 對話。呢個觀察直接指導咗後續好多 Agent 產品嘅設計方向。</p>
+
+<blockquote>
+「用戶需要在熟悉界面裡與 AI 對話。」
+  <span class="attr">— 節目中對 OpenClaw 遺產嘅總結</span>
+</blockquote>
+
+<p>從呢個角度睇，OpenClaw 嘅真正遺產唔係代碼庫，而係：一套關於「人機交互應該係點」嘅設計共識，同一個讓 Agent 平民化嘅認知轉折點。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">六、Token Grant：「缺的不是錢，是 Token」</h2>
+
+<p>節目尾聲介紹咗一個由真格基金同十字路口聯合發起嘅計劃——<strong>Token Grant</strong>。呢個計劃嘅概念好直接：每個入選項目獲得 <span class="data-point">5 萬元 Token 費用</span>，幫創業者解決「有想法但冇算力」嘅問題。</p>
+
+<h3 class="sub-title">Code Pilot：6000 GitHub Stars</h3>
+
+<p>其中一個案例係 <strong>Code Pilot</strong>，一個已經有 <span class="data-point">6000 GitHub stars</span> 嘅開源項目。佢嘅定位係「足夠開放、本地化嘅 Agent」，強調用戶對自己 Agent 嘅完全控制權。呢個項目嘅增長說明咗一件事：市場對「本地優先」、「隱私可控」嘅 Agent 方案有真實需求。</p>
+
+<h3 class="sub-title">0 行代碼到 10 萬行代碼——一場數字生命實驗</h3>
+
+<p>節目仲提到一個引人入勝嘅故事：<strong>一場數字生命實驗</strong>——一個項目從 <span class="data-point">0 行代碼</span> 開始，全程使用 Agent 編程，成長到 <span class="data-point">10 萬行代碼</span>。呢個案例本身唔單止係技術 demo，而係一個深刻嘅里程碑：<strong>Agent 已經可以完整支撐一個真實項目嘅全生命週期開發。</strong></p>
+
+<blockquote class="strong">
+「今天創業缺的不是錢，而是 Token。」
+  <span class="attr">— 節目中 Token Grant 嘅核心觀點</span>
+</blockquote>
+
+<p>呢個 statement 反映咗一個時代變化：喺傳統 startup 生態入面，錢係最稀缺嘅資源；喺 Agent 時代，Token（即係算力 + 模型能力）取代咗錢嘅位置。當你嘅「員工」係 AI Agent，佢哋唔需要薪水，但需要 Token。呢個轉變對創業融資模式嘅影響，可能喺未來幾年逐漸浮現。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">七、精華引用</h2>
+
+<blockquote class="strong">
+「下一個抖音未必是新形態，可能是 10x 產能的抖音。」
+  <span class="attr">— 節目中對 AI 如何改變內容生態嘅判斷</span>
+</blockquote>
+
+<blockquote class="strong">
+「作為 PM 最重要的是定義問題，不要去解上個時代已解決的問題。」
+  <span class="attr">— 產品思維金句</span>
+</blockquote>
+
+<blockquote class="strong">
+「我們也許不該再投資 GUI 思維的軟件公司。」
+  <span class="attr">— 鍾天杰</span>
+</blockquote>
+
+<blockquote class="strong">
+「當概念不斷爆炸，這次對談提供一種更清晰的梳理視角，幫你把這些變化串聯起來。」
+  <span class="attr">— 節目自我描述</span>
+</blockquote>
+
+<blockquote>
+「如果工具能通過 Agent 更好地找到用戶，就應該開放 CLI。」
+  <span class="attr">— Koji</span>
+</blockquote>
+
+<blockquote>
+「消失的可能不是 GUI 本身，而是『人必須在流程裡當傳送帶』的前提。」
+  <span class="attr">— 節目開篇觀點</span>
+</blockquote>
+
+<!-- ============================================ -->
+<h2 class="section-title">八、我的洞察</h2>
+
+<p>聽完呢期對談，有幾個觀察特別值得拎出嚟獨立思考。</p>
+
+<h3 class="sub-title">GUI → Headless 係認知革命，唔係技術革命</h3>
+
+<p>Headless 呢個概念喺技術層面已經存在好多年——API、CLI、RESTful service 呢啲唔係新嘢。真正革命性嘅係：<strong>AI 讓「冇 GUI」變成「對所有人可用」</strong>。以前 Headless 係俾開發者用嘅，因為你必須懂編程先可以操作 API；而家自然語言就係「通用 API 接口」。呢個認知轉變嘅影響可能比任何技術突破都更深遠——佢改變咗我哋對「軟件係乜」嘅根本理解。</p>
+
+<h3 class="sub-title">OpenClaw 從爆紅到「消散」，完整走完開源項目生命週期</h3>
+
+<p>OpenClaw 嘅軌跡係資訊時代嘅經典故事：一個項目喺啱嘅時候出現，爆紅，然後熱度消退。但同大部分「曇花一現」嘅項目唔同，OpenClaw 留低咗可量度嘅文化遺產——唔係代碼行數，而係嗰幾萬個因為佢而第一次理解「Agent 係乜」嘅人。喺技術史上，呢啲「教育型項目」嘅長期影響往往超過同一時期嘅技術型項目。</p>
+
+<h3 class="sub-title">500 天變化最大嘅係觀念，唔係能力</h3>
+
+<p>呢一點可能係最有意思嘅觀察。從技術能力層面睇，500 天前嘅 Claude 3.5 Sonnet 同今日嘅模型差距唔算「代際」級別。但從觀念層面睇，變化係翻天覆地嘅：<strong>人們對「AI 可以做乜」嘅預期完全唔同咗。</strong>500 天前，Agent 仲係「好勁嘅 demo」；500 天後，Agent 係「你每日用嚟寫 code、做 PPT、發郵件嘅工具」。呢個觀念嘅轉變——唔係技術跳躍——先係 Agent 元年真正嘅遺產。</p>
+
+<h3 class="sub-title">最被低估嘅觀點：Skill 會沉澱品味——呢個先係真正的 moat</h3>
+
+<p>節目入面最容易被忽略但最具前瞻性嘅觀點，係歸藏關於 Skill 嘅論述。<strong>Skill 嘅真正價值唔係「教 AI 做嘢」，而係「將你嘅品味外部化」。</strong>喺 AI 時代，知識會變得越嚟越商品化——任何模型都知點樣做一個「好」嘅 PPT。但「歸藏風格嘅好 PPT」係獨一無二嘅——佢承載咗一個具體人類嘅判斷力、美學、同經驗。</p>
+
+<p>呢個「品味下沉」嘅概念，其實係人類喺 AI 時代保留差異化優勢嘅一條路徑。當我哋嘅品味可以沉澱成 Skill，我哋唔單止係使用 AI，而係「教 AI 成為我哋嘅延伸」。</p>
+
+<h3 class="sub-title">微信/小紅書封閉帶來的防守困境</h3>
+
+<p>最後，節目提到嘅「壟斷性軟件嘅防守困境」係一個值得持續跟進嘅話題。微信、小紅書、美團呢啲平台在 GUI 時代嘅 moat 係「用戶習慣 + 網絡效應」；但喺 Agent 時代，呢個 moat 嘅有效性正在被侵蝕。開放 CLI 需要極大嘅決心同勇氣——因為開放意味住失去控制，不開放意味住被邊緣化。</p>
+
+<p>歷史經驗顯示，每一次技術轉型期，最大嘅贏家通常係最敢於「自我蠶食」嘅公司。Netflix 從 DVD 租賃轉型串流、Adobe 從買斷轉型 SaaS——呢啲都係「敢於殺死自己嘅現金牛」嘅案例。而家 Agent 時代嘅到來，可能逼迫微信小紅書們做同樣嘅抉擇。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">＋ 附錄：500 天 Timeline</h2>
+
+<p>以下係節目中提及嘅 key events，加上我自己補充嘅 context，拼成一張 Agent 元年嘅時間線：</p>
+
+<table>
+  <tr><th>時間</th><th>事件</th><th>Category</th></tr>
+  <tr><td>2025 年初</td><td>Koji × 戴雨森對談：2025 = Agent 元年</td><td>預測 / 標誌事件</td></tr>
+  <tr><td>2025 Q1</td><td>DeepSeek-V3/R1 引發模型價格戰</td><td>模型</td></tr>
+  <tr><td>2025 Q2 (~Day 100)</td><td>Claude 3.5 Sonnet 推出；Manus 爆火出圈</td><td>模型 / 產品</td></tr>
+  <tr><td>2025 Q2 (~Day 100)</td><td>OpenClaw 開始爆紅</td><td>開源框架</td></tr>
+  <tr><td>2025 Q3</td><td>吉卜力時刻——AI 圖像生成席捲社交媒體</td><td>文化現象</td></tr>
+  <tr><td>2025 Q4 (~Day 300)</td><td>Claude Code 刷屏；Cline/Copilot Coding Agent 成主流</td><td>工具</td></tr>
+  <tr><td>2025 年底</td><td>Koji × 戴雨森 2026 開年對談（The Year of Agent）</td><td>回顧 / 展望</td></tr>
+  <tr><td>2026 Q1</td><td>Anthropic MCP 協議推出；業界開始標準化</td><td>協議</td></tr>
+  <tr><td>2026 H1 (~Day 500)</td><td>本期對談：GUI→Headless→CLI→Skill→Agentic Economy</td><td>梳理 / 總結</td></tr>
+  <tr><td>2026 H1</td><td>Token Grant 啟動；Code Pilot 6000+ Stars</td><td>生態</td></tr>
+</table>
+
+<!-- ============================================ -->
+<h2 class="section-title">＋ 關於嘉賓</h2>
+
+<div class="highlight-box">
+<h3>🎙 本期人物</h3>
+<ul>
+  <li><strong>Koji（楊遠骋）：</strong> 十字路口主理人，真格基金 Venture Partner。前陌陌產品合夥人、聚劃算 CEO。2025 年開年即判定「Agent 元年」。</li>
+  <li><strong>鍾天杰：</strong> 真格基金投資總監。作者身份——撰寫投資人視角下嘅 Agent 時代分析文章，提出「唔應該再投資 GUI 思維的軟件公司」。</li>
+  <li><strong>歸藏：</strong> AI 開發者、活躍開源貢獻者。以「上下文就是一切」聞名，開發咗大量 Claude Code Skill 實踐。</li>
+  <li><strong>戴雨森：</strong> 真格基金管理合夥人，聚劃算聯合創辦人。與 Koji 共同主持 2025、2026 開年對談。</li>
+</ul>
+</div>
+
+<hr>
+
+<footer>
+  <p>深度復述 · 2026-07-14 · JMOKSZ/ai-podcast-collection</p>
+  <p style="margin-top:0.3rem;">原文出自 十字路口 Crossing × 此话当真（真格基金串台）（2026-07-08）</p>
+  <p style="margin-top:0.3rem;">🎧 原集：<a href="https://podcasts.apple.com/tr/podcast/agent-%E5%85%83%E5%B9%B4%E7%AC%AC-500-%E5%A4%A9-%E4%BB%80%E4%B9%88%E5%9C%A8%E6%B6%88%E5%A4%B1-%E4%BB%80%E4%B9%88%E5%9C%A8%E8%AF%9E%E7%94%9F-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E4%B8%8D%E8%AF%A5%E5%86%8D%E6%8A%95%E8%B5%84-gui-%E6%80%9D%E7%BB%B4%E7%9A%84%E8%BD%AF%E4%BB%B6/id1729552193?i=1000775040891">Apple Podcasts</a> · <a href="https://podtail.com/podcast/--crossing/">Podtail</a></p>
+  <p style="margin-top:0.3rem;">Generated: 2026-07-14T06:13 UTC</p>
+</footer>
+
+</div>
+</body>
+</html>

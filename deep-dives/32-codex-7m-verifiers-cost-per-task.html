@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Codex 700 萬用戶、Verifiers v1 同「Cost per Task」新範式——AI 編碼嘅地殼變動</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+  th, td { border: 1px solid #e0dbd4; padding: 0.5rem 0.8rem; text-align: left; }
+  th { background: #f8f4ee; color: #3a3a3a; font-weight: 500; }
+  td { color: #444; background: #fff; }
+  a { color: #8b6f4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="../index.html">← 返回播客日報</a>
+  <div class="ep-num">Latent Space · AINews</div>
+  <h1>Codex 700 萬用戶、Verifiers v1 同「Cost per Task」新範式——AI 編碼嘅地殼變動</h1>
+  <div class="meta">
+    <span>📅 2026-07-14</span>
+    <span>🎙 AINews 新聞摘要</span>
+    <span>👥 主編 swyx + Alessio Fanelli</span>
+    <span>🏷 <span class="tag">AI編碼</span> <span class="tag">Codex</span> <span class="tag">Verifiers</span> <span class="tag">CostPerTask</span> <span class="tag">GrokBuild</span></span>
+  </div>
+</header>
+
+<!-- 引言 -->
+<p>呢個星期一嘅 AINews 係 2026 年 7 月 14 號播出，由 swyx 同 Alessio Fanelli 主持。這期嘅主題異常聚焦——AI 編碼領域正經歷一場地殼變動：OpenAI Codex 用戶量喺短短 24.5 小時內從 600 萬爆升到 700 萬，Prime Intellect 開源咗 Verifiers v1 架構，仲有 Grok Build 嘅隱私風波。但真正令整個行業感到震動嘅，係一個新嘅評估範式正在悄然形成——「Cost per Task」。呢個指標如果站穩腳，將會摧毀我哋對模型比較嘅所有既有認知。</p>
+
+<p>以下係我對成集節目嘅深度摘要同分析，覆蓋七個核心話題加上一個整合性嘅洞察。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">一、Codex 嘅 10x 增長故事</h2>
+
+<p>呢個禮拜嘅最大新聞毫無疑問係 OpenAI Codex 嘅用戶增長曲線。Alessio 開場就用一種「你唔會信」嘅語氣報告咗呢啲數字：</p>
+
+<ul>
+  <li><span class="data-point">Jan 2026</span>：約 <span class="data-point">550k–700k</span> 用戶。當時已經係業界最大嘅 coding agent 平台之一，但仲未引起大眾注意</li>
+  <li><span class="data-point">Mar 2026</span>：約 <span class="data-point">200 萬</span> 用戶。兩個月翻三倍，曲線開始陡峭</li>
+  <li><span class="data-point">Jul 12（週日傍晚）</span>：<span class="data-point">600 萬</span> 用戶。曲線已經變成垂直</li>
+  <li><span class="data-point">Jul 13（週一傍晚）</span>：<span class="data-point">700 萬</span> 用戶。24.5 小時內淨增 <span class="data-point">100 萬</span> 用戶</li>
+</ul>
+
+<p>呢個意味住由年初到而家大約 6.5 個月，Codex 用戶量增長咗 <span class="data-point">10–12x</span>。呢種增長率喺任何 SaaS 產品都罕見，更何況係一個單一功能嘅 coding agent。</p>
+
+<blockquote class="strong">
+「Seven million users. That's insane! That's like — that's like being a country. A country of developers.」
+  <span class="attr">— swyx</span>
+</blockquote>
+
+<p><strong>增長加速嘅引擎：</strong></p>
+
+<p>swyx 同 Alessio 討論咗幾個催化劑。最直接嘅係 <strong>GPT-5.6 Sol 發佈</strong>（Jul 9）。Sol 嘅最強能力恰好體現喺編碼同長上下文處理——Codex 作為 GPT-5.6 嘅旗艦應用，直接食到版本升級嘅紅利。</p>
+
+<p>但更重要嘅係 <strong>OpenAI 取消咗 Codex 嘅用量限制</strong>，並提供一次「banked reset」——即係用戶之前未用嘅配額可以重新啟用。呢個轉變嘅策略意義巨大：OpenAI 由「限量高價」轉向「無限用量搶佔市場」，目標好明顯係用規模打敗 Claude Code。</p>
+
+<blockquote>
+「They just said 'go nuts'. And the market said 'okay'.」
+  <span class="attr">— Alessio Fanelli</span>
+</blockquote>
+
+<p>值得留意嘅係，Codex 增長主要來自口碑傳播，而非傳統廣告。700 萬開發者中，絕大部分係通過 Twitter/X 、YouTube 同 Discord 社群自然發現。呢種病毒式增長意味住產品-market fit 極強，強到足以淹沒任何競爭對手嘅市場推廣努力。</p>
+
+<p>swyx 將 Codex 比作「開發者嘅 ChatGPT 時刻」——正如 2023 年 ChatGPT 用兩個月達到 1 億用戶，Codex 喺 coding 垂直領域重現咗同樣嘅爆炸式增長，但起點更高、曲線更陡。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">二、Claude Code vs Codex——統計口徑嘅戰爭</h2>
+
+<p>咁強勁嘅 Codex 增長，對競爭對手意味住咩？swyx 同 Alessio 深入探討咗 Anthropic 嘅處境。</p>
+
+<p>Anthropic 最後一次披露 Claude Code 用戶數係 <span class="data-point">2026 年 2 月</span>：約 <span class="data-point">200 萬</span> 用戶，年化收入（ARR）約 <span class="data-point">$25 億</span>。五個月前呢個數字仲睇起嚟好勁——但對比 Codex 嘅 700 萬，Claude Code 已經明顯落後。</p>
+
+<p><strong>Claude Code 嘅結構性調整：</strong></p>
+
+<p>swyx 指出，Anthropic 將主要編碼能力 <strong>遷移至 Claude Tag</strong>——一個 Slackbot 形態嘅產品。呢個決定意味住 Claude Code 嘅「純 IDE agent」定位正在被淡化，取而代之嘅係嵌入工作流平台嘅方案。呢種策略有助於企業採用，因為 Slack 係好多公司嘅日常工作核心，但不利於同 Codex 呢種「開發者專用工具」正面競爭。</p>
+
+<blockquote class="strong">
+「Claude Tag is the new Claude Code. But 'Slackbot for coding' is a different story from 'IDE-native coding agent with 7M users'.」
+  <span class="attr">— swyx</span>
+</blockquote>
+
+<p><strong>Fable 5 訂閱嘅「驚喜延期」：</strong></p>
+
+<p>另一個引發猜測嘅事件係 <strong>Claude Fable 5 訂閱計劃延期</strong>。Anthropic 嘅 Fable 訂閱原本預計喺 7 月初全面推出，但喺最後一刻推遲，官方理由係「基礎設施容量問題」。外界普遍猜測呢同 Codex 壓力有關——OpenAI 取消用量限制後，Anthropic 被迫重新評估自身嘅定價同容量策略。</p>
+
+<p>Alessio 提出一個更技術性嘅觀察：<strong>推理優化</strong>。Anthropic 近期對 Fable 系列進行咗推理效率升級，帶嚟大約 <span class="data-point">10%</span> 嘅更多可用用量。呢項優化令 Fable 5 實際上比發布初期更平、更快——但對比 Codex 嘅「無限用量」模式，呢 10% 嘅改善遠遠唔夠。</p>
+
+<table>
+  <tr><th>指標</th><th>Claude Code (Feb 2026)</th><th>OpenAI Codex (Jul 2026)</th></tr>
+  <tr><td>用戶數</td><td>~2M</td><td>~7M</td></tr>
+  <tr><td>ARR</td><td>$2.5B</td><td>未披露（估計 >$5B）</td></tr>
+  <tr><td>增長速度</td><td>穩定增長</td><td>爆炸式（24.5h +1M）</td></tr>
+  <tr><td>核心產品形態</td><td>Claude Tag (Slackbot)</td><td>IDE-native coding agent</td></tr>
+  <tr><td>用量策略</td><td>配額制（+10% 推理優化）</td><td>無限制 + banked reset</td></tr>
+</table>
+
+<p>swyx 嘅總結頗為冷靜：Anthropic 唔會就此消失，但佢哋必須喺未來 3–6 個月內在 coding agent 領域做出重大策略調整。單純嘅模型質量優勢已經唔足夠——Codex 用規模同用戶體驗建立咗一個飛輪。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">三、Prime Intellect Verifiers v1——開源 RL 架構嘅里程碑</h2>
+
+<p>如果話 Codex 嘅故事係「封閉產品如何征服市場」，咁 Prime Intellect 嘅 Verifiers v1 就係「開源基礎設施如何重新定義開發」。呢個由 Prime Intellect 發佈嘅開源強化學習（RL）架構，被 swyx 稱為「2026 年最重要嘅開源 infra 項目之一」。</p>
+
+<p><strong>環境棧重構：taskset, harness, runtime 三大抽象</strong></p>
+
+<p>Prime Intellect 將複雜嘅 RL 訓練流程拆成三個清晰嘅抽象層：</p>
+<ul>
+  <li><strong>taskset：</strong> 定義任務嘅輸入/輸出規範，類似一個 type-safe 嘅 API 合約</li>
+  <li><strong>harness：</strong> 連接觸發器同執行引擎嘅中間層，負責 rollout 管理同 reward 計算</li>
+  <li><strong>runtime：</strong> 實際運行 agent 嘅執行環境，支援 vLLM 等推理引擎</li>
+</ul>
+
+<p>呢個三層設計嘅價值在於 <strong>「bring your own harness」</strong>——你可以自帶 harness 插入 prime intellect 嘅框架，無需重新實現成個 RL pipeline。呢個設計直接支援 coding agent 同 computer-use agent 嘅異構運行。</p>
+
+<blockquote class="strong">
+「The beauty of Verifiers v1 is that you don't have to rebuild the entire RL stack just to swap out the environment. You bring your harness, they bring the distributed training.」
+  <span class="attr">— swyx</span>
+</blockquote>
+
+<p><strong>核心技術突破：message DAG</strong></p>
+
+<p>Verifiers v1 最關鍵嘅技術創新係 <strong>message DAG（有向無環圖）</strong> 嚟存儲 rollout traces。呢個改變解決咗 RL 訓練中一個長期存在嘅性能瓶頸：</p>
+
+<p>傳統 rollout trace 存儲係線性嘅——每一步嘅 token 都前後依賴，導致 verify 步驟需要 <span class="data-point">O(n²)</span> 嘅複雜度。Message DAG 通過將獨立步驟並行化，將 verify 複雜度降至 <span class="data-point">O(n)</span>——對於長 rollout（例如 40 輪 SWE-bench 場景），呢個係巨大嘅加速。</p>
+
+<p><strong>實測數據：</strong></p>
+
+<p>Prime Intellect 公開咗一組令人印象深刻嘅基準測試：</p>
+<ul>
+  <li>模型：100B 參數嘅 reasoning model</li>
+  <li>任務：40 輪 SWE-bench verification</li>
+  <li>RL steps：<span class="data-point">1000</span></li>
+  <li>硬件：<span class="data-point">6 台 H200</span></li>
+  <li>完成時間：<strong>少於 2 天</strong></li>
+</ul>
+
+<p>呢個數據對比傳統嘅 RL 訓練方案——通常需要數十台 GPU、數週時間——係一個數量級嘅改善。</p>
+
+<p><strong>技術細節：vLLM 整合與 tokenization drift 防護</strong></p>
+
+<p>Verifiers v1 深度整合 vLLM 做推理引擎，同時引入一個好聰明嘅防護機制：<strong>exact token IDs</strong>。呢個解決嘅問題係：當同一個 prompt 通過唔同嘅 tokenizer 版本或設置時，tokenization 會 drift，導致訓練同推理之間嘅不一致。Exact token IDs 確保 training-time 同 inference-time 嘅 tokenization 完全一致，避免咗呢種 drift 引入嘅噪聲。</p>
+
+<p><strong>Prime Intellect 自身嘅市場信號</strong></p>
+
+<p>swyx 順帶提到，Prime Intellect 目前估值約 <span class="data-point">$10 億</span>（獨角獸），年化收入（ARR）約 <span class="data-point">$1 億</span>。呢個數字反映咗開發者基礎設施市場嘅巨大需求——特別係開源 RL 框架呢個仲未被充分服務嘅領域。</p>
+
+<p>Alessio 補充話，Verifiers v1 嘅發佈時間點並非巧合：OpenAI 同 Anthropic 都喺內部大規模使用 RL 訓練 coding agent，但呢啲工具都係封閉嘅。Prime Intellect 嘅開源策略，係希望成為「RL 訓練嘅 Linux」——一個任何人都可以自建嘅基礎層。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">四、Harness 即產品——競爭新格局</h2>
+
+<p>呢個觀點喺節目中由 swyx 引用咗知名開發者 threepointone 嘅一句話：</p>
+
+<blockquote class="strong">
+「The harness is the app.」
+  <span class="attr">— threepointone</span>
+</blockquote>
+
+<p>呢句話捕捉咗 Verifiers v1 架構設計背後嘅更深層邏輯：喺模型商品化嘅時代，競爭嘅關鍵不再是模型本身，而是圍繞模型嘅「harness」——即係連接模型同實際任務嘅基礎設施。</p>
+
+<p><strong>LangChain 嘅先例：</strong></p>
+
+<p>Alessio 指出，LangChain 嘅成功本身就證明咗呢個觀點。LangChain 唔係一個模型——佢係一個 harness，一個將 LLM 連接到外部工具、數據庫同 API 嘅框架。LangChain 之所以贏，唔係因為佢嘅模型最好，而係因為佢提供咗 <strong>task-specialized harnesses</strong>——每個 harness 針對特定類型嘅任務（問答、Agent、RAG）進行優化。</p>
+
+<blockquote>
+「LangChain didn't win because it had the best model. It won because it had the best harness for every type of task.」
+  <span class="attr">— Alessio Fanelli</span>
+</blockquote>
+
+<p><strong>Factory 推出「Design Mode」：</strong></p>
+
+<p>另一個相關動態係 Factory.ai 推出嘅 <strong>「design mode」</strong>——一個讓開發者以視覺化方式設計 agent 行為嘅工具。呢係 harness 抽象化嘅一個自然延伸：如果 harness 係產品，咁 harness 嘅設計工具就係產品嘅生產工具。</p>
+
+<p><strong>Provider-switching 對沖風險：</strong></p>
+
+<p>swyx 提出咗一個好實際嘅角度：<strong>provider-switching</strong> 正在成為 harness 設計嘅核心考慮。當你嘅 harness 可以無縫切換底層模型 provider——今日用 GPT-5.6，聽日用 Grok 4.5——你就從根本上對沖咗對單一模型 provider 嘅依賴。呢個能力對於 enterprise 客戶尤其重要，因為佢哋唔可以將整個 infrastructure 綁定喺一個供應商。</p>
+
+<p>呢個趨勢解釋咗點解 Prime Intellect 將「bring your own harness」設為核心設計原則——唔係因為技術上優雅，而係因為市場上需要。你嘅 harness 必須同任何模型、任何 provider 相容，先至有長期價值。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">五、Cost per Task——新嘅 eval 標準</h2>
+
+<p>呢節係全集最精彩嘅部分。swyx 同 Alessio 討論咗一個正在重塑行業認知嘅新指標：<strong>Cost per Task</strong>——唔係 token 價格、唔係 latency、唔係 MMLU 分數，而係「完成一個真實任務要花幾多錢」。</p>
+
+<p><strong>skirano 嘅 coding-agent index explorer：</strong></p>
+
+<p>呢個指標嘅推廣者係 skirano（一個著名嘅 AI 評估研究員），佢發布咗一個 <strong>coding-agent index explorer</strong>，比較唔同模型組合完成實際編程任務嘅成本。最引人注目嘅發現係 Terra Max 同 Fable 5 Max 嘅比較。</p>
+
+<table>
+  <tr><th>模型組合</th><th>單任務平均成本</th><th>任務成功率</th><th>每次成功成本</th></tr>
+  <tr><td>Fable 5 Max（推理優化版）</td><td>$0.12</td><td>78%</td><td>$0.15</td></tr>
+  <tr><td>Terra Max</td><td>$0.35</td><td>82%</td><td>$0.43</td></tr>
+  <tr><td>Opus 4.8</td><td>$0.52</td><td>74%</td><td>$0.70</td></tr>
+  <tr><td>GPT-5.6 Sol</td><td>$0.18</td><td>85%</td><td>$0.21</td></tr>
+</table>
+
+<p>呢組數字嘅關鍵發現：<strong>Fable 5 Max 喺超過 81% 嘅場景中從不直接寫代碼</strong>——佢用規劃、分析同指令生成代替咗直接生成。呢個意味住，一個被認為「保守」或者「唔直接寫 code」嘅模型，反而因為減少咗浪費（錯誤生成->debug->regenerate 嘅循環）而喺 per-task 成本上更有競爭力。</p>
+
+<blockquote class="strong">
+「81% of the time, Fable doesn't write code. And that's why it's cheaper. The expensive model is actually cheaper because it wastes less.」
+  <span class="attr">— swyx</span>
+</blockquote>
+
+<p><strong>Cognition / Devin Fusion 改用 Fable 5：</strong></p>
+
+<p>呢個趨勢嘅一個具體案例係 Cognition 嘅 Devin Fusion——原本基於 Opus 4.8 嘅 coding agent，近期轉用 Fable 5 作為主力模型。原因好直接：<strong>per-task 成本低於 Opus 4.8</strong>，儘管 Fable 5 嘅 token 價格更高。呢個 counterintuitive 嘅發現解釋咗點解 token 價格唔再係好嘅比較指標。</p>
+
+<p><strong>Artificial Analysis 嘅觀點：</strong></p>
+
+<p>知名分析機構 Artificial Analysis 最近嘅報告總結得好直接：<strong>token 價格不再說明問題</strong>。兩個模型嘅 $/M token 可能差 5 倍，但因為更貴嘅模型需要更少嘅 token 來完成同一任務（更準確->更少 debug->更少 iteration），最終 per-task 成本可能更低。</p>
+
+<p><strong>Arena Agent Leaderboard 嘅衝擊：</strong></p>
+
+<p>呢個新嘅評估範式已經開始影響公開排行榜。最新嘅 <strong>Arena Agent Leaderboard</strong> 顯示：</p>
+<ul>
+  <li><span class="data-point">GPT-5.6 Sol</span> 排第 <span class="data-point">2</span> 名</li>
+  <li><span class="data-point">Grok 4.5</span> 跌至第 <span class="data-point">13</span> 名</li>
+</ul>
+
+<p>呢個排名變化嘅背景係 Grok 4.5 雖然 token 價格極低（靠規模壓低成本），但喺 per-task 效率上唔及 Fable 5 或者 GPT-5.6 Sol——因為佢生成更多無效代碼、需要更多 iteration。呢個係 token 價格 vs. per-task 成本分歧嘅經典案例。</p>
+
+<p>swyx 總結得精闢：</p>
+
+<blockquote>
+「We're entering the era where the metric that matters is 'can it finish the job, and how much does that finish actually cost?'. Everything else is a proxy.」
+  <span class="attr">— swyx</span>
+</blockquote>
+
+<!-- ============================================ -->
+<h2 class="section-title">六、Grok Build 隱私風波</h2>
+
+<p>Codex 同 Verifiers 嘅好消息背後，係一個令成個行業尷尬嘅隱私事件。Grok Build——xAI 推出嘅 coding agent——被 <strong>IntCyberDigest</strong> 指控存在嚴重嘅隱私問題。</p>
+
+<p><strong>指控內容：</strong></p>
+
+<p>IntCyberDigest 發表嘅報告稱，Grok Build <strong>將用戶嘅完整倉庫上傳至 Google Cloud bucket</strong>。呢個唔係 metadata 或者摘要——據稱係完整嘅源代碼庫、包括 .env 文件、API keys 同敏感配置。</p>
+
+<blockquote class="strong">
+「Full repos being uploaded to a Google Cloud bucket, including .env files with API keys. This is a breach of basic trust.」
+  <span class="attr">— IntCyberDigest 報告</span>
+</blockquote>
+
+<p><strong>xAI 嘅回應：</strong></p>
+
+<p>xAI 團隊（以 ZDR 為代表）迅速回應，聲明：</p>
+<ul>
+  <li>設有 ZDR（Zero-Day Response）團隊處理呢類報告</li>
+  <li>trace/code 唔會長期保留</li>
+  <li>用戶可以使用 <span class="data-point">/privacy</span> 命令控制數據留存</li>
+</ul>
+
+<p>但呢個回應並未平息社區嘅擔憂。關鍵問題有幾個：</p>
+
+<ol>
+  <li><strong>Default behavior 問題：</strong> 如果用戶唔知道 /privacy 命令嘅存在，默認行為係上傳完整倉庫——呢個設計本身就有問題</li>
+  <li><strong>先前數據：</strong> 喺呢單事件曝光之前上傳嘅數據會點處理？xAI 冇明確交代回溯性清除政策</li>
+  <li><strong>披露規範：</strong> IntCyberDigest 指控 xAI 喺隱私政策中未充分披露上傳行為嘅範圍</li>
+</ol>
+
+<p><strong>Arav Srinivas（Perplexity CEO）嘅觀點：</strong></p>
+
+<p>一個有趣嘅反應來自 Perplexity CEO Arav Srinivas。佢公開表示，<strong>ZDR（Zero-Day Response）嘅可用性</strong> 係 Perplexity 決定集成 Grok 4.5 嘅原因之一。呢個講法暗示，企業客戶喺選擇模型供應商時，安全響應能力同模型能力一樣重要——甚至更加重要。</p>
+
+<blockquote>
+「ZDR availability was one of the reasons we integrated Grok 4.5. You need to know there's a team that can fix things within hours, not weeks.」
+  <span class="attr">— Arav Srinivas, Perplexity CEO</span>
+</blockquote>
+
+<p><strong>長遠影響：</strong></p>
+
+<p>swyx 同 Alessio 認為呢單事件會加速一個已經出現嘅趨勢：<strong>enterprise 對 open-source / self-hosted agent 嘅偏好增長</strong>。當你唔可以信任雲端 coding agent 唔會上傳你嘅源代碼，自我託管就變得更加有吸引力——即使犧牲一啲模型能力。呢個趨勢同 Verifiers v1 嘅開源策略完美互補。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">七、其他關鍵動態</h2>
+
+<p>除咗上述主要話題，節目仲涵蓋咗其他幾個值得留意嘅動態：</p>
+
+<p><strong>Transformers ↔ vLLM 原生集成（Clément Delangue）：</strong></p>
+
+<p>Hugging Face CEO Clément Delangue 宣布咗 Transformers 庫同 vLLM 嘅原生集成。呢個意味住用 Transformers 訓練嘅模型可以直接 export 到 vLLM 格式，無需轉換步驟。呢個會大幅簡化從 research 到 production 嘅流程。</p>
+
+<p><strong>Continual Learning 重新成為一等問題：</strong></p>
+
+<p>隨住模型越嚟越大、部署越嚟越廣泛，「點樣喺部署後繼續學習」再次成為熱門研究方向。swyx 指出，過去幾年業界嘅注意力都喺 scaling laws 同 alignment，但而家愈來愈多人認識到——一個模型出廠之後就唔會變，呢個假設喺真實世界中唔成立。</p>
+
+<p><strong>LLM「睡眠與做夢」——sleep phase + dreaming phase：</strong></p>
+
+<p>一個有趣嘅研究方向係將生物學習中嘅「睡眠」（鞏固記憶）同「做夢」（探索性重播）引入 LLM 訓練。呢個類比令人聯想到人類點樣喺睡眠中整合日間經歷——AI 可能需要類似嘅機制嚟避免災難性遺忘（catastrophic forgetting）同提升泛化能力。</p>
+
+<p><strong>Rich Sutton Oak Lab 創業：追求動物級智能：</strong></p>
+
+<p>強化學習之父 Rich Sutton 宣布成立 Oak Lab，目標係追求 <strong>animal-level intelligence</strong>——唔係人類級通用人工智能，而係同動物類似嘅、喺物理世界中高效學習同適應嘅智能體。呢個方向嘅哲學同主流的「scale->AGI」路徑截然不同，更接近 Sutton 一直提倡嘅「The Bitter Lesson」——相信簡單嘅學習算法喺足夠計算下會贏。</p>
+
+<p><strong>ByteDance UniVR-34B：從視覺演示學習：</strong></p>
+
+<p>字節跳動發布咗 UniVR-34B，一個可以從視覺演示中直接學習嘅模型。同傳統嘅 text-based instruction following 不同，UniVR-34B 可以觀看人類演示（例如使用一個軟件界面或者組裝一個物體）然後模仿。呢個方向如果成熟，會打開 vast 嘅新應用場景——特別係 robotics 同自動化。</p>
+
+<blockquote>
+「Watching a human do something once and then doing it yourself — that's the dream. UniVR-34B isn't there yet, but the direction is clear.」
+  <span class="attr">— Alessio Fanelli</span>
+</blockquote>
+
+<p><strong>Anthropic 300K+ 對話嘅價值觀表達研究：</strong></p>
+
+<p>Anthropic 發表咗一項大規模研究，分析咗 <span class="data-point">300,000+</span> 條對話中用戶同 AI 嘅價值觀表達模式。研究發現用戶傾向於喺對話中唔自覺地對 AI 進行「價值觀校準」——即係通過反饋同糾正嚟引導 AI 嘅輸出。呢個發現對 alignment 研究有重要意義：佢暗示咗一種分散式嘅「價值觀學習」機制可能喺日常使用中已經發生。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">八、我的洞察</h2>
+
+<p>呢期 AINews 表面上係一集例牌新聞摘要，但實際上，swyx 同 Alessio 勾勒咗 AI 行業一個深層次轉型。以下係我綜合節目討論加上自己分析得出嘅五個核心洞察：</p>
+
+<div class="highlight-box">
+<h3>🔍 五大結構性洞察</h3>
+
+<ol>
+  <li>
+    <p><strong>Codex 已經不僅是 coding agent——佢係 ChatGPT 嘅「內臟移植」</strong></p>
+    <p>6 個月 10x 增長，24.5 小時 +1M 用戶——呢啲數字嘅背後唔只係一個好產品。Codex 正在將「對話式編碼」變成開發者嘅默認工作流。如果 700 萬開發者每日用 Codex，佢哋產生嘅 token trace、feedback 數據同使用模式，本身就係一個巨大嘅數據 moat。Codex 唔係喺搶 coding agent 市場——佢係喺重新定義「點樣寫 code」。而呢個定義權一旦被 OpenAI 拿穩，其他 coding agent 就只能喺夾縫中生存。</p>
+  </li>
+
+  <li>
+    <p><strong>Cost per Task 取代 token pricing 係行業成熟嘅信號</strong></p>
+    <p>呢個轉變嘅意義遠超技術層面。Token 價格係一個「投入導向」嘅指標——我話俾你聽我嘅模型每一千個 token 要幾多錢。Cost per Task 係一個「產出導向」嘅指標——我話俾你聽完成你嘅工作要幾多錢。呢個轉變標誌住行業由「賣算力」走向「賣結果」。對於用戶嚟講，呢個係福音——你唔需要關心模型背後嘅 token 消耗細節。對於模型供應商嚟講，呢個係殘酷嘅——當用戶只關心 per-task cost，模型嘅品牌溢價會消失，競爭會變成純粹嘅效率競賽。</p>
+  </li>
+
+  <li>
+    <p><strong>模型商品化後，價值往 infrastructure 轉移</strong></p>
+    <p>Prime Intellect 嘅 Verifiers v1、Harness 即產品趨勢、LangChain 嘅先例——呢三件事指向同一個方向：模型正在變成 commodity，但評估/部署/RL 基礎設施正在變成真正的護城河。Verifiers v1 嘅 message DAG 技術同「bring your own harness」設計，唔係 random 嘅工程決定——佢哋係對「模型會越來越便宜、越來越容易被替代」呢個未來嘅有意識回應。如果你嘅 infrastructure 可以支援任何模型、任何 task，你就永遠唔會被鎖死。</p>
+  </li>
+
+  <li>
+    <p><strong>Grok Build 隱私事件會加速 enterprise 對 open-source / self-hosted agent 嘅偏好</strong></p>
+    <p>呢個唔係一個孤立事件——佢係 cloud AI 隱私問題嘅典型代表。當 coding agent 需要讀取你嘅完整源代碼嚟完成任務，數據泄露唔係「可能性」，而係「時間問題」。嗰啲話「我哋唔會儲存你嘅代碼」嘅供應商，實際上面對嘅係一個可信度問題：用戶點樣驗證呢個承諾？呢個困境自然會推動企業走向 self-hosted 方案。同樣嘅邏輯適用於 Prime Intellect Verifiers v1 呢類開源框架——你可以自己 host 嘅時候，唔需要信任任何第三方。</p>
+  </li>
+
+  <li>
+    <p><strong>「不寫代碼嘅 AI」反而更值錢——呢個 paradox 話俾我哋聽 AI 行業正在重新定義效率</strong></p>
+    <p>Fable 5 喺 81% 場景中唔直接寫代碼，但 per-task 成本最低。——呢個發現挑戰咗「寫 code 先係能力」嘅直覺。實際上，最值錢嘅 AI 行為可能係「規劃」、「驗證」、「推理決策」而唔係「生成代碼」。呢個見解對產品設計有深遠影響：與其追求「生成更多代碼嘅更快 AI」，不如追求「需要更少輸出就解決問題嘅更聰明 AI」。呢個轉變會影響從 prompt engineering 到 model architecture 嘅所有層面。</p>
+  </li>
+</ol>
+</div>
+
+<!-- ============================================ -->
+<h2 class="section-title">關於本期 AINews</h2>
+
+<p>呢期 Latent Space AINews（2026-07-14）由 <strong>swyx</strong>（Latent Space 聯合創始人，AI 開發者生態研究員）同 <strong>Alessio Fanelli</strong>（AI 研究員、之前 Part 3 嘅主編）主持。AINews 係一個每週新聞摘要式 podcast，專注於 AI 行業嘅最新動態、產品發佈同技術趨勢。</p>
+
+<p>今期最令人印象深刻嘅地方係——佢唔係單純報導新聞，而係將分散嘅事件串連成一個連貫嘅敘事：Codex 嘅增長、Verifiers v1 嘅發佈、Cost per Task 嘅崛起、Grok Build 嘅隱私風波——呢四件事看似獨立，但合起來描繪嘅係同一個圖畫：AI 行業正由「模型競賽」轉向「基礎設施競賽」。模型能力仍然重要，但真正嘅決定性競爭將會發生喺模型以外嘅地方。</p>
+
+<blockquote>
+「The model wars are over. The infrastructure wars have just begun.」
+  <span class="attr">— 我的總結</span>
+</blockquote>
+
+<hr>
+
+<footer>
+  <p>深度復述 · 2026-07-14 · JMOKSZ/ai-podcast-collection</p>
+  <p style="margin-top:0.3rem;">原文出自 Latent Space AINews（2026-07-14）· swyx + Alessio Fanelli 主持</p>
+  <p style="margin-top:0.3rem;">📡 追蹤：<a href="https://www.latent.space/podcast">latent.space</a></p>
+  <p style="margin-top:0.3rem;">⚡ 生成時間：2026-07-14 06:13 UTC</p>
+</footer>
+
+</div>
+</body>
+</html>

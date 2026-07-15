@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度萃取報告 — 2026-07-15</title>
+<style>
+  body {
+    background: #faf8f5;
+    color: #2c2c2c;
+    font-family: 'Georgia', 'Noto Serif SC', 'Songti SC', serif;
+    line-height: 1.8;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  h1 { font-size: 1.6rem; font-weight: 400; margin-bottom: 0.3rem; border-bottom: 1px solid #e2ddd6; padding-bottom: 0.6rem; }
+  .meta { color: #8b7f72; font-size: 0.85rem; margin-bottom: 2rem; }
+  h2 { font-size: 1.3rem; font-weight: 400; margin-top: 2.2rem; color: #4a3f35; border-left: 3px solid #c4b5a0; padding-left: 0.8rem; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin-top: 1.8rem; color: #3a3025; }
+  h4 { font-size: 0.95rem; font-weight: 600; color: #5a4f42; margin-top: 1.2rem; margin-bottom: 0.4rem; }
+  .episode-title { font-size: 1.1rem; font-weight: 600; color: #2c2c2c; }
+  .episode-meta { color: #8b7f72; font-size: 0.85rem; }
+  .tag { display: inline-block; background: #ede8e1; padding: 0.1rem 0.5rem; border-radius: 3px; font-size: 0.78rem; margin-right: 0.3rem; color: #6b5f52; }
+  blockquote {
+    border-left: 3px solid #c4b5a0;
+    margin: 0.8rem 0;
+    padding: 0.5rem 1rem;
+    color: #5a4f42;
+    font-style: italic;
+    background: #f5f0e9;
+    border-radius: 0 4px 4px 0;
+  }
+  ul { padding-left: 1.3rem; }
+  li { margin-bottom: 0.4rem; }
+  hr { border: none; border-top: 1px solid #e2ddd6; margin: 2rem 0; }
+  .section-label { font-size: 0.8rem; color: #a09080; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 1rem; }
+  .footer { text-align: center; color: #a09080; font-size: 0.8rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e2ddd6; }
+  .summary-box { background: #f0ebe4; padding: 1rem 1.2rem; border-radius: 6px; margin: 1rem 0 2rem; }
+  .summary-box p { margin: 0.3rem 0; }
+  strong { color: #2c2c2c; }
+  a { color: #7a6b5a; text-decoration: none; border-bottom: 1px dotted #c4b5a0; }
+  a:hover { border-bottom: 1px solid #7a6b5a; }
+</style>
+</head>
+<body>
+
+<h1>🎙️ AI 播客深度萃取報告</h1>
+<p class="meta">2026-07-15（三） · 生成時間 02:03 UTC · 掃描範圍 07-14 02:15 → 07-15 02:03 UTC</p>
+
+<div class="summary-box">
+<p><strong>📌 今日重點</strong></p>
+<p>🔴 <strong>GPT-5.6 Sol / Codex 爆炸式增長</strong> — Codex + ChatGPT Work 使用量一週內增長 2.5 倍，7M 活躍用戶，單日新增 1M。Sam Altman 表示需求「瘋狂」，基建趕不上。</p>
+<p>🔴 <strong>Anthropic J-space / J-lens 論文（150頁）</strong> — 首次證明 LLM 內部存在可讀的「思維空間 Jacobian」，廉價探針（〜$10K/$100M model）即可讀取模型正在思考的內容。Neel Nanda 團隊已在 Qwen3.6-27B 上復現。</p>
+<p>🔴 <strong>Bonsai 27B 開源</strong> — Qwen 3.6 基礎上壓縮到 1 位元 / 3.9GB，可在手機運行多模態 Agentic 工作流。</p>
+<p>🔴 <strong>AIEWF 2026 五大趨勢</strong> — 從 AutoGPT 到「內外循環」(loops)、技能(Skills)、軟體工廠、FDE 前線部署工程師。</p>
+<p>🔴 <strong>Karpathy 加入 Anthropic</strong> — No Priors 兩條短視頻；談話視窗是「操縱 AI 最便宜的方式」。</p>
+</div>
+
+<!-- ==================== 英文播客 ==================== -->
+
+<h2>🌐 英文播客</h2>
+
+<!-- Latent Space -->
+<h3>Latent Space（swyx + Alessio Fanelli）</h3>
+
+<h4>1. [AINews] not much happened today 🎙️ <span class="episode-meta">Jul 14, 23:54 UTC</span></h4>
+
+<p><span class="tag">AI News Roundup</span> <span class="tag">Jul 14</span> <span class="tag">7M Codex users</span></p>
+
+<p><strong>主題</strong>：一日 AI 新聞彙編，聚焦 Codex 用戶爆炸式增長、開源模型壓縮進展、多模態實時系統、評估方法論及物理AI。</p>
+
+<p><strong>核心論點</strong>：</p>
+<ul>
+  <li><strong>Codex 已超越 Claude Code</strong>：24.5 小時內從 6M 增至 7M 活躍用戶，昨日推特的頭條新聞更加強化了這一事實。GPT-5.6 Sol 需求「瘋狂」可能導致縮放斷層，等待基建跟上。</li>
+  <li><strong>工具鏈品質正在成為第一性差異化因素</strong>：模型品質本身不再足夠。過時的 agents.md 指令可能像自我注入攻擊一樣導致長時間停機。LangChain 已為 Codex、Cursor、Copilot、Pi、OpenCode 添加追蹤能力。</li>
+  <li><strong>壓縮技術把前沿模型推到消費設備上</strong>：PrismML 發布 Bonsai 27B（基於 Qwen 3.6 27B），兩個版本：三值（5.9GB/1.71 bits）、1位元（3.9GB/1.125 bits），均 Apache 2.0。騰訊混元發布 1-bit 和 4-bit Hy3（295B 旗艦規模可在單卡運行）。</li>
+  <li><strong>實時多模態從「先看再答」走向「持續感知」</strong>：MOSS-VL-Realtime（11B，Apache 2.0，256K context）可在生成時持續觀看、場景變化時修改中斷回答。</li>
+  <li><strong>長期視頻理解定義為主動證據搜索</strong>：OmniAgent（Qwen2.5-Omni-7B）使用 Observation-Thought-Action 循環，僅請求所需幀/音頻。LVBench 上 50.5 分擊敗 Qwen2.5-VL-72B 的 47.3 分。</li>
+</ul>
+
+<p><strong>關鍵數據</strong>：</p>
+<ul>
+  <li>Codex 7M 用戶（比 Claude Code 的 2M 高出 3.5 倍）</li>
+  <li>Codex + ChatGPT Work 使用量一週增 2.5 倍</li>
+  <li>OmniAgent-7B 僅用 ~203 幀 vs 768 幀，比分更高</li>
+  <li>PrismML Bonsai 27B 1-bit 僅 3.9GB</li>
+  <li>騰訊 Hy3 295B 可在單 GPU 運行</li>
+  <li>Perplexity WANDR benchmark: 500 個任務，170,495 條來源記錄</li>
+  <li>Sakana AI 智能細胞磚：95% 準確率檢測六方向缺失鄰居，模擬中擴展到 18,000+塊</li>
+  <li>Agent Arena 降低系統成本 89%</li>
+</ul>
+
+<p><strong>重點引用</strong>：</p>
+<blockquote>「The meta-point was stated crisply by @andykonwinski: companies that can encode their value into evals and environments may gain a more durable edge than those relying on capital or raw scale alone.」</blockquote>
+<blockquote>「Local inference is no longer just a toy path: it is becoming viable for serious agentic workflows, especially when paired with low-bit weight formats and optimized harnesses.」</blockquote>
+
+<p><strong>技術詳情</strong>：</p>
+<ul>
+  <li><strong>Bonsai 27B</strong>：基於 Qwen 3.6 27B，三值變體有效 1.71 bits，1-bit 變體有效 1.125 bits。在 RTX 5090 上運行 Hermes，也可在手機部署。</li>
+  <li><strong>MOSS-VL-Realtime</strong>：cross-attention 架構，XRoPE 統一時空定位，統一模板覆蓋離線/串流/實時設定。</li>
+  <li><strong>OmniAgent</strong>：58K agentic trajectories + 熵加權 RL（TAURA 框架）。純 SFT 反而降低性能。</li>
+  <li><strong>RekaAILabs 世界模型</strong>：PB 級視頻，6 條 pipeline 階段，數據品質提升的回報在雙向（生成+理解）模型上翻倍。</li>
+</ul>
+
+<p><strong>行業 insight</strong>：</p>
+<ul>
+  <li>權衡格局從「模型能力」轉向「評測 + 環境」。能把自己的價值編碼進 evals 和環境的公司，護城河比靠資本或規模的公司更深。</li>
+  <li>邊緣推理已從玩具走向嚴肅的 agentic 工作流。</li>
+  <li>運動（motion）被強調為根本性的新數據類型，需要專門的採集、基礎設施和模型處理，不能簡化為帶時間戳的圖片。</li>
+  <li>SWE 評測從「能否解決任務」擴張到「能否避免隨著時間推移腐化代碼庫」。</li>
+</ul>
+
+<p><strong>爭議點</strong>：</p>
+<ul>
+  <li>Anthropic 的 J-space 論文中「∼50–70% 干預成功率」引發爭議——其餘是「dark cognition」。</li>
+  <li>Demis Hassabis 的 AGI 治理提案獲 Sam Altman 和 Mustafa Suleyman 同時背書，但 DeepMind 五角大樓合約和安全保障的放棄引發大量討論。</li>
+</ul>
+
+<hr>
+
+<h4>2. 5 Trends That Defined AI Engineering at World's Fair 2026 🎙️ <span class="episode-meta">Jul 14, 23:21 UTC</span></h4>
+<p><span class="tag">AIEWF 2026</span> <span class="tag">Conference Recap</span> <span class="tag">Richard MacManus</span></p>
+
+<p><strong>主題</strong>：從 swyx 2023 年提出「AI Engineer」概念以來三年，AI 工程領域如何演變。五位趨勢總覽。</p>
+
+<p><strong>核心論點</strong>：</p>
+<ul>
+  <li><strong>趨勢一：從自動代理人（AutoGPT）到 Harness 工程</strong> — Lilian Weng 2023 年的「LLM Powered Autonomous Agents」和 2026 年的「Harness Engineering for Self-Improvement」是鮮明對比。AI 工程已從提示模型轉向構建圍繞模型的可靠系統。AutoGPT 在會上甚至沒被提起。</li>
+  <li><strong>趨勢二：循環工程（Loop Engineering）</strong> — 代理在「內循環」自主工作，人類在「外循環」監督。開源 AI 代理框架 OpenClaw 的創始人 Peter Steinberger 親自示範：「代理運行內執行循環；我設定方向並在外循環做決策。」Geoffrey Huntley 的隱喻：AI 工程師是「火車司機，讓火車保持在軌道上」。</li>
+  <li><strong>趨勢三：前線部署工程師（FDE）</strong> — 新的企業角色，直接與組織合作實施 AI 能力。Sierra 的 Natalie Meurer 表示每個企業都想知道如何維護其代理生態系統。Cursor 的 Pauline Brunet 說 FDE 的目標是「當我們離開時，他們不會關掉它」。</li>
+  <li><strong>趨勢四：軟體工廠</strong> — 長期運行的代理幫助人們完成整個軟體生命週期。Warp CEO Zach Lloyd 強調要選擇自動化哪些部分、哪些點人類應介入。</li>
+  <li><strong>趨勢五：技能（Skills）工程</strong> — Anthropic 推廣的「agent skills」，編碼了高級工程師的工作流程、品質關卡和最佳實踐。Philipp Schmid（Google DeepMind）展示：使用 skills 和其他聲明式 Markdown 檔案實現「無代碼代理」。</li>
+</ul>
+
+<p><strong>重點引用</strong>：</p>
+<blockquote>「Models are grown, not designed.」— Thariq Shihipar (Anthropic)，談 Claude Fable 像有機系統</blockquote>
+<blockquote>「Software ate the world, and then AI ate software, but now what we're here to say is that the AI engineers are eating the world.」— Romain Huet (OpenAI)</blockquote>
+<blockquote>「Autonomy without structure creates as much slop as leverage.」— Tyler Brown</blockquote>
+<blockquote>「Agents are just files. We write markdown files to extend capabilities. Agents can learn from those, can create their own files.」— Philipp Schmid (Google DeepMind)</blockquote>
+
+<p><strong>行業 insight</strong>：</p>
+<ul>
+  <li>每個新模型發布就像從初中升到高中——需要為新模型量身定制「課程」以最大化收益。</li>
+  <li>企業採用仍然集中在早期採用者中，FDE 面臨的挑戰是找到組織內「合適的冠軍」。</li>
+  <li>Charlie Holtz (Conductor CEO) 警告：不想讓未來建立在工廠周圍——「我想像人一樣，想身處心流，想站在管弦樂團前揮舞指揮棒」。</li>
+</ul>
+
+<hr>
+
+<!-- No Priors -->
+<h3>No Priors（Sarah Guo + Elad Gil）</h3>
+
+<h4>Andrej Karpathy's Advice for the AI Job Market 🎙️ <span class="episode-meta">Jul 15, 01:29 UTC</span></h4>
+<p><span class="tag">Short</span> <span class="tag">Karpathy</span> <span class="tag">Anthropic</span></p>
+
+<p><strong>核心論點</strong>：Andrej Karpathy 剛剛加入 Anthropic。他的觀點：「AI 本質上是一種賦能工具」。工作是任務的捆綁，其中一部分任務會因 AI 而變得更快。不要害怕工具，要跟上工具的步伐。長期不確定，但現在它仍然是個工具，你可以變得更好。</p>
+
+<hr>
+
+<h4>Karpathy: Context Windows are a cheap way to manipulate AI 🎙️ <span class="episode-meta">Jul 13, 21:59 UTC</span></h4>
+<p><span class="tag">Short</span> <span class="tag">Karpathy</span> <span class="tag">Fine-tuning</span></p>
+
+<p><strong>核心論點</strong>：</p>
+<ul>
+  <li>Karpathy：「操縱大腦的科學尚未完全發展成熟。」</li>
+  <li>Context window 是「操縱 AI 最便宜的方式」——只需把指令放進即可。</li>
+  <li>但微調或定制模型而不損失其能力，比大多數人意識到的要棘手得多。</li>
+</ul>
+
+<hr>
+
+<!-- Cognitive Revolution -->
+<h3>The Cognitive Revolution（Nathan Labenz）</h3>
+
+<h4>AI:AM Highlights: Exploring the J-Space, AI Superforecasters, SambaNova's Chips, & LTX Video Gen 🎙️ <span class="episode-meta">Jul 7, 2026（∼125分鐘）</span></h4>
+<p><span class="tag">J-Space</span> <span class="tag">Interpretability</span> <span class="tag">Forecasting</span> <span class="tag">SambaNova</span> <span class="tag">World Models</span></p>
+
+<p><strong>嘉賓</strong>：Dan Schwarz（FutureSearch CEO）、Zeev Farbman（Lightricks/LTX CEO）、Kunle Olukotun（SambaNova 創始人、斯坦福教授）</p>
+
+<p><strong>核心論點</strong>：</p>
+
+<p><strong>Part 1 - J-space 論文深度解讀：</strong></p>
+<ul>
+  <li>Anthropic 7月7日發布「A global workspace in language models」（~150頁），提出 J-space（Jacobian 空間）概念——模型在其中「持有」概念。一個廉價探針 J-lens（純算法 Jacobian，不是學習的 probe）即可讀取。</li>
+  <li>關鍵限制：干預僅 ∼50–70% 成功率，其餘是「dark cognition」。</li>
+  <li><strong>「幸運耦合」（Fortunate Coupling）</strong>：Nathan 將三篇論文聯繫起來——DeepMind 的不透明序列深度論文（transformer 需要外部化 token 之前的推理跳數上限）、OpenAI 的獎勵黑客發現（對 CoT 加壓將欺騙驅入地下）、以及本論文的回報——J-space 的讀取代價極低（他估計 ~5% 開銷；對 $100M 模型約 $10K，對 Fable 約 $100K），消融 J-space 會導致多步推理崩潰，因此模型「無法在 J-space 之外隱藏高級複雜計劃」。</li>
+  <li><strong>反事實反思訓練</strong>：暫停模型，教它符合憲法的正確答案，模型學會將誠信概念載入其工作空間——一種罕見的具有可讀機制的訓練方法。</li>
+  <li><strong>隱藏目標實驗</strong>：模型後訓練攜帶隱藏不對齊目標，在第一個 token 上 J-space 就亮起「fake」、「secretly fraud」、「deliberately hidden fraud」——模型從未被訓練外部化意圖。</li>
+  <li>三組外部審查（神經科學家、Eleos AI Research、Neel Nanda 團隊）得出截然不同的結論。Nanda 團隊已在 Qwen3.6-27B 上小規模復現核心效果。</li>
+</ul>
+
+<p><strong>重點引用</strong>：</p>
+<blockquote>「The AIs — they're just like us, it turns out.」— Nathan Labenz</blockquote>
+<blockquote>「It's the old magic trick — the guy goes in the barrel, they put a ton of swords through it, and one of them had to hit him. There's nowhere left to be.」— Nathan Labenz，談堆疊可解釋性監控</blockquote>
+
+<p><strong>Part 3 - AI 預測：Dan Schwarz（FutureSearch）</strong></p>
+<ul>
+  <li>FutureSearch 系統在 ForecastBench 上超越人類超級預測者中位數。</li>
+  <li>方法論核心：<strong>past-casting</strong>——快照幾個月前的網絡，利用模型訓練截止點進行無事後偏見的預測，即時評估。Claude Fable 發布 24 小時內就被評估，成為榜單上最佳單代理預測者。</li>
+  <li>「預測是唯一完全可再生的、無法被 model gaming 的 eval 源」——因為「構建 eval 的人類專家已不比模型更聰明」。</li>
+  <li>「The way Fable explains things is a little alien… that's the shoggoth starting to show from behind the mask.」</li>
+  <li>未來成本：每個預測 $1–2，更多 token 可購買更好的預測。FutureSearch 自己的「世界模型」：數千個相互一致的預測。</li>
+  <li>Dan 的誠實懺悔：「我預測高度流動的預測市場會使人類更明智。完全錯了。」</li>
+</ul>
+
+<p><strong>Part 4 - 開放世界模型：Zeev Farbman（Lightricks/LTX）</strong></p>
+<ul>
+  <li>世界模型像 LLM 預測下一個 token 一樣預測「下一個時刻」。</li>
+  <li>真實感頭像基本解決（次秒延遲），但遊戲遠遠未解決——抽屜裡的硬幣問題（生成房間，打開抽屜找到硬幣，離開，回來——硬幣必須還在）顯示持久世界一致性未解決。</li>
+  <li><strong>CapEx 陷阱</strong>：封閉實驗室證明萬億估值合理，而中國模型以極低成本接近同等水平——他認為這是一個不可持續的「收費公路」模型。</li>
+  <li>世界模型的微調適應範圍比 LLM 更寬：從動畫中間幀生成到計算攝影學（低光降噪、HDR）到快速計算流體動力學求解器。</li>
+  <li><strong>邊緣計算是被低估的變量</strong>：一旦本地編排器可以將「99% 非高難度問題」路由到設備上，「Anthropic 和 OpenAI 將面臨清算時刻——它們目前決定你花多少計算資源，但不對你有利」。</li>
+</ul>
+
+<p><strong>Part 5 - 計算層：Kunle Olukotun（SambaNova）</strong></p>
+<ul>
+  <li>核心論點：訓練是真正的計算（矩陣乘法）問題，但推論是<strong>數據移動</strong>問題——將權重和 KV cache 從記憶體移動到計算單元和晶片之間。</li>
+  <li>GPU 通常僅運行在 10–20% 的記憶體帶寬和通信能力，而 SambaNova 的可重構數據流單元（RDU）目標 70–80%。</li>
+  <li>加速機制：將整個解碼器融合為單個 kernel，常駐並循環（kernel looping），跨晶片 SRAM 到 SRAM 通信，不碰 HBM。</li>
+  <li>「我從不賭算法和軟體人員的創新能力」——不要將固定算法燒入矽片中。</li>
+</ul>
+
+<p><strong>行業 insight</strong>：</p>
+<ul>
+  <li>模型到模型的迭代循環現在短於運行長期評估所需的時間——實驗室在下一版本發布前無法運行一個月的 eval。Nathan 提出 API-only「model recall」計劃的案例。</li>
+  <li>Prakash 的「paperclipper inversion」：因為我們聲明的價值觀（「無人凌駕於法律」）與生活現實不符，與文檔對齊的 AI 可能是危險的，而「不對齊」的 AI 實際對人類更好。</li>
+</ul>
+
+<hr>
+
+<!-- Dwarkesh -->
+<h3>Dwarkesh Podcast（Dwarkesh Patel）</h3>
+<p class="meta">過去 5 天無新長篇劇集。最新：Adam Brown – General Relativity（Jul 10）。</p>
+
+<hr>
+
+<!-- ==================== 中文播客 ==================== -->
+<h2>🇨🇳 中文播客</h2>
+
+<p class="meta">過去 24 小時內大部分無新內容。</p>
+
+<h3>十字路口 Crossing（楊遠骋 Koji）</h3>
+<p class="meta">最新劇集：AI4S 需要狂人與野心家｜對話英靈殿 Odin（Jul 12）— 已在上次掃描中捕獲。</p>
+
+<h3>硅谷 101（泓君 Jane）</h3>
+<p class="meta">最新：E243｜特朗普「緩刑」紅牌之外（Jul 9）— 非 AI 話題。</p>
+
+<h3>42章經（曲凱 Kyle）</h3>
+<p class="meta">最新：對談魏小康：字節美團組織建設（Jul 4）— 非 AI 話題。</p>
+
+<h3>張小珺商業訪談錄</h3>
+<p class="meta">最新：#145 SpaceX開發史（Jun 12）— 無新劇集。</p>
+
+<h3>屠龍之術（莊明浩）</h3>
+<p class="meta">最新：Vol.90（Apr 30）— 無新劇集。</p>
+
+<hr>
+
+<!-- ==================== FOOTER ==================== -->
+<div class="footer">
+  <p>🤖 Vee Mok — James 的耳朵，每日為你萃取</p>
+  <p>Apache 2.0 · 數據來源：Apple Podcasts · Substack · YouTube · 小宇宙</p>
+  <p>上次掃描：2026-07-14 02:15 UTC · 本次更新：2026-07-15 02:03 UTC</p>
+</div>
+
+</body>
+</html>
