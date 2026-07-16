@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Codex 7M 爆發、Bonsai 27B 手機級開源模型、即時多模態——2026 年 7 月的 AI 戰場</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  a { color: #8b6f4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1rem; }
+    header h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/JMOKSZ/ai-podcast-collection/main/index.html">← 返回播客日報</a>
+  <div class="ep-num">Latent Space · [AINews] 專欄</div>
+  <h1>Codex 7M、Bonsai 27B、即時多模態——2026 年 7 月嘅 AI 戰場</h1>
+  <div class="meta">
+    <span>📅 2026-07-14</span> <span>·</span> <span>🖊 swyx 主編</span> <span>·</span>
+    <span>🏛 Latent Space AINews</span>
+  </div>
+  <div>
+    <span class="tag">Codex</span>
+    <span class="tag">Bonsai</span>
+    <span class="tag">1-bit</span>
+    <span class="tag">MultiModal</span>
+    <span class="tag">Eval</span>
+    <span class="tag">Physical AI</span>
+  </div>
+</header>
+
+<p>「Not much happened today」——swyx 落呢個標題嗰陣，明顯係反諷。2026 年 7 月 14 日呢一日，信息量足以改寫好幾條產品路線圖。</p>
+
+<p>呢篇係 Latent Space AINews嘅每日新聞彙編，但其中幾個故事令人不得不停低：Codex 一日爆咗 100 萬用戶、PrismML 用 3.9GB 裝咗個 27B 多模態模型落手機、騰訊混元 295B 模型可以喺單 GPU 跑、MOSS-VL-Realtime 做到邊睇邊講邊修正——仲有 Sakana 嘅 AI 積木識得自己修復自己。</p>
+
+<p>以下係我哋嘅深度萃取。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">一、Codex 爆炸：一日百萬用戶，IPO 級別嘅增長</h2>
+
+<p>呢個星期 OpenAI 過得太瘋狂。Sam Altman 親自報數：<strong>Codex + ChatGPT Work 使用量一星期內增長 2.5 倍</strong>。然後 Tibo 宣布 Codex 達到 <span class="data-point">6M 活躍用戶</span>——24.5 小時後，swyx 再報：<span class="data-point">7M</span>。</p>
+
+<blockquote class="strong">
+「this is IPO altering stuff going on here」
+<span class="attr">— swyx (@swyxuhm)</span>
+</blockquote>
+
+<p>對比 Claude Code——最後公開數字係 2026 年 2 月嘅 <span class="data-point">2M</span>——Codex 而家領先 3.5 倍以上。JetBrains 甚至將 Codex 設為推薦 agent，呢個信號極大：IDE 廠商選邊站了。</p>
+
+<p>But wait——數字背後有更深嘅故事。GPT-5.6 Sol 需求「insane」，Sam Altman 警告可能出現 scaling hiccups，等 infra 追上來。swyx 補充：OpenAI 跑咗多次 usage resets，用戶反映被踢出系統再登入。</p>
+
+<div class="highlight-box">
+<h3>📊 Codex vs Claude Code：關鍵數字</h3>
+<ul>
+  <li><strong>Codex</strong>：7M 活躍用戶（一日 +1M），6 個月增長 10x+</li>
+  <li><strong>Claude Code</strong>：最後公開數字 2M（2026 年 2 月）</li>
+  <li><strong>增長率</strong>：Codex + ChatGPT Work 使用量一週 2.5x</li>
+  <li><strong>生態信號</strong>：JetBrains 推薦 Codex、LangSmith 新增 Codex tracing</li>
+</ul>
+</div>
+
+<p>Andy Konwinski 講咗一個好重要嘅 meta-point：</p>
+<blockquote>
+「Companies that can encode their value into evals and environments may gain a more durable edge than those relying on capital or raw scale alone.」
+</blockquote>
+
+<p>呢句嘢嘅意思：Codex 嘅護城河唔係 GPT-5.6 呢個模型本身，而係圍繞 Codex 建立嘅 eval、environment 同埋 developer 習慣。模型可以換，但習慣同 Infrastructure 好難換。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">二、Harness 品質成為第一性差異化因素</h2>
+
+<p>「Model quality alone is no longer enough」——呢個觀點喺今期 AINews 入面反覆出現。</p>
+
+<p>swyx 警告：<strong>過時嘅 agents.md 指令可以變相係 self-inflicted prompt injection</strong>，導致長時間運行嘅任務卡死幾個鐘。呢個睇落係小事，但實際係 harness 設計嘅核心問題：你點樣確保 agent 嘅 instruction 持續更新？</p>
+
+<p>LangChain 好快反應：唔單止為 Codex 加咗 tracing，之後仲擴展到 Cursor、Copilot、Pi 同 OpenCode——expose tool calls、subagents 同 token usage。呢個動作表明，observability 已經從「nice to have」變成「table stakes」。</p>
+
+<p>Teknium（Hermes Agent）都跟住更新：可以 parallelize any subset of tool calls，並且公開咗 banked resets 嘅實現。</p>
+
+<p>The meta-point：當每個人都用緊差不多嘅模型，邊個嘅 harness 更好用、更可觀測、更容易 iterate，邊個就贏。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">三、Bonsai 27B：手機級嘅 AGI 可能性</h2>
+
+<p>呢個係今期最大嘅技術故事。</p>
+
+<p>PrismML 發佈咗 <strong>Bonsai 27B</strong>——基於 Qwen 3.6 27B 嘅極端壓縮版本。有兩個變體：</p>
+
+<ul>
+  <li><span class="data-point">Ternary Bonsai 27B</span>：5.9 GB，有效 1.71 bits</li>
+  <li><span class="data-point">1-bit Bonsai 27B</span>：3.9 GB，有效 1.125 bits</li>
+</ul>
+
+<p>兩者都係 <span class="data-point">Apache 2.0</span>。重點唔係大細——而係佢哋保留咗 multimodal、tool-using 同 long-context agentic workflows。唔係玩具，係真正可以喺手機上運行完整 agentic 工作流嘅模型。</p>
+
+<p>PrismML 嘅 demo 顯示 Hermes 喺 <span class="data-point">RTX 5090</span> 上運行 Bonsai；Locally AI 更進一步——強調 phone deployment 係可行的。</p>
+
+<p>同一日，騰訊混元發佈咗 1-bit 同 4-bit 嘅 <strong>Hy3</strong>——<span class="data-point">295B 旗艦級模型</span>可以喺單 GPU 透過 llama.cpp + MTP 提供服務。呢個數字好誇張：半年前 295B 模型你想都唔使諗本地運行，而家可以。</p>
+
+<p>Daniel Han（@danielhanchen）宣布了 NVFP4 dynamic quants 支援 Gemma-4 家族、Qwen3.5-122B-A10B、GLM-4.7-Flash 等模型。Mia AI Lab 嘅 DGX Spark thread 仲展示咗實用 multi-node local deployment 配置——<span class="data-point">2× DGX Sparks</span> 可以跑 1M-context DeepSeek v4 Flash 同 MiMo-V2.5。</p>
+
+<blockquote class="strong">
+「Local inference is no longer just a toy path: it is becoming viable for serious agentic workflows, especially when paired with low-bit weight formats and optimized harnesses.」
+<span class="attr">— Latent Space AINews</span>
+</blockquote>
+
+<p>呢句總結係啱嘅。當你有一個 3.9GB 嘅模型可以做 tool calling、可以 long-context、可以 multimodal——仲使乜下下 call API？邊緣計算唔再係未來概念，係而家進行緊嘅事。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">四、即時多模態：MOSS-VL-Realtime 同 OmniAgent</h2>
+
+<p>呢日仲有兩個重要嘅多模態 release，方向唔同但互相補充。</p>
+
+<h3>MOSS-VL-Realtime（OpenMOSS）</h3>
+
+<p><span class="data-point">11B · Apache 2.0 · 256K context</span></p>
+
+<p>呢個模型嘅關鍵特性：<strong>可以一邊生成一邊繼續睇</strong>。傳統嘅 VLM 係「先睇曬再答」，MOSS-VL-Realtime 係持續感知——場景變化時可以中斷/修正回答，證據不足時保持沉默。</p>
+
+<p>技術架構方面：cross-attention + <strong>XRoPE</strong>（統一時空定位）+ unified templates 覆蓋離線、串流同實時三種設定。</p>
+
+<h3>OmniAgent（基於 Qwen2.5-Omni-7B）</h3>
+
+<p>呢個更激進。OmniAgent 唔係被動 ingest frames，而係行 <strong>Observation–Thought–Action 循環</strong>——只請求佢需要嘅 frame 同 audio。</p>
+
+<p>結果：</p>
+<ul>
+  <li>LVBench 得分 <span class="data-point">50.5</span> vs Qwen2.5-VL-72B 嘅 <span class="data-point">47.3</span></li>
+  <li>只消耗 ~<span class="data-point">203 frames</span> vs 768</li>
+</ul>
+
+<p>訓練方法都好有意思：純 SFT 反而降低 performance，真正有效嘅係 <span class="data-point">58K agentic trajectories</span> + 熵加權 RL（TAURA 框架）。</p>
+
+<p>Andrew Carr 對此有一個重要嘅觀察：</p>
+<blockquote>
+「Motion is a fundamentally novel data type requiring dedicated collection, infra, and model treatment rather than being reduced to images-with-time.」
+</blockquote>
+
+<p>即係話：唔好將運動視為「有時間戳嘅圖片」，佢係全新嘅資料類型，需要專門嘅採集基建同模型設計。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">五、評估方法論：WANDR、Agent Arena、SlopCode</h2>
+
+<p>評估（eval）領域呢日有幾個好重要嘅更新。</p>
+
+<h3>Perplexity 開源 WANDR</h3>
+
+<p><span class="data-point">500 tasks · 170,495 條來源記錄</span></p>
+
+<p>WANDR 係一個「wide-and-deep agentic research」benchmark——唔係用靜態答案庫評分，而係動態 re-fetch 引用頁面，驗證 claims against underlying evidence。呢個設計更貼近真實嘅網頁研究場景。</p>
+
+<p>Arav Srinivas（Perplexity CEO）話呢個係 Perplexity Computer deep-and-wide research harness 嘅內部 benchmark。Denis Yarats 仲補充：WANDR 同時可以作為一個 RL environment，由 production traces 合成。</p>
+
+<h3>Agent Arena</h3>
+<p>Agent Arena 發表咗一個 important result：用 <span class="data-point">89% 系統成本削減</span> 去 match 最佳靜態配置嘅準確率。關鍵 insight：full system config > LLM routing alone。</p>
+
+<h3>SlopCodeBench</h3>
+<p>呢個新 benchmark 嘅問題設定好正：唔係測「agent 能唔能解決一個 task」，而係測「agent 喺連續任務中點樣令 codebase 逐步退化」。</p>
+<p>呢個係好真實嘅問題——production 入面 agent 唔係做一次就收工，係要連續維護同迭代。SlopCodeBench 將 eval 從「一次性解題」擴展到「長期代碼健康」。</p>
+
+<div class="highlight-box">
+<h3>🔬 評估方法論嘅三大 shift</h3>
+<ul>
+  <li><strong>動態驗證</strong>（WANDR）：不再信靜態答案庫，實時 re-fetch 驗證</li>
+  <li><strong>系統 > 模型</strong>（Agent Arena）：full system config 比單純 model routing 重要</li>
+  <li><strong>長期 > 一次性</strong>（SlopCodeBench）：測 agent 點樣唔搞爛個 codebase</li>
+</ul>
+</div>
+
+<!-- ============================================ -->
+<h2 class="section-title">六、Physical AI：Sakana 智能細胞磚</h2>
+
+<p>Sakana AI 喺 Nature Communications 發表咗「<strong>Smart Cellular Bricks</strong>」——一套由大量相同 cube 組成嘅系統，每個 cube 運行小型神經網絡，只同物理鄰居通信。</p>
+
+<p>神奇嘅係：即使冇中央控制，呢啲 cube 仍然可以推斷全局形狀、檢測損傷、再生目標結構。具體數據：</p>
+<ul>
+  <li>六個空間方向中 <span class="data-point">95%</span> 準確率檢測缺失鄰居</li>
+  <li>模擬中擴展到 <span class="data-point">18,000+ cubes</span></li>
+</ul>
+
+<p>呢個係「collective intelligence from software into physical self-repairing systems」嘅具體實現。同我哋之前寫嘅 Michael I. Jordan（#22）個集體智能概念一脈相承——只係今次真係砌出實物。</p>
+
+<p>另一邊廂，自主微無人機做到 air-to-air 擊殺飛蛾（目標係蚊蟲消滅）。François Chollet 展示咗 Airtap——將 SMS 變成 headless agentic execution layer，用 text 做控制平面。呢兩個雖然規模差好遠，但共同點明確：人類設定目標，系統執行。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">七、治理爭議：Hassabis 提案 vs DeepMind 五角大樓合同</h2>
+
+<p>同日，Demis Hassabis 提出 AGI 治理提案——獲得 Mustafa Suleyman 同 Sam Altman 公開支持。但 BlackHC 嘅 thread 揭露 DeepMind 嘅五角大樓合同同廢棄 safeguards，引發大規模討論。</p>
+
+<p>呢對矛盾好典型：一間公司嘅 CEO 喺正面倡導 global governance，同一間公司嘅另一部分喺做 military contract。Carole Cadwalladr 加入 amplifiy，令呢個矛盾更加尖銳。</p>
+
+<p>Nathan Labenz（Cognitive Revolution）喺早排嘅節目入面講過：</p>
+<blockquote>
+「The AIs — they're just like us, it turns out.」
+</blockquote>
+
+<p>如果 AI 真係同我哋一樣——咁治理 AI 就係治理人類社會嘅延伸，本身就充滿矛盾同 double standard。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">八、宏觀走向：2026 年 7 月嘅 AI 格局</h2>
+
+<p>呢一日嘅新聞，表面係雜亂嘅「一日彙編」，但實際畫出咗幾個清晰嘅趨勢線：</p>
+
+<p><strong>1. Coding agents 大爆炸</strong><br>
+Codex 一日 1M 用戶唔係 anomaly——係 coding agents 從「developer tool」變成「開發方式本身」嘅 signal。7M 用戶意味住 agent-based coding 已經係主流。</p>
+
+<p><strong>2. 開源模型喺邊緣嘅 acceleration</strong><br>
+Bonsai 27B（3.9GB）、Hy3 295B（單 GPU）——極端壓縮技術正在改變部署經濟學。Model 嘅質量差距在縮小，部署成本在急降。</p>
+
+<p><strong>3. 即時感知取代被動處理</strong><br>
+MOSS-VL-Realtime 同 OmniAgent 嘅共同方向：AI 唔再係「先睇再答」，而係「一直睇住、一直思考、一直回應」。呢個 shift 對機器人、自動駕駛、監控等領域有深遠影響。</p>
+
+<p><strong>4. Eval 從「解題」轉向「持續健康」</strong><br>
+WANDR、SlopCodeBench、Agent Arena——評估方法論喺成熟。你唔再只係問「AI 做到未？」而係問「AI 系統點樣長期健康運行？」</p>
+
+<p><strong>5. Physical Collective Intelligence 初現</strong><br>
+Sakana 嘅智能磚係一個 prototype 級示範——冇中央控制嘅群體智慧可以 self-repair。呢個同傳統嘅「一個強大中央模型控制一切」形成對比。</p>
+
+<hr>
+
+<div class="highlight-box">
+<h3>🎙 本期提及嘅關鍵人物及組織</h3>
+<ul>
+  <li><strong>Sam Altman</strong> — OpenAI CEO（Codex 增長、5.6 Sol 需求「insane」）</li>
+  <li><strong>swyx</strong> — Latent Space 創辦人（AINews 主編）</li>
+  <li><strong>PrismML</strong> — Bonsai 27B 發佈者</li>
+  <li><strong>Tencent Hunyuan（騰訊混元）</strong> — Hy3 1-bit/4-bit 295B</li>
+  <li><strong>OpenMOSS</strong> — MOSS-VL-Realtime 發佈</li>
+  <li><strong>Perplexity AI</strong> — WANDR benchmark 開源</li>
+  <li><strong>Sakana AI</strong> — Smart Cellular Bricks（Nature Comms）</li>
+  <li><strong>Andy Konwinski</strong> — eval 即護城河論</li>
+  <li><strong>Demis Hassabis</strong> — AGI 治理提案</li>
+  <li><strong>Arav Srinivas</strong> — Perplexity CEO</li>
+  <li><strong>JetBrains</strong> — 推薦 Codex 為 agent</li>
+  <li><strong>LangChain</strong> — 擴展 tracing 至多個 agent 平台</li>
+</ul>
+</div>
+
+<hr>
+
+<footer>
+  <p>深度復述 · 2026-07-16 · JMOKSZ/ai-podcast-collection</p>
+  <p style="margin-top:0.3rem;">原文出處：Latent Space — [AINews] not much happened today，2026-07-14</p>
+  <p style="margin-top:0.3rem;">📖 原文：<a href="https://www.latent.space/p/ainews-not-much-happened-today-c72">latent.space/p/ainews-not-much-happened-today-c72</a></p>
+  <p style="margin-top:0.3rem;">Generated: 2026-07-16T06:06 UTC</p>
+</footer>
+
+</div>
+</body>
+</html>

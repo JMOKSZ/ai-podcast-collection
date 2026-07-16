@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 高手點用 AI？從 Codex 取代 ChatGPT 到金剛鑽與推土機</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  a { color: #8b6f4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1rem; }
+    header h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/JMOKSZ/openclaw-memory/main/ai-podcast-collection/index.html">← 返回播客日報</a>
+  <div class="ep-num">十字路口 Crossing · Koji 楊遠骋（主持）</div>
+  <h1>高手點用 AI？——從 Codex 取代 ChatGPT 到金剛鑽同推土機</h1>
+  <div class="meta">
+    <span>📅 2026-06-10</span> <span>·</span>
+    <span>⏱ 25 分鐘</span> <span>·</span>
+    <span>👤 Koji × 課代表立正</span>
+  </div>
+  <div>
+    <span class="tag">AI 生產力</span>
+    <span class="tag">Agentic Tools</span>
+    <span class="tag">創業投資</span>
+    <span class="tag">FDE</span>
+    <span class="tag">AI for Science</span>
+  </div>
+</header>
+
+<p>呢期十字路口有一個好精準嘅時間點：<strong>2026 年過半</strong>。AI 已經強到足以改變「點樣工作」，但離「無摩擦地替你做晒所有嘢」仍然有好大距離。就喺呢個中間地帶，Koji 搵咗課代表立正——一個佢身邊「用 AI 用到上癮」嘅人——做咗一場角色互換嘅對話。</p>
+
+<p>上半場係「高手示範」，下半場係「創投視角」。以下係完整嘅深度萃取。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">一、Stop Using ChatGPT——高手嘅第一條戒律</h2>
+
+<p>對話一開波，課代表立正就拋出一個好有衝擊力嘅建議：</p>
+
+<blockquote class="strong">
+「第一條：停止使用 ChatGPT 式聊天，改用 Codex / Claude Code / Cursor / Manus 呢類 agentic 工具。」
+</blockquote>
+
+<p>呢個建議嘅核心邏輯唔係邊個模型好啲，而係<strong>互動模式根本唔同</strong>。</p>
+
+<p>ChatGPT-style chat 係「你問一句，AI 答一句」——你係 dispatcher，AI 係被動嘅資訊提供者。呢種模式適合快速攞資訊，但唔適合真正「做嘢」。</p>
+
+<p>Agentic tools（Codex、Claude Code、Cursor）嘅互動模式係「你俾一個目標，AI 主動探索、執行、迭代」——你係 direction setter，AI 係主動嘅 worker。呢個區別表面上只係 prompt 長短嘅分別，實際上係工作範式嘅根本轉變。</p>
+
+<div class="highlight-box">
+  <h3>🔍 深度拆解：高手 vs 普通人嘅 AI 使用差距</h3>
+  <p>課代表立正指出一個關鍵 insight：<strong>高手嘅 AI 會越用越強</strong>——因為佢哋唔係用 AI 嚟取代自己嘅思考，而係用 AI 嚟加速自己嘅 iteration loop。佢哋無時無刻喺度想「我能為 AI 做些什麼」——將生活同工作嘅大事小事全部試住交給 AI。</p>
+  <p>呢個 mindset shift 同 Karpathy 喺 No Priors 講嘅「Jobs are bundles of tasks」互相呼應——高手唔係諗「AI 取代咗我邊部分」，而係諗「我可以點樣拆解我呢份工嘅 tasks，然後將適合嘅 tasks 餵俾 AI」。</p>
+</div>
+
+<p>換句話說：<strong>高手嘅 AI 唔係一個 question-answering machine，而係一個 task-execution partner</strong>。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">二、普通人點學 AI？——拆解問題，好過拆解 Prompt</h2>
+
+<p>Koji 同課代表立正都同意一件事：普通人唔需要學 prompt engineering。Prompt engineering 係一個過渡產物，正如 Karpathy 話 Context Windows 係 cheap manipulation——當你識得用 agentic tools，prompt 就唔係瓶頸。</p>
+
+<p>普通人真正需要學嘅係：<strong>拆解問題嘅能力</strong>。</p>
+
+<p>呢個論點同近期幾個主流觀點高度一致：</p>
+
+<ul>
+  <li><strong>AIEWF 2026 嘅 Skills 取代 Prompt Engineering</strong>——Anthropic 引入「Agent Skills」概念一周年，Skills 已經成為 AIEWF 嘅 buzzword。Google DeepMind Philipp Schmid：「Agents are just files. We write markdown files to extend capabilities.」</li>
+  <li><strong>Y Combinator Garry Tan</strong>——AI native companies 將 skills 編碼為書面程序，由 agents 執行，仲請工程師維護呢啲 skills</li>
+  <li><strong>Matt Pocock's 警告</strong>——寫更少、更小的 skills，投入更多思考在結構上</li>
+</ul>
+
+<p>換句話說，普通人最應該做嘅係：<strong>學懂將一個複雜任務拆成多個子任務</strong>——然後逐個俾 AI 幫你完成。呢個能力唔需要懂 coding，需要嘅係邏輯思維同結構化表達。呢個就係「與 AI 協作」嘅 hard skill。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">三、投資人視角：金剛鑽 vs 推土機</h2>
+
+<p>下半場 Koji 同課代表立正交換角色，由立正訪問 Koji 關於 2026 年嘅 AI 創投觀察。Koji 分享嘅 perspective 包含 hope 同失落兩個層面：</p>
+
+<p><strong>希望：</strong>創業同資本熱情前所未有，「人類與 AI 的最佳協作方式仍未被發明」——摩擦本身就係機會。</p>
+
+<p><strong>失落：</strong>商業價值高度集中到基礎模型層，佢哋吞咗絕大多數由 AI 而生嘅收益。應用層好似「喺推土機前面執銀仔」，傳統軟件嘅老路（需求 → 產品 → 賣俾更多人）已經行唔通。</p>
+
+<p>呢個矛盾引向 Koji 最核心嘅框架：</p>
+
+<blockquote class="strong">
+「此刻，創業與投資嘅機會正在兩極化：要麼往天上跳（AI for Science / Physical AI），要麼往地裡鑽（行業深水區嘅流程改造與交付 / FDE）。」
+</blockquote>
+
+<p><strong>「往天上跳」</strong> — AI for Science（類似英靈殿 Odin 做緊嘅 full-modal molecule world model）同 Physical AI，需要長週期、大資本、野心家心態。唔係人人做到，但天花板無限高。</p>
+
+<p><strong>「往地裡鑽」</strong> — Forward Deployed Engineer 模式深入傳統行業嘅深水區，幫實體經濟改造流程。辛苦，但護城河深。呢個趨勢同 AIEWF 2026 嘅 FDE trend 完美對齊——Cursor 嘅 Pauline Brunet 描述 FDE 部署長期運行 agent、自動化、構建應用，確保客戶喺團隊撤出後唔會關閉系統。</p>
+
+<p>而中間嗰層——做 SaaS、做通用工具、做平台——係最危險嘅位置。基礎模型公司自己就可以做，而且佢哋有 distribution 優勢。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">四、五個值得關注嘅 AI 創業方向</h2>
+
+<p>Koji 喺節目末段分享咗自己最近關注嘅 5 個 AI 創業方向：</p>
+
+<ol>
+  <li><strong>行業特定的 AI Agent 平台</strong>——唔係 general-purpose，而係垂直領域嘅 deep agentic workflow（醫療、法律、製造、物流）</li>
+  <li><strong>AI 原生嘅數據基礎設施</strong>——為 AI 工作負載設計嘅 data pipeline、observability、evaluation infra</li>
+  <li><strong>Human-AI 協作工具</strong>——「最佳協作方式未被發明」本身係創業機會，講緊嘅係 agent + human-in-the-loop 嘅新 interaction paradigm</li>
+  <li><strong>Hardware + AI 嘅閉環</strong>——Physical AI / robotics 嘅垂直整合，從 sensor 到 model 到 action</li>
+  <li><strong>AI for Science 嘅 infra 層</strong>——科學模擬、實驗自動化、數據管理，呢啲係科學 breakthrough 嘅 bottleneck</li>
+</ol>
+
+<p>呢五個方向冇一個係「做另一個 ChatGPT」或者「做另一個 Claude Code」——競爭激烈嘅領域佢避開咗。Koji 嘅選擇邏輯同佢嘅框架一致：避開推土機前面嘅位置，去金剛鑽嘅領域。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">五、從呢集睇到嘅 macro picture</h2>
+
+<p>呢期十字路口表面上係「高手點用 AI」，實際上描繪咗 2026 年中嘅幾條宏觀趨勢線：</p>
+
+<p><strong>1. 從 Chat 到 Code 嘅範式轉移</strong></p>
+<p>「Stop using ChatGPT」唔係針對 OpenAI，而係對 chat-based interaction model 嘅終結。Agentic tools（Codex 7M 用戶、Claude Code 2M+）先係 AI 嘅主力工作模式。呢個 shift 嘅速度比大部分人意識到嘅要快——單係 Codex 一週增長 <span class="data-point">2.5x</span>，24 小時內從 6M 到 7M。</p>
+
+<p><strong>2. 應用層嘅兩極化生存</strong></p>
+<p>中間層被壓縮，要麼上 AI for Science，要麼落傳統行業做 FDE。呢個唔係短期現象，而係模型層 power-law distribution 嘅必然結果。當基礎模型行到 GPT-5.6 Sol 嘅級別，通用應用嘅價值好難同模型本身脫鈎。</p>
+
+<p><strong>3. Skills 取代 Prompt Engineering</strong></p>
+<p>從 Anthropic 嘅 Agent Skills，到 YC 嘅 Garry Tan 講「AI native companies encode procedures as skills」，再到呢集 Koji 話「拆解問題係核心技能」——呢個 consensus 已經形成。未來嘅競爭力在於你嘅「skills library」有幾完整，唔在於你 prompt 寫得有幾靚。</p>
+
+<p><strong>4. 中國 AI 創業者嘅特殊挑戰</strong></p>
+<p>Koji 身處中國一線，佢觀察到：中國客戶對 AI「自主性」嘅接受度低，需要更多人工兜底；商業價值被基礎模型公司吃掉嘅問題喺中國更嚴重（因為字節、騰訊、阿里嘅 ecosystem 更封閉）；但同時中國喺製造業、供應鏈、傳統行業數碼化方面有全球最深厚嘅「地裡鑽」空間。</p>
+
+<!-- ============================================ -->
+<h2 class="section-title">六、最值錢嘅一句話</h2>
+
+<p>如果只能從呢集帶走一句話，我會揀呢句：</p>
+
+<blockquote class="strong">
+「人類與 AI 的最佳協作方式仍未被發明——摩擦本身就係機會。」
+<span class="attr">— Koji（十字路口）</span>
+</blockquote>
+
+<p>2026 年過半，我哋已經睇到 Codex 7M 用戶、AIEWF Loops 概念、FDE 成為新角色——但冇人敢話「我哋已經搵到最佳方式」。每一個 friction point（prompting 唔自然、agent 唔可靠、eval 唔完善、human-in-the-loop 太慢）就係一個創業機會。</p>
+
+<p>呢個樂觀主義嚟自 Koji 嘅一線體感：佢每日見到嘅創業者，唔係喺度整 moats，而係喺度製造「幫人拆解問題」嘅工具。呢個 mindset 本身——唔係抗拒 AI，而係成為 AI 嘅 orchestration layer——可能就係最高手嘅用法。</p>
+
+<footer>
+  <p>🎙 來源：十字路口 Crossing（小宇宙 / Bilibili）· 2026-06-10</p>
+  <p>🎬 Bilibili：<a href="https://www.bilibili.com/video/BV13jER6dEQT/">BV13jER6dEQT</a> · 47,704 觀看</p>
+  <p>📝 Deep Dive 生成：2026-07-16 06:20 UTC</p>
+  <p>📬 <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/JMOKSZ/openclaw-memory/main/ai-podcast-collection/index.html">返回播客日報</a></p>
+</footer>
+
+</div>
+</body>
+</html>
