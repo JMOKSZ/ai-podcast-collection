@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Kimi K3 2.8T：開源 Frontier 時代降臨——Moonshot 嘅史詩回歸</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  a { color: #8b6f4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1rem; }
+    header h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="https://jmoksz.github.io/ai-podcast-collection/index.html">← 返回 AI 播客日報</a>
+
+<header>
+  <div class="ep-num">Latent Space · AINews 2026-07-17</div>
+  <h1>Kimi K3 2.8T：開源 Frontier 時代降臨</h1>
+  <p style="font-size:1rem;color:#555;margin-bottom:0.3rem;">Moonshot AI 嘅史詩回歸——最大開源模型、六大架構創新、48 小時自主晶片設計、定價戰全面開打</p>
+  <div class="meta">
+    <span>📅</span> 2026-07-17 <span>·</span> <span>⏱</span> 長篇分析 <span>·</span> <span>📺</span> Latent Space AINews <span>·</span> <span>🏷️</span> <span class="tag">模型發布</span> <span class="tag">開源</span> <span class="tag">Moonshot</span> <span class="tag">Kimi K3</span>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!--  INTRO                                                        -->
+<!-- ============================================================ -->
+<p>2026 年 7 月 16 日，Moonshot AI 正式發布 Kimi K3——<strong>2.8 兆（2.8T）參數</strong>、<strong>1M token 上下文</strong>、<strong>16/896 激活專家</strong>嘅稀疏 MoE 模型。佢唔單止係「史上最大開源模型」，更加係第一個公開宣稱觸及 frontier 級別嘅開源模型。</p>
+
+<p>Latent Space 嘅 AINews 頻道（swyx + Alessio Fanelli）喺發布後第一時間出咗深度分析，將 K3 定位為「DeepSeek 式時刻」嘅續集——但今次係由 Moonshot 來寫。</p>
+
+<p>呢篇復述基於 AINews 嘅報導，配合 VentureBeat、MarkTechPost、Kie.ai 同 Moonshot 官方技術博客嘅材料，嘗試幫你一次過理解 K3 嘅技術細節、戰略意義同行業衝擊。</p>
+
+<blockquote class="strong">
+「Open source is no longer lagging six months behind Western closed-source models. Read that again, and think about what it all means.」
+<div class="attr">— @kimmonismus 於 K3 發布日</div>
+</blockquote>
+
+<!-- ============================================================ -->
+<!--  1. MOONSHOT 的曲折回歸                                       -->
+<!-- ============================================================ -->
+<h2 class="section-title">一、Moonshot 嘅曲折回歸——從七強滑落到第一</h2>
+
+<p>要理解 K3 嘅意義，要先睇 Moonshot 過去 18 個月經歷咗啲咩。</p>
+
+<p>Moonshot AI 由清華畢業生楊植麟（Yang Zhilin）2023 年創立，曾喺 Google 同 Meta 做研究。憑住 Kimi chatbot 嘅超長文本分析能力，公司迅速崛起，到 2025 年初月活排名中國第三、估值 <span class="data-point">$4.3B</span>。</p>
+
+<p>然後 DeepSeek R1 喺 2025 年 1 月出咗——低開銷、高性能、開源，一炮徹底顛覆中國 AI 格局。Kimi 月活從第三跌到第七。Moonshot 嘅處境一度被認為係「被 DeepSeek 碾壓嘅又一家」。公司迅速轉向開源策略，2025 年 7 月發布 K2、2026 年 1 月發布 K2.5、4 月 K2.6、6 月 K2.7 Code——一路追趕，從未領先。</p>
+
+<p>K3 係呢條追趕路線嘅頂點——Moonshot 為呢個項目準備咗超過一年半。CEO 楊植麟早在 2026 年初就公開承認 K3 係下一代旗艦。公司 1 月嘅 <span class="data-point">$500M</span> C 輪融資（估值 $4.3B），資金明確用於「K3 開發同算力擴展」。</p>
+
+<blockquote>
+「K3 嘅發布時間恰好喺 2026 上海世界人工智能大會之前——唔係巧合。」
+<div class="attr">— VentureBeat</div>
+</blockquote>
+
+<p>更諷刺嘅係：DeepSeek 一度係「開源挑戰閉源」嘅象徵，但呢次 K3 直接喺規模上壓過咗 DeepSeek V4 Pro（~1.6T 參數）——開源世界嘅領先位置，由 Moonshot 奪返。用一位行業觀察者嘅話：「Moonshot 用 DeepSeek 嘅劇本打返 DeepSeek。」</p>
+
+<!-- ============================================================ -->
+<!--  2. 架構細節                                                  -->
+<!-- ============================================================ -->
+<h2 class="section-title">二、六大架構創新——唔係簡單加大</h2>
+
+<p>K3 唔係 K2 嘅簡單放大版。Moonshot 團隊從頭設計咗一套全新架構，以下係六大關鍵組件：</p>
+
+<h3 class="sub-title">1. Kimi Delta Attention (KDA)</h3>
+<p>KDA 係混合線性注意力機制。佢嘅核心貢獻係喺百萬 token 級別嘅序列長度上，將解碼速度提升 <span class="data-point">6.3x</span>。呢個唔係理論數字——Moonshot 團隊設計 KDA 始於 2025 年 1 月，耗時約 1.5 年先達到 frontier 規模。VentureBeat 報導指出，KDA 嘅實現已經被 Moonshot 貢獻畀 vLLM 開源項目，意味住任何用 vLLM 部署大型模型嘅團隊都可以受惠。</p>
+
+<h3 class="sub-title">2. Attention Residuals (AttnRes)</h3>
+<p>傳統殘差連接（Residual Connections）係 ResNet 以嚟嘅標準做法：信息沿深度方向一層層累積。AttnRes 改變咗呢個范式：佢選擇性地跨深度檢索表徵，而唔係均勻累積。結果係訓練效率提升約 <span class="data-point">25%</span>，而額外成本唔到 <span class="data-point">2%</span>。</p>
+
+<h3 class="sub-title">3. Stable LatentMoE + 16/896 稀疏路由</h3>
+<p>K3 嘅總參數係 2.8T，但每 token 只激活 <span class="data-point">16/896</span> 個專家——激活率唔到 2%。呢種極致稀疏路由需要全新嘅路由算法。Quantile Balancing（分位數均衡）代替咗傳統嘅 heuristic 更新，直接從 router 分數嘅分位數推導專家分配，消除咗一個敏感嘅平衡超參數。</p>
+
+<h3 class="sub-title">4. Per-Head Muon 優化器</h3>
+<p>Muon 優化器（最初由 Keller Jordan 提出）嘅擴展版本。Per-Head Muon 將每個注意力頭視為獨立優化單元，各自有獨立嘅更新步長。呢個設計嘅直覺係：唔同注意力頭學習唔同嘅模式，應該有唔同嘅最佳學習率。</p>
+
+<h3 class="sub-title">5. SiTU 激活函數</h3>
+<p>Sigmoid Tanh Unit (SiTU) 係全新激活函數，結合 Sigmoid 嘅 soft gating 特性同 Tanh 嘅穩定梯度。用 Moonshot 團隊嘅話：SiTU 改善咗 Activation 控制，尤其係喺 MoE 場景下各個 expert 嘅激活穩定性。</p>
+
+<h3 class="sub-title">6. MXFP4 量化感知訓練</h3>
+<p>K3 從 SFT 階段就開始做量化感知訓練（Quantization-Aware Training），使用 MXFP4 權重搭配 MXFP8 激活。呢個設計確保模型喺部署時可以充分利用現代硬件嘅低精度算力，而唔係訓練完先量化——後者通常帶嚟性能損失。</p>
+
+<div class="highlight-box">
+  <h3>📊 規模對比</h3>
+  <p style="margin-bottom:0.4rem;">開源模型參數規模演變：</p>
+  <ul>
+    <li><strong>Kimi K2</strong> (Jul 2025) — 1T 總參數 · 32B 激活 · 256K ctx</li>
+    <li><strong>DeepSeek V4 Pro</strong> — ~1.6T 總參數</li>
+    <li><strong>Xiaomi LLM</strong> — 1.02T 總參數</li>
+    <li><strong>Alibaba Qwen</strong> — 397B 總參數</li>
+    <li><strong>Kimi K3</strong> (Jul 2026) — <strong>2.8T 總參數</strong> · 16/896 MoE · 1M ctx</li>
+  </ul>
+  <p style="margin-top:0.6rem;">K3 嘅規模比 DeepSeek V4 Pro 大約 <strong>75%</strong>，比 K2 大 <strong>2.8x</strong>。</p>
+</div>
+
+<!-- ============================================================ -->
+<!--  3. 基準測試                                                  -->
+<!-- ============================================================ -->
+<h2 class="section-title">三、基準測試——唔係全部第一，但範圍最廣</h2>
+
+<p>Moonshot 發布咗一個詳盡嘅基準測試表（reasoning effort = max），對比 Fable 5（with fallback）、GPT-5.6 Sol、Opus 4.8 同 GLM-5.2。</p>
+
+<p>最重要嘅結果唔係佢拎咗幾多個第一——而係佢喺廣泛嘅 benchmark 上都達到咗競爭力。</p>
+
+<div class="highlight-box">
+  <h3>🏆 K3 領先嘅 Benchmark</h3>
+  <ul>
+    <li><strong>Frontend Code Arena</strong> — #1（1679 分），從 K2.6 嘅 #18 一躍到 #1，超越 Fable 5 同 GPT-5.6 Sol</li>
+    <li><strong>BrowseComp</strong> — 91.2/100，SOTA 級別太難信息搜尋</li>
+    <li><strong>SWE Marathon</strong> — 42.0（vs Fable 5 35.0 · GPT-5.6 Sol 39.0）</li>
+    <li><strong>Automation Bench</strong> — 30.8（vs Fable 5 29.1 · Opus 4.8 27.2）</li>
+    <li><strong>Program Bench</strong> — 77.8（vs Fable 5 76.8 · GPT-5.6 Sol 77.6）</li>
+    <li><strong>OmniDocBench</strong> — 91.1（多模態文檔解析）</li>
+  </ul>
+</div>
+
+<div class="highlight-box">
+  <h3>🥈 追趕中嘅 Benchmark</h3>
+  <ul>
+    <li><strong>FrontierSWE</strong> — 81.2（vs Fable 5 86.6）</li>
+    <li><strong>HLE-Full</strong> — 43.5（vs Fable 5 53.3 · GPT-5.6 Sol 44.5）</li>
+    <li><strong>DeepSWE</strong> — 67.5（vs GPT-5.6 Sol 73.0 · Fable 5 70.0）</li>
+    <li><strong>Terminal Bench 2.1</strong> — 88.3（vs GPT-5.6 Sol 88.8 · Fable 5 84.6）</li>
+  </ul>
+</div>
+
+<p>Artificial Analysis 嘅獨立評測進一步確認定位：<span class="data-point">AA Intelligence Index 57</span>、<span class="data-point">AutomationBench-AA 53%</span>（#1）、<span class="data-point">AA-Briefcase Elo 1547</span>。對比前代 K2.6：輸出 token 減少 21%，智能指數提升 13 點。</p>
+
+<p>但亦有明顯弱點：Moonshot 自己承認與 Fable 5 同 GPT-5.6 Sol 相比存在「noticeable gap in user experience」。幻覺率從 39% 升至 51%。解碼速度約 <span class="data-point">26-28 tok/s</span>（推測未啟用 speculative decoding）。</p>
+
+<blockquote>
+「K3 is very good open-weights model, but not Sol Max or Fable.」
+<div class="attr">— Simon Willison</div>
+</blockquote>
+
+<!-- ============================================================ -->
+<!--  4. 晶片自主設計 Demo                                         -->
+<!-- ============================================================ -->
+<h2 class="section-title">四、48 小時自主晶片設計——LLM 從未做到嘅嘢</h2>
+
+<p>Benchmark 表之外，Moonshot 展示咗一個可能更震撼嘅 proof-of-concept：K3 被要求設計一個物理晶片，來運行 nano-scale 版本嘅自己。</p>
+
+<p>喺 <strong>48 小時連續自主 Agent 運行</strong>中，K3 獨立完成咗晶片嘅完整構建流程——從架構設計到優化到驗證——全部用開源 EDA 工具。結果係一個得 <span class="data-point">4mm²</span> 嘅小型功能晶片，達到 <span class="data-point">100 MHz</span> 時序收斂，模擬中可解碼 <span class="data-point">8,700+ tok/s</span>。</p>
+
+<blockquote class="strong">
+「呢個唔係量產晶片。佢係 Moonshot 眼中嘅下一個競爭前沿：長程自主 Agent 能力。」
+<div class="attr">— VentureBeat 分析</div>
+</blockquote>
+
+<p>另一個案例：喺天體物理學計算中，K3 用大約 2 小時復現咗通用嘅 I-Love-Q 關係——一個典型需要高級研究員 1-2 週嘅複雜計算——過程中讀取咗 20+ 篇論文並實現咗完整嘅數值管線。</p>
+
+<p>呢啲 demo 嘅意義遠遠超越 benchmark 數字：佢哋展示嘅係模型可以喺長時間、多步驟、需要自主糾錯嘅真實工作場景中保持一致性。用 Moonshot 團隊嘅話：呢係 1M token context window 嘅真正價值——唔係為咗睇更長嘅書，而係為咗 hold 住更複雜嘅任務狀態。</p>
+
+<!-- ============================================================ -->
+<!--  5. 定價與策略                                                -->
+<!-- =========================================================ALES -->
+<h2 class="section-title">五、定價策略——戰術級嘅全面碾壓</h2>
+
+<p>K3 嘅 API 定價：</p>
+<ul>
+  <li><strong>Input（cache miss）</strong> — $3/1M tokens</li>
+  <li><strong>Input（cache hit）</strong> — $0.30/1M tokens（90% 折扣）</li>
+  <li><strong>Output</strong> — $15/1M tokens</li>
+</ul>
+
+<p>混合成本（80/20 input/output 比例）約 <span class="data-point">$5.40/1M tokens</span>。對比：</p>
+<ul>
+  <li><strong>Opus 4.8</strong> — ~$9/1M</li>
+  <li><strong>GPT-5.5</strong> — ~$10/1M</li>
+  <li><strong>Fable 5</strong> — 明顯更高（未公開定價）</li>
+</ul>
+
+<p>Moonshot 報告，喺 coding 工作負載中 cache hit rate 可達 90% 以上——意味住實際有效成本可以更低。</p>
+
+<p>定價戰嘅影響痕直接：frontier 級別性能以顯著低於頂級閉源模型嘅價格出現，直接壓縮 Anthropic 同 OpenAI 嘅定價空間。特別係考慮到 K3 喺 coding 場景表現強勁——而 coding tools 已經成為 AI labs 嘅主要收入來源（Anthropic 披露 Claude Code 年化收入已達 $1B）。</p>
+
+<blockquote>
+「K3 嘅定價將 frontier 級模型帶到咗 mid-tier 嘅價格——呢個係結構性變化，唔係 promo。」
+<div class="attr">— Latent Space AINews 分析</div>
+</blockquote>
+
+<!-- ============================================================ -->
+<!--  6. Kimi Code 生態                                            -->
+<!-- ============================================================ -->
+<h2 class="section-title">六、Kimi Code 生態——從模型到開發者工具鏈</h2>
+
+<p>K3 發布同日，Kimi Code 同步推出 v0.25.0 同 v0.26.0，新增擴展 subagent 工具集、背景任務管理、todo list、plan mode、skill invocation 同 nested agents。GitHub 上有 <span class="data-point">3,100+</span> 星，支援 VSCode、Cursor、Zed 整合。</p>
+
+<p>Moonshot 而家有三層產品線：</p>
+<ul>
+  <li><strong>K3</strong>（$3/$15/1M）— 旗艦，長程 agent 同 coding</li>
+  <li><strong>K2.7 Code</strong>（$0.95/$4/1M）— 專業編碼模型</li>
+  <li><strong>K2.6</strong>（$0.95/$4/1M）— 通用型</li>
+</ul>
+
+<p>三個模型都支援 256K+ context，K3 提供完整 1M。Context caching 係自動嘅，唔需要 cache ID。</p>
+
+<p>呢個生態佈局嘅戰略意圖好清晰：Moonshot 唔係淨係賣模型 API——佢哋想 capture 開發者 workflow，由 CLI 到 IDE extension 到 agent framework，然後轉化為企業 contract。用 Andreessen Horowitz 常用嘅框架：先佔 developer mindshare，再攻 enterprise wallet。</p>
+
+<!-- ============================================================ -->
+<!--  7. 開源與地緣政治                                            -->
+<!-- ============================================================ -->
+<h2 class="section-title">七、開源即地緣政治——最大規模嘅開放權重意味啲咩？</h2>
+
+<p>K3 完全開源（full weights 將於 2026 年 7 月 27 日發布），Modified MIT license。呢個決定嘅戰略意義值得拆解：</p>
+
+<p>Moonshot 嘅模型規模時間線圖將 K3 喺一個突出嘅 outlier——遠超 DeepSeek（1.6T）、小米（1.02T）、阿里巴巴（397B）。發布最大開源模型，等於向全球開源 AI 開發者社群宣示：Moonshot 係新嘅中心。</p>
+
+<p>如 Reuters 報導所指：「中國 AI 公司開源模型係為咗展示技術能力、擴展開發者社群同全球影響力——呢係反擊美國技術限制嘅策略。」DeepSeek、阿里巴巴、騰訊、百度都發布過開源模型。但冇人發布過呢個參數規模嘅。</p>
+
+<p>對企業科技領袖而言，含義好具體：一個 2.8T 參數、表現接近 frontier 嘅開源模型，創造咗新嘅選擇——Fine-tune、self-host、或喺其上構建自有系統，而唔使被鎖喺 OpenAI 或 Anthropic 嘅 API 合約。但代價同樣明確：運行呢個規模嘅模型需要 <span class="data-point">64+ 加速器</span> supernode 配置，唔係普通伺服器搞得掂。</p>
+
+<blockquote class="strong">
+「為咗要搞清楚佢哋點解喺呢個時間點做呢件事——諗清楚佢哋嘅融資節奏同發布時間，好明顯係準備好喺上海 WAIC 之前搶頭條。K3 嘅時機唔係巧合，係精心計算。」
+<div class="attr">— Latent Space AINews</div>
+</blockquote>
+
+<!-- ============================================================ -->
+<!--  8. 行業影響                                                  -->
+<!-- =========================================================ALES -->
+<h2 class="section-title">八、行業影響——五個維度嘅長期衝擊</h2>
+
+<h3 class="sub-title">1. 「中國落後 6-8 個月」嘅敘事已被顛覆</h3>
+<p>K3 證明中國實驗室唔再大幅落後。唔同於過去「模型追趕，但總慢半拍」嘅 pattern，K3 喺 Frontend Code Arena 等關鍵 benchmark 上跑贏晒所有西方模型。多位評論認為 K3 削弱咗常見嘅「中國模型落後半年以上」嘅敘事。</p>
+
+<h3 class="sub-title">2. 開源模型逼近 frontier</h3>
+<p>K3 嘅整體性能仍然落後於 Fable 5 同 GPT-5.6 Sol 嘅最高端版本（Max/Ultra），但差距已經從「年份級」縮短到「月份級」。如果呢個趨勢持續，開源模型將喺未來 6-12 個月內徹底 close the gap。</p>
+
+<h3 class="sub-title">3. 定價壓力壓縮閉源模型利潤空間</h3>
+<p>$3/$15 定價 + 90% cache discount 係一個好進取嘅定價策略。特別係 coding 場景——a16z 報告指出 AI coding 每年節省嘅企業成本高達 $1.7T——低成本 frontier 性能會加速企業 adoption，但同時壓縮 API 提供者嘅利潤率。</p>
+
+<h3 class="sub-title">4. 「開源權重 ≠ 便宜運行」</h3>
+<p>2.8T 模型需要 64+ 加速器部署，呢個硬件需求本身就係一道門檻。但 Moonshot 嘅 Mooncake 項目（FAST 2025 Best Paper）喺 KV-cache-centric disaggregated serving 上嘅突破，可能降低呢個門檻。Moonshot 已經將 KDA prefix caching 貢獻畀 vLLM。</p>
+
+<h3 class="sub-title">5. Coding 係新嘅第一戰線</h3>
+<p>K3 喺 Frontend Code Arena 嘅表現唔係意外——Moonshot 明顯將 coding 作為旗艦場景。考慮到 Claude Code $1B ARR 嘅里程碑，coding tools 已經成為 fact-of-life revenue driver。K3 + Kimi Code 組成嘅開源替代方案，直接威脅 Anthropic 同 OpenAI 喺呢個市場嘅主導地位。</p>
+
+<!-- ============================================================ -->
+<!--  9. 局限性                                                    -->
+<!-- ============================================================ -->
+<h2 class="section-title">九、客觀局限——唔好忽略嘅陰影</h2>
+
+<ul>
+  <li><strong>幻覺率上升</strong>：從 39% 升到 51%。越大嘅模型並唔一定越誠實。</li>
+  <li><strong>User experience gap</strong>：Moonshot 官方承認與 Fable 5 同 Sol 嘅體驗仍有差距。</li>
+  <li><strong>解碼速度</strong>：~26-28 tok/s，推測未啟用 speculative decoding。</li>
+  <li><strong>部署門檻</strong>：64+ 加速器嘅 hardware requirement 唔係普通團隊承擔得起。</li>
+  <li><strong>獨立驗證</strong>：除咗 Artificial Analysis，仲未有第三方復現 benchmark 結果。</li>
+  <li><strong>UA 細節</strong>：Moonshot 尚未披露完整嘅 model card，包括活躍參數數、完整架構圖等。</li>
+</ul>
+
+<!-- ============================================================ -->
+<!--  FOOTER                                                       -->
+<!-- ============================================================ -->
+<footer>
+  <p>🎙️ 原始來源：<a href="https://latent.space/">Latent Space AINews</a> — 2026-07-17 · swyx + Alessio Fanelli</p>
+  <p>📄 補充來源：<a href="https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems">VentureBeat</a> · <a href="https://www.kimi.com/blog/kimi-k3">Moonshot 官方技術博客</a> · <a href="https://kie.ai/blog/what-is-kimi-k3">Kie.ai</a> · <a href="https://www.marktechpost.com/2026/07/16/moonshot-ai-releases-kimi-k3-a-2-8-trillion-parameter-open-moe-model-with-kimi-delta-attention-and-1m-context/">MarkTechPost</a></p>
+  <p>🚀 深度復述 #39 · 生成於 2026-07-17 06:00 UTC · JMOKSZ/ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>

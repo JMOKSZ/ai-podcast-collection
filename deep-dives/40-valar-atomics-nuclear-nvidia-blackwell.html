@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 核反應堆供電 NVIDIA Blackwell——Valar Atomics 嘅能源宣言</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  a { color: #8b6f4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1rem; }
+    header h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="../index.html">← 返回播客日報</a>
+  <div class="ep-num">No Priors · 2026-07-02</div>
+  <h1>核反應堆直接供電 NVIDIA Blackwell——Valar Atomics 嘅能源宣言</h1>
+  <div class="meta">
+    主持：Sarah Guo · 嘉賓：Isaiah Taylor（Valar Atomics 創始人兼 CEO）<br>
+    時長：~1h · 發布日期：2026-07-02 · 拍攝地：猶他州核設施
+  </div>
+</header>
+
+<p class="section-title">這集講咩？</p>
+
+<p>「Nuclear is a hardware execution problem, not a design or simulation problem.」呢句開場白幾乎定義咗成集嘅基調。Isaiah Taylor，Manhattan Project 物理學家嘅曾孫，喺猶他州嘅反應堆現場接受 Sarah Guo 專訪。呢位 2023 年先正式註冊公司嘅創始人，用兩年零四個月做到咗全世界無人做到嘅事——建立咗自 2000 年以來美國第五個新嘅核能發電裝置，而且係唯一一個由私營初創公司從零建造嘅。</p>
+
+<p>呢集 No Priors 唔係一般嘅 startup 訪談。佢係一篇實戰宣言：由一個真正落地做硬體、真正 split atoms 嘅人，對住成個只係喺度做模擬同紙面設計嘅行業，講述點樣用 SpaceX 式嘅迭代方法重新定義核能。</p>
+
+<blockquote class="strong">
+「Most of the nuclear industry is a modeling and simulation industry. They're not focused on hardware iteration, hardware execution, building the simplest and safest reactor that allows them to scale. And Valar just demonstrated that we are.」
+<span class="attr">— Isaiah Taylor, 00:00:26</span>
+</blockquote>
+
+<p class="section-title">1. 四十年前嘅法律解鎖</p>
+
+<p>Valar Atomics 嘅成功唔係靠打破法律，而係發現咗一條俾人遺忘咗四十年嘅法律路徑。</p>
+
+<p>美國國會原本將核能監管分為兩個機構：NRC（核管制委員會）負責商業部署，而 DOE（能源部，前身 ERDA）負責測試。呢條 DOE 測試路徑喺立法時留咗落嚟，但成個行業由 80 年代開始就當佢唔存在。直到特朗普行政令 EO 14301 ——要求喺 2026 年 7 月 4 日前有三個先進反應堆喺美國本土達到臨界——呢條沉睡嘅法規先被激活。</p>
+
+<blockquote>
+「The DOE was originally called the ERDA, the Energy Research and Development Agency… its origin is actually a spin-out of the Atomic Energy Commission… the origin of this agency is testing nuclear reactors. That's what it's for. And everyone sort of forgot this.」
+<span class="attr">— Isaiah Taylor, 00:09:01</span>
+</blockquote>
+
+<p>呢個發現好關鍵：佢唔單止解釋咗點解 Valar 可以咁快建造，仲暴露咗成個行業嘅系統性問題——四十年來，核能公司全部只係面向 NRC 嘅商業審批路徑做文書工作，而忘記咗 DOE 嘅測試路徑先係真正可以落地嘅方向。</p>
+
+<blockquote>
+「The reactor that's behind us here was turned on under an executive order. It was EO 14301, which called for three advanced reactors to go critical on American soil by July 4th. And we built it under Department of Energy authority under that executive order.」
+<span class="attr">— Isaiah Taylor, 00:09:59</span>
+</blockquote>
+
+<p>呢段引述入面有一種幾乎係諷刺嘅語氣：成個行業四十年嚟無人利用呢條通道，而佢哋喺行政令推動下，兩年就搞掂咗。</p>
+
+<p class="section-title">2. Safety Philosophy：從「降低概率」到「消滅後果」</p>
+
+<p>傳統核能安全邏輯係「降低壞事發生嘅概率」——即係越多安全系統越好，事故越少發生越好。但呢個邏輯有個致命問題：你永遠需要假設系統失效嘅可能性，然後用更多系統去 cover——最終變成無限疊加嘅複雜性。</p>
+
+<p>Valar 嘅設計哲學完全相反：<strong>consequence reduction 取代 probability reduction</strong>。唔係令壞事更難發生，而係令壞事發生咗都無害。</p>
+
+<blockquote class="strong">
+「Our safety basis says, all right, let's look at the reactor design and pretend that everything in it has failed. Are we dosing the workers in the public with radiation? And the answer is no.」
+<span class="attr">— Isaiah Taylor, 00:18:55</span>
+</blockquote>
+
+<p>呢個唔係理論——Taylor 喺現場演示咗一個叫「死開關測試」（dead switch test）嘅實驗：佢哋 scram 反應堆之後，完全切斷全廠電源，包括所有安全系統，然後觀察會發生咩事。</p>
+
+<blockquote>
+「We're going to scram this reactor. Immediately after we scram, we're actually going to turn off the entire electrical supply to the plant… Every safety system in this plant, we're going to shut off. And we're going to watch what happens.」
+<span class="attr">— Isaiah Taylor, 00:14:34</span>
+</blockquote>
+
+<p>呢個測試結果話俾我哋知，Valar 嘅 Ward 250 反應堆即使喺「所有嘢都壞晒」嘅情況下，仍然安全。呢種設計哲學令到 regulatory approval 嘅邏輯完全改變：唔需要證明壞事發生概率好細，只需要證明壞事發生咗都無事。</p>
+
+<p class="section-title">3. Tick Rate——核能公司嘅核心 KPI</p>
+
+<p>呢個概念係成集最精采嘅 insight 之一。Taylor 話，衡量核能公司嘅唯一指標係 <strong>tick rate</strong>——即係佢哋達到新反應堆里程碑嘅頻率。</p>
+
+<blockquote>
+「Tick rate is how we judge ourselves and how we judge other people in the nuclear field… From filing in Delaware to first atom split was two years and four months. From Project Nova, first atom split to the second time here in this reactor was about seven months. And the goal is to get that window as short as possible… This company will get to the point where we have a new reactor turning on every few minutes.」
+<span class="attr">— Isaiah Taylor, 00:24:41</span>
+</blockquote>
+
+<p>呢個指標壓縮咗整個創新循環：由 2 年 4 個月，到 7 個月，目標係「幾分鐘一個」。呢個唔係科幻——如果工業化生產同標準化設計真正落地，呢個速度係可以實現嘅。Taylor 引用 SpaceX 嘅比喻：如果 2010 年你話 SpaceX 最終會每隔幾日射一次火箭，人都會話你癲咗。</p>
+
+<p class="section-title">4. 垂直整合——唔係無辦法，而係核心護城河</p>
+
+<p>呢部分係所有做 hard tech 嘅創業者應該細讀嘅。Taylor 話供應鏈對於核能公司嚟講基本上係崩潰嘅：傳統供應商報價離譜、交貨期長到完全唔符合 startup 嘅節奏。</p>
+
+<p>一個例子：反應堆保護系統，傳統供應商報價 <span class="data-point">$500 萬美元</span>，交貨期 <span class="data-point">2.5 年</span>。Valar 決定自己做，結果 6 個星期、<span class="data-point">$40 萬美元</span>就搞掂咗。</p>
+
+<blockquote>
+「Everywhere in nuclear is like this. There are totally fake costs from an industry that is just totally anemic. It doesn't know how to build anything anymore.」
+<span class="attr">— Isaiah Taylor, 00:46:12</span>
+</blockquote>
+
+<p>呢個現象唔單止係價格問題——佢反映咗美國核能供應鏈嘅系統性萎縮。四十年嘅空白期令到成個生態系統失去咗實際建造嘅能力，所有報價都係基於理論而非實際生產。</p>
+
+<blockquote>
+「We are willing to verticalize anything that is necessary on our path to scale… The company that figures out how to do all of that complexity at scale and at pace is going to win.」
+<span class="attr">— Isaiah Taylor, 00:40:37</span>
+</blockquote>
+
+<p class="section-title">5. NVIDIA Blackwell 直接連上反應堆——核能 AI 芯片誕生</p>
+
+<p>呢個係成集最 iconic 嘅 moment。Valar 將一張 NVIDIA Blackwell GPU 直接連接到 Ward 250 反應堆，成為人類史上第一個由原子分裂直接驅動嘅 AI 芯片。</p>
+
+<blockquote class="strong">
+「We powered the first ever AI chip powered by a nuclear reactor. So we took an NVIDIA Blackwell. Super grateful to them for providing the system to us. And we connected it directly to our nuclear reactor.」
+<span class="attr">— Isaiah Taylor, 00:35:04</span>
+</blockquote>
+
+<p>呢個動作嘅象徵意義遠遠大過技術價值：佢展示咗 AI 同核能係天然嘅結合——運算係吞電怪獸，而核能係目前唯一可以大規模供應無碳基載電力嘅來源。當全世界嘅 hyperscaler 搶緊核電協議（Amazon 買 Talen、Google 買 Kairos），Valar 通過呢個 stunt 向市場發出信號：我哋唔係紙上談兵，我哋已經喺度做緊。</p>
+
+<p class="section-title">6. 經濟學：能源價格即一切價格</p>
+
+<p>Taylor 最後用一個深刻嘅經濟觀察收尾。當 AI 同機器人可以做到半自主製造，成品嘅價格就會收斂到「生產佢所用嘅能源價格」。換句話講，能源成本將成為所有嘢嘅成本基礎。</p>
+
+<blockquote>
+「When we figure out AI and robotics that allows us to do semi-autonomous manufacturing, energy will become the cost of all things. The cost of buying a thing will become the cost of energy used to make it.」
+<span class="attr">— Isaiah Taylor, 01:00:21</span>
+</blockquote>
+
+<p>呢個論述同 Buckminster Fuller 嘅「ephemeralization」概念同源——技術進步令到做更少可以產出更多，而最終嘅限制性輸入就係能量。如果 Valar 可以將核能成本降至現有技術嘅 <span class="data-point">1/10</span>，而且係 scalable 嘅 1/10，咁就唔只係能源工業嘅革命，而係成個物質文明嘅成本重構。</p>
+
+<p class="section-title">7. 投資策略——用 Equity 賭賽道</p>
+
+<p>大部分核能 startup 嘅死法係：早期試圖吸引 project finance 或債務融資，結果陷入 chicken-and-egg 循環 ── 無建成反應堆＝無 revenue＝無 bank 肯借錢＝無錢建反應堆。Valar 嘅策略係直接用 venture equity 去建反應堆，用「建成」呢個事實去解鎖下一輪融資嘅完全唔同條款。</p>
+
+<blockquote>
+「We are willing to go build reactors on equity balance sheet because that's going to allow us to prove it years ahead of anybody else… Where our competitors are still trying to convince fundamentally risk-averse financers to finance a project. We will be on our fifth reactor.」
+<span class="attr">— Isaiah Taylor, 00:50:07</span>
+</blockquote>
+
+<p>呢個邏輯同 SpaceX 早期「自己射自己的火箭」一模一樣。當你做嘅嘢太新，傳統金主係永遠唔會買單嘅，唯一方法係用風險資本證明可行性，然後先回頭撬動傳統融資。</p>
+
+<p class="section-title">8. Gigasite 策略：先建電力，負荷自然會來</p>
+
+<p>傳統核電項目嘅開發模式係：先同 hyperscaler 或者電力公司簽約，然後先開始建造。但呢個模式引入大量 counterparty risk 同時間線風險。Valar 嘅做法係 inverted——先建功率規模，然後等數據中心自己過來。</p>
+
+<blockquote>
+「If I have a gigawatt of power with land and fiber, is someone going to put a data center there? It's like, yes, absolutely.」
+<span class="attr">— Isaiah Taylor, 00:51:40</span>
+</blockquote>
+
+<p>呢個策略好大膽：你需要喺需求確認之前投入大量資金，但一旦真係建好咗，你就有定價權同議價能力。考慮到而家 AI 數據中心對電力嘅渴求程度——全球數據中心耗電預計 2026-2030 年間翻倍——呢個 bet 可能比想像中安全。</p>
+
+<p class="section-title">關鍵數據點</p>
+
+<ul>
+  <li>🇺🇸 Valar 嘅 Ward 250 係自 2000 年以來美國第五個新核能發電裝置，係歷史上唯一由私營初創公司成功建造並運行的核反應堆</li>
+  <li>⏱️ 公司成立到首次 atom split：<span class="data-point">2 年 4 個月</span>；首次到第二次 split：<span class="data-point">7 個月</span></li>
+  <li>💲 反應堆保護系統：外部報價 $5M/2.5 年 vs 內部自建 $400K/6 週——成本相差 <span class="data-point">12.5x</span>，速度相差 <span class="data-point">20x</span></li>
+  <li>⚡ NVIDIA Blackwell 首次由活體核反應堆直接供電</li>
+  <li>☢️ Three Mile Island：零死亡、零受傷、公眾零輻射劑量——但導致美國核工業停擺四十年</li>
+  <li>💀 核能按單位能源嘅死亡率比太陽能更低（太陽能安裝導致屋頂墜落死亡）</li>
+  <li>🏭 Valar 使用 Triso 燃料球（graphite-based）而非傳統水冷設計</li>
+  <li>📐 目標核能成本降至傳統核能的 <span class="data-point">1/10</span></li>
+</ul>
+
+<p class="section-title">行業影響</p>
+
+<p>呢集 No Priors 嘅出現時機好有意義。正當全球 hyperscaler（Amazon、Google、Microsoft）爭相搶購核電協議，而 Everyone else 仍然喺度做「paper reactor」之際，Valar 用一個活體反應堆證明咗可行性嘅同時，仲重新定義咗行業嘅 speed benchmark。</p>
+
+<p>最值得留意嘅係 Taylor 反覆強調嘅「hardware iteration」vs「simulation industry」之分。呢個區分對我哋理解核能行業嘅真實格局極其重要：市場上大部分被稱為「nuclear startup」嘅公司，其實係模擬公司，未嘗真正建造過任何嘢。Valar 唔係唯一有技術實力嘅——但佢哋係唯一願意落手落腳砌嘅。</p>
+
+<p>呢種 mentality 同早期 SpaceX、早期 Tesla 完全一致。當所有人都話「呢個行唔通」，有人真係做咗，然後發現阻力唔係嚟自物理定律，而係嚟自行業嘅惰性同錯誤嘅 incentive structure。</p>
+
+<blockquote class="strong">
+「I actually did not allow Valar Atomics to call ourselves a nuclear startup until… we are legitimately a nuclear company because we split atoms. Companies are what they do. Before that, we were a company that was planning to split an atom.」
+<span class="attr">— Isaiah Taylor, 00:36:54</span>
+</blockquote>
+
+<p>呢句說話可能係成集最有力嘅金句。佢唔止係品牌定位，而係一個哲學宣言：你唔係你做咗嘅嘢，而係你無資格自稱一個你未證明過嘅身份。</p>
+
+<p class="section-title">Contrarian 觀點</p>
+
+<p>當然，Valar 嘅路線唔係無風險嘅。Gigasite 策略需要嘅前期資本極大；EO 14301 係行政令，可能因為政治變化而失效；DOE 測試路徑嘅 scalability 仲未經考驗——測試許可不等於商業部署許可；Ward 250 嘅功率規模（~25MW）離 gigawatt 級數據中心所需仲有好大距離。</p>
+
+<p>但 Taylor 嘅核心論點——核能行業最大嘅問題係唔夠實幹——幾難反駁。喺一個四十年無真正創新嘅行業入面，任何願意落手做嘅人都會有好大嘅先行者優勢。</p>
+
+<hr>
+
+<footer>
+  <p>深度復述 · 2026-07-17</p>
+  <p>來源：<a href="https://www.youtube.com/watch?v=5Xvbq_zvOQ4">No Priors — How Nuclear Will Unlock Energy Abundance with Valar Atomics Founder Isaiah Taylor</a></p>
+  <p>JMOKSZ / ai-podcast-collection · 每日自動掃描 · Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>
