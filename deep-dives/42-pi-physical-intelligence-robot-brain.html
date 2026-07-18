@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Physical Intelligence Pi：機器人嘅 GPT 時刻——從 π0 到 π0.7 的強化學習革命</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  a { color: #8b6f4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1rem; }
+    header h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="https://jmoksz.github.io/ai-podcast-collection/">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">张小珺商业访谈录 · #146</div>
+  <h1>Physical Intelligence Pi：機器人嘅 GPT 時刻</h1>
+  <p>從 π0 到 π0.7 的強化學習革命、機器人江湖譜系同 50 億美元估值背後嘅技術信仰</p>
+  <div class="meta">
+    <span>📅 2026-07-18</span>
+    <span>⏱ 03:48:04</span>
+    <span>🎙️ 主持人：张小珺</span>
+    <span>🧑‍🔬 嘉賓：柯丽一鸣（Kay Ke）</span>
+  </div>
+  <div style="margin-top: 0.8rem;">
+    <span class="tag">#机器人</span>
+    <span class="tag">#PhysicalIntelligence</span>
+    <span class="tag">#强化学习</span>
+    <span class="tag">#π0</span>
+    <span class="tag">#VLA</span>
+  </div>
+</header>
+
+<p>呢期節目係一張完整嘅機器人行業地圖。4 個鐘頭嘅對話，從創業江湖譜系到技術路線分歧，從 π 系列模型進化到強化學習嘅關鍵作用，從矽谷投資圖譜到中國機器人產業嘅追趕路徑。唔係普通訪談——係一個行業嘅底層切片。</p>
+
+<p>本文係深度萃取，目標係你讀完唔使再聽。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">一、嘉賓：一個寫小說嘅機器人科學家</h2>
+
+<p>柯丽一鸣（Kay Ke）唔係典型嘅 AI 研究員。佢從編程競賽起步，到 UW 攻讀博士，師從 Siddhartha Srinivasa——操作機器人領域最有影響力嘅人物之一。博士論文題目係《Data-Driven Fine Manipulation》，專門解決佢所謂嘅「最後一毫米」問題：用筷子呢類需要人類級靈巧度嘅任務。</p>
+
+<p>博士期間佢喺 Meta AI（FAIR）、Microsoft Research、Google Search 做過研究實習，被選為 EECS Rising Star——一個標誌早期職業研究員為未來領袖嘅獎項。</p>
+
+<p>然後佢做咗一個好多人唔明嘅決定：放棄劍橋大學教職，加入一間當時只有 20 人嘅創業公司 Physical Intelligence。</p>
+
+<blockquote>「佢在科研之餘，追求在工作和人文表達之間找到平衡，所以業餘時間她也會寫寫小說。這讓今天的聊天更有意思了。」<span class="attr">—— 张小珺</span></blockquote>
+
+<p>呢個細節唔止係花絮——佢暴露咗一個重要事實：Pi 吸引嘅唔係純技術人，而係一批有人文底蘊、願意從零開始解決極難問題嘅「通才」。呢種人才密度，可能係 Pi 嘅真正護城河。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">二、Pi 嘅融資神話：兩年 50 億美元</h2>
+
+<p>Physical Intelligence 由 Karol Hausman 創立，Sergey Levine（RL 領域引用最高嘅學者之一，Google Scholar 超 23 萬次）共同創立。2024 年成立，同年 11 月完成 $4 億 A 輪，估值 $20 億，由 Jeff Bezos、OpenAI Startup Fund、Thrive Capital、Lux Capital 領投。2025 年底 $6 億 B 輪（估值 $56 億），CapitalG（Alphabet 嘅成長基金）領投。截至 2026 年初，傳聞緊新一輪 $10 億，估值衝擊 <span class="data-point">$110 億</span>。</p>
+
+<p>「部分業界人士對 Pi 嘅期望係，成為機器人領域嘅 OpenAI。」——呢句唔係 PR 口號。Pi 嘅路線確實最似 OpenAI 早期：先做大模型（機器人嘅「GPT」），再考慮商業化。但佢哋揀咗開源，同 OpenAI 嘅封閉路線相反。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">三、機器人江湖譜系：三派分立</h2>
+
+<p>節目最大嘅貢獻之一，係畫咗一張全球機器人研究嘅清晰地圖。柯丽一鳴將行業分為三大門派：</p>
+
+<div class="highlight-box">
+<h3>🏛️ 第一派：大模型派（Pi 嘅路線）</h3>
+<p>用大規模預訓練統一機器人行為，核心信念係「用大模型做機器人」——唔係手寫每個動作嘅控制代碼，而係讓模型從數據中學習通用行為。類似 GPT 在語言領域嘅路徑。</p>
+
+<h3>⚙️ 第二派：控制論派（波士頓動力代表）</h3>
+<p>手寫控制算法、精確力控、基於經典機器人學嘅數學模型。呢條路效果好、可解釋性強，但無法規模化——每個新任務都需要重寫控制邏輯。</p>
+
+<h3>🎓 第三派：學術派（Stanford、CMU 等）</h3>
+<p>介乎兩者之間，專注特定場景嘅研究突破，但缺乏工業化嘅規模效應。</p>
+</div>
+
+<p>呢個三分框架好有用——唔止幫你理解 Pi 嘅競爭定位，更能解釋點解 Figure AI、1X、Tesla Optimus 各自揀咗唔同嘅技術路徑。每間公司嘅路線選擇，本質上係一個賭注：賭通用大模型會先成熟，定係垂直場景專用方案會更快商業化。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">四、π 系列模型進化：從 π0 到 π0.7</h2>
+
+<p>呢 part 係節目嘅技術核心。Pi 嘅模型迭代路線貢獻咗一條清晰嘅進化線索：</p>
+
+<h3 class="sub-title">π0（2024 年 10 月）</h3>
+<p>Vision-Language-Action（VLA）flow model，用 diffusion/flow-matching 生成連續機器人動作。核心突破：一個通用策略同時控制多種機器人形態（embodiments），跨多樣任務。開源到 OpenPI repository。</p>
+
+<h3 class="sub-title">π0.5（2025 年）</h3>
+<p>擴展泛化能力——用異質數據源的協同訓練實現開放世界泛化，讓機器人執行實驗室以外嘅真實世界任務。核心突破：從「特定場景」到「開放世界」。</p>
+
+<h3 class="sub-title">π*0.6</h3>
+<p>引入更複雜嘅推理能力，提升任務完成嘅自主性。柯丽一鳴形容為「從 roughly correct 走向 precisely right 嘅關鍵一步」。</p>
+
+<h3 class="sub-title">π0.7（節目後發布）</h3>
+<p>最新一代，核心創新係「統一模型」——唔需要後訓練就可以達到之前需要後訓練嘅通用能力水平。關鍵驅動力：架構創新 + 大量自主 rollout 數據。</p>
+
+<blockquote>「π0.7 嘅統一模型設計意味著——以前需要先訓練一個 base policy，再 fine-tune 到特定任務；而家一個模型直接搞掂，因為佢嘅自主 rollout 數據已經覆蓋咗足夠多嘅場景變異。」</blockquote>
+
+<h3 class="sub-title">RL Token（RLT）：最關鍵嘅技術貢獻</h3>
+<p>柯丽一鳴最引以為傲嘅工作，唔係 π 系列本身，而係 RL Token。RLT 解決一個具體但致命嘅 gap：點樣將一個通用 VLA 模型快速專業化到精確操作場景？傳統方法需要數週甚至數月嘅真實世界數據收集；RLT 嘅方案係——從 VLA 模型中提取一個緊湊表徵，然後用一個小型 RL 模塊進行快速微調，只需要數小時嘅真實世界訓練數據。</p>
+
+<p>呢個貢獻嘅意義遠超技術層面：佢證明了 RL 同模仿學習唔係替代關係，而係互補——VLA 模型提供「大約正確」嘅行為基礎，RL 提供「精確正確」嘅微調能力。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">五、強化學習：唔係有冇用，而係點樣用</h2>
+
+<p>柯丽一鳴對 RL 嘅態度直接得嚟有力：</p>
+
+<blockquote class="strong">「仲喺度質疑 2026 年強化學習對機器人有冇用？答案早已經好清楚。只係目前嘅方法仲未夠成熟。」</blockquote>
+
+<p>佢指出一個行業性誤區：當前主流範式（2023 年後）係收集大量示範數據，用行為克隆（behavioral cloning）訓練 VLA 模型。呢條路可以快速見到效果，但唔足夠。真正嘅突破需要：</p>
+
+<ul>
+  <li><strong>評估數據遠超示範數據</strong>——機器人自己探索過程中產生嘅數據，先係真正提升能力嘅關鍵。</li>
+  <li><strong>好的 prior 係 RL 嘅起點</strong>——從 VLA 嘅 learned representation 開始做 RL，比起從零開始快幾個數量級。</li>
+  <li><strong>RL 嘅難度被低估</strong>——唔係因為 RL 理論有問題，而係而家嘅方法仲好粗糙。</li>
+</ul>
+
+<p>呢個論點呼應咗 Eric Jang（Dwarkesh Podcast，我哋 #5 深度復述）關於 AlphaGo 自我對弈嘅核心理念：從模仿學習到 RL 嘅跨越，就似 AlphaGo 從監督學習到自我對弈嘅飛躍。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">六、行業洞察：荒謬、秩序與未來</h2>
+
+<h3 class="sub-title">「做機器人而家幾乎係荒謬嘅」</h3>
+<p>柯丽一鳴用一個非常精準嘅詞形容行業現狀：Absurd。每個關節都不成熟、需要研發；每個方向嘅人都可以自己開公司。供應鏈每個環節都有缺口——想做機器人，結果變成自己做摩打、自己做傳感器、自己做電池。行業缺乏標準化，一切都要從頭開始。</p>
+
+<blockquote>「一個穩定嘅行業，每個人專注每個方向都可能自己開公司。好多嘢我哋寧願外判俾上下游夥伴，但而家機器人鏈條每個環節都有缺口。我哋只能頂硬上。」</blockquote>
+
+<h3 class="sub-title">開放感知：被低估嘅瓶頸</h3>
+<p>柯丽一鳴嘅背景係精細操作，呢個背景令佢對「可觀測性」特別敏感。佢直接指出：</p>
+
+<blockquote>「而家機器人嘅感知系統好差。好多任務人類一眼睇清楚就可以輕鬆執行，機器人完全做唔到。精度差到令人沮喪。睇返歷史，active perception 可能係突破點。」</blockquote>
+
+<p>呢個論點好有意思——當所有人關注 AI 模型、訓練數據、計算資源時，真正嘅 bottleneck 可能係最基礎嘅感知能力。冇好嘅感知，再好嘅模型都係盲人摸象。</p>
+
+<h3 class="sub-title">開源嘅權衡</h3>
+<p>同一般矽谷 startup 唔同，柯丽一鳴對開源嘅態度係「支持但不盲從」：</p>
+
+<blockquote>「我支持開源，但唔主張盲目開源所有嘢。全部開源其實係浪費精力。開源係分享，但都係一個燙手山芋：耗時、費力、回報不確定，尤其係而個行業噪音咁多嘅時候。」</blockquote>
+
+<p>呢個觀點喺 Pi 整體開源策略嘅背景下特別有意思——Pi 選擇開源機器人「大腦」，但唔見得會開源所有細節。呢種選擇性開源，可能係未來機器人領域嘅主流。</p>
+
+<h3 class="sub-title">最後一公里嘅人文關懷</h3>
+<p>當被問到做機器人嘅初心，柯丽一鳴嘅答案出乎意料地溫暖：</p>
+
+<blockquote class="strong">「我最初做機器人嘅動機好簡單：我想用技術俾喜歡獨處同內向嘅人一種自由——唔使依賴他人、唔使被迫依靠任何人就能好好生活嘅自由。」</blockquote>
+
+<p>呢個願景跨越咗商業化、技術突破、行業競爭——回歸到技術本質嘅人文意義。從日常家務、定制製造，到用機器人集群創造「賽博朋克田園詩」，技術發展可以讓人更加自由。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">七、前後脈絡：張小珺嘅機器人三部曲</h2>
+
+<p>呢期 #146 係張小珺嘅第三期機器人節目。之前何小鵬（#143）講小鵬 Iron 人形機器人嘅誕生；關於數據產業嘅綜述（#134）。而呢期首次深入矽谷原生機器人創業公司嘅技術細節——從「旁觀大公司」切換到「深入創業一線」嘅視角。</p>
+
+<p>呢三集加埋，實際上構成咗一個完整的機器人行業全景圖：從中國大廠嘅人形機器人嘗試，到數據產業嘅基礎設施，再到矽谷最先進嘅通用機器人技術路線。如果你只想聽三集來理解 2026 年機器人行業嘅全貌，呢三集就係最佳選擇。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">八、我的洞見：什麼才是「機器人 GPT 時刻」？</h2>
+
+<p>聽完呢期節目，有一個關鍵問題值得深思：Pi 嘅路徑到底係咪真係機器人嘅「GPT 時刻」？</p>
+
+<p>有啲似，有啲唔似。似嘅係：Pi 嘅通用 VLA 模型路線，正正係 LLM 領域從 BERT/GPT 小模型到大模型嘅演化翻版——先做大統一模型，再考慮 specialization。唔似嘅係：機器人嘅「數據」問題遠比語言複雜——語言數據喺互聯網上無限供應，但機器人操作數據需要真實物理世界嘅採集、昂貴嘅硬件成本、同埋無法用純模擬替代嘅物理真實性。</p>
+
+<p>但有一點可以肯定：RL 嘅深化應用，係解開呢個困局嘅關鍵。柯丽一鳴嘅 RL Token 證明了從 VLA 到高精度操作嘅橋樑可以好短（數小時 vs 數月）。如果呢條路徑被進一步驗證，2027-2028 年可能會見到機器人領域嘅「GPT-3 時刻」——唔係模型規模上嘅突破，而係 RL-driven self-improvement 帶來嘅能力飛躍。</p>
+
+<p>另一個值得注意嘅訊號：Pi 嘅選擇性開源策略。如果 Pi 嘅「機器人大腦」成為業界標準，類似 Android 在手機領域嘅角色，咁未來的機器人行業將被「通用大腦 + 專用硬件」嘅生態所統治。呢個模型對比 Tesla Optimus 嘅封閉路線、Figure AI 嘅垂直整合路線，將會係未來三到五年嘅核心競爭。</p>
+
+<hr>
+
+<footer>
+  <p>📝 本文由 Vee Mok 深度萃取</p>
+  <p>🎙️ 來源：<a href="https://www.xiaoyuzhoufm.com/episode/6a57a05da4972c496dfc67f1">小宇宙 · 张小珺商业访谈录 #146</a></p>
+  <p>📄 補充來源：<a href="https://chinaresearchcollective.substack.com/p/exclusive-interview-with-physical">China Research Collective 英文翻譯（許華哲訪談版）</a></p>
+  <p>🕐 生成時間：2026-07-18 UTC</p>
+</footer>
+
+</div>
+</body>
+</html>

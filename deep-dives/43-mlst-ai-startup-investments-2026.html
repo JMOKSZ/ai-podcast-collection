@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · AI 初創投資 2026：模型層窗口關閉，應用層理性回歸</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  a { color: #8b6f4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1rem; }
+    header h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="https://jmoksz.github.io/ai-podcast-collection/">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">Machine Learning Street Talk · Episode 255</div>
+  <h1>AI 初創投資 2026：模型層窗口已關</h1>
+  <p>從「模型狂熱」到「應用理性」——ML 研究者視角嘅 VC 市場全景掃描</p>
+  <div class="meta">
+    <span>📅 2026-07-01</span>
+    <span>🎙️ Tim Scarfe · Keith Duggar · Connor Leahy · Yannic Kilcher</span>
+  </div>
+  <div style="margin-top: 0.8rem;">
+    <span class="tag">#VC</span>
+    <span class="tag">#AI投资</span>
+    <span class="tag">#创业</span>
+    <span class="tag">#开源模型</span>
+    <span class="tag">#垂直AI</span>
+  </div>
+</header>
+
+<p>呢期 Machine Learning Street Talk 由一群真正 understanding AI 嘅研究者討論 AI 初創投資。佢哋唔係 VC，冇 portfolio bias，冇 deal flow 需要推銷。佢哋係從技術第一性原理出發，用研究者嘅眼光解剖 VC 市場。</p>
+
+<p>結果係一期少見嘅「AI 投資底層邏輯」課程——啱啱好係半年後今日（2026 年 7 月），我哋可以對照 Kimi K3、Codex 7M、Opus 4.8 等事件來驗證呢班人半年前嘅判斷有幾準。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">一、核心論點：模型層嘅窗口已經關閉</h2>
+
+<p>呢個係全期最重要嘅判斷。MLST 團隊嘅看法清晰得冇得再清晰：</p>
+
+<blockquote class="strong">「基礎模型層嘅窗口基本關閉。新進入者無法與 OpenAI、Anthropic、Google、DeepSeek 競爭。」</blockquote>
+
+<p>半年後回頭睇，Kimi K3（#39 深度復述）嘅發布並冇推翻呢個判斷——Moonshot 係一個特殊案例，因為佢哋從 Kimi K1.5 時代已經係 frontline player。新嘅第三梯隊想從零做起一個 foundation model，成本已經貴到冇可能。</p>
+
+<p>原因唔止係資金門檻（一個 frontier model 嘅訓練成本已經到 <span class="data-point">$1B+</span>），更加係人才壁壘——全球有能力訓練 frontier model 嘅團隊唔超過五個。就算你係 Google Brain 出身，冇 3-5 年嘅積累都做唔到。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">二、最大機會：垂直行業專用 AI</h2>
+
+<p>模型層窗口關閉之後，錢會流向邊度？MLST 嘅答案清晰：醫療、法律、金融、生物技術——呢啲領域嘅專用 AI。</p>
+
+<div class="highlight-box">
+<h3>📊 2026 年 AI 投資熱點矩陣</h3>
+<ul>
+  <li><strong>醫療 AI</strong>：FDA 審批門檻高，但一旦突破壁壘極深。數據私有化 advantage 明顯。</li>
+  <li><strong>法律 AI</strong>：文書工作的自動化空間巨大，但需要解決「責任歸屬」問題。</li>
+  <li><strong>金融 AI</strong>：量化交易 + 風險管理 + 合規審查，每個子領域都係百億美元市場。</li>
+  <li><strong>生物技術 AI</strong>：藥物發現 + 蛋白質設計，過去兩年已有 AlphaFold 級別嘅突破。</li>
+</ul>
+</div>
+
+<p>呢個判斷嘅底層邏輯係：通用模型已經夠好，但佢哋唔 understand 行業。你需要一個 domain-specific 嘅系統，唔係一個更好嘅 general model。呢個 domain knowledge + data moat 嘅組合，係當今 AI startup 最有價值嘅護城河。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">三、一個關鍵轉向：從 Benchmark 到 Harness</h2>
+
+<p>Tim Scarfe 嘅一個觀點特別有前瞻性：</p>
+
+<blockquote>「投資者需要理解嘅係，唔係邊個模型『最好』，而係邊個 harness/生態系統能讓企業真正部署 AI。純模型能力 benchmarking 嘅時代已經過去。」</blockquote>
+
+<p>呢個判斷喺半年後的今天（2026 年 7 月）得到咗完美驗證。AIEWF 2026（#35 深度復述）嘅五大趨勢中，「Harness Engineering」被列為第一大趨勢——圍繞模型嘅系統遠比模型本身更重要。Satya Nadella 喺 Build 2026 嘅演講（#25）亦係同一個方向：私有評估即 IP，多模型 Harness 取代單一模型策略。</p>
+
+<p>MLST 比主流市場早半年睇到呢個轉向——呢個正正係「ML 研究者視角」嘅價值所在：佢哋唔係睇 market trend，而係睇技術演化嘅內在邏輯。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">四、開源模型嘅商業模式革命</h2>
+
+<p>MLST 對開源模型嘅分析，今日睇返更加當頭棒喝：</p>
+
+<p>「開源模型的崛起改變了初創的商業模式——不是賣模型，而是賣服務/數據/管道。」</p>
+
+<p>呢個論點今日嘅最強證據係 Kimi K3：Moonshot 開源 2.8T 模型權重，但佢哋嘅商業模式唔係賣模型，而係賣企業 API（$3/1M input 定價）、賣私有化部署方案、賣 inferencing 優化工具。模型只係引流工具，真正嘅 revenue 來自圍繞模型嘅 infrastructure。</p>
+
+<p>呢個模式其實同 Red Hat 賣 Linux 支援嘅邏輯一樣——開源軟件本身免費，但企業願意為穩定性、安全性、SLA 付款。MLST 半年前就點破咗呢點。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">五、地區格局：美國仍領先，但差距收窄</h2>
+
+<p>MLST 討論咗歐洲同亞洲嘅 AI 投資生態追趕：</p>
+
+<ul>
+  <li><strong>歐洲</strong>：監管領先但資本落後。GDPR 限制了數據 moat 嘅建立，但同時創造咗 privacy-preserving AI 嘅賽道。</li>
+  <li><strong>亞洲（特別是中國）</strong>：應用層快速追趕，Kimi K3 係證明。但基礎科研差距仍大。</li>
+  <li><strong>美國</strong>：模型層 + 人才層嘅雙重統治短期內唔會動搖。</li>
+</ul>
+
+<p>半年後的今天，中國嘅 AI 創業生態比 MLST 半年前描述嘅更加成熟。唔止 Moonshot，仲有 StepFun Flash、GLM-5、MiniMax M2.5 等一批追趕者。但 MLST 嘅核心判斷——美國喺 frontier model 層面仍領先——依然成立。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">六、2026 年中回頭驗證：MLST 嘅命中率</h2>
+
+<p>等我哋用目前已知嘅事實，做一次「回溯性驗證」：</p>
+
+<div class="highlight-box">
+<h3>✅ 命中：</h3>
+<ul>
+  <li>模型層窗口關閉 ✔️——2026 年冇新玩家成功進入 frontier model 競爭</li>
+  <li>Harness > Model ✔️——AIEWF 2026 第一趨勢確認</li>
+  <li>開源改變商業模式 ✔️——Kimi K3、Bonsai 27B 等開源模型嘅商業策略驗證</li>
+  <li>垂直 AI 成主力 ✔️——法律、醫療、金融 AI startup 融資額持續增長</li>
+</ul>
+<h3>⚠️ 低估：</h3>
+<ul>
+  <li>Codex/Cursor 等 Coding Agent 嘅爆發速度——7M 活躍用戶、2.5x/週增長，呢個規模超出所有人預期</li>
+  <li>Kimi K3 嘅「DeepSeek 時刻」——中國開源模型追趕速度比預期更快</li>
+  <li>核能 + AI（Valar Atomics）呢個賽道——半年後 NVIDIA Blackwell 芯片由核反應堆直接供電</li>
+</ul>
+</div>
+
+<p>總體來說，MLST 嘅核心判斷 alpha 好高。佢哋輸喺細節（增長速度、中國追趕超預期），但贏喺框架——而呢個框架喺半年後的今天依然係最有用嘅投資思考框架之一。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">七、ML Street Talk 嘅獨特價值</h2>
+
+<p>喺所有 AI 播客中，MLST 係最接近「學術研討會」氣質嘅一個。Tim Scarfe（PhD）、Keith Duggar（MIT PhD）、Connor Leahy（EleutherAI 創始人）、Yannic Kilcher 呢個組合令到討論有深度嘅同時保持爭議性——佢哋唔怕得罪人，唔怕講政治唔正確嘅判斷。</p>
+
+<p>呢種風格嘅代價係收聽門檻高——如果你唔係呢個領域嘅從業者，可能會覺得佢哋太 technical。但回報亦高：佢哋嘅判斷唔係來自 market analysis，而係來自對技術演化內在邏輯嘅理解。呢種 perspective 喺 VC 主導嘅 AI 討論中極其稀缺。</p>
+
+<p>呢期 #255 特別適合：半年後今日對照驗證。因為佢唔係預測股價，而係預測技術結構嘅演化方向——而技術結構嘅演化，往往比市場預測更容易驗證。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">八、我的洞見：投資者該點樣用呢個框架？</h2>
+
+<p>聽完 MLST #255，我認為最有用嘅唔係佢哋嘅具體判斷，而係個思考框架：</p>
+
+<ol>
+  <li><strong>用技術演化邏輯替代市場情緒</strong>——唔好問「呢條賽道熱唔熱」，而係問「技術嘅內在演化邏輯指向邊條路徑」。</li>
+  <li><strong>識別不可逆轉嘅趨勢</strong>——模型層窗口關閉、開源改變商業模式、Harness 價值超越模型——呢啲係 irreversible。</li>
+  <li><strong>喺 consensus 形成前出手</strong>——2026 年 1 月 MLST 講嘅「Harness > Model」喺 2026 年 7 月已經係 consensus。如果你等到 consensus 先出手，已經冇 alpha 了。</li>
+</ol>
+
+<p>最後一條建議：留意 MLST 嘅觀點，但唔好直接複製。佢哋係研究者視角——可以睇到 100 米遠，但缺乏對市場時機嘅敏感度。你需要用自己嘅判斷補上「timing」呢個維度。</p>
+
+<hr>
+
+<footer>
+  <p>📝 本文由 Vee Mok 深度萃取</p>
+  <p>🎙️ 來源：Machine Learning Street Talk · Episode 255（2026-07-01）</p>
+  <p>📄 補充驗證資料：2026 年 7 月 AI 播客日報系列</p>
+  <p>🕐 生成時間：2026-07-18 UTC</p>
+</footer>
+
+</div>
+</body>
+</html>
