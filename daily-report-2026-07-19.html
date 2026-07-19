@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度萃取日报 — 2026-07-19</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;
+    background: #faf8f5;
+    color: #2c2c2c;
+    line-height: 1.8;
+    font-size: 16px;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+  .header {
+    text-align: center;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #e5ddd5;
+    margin-bottom: 36px;
+  }
+  .header h1 { font-size: 24px; font-weight: 700; color: #1a1a1a; }
+  .header .meta { font-size: 14px; color: #8a8078; margin-top: 6px; }
+  .header .meta span { margin: 0 10px; }
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 40px 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #d4c9bf;
+    color: #1a1a1a;
+  }
+  .podcast-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 32px 0 8px;
+    color: #444;
+  }
+  .podcast-name .host { font-weight: 400; font-size: 14px; color: #8a8078; }
+  .episode {
+    margin: 24px 0;
+    padding: 20px 24px;
+    background: #fffcf9;
+    border-left: 3px solid #c4b5a8;
+    border-radius: 0 8px 8px 0;
+  }
+  .episode-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .episode-title .icon { margin-right: 6px; }
+  .episode-meta { font-size: 13px; color: #8a8078; margin-bottom: 14px; }
+  .block-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b5d52;
+    background: #ede6de;
+    padding: 1px 10px;
+    border-radius: 3px;
+    margin: 10px 0 4px;
+    letter-spacing: 0.5px;
+  }
+  .episode p { margin: 6px 0; text-align: justify; }
+  .episode ul { margin: 6px 0 6px 20px; }
+  .episode li { margin-bottom: 4px; text-align: justify; }
+  .episode blockquote {
+    margin: 10px 0;
+    padding: 10px 16px;
+    background: #f5f0ea;
+    border-left: 3px solid #b8a99a;
+    font-style: italic;
+    color: #4a4038;
+    border-radius: 0 4px 4px 0;
+  }
+  .episode blockquote p { margin: 0; }
+  hr.sep {
+    margin: 32px 0;
+    border: none;
+    border-top: 1px dashed #ddd5cc;
+  }
+  .footer {
+    text-align: center;
+    padding-top: 28px;
+    border-top: 1px solid #e5ddd5;
+    margin-top: 40px;
+    font-size: 13px;
+    color: #8a8078;
+  }
+  .highlight {
+    background: linear-gradient(180deg, transparent 60%, #f5eadd 60%);
+    padding: 0 2px;
+  }
+  .emoji-pill {
+    display: inline-block;
+    margin-right: 4px;
+  }
+  @media (max-width: 600px) {
+    body { padding: 20px 14px; font-size: 15px; }
+    .episode { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🎙️ AI 播客深度萃取</h1>
+  <div class="meta">
+    <span>📅 2026-07-19</span>
+    <span>⏱ 生成 02:03 UTC</span>
+    <span>🔍 10 檔播客</span>
+  </div>
+</div>
+
+<!-- ============== BULLET POINTS ============== -->
+<div style="background: #f5f0ea; padding: 20px 24px; border-radius: 8px; margin-bottom: 32px;">
+  <p style="font-size: 14px; font-weight: 600; color: #6b5d52; letter-spacing: 1px; margin-bottom: 10px;">📌 今日重點</p>
+  <ul style="margin-left: 18px;">
+    <li><strong>Kimi K3 繼續發酵</strong> — AI 界本週話題中心，Frontend Code Arena 中國首次超越美國，#3 DeepSWE 開源模型第一。Artificial Analysis 顯示前沿已從 2 個實驗室擴大到 6 個，Claude Fable 5 仍領先但差距縮小</li>
+    <li><strong>Databricks $188B Series M</strong> — 又一個超巨型融資，AI 基礎設施公司的估值天花板還在上升</li>
+    <li><strong>OpenRouter 或將被收購</strong> — Alex Atallah 的 keynote 暗示收購談判進行中</li>
+    <li><strong>硅谷101：SK海力士崛起史</strong> — HBM 如何卡住全球 AI 脖子，SK海力士納斯達克上市，市值破 $1T，一隻曾經的「苦生意」公司等來最黃金的時代</li>
+    <li><strong>硅谷101：Tokenmaxxing後Agent落地</strong> — 從堆Token轉向交付結果，探展 AWS 中國峰會，AI 短劇、量化回測、藥物研發工作流、遊戲開發等真實案例</li>
+    <li><strong>Dwarkesh：Adam Brown GR 廣義相對論</strong> — Google DeepMind Blueshift 負責人用通俗語言講清 GR 核心思想，並討論 AI 接近無實驗發現物理定律的程度（上次覆蓋本集，本次追蹤）</li>
+  </ul>
+</div>
+
+<!-- =================== 中文播客 =================== -->
+<h2 class="section-title">🇨🇳 中文播客</h2>
+
+<!-- 张小珺 -->
+<div class="podcast-name">张小珺商业访谈录 <span class="host">— 张小珺</span></div>
+
+<div class="episode">
+  <div class="episode-title"><span class="icon">🎙️</span>#146 對Physical Intelligence柯麗一鳴4小時訪談：Pi的開源模型研究，機器人的江湖、族譜與主角</div>
+  <div class="episode-meta">📆 2026-07-18 | 🎧 小宇宙 / Apple / Bilibili | ⏱ 4 小時</div>
+
+  <span class="block-label">📖 主題</span>
+  <p>深度對話 Physical Intelligence（Pi）聯合創始人柯麗一鳴，覆蓋 Pi 的開源機器人模型研究（pi0 系列）、全球機器人產業地圖、技術路線之爭、以及 Pi 如何看待自己的競爭格局。</p>
+
+  <span class="block-label">👤 嘉賓背景</span>
+  <p>柯麗一鳴（Lerrel Pinto），紐約大學助理教授，Physical Intelligence 聯合創始人之一。Pi 是 2024 年成立的機器人基礎模型公司，匯集了 Sergey Levine、Chelsea Finn 等頂尖學者，旨在打造通用機器人大腦。</p>
+
+  <span class="block-label">💡 核心論點</span>
+  <ul>
+    <li><strong>開源機器人模型的「ChatGPT 時刻」還遠</strong> — Pi 的策略是同時做開源研究（pi0 系列）和商業化閉源，通過開源建立生態，通過閉源解決實際部署問題。柯麗認為機器人領域尚未出現像 LLM 那樣的大一統模型架構。</li>
+    <li><strong>機器人「江湖」三分天下</strong> — 柯麗將機器人領域劃分為：傳統工業機器人（FANUC、ABB）、人形機器人（Tesla Optimus、Figure）、以及「通用機器人大腦」路線（Pi 的定位）。他認為第三條路最終會贏，因為硬件會持續便宜和標準化，但軟件才是真正的護城河。</li>
+    <li><strong>數據問題是最核心瓶頸</strong> — 與 LLM 有互聯網海量文本不同，機器人數據極其稀缺且昂貴。Pi 的解法是：利用合成數據+仿真遷移+少量真實數據微調。柯麗特別強調「機器人數據的 scaling law 尚未被證實」。</li>
+    <li><strong>Pi 的策略更像 Android 而非 iOS</strong> — 做開放平台，讓更多人可以在上面開發，而不是像 Figure 那樣做軟硬件一體封閉系統。</li>
+  </ul>
+
+  <span class="block-label">📊 關鍵數據</span>
+  <ul>
+    <li>pi0 模型系列在 5 個不同機器人平台上實現零樣本遷移</li>
+    <li>Pi 的訓練數據量在千萬級別（對比 LLM 的數萬億 token）</li>
+    <li>全球機器人初賽在 2025-2026 年融資總額超過 $5B（估計）</li>
+    <li>機器人部署成本目前仍遠高於人類勞動力，但曲線在加速下降</li>
+  </ul>
+
+  <span class="block-label">💬 重點引用</span>
+  <blockquote><p>「機器人領域現在最缺的不是更好的硬件，而是一個能讓所有機器人共享的『大腦』。我們今天造的每一個機器人都要從頭訓練，這太荒謬了。」</p></blockquote>
+  <blockquote><p>「開源對我們來說不是慈善，是策略。我們需要更多的數據、更多的場景、更多的反饋。開源是最好的方式讓整個生態幫你解決這個問題。」</p></blockquote>
+
+  <span class="block-label">🔧 技術詳情</span>
+  <ul>
+    <li>pi0 使用視覺-語言-動作（VLA）架構，基於預訓練視覺編碼器 + 小型語言模型 + 動作解碼器</li>
+    <li>訓練策略：先在仿真大規模預訓練，再在真實機器人上做少量微調</li>
+    <li>視覺編碼層採用了 DINOv2 預訓練權重，語言部分使用了開源 LLM</li>
+    <li>動作空間設計為「殘差動作預測」，相比直接預測原始扭矩更穩定</li>
+  </ul>
+
+  <span class="block-label">🌐 行業 Insight</span>
+  <ul>
+    <li>2026 年機器人領域出現了明顯的「開源 vs 閉源」路線分化，類似 2023 年的 LLM 格局</li>
+    <li>Pi 的開源策略可能改寫機器人行業生態：如果成功，將成為機器人領域的「Android」</li>
+    <li>中國機器人初賽（宇樹、星動紀元、銀河通用等）在硬件迭代速度上領先，但軟件平台能力仍落後美國</li>
+    <li>柯麗判斷：「機器人領域的 transformer moment 還沒有到來」</li>
+  </ul>
+</div>
+
+<!-- 硅谷101 -->
+<div class="podcast-name">硅谷 101 <span class="host">— 泓君 Jane</span></div>
+
+<div class="episode">
+  <div class="episode-title"><span class="icon">🎙️</span>一個荒誕又狗血的財閥故事：SK海力士崛起史</div>
+  <div class="episode-meta">📆 2026-07-17 11:56 UTC | 🎬 Bilibili | ⏱ 49:53</div>
+
+  <span class="block-label">📖 主題</span>
+  <p>SK海力士 7 月 10 日以 ADR 形式在納斯達克掛牌，融資 265 億美元，隨後市值突破 1 萬億美元。這期視頻深度追溯這家公司從一家紡織企業到「卡住全球 AI 脖子」的荒誕崛起史。</p>
+
+  <span class="block-label">👤 嘉賓</span>
+  <p>權小星，韓國高麗大學校長特別外事顧問</p>
+
+  <span class="block-label">💡 核心論點</span>
+  <ul>
+    <li><strong>HBM 不是偶然的技術押注，而是韓國政府+財閥+產業週期的產物</strong> — SK海力士的前身來自現代集團，經歷過政府主導的產業整合、債務危機（曾差點被美光收購）、存儲行業的反复洗牌，最後被 SK 接盤。HBM 的成功是 30 年苦熬的結果。</li>
+    <li><strong>存儲行業的「這次不一樣」魔咒</strong> — 市場相信 AI 將打破存儲行業的週期性，但歷史多次證明「每個人都相信這次不一樣，但每次都是一樣的」。</li>
+    <li><strong>SK海力士在 HBM 的領先不是靠革命性技術，而是靠工程執行力</strong> — 在量產、封裝（TSV）、散熱工藝上的持續微創新，讓它在 HBM3/HBM3E/HBM4 上持續領先三星。</li>
+    <li><strong>韓國財閥的權力遊戲</strong> — 背後牽扯 SK 集團會長崔泰源的 8 年天價離婚案，以及韓國政府、產業資本與家族權力交織的複雜歷史。</li>
+  </ul>
+
+  <span class="block-label">📊 關鍵數據</span>
+  <ul>
+    <li>SK海力士 NASDAQ 上市募資 265 億美元</li>
+    <li>市值突破 1 萬億美元，股價一年內上漲近 3 倍</li>
+    <li>HBM 市場格局：SK海力士約占 50%+，三星約 40%，美光約 10%</li>
+    <li>HBM3E 是 NVIDIA Blackwell 系列 GPU 的標配記憶體</li>
+    <li>SK海力士在 TSV（Through-Silicon Via）封裝良率已達業界最高水準</li>
+  </ul>
+
+  <span class="block-label">🌐 行業 Insight</span>
+  <ul>
+    <li>HBM 已成為 AI 算力的「命門」— 沒有足夠的高頻寬記憶體，再大的 GPU 集群也跑不起來</li>
+    <li>存儲晶片是典型的「苦生意」— 高資本開支、強週期性、薄利多銷。但 AI 改變了這個邏輯：HBM 的高附加值讓 SK海力士的利潤率創歷史新高</li>
+    <li>中國的長江存儲和長鑫存儲正在追趕，但差距仍然巨大</li>
+  </ul>
+</div>
+
+<div class="episode">
+  <div class="episode-title"><span class="icon">🎙️</span>Tokenmaxxing 後的理智與 Agent 落地｜探展亞馬遜雲科技中國峰會</div>
+  <div class="episode-meta">📆 2026-07-07 05:14 UTC | 🎬 Bilibili | ⏱ 35:02</div>
+
+  <span class="block-label">📖 主題</span>
+  <p>2026 年過半，AI 行業的關鍵詞正在從「堆 Token、做 Demo」轉向「交付結果」。在亞馬遜雲科技中國峰會現場，與一線產品和技術人員對話，探索 Agent 真正進入產業後的真實變化。</p>
+
+  <span class="block-label">💡 核心論點</span>
+  <ul>
+    <li><strong>AI 短劇正在被規模化驗證</strong> — 小說作者可以把故事變成 AI 短劇，整個製作流程從數月縮短到數天，成本降低 90%+</li>
+    <li><strong>自然語言量化回測</strong> — 普通投資者不再需要寫代碼，用自然語言就能做量化回測，這是金融民主化的典型案例</li>
+    <li><strong>藥物研發被打通成低門檻工作流</strong> — Agent 調度多個專業工具，讓藥物研發中的分子篩選等環節大幅提速</li>
+    <li><strong>不會寫代碼的人可以幾分鐘生成遊戲</strong> — 多 Agent 編排讓遊戲開發門檻降低到「會說話就行」</li>
+    <li><strong>雲廠商角色轉變</strong> — 不再只提供算力和模型，更承擔數據、工具鏈、部署、安全與驗證這些「把 AI 變成生產力」的基礎設施</li>
+  </ul>
+
+  <span class="block-label">📊 關鍵數據</span>
+  <ul>
+    <li>AI 短劇製作成本降低 90%+，交付週期從數月→數天</li>
+    <li>多 Agent 編排的遊戲開發已可在數分鐘內完成原型</li>
+    <li>亞馬遜雲科技中國峰會：展示從 5 層技術棧（算力→模型→數據→Agent→安全）的全棧 AI 能力</li>
+  </ul>
+
+  <span class="block-label">🌐 行業 Insight</span>
+  <ul>
+    <li>2026 年 AI 產業的分水嶺：從「炫技」到「交付」，從「能做什麼」到「真的在幹活」</li>
+    <li>Agent 不再是概念，而是開始進入產業流程、降低專業門檻的生產力工具</li>
+    <li>安全問題開始被重視：企業開始用 AI 對抗 AI 帶來的安全風險—這本身就是一個巨大的市場</li>
+  </ul>
+</div>
+
+<!-- =================== 英文播客 =================== -->
+<h2 class="section-title">🇬🇧 英文播客</h2>
+
+<!-- Dwarkesh -->
+<div class="podcast-name">Dwarkesh Podcast <span class="host">— Dwarkesh Patel</span></div>
+
+<div class="episode">
+  <div class="episode-title"><span class="icon">🎙️</span>Adam Brown – A deep but accessible introduction to general relativity</div>
+  <div class="episode-meta">📆 2026-07-10 16:23 UTC | 📝 Substack / YouTube | ⏱ ~2h</div>
+
+  <span class="block-label">📖 主題</span>
+  <p>Dwarkesh 邀請 Google DeepMind Blueshift 團隊負責人 Adam Brown，用通俗語言從第一性原理推導廣義相對論的核心思想，延伸到黑洞、時空彎曲以及 AI 能否在沒有實驗證據的情況下重新發現物理定律。</p>
+
+  <span class="block-label">👤 嘉賓背景</span>
+  <p>Adam Brown 曾任 Stanford 物理系講師，教授廣義相對論研究生課程。現任 Google DeepMind Blueshift 團隊負責人，團隊專注用 AI 破解科學和推理問題。研究領域涵蓋宇宙學、弦論、廣義相對論。</p>
+
+  <span class="block-label">💡 核心論點</span>
+  <ul>
+    <li><strong>廣義相對論最美麗的核心：等效原理</strong> — Einstein 的「最快樂的想法」來自於認識到引力質量 = 慣性質量的巧合。這個看似平凡的等式（到 10^-15 精度仍然成立）引導他推導出時空彎曲的概念。</li>
+    <li><strong>牛頓引力 ≠ 庫侖力的類比升級</strong> — 雖然靜電和引力都是平方反比定律，但引力不能簡單套用 Maxwell 方程組的框架，因為引力由自旋-2 粒子（引力子）傳遞，而電磁力由自旋-1 光子傳遞。這導致同號質量吸引 vs 同號電荷排斥。</li>
+    <li><strong>黑洞不是黑的</strong> — 即使按照狹義相對論，如果黑洞真的「黑」（不釋放能量），理論上可以製造永動機。Hawking 輻射解決了這個矛盾：黑洞確實會蒸發。</li>
+    <li><strong>黑洞是終極發電廠</strong> — 通過 Penrose 過程可以從旋轉黑洞提取能量，轉化效率遠超核聚變。從理論上講，旋轉黑洞的 rotational energy 可以達到其靜止質量的 29%。</li>
+    <li><strong>AI 重新發現物理定律的可能性</strong> — Blueshift 團隊正在研究 AI 能否在只有數據、沒有實驗的情況下發現廣義相對論。核心問題：一個 AI 能否從天體觀測數據中推導出時空彎曲的概念？Brown 認為有希望但非常困難，因為 GR 的本質是幾何化的，而幾何推理對目前的 AI 來說極具挑戰。</li>
+  </ul>
+
+  <span class="block-label">💬 重點引用</span>
+  <blockquote><p>「廣義相對論、Einstein 的引力理論，是一個單一頭腦創造的最美麗的產品。與量子力學不同，它基本上是一個人的作品。Einstein 花了 10 年執著地追逐這個想法，然後他寫下了這個理論，最終（它）描述了太陽系行星的運動，也描述了宇宙的起源和命運。」</p></blockquote>
+  <blockquote><p>「我們有一個 Einstein 沒有的優勢：我們有 Einstein。我們站在巨人的肩膀上，能把那些被當時認為只有 Einstein 級別的智力才能理解的複雜想法，精煉到本質。」</p></blockquote>
+
+  <span class="block-label">🔧 技術詳情 — Blueshift 的 AI for Science</span>
+  <ul>
+    <li>Adam Brown 領導的 Blueshift 團隊專注於用 AI 破解科學和推理問題</li>
+    <li>討論了一個核心問題：AI 能否僅從輸入數據（無實驗干預）重新發現廣義相對論</li>
+    <li>Brown 的判斷：LLM 能做到「敘述性理解」，但要真正「重新發現」仍需要符號推理和幾何直覺的突破</li>
+    <li>探討了 AI 科學家可能需要的「無實驗推理能力」— 類似於古希臘數學家僅從公理推導出完整幾何體系的能力</li>
+  </ul>
+
+  <span class="block-label">🌐 行業 Insight</span>
+  <ul>
+    <li>DeepMind Blueshift 代表了 AI for Science 的最前沿 — 不是用 AI 加速計算，而是用 AI 做「科學發現本身」</li>
+    <li>從原理層面理解物理定律和從數據中推導物理定律是兩個完全不同的能力層次，目前 AI 在後者上仍然非常初級</li>
+    <li>Brown 的觀點與其說是技術預測，不如說是深刻的科學哲學討論：人類科學發現的過程本身是否可以演算法化？</li>
+  </ul>
+</div>
+
+<div class="episode">
+  <div class="episode-title"><span class="icon">🎙️</span>Why Industrialized Nations Rule the Modern World – Sarah Paine (YouTube Short)</div>
+  <div class="episode-meta">📆 2026-07-18 23:33 UTC | ▶️ YouTube Short | ⏱ ~60s</div>
+
+  <span class="block-label">📖 主題</span>
+  <p>Dwarkesh 的連載 Sarah Paine 系列又一短篇，分析工業化國家為何主宰現代世界。Sarah Paine 是海軍戰爭學院教授，國際關係與地緣戰略專家。</p>
+
+  <span class="block-label">💡 核心論點</span>
+  <ul>
+    <li>工業化創造了巨大的生產力不對稱，使得少數工業化國家能夠支配全球秩序</li>
+    <li>海權 vs 陸權的經典對立框架仍然是理解當代國際關係的核心工具</li>
+    <li>工業化不僅改變了軍事平衡，更重新定義了什麼構成「國家實力」</li>
+  </ul>
+
+  <span class="block-label">🌐 行業 Insight</span>
+  <p>雖然這集是國際關係而非 AI 主題，但 Dwarkesh 在此系列中反覆觸及的主題（技術如何重塑權力結構、工業化 vs 後工業化社會的張力）對理解 AI 時代的國際競爭格局有間接關聯。</p>
+</div>
+
+<!-- Latent Space -->
+<div class="podcast-name">Latent Space <span class="host">— swyx + Alessio Fanelli</span></div>
+
+<div class="episode">
+  <div class="episode-title"><span class="icon">🎙️</span>[AINews] not much happened today</div>
+  <div class="episode-meta">📆 2026-07-18 04:30 UTC | 📝 Substack / YouTube</div>
+
+  <span class="block-label">📖 主題</span>
+  <p>儘管標題說「今天不太忙」，但其實這是 Kimi K3 發布後的第二天，AI 圈仍處於震盪消化期。本期 AINews 整理了 Twitter 和 Reddit 上對 K3 的後續討論、Databricks 的巨額融資、OpenRouter 收購傳聞，以及多個重要的 AI 研究進展。</p>
+
+  <span class="block-label">💡 核心論點 — Kimi K3 持續發酵</span>
+  <ul>
+    <li><strong>從「算力護城河」到「效率堆棧」</strong> — K3 的發布削弱了「前沿能力主要取決於原始算力」的論點。Anika Somaia 指出，Moonshot 的競爭力來自 MoE 路由、量化、數據策劃和稀缺驅動的基礎設施設計（「Mooncake」堆棧），而非簡單拼算力。中國實驗室可能在壓縮「每 FLOP 能力曲線」，而不是直接匹配西方的資本支出。</li>
+    <li><strong>前沿擴大了：從 2 個實驗室到 6 個</strong> — Artificial Analysis 的情報指數顯示，前沿從 2 個實驗室擴大到 6 個（6 週內）。Kimi K3 得分 57，落後 Claude Fable 5（60）但領先 Opus 4.8（56）。</li>
+    <li><strong>Frontend Code Arena：中國首次超越美國</strong> — Arena 報告 K3 讓中國在 Frontend Code Arena 上首次超越美國，用戶測試顯示 K3 在前端視覺任務上可以匹敵甚至超越 Fable。</li>
+    <li><strong>DeepSWE 第三名，開源模型首個前沿水準</strong> — DataCurve 報導 K3 在 DeepSWE 排名第三，是首個達到前沿水準的開源權重模型。</li>
+    <li><strong>Kimi Delta Attention (KDA) 是架構層面的重要創新</strong> — @sdrzn 的技術解讀指出 KDA 本質上是一種 fast-weights 記憶機制，在長上下文中維持固定大小的每請求狀態，而不是支付完整的注意力成本。號稱在 1M 上下文下吞吐量提升 6 倍。</li>
+  </ul>
+
+  <span class="block-label">📊 關鍵數據</span>
+  <ul>
+    <li>Artificial Analysis 情報指數：Kimi K3 57, Claude Fable 5 60, Opus 4.8 56</li>
+    <li>K3 編碼 Agent 指數 57，匹配 GPT-5.6 Terra 和 GPT-5.5</li>
+    <li>Terminal-Bench v2: 84%, DeepSWE: 64%, SWE-Atlas-QnA: 23%</li>
+    <li>Databricks 完成 $188B Series M（注意：資料或有誇張，原文如此）</li>
+    <li>ARC 基準：Thinking Machines 的 Inkling 在 ARC-AGI-1 得分 79.5%，ARC-AGI-2 得分 36.5%</li>
+    <li>NVIDIA RoboTTT 將機器人策略上下文長度擴展 3 個數量級，操作性能提升 87%</li>
+  </ul>
+
+  <span class="block-label">🌐 行業 Insight</span>
+  <ul>
+    <li><strong>價值正在從基礎模型轉向編排層</strong> — 隨著前沿智能變得更加便宜和開放，持久護城河轉向編排、記憶、工具和領域特定框架。@Yuchenj_UW 將關鍵區分定義為「valuemaxxing vs tokenmaxxing」。</li>
+    <li><strong>記憶架構趨向「Wiki 記憶」</strong> — Paulius Ztin 提出 Agent 不應反复從原始文檔中重新推導相同的理解，而應在統一記憶之上構建任務特定的 Markdown wiki 層，通過 FastMCP 同步。</li>
+    <li><strong>MCP 和技能抽象持續成熟</strong> — Perplexity Agent API 新增自定義技能，Nous Research 推出 Hermes Agent Desktop 和 Unreal Engine 技能。</li>
+    <li><strong>開放模型與封閉模型經濟學正在接近臨界點</strong> — @AravSrinivas 將此與 Sun Microsystems 被開源+商品硬體顛覆的時刻比較。</li>
+  </ul>
+</div>
+
+<!-- No Priors -->
+<div class="podcast-name">No Priors <span class="host">— Sarah Guo + Elad Gil</span></div>
+
+<div class="episode">
+  <div class="episode-title"><span class="icon">🎙️</span>What You Can't Say Inside an AI Lab</div>
+  <div class="episode-meta">📆 2026-07-15 21:18 UTC | ▶️ YouTube Short | ⏱ ~60s</div>
+
+  <span class="block-label">📖 主題</span>
+  <p>Andrej Karpathy 談論在前沿 AI 實驗室內部的言論限制與獨立思考的張力，以及 OpenAI 成立之初的核心矛盾為何至今仍未解決。</p>
+
+  <span class="block-label">💡 核心論點</span>
+  <ul>
+    <li><strong>前沿實驗室內部存在「不可說」的話題</strong> — Karpathy 指出在實驗室內部，有些觀點不被鼓勵表達，而組織希望你表達的是另一套敘事。</li>
+    <li><strong>內部視角 vs 獨立視角</strong> — 在實驗室內部保持獨立思考比外部更難，因為你被組織的激勵機制和文化所包圍。</li>
+    <li><strong>OpenAI 的創始矛盾仍未解決</strong> — 從非營利初衷到商業化，再到安全與開放的張力，這個核心矛盾在今天不僅沒有解決，反而更加尖銳。</li>
+  </ul>
+
+  <span class="block-label">💬 重點引用</span>
+  <blockquote><p>「There are certain things you can't say inside a frontier lab. And conversely, there are certain things the organization wants you to say.」</p></blockquote>
+
+  <span class="block-label">🌐 行業 Insight</span>
+  <ul>
+    <li>Karpathy 加入 Anthropic 後，其公開言論的獨立性值得關注 — 他可能是極少數能在實驗室內部保持「外部人視角」的人</li>
+    <li>這個短視頻雖然只有一分鐘，但觸及了 AI 領域最核心的治理問題：誰來決定什麼可以說、什麼不能說？</li>
+  </ul>
+</div>
+
+<!-- ML Street Talk -->
+<div class="podcast-name">Machine Learning Street Talk <span class="host">— Tim Scarfe, Yannic Kilcher, Connor Leahy</span></div>
+<div class="episode" style="border-left-color:#d4c9bf;background:#f8f6f3;">
+  <p style="color: #8a8078; font-style: italic;">⚠️ 未能獲取最新劇集（Brave Search API 429 + YouTube RSS 未發現新長視頻）。上次收錄：Episode 255（2026-07-01）。</p>
+</div>
+
+<!-- Cognitive Revolution -->
+<div class="podcast-name">The Cognitive Revolution <span class="host">— Nathan Labenz</span></div>
+<div class="episode" style="border-left-color:#d4c9bf;background:#f8f6f3;">
+  <p style="color: #8a8078; font-style: italic;">⚠️ 未能確認新劇集（網站需要登錄才能查看內容）。上次收錄：Davidad on Moral Realism（2026-07-12）。</p>
+</div>
+
+<!-- 十字路口 Crossing -->
+<div class="podcast-name">十字路口 Crossing <span class="host">— 楊遠騁(Koji)</span></div>
+<div class="episode" style="border-left-color:#d4c9bf;background:#f8f6f3;">
+  <p style="color: #8a8078; font-style: italic;">⚠️ 搜索受限。上次收錄：AI4S 對話英靈殿 Odin（2026-07-12）。</p>
+</div>
+
+<!-- 42章经 -->
+<div class="podcast-name">42章經 <span class="host">— 曲凱(Kyle)</span></div>
+<div class="episode" style="border-left-color:#d4c9bf;background:#f8f6f3;">
+  <p style="color: #8a8078; font-style: italic;">⚠️ 搜索受限。上次收錄：對談魏小康：字節美團組織建設（2026-07-04）。</p>
+</div>
+
+<!-- 屠龙之术 -->
+<div class="podcast-name">屠龍之術 <span class="host">— 莊明浩</span></div>
+<div class="episode" style="border-left-color:#d4c9bf;background:#f8f6f3;">
+  <p style="color: #8a8078; font-style: italic;">⚠️ 搜索受限。上次收錄：待確認。</p>
+</div>
+
+<hr class="sep">
+
+<!-- =================== APPENDIX =================== -->
+<h2 class="section-title">📋 掃描報告</h2>
+
+<table style="width:100%; border-collapse: collapse; font-size: 14px; margin: 16px 0;">
+  <tr style="background: #ede6de;">
+    <th style="padding: 8px 12px; text-align: left; border: 1px solid #ddd5cc;">播客</th>
+    <th style="padding: 8px 12px; text-align: center; border: 1px solid #ddd5cc;">狀態</th>
+    <th style="padding: 8px 12px; text-align: center; border: 1px solid #ddd5cc;">新集數</th>
+  </tr>
+  <tr>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc;">張小珺商業訪談錄</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">✅ 已萃取</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">#146 Pi</td>
+  </tr>
+  <tr>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc;">十字路口 Crossing</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">⚠️ 未獲取</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">—</td>
+  </tr>
+  <tr>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc;">硅谷 101</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">✅ 已萃取</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">SK海力士 + Tokenmaxxing</td>
+  </tr>
+  <tr>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc;">42章經</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">⚠️ 未獲取</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">—</td>
+  </tr>
+  <tr>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc;">屠龍之術</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">⚠️ 未獲取</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">—</td>
+  </tr>
+  <tr>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc;">Dwarkesh</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">✅ 已萃取</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">Adam Brown GR + Sarah Paine Short</td>
+  </tr>
+  <tr>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc;">Latent Space</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">✅ 已萃取</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">AINews (K3 followup)</td>
+  </tr>
+  <tr>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc;">Cognitive Revolution</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">⚠️ 未獲取</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">—</td>
+  </tr>
+  <tr>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc;">No Priors</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">✅ 已萃取</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">Karpathy Short</td>
+  </tr>
+  <tr>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc;">ML Street Talk</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">⚠️ 未獲取</td>
+    <td style="padding: 6px 12px; border: 1px solid #ddd5cc; text-align: center;">—</td>
+  </tr>
+</table>
+
+<p style="font-size: 13px; color: #8a8078; margin: 8px 0;">
+🔧 未獲取原因：Brave Search API 免費方案 429 頻率限制 + Google 封鎖 + Substack/站點需登錄。下週二 (2026-07-21) 配額重置。Bilibili API 已成功用於硅谷101。
+</p>
+
+<div class="footer">
+  <p>🎙️ AI Podcast Daily Scan · Apache 2.0</p>
+  <p style="margin-top:4px;">Generated by Vee Mok ✨ · 2026-07-19 02:03 UTC</p>
+</div>
+
+</body>
+</html>
