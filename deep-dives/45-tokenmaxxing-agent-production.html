@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Tokenmaxxing 後嘅理智——2026 AI Agent 落地全景</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  .podcast-badge {
+    display: inline-block;
+    background: #ede6de;
+    color: #5a4a3a;
+    font-size: 0.8rem;
+    padding: 0.2rem 1rem;
+    border-radius: 3px;
+    margin-bottom: 0.8rem;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.6rem;
+  }
+  .meta {
+    font-size: 0.85rem;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .meta span { margin: 0 0.5rem; }
+
+  .toc {
+    background: #f5f0ea;
+    padding: 1.5rem 2rem;
+    border-radius: 6px;
+    margin-bottom: 2.5rem;
+    font-size: 0.9rem;
+  }
+  .toc h3 { font-size: 0.85rem; color: #6b5d52; letter-spacing: 1px; margin-bottom: 0.6rem; text-transform: uppercase; }
+  .toc ol { padding-left: 1.2rem; }
+  .toc li { margin-bottom: 0.3rem; }
+  .toc a { color: #3a3a3a; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2.8rem 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #e5ddd5;
+    color: #1a1a1a;
+  }
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.6rem;
+    color: #2a2a2a;
+  }
+  h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+    color: #3a3a3a;
+  }
+  p { margin-bottom: 1rem; text-align: justify; }
+
+  blockquote {
+    margin: 1.2rem 0;
+    padding: 1rem 1.5rem;
+    background: #f5f0ea;
+    border-left: 4px solid #b8a99a;
+    font-style: italic;
+    color: #4a4038;
+    border-radius: 0 6px 6px 0;
+  }
+  blockquote.strong {
+    border-left-color: #c4a882;
+    background: #f8f4ee;
+  }
+  blockquote p { margin: 0; }
+
+  .data-point {
+    display: inline-block;
+    background: #ede6de;
+    padding: 0.15rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #3a2a1a;
+  }
+
+  ul, ol { margin: 0.6rem 0 1rem 1.5rem; }
+  li { margin-bottom: 0.4rem; text-align: justify; }
+
+  .case-box {
+    background: #fff;
+    border: 1px solid #e5ddd5;
+    border-radius: 6px;
+    padding: 1.2rem 1.5rem;
+    margin: 1.2rem 0;
+  }
+  .case-box h4 { margin-top: 0; }
+  .case-box p:last-child { margin-bottom: 0; }
+
+  .insight-box {
+    background: #f5f0ea;
+    border-radius: 6px;
+    padding: 1.2rem 1.5rem;
+    margin: 1.2rem 0;
+  }
+  .insight-box p { margin-bottom: 0.5rem; }
+  .insight-box p:last-child { margin-bottom: 0; }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e8e2d8;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #aaa;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    h1 { font-size: 1.5rem; }
+    blockquote { padding: 0.8rem 1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">
+    <span class="arrow">←</span> 返回播客日報
+  </a>
+  <div class="podcast-badge">硅谷 101 · 泓君 Jane</div>
+  <h1>Tokenmaxxing 後嘅理智<br>2026 年中 Agent 落地全景——從 AI 短劇到藥物研發</h1>
+  <div class="meta">
+    <span>📆 2026-07-07</span>
+    <span>⏱ 35:02</span>
+    <span>🎙️ 探展：亞馬遜雲科技中國峰會</span>
+  </div>
+</header>
+
+<!-- ══════════ TOC ══════════ -->
+<div class="toc">
+  <h3>目錄</h3>
+  <ol>
+    <li><a href="#intro">關於呢集</a></li>
+    <li><a href="#ch1">第 1 幕：AI 短劇——從小說到影片嘅 10x 壓縮</a></li>
+    <li><a href="#ch2">第 2 幕：自然語言量化——金融民主化嘅臨界點</a></li>
+    <li><a href="#ch3">第 3 幕：藥物研發——Agent 調度嘅工作流革命</a></li>
+    <li><a href="#ch4">第 4 幕：遊戲開發——唔識 Code 嘅人幾分鐘生</a></li>
+    <li><a href="#ch5">第 5 幕：雲廠商嘅角色轉變——從賣算力到賣生產力</a></li>
+    <li><a href="#security">第 6 幕：安全——用 AI 對抗 AI 嘅新戰場</a></li>
+    <li><a href="#insights">終章：深度洞察</a></li>
+    <li><a href="#guests">嘉賓名單</a></li>
+  </ol>
+</div>
+
+<!-- ══════════ INTRO ══════════ -->
+<h2 id="intro">關於呢集</h2>
+
+<p>2026 年過咗一半。如果你只睇 Twitter/X 或者 HN，你可能會覺得 AI 行業仲係嗰套——新模型發布、Benchmark 刷榜、Agent 框架換湯唔換藥。但如果行入亞馬遜雲科技中國峰會嘅會場，同真正做產品嘅一線團隊傾偈，你會發現行業嘅關鍵詞已經從「堆 Token、做 Demo」轉向「交付結果」。</p>
+
+<p>呢期硅谷 101 嘅泓君 Jane 帶住攝影機走入 AWS 中國峰會，同幾間公司嘅產品負責人聊咗幾個真實落地案例：AI 短劇、量化回測、藥物研發、遊戲開發、AI 安全。冇咩宏大敘事，全部係「呢個產品今個月出咗，客戶用咗，效果係咁」嘅具體故事。</p>
+
+<blockquote class="strong">
+  <p>「Agent 接入各行各業之後，AI 唔再只係聊天窗口，而係喺降低專業門檻、重組業務流程。」</p>
+</blockquote>
+
+<p>呢篇復述會逐個案例拆解，然後抽出 5 個跨行業嘅共通洞察，最後討論一個核心問題：當 AI 從「能做啲咩」變成「真係喺度做嘢」，雲廠商嘅角色發生咗咩根本變化？</p>
+
+
+<!-- ══════════ ACT 1 ══════════ -->
+<h2 id="ch1">第 1 幕：AI 短劇——從小說到影片嘅 10x 壓縮</h2>
+
+<div class="case-box">
+  <h4>案例：STARY 副總裁 Grace</h4>
+  <p><strong>一句話：</strong>小說作者可以將自己嘅故事變成 AI 短劇，製作流程從數月縮短到數天，成本降低 <span class="data-point">90%+</span>。</p>
+</div>
+
+<p>Grace 嘅公司 STARY 做嘅係 AI 短劇平台。以前小說作者要將作品影視化，要經歷：版權談判→編劇改編→選角→拍攝→後期→發行，整個鏈條從半年到兩年不等，成本動輒幾百萬甚至上千萬。</p>
+
+<p>AI 短劇嘅做法唔同。作者將小說文本輸入平台，Agent 會自動進行角色提取、場景識別、對話分割，然後由多個生成模型協同工作——一個負責角色設計，一個負責場景渲染，一個負責動作編排，一個負責配音。最後由一個「剪輯 Agent」將所有素材合成為完整短片。</p>
+
+<p>成個流程從數月壓縮到 <span class="data-point">數天</span>，成本降低 <span class="data-point">90% 以上</span>。Grace 特別提到一個細節：作者仍然係核心創作者——AI 負責執行，但創意方向同關鍵決策權喺作者手上。</p>
+
+<blockquote>
+  <p>「呢個模式唔係取代創作者，而係將創作者從執行層面嘅時間消耗入面解放出來，等人可以專注喺真正嘅創作上。」</p>
+</blockquote>
+
+<h3>行業意義</h3>
+<p>AI 短劇係「Agent 編排多模型」嘅典型場景。唔係一個模型做晒所有嘢——而係多個專用模型喺 Agent 嘅調度下協同工作。呢個模式比「一個萬能模型做晒」更實際、更可控。</p>
+
+<p>另外，呢個案例揭示咗一個重要趨勢：<strong>內容生產嘅民主化</strong>。以前影視製作係高資本、高門檻嘅行業，而家一個小說作者可以單人完成。呢不僅係效率提升，更加係權力結構嘅改變——創作者直接面對受眾，中間環節被壓縮到接近零。</p>
+
+
+<!-- ══════════ ACT 2 ══════════ -->
+<h2 id="ch2">第 2 幕：自然語言量化——金融民主化嘅臨界點</h2>
+
+<div class="case-box">
+  <h4>案例：普通投資者用自然語言做量化回測</h4>
+  <p><strong>一句話：</strong>唔使寫 Code，普通投資者可以用自然語言描述策略，AI 自動生成回測代碼、執行回測、輸出結果。</p>
+</div>
+
+<p>量化交易以前係華爾街嘅專利——需要 Python/ C++ 功底、金融工程知識、數據基礎設施。一個普通散戶想驗證自己嘅投資想法，要麼學寫 Code，要麼俾錢請人做。</p>
+
+<p>而家，你可以直接同 Agent 講：「我想試下呢個策略：買入所有 PE &lt; 15 且 ROE &gt; 20% 嘅 A 股，每月再平衡一次，過去 5 年嘅收益同最大回撤係幾多？」Agent 會自動生成回測代碼，從數據源拉取歷史數據，執行回測，然後用圖表+文字解釋結果。</p>
+
+<p>關鍵係：Agent 唔係單純執行指令，而係會主動問問題——「你需要考慮手續費嗎？」「要排除 ST 股嗎？」「再平衡日係每月第一個交易日定固定日期？」呢啲提問逼使用戶思考自己本來唔知要思考嘅細節。</p>
+
+<blockquote class="strong">
+  <p>「Agent 最大嘅價值唔係『代你識』，而係幫你問出你本來唔知要問嘅問題。」</p>
+</blockquote>
+
+<h3>行業意義</h3>
+<p>呢個案例揭示咗 Agent 嘅獨特價值：<strong>中介能力</strong>。Agent 唔單止執行任務，仲喺任務過程中識別用戶未明確表達嘅需求，提前補充。呢種「主動中介」係傳統軟件（表單/腳本）冇辦法做到嘅。</p>
+
+<p>另外，自然語言量化回測標誌住金融民主化進入新階段。唔係「人人都可以做量化」，而係「有投資想法嘅人都可以低成本驗證自己嘅想法」——呢會大幅增加市場效率，但也可能帶嚟新嘅風險（用戶對模型輸出嘅盲目信任）。</p>
+
+
+<!-- ══════════ ACT 3 ══════════ -->
+<h2 id="ch3">第 3 幕：藥物研發——Agent 調度嘅工作流革命</h2>
+
+<div class="case-box">
+  <h4>案例：AWS 藥物研發工作流</h4>
+  <p><strong>一句話：</strong>Agent 協調多個專業工具，將藥物研發中嘅分子篩選等環節大幅提速，門檻降低到「非計算化學家都可以操作」。</p>
+</div>
+
+<p>藥物研發傳統上係一個極度依賴專家經驗嘅領域。分子篩選——即從數百萬候選分子中找出最有潛力嗰啲——需要計算化學家用專業軟件逐個評估。一個篩選週期通常要 <span class="data-point">幾週到幾個月</span>。</p>
+
+<p>Agent 嘅做法係：定義一個工作流（Workflow），將篩選過程拆成多個步驟——分子加載→ADMET 預測（吸收/分佈/代謝/排泄/毒性）→目標蛋白對接→打分排序。每個步驟由唔同嘅專業模型完成，Agent 負責調度、傳遞中間結果、處理錯誤、生成報告。</p>
+
+<p>呢個模式嘅顛覆性在於：<strong>唔係取代計算化學家，而係將計算化學家從重複勞動中解放，等人專注喺更有創造力嘅設計工作上</strong>。同樣重要嘅係，呢啲工作流而家可以由生物學家而非計算化學家操作——因為 Agent 處理咗所有技術細節。</p>
+
+<h3>行業意義</h3>
+<p>藥物研發案例展現咗 Agent 最有價值嘅應用場景：<strong>跨專業領域嘅工作流自動化</strong>。唔係取代專業人士，而係降低專業操作門檻，讓更多非技術背景嘅科學家可以使用計算工具。呢個模式可以擴展到材料科學、化學工程、基因組學等所有需要多工具協作嘅科學領域。</p>
+
+
+<!-- ══════════ ACT 4 ══════════ -->
+<h2 id="ch4">第 4 幕：遊戲開發——唔識 Code 嘅人幾分鐘生成</h2>
+
+<div class="case-box">
+  <h4>案例：Plaud 產品經理張庭睿</h4>
+  <p><strong>一句話：</strong>多 Agent 編排令遊戲開發門檻降低到「會講話就得」——唔識寫 Code 嘅人幾分鐘內可以生成一個可玩遊戲原型。</p>
+</div>
+
+<p>張庭睿展示咗一個令在場所有人都驚訝嘅 Demo：一個完全冇編程經驗嘅產品經理，用自然語言描述「我想做一個射擊遊戲，玩家控制太空船躲避隕石，每 10 秒出現一個 BOSS，打死可以升級武器」，幾分鐘之後，一個可玩嘅 HTML5 遊戲就生成咗。</p>
+
+<p>背後嘅技術棧係多 Agent 編排：一個 Agent 負責理解需求同拆解任務（「呢個遊戲需要碰撞檢測、分數系統、敵人生成邏輯」），一個 Agent 負責生成代碼，一個 Agent 負責測試同調試，一個 Agent 負責 UI 同動畫。每個 Agent 都係專用嘅——類似於一個微型遊戲開發團隊。</p>
+
+<blockquote>
+  <p>「以前做一個遊戲原型，要揾程序員、設計師、策劃，中間溝通成本極高。而家一個人就得——唔係因為 AI 代替咗所有人，而係因為溝通成本被 AI 降到接近零。」</p>
+</blockquote>
+
+<h3>行業意義</h3>
+<p>遊戲原型生成係「快速迭代」哲學嘅極致體現。當一個創意到一個可交互原型嘅時間從數天壓縮到幾分鐘，創新嘅頻率同質量都會本質性提升。呢個邏輯適用於任何需要快速驗證想法嘅領域——產品設計、UI/UX、數據可視化、交互藝術。</p>
+
+<p>另外，呢個案例展示咗一個重要趨勢：<strong>多 Agent 編排正在取代傳統嘅 IDE 開發流程</strong>。以前做軟件係一個人用一個工具（IDE）寫成件事。而家係一個人定義需求，多個專用 Agent 協同完成。開發者嘅角色從「寫 Code 嘅人」變成「定義問題同驗證結果嘅人」。</p>
+
+
+<!-- ══════════ ACT 5 ══════════ -->
+<h2 id="ch5">第 5 幕：雲廠商嘅角色轉變——從賣算力到賣生產力</h2>
+
+<p>以上四個案例——AI 短劇、量化回測、藥物研發、遊戲開發——背後都有一間公司做基礎設施：亞馬遜雲科技。</p>
+
+<p>但 AWS 嘅角色同三年前已經完全唔同。以前雲廠商賣嘅係三樣嘢：<strong>算力（EC2/Graviton）、儲存（S3）、模型（Bedrock）</strong>。而家嘅實戰係一個 <span class="data-point">5 層技術棧</span>：</p>
+
+<ol>
+  <li><strong>算力層</strong>——GPU/CPU 基礎設施</li>
+  <li><strong>模型層</strong>——Bedrock 提供嘅多模型服務</li>
+  <li><strong>數據層</strong>——數據管理、清洗、向量化、檢索</li>
+  <li><strong>Agent 層</strong>——Agent 編排、工具鏈、工作流定義</li>
+  <li><strong>安全層</strong>——AI 安全、內容審核、Guardrails</li>
+</ol>
+
+<p>雲廠商不再只提供算力同模型，更承擔起數據、工具鏈、部署、安全同驗證呢啲「將 AI 變成生產力」嘅基礎設施。換句話講，AWS 正在從「出售計算資源」轉向「出售 AI 生產力」——客戶唔使自己搭建整個技術棧，而係用 AWS 提供嘅完整方案直接解決業務問題。</p>
+
+<blockquote class="strong">
+  <p>「雲廠商嘅競爭，已經從『邊間嘅 GPU 最多、最平』，轉向『邊間能幫客戶最快將 AI 用喺真嘅業務入面』。」</p>
+</blockquote>
+
+<h3>行業意義：雲嘅二次演化</h3>
+<p>第一次雲化（2010–2020）將 IT 基礎設施從自建機房搬到雲端。第二次雲化（2024–而家）將 AI 能力從 API 調用升級為完整嘅生產力平台。呢次演化嘅本質係：<strong>從工具到工廠</strong>——以前雲係俾工程師用嘅工具，而家雲係俾所有人用嘅生產工廠。</p>
+
+
+<!-- ══════════ SECURITY ══════════ -->
+<h2 id="security">第 6 幕：安全——用 AI 對抗 AI 嘅新戰場</h2>
+
+<p>安全喺 AWS 嘅 5 層棧中佔咗一整層，唔係偶然。2026 年嘅安全局勢同三年前完全唔同：大規模 AI 攻擊已經成為現實——自動化釣魚、深度偽造詐騙、AI 生成嘅惡意軟件、Prompt Injection 攻擊。</p>
+
+<p>AWS 展示咗幾個防禦案例：</p>
+<ul>
+  <li><strong>Guardrails for LLM：</strong>自動檢測同攔截模型輸出中嘅有害內容、敏感信息洩漏、Prompt Injection 攻擊</li>
+  <li><strong>AI 驅動嘅威脅檢測：</strong>用專門嘅安全模型分析網絡流量，發現人類分析師睇唔出嘅異常模式</li>
+  <li><strong>自動化應急響應：</strong>檢測到攻擊後，Agent 自動隔離受感染系統、啟動備份、通知安全團隊</li>
+</ul>
+
+<blockquote>
+  <p>「企業開始用 AI 對抗 AI 帶嚟嘅安全風險——呢本身就係一個巨大嘅市場。」</p>
+</blockquote>
+
+<p>呢個領域最有趣嘅觀察係：安全 Agent 同攻擊 Agent 嘅對抗，本質上係一場持續嘅「軍備競賽」。邊一方嘅 Agent 更強，唔係取決於底層模型（雙方都用同一批模型），而係取決於 Agent 嘅架構設計——檢測邏輯、響應策略、更新頻率。呢意味住安全領域嘅競爭重點，正在從「發現漏洞」轉向「設計更好嘅防禦 Agent」。</p>
+
+
+<!-- ══════════ INSIGHTS ══════════ -->
+<h2 id="insights">終章：深度洞察</h2>
+
+<h3>1. 2026 年係 AI 產業嘅分水嶺——從「炫技」到「交付」</h3>
+<p>我哋而家正處於一個範式轉換嘅中間點。上半場（2022–2025）嘅關鍵詞係「模型能力」——誰嘅模型更強、誰嘅 Benchmark 更高、誰能做出令人驚嘆嘅 Demo。下半場（2026–）嘅關鍵詞係「交付結果」——邊間公司能真正將 AI 嵌入業務流程、降低實際成本、增加真實收入。</p>
+
+<p>呢期節目嘅所有案例都有一個共同點：<strong>冇人吹自己做咗 AGI，所有人都喺度講具體嘅落地數字</strong>。成本降咗幾多、週期短咗幾多、邊啲人可以用到。呢係一個行業走向成熟嘅信號。</p>
+
+<h3>2. Agent 嘅本質係「專業門檻消除器」</h3>
+<p>四個案例嘅共同底層邏輯：Agent 嘅核心功能唔係「代替人做決定」，而係「消除專業操作嘅技術門檻」。</p>
+<ul>
+  <li>AI 短劇：消除影視製作嘅技術門檻</li>
+  <li>量化回測：消除金融編程嘅技術門檻</li>
+  <li>藥物研發：消除計算化學嘅技術門檻</li>
+  <li>遊戲開發：消除遊戲編程嘅技術門檻</li>
+</ul>
+<p>呢意味住：Agent 嘅最大經濟價值唔喺於「更聰明」，而在於「更易用」。</p>
+
+<h3>3. 多 Agent 編排係 2026 年嘅核心範式</h3>
+<p>無論係 AI 短劇嘅多模型協作，定係遊戲開發嘅多 Agent 團隊，2026 年嘅產品設計已經默認「一個 Agent 做唔晒所有嘢」。多 Agent 編排取代咗傳統嘅 monolithic AI 系統，成為新常態。</p>
+
+<p>呢個轉變有深遠嘅產品設計含義：以前你問「我用邊個模型最好？」，而家你問「我點樣設計呢個多 Agent 系統，令每個 Agent 做自己最擅長嘅事？」呢係從模型選擇到系統設計嘅範式轉變。</p>
+
+<h3>4. 雲廠商嘅角色從「水電基礎設施」升級為「AI 工廠作業系統」</h3>
+<p>AWS 呢期展示嘅唔係 GPU 性能或者新模型，而係完整嘅生產力棧。呢反映咗一個深層趨勢：當模型變得商品化、Agent 變得普及化，真正嘅護城河係「幫客戶從零到交付嘅完整路徑」。雲廠商唔再係「水電煤」，而係 AI 時代嘅「富士康」——提供從原料到成品嘅全鏈條服務。</p>
+
+<h3>5. 安全 Agent 軍備競賽即將白熱化</h3>
+<p>當每個企業都有 Agent 幫佢哋做業務，攻擊者都會有 Agent。呢場戰爭嘅勝負唔取決於模型能力（大家都用同一批模型），而取決於 Agent 架構設計嘅質量。安全將從「被動防禦」變成「主動獵殺」——企業需要部署安全 Agent 去發現同消除威脅。呢個市場嘅規模可能遠超所有人嘅預期。</p>
+
+<h3>6. Agent 嘅可解釋性同可審計性將成為新嘅關鍵需求</h3>
+<p>當 Agent 幫你做定量決策、藥物篩選同安全響應嘅時候，「點解 Agent 做出咗呢個決定」就變得至關重要。節目中量化回測嘅例子特別明顯——用戶需要理解策略表現背後嘅邏輯，唔係單純接受一個數字。呢意味住可解釋性 Agent 將成為一個新嘅產品類別。</p>
+
+<blockquote class="strong">
+  <p>「2026 年嘅 AI 產業不再問『模型可以做啲咩』——因為幾乎所有模型都可以做大部分嘢。真正嘅問題係：你點樣將呢啲能力變成真正嘅業務結果？」</p>
+</blockquote>
+
+
+<!-- ══════════ GUESTS ══════════ -->
+<h2 id="guests">嘉賓名單</h2>
+<ul>
+  <li><strong>Grace</strong> — STARY 副總裁（AI 短劇平台）</li>
+  <li><strong>張庭睿</strong> — Plaud 產品經理（AI 遊戲開發）</li>
+  <li><strong>亞馬遜雲科技工作人員</strong> — 5 層技術棧展示</li>
+</ul>
+
+
+<footer>
+  <p>📖 深度復述 · AI 播客日報</p>
+  <p>來源：<a href="https://www.bilibili.com/video/BV1yPMb6rE5v/">硅谷101：Tokenmaxxing後的理智與Agent落地｜探展亞馬遜雲科技中國峰會</a></p>
+  <p style="margin-top:0.3rem;">Generated by Vee Mok ✨ · 2026-07-19 06:08 UTC</p>
+</footer>
+
+</div>
+</body>
+</html>
