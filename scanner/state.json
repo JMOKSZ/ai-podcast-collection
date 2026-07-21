@@ -1,11 +1,18 @@
 {
-  "lastScan": "2026-07-20T02:16:00.000Z",
-  "lastScanDate": "2026-07-20",
+  "lastScan": "2026-07-21T02:03:00.000Z",
+  "lastScanDate": "2026-07-21",
   "episodes": {
     "dwarkesh": {
-      "lastEpisodePubDate": "2026-07-18T23:33:29.000Z",
-      "lastEpisodeTitle": "Why Industrialized Nations Rule the Modern World - Sarah Paine (YouTube Short)",
-      "newEpisodes": []
+      "lastEpisodePubDate": "2026-07-20T22:42:51.000Z",
+      "lastEpisodeTitle": "How a Solar Eclipse Confirmed General Relativity - Adam Brown (YouTube Short)",
+      "newEpisodes": [
+        {
+          "title": "How a Solar Eclipse Confirmed General Relativity - Adam Brown",
+          "pubDate": "2026-07-20T22:42:51.000Z",
+          "type": "YouTube Short",
+          "url": "https://youtu.be/srET3ahp0ns"
+        }
+      ]
     },
     "latent_space": {
       "lastEpisodePubDate": "2026-07-18T04:30:21.000Z",
@@ -13,9 +20,17 @@
       "newEpisodes": []
     },
     "no_priors": {
-      "lastEpisodePubDate": "2026-07-15T21:18:40.000Z",
-      "lastEpisodeTitle": "What You Can't Say Inside an AI Lab",
-      "newEpisodes": []
+      "lastEpisodePubDate": "2026-07-20T15:18:22.000Z",
+      "lastEpisodeTitle": "Why Cheap Energy Always Creates Its Own Demand",
+      "newEpisodes": [
+        {
+          "title": "Why Cheap Energy Always Creates Its Own Demand",
+          "pubDate": "2026-07-20T15:18:22.000Z",
+          "type": "YouTube Short",
+          "guest": "Isaiah Taylor (Valar Atomics)",
+          "url": "https://youtu.be/VqiZcxRaTWU"
+        }
+      ]
     },
     "cognitive_revolution": {
       "lastEpisodePubDate": "2026-07-12T11:11:55.000Z",
@@ -23,9 +38,17 @@
       "newEpisodes": []
     },
     "42zhangjing": {
-      "lastEpisodePubDate": "2026-07-04T00:00:00.000Z",
-      "lastEpisodeTitle": "对谈魏小康：字节美团组织建设",
-      "newEpisodes": []
+      "lastEpisodePubDate": "2026-07-18T00:00:00.000Z",
+      "lastEpisodeTitle": "AI 发展了 4 年，把应用发展没了？｜AI 年中复盘",
+      "newEpisodes": [
+        {
+          "title": "AI 发展了 4 年，把应用发展没了？｜AI 年中复盘",
+          "pubDate": "2026-07-18T00:00:00.000Z",
+          "type": "单口",
+          "host": "曲凯",
+          "url": "https://www.xiaoyuzhoufm.com/episode/6a5b98a66356eb2d9be4ad2c"
+        }
+      ]
     },
     "silicon_valley_101": {
       "lastEpisodePubDate": "2026-07-17T11:56:53.000Z",
@@ -46,12 +69,25 @@
       "lastEpisodePubDate": "2026-07-01T00:00:00.000Z",
       "lastEpisodeTitle": "Episode 255 - AI Startup Investments 2026",
       "newEpisodes": []
+    },
+    "slaying_dragon": {
+      "lastEpisodePubDate": "2026-07-18T00:00:00.000Z",
+      "lastEpisodeTitle": "重估一切，文艺复兴---2026H1 AI行业观察",
+      "newEpisodes": [
+        {
+          "title": "重估一切，文艺复兴---2026H1 AI行业观察",
+          "pubDate": "2026-07-18T00:00:00.000Z",
+          "type": "单口（76页PPT辅助）",
+          "host": "庄明浩",
+          "url": "https://www.xiaoyuzhoufm.com/episode/6a5a91e1a3fec224d59f4ddd"
+        }
+      ]
     }
   },
   "notes": {
-    "scan_status": "2026-07-20扫描：10个播客均无新剧集。周末效应，无新内容发布。",
-    "brave_api": "Brave Search API 频率限制持续 (429)。中文播客搜索受限。",
-    "report_date": "2026-07-20",
-    "deep_content_fetched": "None (no new episodes since last scan)"
+    "scan_status": "2026-07-21扫描：10个播客中4个有新内容。42章经发布AI四年复盘单口；屠龙之术发布2026H1行业全景（76页PPT，50分钟）；No Priors YouTube Short（Valar Atomics能源）；Dwarkesh YouTube Short（Adam Brown日食/GR）。Brave Search API持续限流（429），中文播客搜索受限，改用直接抓取xiaoyuzhoufm页面。",
+    "brave_api": "Brave Search API频率限制持续（429，1req/sec + 2000 quota）。中文播客发现改用xiaoyuzhoufm direct fetch + web_search替代。",
+    "report_date": "2026-07-21",
+    "deep_content_fetched": "42章经AI年中华复盘、屠龙之术H1行业观察、No Priors能源Short、Dwarkesh GR Short。"
   }
 }
