@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · AI 四年，應用反而發展沒了？——曲凱年中復盤</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  .podcast-badge {
+    display: inline-block;
+    background: #ede6de;
+    color: #5a4a3a;
+    font-size: 0.8rem;
+    padding: 0.2rem 1rem;
+    border-radius: 3px;
+    margin-bottom: 0.8rem;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.6rem;
+  }
+  .meta {
+    font-size: 0.85rem;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .meta span { margin: 0 0.5rem; }
+  .toc {
+    background: #f5f0ea;
+    padding: 1.5rem 2rem;
+    border-radius: 6px;
+    margin-bottom: 2.5rem;
+    font-size: 0.9rem;
+  }
+  .toc ul { list-style: none; padding: 0; margin-top: 0.8rem; }
+  .toc li { padding: 0.25rem 0; }
+  .toc li a { color: #5a4a3a; text-decoration: none; border-bottom: 1px dashed #ccc; }
+  .toc li a:hover { border-bottom-color: #5a4a3a; }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2.8rem 0 1.2rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid #e0d6c8;
+  }
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 2rem 0 0.8rem;
+    color: #3b2f24;
+  }
+  h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 1.5rem 0 0.5rem;
+    color: #5c4a38;
+  }
+
+  p { margin-bottom: 1rem; }
+  ul, ol { padding-left: 1.4rem; margin-bottom: 1rem; }
+  li { margin-bottom: 0.4rem; }
+
+  blockquote {
+    background: #f3efe8;
+    border-left: 4px solid #c4a98e;
+    margin: 1.2rem 0;
+    padding: 1rem 1.3rem;
+    font-style: italic;
+    color: #4a3f35;
+    border-radius: 2px;
+  }
+  blockquote.strong {
+    border-left-color: #a8896a;
+    background: #efeaE2;
+    font-style: normal;
+    font-weight: 500;
+  }
+  blockquote p { margin: 0; }
+
+  .data-point {
+    display: inline-block;
+    background: #f0ece6;
+    padding: 0.15rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    color: #4a3f35;
+    font-weight: 600;
+  }
+
+  .highlight-box {
+    background: #f7f3ed;
+    padding: 1rem 1.3rem;
+    margin: 1.2rem 0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+  }
+  .highlight-box strong { color: #3b2f24; }
+
+  hr { border: none; border-top: 1px solid #ddd6c8; margin: 2rem 0; }
+
+  .divider { width: 3rem; height: 2px; background: #ccc; margin: 0 auto 1.5rem; }
+
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0d6c8;
+    font-size: 0.8rem;
+    color: #999;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+  <a class="back-link" href="../index.html">← 返回 AI 播客日報</a>
+  <div class="podcast-badge">42章經 · 曲凱</div>
+  <h1>AI 發展咗 4 年，把應用發展沒咗？</h1>
+  <p style="font-size:1rem; color:#555; font-style:italic; margin-top:0.4rem;">——AI 年中復盤，曲凱嘅四年度回溯與冷思考</p>
+  <div class="meta">
+    🎙️ 單口 · 約 27 分鐘<br>
+    📅 2026 年 7 月中旬發布<br>
+    🔗 《42章經》· 第 68 期
+  </div>
+  <div class="divider"></div>
+</header>
+
+<div class="toc">
+  <strong>📖 目錄</strong>
+  <ul>
+    <li><a href="#context">一、背景：一個 VC 嘅四年回望</a></li>
+    <li><a href="#paradox">二、核心悖論：「應用已死」究竟意味着什麼？</a></li>
+    <li><a href="#winners">三、少數跑出來嘅應用做對咗什麼？</a></li>
+    <li><a href="#sequoia">四、紅杉點解投得好？「隨波逐流」</a></li>
+    <li><a href="#option">五、「產品同創始人都係模型嘅期權」</a></li>
+    <li><a href="#market">六、一級二級市場嘅瘋狂：尾聲定係序曲？</a></li>
+    <li><a href="#history">七、歷史嘅重演：從 IBM 收 CPU 錢到 Token 錢</a></li>
+    <li><a href="#common">八、不變嘅常識：曲凱嘅幾條信念</a></li>
+    <li><a href="#pendulum">九、曲凱四年態度變化曲線</a></li>
+    <li><a href="#summary">十、總結：迷霧之中嘅思考</a></li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="context">一、背景：一個 VC 嘅四年回望</h2>
+
+<p>曲凱，42章經創始人，42 Capital 創始人，係最早押注大模型應用嘅 VC 之一。由 2023 年起，佢每年都會做一次 AI 年度復盤。2025 年初佢話「極度樂觀」，2026 年中佢講嘅係——</p>
+
+<blockquote class="strong">「從業十多年，我還是第一次聽到『應用已死』的論斷。」</blockquote>
+
+<p>呢期單口 27 分鐘，唔長，但信息量好大。曲凱從一級二級市場嘅雙重視角，梳理咗過去四年 AI 產業嘅關鍵演變：</p>
+
+<ul>
+  <li><strong>模型勢能：</strong>「達到幾年來最強」——GPT-4 發布後嘅模型能力進展，特別係 2025–2026 嘅迭代速度，遠超大部分人預期</li>
+  <li><strong>應用市場：</strong>「冷到谷底」——唔係投資人唔肯投，係結構性問題</li>
+  <li><strong>二級市場：</strong>智譜同 MiniMax 接連上市，股價走勢「陡峭得反映市場瘋狂」</li>
+</ul>
+
+<p>佢嘅核心觀察係一句並列句：「模型勢能達到幾年來最強，但應用市場冷到谷底」。呢兩個現象同時存在，先係最令人困惑嘅地方。</p>
+
+<!-- ============================================================ -->
+<h2 id="paradox">二、核心悖論：「應用已死」究竟意味着什麼？</h2>
+
+<p>曲凱講咗一個好誠實嘅觀察：</p>
+
+<blockquote>「過去四年市場變化非常劇烈，且趨勢跟喜好非常明顯。投資人可能一度比張一鳴更清楚字節裡誰最有能力。」</blockquote>
+
+<p>呢句話嘅意思係：過去四年，VC 圈嘅 attention 集中到咗一個難以置信嘅程度——每個人都在同一時間睇同一樣嘢，追逐同一個熱點。從基礎模型嘅軍備競賽，到 Agent 概念嘅一波波炒作，再到應用層嘅絕望。</p>
+
+<p><strong>「模型太強，應用被擠壓」</strong>嘅論述，曲凱認為係真實嘅：</p>
+
+<ul>
+  <li>模型公司不斷擴張邊界，從提供 API 到自己做產品、做服務</li>
+  <li>下游應用創始人面對嘅係一個「模型期權」困境——你嘅產品本質上只係模型嘅期權，模型一升級你嘅價值就被稀釋</li>
+  <li>「模型公司裡，我覺得最值得研究的不是 Anthropic / OpenAI / DeepSeek。」——呢句有啲意味深長</li>
+</ul>
+
+<div class="highlight-box">
+  <strong>🔑 關鍵洞察：</strong>曲凱認為「應用已死」唔係投資人嘅錯，而係結構性問題。佢唔係話應用無機會，而係話以「做一個比模型更好嘅產品」呢個出發點去創業，喺當前環境下好難成立。
+</div>
+
+<!-- ============================================================ -->
+<h2 id="winners">三、少數跑出來嘅應用做對咗什麼？</h2>
+
+<p>雖然整體唔樂觀，但曲凱指出咗幾個例外：</p>
+
+<ul>
+  <li><strong>Manus：</strong>通用 Agent 產品，承受咗好多爭議同罵名，但曲凱話「真心希望它好」</li>
+  <li><strong>Liblib（哩布哩布）：</strong>AI 繪畫平台，喺國內市場站穩咗腳</li>
+  <li><strong>Dify：</strong>AI 應用開發平台，從被低估到成為明星項目</li>
+</ul>
+
+<blockquote>「不管 Manus、Liblib 承受了多少爭議跟罵名，我都真心希望它們好。」</blockquote>
+
+<p>呢啲跑出來嘅公司做對咗同一件事：<strong>選擇咗模型暫時唔願意做、或者做唔好嘅垂直場景</strong>。唔係同模型競爭，而係喺模型嘅空白地帶建立價值。</p>
+
+<p>另外仲有兩個例子曲凱有提及：</p>
+<ul>
+  <li><strong>ACE Studio：</strong>「信念感與矽谷頂尖孵化器的奇遇，赴美三個月實現千萬刀 ARR」</li>
+  <li><strong>Ambi（莫子皓團隊）：</strong>「莫子皓團隊的新產品 Ambi」俾到曲凱啟發</li>
+</ul>
+
+<p>曲凱引用咗一個比喻去解釋呢個現象：<strong>「模型係發動機，應用係車身」</strong>——你唔可以話發動機太強所以車唔需要造，而係要諗點樣用呢個發動機造一部真正跑得遠嘅車。</p>
+
+<!-- ============================================================ -->
+<h2 id="sequoia">四、紅杉點解投得好？「隨波逐流」</h2>
+
+<p>曲凱喺節目中間講咗一句「題外話」，但呢句題外話好值得獨立拎出來：</p>
+
+<blockquote class="strong">「我反而覺得，現在是應用創始人歷史上最好的時候。」</blockquote>
+
+<p>然後佢解釋咗紅杉嘅投資哲學：</p>
+
+<ul>
+  <li>紅杉嘅成功秘訣唔係選賽道，而係<strong>「隨波逐流」</strong>——隨模型嘅波，逐資本嘅流</li>
+  <li>創始人應該默認接受呢個前提：模型公司會不斷變強，你嘅產品要喺呢個前提下找到位置</li>
+</ul>
+
+<blockquote>「建議是不要純粹為了融資講故事。」</blockquote>
+
+<p>呢個諗法同好多創始人嘅 instinct（我要做一個完全獨立於模型嘅產品）相反。曲凱嘅論點係：承認自己係模型生態嘅一部分，反而係更務實、更有效率嘅策略。</p>
+
+<!-- ============================================================ -->
+<h2 id="option">五、「產品同創始人都係模型嘅期權」</h2>
+
+<p>呢期播客最被廣泛引用嘅一句金句：</p>
+
+<blockquote class="strong">「今天所有的產品和創始人，都是模型的期權。」</blockquote>
+
+<p>呢句嘅含義好深：</p>
+
+<ul>
+  <li>模型公司可以隨時「行權」——如果一個應用層嘅功能變得重要，模型公司可以自己落場做</li>
+  <li>「模型期權」嘅價值取決於模型公司嘅選擇，而唔係產品本身</li>
+  <li>呢個唔係一個令人舒服嘅現實，但係當前 AI 產業結構嘅真實寫照</li>
+</ul>
+
+<p>曲凱仲提到一個觀察：AGI 呢個概念正喺度「縮水」——唔係貶義，而係模型嘅通用能力在收斂到具體場景。反過來講，呢個趨勢意味住「任何做得夠好嘅垂直場景，都可能被模型公司嘅通用能力覆蓋」。</p>
+
+<!-- ============================================================ -->
+<h2 id="market">六、一級二級市場嘅瘋狂：尾聲定係序曲？</h2>
+
+<p>曲凱對市場嘅判斷係呢期播客嘅另一個重點：</p>
+
+<ul>
+  <li>智譜同 MiniMax 接連上市，股價「陡峭變化」折射市場瘋狂</li>
+  <li>「故事已經講到世界模型了，那之後還能講什麼？」——一個令投資人無從回答嘅問題</li>
+  <li>「如果 GPT 3.5 代表了爆發期的開始，今天我們是否已經站在了狂熱期？」</li>
+</ul>
+
+<blockquote>「一級二級市場的瘋狂，是 AI 走到階段性尾聲的信號嗎？」</blockquote>
+
+<p>曲凱引用咗卡蘿塔·佩蕾絲（Carlota Perez）嘅《技術革命與金融資本》框架：每一次技術革命都經歷「導入期 → 狂熱期 → 回調 → 展開期」。按呢個框架，我哋目前處於<a href="https://www.douban.com/doubanapp/dispatch/book/2326852" target="_blank">導入期末尾，狂熱期已經到來，但展開期尚未降臨</a>。</p>
+
+<div class="highlight-box">
+  <strong>📊 框架解讀：</strong>佩蕾絲嘅模型話畀我哋，每一次技術革命都有一個「財務泡沫 → 崩盤 → 制度重組 → 黃金時代」嘅循環。AI 目前正處於泡沫階段，但泡沫之後先係真正嘅產業展開期。曲凱似乎認為「我哋連泡沫都未真正經歷完」。
+</div>
+
+<!-- ============================================================ -->
+<h2 id="history">七、歷史嘅重演：從 IBM 收 CPU 錢到 Token 錢</h2>
+
+<p>曲凱做咗一個好有意思嘅歷史類比：</p>
+
+<blockquote>「IBM 收 CPU 錢，恰如今天英偉達和模型公司收 Token 錢。」</blockquote>
+
+<p>呢個類比嘅力量在於：</p>
+<ul>
+  <li>IBM 時代，硬件（CPU）係價值集中點，所有軟件都要俾「CPU 稅」</li>
+  <li>AI 時代，算力（GPU）同模型能力（Token）成為新嘅價值集中點</li>
+  <li>歷史證明，CPU 稅最終被 PC 革命瓦解——但呢一次瓦解需要幾耐？冇人知</li>
+</ul>
+
+<p>曲凱唔相信一家公司會長期獨大，亦唔相信模型會吃掉一切。但佢承認：「Token 成本什麼時候才能足夠低、實現真正的智能平權，仍是一個開放問題。」</p>
+
+<!-- ============================================================ -->
+<h2 id="common">八、不變嘅常識：曲凱嘅幾條信念</h2>
+
+<p>喺瘋狂之中，曲凱話「守住常識」最重要。佢列咗幾條：</p>
+
+<ol>
+  <li><strong>唔信一家公司會長期獨大：</strong>模型交替領先嘅局面會持續</li>
+  <li><strong>唔信模型會吃掉一切：</strong>應用層嘅機會唔會消失，只係會換個形式出現</li>
+  <li><strong>歷史嘅韻律：</strong>「歷史上幾波大的科技革命都經歷過導入期、轉折點和展開期」</li>
+  <li><strong>模型競爭未結束：</strong>「模型交替領先的局面還會怎麼變？」——遠未見底</li>
+</ol>
+
+<blockquote>「我們仍處於 AI 劇烈動盪、快速變化的中早期。」</blockquote>
+
+<p>呢句說話係成期播客嘅基調——唔係絕望，而係清醒。曲凱仍然認為 AI 係巨大機會，但佢認為市場對呢個機會嘅表述方式（「應用已死」、「模型通吃」）過於簡化。</p>
+
+<!-- ============================================================ -->
+<h2 id="pendulum">九、曲凱四年態度變化曲線</h2>
+
+<p>回溯曲凱過去幾次年度復盤，佢嘅態度變化好明顯：</p>
+
+<ul>
+  <li><strong>2024 年 1 月：</strong>「24、25 年會是下一代浪潮最關鍵的兩年」——審慎樂觀</li>
+  <li><strong>2025 年 1 月：</strong>「為什麼我們對 25 年 AI 極度樂觀」——高漲</li>
+  <li><strong>2026 年 7 月（今次）：</strong>「AI 發展了 4 年，把應用發展沒了？」——悲觀底色</li>
+</ul>
+
+<p>呢個態度變化唔止反映曲凱個人嘅判斷，更加反映咗整個 AI 行業從「什麼都有可能」到「什麼都難落地」嘅集體心態轉變。</p>
+
+<!-- ============================================================ -->
+<h2 id="summary">十、總結：迷霧之中嘅思考</h2>
+
+<p>呢期播客嘅最後幾分鐘，曲凱提出咗幾個佢自己都冇答案嘅開放問題：</p>
+
+<ul>
+  <li>故事已經講到世界模型了，之後還能講什麼？</li>
+  <li>模型交替領先嘅局面還會怎樣變？</li>
+  <li>Token 成本什麼時候才能足夠低，實現智能平權？</li>
+  <li>如果 GPT 3.5 是爆發期嘅開始，今天我們是否站在了狂熱期？</li>
+  <li>轉折點距離我們到底還有多遠？</li>
+</ul>
+
+<blockquote class="strong">「在高速變化裡，有哪些不變的常識，仍能幫助我們理解 AI？」</blockquote>
+
+<p>呢個問題可能係成期播客最重要嘅嘢。曲凱嘅答案係：<strong>歷史會重演，技術革命有規律，泡沫之後總有展開期</strong>。但「泡沫」嘅階段本身——就係嗰個令人最唔舒服、最唔確定、亦最容易被 mistake 為終點嘅階段。</p>
+
+<p>曲凱冇俾出一個「我哋應該點做」嘅具體 roadmap，但佢嘅態度係清晰嘅：承認現實、守住常識、繼續堅持。對於一個喺 AI 領域投資多年嘅 VC 來講，呢個態度本身就係一種訊號。</p>
+
+<hr>
+
+<div class="highlight-box" style="background:#ede6de;">
+  <p style="font-size:0.9rem; margin-bottom:0;"><strong>📌 延伸參考：</strong>曲凱 AI 復盤系列——<br>
+  <a href="https://podcasts.apple.com/us/podcast/42%E7%AB%A0%E7%BB%8F/id1700299886" target="_blank" style="color:#5a4a3a;">2025.1.4 為什麼我們對 25 年 AI 極度樂觀｜AI 年終復盤</a><br>
+  <a href="https://podcasts.apple.com/us/podcast/42%E7%AB%A0%E7%BB%8F/id1700299886" target="_blank" style="color:#5a4a3a;">2024.1.13 24、25 年會是下一代浪潮最關鍵的兩年 | AI 年終復盤</a><br>
+  卡蘿塔·佩蕾絲《技術革命與金融資本》——曲凱多次引用嘅框架來源</p>
+</div>
+
+<footer>
+  <p>🎙️ 來源：<a href="https://podcasts.apple.com/us/podcast/42%E7%AB%A0%E7%BB%8F/id1700299886" target="_blank" style="color:#888;">42章經 · 第 68 期「AI 發展了 4 年，把應用發展沒了？」</a></p>
+  <p>📝 深度復述生成時間：2026-07-21 14:10 CST</p>
+  <p>JMOKSZ / ai-podcast-collection · Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>
