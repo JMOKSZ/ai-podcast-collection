@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 螞蟻靈波沈宇軍：機器人大腦要從物理世界重做一遍</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5; color: #1a1a1a; line-height: 1.85; -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b6914; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title { font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a; }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #8b6914; background: #fdf8f0; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem; margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  .chapter { font-size: 0.9rem; color: #888; margin: 1.2rem 0 0.5rem; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">← 返回播客日報</a>
+  <div class="ep-num">張小珺商業訪談錄 · #147</div>
+  <h1>螞蟻靈波沈宇軍：機器人大腦要從物理世界重做一遍</h1>
+  <div class="meta">
+    <span>📅 2026-07-21</span>
+    <span>⏱ ~60 分鐘</span>
+    <span>🎙️ 張小珺 × 沈宇軍</span>
+    <span><span class="tag">具身智能</span> <span class="tag">基礎模型</span> <span class="tag">機器人</span></span>
+  </div>
+</header>
+
+<!-- 目錄 -->
+<nav style="background:#f5f0ea;padding:1.2rem 1.8rem;border-radius:6px;margin-bottom:2rem;font-size:0.88rem;">
+  <strong style="display:block;margin-bottom:0.6rem;">📑 目錄</strong>
+  <ol style="margin:0;padding-left:1.2rem;">
+    <li style="margin-bottom:0.3rem;">逆向思維：從物理世界出發</li>
+    <li style="margin-bottom:0.3rem;">三道鴻溝：數字模型裝唔入機械人</li>
+    <li style="margin-bottom:0.3rem;">全棧 2.0：具身原生的六個模型</li>
+    <li style="margin-bottom:0.3rem;">數據卡點：真機數據嘅 Scaling Law</li>
+    <li style="margin-bottom:0.3rem;">Sim-to-Real 嘅反面選擇</li>
+    <li style="margin-bottom:0.3rem;">終局判斷：一兩年落地，五年大規模</li>
+    <li style="margin-bottom:0.3rem;">同門恩怨：Pi 嘅對比視角</li>
+    <li style="margin-bottom:0;">行業啟示：此刻的具身智能</li>
+  </ol>
+</nav>
+
+<!-- ==================== 第一章 ==================== -->
+<h2 class="section-title">一、逆向思維：從物理世界出發</h2>
+
+<p>今次沈宇軍（螞蟻靈波首席科學家）上張小珺嘅訪談，有一個強烈嘅前提判斷——<strong>「物理世界唔係數字世界嘅簡單延伸」</strong>。呢個判斷聽落好似常識，但而家絕大部分做機械人大腦嘅團隊，都係用另一個方法做：攞數字世界已經訓練好嘅大模型，再加少少機械人數據微調，就當係機械人大腦。呢種做法被沈宇軍稱為「<strong>迫不得已嘅選擇</strong>」。</p>
+
+<p>沈宇軍嘅老師係已故 AI 學者湯曉鷗。佢自己嘅職業生涯亦好有意思：從人工智能學生，到字節跳動，到螞蟻研究院，再到螞蟻成立子公司「螞蟻靈波」（Robbyant）做具身智能。呢條路本身已經講緊一個故事——螞蟻集團想做嘅唔止係數字世界嘅 AI，仲要進入物理世界。</p>
+
+<p>螞蟻靈波 CEO 朱興喺另一篇專訪解釋得更直接：「螞蟻一直係做生活相關嘅服務，包括金融、醫療等，過去更多係喺數字世界積累，未來要更好服務用戶肯定要進入物理世界。」</p>
+
+<blockquote>「我們堅定認為基模嘅訓練應該更多使用互聯網數據和真實數據。所謂嘅『真實數據成本高』也只係階段性嘅。」<br>— 沈宇軍</blockquote>
+
+<p>呢個判斷嘅商業背景：螞蟻集團嘅 AGI 版圖包含數字智能（百靈團隊）同物理智能（靈波團隊）。百靈負責語言模型、多模態模型嘅技術演進，靈波負責另一條路——從物理交互出發，喺真實世界中構建智能。兩條線平行運作，但基礎技術可以互相復用。</p>
+
+<!-- ==================== 第二章 ==================== -->
+<h2 class="section-title">二、三道鴻溝：數字模型裝唔入機械人</h2>
+
+<p>沈宇軍將數字世界模型搬到機械人嘅困難歸納為三個層面：</p>
+
+<p><strong>第一，睇得更清楚。</strong> 數字世界嘅視覺模型擅長分辨「呢個係乜嘢」，但機械人需要知道「佢喺邊」「離我幾遠」「中間過唔過到」。隔住透明玻璃見到一隻貓，唔等於機械人可以掂到佢。視覺語義上「見到」，唔等於物理空間上「可達」。</p>
+
+<p><strong>第二，想得更明白。</strong> 數字內容模型可以在相對完整嘅上下文生成結果，機械人面對嘅環境卻隨時可能俾人打斷、被物體遮擋、或者因為一次接觸而發生變化。佢唔可能一次規劃到底，而係要喺行動中持續預測下一刻，並根據反饋實時修正。</p>
+
+<p><strong>第三，幹得更利索。</strong> 機械人唔單止要喺一部機、一個任務上表現好，仲要將能力遷移到唔同構型同真實場景。對具身智能嚟講，做到一次示範只係起點，在不同本體上穩定復用先接近通用能力。</p>
+
+<blockquote class="strong">「數字模型識別得準、生成得靚，都唔等於任務能夠完成。模型仲要理解空間約束、遵循因果同物理規律、喺實時反饋中持續行動，並把能力遷移到更多本體和場景。」<br>— 沈宇軍</blockquote>
+
+<p>呢三點背後有一個更深層嘅問題：<strong>數字世界同物理世界有不一樣嘅優化目標</strong>。數字世界優化「似度」（如 PSNR、FID），物理世界優化「完成度」（這個任务完成咗未）。兩者有時仲會衝突——生成得最好睇嘅方案唔一定係機械人最容易執行嘅方案。</p>
+
+<!-- ==================== 第三章 ==================== -->
+<h2 class="section-title">三、全棧 2.0：具身原生的六個模型</h2>
+
+<p>沈宇軍喺 2026 年 7 月 19 日嘅 InclusionAI 論壇上正式發布螞蟻靈波全棧 2.0，包含六個模型。呢啲模型唔係從數字模型「嫁接」過嚟，而係從頭設計：</p>
+
+<div class="highlight-box">
+<h3>🧩 六個模型的定位</h3>
+<ul>
+  <li><strong>LingBot-Depth 2.0</strong> — 空間感知層。從幾何結構出發進行視覺預訓練，重點處理透明、反光同密集物體等真實環境難題。已集成至奧比中光相機，全球銷售。</li>
+  <li><strong>LingBot-Vision</strong> — 視覺基礎模型。</li>
+  <li><strong>LingBot-VLA 2.0</strong> — 視覺-語言-動作模型。面向「一腦多機」，已適配宇樹、智元、銀河通用、樂聚等 <span class="data-point">17 個品牌、20 種機械人構型</span>，並將控制擴展到頭部、腰部、底盤等全身自由度。</li>
+  <li><strong>LingBot-VA 2.0</strong> — 行業首個具身原生嘅世界動作模型。冇嫁接數字世界模型，從頭開始預訓練。全新嘅語義視覺—動作分詞器、嚴格嘅因果預訓練、MoE 架構與異步推理機制，讓機械人能夠「邊推演、邊行動、邊調整」。</li>
+  <li><strong>LingBot-World 2.0</strong> — 持續生成從分鐘級推進到小時級，支援 <span class="data-point">720p/60fps</span> 實時交互。採用 MoE 架構。</li>
+  <li><strong>LingBot-Video</strong> — 視頻生成模型，MoE 架構，喺推理效率、物理合理性、動作理解等方面系統提升。</li>
+</ul>
+</div>
+
+<p>呢六個模型嘅設計思路，體現咗一個清晰嘅層次：「內部始終只有一盤棋」。每個模型係同一張大拼圖嘅唔同模塊，隨住進展逐步釋放。</p>
+
+<p>LingBot-VLA 嘅訓練數據尤其值得注意：基於九種主流構型嘅 <span class="data-point">超兩萬小時高質量真機數據</span>進行預訓練（實際採集總時長接近 10 萬小時，包含大量重複和質量較低嘅數據，篩選標準非常嚴格）。呢個模型在權威評測中超越了一系列國際頂尖基線。</p>
+
+<p>而 LingBot-VA 作為全棧嘅「壓軸」，徹底展現咗技術野心。它是全球首個用於通用機器人控制嘅因果視頻-動作世界模型。透過視頻生成模型來實現「想像」，結合多模態模型嘅邏輯推理，再疊加真實環境嘅反饋。僅通過 <span class="data-point">30-50 次真實世界演示</span>就能學習新技能，成功率比常見基準模型（如 π0.5）高出約 <span class="data-point">20%</span>。</p>
+
+<p>呢組數字嘅含義：少樣本學習能力已達到實用水準，微調成本大幅下降。</p>
+
+<!-- ==================== 第四章 ==================== -->
+<h2 class="section-title">四、數據卡點：真機數據嘅 Scaling Law</h2>
+
+<p>沈宇軍反覆強調一句話：「智能不夠！」佢認為具身智能仲未有到自己嘅 GPT-1 moment——因為仲未見到好嘅數據 scaling up 方式。</p>
+
+<blockquote>「現在的多模態模型、視頻生成模型，基本上都要用幾億個視頻去學。但機器人的有效數據積累，還遠未達到這個量級。」<br>— 沈宇軍</blockquote>
+
+<p>佢預計要到互聯網數據量級（百萬小時起步）才可能到具身智能嘅 GPT-1 moment，時間點大概喺明年中（2027 年中）。呢個判斷同業界主流預期一致——數據量嘅不足，唔係算力或模型架構能夠補償嘅。</p>
+
+<p>目前 LingBot-VLA 用了約 2 萬小時有效數據，但實際採集了接近 10 萬小時，有效率只有大約 <span class="data-point">20%</span>。數據篩選嘅嚴格程度反映出物理世界數據的「雜訊」遠比數字世界大——重複動作、傳感器誤差、環境不一致都讓大部分採集數據無法用於訓練。</p>
+
+<p>沈宇軍對「好數據」嘅定義有三個關鍵詞：</p>
+<ul>
+  <li><strong>多樣性</strong> — 任務本身的豐富程度。如果所有數據都係抓、拿、取、放呢啲簡單動作，機械人最後也就只能做呢啲。數據分佈的多樣性決定了模型能力嘅邊界。</li>
+  <li><strong>靈巧性</strong> — 指向硬體嘅局限。目前大多數機械人仲用緊夾爪，但夾爪能做到嘅嘢好有限。</li>
+  <li><strong>力</strong> — 物理世界獨有嘅維度。數字世界冇摩擦力、冇重量感、冇材質軟硬。喺物理世界做嘢，呢啲嘢恰恰至關重要。</li>
+</ul>
+
+<p>數據採集成本正處於加速下降嘅拐點。遙操方式（人遠程操控機械人做動作）嘅效率正被新技術取代——UMI、數據手套等新方式正在快速拉低成本，相關公司也越來越多。「可能會比仿真器提升嘅速度更快」，沈宇軍補充道。</p>
+
+<!-- ==================== 第五章 ==================== -->
+<h2 class="section-title">五、Sim-to-Real 嘅反面選擇</h2>
+
+<p>而家具身智能領域最主流嘅技術路徑係 Sim-to-Real（從仿真到現實）：先在仿真虛擬環境中海量訓練機械人，再將策略遷移到現實。螞蟻靈波選擇咗相反嘅路——<strong>真實數據優先，基本上不用仿真數據</strong>。</p>
+
+<p>沈宇軍認為「仿真數據很多場景仲無法模擬」嘅挑戰是切實存在嘅——流體、柔性物體、傳感器誤差，呢啲仿真好難搞掂。解決定問題嘅週期可能比降低真實數據採集成本更長。</p>
+
+<p>呢個判斷同 Physical Intelligence（Pi）嘅路線唔一樣。Pi 團隊（同為機械人大腦公司，估值 50 億美元）重點做 Sim-to-Real 加上後訓練 scaling，而螞蟻靈波選擇從物理世界出發做基模。沈宇軍嘅觀點更極端：<strong>「預訓練過程基本上沒有用仿真數據」</strong>。佢認為仿真喺具體場景落地時有用，但如果目標係構建通用模型，仿真環境也要跟著通用——而這本身就是個極難嘅問題。</p>
+
+<p>呢個技術選擇背後有更深層嘅思考：數位世界同物理世界有不同的優化目標。對機器人來說，識別得準、生成得靚，都不等於任務能夠完成。模型還必須理解空間約束，遵循因果與物理規律，在實時反饋中持續行動。</p>
+
+<blockquote>「Sim-to-Real 不是我哋選擇嘅主技術路線。我哋堅定認為基模嘅訓練應該更多使用互聯網數據和真實數據。」<br>— 沈宇軍</blockquote>
+
+<!-- ==================== 第六章 ==================== -->
+<h2 class="section-title">六、終局判斷：一兩年落地，五年大規模</h2>
+
+<p>沈宇軍對產業落地節奏保持咗罕見嘅冷靜：</p>
+
+<blockquote>「如果話跑通一兩個行業，我覺得到一兩年內就能看到。但大規模在生活中應用，至少五年起步。」</blockquote>
+
+<p>佢特別提出咗「<strong>原生安全</strong>」嘅概念——安全唔應該係事後加裝嘅圍欄，而應該成為機械人預訓練嘅一部分。「要先想清楚怎麼定義安全、怎麼採集安全數據，把安全能力內化到預訓練過程中。」</p>
+
+<p>目前行業面臨嘅幾個關鍵未解決問題：</p>
+<ul>
+  <li><strong>強化學習（RL）落地範式尚未收斂</strong> — RL 喺機械人領域點樣同預訓練結合，業界仲未有共識</li>
+  <li><strong>System 2（慢思考）能力仍在探索</strong> — 機械人需要嘅唔單止係快反應，仲有推理同規劃</li>
+  <li><strong>技術路線未收斂</strong> — VLA、世界模型、擴散策略，邊條路最終勝出仲未明朗</li>
+</ul>
+
+<p>對人形機械人，沈宇軍嘅態度係「<strong>沒有執念</strong>」。佢認為本體（機械人嘅身體）很難通用，場景選不準本體設計就有問題。目前大腦開發落後於本體，未來會交替上升。呢個務實態度同好多「人形機械人必須行」嘅公司形成鮮明對比。</p>
+
+<p>最終產業格局可能貼近大語言模型嘅格局——基礎模型層由少數公司提供，應用層百花齊放。螞蟻靈波嘅生態策略係透過開源成為機械人領域嘅「安卓系統」：唔只提供基礎模型，仲提供高效嘅後訓練工具鏈，讓硬體廠商可以用更低嘅數據量和 GPU 成本把「大腦」適配到唔同嘅「身體」上。</p>
+
+<!-- ==================== 第七章 ==================== -->
+<h2 class="section-title">七、同門恩怨：Pi 嘅對比視角</h2>
+
+<p>沈宇軍呢集同第 #146 集 Pi 團隊嘅專訪形成咗有意思嘅對照。Pi（Physical Intelligence）同螞蟻靈波都係做機械人大腦，但路線各有不同：</p>
+
+<ul>
+  <li><strong>Pi</strong> 強調 Zero-shot 落地，走 Sim-to-Real + RL 後訓練路線，模型進化路線係 π0 → π0.5 → π*0.6 → π0.7</li>
+  <li><strong>螞蟻靈波</strong> 強調物理世界原生數據預訓練，基本上不用仿真數據，從 LingBot-VLA → LingBot-VA 的具身原生路線</li>
+  <li><strong>共同點</strong>：都認為數據是瓶頸，都強調後訓練的價值，都在探索世界模型 + 動作嘅閉環</li>
+  <li><strong>分歧點</strong>：Pi 在 RL 上的投入更大（RL Token 縮短微調時間），螞蟻靈波在真實數據質量上更執著</li>
+</ul>
+
+<p>呢兩條路線嘅競爭，本質上係「Sim-to-Real 先走抑或物理世界先走」嘅路線之爭。邊條最終能達到足夠嘅通用性，可能需要幾年時間驗證。</p>
+
+<!-- ==================== 第八章 ==================== -->
+<h2 class="section-title">八、行業啟示：此刻的具身智能</h2>
+
+<p>沈宇軍呢集提供咗一個稀缺嘅視角——<strong>中國公司喺物理 AI 領域嘅真實技術狀態</strong>。唔似美國公司動輒宏大敘事，沈宇軍嘅表述始終實事求是：「智能不夠」就係智能不夠，唔會話「即將超越人類」。</p>
+
+<p>幾個重要行業判斷值得記低：</p>
+
+<ul>
+  <li><strong>技術路線尚未收斂</strong> — 冇任何公司可以把整個具身智能行業全吃透，開源係推進行業進步的最優解</li>
+  <li><strong>數據量級差距懸殊</strong> — 數字世界模型用幾億條數據訓練，具身智能目前只有幾萬小時</li>
+  <li><strong>成本下降拐點已到</strong> — 真實數據採集成本正在快速下降，新硬件+新方法正在改變數採經濟學</li>
+  <li><strong>安全前置化</strong> — 原生安全概念值得整個行業思考</li>
+  <li><strong>具身智能嘅「ChatGPT 時刻」仲未到來</strong> — DeepSeek R1 時刻更加遙遠，目前還在早期探索階段</li>
+</ul>
+
+<p>呢集同第 #146 集 Pi 團隊訪談、以及第 #133 集謝賽寧關於世界模型嘅討論，構成咗 2026 年中具身智能嘅三重視角——矽谷嘅 Sim-to-Real 路線、中國嘅物理原生路線、以及學術界對世界模型嘅理論建構。三者嘅碰撞正塑造緊這個行業嘅未來。</p>
+
+<blockquote class="strong">「不管做 VLA 還是世界模型，從原理上都一樣——機器人根據觀察到的東西，理解要做的事情，把它執行。核心要喺大嘅範式框架下，把數據發揮到最大嘅價值。」<br>— 沈宇軍</blockquote>
+
+<footer>
+  <p>深度萃取自《張小珺商業訪談錄》#147 · 沈宇軍（螞蟻靈波首席科學家）</p>
+  <p>另參考：甲子光年對話｜21世紀經濟報道｜新浪科技｜螞蟻靈波全棧2.0發布演講（InclusionAI 2026-07-19）</p>
+  <p>生成時間：2026-07-22 14:12 CST</p>
+</footer>
+
+</div>
+</body>
+</html>
