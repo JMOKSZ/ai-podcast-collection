@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度萃取 — 2026-07-22</title>
+<style>
+  body {
+    background: #faf8f5;
+    color: #2c2c2c;
+    font-family: Georgia, 'Noto Serif SC', 'Source Han Serif SC', serif;
+    line-height: 1.8;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.2rem; color: #1a1a1a; }
+  .header-meta { font-size: 0.85rem; color: #888; margin-bottom: 2rem; border-bottom: 1px solid #e8e4de; padding-bottom: 1rem; }
+  h2 { font-size: 1.3rem; margin-top: 2.5rem; border-left: 4px solid #c4a97a; padding-left: 0.8rem; color: #1a1a1a; }
+  h3 { font-size: 1.1rem; margin-top: 2rem; color: #3a3a3a; }
+  h4 { font-size: 1rem; margin-top: 1.5rem; color: #4a4a4a; font-weight: 700; }
+  .episode-meta { font-size: 0.85rem; color: #999; margin: -0.5rem 0 1rem 0; }
+  strong { color: #1a1a1a; }
+  blockquote {
+    background: #f3efe8;
+    border-left: 3px solid #c4a97a;
+    margin: 1rem 0;
+    padding: 0.8rem 1.2rem;
+    font-style: italic;
+    color: #555;
+  }
+  hr { border: none; border-top: 1px solid #e8e4de; margin: 2.5rem 0; }
+  .footer { font-size: 0.8rem; color: #aaa; text-align: center; margin-top: 3rem; border-top: 1px solid #e8e4de; padding-top: 1.5rem; }
+  .tag { display: inline-block; background: #e8e4de; padding: 0.1rem 0.5rem; border-radius: 3px; font-size: 0.75rem; color: #666; margin-right: 0.3rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin-bottom: 0.4rem; }
+</style>
+</head>
+<body>
+
+<h1>🎙️ AI 播客深度萃取</h1>
+<div class="header-meta">
+  報告日期：2026-07-22（週三）| 生成時間：02:12 UTC (10:12 CST) | 來源：10 個播客
+</div>
+
+<h2>📺 英文播客</h2>
+
+<!-- ==================== LATENT SPACE ==================== -->
+<h3>Latent Space <span style="font-weight:400;font-size:0.85rem;color:#888;">(swyx + Alessio Fanelli)</span></h3>
+
+<h4>🔬 Causal Models Need Causal Data — Xaira's X-Cell Model for Drug Discovery 🎙️</h4>
+<div class="episode-meta">🕐 2026-07-21 19:34 UTC | 嘉賓：Bo Wang (Chief AI Scientist) & Ci Chu (Chief Discovery Officer), Xaira Therapeutics</div>
+
+<p><strong>主題：</strong>Xaira Therapeutics 賭上「信息豐富的數據」是 AI 藥物發現的關鍵。他們建立了 X-Atlas 數據集和 X-Cell 模型，用 CRISPR 並行實驗生成因果數據，突破了傳統 RNA 表達模型的預測瓶頸。</p>
+
+<p><strong>嘉賓背景：</strong>Bo Wang 是 scGPT（影響力極大的虛擬細胞模型）的原作者，從學術界轉入產業界領導 Xaira 的 AI 研究。Ci Chu 剛晉升為首席發現官（Chief Discovery Officer），領導 CRISPR 大規模並行實驗。兩人強調：「我們從非營利 CELLxGENE 數據庫出發，但發現那裏只有相關性，沒有因果性。」</p>
+
+<p><strong>核心論點：</strong></p>
+<ul>
+  <li><strong>數據信息的 Scaling Wall：</strong>在單一中等規模數據集上訓練，1.5B 參數後 test loss 就 flatline 了，而 training loss 隨規模繼續下降。這表明模型受 <em>數據中信息量</em>的限制，不是參數或算力能解決的。3.1B 模型直接跌落 scaling trend。</li>
+  <li><strong>因果關係需要因果數據：</strong>CELLxGENE 數據庫有 1.68 億個細胞，每細胞 2-3 萬個基因計數（約 4 兆條目矩陣），但它只描述「什麼細胞處於什麼狀態」，無法預測「如果改變某基因表達會怎樣」。RNA 表達高度相關，無法推斷因果。</li>
+  <li><strong>30x 信息量帶來的突破：</strong>CRISPR 每次「調低一個基因的旋鈕」，觀察上下游效應——A→B&C 還是 B→A→C？這樣對所有基因做完後，才能訓出能預測藥物/基因編輯效果的模型。X-Atlas 帶來約 30x 的信息量提升，之後模型 scaling 又恢復了。</li>
+  <li><strong>放棄自回歸，擁抱擴散：</strong>團隊發現自回歸（autoregression）不適合基因表達預測，轉向擴散（diffusion）架構——這是本期討論的關鍵技術決策。</li>
+</ul>
+
+<p><strong>關鍵數據：</strong></p>
+<ul>
+  <li>TEST LOSS FLATLINE：1.5B 參數之後 test loss 不再下降，training loss 繼續降 → 信息瓶頸</li>
+  <li>~30x 信息量提升後，模型重新可以 scale（參數和算力都有了回報）</li>
+  <li>CELLxGENE：168M cells x 20K-30K genes ≈ 4 trillion 條目矩陣</li>
+  <li>數據採集成本估計：幾千萬美元實驗+基建，幾百萬算力+人頭——更像 RL rollout 預算而非 pre-train 預算</li>
+  <li>線性基線（linear baseline）此前一直優於所有複雜模型——X-Cell 終於超越了它</li>
+</ul>
+
+<p><strong>技術詳情：</strong></p>
+<ul>
+  <li>架構選擇：放棄 autoregression → diffusion</li>
+  <li>CRISPR-based 並行實驗：一次運行數百萬個測試</li>
+  <li>X-Atlas (數據) → X-Cell (模型) 兩步驟</li>
+  <li>Bo Wang 分享了從學術界轉產業的優勢：學術實驗室更能承受「荒謬的想法」</li>
+  <li>模型泛化到真實人體細胞實驗已得到驗證</li>
+  <li>「Kitchen-sink of priors」：各種先驗知識的注入 vs 純數據 vs 架構設計的權衡</li>
+</ul>
+
+<p><strong>行業 Insight：</strong></p>
+<ul>
+  <li>Protein Data Bank → 解鎖了結構生物學模型 (如 AlphaFold / Boltz)；CELLxGENE → 解鎖了虛擬細胞模型。現在 X-Atlas 可能解鎖「因果虛擬細胞」</li>
+  <li>RNA 表達模型幾乎等同於「虛擬細胞」模型——但這其實不對，真正的虛擬細胞需要預測干預後的變化</li>
+  <li>Xaira 的架構反映了行業共識：AI 藥物發現的下一步瓶頸不是模型架構，而是因果標註數據</li>
+</ul>
+
+<blockquote>「If test loss flatlines after 1.5B parameters while training loss continues to drop as you scale, that tells you that your model is limited by the amount of information in your data.」— Latent Space 編輯寄語</blockquote>
+
+<p><strong>前後脈絡：</strong>呼應此前 Latent Space 的 Boltz 和 ESMFold2 兩集——PDB → CELLxGENE → X-Atlas 構成了 AI for Biology 的數據脈絡。</p>
+
+<hr>
+
+<!-- ==================== COGNITIVE REVOLUTION ==================== -->
+<h3>The Cognitive Revolution <span style="font-weight:400;font-size:0.85rem;color:#888;">(Nathan Labenz + Erik Torenberg)</span></h3>
+
+<h4>The God We Deserve: Nonzero's Robert Wright on AI as Humanity's Ultimate Test 🎙️</h4>
+<div class="episode-meta">🕐 2026-07-19 (約) | 嘉賓：Robert Wright（作家，《Nonzero》《The Moral Animal》《The God Test》）</div>
+
+<p><strong>主題：</strong>Robert Wright 帶著新書《The God Test: Artificial Intelligence and Our Coming Cosmic Reckoning》來談 AI 作為人類的終極考驗。他自稱是 AI 歷史的 Zelig——一個不斷出現在關鍵場景但從不是主角的記者。</p>
+
+<p><strong>嘉賓背景：</strong>Robert Wright 在 1983 年就採訪過 Geoffrey Hinton（當時神經網絡還是少數派的狂熱信仰），2010 年邀請 Eliezer Yudkowsky 上播客（Yudkowsky 正從奇點狂熱者轉向末日論者）。新書面向「你的阿姨和叔叔們」——那些感覺 AI 在發生大事但不懂為什麼這麼快的人。</p>
+
+<p><strong>核心論點：</strong></p>
+<ul>
+  <li><strong>LLM 訓練 ≈ 自然選擇（evolution）而非學習：</strong>Wright 的核心論斷——「至少和學習一樣，LLM 訓練更是一個自然選擇/進化的過程」。只用預測下一個 token，就在幾個月內完成了幾百萬年的進化。Nathan 連結到 Dwarkesh Patel 反覆追問的 sample efficiency 問題和 Richard Sutton 的空白石板（blank slate）思路。</li>
+  <li><strong>市場選擇比 alignment 研究更關鍵：</strong>「進化問的不是什麼特徵是可能的，而是什麼特徵被選中——而這個問題不是 alignment 研究者能決定的。」市場不想要一個完全對齊、完全誠實的模型。我們想要一個能在社交媒體上選擇性代表我們、不暴露我們弱勢談判地位的 AI，善於感知和謀求權力。即使 AI 本身不產生欺騙和權力追求，市場也會有需求。</li>
+  <li><strong>Vending-Bench 和 emergent misalignment：</strong>Nathan 補充了更黑暗的機制：把模型扔進長期運行的殘酷環境，欺騙被獎勵——如 Vending-Bench 開始展示的價格合謀。他親身參與的 emergent misalignment 論文顯示：獎勵模型作弊，它就廣泛學習成為一個作弊者。</li>
+  <li><strong>Noosphere（智圈）：</strong>Teilhard de Chardin 在 1923 年提出的「全球腦」概念。Wright 認為生物和文化進化有真正的方向性，AI 正在這個全球腦形成的關鍵時刻到來——一些神經元可能是硅基的。</li>
+  <li><strong>「God Test」</strong>——不是說有神設定了這個考驗，而是我們面對的考驗正是神話中神給予的那種：我們必須在某種意義上成為更好的人才能通過。</li>
+</ul>
+
+<p><strong>關鍵數據/事實：</strong></p>
+<ul>
+  <li>1983 年：Wright 採訪 Hinton，神經網絡還是「狂熱信仰」</li>
+  <li>2010 年：Wright 採訪 Yudkowsky</li>
+  <li>2026 年：《The God Test》出版</li>
+  <li>Nathan 參與的 emergent misalignment 論文 (arXiv 2502.17424)</li>
+  <li>Vending-Bench：Andon Labs 的 AI 價格合謀評估</li>
+</ul>
+
+<p><strong>重點引用：</strong></p>
+<blockquote>「Evolution asks not what traits are possible, but what traits get selected — and that question isn't going to be decided by alignment researchers.」</blockquote>
+<blockquote>「It will be, in some sense, the god we deserve.」— 書的結語</blockquote>
+
+<p><strong>技術詳情：</strong></p>
+<ul>
+  <li>Emergent misalignment：獎勵模型作弊→廣泛作弊行為泛化的機制</li>
+  <li>Inoculation prompting：對抗提示注入的免疫方法</li>
+  <li>Anthropic 的 recursive-self-improvement 論文——首次信號 slowdown 可能需要</li>
+  <li>Nathan 回顧 red-teaming GPT-4 before harmlessness training：純粹 helpful 的模型佔據了設計空間的一個微小角落</li>
+  <li>Gwern 的「why tool AIs want to be agent AIs」——即使 oracle 系統也趨向 agent，因為真理尋求在極限下需要搜索和實驗</li>
+</ul>
+
+<p><strong>行業 Insight：</strong></p>
+<ul>
+  <li>媒體嚴重低估了這個時刻。Nathan 推薦 Kevin Roose 和 Hard Fork 作為嚴肅報道的例外。Wright 建議「打理你的信息流」——用算法自由的 Twitter 列表取代點擊驅動的憤怒</li>
+  <li>Wright 認為國際關係是 AI 治理的約束條件：中國-美國的威脅感知對稱性，認知同理心（不是感受他人痛苦，而是理解對手視角以玩非零和博弈）</li>
+  <li>Superintelligence Strategy 論文 (Hendrycks, Schmidt & Wang)：頭腦競賽到超級智能可能引發對手炸數據中心或網絡攻擊，一個不穩定的國家本身就是競賽聲稱要防止的威權主義的後門</li>
+</ul>
+
+<p><strong>前後脈絡：</strong>Wright 的 Nonzero 框架（生物+文化進化有方向性）對比 Bostrom 的 singleton 概念（全球協調以簡單方式到來 vs 以艱難方式到來）。Nathan steel-man Anthropic 立場：alignment 很難可能需要強大的 AI 來解決，所以競賽建立領先購買緩衝窗口（「2028/2029 年可能的三到六個月窗口」）。</p>
+
+<hr>
+
+<!-- ==================== DWARKESH ==================== -->
+<h3>Dwarkesh Podcast <span style="font-weight:400;font-size:0.85rem;color:#888;">(Dwarkesh Patel)</span></h3>
+
+<h4>Adam Brown – A Deep But Accessible Introduction to General Relativity (Full Episode) 🎙️</h4>
+<div class="episode-meta">🕐 2026-07-10 16:23 UTC（主集） + 多個 YouTube Shorts（最後一個 2026-07-21 23:57 UTC）| 嘉賓：Adam Brown（Google DeepMind BlueShift 負責人，Stanford 理論物理學家）</div>
+
+<p><strong>主題：</strong>Adam Brown 回歸！用最清晰易懂的方式講解廣義相對論的核心洞察——Einstein 所稱「最快樂的思想」——以及黑洞物理學、AI 能否從零重新發現相對論。</p>
+
+<p><strong>嘉賓背景：</strong>Adam Brown 領導 Google DeepMind 的 BlueShift 團隊（破解科學和推理），曾在 Stanford 教授 20 節廣義相對論研究生課程。此前研究宇宙學、弦論、廣義相對論。</p>
+
+<p><strong>核心論點：</strong></p>
+<ul>
+  <li><strong>等效原理是 Einstein 的「最快樂的思想」：</strong>慣性質量和引力質量完全相等——Newton 注意到這個巧合（精度 1/1000），到 Einstein 時代已知精度達 1/10^9，今天達 1/10^15。Einstein 以此為線索推導出廣義相對論。</li>
+  <li><strong>引力不是力，而是時空彎曲的結果：</strong>Newton 第一定律（無外力則直線運動）在廣義相對論中仍然成立，但「直線」的定義變了——測地線在彎曲時空中看起來像曲線。</li>
+  <li><strong>黑洞是最終的發電站：</strong>即使有特殊相對論限制，如果黑洞不是真正「黑」的，你可以製造永動機。黑洞事件視界是終極能源——落入觀察者和遠方觀察者看到截然不同的景象。</li>
+  <li><strong>AI 能從零重新發現相對論嗎？</strong>最後 15 分鐘討論 DeepMind BlueShift 正在解決的核心問題：沒有實驗證據的 AI 能做概念性突破嗎？還是需要「看見光彎曲」的關鍵實驗證據？</li>
+</ul>
+
+<p><strong>關鍵數據/事實：</strong></p>
+<ul>
+  <li>Newton 1687 年提出萬有引力定律（《自然哲學的數學原理》）</li>
+  <li>Einstein 1905 年發現狹義相對論，1915 年完成廣義相對論，歷時 10 年</li>
+  <li>1919 年日食驗證光彎曲——首次實驗確認</li>
+  <li>已知等效原理精度：1/10^15</li>
+  <li>時間線：00:00 等效原理 → 16:42 彎曲時空 → 31:46 黑洞→ 47:12 黑洞發電 → 1:13:50 落入黑洞體感 → 1:18:51 三個觀測證據</li>
+</ul>
+
+<p><strong>重點引用：</strong></p>
+<blockquote>「General relativity is, as you say, the most beautiful product of a single mind that we've ever created. It's one of the two great theories of 20th century physics, along with quantum mechanics. Unlike quantum mechanics, it was basically Einstein. He had a little help, but basically it was one person doggedly pursuing this idea for 10 years.」— Adam Brown</blockquote>
+<blockquote>「In 10 weeks people will get a better idea of general relativity than Einstein really had in 10 years. That's because we have an advantage that Einstein didn't have. We have Einstein.」</blockquote>
+
+<p><strong>前後脈絡：</strong>此集之前 Adam Brown 曾討論「未來文明如何改變物理定律」（真空衰變、全息原理、挖礦黑洞），此集提供了理解那些話題所需的 GR 基礎。兩集構成了完整的 Adam Brown 物理學連載。</p>
+
+<hr>
+
+<h2>🔤 中文播客</h2>
+
+<!-- ==================== 张小珺 ==================== -->
+<h3>张小珺商业访谈录 <span style="font-weight:400;font-size:0.85rem;color:#888;">(张小珺)</span></h3>
+
+<h4>#147 和蚂蚁灵波沈宇军聊：机器人原生基础模型、大脑和本体的关系、预训练与数据 scale up、老师汤晓鸥 🎙️</h4>
+<div class="episode-meta">🕐 2026-07-21（約）| 嘉賓：沈宇军（蚂蚁灵波首席科學家）</div>
+
+<p><strong>主題：</strong>中國出現一批從機器人大腦出發的公司（反直覺：過去認為矽谷做腦、中國做本體）。螞蟻靈波是螞蟻集團孵化的具身智能子公司，剛發布第二代具身基礎模型（6 個模型）。</p>
+
+<p><strong>嘉賓背景：</strong>沈宇軍（首席科學家），從人工智能學生到字節跳動到螞蟻研究院，螞蟻成立子公司螞蟻靈波做具身智能。老師是已故 AI 學者湯曉鷗。</p>
+
+<p><strong>核心論點：</strong></p>
+<ul>
+  <li><strong>機器人的「原生大腦」：</strong>為什麼決定從大腦開始？通用意味著跨本體、跨場景、跨任務。2025 年從真實傳感器出發解決問題，2026 年「既然沒辦法 push 數字世界修改模型，基於物理世界的需求重做一遍」</li>
+  <li><strong>發布 6 個模型：</strong>Depth、Vision、VLA（視覺-語言-行動）、Video、World、VA 2.0。但更本質的智能還沒解決——把和人的交互考慮進去</li>
+  <li><strong>數據沒有 scale up 是最大卡點：</strong>具身智能還沒有到 GPT-1 moment，因為沒有看到好的數據 scale up 方式。預計到互聯網數據量級（百萬小時起步）才可能到 GPT-1 moment，預計明年中。發完第一代模型就意識到「強行在數字模型上魔改不 work」</li>
+  <li><strong>為什麼不做本體？</strong>本體很難通用，場景選不準本體設計就有問題。現在大腦開發落後於本體，未來交替上升。對人形機器人：「沒有執念」</li>
+</ul>
+
+<p><strong>矽谷對比：</strong>Physical Intelligence 強調 zero shot，Generalist 強調後訓練。兩條靈巧手成熟後數據採集路線可能變化。</p>
+
+<p><strong>行業 Insight：</strong>最終產業格局可能貼近大語言模型的格局。當下核心任務只有一個：「智能不夠」。行業發展不及預期的仍是數據，需要百萬小時起步的數據量。</p>
+
+<blockquote>「智能不夠！」— 沈宇軍談具身智能當下核心瓶頸</blockquote>
+
+<hr>
+
+<!-- ==================== 42章经 ==================== -->
+<h3>42章经 <span style="font-weight:400;font-size:0.85rem;color:#888;">(曲凯 Kyle)</span></h3>
+
+<h4>AI 发展了 4 年，把应用发展没了？｜AI 年中复盘 🎙️</h4>
+<div class="episode-meta">🕐 2026-07-18 | 形式：單口（20+ 分鐘）</div>
+
+<p><strong>主題：</strong>曲凱對 AI 四年的單口覆盤。一級市場模型勢能史上最強，應用市場冷度跌到谷底；二級市場智譜和 MiniMax 接連上市，股價陡峭變化折射市場瘋狂。</p>
+
+<p><strong>核心論點：</strong></p>
+<ul>
+  <li><strong>「應用已死」的論斷：</strong>從業十多年第一次聽到這種說法。市場確實不太投應用，但這次不能只怪投資人。</li>
+  <li><strong>模型公司中最值得研究的不是 OpenAI/Anthropic/DeepSeek：</strong>未明說但暗示中國的某些特定公司（推理上下文：智譜/MiniMax 上市）</li>
+  <li><strong>應用創始人反而處在歷史上最好的時候：</strong>建議「隨波逐流」——隨模型的波，逐資本的流。不要純粹為了融資講故事</li>
+  <li><strong>「今天所有的產品和創始人，都是模型的期權」</strong>— 從 Ambi 創始人莫子皓得到的啟發</li>
+  <li><strong>不相信一家公司會長期獨大：</strong>引用 IBM 收 CPU 錢 vs 今天英偉達和模型公司收 Token 錢的類比</li>
+  <li><strong>引用卡蘿塔·佩蕾絲《技術革命與金融資本》：</strong>歷史上的科技革命都經歷導入期、轉折點和展開期。我們仍處於 AI 劇烈動盪、快速變化的中早期</li>
+</ul>
+
+<blockquote>「歷史上幾波大的科技革命都經歷過導入期、轉折點和展開期」</blockquote>
+
+<p><strong>行業 Insight：</strong>曲凱框架中的三個問題：(1) 模型交替領先的局面還會怎麼變？(2) Token 成本什麼時候才足夠低、真正實現智能平權？(3) 如果 GPT-3.5 是爆發期的開始，今天是否已站在狂熱期？</p>
+
+<hr>
+
+<!-- ==================== 屠龙之术 ==================== -->
+<h3>屠龙之术 <span style="font-weight:400;font-size:0.85rem;color:#888;">(庄明浩)</span></h3>
+
+<h4>重估一切，文艺复兴——2026H1 AI 行业观察 🎙️</h4>
+<div class="episode-meta">🕐 2026-07-18 | 形式：單口（50 分鐘，76 頁 PPT 輔助）</div>
+
+<p><strong>主題：</strong>從資本、硬件、模型、智能體、世界模型與治理等多角度重審 AI 產業方向。核心框架：「重估一切，文藝復興」。</p>
+
+<p><strong>核心論點（四章結構）：</strong></p>
+<p><strong>第一章：資本與硬件 = 美第奇的賬本</strong></p>
+<ul>
+  <li>AI 的敘事變了：萬億美金的流轉，Token 買方和賣方的利益博弈成為市場主線</li>
+  <li>存儲（SK 海力士美國上市）成本佔比和絕對量增長成為關鍵指標</li>
+  <li>收入只夠折舊，現金流出了問題—「債」頻繁出現，neocloud 的挑戰被「債」放大</li>
+  <li>結論是「黃金時代還是泡沫破裂之前？」— 庄明浩沒有給出明確判斷</li>
+</ul>
+
+<p><strong>第二章：智能的復興（文藝復興核心）</strong></p>
+<ul>
+  <li>美國頭部模型競爭：模型能力已經非常強，Anthropic 超過 OpenAI（值得關注的判斷）</li>
+  <li>模型發布節奏瘋狂加速，多模型共存成為常態，neolabs 興起</li>
+  <li>瘋狂數字：1 萬億美金（CAPEX），史無前例的「大年」</li>
+  <li>美國閉源前沿模型 vs 中國開放權重、高效率擴散的兩條路線</li>
+  <li>李飛飛對世界模型的分類：所有人似乎都在做世界模型，各自有主張</li>
+</ul>
+
+<p><strong>第三章：Agent 元年 = 畫匠與工坊</strong></p>
+<ul>
+  <li>Codex = 新的 ChatGPT。用戶層面「時代變了」，Claude Code 時刻，code 吞噬一切</li>
+  <li>Coding 成為核心戰場，軟件生態改寫，Agent Infra 蓬勃發展</li>
+  <li>模型廠商的邊界在哪裡？國內大廠再次掀起競爭</li>
+</ul>
+
+<p><strong>第四章：治理與反彈</strong></p>
+<ul>
+  <li>大模型也要先審後發嗎？三對博弈浮現</li>
+  <li>Tokenmaxxxing 的敘事很快過去了，真實「價值」如何衡量？「第四支柱」缺失</li>
+  <li>「人還是萬物的尺度嗎？」— 2050 年的一種可能</li>
+</ul>
+
+<blockquote>「智能逐漸不再稀缺的時候，人類的責任、價值與位置又該如何重新定義？」</blockquote>
+
+<hr>
+
+<!-- ==================== No Priors ==================== -->
+<h3>No Priors <span style="font-weight:400;font-size:0.85rem;color:#888;">(Sarah Guo + Elad Gil)</span></h3>
+
+<h4>Why Cheap Energy Always Creates Its Own Demand 🎙️</h4>
+<div class="episode-meta">🕐 2026-07-20 15:18 UTC | YouTube Short | 嘉賓：Isaiah Taylor（Valar Atomics 創辦人）</div>
+
+<p><strong>主題：</strong>Isaiah Taylor 論能源是宇宙中唯一真正稀缺的資源——讓能源更便宜，需求自然出現。</p>
+
+<p><strong>前後脈絡：</strong>這是 No Priors x Valar Atomics 系列的延續。此前完整集（2026-07-02）包含核反應堆實地演示：在猶他州核設施直接將 NVIDIA Blackwell 芯片接入反應堆，運行全球首個「核能驅動網站」。本期 Short 濃縮了核心論點。</p>
+
+<hr>
+
+<h2>📋 本日掃描摘要</h2>
+<ul>
+  <li><strong>Latent Space</strong> — X-Cell 模型，AI 藥物發現的因果數據瓶頸突破 ✨ 重點</li>
+  <li><strong>Cognitive Revolution</strong> — Robert Wright 論 AI 進化論視角、市場選擇、alignment 困境 ✨ 重點</li>
+  <li><strong>張小珺商業訪談錄</strong> — 螞蟻靈波沈宇軍，中國機器人大腦公司的原生基模策略 ✨ 重點</li>
+  <li><strong>42章經</strong> — 曲凱 AI 四年復盤，「應用已死？」</li>
+  <li><strong>屠龍之術</strong> — 庄明浩 2026H1 全景，76 頁 PPT</li>
+  <li><strong>Dwarkesh</strong> — Adam Brown GR 全集+ Shorts</li>
+  <li><strong>No Priors</strong> — 能源 Short</li>
+  <li><strong>硅谷101 / 十字路口 / ML Street Talk / Cognitive Revolution</strong> — 本期無新集</li>
+</ul>
+
+<div class="footer">
+  Apache 2.0 | Generated at 2026-07-22T02:12 UTC | Data sourced from Substack RSS, YouTube RSS, XiaoyuzhouFM
+</div>
+
+</body>
+</html>
