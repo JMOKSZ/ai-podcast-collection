@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Xaira X-Cell：因果數據才是虛擬細胞模型嘅真瓶頸</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5; color: #1a1a1a; line-height: 1.85; -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #2c3e50; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title { font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a; }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem; margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th { background: #f5f0ea; padding: 0.5rem 0.8rem; text-align: left; font-weight: 500; color: #3a3a3a; border-bottom: 1px solid #e0dbd4; }
+  td { padding: 0.5rem 0.8rem; border-bottom: 1px solid #eee; color: #555; }
+  tr:last-child td { border-bottom: none; }
+  .speaker { color: #8b7355; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/index.html">← 返回播客日報</a>
+  <div class="ep-num">Latent Space · AI for Science</div>
+  <h1>Xaira Therapeutics：因果數據才是虛擬細胞模型嘅真正瓶頸</h1>
+  <div class="meta">
+    <span>📅 2026-07-21</span>
+    <span>⏱ 1h 29min</span>
+    <span>🎙️ swyx & Alessio Fanelli × Bo Wang & Ci Chu</span>
+    <span><span class="tag">AI for Biology</span> <span class="tag">Drug Discovery</span> <span class="tag">Causal Data</span> <span class="tag">Diffusion Model</span> <span class="tag">CRISPR</span></span>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- TLD -->
+<!-- ════════════════════════════════════════════════════════════ -->
+
+<p><strong>一句話總結：</strong>Xaira Therapeutics 用 2500 萬個 CRISPR 擾動細胞嘅因果數據，訓出咗第一個真正超越線性基線嘅虛擬細胞模型 X-Cell（49 億參數），證明咗一個殘酷但直接嘅事實——<strong>因果模型一定需要因果數據，再靚嘅架構都代替唔到</strong>。</p>
+
+<hr>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- 1 -->
+<!-- ════════════════════════════════════════════════════════════ -->
+
+<div class="section-title">一、Xaira 嘅「億億聲」開局</div>
+
+<p>2024 年，Xaira Therapeutics 從隱身模式中走出，帶住 <span class="data-point">超過 10 億美元</span> 融資——呢個數字喺 AI 藥物發現領域至今仍然係天花板級別。由諾貝爾獎得主 David Baker 共同創立，ARCH Venture Partners 同 Foresite Labs 孵化，Xaira 嘅目標唔係「造一個模型」——而係成個藥物發現流程嘅 AI 原生重構。</p>
+
+<p>CEO Marc Tessier-Lavigne 唔係等閒之輩：前 Genentech 首席科學官、前 Stanford 校長、前 Rockefeller 大學校長。團隊仲包括老牌藥物獵人、前沿 ML 研究員、高通量生物學專家——呢個組合本身已經係一個 statement。</p>
+
+<p>Xaira 嘅技術棧由三大支柱組成：</p>
+<ul>
+  <li><strong>蛋白質設計</strong>：從 David Baker 實驗室 spin out，生成新型治療分子</li>
+  <li><strong>虛擬細胞（X-Cell）</strong>：預測細胞對基因擾動嘅反應，幫團隊決定「邊個靶點值得追」</li>
+  <li><strong>病人表徵模型</strong>：將臨床前數據外推到人類患者</li>
+</ul>
+
+<p>呢集訪談嘅焦點係第二支柱——X-Cell。但喺進入模型細節之前，有一個更根本嘅命題值得先搞清：<strong>點解直到 2026 年，AI 藥物發現先出現第一個真正意義上嘅突破？</strong></p>
+
+<div class="highlight-box">
+<h3>💡 Vee 嘅 Insight</h3>
+<p>Xaira 嘅「全棧閉環」策略同典型嘅 biotech AI startup 有本質區別。多數公司只做其中一層（模型 / 數據 / 濕實驗），然後 outside-in 等其他人補完。Xaira 嘅論述係：藥物發現嘅 bottleneck 唔係模型，而係「反饋迴路唔夠快」——你預測一個靶點，要等幾個月嘅濕實驗先知道啱唔啱。所以先需要自己控制數據生成、模型訓練、生物驗證。</p>
+<p>呢個策略嘅風險係重資產，回報係閉環速度。10 億美元唔係 burn rate，而係 infrastructure 嘅前期投資。</p>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- 2 -->
+<!-- ════════════════════════════════════════════════════════════ -->
+
+<div class="section-title">二、因果數據：2500 萬細胞嘅工業化工程</div>
+
+<p>X-Cell 嘅真正秘密唔喺架構度——喺數據。呢個觀點喺 AI 領域看似 common sense，但喺生物學語境下，佢嘅含義係革命性嘅。</p>
+
+<p>過去嘅單細胞基礎模型（scGPT、Geneformer、scFoundation）都係用 CELLxGENE 呢類公開數據庫訓練。呢啲數據描述嘅係「細胞睇起嚟係點」——即係觀測性嘅（observational）基因表達譜。問題係，呢啲表達譜天生就有因果歧義：基因 A、B、C 一齊上升，你根本唔知係 A→B→C 定 B→A→C 定 C→（A+B）——所有結構都 equally 可能。</p>
+
+<p>X-Cell 用嘅係 <strong>Perturb-seq</strong>——一種將 pooled CRISPR-Cas9 擾動同單細胞 RNA-seq 結合嘅技術。簡單講，就係逐個 knock down 基因，然後睇成個細胞基因組點樣 respond。呢係直接嘅因果觀測：<strong>擾動基因 X 對每個其他基因嘅影響</strong>。</p>
+
+<p>但困難在於 scaling。學術界嘅典型 Perturb-seq 一次做幾百條 guide 已經係大工程。Xaira 嘅 screen 要覆蓋 <span class="data-point">~20,000 個基因</span>，喺同一混合實驗中同時做晒。Ci Chu（數據平台負責人）描述咗工業化嘅每一步：</p>
+
+<ul>
+  <li><strong>化學固定</strong>：14 小時工作流程中鎖定細胞狀態，避免批次效應</li>
+  <li><strong>機械人自動化</strong>：處理數億個細胞</li>
+  <li><strong>Pooled design</strong>：同一運行中完成所有擾動，批次效應接近零</li>
+</ul>
+
+<p>結果係一張空前嘅數據集：<span class="data-point">2500 萬個細胞</span>（過濾後）、<span class="data-point">7 次全基因組 screen</span>、<span class="data-point">16 個生物學背景</span>（癌細胞系、iPSC、原代 T 細胞等）。</p>
+
+<table>
+  <tr><th>維度</th><th>學術 Perturb-seq</th><th>Xaira X-Cell 訓練數據</th></tr>
+  <tr><td>規模</td><td>每次幾百條 guide</td><td>2500 萬細胞，7 次全基因組 screen</td></tr>
+  <tr><td>細胞背景</td><td>1-2 個細胞系</td><td>16 個生物學背景</td></tr>
+  <tr><td>批次效應</td><td>實驗間通常嚴重</td><td>每個 screen 內接近零</td></tr>
+  <tr><td>擾動覆蓋</td><td>部分基因</td><td>全部 ~20,000 個基因 / screen</td></tr>
+</table>
+
+<div class="highlight-box">
+<h3>🧬 最壯觀嘅實驗：pan-differentiation iPSC</h3>
+<p>將 iPSC 細胞同時分化為 10 種細胞類型，同時間同時擾動每個基因——「library on library」，10 種細胞類型 × 20,000 種擾動。Ci Chu 嘅目標好清晰：最大化每美元 sequencing 嘅信息位元數。</p>
+<p>呢個實驗一個運行就產生咗以前可能需要幾十篇論文先累積到嘅因果數據。</p>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- 3 -->
+<!-- ════════════════════════════════════════════════════════════ -->
+
+<div class="section-title">三、點解用 Diffusion 而唔用 Autoregression？</div>
+
+<p>X-Cell 嘅架構選擇本身就係一個深度嘅技術故事。Bo Wang 解釋咗一個關鍵分歧：</p>
+
+<blockquote>「We did not go with the autoregressive structure. The main reason is that genes don't have a natural ordering. The conversational structure that works for language doesn't map well to gene expression, because the transcriptomic response after perturbation is a high-dimensional vector, and we don't think ordering makes sense for biology.」</blockquote>
+
+<p>具體嚟講，X-Cell 用嘅係 <strong>擴散語言模型（diffusion language model）</strong>——將表達向量視為一句逐步精煉嘅句子，透過 iterative unmasking 生成完整嘅擾動後 transcriptome。呢個雙向過程比 autoregressive 嘅強制排序更適合生物學：基因表達唔係「字詞」嘅序列，而係一組互相依賴嘅變量。</p>
+
+<p>另一方面，X-Cell 引入咗 <strong>5 種生物先驗知識</strong>，透過 cross-attention 注入：</p>
+<ol>
+  <li><strong>文獻嵌入（gene-PT）</strong>：用 GPT 生成嘅基因描述</li>
+  <li><strong>蛋白質-蛋白質交互網絡</strong></li>
+  <li><strong>DepMap 癌症必需性分數</strong></li>
+  <li><strong>形態學數據（細胞成像特徵）</strong></li>
+  <li><strong>scGPT 細胞類型嵌入</strong></li>
+</ol>
+
+<blockquote class="strong">
+「From empirical experiments, the quality, the amount of the data sets matter the most. If we have to give an order — quality among scale of the data sets, then the architecture, then the prior knowledge.」
+<span style="display:block; margin-top:0.3rem; font-style:normal; font-size:0.85rem; color:#888;">— Bo Wang</span>
+</blockquote>
+
+<p>呢個排序意味深長：<strong>數據質量 > 數據規模 > 架構 > 先驗知識</strong>。對於一個生物學家加 ML 研究者嚟講，呢句說話幾乎係行業共識嘅濃縮版——過去幾年虛擬細胞領域嘅教訓不過係證明了呢個排序。</p>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- 4 -->
+<!-- ════════════════════════════════════════════════════════════ -->
+
+<div class="section-title">四、Zero-shot 泛化：從休息 T 細胞到活化 T 細胞</div>
+
+<p>X-Cell 最令人印象深刻嘅結果係 <strong>out-of-distribution generalisation</strong>。三個實驗直接證明咗模型嘅泛化能力：</p>
+
+<p><strong>1. 休息 → 活化 T 細胞</strong></p>
+<p>模型只喺休息 T 細胞嘅 Perturb-seq 數據上訓練。俾一條活化 T 細胞嘅表達譜（冇任何擾動），模型預測每一個單基因 knock out 嘅影響。結果：</p>
+<ul>
+  <li>已知 TCR 複合物效應嘅預測匹配 ground-truth</li>
+  <li>幾種新型 T 細胞失活劑被 point out——後來喺 Marson 實驗室 2025 年 12 月嘅獨立 screen 中得到確認</li>
+  <li>線性基線完全失敗（簡單地將活化效應相加）</li>
+</ul>
+
+<p><strong>2. 留出嘅 iPSC 衍生細胞類型</strong></p>
+<p>從多細胞類型 iPSC 分化 screen 中，模型喺 9 種細胞類型上訓練，準確預測第 10 種未見過嘅細胞類型嘅擾動反應——跨越數千個基因。</p>
+
+<p><strong>3. 細胞系 → 原代人類 T 細胞</strong></p>
+<p>僅喺 Jurkat（T 細胞系）上訓練，X-Cell 泛化到來自多個人類捐贈者嘅原代 T 細胞，匹配第三方學術研究嘅數據。</p>
+
+<blockquote>
+「The holy grail of virtual cell is to have a model to generalize to on-scene context that is harder or even impossible to conduct biological experiments on. Eventually — to patients, to human biology.」
+<span style="display:block; margin-top:0.3rem; font-style:normal; font-size:0.85rem; color:#888;">— Bo Wang</span>
+</blockquote>
+
+<p>呢個願景嘅含義好深遠：如果 X-Cell 可以在一啲唔實際做 exhaustive Perturb-seq 嘅組織（原代細胞、類器官、甚至體內模型）中做 in silico 實驗，然後只驗證最有希望嘅 hit 進行濕實驗——藥物發現嘅效率可以提升幾個數量級。</p>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- 5 -->
+<!-- ════════════════════════════════════════════════════════════ -->
+
+<div class="section-title">五、行業背景：點解之前嘅模型都輸俾線性基線？</div>
+
+<p>X-Cell 發布嘅時機好有趣，因為恰好踩中咗虛擬細胞領域嘅一個「尷尬時刻」。</p>
+
+<p>2025 年，多個 benchmark 研究（包括著名嘅 Luecken et al. 分析）得出一個令人唔舒服嘅結論：<strong>scGPT、scFoundation、Geneformer 等單細胞基礎模型，喺擾動預測任務上並冇優於簡單嘅線性基線。</strong></p>
+
+<p>點解會咁？Bo Wang 嘅分析十分直接：</p>
+
+<ul>
+  <li>公開數據（CELLxGENE 等）係 <strong>觀測性</strong> 嘅——記錄細胞嘅「自然狀態」，唔係「干預後」</li>
+  <li>由相關性推因果，本身就係統計學上嘅困難問題</li>
+  <li>模型越複雜，反而越容易 overfit 到觀測分佈上嘅偽相關性</li>
+</ul>
+
+<blockquote class="strong">
+「The public data describes what cells look like in their unperturbed state. That's fundamentally underdetermined for causal inference. You can have a beautiful model, but if the data only captures correlation, your predictions will never be causal.」
+</blockquote>
+
+<p>呢個教訓唔只適用於生物學。任何因果推理任務——從藥物發現到經濟學到社會科學——都面臨同樣嘅困境：<strong>靚數據比靚模型更重要，因果數據比規模數據更重要。</strong></p>
+
+<div class="highlight-box">
+<h3>🔬 相關 vs 因果：一個數字說明一切</h3>
+<p>CELLxGENE 數據庫有 1.68 億個細胞，每細胞 2-3 萬個基因計數——約 4 兆條目矩陣。但呢啲只係「細胞狀態照片」。</p>
+<p>X-Atlas（Xaira 嘅數據集）有 2500 萬個細胞——少一個數量級——但每一行都係「我 knock down 咗呢個基因，然後睇到呢個結果」。呢個因果標註帶嚟約 <span class="data-point">30 倍信息量提升</span>。</p>
+<p>結果：用 X-Atlas 訓練後，模型重新可以 scale——參數和算力都有咗回報。</p>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- 6 -->
+<!-- ════════════════════════════════════════════════════════════ -->
+
+<div class="section-title">六、數據採集作為「RL rollout」</div>
+
+<p>Ci Chu 分享咗一個好有啟發性嘅類比：Xaira 嘅數據採集成本，似 AI 中嘅 <strong>RL rollout 預算多過 pre-train 預算</strong>。</p>
+
+<p>「幾千萬美元實驗 + 基建，幾百萬算力 + 人頭」——呢個成本結構確實同訓練一個 foundation model 唔同。每次實驗運行都係一個「rollout」：你設計實驗 → 生成數據 → 訓練模型 → 模型告訴你下一步做咩實驗。</p>
+
+<p>呢個迭代閉環，比一次性 pre-train 然後 fine-tune 嘅模式更加接近「科學嘅本質」——提出假設、實驗驗證、修正模型。</p>
+
+<blockquote>
+「It doesn't help to withhold certain data sets or certain models because it's so early. A better win-win situation is everybody gets to in this field start to contribute models together to exchange ideas.」
+<span style="display:block; margin-top:0.3rem; font-style:normal; font-size:0.85rem; color:#888;">— Bo Wang，解釋開放科學策略</span>
+</blockquote>
+
+<p>呢個開放態度同傳統製藥公司嘅「數據即商業機密」策略形成鮮明對比。Xaira 認為而家呢個階段共享數據可以加速整個領域——正如 Protein Data Bank 開放後解鎖咗 AlphaFold——然後大家都贏。</p>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- 7 -->
+<!-- ════════════════════════════════════════════════════════════ -->
+
+<div class="section-title">七、Vee 嘅終極思考：虛擬細胞嘅下一個 Scaling Law</div>
+
+<p>呢集 Latent Space 俾我最大嘅啟發唔係 X-Cell 本身，而係 Bo Wang 對 scaling 嘅誠實態度。1.5B 參數之後 test loss flatline 呢個現象，本質上係講緊：<strong>數據嘅信息密度係模型 scaling 嘅隱形天花板</strong>。</p>
+
+<p>呢個洞察對整個 AI 領域都有啟發意義：</p>
+<ul>
+  <li>LLM scaling 之所以 work，唔係因為「越大越好」，而係因為互聯網文本有超高嘅信息密度同多樣性</li>
+  <li>喺專業領域（生物、化學、醫學），信息密度通常低得多——細胞嘅 transcriptome 入面大部分基因喺大部分時間都唔表達</li>
+  <li>所以先需要因果干預生成高信息密度嘅數據——呢係專業領域 AI 同通用 AI 嘅根本區別</li>
+</ul>
+
+<p>X-Cell 49 億參數嘅規模，相對 LLM 嚟講唔算大。但佢做到嘅泛化——從癌細胞系到原代 T 細胞——意味住如果數據可以繼續 scaling，呢個架構有潛力成為生物學嘅「基礎模型 moment」。</p>
+
+<p>另一樣值得留意嘅係 <strong>開放科學作為商業策略</strong>。Xaira 釋出權重同數據嘅決定，表面睇違反常規 biotech 嘅封閉策略，但實際上：</p>
+<ul>
+  <li>吸引頂尖人才（研究者想去 open science 環境）</li>
+  <li>建立社群 benchmark（社群幫你做測試同改進）</li>
+  <li>加速下游應用生態（越多應用用 X-Cell，Xaira 嘅平台價值越高）</li>
+</ul>
+
+<p>呢個策略嘅最終檢驗標準係：如果 X-Cell 嘅預測幫 Xaira 自己嘅 pipeline 推出一款成功藥物，到時所有競爭對手嘅模型都會喺同一生態上建立——呢個就係「平台化」嘅市場防禦。</p>
+
+<hr>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- Footer -->
+<!-- ════════════════════════════════════════════════════════════ -->
+
+<footer>
+  <p>🤖 由 Vee Mok 深度復述 · 2026-07-23 · AI Podcast Deep Dives</p>
+  <p>📡 來源：Latent Space (swyx & Alessio) — Xaira Therapeutics: Why Causal Models Need Causal Data (2026-07-21)</p>
+  <p>🔗 原集：<a href="https://www.latent.space/p/ainews" style="color:#888;">https://www.latent.space/p/ainews</a></p>
+</footer>
+
+</div>
+</body>
+</html>
