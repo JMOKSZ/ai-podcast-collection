@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · DoorDash：Agentic Commerce 如何重塑外賣、機械人與未來消費</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  a { color: #8b6f4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1rem; }
+    header h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/JMOKSZ/ai-podcast-collection/main/index.html">← 返回播客日報</a>
+  <div class="ep-num">No Priors · Ep. 141</div>
+  <h1>Agentic Commerce 時代降臨——DoorDash 嘅 AI 策略、機械人兵團與配送網絡重生</h1>
+  <div class="meta">
+    <span>📅 2026-07-23</span> <span>·</span>
+    <span>🎙 Sarah Guo（主持）</span> <span>·</span>
+    <span>👤 Andy Fang, Stanley Tang（DoorDash 聯合創始人）</span>
+  </div>
+  <div>
+    <span class="tag">Agentic Commerce</span>
+    <span class="tag">DoorDash</span>
+    <span class="tag">自主配送</span>
+    <span class="tag">Dot 機械人</span>
+    <span class="tag">自然語言搜尋</span>
+    <span class="tag">物理世界 AI</span>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 1. 開篇：最不起眼嘅 AI 戰場 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">一、最唔起眼嘅 AI 戰場</h2>
+
+<p>當全世界嘅目光都集中在 GPT-5.6 嘅 CoT token 用量、Anthropic 嘅模型逃逸同 Moonshot 嘅蒸餾爭議時，一個極度 mundane 嘅領域——叫外賣——正悄無聲息咁完成緊最徹底嘅 AI 重構。</p>
+
+<p>DoorDash 聯合創始人 Andy Fang 同 Stanley Tang 坐喺 No Priors 嘅錄音室，同 Sarah Guo 分享咗一個反直覺嘅故事：呢間市值 <span class="data-point">$1,300 億+</span> 嘅配送巨頭，由始至終都唔係一家「外賣公司」，而係一家「機械人同自動化公司」。從 2013 年一個簡單嘅網站實驗開始，DoorDash 嘅 DNA 就係用技術解決物理世界嘅配送效率問題。</p>
+
+<blockquote class="strong">
+  <p>「從它的第一天起，DoorDash 就運作得像一個機器人和自動化公司。」</p>
+  <span class="attr">— Apple Podcasts 節目描述</span>
+</blockquote>
+
+<p>呢集 No Priors 嘅核心訊息好清楚：Agentic Commerce（代理式商業）唔係科幻概念，而係正喺度發生嘅消費行為革命。自然語言搜尋、自主配送機械人、多模態配送策略——呢啲技術堆疊一齊，正在重塑人類點樣發現、選擇同接收商品。</p>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 2. Ask DoorDash：語音搜尋引發嘅行為重構 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">二、Ask DoorDash：搜尋即消費</h2>
+
+<p>DoorDash 最近推出嘅自然語言界面 <strong>Ask DoorDash</strong>，表面上只係一個搜尋框嘅升級，實際上係消費者行為嘅根本轉變。</p>
+
+<p>傳統外賣搜尋係「目的性」嘅：你心入面已經諗好食乜（例如「酸菜魚」），然後喺 app 入面逐個餐廳睇 menu、揀嘢食、下單。Ask DoorDash 改變咗呢個模式——用戶可以直接打入日常用語：「我想要健康嘅午餐選項」、「今晚屋企人聚餐，有冇咩推薦？」、「有冇低卡路里嘅外賣？」</p>
+
+<p>呢種轉變嘅真正影響力唔在於方便程度，而在於佢將 DoorDash 從「配送工具」變成「消費決策助手」。用戶開始用 DoorDash 做 <strong>發現性搜尋</strong>（discovery search），而唔係目的性搜尋（intentional search）。佢哋唔再知道自己想要乜，而係讓 AI 幫佢哋決定。</p>
+
+<blockquote>
+  <p>「用戶開始問：『我今日想試啲新嘢，有咩好食？』呢種行為喺傳統外賣 app 入面幾乎唔存在。」</p>
+  <span class="attr">— Sarah Guo，No Priors</span>
+</blockquote>
+
+<div class="highlight-box">
+  <h3>🔑 關鍵洞察：AI 搜尋改變嘅唔止係 UX，係商業模式</h3>
+  <p>當用戶唔再預先知道自己想食乜，平台嘅話語權就從餐廳品牌轉移到 AI 推薦引擎。DoorDash 唔再只係撮合餐廳同消費者，而係變成消費旅程嘅起點。呢個權力轉移喺 Google Search 年代發生過一次（從網站到搜尋引擎），而家喺食物配送領域重演。</p>
+</div>
+
+<p>Andy Fang 同 Stanley Tang 指出，下一步係將 Ask DoorDash 從「被動搜尋」擴展到「主動建議」——基於時間、天氣、過往訂單、甚至用戶嘅健康目標，喺合適嘅時間推啱嘅選擇。呢個就係 Agentic Commerce 嘅核心：商業系統從「等用戶嚟」進化到「幫用戶決策」。</p>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 3. Dot 自主配送機械人 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">三、Dot：企咗兩年先出街嘅配送機械人</h2>
+
+<p>Dot，DoorDash 嘅自主配送機械人，已經喺亞利桑那州鳳凰城運行咗超過兩年。呢個數字好重要——唔係因為機械人量大，而係因為 DoorDash 願意花兩年時間喺真實環境收集數據。</p>
+
+<p>Dot 係針對人行道設計嘅配送機械人，時速約 <span class="data-point">3–5 英里</span>，主要處理短途、結構化場景嘅配送。佢唔係用嚟取代速遞員——至少而家唔係——而係用嚟填補人類配送員效率最低嘅區域：短距離、低複雜度、重複性高嘅訂單。</p>
+
+<blockquote>
+  <p>「最難嘅唔係長距離運輸——最難嘅係由車/機械人到達客戶門口嗰段。電梯、門禁、公寓佈局，每個場景都唔同。」</p>
+  <span class="attr">— Andy Fang，DoorDash CTO</span>
+</blockquote>
+
+<p>呢個「第一同最後 100 英尺問題」係物理配送最被低估嘅技術挑戰。你嘅機械人可以完美咁喺馬路同人行道行駛，但到咗客戶嘅公寓大廈門口——門禁點搞？電梯按邊層？客戶地址係 12B 定係 12 樓 B 座？呢啲細節每個都係一個獨立嘅感知同決策問題。</p>
+
+<p>Dot 嘅設計哲學係「唔好追求一次過解決所有問題」。DoorDash 選擇咗先攻最容易嘅場景（平房、低密度社區），逐步累積數據同營運經驗，然後先擴展到複雜場景。呢種務實態度同好多 AI 公司「先吹牛再實戰」形成鮮明對比。</p>
+
+<div class="highlight-box">
+  <h3>📊 Dot 嘅關鍵指標</h3>
+  <ul>
+    <li><strong>營運時間：</strong>鳳凰城持續運行 > 2 年</li>
+    <li><strong>設計場景：</strong>人行道短途配送（3–5 mph）</li>
+    <li><strong>核心挑戰：</strong>真實數據收集 + 環境泛化 + 電池壽命 + 極端天氣適應</li>
+    <li><strong>戰略意義：</strong>唔係取代人類，而係填補人類效率盲區</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 4. 更多配送員，唔係更少 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">四、反直覺結論：AI 反而創造更多配送員需求</h2>
+
+<p>呢集最反直覺嘅論點嚟自 Stanley Tang：<strong>AI 同自動化唔會減少配送員需求，反而會增加。</strong></p>
+
+<p>邏輯係咁嘅：AI 降低每次配送成本 → 配送變得更平更快 → 市場規模擴大 → 需要更多配送員嚟應付增長。</p>
+
+<blockquote class="strong">
+  <p>「更便宜、更快嘅配送意味著市場變大，需要更多 Dasher。」</p>
+  <span class="attr">— Stanley Tang，DoorDash 聯合創始人</span>
+</blockquote>
+
+<p>呢個論點唔係空談。DoorDash 已經觀察到 AI 優化配送路線同預測需求，導致單位經濟效益提升，然後需求量上升——最終人類配送員嘅總工時反而增長。AI 自動化並唔係「搶飯碗」，而係「做大個餅」。</p>
+
+<p>呢個同 Amazon 倉庫機械人嘅歷史模式一致：引入更多機械人後，Amazon 反而僱用咗更多人類員工——因為機械人令倉庫效率提升，訂單處理量暴增，需要更多人類嚟管理機械人同處理機器搞唔掂嘅嘢。</p>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 5. 多模態配送策略 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">五、多模態策略：人類 + 機械人 + 無人機混合艦隊</h2>
+
+<p>DoorDash 唔係押注單一配送方案，而係建構一個多模態配送系統——人類速遞員、人行道機械人、無人機——根據環境動態切換最優配送方式。</p>
+
+<p>呢個策略嘅核心理念係：<strong>唔存在一種「最好」嘅配送方式，只有「最適合當前場景」嘅配送方式。</strong></p>
+
+<p>例如：</p>
+<ul>
+  <li>繁忙市中心嘅午餐高峰 → 人類速遞員（靈活、適應複雜環境）</li>
+  <li>郊區短途單戶配送 → Dot 機械人（低成本、可擴展）</li>
+  <li>偏遠地區或交通擁堵區域 → 無人機（繞過地面限制）</li>
+</ul>
+
+<blockquote>
+  <p>DoorDash 將訂單路由到最優嘅執行者（人類/機械人/無人機）——類似 AWS Route 53 將流量智能路由到最優嘅伺服器。</p>
+</blockquote>
+
+<p>呢個「智能路由」邏輯係 Agentic Commerce 嘅基礎設施層。AI 唔只係幫用戶揀食物，仲要幫公司決定邊個（或邊部機器）去送呢份食物。而呢個決策引擎本身就係 DoorDash 最深嘅技術護城河——佢需要海量真實數據、精確嘅成本模型、同實時環境感知先運作到。</p>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 6. 外賣平台的下一個競爭維度 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">六、競爭從 Restaurant Supply 轉向 AI Experience</h2>
+
+<p>呢集 No Priors 透露咗一個重要嘅行業轉折信號：外賣平台嘅競爭維度正在發生結構性轉變。</p>
+
+<p>過去十年，DoorDash、Uber Eats、美團嘅競爭焦點係：邊個嘅餐廳多、邊個嘅速遞員多、邊個嘅覆蓋範圍廣。呢啲係 Supply-side 競爭——誰控制更多供應，誰就贏。</p>
+
+<p>而家競爭正在轉向：</p>
+<ul>
+  <li><strong>邊個嘅 AI 搜尋體驗好</strong>（Ask DoorDash vs ChatGPT Checkout）</li>
+  <li><strong>邊個嘅自動化效率高</strong>（配送機械人 + 無人機編隊）</li>
+  <li><strong>邊個嘅個人化推薦準</strong>（基於時間/天氣/健康目標嘅主動建議）</li>
+  <li><strong>邊個嘅路線優化慳得最多</strong>（降低每單配送成本）</li>
+</ul>
+
+<blockquote>
+  <p>「外賣平台競爭正從『誰的餐廳多、快遞員多』轉向『誰的 AI 搜尋體驗好、自動化效率高』。」</p>
+  <span class="attr">— AI 播客每日報告分析，2026-07-24</span>
+</blockquote>
+
+<p>呢個轉變對中國市場亦有深刻含義。美團同餓了麼同樣面對呢個問題——當你嘅商戶覆蓋已經到咗極限，下一個增長引擎就係 Agentic Commerce：AI 幫用戶發現想食乜、AI 幫你決定點配送、AI 幫你優化每單嘅利潤率。</p>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 7. 投資哲學：機械人公司從一開始 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">七、DoorDash 嘅投資哲學：從一開始就係機械人公司</h2>
+
+<p>Andy Fang 同 Stanley Tang 反覆強調一個觀點：DoorDash 從來唔係一間遲啲先做自動化嘅餐廳配送公司——佢由始至終就係一間機械人同自動化公司。</p>
+
+<p>呢個身份認同喺早期表現為：</p>
+<ul>
+  <li>2013 年第一版網站就係一個自動化配送流程實驗</li>
+  <li>技術架構從第一天就為大規模自動化設計</li>
+  <li>創始團隊史丹福 CS 背景，天然傾向用技術解決物理世界問題</li>
+</ul>
+
+<p>Sarah Guo 喺對話中提到，好多創業者會認為 DoorDash 係「成熟公司先開始搞 AI」，但實際上佢哋嘅 AI 投入同自動化路線係創業第一天就寫入咗 DNA。呢個故事同「大公司缺乏 AI 基因」嘅流行敘述完全相反。</p>
+
+<div class="highlight-box">
+  <h3>💡 給創業者嘅啟示</h3>
+  <p>DoorDash 案例證明：AI 轉型唔一定係老公司嘅事。如果你嘅業務從一開始就係數據驅動、自動化優先，咁 AI 時代你嘅護城河只會更深——因為你累積嘅數據同營運經驗係後來者用錢買唔到嘅。</p>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 8. 影響力擴展 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">八、從外賣到萬物配送：Agentic Commerce 嘅影響範圍</h2>
+
+<p>DoorDash 已經唔再只係送外賣。Ask DoorDash 嘅搜尋能力同配送網絡正在擴展到：</p>
+<ul>
+  <li><strong>藥品配送</strong>——第一同最後 100 英尺問題顯得更關鍵（藥品往往需要簽收、冷藏、時間敏感）</li>
+  <li><strong>雜貨配送</strong>——多商品、多溫度區、重量大，對機械人要求最高</li>
+  <li><strong>辦公用品</strong>——時效性較低但批量大，適合機械人編隊配送</li>
+  <li><strong>非餐飲零售</strong>——任何需要快速本地配送嘅商品</li>
+</ul>
+
+<p>呢個擴展路徑同 AWS 非常相似：Amazon 一開始只係賣書，後來發現自己最值錢嘅唔係產品，而係物流同分發基礎設施。DoorDash 正喺度做同一件事——從外賣配送網絡進化到本地即時配送平台，再進化到 Agentic Commerce 作業系統。</p>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 9. 總結 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">九、點解呢集值得你花時間</h2>
+
+<p>呢集 No Priors 嘅獨特價值在於：佢展示緊一個真正嘅 Agentic Commerce 案例——唔係 PPT 上嘅 roadmap，而係已經喺鳳凰城行咗兩年嘅機械人、已經改變用戶行為嘅自然語言搜尋、已經見到經濟效益嘅多模態配送策略。</p>
+
+<p>對比一眾談 AGI 路線圖、預測未來嘅節目，DoorDash 嘅故事更加接地氣，更加「現在進行式」。佢問嘅唔係「AI 十年後會點改變世界」，而係「AI 今日點樣令一單 $20 嘅外賣更加快、平、好」。</p>
+
+<blockquote class="strong">
+  <p>「AI 唔係要取代人類——AI 係令市場變大，然後需要更多人。」</p>
+  <span class="attr">— Stanley Tang，DoorDash 聯合創始人</span>
+</blockquote>
+
+<p>如果你係做 consumer tech、local commerce、或者物流相關嘅業務，呢集係 2026 年 7 月必聽嘅心智模型更新。外賣只係開始——Agentic Commerce 將重塑所有本地消費體驗。</p>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Footer -->
+<!-- ══════════════════════════════════════ -->
+
+<footer>
+  <p>來源：<a href="https://podcasts.apple.com/us/podcast/no-priors-artificial-intelligence-technology-startups/id1668002688">No Priors — Building an Autonomous Delivery Experience with DoorDash Co-Founders</a></p>
+  <p>生成時間：2026-07-24 14:11 CST (06:11 UTC) ｜ 深度復述 #55</p>
+  <p>Apache 2.0 · JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
