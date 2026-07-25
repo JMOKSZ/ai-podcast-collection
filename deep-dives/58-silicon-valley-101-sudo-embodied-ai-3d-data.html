@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 機器人走錯路了嗎？——蘇度科技韓铮拆解具身智能嘅 3D 數據困局</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  a { color: #8b6f4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1rem; }
+    header h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/JMOKSZ/ai-podcast-collection/main/index.html">← 返回播客日報</a>
+  <div class="ep-num">硅谷101 · E244（2026-07-15）</div>
+  <h1>機器人走錯路了嗎？——蘇度科技韓铮拆解具身智能嘅 3D 數據困局同上下分層路線</h1>
+  <div class="meta">
+    <span>📅 2026-07-15</span> <span>·</span>
+    <span>🎙 泓君 Jane（主持）</span> <span>·</span>
+    <span>👤 韓铮（蘇度科技聯合創始人 & CEO）</span> <span>·</span>
+    <span>⏱ 1 小時 17 分鐘</span>
+  </div>
+  <div>
+    <span class="tag">具身智能</span>
+    <span class="tag">3D 數據</span>
+    <span class="tag">Sim-to-Real</span>
+    <span class="tag">上下分層</span>
+    <span class="tag">ImageNet</span>
+    <span class="tag">通用機器人</span>
+    <span class="tag">零樣本抓取</span>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">一、開場：引戰標題背後的嚴肅議題</h2>
+
+<p>「機器人走錯路了嗎？」——呢個標題唔係 clickbait。當硅谷嘅主流共識係用「一個端到端黑盒大模型」解決所有機器人問題嘅時候，蘇度科技（sudo.ai）走咗一條截然不同嘅路：<strong>軟硬件協同設計、上下分層架構、Sim-to-Real 作為核心訓練範式</strong>。韓铮喺呢期節目入面，唔單止解釋咗呢條路線點解係對嘅，仲大膽預言：被硅谷拋棄嘅「上下分層」即將回歸主流。</p>
+
+<p>呢個預言嘅膽量來自佢哋嘅實際成果：面對從未見過嘅新物體，零樣本通用抓取成功率接近 <span class="data-point">100%</span>——一個讓業界難以忽視嘅數字。</p>
+
+<p>蘇度科技嘅聯合創始人蘇昊（Su Hao）係呢個故事嘅另一條主線。佢係 ImageNet 嘅核心作者之一，師從李飛飛，參與過 3D 數據集 ShapeNet 嘅建設。一個做 2D 圖像識別嘅人，點解會轉去做 3D 機器人數據？答案就喺呢一期訪談入面。</p>
+
+<blockquote class="strong">
+  <p>「機器人已經能喺舞台上翻跟頭、表演武術了，但要讓佢喺開放環境裡伸手幫你擰開一個瓶蓋，難度陡然躍升 2 到 3 個數量級——因為那一刻，佢需要理解眼前的物理世界。」</p>
+  <span class="attr">— 泓君，開場總結</span>
+</blockquote>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">二、3D 數據：被低估嘅瓶頸</h2>
+
+<p>節目一開頭就講到核心問題：「機器人『動手』嘅數據根基」。韓铮由蘇昊嘅背景講起——從 2D 圖片標註（ImageNet）到 3D 數據集（ShapeNet），呢條軌迹本身就係一個線索：<strong>機器人需要嘅唔係更多圖片，係物理世界嘅 3D 理解。</strong></p>
+
+<h3 class="sub-title">3D 數據收集難喺邊度？</h3>
+
+<p>唔係「搵唔到 3D 數據」，而係「質量夠唔夠」。韓铮指出以下幾個層次嘅難度：</p>
+
+<ul>
+  <li><strong>仿真需要亞毫米級精度</strong>——影片訓練達唔到呢個精度。拍一條影片，從多個角度重建 3D 模型，誤差可能達到釐米級，對機械操作嚟講呢個誤差足以導致抓取失敗</li>
+  <li><strong>Sim-to-Real 嘅冷啟動困境</strong>——蘇度科技冇辦法複刻 Tesla 百萬級車隊嘅真實世界數據收集模式，必須靠仿真做冷啟動</li>
+  <li><strong>自建結構化 3D 數據集</strong>——係平衡質量同規模嘅關鍵：同一個物體需要多角度、多光照、多背景嘅數據，先可以訓練出泛化能力</li>
+  <li><strong>DALL-E 帶嚟嘅數據拐點</strong>——韓铮提到創業時機判斷嘅關鍵：DALL-E 出現之後，生成式 AI 可以產生大量多模態訓練數據，呢個係 2022 年之前唔存在嘅機會</li>
+</ul>
+
+<blockquote>
+  <p>「So 昊早年經歷：從圖片標註 ImageNet，到 3D 數據集 ShapeNet⋯其實一條線索好清晰——從理解 2D 世界，到理解 3D 世界，再到理解物理世界。」</p>
+  <span class="attr">— 節目筆記</span>
+</blockquote>
+
+<h3 class="sub-title">視頻訓練 vs 3D 仿真：一個關鍵取捨</h3>
+
+<p>韓铮喺呢個問題上表達咗一個重要立場：<strong>影片訓練唔足以取代精確 3D 仿真</strong>。好多同行認為可以從大量 YouTube 影片中學習機械操作，但韓铮指出影片缺乏精確嘅物理參數——物體質量、摩擦系數、材質屬性——呢啲對機器人抓取嚟講係「隱藏變量」。Sim-to-Real 嘅核心優勢係可以精確控制呢啲變量，並喺仿真中進行大規模嘅強化學習訓練。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">三、Sim-to-Real：讓機器人喺虛擬世界修煉百萬年</h2>
+
+<p>Sim-to-Real 唔係新概念——十年前就有人做。但蘇度科技嘅特別之處喺於佢哋實現咗一個閉環：</p>
+
+<ul>
+  <li><strong>仿真器內核</strong>：經典物理法則 + 強化學習——唔係黑盒神經網絡模擬物理，係用精確嘅物理引擎模擬，再喺呢個精確環境入面用 RL 學習操控策略</li>
+  <li><strong>Sapien 仿真器</strong>：蘇度科技自建嘅仿真平台，讓機器人好似幼童第一次擰瓶蓋咁操作——從完全唔識到逐漸掌握，全部喺仿真入面完成</li>
+  <li><strong>真實世界數據校正</strong>：仿真學習完之後，加入少量真實世界數據做 fine-tuning——「教機器人擰瓶蓋，加入真實世界數據更高效」</li>
+</ul>
+
+<blockquote class="strong">
+  <p>「零樣本通用抓取，一次性成功率 98%。」</p>
+  <span class="attr">— 韓铮，蘇度科技</span>
+</blockquote>
+
+<p>呢個數字點樣出嚟？韓铮解釋咗兩點：第一，仿真器入面已經讓機械臂見過大量嘅物體幾何形狀變化；第二，成功率嘅定義係「面對從未見過嘅新物體，第一次嘗試嘅成功率」。佢哋仲特意去學術會議現場做隨機環境演示，目的係回應「Demo 係咪 cherry-pick 嘅」質疑。</p>
+
+<div class="highlight-box">
+  <h3>🔬 技術洞察</h3>
+  <p>Sim-to-Real 嘅關鍵瓶頸通常唔係仿真器本身，而係<strong>仿真到現實之間嘅「域差距」（domain gap）</strong>。蘇度科技嘅做法係：</p>
+  <ul>
+    <li>用高精度物理仿真器減少 gap</li>
+    <li>在仿真中引入隨機化（domain randomization）——改變光照、材質、摩擦力等參數，迫使模型學習不變特徵</li>
+    <li>用 tiny amount 嘅真實數據做最後 correction</li>
+  </ul>
+  <p>呢個組合喺零樣本抓取上證明有效。但韓铮亦承認：<strong>靈巧手雖然好，但不是目前性價比最高的方法</strong>——在通用泛化能力未解決之前，追求靈巧性反而會分散資源。</p>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">四、技術路線之争：白盒 vs 黑盒、上下分層 vs 端到端</h2>
+
+<p>呢個係一期之中信息密度最高嘅部分。韓铮將機器人行業嘅技術分歧歸納為幾個維度：</p>
+
+<h3 class="sub-title">白盒 vs 黑盒</h3>
+<p>硅谷主流係「純大腦黑盒大模型」——一個端到端神經網絡輸入 sensor 數據輸出 motor command。蘇度科技嘅路線係「白盒」：<strong>上下分層架構，上層負責任務規劃同環境理解，下層負責具體物體操作</strong>。上層可以係較大嘅模型，下層係更高效、更專注嘅模型——中間通過 API 溝通。</p>
+
+<blockquote>
+  <p>「被硅谷拋棄嘅『上下分層』即將重回主流。」</p>
+  <span class="attr">— 韓铮，節目預言</span>
+</blockquote>
+
+<p>呢個預言嘅邏輯係：端到端大模型喺 demonstrate 任務上好睇，但一旦遇到 unfamiliar 環境，fail gracefully 嘅能力遠不如 modular system。上下分層雖然「唔靚仔」，但每個層可以獨立優化、獨立調試——喺真實工業場景入面，呢個彈性比漂亮嘅理論更重要。</p>
+
+<h3 class="sub-title">零樣本泛化 vs 長程任務串聯</h3>
+<p>韓铮表達咗一個反直覺嘅觀點：<strong>基礎 Zero-Shot 泛化能力比長程任務串聯更為關鍵</strong>。業界普遍關注「機器人可唔可以做 10 步嘅複雜任務」，但韓铮認為第一步係「機器人能夠可靠地抓取從未見過嘅物體」。如果基礎動作都不可靠，長程任務只會放大錯誤。</p>
+
+<h3 class="sub-title">軟硬件協同設計</h3>
+<p>蘇度科技強調仿真器同機器人本體必須強綁定——「唔可以買一個現成嘅機械臂然後自己寫軟件」。呢個觀點同 Physical Intelligence 嘅路線一致：通用機器人需要從硬件層就為通用性設計，而唔係為特定任務優化後試圖泛化。</p>
+
+<div class="highlight-box">
+  <h3>🔬 操作物體 vs 運動控制——難度嘅量子躍遷</h3>
+  <p>「操作物體比運動控制難 2~3 個數量級」——呢個係一期入面最值得記住嘅一句。讓機器人行路（運動控制）已經好難，但比起讓佢伸手抓一個形狀唔規則、重量唔明嘅物體，行路係容易好多量級。行路只需要控制自身重心同關節，抓取需要理解外部物體嘅所有物理屬性。呢個 insight 解釋咗點解咁多機器人公司做 locomotion 做得好好（Atlas 翻跟頭、Optimus 跳舞），但真正嘅「通用機器人助手」仲未出現。</p>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">五、全球機器人競爭格局：韓铮嘅評分卡</h2>
+
+<p>節目最後部分，泓君讓韓铮點評全球機器人主要玩家——呢部分非常精彩，因為唔係 PR 語言，係一個從業者嘅真實判斷。</p>
+
+<h3 class="sub-title">Skild、Figure、Optimus——硅谷三大明星</h3>
+<ul>
+  <li><strong>Skild</strong>：用大模型思維做機器人——但韓铮認為「純大模型方法嘅路徑有局限性」，因為物理世界嘅不確定性遠超 token space</li>
+  <li><strong>Figure</strong>：硬嘢做得好，但面臨規模化挑戰——Figure 唔係用通用方法，而係為每個場景定制</li>
+  <li><strong>Optimus（Tesla）</strong>：最大優勢係真實世界數據（百萬車隊），但佢哋嘅「人形」先決可能係一個約束——「人形唔一定係最優形態」</li>
+</ul>
+
+<h3 class="sub-title">DeepMind + 波士頓動力 Atlas——韓铮最睇好嘅組合</h3>
+<p>韓铮嘅判斷：<strong>DeepMind 嘅 AI 能力 + 波士頓動力 Atlas 嘅硬件能力，係全球最具潛力嘅機器人組合。</strong>Atlas 嘅運動控制係世界一流，DeepMind 嘅 RL 同世界建模能力都係頂級——兩者結合，有機會突破通用機器人嘅核心障礙。</p>
+
+<blockquote>
+  <p>「為什麼最看好 DeepMind+波士頓動力 Atlas 的組合？」</p>
+  <span class="attr">— 泓君提問，韓铮給出的答案</span>
+</blockquote>
+
+<h3 class="sub-title">亞馬遜機器人——場景多但整合困難</h3>
+<p>亞馬遜有倉庫、物流、配送等多個場景，仲有大量真實數據。但韓铮指出「場景多但整合困難」——唔同場景需要唔同嘅操作技能，通用解決方案仲未成熟。</p>
+
+<h3 class="sub-title">點解多數公司退回垂類？</h3>
+<p>「因為不知道通用該怎麼走。」呢句係韓铮對行業現狀嘅誠實診斷。大多數機器人公司最終退回垂類（物流、清潔、巡檢等），唔係因為佢哋唔想做通用，而係通用實在太難。蘇度科技嘅選擇係：<strong>不做垂類押注，而是構建開發者生態，目標是成為機器人時代的「iOS+硬體」</strong>。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">六、商業模式：Smartphone 生態類比</h2>
+
+<p>蘇度科技嘅商業模式思路係：硬件 + 底層模型 + API——類比智能手機生態。Apple 唔係靠賣 iPhone 硬件賺晒所有錢，而係通過 App Store 生態讓第三方開發者創造價值。蘇度科技想成為機器人領域嘅「iOS」——提供硬件平台同基礎能力，讓第三方開發者喺上面構建應用。</p>
+
+<p>呢個策略有風險：如果通用機器人嘅技術瓶頸仲未突破，第三方開發者就冇辦法構建有價值嘅應用。係一個 chicken-and-egg 問題。但韓铮認為，Sim-to-Real 嘅進展已經足夠支持呢個生態——至少喺「通用抓取」呢個基礎能力上，佢哋已經有 confidence。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">七、深度萃取：學到嘅教訓同啓示</h2>
+
+<div class="highlight-box">
+  <h3>🧠 我嘅睇法</h3>
+  <ol>
+    <li><strong>「通用機器人嘅瓶頸係數據，但唔係任何數據，而係因果數據」</strong>——韓铮嘅 Sim-to-Real 路線本質上係用精確物理仿真產生大量「因果標籤」：物體嘅質量、摩擦系數、重心位置。呢啲係 real-world video 永遠無法提供嘅 ground truth。呢個思路同 #53 X-Cell 嘅「因果數據才是虛擬細胞瓶頸」完全一致。</li>
+    <li><strong>「上下分層回歸主流」嘅判斷值得認真對待</strong>——2025–2026 嘅 AI 行業已經證明咗兩件事：端到端模型喺語音/文字領域嘅巨大成功，同喺物理世界操作領域嘅明顯局限。邊界模型可以寫詩、寫 code、解數學，但無法可靠地擰一個瓶蓋。物理世界嘅不確定性可能要求完全不同嘅範式。</li>
+    <li><strong>蘇度科技嘅「iOS 類比」係一個大膽但合理嘅願景</strong>——同 Physical Intelligence 嘅「機器人大腦平台」、Covariant 嘅「機器人基礎模型」策略類似。呢個賽道最終可能剩落 2–3 個平台級玩家，蘇度科技而家入場係第啱時機。</li>
+    <li><strong>韓铮對行業嘅誠實診斷令人印象深刻</strong>——直接話「多數公司退回垂類因為唔知通用點行」，呢種 honesty 喺創始人訪談中好罕見。通常聽到嘅係「我哋嘅路徑係最靚嘅」。</li>
+    <li><strong>最被低估嘅觀察：操作物體比運動控制難 2–3 個數量級</strong>——呢個 insight 應該成為任何評估機器人公司嘅框架嘅前提。如果一間公司喺「操作」層面未有突破，咁佢嘅「通用機器人」故事唔成立。</li>
+  </ol>
+</div>
+
+<p>最後，一個值得跟蹤嘅信號：蘇度科技嘅 sudo R1 機械臂已經開放<a href="https://www.sudo.ai">60 分鐘連續無剪輯實測</a>——對於想驗證佢哋 claim 嘅人，呢個係最好嘅 testing ground。</p>
+
+<footer>
+  <p>來源：<a href="https://sv101.fireside.fm/257">矽谷101 E244 節目頁面</a> ｜ 蘇度科技官網 <a href="https://www.sudo.ai">sudo.ai</a> ｜ 每日報告 2026-07-25</p>
+  <p>生成時間：2026-07-25 14:15 CST (06:15 UTC) ｜ 深度復述 #58</p>
+  <p>Apache 2.0 · JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>

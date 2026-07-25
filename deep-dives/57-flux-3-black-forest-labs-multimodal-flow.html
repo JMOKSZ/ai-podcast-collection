@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · FLUX 3：統一多模態流模型——從圖像到機械人動作嘅世界模擬器</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  a { color: #8b6f4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  th, td { padding: 0.6rem 0.8rem; text-align: left; border-bottom: 1px solid #e8e2d8; }
+  th { background: #f5f2ed; color: #3a3025; font-weight: 500; }
+  tr:last-child td { border-bottom: none; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1rem; }
+    header h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/JMOKSZ/ai-podcast-collection/main/index.html">← 返回播客日報</a>
+  <div class="ep-num">Latent Space · AINews（2026-07-24）</div>
+  <h1>FLUX 3：統一多模態流模型——從圖像到機械人動作嘅世界模擬器</h1>
+  <div class="meta">
+    <span>📅 2026-07-23</span> <span>·</span>
+    <span>🎙 swyx, Alessio Fanelli（主持）</span> <span>·</span>
+    <span>👤 Black Forest Labs（Stability AI 前核心團隊）</span>
+  </div>
+  <div>
+    <span class="tag">FLUX 3</span>
+    <span class="tag">Self-Flow</span>
+    <span class="tag">多模態</span>
+    <span class="tag">開源權重</span>
+    <span class="tag">機械人</span>
+    <span class="tag">The Stack v3</span>
+    <span class="tag">世界模型</span>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">一、FLUX 3：唔係一個模型，係一個世界模擬器</h2>
+
+<p>2026 年 7 月 23 日，Black Forest Labs（Stability AI 前核心團隊出走創立）發布咗 FLUX 3——一個統一嘅多模態 Flow Model。但呢句描述太抽象。具體啲講：FLUX 3 係一個用同一套權重同時做圖像生成、影片生成（包原生音頻）、字體渲染、動畫設計、同機械人動作預測嘅模型。唔係三個模型共用一個品牌名，係一個模型嘅三個能力。</p>
+
+<p>呢個區別好重要。現有嘅「多模態」模型大部分係：一個語言模型 + 一個視覺編碼器 + 一個音頻解碼器——三件嘢用 glue code 痴埋一齊。FLUX 3 嘅做法截然不同：圖像、影片、音頻三種模態喺同一個 flow matching 訓練過程中同時學習，互相約束、互相教學。</p>
+
+<blockquote>
+  <p>「Each is a projection of the same underlying reality, captured by different sensors, each of which loses some information in the process. Images capture spatial structures… Video restores time… Audio reveals causal relationships… Learn from all of them at once and their mutual constraints tell you more: the sound has to match the impact, the motion has to obey the mass, the future has to follow from the past.」</p>
+  <span class="attr">— Black Forest Labs，FLUX 3 官方博客</span>
+</blockquote>
+
+<p>呢個表述唔係營銷語言，係架構層面嘅設計哲學。每一種模態都係同一個物理世界嘅投影——圖像睇到空間結構，影片睇到時間動態，音頻揭示因果關係。單獨學任何一種，你只係學到投影本身。一齊學，佢哋嘅相互制約會教會模型世界係點運作嘅：一個杯跌落地應該有碰撞聲，而唔係隨便一個撞擊 noise。呢種「因果一致性」係 FLUX 3 最核心嘅競爭力。</p>
+
+<p>技術基礎係 Black Forest Labs 之前發表嘅 <strong>Self-Flow</strong> 方法——一種高效對齊多模態生成同理解嘅統一架構。FLUX 3 將 Self-Flow 大幅擴展算力同數據規模，做到同時訓練影片、圖像同音頻。</p>
+
+<blockquote class="strong">
+  <p>「A model that generates video, images, audio, and robot actions from the same weights is not a media model. It is a world simulator.」</p>
+  <span class="attr">— 獨立分析，Wan 2.7 FLUX 3 評測</span>
+</blockquote>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">二、影片生成：原生音頻係殺手功能</h2>
+
+<p>FLUX 3 Video 係首個上線嘅模塊，已經開放 Early Access。佢嘅核心能力係：單次生成最長 <span class="data-point">20 秒</span>含原生音頻嘅影片，支援 text-to-video、image-to-video、video-to-video、keyframe-to-video 四種模式，以及多語言對話同 agentic chaining（智能串聯多個片段形成長序列）。</p>
+
+<h3 class="sub-title">原生音頻——市場上獨一無二嘅能力</h3>
+
+<p>呢個係 FLUX 3 同所有競爭對手最明顯嘅分別。Kling v3 Pro、Seedance 2.0、Runway Gen-4.5、Luma Ray 3.2——冇一個喺生成過程中同時產生音頻。全部需要後期用獨立音頻模型對齊。Sora 2 後來加了音頻，但都唔係同一個 inference pass 生成。</p>
+
+<p>FLUX 3 嘅做法：你 prompt「一個爵士鼓手喺昏暗俱樂部打鈸，鼓棍擊中嘅瞬間同步有 crash 聲」——生成嘅影片入面，鼓棍打到鈸嘅同一個 frame，crash 聲同時產生。唔使對音軌。唔使 lip-sync 後期。一次 inference 完成。</p>
+
+<table>
+  <tr><th>模型</th><th>最長時長</th><th>原生音頻</th><th>Image-to-Video</th><th>字體</th><th>Agentic Chaining</th></tr>
+  <tr><td><strong>FLUX 3</strong></td><td>20 秒</td><td>✅ 同步生成</td><td>✅</td><td>✅ 強</td><td>✅ 有</td></tr>
+  <tr><td>Kling v3 Pro</td><td>~10 秒</td><td>❌ 獨立 pipeline</td><td>✅</td><td>中等</td><td>❌</td></tr>
+  <tr><td>Seedance 2.0</td><td>30 秒</td><td>❌ 獨立 pipeline</td><td>✅</td><td>中等</td><td>❌</td></tr>
+  <tr><td>Runway Gen-4.5</td><td>~10–15 秒</td><td>❌ 無</td><td>✅</td><td>弱</td><td>❌</td></tr>
+  <tr><td>Luma Ray 3.2</td><td>~5–10 秒</td><td>❌ 無</td><td>有限</td><td>弱</td><td>❌</td></tr>
+  <tr><td>Grok Imagine Video</td><td>視情況</td><td>❌ 有限</td><td>有限</td><td>未知</td><td>❌</td></tr>
+</table>
+
+<h3 class="sub-title">人類偏好基準：初步勝出，但不等於統治</h3>
+
+<p>Black Forest Labs 發布咗初步嘅人類偏好評價（10 秒 720p text-to-video clips）：</p>
+
+<ul>
+  <li>Luma Ray 3.2：<span class="data-point">93%</span> 偏好 FLUX 3</li>
+  <li>Runway Gen-4.5：<span class="data-point">77%</span></li>
+  <li>Grok Imagine Video：<span class="data-point">69%</span></li>
+  <li>Kling v3 Pro：<span class="data-point">60%</span></li>
+  <li>Seedance 2.0：<span class="data-point">52%</span></li>
+  <li>Gemini Omni Flash：<span class="data-point">52%</span></li>
+</ul>
+
+<blockquote>
+  <p>⚠️ 重要免責：呢啲係 vendor-published 初步數據。52% 對 Seedance 2.0 同 Gemini Omni Flash 基本上係統計噪聲範圍內（2-3% 差異可歸因於單次 100-200 評估批次）。真正嘅指標係第三方獨立測試。另外 Seedance 2.5 已經發布，支援 30 秒 4K 同 50 個多模態 reference——FLUX 3 嘅窗口唔係永久的。</p>
+</blockquote>
+
+<h3 class="sub-title">字體生成——被低估嘅突破</h3>
+
+<p>AI 影片嘅字體渲染向來係一個頑疾。字母扭曲、跨幀 morphing、可讀嘅畫面文字需要後期手動合成。FLUX 3 因為從圖像訓練中學到字體渲染（圖像對 spatial structure 嘅理解直接遷移到影片），呢個痛點有望第一次被解決。如果 community testing 證實呢個 claim 成立，咁單係呢個能力已經可以節省大量後期製作工時。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">三、從數碼內容到物理世界：FLUX-mimic 與機械人動作預測</h2>
+
+<p>呢個係 FLUX 3 發佈中最令人意外、可能亦係最長遠影響嘅部分。Black Forest Labs 同機械人公司 mimic robotics 合作推出咗 <strong>FLUX-mimic</strong>——一個將 FLUX 3 嘅影片世界模型直接用於機械人控制嘅視頻-動作模型。</p>
+
+<p>邏輯係咁嘅：FLUX 3 從大量影片訓練中已經學識咗物理動態——物體點樣移動、碰撞、變形、互相作用。將呢種理解應用於機械人控制——預測機械臂下一步應該點做——係同一套能力嘅自然延伸。模型唔需要為影片同機械人分別學物理；從影片中學到嘅物理直接遷移。</p>
+
+<blockquote>
+  <p>「Better video world models directly translate to better robot control quality and sample efficiency.」</p>
+  <span class="attr">— Black Forest Labs，FLUX 3 技術博客</span>
+</blockquote>
+
+<p>呢個論點挑戰咗機械人學界一個主流假設：即係認為「數碼內容模型」同「物理世界模型」係兩個唔同嘅問題。FLUX 團隊認為佢哋係同一個問題嘅兩種 manifestation——都係預測「下一幀」同「下一動作」。呢個觀點同近年興起嘅「世界模型就是機械人大腦」運動（如 Physical Intelligence、Covariant）完全一致。</p>
+
+<p>FLUX-mimic 已經喺 <strong>Audi 工廠</strong>進行實際測試。訓練數據包含機械人操作數據同人類穿戴式數據。單個 on-prem GPU 即可部署——呢個對工業場景嚟講係關鍵優勢。</p>
+
+<div class="highlight-box">
+  <h3>🔬 關鍵洞察</h3>
+  <p>FLUX 3 嘅動作預測能力，某程度上驗證咗一個更廣泛嘅假設：<strong>scaling 影片數據可以學到通用嘅物理直覺</strong>。如果呢條路行得通，機械人學習嘅數據瓶頸可能被繞過——唔需要每個任務都採集大量真實機械人數據，因為世界模型已經從互聯網影片中掌握咗基本物理。</p>
+  <p>當然，呢個仲係早期。從「識睇物理」到「識控制機械臂」之間嘅 gap，仲需要大量 RL 同 fine-tuning 嚟填。但 FLUX-mimic 嘅 Audi 測試至少證明咗條路係可行嘅。</p>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">四、The Stack v3：開源碼庫嘅「大爆炸」</h2>
+
+<p>同日，另一件同 FLUX 3 無直接關係但同等重要嘅事：<strong>The Stack v3</strong> 發布——迄今最大嘅開源程式碼數據集。</p>
+
+<ul>
+  <li><span class="data-point">114TB</span> raw 數據</li>
+  <li><span class="data-point">2.24 億</span>倉庫</li>
+  <li><span class="data-point">44B</span> 文件</li>
+  <li><span class="data-point">770 種</span>程式語言</li>
+  <li>過濾後約 <span class="data-point">5T tokens</span></li>
+  <li>包含 inline content（非 Software Heritage IDs）——可以直接用於訓練</li>
+</ul>
+
+<p>v2 到 v3 嘅增長驚人：C++ <span class="data-point">15x</span>、TypeScript <span class="data-point">7.5x</span>、Rust <span class="data-point">7x</span>、Python <span class="data-point">4.8x</span>。呢啲增長幅度反映出開源社群嘅爆炸性擴張——特別係 Rust 同 TypeScript 呢啲較新嘅語言。</p>
+
+<blockquote>
+  <p>「The meta-point: companies that can encode their value into evals and environments may gain a more durable edge than those relying on capital or raw scale alone.」</p>
+  <span class="attr">— Latent Space AINews，對 The Stack v3 + Codex 現象嘅總結</span>
+</blockquote>
+
+<p>The Stack v3 嘅影響唔只係「又多一個數據集」。佢解決咗開源 code 數據嘅最大痛點——version 2 用 Software Heritage IDs 做 pointer，意味住你要自己去拉數據；v3 直接包含內容，大幅降低咗使用門檻。對於預算有限嘅學術團隊同中小型 AI 公司嚟講，呢個 dataset 可能係訓練自家 code model 嘅關鍵。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">五、同日其他重要 AI 新聞（同篇梳理）</h2>
+
+<h3 class="sub-title">OpenAI ChatGPT Voice + Presence</h3>
+<p>桌面應用程式語音控制上線，可操作 ChatGPT Work 同 Codex。同日 Claude Voice 也發布——Latent Space 形容為「完全意外撞期」，暗示兩間公司可能係刻意選同一日發布，避免對方獨攬媒體注意力。</p>
+
+<h3 class="sub-title">Andrew Ng OpenWorker</h3>
+<p>開源、模型無關嘅本地 agent，用於文件和辦公工具。Andrew Ng 嘅團隊持續填充「AI 基建」嘅開源替代方案——唔係最令人興奮嘅新聞，但對中小企業嚟講實際價值最高。</p>
+
+<h3 class="sub-title">Qwen-Audio-3.0-TTS</h3>
+<p>通義千問發布嘅語音合成模型，支援 <span class="data-point">16 種語言</span>、inline 控制標籤（[whisper]、[angry]）、自然語言風格操控、<span class="data-point">3 分鐘</span>一次生成。對於內容創作者同 accessibility 場景嚟講，呢個模型直接影響生產力。</p>
+
+<h3 class="sub-title">Etched $300M C 輪 @ $10.3B 估值</h3>
+<p>推理專用晶片公司 Etched 完成 <span class="data-point">$300M</span> C 輪融資，估值 <span class="data-point">$10.3B</span>，新開 8 萬 sqft / 10MW 設施。呢個估值反映咗市場對推理專用晶片嘅信心——儘管 GPU 仍然主導訓練市場，但推理嘅性價比優化已經成為獨立賽道。</p>
+
+<h3 class="sub-title">Frontier-Bench</h3>
+<p>社區驅動嘅動態 agent 基準——一個「eval of evals」嘅概念，由社區持續更新任務，超越靜態 eval。呢個方向可能解決咗 AI eval 嘅核心問題：靜態嘅 benchmark 一旦為人熟知，模型就會 overfit。動態基準可以保持 eval 同模型之間嘅軍備競賽公平。</p>
+
+<h3 class="sub-title">HuggingFace 黑客事件持續發酵</h3>
+<p>John Schulman 要求公布完整 transcript 以判斷 agent 係咪有意行為。呢個事件（上一期 deep dive #56 已詳述）繼續牽動安全社群。</p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">六、蒸餾政策爭議：開源權重嘅地緣政治</h2>
+
+<p>FLUX 3 嘅發布同時引發咗一場更大嘅辯論：蒸餾（distillation）政策。</p>
+
+<p>白宮暗示可能制裁開源模型以防「工業化蒸餾」——即係中國團隊用美國模型蒸餾出自己嘅開源版本。但社區反駁稱 The Stack v3 同開源模型對國防同競爭力至關重要。Garry Tan（Y Combinator）公開表示：open weights are strategically important。</p>
+
+<blockquote>
+  <p>「Garry Tan：open weights are strategically important.」</p>
+  <span class="attr">— 引述自 Latent Space AINews 7/24</span>
+</blockquote>
+
+<p>呢場辯論嘅核心係：開源比封閉更安全定係更危險？兩邊都有合理論點。開放派指出 HuggingFace 黑客事件中，開源模型 GLM-5.2 喺防禦中起到關鍵作用，而封閉模型嘅安全防護反而阻礙咗調查。封閉派則指出蒸餾可能導致知識產權流失同國家安全風險。</p>
+
+<p>呢個矛盾冇簡單答案。但可以肯定嘅係：<strong>隨着 FLUX 3 Dev（open-weight 版本）喺今年稍後發布，呢場辯論只會越演越烈。</strong></p>
+
+<!-- ══════════════════════════════════════ -->
+<h2 class="section-title">七、深度萃取：FLUX 3 意味住乜嘢？</h2>
+
+<div class="highlight-box">
+  <h3>🧠 我嘅睇法</h3>
+  <ol>
+    <li><strong>「多模態統一架構」唔只係效率問題，係能力天花板嘅問題。</strong>分開訓練嘅模型永遠無法達到 joint training 嘅因果一致性。FLUX 3 嘅原生音頻、跨模態編輯、同機械人動作預測，全部係 unified architecture 嘅副產品。呢個趨勢會加速：未來的基礎模型將唔會係「語言模型加視覺」，而係從一開始就 multi-modal 嘅模型。</li>
+    <li><strong>影片模型嘅商業價值正在從「媒體製作」擴展到「物理世界理解」。</strong>FLUX-mimic 嘅 Audi 測試係呢個趨勢嘅早期信號。如果世界模型可以從 YouTube 影片中學到物理直覺，機械人公司嘅數據成本將大幅下降。</li>
+    <li><strong>FLUX 3 Dev（open weights）係今年稍後值得關注嘅事件。</strong>Black Forest Labs 一直係開源嘅堅定支持者（FLUX.2 Dev 同 Schnell 版本廣泛使用）。FLUX 3 Dev 可能成為開源多模態領域嘅新標杆。</li>
+    <li><strong>Seadance 2.5 同 Runway Gen-4.5 嘅反應將決定 FLUX 3 嘅窗口長度。</strong>目前 FLUX 3 喺「原生音頻 + 字體 + chaining」嘅組合上有獨特優勢，但競爭對手嘅更新週期以週計。六個月後呢個差距可能消失。</li>
+    <li><strong>The Stack v3 + FLUX 3 Dev = 開源 AI 嘅夏天。</strong>數據同模型嘅開放權重版本同步爆發，對於預算有限嘅開發者同研究者嚟講，呢個係最好嘅時期。</li>
+  </ol>
+</div>
+
+<p>最後，一個值得留意嘅信號：FLUX 3 嘅發布方式——先 video、再 image、再 action——反映咗 Black Forest Labs 嘅市場策略：用影片（最高調嘅媒體形式）吸引注意力，用機械人（啱啱崛起嘅垂直領域）建立長期護城河。呢個 triple play 比單純發布一個 benchmark 榜首模型更加深思熟慮。</p>
+
+<footer>
+  <p>來源：<a href="https://bfl.ai/blog/flux-3">Black Forest Labs — FLUX 3 官方博客</a> ｜ <a href="https://wan27.org/blog/flux-3">Wan 2.7 FLUX 3 評測</a> ｜ <a href="https://bfl.ai/blog/flux-3-mimic">FLUX-mimic 技術博客</a> ｜ Latent Space AINews 7/24 日報</p>
+  <p>生成時間：2026-07-25 14:00 CST (06:00 UTC) ｜ 深度復述 #57</p>
+  <p>Apache 2.0 · JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
