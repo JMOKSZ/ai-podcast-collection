@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Claude Opus 5：Benchmark 危機、Agent 實戰同 AI 定價新時代</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { font-size: 0.95rem; color: #444; line-height: 1.8; margin-bottom: 0.9rem; text-align: justify; }
+  a { color: #8b6f4c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  blockquote {
+    font-size: 0.95rem; font-style: italic; color: #5a4a3a;
+    background: #f8f4ee; border-left: 3px solid #d4c5b0;
+    padding: 0.9rem 1.4rem; margin: 1rem 0 1.2rem; line-height: 1.7;
+  }
+  blockquote.strong { border-left-color: #c0392b; background: #fef5f5; }
+  blockquote .attr { display: block; margin-top: 0.4rem; font-size: 0.85rem; color: #888; font-style: normal; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { font-size: 0.93rem; color: #444; line-height: 1.8; margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #fffcf6; border: 1px solid #e8dfd3; padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.8rem; color: #2a2a2a; }
+  .highlight-box p, .highlight-box li { font-size: 0.9rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; text-align: center; font-size: 0.8rem; color: #aaa; }
+  .speaker { color: #8b7355; font-weight: 500; }
+  hr { border: none; border-top: 1px solid #eae8e3; margin: 2rem 0; }
+  .data-point { font-family: "SF Mono", "Cascadia Code", monospace; background: #f5f2ed; padding: 0.1rem 0.4rem; font-size: 0.85rem; border-radius: 2px; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1rem; }
+    header h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/JMOKSZ/ai-podcast-collection/main/index.html">← 返回播客日報</a>
+  <div class="ep-num">Latent Space · AINews · 2026-07-25</div>
+  <h1>Claude Opus 5：Fable 級效能、Opus 價格——同埋一場 Benchmark 信任危機</h1>
+  <div class="meta">
+    <span>📅 2026-07-25</span> <span>·</span>
+    <span>🎙 swyx + Alessio Fanelli（Latent Space）</span>
+    <span>· 🆕 AINews 深度萃取</span>
+  </div>
+  <div>
+    <span class="tag">Claude Opus 5</span>
+    <span class="tag">Anthropic</span>
+    <span class="tag">Benchmark 危機</span>
+    <span class="tag">FrontierCode</span>
+    <span class="tag">ECI</span>
+    <span class="tag">Agentic AI</span>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 1. 開篇 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">一、週五突襲：一個反常嘅發布時間</h2>
+
+<p>2026 年 7 月 24 日星期五，Anthropic 做咗一件好反常嘅事——<strong>喺週五發布 Claude Opus 5</strong>。</p>
+
+<p>喺 AI 業界，週五發布通常意味住兩樣嘢：要麼你覺得呢個產品唔夠震撼想低調推出，要麼你根本唔在乎傳統 PR 節奏。Anthropic 明顯係後者——Opus 5 帶住接近 Fable 5 嘅能力、Opus 4.8 嘅價格，同埋一大堆 benchmark 爭議，炸翻咗整個週末。</p>
+
+<blockquote class="strong">
+  <p>「Opus 5 comes close to the capabilities of Claude Fable 5 in many domains at half the price.」</p>
+  <span class="attr">— Anthropic 官方發布稿</span>
+</blockquote>
+
+<p>但真正有趣嘅唔係 Opus 5 有幾勁——而係佢引發嘅一場關於 <strong>AI benchmark 信任危機</strong> 嘅大辯論。官方數字話 Opus 5 「接近」Fable 5，但社區實測話「贏咗」。呢個 gap 本身，就係 2026 年 AI 產業最值得關注嘅信號。</p>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 2. 數字之戰 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">二、數字之戰：四個 Benchmark，四種敘事</h2>
+
+<p>Opus 5 嘅 benchmark 數據，取決於你信邊個。</p>
+
+<div class="highlight-box">
+  <h3>📊 Opus 5 vs Fable 5 —— 四大測試框架</h3>
+  <ul>
+    <li><strong>Epoch ECI（整體）</strong>：Opus 5 = <span class="data-point">159</span> vs Fable 5 = <span class="data-point">161</span>（-2 分，官方口徑係「接近」）</li>
+    <li><strong>SWE-ECI（軟件工程）</strong>：Opus 5 = <span class="data-point">161</span>，與 Fable 5 <strong>完全持平</strong></li>
+    <li><strong>AA-Briefcase（Artificial Analysis 代理知識工作）</strong>：Opus 5 超越 Fable 近 <span class="data-point">150 Elo</span>，每任務成本降低 <span class="data-point">20%</span></li>
+    <li><strong>EEG 對比 Opus 4.8</strong>：僅 +<span class="data-point">1 ECI</span> 分——但社區認為實際體驗遠超呢個數字</li>
+  </ul>
+</div>
+
+<p>呢四個數字講緊四個唔同嘅故事：</p>
+<ul>
+  <li><strong>Epoch ECI 話你知</strong>：Opus 5 整體上係「接近但未超越」Fable 5</li>
+  <li><strong>SWE-ECI 話你知</strong>：喺編碼呢個關鍵領域，Opus 5 同 Fable 5 已經平起平坐</li>
+  <li><strong>AA-Briefcase 話你知</strong>：喺 agentic knowledge work（代理式知識工作）——即係最實際嘅企業使用場景——Opus 5 明顯勝出</li>
+  <li><strong>EEG 話你知</strong>：官方 aggregate benchmark 可能嚴重低估咗 Opus 5 嘅真實進步</li>
+</ul>
+
+<p>Epoch AI Research 嘅推文好謹慎：「Claude Opus 5 achieves an ECI of 159, slightly below Fable 5's value of 161, while matching Fable 5 on SWE-ECI at 161」。但社區反應幾乎立即反彈——@scaling01 話：「ECI is incredibly underrated. It's only +1 vs Opus 4.8 but seems much better at everything. We need harder public benchmarks.」</p>
+
+<blockquote>
+  <p>「ECI is incredibly underrated. It's only +1 vs Opus 4.8 but seems much better at everything. We need harder public benchmarks.」</p>
+  <span class="attr">— @scaling01</span>
+</blockquote>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 3. FrontierCode 異常 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">三、FrontierCode 異常：當更多計算 = 更差結果</h2>
+
+<p>呢次發布中最技術性嘅爭議，來自 @jerhadf 發現嘅 FrontierCode 異常：<strong>Opus 5 喺 medium effort 嘅得分竟然高過 high effort</strong>。</p>
+
+<p>呢個發現違反咗直覺——正常情況下，比更多 test-time compute（推理時計算）應該得到更好結果。但 FrontierCode 上嘅 anomaly 顯示，對於 Opus 5 嚟講，effort scaling 並非單調遞增。</p>
+
+<blockquote>
+  <p>「Opus 5 scored better on FrontierCode at medium effort than at higher effort, even though more effort improved performance on other evals.」</p>
+  <span class="attr">— @jerhadf</span>
+</blockquote>
+
+<p>呢個現象嘅含義遠遠超出一個 benchmark 嘅 bug：</p>
+<ul>
+  <li><strong>部署策略（deployment policy）可能比模型質量更重要</strong>——點樣分配 inference-time compute，可能同模型本身一樣決定最終表現</li>
+  <li><strong>Frontier Labs 日益依賴 test-time compute</strong>——但如果呢種 compute 嘅回報唔係線性嘅，咁舖 compute 嘅競爭就唔係「越多越好」嘅簡單遊戲</li>
+  <li><strong>Effort scaling 本身需要成為 eval 嘅一部分</strong>——而唔係被當作一個 hyperparameter</li>
+</ul>
+
+<p>呢個發現對 OpenAI 嘅 o-series 同 Anthropic 嘅 thinking mode 都有直接含義：如果 medium effort 喺某啲任務上比 high effort 好，咁我哋可能需要重新思考 test-time compute 嘅分配策略——唔係畀愈多愈好，而係要揾個 optimal point。</p>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 4. 真實世界表現 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">四、真實世界嘅 Agent 表現</h2>
+
+<p>Benchmark 嘅爭議之外，Opus 5 喺真實世界嘅表現獲得咗一致好評——特別係 agentic tool use 方面。</p>
+
+<p>最令人印象深刻嘅 demo 嚟自 @abacaj：Opus 5 「opened the browser and canceled a ChatGPT Pro subscription」，跟住佢補多句：「This thing can really drive a browser wow.」呢個看似簡單嘅操作背後，係 browser automation + decision making + security credential handling 嘅完整 agentic loop。</p>
+
+<p>Mikhail Parakhin（@MParakhin）——一個被廣泛引用嘅工程師——話 Opus 5 喺佢嘅測試中「clear head-to-head win against Fable for math and everything, really」，特別係用 best-of-n sampling 嘅時候。</p>
+
+<blockquote class="strong">
+  <p>「Best-of-n rules — clear head-to-head win against Fable for math and everything, really.」</p>
+  <span class="attr">— Mikhail Parakhin (@MParakhin)</span>
+</blockquote>
+
+<p>Stripe 工程師 Cristian Rivera 嘅描述更具體：「Over one weekend, I gave it a chief-of-staff role over my dev environments: it built its own monitor, drove each box, and pulled me in only for the judgment calls.」呢個正正係「AI 同事」嘅感覺——唔係取代你，而係幫你 handle 所有可以做 automation 嘅部分。</p>
+
+<p>Harvey（AI 法律工具）嘅應用研究主管 Niko Grupen 提供咗量化數據：「Opus 5 maintained quality at lower reasoning levels, generating 26% fewer tokens on average compared to Opus 4.8 at max reasoning.」Token 節省直接轉化為成本節省同 session 長度——呢個對企業嚟講可能比 benchmark 分數更實際。</p>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 5. 定價革命 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">五、價格革命：Fable 級能力，一半價錢</h2>
+
+<p>Opus 5 保持 Opus 4.8 嘅價格：<span class="data-point">$5/百萬 input token</span>、<span class="data-point">$25/百萬 output token</span>。相比 Fable 5 嘅大約雙倍價格，呢個定價策略好明顯——Anthropic 想 Opus 5 成為「everyday driver」。</p>
+
+<p>仲有幾個值得留意嘅產品更新：</p>
+<ul>
+  <li><strong>Fast Mode</strong>：research preview，以雙倍價格換取 150% 更快嘅 token 生成速度</li>
+  <li><strong>Automatic Fallbacks</strong>：當 safety classifier 拒絕請求時，API 自動 fallback 到另一個模型——確保用戶收到有用回應而非錯誤</li>
+  <li><strong>Mid-conversation Tool Changes</strong>：開發者可以喺對話中間切換工具，唔使重置 prompt cache——呢個對長時間 agentic sessions 好關鍵</li>
+</ul>
+
+<p>其中 Mid-conversation tool changes 尤其值得關注。佢解決嘅係一個實戰痛點：長時間 agentic session 入面，你一開始畀咗好多 tools 畀模型，但任務到咗後期某啲 tools 已經唔需要。傳統做法要麼繼續保留（浪費 token + prompt cache），要麼開新 session（丟失 context）。Anthropic 呢個設計容許動態 tool management——呢個先係真正為 agent 時代而設計嘅 infra 改進。</p>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 6. 競爭格局 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">六、擁擠的前沿：Opus 5 喺邊個位？</h2>
+
+<p>Opus 5 發布嘅時機好有趣。佢進入嘅唔係一個平靜嘅市場，而係一個 frontiers 大亂鬥嘅局面：Fable 5、GPT 5.6 Sol、Grok 4.5、Kimi K3、Mythos——再加上洶湧嘅開源權重浪潮。</p>
+
+<p>呢次發布同舊日模型發布有一個明顯分別：<strong>討論嘅 tone 唔同咗</strong>。</p>
+
+<p>以前發布 flagship 模型，大家攞住 spec sheet 逐行對比：MMLU 幾多分？HumanEval 幾多分？而家嘅討論係：</p>
+<ul>
+  <li>「佢可唔可以自主操控 browser？」</li>
+  <li>「佢嘅 cost per task 有幾低？」</li>
+  <li>「佢喺 agentic workflow 入面會唔會 loop？」</li>
+  <li>「佢嘅 evals 有冇被 game？」</li>
+</ul>
+
+<p>呢個轉變本身就係行業信號：AI 競爭已經從「邊個模型最 smart」轉向「邊個模型最有用」。</p>
+
+<blockquote>
+  <p>「The launch pattern: fewer 'spec sheet' posts than older model launches, and more argument over evaluation methodology, agent demos, and real-world coding performance. This combination explains the launch pattern in these tweets.」</p>
+  <span class="attr">— Latent Space AINews 分析</span>
+</blockquote>
+
+<p>Artificial Analysis 嘅 AA-Briefcase benchmark 特別值得留意。佢哋測嘅唔係 static QA，而係 agentic knowledge work——模型要喺多步 workflow 中完成複雜任務。Opus 5 喺呢度超越 Fable 5 近 150 Elo，同時 cost per task 低 20%。呢個先係企業用戶真正 care 嘅指標。</p>
+
+<div class="highlight-box">
+  <h3>🔑 核心洞察：Benchmark 危機嘅根源</h3>
+  <p>Opus 5 引發嘅 benchmark 信任危機，根源在於一個結構性問題：<strong>aggregate capability scores compress diverse behaviors into a single number</strong>。ECI 將 coding、reasoning、knowledge work 等維度壓縮為一個數字，但 Opus 5 嘅強項係編碼同 tool use——呢啲恰恰係 aggregate score 最難捕捉嘅維度。</p>
+  <p>社區嘅 frustration 其實係一個健康信號：用戶唔再滿足於「呢個模型 MMLU 幾多分」，而係要「呢個 model 幫我解決真實問題有幾掂」。Agent era 需要 agent-native benchmarks，唔係 chatbot era 留下嚟嘅靜態測試。</p>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- 7. 展望 -->
+<!-- ══════════════════════════════════════ -->
+
+<h2 class="section-title">七、Agent 時代嘅新規則</h2>
+
+<p>Opus 5 嘅發布——同圍繞佢嘅爭議——揭示咗 AI 行業嘅幾個新規則：</p>
+
+<p><strong>第一，Benchmark 已死，Benchmark 萬歲。</strong> 現有嘅公開 benchmark 明顯跟唔上模型能力嘅進化——特別係 agentic 方向。FrontierCode 嘅 effort scaling anomaly、ECI 被社區質疑「underrated」——呢啲都係靜態 eval 喺動態 agent 時代嘅失效信號。社區開始呼籲 harder public benchmarks。</p>
+
+<p><strong>第二，Cost per Task 取代 Cost per Token。</strong> Opus 5 嘅定價敘事唔再係「每 token 幾錢」，而係「每完成一個任務幾錢」。呢個 shift 同我哋之前喺 Codex 7M 深潛中睇到嘅一致——「cost per task」正成為行業新定價單位。</p>
+
+<p><strong>第三，Agent demos > Benchmarks。</strong> Opus 5 取消 ChatGPT Pro 訂閱嘅 browser demo，比任何 benchmark 數字都更有說服力。呢個趨勢今年一直喺度加速——我哋見過 Claude Code 嘅 live demos、Codex 嘅 workflow automation、GPT-5.6 Sol 嘅 agentic coding——每次 demo 嘅 impact 都大過 official benchmark。</p>
+
+<p><strong>第四，Distillation 定價嘅威力。</strong> Opus 5 以 Opus 級價格提供接近 Fable 嘅效能，暗示 Anthropic 嘅 distillation 能力可能被低估。用更小嘅模型逼近 frontier performance——呢個策略如果成功，會改變 frontier labs 之間嘅競爭邏輯。</p>
+
+<blockquote>
+  <p>「The practical implication is that Opus 5's reception is being filtered through two simultaneous lenses: as a coding/agentic product that users can immediately operationalize, and as a frontier model subject to increasingly adversarial benchmark and safety scrutiny.」</p>
+  <span class="attr">— Latent Space AINews</span>
+</blockquote>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Footer -->
+<!-- ══════════════════════════════════════ -->
+
+<footer>
+  <p>來源：<a href="https://www.latent.space/p/ainews-claude-opus-5-fable-level">Latent Space AINews — Claude Opus 5: Fable-level performance at Opus price</a></p>
+  <p>生成時間：2026-07-26 14:06 CST (06:06 UTC) ｜ 深度復述 #59</p>
+  <p>Apache 2.0 · JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
