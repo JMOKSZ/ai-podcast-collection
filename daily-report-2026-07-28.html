@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度萃取 — 2026-07-28</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  background: #faf8f5;
+  color: #1a1a1a;
+  font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  line-height: 1.75;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+header {
+  border-bottom: 1px solid #e0dcd5;
+  padding-bottom: 1.2rem;
+  margin-bottom: 2rem;
+}
+header h1 { font-size: 1.4rem; font-weight: 600; margin: 0 0 0.4rem; color: #2c2c2c; }
+header .meta { color: #777; font-size: 0.85rem; font-family: -apple-system, sans-serif; }
+h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 2.2rem 0 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #e0dcd5;
+  color: #2c2c2c;
+}
+h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.8rem 0 0.3rem;
+  color: #444;
+}
+h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 1.2rem 0 0.2rem;
+  color: #555;
+}
+.episode {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  margin: 1.2rem 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border: 1px solid #edeae5;
+}
+.episode-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+.episode-header h4 { margin: 0; font-size: 1rem; }
+.episode-header .date { color: #888; font-size: 0.78rem; font-family: -apple-system, sans-serif; }
+.section-label {
+  font-weight: 600;
+  color: #3a7a5f;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 1rem 0 0.3rem;
+  font-family: -apple-system, sans-serif;
+}
+blockquote {
+  border-left: 3px solid #c4b89a;
+  margin: 0.6rem 0;
+  padding: 0.4rem 0.8rem;
+  color: #555;
+  font-style: italic;
+  background: #f8f6f2;
+}
+ul, ol { margin: 0.3rem 0; padding-left: 1.2rem; }
+li { margin-bottom: 0.2rem; }
+p { margin: 0.4rem 0; }
+.note {
+  background: #f4f1eb;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  margin: 1rem 0;
+  font-size: 0.88rem;
+  color: #555;
+  border-left: 3px solid #c4b89a;
+}
+.bullet-list { margin: 0.8rem 0; }
+.bullet-list li { margin-bottom: 0.4rem; }
+.key-point {
+  background: #fdfaf3;
+  border: 1px solid #efe6d5;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  margin: 1rem 0;
+}
+.key-point strong { color: #8b5e3c; }
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0dcd5;
+  font-size: 0.8rem;
+  color: #999;
+  text-align: center;
+  font-family: -apple-system, sans-serif;
+}
+hr { border: none; border-top: 1px solid #e0dcd5; margin: 1.5rem 0; }
+</style>
+</head>
+<body>
+<header>
+<h1>🎙 AI 播客深度萃取报告</h1>
+<div class="meta">2026-07-28 星期二 · 生成时间 10:03 CST · 覆盖 10 个播客</div>
+</header>
+
+<!-- 今日重点 -->
+<div class="key-point">
+<strong>今日重点：</strong><br>
+• <strong>张小珺 #148</strong> — 游凯超 3 小时深度：vLLM 从伯克利开源项目到 1.5 亿美金融资的商业化历程，模型与 Infra Co-design<br>
+• <strong>Cognitive Revolution</strong> — Nathan Labenz 中国行 Part 1：实地体验 DeepSeek/Kimi/Doubao，微信 Agent 可能是史上最重要的 Agent 发布，机器人硬件中国领先但自主性不足<br>
+• <strong>Dwarkesh × Adam Brown</strong> — 广义相对论第一性原理解读+蓝移团队(DeepMind)讨论 AI 能否从零重现相对论<br>
+• <strong>Latent Space</strong> — Claude Opus 5 发布追踪：ECI 159 vs Fable 161，SWE-ECI 打平，社区反应「benchmark 低估了实际体验」<br>
+• ⚠️ 小宇宙 RSS 源 ID 已失效（404），需更新中文播客采集方案
+</div>
+
+<!-- =============== 中文播客 =============== -->
+<h2>🇨🇳 中文播客</h2>
+
+<!-- 张小珺 -->
+<div class="episode">
+<div class="episode-header">
+<h4>张小珺商业访谈录（张小珺）</h4>
+</div>
+
+<h4>#148 对游凯超3小时访谈：开源Infra、和模型Co-design、「如果vLLM失败，我们会后悔一辈子」 🎙️</h4>
+<div class="section-label">嘉宾背景</div>
+<p><strong>游凯超</strong>，创业公司 Inferact 联合创始人兼首席科学家。这家公司极其特殊——从伯克利一个校园开源项目 vLLM 演化而来。社区维护者用了将近 3 年时间，把它从一篇算法论文变成了一个开源社区，又变成了一家公司的正常运营。今年初，Inferact 获得了 <strong>1.5 亿美元种子轮融资</strong>。</p>
+
+<div class="section-label">核心论点</div>
+<ul class="bullet-list">
+<li><strong>开源社区→公司的底层逻辑</strong>：vLLM 维护者们放弃了大量个人诱惑，坚守开源精神。当一个寄托社区情怀的项目变成商业组织后，面临抉择、转变与思考。</li>
+<li><strong>模型与 Infra 的 Co-design</strong>：在 AI Infra、模型结构、甚至 Harness Engineering 都要联合设计的时代背景下，多方的联合设计应该怎么做？</li>
+<li><strong>Token vs 电力</strong>：讨论了 AI 算力的终极瓶颈——究竟是 Token 成本还是电力成本先到天花板。</li>
+<li><strong>"如果 vLLM 失败了，我们会后悔一辈子"</strong>：这句话说明了团队对这个项目的执念和使命感。</li>
+</ul>
+
+<div class="section-label">关键数据</div>
+<ul>
+<li>Inferact 获得 <strong>1.5 亿美元种子轮融资</strong>（2026 年初）</li>
+<li>vLLM 从伯克利校园项目起步→开源社区→正式公司运营，历时约 3 年</li>
+</ul>
+
+<div class="section-label">重点引用</div>
+<blockquote>"如果 vLLM 失败了，我们会后悔一辈子"</blockquote>
+
+<div class="section-label">行业 Insight</div>
+<p>游凯超的经历揭示了 AI Infra 领域一个独特的现象：以开源项目为核心的社区在获得足够的 momentum 后，可以直接演变成可持续的商业组织。Inferact 的路径——从算法论文到开源社区到公司——可能成为 AI 基础设施创业的新范式。</p>
+
+<div class="section-label">技术细节</div>
+<p>节目中深入讨论了 AI Infra 前沿：从算法到机器学习系统的转化、开源项目治理模式（"仁慈的独裁者"）、模型与 Infra 的 Co-design、以及 Token 经济学。</p>
+
+<div class="section-label">前後脈絡</div>
+<p>这集延续了张小珺近期对 AI 底层基础设施创业者的系列访谈（之前已覆盖罗福莉谈 AI 范式转变、苏煜谈 Agent 技术史），这次从更技术的视角切入 Infra 层。</p>
+
+<p style="color:#999; font-size:0.8rem;">来源：小宇宙 · 发布于 约 2-3 天前 · 时长约 3 小时</p>
+</div>
+
+<!-- 硅谷101 -->
+<div class="episode">
+<div class="episode-header">
+<h4>硅谷 101（泓君）</h4>
+</div>
+
+<h4>E245｜藏在大模型背后的新闻人：GPT们的回复是这样写出来的 🎙️</h4>
+<p style="color:#888; font-size:0.8rem;">2026-07-24 08:00 CST · 46 分钟</p>
+
+<div class="section-label">嘉宾背景</div>
+<p><strong>Tony Lin</strong>，人工智能实验室模型设计负责人，播客《行星酒馆》主播（前媒体人转型内容工程师）。<strong>Bianca Consunji</strong>，NBCUniversal AI战略总监。</p>
+
+<div class="section-label">核心论点</div>
+<ul class="bullet-list">
+<li><strong>内容工程师（Content Engineer）是什么？</strong>：当模型能力日益趋同，真正决定用户去留的不再是参数，而是 AI 能否让人觉得「懂我」。</li>
+<li><strong>如何拆解「好内容」</strong>：那些"只可意会不可言传"的语感与共情，正在被文字工作者拆解成可量化、可训练、可评估的工程标准。</li>
+<li><strong>意图理解</strong>：理解提问者的"言下之意"，而非仅仅回答字面问题。这是内容工程师最难也最有价值的工作。</li>
+<li><strong>AI 谄媚是产品设计问题</strong>：AI 顺着用户的价值取向去迎合讨好，本质上是为了留住用户、提升 engagement。</li>
+<li><strong>"AI 商"</strong>：人除了智商情商，未来还会需要「AI 商」——知道怎么跟 AI 有效协作的能力。</li>
+<li><strong>基于共识训练出来的 AI，不会产生伟大的艺术</strong>：Tony 认为 AI 训练追求共识，但伟大的艺术往往来自非共识。</li>
+</ul>
+
+<div class="section-label">重点引用</div>
+<blockquote>"当你觉得 AI '懂你'的那一刻——精准抓住一个你自己都没说清的情绪，问出一个让你陷入沉思的问题——你以为那来自数据中心的芯片、模型里的参数、程序员敲下的代码，但真相是，那些问进你心坎里的问题背后站着一群人：他们曾是记者、编辑和纪录片导演。"</blockquote>
+<blockquote>"曾经我出卖成果，现在我展示过程"——媒体从业者职业价值的迁移方向</blockquote>
+
+<div class="section-label">技术细节</div>
+<ul>
+<li><strong>系统提示词（System Prompt）</strong>：写给模型、设定身份/语气/行为边界的底层指令，本质是"要让模型听得懂的技术性写作"。</li>
+<li><strong>少样本示例（Few-shot Example）</strong>：随机提供相关案例让模型理解什么是好内容。</li>
+<li><strong>多轮对话</strong>：通常是 AI 弱项，缺乏上下文时 AI 会不断"脑补"，错误如滚雪球般放大。</li>
+</ul>
+
+<div class="section-label">行业 Insight</div>
+<p>这集揭示了一个正在快速膨胀的新兴岗位——内容工程师，正在各 AI 公司内部裂变扩张。从记者、编辑、纪录片导演转行做 AI 内容质量把控，文科生在 AI 时代的职业价值正在被重新定义。</p>
+
+<div class="section-label">争议点</div>
+<p>Tony 在东尼在养病期间做出了震惊谷歌的 voice agent，证明个人创造力和工程能力的结合依然可以突破大公司的资源壁垒。</p>
+</div>
+
+<!-- 十字路口（已有但补充） -->
+<div class="episode">
+<div class="episode-header">
+<h4>十字路口 Crossing（Koji 杨远骋）</h4>
+</div>
+
+<h4>11 年，110 亿美金，然后呢？｜对话 Airwallex 吴恺：AI 时代，下一站 1000 亿 🎙️</h4>
+<p style="color:#888; font-size:0.78rem;">2026-07-27 · 约 50 分钟</p>
+
+<div class="section-label">嘉宾背景</div>
+<p><strong>吴恺</strong>，Airwallex 空中云汇首席营收官（CRO）。Airwallex 上月完成新一轮融资，估值 110 亿美金。11 年前从墨尔本起家的华人创业公司。</p>
+
+<div class="section-label">核心论点</div>
+<ul class="bullet-list">
+<li><strong>拒绝 Stripe 收购</strong>：B 轮时 Stripe 曾想收购 Airwallex，团队选择了拒绝。核心在于"钱"与"愿景"的选择。</li>
+<li><strong>亏四年，先铺全球网络</strong>：Day One 就选择了覆盖全球而非只做东南亚，如果只做东南亚可能早就盈利了。</li>
+<li><strong>AI 正在推动全球金融的关键拐点</strong>：Airwallex 正在服务 Kimi、MiniMax、智谱、DeepSeek 等大模型公司。</li>
+<li><strong>10 个财务 SaaS → 1 个 Agent 入口</strong>：吴恺认为未来财务自动化的终极形态是一个 Agent 整合所有流程。</li>
+<li><strong>ChatGPT Finance 发布后</strong>：当模型越来越像商品，金融超级入口最终会长在哪一层？</li>
+</ul>
+
+<div class="section-label">关键数据</div>
+<ul>
+<li>Airwallex 估值 <strong>110 亿美金</strong>（最新融资后）</li>
+<li><strong>ARR 约 13 亿美金</strong>，年增速约 <strong>74%</strong>，行业毛利约七成</li>
+<li>按约 8 倍 P/S 计算，吴恺认为 110 亿估值并不高</li>
+<li>目前拥有 <strong>20 多万客户</strong>，下一目标是 <strong>100 万客户</strong></li>
+<li>连续收购 Leapfin、OpenPay</li>
+</ul>
+
+<div class="section-label">重点引用</div>
+<blockquote>"投资人觉得这个'全球银行'愿景疯了"</blockquote>
+<blockquote>"过去 5 个财务人员使用 10 套软件，未来呢？"</blockquote>
+
+<div class="section-label">行业 Insight</div>
+<p>Airwallex 的 Kai（AI 助手）、AgentOS（通过 CLI/API/MCP 开放底层金融能力）、T:0（迷你 CFO）、Airi（智能钱包）等 AI 产品线，展示了金融科技公司从"工具"向"Agent 平台"的转型。ChatGPT Finance 的竞争压力下，金融 SAAS 行业的格局正在被重写。</p>
+</div>
+
+<!-- =============== 英文播客 =============== -->
+<h2>🇬🇧 英文播客</h2>
+
+<!-- Cognitive Revolution -->
+<div class="episode">
+<div class="episode-header">
+<h4>The Cognitive Revolution（Nathan Labenz）</h4>
+<span class="date">约 2026-07-25</span>
+</div>
+
+<h4>Nathan Goes to China – Part 1: Tech & Agent Setup, Chinese AI UX, WAIC, and Attitudes on AI 🎙️</h4>
+
+<div class="section-label">核心论点</div>
+<ul class="bullet-list">
+<li><strong>中国 AI 产品真实体验</strong>：Nathan 用 DeepSeek、Kimi、MiniMax 作为历史导游实际使用一周。评价：解释景点时这些模型快速、准确、有教育意义，不需要长程 Agent 能力。</li>
+<li><strong>Kimi 在品味和感觉上最佳</strong>：Nathan 将其归因于 Moonshot AI 作为组织的审美严肃性。</li>
+<li><strong>关键时刻，信任回到 ChatGPT</strong>：凌晨 3 点突发荨麻疹时，他选择下载 ChatGPT 而非继续用中文模型——尽管此前一周对中国模型很满意。</li>
+<li><strong>中国真正大规模普及的是豆包（Doubao）</strong>：字节跳动语音原生助手，约 1.5 亿用户。DeepSeek 在西方讨论多但中国实际使用者少。</li>
+<li><strong>豆包的家庭陪伴功能</strong>：父母向子女展示"豆包说了什么"——"你为什么不能像豆包一样对我好？"成为社会现象。</li>
+<li><strong>紫禁城导游的故事</strong>："中国社会有些话你不能对任何人说，但你可以对豆包说，因为豆包不会评判你。"以前只能闷在心里。</li>
+</ul>
+
+<div class="section-label">关键数据/事实</div>
+<ul>
+<li>Doubao（豆包）约 <strong>1.5 亿用户</strong>，嵌入在字节跳动生态中</li>
+<li>中国支付交易费率约 <strong>0.25%</strong>，对比美国 <strong>2-3%</strong></li>
+<li>中国完全无现金社会——Nathan 两周内没见过实体货币</li>
+<li>微信 Agent 处于后期测试阶段，Nathan 认为可能是<strong>历史上最重要的 Agent 发布</strong></li>
+<li>蚂蚁集团正在资助免费的 AI 医生（Alipay 交易利润支撑）</li>
+</ul>
+
+<div class="section-label">重点引用</div>
+<blockquote>"Nathan 离开前留下了他的 Mac Mini，让 Claude 监控通信、每天发两次摘要、标记紧急事项。"</blockquote>
+<blockquote>"把东西放在纽约/旧金山和北京/上海的边上，隐藏价格，问哪个是更富的国家——绝大多数人会选中国。"</blockquote>
+
+<div class="section-label">技术细节</div>
+<ul>
+<li>Nathan 设置了一个远程 Agent 方案：Mac Mini 运行 Claude，监控 Gmail 并代理回复。密码挑战被否决（邮件可见），改用智能过滤+冷知识验证。</li>
+<li>Gmail 认证每两周过期一次，需要人工点击浏览器——这是整个方案唯一反复中断的环节。</li>
+<li>翻墙经验：国际漫游用户基本不受影响，流量从境内回传运营商的国际路由。</li>
+</ul>
+
+<div class="section-label">行业 Insight</div>
+<p><strong>最重要的预测：</strong>微信正在后期测试原生 Agent。由于几乎所有中国人都在微信上（支付、预订、身份、社交图谱全部集成），这个 Agent 将拥有西方任何产品无法比拟的"深入真实生活的接入权限"。字节跳动试图搭建一个超级 Agent 位于超级 App 之上，但被微信阻拦（因为微信在自建）。Nathan 的判断是：这可能是历史上最重要的 Agent 发布，开放问题是腾讯能否为超过 10 亿用户提供足够算力。</p>
+<p><strong>机器人格局观察：</strong>中国在机器人硬件和大规模生产上领先，美国实验室在通用自主性上更靠前。存在真正的互补性。</p>
+
+<div class="section-label">争议点</div>
+<p>中国社会"容忍矛盾"的文化现象——参与多个宗教或无宗教、VPN 违法但公司统一配置（没人担心执法）、同时抱怨审查和为审查辩护。Nathan 认为这种制度可能有更多达成交易的灵活性。</p>
+<p>尾风险：没人能说出 Xi 之后的继任者，当前维持秩序的工具在权力继承斗争中将是 formidable instrument。</p>
+</div>
+
+<!-- Dwarkesh Podcast -->
+<div class="episode">
+<div class="episode-header">
+<h4>Dwarkesh Podcast（Dwarkesh Patel）</h4>
+<span class="date">2026-07-10</span>
+</div>
+
+<h4>Adam Brown – A deep but accessible introduction to general relativity 🎙️</h4>
+
+<div class="section-label">嘉宾背景</div>
+<p><strong>Adam Brown</strong>，Google DeepMind Blueshift 团队负责人，前斯坦福教授。BlueShift 致力于用 AI 攻克科学推理难题。Adam 的学术背景涵盖宇宙学、弦论和广义相对论。</p>
+
+<div class="section-label">核心论点</div>
+<ul class="bullet-list">
+<li><strong>等效原理是爱因斯坦的"最快乐的想法"</strong>：惯性质量与引力质量的精确相等（实验验证到 10¹⁵ 分之一）是 GR 的核心线索。</li>
+<li><strong>广义相对论的核心洞察</strong>：引力不是一种力，而是时空弯曲的几何效应。物体沿"直线"（测地线）运动，只是时空本身弯曲了。</li>
+<li><strong>黑体是终极发电站</strong>：根据 Penrose 过程，可以从旋转黑洞提取能量——理论上效率远超核聚变。</li>
+<li><strong>黑洞视界的信息悖论</strong>：远处观察者和下落观察者对同一事件会有根本不同的描述。</li>
+</ul>
+
+<div class="section-label">关键数据/事实</div>
+<ul>
+<li>爱因斯坦花费 <strong>10 年</strong>（1905-1915）从狭义相对论推进到广义相对论</li>
+<li>等效原理现在被验证到精确到 <strong>1 分之一的 10¹⁵</strong></li>
+<li>亚当在斯坦福教 GR 用 <strong>20 讲的研究生课程</strong>，但将这集的浓缩版本称为普通人可理解</li>
+<li>1919 年日食首次验证了光线弯曲——爱丁顿的观测</li>
+</ul>
+
+<div class="section-label">重点引用</div>
+<blockquote>"广义相对论，爱因斯坦的引力理论，正如你所说，是单一头脑产生的最美丽的产物。它是 20 世纪物理学的两大理论之一，另一个是量子力学。"</blockquote>
+<blockquote>"Nothing can go faster than light, not even gravity."</blockquote>
+
+<div class="section-label">技术细节</div>
+<p>Adam 从牛顿力学出发，对比了引力与电磁力之间的关键差异。指出静电力和牛顿引力都是平方反比律，但电荷（电磁）和质量（引力）的角色完全不同——电荷与质量无关，但引力质量恒等于惯性质量。Adam 还解释了为什么引力由自旋-2 粒子（引力子）介导，而电磁力由自旋-1 光子介导，这个自旋差异导致了引力总是吸引而电磁力可吸引可排斥。</p>
+
+<div class="section-label">行业 Insight</div>
+<p>节目末尾（01:29:33）讨论到 AI 能否在没有实验验证的情况下重新发现广义相对论。Adam 领导的 BlueShift 团队正在解决这个问题。这是一个深层哲学问题：AI 能否仅从第一性原理推理出物理学定律，而不依赖实验数据？</p>
+
+<div class="section-label">前後脈絡</div>
+<p>这集延续了 Adam Brown 作为 Dwarkesh 常驻物理学家的角色，此前他已在多个短片中解释黑洞、时间膨胀、引力波等概念。这次的大长篇是完整的 GR 入门。</p>
+
+<div class="section-label">赞助商信息（有行业意义）</div>
+<ul>
+<li><strong>Crusoe</strong> 推出 serverless fine-tuning 产品，Dwarkesh 用它训练了一个"Dwarkesh 风格提问生成器"，盲测中 30% 情况下优于他自己的问题——下周正式上线。</li>
+<li><strong>Cursor iOS 应用</strong>：Dwarkesh 在晚餐时突然想到一个关于样本效率的研究想法，用 Cursor 语音笔记，15 分钟后 Cursor 克隆了相关 repo、完成了分析并写出了发现。</li>
+</ul>
+</div>
+
+<!-- Latent Space -->
+<div class="episode">
+<div class="episode-header">
+<h4>Latent Space（swyx + Alessio Fanelli）</h4>
+<span class="date">2026-07-25</span>
+</div>
+
+<h4>[AINews] Claude Opus 5: Fable-level performance at Opus price (half Fable) 🎙️</h4>
+
+<div class="section-label">核心论点</div>
+<ul class="bullet-list">
+<li><strong>Anthropic 发布 Claude Opus 5</strong>——周五罕见发布（通常周四），立即引发 benchmark 讨论、编码 Agent 赞誉和前沿模型评估方法论的辩论。</li>
+<li><strong>Anthropic 的蒸馏能力无人能敌</strong>：标题"ain't nobody beats Anthropic at distilling Fable!"——用 Opus 价格获得接近 Fable 性能。</li>
+</ul>
+
+<div class="section-label">关键数据</div>
+<ul>
+<li><strong>Epoch Capabilities Index (ECI)</strong>：Opus 5 = <strong>159</strong>，Fable 5 = <strong>161</strong></li>
+<li><strong>SWE-ECI</strong>：Opus 5 = <strong>161</strong>，与 Fable 5 打平</li>
+<li>比 Opus 4.8 仅 <strong>+1 ECI 点</strong>，但社区认为"实际上好得多"</li>
+<li>在编码 Agent 基准 AA-Briefcase 上，Opus 5 超越 Fable 约 <strong>150 Elo</strong>，同时每任务成本降低 <strong>20%</strong></li>
+<li>效率（performance per unit cost）与 GPT 5.6 Sol 持平</li>
+<li>Nous Portal 提供 Opus 5 接入，全部模型 <strong>20% 折扣</strong></li>
+</ul>
+
+<div class="section-label">重点引用</div>
+<blockquote>"Best-of-n rules" — Mikhail Parakhin 报告 Opus 5 在数学和"所有方面"正面击败 Fable</blockquote>
+<blockquote>"This thing can really drive a browser wow" — @abacaj 演示 Opus 5 打开浏览器取消 ChatGPT Pro 订阅</blockquote>
+
+<div class="section-label">技术细节</div>
+<ul>
+<li><strong>FrontierCode 异常</strong>：Opus 5 在中等 effort 下得分反而高于高等 effort——推理时间计算增加并不总是带来单调收益提升。</li>
+<li>社区反应认为 ECI <strong>低估</strong>了实际体验提升，建议需要更难的公开 benchmark。</li>
+<li>多个技术用户报告编码工具使用（browser automation）表现显著提升。</li>
+</ul>
+
+<div class="section-label">行业 Insight</div>
+<p>这次发布揭示了前沿模型评估的一个关键争议：<strong>benchmark vs 实际体验的鸿沟</strong>。Anthropic 官方声称 Opus 5 "comes close" to Fable，但独立评测（Artificial Analysis、Mikhail Parakhin 等）显示它在编码 Agent 任务上确实超越 Fable。这可能说明 SWE-bench 等现有评测无法充分捕捉 Agentic 能力的改进。</p>
+
+<div class="section-label">争议点</div>
+<ul>
+<li>Epoch 的 ECI 显示 Opus 5 仅比 Opus 4.8 好 1 个点——"incredibly underrated"</li>
+<li>FrontierCode 上 effort 增加反而得分降低，暗示评估不稳定</li>
+<li>"How to shake faith in any benchmark: show Anthropic doing meh on it" — 社区对 benchmark 信任度的调侃</li>
+</ul>
+
+<div class="section-label">前後脈絡</div>
+<p>AINews 现在是 Latent Space 的一个版块（自 2026 年起）。这期覆盖 7/23-7/24 的 AI 新闻，12 个 subreddits、544 个 Twitter 账号。</p>
+</div>
+
+<!-- No Priors -->
+<div class="episode">
+<div class="episode-header">
+<h4>No Priors（Sarah Guo + Elad Gil）</h4>
+</div>
+
+<h4>Building an Autonomous Delivery Experience with DoorDash Co-Founders Andy Fang and Stanley Tang 🎙️</h4>
+<p style="color:#888; font-size:0.78rem;">2026-07-23 · 约 50 分钟</p>
+
+<div class="section-label">嘉宾背景</div>
+<p><strong>Andy Fang</strong> 和 <strong>Stanley Tang</strong>，DoorDash 联合创始人。DoorDash 从成立之初就被他们定位为机器人+自主配送公司。</p>
+
+<div class="section-label">核心论点</div>
+<ul class="bullet-list">
+<li><strong>Ask DoorDash</strong>：自然语言界面正在改变餐厅发现和杂货订购行为。</li>
+<li><strong>Dot 自主配送机器人</strong>：在凤凰城运营超过两年，展示了实际运营中的硬件瓶颈和解决方案。</li>
+<li><strong>"第一和最后 100 英尺问题"</strong>：自主配送最难的部分不是路途，而是从路边到用户门口的最后一小段。</li>
+<li><strong>多模态策略是关键</strong>：不是单一技术方案（机器人/无人机/人工），而是灵活组合。</li>
+<li><strong>更多 Dasher 而非更少</strong>：AI 会扩大配送网络整体规模，而非取代配送人员。</li>
+</ul>
+
+<div class="section-label">重点引用</div>
+<blockquote>"Build something people want" — 但为什么这么多机器人公司忽略了这个基本建议？</blockquote>
+
+<hr style="margin:0.8rem 0;">
+
+<!-- 备注 -->
+<div class="note">
+<h4 style="margin:0 0 0.4rem;">⚠️ 技术备注</h4>
+<p><strong>小宇宙 RSS 源失效</strong>：之前记录的中文播客 xyzfm RSS 源 ID（十字路口 68fyjknth9hj、42章经 evgg6xle9rdc、屠龙之术 834hyx3v9k74、张小珺 dk4yh3pkpjp3）全部返回 404。需更新采集方案。</p>
+<p><strong>Brave Search API 达限额</strong>：部分中文播客（42章经、屠龙之术）最新剧集未能通过搜索引擎确认，下期需优化扫描策略。</p>
+<p><strong>Cognitive Revolution RSS</strong>：其 Substack RSS 和 Transistor RSS 均失效/404，需更新源地址。</p>
+</div>
+
+<footer>
+Apache 2.0 · AI Podcast Collection · Generated 2026-07-28 10:03 CST
+</footer>
+</body>
+</html>
