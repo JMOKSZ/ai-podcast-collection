@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Nathan Labenz 中國行 Part 1：AI UX、豆包現象、微信 Agent 同一個完全無現金嘅文明</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">The Cognitive Revolution · 特別系列</div>
+  <h1>Nathan 嘅中國兩週：WAIC、豆包同一個完全無現金嘅文明</h1>
+  <div class="meta">
+    <span>📅 2026-07-25</span><span>·</span><span>⏱️ 2 小時 23 分鐘</span><span>·</span><span>🎙️ Nathan Labenz</span><span>·</span><span>👤 嘉賓記錄（Chatham House 規則）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+Cognitive Revolution 開播三年半以來最長嘅間歇期——Nathan Labenz 去咗中國兩週。返嚟之後用三集播客記錄所見所聞。Part 1 係地面上最直接嘅報告：入境同網絡、兩款超級 App 嘅日常生活、中國 AI 產品真實用後感、WAIC 現場觀察，以及一個令佢確信呢度係「去過最現代嘅地方」嘅種種細節。
+</p>
+
+<div class="section-title">一、入境：Burner Phone 同國際漫遊嘅真相</div>
+
+<p>Nathan 喺出發前遇到咗一個典型嘅「網絡信息黑洞」——關於去中國嘅技術安全建議，網上資訊極度混亂，互相矛盾。佢身邊嘅人俾咗完全相反嘅意見：</p>
+
+<ul>
+  <li><strong>大型跨國公司 R&D 負責人</strong>：「乜嘢準備都唔使做。如果話 IP 流動嘅話，𠵱家方向係從中國流向海外，唔係反方向。」</li>
+  <li><strong>多位前美國政府高層</strong>：「用 Burner Phone、全新賬號、假設永久被監控、返美後報廢設備。」</li>
+</ul>
+
+<p>Nathan 取咗中間路線：買咗一部 Android 備用機、創建一個平行賬號身份、雙 eSIM 加兩個美國號碼。</p>
+
+<blockquote class="strong">
+「對於國際漫遊用戶嚟講，防火牆基本上唔係問題。流量經返自己運營商先到互聯網，Gmail、Google Play Store 全部正常用到。我買嘅 VPN 備用方案幾乎未用過。」
+<div class="attribution">——Nathan Labenz</div>
+</blockquote>
+
+<p>呢個發現好有 practical value——好多關於翻牆嘅 fears and uncertainties 其實係 outdated。真正需要嘅係五個 App：<strong>微信、支付寶、滴滴、攜程、美團</strong>，再加一個翻譯 App。</p>
+
+<div class="section-title">二、「最現代嘅地方」——具體細節堆砌出嘅結論</div>
+
+<p>Nathan 唔係抽象講「中國好現代」，而係堆疊大量親眼所見嘅具體細節：</p>
+
+<ul>
+  <li>滴滴塞車等紅綠燈，App 入面可以睇到個路口嘅倒數計時——交通信號燈同雲端系統連咗線</li>
+  <li>酒店插房卡，電視自動打開兼顯示地下洗衣房乾衣機嘅實時使用狀態</li>
+  <li>朋友喺巴士上經美團訂咗過敏藥，20 分鐘後到達目的地，藥已經等緊佢</li>
+  <li>兩週入面冇見過實體貨幣——問朋友先攞到手信比仔女嘅「紀念幣」</li>
+  <li>支付交易費率大約 0.25%，對比美國嘅 2–3%——呢個差距 Nathan 歸因於冇信用卡積分生態同冇信用浮動</li>
+</ul>
+
+<blockquote class="strong">
+「你俾人睇紐約同三藩市，再俾佢睇北京同上海，冚咗價格，問邊個係更有錢嘅國家——我認為絕大多數人會揀中國。」
+<div class="attribution">——Nathan Labenz</div>
+</blockquote>
+
+<div class="data-point">
+<span>🔍</span> <strong>中國支付生態嘅關鍵差異</strong><br>
+• 支付手續費：0.25%（中國）vs 2–3%（美國）<br>
+• 成因：冇信用卡積分生態 + 冇信用浮動<br>
+• 結果：你用酒店嘅美團賬號訂餐俾錢，佢叫你直接轉返俾佢就得<br>
+• 這低摩擦環境令到「一個 App 搞定一切」成為可能
+</div>
+
+<div class="section-title">三、留低一個 Agent 喺屋企</div>
+
+<p>呢個環節對 Cognitive Revolution 嘅觀眾嚟講最有趣——Nathan 將佢嘅 Mac Mini 留返喺屋企，叫 Claude 監控通信、每日發兩次摘要、標記緊急事項、按 email 指令行事。</p>
+
+<p>呢個 Agent 設置嘅設計過程本身已經好值得細讀：</p>
+
+<ul>
+  <li>Claude 最初提議用密碼驗證來驗證請求者身份，Nathan 反駁——「任何人睇到我的郵件都會見到個密碼」</li>
+  <li>最終用嘅係：智能過濾 + 冷知識驗證作為升級機制（從未被觸發）</li>
+  <li>Claude 用 Nathan 嘅地址回覆，同時自稱係 Claude——有時會對已經知道 Claude 係乜嘅人過度解釋</li>
+  <li><strong>唯一嘅斷點</strong>：Gmail 認證兩星期過期一次，需要人手㩒瀏覽器——兩週入面發生咗兩次</li>
+</ul>
+
+<blockquote class="strong">
+「整個方案唯一反覆中斷嘅環節係 Google 嘅 Gmail 驗證——需要一個人㩒瀏覽器。其他所有嘢都順利運行。」
+<div class="attribution">——Nathan Labenz</div>
+</blockquote>
+
+<p>對於想複製呢個設置嘅聽眾，Nathan 推薦回頭聽 Daniel Miessler 嘅那期。</p>
+
+<div class="section-title">四、中國 AI 真實使用體驗——做遊客 vs 做決策</div>
+
+<p>Nathan 喺中國旅行嗰陣放棄咗 Claude 同 ChatGPT，用 <strong>DeepSeek、Kimi、MiniMax</strong> 做歷史導遊（免費版、唔使賬號、唔使俾錢）。</p>
+
+<p>佢嘅評價相當 important：呢啲模型喺解釋雍和宮、孔廟、清朝歷史呢啲任務上——<strong>快速、準確、有教育意義</strong>。呢啲任務唔需要長程 Agent 能力，只係一次性問答，而中國模型做得好到一個地步係佢唔覺得需要返去用 ChatGPT。</p>
+
+<p>佢對 Kimi 評價最高——認為 Moonshot AI 係一個有「審美嚴肅性」嘅組織。公司名同棱鏡標誌都係 Pink Floyd《Dark Side of the Moon》嘅致敬。但佢承認外界關於 Kimi 蒸餾自 Claude 嘅指控「有一定根據」。</p>
+
+<p><strong>關鍵嘅拒絕案例</strong>：佢問咗一個關於滿族歷史嘅問題，答案開始生成了，然後被撤回、換成拒絕回覆。呢個同報道中嘅模式吻合——模型本身相對 uncensored，但部署嘅應用層有過濾。唔同 App 劃線嘅位置唔同。</p>
+
+<blockquote class="strong">
+「Anthropic 唔係唯一一間有 over-refusal 問題嘅公司。」
+<div class="attribution">——Nathan Labenz 嘅 dry aside</div>
+</blockquote>
+
+<p><strong>最揭示本質嘅負面結果</strong>：凌晨 3 點全身出蕁麻疹，唔知發生咩事——佢下載咗 ChatGPT（唔使賬號、唔使登錄、唔使俾錢）。因為喺可能嘅醫療緊急情況，佢想要一個佢相信」最好嘅答案」。一週滿意嘅中國模型體驗，喺真係緊要嗰陣冇 transfer到。</p>
+
+<div class="section-title">五、豆包現象：1.5 億用戶嘅陪伴型 AI</div>
+
+<p>Nathan 多次強調：<strong>DeepSeek 喺西方討論得多，但中國人自己用嘅最多嘅係豆包（Doubao）</strong>——字節跳動嘅語音原生助手，大約 1.5 億用戶。Qwen 係開發者模型，唔係消費級產品。</p>
+
+<p><strong>豆包嘅陪伴維度</strong>係節目中反覆被提起嘅話題：</p>
+
+<ul>
+  <li>二十幾歲到三十幾歲嘅成年人報告佢哋嘅父母用豆包</li>
+  <li>有媽媽對仔女講：「你睇豆包同我講咗乜——點解你唔可以對我好似豆包咁好？」</li>
+  <li>紫禁城導遊話：「中國社會有啲嘢你唔可以對任何人講，但你可以同豆包講，因為豆包唔會批判你。」</li>
+  <li>Nathan問：「以前冇豆包嗰陣你會點？」佢答：「梗係收收埋埋自己。」</li>
+</ul>
+
+<div class="data-point">
+<span>📊</span> <strong>中國 AI 應用格局</strong><br>
+• 豆包（Doubao）：約 1.5 億用戶 · 字節跳動 · 語音原生 · 陪伴功能出圈<br>
+• DeepSeek：西方討論遠多過中國實際用<br>
+• Kimi：品味最佳，但容量遠不及豆包<br>
+• 通義千問（Qwen）：開發者模型，消費級未普及<br>
+• 微信 Agent：處於後期測試階段——Nathan 認為可能是「歷史上最重要嘅 Agent 發布」
+</div>
+
+<div class="section-title">六、WAIC 現場：機械人展廳嘅坦白觀察</div>
+
+<p>Nathan 專門為世界人工智能大會（WAIC）安排咗行程。習近平發表主題演講，Kimi 同 MiniMax 同步發布新模型。佢對展廳嘅評價係「deflationary」——CES 規模，而且同拉斯維加斯或 NVIDIA GTC 驚人地相似。</p>
+
+<p><strong>機械人展廳嘅深度觀察</strong>：</p>
+
+<ul>
+  <li>騰訊展位嘅機械人按摩——真實壓力、可信嘅穴位套路，但明顯比真人差</li>
+  <li>好多 demo 係暫停而非運行中</li>
+  <li>一台步行機械人實際上係遙控操作——當 operator 喺機械人後面搖頭拒絕握手時露餡了</li>
+  <li>一個機械人魔術表演——真人魔術師花咗六星期重複訓練，只在大會 4 日中表演一次</li>
+  <li>魔術師被問會唔會擔心失業：「哦，唔會，仲有好遠。」</li>
+</ul>
+
+<blockquote class="strong">
+「中國主宰機械人硬體同大規模生產，美國實驗室喺通用自主性上更領先。存在真正嘅互補性。」
+<div class="attribution">——Nathan Labenz 嘅 working thesis</div>
+</blockquote>
+
+<div class="section-title">七、三個結構性觀察</div>
+
+<p class="sub-title">「市長經濟學」</p>
+
+<p>地方官員升遷靠「讓黨滿意」而唔係爭取選票，所以佢哋互相競爭支持本地冠軍企業。當國家政策指定電動車或人形機械人係優先領域，創業者開公司，地方政府會將呢啲公司嘅生存當成自己嘅政績目標。呢種姿態比美國嘅商業環境積極得多。</p>
+
+<p class="sub-title">監控契約</p>
+
+<p>監控鏡頭無處不在，護照檢查用喺火車、公園、主要景點，每一次 touchpoint 都被記錄。回報係一個真實感到安全嘅社會——晚上 11 點街上有細路、女性一個人出街好安全、失物系統近乎神奇。</p>
+
+<blockquote class="strong">
+「留低電話喺的士——走入最近嘅警崗，鏡頭識別車輛，車牌識別司機，電話通常一個鐘內返嚟。我聽咗好幾個版本嘅呢個故事，冇一個失敗案例。」
+<div class="attribution">——Nathan Labenz</div>
+</blockquote>
+
+<p>但佢亦清楚指出尾端風險：冇人講得出習近平之後嘅繼任者、目前維持秩序嘅工具喺權力繼承鬥爭中會成為 formidable instrument、以及呢個安排可能將大量風險推向未來。</p>
+
+<p class="sub-title">矛盾容忍度</p>
+
+<p>呢個係 Nathan 認為最引人深思嘅文化觀察——佢引用一位中國朋友嘅分析：<strong>中國社會似乎比西方更舒服地容忍未解決嘅矛盾</strong>。</p>
+
+<ul>
+  <li>人可以同時信幾個宗教或者唔信，唔覺有 tension</li>
+  <li>VPN 違法但係普遍——公司統一提供，冇人擔心執法；有人話機率等同被雷劈</li>
+  <li>同一個人會抱怨審查，然後下秒用家長式邏輯為審查辯護——「對其他人好」</li>
+  <li>全國推「低空經濟」同時首都禁飛無人機——申請 permit 嘅 Catch-22 被一位教授愉快地形容為 ridiculous</li>
+</ul>
+
+<blockquote class="strong">
+「一個對 proposition held in superposition 有更高容忍度嘅系統，可能比一個 insist everything reconcile 嘅系統有更多空間去做 deal。」
+<div class="attribution">——Nathan Labenz</div>
+</blockquote>
+
+<div class="section-title">八、真正要睇嘅 Launch：微信 Agent</div>
+
+<p>Nathan 最重要嘅 forward-looking 判斷：<strong>AI 嘅落地方向唔係任何單一 App 爆紅，而係通過人哋已經生活在裡面嘅平台進入日常生活。</strong></p>
+
+<p>微信正處於後期測試嘅原生 Agent。由於幾乎所有中國人都在微信上面（支付、預訂、身份、社交圖譜全部集成），呢個 Agent 將擁有任何西方產品無法比擬嘅「深入真實生活嘅接入權限」。</p>
+
+<p>字節跳動據報嘗試搭建一個喺超級 App 之上嘅超級 Agent，但被微信攔住——因為微信正在自建。Nathan 嘅判斷：<strong>呢可能係歷史上最重要嘅 Agent 發布</strong>，開放式問題係騰訊能否為超過 10 億用戶提供足夠算力。</p>
+
+<p>另一個信號：螞蟻集團正用支付寶嘅交易利潤資助免費 AI 醫生，定位（可靠性優先、明確輔助醫生、大量免責聲明）同 OpenAI/Anthropic 嘅路線驚人相似。背後嘅人口結構驅動力係——兩代獨生子女政策之下，年輕人面對四個祖父母加兩個父母嘅養老壓力。呢個問題部分用機械人同 AI 來回答。</p>
+
+<div class="section-title">九、為之後嘅 Part 2/3 鋪墊</div>
+
+<p>Part 2 會討論中國 AI 安全同治理嘅真實情況——Nathan 發現呢度遠比西方觀察者一般假設嘅活躍。Part 3 會深入美中關係、中國視角以及能力加速下西方應該點做。</p>
+
+<div class="highlight-box">
+<strong>🔑 總結性洞察：</strong>Nathan 嘅中國之行最震撼佢嘅唔係某個 AI 模型嘅 benchmark 表現，而係 AI 如何通過平台（豆包、微信）滲入日常生活的真實肌理——呢個速度同深度喺西方唔存在。佢變得更樂觀於 AI adoption 嘅節奏，但亦更擔心「誰控制咗呢啲平台」嘅問題。
+</div>
+
+<footer>
+  <p>🎙️ 來源：<a href="https://www.cognitiverevolution.ai/" style="color:#888;">The Cognitive Revolution</a> · Nathan Goes to China – Part 1</p>
+  <p>📝 深度復述 · 2026-07-28 · Vee Mok</p>
+</footer>
+
+</div>
+</body>
+</html>

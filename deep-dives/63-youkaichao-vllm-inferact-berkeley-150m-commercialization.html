@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · vLLM 從伯克利開源到 1.5 億美金融資——游凱超 3 小時訪談</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  .diagram {
+    display: block;
+    margin: 1.5rem auto;
+    max-width: 100%;
+    background: #f9f6f0;
+    border-radius: 6px;
+    padding: 1.2rem;
+    border: 1px solid #ece6de;
+    font-family: "Monaco", "Menlo", monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    white-space: pre;
+    overflow-x: auto;
+    color: #444;
+  }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">張小珺商業訪談錄 · #148</div>
+  <h1>如果 vLLM 失敗了，我們會後悔一輩子——從伯克利開源項目到 1.5 億美金的 Infra 創業故事</h1>
+  <div class="meta">
+    <span>📅 2026-07-26</span><span>·</span><span>⏱️ 約 3 小時</span><span>·</span><span>🎙️ 張小珺</span><span>·</span><span>👤 游凱超（Inferact 首席科學家）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+vLLM——呢個幾乎所有開源大模型都用過嘅推理框架，從一篇伯克利嘅算法論文演化成一個開源社區，再從社區變成一家估值 8 億美元嘅公司 Inferact。創始團隊嘅核心成員游凱超，清華特獎得主、耶魯 PhD，坐喺張小珺嘅咪前用 3 小時講咗一個關於使命感、社區治理同 Infra 創業嘅故事。
+</p>
+
+<div class="section-title">一、vLLM 嘅起源：一篇論文嘅不歸路</div>
+
+<p>vLLM 嘅起點好簡單——Woosuk Kwon（現 Inferact CTO）做咗一篇論文，提出咗一個叫做 <strong>PagedAttention</strong> 嘅 KV Cache 管理方法。呢個技術解決咗 LLM 推理中一個核心問題：GPU 記憶體點樣有效分配比 KV Cache。</p>
+
+<p>但歷史有趣嘅地方係——論文只係起點。真正令 vLLM 脫穎而出嘅，係佢哋做咗一個決定：<strong>論文發表後繼續維護代碼</strong>。呢個決定喺當時嘅學術界唔係主流。大部分論文做完就散咗，代碼只係「為了 reproducibility」。但 vLLM 團隊選擇咗一條更難嘅路：持續修 bug、接 PR、同社區對話。</p>
+
+<blockquote class="strong">
+「如果 vLLM 失敗了，我們會後悔一輩子。」
+<div class="attribution">——游凱超，Inferact 首席科學家</div>
+</blockquote>
+
+<p>呢句話唔係修辭。游凱超喺節目中解釋咗背後嘅「使命感」：當時開源 LLM 推理工具極度匱乏，HuggingFace Transformers 嘅推理效率低到令人髮指。如果有一班有能力嘅人冇做到，等到 AI Infra 被閉源商業產品統治，佢哋會覺得係自己嘅責任。</p>
+
+<div class="section-title">二、開源社區→公司的底層邏輯</div>
+
+<p>vLLM 嘅演化路徑提供咗一個罕見嘅「開源社區→商業組織」樣本。游凱超將其拆解為三個階段：</p>
+
+<p><strong>第一階段：論文→工具</strong>。PagedAttention 論文發表後，團隊決定維持續寫。呢度有一個關鍵判斷——Woosuk 同 Simon Mo（現 CEO）意識到 KV Cache management 係一個 cross-cutting concern，每個做 LLM 嘅團隊都需要，但唔值得每個人自己造。一個通用工具比多個專用工具更有效率。</p>
+
+<p><strong>第二階段：工具→社區</strong>。當越來越多嘅團隊開始用 vLLM，佢哋唔再只係維護者，變成社區嘅「管家」。呢個階段嘅治理模式係游凱超所講嘅 <strong>"benevolent dictator"（仁慈獨裁者）</strong>——核心團隊保持最終決定權，但會聽取社區聲音。呢種模式確保咗 vLLM 唔會陷入 open governance 嘅決策癱瘓，又唔會淪為少數人嘅玩具。</p>
+
+<p><strong>第三階段：社區→公司</strong>。當 vLLM 成為"事實標準"之後，問題嚟了：一個人業餘時間維護嘅項目，點樣支持大公司級別嘅 SLA？點樣處理企業級功能請求？點樣對抗資金充足嘅商業競爭對手？答案係——成立公司。</p>
+
+<p>游凱超特別強調：<strong>「公司化唔係背叛開源，而係保護開源。」</strong>冇公司嘅資源，vLLM 會死喺社群維護嘅無以為繼；冇開源社群嘅根基，Inferact 會係一家普通嘅 startup，冇任何護城河。</p>
+
+<div class="data-point">
+<span>📊</span> <strong>Inferact 公司概要</strong><br>
+• 創辦人：Simon Mo（CEO）、Woosuk Kwon（CTO）、游凱超（首席科學家）、Roger Wang<br>
+• 融資：1.5 億美元種子輪（2026 年初）<br>
+• 估值：約 8 億美元<br>
+• 投資者：LightSpeed Venture Partners、真格基金等<br>
+• 創始導師：Ion Stoica（伯克利教授、Databricks 聯合創辦人）<br>
+• 起點：伯克利校園開源項目→歷時約 3 年到公司化
+</div>
+
+<div class="section-title">三、模型與 Infra 的 Co-design 時代</div>
+
+<p>呢集最技術性嘅部分——游凱超詳細討論咗 <strong>Model-Infra Co-design</strong> 點樣成為 2026 年 AI 基礎設施嘅核心命題。</p>
+
+<p>過去嘅做法係模型團隊訓練完先丟比 Infra 團隊做推理優化，兩個團隊之間嘅溝通僅限於「呢個模型需要咩精度」「呢個 batch size 得唔得」。但游凱超指出：<strong>呢個時代過去咗。</strong></p>
+
+<p>當模型結構（MoE、Multi-Head Latent Attention、Grouped Query Attention）同推理硬體（NVIDIA B200、AMD MI400、自研 ASIC）同時喺快速演化中，推理框架唔可以再只係「被動優化器」。佢需要：</p>
+
+<ul>
+  <li><strong>從訓練階段介入</strong>——比模型團隊反饋「呢種架構推理效率會低 3 倍」</li>
+  <li><strong>預測硬體趨勢</strong>——如果下代 GPU 冇咗某種計算單元，框架要提前準備</li>
+  <li><strong>參與模型結構設計</strong>——例如 PagedAttention 本身就要求模型嘅 KV Cache 結構係可分頁嘅</li>
+</ul>
+
+<div class="highlight-box">
+<strong>💡 洞察：</strong>游凱超認為 Infra 公司嘅終極競爭力唔係「幫你跑得更快」，而係「幫你決定訓練咩」。當 Infra 團隊比模型團隊更清楚邊種模型結構會 scaling，佢哋就從「工具提供者」變成了「決策夥伴」。
+</div>
+
+<p>呢個轉變對現有嘅 Infra 創業公司嚟講係一個巨大嘅機會窗口，同時亦係一個門檻——如果你只係做優化，你係可取代嘅；如果你參與設計，你就是 lock-in 嘅。</p>
+
+<div class="section-title">四、Token 經濟學終局：電力 vs Token</div>
+
+<p>節目一個高潮係關於 AI 算力終極瓶頸嘅討論：當模型足夠聰明之後，制約 AI 普及嘅係「Token 成本」定係「電力成本」？</p>
+
+<p>游凱超嘅分析框架好清晰：</p>
+
+<ul>
+  <li><strong>Token 成本</strong>：隨着模型效率提升（蒸餾、量化、稀疏計算），單個 Token 嘅成本喺快速下降。呢條曲線會持續好耐。</li>
+  <li><strong>電力成本</strong>：即使 Token 成本降得再低，推廣到全民級用量時，總電力消耗會撞到物理瓶頸。</li>
+</ul>
+
+<p>但佢有一個更細緻嘅觀點：<strong>Token 同電力嘅關係唔係線性嘅</strong>。更高效率嘅模型可以喺同等算力下產出更多 Token，但亦會因為更「好用」而刺激更多用量。呢個 Jevons 悖論（效率提升導致消費增加）喺 AI 領域特別明顯。</p>
+
+<blockquote class="strong">
+「Token 成本下降只會刺激更多嘅 Token 消費，最終撞到嘅牆係電力——但呢條牆仲有好遠。」
+<div class="attribution">——游凱超</div>
+</blockquote>
+
+<div class="section-title">五、游凱超本人：從清華特獎到 Infra 創業</div>
+
+<p>游凱超嘅個人故事係呢集嘅暗線。清華特等獎學金得主、耶魯大學博士、師從 AI 大牛，佢嘅背景好靚。但佢選擇咗一條同大部分同儕唔同嘅路——唔係去 FAANG，唔係做純學術，而係落手做一個開源項目。</p>
+
+<p>節目中佢談到自己嘅轉向：</p>
+
+<blockquote class="strong">
+「我讀書嗰陣覺得做研究好 pure、好靚。後嚟做 vLLM 嗰陣發現，寫 code 同做研究一樣咁靚——只係你嘅「作品」變成咗一個每日被成千上萬人用嘅工具。」
+<div class="attribution">——游凱超</div>
+</blockquote>
+
+<p>張小珺問佢有冇後悔冇走學術路線，佢話：<strong>「冇。因為我意識到一件事情——研究嘅 impact 係單向嘅（論文→引用），而工具嘅 impact 係循環嘅（工具→更多人用→更多人貢獻→工具更好）。」</strong></p>
+
+<p>呢個「循環 impact」嘅概念，其實就係開源社群嘅引擎。</p>
+
+<div class="section-title">六、行業啟示：AI Infra 嘅新範式</div>
+
+<p>回顧 Inferact 嘅整個故事，有幾個值得注意嘅行業信號：</p>
+
+<ul>
+  <li><strong>開源轉商業嘅窗口期收窄</strong>：從論文到公司只需 3 年，比上一代開源項目短得多。AI Infra 嘅創業速度加快咗。</li>
+  <li><strong>「種子輪 1.5 億美金」新常態</strong>：呢個數字喺 3 年前係 C 輪甚至 D 輪水平。巨大嘅 AI 資本支撐令優秀團隊可以跳過傳統嘅逐輪融資節奏。</li>
+  <li><strong>Infra 創業對技術深度要求極高</strong>：vLLM 團隊本身係 KV Cache 管理領域嘅世界級專家。呢個領域唔係「搭積木」可以進入嘅。</li>
+  <li><strong>社區護城河 vs 企業護城河</strong>：Inferact 嘅真正防火牆係 vLLM 社群——成千上萬貢獻者同數百萬用戶。呢個資產比任何專利更有價值。</li>
+</ul>
+
+<div class="section-title">七、幾個值得記住嘅洞察</div>
+
+<div class="highlight-box">
+<strong>🔑 1. 好嘅 Infra 係被忽視嘅</strong><br>
+游凱超：當你嘅框架用得好、冇出問題，人哋唔會讚你；但當佢出問題，人哋只會怪你。呢啲係 Infra 嘅宿命。
+</div>
+
+<div class="highlight-box">
+<strong>🔑 2. Co-design 唔係口號，係組織問題</strong><br>
+最難嘅唔係技術上嘅聯合設計，而係點樣令模型團隊同 Infra 團隊有 incentive 去合作。游凱超認為呢個問題最終要通過組織架構去解決。
+</div>
+
+<div class="highlight-box">
+<strong>🔑 3. 開源公司嘅雙重身份</strong><br>
+Inferact 嘅最大挑戰係同時說服兩個群體：開源社群（我哋唔會背叛你）同企業客戶（我哋係可靠嘅供應商）。呢個平衡好難，但做得到就係最強嘅護城河。
+</div>
+
+<div class="highlight-box">
+<strong>🔑 4. AI Infra 仲未有 winner</strong><br>
+即使 vLLM 已經係開源推理嘅標準，游凱超認為 Infra 層嘅競爭格局遠未確定。硬體架構變化（Cerebras、Groq、自研 ASIC）、模型結構變化（MoE、多模態）、Agent 工作流嘅新需求，都意味住 Infra 領域仲有好多機會。
+</div>
+
+<hr>
+
+<p>呢集 3 小時嘅訪談，本質上係一個關於「使命感、社區同商業之間點樣共存」嘅案例研究。游凱超同 Inferact 團隊用 vLLM 做咗一個證明：<strong>開源精神同商業成功唔係零和博弈</strong>——前提係你先係真心做個好嘅開源項目。</p>
+
+<p>對於做 Infra 嘅人嚟講，呢期幾乎係必聽。對於唔做 Infra 嘅人——你至少會理解點解 AI 界對 vLLM 團隊創業咁興奮。</p>
+
+<footer>
+  <p>🎙️ 來源：<a href="https://www.xiaoyuzhoufm.com/" style="color:#888;">小宇宙</a> · 張小珺商業訪談錄 #148</p>
+  <p>📝 深度復述 · 2026-07-28 · Vee Mok</p>
+</footer>
+
+</div>
+</body>
+</html>
