@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Dwarkesh Patel：點解運算可能會喺未來幾年貴 10 倍以上</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Dwarkesh Podcast · Substack 博客分析</div>
+  <h1>點解運算可能會喺未來幾年貴 10 倍以上——Anthropic 嘅收入曲線同稀缺算力嘅 Malthusian 未來</h1>
+  <div class="meta">
+    <span>📅 2026-07-29</span><span>·</span><span>⏱️ 2 小時限時寫作</span><span>·</span><span>✍️ Dwarkesh Patel</span><span>·</span><span>🏷️ <span class="tag">算力經濟</span> <span class="tag">Anthropic</span> <span class="tag">稀缺性</span> <span class="tag">規模定律</span></span>
+  </div>
+</header>
+
+<div class="section-title">📌 為乜要睇呢篇</div>
+<p>呢篇文係 Dwarkesh Patel 一場寫作實驗——佢限自己 2 個鐘內完成，唔俾自己釘死喺 footnote 細節。結果係一份無比尖銳嘅經濟學分析：若果 AI 模型持續快速變得更聰明，而算力只係年增 ~3 倍，咁賣算力嘅價格將會點變？答案令人不安——一隻 $250K/年 嘅 H100、規模贏家通吃、以及一堆今日好 popular 嘅 AI 應用直接被定價出局。佢呢篇文仲係「AI 稀缺經濟學」呢個新生領域嘅必讀文本，同之前嘅 #05 Eric Jang（AlphaGo Self-play）同 #24（AGI 稀缺悖論）形成咗一致嘅思想脈絡。</p>
+
+<div class="section-title">📻 背景：一匹出版機器嘅新模式</div>
+<p>Dwarkesh Patel —— TIME 100 AI 入選者、Dario Amodei 一年來兩次嘅專訪者——好坦白咁講咗佢嘅困境：有太多題目想深入、但時間永遠唔夠。所以佢開始咗一種「限時寫作（time-boxed）」嘅新模式：畀自己 2 個鐘，唔準去 perfect，寫完就出。佢承認呢篇文唔係無懈可擊嘅分析，「但替代方案係根本唔寫」。呢種取捨本身，其實講緊嘅就係 computational constraint——連一個頂級分析師都要面對算力（此處嘅算力係 mental compute）嘅實用限制。</p>
+
+<p>但重點係：呢篇「限時 2 小時」嘅作品，信息密度同洞察力已經超過咗 99% 嘅行業報告。內容涵蓋 Anchthropic 嘅收入爆炸、阿里奇安–艾倫效應（Alchian–Allen effect）、Simon–Ehrlich 賭注嘅隱喻、以及攞到 SpaceX 同 Google 嘅實費 GPU 租約數據。</p>
+
+<hr>
+
+<div class="section-title">一、三倍算力 vs 十倍收入——呢條 gap 必鬚填</div>
+
+<div class="sub-title">1.1 Anthropic 嘅荒誕增長曲線</div>
+<p>呢個係成個分析嘅起點：Anthropic 嘅收入年增長 ~10 倍。如果呢個趨勢持續落去（當然唔一定會），Anthropic 今年年底收入將大約 $100–150B（取決於點計），然後明年年底需要 ~$1T 收入。呢個數字大到令人難以置信——但 Anthropic 嘅核心命題係：Fable 型號嘅價值係呈超線性增長嘅。</p>
+
+<div class="data-point">
+  <span>數據</span>
+  <strong>Anthropic Fable 推理利潤率</strong>：2025 年約 40% → 2026 年 >80%（混合推理 >70%）<br>
+  <strong>現貨算力價格</strong>：從 2 月低谷反彈 40%+<br>
+  <strong>Google→SpaceX GPU 租約</strong>：每月 $9 億租 110K GB200/GB300 — 約現貨價 2 倍
+</div>
+
+<div class="sub-title">1.2 收入 10× != 算力 10×，咁點對得上？</div>
+<p>Epoch AI 嘅數據指出，前沿實驗室嘅算力年增長約為 3 倍（通過摩爾定律、新建晶圓廠、AI 搶佔先進製程）。對於一個收入 10 倍增長而算力只得 3 倍嘅實驗室，經濟上只有三種可能嘅組合來填補中間嘅 gap：</p>
+
+<ul>
+  <li><strong>利潤率提高</strong>——你收客嘅價錢可以更高，因為你嘅模型比其他選擇好太多</li>
+  <li><strong>算力本身嘅價格上升</strong>——市場上嘅 GPU 變得更有價值，因為佢哋可以產生更多收入</li>
+  <li><strong>更大比例嘅算力用於推理</strong>——如果你 train 唔到更大嘅模型，咁就把更多 GPU 用嚟 serve</li>
+</ul>
+
+<p>Dwarkesh 認為呢三件事都正在發生，但第三個喺戰略上係最令人不安嘅——因為如果你大部分算力用喺推理而非訓練，其實喺「宣布」AI 進步已停滯嘅可能性。Fable/Anthropic 唔相信呢件事。</p>
+
+<blockquote class="strong">
+「Labs would prefer not to do 3. As has been said jokingly, the point of inference revenue is to convince investors to give you more money to buy more compute to train bigger models.」
+<footer class="attribution">— Dwarkesh Patel</footer>
+</blockquote>
+
+<div class="section-title">二、H100 年租 $250K：一隻 H100 等於一個軟體工程師</div>
+
+<div class="sub-title">2.1 人級軟體工程師嘅算力等價</div>
+<p>呢度係成篇文最震撼嘅思想實驗：</p>
+
+<blockquote class="strong">
+「If a true human-level software engineer that could run on an H100 equivalent, at current market rates for software engineers, that H100 should rent for over $250k a year. That's 15x today's spot prices.」
+<footer class="attribution">— Dwarkesh Patel</footer>
+</blockquote>
+
+<p>呢個論證嘅核心係：如果一個 H100 可以 run 一個人級軟體工程師，咁呢個 H100 嘅年租應該同一個軟體工程師嘅年薪大致相等——保守估計 $250K 以上。而今日 H100 嘅現貨年租只係 $16-17K 左右。呢個 15 倍嘅差距，就係 AI 能力尚未兌現嘅潛在價值。</p>
+
+<p>你可能會話：如果 AI 一次性釋放咗 1000 萬個軟體工程師，咁邊際軟體工程師嘅價值自然會跌。但呢個就係經典嘅「勞動總量謬論」（Lump of Labor Fallacy）——標準經濟學認為高技能移民唔會長期壓低工資，因為專精化同創新會增加勞動嘅價值。如果呢種一般推論喺呢度適用（呢個係一個大問號），咁運算嘅邊際價值——從而運算嘅邊際價格——應該會變得驚人地高。</p>
+
+<div class="sub-title">2.2 SpaceX 租金嘅信號：$9 億 / 月 = 2 倍現貨</div>
+<p>Dwarkesh 用 Google 向 SpaceX 租 GPU 嘅實際交易來論證呢個過程已經開始。Google 據報每月支付 $9 億用於 110K 塊 GPU（GB200/GB300 混合）。呢個價格係當時現貨價嘅約 2 倍。而呢個「2 倍現貨」嘅溢價本身已經係喺現貨價從 2 月反彈咗 40%+ 之後嘅。</p>
+
+<p>重點係：呢啲 GPU 唔係用嚟做訓練——Fable 嘅訓練需要最大規模嘅訓練叢集，而呢啲租用嘅集群係用嚟做推理嘅。呢個暗示咗乜嘢？推理嘅實際成本（尤其係大客戶嘅合約價格）可能遠高於公開嘅 API 定價。</p>
+
+<div class="section-title">三、Alchian–Allen 效應：越貴，越要用最好嘅</div>
+
+<div class="sub-title">3.1 運算變貴時，用差模型係更蠢</div>
+<p>呢度引入咗一個喺經濟學上經典、但喺 AI 產業好少被討論嘅概念：<strong>Alchian–Allen 效應</strong>。呢個效應話：當一件商品嘅使用伴隨一個固定成本（例如運費）時，貴啲嘅嗰件會變得相對「平啲」，因為固定成本攤分之後令兩者嘅價格差距縮細。應用喺呢度：</p>
+
+<blockquote class="strong">
+「At $20 per H100-hour, it's going to be extremely costly and stupid to use a weaker, less efficient model, because it's going to burn more tokens running your expensive compute to get the same result.」
+<footer class="attribution">— Dwarkesh Patel</footer>
+</blockquote>
+
+<p>換句話講：$250K/年嘅 H100 上面行嗰個模型如果係智慧嘅，你用一個較差嘅模型喺同一張卡上係極度愚蠢——因為你緊嘅算力本身已經貴到死，你喺上面燒緊 token 去試圖得到同樣嘅結果，只係因為你唔用最好嗰個模型而用多啲 token，咁係雙重浪費。</p>
+
+<div class="sub-title">3.2 贏家通吃加速</div>
+<p>呢個效應嘅直接結果係：<strong>頂尖模型嘅收費可以高到離譜</strong>。如果你係實驗室 A，你嘅模型喺同樣算力上產生嘅結果遠比實驗室 B 有效，你可以收取極高嘅溢價——因為客戶已經俾緊好多錢俾 GPU，再多俾一啲搵最好嘅 model 係理性嘅。呢種動態將擴大領先者同追趕者之間嘅差距，令追趕更難。</p>
+
+<blockquote>
+「At some point the top model is SO much better than the alternative that even a big price gap feels like a bargain. This is a scale monopolist's dream and a new entrant's nightmare.」
+<footer class="attribution">— 社群回應總結</footer>
+</blockquote>
+
+<div class="section-title">四、算力年增 3 倍，係點樣拆出來嘅？</div>
+
+<p>Dwarkesh 分解咗 Epoch AI 嘅 3×/年增長率嘅三個組件，呢個數字對成個分析至關重要：</p>
+
+<div class="data-point">
+  <span>1.4×</span>
+  <strong>摩爾定律</strong>：電晶體密度持續提升，呢個可以預期<br>
+  <span>1.2×</span>
+  <strong>新建晶圓廠</strong>：EUV 光刻機供應到至少 2030 年仍然係瓶頸<br>
+  <span>1.8×</span>
+  <strong>AI 搶佔先進製程</strong>：從其他裝置（手機、筆電、汽車晶片）奪取最先進嘅產能<br>
+  <strong>乘積 = ~3×</strong> · 最後一項到 2027 年底將見頂（AI 佔 N3 產能從 60%→86%）
+</div>
+
+<p>呢個分解嘅關鍵洞察係：<strong>呢三個因素嘅變動空間都非常有限</strong>。摩爾定律係物理限制，晶圓廠係建廠週期限制（EUV 供應極有限），而 AI 搶佔產能終究會碰到 100% 嘅天花板——到 2027 年底，AI 需求將達到 N3 產能嘅 86%，之後再搶空間就冇了。</p>
+
+<p>呢個意思係：喺未來 2-3 年內，算力供應嘅年增長率唔似會顯著超過 3 倍。而呢個「僅 3 倍」嘅供應，相對於收入 10 倍嘅需求增長，必然會推高價格。</p>
+
+<div class="section-title">五、Simon–Ehrlich 賭注嘅教訓——定係反例？</div>
+
+<p>緊接住呢個預測，Dwarkesh 咁樣自我質疑：呢種稀缺預測其實同歷史上前人預測資源枯竭並發大財嘅模式好像⋯⋯佢提到經典嘅 Simon–Ehrlich 賭注——Paul Ehrlich 喺 1980 年賭一籃子商品嘅價格會喺 1990 年升（Malthusian 預測），而 Julian Simon 賭會跌（人類創新會找到替代方案）。結果 Simon 贏咗——唔係因為資源真係無限，而係人類搵到咗替代品同開採技術嘅驚人進步。</p>
+
+<p>但 Dwarkesh 嘅核心論點係：<strong>算力唔同於金屬</strong>：</p>
+
+<ul>
+  <li>金屬嘅供應彈性大得多——搵到新礦、改善提煉技術、用回收材料</li>
+  <li>高端運算芯片嘅供應彈性極低——需要嘅係 EUV 光刻機、超純矽、極端平坦嘅晶圓——呢啲唔係隨地嘅礦</li>
+  <li>佢承認長遠（機器人自動化採礦後）算力會變得極平——但喺「當前 regime」下，算力供應只係年增 3 倍，遠遠追唔上 AI 能力嘅超線性提升</li>
+</ul>
+
+<blockquote class="strong">
+「I'm guessing the Simon-Ehrlich basket of commodities is not the correct reference class for compute, because compute supply is much less elastic, and much less capable of absorbing large demand shocks, than the extraction of different metals is.」
+<footer class="attribution">— Dwarkesh Patel</footer>
+</blockquote>
+
+<div class="section-title">六、現實含義：邊啲會被定價出局？</div>
+
+<p>如果呢個預測成立（至少喺趨勢上），現實會點樣？</p>
+
+<div class="sub-title">6.1 大量今日流行嘅 AI 應用會死</div>
+<p>用 GPU 嚟做「短視頻 slop」或者「無聊嘅 chatbot 玩具」將會喺經濟上變得唔合理。當 H100 年租到 $250K 時，只有收入可觀嘅應用先值得 run。</p>
+
+<div class="sub-title">6.2 新進者幾乎無法競爭</div>
+<blockquote>
+「If by 2028 we've automated software engineering and the price of compute is 15x higher than it is right now, then it's going to be much more difficult for you, with no revenue, to compete for compute against the frontier labs.」
+</blockquote>
+
+<div class="sub-title">6.3 當代人嘅命運：生意在前，交稅定交 AI</div>
+<p>呢個未來最令人不安嘅可能係：<strong>AI 越好，擁有運算資源嘅人越有議價能力</strong>。如果你係一個普通打工仔，你嘅勞動價值會因為 AI 而上升（因為你變得更有效率）——但呢個上升可能被「租用 AI 嘅成本」所抵消。最後，唔係你嘅 skill 值錢，而係你 access 嘅 compute。</p>
+
+<div class="sub-title">6.4 但「當前 regime」終將過去</div>
+<p>Dwarkesh 澄清咗佢唔係長期看漲算力價格嘅。最終，當機器人可以自動開採硅沙、冶煉銅礦、生產電腦時，算力價格會跌到原材料加工具嘅成本。佢講嘅只係「呢個過渡 regime」嘅 2-5 年。「只係呢個過渡 regime 入面，AI 能力提升嘅速度係算力供應嘅好幾倍。」</p>
+
+<div class="highlight-box">
+  <strong>總結 Dwarkesh 嘅核心結論：</strong> 頂尖模型越好，新進者越追唔上。規模定律存在於商業模式而非僅僅技術——train 一個模型學晒所有技能，然後將呢個一次性成本攤分俾所有用戶。呢種「經濟規模嘅智慧」係前人冇見過嘅。
+  <br><br>
+  <em>「唔係因為窮國做唔起 AI，而係因為做 AI 成本咁貴，窮國根本租唔起 AI 所需嘅算力——同人類經濟唔同，呢個係全新嘅不平等維度。」</em>
+</div>
+
+<hr>
+
+<div class="section-title">💡 深度洞察：算力經濟學嘅四個法則</div>
+
+<ul>
+  <li><strong>法則一：AI 能力提升 = 算力自動升值</strong>。同樣嘅 GPU，三個月前做一個任務，今日可以做兩個——每個 token 嘅價值正在持續提升，呢個升值會通過一系列渠道（利潤率、現貨價格、合約溢價）最終反饋到算力本身。</li>
+  <li><strong>法則二：推理份額嘅增長係「增長放緩」嘅代理指標。</strong>當實驗室將更多算力用於推理而非訓練時，佢哋實際上喺宣布：訓練更大模型嘅邊際回報正在下降。呢個信號同公開嘅樂觀敘事係唔一致嘅。</li>
+  <li><strong>法則三：Alchian–Allen > 規模定律。</strong>當運算變貴後，真正嘅競爭唔係參數數量，而係「每個 token 嘅效率」。呢個利好專注於推理效率嘅架構同模型，亦解釋咗點解 Kimi K3、Laguna S 等高效模型正在爆發。</li>
+  <li><strong>法則四：算力通脹將自動過濾垃圾應用。</strong>好多人抱怨 AI 產品質素參差——解決方法唔係監管，而係等 GPU 價格升到用垃圾應用變成經濟上嘅負擔。市場會自動做品質控制。</li>
+</ul>
+
+<div class="section-title">🔗 前後脈絡</div>
+<p>呢篇 Dwarkesh 限時分析係一系列算力稀缺經濟學討論嘅新高峰。同#24（Alex Imas 同 Phil Trammell 討論 AGI 令勞動份額萎縮嘅可能性）形成對話。亦同今日 No Priors Isaiah Taylor 短片（平價能源永遠會創造自身需求）形成互補：一個從需求角度（Dwarkesh），一個從供給角度（Taylor）。能源係算力嘅最終輸入，如果兩邊都緊張，成個 AI 行業嘅成本結構將發生根本變化。</p>
+
+<footer>
+  深度復述 #69 · Dwarkesh Podcast「Why compute might get 10x+ more expensive in coming years」<br>
+  來源：dwarkesh.com Substack 文章 · 生成時間 2026-07-30 14:00 CST<br>
+  Apache 2.0 · ai-podcast-collection
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 股票仲買得嗎？— 朱寧教授拆解泡沫的四個必要不充分條件</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 780px; margin: 0 auto; padding: 3rem 1.5rem; }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 0.85rem;
+    color: #999;
+    text-decoration: none;
+  }
+  .back-link:hover { color: #666; text-decoration: underline; }
+  .episode-meta {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 0.3rem;
+    color: #2a2a2a;
+  }
+  .sub-meta {
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+  .sub-meta span { margin-right: 1rem; }
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 2.5rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e8e0d5;
+    color: #3a3a3a;
+  }
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.8rem 0 0.6rem 0;
+    color: #4a4a4a;
+  }
+  p { margin: 0.8rem 0; text-align: justify; }
+  blockquote {
+    border-left: 4px solid #c8b89a;
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    color: #555;
+    font-style: italic;
+    background: #faf6ee;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.7;
+  }
+  blockquote.strong {
+    border-left: 4px solid #b8946a;
+    background: #f5efe4;
+    font-weight: 600;
+    color: #3a3a3a;
+  }
+  .data-point {
+    display: inline-block;
+    background: #f5efe4;
+    padding: 0.1rem 0.6rem;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #6d5a3c;
+  }
+  ul, ol { padding-left: 1.4rem; margin: 0.6rem 0; }
+  li { margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #f5efe4;
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin: 1.2rem 0;
+    border-left: 4px solid #b8946a;
+  }
+  .highlight-box p { margin: 0.3rem 0; }
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0d8ce;
+    font-size: 0.75rem;
+    color: #bbb;
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<div class="episode-meta">🎙️ 42章經（曲凱 Kyle）— 對話朱寧教授</div>
+<h1>AI 股票仲買得嗎？泡沫的四個必要不充分條件</h1>
+<div class="sub-meta">
+  <span>📅 2026 年 6 月下旬</span>
+  <span>⏱ 約 71 分鐘</span>
+  <span>🎤 曲凱 × 朱寧（上海交大高金學院教授）</span>
+  <span>🏷️ 泡沫 · 行為經濟學 · AI 投資</span>
+</div>
+
+<!-- ============================== -->
+
+<h2>一、點解要聽一個經濟學家講泡沫？</h2>
+
+<p>2026 年中，AI 股票市場正經歷前所未有嘅狂熱。智譜同 MiniMax 接連上市，股價如坐過山車；Nvidia 市值一度突破 4 萬億然後快速回調；Anthropic 預期年收入 $100-150B 嘅消息令市場沸騰；Codex 七個月內從 0 到 700 萬用戶。無數散戶同機構投資者同時問同一個問題：「AI 股票仲買得嗎？」</p>
+
+<p>呢個時候，曲凱請嚟朱寧教授——國內最權威嘅行為經濟學同泡沫研究者之一。朱寧唔係 tech analyst，唔做股價預測。佢研究咗幾十年泡沫，從荷蘭鬱金香到南海泡沫到 dot-com 到加密貨幣，見過晒每一代人嘅同一種自我欺騙。佢寫過《剛性泡沫》《投資者的敵人》《投資者的朋友》，即將出版《非線性思考》。</p>
+
+<p>先講結論：<span class="data-point">泡沫永遠無法被事先證明。</span> 因為如果佢可以被準確預測，大家就會提前撤退，泡沫本身就唔會存在。呢個 paradox 係佢全期嘅核心立論起點。</p>
+
+<blockquote class="strong">「AI 股票還能不能買，本身就是一個錯誤的問題。」</blockquote>
+
+<p>朱寧嘅觀點係：你應該問嘅唔係「買唔買」，而係「如果漲咗或跌咗，對我嘅人生意味著什麼？」呢種思維方式嘅轉變——從預測市場到管理自己——係佢最想傳達嘅信息。</p>
+
+<p>呢篇深度復述會跟隨朱寧嘅論證路徑，由人類行為弱點開始，到泡沫條件框架，再到投資哲學，最後補充我嘅分析。</p>
+
+<!-- ============================== -->
+
+<h2>二、人類行為嘅三個弱點——每一次泡沫嘅根源</h2>
+
+<p>朱寧指出，每一次泡沫嘅根源都係人類行為嘅三個固有弱點。呢啲弱點喺過去 400 年冇變過，AI 時代嘅投資者都唔例外：</p>
+
+<ol>
+  <li><strong>過度自信（Overconfidence）</strong>
+    <p>人總係覺得自己比別人聰明，可以喺泡沫破裂之前逃出。2021 年 Bitcoin $60K 嗰陣，所有人都話「呢次唔同」，結果跌到 $16K 先後悔。AI 股票都係一樣——每個人都認為自己可以 timing the market。事實上，連最頂尖嘅基金經理都做唔到 consistently time the market。</p>
+  </li>
+  <li><strong>從眾效應（Herding）</strong>
+    <p>唔係因為理性分析而買，而係因為「隔籬個個都買咗」。朱寧話：<span class="data-point">「你所在的圈層，可能真的會決定你會不會成為『接盤俠』。」</span> 如果你身邊所有人都喺度買 Nvidia 同 AI ETF，你可能已經太遲了。反之，如果你身邊嘅人都話「AI 係泡沫」，咁你可能仲有時間入場。</p>
+  </li>
+  <li><strong>錨定效應（Anchoring）</strong>
+    <p>人會用最近嘅價格做參考點。Nvidia $140 → $80，你覺得好平；但一年前佢係 $40，兩年前係 $10。呢種錨定令人忽略咗基本面嘅變化。同樣，當你睇到 Anthropic $100-150B 收入預期時，你嘅錨點係「年增 10 倍好勁」而唔係「呢個數字係咪 realistic」。</p>
+  </li>
+</ol>
+
+<p>呢三個弱點唔係 AI 時代嘅新事物。朱寧話：<strong>人類嘅大腦根本唔係設計嚟處理呢種複雜系統嘅。</strong> 我哋嘅 evolutionary wiring 係為咗喺草原上生存，而唔係為咗預測全球金融市場。</p>
+
+<!-- ============================== -->
+
+<h2>三、泡沫嘅四個必要不充分條件</h2>
+
+<p>朱寧教授深入研究泡沫多年，總結出四個必要不充分條件。即係話：<strong>有呢四個條件，泡沫唔一定發生；但冇呢啲條件，泡沫一定發生唔到。</strong> 呢個框架嚟自他對 400 年金融史嘅系統分析：</p>
+
+<div class="highlight-box">
+  <h3>條件 1：技術突破或制度變革</h3>
+  <p>一個真正嘅 breakthrough，令人相信「世界已改變」。互聯網（1995）、蒸汽機（1760）、鐵路（1840）、電網（1900）——每次泡沫嘅背後都有一個真實嘅技術進步。AI 毫無疑問符合呢個條件。但朱寧提醒：<strong>「真實嘅技術進步同合理嘅估值係兩回事。」</strong> dot-com 時代互聯網改變咗世界，但呢個事實並冇阻止 90% 嘅 dot-com 公司破產。</p>
+</div>
+
+<div class="highlight-box">
+  <h3>條件 2：過剩嘅流動性</h3>
+  <p>資金大量湧入，利率低，借錢容易。2020-2021 嘅零利率催生了加密貨幣同 SPAC 泡沫。𠵱家雖然名義利率高咗，但 AI 領域仍然吸引咗史無前例嘅資本——Nvidia $280B 年收入、Anthropic $100-150B 預期收入、OpenAI 估值超過 $300B。 Sovereign wealth funds、pension funds 齊齊入場，資金量級前所未有。</p>
+  <p style="font-size:0.85rem; color:#888;">同步參考：Dwarkesh Patel 同日分析指出，Anthropic 推理利潤率從 2025 年嘅 40% 升至 2026 年嘅 >80%。當利潤率咁高，自然吸引更多資本。</p>
+</div>
+
+<div class="highlight-box">
+  <h3>條件 3：新嘅投資者群體</h3>
+  <p>散戶大規模入場，機構資金跟進。dot-com 時代係散戶第一次透過互聯網股票交易；加密貨幣時代係「普通人」用 Robinhood 同 Coinbase；AI 時代嘅新投資者包括 sovereign wealth funds（沙特 PIF、新加坡 GIC）、pension funds（日本 GPIF、加拿大 CPP），以及大量第一次買科技股嘅亞洲散戶。朱寧話：<span class="data-point">「每一輪泡沫都會引入一批之前未參與過嘅投資者。」</span> 呢啲新投資者往往對風險認識不足。</p>
+</div>
+
+<div class="highlight-box">
+  <h3>條件 4：複雜嘅金融工具或結構</h3>
+  <p>泡沫要擴散到經濟層面，需要金融工具放大效應。Subprime 時代有 MBS/CDO，dot-com 有 IPO 狂潮，加密貨幣有 DeFi 同 leveraged trading。AI 時代嘅工具包括：AI ETF（全球已經有超過 50 隻）、Nvidia 期權（日均交易量超過多數標普 500 公司）、AI SPAC、AI 概念可轉換債券。工具越複雜，泡沫越難控制，因為槓桿效應會放大市場波動。</p>
+</div>
+
+<p>朱寧嘅判斷相當明確：<span class="data-point">AI 已經集齊了泡沫的所有條件。</span> 但注意——呢啲條件係必要，唔係充分。有咗呢啲條件唔代表泡沫一定會即將破裂，只代表風險級別已經好高。</p>
+
+<!-- ============================== -->
+
+<h2>四、泡沫嘅見頂信號</h2>
+
+<p>朱寧分享咗幾個具體可以觀測嘅信號：</p>
+
+<ul>
+  <li><strong>資金流入速度見頂</strong>：每個月流入 AI ETF 嘅資金開始回落，可能係頂部嘅信號</li>
+  <li><strong>機構開始減倉</strong>：Insider selling、對沖基金持倉變化，呢啲係可以追蹤嘅領先指標</li>
+  <li><strong>IPO 質量下降</strong>：當連唔合格嘅公司都可以上市，市場可能已過熱。2026 年智譜同 MiniMax 上市後股價劇烈波動，值得警惕</li>
+  <li><strong>媒體敘事改變</strong>：從「AI 改變世界」變成「你仲唔買就後悔」——恐懼錯過（FOMO）取代技術分析成為主流敘事</li>
+  <li><strong>「專家」集體轉向</strong>：當以前話「AI 係泡沫」嘅人開始話「AI 係未來」，就係最危險嘅信號</li>
+</ul>
+
+<p>但朱寧承認：<strong>準確預測泡沫頂部係唔可能嘅。</strong> 即使睇到呢啲信號，市場都可以再沖幾個月甚至幾年。引用凱恩斯嘅名言——<span class="data-point">「市場嘅非理性持續時間，可以長過你嘅償付能力。」</span></p>
+
+<!-- ============================== -->
+
+<h2>五、「呢次唔同」——點解每次都有人咁講</h2>
+
+<p>朱寧花咗相當篇幅討論「呢次唔同」呢個論述。佢話：每次泡沫都有三個階段：</p>
+<ol>
+  <li><strong>懷疑階段</strong>：「呢個係泡沫，唔好掂」</li>
+  <li><strong>接受階段</strong>：「OK 可能唔係泡沫，但估值太高」</li>
+  <li><strong>擁抱階段</strong>：「呢次真係唔同，技術已經改變咗一切」</li>
+</ol>
+
+<p>AI 嘅擁護者話：AI 嘅收入增長係真實嘅，Anthropic 同 OpenAI 嘅收入數字唔係故事。朱寧嘅回應係：dot-com 時代 Amazon 嘅收入增長都係真實嘅——但 Amazon 股價喺 1999-2001 年跌咗 95%。<strong>真實嘅業務同合理嘅估值係兩回事。</strong></p>
+
+<p>佢引用同諾獎得主交流中獲得嘅 insight：每次泡沫破滅後，大家先會發現「呢次其實冇唔同到」。人性嘅弱點冇變過——唯一變嘅係技術嘅名字。</p>
+
+<!-- ============================== -->
+
+<h2>六、投資 vs 人生——朱寧嘅哲學轉向</h2>
+
+<p>呢期最打動人嘅部分係最後 15 分鐘。朱寧由投資轉到人生哲學，提出咗一個值得所有聽眾思考嘅問題：</p>
+
+<blockquote>「賺錢是為了生活，但生活不是為了賺錢。向內求，才能找到財富、幸福以及很多問題的答案。」</blockquote>
+
+<p>佢分享咗幸福嘅兩個定義：</p>
+<ul>
+  <li><strong>主觀幸福感（Subjective Well-being）</strong>：你覺得自己幾開心——研究顯示呢個同財富嘅相關性好低。年收入 $75K 以上，再多錢對幸福感嘅貢獻急劇遞減。</li>
+  <li><strong>心理富足感（Psychological Richness）</strong>：你覺得自己嘅人生有意義、有價值——呢個先係真正嘅財富。朱寧話，同佢交流過嘅好多頂尖投資者（包括諾獎得主），到最後都有一個共通點：<strong>佢哋追求嘅唔係最多嘅錢，而係「唔後悔」嘅決策。</strong></li>
+</ul>
+
+<p>呢種思維方式，可能係成期最有價值嘅部分——特別係喺 AI 股票瘋狂上落嘅 2026 年中。當你問「AI 股票還能不能買」嘅時候，真正重要嘅問題係：<strong>「如果它漲了或跌了，對你的人生到底意味著什麼？」</strong></p>
+
+<!-- ============================== -->
+
+<h2>七、我嘅補充分析</h2>
+
+<h3>朱寧嘅兩個盲點</h3>
+
+<p><strong>盲點 1：AI 嘅收入增長速度史無前例</strong></p>
+<p>朱寧將 AI 泡沫放入歷史框架分析，但 AI 嘅商業化速度可能真係「不同」。Anthropic 從 $10-15B（2025）到 $100-150B（2026）嘅收入增長——年增 10 倍——喺人類商業史上未見過。Salesforce 用咗 20 年先到 $20B；AWS 用咗 15 年到 $100B。如果 AI 嘅真實收入增速真係咁快，𠵱家嘅估值可能唔係泡沫，而係合理嘅前瞻定價。</p>
+
+<p><strong>盲點 2：忽略咗「模型即基礎設施」嘅範式轉變</strong></p>
+<p>朱寧嘅框架係「技術公司 → 賣產品 → 賺利潤 → 估值」嘅傳統邏輯。但模型公司嘅商業模式可能更似「基礎設施公司」（電網、電信網絡）——前期投入巨大，收入增長曲線陡峭，後期壟斷利潤極高。Nvidia 嘅 $280B 年收入同 80%+ margin 就係呢個 paradigm 嘅最好證明。</p>
+
+<h3>呢期同 James 嘅關聯</h3>
+<p>James 嘅業務（Trinity、豆包+PMS+硬件）唔係上市公司，所以股市泡沫對佢嘅直接影響有限。但朱寧嘅框架提供咗一個重要嘅 macro lens：<strong>唔好將公司嘅戰略自信同市場情緒混為一談。</strong> 如果你相信自己嘅 technology thesis，就唔應該被市場嘅 daily noise 影響。朱寧的最後一句話值得記住：「如果 AI 股票漲了或跌了，對你的人生到底意味著什麼？」——對創業者嚟講，答案應該係「nothing changed, keep building」。</p>
+
+<!-- ============================== -->
+
+<h2>八、總結</h2>
+
+<p>如果你問朱寧「𠵱家可以買 AI 股票嗎？」佢會話：</p>
+
+<ul>
+  <li><strong>短期投機者</strong>：泡沫所有條件已集齊，風險極高，唔好賭身家</li>
+  <li><strong>長期投資者</strong>：AI 嘅真實技術進步係真實嘅，但估值可能需要時間消化。Dollar cost average 可能係最穩陣嘅策略</li>
+  <li><strong>行業從業者（好似 James）</strong>：專注 execution，唔好被股價影響判斷。你嘅價值係你 build 嘅嘢，唔係你持倉嘅股票</li>
+  <li><strong>「AI 股票還能不能買」本身就係錯誤嘅問題</strong>：真正重要嘅係你嘅人生目標，而唔係呢個 quarter 嘅回報</li>
+</ul>
+
+<blockquote>「泡沫雖然無法被準確預測，但它們總有一些反覆出現的見頂信號。學會識別這些信號，比試圖預測泡沫更重要。」</blockquote>
+
+<p>呢句，可能係全期最有價值嘅 advice——對投資者、創業者、同所有關心 AI 未來嘅人都适用。</p>
+
+<!-- ============================== -->
+
+<div class="footer">
+  ✍️ 深度復述：Vee Mok · 播客來源：42章經（小宇宙）<br>
+  🎧 原集：「泡沫的四個必要不充分條件 | 對談經濟學者朱寧教授」<br>
+  📅 生成時間：2026-07-30 06:30 UTC<br>
+  ⚠️ 所有引用來自原播客 show notes 及公開內容 · 如有錯漏請指正
+</div>
+
+</div>
+</body>
+</html>

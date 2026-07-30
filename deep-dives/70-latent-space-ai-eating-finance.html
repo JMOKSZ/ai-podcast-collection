@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 全面入侵金融業 — Latent Space 嘅 7 個案例深度掃描</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 780px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 0.85rem;
+    color: #999;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: #666; text-decoration: underline; }
+
+  .episode-meta {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 0.3rem;
+    color: #2a2a2a;
+  }
+  .sub-meta {
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+  .sub-meta span { margin-right: 1rem; }
+
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 2.5rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e8e0d5;
+    color: #3a3a3a;
+  }
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.8rem 0 0.6rem 0;
+    color: #4a4a4a;
+  }
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1.2rem 0 0.4rem 0;
+    color: #5a5a5a;
+  }
+  p { margin: 0.8rem 0; text-align: justify; }
+
+  blockquote {
+    border-left: 4px solid #c8b89a;
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    color: #555;
+    font-style: italic;
+    background: #faf6ee;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.7;
+  }
+  blockquote.strong {
+    border-left: 4px solid #b8946a;
+    background: #f5efe4;
+    font-weight: 600;
+    color: #3a3a3a;
+  }
+
+  .data-point {
+    display: inline-block;
+    background: #f5efe4;
+    padding: 0.1rem 0.6rem;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #6d5a3c;
+  }
+
+  ul, ol { padding-left: 1.4rem; margin: 0.6rem 0; }
+  li { margin-bottom: 0.5rem; }
+
+  .highlight-box {
+    background: #f5efe4;
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin: 1.2rem 0;
+    border-left: 4px solid #b8946a;
+  }
+  .highlight-box p { margin: 0.3rem 0; }
+
+  .case-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-left: 3px solid #d4c8b4;
+  }
+  .case-card h4 { margin-top: 0; }
+
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0d8ce;
+    font-size: 0.75rem;
+    color: #bbb;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<div class="episode-meta">🎙️ Latent Space — AINews（swyx + Alessio Fanelli）</div>
+<h1>AI 全面入侵金融業：Code 之後的下一個萬億垂直市場</h1>
+<div class="sub-meta">
+  <span>📅 2026 年 7 月 29 日</span>
+  <span>📰 Substack 深度日報</span>
+  <span>🎤 主持人：swyx + Alessio Fanelli</span>
+  <span>🏷️ AI in Finance · AIE NYC · 金融科技</span>
+</div>
+
+<!-- ============================== -->
+
+<h2>一、點呢期特別值得關注</h2>
+
+<p>Latent Space AINews 係每日出版嘅 AI 行業掃描，通常 cover 好廣泛嘅 topics。但 2026 年 7 月 29 日呢期，有一個非常清晰嘅主題 thread：<strong>AI 正在全面入侵金融服務業。</strong></p>
+
+<p>swyx 自己形容呢期係「a quiet day lets us cover how AI is permeating financial services as the next big vertical after coding。」即係話：今日冇乜爆炸性新聞，所以可以專注做一個垂直領域嘅深度拆解。</p>
+
+<p>結果呢期成為咗一篇 mini-whitepaper：有 7 個具體嘅企業案例、有新產品發布（OpenAI Equity Investing Plugin + Anthropic Financial Services Templates）、有新嘅行業會議公告（AIE NYC 2026）。</p>
+
+<p>呢篇深度復述會逐個案例拆解，再抽出共通嘅 pattern 同埋 insight。</p>
+
+<!-- ============================== -->
+
+<h2>二、OpenAI 嘅金融攻勢</h2>
+
+<div class="case-card">
+  <h4>🏢 OpenAI NYC 活動</h4>
+  <p>OpenAI 喺紐約舉辦咗一場「AI in Finance」主題活動，最大嘅 news 係推出咗兩個專用 Plugin：</p>
+  <ul>
+    <li><strong>Equity Investing Plugin</strong> — 針對股票投資研究，整合實時市場數據、財務報告分析、估值模型</li>
+    <li><strong>Investment Banking Plugin</strong> — 覆蓋投行工作流程：盡職調查、財務建模、交易文件起草</li>
+  </ul>
+  <p>呢兩個 Plugin 都已經納入 Codex 生態，即係話用戶可以喺 ChatGPT Work 入面直接使用。呢個策略嘅聰明之處在於：<span class="data-point">唔使金融機構自己開發 AI infra，直接用 Codex 嘅 agent 框架 + 專用金融工具。</span></p>
+</div>
+
+<div class="case-card">
+  <h4>🏢 Anthropic 金融服務 Templates</h4>
+  <p>Anthropic 同步喺紐約舉辦活動，發布咗 <strong>Cowork &amp; Claude Code Agent Templates for Financial Services</strong>。涵蓋：</p>
+  <ul>
+    <li>企業金融全流程 agent（應付賬款、合規檢查、風險評估）</li>
+    <li>內建嘅 security framework 同 audit trail</li>
+    <li>專為金融業長文檔處理優化嘅 context window 管理</li>
+  </ul>
+  <p>Anthropic 嘅 approach 同 OpenAI 略有不同：佢哋更強調 agent template 嘅可定制性同企業級安全，而唔係 plug-and-play。</p>
+</div>
+
+<!-- ============================== -->
+
+<h2>三、七個企業案例深度拆解</h2>
+
+<p>呢期嘅真正金礦係 AIE（AI Engineer Conference）發布嘅完整 Finance Track——7 間金融機構分享咗佢哋嘅 AI 部署經驗。</p>
+
+<h3>1. FactSet — AI Skills 嘅企業級基礎設施</h3>
+<div class="case-card">
+  <p><strong>講者：</strong>Yogendra Miraje</p>
+  <p><strong>背景：</strong>FactSet 服務數千間金融機構，提供金融數據同分析。</p>
+  <p><strong>核心觀點：</strong>AI skills 需要五個要素先可以成為企業級 agent 基礎設施：</p>
+  <ul>
+    <li><strong>Ownership</strong> — 每個 agent 要有明確嘅業務擁有者，唔係 IT project</li>
+    <li><strong>Search</strong> — 唔係 keyword search，而係 semantic + 結構化數據混合檢索</li>
+    <li><strong>Evals</strong> — 金融業唔接受「大約正確」，答案必須可以驗證</li>
+    <li><strong>Audits</strong> — 每個 agent 操作必須有完整嘅審計軌跡（regulatory requirement）</li>
+    <li><strong>Governance</strong> — 權限管理、數據隔離、合規檢查</li>
+  </ul>
+  <p><strong>Insight：</strong>FactSet 嘅視角好有代表性——佢哋唔係 sell AI，而係 sell <span class="data-point">「AI-readiness infrastructure」</span>。金融機構唔缺數據，缺嘅係可以安全、可控地使用 AI 嘅基礎設施。</p>
+</div>
+
+<h3>2. Nubank + Snowglobe — Agent Evals 從瓶頸變 Release 機制</h3>
+<div class="case-card">
+  <p><strong>講者：</strong>Lucas Palma</p>
+  <p><strong>背景：</strong>Nubank，巴西最大嘅數位銀行，服務 <span class="data-point">1 億+ 客戶</span>。</p>
+  <p><strong>核心觀點：</strong>Nubank 同 Snowglobe 合作，建立咗模擬環境用嚟測試 agent。傳統嘅 eval 係發布瓶頸——你要人工審核每個 agent 嘅每個 output。Nubank 嘅做法係：<strong>用模擬環境自動化 eval，變成 release 機制嘅一部分。</strong></p>
+  <p>佢哋有數千個 AI skills 需要審核，每個都關乎客戶資金安全。人手審核根本唔可能。所以佢哋嘅解決方案係：</p>
+  <ul>
+    <li>建立金融場景嘅 sandbox environment</li>
+    <li>agent 喺 sandbox 入面執行，自動生成 eval report</li>
+    <li>只有 pass eval 嘅 agent 先可以進入 production</li>
+  </ul>
+  <p><strong>Insight：</strong>Nubank 嘅案例證明咗：<span class="data-point">agent safety 唔係靠人手審核，而係靠 automation + simulation。</span> 呢個思維對所有準備大規模部署 AI agent 嘅公司都適用。</p>
+</div>
+
+<h3>3. Intuit — 通用 LLM 唔夠，金融 AI 要理解「結果」</h3>
+<div class="case-card">
+  <p><strong>講者：</strong>Udi Menkes</p>
+  <p><strong>背景：</strong>Intuit 服務約 1 億消費者、小企業同會計師，產品包括 TurboTax、QuickBooks、Mint。</p>
+  <p><strong>核心觀點：</strong>通用 LLM 對金融場景遠遠唔夠。金融 AI 必須：</p>
+  <ul>
+    <li>理解真實狀態（用戶嘅財務狀況、稅務歷史）</li>
+    <li>理解行為（用戶做咗咩交易、點解咁做）</li>
+    <li>理解結果（呢個推薦會導致咩稅務後果）</li>
+    <li>理解風險（如果推薦錯咗，用戶會損失幾多錢）</li>
+  </ul>
+  <p>Udi Menkes 話：<span class="data-point">「金融 AI 唔可以 approximate——差一個小數點嘅稅務建議都可能令用戶損失幾千蚊。」</span></p>
+  <p><strong>Insight：</strong>呢個係一個重要嘅 cautionary tale——好多 AI 公司 rush to deploy，但低估咗金融場景嘅精確度要求。</p>
+</div>
+
+<h3>4. Kepler — 「可驗證 AI」喺金融研究</h3>
+<div class="case-card">
+  <p><strong>講者：</strong>Vinoo Ganesh</p>
+  <p><strong>背景：</strong>Kepler 喺金融研究中索引數百萬份報表文件。</p>
+  <p><strong>核心觀點：</strong>金融研究嘅 game changer 唔係「AI 可以分析更多數據」，而係「AI 可以俾你 verify 每個答案嘅來源」。</p>
+  <p>具體做法：</p>
+  <ul>
+    <li>每個答案都要有來源文件引用（唔係「模型知識」）</li>
+    <li>來源記錄可以追溯，方便審計同覆核</li>
+    <li>支持對答案進行 fact-check 同 cross-reference</li>
+  </ul>
+  <p><strong>Insight：</strong>金融業嘅痛點唔係資料唔夠多，而係 source verification 太慢。Kepler 嘅 approach 係用 AI 做 indexing，然後靠人類 analyst 做 decision——呢個 division of labor 好可能係金融 AI 嘅標準 pattern。</p>
+</div>
+
+<h3>5. Nubank（再次）— AI Skills 嘅供應鏈安全</h3>
+<div class="case-card">
+  <p><strong>講者：</strong>Lucas Palma（同一個 Nubank，另一個角度）</p>
+  <p><strong>核心觀點：</strong>當你嘅銀行有 <span class="data-point">數千個 AI skills</span>，每個可能由唔同嘅 internal team 或者 vendor build，supply chain security 就變成頭號問題。</p>
+  <p>主要風險：</p>
+  <ul>
+    <li>一個 rogue agent 可以 access 唔應該 access 嘅數據</li>
+    <li>第三方程式庫可能有 vulnerability</li>
+    <li>Agent prompt injection 可以導致金融交易被篡改</li>
+  </ul>
+  <p><strong>Insight：</strong>呢個同 HuggingFace 嘅 rogue agent 攻擊 time-line visualization 呼應——<span class="data-point">AI security 唔再係理論問題，而係每日都要面對嘅現實威脅。</span></p>
+</div>
+
+<h3>6. Morgan Stanley — 多 Agent 研究嘅實驗環境</h3>
+<div class="case-card">
+  <p><strong>講者：</strong>Brendan Hogan Rappazzo</p>
+  <p><strong>背景：</strong>Morgan Stanley Wealth Management，管理 <span class="data-point">數萬億美元</span> 客戶資產。</p>
+  <p><strong>核心觀點：</strong>多 agent 系統喺金融研究有好大潛力——一個 agent 做宏觀分析、一個做行業研究、一個做公司估值——但呢啲 agent 需要喺可信嘅實驗環境中優化先得。</p>
+  <p>Morgan Stanley 嘅做法：</p>
+  <ul>
+    <li>建立咗隔離嘅沙箱環境，用歷史數據模擬真實市場</li>
+    <li>Agent 之間嘅 interaction 可以記錄同分析</li>
+    <li>每個 agent 嘅 output 都係「可解釋嘅」——知道點解佢俾呢個 recommendation</li>
+  </ul>
+  <p><strong>Insight：</strong>華爾街對 AI 嘅態度係「cautious but committed」。Morgan Stanley 呢個案例說明：<span class="data-point">金融機構唔係唔想用 AI，而係需要用正確嘅方式用。</span></p>
+</div>
+
+<h3>7. Fidelity Investments — 群聊 Agent + 可穿戴安全</h3>
+<div class="case-card">
+  <p><strong>講者：</strong>Sai Krishna Rallabandi</p>
+  <p><strong>背景：</strong>Fidelity，管理 <span class="data-point">數萬億美元</span> 資產。</p>
+  <p><strong>核心觀點：</strong>Fidelity 正在 experiment 群聊 agent 同可穿戴 device 上嘅 AI assistant——但呢啲新界面強制佢哋重新思考三個方面：</p>
+  <ul>
+    <li><strong>Memory</strong> — agent 應該記住幾多對話歷史？邊啲信息可以跨 session 保留？</li>
+    <li><strong>Permissions</strong> — 群聊入面，agent 可以 access 邊個嘅數據？唔同參與者有唔同權限</li>
+    <li><strong>Prompt injection defense</strong> — 喺開放式群聊環境，agent 更容易受到攻擊</li>
+  </ul>
+  <p><strong>Insight：</strong>Fidelity 嘅 approach 係「build for the edge cases first」——即係假設最壞情況（prompt injection、數據洩漏）會發生，然後從個 base case 度 design。呢種 security-first 思維好值得其他金融機構參考。</p>
+</div>
+
+<!-- ============================== -->
+
+<h2>四、共通嘅 Pattern 同 Insight</h2>
+
+<p>呢 7 個 case studies 加起來，幾條清晰嘅 thread 浮出水面：</p>
+
+<h3>Thread 1：Agent Safety = 自動化 Eval，唔係人手審核</h3>
+<p>FactSet、Nubank、Morgan Stanley 三間公司獨立噉得出同一個結論：<strong>金融機構嘅 agent 數量會快速增長到人手無法管理嘅規模。</strong> 唯一可行嘅方法係 build 自動化 eval 同模擬環境。</p>
+
+<h3>Thread 2：金融 AI 嘅 Killer App 係 Research，唔係 Trading</h3>
+<p>Kepler、Morgan Stanley、FactSet 嘅案例都 focus 喺金融研究同分析——唔係高頻交易。呢個說明咗：<span class="data-point">AI 喺金融業嘅第一個大規模應用會係「知識工作自動化」，唔係「交易自動化」。</span></p>
+
+<h3>Thread 3：OpenAI vs Anthropic 嘅金融路線差異</h3>
+<p>OpenAI 走 plug-and-play path（Equity Investing Plugin + Codex），Anthropic 走 template + security framework path。呢個差異反映咗兩間公司對金融市場嘅策略判斷：OpenAI 認為速度係關鍵，Anthropic 認為信任係關鍵。</p>
+
+<h3>Thread 4：AI Security 唔再係理論</h3>
+<p>從 Nubank 嘅 AI supply chain 問題到 Fidelity 嘅 prompt injection concern，再到 HuggingFace 嘅 rogue agent 攻擊時間線——<span class="data-point">AI security 已經從「可能嘅問題」變成「每日嘅現實」。</span> 金融機構對此尤其敏感。</p>
+
+<!-- ============================== -->
+
+<h2>五、Codex 嘅自我優化同推理成本革命</h2>
+
+<p>呢期仲有一個值得單獨拎出來講嘅 news：</p>
+
+<blockquote class="strong">Codex 自我優化 OpenAI 生產線 — GPT-5.6 Sol 被應用到生產推理優化，GPU kernel 改進降低 20% 推理成本，speculative decoding 提升 15%+ token 生成效率。</blockquote>
+
+<p>呢個係 <span class="data-point">AI 改善 AI 系統</span> 嘅具體案例。Codex 唔係被動等新模型，而係主動將最新嘅 model capability 應用到 infrastructure 層面。呢個 loop 一旦閉合，改進速度就會指數級加速。</p>
+
+<p>同金融業嘅關聯：推理成本降 20% 對 coding agent 係好事，但對金融 agent 呢？<strong>金融 agent 嘅瓶頸向來唔係推理成本，而係 accuracy、security、同 compliance。</strong> 所以呢個改進對金融業嘅直接影響有限，但間接影響係：便宜嘅推理 = 更多 agent 嘗試 = 更快摸清金融場景嘅 best practices。</p>
+
+<!-- ============================== -->
+
+<h2>六、我嘅分析</h2>
+
+<h3>為咩金融業係 Code 之後嘅第一個垂直市場？</h3>
+<p>swyx 嘅判斷係啱嘅——金融業同 coding 有幾個共通點令佢成為 AI 嘅天然 playground：</p>
+<ul>
+  <li><strong>高數據密度</strong>：金融機構嘅數據比任何其他行業都結構化同乾淨</li>
+  <li><strong>清晰嘅 ROI</strong>：金融分析嘅價值可以精確量化（better research = better returns）</li>
+  <li><strong>強烈嘅競爭壓力</strong>：邊個先用 AI，邊個就有信息優勢</li>
+  <li><strong>監管推動數位化</strong>：合規要求（SOX、Basel III）迫使金融機構建立完善嘅 audit trail，呢個同 AI agent 嘅需求天然吻合</li>
+</ul>
+
+<h3>風險同挑戰</h3>
+<ul>
+  <li><strong>Hallucination 喺金融業係災難</strong>：一個錯誤嘅財務分析可以導致幾千萬嘅損失。金融 agent 需要 ground truth verification——唔係「大概啱」</li>
+  <li><strong>Black box 問題</strong>：監管機構要求「可解釋嘅」金融決策。如果 AI agent 嘅 decision making process 係不可解釋嘅，金融機構就用唔到</li>
+  <li><strong>人才競爭</strong>：金融機構要同科技公司搶 AI 人才——呢場仗金融業好難贏</li>
+</ul>
+
+<h3>香港／中國嘅金融 AI 機遇</h3>
+<p>雖然呢期 Latent Space focus 喺歐美市場，但中國金融業嘅 AI 機會同樣巨大——甚至可能更大：</p>
+<ul>
+  <li>中國金融機構嘅數位化程度參差不齊，跳躍式升級嘅空間大</li>
+  <li>監管環境相對集中，一次獲批可以大規模部署</li>
+  <li>區塊鏈金融 + 數字人民幣 + AI 可以產生化學反應</li>
+</ul>
+
+<!-- ============================== -->
+
+<h2>七、結論</h2>
+
+<p>呢期 Latent Space AINews 雖然係「quiet day」嘅產物，但內容密度好高。佢捕捉到咗一個重要嘅行業信號：<strong>AI 正在離開 coding 呢個 comfort zone，進入下一個萬億級垂直市場。</strong></p>
+
+<p>對於 James 同佢嘅 Trinity 項目（豆包 + PMS + 硬件）：金融業 AI 嘅進展係一個重要嘅參考——酒店業同樣係高數據密度、清晰 ROI、強競爭壓力嘅行業。金融業踩過嘅坑（eval automation、security-by-design、regulatory compliance）好快就會喺其他垂直行業重演。</p>
+
+<blockquote>「模型安全研究需要評估完整的 chatbot/harness/system stack，而不僅僅是 base models——因為記憶、搜索、工具、長會話漂移和 scaffolding 實質性地改變了風險配置文件。」</blockquote>
+
+<p>呢句係成期最值得記住嘅 advice。無論你做邊個行業嘅 AI agent，呢個都係 bottom line。</p>
+
+<!-- ============================== -->
+
+<div class="footer">
+  ✍️ 深度復述：Vee Mok · 播客來源：Latent Space AINews（Substack）<br>
+  🎧 原集：「[AINews] AI is eating Finance; AIE NYC now open」— 2026-07-29<br>
+  📅 生成時間：2026-07-30 06:25 UTC<br>
+  ⚠️ 所有引用來自原 Substack 文章及 AIE NYC 發布內容 · 如有錯漏請指正
+</div>
+
+</div>
+</body>
+</html>
