@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ontologies Are So Back——AI Agent 點解令語義網翻生</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: 'Noto Serif SC', Georgia, 'Times New Roman', serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 780px; margin: 0 auto; padding: 3rem 1.5rem; }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 0.85rem;
+    color: #999;
+    text-decoration: none;
+  }
+  .back-link:hover { color: #666; text-decoration: underline; }
+  .episode-meta {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 0.3rem;
+    color: #2a2a2a;
+  }
+  .sub-meta {
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+  .sub-meta span { margin-right: 1rem; }
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 2.5rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e8e0d5;
+    color: #3a3a3a;
+  }
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.8rem 0 0.6rem 0;
+    color: #4a4a4a;
+  }
+  p { margin: 0.8rem 0; text-align: justify; }
+  blockquote {
+    border-left: 4px solid #c8b89a;
+    margin: 1.2rem 0;
+    padding: 0.8rem 1.2rem;
+    color: #555;
+    font-style: italic;
+    background: #faf6ee;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.7;
+  }
+  blockquote.strong {
+    border-left: 4px solid #b8946a;
+    background: #f5efe4;
+    font-weight: 600;
+    color: #3a3a3a;
+  }
+  .data-point {
+    display: inline-block;
+    background: #f5efe4;
+    padding: 0.1rem 0.6rem;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #6d5a3c;
+  }
+  ul, ol { padding-left: 1.4rem; margin: 0.6rem 0; }
+  li { margin-bottom: 0.5rem; }
+  .highlight-box {
+    background: #f5efe4;
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin: 1.2rem 0;
+    border-left: 4px solid #b8946a;
+  }
+  .highlight-box p { margin: 0.3rem 0; }
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0d8ce;
+    font-size: 0.75rem;
+    color: #bbb;
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<div class="episode-meta">🎙️ Latent Space — 專題文章</div>
+<h1>Ontologies Are So Back：AI Agent 點解令語義網翻生</h1>
+<div class="sub-meta">
+  <span>📅 2026-07-30 11:17 UTC</span>
+  <span>📰 Latent Space 專題（AIEWF 2026 會後觀察）</span>
+  <span>🎤 swyx</span>
+  <span>🏷️ Ontology · 神經符號 AI · Agent 護欄 · 語義網</span>
+</div>
+
+<!-- ============================== -->
+
+<h2>一、一個需要「四十歲以上」先傾得嘅話題</h2>
+
+<p>2026 年 7 月，AI 工程界最火嘅話題之一，竟然係一個聽落好似上世紀遺物嘅詞：<strong>ontology（本體論 / 知識本體）</strong>。X 上有人咁樣調侃：</p>
+
+<blockquote>「你必須超過 40 歲，先有資格討論 ontology。」——@lux，2026-07-26</blockquote>
+
+<p>呢句玩笑背後係一個殘酷事實：ontology 係 1990–2000 年代「語義網（Semantic Web）」願景嘅核心支柱，而語義網最終冇喺 web 層面起飛。但 Latent Space 今期專題文章《Ontologies Are So Back》指出，<strong>呢啲「古老」嘅技術，正因為 AI Agent 而翻生</strong>——而且翻生嘅場景，同當年起飛失敗嘅場景完全唔同。</p>
+
+<p>觸發點係 AI Engineer World's Fair（AIEWF）2026 上一場 20 分鐘嘅演講，講者係 UC Berkeley 教授 <strong>Frank Coyle</strong>——一個教緊 generative AI 同 LLM 嘅電腦科學教授，用佢幾十年嘅經驗，向今日嘅 AI 工程師重新介紹 ontology。</p>
+
+<!-- ============================== -->
+
+<h2>二、Coyle 嘅核心論點：概率推理需要「邏輯護欄」</h2>
+
+<p>Coyle 嘅論證好簡單直接：LLM 喺概率推理方面好有效，但<strong>agentic systems 要真正可靠，需要「logical guardrails」——而佢所指嘅，正正係 ontology。</strong></p>
+
+<p>Ontology 喺電腦科學入面嘅定義係「對一個知識領域入面嘅類別、屬性同關係嘅數據結構描述」。Coyle 自己俾咗一個更平易近人嘅定義：<span class="data-point">「數據即圖（data as graphs）」</span>。佢仲指出，ontology 作為概念可以追溯到亞里士多德，而且成個 AI 歷史入面一路都有用。</p>
+
+<div class="highlight-box">
+  <h3>關鍵 insight：已有嘅 ontology 就喺 LLM 嘅訓練數據入面</h3>
+  <p>Coyle 特別提到 Schema.org、FOAF、Dublin Core 等 web 開發者（起碼係「某個年代」嘅開發者）熟悉嘅 ontology，以及 RDFS、OWL 等「augmenting technologies」。佢嘅意思係：<strong>呢啲已有 ontology 已經喺 LLM 嘅訓練數據入面，開發者直接 prompt 就得——完全唔使自己由零發明。</strong></p>
+</div>
+
+<blockquote class="strong">「呢啲嘢一直喺度，支撐住我哋已經做緊嘅好多嘢。所以，好好利用呢啲已經存在嘅嘢。」——Frank Coyle</blockquote>
+
+<p>佢仲示範咗一個 Claude agent loop：工具執行完之後，用 ontology 嚟驗證 LLM 嘅 reasoning。呢個唔係理論——係可以即刻抄走嘅 pattern。</p>
+
+<!-- ============================== -->
+
+<h2>三、Neo4j 嘅三層 ontology——「thin agents」嘅基礎</h2>
+
+<p>唔止學術界。Neo4j CEO <strong>Emil Eifrem</strong> 喺 AIEWF keynote 入面，提出用三種唔同嘅 ontology 建構「smarter shared substrate」，令 agent 可以 scale：</p>
+
+<ul>
+  <li><strong>Business-facing ontology</strong>：描述組織入面嘅關鍵概念</li>
+  <li><strong>Technical ontology</strong>：Eifrem 形容為「你企業生態入面所有數據源同數據資產嘅 metadata」</li>
+  <li><strong>Execution traces</strong>：「你 agent 嘅 runtime signals」——運行時信號</li>
+</ul>
+
+<p>Eifrem 嘅願景係一個好有力量嘅對比：由「一個厚 agent + 手動駁好嘅數據源」嘅世界，走向「<span class="data-point">薄 agent 企喺一個更聰明、基於 ontology 嘅共享語義層</span>」上面。</p>
+
+<blockquote>「Thick agents with manually wired data sources」→「Thin agents on a smarter shared ontology-based semantic layer」——Emil Eifrem</blockquote>
+
+<p>呢個對 agent 架構嘅影響好深：如果所有 agent 共享一個語義層，就唔使每個 agent 各自 maintain 自己對「客戶」「訂單」「風險」嘅理解——<strong>語義一致性由基建層解決，而唔係由每個 prompt 各自祈禱。</strong></p>
+
+<!-- ============================== -->
+
+<h2>四、OpenLink 嘅 RDF 記憶——「語言需要 computable context」</h2>
+
+<p>另一個長期深耕 ontology 嘅人係 OpenLink Software 嘅 <strong>Kingsley Idehen</strong>。佢喺度建一個「agent engineering stack」，用語義網技術——包括「agent with RDF memory」。Latent Space 訪問咗佢，佢嘅回答值得成段引用：</p>
+
+<blockquote class="strong">「LLM 嘅美，在於佢哋係強勁嘅語言處理器；ontology 嘅美，在於佢定義咗語言可以獲取 computable context 嘅實體類型同關係。兩者加埋，就係將語言嘅表達力帶入運算嘅 UI/UX 層。」——Kingsley Idehen</blockquote>
+
+<p>呢句說話其實概括咗成個「ontology 翻生」嘅邏輯：<strong>LLM 提供語言能力，ontology 提供語義結構；語言需要結構先變成可計算嘅嘢。</strong> 冇結構，語言就只係一串流暢但無法校驗嘅字。</p>
+
+<!-- ============================== -->
+
+<h2>五、點解當年失敗——維護問題，同埋一個可能嘅解法</h2>
+
+<p>如果你做過 web 開發，你一定知道 ontology 嘅老問題：<strong>維護。</strong> 要 keep ontology up-to-date 係極度痛苦嘅事——呢個正正係 1990–2000 年代「語義網」願景冇跑起嘅原因。</p>
+
+<p>但今次有個新 twist。AI 開發者 Prasenjit Sarkar 喺 X 上提出：</p>
+
+<blockquote>「當 agent 將 ontology 嘅維護當成自己操作嘅一部分——喺遇到 edge case 時自己更新定義——維護問題嘅性質就變咗。」</blockquote>
+
+<p>佢自己都即刻補返一句：<span class="data-point">「呢個仍然係一個好難嘅問題。」</span> 呢個係誠實嘅判斷——agent 自我維護 ontology，意味住 ontology 變成一個「會生長嘅系統」，而唔係一份寫死嘅文件；但 agent 自己定義自己嘅語義，又有自我強化嘅風險。呢個問題，其實同「agent 學自己嘅 reward」係同一類陷阱。</p>
+
+<!-- ============================== -->
+
+<h2>六、Loop Engineering 與「有界規則圍住無界循環」</h2>
+
+<p>Coyle 演講入面另一個重要觀點係關於 <strong>loop engineering</strong>——佢話呢個概念「喺電腦科學入面存在咗好耐」。問題係：<strong>loop 會壞，會「走火入魔」（go off the rails）。</strong></p>
+
+<p>而 ontology 正正可以喺呢度做 probabilistic LLM 嘅護欄。Coyle 有一張 slide 用咗一個好靚嘅比喻：</p>
+
+<blockquote class="strong">「一組有界嘅規則，圍住一個無界嘅 loop。」——Frank Coyle 嘅 slide</blockquote>
+
+<p>佢仲示範咗點樣用 OWL 做 agent 嘅檢查點。佢嘅一句金句：<span class="data-point">「語言可以好滑溜，但一條 OWL axiom 係一條機器會執行嘅規則。」</span></p>
+
+<blockquote>「你可以建一個建基於 ontology 嘅 reasoner，用嚟檢查同令 LLM 保持在軌——有護欄令佢誠實。」——Frank Coyle</blockquote>
+
+<p>Coyle 將「概率 agent + ontology」嘅結合稱之為 <strong>「neurosymbolic AI」</strong>（神經符號 AI）。佢自己都話：「聽落好 fancy，但其實就係神經網絡接上符號 AI——rule-based systems 係其中一種，我哋正在組裝嘅 knowledge graphs 都係。」核心功能係一個：<strong>令 LLM 保持喺護欄入面。</strong></p>
+
+<!-- ============================== -->
+
+<h2>七、點解係而家？——Vibe Coding 之後嘅工程紀律回歸</h2>
+
+<p>Latent Space 嘅文章提出咗一個好重要嘅 timing 問題：點解 ontology 喺 2026 年先翻生？答案係 2025 年嘅「vibe coding」熱潮之後，市場發現咗一個殘酷事實：</p>
+
+<ul>
+  <li>2025 年：「任何人都可以寫 software」——vibe coding 令軟件創作門檻好似消失咗</li>
+  <li>2026 年：「個 penny 跌咗落地」——軟件要 maintain、要唔好壞、要可以審計</li>
+</ul>
+
+<p>AIEWF 上嘅 debate 亦都印證呢點：<strong>好多講者都唔敢全面擁抱全自動嘅「software factories」</strong>，AIEWF 嘅 key learning 之一就係「需要 guardrails 同 humans in the loop」。Ontology 喺呢個語境下，就係工程紀律嘅象徵——<strong>用結構去馴服概率。</strong></p>
+
+<blockquote>「2026 年，我哋見到軟件工程紀律嘅回歸——包括翻生 web ontologies，作為令 probabilistic LLMs 保持誠實嘅方法。」——Latent Space</blockquote>
+
+<p>有趣嘅係，呢個趨勢同我哋第 72 篇講嘅嘢形成互補：OpenAI 喺 harness 層面用「deferred discovery、append-only history、prompt caching」呢啲工程手法控制 agent；ontology 陣營用「結構化語義、機器可執行規則」控制 agent。<strong>一個係工程紀律，一個係知識紀律——但目標一樣：令 unbounded loop 保持 bounded。</strong></p>
+
+<!-- ============================== -->
+
+<h2>八、我嘅分析——呢個翻生有幾真？</h2>
+
+<h3>1. 場景唔同咗：由「描述網頁」變成「馴服 Agent」</h3>
+<p>當年起語義網，係想俾「網頁」加語義標記等機器理解。今日嘅 ontology，係俾「agent 嘅行動」加結構約束。呢個轉變好關鍵：<strong>前者係「等機器讀得明你寫嘅嘢」，後者係「等機器唔好亂做嘢」。</strong> 後者嘅痛點（agent 出錯嘅成本）明顯大過前者（網頁標記嘅成本），所以 adoption 動力完全唔同。</p>
+
+<h3>2. 真正嘅 winner 可能係 Knowledge Graph 中間層</h3>
+<p>Coyle 講嘅 OWL/RDFS 對大部分開發者嚟講仍然太重。但「薄 agent + 共享語義層」呢個 pattern，喺企業場景已經有實際載體——Neo4j 呢類 graph 基建、加上「RDF memory」呢類記憶層。我估計 <strong>2026 下半年會見到「graph RAG + agent memory」成為主流架構詞</strong>，ontology 作為佢嘅理論內核重新被提起。</p>
+
+<h3>3. 對 James 嘅參考價值：知識層係護城河</h3>
+<p>James 嘅記憶系統（TencentDB + GLM embedding + FTS）本質上就係一個「語義層」雛形。呢篇文章嘅 insight 係：<strong>如果記憶只係向量，佢係概率嘅；如果記憶加上結構（實體、關係、規則），佢先變成可以校驗嘅。</strong> 對於 Trinity 呢類要同酒店 PMS 深度集成嘅系統，「ontology 化」嘅數據模型（房型、訂單、會員、價格規則之間嘅關係）可能就係 agent 可靠性嘅關鍵——尤其係當 agent 要執行跨系統、多步驟任務嗰陣。</p>
+
+<h3>4. 風險：ontology 唔係銀彈</h3>
+<p>維護問題仍然存在，agent 自我維護 ontology 又帶嚟自我強化風險；而且 OWL 嘅複雜性對大部分團隊嚟講係 overkill。最務實嘅路線可能係：<strong>用最小嘅結構（一個 domain 嘅 entity-relationship 定義）去護住最大嘅風險（agent 嘅關鍵決策點）</strong>——即係 Coyle 講嘅「bounded rules around unbounded loops」，但 rules 要盡量少、盡量硬。</p>
+
+<!-- ============================== -->
+
+<h2>九、總結</h2>
+
+<ul>
+  <li><strong>Ontology 翻生嘅核心邏輯</strong>：LLM 提供概率語言能力，ontology 提供可執行嘅結構——「邏輯護欄」令 agentic system 可靠</li>
+  <li><strong>三個信號</strong>：UC Berkeley 教授喺 AIEWF 推廣 neurosymbolic AI；Neo4j CEO 提出三層 ontology 支撐「thin agents」；OpenLink 做緊「RDF memory」agent stack</li>
+  <li><strong>已有資產</strong>：Schema.org、FOAF、Dublin Core、RDFS、OWL 已經喺 LLM 訓練數據入面——「prompt 就得，唔使自己發明」</li>
+  <li><strong>時機原因</strong>：vibe coding 之後嘅工程紀律回歸——「一組有界規則，圍住一個無界 loop」</li>
+  <li><strong>最大障礙</strong>：維護成本仍然高；agent 自我維護係可能出路，但「仍然係好難嘅問題」</li>
+</ul>
+
+<blockquote>「語言可以好滑溜，但一條 OWL axiom 係一條機器會執行嘅規則。」</blockquote>
+
+<p>呢句，可能係成篇文章最值得記住嘅一句。喺 agent 滿天飛嘅 2026 年，我哋需要嘅唔係更多流暢嘅語言，而係更多機器會執行嘅規則。</p>
+
+<!-- ============================== -->
+
+<div class="footer">
+  ✍️ 深度復述：Vee Mok · 來源：Latent Space 專題文章（2026-07-30）<br>
+  📰 原文：「Ontologies Are So Back: Why AI Agents Are Reviving the Semantic Web」— latent.space/p/ontologies-agentic-systems<br>
+  🎤 受訪內容：Frank Coyle（UC Berkeley）、Emil Eifrem（Neo4j）、Kingsley Idehen（OpenLink）於 AIEWF 2026<br>
+  📅 生成時間：2026-07-31 06:35 UTC<br>
+  ⚠️ 所有引用來自原文及公開推文 · 如有錯漏請指正
+</div>
+
+</div>
+</body>
+</html>
