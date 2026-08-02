@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度萃取报告 — 2026-08-02</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #faf8f5;
+    color: #2a2825;
+    font-family: Georgia, "Noto Serif SC", "Songti SC", "SimSun", serif;
+    line-height: 1.75;
+    padding: 48px 20px;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  header {
+    border-bottom: 2px solid #d8d2c8;
+    padding-bottom: 24px;
+    margin-bottom: 40px;
+  }
+  h1 { font-size: 1.9em; font-weight: 700; letter-spacing: 0.02em; }
+  .meta { color: #8a8378; font-size: 0.92em; margin-top: 10px; }
+  h2 {
+    font-size: 1.45em;
+    margin: 52px 0 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd6ca;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 1.15em;
+    margin: 34px 0 4px;
+    color: #4a443c;
+    font-weight: 700;
+  }
+  h4 {
+    font-size: 1.05em;
+    margin: 28px 0 6px;
+    font-weight: 700;
+    color: #33302b;
+  }
+  .ep {
+    margin: 26px 0;
+    padding: 22px 26px;
+    background: #fffdfa;
+    border: 1px solid #e6e0d4;
+    border-radius: 8px;
+  }
+  .ep-time { color: #9a9184; font-size: 0.88em; margin-bottom: 12px; }
+  .label { font-weight: 700; color: #5a5148; margin-top: 14px; }
+  ul { padding-left: 1.4em; margin: 6px 0; }
+  li { margin: 4px 0; }
+  blockquote {
+    border-left: 3px solid #c9bfae;
+    background: #f5f1e9;
+    padding: 10px 16px;
+    margin: 10px 0;
+    color: #4c463d;
+    font-style: italic;
+  }
+  .toc { background: #f3efe7; border: 1px solid #e0d9cb; border-radius: 8px; padding: 18px 24px; margin: 30px 0; }
+  .toc ul { list-style: none; padding-left: 0; }
+  .toc li { margin: 3px 0; }
+  .toc a { color: #6b5d4b; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  footer {
+    margin-top: 60px;
+    padding-top: 16px;
+    border-top: 2px solid #d8d2c8;
+    color: #9a9184;
+    font-size: 0.9em;
+  }
+  .zh-quote { font-style: normal; }
+  code { background: #f0ece4; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>AI 播客深度萃取报告</h1>
+  <div class="meta">报告日期：2026-08-02 ｜ 生成时间：2026-08-02 02:03 UTC ｜ 来源：Dwarkesh / Latent Space / Cognitive Revolution / No Priors / MLST / 张小珺 / 硅谷101 / 十字路口 / 42章经 / 屠龙之术</div>
+</header>
+
+<div class="toc">
+  <strong>本期索引</strong>
+  <ul>
+    <li><a href="#zh">中文播客</a> — 屠龙之术：WorkBuddy 2000万月活之辩（真 Agent 时代）</li>
+    <li><a href="#en">英文播客</a> — No Priors：低估美国｜Dwarkesh：Grant Sanderson 谈 LLM 生成文本之弊</li>
+  </ul>
+</div>
+
+<h2 id="zh">中文播客</h2>
+
+<h3 id="tulong">屠龙之术（庄明浩）</h3>
+
+<div class="ep">
+  <h4>你真的信WorkBuddy有2000万月活？ 🎙️（2026-08-01 17:16 UTC）</h4>
+  <div class="ep-time">类型：单口吐槽 + 行业 PPT 分享 ｜ 时长：约 28 分钟 ｜ 来源：Apple Podcasts / 小宇宙</div>
+
+  <p><strong>主题</strong>：庄明浩以"数据控"视角，吐槽近一个月来众多媒体把 WorkBuddy 的"2000 万月活"当作既定事实反复"演绎"的现象；借着一个活动邀请的 PPT，把话题从数字真假扩展到更大的判断——中国已经正式进入"真 Agent 时代"，且"work agent 成为所有人的共识"。表面是数字打假，实际是一期浓缩的 2026 年 AI 行业观察。</p>
+
+  <p><strong>背景事实（数字打假的对象）</strong>：
+  <ul>
+    <li>WorkBuddy 是腾讯云 CodeBuddy 团队开发的桌面 AI 智能体，2026-03-09 上线，主打"免部署、零门槛"。</li>
+    <li>媒体引用的数据链条：易观统计 PC 端月访问量突破 2000 万（超过第二、第三名之和）→ 花旗研报"月活 2000 万、日活 1300 万"→ 部分自媒体直接写成"WorkBuddy 有 2000 万月活"并二次演绎；DAU/MAU 被引为 65%–75%，对标 Slack。</li>
+    <li>庄明浩的核心不满：把一个第三方统计口径（月访问量）与另一个口径（月活）混为一谈，再叠加"日均 Token 消耗增长十倍"等营销口径，媒体不做交叉验证就全盘照抄——"逮着一个数据源就疯狂演绎"。</li>
+  </ul></p>
+
+  <p><strong>核心论点</strong>：
+  <ul>
+    <li><strong>论点 1：CodeX 已成为"新的 ChatGPT"，Agent 时代的度量单位彻底换了。</strong> 从 2026 上半年起，行业的竞争主轴从纯 Chat 对话，转向 Coding Agent 与通用 Agent 的大众化爆发；CodeX 拥有千万级活跃用户，"Claude Code 时刻"被反复提及。Chat 时代的用户数、对话量不再是衡量 AI 价值的合适标尺。</li>
+    <li><strong>论点 2：真正的行业重心是 Harness 与开源 Agent Infra 的崛起。</strong> 模型本身不再是全部故事——围绕 Agent 的工程外壳（Harness）、评估体系（Evals）成为新战场；开源的 Agent 基础设施生态"异常繁荣"，评估的重要性"空前"提高。</li>
+    <li><strong>论点 3："workagent 共识"形成得极快，大战已经开启。</strong> 国内大厂与创业公司几乎在同一时间认定"让 AI 干活"是下一步，共识形成速度远超以往技术周期；从共识到达成竞争格局（11:57 "workagent 大战开启"）只隔了几个月。</li>
+    <li><strong>论点 4：数字游戏没有意义了——用户量不重要，Token 量也不重要，只能回到 ARR。</strong> 庄明浩回顾自己过去几次用"新指标"衡量行业的尝试都"不太成功"（25:57），结论是：当用户数与 Token 都被营销污染，衡量 Agent 时代价值的锚点只剩收入（ARR）。他也在反问：这次（ARR 叙事）会不一样吗？（27:04，开放性收尾，无定论）</li>
+    <li><strong>论点 5：中国到底有多少人在用 Agent？需要"事实和估算"而非媒体口号。</strong> 他给出自己的估算框架（13:49）+ 第三方数据佐证（17:45），试图回答"13 亿人中真正用上各种 Agent 的有多少"——意在提醒：行业热度与真实渗透率之间存在巨大落差。</li>
+  </ul></p>
+
+  <p><strong>关键数据/事实</strong>：
+  <ul>
+    <li>WorkBuddy 上线约 3 个月（2026-03-09 起），被引 MAU 2000 万、DAU 1300 万、PC 端日活超 200 万；同期飞书日活约 1000 万量级（作为参照系被媒体引用）。</li>
+    <li>易观口径：PC 端月访问量 2000 万+，超过第二名与第三名之和；花旗研报口径：月活 2000 万、日活 1300 万；"平台人均 Token 消耗增长超十倍"为产品侧口径。</li>
+    <li>CodeX 活跃用户达千万级（03:28），被视为"新的 ChatGPT"（02:44）。</li>
+    <li>节目内还引用了晚点文章《当一个年轻人空降：改造腾讯混元的 300 天》作为腾讯系 AI 组织变动的旁证。</li>
+    <li>王慧文在即刻发出"时光，时光，慢些吧……"的感慨（01:13），被庄明浩引为行业情绪注脚。</li>
+  </ul></p>
+
+  <p><strong>重点引用</strong>：
+  <blockquote class="zh-quote">「我最受不了的就是这种不知道数字概念，逮着一个数据源就疯狂'演绎'的状况……」</blockquote>
+  <blockquote class="zh-quote">「（衡量 Agent 时代）好像似乎又只能回到 ARR 了。」</blockquote></p>
+
+  <p><strong>行业 insight</strong>：这期节目最有价值的部分是它把"2026 年中国 Agent 元年"的行业共识拆成了可检验的命题：Chat 时代的流量指标（MAU/DAU）正在失效，但替代指标（Token、ARR）也各有污染；当一个行业连"多少人在用"都说不清时，恰恰说明它处在从技术 Demo 走向真实商业化的混乱过渡期。对投资人/从业者的实用含义：警惕单一数据源的二手演绎，优先看收入与留存这类"反营销"指标。</p>
+
+  <p><strong>前後脉络</strong>：延续庄明浩 7 月中旬《重估一切，文艺复兴——2026H1 AI 行业观察》的判断（codex=新 ChatGPT、Coding Agent 大众化、Agent Infra 繁荣、评估重要），本期是把 H1 宏观判断落到"WorkBuddy 数字"这一个具体案例上的数据打假篇；也呼应 42章经 7 月 19 日"AI 发展了 4 年，把应用发展没了"的同一焦虑——应用侧的真实价值如何度量，是当下中文投资圈最热的问题之一。</p>
+
+  <p><strong>争议点</strong>：节目本身即争议现场——它公开质疑腾讯系明星产品的数据可信度；而另一方面，36氪、新浪财经等仍在持续报道 WorkBuddy 的增长（36氪 8 月 1 日仍有《WorkBuddy 正在重估腾讯》一文），说明"2000 万月活"叙事仍在资本市场流通。庄明浩的立场是：不是否定产品本身，而是否定媒体不加甄别的数据搬运。</p>
+</div>
+
+<h2 id="en">英文播客</h2>
+
+<h3 id="nopriors">No Priors（Sarah Guo & Elad Gil）</h3>
+
+<div class="ep">
+  <h4>You're Underestimating America 🎙️（2026-08-02 00:43 UTC）</h4>
+  <div class="ep-time">类型：YouTube Short（观点切片）｜ 来源：No Priors YouTube 频道</div>
+
+  <p><strong>主题</strong>：一段来自美国副国务卿 Jacob Helberg（负责经济增长、能源与环境事务）访谈的观点切片：美国被低估时反而会更强，"硅谷式逆袭心态"正在成为美国外交政策的底色。</p>
+
+  <p><strong>核心论点</strong>：
+  <ul>
+    <li>Helberg 提出："硅谷体现了'underdog 心态'的精髓"——就像被低估的创业者一样，每当世界唱衰美国，美国都以更强的姿态回归。</li>
+    <li>把这一心态延伸到外交与产业政策：美国正在用"创业公司式"的进攻姿态处理 AI 供应链、地缘竞争等议题。</li>
+  </ul></p>
+
+  <p><strong>关键事实</strong>：与本周另一条 No Priors 短片（The U.S. Claimed 4,000 Acres in the Philippines for AI，7 月 30 日）直接呼应——美国在菲律宾获取 4000 英亩土地（约等于三分之一个曼哈顿）用于 AI 产业基地，背后的"Pax Silica"是 14 国联盟，被描述为"美国迄今最具雄心的经济安全计划"。Helberg 正是 Pax Silica 叙事的主要推手之一。</p>
+
+  <p><strong>重点引用</strong>：
+  <blockquote>"Silicon Valley embodies the quintessence of the underdog mentality."</blockquote>
+  <blockquote>"Every time the world counted America out, it came back harder."</blockquote></p>
+
+  <p><strong>行业 insight</strong>：No Priors 近期内容明显从纯技术转向"AI 地缘政治"（菲律宾土地、Pax Silica、中国竞争），反映硅谷主流叙事正在把 AI 安全/供应链问题政治化、产业政策化——这对理解美国 AI 出口管制、算力外交的走向有直接参考意义。</p>
+
+  <p><strong>前後脉络</strong>：与 7 月 30 日"4000 Acres"短片构成上下集；前者讲"美国在做什么"（抢占菲律宾算力基地），本期讲"美国为何自信"（underdog 心态）。</p>
+
+  <p><strong>争议点</strong>：Helberg 的乐观叙事忽略了一面——美国 AI 产业对海外土地、能源、芯片供应链的依赖本身正是其脆弱性的体现；"被低估所以更强"是修辞，而非可验证的因果。这是典型的政策宣传性内容，宜作为"美国官方立场"样本而非客观分析阅读。</p>
+</div>
+
+<h3 id="dwarkesh">Dwarkesh Patel</h3>
+
+<div class="ep">
+  <h4>The Problem With How LLMs Generate Text - Grant Sanderson 🎙️（2026-08-01 23:12 UTC）</h4>
+  <div class="ep-time">类型：YouTube Short（65 秒切片，出自 6 月 30 日完整访谈《Grant Sanderson – AI and the future of math》）｜ 来源：Dwarkesh YouTube 频道</div>
+
+  <p><strong>主题</strong>：3Blue1Brown 主理人 Grant Sanderson 谈 LLM 生成文本的根本问题——逐 token 自回归的生成方式，决定了模型在"写作"这种需要全局规划与心智理论的任务上的结构性短板。</p>
+
+  <p><strong>核心论点</strong>（结合 6 月 30 日完整访谈的上下文）：
+  <ul>
+    <li>LLM 逐字生成（token-by-token），没有"先想好整篇文章再落笔"的能力；好的写作需要先有整体结构与对读者的心智模型（theory of mind），这是当前 AI 仍然缺乏的（完整访谈 01:07:07 章节："Good writing requires theory of mind that AI still lacks"）。</li>
+    <li>数学是 AI 进步最快、最"尖峰"的领域，但它恰好是"可验证"任务的代表；写作/白领工作属于"不可验证 + 需要心智理论"的另一端——这两个领域的天花板完全不同。</li>
+    <li>由此延伸：真实世界任务难以塞进 RL 环境（01:07:07 前一段 00:53:48："Why real-world tasks don't fit into RL environments"），因为缺少可自动判分的奖励信号。</li>
+  </ul></p>
+
+  <p><strong>关键事实</strong>：该短片在 24 小时内获 170+ 赞、2600+ 观看，是 Dwarkesh 从 6 月底 Grant Sanderson 长访谈中切出的短视频矩阵之一；完整访谈还覆盖"AI 发现新证明是否等于 AGI""对黎曼猜想的 AI 证明我们能否理解""AI 能否找到跨领域隐藏桥梁"等议题。</p>
+
+  <p><strong>重点引用</strong>（出自完整访谈，写作与心智理论段）：
+  <blockquote>"Good writing requires theory of mind that AI still lacks."</blockquote></p>
+
+  <p><strong>行业 insight</strong>：这条切片点破了 2026 年 AI 能力"尖峰状"分布的结构性原因——可验证任务（数学、代码）与不可验证任务（写作、管理）之间的差距不是"再训大一点"就能抹平的，因为后者缺的不是知识而是规划与心智建模。对评估 Agent 能力的从业者：Benchmark 越"可验证"，越会高估模型在真实开放式工作中的表现。</p>
+
+  <p><strong>前後脉络</strong>：完整访谈（6 月 30 日）早在 7 月初已被本报告深度萃取；本期仅收录这条新发布的短视频切片，作为对该访谈核心观点的补强传播。Grant 的新项目正是"记录 AI 在数学中的进展"，与本期观点互相印证。</p>
+
+  <p><strong>争议点</strong>：Grant 的"AI 写作缺心智理论"判断与另一派观点（长上下文 + RL 后训练已大幅改善长文规划能力）存在张力；2026 年的前沿模型在长文档结构化写作上已明显进步，"结构性短板"是否仍成立，取决于你测试的模型代际。</p>
+</div>
+
+<footer>
+  <p>本报告由 AI 自动抓取并深度萃取生成，覆盖 10 个播客源。发布时间均以源站为准（UTC）。</p>
+  <p>注：本期其余源（Latent Space / Cognitive Revolution / MLST / 张小珺 / 硅谷101 / 十字路口 / 42章经）在最近一次扫描后均无新剧集；CR 的 "Nathan Goes to China Part 1" 已于 7 月 28–30 日报告覆盖。</p>
+  <p>Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>
