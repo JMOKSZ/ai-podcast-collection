@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 你真的信 WorkBuddy 有 2000 萬月活？——莊明浩嘅數據打假與真 Agent 時代度量衡</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  .podcast-badge {
+    display: inline-block;
+    background: #ede6de;
+    color: #5a4a3a;
+    font-size: 0.8rem;
+    padding: 0.2rem 1rem;
+    border-radius: 3px;
+    margin-bottom: 0.8rem;
+  }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.45rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="podcast-badge">屠龍之術 · 單口</div>
+  <div class="ep-num">2026-08-01 ｜ 約 28 分鐘 ｜ 配 PPT（ima 知識庫）</div>
+  <h1>你真的信 WorkBuddy 有 2000 萬月活？——莊明浩嘅「數據打假」與真 Agent 時代嘅度量衡之爭</h1>
+  <div class="meta">
+    <span>📅 2026-08-01</span><span>·</span><span>⏱️ ~28 分鐘</span><span>·</span><span>🎙️ 莊明浩（單口）</span><span>·</span><span>🏷️ <span class="tag">數據打假</span> <span class="tag">真 Agent 時代</span> <span class="tag">ARR</span></span>
+  </div>
+</header>
+
+<div class="section-title">📌 為乜要睇呢篇</div>
+<p>2026 年 8 月，中國 AI 圈最荒謬嘅一幕：一個第三方統計機構嘅「PC 端月訪問量」，經過媒體、研報、自媒體嘅三手加工，變成咗「WorkBuddy 有 2000 萬月活」嘅行業「事實」，再被反覆引用去證明「中國 Agent 時代已到」。莊明浩——中文 AI 圈最出名嘅「數據控」——忍咗成個月，最後用一期 28 分鐘嘅單口 + PPT 把件事拆到見骨。</p>
+<p>但呢期嘢嘅價值遠超「打假」本身。佢借 WorkBuddy 一個數字，問咗一個更難答嘅問題：<strong>當 Chat 時代嘅 MAU/DAU 已經失效、Token 量又被營銷污染，2026 年衡量 AI 公司嘅錨點究竟係乜？</strong> 佢自己嘅答案係「只能回到 ARR」——但佢同時坦白：自己過去用「新指標」衡量行業嘅嘗試「都不太成功」。呢種自我懷疑，正正係佢同一般吹水主播嘅分別。</p>
+
+<div class="section-title">🎙️ 播客背景</div>
+<p><strong>屠龍之術</strong>係莊明浩嘅個人播客：前大廠、前美元 VC，而家以「游走在互聯網與風險投資行業邊緣嘅人士」自居。佢嘅節目特色係單口 + 70–130 頁 PPT，一期等於一份行業研究報告，中文 AI 播客圈資訊密度最高嘅一檔。今期主題出自一個活動邀請——佢話「趁著一個活動邀請，我做了這期的 PPT」，而 PPT 嘅內容，其實遠大過 WorkBuddy 一個數字：<strong>「從 Chat 進入真 Agent 時代，且國內 work agent 似乎成為了所有人的共識」</strong>。</p>
+<p>節目開頭引用咗王慧文喺即刻嘅一句感慨——<strong>「時光，時光，慢些吧……」</strong>（01:13）——為全期定調：行業變化快到連資深玩家都覺得暈。</p>
+
+<hr>
+
+<div class="section-title">一、數據打假：2000 萬月活係點樣「煉成」嘅</div>
+<p>莊明浩開場就講明：呢期係「吐槽節目」。佢喺即刻已經吐槽咗成個月，忍唔住先錄成節目。佢拆出嚟嘅數據鏈係噉嘅：</p>
+<ul>
+  <li><strong>第一手（第三方統計）</strong>：易觀（Analysys）統計 WorkBuddy PC 端月訪問量突破 2000 萬，超過第二名同第三名之和——注意，呢度講嘅係<strong>「月訪問量」</strong>，一個流量口徑。</li>
+  <li><strong>第二手（券商研報）</strong>：花旗研報寫「月活 2000 萬、日活 1300 萬」——把「訪問量」偷換成「月活」，仲自行加咗個「日活 1300 萬」。</li>
+  <li><strong>第三手（媒體/自媒體）</strong>：直接寫成「WorkBuddy 有 2000 萬月活」，再二次演繹，DAU/MAU 被引為 65%–75%，「對標 Slack」；再疊加「平台人均 Token 消耗增長超十倍」呢類產品側營銷口徑。</li>
+</ul>
+
+<blockquote class="strong">
+「我最受不了的就是這種不知道數字概念，逮著一個數據源就瘋狂『演繹』的狀況……」
+<footer class="attribution">— 莊明浩，節目開場白（即節目標題註腳）</footer>
+</blockquote>
+
+<p>佢嘅不滿唔係針對 WorkBuddy 產品本身，而係針對一種行業病：<strong>媒體唔做交叉驗證，逮住一個數據源就全盤照抄，仲要逐級加碼。</strong> 佢做嘅「打假」方法好樸素——搵多個獨立口徑對比，包括易觀、花旗、產品側、以及作為參照系嘅飛書日活（約 1000 萬量級）。當一個新產品嘅「月活」數字企到飛書日活兩倍，而呢個產品上線先得三個月，理性嘅人第一反應就應該係「睇清楚口徑」，而唔係興奮轉發。</p>
+
+<div class="data-point">
+<span>📊 數字鏈</span><br>
+易觀：PC 端月訪問量 2000 萬+（超第二名+第三名之和）<br>
+花旗研報：月活 2000 萬 ／ 日活 1300 萬（自行加碼）<br>
+自媒體：DAU/MAU 65–75%，「對標 Slack」<br>
+產品側：「平台人均 Token 消耗增長超十倍」<br>
+參照系：飛書日活約 1000 萬量級<br>
+→ 上線約 3 個月（2026-03-09 起）嘅桌面 Agent，被引月活 = 飛書日活 × 2
+</div>
+
+<p>背景事實：WorkBuddy 係騰訊雲 CodeBuddy 團隊開發嘅桌面 AI 智能體，2026-03-09 上線，主打「免部署、零門檻」。節目仲引用咗晚點文章《當一個年輕人空降：改造騰訊混元的 300 天》作為騰訊系 AI 組織變動嘅旁證——WorkBuddy 嘅爆紅，本質上係騰訊 AI 戰略轉向嘅一個窗口。</p>
+
+<hr>
+
+<div class="section-title">二、CodeX 已經係「新嘅 ChatGPT」——度量單位換咗</div>
+<p>打假只係引子。PPT 嘅正題由 02:44 開始：<strong>CodeX 已經成為「新的 ChatGPT」</strong>（03:28 提到 CodeX 活躍用戶達千萬級）。莊明浩嘅判斷係：由 2026 上半年開始，行業競爭嘅主軸已經由純 Chat 對話，轉向 Coding Agent 與通用 Agent 嘅大眾化爆發，「Claude Code 時刻」被反覆提及。</p>
+<p>呢個判斷嘅含義係：<strong>Chat 時代嘅用戶數、對話量，已經唔再係衡量 AI 價值嘅合適標尺。</strong> 如果 CodeX 係新嘅 ChatGPT，咁「千萬活躍用戶」先係新時代嘅「億級用戶」——量級嘅語義徹底唔同。你唔可以再用舊尺去量新物體。</p>
+
+<hr>
+
+<div class="section-title">三、行業重心轉移：Harness 崛起、Agent Infra 繁榮、評估空前重要</div>
+<p>由 06:03 開始，莊明浩講咗 2026 年真正嘅行業重心——<strong>模型本身唔再係全部故事</strong>：</p>
+<ul>
+  <li><strong>Harness 崛起（06:03）</strong>：圍繞 Agent 嘅工程外殼——工具、記憶、權限、沙箱、觀測——成為新戰場。模型係引擎，Harness 先係部車。</li>
+  <li><strong>異常繁榮嘅開源 Agent Infra 生態（06:35）</strong>：開源嘅 Agent 基礎設施（框架、協議、運行時）多到「異常繁榮」，呢個係中國特別強嘅一段。</li>
+  <li><strong>評估空前重要（07:11）</strong>：Evals 從「模型評測」擴展到「Agent 任務評估」，因為冇評估就冇法迭代、冇法對客戶交代。</li>
+</ul>
+<p>呢三段直接呼應佢 7 月中《重估一切，文藝復興——2026H1 AI 行業觀察》嘅判斷（該集本系列已有深度復述 #49）。今期係將宏觀判斷落到一個具體案例。</p>
+
+<hr>
+
+<div class="section-title">四、「workagent 共識」形成得極快——大戰已開</div>
+<p>08:03 嘅小標題係「workagent 的共識形成很快」，11:57 就係「workagent 大戰開啟」。莊明浩指出一個唔尋常嘅現象：<strong>國內大廠同創業公司幾乎喺同一時間認定「讓 AI 幹活」係下一步</strong>——共識形成速度遠超以往任何技術周期。由共識到達成競爭格局，中間只隔咗幾個月。</p>
+<p>呢個「共識速度」本身係雙刃劍：一方面證明需求真實、時機成熟；另一方面意味住<strong>窗口期極短</strong>——所有人都睇到嘅機會，通常唔係機會。大廠（騰訊 CodeBuddy、字節、阿里）同創業公司同時開火，work agent 戰場瞬間變成紅海。</p>
+
+<hr>
+
+<div class="section-title">五、中國究竟有幾多人用緊 Agent？——事實與估算</div>
+<p>13:16 開始係全期最「數據控」嘅一段：<strong>「中國現在有多少人用上了各種 Agent？」</strong> 莊明浩畀咗自己嘅估算框架（13:49），再用第三方數據佐證（17:45）。佢嘅意圖好明顯：行業熱度（媒體頭條）與真實滲透率之間，存在巨大落差。</p>
+<p>佢冇畀一個「正確答案」——而係示範一個負責任嘅分析師應該點樣答呢條問題：先定義「Agent 用戶」嘅口徑，再分層估算（深度用戶 / 嚐鮮用戶 / 被動接觸），最後用多個獨立數據源交叉驗證。呢種方法論，同佢鬧媒體「逮著一個數據源就演繹」嘅行為，形成直接對照。</p>
+
+<blockquote class="strong">
+「（衡量 Agent 時代）好像似乎又只能回到 ARR 了。」
+<footer class="attribution">— 莊明浩，25:15，全期嘅落點</footer>
+</blockquote>
+
+<hr>
+
+<div class="section-title">六、用戶量唔重要、Token 量都唔重要——只能回到 ARR</div>
+<p>24:17 開始係全期最誠實嘅部分。莊明浩逐個拆：</p>
+<ul>
+  <li><strong>用戶量仲重要嗎？（24:17）</strong>——唔重要。因為用戶數已經被營銷污染，仲因為 Chat 時代嘅「用戶」同 Agent 時代嘅「用戶」根本唔係同一種嘢。</li>
+  <li><strong>Token 量似乎都唔重要喇（24:57）</strong>——Token 可以灌水（長任務、循環重試、惡意刷量），人均 Token 消耗增長十倍呢類口徑，營銷意義大過業務意義。</li>
+  <li><strong>所以只能回到 ARR（25:15）</strong>——收入係最難造假、最反營銷嘅指標。客戶肯畀錢，先係真實需求嘅終極證明。</li>
+  <li><strong>但係……（25:57）</strong>——佢回顧自己過去幾次用「新指標」衡量行業嘅嘗試，結論係「似乎都不太成功」。最後佢反問：<strong>「這次會不一樣嗎？」（27:04）</strong>——開放收尾，冇畀答案。</li>
+</ul>
+
+<div class="data-point">
+<span>📊 指標演化</span><br>
+Chat 時代：MAU / DAU / 對話量 —— 已失效（口徑混亂 + 語義變化）<br>
+Agent 時代候選：Token 消耗 —— 已污染（可灌水、可營銷化）<br>
+最後錨點：ARR —— 最反營銷，但「貴、慢、難追蹤」<br>
+莊明浩自評：「我們之前的嘗試似乎都不太成功」（25:57）
+</div>
+
+<p>呢段自我懷疑好珍貴。一個行業觀察者嘅價值，唔在於佢次次啱，而在於佢知道自己邊度可能錯。莊明浩承認：由流量指標過渡到收入指標，佢自己都未搵到一個穩定好用嘅框架——呢個唔係佢嘅失敗，而係成個行業嘅未解難題。</p>
+
+<hr>
+
+<div class="section-title">💡 我的洞察</div>
+
+<div class="highlight-box">
+<strong>1. 呢期係 2026 年「中國 Agent 元年」共識嘅可檢驗化。</strong> 莊明浩冇否定「真 Agent 時代」——佢自己都信。佢做嘅係把一個模糊嘅行業共識，拆成可以驗證嘅命題：CodeX 係咪新 ChatGPT？Agent Infra 係咪真繁榮？「多少人在用」有冇可靠答案？當一個行業連「幾多人用緊」都講唔清嘅時候，恰恰說明佢處於由技術 Demo 走向真實商業化嘅混亂過渡期。
+</div>
+
+<div class="highlight-box">
+<strong>2. 數字打假嘅本質，係喺「敘事市場」做套利。</strong> 媒體賣嘅係故事，唔係事實。當一個數字可以支持「中國 Agent 起飛」嘅敘事，就會有無限多嘅人想信。莊明浩嘅價值在於：佢係少數願意花成個月、錄一期節目去拆穿敘事嘅人。對投資人嚟講，呢種「反敘事」嘅人先係最貴嘅資訊源。
+</div>
+
+<div class="highlight-box">
+<strong>3. ARR 唔係終點，係退無可退嘅落點。</strong> 佢話「只能回到 ARR」，語氣係無奈而唔係篤定。原因好簡單：ARR 亦會被污染（收入確認方式、關聯交易、補貼單）。但喺用戶數同 Token 都已經徹底淪陷嘅前提下，ARR 至少係「最唔爛嘅蘋果」。呢個選擇本身，就係行業現狀嘅縮影。
+</div>
+
+<div class="highlight-box">
+<strong>4. 今期同 42章經「AI 發展了 4 年，把應用發展沒了」係同一焦慮嘅兩面。</strong> 曲凱嗰邊問「應用嘅錢喺邊」，莊明浩呢邊問「應用嘅人喺邊、數字真唔真」。兩個問題其實係一個：Agent 時代嘅真實商業化，仲未搵到可靠嘅度量衡。呢個問題未解決之前，所有「爆發」敘事都要打折扣。
+</div>
+
+<hr>
+
+<div class="section-title">🔮 延伸思考</div>
+<ul>
+  <li>WorkBuddy 真正嘅月活係幾多？如果企喺飛書日活（~1000 萬）量級，作為上線三個月嘅桌面 Agent 已經係現象級；如果企喺 2000 萬，就係中國軟件史嘅奇蹟。兩個都值得研究——但係你必須知道你自己睇緊邊個口徑。</li>
+  <li>「共識形成太快」對創業者意味住乜？窗口期縮短 → 執行速度取代判斷力成為第一競爭要素；同時，紅海化會令「細分場景 + 深度交付」反而成為新藍海。</li>
+  <li>如果 ARR 成為行業唯一錨點，會唔會催生下一輪「收入造假」？歷史話畀我哋知：任何被全行業盯上嘅單一指標，最終都會被博弈污染。下一個「反 ARR」嘅指標會係乜？</li>
+</ul>
+
+<footer>
+  <p>來源：屠龍之術《你真的信WorkBuddy有2000萬月活？》（2026-08-01，約 28 分鐘）</p>
+  <p>收聽：小宇宙 / Apple Podcasts ｜ 節目 PPT：屠龍之術 VIP 報告庫（ima）</p>
+  <p>生成：Vee Mok · 2026-08-02 · Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>

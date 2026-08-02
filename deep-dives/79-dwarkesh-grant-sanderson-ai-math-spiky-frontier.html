@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · AI 嘅數學尖峰——Grant Sanderson 談 IMO 之後、黎曼猜想三條路與寫作嘅「心智理論」死穴</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  .podcast-badge {
+    display: inline-block;
+    background: #ede6de;
+    color: #5a4a3a;
+    font-size: 0.8rem;
+    padding: 0.2rem 1rem;
+    border-radius: 3px;
+    margin-bottom: 0.8rem;
+  }
+  header h1 { font-size: 1.85rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="podcast-badge">Dwarkesh Podcast</div>
+  <div class="ep-num">2026-06-30 ｜ 1 小時 33 分 ｜ 完整訪談</div>
+  <h1>AI 嘅數學尖峰——Grant Sanderson 談 IMO 之後、黎曼猜想嘅三條路，同寫作嘅「心智理論」死穴</h1>
+  <div class="meta">
+    <span>📅 2026-06-30</span><span>·</span><span>⏱️ 1h 33m</span><span>·</span><span>🎙️ Dwarkesh Patel × Grant Sanderson（3Blue1Brown）</span><span>·</span><span>🏷️ <span class="tag">AI for Math</span> <span class="tag">尖峰能力</span> <span class="tag">RLVR</span> <span class="tag">寫作</span></span>
+  </div>
+</header>
+
+<div class="section-title">📌 為乜要睇呢篇</div>
+<p>2026 年 8 月 1 日，Dwarkesh 頻道出一條 65 秒短片，標題係 <em>The Problem With How LLMs Generate Text</em>，節錄 Grant Sanderson 一句話：「<strong>Good writing requires theory of mind that AI still lacks.</strong>」短片好短，但佢背後係 6 月 30 號呢場 1 小時 33 分嘅完整訪談——本系列深度復述 #79 就係為咗呢個「背後」而寫。</p>
+<p>點解要睇？因為 Grant 呢集講嘅係一個 2026 年最關鍵嘅結構性問題：<strong>AI 喺數學嘅進步快過任何其他領域，而數學正正係一個「尖峰」（spike）——佢會話畀我哋知，AI 喺其他領域嘅進步將來會係點樣。</strong> 你睇清楚數學呢個尖峰嘅形狀（邊度尖、邊度平、點解），就等於睇清楚成個 AI 能力地圖嘅等高線。Dwarkesh 喺開場講得好直接：「Whatever is happening here… will tell us about what will happen to the rest of the world as AI gets better and better.」</p>
+
+<div class="section-title">🎙️ 播客背景</div>
+<p><strong>Dwarkesh Patel</strong>——TIME 2024 百大 AI 影響力人物，英文圈準備最充足嘅訪談者，每期節目前讀晒嘉賓嘅論文同五年內公開訪談。今次訪問 <strong>Grant Sanderson</strong>——3Blue1Brown 主理人，全球最出名嘅數學科普 YouTuber；佢而家正做緊一個新項目：<strong>記錄 AI 喺數學領域嘅進展</strong>（訪問一大班數學家嘅紀錄片系列）。</p>
+<p>呢個訪問有一個重要嘅「前傳」：三年前（2023 年 10 月）Dwarkesh 訪問過 Grant 一次，當時問咗一個問題——「當 AI 喺國際數學奧林匹克（IMO）拎到金牌，係咪就等於 AGI？」Grant 當時嘅答案係：<strong>「佢會係另一個 benchmark，好似 AI 已經通過嘅其他 benchmark 一樣；唔會有一個『aha』時刻。」</strong> 三年後回望，呢個答案「被證明非常明智同正確」（Dwarkesh 原話）。今集嘅開場，就係由「點解呢個預測啱咗」開始。</p>
+<p>另外：今集三個贊助商（Gemini 3.5 Live Translate、Cursor、Jane Street）都唔係普通植入——Cursor 係 Dwarkesh 嘅 Agent harness（用嚟剪廣告、準備訪問），Jane Street 係 3Blue1Brown 嘅贊助商，Grant 啱啱訪問完一班 Jane Streeters，學到「佢哋刻意保持角色定義模糊，等員工持續學習成長」——呢啲細節本身都係 2026 年 AI 原生工作方式嘅縮影。</p>
+
+<hr>
+
+<div class="section-title">一、IMO 金牌之謎：能力嘅「分形尖峰」</div>
+<p>Grant 用一個關鍵詞形容 AI 嘅能力地圖：<strong>尖峰（spiky）</strong>。數學正正企喺其中一個尖峰之上——AI 喺呢度嘅進步快過其他領域。但佢隨即補充：<strong>「呢種尖峰性具有分形特徵」</strong>——你放大睇數學內部，一樣係尖尖平平。</p>
+<p>以 IMO 為例（Grant 話「IMO 已經係舊聞」）：AI 喺 2024 年已經有能力拎金牌——如果唔係因為一個原因。IMO 有四大類題目：幾何、數論、代數、組合數學（combinatorics）。<strong>幾何題，AI 由 2024 年起「冷解」（cold-solve），19 秒搞掂，因為本質上係暴力搜尋器。</strong> 但嗰年有兩條組合數學題（四類六題，邊類出兩題係抽籤），AI 喺組合數學上卡死——如果嗰年多啲幾何題，佢已經拎咗金牌。</p>
+
+<blockquote class="strong">
+「The dirty secret with the IMO is that you really can train for a lot of them.」（IMO 嘅骯髒秘密係：好多題你真係可以訓練出嚟。）——而且對學生嚟講，都存在一條暴力嘅路。
+<footer class="attribution">— Grant Sanderson，01:11:32 前段</footer>
+</blockquote>
+
+<p>組合數學係「人類最後堡壘」，因為佢最 playful、最 puzzly——用 Grant 嘅話，「想要守住『數學仲有屬於人類嘅角落』呢支火炬嘅人，會話呢啲題先需要創造力」。但佢隨即提醒：即使 AI 解到千禧年大獎問題（Millennium Prize Problem），都唔代表佢搞得掂白領工作——<strong>「由而家到嗰度嘅速率限制器（rate limiter），同令白領工作變好嘅速率限制器，係同一個。」</strong> 呢句係全集嘅綱領。</p>
+
+<div class="data-point">
+<span>📊 關鍵數據</span><br>
+IMO 幾何題：19 秒冷解（2024 年起，暴力求解）<br>
+IMO 四類：幾何／數論／代數／組合數學——AI 對前三者熟練，組合數學係軟肋<br>
+2024 年嗰屆：有 2 條組合數學題（四類六題，出邊兩類係抽籤）→ 差一步就金牌<br>
+AI 拎 IMO 金牌 = 「又一個被剔走嘅格子」，類比圍棋/國際象棋，唔係工業革命
+</div>
+
+<hr>
+
+<div class="section-title">二、黎曼猜想嘅三條路：閃電、高山、同「硬算」</div>
+<p>00:26:12 開始係全集最精彩嘅思想實驗：<strong>如果 AI 證明咗黎曼猜想，會係邊一種證明？</strong> Grant 畫咗三條截然不同嘅路：</p>
+
+<div class="sub-title">2.1 第一條路：「閃電連接」（lightning bolt）</div>
+<p>數學史上有名嘅 Montgomery–Dyson 午餐故事：數論學家 Hugh Montgomery 想理解黎曼 zeta 函數零點嘅「對相關」統計，寫咗條公式出嚟；物理學家 Freeman Dyson 一睇就話「我認得呢條式——呢個係隨機 Hermitian 矩陣嘅本徵值統計」，而呢樣嘢正正出現喺原子核能級嘅研究入面。兩個看似無關嘅領域（質數分佈 vs 原子核），因為一條公式嘅相似性被連埋。</p>
+<p>Grant 話：<strong>呢種「跨領域閃電」，正正係 LLM 應該擅長嘅嘢</strong>——佢哋同時係量子物理專家、解析數論專家，理應睇到 Montgomery 同 Dyson 要靠食晏傾偈先發現嘅相似性。「呢種能力同白領工作所需要嘅嘢好唔同——你唔會因為個 AI 編輯知識夠廣，就搞掂佢搵唔到嗰下閃電嘅問題。」</p>
+
+<div class="sub-title">2.2 第二條路：「建造新高山」（building a new mountain）</div>
+<p>另一種可能係費馬大定理模式：問題本身簡單到可以寫喺書邊（xⁿ+yⁿ=zⁿ，n&gt;3 有冇整數解？），但真正嘅證明要建立兩座大山——橢圓曲線理論 + 模形式理論——每座都係幾百年累積，兩座山都起好晒，你先問得出嗰條「連山」嘅正確問題。</p>
+<p>Grant 嘅判斷：<strong>如果黎曼猜想嘅證明需要「起一座新山」（創造一套新理論、重新組織點樣理解一個領域），呢種能力已經係「咁高嘅智慧水平，冇理由唔滲透去經濟其他部分」</strong>——包括白領工作。換句話講：閃電式證明 → 唔代表 AGI；造山式證明 → 幾乎就係 AGI。</p>
+
+<div class="sub-title">2.3 第三條路：「硬算」（brute computational hustle）</div>
+<p>仲有一條路係純粹暴力：用天文數字嘅算力硬推。呢條路嘅後果係——證明可能「人類無法理解」（uninterpretable）。00:26:12 嗰節就係問「我哋會唔會理解一個 AI 嘅黎曼猜想證明」：如果個證明係一萬步機械推導，冇人拎到「直覺」，咁數學界點算？呢個問題直接通向後面「Lean 形式化」嘅討論。</p>
+
+<blockquote class="strong">
+「It's bizarre to have something with this superhuman breadth that knows all the fields so well, and yet isn't finding those lightning bolts that connect them.」（一個有超人級廣度、精通所有領域嘅嘢，竟然搵唔到連住佢哋嘅閃電——呢件事好荒謬。）
+<footer class="attribution">— Grant Sanderson，論 LLM 嘅現狀</footer>
+</blockquote>
+
+<hr>
+
+<div class="section-title">三、證明 vs 猜想 vs 定義：Benchmark 嘅盡頭</div>
+<p>Dwarkesh 指出一個殘酷嘅事實：OpenAI 之所以可以出頭條話「推翻 unit distance conjecture」（離散幾何嘅 Erdős 猜想反例），係因為呢啲嘢「明確、可判決」——波入咗龍門就係入咗。但係，「GPT-5.4 提出咗一個好好嘅猜想」呢句頭條，根本冇人會信。</p>
+<p>Grant 引用咗 Polylog 頻道一個視頻入面嘅金句：<strong>「好數學家證明定理，偉大數學家提出猜想，最偉大嘅數學家創造定義。」</strong>（Good mathematicians prove theorems, great mathematicians come up with conjectures, and the greatest mathematicians come up with definitions.）而「提出好猜想」同「創造新定義」正正係無辦法整成 benchmark 嘅能力——你點樣量化「一個好猜想」？</p>
+<p>佢嘅答案好特別：<strong>唔好期望佢變成 benchmark，而係要留意「口吻轉變」（tone shift）。</strong> 佢自己訪問數學家嘅紀錄片系列做咗一年多，由 2025 年中到 2026 年中，明顯見到數學家談論 AI 嘅口吻變咗——由好奇，到認真對待，到部分依賴。佢話：「衡量猜想能力嘅方式會更加主觀——數學家會話，當佢哋退後一步、決定自己嘅研究領域應該係乜嘅時候，同某個模型嘅對話真係幫到手。」</p>
+<p>呢個「口吻轉變」概念好犀利：<strong>最難衡量嘅能力，往往就係最難 train 嘅能力——因為「benchmark 同 training environment 本質上冇分別」（Dwarkesh 原話）。</strong> 你 train 唔到嘅嘢，正正係 RLVR 嘅盲區。</p>
+
+<hr>
+
+<div class="section-title">四、可驗證 ≠ 可磨練：點解現實世界任務入唔到 RL</div>
+<p>00:53:48 嗰節，Dwarkesh 提出咗一個全場最原創嘅論點：<strong>「可驗證性（verifiability）」唔係數學/編碼進步快嘅唯一原因，仲有一個被忽略嘅因素——「可磨練性」（grindability）。</strong></p>
+<p>證據係：電腦操作（computer use）一樣好可驗證（「我個 Etsy 包裹到咗未？」「個活動 book 到未？」），但 AI 喺電腦操作嘅進步慢過數學好多。點解？<strong>因為網站有 bot 偵測——你想開一千個並行 rollout 去試 Amazon 嘅 checkout flow，會即刻被封。</strong>（Grant 接話：「Andy Jassy 親手㩒你個紅色 X 掣。」）</p>
+<ul>
+  <li><strong>Code 可以 containerize</strong>：將一個進度凍結喺 repo，開幾百個並行容器話「實現呢個 feature」，完全 deterministic → 可以解決 credit assignment（成功/失敗 rollout 嘅 diff 就係有效嘢）→ 可以無限磨。</li>
+  <li><strong>現實世界唔可以</strong>：做生意、炒股票、同人打交道——世界日日變，冇得 replay、冇得 farming simulator。Karpathy 話齋：深度學習而家仲係「用飲管吸監督」（sucking supervision through a straw），sample efficiency 未解決，所以要靠並行 rollout 補救——而現實世界唔俾你並行。</li>
+  <li><strong>數學係例外</strong>：證明可以喺 Lean 入面自動驗證，可以無限重跑。所以數學 + 編碼成為兩個「可磨」嘅尖峰，唔係偶然。</li>
+</ul>
+
+<blockquote class="strong">
+「Most things in the real world are very hard to containerize… Coding and math are exceptions to this rule.」（現實世界大部份嘢好難容器化……編碼同數學係例外。）
+<footer class="attribution">— Dwarkesh Patel，00:53:48 段落</footer>
+</blockquote>
+
+<p>順住呢個邏輯，Dwarkesh 仲提出一個「異端」觀點：<strong>Lean 形式化對而家嘅 AI 數學進展嚟講，可能被高估咗。</strong> 證據：OpenAI 推翻 unit distance conjecture 嗰次，公開咗 chain-of-thought（至少係改寫版），入面完全冇用 Lean。DeepMind 第一年做 IMO 全部行 Lean，第二年已經全部轉返自然語言——如果 Lean 咁關鍵，點解第二年唔用？</p>
+<p>Grant 部分同意，但佢補咗一個 Lean 嘅「未被開發嘅價值」：<strong>無限探索</strong>。AlphaGo/AlphaZero 式嘅系統可以喺自己嘅宇宙入面無限自弈，永遠唔使人 check in——因為獎勵可以自動驗證。如果數學形式化做到呢步，AI 就可以無限延伸 Mathlib（數學庫），探索公理空間，甚至發現新嘅代數結構，全程唔使人類覆核。佢引用 Alex Kontorovich 嘅抱怨：如果 AI 一日出十篇論文，就算 99% 啱，數學家都會「唔知值唔值得花時間」——因為搵嗰 1% 錯處嘅成本極高。<strong>「如果有個綠色剔號話『呢篇嘢至少係啱嘅』，其他每個領域都會搶住要。數學有呢樣嘢。」</strong> 呢句係全集對「可驗證性」最有力嘅辯護。</p>
+
+<hr>
+
+<div class="section-title">五、寫作死穴：自回歸、B* 論文、同「讀者嘅心智模型」</div>
+<p>01:07:07 嗰節——亦即今日條 65 秒短片嘅出處——係全集對「點解 AI 寫作進步咁慢」嘅最深入剖析。兩個論點：</p>
+
+<div class="sub-title">5.1 寫作唔 modular——成品就係輸出本身</div>
+<p>Dwarkesh 嘅理論：<strong>寫作冇 modularity。</strong> Code 可以有好多種寫法而行為一樣——「最後 end product 啱就得，中間可以係 slop」。數學 lemma 一樣。但寫作唔同：<strong>「每一段、每一句、每一個字都重要，因為佢就係 substance 本身。」</strong> 輸出嘅嘢冇辦法同「功能」分離，AI 寫出嚟嘅 slop 就係 slop。</p>
+<p>仲有 reward hacking：模型可能擅長分辨「B 級論文 vs A 級論文」，但佢哋會被「B* 論文」呃到——一篇「齊晒所有 A 應該有嘅 bells and whistles、但內裡空洞」嘅垃圾文。呢個正正係 RL 喺寫作上走火入魔嘅形態。</p>
+
+<div class="sub-title">5.2 自回歸 + 心智理論：AI 寫作嘅雙重死穴</div>
+<p>Grant 補充咗最深刻嘅一層：<strong>「好嘅寫作需要一個不可預測嘅元素。」</strong> 自回歸（autoregression）係一種好奇怪嘅生成方式——真正嘅作者知道「要喺啱嘅位做一個意料之外嘅動作」，呢個動作先係 insight 嘅來源；但自回歸天生係喺「最可能嘅下一個 token」上面行，同「刻意揀一個新穎嘅嘢」直接矛盾。</p>
+<p>Dwarkesh 再補一刀：<strong>「佢哋（LLM）好唔擅長建立對人嘅心智模型（mental models of people），而呢個係寫作嘅核心技能。」</strong> 佢引用 Andy Matuschak 嘅 spaced-repetition 實驗：一班高手嘗試教 LLM 寫好嘅間隔重複卡片，RL 開源模型、chain-of-thought、大 prompt 乜都試勻——全部失敗。點解？因為<strong>寫一張好卡，等於要預測「三個月後嗰個人嘅腦」</strong>——佢會點樣聯想到條問題？嗰一刻會諗緊乜答案？同理，寫作嘅每一步都要諗：「我讀者個腦而家發生緊乜事？」</p>
+
+<blockquote class="strong">
+「Good writing requires theory of mind that AI still lacks.」（好嘅寫作需要心智理論——而 AI 仲未有。）
+<footer class="attribution">— Grant Sanderson，01:07:07 段落（今日 65 秒短片嘅出處）</footer>
+</blockquote>
+
+<p>但 Grant 最後亦好公道：AI 係「好嘅解釋者」。Dwarkesh 承認佢嘅「revealed preference」——好多嘢佢寧願 copy 入 LLM 叫佢解釋，「個解釋仲好過原作者寫嘅嘢」。Grant 嘅總結係：<strong>解釋（distillation）AI 已經贏晒；但「本書點解值得存在、乜嘢先值得探索」——嗰種 insight 嘅生成，先係寫作嘅真正內核，而呢個內核 AI 仲未有。</strong></p>
+
+<hr>
+
+<div class="section-title">六、學習仲係要靠人：策展（curation）嘅永恆價值</div>
+<p>01:16:02 最後一節，講返教育。Grant 嘅第一條建議係：「<strong>識人比識乜更重要</strong>（who matters more than what）」——揀課程睇教嗰個人係咪好 educator、同你有冇共鳴；揀書睇作者，好過睇主題。</p>
+<p>佢用 Wikipedia vs 百科全書做對比：Wikipedia 係「每個句子都要啱」嘅 local minimum；而 Stanford Encyclopedia of Philosophy、Princeton Companion to Mathematics 呢類嘢，係<strong>由一個特定嘅人刻意鋪排 motivation</strong>——佢可以「沿途故意錯少少、再慢慢修正」，呢種帶住讀者行嘅敘事，crowdsourced 環境係做唔出嘅。</p>
+<p>佢對 LLM 學習體驗嘅評價好精準：「LLM 嘅解釋而家感覺好似 Wikipedia——好犀利，但係……」<strong>佢仲分享咗一個被「gaslight」嘅經歷：</strong>佢想學半導體，問 Claude 有冇好嘅可視化視頻，Claude 推薦咗一條「3Blue1Brown 嘅片」——Grant 話：「我可以擔保冇。」（實際係 Claude 張冠李戴，推薦咗人哋嘅片。）所以佢嘅實用策略係：<strong>「當佢係超級強化版 Google——用嚟定位『應該讀邊個人寫嘅嘢』。」</strong></p>
+<p>Dwarkesh 嘅總結更實際：佢學 Steven Strogatz 嘅《Nonlinear Dynamics and Chaos》嗰陣，用三屏 setup——教授 lecture 佔三分之一、教科書佔三分之一、LLM 佔三分之一。核心心法係：<strong>「由一個人類製作嘅 artifact（文章/書/片）負責組織概念同 motivation，LLM 負責喺樹枝度修剪。」</strong> 呢個 division of labor，可能就係 AI 時代學習嘅終極形態。</p>
+
+<hr>
+
+<div class="section-title">💡 我的洞察</div>
+
+<div class="highlight-box">
+<strong>1. 「分形尖峰」係理解 2026 年 AI 能力最準嘅地圖。</strong> 外面啲人淨係睇「AI 拎 IMO 金牌」呢個頭條，Grant 話你知：尖峰內部仲有尖峰（幾何 19 秒 vs 組合數學卡死）。呢個隱喻可以延伸到一切領域——「AI 識寫 code」同「AI 識寫好 code」之間，可能隔住一座山。唔好再問「AI 得唔得」，要問「邊一忽得、邊一忽唔得、點解」。
+</div>
+
+<div class="highlight-box">
+<strong>2. 可驗證性 + 可磨練性，先係「快領域」嘅完整解釋。</strong> 數學同編碼進步快，唔單止因為答案可以 check，仲因為可以 containerize 並行磨。呢個框架直接解釋咗點解 computer use、Agent 做真實工作進步咁慢——唔係「唔可驗證」，而係「唔可磨」。對做 Agent 產品嘅人：想加速落地，第一要務係諗點樣為真實任務整一個「可並行 replay 嘅模擬環境」。
+</div>
+
+<div class="highlight-box">
+<strong>3. 「提出好問題」先係下一個 AI 邊界，而佢冇辦法變成 benchmark。</strong> 證明定理（AI 已掂）→ 提出猜想（進行中）→ 創造定義（未開始）。但後兩者天生抗拒量化——「你點樣 headline『GPT-5.4 提出咗個好 conjecture』？」結果就係：AI 能力嘅真實進展，會喺「數學家口吻嘅轉變」度表現出嚟，而唔係 benchmark 數字。做評估嘅人要注意：你量度唔到嘅嘢，可能先係最重要嘅嘢。
+</div>
+
+<div class="highlight-box">
+<strong>4. 寫作嘅死穴唔係「文筆」，係「心智模型」。</strong> 如果 Grant 同 Dwarkesh 啱，AI 寫作嘅樽頸唔喺語感、唔喺知識，而喺「預測讀者個腦」呢種理論心智能力——間隔重複卡片實驗（Matuschak）就係最乾淨嘅證據。呢個對內容行業係一個重要信號：AI 可以做好「解釋」呢類 distillation 工作，但「點解呢本書值得存在」嘅 insight 層，短期內仲係人類嘅地盤——而呢個正正係「策展」價值上升嘅原因。
+</div>
+
+<hr>
+
+<div class="section-title">🔮 延伸思考</div>
+<ul>
+  <li>Grant 講「三年前我話 IMO 金牌只係另一個 benchmark，估中咗」——咁「AI 證明到黎曼猜想」呢個下一個 milestone，會唔會都係「只係另一個 benchmark」？定係真係會滲透去白領工作？答案可能取決於佢係「閃電式」定「造山式」證明——呢個區分本身就係一個投資信號。</li>
+  <li>「可磨練性」框架下，下一個被 AI 攻克嘅領域會係邊個？條件係：可自動驗證 + 可容器化並行。除咗數學同 code，可能係：合成數據充足嘅科學模擬、形式化驗證嘅電路設計、棋類/遊戲策略。留意呢啲領域嘅「口吻轉變」。</li>
+  <li>對學習者：Grant 嘅「識人比識乜重要」+ Dwarkesh 嘅「三屏學習法」，構成一套 AI 時代嘅學習協議——人類 artifact 負責主幹，LLM 負責修剪。你而家嘅學習流程，有冇跟住呢個 division of labor 重組？</li>
+</ul>
+
+<footer>
+  <p>來源：Dwarkesh Podcast《Grant Sanderson – AI and the future of math》（2026-06-30，1h 33m）</p>
+  <p>完整文字稿：dwarkesh.com/p/grant-sanderson-2 ｜ 今日短片（65s）：The Problem With How LLMs Generate Text（2026-08-01）</p>
+  <p>生成：Vee Mok · 2026-08-02 · Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>
