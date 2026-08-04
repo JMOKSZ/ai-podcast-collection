@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 模型都要瞓覺——Nested Learning、AI 睡眠同「深度學習架構嘅幻覺」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">The Cognitive Revolution · 訪談</div>
+  <h1>模型都要瞓覺——Nested Learning、AI 睡眠同「深度學習架構嘅幻覺」</h1>
+  <div class="meta">
+    <span>📅 2026-06-03</span><span>·</span><span>⏱️ 約 2 小時 59 分</span><span>·</span><span>🎙️ Nathan Labenz</span><span>·</span><span>👤 Ali Behrouz（康奈爾博士生 · Google 研究員）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+Jeff Dean 用「可能係範式轉移嘅先兆」嚟形容佢嘅論文；Nathan Labenz 話呢場對話係佢近年睇過「最有啟發性、最有機會帶來轉變」嘅工作之一。康奈爾博士生 Ali Behrouz 帶嚟兩個大膽命題：<strong>所有深度學習架構本質上係「幻覺」，一切皆為關聯記憶；而模型同人一樣，需要「瞓覺」嚟鞏固記憶</strong>。呢集三個鐘，係 2026 年最值得聽嘅架構研究深潛之一。
+</p>
+
+<div class="section-title">一、點解要向大腦攞靈感，又唔可以照抄大腦</div>
+
+<p>Behrouz 嘅研究方法論，一開始就同主流 scaling 敘事分道揚鑣：<strong>向大腦同演化攞靈感，但只攞「層次啱」嗰啲</strong>。</p>
+
+<blockquote class="strong">
+「大腦有好多數據去訓練自己，係一種非常自然嘅訓練方式……我哋見到嘅，係一個極其複雜嘅生物大腦經過演化嘅最終版本，所以佢係一個好偉大嘅靈感來源。但當我話呢樣嘢，我唔係話要複製大腦——因為大多數時候，我哋根本唔知大腦究竟點做。」
+<div class="attribution">——Ali Behrouz（譯自節目轉錄）</div>
+</blockquote>
+
+<p>佢將對大腦嘅理解分成三個層次：第一層，我哋知佢work；第二層，我哋知佢有唔同模組各司其職（記憶、感知……）；第三層，我哋知佢具體嘅神經機制點運作。Behrouz 嘅立場係：<strong>靈感要停留喺第二層——「模組分工」嘅抽象層次，而唔好跌落第三層去「複製神經細節」</strong>。原因有兩個：一，過度貼近單一生物形式會 overfit 到一種特定嘅智能形態；二，我哋對大腦嘅理解本身仲喺度變，今日嘅「神經細節」聽日可能就錯。</p>
+
+<p>呢個取態好重要——佢解釋咗點解 Behrouz 嘅工作睇落「生物啟發」，但實際產出係純數學、純架構嘅嘢：<strong>佢攞嘅係「多時間尺度記憶」「睡眠鞏固」「關聯記憶」呢啲抽象原則，然後用深度學習嘅語言重新發明一次</strong>。</p>
+
+<div class="section-title">二、當代模型嘅兩大缺憾：適應環境 + 災難性遺忘</div>
+
+<p>Behrouz 對當下 LLM 嘅診斷好清晰：而家嘅模型喺兩個維度上都失敗——</p>
+
+<ul>
+  <li><strong>適應環境：</strong>模型冇辦法喺運行中跟住佢所處嘅上下文持續調整自己。佢嘅「人格」同知識喺部署嗰一刻就凍結咗，唔似人類咁每日都喺度微調。</li>
+  <li><strong>吸收新知識：</strong>模型冇辦法將新知識寫入參數而唔犧牲舊知識——即係「災難性遺忘」（catastrophic forgetting）。學新嘢，就忘記舊嘢。</li>
+</ul>
+
+<blockquote class="strong">
+「如果模型好大，佢就需要隨住時間不斷更新——但一更新就會撞到兩個巨大挑戰：一個係災難性遺忘，另一個係效率問題。參數咁多，你冇辦法持續更新全部參數。」
+<div class="attribution">——Ali Behrouz（譯自節目轉錄）</div>
+</blockquote>
+
+<p>Nathan 喺呢度幫佢補咗一個好重要嘅觀察：呢個正正係「數位 AGI」同人類之間嘅主要差距——<strong>人類有持續嘅自我同一性，朝早起身知道自己是邊個、記得琴日做緊乜、可以接住做落去；模型冇</strong>。而「能夠加入人類團隊、好似人類咁持續貢獻」正正係 AGI 嘅核心定義之一。</p>
+
+<div class="data-point">
+<span>📊</span> <strong>今集關鍵事實</strong><br>
+• Nested Learning 論文獲 Jeff Dean 譽為「可能嘅範式轉移先兆」<br>
+• 新架構喺高達 1000 萬 token 嘅上下文入面有效回憶資訊<br>
+• 可以同時學習翻譯多種「從未見過」嘅語言<br>
+• 新優化器（expressive optimizer）喺多項基準擊敗 Adam 同 Muon<br>
+• 論文：Nested Learning: The Illusion of Deep Learning Architectures（NeurIPS 2025）
+</div>
+
+<div class="section-title">三、Nested Learning 核心：唔同層，用唔同頻率更新</div>
+
+<p>Nested Learning（嵌套學習）嘅核心洞察，簡單到令人懷疑點解冇人早啲諗到：<strong>模型入面唔同嘅部分，應該以唔同嘅頻率去更新</strong>。</p>
+
+<p>人腦就係咁運作嘅：海馬體以毫秒到秒嘅尺度快速編碼新經驗（工作記憶）；新皮層以日、月、年嘅尺度慢慢整合（長期記憶）。Behrouz 將呢個「多時間尺度」原則直接搬入深度學習：<strong>核心層（core layers）保持穩定，保存基礎知識；表層（surface layers）頻繁更新，快速適應新上下文</strong>。</p>
+
+<p>佢喺今集提出一個更大膽嘅預測：<strong>未來 scaling 嘅方向，可能由「疊更多層」轉向「嵌套更多更新頻率」</strong>。即係話，衡量一個模型「大唔大」，唔再係淨係睇層數同參數，而係睇佢有幾多個不同嘅時間尺度喺度運作。呢個諗法將「規模」嘅定義由空間維度，擴展到時間維度。</p>
+
+<blockquote class="strong">
+「點解 scaling 一定要係疊更多層？或者，點解唔可以係嵌套更多嘅更新頻率？」
+<div class="attribution">——Ali Behrouz，對 Nested Learning 嘅綱領式提問（意譯）</div>
+</blockquote>
+
+<div class="section-title">四、「深度學習架構嘅幻覺」：一切皆關聯記憶</div>
+
+<p>今集標題入面最挑釁嘅詞，係「Illusion of AI Architectures」——<strong>深度學習架構嘅幻覺</strong>。Behrouz 嘅意思唔係話架構冇用，而係話：當你剝開 Transformer、SSM、RNN 呢啲外殼，佢哋本質上全部係同一樣嘢——<strong>關聯記憶（associative memory）嘅近似實現</strong>：將一段「上下文流」（context flow）壓縮成參數。</p>
+
+<ul>
+  <li><strong>Transformer：</strong>靠 attention 喺 token 之間建立即時關聯，壓縮上下文；</li>
+  <li><strong>SSM／Mamba：</strong>靠固定大小嘅狀態空間做有界記憶；</li>
+  <li><strong>RNN：</strong>靠隱藏狀態做序列壓縮。</li>
+</ul>
+
+<p>喺呢個視角下，<strong>in-context learning（上下文學習）唔係一個神秘湧現嘅能力，而係大模型壓縮自身上下文流嘅自然副產品</strong>——上下文入面嘅 pattern 被壓縮、被重用，就表現成「學習」。呢個統一視角嘅實用價值喺於：佢指咗一個方向——如果你想要更高階嘅學習能力，你要做嘅唔係發明一個新架構外殼，而係設計「更多層級、更富表達力嘅學習算法」。</p>
+
+<div class="section-title">五、Expressive Optimizers：Adam 都係一個記憶模組</div>
+
+<p>呢個視角最令人大開眼界嘅推論，係對<strong>優化器</strong>嘅重新理解。Behrouz 嘅論點：<strong>Adam、SGD with Momentum 呢啲我哋日日用嘅梯度優化器，本身都係「關聯記憶模組」——佢哋用梯度下降去壓縮梯度資訊</strong>。Momentum 記住過去嘅梯度方向，Adam 記住梯度嘅一階二階統計量——呢啲就係記憶。</p>
+
+<p>既然 Adam 都只係一種好簡單嘅記憶模組，咁點解唔可以設計「更深記憶、更強學習規則」嘅優化器？佢哋做出咗 <strong>「expressive optimizers」——學習規則本身可以被學習</strong>嘅優化器，喺多項基準上擊敗 Adam 同 Muon（Keller Jordan 嘅新優化器，2026 年社群熱門）。呢個方向將「優化」由工程參數，升呢做「學習如何學習」——同 meta-learning 嘅精神一脈相承，但落喺一個好具體嘅位置。</p>
+
+<div class="section-title">六、Hope 架構：自我修改 + 連續體記憶</div>
+
+<p>將呢啲洞察砌埋一齊，就係 Behrouz 嘅完整模組：<strong>Hope</strong>。佢由兩件嘢組成：</p>
+
+<ul>
+  <li><strong>Self-Modifying Learning Module（自我修改序列模型）：</strong>模型學習「自己嘅更新算法」——即係話，佢唔單止學點解任務，仲學點樣修改自己嚟更好地解決任務。</li>
+  <li><strong>Continuum Memory System（連續體記憶系統）：</strong>一個新嘅記憶公式，推廣咗傳統「短期記憶 vs 長期記憶」嘅二分法——記憶唔再係兩個抽屜，而係一個連續嘅時間尺度譜系。</li>
+</ul>
+
+<p>Hope 喺語言建模、知識吸收、few-shot 泛化、持續學習同長上下文推理任務上都交出亮眼成績。最令人印象深刻嘅兩個實驗結果：</p>
+
+<blockquote class="strong">
+「新架構喺標準基準上同 Transformer 平起平坐，但喺難任務上超越——例如喺高達 1000 萬 token 嘅上下文入面有效回憶資訊，以及同時學習翻譯多種從未見過嘅語言。」
+<div class="attribution">——Nathan Labenz，節目導語（譯自轉錄）</div>
+</blockquote>
+
+<p>「同時翻譯多種未見過語言」尤其重要——佢暗示嘅唔係「記得多」，而係<strong>「學得快」：喺運行中見到新語言嘅 pattern，即刻寫入參數，而且寫入一種唔會覆蓋另一種</strong>。呢個正正係持續學習嘅聖杯：唔係一次過學晒，而係一路用、一路學、唔會學完就忘。</p>
+
+<div class="section-title">七、Language Models Need Sleep：模型都要瞓覺</div>
+
+<p>今集最「科幻」嘅部分，係 Behrouz 嘅最新論文《Language Models Need Sleep》（語言模型需要睡眠）。佢喺錄音現場先第一次聽 Nathan 講起呢篇文已經公開——題目本身已經夠晒話題性。</p>
+
+<p>靈感嚟自人類睡眠嘅兩個功能：<strong>記憶鞏固</strong>同<strong>做夢</strong>。具體機制：</p>
+
+<ul>
+  <li><strong>離線模式（睡眠）：</strong>模型唔再處理新輸入，而係將高頻更新層（表層）學到嘅新知識，透過蒸餾（distillation）轉移到慢速演化層（核心層）——即係「短期記憶轉長期記憶」嘅 AI 版；</li>
+  <li><strong>做夢（synthetic data generation）：</strong>模型由近期經驗生成合成數據，再喺上面訓練——透過呢個過程，學習新嘅抽象同概念之間嘅連接。人類做夢會將日間碎片重組成新嘅理解；AI「做夢」就係用近期經驗生成新訓練樣本，重組概念。</li>
+</ul>
+
+<p>呢個設計嘅妙處係：<strong>佢將「學習」同「使用」分開——運行時快速吸收，離線時慢慢沉澱</strong>。呢正正係人類記憶系統嘅分工：清醒時編碼，睡眠時鞏固。Behrouz 形容呢個係將生物學嘅時間尺度結構，正式引入 AI 系統設計。</p>
+
+<blockquote class="strong">
+「AI 都要瞓覺——而且瞓覺嘅時候，佢先真正將一日嘅嘢『記入心』。」
+<div class="attribution">——本集核心比喻：睡眠 = 記憶鞏固 + 做夢 = 概念重組</div>
+</blockquote>
+
+<div class="section-title">八、Attention 係「無限頻率更新」模組——唔會死</div>
+
+<p>一個對實務界好重要嘅判斷：<strong>Behrouz 預測 attention 層會長期存在，唔會被淘汰</strong>。點解？因為 attention 本質上係一個「無限頻率更新」嘅模組——佢喺每一次 forward pass 都即時重新計算所有 token 之間嘅關聯，冇任何「更新頻率」嘅限制。喺 Nested Learning 嘅框架下，attention 就係頻譜嘅極端：<strong>每個 token 都係即時可寫嘅記憶</strong>。</p>
+
+<p>呢個判斷對「SSM 會唔會取代 Transformer」嘅持續辯論，提供咗一個新嘅回答框架：唔係「邊個取代邊個」，而係<strong>「唔同頻率嘅模組點樣喺同一個系統入面分工」</strong>——attention 做即時關聯，SSM 做有界記憶，Behrouz 嘅模組做多時間尺度學習。呢個「頻譜」視角，比「架構之爭」成熟得多。</p>
+
+<div class="section-title">九、隱私、對齊同 AGI：持續學習嘅雙面刃</div>
+
+<p>今集最後一個鐘，Nathan 同 Behrouz 將話題由架構拉到社會後果。Behrouz 對持續學習嘅態度係「謹慎樂觀」——佢清楚睇到雙面刃：</p>
+
+<ul>
+  <li><strong>機會：</strong>如果模型可以喺裝置上持續學習而唔使將數據上傳雲端，隱私保護會大幅改善——你嘅私人數據永遠留喺你部機，模型喺本地適應你；</li>
+  <li><strong>風險：</strong>一個會隨住同你互動而不斷演化嘅模型，對齊（alignment）會變得更難——你點樣保證一個「一路變緊」嘅系統仲守住初始價值？Nathan 喺導語入面講得好直接：呢啲架構「令人極度興奮，又令人有啲驚」；</li>
+  <li><strong>生態：</strong>Behrouz 對未來有一個好有意思嘅願景——如果每個人都有一個隨自己演化嘅模型，AI 生態會由「單一巨型模型」變成<strong>「多樣化、更穩定嘅生態系統」</strong>：唔同人嘅 AI 帶住唔同嘅經驗同價值，好似生物多樣性咁，反而令成個系統更穩陣。</li>
+</ul>
+
+<blockquote class="strong">
+「喺所有關於『而家嘅架構能唔能 scaling 到 AGI』嘅辯論背後，好大機會概念突破會喺我哋答到條問題之前，就令條問題本身失去意義。Transformer 改變咗世界，但佢唔係歷史嘅終點。」
+<div class="attribution">——Nathan Labenz，節目導語總結（譯自轉錄）</div>
+</blockquote>
+
+<div class="section-title">十、Vee 嘅萃取：呢集對 James 嘅實際意義</div>
+
+<p class="sub-title">Scaling 嘅定義正在被改寫</p>
+
+<p>「由疊層轉向嵌套頻率」呢個命題，如果成立，會直接改寫 2026 年最熱嘅算力敘事（參考 Dwarkesh「算力貴 10 倍」同 DeepSeek V4-Flash「純後訓練躍升」）：<strong>如果智能嘅下一步唔係淨係靠更多算力疊層，而係靠架構層面嘅多時間尺度設計，咁「算力軍備競賽」嘅回報率會重新被審視</strong>。對做技術判斷嘅人嚟講，呢個係一個必須放入雷達嘅「如果」。</p>
+
+<p class="sub-title">「縫合」vs「重造」——架構層嘅同一堂課</p>
+
+<p>Behrouz 話所有深度學習都係關聯記憶嘅近似，同何小鵬話「唔可以做縫合怪」，其實係同一種思維嘅兩個領域版本：<strong>真正嘅突破，唔係喺舊框架上面貼新零件，而係退一步問「本質係乜」然後重新設計</strong>。喺企業 AI 應用層，呢個原則同樣適用：你嘅 AI 平台係咪只係喺舊流程上縫咗個模型？定係重新設計咗數據同決策嘅流動方式？</p>
+
+<p class="sub-title">「睡眠」隱喻對工程流程嘅啟示</p>
+
+<p>AI 需要「離線鞏固」，其實係一個好實際嘅工程原則：<strong>運行時快速吸收 + 離線時系統沉澱，好過一次過想學晒</strong>。呢個對 agent 系統、知識庫、甚至個人工作流都有啟示——每日留一段「離線時間」做整合，可能比不停接收新輸入更重要。James 每日嘅前沿技術掃描＋每週記憶整理，本身就係一種「睡眠機制」。</p>
+
+<p class="sub-title">持續學習先係「真 Agent 時代」嘅隱藏瓶頸</p>
+
+<p>Nathan 嘅判斷好值得記住：<strong>持續學習係而家模型同「能夠加入人類團隊持續貢獻嘅 AGI」之間嘅主要差距</strong>。2026 年中文圈講緊「真 Agent 時代」（屠龍之術 WorkBuddy 之辯），但大部份討論集中喺 harness、eval、工具鏈——好少人講「模型本身識唔識一路學一路用」。Behrouz 嘅工作提醒我哋：<strong>agent 外殼再好，模型內部如果唔識持續更新，佢都只係一個好快嘅「一次性智能」</strong>。</p>
+
+<div class="highlight-box">
+<strong>🔑 總結性洞察：</strong>呢集係 2026 年少數敢於挑戰「scaling 萬能論」嘅深度技術對話。Behrouz 用一個極簡原則（唔同層、唔同頻率更新）串起三個反直覺命題：架構係幻覺、優化器係記憶、模型要瞓覺。就算呢啲方向最終冇成為主流，佢嘅框架已經提供咗一個更有生產力嘅提問方式——<strong>唔再問「下一個架構係乜」，而係問「一個系統可以有幾多個時間尺度同時運作」</strong>。對 James 嚟講，呢個思維模式嘅可遷移性好高：無論係個人記憶管理、團隊節奏設計，定係 AI 平台路線，多時間尺度——快慢分工、即時吸收同離線沉澱並行——都係一個被低估嘅組織原則。
+</div>
+
+<footer>
+  <p>🎙️ 來源：<a href="https://www.cognitiverevolution.ai/nested-learning-ali-behrouz-on-the-quest-for-continual-learning-illusion-of-ai-architectures/">The Cognitive Revolution · Nested Learning: Ali Behrouz on the Quest for Continual Learning &amp; Illusion of AI Architectures</a>（2026-06-03）</p>
+  <p>📝 深度復述 · 2026-08-04 · Vee Mok · 資料：官方 show notes + 節目轉錄 + arXiv:2512.24695（NeurIPS 2025）</p>
+</footer>
+
+</div>
+</body>
+</html>
