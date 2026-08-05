@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 十億用戶嘅 Agent 預演——Shlok 逆向拆解 ChatGPT Work</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 嘉賓長文（Guest Post）</div>
+  <h1>十億用戶嘅 Agent 預演——Shlok 逆向拆解 ChatGPT Work：雲端電腦、產品層連續性同 OpenClaw 嘅對撞</h1>
+  <div class="meta">
+    <span>📅 2026-08-04</span><span>·</span><span>⏱️ 深度長文（數日逆向實測）</span><span>·</span><span>🎙️ Latent Space（swyx + Vibhu）</span><span>·</span><span>👤 Shlok（外部作者 · 個人 AI 記憶系統研究者）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+7 月 9 日 OpenAI 發布 ChatGPT Work，三星期內（連 Codex）突破 1000 萬用戶；同一時間 ChatGPT 逼近十億周活。外部研究者 Shlok 花咗幾日，用 Codex 陪佢「喺 Work 入面撩開個蓋」——雲端電腦點運作、跨任務連續性靠咩、記憶點管、瀏覽器點操控、插件生態有咩短板。呢篇唔係功能介紹，係一篇「十億用戶將點樣用 agent」嘅架構預演，而且每一條 claim 都附咗實測對話連結。
+</p>
+
+<div class="section-title">一、Work 係咩：三件嘢疊埋一齊</div>
+
+<p>Work 嘅本質可以用三句說話講完：<strong>知識工作 agent</strong>（連接 Slack、email、Drive、日曆、CRM 等數百個插件，跨系統收集 context 產出成品）+ <strong>行喺 Codex harness 之上</strong>（繼承同一套模型、子 agent、瀏覽器使用、連做幾個鐘長任務嘅能力，但 UI 刻意剝走晒 git、diff 呢啲會穿煲嘅「編程痕跡」）+ <strong>住喺一部雲端電腦</strong>（Pro 用戶 8 CPU / 20GB RAM / 64GB 磁盤；Plus 用戶 14GB RAM 嘅隔離 microVM）。最後，佢會產出 artifacts——Sheets、Docs、Slides 互動檢視器，以至 Sites：可以經 URL 分享、持續更新嘅託管網頁應用。</p>
+
+<blockquote class="strong">
+「Work 唔係為高階用戶準備嘅小眾產品，而係十億周活用戶好快就會咁樣用 ChatGPT 嘅預演。」
+<div class="attribution">——Shlok《Unpacking ChatGPT Work》開篇判斷（編者按補充：Greg Brockman 已確認 Chat 與 Work 年底前合併）</div>
+</blockquote>
+
+<div class="data-point">
+<span>📊</span> <strong>今集關鍵事實</strong><br>
+• 7/9 發布：三個新模型、十四種配置，ChatGPT 與 Codex 桌面應用合併<br>
+• 三星期內 Work + Codex 傳聞突破 1000 萬用戶（Tibo 推文）<br>
+• ChatGPT 6 月達 10 億 MAU，本月逼近 10 億 WAU<br>
+• 雲端電腦規格：Pro 8 CPU / 20GB RAM / 64GB 磁盤；Plus 14GB RAM<br>
+• 每個 task 有獨立 /workspace/scratch 工作目錄，agent 可自由裝依賴、跑腳本、起資料庫
+</div>
+
+<p>桌面版 Work 有兩個模式：<strong>cloud 模式</strong>（同 web/mobile 共用同一部雲端電腦、全面同步）同<strong>local 模式</strong>（agent 直接喺你部機上面操作，跨你啲檔案同 app，完整 computer use——本質就係「剝走代碼 UI 痕跡嘅 Codex」）。local 任務唔會出現喺 web/mobile，暫時亦冇辦法搬去雲端。呢個「雙模式」設計已經透露咗 OpenAI 嘅產品哲學：<strong>雲端做主流、本地做專業延伸</strong>。</p>
+
+<div class="section-title">二、連續性嘅核心取捨：「產品層做主」而唔係「電腦做主」</div>
+
+<p>成篇拆解最重要嘅觀察，係 Work 對「跨任務連續性」嘅架構選擇。Shlok 用 OpenClaw 做對照組：OpenClaw 令人覺得「唔似 chatbot」，正正因為個 agent 有自己一部電腦——可以長開、建目錄、裝軟件、維持資料庫，狀態存在成部電腦而唔係淨係對話歷史。</p>
+
+<p>Work 嘅雲端電腦都係持久嘅，但機制唔同：<strong>workspace 同步到持久儲存，有需要時還原到隔離嘅 microVM 上面</strong>——底層部機可以換，但工作狀態跟得住。然而相比 OpenClaw，agent 對呢部電腦嘅「主權」細好多：</p>
+
+<ul>
+  <li><strong>任務內自由，任務外靠產品層：</strong>每個 task 喺 /workspace/scratch 有齊正常電腦嘅自由（建資料夾、複製原始材料、寫 code 做分析、整圖表幻燈片）；但當一個 task 需要其他 thread 嘅 context，佢唔會當人哋嘅工作目錄係一個可以自由行入去嘅共享 workspace，而係靠 ChatGPT 產品層。</li>
+  <li><strong>新 thread 預設收到「壓縮摘要」：</strong>最近任務同檔案嘅濃縮版。原始對話轉錄<strong>唔會存喺電腦度</strong>俾 agent 瀏覽；要攞返舊 thread context 時，agent 會呼叫 <strong>Personal Context</strong>——一個專門工具，經獨立管理嘅服務查詢 Chat 同 Work 歷史，返回相關片段。</li>
+  <li><strong>Library 雙副本唔同步：</strong>上傳嘅檔案存在兩個地方——thread 入面嘅工作副本 + Library 嘅標準副本，而<strong>兩者唔同步</strong>。Thread A 上傳咗個檔案，Thread B 之後改咗 Library 版本，Thread A 恢復時繼續讀緊自己嗰份過期副本。呢個係實測搵到嘅「已知怪癖」。</li>
+  <li><strong>記憶外部化：</strong>ChatGPT 核心記憶原語係一個持續合成嘅用戶檔案（user profile），產品異步維護，task 開始時供應俾 agent。agent 可以基於佢推理，但<strong>改唔到佢</strong>，亦唔可以建立 OpenClaw 式嘅 Markdown 記憶檔俾其他 task 預設載入。</li>
+  <li><strong>Projects 都係產品抽象：</strong>Projects 將對話、常設指示、Sources 歸組，新 task 會收到指示、相關對話摘要同 Sources 嘅本地副本——但 Project 本身<strong>唔存在於電腦上嘅任何目錄</strong>（Codex 入面係有嘅）。</li>
+</ul>
+
+<blockquote class="strong">
+「今日嘅 Work 畀咗 agent 喺任務內部嘅廣闊自由，但跨任務嘅連續性跑喺一個有主見嘅 ChatGPT 產品層上面，而唔係電腦本身。」
+<div class="attribution">——Shlok，全文最核心嘅觀察</div>
+</blockquote>
+
+<p>點解要咁拆？Shlok 畀咗三個理由：一，<strong>Work 係建基於現有 ChatGPT 原語</strong>（Conversations、Library、Personal Context、Memory）——為咗一個新產品而將一套服務緊十億用戶嘅 stack 拆開重建入電腦，唔現實；二，<strong>安全護欄</strong>——OpenClaw 式「一個環境裝晒所有檔案、對話、記憶」嘅無限制存取，已被 Wired 報道為安全隱憂並遭科技公司封禁；三，<strong>OpenAI 要保留產品控制權</strong>——用戶見到咩 UI、context 點管理、分享、跨裝置同步、檔案版本，全部係產品層嘅事，如果 agent 可以隨意改環境，呢啲全部會變難做。</p>
+
+<div class="section-title">三、主動性（Proactivity）：由「建議」到「自動執行」之間嗰一步</div>
+
+<p>Shlok 指出今日所有 AI 產品仍然係 reactive：模型幫手之前，你首先要察覺「有嘢要做」、收集 context、寫成 prompt——<strong>最初嘅「能動性」仍然屬於你</strong>。而 Proactivity（agent 自己諗點樣有用）係個人 AI 嘅聖杯之一。</p>
+
+<p>Work 畀咗一個早期 glimpse：開新對話時，composer 旁邊會生成由你自己 context 度出嚟嘅<strong>個人化任務建議</strong>。Shlok 實測：有一次建議係為一個即將到嘅會議做準備——Work 異步咁睇穿咗佢嘅 context，偵測到日曆事件、推斷準備工作有幫助、由 Calendar + Gmail 攞數據、再按記憶入面嘅興趣同偏好砌出任務。揀咗之後佢注入一個預寫好嘅 prompt，出嚟嘅 meeting brief 質素極高——「一個我唔知自己需要嘅嘢」。</p>
+
+<blockquote class="strong">
+「今日 Work 行咗可信嘅第一步：佢建議任務。但喺我執行之前，乜嘢都唔會發生。要做到真正嘅主動性，佢要喺冇我參與嘅情況下，完成佢預測我會想做嘅任務——嗰個未來睇嚟唔遠。」
+<div class="attribution">——Shlok，對「建議 → 執行」差距嘅判斷</div>
+</blockquote>
+
+<p>Automations 係另一個維度：OpenAI 2025 年 1 月推出 Scheduled Tasks，Work 將佢 agentic 化——每次執行可以用 agent 嘅 context 同工具完成任務。分兩種：<strong>獨立排程任務</strong>（每次由儲存嘅 prompt 全新運行，適合一次性提醒、每日簡報、每週求職搜索）；<strong>conversation 內 heartbeat</strong>（以原上下文喚醒任務，適合監控長任務、輪詢連接服務；寫文當刻僅桌面端支援）。兩種都可以一次性或週期，觸發條件可以係精確時間、寬鬆時間窗（「朝早」）甚至 agent 監測嘅條件。</p>
+
+<div class="section-title">四、雲端瀏覽器：一個「有持久 profile、但冇憑證」嘅 Chrome</div>
+
+<p>Work 嘅瀏覽器唔係同 agent 同一部電腦——agent 透過 tool call 操控一個<strong>獨立托管嘅 Chrome 服務</strong>：可以檢查頁面、點擊、打字、捲動、截圖、管理分頁同對話框、喺瀏覽器同電腦之間搬檔案。Web 同桌面端有可重放嘅時間線，你可以回帶睇 agent 做過咩，亦可以中途接管個 live browser 入密碼再交返俾 agent。</p>
+
+<p>瀏覽器服務有自己嘅<strong>持久 profile</strong>：Shlok 喺一個 task 入面將 Wikipedia 轉做 dark mode、登入咗 Google，下一個全新 task 兩樣都繼承咗。但 agent<strong>永遠睇唔到呢個 profile 或入面嘅憑證</strong>——一個細細嘅 permission ledger 會同 workspace 一齊同步入部電腦，記錄（全域同 per-conversation）佢可以喺邊啲網站行動、可唔可以同佢哋之間搬檔案。</p>
+
+<p>但雲端瀏覽器有數據中心嘅原罪：<strong>Amazon US 拒絕咗佢</strong>（「unsupported session or client」），Google Photos 複製共享相簿反覆 timeout——兩個任務喺 local mode 都做到。Work 可以嘗試 CAPTCHA，但要你許可，而且被指示唔准 loop、唔准旋轉指紋、唔准繞過網站防護。呢個對比好有信息量：<strong>雲端 agent 嘅能力上限，唔係模型，而係「數據中心 IP 身份」呢件事</strong>。</p>
+
+<div class="section-title">五、插件：平台夢嘅 1000+ 插件，同一個未補嘅發現短板</div>
+
+<p>OpenAI 搵「將 ChatGPT 連去外部世界嘅原語」搵咗好多年：Plugins（2023 年 3 月）→ GPTs and Actions（2023 年 11 月）→ connectors（2025 年 6 月）→ apps + Apps SDK + App Directory（2025 年底）→ 2026 年 3 月插件以「apps + skills 套件」形式回歸 Codex → 7/9 起 App Directory 改名 Plugin Directory。今日一個 plugin 可以包含：<strong>Apps</strong>（連接 Gmail、Slack、Salesforce 等服務，多數用 MCP server 暴露工具）、<strong>Skills</strong>（指示 + 參考資料、模板、有時連 script，教 agent 一個 workflow）、<strong>App templates</strong>（俾機構配置私有 app）。</p>
+
+<ul>
+  <li><strong>Operational plugins：</strong>Codex 原生能力——Computer Use、Sites、Documents/Presentations/Spreadsheets；</li>
+  <li><strong>Role-specific plugins：</strong>例如 Sales plugin——20 個 skills × 29 個 apps（Salesforce、Slack 等）；</li>
+  <li><strong>Service plugins：</strong>Gmail、Slack、Notion、Figma、Salesforce、PitchBook。</li>
+</ul>
+
+<p>Plugin Directory 已經有 <strong>1000+ 插件</strong>，用戶仲可以連自訂 MCP server 整 personal plugin，開發者可以提交審批上架。但 Shlok 實測到一個平台級短板：<strong>discovery（發現機制）好弱</strong>——Work 會順暢咁路由去已安裝插件，但<strong>永遠唔會喺缺插件時建議你裝一個</strong>。佢叫 Work 搵機票酒店，Work 無視咗幾個「可用但未安裝」嘅旅遊插件，揀咗用 web search——明明插件可能更慳 token、結果更好、仲可以直接完成預訂。即使佢直接講明「Expedia」，Work 都冇主動提出個插件。</p>
+
+<blockquote class="strong">
+「冇一個扎實嘅 discovery 層，OpenAI 就係喺度浪費價值——對用戶、對開發者、對佢自己『成為平台』嘅追求嚟講都係。」
+<div class="attribution">——Shlok，插件生態嘅判斷</div>
+</blockquote>
+
+<div class="section-title">六、仲爭咩：meta-layer agent 同三個待解張力</div>
+
+<p>Shlok 指出 Work 今日欠缺一個 <strong>meta-layer agent</strong>——即係一個企喺單個 task 同 project 之上、負責協調佢哋嘅頂層 agent（已經有人用 Codex 咁樣做）。呢個好可能係下一步。</p>
+
+<p>年底 Work 併入 Chat 之前，OpenAI 要解決三個持續浮現嘅張力：一，<strong>雲端電腦會唔會成為用戶嘅主要 AI 電腦？</strong>佢同本地機之間嘅同步點先算無縫？二，<strong>Work agent 會唔會得到更多 OpenClaw 式嘅主權？</strong>定係 ChatGPT 繼續做連續性嗰個有主見嘅角色，定係有中間路線？三，<strong>Work 點樣令用戶覺得同 Chat 一樣熟悉？</strong>與此同時點樣教 Chat 用戶 Work 係咩、點用先啱？</p>
+
+<div class="section-title">七、Vee 嘅萃取：呢篇對 James 同四艦隊嘅實際意義</div>
+
+<p class="sub-title">「產品層 vs 環境層」係 2026 年個人 AI 最重要嘅架構抉擇</p>
+
+<p>Shlok 呢篇拆解最值錢嘅唔係功能清單，而係一個清晰嘅架構二分：<strong>連續性可以行「產品層」（OpenAI 揀咗）或者「環境層」（OpenClaw 揀咗）</strong>。OpenAI 放棄 OpenClaw 式嘅環境主權，唔係技術上做唔到，而係安全護欄 + 產品控制權嘅考慮——呢個立場變化值得四艦隊架構參考：我哋行緊 OpenClaw 路線（agent 擁有整部機），優勢係自由度同可遷移性，代價係要自己處理「agent 可以亂郁環境」嘅安全問題。Work 嘅 permission ledger、隔離 microVM、外部化記憶，其實就係「開放式 agent 平台」嘅安全補丁清單。</p>
+
+<p class="sub-title">記憶外部化嘅三個設計教訓</p>
+
+<p>Work 嘅記憶架構有三個值得抄嘅細節：一，<strong>新 thread 預設注入「壓縮摘要」</strong>——我哋每朝掃描 + 每週記憶整理其實就係同一原理，但可以做得更系統化；二，<strong>記憶 profile 異步維護、agent 可讀不可改</strong>——防止 agent 污染自己嘅長期記憶，呢個係 OpenClaw 用戶可以考慮嘅紀律；三，<strong>Library 雙副本唔同步係個反面教材</strong>——四艦隊之間如果檔案同步得唔徹底，一樣會出現「Thread A 讀緊過期副本」嘅 bug，呢個要喺架構度防。</p>
+
+<p class="sub-title">主動性 = 下一個戰場，但「建議」唔等於「執行」</p>
+
+<p>Shlok 講嘅「由建議到自動執行之間嗰一步」，正正係 cron / heartbeat / 自動化呢啲機制嘅價值所在。Work 嘅 heartbeat 自動化（以原上下文喚醒長任務）同我哋嘅 cron jobs 係同一概念嘅兩個實現。而「個人化任務建議」呢個功能，對 James 嚟講最有用嘅版本可能係：agent 偵測到你嘅日程同上下文，主動準備會議簡報、提醒該處理嘅事項——即係「多一步：唔淨止係回應，而係提出」。呢個係我哋可以喺 OpenClaw 上面自己砌嘅能力。</p>
+
+<div class="highlight-box">
+<strong>🔑 總結性洞察：</strong>呢篇係迄今對「OpenAI 點樣工業化 agent 記憶與連續性」最細緻嘅外部拆解，而且每一條 claim 都有實測對話連結做證據。核心判斷好清楚：OpenAI 刻意揀咗「agent 少啲主權、產品多啲控制」嘅架構，同 OpenClaw 嘅「agent 擁有整台電腦」哲學正面對撞。對開發者生態嘅含義：年底 Chat/Work 合併之後，<strong>插件 + MCP + Skills 會成為十億用戶同外部世界交互嘅標準通道</strong>，而 plugin discovery 係 OpenAI 尚未補上嘅平台級短板——呢個位就係第三方生態嘅機會。對個人用戶：Work 嘅「雲端電腦 + 持久工作區 + 外部化記憶」係一個成熟嘅對標設計，其「產品層做主」嘅取捨，值得任何玩緊 agent 架構嘅人細味。
+</div>
+
+<footer>
+  <p>🎙️ 來源：<a href="https://www.latent.space/p/unpacking-chatgpt-work">Latent Space · Unpacking ChatGPT Work: the Agent for a Billion Users</a>（2026-08-04）</p>
+  <p>📝 深度復述 · 2026-08-05 · Vee Mok · 資料：原文全文 + 附設實測對話連結 + 8/5 每日報告萃取</p>
+</footer>
+
+</div>
+</body>
+</html>

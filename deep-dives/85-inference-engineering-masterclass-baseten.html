@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 推理工程大師課——Baseten 點樣將權重變成產品</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 主節目訪談</div>
+  <h1>推理工程大師課——Baseten 點樣將權重變成產品：200K token 嘅旅程、量化誤差互相抵消、megakernel 之死與 Rubin 時代</h1>
+  <div class="meta">
+    <span>📅 2026-08-03</span><span>·</span><span>⏱️ 1 小時 40 分</span><span>·</span><span>🎙️ swyx + Vibhu</span><span>·</span><span>👤 Philip Kiely + Ali Taha（Baseten）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+Baseten 啱啱融咗 <strong>130 億美元 Series F</strong>，成為 AI Infra 獨角獸新群體嘅代表。呢集請嚟《Inference Engineering》作者 Philip Kiely 同埋「48 小時拆解 Kimi K3」嘅網紅工程師 Ali Taha（waterloo_intern），由一個 200K token 請求入閘講起，一路拆到量化、speculative decoding、megakernel 論戰、Rubin 硬件同「模型自己優化自己」嘅閉環。三年前「推理工程」幾乎唔存在，今日佢已經係 AI 最關鍵嘅獨立學科之一——呢集就係佢嘅全景圖。
+</p>
+
+<div class="section-title">一、一個 200K token 請求入閘之後發生咩事</div>
+
+<p>swyx 第一條問題就好刁鑽：「我 send 一個 200K token 嘅長 query 入 Baseten 嘅推理系統，跟住會發生咩？」Philip 嘅答案係一堂完整嘅 cache-aware 推理課：</p>
+
+<ul>
+  <li><strong>第一句係問「你 send 過呢條 query 未？」</strong>——cache-aware routing：系統有多個 instance/replica 服務緊同一個模型，要將請求送去「一，有 prefill worker 可用；二，最好已經有 cached input」嗰個。200K token 嘅請求九成係 coding 或 multi-turn agent，好大機會有緩存，可以跳過一部分 prefill。</li>
+  <li><strong>Prefill 同 decode 分離：</strong>一組 GPU 淨係處理輸入、建立 KV cache、出第一個 token；然後交俾另一組 GPU 跑 decode 逐個 token 生成。</li>
+  <li><strong>Speculator model 前置：</strong>一個細模型快速 autoregressive 預測 3 個 token，再用大模型一次 forward pass 驗證，啱就接受——慳 decode 時間。呢個 draft model 係「traffic-specific」：假設你係 coding traffic，acceptance rate 就會高；如果你叫佢「總結晒 Harry Potter 全套書」，佢會慢。</li>
+  <li><strong>計費：</strong>「幾蚊美金，然後話：『想唔想再嚟一條？』」</li>
+</ul>
+
+<blockquote class="strong">
+「第一個問題我會問：『你之前 send 過呢條 query 未？或者至少部分？』我真係希望你 send 過——因為對我嚟講會易好多，對你嚟講會平好多。」
+<div class="attribution">——Philip Kiely，200K token 請求嘅第一反應（譯自節目轉錄）</div>
+</blockquote>
+
+<div class="section-title">二、共享 API vs 專用部署：幾時轉、點解轉</div>
+
+<p>對高流量用戶嚟講，<strong>按小時租成部機，比按 token 畀錢平好多</strong>——如果你推緊每小時幾百萬 token，你只需要自己設法塞滿部機。但「幾時由共享轉專用」係有講究嘅：</p>
+
+<ul>
+  <li><strong>可靠性：</strong>最大原因——唔使同人哋嘅 benchmark 流量爭資源（「你服務緊用戶嘅時候，人哋啱啱喺個 endpoint 度跑咗一億 token 嘅 benchmark」）；</li>
+  <li><strong>自己嘅 spec dec：</strong>為自己嘅 traffic 訓練專屬 draft model——例如你想總結 Harry Potter，就 train 一個淨係預測 Harry Potter 內容嘅 draft model，保證三粒 token 次次中；共享 endpoint 冇可能做呢樣嘢；</li>
+  <li><strong>自訂 batch size / 並行策略：</strong>想 optimize throughput 定 latency，自己話事；</li>
+  <li><strong>精度控制：</strong>如果 NVFP4 量化過唔到你嘅 benchmark，你可以用更高精度跑。</li>
+</ul>
+
+<p>典型 journey：人人都想試 open models，所以 pay-per-token API 需求好大；一旦搵到一個 sticky 嘅 use case，就搬去 dedicated。</p>
+
+<div class="section-title">三、Tool calling 嘅真相：唔係沙箱問題，係「JSON 閉合」問題</div>
+
+<p>呢度有個好重要嘅認知校正。Ali 話：tool calling 最難嘅地方<strong>唔係沙箱</strong>——唔係驚個 agent 用 tool 逃出沙箱所以要 containment——而係 <strong>JSON 閉合</strong>：模型輸出 JSON 如果唔以特定方式閉合，個 request 就會出問題。佢見過有模型做完 tool calling 同 thinking 之後，因為冇見到結果而<strong>直接幻覺咗個結果出嚟</strong>。</p>
+
+<blockquote class="strong">
+「LLM 本身冇能力做任何嘢。佢只係有能力提出『應該做啲咩』嘅建議——而當啲建議以某種方式被格式化，並交俾一個知道點樣執行嘅系統，動作先至發生。」
+<div class="attribution">——Philip Kiely（譯自節目轉錄）</div>
+</blockquote>
+
+<p>解法其實兩年前已經有：<strong>structured output</strong>——用 state machine 將輸出限制喺指定格式，即係將舊式「只准 output JSON，唔係就阿婆會死」嗰類 prompt 工程化。但 Philip 坦白：佢解決到「輸出結構」問題，解決唔到「確定性」問題——模型依然可以 call 錯 tool、或者唔 call tool。MCP 喺呢個框架入面「只係另一種 tool，冇乜特別」。</p>
+
+<div class="section-title">四、Day-0 支持新模型：一場重體力活嘅 inference war</div>
+
+<p>「支持一個新 open model」唔係「能吐 token」就算，而係生產級。GLM-5.2 同 Kimi K2.5 發布嗰陣爆發咗一場 inference war：swyx 承認係自己嗰條 50 萬瀏覽嘅 GLM-5.2 推文點燃嘅——「X 家 90 tok/s，第二日我哋 150」。呢啲數字戰背後係真功夫：要處理好 prefill、KV cache、量化配置先可以上線。</p>
+
+<p>仲有個好靚嘅例子證明 open source labs 點互相「借用」：<strong>GLM-5.2 冇 vision，Baseten 團隊嘅 Haley 將 Kimi 嘅 vision encoder 嫁接咗上去</strong>——唔使郁個 language model 本身。呢種「手術式 retrofit」喺 open weights 世界會越嚟越常見。</p>
+
+<p>另外一個實務教訓：<strong>同一份權重，喺唔同 cluster 上面表現可以唔同</strong>——硬件、kernel、race condition 會造成 nondeterministic failure，例如模型有時會 collapse 成重複同一個 token。呢啲都係「推理工程」作為獨立學科要面對嘅問題。</p>
+
+<div class="section-title">五、量化誤差可以互相抵消——反直覺但被實證</div>
+
+<p>全場最反直覺嘅部分。Ali 用 GLM-5.2 實驗解釋：<strong>量化更多層，反而可以保持 benchmark 質量，同時 throughput 提升 20%</strong>——因為唔同層引入嘅量化誤差會互相抵消。你 quantize layer 1、5、10，可能好過淨係 quantize layer 1、5——一層偏右、一層偏左、再一層偏右，最後 logits 分佈反而更接近原始模型。</p>
+
+<blockquote class="strong">
+「error(layer a) + error(layer b) &lt; error(layer a) alone——以前行業以為量化越多越差，因為引入越多損失。呢個諗法唔一定啱。」
+<div class="attribution">——Ali Taha 同 Joshua Hill 論文嘅核心結論（譯自節目轉錄）</div>
+</blockquote>
+
+<p>佢哋同事 Joshua Hill 用 <strong>Fourier Analysis on Groups</strong> 做咗數學證明：可以預測邊啲層嘅量化誤差會互相抵消，然後專揀嗰啲層嚟量化。驗證方法唔係淨睇 benchmark，而係用 <strong>KL divergence 比較量化模型同原始 full precision 模型嘅 logits 分佈</strong>——分佈越似，fidelity 越好。結果：比起其他 provider 多量化 20% 嘅層（所以多 20% throughput），而質量仲要好過對方嗰個 quant，因為揀咗啲「誤差會抵消」嘅層。論文叫《Fourier Analysis on Groups》，SOTA 量化法。</p>
+
+<div class="data-point">
+<span>📊</span> <strong>今集關鍵數據</strong><br>
+• Baseten 融咗 $13B Series F（AI Infra decacorn 新群體）<br>
+• 推理優化空間：20% / 100% / 200% 嘅增益仍然存在；好嘅 serving 可以令模型快 10 倍<br>
+• 量化更多層（揀啱層）→ GLM-5.2 吞吐 +20% 同時質量不跌<br>
+• Ali 拆 Kimi K3：48 小時 + 650mg 咖啡因 + 40 罐 LaCroix + 8 篇論文，推文 2.05M 瀏覽<br>
+• Ali 直指 megakernel 已死；同日 Cursor 開源 MoK 證明 2.37x 加速——兩邊都啱
+</div>
+
+<div class="section-title">六、Megakernel 論戰：fusion 救唔到張量並行</div>
+
+<p>Ali 對 megakernel 好 bearish，而且有硬技術理由：<strong>張量並行下，矩陣分佈喺多個 GPU 上面，softmax／指數呢類非線性運算需要成行數據</strong>——即使有 fused kernel，你都必須跨 GPU 通信先做得到下一步。加上 megakernel 本身複雜度極高：寫一個極度優化嘅 fused kernel 好難，而佢識嘅公司（佢唔開名）做咗 fused megakernel 之後，<strong>好多人最終都冇喺生產環境用</strong>——因為 TensorRT-LLM 同 modular kernel 反而更快：每個 component 可以獨立優化，仲可以互相並行。</p>
+
+<p>同一日嘅劇情反轉：Cursor 開源咗 MoK（Mixture-of-Kittens）——NVL72 上嘅 MoE 訓練 megakernel，比最強公開 baseline 快 2.37x。Ali 後來發推「道歉」：「我好抱歉我每一件事都講啱咗。」呢個先係重點：<strong>megakernel「死而復生」嘅張力，取決於 scale 同 workload——兩邊都啱</strong>。</p>
+
+<p>仲有硬件層嘅助攻：NVIDIA 一個 tech lead 喺 Twitter「揭開 Rubin 嘅面紗」，第三條推文顯示<strong>Rubin 嘅設計「從硬件層面扼殺 megakernel」</strong>——仲有 Kyle Kranen 提到嘅 tile-level dependency triggers：一個操作嘅數據一 ready，對應 kernel 即刻可以啟動，消解咗 fusion 存在嘅一個理由。Ali 嘅總結：「成個研究領域好似唔會再繼續。」</p>
+
+<div class="section-title">七、Rubin 同「GPU 演化成可程式化 AI ASIC」</div>
+
+<p>講到硬件，Philip 話自己經歷咗三個硬件週期：Ampere、Hopper、Blackwell——vLLM 最初 targeting Ampere，之後要更新去 Hopper、再更新去 Blackwell，每個週期更快更急但複雜度大幅上升。對 Rubin 嘅預判：<strong>Dynamo 透露咗好多線索</strong>——KV cache offloading、KV-aware routing、disaggregation 喺 Rubin 時代會更重要；inference engineering 唔再淨係 CUDA kernel 問題，而係好傳統嘅 hardware infrastructure 問題。</p>
+
+<blockquote class="strong">
+「相比 Ampere 或者 T4，Rubin 係一部 ASIC——就係一件被用嚟做某啲嘢嘅嘢。佢係第一粒完全喺『公開開源模型架構世界』入面建造嘅芯片。」
+<div class="attribution">——Ali Taha + Philip Kiely 對 Rubin 嘅定位（譯自節目轉錄）</div>
+</blockquote>
+
+<p>Ali 仲講咗 inference 嘅「auto-tuning 文化」：同 training 唔同（training 可以計 flops、睇數學），inference 好多時係「你 define TP1/TP2、EP1/EP2，然後用真實 prod traffic 做 shadow test，睇邊個 config 嘅 TPM/TPS 最好就用邊個」。Kernel 都一樣——launch 幾多 threads、用幾多 shared memory，全部 sweep 參數空間搵 empirical 最佳。佢坦言「你冇辦法理性推斷邊個 config 一定最好，但 auto-tuning 就係搵到最好嗰個嘅方法」。</p>
+
+<div class="section-title">八、本地 AI vs 數據中心 AI：一個令模型「冇咁蠢」，一個令佢「冇咁慢」</div>
+
+<p>呢句係全場最精警嘅一句：</p>
+
+<blockquote class="strong">
+「本地 AI 嘅問題係點將個模型塞入我嘅硬件，然後令佢冇咁蠢；數據中心 AI 嘅問題係點載入個模型，然後令佢冇咁慢。我哋關心『冇咁蠢』，佢哋關心『冇咁慢』。」
+<div class="attribution">——Philip Kiely（譯自節目轉錄）</div>
+</blockquote>
+
+<p>而且數據中心有好多嘢要同本地生態學：本地 AI 工程師係 dynamic quantization、pruning、distillation、layer removal 嘅專家——呢啲技術數據中心「完全冇掂」。但 tensor parallelism 唔適合本地（佢假設 NVLink 級嘅高頻寬互連），本地被迫用 pipeline parallelism。</p>
+
+<div class="section-title">九、訓練同推理融合：模型自己優化自己</div>
+
+<p>最後一節講「訓練為推理、推理為訓練」嘅閉環：持續 post-training、部署-評估-改進循環；<strong>GLM-5.2 自己幫手優化服務緊 GLM-5.2 嘅 kernel</strong>（self-optimizing loop）——呢個就係 2026 年最熱嘅「遞迴自我優化」敘事嘅基建版；更快嘅網絡可能解鎖大幅更快嘅 decode。</p>
+
+<p>仲有 continual learning 之辯。Ali 同 Charlie 喺 Twitter 上拗過：持續學習有兩條路——一，模型學嘢就推入權重（inference 要不斷 fetch 新權重）；二，<strong>KV cache compaction</strong>（將 KV cache 壓縮到近乎無限而唔流失知識）。Ali 用一個例子解釋權重路線嘅死穴：「如果我喺你嘅 knowledge base 度編輯『Waterloo 係最好嘅大學』，你點解唔用呢個事實去做推理？」——<strong>喺 MLP 權重入面改一個事實，係 fundamental 地難</strong>。佢最後當眾認輸：「Charlie 嘅 point 係啱嘅，我睇到 KV cache 先係前路」——用 KV cache 做持續學習，inference 本身幾乎唔使變，只係多一步更新 KV cache，權重唔郁，inference time 唔郁。</p>
+
+<div class="section-title">十、Vee 嘅萃取：呢集對 James 嘅實際意義</div>
+
+<p class="sub-title">「推理拐點」= AI 價值鏈重心由訓練移向 serving</p>
+
+<p>Baseten 融 130 億美元呢件事本身，就係「推理拐點」嘅里程碑信號。對企業決策者嘅意義好直接：<strong>模型價格戰（DeepSeek-V4-Flash、GPT-5.6 降價）嘅背後係推理工程師嘅軍備競賽——20–200% 嘅優化空間意味住「同一個模型、唔同服務商，成本可以差數倍」</strong>。揀 API 供應商唔再淨係睇模型分數，要睇佢嘅 serving 工程能力。</p>
+
+<p class="sub-title">量化誤差抵消 = 「多即少」嘅工程哲學</p>
+
+<p>「量化更多反而更好」同「error(a)+error(b) &lt; error(a)」係一個可遷移嘅思維模式：<strong>系統優化好多時唔係「減嘢」，而係「聰明咁揀邊度犧牲」</strong>。Joshua 嘅方法論（用 KL divergence 驗證 fidelity 而唔淨係睇 benchmark）都值得記住——衡量「變壞咗幾多」要用對嘅尺。呢個對任何做模型選型、量化、蒸餾決策嘅人都適用。</p>
+
+<p class="sub-title">「本地 = 冇咁蠢、數據中心 = 冇咁慢」係四艦隊架構嘅分工註腳</p>
+
+<p>James 嘅四艦隊架構（VPS 指揮官 + Mac Mini + Mac Studio + 騰訊雲）橫跨本地同數據中心兩個世界，呢句說話就係最佳分工原則：<strong>本地機嘅價值喺「回應質素」同私隱，數據中心嘅價值喺「規模同速度」</strong>——唔好攞錯尺去衡量對方。Mini/Stu 呢類本地機可以玩 dynamic quantization、layer pruning 呢啲數據中心「冇掂」嘅技術，呢個係本地部署嘅隱藏優勢。</p>
+
+<p class="sub-title">KV cache 做持續學習——agent 記憶嘅另一條路</p>
+
+<p>Ali 認輸嗰個結論（KV cache compaction 先係持續學習前路，改權重係 fundamental 地難）對 agent 架構有直接啟示：<strong>與其不斷 fine-tune 模型去記嘢，不如將「記憶」放喺 context 層——壓縮、檢索、重用</strong>。呢個同 Work 拆解文（84）入面「連續性行產品層而唔行權重層」嘅判斷互相呼應：2026 年嘅行業共識係——記憶應該外置，唔好諗住塞入參數。</p>
+
+<div class="highlight-box">
+<strong>🔑 總結性洞察：</strong>呢集係 2026 年推理工程現狀嘅全景圖：推理已由「訓練嘅收尾步驟」變成獨立學科，有自己嘅研究問題、基建同專業角色。三個最值得帶走嘅觀點：一，<strong>量化誤差可以互相抵消</strong>——「量化越多越差」係行業迷信，揀啱層可以又快又準；二，<strong>megakernel「死而復生」</strong>——Ali 話佢死（張量並行 + 非線性 = 一定要跨 GPU 通信，Rubin 硬件直接扼殺），Cursor 同日證明佢未死（2.37x）——答案係「睇 scale 同 workload」；三，<strong>推理正在變成系統問題</strong>——KV cache 移動、KV-aware routing、Dynamo、本地 vs 數據中心嘅分工，以至「模型自己優化自己」嘅閉環，全部指向同一件事：AI 價值鏈嘅重心，已經由「點樣練出嚟」移向「點樣 serve 得好」。
+</div>
+
+<footer>
+  <p>🎙️ 來源：<a href="https://www.latent.space/p/inference-eng">Latent Space · The Inference Engineering Masterclass — Philip Kiely &amp; Ali Taha, Baseten</a>（2026-08-03）</p>
+  <p>📝 深度復述 · 2026-08-05 · Vee Mok · 資料：官方 show notes + 節目轉錄 + Baseten/Joshua Hill 論文引述 + 8/5 每日報告萃取</p>
+</footer>
+
+</div>
+</body>
+</html>
