@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Infra 嘅浪漫——盛穎：由 SGLang 到 RadixArk，點解佢話 AI 基礎設施係「產品本身」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">硅谷101（泓君 Jane）· E247</div>
+  <h1>Infra 嘅浪漫——盛穎：SGLang 點樣由學術項目變成行業底座，佢點解離開 xAI 創辦 RadixArk，同埋「AI 基礎設施平權」係咩一回事</h1>
+  <div class="meta">
+    <span>📅 2026-08-05（北京時間 12:30）</span><span>·</span><span>🎙️ 泓君 Jane</span><span>·</span><span>👤 盛穎（RadixArk 聯合創辦人 / CEO，xAI 前推理團隊負責人，SGLang 發起人）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+「AI Infra 係浪漫嘅關係，係產品本身，需要有美感。」——呢句說話出自盛穎，一個由數學家夢想出發、行過形式化驗證、LMSYS、Databricks、xAI，最終喺 2026 年創辦 RadixArk 嘅人。佢做嘅 SGLang 已經成為開源大模型推理領域被引用最頻繁嘅引擎之一，而 RadixArk 攞到 1 億美元種子輪——英偉達、AMD、英特爾罕見聯手投資。呢集唔止係一個技術專訪，係一個關於「一個人點樣理解自己嘅天性、決定唔再同佢對抗」嘅故事。
+</p>
+
+<div class="section-title">一、由「世界與我無關」到「人類唔會輸嘅未來」</div>
+
+<p>盛穎嘅起點，係一個好典型嘅「天才少女」敘事，但佢自己拆穿咗呢個敘事。佢細個想做數學家，嚮往一個確定、純粹、彷彿「與世界無關」嘅世界。本科上海交通大學 ACM 班，之後哥大 CS 碩士、斯坦福博士，師從 Clark Barrett 做形式化驗證——SMT 求解器優化。呢條路拎到 IJCAR 最佳論文獎，亦以 cvc5 貢獻者身份攞到 TACAS 最佳工具論文獎。</p>
+
+<p>但佢喺節目入面坦白：最初入形式化驗證係「被動」嘅——博士輪轉匹配到呢個方向。佢後來欣賞到佢嘅美感，但同時睇到現實局限：驗證成本高、能驗證嘅範圍有限、好難產生廣泛影響。呢個「美感 vs 影響力」嘅張力，其實貫穿佢成個職業生涯：佢唔係一個為咗「做 impact」而做嘢嘅人，而係一個被問題本身吸引、先至能夠進入高度專注狀態嘅人。</p>
+
+<blockquote class="strong">
+「佢在乎嘅唔係 'making impact' 呢個矽谷流行詞，而係那些佢認為正確嘅事，最終有冇發生。由 '世界與我無關'，到 '想要構建那個跟強力 AI 共存、且人類唔會輸嘅未來'——呢個，就係盛穎嘅故事。」
+<div class="attribution">——節目開場白（泓君 Jane）</div>
+</blockquote>
+
+<p>佢喺訪問中回顧：由江西去上海讀本科，經歷文化衝擊；紐約嘅包容令佢感到自由；但西海岸嘅氛圍令佢重新渴望參與世界嘅推動。佢坦承研究過程中多次經歷「空窗期」——外界睇到嘅係連續發頂刊嘅高光，背後係唔為人知嘅搵方向、迷茫、停滯、低谷同重新出發。呢段「承認自己唔可以勉強做唔感興趣嘅事」嘅坦白，係成集最動人嘅地方：佢冇將自己包裝成一個一路順風嘅天才，而係一個不斷同自己天性談判嘅人。</p>
+
+<div class="section-title">二、SGLang：由學術項目到行業底座的「集大成者」</div>
+
+<p>SGLang 係盛穎研究路徑嘅集大成者，亦係理解成集嘅技術核心。佢係一個面向真實生產環境嘅開源推理引擎——由學術項目起家，成長為 AI Infra 領域最具影響力嘅開源推理框架之一。佢嘅關鍵能力，係對歷次架構劇變做到「Day-0 兼容」：</p>
+
+<ul>
+  <li><strong>MoE 架構：</strong>混合專家模型成為主流後，SGLang 即時跟上排程同內存優化，唔使等上游改版。</li>
+  <li><strong>長上下文：</strong>百萬 token 級別嘅 context 處理，涉及 KV cache 管理同 attention 優化嘅深度改動，SGLang 同樣 Day-0 支援。</li>
+  <li><strong>Reasoning 模型：</strong>o1 類思考鏈模型興起後，推理時長同中間 token 大增，SGLang 嘅 scheduler 針對呢類 workload 做優化。</li>
+  <li><strong>多模態融合：</strong>視覺/音頻 token 混合輸入嘅排程，同樣保持「開源模型發布即支援」嘅節奏。</li>
+</ul>
+
+<div class="data-point">
+<span>Day-0</span>
+SGLang 對 MoE、長上下文、Reasoning 模型、多模態融合等歷次架構劇變均做到「開源模型發布即支援」——性能直逼機器物理極限，迭代速度與工程紀律合一嘅風格，被投資人評為「喺開源項目中絕對頂尖」。
+</div>
+
+<p>盛穎嘅完整研究路徑，可以睇成 AI Infra 十年嘅縮影：<strong>SMT 求解器優化 → 形式化驗證（cvc5）→ 大模型系統 → 推理引擎（SGLang）→ 生產級推理（xAI Grok）→ 開放基礎設施公司（RadixArk）</strong>。每一步都係由「被問題吸引」驅動，而唔係由職涯規劃驅動。呢個軌跡亦解釋咗點解佢會喺「正確嘅事」同「impact」之間揀前者：SGLang 最初只係一個學術項目，佢冇預設佢會成為行業標準——佢只係被「點樣令推理更快」呢個問題本身吸引住。</p>
+
+<div class="section-title">三、xAI 嘅「support + freedom」黃金時代，同埋點解要離開</div>
+
+<p>喺早期 xAI，盛穎獲得咗一個好難得嘅組合：同時存在嘅「支持」同「自由」。佢參與搭建生產級推理系統，領導 Grok 嘅推理團隊。但 SGLang 社區迅速擴張，僅靠開發者業餘時間維護已經撐唔住——呢個係開源項目最典型嘅「成功困境」：用戶越多，維護壓力越大，而如果冇全職團隊投入，項目會慢慢爛掉。</p>
+
+<p>佢離開 xAI 嘅理由好清晰：<strong>「為了讓這件事真正走下去」</strong>。呢個決定嘅結構，同好多開源創業者嘅故事一樣——但盛穎嘅版本有一個唔同嘅重點：佢離開唔係因為唔鍾意 xAI，而係因為佢認為 SGLang 呢件「正確嘅事」需要一個更可持續嘅載體。RadixArk 就係呢個載體。</p>
+
+<blockquote class="strong">
+「只有真正被一個問題吸引，佢先至能夠進入高度專注嘅狀態，並把它做到極致。佢無法勉強自己做一件唔感興趣嘅事。」
+<div class="attribution">——盛穎，論自己嘅工作哲學</div>
+</blockquote>
+
+<p>呢度值得留意嘅係 RadixArk 嘅結構：聯合創辦人兼 CTO 朱邦華，師從 Michael I. Jordan 同 Jiantao Jiao，曾聯合創立 Nexusflow 並俾 NVIDIA 收購——即係話呢個團隊本身已經有「被算力巨頭收購過一次」嘅經驗，而家反過來同算力巨頭做股東。公司 40 幾人，6 月 1 日搬入新辦公室，擴張速度超出預期。</p>
+
+<div class="section-title">四、RadixArk：1 億美元種子輪與「AI 基礎設施平權」</div>
+
+<p>RadixArk 嘅願景，用一句話講就係：<strong>將少數科技巨頭先至擁有嘅前沿 AI 基礎設施，變成整個行業都能用嘅開放技術底座</strong>。盛穎喺節目入面提到 SandHill Road 嘅融資套路與規則、Two Sigma「有組織嘅公司」嘅對照——構成咗佢對「公司應該點樣生長」嘅完整思考框架。</p>
+
+<div class="data-point">
+<span>$100M</span>
+RadixArk 完成 1 億美元種子輪融資——投資方「幾乎集齊咗矽谷嘅算力巨頭同技術領袖」，包括英偉達、AMD、英特爾破天荒聯手投資。公司 40+ 人，2026 年 6 月 1 日搬入新辦公室。
+</div>
+
+<p>呢個融資結構本身，已經係一條新聞：英偉達、AMD、英特爾係直接競爭對手，佢哋好少投資同一家公司。佢哋聯手嘅唯一合理解釋係：<strong>「開放推理底座」被視為關乎各自晶片生態嘅戰略要地</strong>——如果 SGLang/RadixArk 成為行業標準推理棧，咁無論你用邊隻晶片，都可以透過呢一層接到客戶。呢個唔係財務投資，係生態位投資。</p>
+
+<p>呢度有一個冇被正面回答嘅問題：<strong>攞住算力巨頭嘅錢，做「平權」基礎設施，獨立性點保證？</strong>如果英偉達係大股東，RadixArk 會唔會優先優化 CUDA？AMD 會唔會要求同等支援？呢個係「開放底座」敘事嘅內在張力——盛穎嘅答案係工程紀律：SGLang 嘅 Day-0 兼容文化，本身就係對「平台偏袒」嘅制度性回應。但佢冇喺節目入面正面回應呢個問題，值得聽眾自己判斷。</p>
+
+<div class="section-title">五、行業 Insight：Infra 開放化點解係 2026 年嘅主線</div>
+
+<p>呢集播出嘅時間點好有意思：正值開源模型集中爆發（GLM、Kimi、DeepSeek 等接連發佈），而 AI Infra 層嘅「開放化」成為新主線。SGLang 由開源社區孵化出商業公司，同開源模型形成生態共振——「模型開源 + 引擎開源」組成咗一個對抗閉源巨頭嘅完整棧。呢個組合，先至係中國開源模型可以喺全球範圍內被大規模部署嘅真正原因：模型開源咗，冇一個高效嘅開放推理引擎，部署成本會高到冇人用得起。</p>
+
+<p>盛穎嘅個人軌跡亦映射 2026 年 Infra 人才流動嘅大勢：<strong>學術（LMSYS）→ 大廠（Databricks/xAI）→ 自創公司</strong>。頂級 Infra 研究者正由「俾巨頭打工」轉向「用開源社區做槓桿、自己落場」。背後嘅判斷係：推理成本嘅下降曲線，而家由開源社區主導，而唔係由單一閉源供應商主導——如果你想喺呢條曲線上面有話語權，你要擁有嗰個社區，而唔係租用嗰個供應商。</p>
+
+<p>對企業用戶嚟講，呢集嘅實際意義係：<strong>當你揀推理引擎嗰陣，你唔單止係揀一個軟件，你係喺度投票俾一個生態</strong>。SGLang 嘅崛起證明，開源基建可以同時做到「性能直逼極限」同「發布即支援」——傳統「開源 = 慢半拍」嘅偏見已經過時。而 RadixArk 嘅出現，意味住呢個生態開始有全職團隊、公司治理同資本背書，唔再係一班志願者嘅業餘項目。</p>
+
+<div class="section-title">六、對「中國視角」嘅特別意義：開源引擎係開源模型嘅最後一塊拼圖</div>
+
+<p>呢集喺中文播客圈嘅反響特別大，原因好實際：<strong>中國開源模型（GLM、Kimi、DeepSeek）要喺全球被大規模部署，SGLang 呢類開源引擎係繞唔開嘅基礎</strong>。模型開源只係第一步——如果推理引擎係閉源嘅、或者只優化特定硬件，咁「開源模型」實際上仍然受制於人。盛穎嘅 LMSYS 背景尤其重要：LMSYS Chatbot Arena 已經係全球公認嘅模型評測基準，而 SGLang 係 LMSYS 生態入面孵化出嚟嘅引擎——即係話「測模型嘅人」同「跑模型嘅人」本身係同一個社區，呢種生態閉環係閉源廠商好難複製嘅。</p>
+
+<p>所以「AI 基礎設施平權」對中國開發者嚟講唔係抽象口號：佢意味住<strong>你唔使等 NVIDIA 嘅專屬軟件棧、唔使被單一雲廠商綁定，都可以用一套開放、高效、Day-0 兼容嘅引擎跑起最先進嘅開源模型</strong>。呢個係「開源模型 + 開源引擎」組成嘅完整反制棧——而 RadixArk 嘅出現，令呢個棧第一次有咗公司級嘅可持續性。</p>
+
+<div class="highlight-box">
+<strong>一句總結：</strong>呢集係「AI Infra 平權」嘅宣言書——盛穎由數學家夢想出發，行過形式化驗證嘅美感與局限，用 SGLang 證明了開源引擎可以做到行業標準，再用 RadixArk 將「開放」變成一家有 1 億美元資本、三大晶片巨頭做股東嘅公司。佢嘅故事核心唔係技術，而係一個判斷：<strong>喺 AI 時代，真正嘅槓桿唔係擁有模型，而係擁有讓模型跑起來嘅底座。</strong>
+</div>
+
+<div class="section-title">七、可以帶走嘅三個問題</div>
+
+<ul>
+  <li><strong>「美感」係咪一個可量度嘅工程標準？</strong>盛穎話 Infra 需要美感同設計感——但美感喺 benchmark 上點體現？可能嘅答案係：Day-0 兼容、零配置、可觀測性。呢啲「美」嘅維度，其實就係工程紀律嘅另一種講法。</li>
+  <li><strong>開源引擎嘅商業模式到底係咩？</strong>RadixArk 攞咗 1 億美元種子輪，但「開放底座」嘅收入模型未明——係賣託管服務、賣企業支援、定係做硬件一體機？呢個問題決定咗「平權」敘事能唔能夠持續。</li>
+  <li><strong>三大晶片巨頭做股東，會唔會令「平權」變「齊權」？</strong>英偉達、AMD、英特爾聯手投資，短期係利好（代表 SGLang 會喺三大平台都被優化），但長期嚟睇，佢哋各自都想將 RadixArk 綁入自己嘅生態。盛穎嘅工程紀律文化會係唯一嘅緩衝。</li>
+</ul>
+
+<hr>
+
+<div class="sub-title">附錄：節目關鍵資訊</div>
+<ul>
+  <li><strong>播出日期：</strong>2026-08-05 04:30 UTC（北京時間 12:30），視頻播客於 Bilibili / YouTube 同步上線</li>
+  <li><strong>嘉賓背景：</strong>盛穎，本科上海交通大學 ACM 班；哥倫比亞大學 CS 碩士；斯坦福博士（師從 Clark Barrett，形式化驗證 / SMT 求解器優化）；IJCAR 最佳論文獎；cvc5 貢獻者獲 TACAS 最佳工具論文獎；LMSYS Org 發起者之一；SGLang 主要創始人；Databricks 與 xAI 推理系統領導者</li>
+  <li><strong>RadixArk：</strong>2026 年創辦，聯合創辦人 CTO 朱邦華（師從 Michael I. Jordan 與 Jiantao Jiao，聯合創立 Nexusflow 並被 NVIDIA 收購）；1 億美元種子輪；40+ 人；6 月 1 日搬入新辦公室</li>
+  <li><strong>前後脈絡：</strong>與 8/1 E246（何謂蒸餾？硅谷如何看中國開放模型逼近前沿）互補——E246 講開源模型側嘅衝擊，E247 講開源基礎設施側嘅供給；與 7/16 E244（具身智能 3D 數據）同屬「中國視角看矽谷前沿」系列；同 8/6 Latent Space AINews（Jeff Dean 等四人出走創辦 Discovery Loop）對照——美國最頂級嘅研究者正由「模型」流向「自動化研究與基礎設施」，而盛穎嘅路徑印證咗同一趨勢喺 Infra 層面嘅體現</li>
+  <li><strong>延伸閱讀：</strong>虎嗅專訪稿（2026-08-05）對同一對話有書面整理；LMSYS Chatbot Arena 排名生態（屠龍之術 8/1 期亦討論 WorkBuddy 月活數據與評測體系）與盛穎嘅 LMSYS 背景直接相關</li>
+</ul>
+
+<footer>
+  <p>深度復述 · 來源：硅谷101 E247（Bilibili 官方 show notes）、虎嗅整理稿、AI 播客深度萃取日報 2026-08-07</p>
+  <p style="margin-top:0.3rem;">生成時間：2026-08-07 06:30 UTC · JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>

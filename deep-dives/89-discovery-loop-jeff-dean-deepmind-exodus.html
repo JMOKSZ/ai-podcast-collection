@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · DeepMind 時代終結——Jeff Dean 等四人出走創辦 Discovery Loop，Demis 轉任主席：中期衰落定係偉大復出嘅序幕？</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · [AINews] 每日新聞日報（8/4–8/5）</div>
+  <h1>DeepMind 嘅歷史性拐點——Jeff Dean、Sanjay Ghemawat、Oriol Vinyals、Quoc Le 集體出走創辦 Discovery Loop，Demis 轉任主席、Koray 接掌 SVP：「一個時代嘅終結」定係「必要復出嘅序幕」？</h1>
+  <div class="meta">
+    <span>📅 2026-08-06（北京時間 12:34）</span><span>·</span><span>⏱️ 新聞日報</span><span>·</span><span>🎙️ swyx + Alessio Fanelli</span><span>·</span><span>👤 Jeff Dean / Demis Hassabis / Koray Kavukcuoglu / Discovery Loop</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+8 月 5 日，Google 宣佈咗 AI 史上其中一次最震撼嘅人事地震：Jeff Dean（27 年資歷嘅首席科學家）、Sanjay Ghemawat、Oriol Vinyals、Quoc Le——四位「人類歷史上最資深嘅工程與研究人才」——集體離開 DeepMind，共同創辦自動研究（autoresearch）公司 Discovery Loop；Demis Hassabis 由 CEO 轉任 GDM 董事會主席兼 Alphabet 首席科學家；Koray Kavukcuoglu 升任 SVP 掌管日常運營。Latent Space 用一句話定性：「一個時代嘅終結」。但佢哋即刻追問：呢個係中期衰落嘅開始，定係一場偉大復出嘅序幕？
+</p>
+
+<div class="section-title">一、事件全貌：四條推文、一個時代</div>
+
+<p>8 月 5 日下午 4 點零幾，三條推文幾乎同時發出，改寫咗 Google AI 嘅權力結構：</p>
+
+<ul>
+  <li><strong>Jeff Dean（4:06 PM · Aug 5, 2026）：</strong>宣佈同「longtime friends and collaborators」Sanjay Ghemawat、Oriol Vinyals、Quoc Le 共同創辦 Discovery Loop（@DiscoLoopAI），一家 Public Benefit Corporation，使命係「automate machine learning, science, and engineering」（自動化機器學習、科學與工程）。推文數據：3.2M 瀏覽、708 回覆、1.53K 轉推、15.2K 讚好。</li>
+  <li><strong>Demis Hassabis（4:04 PM · Aug 5, 2026）：</strong>「我一世人都喺度做 AGI，而家進入呢個 pivotal moment，我轉任 Google DeepMind 主席兼 Alphabet 首席科學家，專注長期戰略同加速科學突破，包括 Isomorphic。」推文數據：1.06M 瀏覽、781 回覆、1.25K 轉推、15.4K 讚好。</li>
+  <li><strong>Koray Kavukcuoglu：</strong>升任 GDM SVP，接管 Gemini、前沿研究同產品/開發團隊嘅日常運營，向 Sundar Pichai 匯報，負責下一代旗艦 Gemini 4 嘅開發。</li>
+</ul>
+
+<p>同日仲有兩單大事，但 Latent Space 明言「我哋試過，相信我哋試過」將佢哋做頭條——Meta Spark 1.2 + Muse Code 推出 5.6 Terra 級模型配創新 harness 設計（本地事件日誌支援可恢復性 + 持久後台 agent），同 Prime Intellect 嘅自我改進 RLM harness「Prime Agent」聲稱 ARC-AGI-3 達 95.5%（未獲 ARC 官方背書）。但兩單都唔夠 DeepMind 地震大。</p>
+
+<blockquote class="strong">
+「Today's most important story is the coordinated departures of Jeff Dean, Sanjay Ghemawat, Oriol Vinyals, and Quoc Le, some of the most senior engineering and research talent in both Google and in human history, from DeepMind to cofound a new autoresearch startup Discovery Loop.」
+<div class="attribution">——Latent Space AINews，8/6</div>
+</blockquote>
+
+<div class="section-title">二、Discovery Loop 唔係「又一家通用模型公司」——呢個先係重點</div>
+
+<p>技術圈最重要嘅解讀係：<strong>Discovery Loop 瞄準嘅唔係下一代大模型，而係 autoresearch / automated discovery loops</strong>——由 AI 自主跑通「提出假設 → 設計實驗 → 執行 → 分析 → 再提出」嘅發現循環，覆蓋機器學習、科學、工程三大領域。公司註冊為 Public Benefit Corporation，使命原文係「automate machine learning, science, and engineering」。</p>
+
+<p>四位創辦人嘅履歷組合，係「Google 深度 Infra + 模型構建 + 研究執行棧」嘅完整切片：</p>
+
+<ul>
+  <li><strong>Jeff Dean：</strong>MapReduce / TensorFlow / Google AI 基礎設施總設計師，27 年 Google 生涯嘅傳奇工程師。</li>
+  <li><strong>Sanjay Ghemawat：</strong>GFS 同 MapReduce 嘅共同發明人，同 Jeff Dean 由 90 年代合作到而家嘅老拍檔。</li>
+  <li><strong>Oriol Vinyals：</strong>Seq2Seq、AlphaStar 嘅核心人物，Gemini 研究負責人。</li>
+  <li><strong>Quoc Le：</strong>Transformer 思想先驅之一，AutoML 之父級人物。</li>
+</ul>
+
+<p>呢個組合嘅訊號好強：佢哋唔係「四個離開嘅大佬」，而係<strong>一整套可以由零起手重構 AI 研究棧嘅完整團隊</strong>——有人管基礎設施，有人管分佈式系統，有人管模型研究，有人管自動化方法。呢個先至係 Discovery Loop 嘅真正資產。</p>
+
+<div class="data-point">
+<span>Seed</span>
+種子輪由 Radical Ventures 同 Khosla Ventures 領投，Lightspeed、Kleiner Perkins、Doerr Capital 參投——而 Alphabet 自己都有份投資。Jeff Dean 明言：「All the departures are very amicable; Google is investing in Discovery Loop.」
+</div>
+
+<div class="section-title">三、點解唔可以喺 Google 內部做？——Latent Space 嘅核心質疑</div>
+
+<blockquote class="strong">
+「Surely we are not being told the full story here; why couldn't Discovery Loop have been done inside Google?」
+<div class="attribution">——Latent Space AINews</div>
+</blockquote>
+
+<p>呢個係成集最尖銳嘅問題。Latent Space 自己俾咗一條線索：GDM 有 Gemini 論文 1000+ 共同作者嘅龐大協作文化——即係話喺 GDM 做研究，你嘅論文會有一千幾百個共同作者，每個決定都要經過巨型組織嘅協調。而呢四個人自己寫咗一份「宣言」（manifesto）——暗示佢哋想要嘅係<strong>小團隊、快迭代、獨立決策</strong>嘅自動研究形態。呢種形態喺 13000 人嘅巨型組織入面係做唔出嚟嘅。</p>
+
+<p>呢個張力其實係成個 AI 行業嘅結構性矛盾：<strong>前沿研究需要嘅自由度，同大公司規模化營運需要嘅協調度，本質上互相排斥</strong>。OpenAI 嘅 o 系列研究團隊、Anthropic 嘅安全團隊、DeepMind 嘅 Alpha 系列團隊——全部都係喺巨型組織入面劃出「特區」嚟保留自由度。但當「特區」都唔夠用嘅時候，就只好出去自己開公司。Discovery Loop 就係呢種張力嘅最新、最大嘅一次爆發。</p>
+
+<div class="section-title">四、人才流失嘅累積效應：單睇都有理由，連埋睇就係結構性訊號</div>
+
+<p>Latent Space 嘅分析框架好清醒：單獨睇每一次出走，都可以搵到「合理原因」——</p>
+
+<ul>
+  <li><strong>John Jumper → Anthropic：</strong>可以歸因於 Anthropic 嘅勢頭（AlphaFold 之父 + 諾貝爾獎得主跳去對手，可算係 GDM 近年最大單一損失）。</li>
+  <li><strong>Noam Shazeer → OpenAI：</strong>可以指向 OpenAI 喺推理模型方面嘅先驅工作（Attention Is All You Need 作者之一，由 Google 返去 OpenAI）。</li>
+  <li><strong>David Silver：</strong>強化學習之父級人物（AlphaGo 核心），據報亦已離開。</li>
+  <li><strong>Denny Zhou：</strong>Chain-of-Thought 嘅關鍵人物，同樣出走。</li>
+</ul>
+
+<p>但將佢哋連埋一齊，加上<strong>Gemini Pro 更新停滯 6 個月</strong>呢個產品層訊號，就唔再係「獨立事件」而係「結構性訊號」。Latent Space 提出三個問題：1) 到底發生咗咩事導致呢個局面？2) 呢次洗牌係點決定嘅？3) 呢次 shuffle 係「中期嘅終結嘅開始」，定係「一場偉大而必要嘅復出故事嘅第一頁」？</p>
+
+<div class="highlight-box">
+<strong>市場反應：</strong>Alphabet 股價喺公佈後下跌約 4%（CNBC 數據）——市場第一反應係負面嘅。但同一時間，Google Cloud 第二季收入暴增 82% 至 248 億美元（AWS +37%、Azure +43%），Pichai 喺業績會上話「demand is translating to strong token usage」且仍然「supply constrained」。即係話：<strong>人才層面嘅動盪 vs 商業層面嘅勢頭，兩者同時為真。</strong>
+</div>
+
+<div class="section-title">五、治理重置 vs 產品執行提速</div>
+
+<p>生態圈對呢次重組嘅主流解讀係「雙重訊號」：</p>
+
+<ul>
+  <li><strong>治理重置：</strong>Demis 升任主席 + Alphabet 首席科學家，專注長期戰略、AGI 同科學，特別係「leaning into」Isomorphic Labs（佢嘅藥物發現公司）。呢個係一個典型嘅「創辦人退居二線做願景」結構——但考慮到 Demis 一直係 GDM 嘅靈魂，呢個退法係「退」定係「被退」，外界無從得知。</li>
+  <li><strong>產品執行提速：</strong>Koray 接管 Gemini 路線圖，向 Pichai 直接匯報，負責 Gemini 4 開發——將前沿研究產品化嘅責任，由「科學家治國」轉向「工程管理治國」。配合 Gemini Pro 停滯 6 個月嘅背景，呢個安排明顯係為咗加速交付。</li>
+</ul>
+
+<p>呢個結構令人諗起 Microsoft 當年 Satya Nadella 接手後嘅「刷新」：創辦人/精神領袖退後，產品經理上場，短期執行提速，但長期願景風險增加。DeepMind 嘅特殊性在於——佢嘅「長期願景」就係佢嘅產品（AGI 研究），所以「治理重置」同「產品執行」喺 DeepMind 呢度唔係兩回事，而係同一件事嘅兩面：<strong>你想快啲出 Gemini 4，定係想保住 DeepMind 作為 AGI 研究聖地嘅地位？</strong></p>
+
+<div class="section-title">六、行業 Insight：AI-for-Science 由「支線任務」變成「主戰場」</div>
+
+<p>Nathan Lambert、Andrew Ng 等圈內評論將呢件事定性為「Google AI 嘅歷史性拐點」，以及<strong>「AI-for-science 正成為主戰場而非支線任務」嘅最強訊號</strong>。呢個判斷同近期資本流向完全吻合：7/30 張小珺 #149 訪問清華劉子鳴，講中美 neo labs 資本狂潮——「當下資本湧入最活躍嘅方向係 AutoResearch（又稱 AI for AI）」——而家 Jeff Dean 親自落場做 autoresearch，等於用「人類歷史上最資深嘅工程人才」為呢個判斷背書。</p>
+
+<p>更深一層嘅 insight 係：<strong>2026 年最頂級嘅研究者相信，下一波價值唔喺「訓練更大嘅通用模型」，而喺「用 AI 自動化科學發現本身」</strong>。呢個判斷如果成立，咁「模型公司」同「科學發現公司」之間嘅界線會開始模糊——Discovery Loop 嘅 Public Benefit Corporation 架構，本身就係一個訊號：佢哋唔想做「估值遊戲」，想做「使命組織」。而 Google 仍然投資佢哋，等於係用資本承認：呢個方向我哋自己內部做唔到，但佢值得存在。</p>
+
+<p>Latent Space 最後嘅定調係「中場疑問，而非終局判決」：Google 仍然有頂級模型、頂級團隊、頂級算力，同人類歷史上最大嘅訓練數據寶庫。呢次地震嘅真正答案，要等 Gemini 4 出嚟先知——如果 Koray 成功加速交付，呢次就係「必要復出嘅序幕」；如果唔得，歷史會話俾你聽，2026 年 8 月 5 日就係「中期衰落嘅開始」。</p>
+
+<hr>
+
+<div class="sub-title">附錄：節目關鍵資訊</div>
+<ul>
+  <li><strong>播出日期：</strong>2026-08-06 04:34 UTC（北京時間 12:34），AINews 8/4–8/5 新聞日報</li>
+  <li><strong>覆蓋範圍：</strong>12 個 subreddit、544 個 Twitter 帳號</li>
+  <li><strong>次頭條：</strong>Meta Spark 1.2 + Muse Code 發佈 5.6 Terra 級模型，配本地事件日誌（local event log）支援任務可恢復性 + 持久後台 agents——「應令其他 coding agent 廠商警覺」；Prime Agent（Prime Intellect）聲稱 ARC-AGI-3 95.5%，未獲 ARC 官方背書</li>
+  <li><strong>前後脈絡：</strong>與 7/30 張小珺 #149（劉子鳴：AutoResearch 成資本最熱方向）直接呼應；與 7/10 Dwarkesh 專訪 Adam Brown（GDM Blueshift 團隊做 AI 科學推理）形成對照——GDM 內部科學團隊仍在，但最耀眼嘅幾位選擇出去單幹；8/5 報告曾覆蓋 Gemini 3.5 Pro 延遲等背景</li>
+  <li><strong>延伸閱讀：</strong>CNBC（8/5）、Axios（8/5）、Reuters、Hacker News 討論串（item 49184755 / 49184960）、Jeff Dean 官宣推文、Demis 官宣推文、Pichai 內部備忘錄（blog.google）</li>
+</ul>
+
+<footer>
+  <p>深度復述 · 來源：Latent Space AINews（8/6）、CNBC、Axios、Jeff Dean / Demis Hassabis 官方推文、AI 播客深度萃取日報 2026-08-07</p>
+  <p style="margin-top:0.3rem;">生成時間：2026-08-07 06:32 UTC · JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
