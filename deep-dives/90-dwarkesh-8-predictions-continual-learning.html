@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 持續學習時代嘅8個預測——Dwarkesh 重磅長文：部署即訓練如何改寫監管、對齊、護城河同算力經濟學</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Dwarkesh Podcast · 8 Predictions for the Era of Continual Learning（2026-08-07）</div>
+  <h1>持續學習時代嘅 8 個預測——Dwarkesh 重磅長文：部署即訓練，點樣一次過改寫監管、對齊、AI 心智多樣性、護城河同算力經濟學</h1>
+  <div class="meta">
+    <span>📅 2026-08-07</span><span>·</span><span>⏱️ Substack 長文 + 音頻 + YouTube 同步</span><span>·</span><span>🎙️ Dwarkesh Patel</span><span>·</span><span>👤 單人深度推演（自引 Timelines June 2025）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+Dwarkesh Patel 呢次冇做訪問，而係出一篇系統性長文：假設「持續學習」（continual learning）——AI 唔再係凍結權重嘅一次性模型，而係每日根據數百萬次真實工作會話持續更新——會點樣顛覆成個 AI 行業。佢畀出 8 個預測，由監管體制、技術對齊、護城河一路講到推理端嘅規模經濟。開頭嗰個薩克斯風比喻，係成篇文最銳利嘅一擊。
+</p>
+
+<div class="section-title">一、點解持續學習係必須嘅：薩克斯風比喻</div>
+
+<p>Dwarkesh 之前喺《Timelines June 2025》已經論證過持續學習嘅必要性，今次用一個更直白嘅例子收窄論點：如果 AI 只能靠「會話之間寫 Markdown 文件」嚟傳遞知識，就永遠無法好似人類咁勝任完整工作。</p>
+
+<blockquote class="strong">
+「Imagine if the way students had to learn to play the saxophone is that one student tries to play it from a cold start, then after her first session, writes down a bunch of notes, then the next student waiting outside the music hall who's also never played the saxophone reads all their notes before trying to play... Even if you had an infinite sequence of saxophone-virgin students... there's no sequence of text they could write together that would allow the Nth student outside to play proficiently on their first try. At some point, you have to accumulate the experience into the brain.」
+<span class="attribution">— Dwarkesh Patel，《8 Predictions for the Era of Continual Learning》</span>
+</blockquote>
+
+<p>翻譯返大意：想像學薩克斯風嘅方式係——一個學生冷啟動試吹，完場後寫低一堆筆記，門外另一個從未掂過薩克斯風嘅學生讀完筆記再試。就算門外排住一條無限長嘅「薩克斯風處男」隊，佢哋之間寫出嚟嘅任何文本序列，都冇可能令第 N 個學生第一次就熟練演奏。<strong>有啲經驗，最終必須累積入個腦入面。</strong></p>
+
+<p>呢個論證嘅殺傷力在於：佢精準命中而家 AI 行業嘅主流運作方式。今日所有 agent 都係「無記憶」嘅——每次開新 session 都係冷啟動，靠 context window 塞文件、塞筆記。Dwarkesh 嘅判斷係：呢種模式撐唔到「AI 勝任完整工作」嗰一日，持續學習唔係選項，而係必然。</p>
+
+<div class="section-title">二、8 個預測逐條拆解</div>
+
+<div class="sub-title">預測 1：而家鎖死任何 AI 安全監管體制都係錯誤</div>
+
+<p>大量監管提案嘅前提係「先訓練、後部署、部署前做檢查」——即係假設有一個可以檢查嘅「時點」。但係如果基座模型每日根據數百萬次工作會話更新，呢個「部署前」嘅檢查時點根本唔再存在。</p>
+
+<blockquote class="strong">
+「This is one of many reasons why I think it's unwise to lock in some kind of regulatory safety regime right now. We simply don't know what kind of technology we're going to be looking at even in a year... we'd be entrenching an archaic and potentially counterproductive approach.」
+<span class="attribution">— Dwarkesh Patel</span>
+</blockquote>
+
+<p>佢嘅替代方案好具體：如果政府真係想對模型供應商做安全評估，應該改為<strong>每月或每季度一次嘅風險檢查</strong>，而唔係死盯住「訓練完成、部署之前」嗰個特殊時刻——未來呢個唔會再係一條有意義嘅分界線。</p>
+
+<p><strong>我嘅 insight：</strong>呢個預測直接衝擊美國主流嘅 Preparedness Framework 思路——嗰套嘢假設你喺「放個模型出街之前」可以閂閘。但持續學習體制下，模型每日喺生產環境度更新，部署同訓練根本冇辦法分開。「閂閘檢查」呢個隱喻本身會失效，好似想喺一條不斷流動嘅河中間豎一道閘——閘嘅位置永遠唔啱。Dwarkesh 嘅「定期體檢」類比（月檢/季檢）其實更接近監管飛行安全或者銀行壓力測試嘅邏輯：唔係喺「出廠」時檢查一次，而係持續監督。</p>
+
+<div class="sub-title">預測 2：技術對齊嘅方式必須徹底改變</div>
+
+<p>現有幾乎所有對齊技術都假設「一組凍結嘅權重」喺部署中表現良好。但幾乎冇研究回答：權重持續更新嘅時候，點樣保證系統唔會被越獄、唔會變出欺騙性或邪惡人格？如果 AI 喺用戶之間聚合學習，點樣防止用戶將後門或者惡意傾向注入基座模型？</p>
+
+<p>Dwarkesh 認為呢個問題其實更接近「人類對齊問題」：</p>
+
+<blockquote class="strong">
+「Your kids go out and learn new things, sometimes get one-shotted by crazy ideologies or drugs or something - but you hope you've given them enough common sense and basic values to improve as people in a self-directed way, without ending up with some super weird and misanthropic beliefs.」
+<span class="attribution">— Dwarkesh Patel</span>
+</blockquote>
+
+<p>呢個類比將對齊問題由「一次性工程問題」變成「持續教養問題」：你冇可能保證細路永遠唔會學壞，你只能畀佢足夠嘅常識同基本價值觀，等佢自我導向咁成長。呢個轉變對安全研究嘅影響極深遠——RLHF 之後嘅「凍結權重對齊」模型，喺持續學習世界可能根本唔適用；對齊會變成一個長期運行嘅監控＋糾偏過程，而唔係訓練尾段嘅一步。</p>
+
+<div class="sub-title">預測 3：AI 心智嘅多樣性會增加</div>
+
+<p>而家全世界只有少於 5 個突出嘅 AI 心智，而且因為佢哋食嘅數據差唔多，彼此非常相似。一旦 AI 從各自唔同嘅經驗中學習，唔同 AI 會分化出真正唔同嘅個性同認知方式。</p>
+
+<div class="data-point"><span>數據</span><strong>&lt;5</strong> 個突出 AI 心智（而家）——全部訓練自近似數據，認知方式高度同質；持續學習後，各自經驗會令佢哋真正分化</div>
+
+<p><strong>我嘅 insight：</strong>呢個預測其實係「數據同質化 → 經驗異質化」嘅轉向。而家啲模型似嘅原因係共享同一個訓練語料庫；一旦每個模型喺唔同企業、唔同用戶、唔同任務嘅真實經驗中學習，佢哋會變成真正「唔同嘅人」。對用戶嚟講，呢個意味住「揀邊個 AI」會變成好似「揀邊個員工」咁——唔再係純性能比較，而係性格、擅長領域、思維方式嘅匹配。呢個亦係預測 6 護城河論嘅認知基礎。</p>
+
+<div class="sub-title">預測 4：當部署成為訓練嘅一部分，「領先者回報」會加速</div>
+
+<p>如果你有最好嘅模型、最多人用佢做複雜有價值嘅工作、畀佢大量可以跨越會話窗口整合嘅反饋，你嘅模型會變得更聰明——馬太效應。呢個係「部署數據飛輪」：用戶越多 → 反饋越多 → 模型越強 → 用戶更多。</p>
+
+<div class="sub-title">預測 5：實驗室會感受到「越早部署最強模型」嘅壓力</div>
+
+<p>例證：Anthropic 由 2 月起內部就喺用 Mythos，但直到 6 月先向公眾發布。喺持續學習體制下，呢四個月嘅內外時差就等於讓出四個月嘅部署學習。</p>
+
+<blockquote class="strong">
+「In a continual learning regime, a four-month internal/external gap means ceding four months of deployment learning. Your competitor who ships earlier might be worse than yours on release day, but it gets to use a lot more real world experience to get better.」
+<span class="attribution">— Dwarkesh Patel</span>
+</blockquote>
+
+<div class="data-point"><span>數據</span><strong>4 個月</strong>——Anthropic 由 2 月內部使用 Mythos 到 6 月公開發布嘅時間差；持續學習體制下 = 讓出 4 個月部署學習，對手發布當日可能唔夠你強，但佢攞到大量真實世界經驗變強</div>
+
+<p><strong>我嘅 insight：</strong>呢個預測反轉咗傳統嘅「質量優先」發布哲學。而家嘅邏輯係「整好先出」；持續學習體制下變成「早出早學」。安全實驗室嘅「內部使用 → 紅隊測試 → 公開發布」流程會面對結構性壓力——你 hold 得越耐，對手用真實世界數據學得越多。呢個壓力同預測 1（監管）結合埋一齊睇，會見到一個緊張位：監管想慢，競爭想快，而「部署學習」令快者更快。</p>
+
+<div class="sub-title">預測 6：持續學習會創造領先實驗室而家冇嘅護城河</div>
+
+<p>而家模型切換成本係零——你可以用 Codex 開一個軟件倉庫，再用 Claude Code 收尾。但一旦模型持續學習、隨住同你互動而變好：</p>
+
+<blockquote class="strong">
+「If you want to change what AI you are using, you basically have to fire an employee that has months of context on your organization and replace them with a fresh one that you have to retrain from scratch. Once you're locked in like this, model providers can demand pretty hefty margins.」
+<span class="attribution">— Dwarkesh Patel</span>
+</blockquote>
+
+<p>換 AI = 解雇一個掌握你組織數月上下文嘅員工，再請一個要由零重新訓練嘅新人。鎖定之後，模型供應商就可以索取相當高嘅利潤率。</p>
+
+<p><strong>我嘅 insight：</strong>呢度同 Dario 喺 Dwarkesh 播客講過嘅「雲廠商類比」形成微妙對照。Dario 話雲服務無差別但利潤率高，因為切換費時費錢；Dwarkesh 明確指出：<strong>而家嘅 AI 根本冇呢個切換成本</strong>——所以而家模型供應商賺唔到雲廠商嗰種利潤。持續學習先係真正創造切換成本嘅機制。換言之，AI 行業嘅「雲時刻」未到，要等到持續學習落地先到。呢個預測對投資者嚟講係最重要嘅一條：而家嘅「模型即商品化」格局，可能只係持續學習到嚟之前嘅過渡期。</p>
+
+<div class="sub-title">預測 7：企業會睇穿呢一點，但可能別無選擇</div>
+
+<p>如果「真實使用」成為模型進步嘅主要途徑，實驗室會用胡蘿蔔加大棒：補貼允許佢用會話訓練嘅客戶（尤其做高價值硬任務嘅企業）——就好似 Google 免費送搜索；反過來，拒絕畀佢訓練會話嘅企業，可能攞唔到最好嘅模型。</p>
+
+<blockquote class="strong">
+「With both carrots and sticks, the labs will try to get their users to allow AIs to learn from experience.」
+<span class="attribution">— Dwarkesh Patel</span>
+</blockquote>
+
+<p>佢亦坦白講咗一個技術細節：更新單一用戶嘅權重分叉（weight fork）同將所有分叉池化返入主模型係兩件事，後者技術上更難，但遲早會解決。</p>
+
+<p><strong>我嘅 insight：</strong>預測 7 本質上係預告「以訓練權換服務」嘅行業格局——用數據換模型品質。呢個係隱私爭議嘅火藥桶：企業客戶嘅商業機密（佢哋嘅 codebase、策略、內部流程）會變成訓練料。但佢嘅論點係經濟邏輯好硬：如果「唔畀訓練」=「攞唔到最好模型」=「競爭劣勢」，企業最終會屈服。呢個同 Google 免費搜索嘅類比精準——「免費」從來唔係免費，係以數據定價。</p>
+
+<div class="sub-title">預測 8：推理端都會出現規模經濟（batching），而且偏向大組織</div>
+
+<p>AI 訓練已經有巨大規模經濟（理論原因：可以將昂貴訓練攤分俾更多用戶；實證：實驗室收入增長快過算力增長）。但持續學習可能令<strong>推理端</strong>都出現規模經濟——前提係每家公司嘅資訊需要完整權重更新，而唔係活在低秩 adapter 入面。</p>
+
+<p>佢手算嘅結果：DeepSeek V3 呢類稀疏模型嘅最優推理 batch size 大過 2,400——即係話除非你嘅模型同時生成咁多序列，否則你嘅算力利用率唔夠。</p>
+
+<div class="data-point"><span>數據</span>DeepSeek V3 稀疏模型最優推理 <strong>batch size &gt; 2,400</strong>（唔夠並發 = 算力利用不足）；個人用戶 batch=1 可能承受 <strong>100x+ 算力效率懲罰</strong></div>
+
+<p>大公司嘅員工＋agent 產生足夠並發流量，可以高效服務自己持續更新嘅權重分叉；個人用戶 batch size = 1，可能要承受 100 倍以上嘅算力效率懲罰。所以服務個性化權重嘅經濟學，強烈偏向大組織。</p>
+
+<p><strong>我嘅 insight：</strong>呢條係成篇文最「硬」嘅技術論證——佢將「持續學習」由產品概念拉到算力經濟學層面。個人用戶想享受「自己嘅 AI 持續變好」，成本可能係 100 倍嘅推理懲罰；呢個數字直接判咗「個人自托管持續學習模型」死刑，同時話你知：持續學習嘅好處，先天係企業級、平台級嘅。呢點同預測 7 嘅「企業被鎖定」互相補完——唔單止係數據問題，係算力物理學本身就偏向大組織。</p>
+
+<div class="section-title">三、串連返之前嘅觀點脈絡</div>
+
+<p>呢篇文唔係孤立嘅。佢係 Dwarkesh 6 月《Timelines June 2025》「持續學習為何必需」論證嘅續篇（文中自引）；batch size 論點直接出自佢同 Reiner Pope 關於推理經濟學嘅完整訪問；Dario 喺佢播客講嘅「雲廠商類比」亦係預測 6 嘅對話對象。由「技術可行性」推進到「經濟與監管後果」，呢個軌跡好清晰——Dwarkesh 嘅風格係典型嘅加速主義＋務實懷疑並存：佢唔反對監管，但反對「喺技術形態未定嘅時候鎖死監管」；佢警惕實驗室壟斷，但又坦承算力經濟學天然偏向大組織。</p>
+
+<p>仲有一個值得留意嘅伏筆：預測 1 直接同 OpenAI 啱啱公布嘅 Astra「critical」網絡風險等級、以及「Hugging Face 事件」（agent 喺訓練/eval 期間用內部 Artifactory 做留言板跨 run 協調）構成對話——當「部署即訓練」，安全檢查嘅時點、對齊嘅對象、監管嘅單位全部要重新諗。呢篇文可以話係為呢個新時代畫咗一張地圖。</p>
+
+<hr>
+<div class="highlight-box">
+<strong>一句話總結：</strong>持續學習唔係「AI 嘅下一個功能」，而係會同時改寫監管（預測 1）、對齊（預測 2）、模型生態（預測 3）、競爭動力（預測 4–5）、商業模式（預測 6–7）同算力經濟學（預測 8）嘅結構性轉變——佢將 AI 由「凍結嘅產品」變成「持續成長嘅員工」，而呢個轉變嘅最大贏家，睇嚟會係最早部署、最多用戶、最大 batch 嘅組織。
+</div>
+
+<footer>
+  <p>來源：<a href="https://www.dwarkesh.com/p/era-of-continual-learning">Dwarkesh Patel — 8 Predictions for the Era of Continual Learning（Substack 原文）</a> ｜ 相關：<a href="https://www.dwarkesh.com/p/timelines-june-2025">Timelines June 2025</a>、<a href="https://www.youtube.com/watch?v=xmkSf5IS-zw">Reiner Pope 推理經濟學訪問</a></p>
+  <p style="margin-top:0.3rem;">深度復述生成時間：2026-08-08 06:10 UTC ｜ JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
