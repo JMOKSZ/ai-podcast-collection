@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 創始人野心被 AI 大實驗室嚇住咗？——No Priors 拆解萬億美元公司、RSI Burnout 同算力冪律</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">No Priors · Chasing Trillion-Dollar Companies, Founder Ambition, Token Budgets, &amp; Regulatory Capture（2026-08-06）</div>
+  <h1>創始人野心被 AI 大實驗室嚇住咗？——No Priors 兩位頂級 VC 拆解萬億美元公司、RSI Burnout 同算力冪律</h1>
+  <div class="meta">
+    <span>📅 2026-08-06</span><span>·</span><span>⏱️ 約 39 分鐘</span><span>·</span><span>🎙️ Sarah Guo + Elad Gil</span><span>·</span><span>👤 二人對談（無嘉賓）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係 No Priors 少見嘅「純二人對談」——冇嘉賓，只有 Sarah Guo（Conviction 創辦人）同 Elad Gil（Color Health 聯合創辦人、GitHub/Stripe 早期投資人）兩位矽谷最活躍嘅 AI 時代 VC 互相逼問。核心問題得一條：科技行業係咪跑得太快，定係創始人畀 AI 大實驗室嚇住咗、反而壓抑咗自己嘅野心？由萬億美元公司嘅「間斷均衡」，到 RSI/ASI 逼近下研究者嘅 burnout，再到算力冪律同監管捕獲——39 分鐘濃縮晒 2026 年中頂級 VC 嘅焦慮同判斷。
+</p>
+
+<div class="section-title">一、點題：跑得太快，定係野心被嚇細咗？</div>
+
+<p>官方描述一句講晒成集嘅張力：</p>
+
+<blockquote class="strong">
+「Is the tech industry moving too quickly, or are founders letting fear of AI labs stunt their ambitions?」
+<span class="attribution">— No Priors，本集官方描述</span>
+</blockquote>
+
+<p>呢個問題嘅背景係 2026 年嘅結構性格局：OpenAI、Anthropic、xAI 呢啲大實驗室嘅體量（萬億級估值、千億級收入、壟斷級算力）令「創辦一間公司」呢件事本身睇落越來越冇意義——你做乜，大實驗室都可以喺下一次模型發布入面免費附送。兩位 VC 想搞清楚嘅係：創業者嘅反應係咪理性？定係集體性地過度恐懼、錯過咗真正嘅機會窗口？</p>
+
+<p><strong>我嘅 insight：</strong>呢個問題本身就係一個市場信號——當兩位見過最多 deal 嘅頂級投資人要公開討論「創始人係咪唔夠野心」，說明佢哋見到嘅 deal flow 正喺度萎縮或者質變。2025 年嘅敘事係「AI 原生公司雨後春筍」；2026 年中嘅敘事變成「被大實驗室吞噬之前，仲有冇得做」。呢個轉變嘅速度，快過好多人意識到。</p>
+
+<div class="section-title">二、萬億美元公司：間斷均衡與「TAM ≠ 收入」</div>
+
+<div class="sub-title">科技浪潮係「間斷均衡」，而家正處於爆發窗口</div>
+
+<p>Sarah 同 Elad 用演化生物學嘅「間斷均衡」（punctuated equilibria，03:12）嚟理解科技浪潮：長期平靜之後突然爆發式重構。佢哋嘅判斷係——當下正處於一個爆發窗口，歷史類比係互聯網 1995–2000、移動互聯網 2007–2012 嗰種級別。</p>
+
+<p>但佢哋即刻補咗一個重要嘅提醒：<strong>TAM（市場總規模）同真實收入係兩回事</strong>（04:42）。你可以畫出一張好大嘅市場圖，但收入要逐個客戶收返嚟。市場大小同推進速度之間要權衡（07:14）——大市場唔等於快增長，快增長唔等於好生意。</p>
+
+<div class="data-point"><span>數據</span><strong>間斷均衡</strong>（punctuated equilibria）：科技浪潮嘅歷史模式——長期平靜 → 爆發式重構；佢哋判斷而家正處於爆發窗口，而「TAM vs 真實收入」係投資人最鍾意拆穿嘅幻覺</div>
+
+<p><strong>我嘅 insight：</strong>「TAM 唔等於收入」呢句講得輕鬆，其實係 2026 年最容易被忽略嘅分野。AI 行業而家充斥住「$10T 市場」嘅演講，但收入係逐個客戶、逐張合同收返嚟。Elad 喺 8/7 條切片仲有一個更銳利嘅版本——「十億美元級嘅單人公司」：</p>
+
+<blockquote class="strong">
+「People keep talking about someday there'll be a multi-billion dollar single-person company. That was basically Minecraft. It already happened 15 years ago.」
+<span class="attribution">— Elad Gil，本集切片《The First 1-Person Billion-Dollar Company》</span>
+</blockquote>
+
+<p>佢嘅論點係：單人/微型團隊創造巨大價值嘅公司形態早已被驗證（《我的世界》Mojang，11 人團隊 25 億美元賣畀微軟），AI 只係將呢種形態由遊戲擴展到所有領域。呢個係「萬億美元公司」討論嘅另一面：大公司嘅出現方式，可能唔再係「僱 10 萬人」，而係「10 萬個 agent + 幾個人」。</p>
+
+<div class="sub-title">創始人幾時該賣？（10:32）</div>
+
+<p>章節標題係「Founder Ambition / When to sell」——喺 AI 大實驗室吞噬一切嘅背景下，兩位 VC 討論創始人嘅退出框架：幾時應該接受收購、幾時應該繼續賭大。呢個唔係一般嘅 exit 策略討論，而係「大實驗室隨時可以發布一個免費功能打爆你」嘅環境下嘅生存判斷。</p>
+
+<div class="section-title">三、RSI 與 ASI 逼近：未來 18 個月嘅研究者 Burnout</div>
+
+<p>最沉重嘅一段喺 17:57：Recursive Self-Improvement（遞歸自我改進）同「ASI 懸喺頭頂」嘅壓力。兩位 VC 嘅判斷：<strong>未來 18 個月係研究者 burnout 嘅高危窗口</strong>——因為前沿推進嘅速度令人無法喘息。</p>
+
+<div class="data-point"><span>數據</span><strong>18 個月</strong>——佢哋點名嘅研究者 burnout 高危窗口：RSI 逼近 + ASI looming，前沿節奏快到「停低就輸」；創業者同研究者嘅心理健康成為 VC 眼中嘅系統性風險</div>
+
+<p><strong>我嘅 insight：</strong>呢段係成集最「人性」嘅部分，亦係最容易被忽略嘅。VC 通常關心 market、product、team——但 Elad 同 Sarah 明確將「burnout」當成一個行業級風險因素：如果最叻嗰班研究者喺未來 18 個月集體燒燬，會直接拖慢整個行業嘅時間線。呢個判斷同 Cognitive Revolution 上 Zvi 講嘅「Sprint 有時可以頂一個月，頂唔到一年，肯定頂唔到五年」形成跨播客嘅呼應——矽谷最聰明嗰班人開始集體意識到：呢場競賽嘅速度已經超越人類嘅生理極限。</p>
+
+<div class="section-title">四、算力冪律：邊個留喺牌桌上（21:49）</div>
+
+<p>呢段好短但好硬：compute 係瓶頸，而算力分配服從冪律——即係話越有算力嘅組織越容易攞到更多算力（因為佢哋嘅模型更強、收入更多、融資更容易），差距會自我放大。</p>
+
+<p>呢個話題同 Dwarkesh 啱啱喺 8/3 發佈嘅《Why compute might get 10x+ more expensive》形成直接對話：Dwarkesh 論證「算力越貴，最有錢嘅玩家優勢越大」；No Priors 呢度講嘅係同一現象嘅創業視角——<strong>算力冪律決定咗邊個有能力留喺牌桌上</strong>，而呢個冪律正喺度收緊（現貨價較 2 月低點已漲 40%+，Google 向 SpaceX 租 110K GPU 每月 $9 億）。</p>
+
+<blockquote class="strong">
+「Compute is the bottleneck. The power law determines who gets to stay at the table.」
+<span class="attribution">— Elad Gil / Sarah Guo，本集算力冪律章節（大意）</span>
+</blockquote>
+
+<p><strong>我嘅 insight：</strong>算力冪律嘅創業含義係：如果你嘅創業計劃依賴「模型能力持續免費進步」，你其實係將自己嘅命運交畀冪律嘅頂端。呢個解釋咗點解 2026 年嘅 AI 創業者要麼去咗做「模型能力之上嘅分發/工作流/數據層」（避開算力戰），要麼直接加入大實驗室（加入冪律頂端）。中間地帶——「自己訓一個有競爭力嘅模型」——已經唔係創業者嘅選項。</p>
+
+<div class="section-title">五、監管捕獲與「Beyond Transformers」（28:12 / 33:06）</div>
+
+<div class="sub-title">加州 → 德克薩斯：監管捕獲嘅兩種形態</div>
+
+<p>28:12 討論 regulatory capture（監管捕獲）：從加州到德克薩斯嘅生態遷移（公司因為監管環境差異而搬走），以及監管對大公司同小公司嘅不對稱影響。大公司有法律團隊、有遊說資源，可以「同監管共存」甚至「馴化監管」；小公司冇呢啲資源，監管對佢哋嚟講就係純粹嘅合規成本。所以監管捕獲唔單止係政策問題，仲係一個競爭武器——佢會系統性咁偏向大玩家。</p>
+
+<div class="sub-title">Beyond Transformers：架構之外嘅護城河（33:06）</div>
+
+<p>最後一段討論「Transformer 之外」：如果架構繼續演進（呢個係 No Priors 近期反覆觸及嘅主題），真正嘅護城河喺邊？佢哋嘅答案傾向：唔係模型架構本身，而係分發、數據、工作流、同用戶嘅關係。緊接住 34:26 係 Safety vs Progress 嘅取捨——推進速度同安全投入之間嘅平衡點。</p>
+
+<div class="section-title">六、我嘅總體洞察：三位一體嘅 2026 創業困境</div>
+
+<p>將成集嘅碎片拼埋，會見到一個好清晰嘅結構——2026 年中嘅 AI 創業者面對三層同時收緊嘅天花板：</p>
+
+<ul>
+  <li><strong>算力層</strong>：冪律令「獨立訓練」出局，算力越嚟越貴，你只能依附於冪律頂端嘅平台；</li>
+  <li><strong>能力層</strong>：大實驗室嘅模型每次發布都免費附送你嘅產品功能，TAM 故事被「模型即功能」蠶食；</li>
+  <li><strong>心理層</strong>：RSI/ASI 時間線壓縮令「慢慢做」嘅選項消失，burnout 變成行業級風險。</li>
+</ul>
+
+<p>而 Elad 嘅 Minecraft 論點提供咗一條出路：<strong>價值創造嘅單位正在從「公司」縮細到「個人 + agent」</strong>。萬億美元公司嘅敘事可能仍然成立，但實現方式會被重寫——唔係 10 萬人嘅組織，而係極少數人 + 極大量 agent 嘅槓桿結構。對創始人嚟講，問題唔係「我應唔應該做」，而係「我嘅野心應該長喺邊一層」。</p>
+
+<div class="highlight-box">
+<strong>一句話總結：</strong>科技行業冇跑得太快，創始人亦唔係真係野心唔夠——係算力冪律、模型能力壟斷同 RSI 時間線三層壓力同時收緊，令「傳統嘅創業野心」失效；而新嘅野心形態（單人 + agent、Context 層、分發層）先係 2026 嘅正確賭注。
+</div>
+
+<hr>
+
+<p><strong>前後脈絡：</strong>呢集同 8/7 嘅切片《The First 1-Person Billion-Dollar Company》（Minecraft 論）同期發布；同 8/5 嘅 Onyx Security 切片（AI 安全市場冇過度反應）構成「市場結構判斷 + 安全賽道判斷」嘅互補。宏觀框架上，佢同 7/31 Netic 期（自主企業服務，務實路線）加埋先係 No Priors 對 2026 創業光譜嘅完整畫像——一端係「萬億野心」，另一端係「服務落地」。同日嘅 Latent Space 亦喺度拆「harness 即產品」，側面印證咗「模型之上嘅層先係戰場」呢個共同判斷。</p>
+
+<footer>
+  <p>來源：<a href="https://www.youtube.com/watch?v=sasC-IgKXxk">No Priors — Chasing Trillion-Dollar Companies, Founder Ambition, Token Budgets, &amp; Regulatory Capture（YouTube）</a> ｜ 相關：<a href="https://www.nopriors.com">No Priors 官網</a>、Dwarkesh《Why compute might get 10x+ more expensive》（2026-07-29）</p>
+  <p style="margin-top:0.3rem;">深度復述生成時間：2026-08-08 06:11 UTC ｜ JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
