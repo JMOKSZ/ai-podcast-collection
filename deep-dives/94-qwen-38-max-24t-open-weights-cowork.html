@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Qwen 3.8 Max（2.4T）——阿里開源 2.4T 旗艦：4% 激活率、生態對決獨家、中國開放權重前沿踩入新量級</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · [AINews] Qwen 3.8 Max(2.4T) and 27B（2026-08-04）</div>
+  <h1>「2.4T 參數、4% 激活、下週開源」——Qwen 3.8 Max：阿里用生態採用率打贏獨家溢價，中國開放權重前沿正式踩入 2.4T 量級</h1>
+  <div class="meta">
+    <span>📅 2026-08-04（03:49 UTC）</span><span>·</span><span>⏱️ AI 新聞日報（12 subreddits + 544 Twitters）</span><span>·</span><span>🎙️ swyx + Alessio Fanelli</span><span>·</span><span>👤 Alibaba Qwen / Vals AI / LMArena / ZhihuFrontier</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+上年「Qwen 團隊出走」之後，新管理層接手、連續推出閉源 API，外界一度懷疑呢個開放模型領頭羊仲會唔會出真正有份量嘅開放模型。8 月 4 日凌晨 Latent Space 嘅 AI 新聞日報開場就講：呢個懷疑，而家可以收皮喇——阿里發布 Qwen3.8-Max，一個 2.4T 參數嘅巨型稀疏模型，如果唔係一個星期前 Kimi K3 搶先發布，佢就係世界上最好嘅開放模型。
+</p>
+
+<div class="section-title">一、故事開頭：一個懸念嘅終結</div>
+
+<p>Latent Space 用咗一段好長嘅背景交代點解呢單發布咁重要：去年 Qwen 團隊出走潮之後，市場擔心阿里會唔會放棄開放模型路線；當新管理層接手、連續幾個月淨係出閉源 API 嗰陣，呢個懷疑更加具體。但 Qwen 3.8 Max 一次過證明——開放模型路線冇死，而且直接推上 2.4T 量級：</p>
+
+<blockquote class="strong">
+「That doubt is now gone. Qwen 3.8 Max is a MONSTER 2.4T model that would have been the top open model in the world but for the Kimi K3 release we already covered.」
+<span class="attribution">— Latent Space [AINews] 2026-08-04</span>
+</blockquote>
+
+<p>發布推文（2:15 AM · Aug 3，<strong>496 萬瀏覽、2.5K 轉推、20.1K 讚</strong>）內容簡潔有力：Qwen3.8-Max 係「coding and cowork 嘅新標竿」，2.4T 參數，下週開放權重；Qwen3.8-27B 亦會一齊開放。API 定價 <strong>$2 / $6 / $0.25</strong>（每百萬 token 輸入/輸出/緩存命中）——比上一代 Qwen 3.7 Max 嘅 $2.50 / $7.50 明顯降價。</p>
+
+<div class="section-title">二、演示級長程能力：10+ 日編碼、125 小時研究、晶片設計、365 日電商</div>
+
+<p>阿里今次嘅發布框架好特別——佢冇主打「chatbot 幾聰明」，而係主打「long-horizon agentic work」：一個模型可以唔睇住做嘢做足十日。官方列嘅示範能力：</p>
+
+<ul>
+  <li><strong>10+ 日無人值守編碼：</strong>由空白資料夾開始，自建一個 self-evolving coding harness，喺多星期嘅自主運行入面完成成個 production 項目，完整 project trace 公開喺 GitHub。</li>
+  <li><strong>125 小時自主 AI 研究：</strong>由零重建一篇論文嘅完整 pipeline（Unified Data Selection for LLM Reasoning），然後自主運行迭代研究循環 125 小時，發明咗一個新嘅數據選擇方法，喺 benchmark 上贏原論文 <strong>+2.71 分</strong>。</li>
+  <li><strong>競賽級數據科學：</strong>喺 WWW2025 多模態對話意圖識別挑戰賽對戰 526 支人類隊伍，24 小時內打入前 13%（贏 87% 人類隊伍）。</li>
+  <li><strong>完整晶片設計流程：</strong>由 RTL 編輯到模擬、綜合、物理佈局完整走完一個硅片設計流程（GCD/RSA 加密加速器）——gate count 由 8,298 減到 <strong>678</strong>，die 面積減 <strong>81%</strong>，仲做到 500 MHz 嘅物理時序閉合。</li>
+  <li><strong>365 日電商營運：</strong>喺 E-Commerce Bench（365 日商店營運模擬）上，透過持續嘅博弈論式談判同庫存規劃，做出 <strong>4.16x 回報</strong>（¥416,252 結餘）。</li>
+  <li><strong>原生多模態執行循環：</strong>視覺係執行循環嘅一部分而唔係單純輸入通道——planning、coding、GUI 交互都有視覺回饋；另發布 Qwen-MM-Plugins 將多模態能力擴展到現有 agent 框架。</li>
+</ul>
+
+<div class="data-point"><span>數據</span>官方示範數字：<strong>10+</strong> 日自主編碼、<strong>125</strong> 小時研究循環（+2.71 分贏原論文）、gate count <strong>8,298 → 678</strong>（die 面積 -81%、500 MHz 閉合）、電商模擬 <strong>4.16x</strong> 回報、WWW2025 對戰 526 支人類隊伍入前 13%</div>
+
+<p><strong>我嘅 insight：</strong>留意呢串數字嘅共通點——全部係「持續目標維持」（persistent objective maintenance）嘅任務，冇一個係單輪問答。阿里明顯係瞄住「long-horizon agents」嘅 discourse 嚟設計發布：10 日編碼、500+ turns 晶片優化、365 日商業策略，全部係考驗模型「記得住目標、唔走樣、識恢復」嘅能力。呢個係 2026 年 agent 時代最核心嘅能力維度，亦係「模型係 harness 嘅 substrate」呢個敘事嘅官方背書——佢唔係賣一個聊天機械人，而係賣一個「可以放喺 harness 入面長跑」嘅引擎。</p>
+
+<div class="section-title">三、第三方評測：真金白銀嘅排行榜位置</div>
+
+<p>官方數字信唔過，第三方評測先係重點。今次嘅第三方結果異常強勁，尤其喺 coding、視覺同設計類：</p>
+
+<ul>
+  <li><strong>Frontend Code Arena：</strong>以 <strong>1,668 Elo</strong> 首發即 #4 整體——僅次於 Claude Opus 5 [Max]（1,705）同 Kimi K3 [Max]（1,676），同 Claude Opus 5 [High]（1,669）幾乎打和。細分榜：#2 Consumer Product、#3 Brand &amp; Marketing / Reference-based design / Gaming / Content Creation Tools、#4 Data &amp; Analytics、#5 Simulations。</li>
+  <li><strong>Vision Arena：</strong>#2（1,305），只落後 Claude Fable 5 [High] <strong>13 分</strong>。</li>
+  <li><strong>Vals Index：</strong>開放權重模型 #2、43 個模型中整體 #10，得分 <strong>66.1</strong>——同 Claude Opus 4.7 完全打和（66.1 vs 66.1），但每次測試成本只係 $2.68 vs $6.17，<strong>平 2.3 倍</strong>。</li>
+  <li><strong>SWE-bench：87.3%</strong>——贏 GPT-5.5（82.6%）同 GLM-5.2（83.3%），輸畀 Claude Opus 4.8（89.2%）。</li>
+  <li><strong>Terminal-Bench 2.1：67.4</strong>（上代 Qwen 3.7 Max 係 61.0）。</li>
+  <li><strong>Vals 評估設定：</strong>1M token context、128k max output、temperature 0.7。</li>
+</ul>
+
+<p>ZhihuFrontier 另補充咗一組規格數字：<strong>95B active parameters per token</strong>（激活率約 4%）、1M context、API 提供 low/medium/xhigh 三檔推理強度、兼容 OpenAI 同 Anthropic 協議；benchmark 宣稱 PaperBench 93.0、CoWorkBench 74.8、WideSearch 81.9。</p>
+
+<div class="data-point"><span>數據</span>進步速度：Qwen 3.7 Max = <strong>57.5</strong> → Qwen 3.8 Max = <strong>66.1</strong>，約 2.5 個月 +8.6 分；同時輸入/輸出定價由 $2.50/$7.50 降至 <strong>$2.00/$6.00</strong> ——「又強咗又平咗」一齊發生</div>
+
+<p>社區入面仲有一啲更進取嘅演繹：「Opus 4.8 大部分能力已被 3.8-Max 覆蓋」（有人重畫 benchmark 圖表後嘅判斷）、「Qwen 3.8 喺 Terminal Bench 贏咗 Fable 5，Anthropic 明顯受壓」——呢啲係生態解讀而唔係嚴格測量，但連埋一齊睇，方向好清晰。</p>
+
+<div class="section-title">四、關鍵分歧一：「操作上開源」≠「本地跑得起」</div>
+
+<p>今次討論最大嘅冷卻劑嚟自 Jamin Ball（Benchmark Capital）：佢話淨係比「vanilla token 價格」係誤導，因為呢啲模型大到你根本冇辦法當佢係普通開源模型：</p>
+
+<blockquote class="strong">
+「Qwen 3.8 Max &gt;2T params；Kimi K3 ~104B active per token，淨係載入權重就要 &gt;1TB 記憶體，至少要 8 張 H100/B200 先跑得起，Moonshot 建議 64+ 加速器嘅 supernode 配置……一個 2.4T-class MoE 唔係 commodity local model。」
+<span class="attribution">— Jamin Ball（@jaminball），2026-08-03/04</span>
+</blockquote>
+
+<p>StableQuan 講得更白：長 prompt、RAM 爆滿、tool call 慢——巨型模型喺消費級硬件上好痛苦，建議直接用 API。呢個就係開放模型故事入面最關鍵嘅 split：</p>
+
+<blockquote class="strong">
+「生態影響力同 benchmark 合法性嚟自 2.4T 旗艦嘅發布；實際規模化採用，可能嚟自 27B 嘅發布。」
+<span class="attribution">— Latent Space [AINews] 對社區討論嘅總結</span>
+</blockquote>
+
+<p><strong>我嘅 insight：</strong>呢個 split 係理解成個開放權重時代嘅鑰匙。2.4T 旗艦嘅戰略價值根本唔喺「有幾多人自託管佢」——佢係一個「合法性錨點」：證明開放路線可以企喺前沿、令第三方 benchmark 榜單有你個名、令整個生態（Baseten、Hermes Agent、Cline、Venice 全部即日宣布支援）以你為中心轉。真正承擔「採用」任務嘅係 27B 小弟——細到個人開發者跑得起，先至有 developer lock-in。呢個係「用旗艦立旗、用小弟圈地」嘅雙層戰略。</p>
+
+<div class="section-title">五、關鍵分歧二：許可證——「開放權重」可以好唔開放</div>
+
+<p>最具體嘅質疑唔係性能，而係許可證。OstrisAI 讀咗條款之後指：許可證似乎禁止美國、歐盟、英國同韓國使用，甚至連「從美國下載模型」都可能被禁。呢個擔憂同 MiniMax H3 嘅討論互相呼應——當時有人話 H3 嘅公開許可證令佢喺美國/歐盟/英國/韓國「唔合法可用」（後來 MiniMax 方面澄清係需要正式授權流程，唔係完全禁止）。截至今期新聞，阿里自己冇出澄清推文，所以「限制性許可證」嘅解讀喺數據集入面仍然懸而未決。</p>
+
+<blockquote class="strong">
+「對於工程師嚟講，呢個比 marketing label 更重要。『開放權重』仍然可以意味住：冇 OSI 式開源權利、有用例限制、有出口/司法管轄限制、或者喺關鍵地區冇商業部署嘅法律許可。呢個許可證嘅模糊性，正係今次反應比慶祝更謹慎嘅主要原因之一。」
+<span class="attribution">— Latent Space [AINews] 2026-08-04</span>
+</blockquote>
+
+<p><strong>我嘅 insight：</strong>「Open weights ≠ open source」呢個提醒好重要，尤其對做企業採購嘅人。你見到「開源」兩個字，要問嘅唔係「權重俾唔俾下載」，而係：邊個司法管轄區用得？商業用途俾唔俾？fine-tune 之後條款點算？呢個模糊性唔係 Qwen 獨有——係 2026 年所有中國開放權重模型嘅共同陰影，亦係「開放權重」呢個詞越來越需要逐字讀條款嘅原因。</p>
+
+<div class="section-title">六、戰略解讀：阿里由「獨家溢價」轉向「生態採用率」</div>
+
+<p>ZhihuFrontier 嘅框架被今期新聞引為標準解讀：呢個唔係一次例行產品更新，而係阿里的戰略轉向。以往 Max 系列保持閉源，開放路線頂多到 Qwen3-235B；今次將 2.4T 旗艦開放權重，係因為 DeepSeek、Kimi 等中國開放模型已經削弱咗「頂級系統 API-only 溢價」——既然保留獨家都收唔到溢價，不如用生態採用率競爭。社區嘅反應：</p>
+
+<ul>
+  <li><strong>「中國不再落後，而係平等競爭」</strong>（@kimmonismus）</li>
+  <li><strong>「前端設計榜前三位，而家有兩個中國模型一個西方模型」</strong>（@kimmonismus）</li>
+  <li><strong>「仲記唔記得中國曾經落後兩年？」</strong>（@matvelloso）</li>
+  <li><strong>「過去兩年 open weights frontier 一直由中國實驗室主導」</strong>（@_micah_h）——Hugging Face CEO 亦喺 CNBC 講「中國正贏緊開放模型」；Artificial Analysis 歷史數據則顯示中國領先模型平均落後美國頂尖 3–9 個月</li>
+</ul>
+
+<p>更深一層嘅 subtext：<strong>護城河正在轉移</strong>——唔再係 raw pretraining，而係 post-training、agent harnesses、推理基建、蒸餾 pipeline 同 developer lock-in。呢個正正解釋咗點解一個「好少團隊會真係自託管」嘅 2.4T 開源旗艦，戰略價值依然巨大。</p>
+
+<div class="section-title">七、架構信號：4% 激活率嘅稀疏 MoE</div>
+
+<p>如果 ZhihuFrontier 嘅 95B active / 2.4T total 數字屬實，Qwen3.8-Max 每 token 只激活總參數嘅約 <strong>4%</strong>——對比 Qwen3-235B-A22B 嘅約 10%。呢個係阿里明顯比對手更進取嘅稀疏化：</p>
+
+<blockquote class="strong">
+「Frontier open models can look 'huge to store yet still cheap to run' by only activating a narrow expert slice per token.」
+<span class="attribution">— @ProfTomYeh，轉述稀疏 MoE 討論嘅核心</span>
+</blockquote>
+
+<p>呢個架構方向好可能就係阿里可以「總參數量級上升、API 定價反而下降」嘅原因：更大嘅 expert pool + 更低嘅 active footprint + 更低嘅有效推理成本——假設 routing 同系統優化喺生產環境頂得住。</p>
+
+<div class="section-title">八、同日其他值得記低嘅事</div>
+
+<ul>
+  <li><strong>MiniMax H3（開放權重視頻模型）：</strong>Video Arena 開放模型 #1，領先第二嘅開放模型 <strong>+280 分</strong>，image-to-video 幾乎同整體 #1 打和；33B、文字/圖像/視頻/音頻單一 context、RTX 5090 加 ComfyUI 約 40GB 可本地跑；但 context orchestration、2K 再生、sparse attention 仍然 server-side——又係「開放權重但唔係 fully open-source」嘅案例。</li>
+  <li><strong>OpenAI 數學結果：</strong>內部下一代模型以約 <strong>$2,000</strong> token 成本（GPT-5.6 Sol 費率）解出 10 個長期開放嘅數學/理論 CS 問題——興奮同懷疑並存（「總嘗試成本 vs 成功成本」嘅會計問題）。</li>
+  <li><strong>Elon Musk：</strong>源碼即將變得似 assembly——AI 最終會直接將意圖編譯成二進制。</li>
+  <li><strong>Cursor：</strong>cloud agents token 效率 +20–30%、computer-use 效率 +80%，並推出 Google Workspace 插件。</li>
+  <li><strong>Cloudflare @cloudflare/computer：</strong>可以喺輕量 isolate 同完整 Linux container 之間動態切換嘅 agent runtime。</li>
+  <li><strong>DSPy 3.3.0：</strong>dspy.Flex（同時優化 code + prompt）、ReActV2 原生/並行 tool calling。</li>
+  <li><strong>TokTier：</strong>stateful tokenization——cached agent workload 入面 tokenization 可以佔 TTFT 嘅 <strong>64%</strong>，stateful tokenization 減少 TTFT 16–34%、incremental repair 快過 HF tokenizer 437x。</li>
+  <li><strong>Epoch：</strong>7 月 21 間主要科技機構披露約 <strong>2,500</strong> 個 high/critical CVE——約莫係 Anthropic 自主漏洞發現披露之前歷史月度紀錄嘅 5 倍。</li>
+  <li><strong>Cline 嘅觀察（同 Qwen 敘事完美咬合）：</strong>好多開放模型被 RL 訓練成「花更多 token 驗證」——重跑測試、檢查 build、重讀 diff——當 harness 允許佢哋咁樣做嗰陣，單係 harness 改變就可以有約 <strong>20%</strong> 收益。</li>
+</ul>
+
+<div class="section-title">九、行業信號總結</div>
+
+<blockquote class="strong">
+「中國開放權重前沿嘅競爭，由 100B 級推到 2.4T 級，而且定價低過自家前代——『開放模型而家喺贏』。對 Anthropic/OpenAI 嘅壓力係結構性嘅：閉源溢價只能靠 token 效率 + harness 體驗維持，而 Qwen 3.8-Max 嘅長程自主示範（10 日編碼、125 小時研究、晶片設計）直接打向 agent 時代嘅核心賣點。」
+<span class="attribution">— 本文整合自 Latent Space [AINews] 2026-08-04 及每日報告</span>
+</blockquote>
+
+<p><strong>我嘅 insight：</strong>將今期三條線放埋一齊——2.4T 旗艦開源、4% 激活率嘅架構、以及「護城河由 pretraining 轉向 harness/post-training/蒸餾」嘅共識——會得到一個重要結論：<strong>「開放 vs 閉源」嘅戰場已經由「模型能力」移咗去「生態同 harness」。</strong>模型能力方面，中國開放陣營已經企喺同 Western closed 差一個身位嘅位置（3–9 個月、而且每個月喺度收窄）；真正未定勝負嘅係：邊個嘅 harness、蒸餾 pipeline、developer 生態圈得住人。阿里用 2.4T 旗艦做「立旗」，用 27B 做「圈地」，呢個打法嘅成敗要等到下週權重真係開放、社區真係跑得起先見真章——尤其許可證問題一日未澄清，一日都係懸喺頭上嘅問號。</p>
+
+<hr>
+<div class="highlight-box">
+<strong>一句話總結：</strong>Qwen 3.8 Max 係「Qwen 團隊出走」後阿里開放路線嘅終極宣言——2.4T 總參數、約 4% 激活、$2/$6 定價、Frontend Code Arena #4 / Vision Arena #2 / Vals Index 66.1（同 Opus 4.7 打和但平 2.3 倍），示範能力全部係 long-horizon agentic 任務（10 日編碼、125 小時研究、晶片設計、365 日電商）。但「開放權重」三個字背後仲有兩個未解問題：2.4T 冇幾多個人真係跑得起（真正採用可能靠 27B 小弟），同埋許可證對美/歐/英/韓嘅限制一日未澄清，一日都係企業採用嘅絆腳石。
+</div>
+
+<footer>
+  <p>來源：<a href="https://www.latent.space/p/ainews-qwen-38-max24t-and-27b-new">Latent Space — [AINews] Qwen 3.8 Max(2.4T) and 27B（Substack 原文）</a> ｜ 相關：<a href="https://qwen.ai/blog?id=qwen3.8">Qwen 官方發布頁</a>、<a href="https://www.latent.space/p/ainews-much-ado-about-open-weights">Latent Space — Kimi K3 開放權重報道</a></p>
+  <p style="margin-top:0.3rem;">深度復述生成時間：2026-08-09 06:15 UTC ｜ JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
