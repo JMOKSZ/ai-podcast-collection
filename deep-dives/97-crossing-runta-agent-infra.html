@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 十字路口×戴冠蘭——「模型能力已經夠了，要卷就卷 infra」：Runta 創始人點樣睇 Agent 時代嘅執行底座、權限吞噬同「必然嚟嘅災難性事故」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">十字路口 Crossing（Koji）· 「模型能力已經夠了，要卷就卷 infra」｜對談戴冠蘭：Runta 創始人（2026-08-09）</div>
+  <h1>「未來 10 個月，必然會有一場災難性嘅 Agent 事故」——Runta 創始人戴冠蘭：Token 文化半年急轉彎、AI 時代嘅「水電煤」由創業公司嚟建、同埋人類點樣喺一次次撳「允許」中交出控制權</h1>
+  <div class="meta">
+    <span>📅 2026-08-09（16:00 UTC）</span><span>·</span><span>🎙️ Koji（楊遠骋）</span><span>·</span><span>👤 戴冠蘭（Runta 創始人 / CEO）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+Runta 係 Agent Infra 領域嘅矽谷明星創業公司，啱啱完成由 a16z 領投嘅 2000 萬美元 Seed 輪，Jeff Dean、李飛飛等以個人天使身份參投——a16z 罕見咁為一間 Seed 輪公司專門寫咗篇 Blog。創辦人戴冠蘭係 Cloudflare 同 Kong 嘅早期團隊成員，今次係佢第一次以 CEO 身份創業。佢嘅創業判斷簡單直接：「模型能力已經夠了，要卷就卷 infra」——呢句說話係 2026 下半年 AI 行業關鍵詞由「模型」轉向「基礎設施」嘅最好註腳。
+</p>
+
+<div class="section-title">一、點解係而家？——「模型能力已經夠了」</div>
+
+<p>戴冠蘭嘅判斷好直接：<strong>未來一定會有比人類更多嘅 agent，AI 領域嘅關鍵問題將變成：佢哋跑喺邊？點樣管？出咗事邊個負責？</strong>呢個係佢揀喺呢一刻創業嘅最直接理由。</p>
+
+<blockquote class="strong">
+「模型能力已經夠了，要卷就卷 infra——未來一定會有比人類更多的 agent，AI 領域的關鍵問題將變成：它們跑在哪？怎麼管？出了事誰來負責？」
+<span class="attribution">— 戴冠蘭，Runta 創始人 / CEO</span>
+</blockquote>
+
+<p>呢句說話嘅重量，要放喺 2026 年嘅脈絡先睇得明：過去兩年行業嘅全部注意力都喺模型能力——scaling law、後訓練、多模態。但當 Claude Code、Codex 呢類 agent 開始真正執行長任務，行業先發現：<strong>模型識做嘢，但冇一個地方俾佢安全咁做嘢。</strong>GPU 短缺之外開始出現 CPU 短缺——因為 agent 唔單止要推理，仲要跑喺一個完整、有狀態嘅「電腦」上面。a16z 合夥人 Martin Casado 喺投資 Blog 入面講得好白：</p>
+
+<blockquote>
+「AI 模型逼使我哋重新諗 GPU 堆棧；而家 agent 對 CPU 做緊同樣嘅事。AI agent 就係想要一部電腦——完整嘅 OS、完全有狀態、可以喺本地或者雲端跑。」
+<span class="attribution">— Martin Casado（a16z），《Investing in Runta》</span>
+</blockquote>
+
+<p><strong>我嘅 insight：</strong>「模型能力已經夠咗」係一個好大膽、但喺特定語境下成立嘅 claim。佢唔係話模型唔會再進步，而係話<strong>瓶頸已經由「模型識唔識做」轉移去「社會敢唔敢俾佢做」。</strong>呢個轉移本身，就係 agent 由 demo 走向生產嘅標誌。對照返過去十年嘅 infra 歷史——GPU 堆棧為模型重新設計過一次（CUDA、TPU、推理引擎），而家輪到 CPU 堆棧為 agent 重新設計——呢個先係「AI 嘅水電煤」真正嘅生意所在。</p>
+
+<div class="section-title">二、Token 文化半年急轉彎：由 Maxxing 到 Minimizing</div>
+
+<p>戴冠蘭觀察到一個好快嘅文化轉變：<strong>Token Maxxing（用得越多越光榮）喺三到六個月內急轉彎，變成 Token Minimizing（ROI、預算、歸因、節流）。</strong></p>
+
+<p>呢個轉彎背後係行業由「秀肌肉」走向「算帳」嘅信號：</p>
+
+<ul>
+  <li><strong>燒錢敘事結束</strong>——「用得多」唔再係能力證明，而係成本漏洞</li>
+  <li><strong>每一分 token 都要有歸因</strong>——呢個 token 產生咗幾多收入？幾多效率？</li>
+  <li><strong>預算意識抬頭</strong>——企業開始計 agent 嘅單位經濟</li>
+</ul>
+
+<p>呢個轉變對 infra 嘅含義好深：當 token 變成要「節流」嘅資源，<strong>agent 執行效率就由「錦上添花」變成「生死存亡」。</strong>一個長程 agent 跑一日任務，token 消耗可能係天文數字——如果冇人計呢條數，企業好快就唔會再用 agent。</p>
+
+<div class="section-title">三、AI 時代嘅「水電煤」：點解創業公司贏過公有雲巨頭</div>
+
+<p>呢集最反直覺嘅論點：<strong>AI 時代嘅「水電煤」由創業公司建，而唔係公有雲巨頭。</strong>戴冠蘭嘅理由係：巨頭受制於既有架構同商業模式——佢哋嘅 infra 係為「人寫嘅、邏輯確定嘅軟件」設計嘅，要翻轉嚟遷就 agent 嘅概率性執行，成本太高、動機太低。</p>
+
+<blockquote class="strong">
+「當軟件的執行從『邏輯清晰的確定性』變成『LLM 的概率性』——AI 正在動搖整個數字世界的地基。當執行不再是確定性的，基礎設施的語義就全變了。」
+<span class="attribution">— 戴冠蘭</span>
+</blockquote>
+
+<p>呢個「地基語義改變」嘅論述好有力量。傳統 infra 嘅一切假設——冪等性、事務、回滾、監控——都建立喺「程式行爲可預測」之上。但 agent 嘅每一步都係概率性嘅：佢可能揀錯 tool、可能行錯 branch、可能「諗到」要做啲嘢超出你授權。呢啲情況傳統 infra 全部冇預案。戴冠蘭嘅結論：<strong>呢個唔係修補問題，係重建問題。</strong></p>
+
+<p>點解創業公司反而有機會？因為佢哋冇包袱——可以直接為 agent 設計執行底座，而唔使兼容三十年嘅 legacy 假設。呢個同「GPU 時代 Nvidia 由零打造 CUDA 生態」嘅故事異曲同工。</p>
+
+<div class="section-title">四、Sandbox 嘅局限：E2B、Daytona 式方案點解唔夠</div>
+
+<p>戴冠蘭直接點名現有方案嘅痛點：<strong>E2B、Daytona 式嘅通用 Sandbox 難以承載長程 Agent。</strong></p>
+
+<ul>
+  <li><strong>長時程：</strong>agent 任務可以跑幾個鐘、幾日——session 點維持？狀態點保存？</li>
+  <li><strong>有狀態：</strong>agent 要記住做過乜、改過乜、邊啲文件掂過——stateless sandbox 唔夠用</li>
+  <li><strong>治理：</strong>企業要知 agent 掂過乜、使咗幾多錢、有冇越權——sandbox 淨係隔離，唔係治理</li>
+</ul>
+
+<p>呢個正正係 Runta 切入嘅差異化空間：唔係「另一個 sandbox cloud」（Casado 喺 Blog 入面特登澄清），而係<strong>為 agent 重新想像執行層</strong>——提供 agent 想要嘅抽象（一部電腦），同時極度高效、可以本地或雲端跑，仲內置安全同政策接口。</p>
+
+<p>Martin Casado 將呢個轉變講到好大：</p>
+
+<blockquote>
+「我入行夠耐，記得 client/server 去 datacenter、物理機去 VM、再去 container 嘅每次轉變。呢次 shift 係最大、最重要嘅一次——由 hosting software 變成 hosting agents。」
+<span class="attribution">— Martin Casado（a16z）</span>
+</blockquote>
+
+<div class="section-title">五、企業嘅 Agent 邊界：幾百個 agent 點劃線？</div>
+
+<p>Koji 問咗個好實際嘅問題：企業話自己有幾百個 agent，Agent 嘅邊界究竟點劃？戴冠蘭嘅答案觸及 agent 治理嘅核心難題：</p>
+
+<ul>
+  <li><strong>身份：</strong>每個 agent 係咪要有獨立身份同憑證？</li>
+  <li><strong>授權：</strong>agent 可以掂邊啲嘢？上限係幾多？</li>
+  <li><strong>歸責：</strong>agent 做錯嘢，追邊個？模型廠？平台？企業？</li>
+</ul>
+
+<p>呢啲問題喺「單個 agent demo」時代完全唔存在，但喺「幾百個 agent 同時開工」嘅企業環境入面，每一個都係要命嘅。戴冠蘭用咗個好貼地嘅比喻：<strong>Agent 似早熟嘅細路——父母要將屋企「兒童安全化」（childproof），信用卡要收好。</strong>開發者必須限制 agent 可以掂邊啲檔案、一次過可以用幾多錢。</p>
+
+<blockquote class="strong">
+「人類會喺一次次點擊『允許』中，不知不覺交出邊界與控制權——這是 agent 時代最被低估的風險。」
+<span class="attribution">— 戴冠蘭</span>
+</blockquote>
+
+<p>呢個「權限吞噬」嘅論述值得放慢讀：今日你用任何 agent 工具，每一步都係彈一個「允許」dialog 出嚟——允許讀檔案、允許執行命令、允許訪問網站。每一次撳「允許」，你就交出一啲控制權。當呢啲 dialog 變成日常、變成肌肉記憶，<strong>人類嘅監督就會由「審批」淪為「蓋章」。</strong>戴冠蘭話呢個係最被低估嘅風險——因為佢唔係一次性嘅大事故，而係慢性嘅、逐啲逐啲嘅失守。</p>
+
+<div class="section-title">六、「未來 10 個月，必然有一場災難性事故」</div>
+
+<p>成集最強嘅 claim：</p>
+
+<blockquote class="strong">
+「未來 10 個月，必然會有一場災難性的事故。那場事故，會把所有人重新『教育』一遍。」
+<span class="attribution">— 戴冠蘭</span>
+</blockquote>
+
+<p>呢個預判嘅邏輯係：agent 嘅部署速度遠快過治理機制嘅成熟速度。企業為咗競爭優勢搶住上 agent，但安全、權限、可觀測性嘅最佳實踐仲未成型——呢個 gap 本身就係事故嘅溫床。而「災難性」唔一定指實體傷害，可以係：一個 agent 搞冧生產系統、一單巨額誤操作、一單大規模數據洩漏。</p>
+
+<p>值得注意嘅係，呢個預判同本周嘅行業事件形成互證：OpenAI Astra 升到 critical 網絡風險等級、Hugging Face 事件（Latent Space 報道）——行業似乎真係開始為「agent 事故週期」做準備。戴冠蘭嘅觀點係：<strong>呢場事故未必係壞事——佢會將所有人「教育」一遍，重塑行業對 agent 安全同治理嘅態度。</strong>有啲似 2017 年 Equifax 洩漏之後，安全行業先真正重視 data governance。</p>
+
+<p>被問到 Agent 安全出問題根源喺邊——模型、Harness 定執行底座？佢嘅框架係三層都要查，但<strong>執行底座（infra）係最少人關注、最多隱患嘅一層。</strong>呢個答案對 infra 創業公司嚟講當然有立場成分，但佢嘅邏輯成立：模型廠有 incentive 搞好模型安全，harness 廠有 incentive 搞好框架安全，但「agent 實際跑喺邊」呢層——執行環境、hypervisor、VM、網絡——係傳統 infra 廠嘅地盤，而傳統 infra 廠又未準備好為 agent 重新設計。</p>
+
+<div class="section-title">七、95% Vibe Coding：人類工程師仲不可替代喺邊？</div>
+
+<p>一個好反直覺嘅數據：<strong>Runta 內部 95% 以上嘅開發工作都係 Vibe Coding 完成。</strong>戴冠蘭嘅觀點：人類工程師嘅不可替代性唔喺寫代碼，而喺判斷、架構同驗收。</p>
+
+<ul>
+  <li><strong>判斷：</strong>呢件事值唔值得做？呢個 trade-off 點揀？</li>
+  <li><strong>架構：</strong>系統點樣拆？邊啲部分要嚴謹、邊啲可以鬆散？</li>
+  <li><strong>驗收：</strong>AI 寫出嚟嘅嘢啱唔啱？有冇 hidden bug？</li>
+</ul>
+
+<p>呢個同 Goodfire 嗰集 Dan Balsam 講嘅「AI 令兩種人真正有價值：頂級專才同頂級通才」形成完美互文——<strong>當寫代碼變成 commodity，判斷力就係唯一稀缺品。</strong>對 James 呢類做緊 agent 產品嘅人嚟講，呢個係好消息：團隊唔使再咁大，但對 senior 判斷力嘅要求會更高。</p>
+
+<div class="section-title">八、創業者心法：揀 startup、睇公司、做天使</div>
+
+<p>後半段係戴冠蘭嘅職場同投資心得，好實用：</p>
+
+<ul>
+  <li><strong>點揀 startup 贏家：</strong>佢早年加入 Cloudflare 同 Kong 都係早期——教訓係睇創辦人嘅判斷力，而唔係睇估值；去睇佢哋面對關鍵抉擇時點樣做決定。</li>
+  <li><strong>面試前點樣睇一間創業公司：</strong>年輕人資訊有限，要主動問——問 revenue、問 burn、問創辦人點解做呢件事、問團隊背景，唔好淨係信 PR。</li>
+  <li><strong>300 萬美元天使投資：</strong>佢個人用 300 萬美元做天使投資——投畀邊啲人？睇乜嘢標準？佢分享咗自己嘅判斷框架（節目未完整展開，但核心係：人 > 賽道，判斷力 > 簡歷）。</li>
+  <li><strong>Claude Code 定 Codex？</strong>節目有講（50:10 時間戳），兩個都係佢哋日常工具。</li>
+</ul>
+
+<div class="data-point"><span>數據</span>Runta 快照：<strong>2000 萬美元 Seed（a16z 領投）</strong>，估值 >1 億美元（The Information 報道）；Jeff Dean、李飛飛個人天使參投；創辦人戴冠蘭曾任 Cloudflare 早期 edge 團隊 tech lead（edge proxy、caching、WAF）同 Kong 核心 proxy 團隊 leader；硅谷 + 新加坡兩地辦公室；招聘 Core Runtime（hypervisor/VM 定制與調度）、Cloud Infra（IaC 與多雲）、Product Engineering（Agent Experience 與 DX）；<strong>8 月 17 日（週日）Agent Infra 線上閉門分享會，僅限 20 人</strong>。</div>
+
+<div class="section-title">九、我嘅總結：呢集點解重要</div>
+
+<p>第一，<strong>「Infra 係下一場戰爭嘅勝負手」正式成為行業共識。</strong>呢集同 42 章經孟繁青嗰集（「算法就是數據，數據就是 Infra，Infra 就是算法」）形成共振——2026 下半年的關鍵詞已經清晰指向 Infra 層。但戴冠蘭嘅角度更硬核：唔係數據 infra、唔係模型 infra，而係<strong>agent 執行底座</strong>——呢個係最少人講、最多人需要嘅一層。</p>
+
+<p>第二，<strong>「創業公司建 AI 水電煤」係一個值得下注嘅非共識。</strong>主流直覺係「巨頭通吃 infra」（AWS、Azure、GCP），但戴冠蘭嘅反駁有邏輯：巨頭嘅既有架構係包袱。a16z 願意為一間 Seed 輪公司專門寫 Blog，本身已經係強信號——Martin Casado 將呢次 shift 同「client/server → datacenter → VM → container」並列，話係「最大最重要嘅一次」。</p>
+
+<p>第三，<strong>災難性事故嘅預判，其實係一個行業 call。</strong>「未來 10 個月必然有事故」——你可以話佢係理性預判，亦可以話佢係自我實現嘅敘事（預言事故 → 行業加強安全投入 → 事故真係發生時已經有啲準備）。但無論點解讀，佢嘅政策含義一致：<strong>而家就要開始起治理機制，而唔係等事故發生先補救。</strong>對做 agent 產品嘅團隊嚟講，呢個係一個 strategic hint：安全同治理唔係「以後先搞」嘅事，而係而家就要內置嘅產品功能。</p>
+
+<p>最後，將呢集同上周嘅汪天凡公路播客放埋一齊睇好有意思：汪天凡講「智能通脹、智慧稀缺」嘅宏觀願景，戴冠蘭就落喺最硬核嘅執行層——<strong>一個望天，一個望地，但指向同一個結論：2026 下半年，AI 嘅價值創造重心已經由「模型」移向「模型之上嘅一切」。</strong></p>
+
+<hr>
+<div class="highlight-box">
+<strong>一句話總結：</strong>Runta 創始人戴冠蘭（前 Cloudflare/Kong 早期成員）帶住「模型能力已經夠了，要卷就卷 infra」嘅判斷創業——a16z 領投 2000 萬美元 Seed、Jeff Dean 同李飛飛天使參投；佢拆解咗 Token 文化半年內由 Maxxing 轉 Minimizing 嘅信號、AI 時代「水電煤」點解由創業公司建（巨頭受制於既有架構）、E2B/Daytona 式 Sandbox 點解扛唔住長程 agent、人類點樣喺一次次撳「允許」中交出控制權，仲拋出「未來 10 個月必然有一場災難性 Agent 事故」嘅強預判——執行底座（infra）先係最少人關注、最多隱患嘅一層。
+</div>
+
+<footer>
+  <p>來源：<a href="https://www.xiaoyuzhoufm.com/episode/6a773808c4079d62c57f5802">十字路口 Crossing — 「模型能力已經夠了，要卷就卷 infra」（小宇宙）</a> ｜ 相關：<a href="https://a16z.com/announcement/investing-in-runta/">a16z — Investing in Runta</a>、<a href="https://thenextweb.com/news/runta-a16z-seed-ai-agent-infrastructure">TNW — a16z is backing Runta</a> ｜ 每日報告：<a href="../daily-report-2026-08-10.html">2026-08-10</a></p>
+  <p style="margin-top:0.3rem;">深度復述生成時間：2026-08-10 06:50 UTC ｜ JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>

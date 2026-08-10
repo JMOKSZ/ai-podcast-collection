@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Thinking in Silico——Goodfire CTO Dan Balsam：概念流形、1000 美元/月嘅 ML 研究 Agent，同埋「特徵之於幾何，就像元素之於化學」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">The Cognitive Revolution · Thinking in Silico: Goodfire CTO Dan Balsam on Concept Manifolds &amp; a $1000/Month ML Research Agent（2026-08-08）</div>
+  <h1>「特徵之於幾何，就像元素之於化學」——Goodfire CTO Dan Balsam 第 4 次做客：可解釋性當眾長大、概念流形取代「SAE 藥丸」圖景、Silico 用 1000 美元/月賣「能 debug AI 嘅 AI」</h1>
+  <div class="meta">
+    <span>📅 2026-08-08（20:48 UTC）</span><span>·</span><span>⏱️ 約 1 小時 56 分</span><span>·</span><span>🎙️ Nathan Labenz</span><span>·</span><span>👤 Dan Balsam（Goodfire 聯創 / CTO，第 4 次上節目）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+Nathan Labenz 開場講咗一個好重要嘅背景數字：<strong>Toy Models of Superposition 只係大約 3 年前嘅嘢</strong>——而家 Goodfire 嘅產出已經多到冇辦法再逐篇論文深挖。呢集分兩幕：第一幕係可解釋性研究現狀全景（預測性數據調試、概念流形、神經幾何），第二幕係 Goodfire 發布 Silico——一個佢哋自己內部用、而家決定賣畀全世界嘅 1000 美元/月 ML 研究 Agent 平台。呢集係近年可解釋性技術密度最高嘅單集之一，同時亦係「可解釋性從玩具模型科學變成產品生意」嘅標誌性時刻。
+</p>
+
+<div class="section-title">一、領域嘅「當眾長大」：3 年從玩具到產品</div>
+
+<p>Nathan 嘅 framing 好準確：Dan Balsam 四次上節目，貫穿嘅主線係「一個領域喺公眾面前長大成人」。三年前 Toy Models of Superposition 仲係一篇引起轟動嘅論文；三年後，Goodfire 已經由「解釋小模型」走到「喺 Kimi k3、GLM 量級上複現技術」——開放權重同閉源模型之間嘅可解釋性差距已經大幅收窄。</p>
+
+<blockquote class="strong">
+「可解釋性係『玩具模型科學』嘅名聲已經過時。」
+<span class="attribution">— Dan Balsam，談 Goodfire 已喺 Kimi k3 / GLM 量級複現 Predictive Data Debugging</span>
+</blockquote>
+
+<p>呢個轉變本身有行業意義：<strong>當你見到一個領域由「論文」變成「平台」，通常係因為佢已經搵到唔止一個付費場景。</strong>Silico 就係呢個信號——可解釋性唔再淨係 safety 圈嘅奢侈品，而係開始有生產級嘅用戶。</p>
+
+<div class="section-title">二、預測性數據調試：後訓練「安裝唔到新能力」</div>
+
+<p>第一幕由 Goodfire 嘅 <strong>Predictive Data Debugging（預測性數據調試）</strong>開始。Dan 將佢哋世界觀嘅地基講得好清楚：</p>
+
+<blockquote>
+「模型大部分知識來自預訓練；後訓練——包括 RL——主要唔係安裝新能力，而係令低概率行為變得更可能發生。」
+<span class="attribution">— Dan Balsam</span>
+</blockquote>
+
+<p>如果呢個方向啱，咁模型喺讀一段數據時「已經諗緊乜」，就係嗰段數據會強化乜嘢嘅預測指標。實際做法：將微調集跑過一個被解釋嘅模型，睇有冇啲你從來唔想掂嘅概念被意外點亮，然後回溯到具體肇事數據點。Dan 最鍾意嘅唔係診斷本身，而係解藥——研究者發現<strong>數據過濾同獎勵塑形之間存在深度同構</strong>：</p>
+
+<blockquote class="strong">
+「數據過濾同獎勵塑形係同一座山嘅兩面——效果相當，附帶損傷亦相當。」
+<span class="attribution">— Dan Balsam，談 Predictive Data Debugging 論文嘅核心發現</span>
+</blockquote>
+
+<p>呢個同構好值得停低諗一諗：<strong>「揀走壞數據」同「調低壞行為嘅獎勵」其實係同一件事嘅兩個表象。</strong>咁意味住，你做數據工程嘅直覺（邊啲數據有毒）同你做 RL 嘅直覺（邊啲行為要懲罰）可以互相翻譯——呢個係一個好 deep 嘅理論統一，而唔係一個 engineering 技巧。</p>
+
+<p>Nathan 即刻問咗個實際障礙：冇開放權重模型 carry frontier-intensity RL，點做？Dan 反駁話開放/閉源差距已大幅收窄，Goodfire 已經喺 Kimi k3 同 GLM 量級上複現咗呢個技術。呢個回應本身就係「國產模型開放權重已經追到可以用嚟做可解釋性研究」嘅註腳——同 42 章經孟繁青嗰集講嘅「國模靠 pre-training 架構創新」互相呼應。</p>
+
+<div class="section-title">三、概念流形：LRH 嘅辯護與修正</div>
+
+<p>呢集做得最好嘅概念工作喺幾何部分。Nathan 問：畀一個新嘅一句話版本嚟取代線性表徵假設（LRH）？Dan 嘅答案係——<strong>呢個係推廣，唔係推翻</strong>：</p>
+
+<ul>
+  <li><strong>LRH 站得住嘅版本：</strong>特徵可以線性解碼——呢點仍然成立。</li>
+  <li><strong>錯嘅係「SAE 藥丸」圖景：</strong>模型拎住一袋互相正交嘅 one-hot 概念，幅度編碼顯著性——呢個係錯嘅。</li>
+  <li><strong>真實情況係「有意義子空間嘅稀疏混合」：</strong>例如星期子空間嵌套喺更大嘅日曆時間子空間入面——幾何本身攜帶語義，因為佢決定咗邊啲操作可用。</li>
+</ul>
+
+<blockquote class="strong">
+「特徵之於幾何，就像元素之於化學。」
+<span class="attribution">— Dan Balsam（Features are to geometry what elements are to chemistry.）</span>
+</blockquote>
+
+<p>Dan 用程式碼做類比：將 Monday→Tuesday→Wednesday 表示成一串 if-statement 會係 spaghetti code；表示成一個輪（wheel）先係高效學習者真正會做嘅事。呢個 insight 嘅實際回報就係：<strong>沿流形 steering 遠比穿越流形有效</strong>。</p>
+
+<p>點解？一個從 Monday 到 Friday 嘅 contrastive vector 會切過圓嘅中部——而圓嘅中部唔係任何一日，係 off-manifold、out of distribution。Dan 話呢個就係舊 Ember demo 嗰個「sweet spot」現象（steering 太弱冇效、太強出亂碼）嘅真正解釋。而沿住曲線走，可以控制真正難搞嘅性質——例如蛋白質 beta-propeller 嘅葉片數目。</p>
+
+<div class="data-point"><span>數據</span>實例 1：affective circumplex（情感環形模型）——情緒沿 valence/arousal 張成嘅輪排列，<strong>幾乎所有 LLM 都有</strong>，而且 chat 模型自己講嘢時表徵最強；冇人訓練過佢——係壓縮嘅自然結果，模型喺 RL 期間學會功能性使用。實例 2：Evo 2 全基因組模型（同 Arc Institute 合作，Nature 論文）恢復出生命之樹；純數據訓練嘅化學模型恢復出元素週期表。</div>
+
+<p><strong>我嘅 insight：</strong>「模型自己學識咗情感環形模型」呢個發現，比佢表面上睇落更震撼。如果情緒結構係壓縮嘅自然結果——即係話「訓練緊嘅任何嘢，只要佢要壓縮人類語言，就會自動長出一個同心理學教科書一致嘅情緒輪」——咁「外星心智」呢個先驗就要打個折。Nathan 喺度講得好坦白：佢發現自己嘅情緒狀態可能係由旋轉（rotation）關聯起嚟嘅，呢件事令佢感到 destabilizing。呢個就係成集嘅 recurring theme：<strong>可解釋性恢復出嘅結構越多，「外星心智」就越唔似正確嘅先驗。</strong></p>
+
+<div class="section-title">四、Block-Sparse Featurizers：SAE 生咗個仔</div>
+
+<p>Nathan 對 <strong>Block-Sparse Featurizers（BSF）</strong>嘅比喻被 Dan 評為「完全正確」：</p>
+
+<blockquote>
+「SAE 生咗個仔——保持稀疏，但將每個標量槽換成一個小向量。」
+<span class="attribution">— Nathan Labenz，Dan Balsam：「That's exactly right.」</span>
+</blockquote>
+
+<p>SAE 假設特徵係 1 維嘅；BSF 只係放棄呢個假設，無需監督就恢復出語義上有意義嘅子空間，避開部分 SAE 病態。喺視覺模型入面，兔子特徵唔再係單一維度，而係幾個維度——兔耳喺一處、兔臉喺另一處。Goodfire 仲發過一隻行走嘅狼嘅 GIF：恢復出嘅激活子空間隨住動物嘅動作同步「蠕動」——即係模型喺同一個子空間入面追蹤緊物體、部件同 3D 位置。</p>
+
+<p>Dan 嘅預測係：<strong>冇單一工具會贏</strong>——殘餘流用 BSF 風格工具、MLP 本身就相當稀疏可以直接處理、注意力用參數分解——「一套顯微鏡，而唔係一台」。</p>
+
+<div class="section-title">五、可解釋性 = 分解（Factoring），而重構先係未解嘅一半</div>
+
+<p>Dan 嘅深層主張：<strong>每個模型本質上都係稀疏專家混合</strong>——任何一次前向傳播只有一小部分子網絡起緊作用——而可解釋性技術就係競爭性嘅「點樣分解佢」嘅提案。案例：Transluce 嘅 WeirdChat 數據集入面嗰條經典問題——「飲咗 4 杯嘅人應唔應該揸車返屋企（因為其他人都飲咗 8 杯）」，模型成日答「應該」。Goodfire 研究員追溯到單一神經元：佢隨飲酒數縮放但校準不足；將呢個神經元 steered 上去，答案修正，而且冇附帶損傷。</p>
+
+<p>參數分解 + 定向訓練仲可以令 LLM <strong>忘記德文但保留荷蘭文</strong>。但 Dan 好小心：呢個係容易嘅一半。佢嘅類比係遺留代碼庫——模組之間唔應該傾偈嘅傾緊偈、應該傾偈嘅冇傾——可解釋性已經好擅長「讀代碼」，但「重構」先係開放問題：<strong>目標係令正確嘅神經元喺第一時間就正確觸發。</strong></p>
+
+<blockquote class="strong">
+「Steering 係『作弊』——作為因果證據極好，但永遠只係一個反事實生成器。」
+<span class="attribution">— Dan Balsam，對自家產品能力嘅自我否定式表述</span>
+</blockquote>
+
+<p>呢個「自我否定」好有味道：<strong>佢哋產品賣緊嘅就係 steering 能力，但 Dan 喺鏡頭前話呢個係 cheating。</strong>呢種坦誠唔係修辭——佢係話畀你聽 Goodfire 對自己技術嘅定位：steering 係診斷工具，唔係終極解法；終極解法係「Intentional Design」——令模型由內而外就係啱嘅。</p>
+
+<p>越獄都係用同一個框架理解：<strong>每個 token 都喺引導模型，攻擊就係「將佢帶出流形、再喺第二度帶返嚟」嘅 token 序列。</strong>Dan 話佢好驚訝至今冇人解決越獄——因為將模型分解得好嘅人應該可以眼睇住佢發生。佢提到探針式護欄（probe-based guardrails）已經係前沿實驗室嘅標準實踐。</p>
+
+<div class="section-title">六、Silico：1000 美元/月嘅 ML 研究 Agent</div>
+
+<p>第二幕係產品發布。Dan 嘅 framing：<strong>可解釋性天然適合 agent</strong>——佢係經驗性、迭代、假設-檢驗式嘅工作，作用於複雜到任何人類都冇辦法成個裝入腦嘅系統。Silico 最初係內部工具，Goodfire 睇住自己嘅研究速度改變，然後產品化——pitch 係「<strong>AIs that can debug other AIs</strong>」。</p>
+
+<p>佢點名 Silico 解決咗 Claude Code 或 Codex 畀唔到嘅四件事：</p>
+
+<ul>
+  <li><strong>萬億參數規模嘅訓練 + 可解釋性基礎設施</strong></li>
+  <li><strong>研究品味（research taste）</strong>——由 Goodfire 研究員手工編碼入每個 skill 同 prompt，用戶報告話呢個係最大嘅質性差異</li>
+  <li><strong>圍繞 provenance 同 drill-down 嘅 UX</strong>——人類好似 PI 監督一百個研究生</li>
+  <li><strong>長程連貫性</strong>——「呢個就係價格從邊度嚟嘅原因」</li>
+</ul>
+
+<div class="data-point"><span>數據</span>Silico 經濟學：<strong>1000 美元/月</strong>，前兩個月五折；credit 池 ≈ 每週 5–10 個自主實驗（目標一兩個月內到 10–20 個），可兌換 GPU 時間，自帶集群免費；有面向生命科學同 AI 安全研究員嘅 grant 項目。Nathan 算帳：有研究指 AI 運行成本約為人類成本 <strong>3%</strong>，Silico 名義上對標嘅係 <strong>3 萬美元/月</strong>嘅研究員。Dan 好坦白：個體訂閱目前唔賺錢。</div>
+
+<p>最有力嘅證據係用例——一日內部黑客松嘅產出：SOTA（雖則小眾）生物風險分類器、SOTA-for-size 音頻編碼器、刪掉一半參數零性能損失嘅模型、基於 Kimi k3 訓練嘅 cyber guardrails、binding 更好嘅 steered 蛋白質——仲有一位成員發明咗新 featurizer。外部用例：Cameron Berg 嘅內省探測（模型講唔出概念有冇被注入潛空間，但可以準確講出注入咗乜）；weight edits 救活一個鎖死喺單一首 token 上嘅崩潰 RL run；Baseten 用 KV cache 壓縮追效率；Prime Intellect 自動化 post-training（配合 Tinker API）。</p>
+
+<p><strong>我嘅 insight：</strong>「研究品味被明碼標價」係前所未有嘅信號。傳統上，品味（taste）係學術界最唔值錢、業界最難買嘅嘢——而家 Goodfire 將佢哋研究員嘅判斷力壓縮成 skill 同 prompt 賣。呢個係「AI 時代嘅知識產權」嘅新形態：<strong>唔係賣數據、唔係賣算力，係賣「點樣問問題」嘅方法論。</strong>另外，Nathan 話 fork/share 功能係產品入面最有趣嘅社群 affordance——研究項目可以俾人 fork，意味住「研究」本身開始變成 open-source 嘅 artifact，呢個對科學傳播嘅影響可能比產品本身更大。</p>
+
+<div class="section-title">七、安全觀：能力網絡武器、雙用途、生物風險</div>
+
+<p>Silico 目前只服務 Anthropic 同 OpenAI 模型，Goodfire 自己嘅護欄層（LLM-as-judge、activation monitors）疊喺上面。Dan 好明確：<strong>難嘅唔係起護欄，而係知道幾時應用而唔扼殺正當科學。</strong>喺 8B 開源模型上消融 refusal 方向冇害；但由一個帶 GPU 集群訪問權嘅多萬億參數 agent 上拆走護欄，係另一個風險等級。</p>
+
+<p>開放權重問題上佢立場有 nuance：</p>
+
+<blockquote class="strong">
+「能力模型而家係真正嘅雙用途網絡武器；唯一能防禦能力網絡武器嘅，係另一個能力網絡武器。被擋喺 frontier labs 專屬防禦計劃之外嘅組織，需要啲嘢。」
+<span class="attribution">— Dan Balsam，判斷開源今日仍然淨正面</span>
+</blockquote>
+
+<p>生物安全方面佢「相當擔心」——機制會好似最近嘅網絡事件咁怪異同意外；佢簽咗呼籲國際合作減慢 AI 進展嘅公開信。被問到「最禁忌嘅技術」，佢shortlist 咗<strong>多 agent 優化（獎勵跨合作 agent 傳播）</strong>——佢認為呢個係真正壞主意，仲猜測佢係 OpenAI 事件最可能嘅成因。但佢拒絕全面禁令：呢個領域極度缺乏研究，結果好 mixed。</p>
+
+<p>對 J-Space（監控是否足夠）佢接受弱版本、拒絕強版本：模型用各種各樣嘅 circuit，冇任何簡單子空間可以畀你完整圖景。而監控到底夠唔夠，取決於一個關鍵問題——<strong>權重會唔會保持 frozen；如果模型變成持續訓練嘅動態對象，控制訓練過程就係唯一槓桿。</strong>佢仲主動講：「我哋冇喺後台秘密做 RSI。」</p>
+
+<div class="section-title">八、意識：喺水母同老鼠之間</div>
+
+<p>結尾係 Goodfire 午飯桌。Dan 喺公司 retreat 拎住 pad 問同事：由細菌到人類嘅尺度，Claude 嘅意識有幾多？答案係雙峰分佈——「完全冇」或者「有少少」。Nathan 自己就由自信嘅 sub-5% 移到接近五五波——驅動力正正係呢集前半部累積嘅結構類比。Dan 嘅 Occam's razor：意識係某種計算機制，但人腦喺神經元數量上仍然有兩個數量級嘅優勢，加上豐富得多嘅單神經元計算同遞歸。</p>
+
+<blockquote class="strong">
+「我大概比水母更有意識，大概冇老鼠咁有意識——喺水母同老鼠之間。」
+<span class="attribution">— Dan Balsam，帶住真實嘅不確定性講出嚟</span>
+</blockquote>
+
+<p>Dan 最後提醒：<strong>考慮到潛在 downside，任何人喺呢個問題上都唔應該特別自信，知識分子謙遜好重要。</strong>呢句係成集最好嘅收尾——一個日日拆解模型嘅人，對最 fundamental 嘅問題保持住最大嘅謙遜。</p>
+
+<div class="section-title">九、我嘅總結：呢集嘅三個 meta-takeaway</div>
+
+<p>第一，<strong>可解釋性已經由「玩具模型科學」進入生產級。</strong>喺 Kimi k3、GLM 量級上複現、探針護欄成為前沿實驗室標準、平台化產品推出——呢個領域嘅 open/closed 差距收窄，意味住佢唔再係極少數 lab 嘅奢侈品。</p>
+
+<p>第二，<strong>「AIs 調試 AIs」成為新商業模式。</strong>Silico 嘅出現標誌住可解釋性由論文走向產品，而「研究品味被明碼標價」係前所未有嘅信號。當 agent 系統複雜到人類無法整體理解，可解釋性就係為呢類系統設計嘅「監督接口」——呢個解釋咗點解 Goodfire 揀而家產品化。</p>
+
+<p>第三，<strong>安全敘事已經轉向「能力網絡武器」。</strong>開源權重嘅雙用途武器論、探針護欄成前沿標配、對生物安全嘅「相當擔心」——同本周 OpenAI Astra critical 事件、Hugging Face 事件同頻。Nathan 對「外星心智」先驗嘅動搖亦延續咗節目一貫嘅哲學主線：<strong>結構恢復得越多，我哋離「理解」越近，亦離「佢哋係外星人」越遠。</strong></p>
+
+<hr>
+<div class="highlight-box">
+<strong>一句話總結：</strong>Goodfire CTO Dan Balsam 第 4 次做客，標誌可解釋性「當眾長大」——預測性數據調試揭示「數據過濾 = 獎勵塑形」嘅同構；概念流形修正 LRH（「特徵之於幾何，就像元素之於化學」），沿流形 steering 先有效而穿越流形會出亂碼；BSF 喺視覺模型恢復出兔耳兔臉同 3D 追蹤；「Steering 係作弊」，重構先係未解嘅一半；Silico（1000 美元/月、對標 3 萬美元/月研究員）將「研究品味」明碼標價——「AIs that can debug other AIs」；安全觀落到「能力網絡武器」同「權重 frozen 與否決定一切」；意識問題佢答「水母同老鼠之間」。
+</div>
+
+<footer>
+  <p>來源：<a href="https://www.cognitiverevolution.ai/thinking-in-silico-goodfire-cto-dan-balsam-on-concept-manifolds-a-1000-month-ml-research-agent/">The Cognitive Revolution — Thinking in Silico（官方 Show Notes + 逐字稿）</a> ｜ 相關：<a href="https://www.goodfire.ai/silico">Goodfire — Silico</a>、<a href="https://www.goodfire.ai/research/predictive-data-debugging">Predictive Data Debugging</a>、<a href="https://www.goodfire.ai/research/the-world-inside-neural-networks">The World Inside Neural Networks</a>、<a href="https://arxiv.org/html/2606.25234v1">Block-Sparse Featurizers（arxiv 2606.25234）</a></p>
+  <p style="margin-top:0.3rem;">深度復述生成時間：2026-08-10 06:45 UTC ｜ JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
