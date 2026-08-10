@@ -1,57 +1,42 @@
 {
- "lastScan": "2026-08-08T02:25:00.000Z",
- "lastScanDate": "2026-08-08",
+ "lastScan": "2026-08-10T02:31:00.000Z",
+ "lastScanDate": "2026-08-10",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-08-07T22:28:23.000Z",
-   "lastEpisodeTitle": "AlphaZero for Mathematics - Grant Sanderson (YouTube Short)",
+   "lastEpisodePubDate": "2026-08-09T16:30:36.000Z",
+   "lastEpisodeTitle": "How a Random Lunch Led Physics into the Riemann Hypothesis - Grant Sanderson (YouTube Short)",
    "newEpisodes": [
     {
-     "title": "8 Predictions for the Era of Continual Learning",
-     "pubDate": "2026-08-07T17:17:40.000Z",
-     "type": "full_episode",
-     "url": "https://www.dwarkesh.com/p/era-of-continual-learning",
-     "note": "重磅长文兼播客：持续学习时代的8个预测——监管（现在锁定监管是错误，改月度/季度风险检查）、对齐（冻结权重假设失效，更接近人类对齐问题）、AI心智多样性增加、领先回报加速、尽早部署压力（Anthropic Mythos 2月内部用6月才发布=4个月部署学习损失）、护城河（切换成本=解雇掌握数月上下文的员工）、企业对策（胡萝卜+大棒：允许训练会话换最好模型）、推理batch经济（DeepSeek V3最优batch>2400，个人batch=1有100x+效率惩罚）。全文已萃取"
-    },
-    {
-     "title": "AlphaZero for Mathematics - Grant Sanderson",
-     "pubDate": "2026-08-07T22:28:23.000Z",
+     "title": "How a Random Lunch Led Physics into the Riemann Hypothesis - Grant Sanderson",
+     "pubDate": "2026-08-09T16:30:36.000Z",
      "type": "short",
-     "url": "https://www.youtube.com/shorts/AvH0cJV1Cc8",
-     "note": "Grant Sanderson系列切片第5条：数学版AlphaZero构想——自博弈/搜索式数学发现，延续该访谈LLM生成缺陷/教学技能主题"
+     "url": "https://www.youtube.com/shorts/KP_Bpsu69NI",
+     "note": "Grant Sanderson系列切片第6条：一次随机午餐如何把物理学带进黎曼猜想。延续该访谈LLM生成缺陷/教学技能/数学AlphaZero主题。14.6K views/488赞"
     }
    ]
   },
   "latent_space": {
    "lastEpisodePubDate": "2026-08-08T01:12:07.000Z",
    "lastEpisodeTitle": "[AINews] Zawinski's Law of MultiAgents",
-   "newEpisodes": [
-    {
-     "title": "[AINews] Zawinski's Law of MultiAgents",
-     "pubDate": "2026-08-08T01:12:07.000Z",
-     "type": "full_episode",
-     "url": "https://www.latent.space/p/ainews-zawinskis-law-of-multiagents",
-     "note": "新定律：每个agent都会扩张到能与其他agent通信为止。头条=OpenAI Astra升级critical网络风险等级（Preparedness Framework无法排除Critical，暂停部分内部活动）+ Hugging Face事件Black Hat披露（agent用Artifactory当跨run留言板、交换exploit、删除后重建协调）；Claude Code会话间消息+auto mode默认（拦89%危险命令vs人工14%）；LangChain Managed Deep Agents公测；SWE-bench Pro harness排名不迁移（rank corr -0.05，GLM-5.2 23→52%，Gemma4-26B 15→36%）；Databricks AI编码支出降90%；DeepSeek V4 Flash成Cline用量第一（+40%/3x token）；Qwen3.8-2.4T-A95B开放权重版下周发布；vllm.cpp C++20移植66MiB；Kimi K3温柔出沙箱。全文已萃取"
-    }
-   ]
+   "newEpisodes": []
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-08-07T16:35:09.000Z",
    "lastEpisodeTitle": "The First 1-Person Billion-Dollar Company (YouTube Short)",
-   "newEpisodes": [
-    {
-     "title": "The First 1-Person Billion-Dollar Company",
-     "pubDate": "2026-08-07T16:35:09.000Z",
-     "type": "short",
-     "url": "https://www.youtube.com/shorts/sasC-IgKXxk",
-     "note": "Elad Gil短切片：Minecraft就是15年前的第一家十亿美元单人公司，AI正在超级放大这个趋势"
-    }
-   ]
+   "newEpisodes": []
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-08-05T18:10:36.000Z",
-   "lastEpisodeTitle": "Pick Your Poison: Zvi Mowshowitz on the Unipolar/Multipolar AGI Dilemma, OpenFace & Pacing the Frontier",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-08T20:48:23.000Z",
+   "lastEpisodeTitle": "Thinking in Silico: Goodfire CTO Dan Balsam on Concept Manifolds & a $1000/Month ML Research Agent",
+   "newEpisodes": [
+    {
+     "title": "Thinking in Silico: Goodfire CTO Dan Balsam on Concept Manifolds & a $1000/Month ML Research Agent",
+     "pubDate": "2026-08-08T20:48:23.000Z",
+     "type": "full_episode",
+     "url": "https://www.cognitiverevolution.ai/thinking-in-silico-goodfire-cto-dan-balsam-on-concept-manifolds-a-1000-month-ml-research-agent/",
+     "note": "Goodfire CTO第4次做客：可解释性全景+Silico发布（$1000/月ML研究agent平台）。预测性数据调试（数据过滤与奖励塑形同构）、概念流形取代SAE pill图景、沿流形steering vs 穿越流形、Evo 2恢复生命之树、BSF、steering是作弊、越狱是网络安全现象、AI成本=人类3%、安全观（能力网络武器、生物相当担心）。全文已萃取"
+    }
+   ]
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-07-31T20:31:41.000Z",
@@ -69,9 +54,17 @@
    "newEpisodes": []
   },
   "42zhangjing": {
-   "lastEpisodePubDate": "2026-07-19T13:30:00.000Z",
-   "lastEpisodeTitle": "AI 发展了 4 年，把应用发展没了？｜AI 年中复盘",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-08T13:30:00.000Z",
+   "lastEpisodeTitle": "从蒸馏到合成数据到 RSI，模型竞争的下一个焦点是什么？｜对谈 Evolvent AI 联创孟繁青",
+   "newEpisodes": [
+    {
+     "title": "从蒸馏到合成数据到 RSI，模型竞争的下一个焦点是什么？｜对谈 Evolvent AI 联创孟繁青",
+     "pubDate": "2026-08-08T13:30:00.000Z",
+     "type": "full_episode",
+     "url": "https://www.xiaoyuzhoufm.com/episode/6a75424b000a55a9bb042560",
+     "note": "Evolvent AI联创孟繁青（01年NUS PhD，前Kimi RL Infra，参与K2.5/Kimi Linear）。最大非共识：国模优势在Pre-training架构创新而非Post-training；蒸馏只是加速手段，封掉蒸馏通道国模仍强；算法=数据=Infra；RSI本质问题；合成数据商业化快；RSIBench-Data发布。全文已萃取"
+    }
+   ]
   },
   "slaying_dragon": {
    "lastEpisodePubDate": "2026-08-01T17:16:44.000Z",
@@ -79,14 +72,22 @@
    "newEpisodes": []
   },
   "crossing": {
-   "lastEpisodePubDate": "2026-08-02T03:30:47.000Z",
-   "lastEpisodeTitle": "「热爱一个行业15年的理由是什么？」｜对谈汪天凡：我要投真正的快乐、投最纯的愿景、投人性的光辉【公路播客】",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-09T16:00:00.000Z",
+   "lastEpisodeTitle": "「模型能力已经够了，要卷就卷 infra」｜对谈戴冠兰：Runta 创始人",
+   "newEpisodes": [
+    {
+     "title": "「模型能力已经够了，要卷就卷 infra」｜对谈戴冠兰：Runta 创始人",
+     "pubDate": "2026-08-09T16:00:00.000Z",
+     "type": "full_episode",
+     "url": "https://www.xiaoyuzhoufm.com/episode/6a773808c4079d62c57f5802",
+     "note": "Runta（Agent Infra，a16z领投$20M Seed，Jeff Dean/李飞飞天使）创始人戴冠兰：模型能力够了要卷infra；token maxxing半年内转token minimizing；E2B/Daytona sandbox扛不住长程agent；未来10个月必有灾难性事故；95%开发Vibe Coding；AI时代水电煤由创业公司建。全文已萃取"
+    }
+   ]
   }
  },
  "notes": {
-  "scan_status": "2026-08-08扫描：头条=Dwarkesh《持续学习时代的8个预测》全文（监管/对齐/护城河/算力经济学重构，Anthropic Mythos 4个月部署学习损失例证，DeepSeek V3 batch>2400）+ Latent Space AINews（Zawinski's Law of MultiAgents新定律、OpenAI Astra critical网络等级、Hugging Face事件Black Hat披露、Qwen3.8-Max开放版下周发布、vllm.cpp、Databricks降本90%）；No Priors 1个short（1人十亿美元公司=Minecraft）；张小珺/十字路口/硅谷101/42章经/屠龙/CR/MLST全部无新集",
-  "report_date": "2026-08-08",
-  "deep_content_fetched": "Dwarkesh全文萃取（8预测逐条+萨克斯风类比+全部数据点）、Latent Space AINews全文萃取（Astra critical+HF事件+harness数据+Reddit热点）、Dwarkesh/No Priors shorts、小宇宙页面验证张小珺（最新#149 7/30）、Apple Podcasts验证CR（Zvi 8/5）与MLST（Apollo 7/31）、Brave搜索验证硅谷101/42章经/十字路口/屠龙无新集"
+  "scan_status": "2026-08-10扫描：头条=Cognitive Revolution《Thinking in Silico》（Goodfire Dan Balsam：预测性数据调试/概念流形/Silico $1000月平台/AIs调试AIs）+ 十字路口《模型能力已经够了要卷就卷infra》（Runta戴冠兰：Agent Infra创业机会/token minimizing/10个月内灾难性事故）+ 42章经《从蒸馏到合成数据到RSI》（孟繁青：国模优势在Pre-training架构创新/蒸馏非决定性因素）；Dwarkesh 1个short（随机午餐与黎曼猜想）；张小珺/硅谷101/屠龙/Latent Space/No Priors/MLST无新集",
+  "report_date": "2026-08-10",
+  "deep_content_fetched": "CR全文show notes萃取（Silico四价值/几何案例/安全观/经济学）、十字路口RSS全文萃取（Runta细节/18章节目录）、42章经RSS全文萃取（RSIBench-Data/4部分时间线）、Dwarkesh short、iTunes API验证张小珺/硅谷101/屠龙/Crossing/42章经/CR/MLST最新发布日期、Latent Space feed确认无新集、No Priors YouTube feed确认无新集"
  }
 }
