@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space——Chai Discovery：藥廠忽然開始為 AI 工具畀大錢，BioAI 嘅 Phase Shift</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space（swyx + Alessio Fanelli）· The BioAI Phase Shift – Matthew McPartlon & Neil Patil, Chai Discovery（2026-08-11 發布）</div>
+  <h1>「蛋白 token 係下游價值最高嘅 token」——OpenAI 投資、40 億估值、兩歲嘅 Chai Discovery 點解今年夏天令藥廠排隊畀錢</h1>
+  <div class="meta">
+    <span>📅 2026-08-11（發布 21:03 GMT）</span><span>·</span><span>⏱️ 1 小時 35 分</span><span>·</span><span>🎙️ RJ Honicky（主持）</span><span>·</span><span>👤 Matt McPartlon（聯合創辦人）＋ Neil Patil（產品負責人），Chai Discovery</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+AI 製藥嘅劇本今年一月開始被改寫：JPM 大會上一口氣官宣四筆大型「AI × Pharma 工具」交易，而核心主角竟然係一間只得兩歲、OpenAI 投資、估值 40 億美元嘅公司——Chai Discovery。呢集係佢哋首次上播客，聯合創辦人 Matt McPartlon 同產品負責人 Neil Patil 親口講完整故事。核心論點好簡單但好震撼：<strong>「賣工具」由不可能變成可能，因為工具好到藥廠嘅設計團隊肯信</strong>——呢個係 step change，唔係 efficiency 論。
+</p>
+
+<div class="section-title">一、分水嶺：由「自己做藥」到「賣工具」</div>
+
+<p>開場 RJ 就拋出個背景：<strong>AI 製藥公司傳統上嘅最優路徑係「自己做藥管線」</strong>——因為要說服藥廠用你嘅工具，你需要證明工具有效；而證明有效最直接嘅方法，就係自己做出好靶點、有臨床驗證。一旦你做到，與其將工具賣畀好多公司（承諾佢喺人哋嘅 portfolio 上都有效），不如直接為一個靶點籌錢或者賣盤（用「biobucks」里程碑付款）。</p>
+
+<p>呢個「我哋自己 partner / 自己整藥」嘅 optionality，一直係直到今年一月之前唯一行得通嘅路。咩變咗？用編輯（RJ）嘅話講：<strong>「工具好到藥廠設計團隊願意信任」。</strong></p>
+
+<blockquote class="strong">
+「Good-enough-to-trust unlocks the ability to scale discovery: get more, better candidates into the lab and animal trials faster. More screening for toxicity, better delivery, etc. This means that what you push to the clinic is more likely to succeed.」
+<span class="attribution">— Latent Space 編輯：信任解鎖規模化發現</span>
+</blockquote>
+
+<p>「好到肯信」解鎖嘅唔止係效率——仲有新能力：設計一個<strong>精準觸發特定分子級聯</strong>嘅抗體、設計<strong>雙特異性抗體</strong>（同時結合兩種蛋白）——呢啲喺傳統實驗室方法下要多年 trial and error，甚至根本做唔到。</p>
+
+<div class="section-title">二、「模型品質跳升 = 做得到以前做唔到嘅事」</div>
+
+<p>RJ 將呢個論點講得好清楚：</p>
+
+<blockquote class="strong">
+「The fact that the quality of the model has jumped means you're enabling things you just plain couldn't do. So it's a step change. It's not an efficiency argument at all, or not so much.」
+<span class="attribution">— RJ Honicky：階躍變化，唔係效率論</span>
+</blockquote>
+
+<p>呢個區分好重要：<strong>唔係「更快、更平」，而係能力邊界外推</strong>——做到以前根本做唔到嘅分子。Matt 喺度好坦白咁自爆：連佢自己都花咗好幾個月先相信呢個論點——</p>
+
+<blockquote class="strong">
+「有趣的是，連我們自己都這樣——我花了好幾個月才相信這個論點。Chai 開始前我跟 Josh 談了好幾個月……就像：我能打敗老鼠嗎？然後我能做到老鼠做不到的事嗎？然後你能在這之上繼續疊多少層互動？」
+<span class="attribution">— Matt McPartlon：由「打敗老鼠」到「做到老鼠做唔到嘅事」</span>
+</blockquote>
+
+<p>呢句「Can I beat a mouse, and then can I do what mice can't do?」會係今年 AI 製藥圈最出名嘅一句——佢將整個行業嘅自我懷疑同終局願景壓縮晒入去。</p>
+
+<div class="section-title">三、結構模型 → 結合模型：解鎖「設計」</div>
+
+<p>技術上嘅關鍵轉變係乜？RJ 嘅拆解：<strong>「結構模型（structural models）變成咗結合模型（binding models）」</strong>——由「預測蛋白結構」變成「預測結合親和力」（呢個分子同嗰個分子結合得幾好）。</p>
+
+<p>呢個轉變嘅意義：<strong>Binding models 解鎖「設計」</strong>，而且可以持續改進。成個「AI 製藥」敘事本身唔新——a16z 2020 年已經articulate 過一個版本——但真正變咗嘅係呢個閉環：</p>
+
+<div class="data-point">
+<span>核心轉變</span>
+<strong>結構模型（預測形狀）→ 結合模型（預測結合親和力）</strong>——由「睇得明」到「設計得到」，先至將 discovery 變成可爬山嘅工程問題。
+</div>
+
+<p>對照返 8 月 8 日 AINews 記錄嘅「一切皆 loop」共識（屠龍之術嗰集）：Chai 嘅故事本質上係<strong>「design-verify loop 閉環之後，工程化碾壓」</strong>嘅又一案例——只係呢個 loop 嘅 verify 端係「結合親和力」，物理世界會俾你最硬嘅 feedback。</p>
+
+<div class="section-title">四、科學變成工程：One-Shotting Molecules</div>
+
+<p>Chai 揀咗一個同業界唔同嘅 unlock：<strong>「一步到位攞到好分子」</strong>——即係話設計出嚟嘅分子唔使再做好多 lab work，迭代時間大幅縮短。呢個將科學變成工程：</p>
+
+<blockquote class="strong">
+「Getting good molecules right out of the gate (meaning they don't then need as much lab work) means that the iteration time is faster. This turns science into engineering: you can design your systems to reduce friction and hill climb towards one-shotting molecules all the way to the clinic.」
+<span class="attribution">— Latent Space 編輯：將摩擦設計走，向「一步到位到臨床」爬山</span>
+</blockquote>
+
+<p>留意佢哋嘅用詞——「design your systems to reduce friction」——<strong>佢哋唔係喺度做科學研究，係喺度做工程系統</strong>。呢個 mindset 貫穿成集：好技術係必要非充分條件；對工程問題嚟講，<strong>最好嘅產品會贏</strong>。</p>
+
+<div class="section-title">五、產品哲學：分子嘅 CAD，唔係 Chatbot</div>
+
+<p>咁「最好嘅產品」係咩樣？Neil Patil 講咗產品設計嘅核心邏輯：</p>
+
+<blockquote class="strong">
+「能和這麼多合作夥伴緊密工作最酷的地方是，我們真的能學到什麼東西對研究有幫助。不是憑空假設什麼酷，而是根據合作夥伴自然提出的需求做有依據的研究。」
+<span class="attribution">— Neil Patil：合作夥伴驅動嘅研究，唔係真空科研</span>
+</blockquote>
+
+<p>所以 Chai 重金投資合作關係，令研究由合作夥伴嘅真實需求驅動，而唔係喺實驗室入面「假設咩嘢 cool」。產品 UX 嘅結果就係：<strong>分子編輯器設計成 CAD / 圖形設計工具，而唔係聊天機器人</strong>（編輯註：SolidWorks 其實係更好嘅類比，但 Photoshop 品牌知名度高啲）。</p>
+
+<p>呢個細節好有意思：<strong>「分子嘅 Photoshop」</strong>——科學家唔係喺度同 AI 傾偈，係喺度「畫分子」。呢個先係「工具」嘅真正形態，亦係藥廠設計團隊肯信嘅原因：佢哋熟悉嘅係 CAD 工作流，唔係 prompt 工程。</p>
+
+<div class="section-title">六、「蛋白 token 係下游價值最高嘅 token」</div>
+
+<p>成集金句之一：<strong>「蛋白 token 係下游價值最高嘅 token」</strong>——點解？RJ/Matt 嘅論證：</p>
+
+<ul>
+  <li>文字 token 生成出嚟嘅嘢，要由人嚟判斷有冇用；</li>
+  <li>圖片 token 亦然——美感、用途都係主觀嘅；</li>
+  <li>但<strong>蛋白序列 token 生成出嚟，物理世界即刻俾你 verdict</strong>——結合唔結合、摺疊唔摺疊、毒性高唔高，全部有明確嘅實驗/臨床驗證。</li>
+</ul>
+
+<p>換句話講：<strong>生物序列係少數「生成出嚟就有明確物理/商業驗證」嘅 token</strong>——呢個令到 BioAI 嘅 design-verify loop 特別硬、特別可以 close the loop，亦令到「賣工具」呢個商業模式有得企得住。</p>
+
+<div class="section-title">七、Biobucks 嘅現實：2–5% 先係真錢</div>
+
+<p>講到商業模式，編輯加咗個好重要嘅註腳——<strong>「Biobucks」</strong>：里程碑型授權交易嘅頭條金額（例如「$1.7B deal」）幾乎全部取決於達成目標。</p>
+
+<div class="data-point">
+<span>Biobucks 現實</span>
+「$1.7B deal」入面通常只有 <strong>2–5% 係預付</strong>——其餘要等藥物通過每道關卡（臨床 I/II/III 期、監管批准……）先逐步支付，而<strong>多數藥物過唔到</strong>。
+</div>
+
+<p>呢個係理解 AI × Pharma 交易嘅關鍵語境：<strong>頭條數字好睇，但現金流要睇預付同里程碑達成率</strong>。亦解釋咗點解「工具可信度」先係今次拐點嘅真正貨幣——如果藥廠唔信你嘅工具，連嗰 2–5% 都唔會畀。</p>
+
+<div class="section-title">八、四筆大 Deal 解剖：Lilly、Novartis、argenx</div>
+
+<p>Chai 嘅戰績表：今年 1 月 JPM 大會係四筆大型 AI×Pharma 工具交易嘅核心；<strong>6 月以嚟再宣佈三筆大 deal：Lilly、Novartis、argenx，加上 Eli Lilly 計劃擴張</strong>——即係今年夏天共四筆新進展。呢啲全部係「賣工具」嘅 deal，唔係「賣管線」。</p>
+
+<p>對一間兩歲嘅公司嚟講，呢個節奏嘅意義係：<strong>佢哋證明咗「工具」模式可以規模化</strong>——唔係一單過嘅運氣，而係可以連續成交嘅商業模式。Matt 喺訪問入面亦提到「climbing levels of abstraction as models improve」：模型越嚟越好，你可以爬嘅抽象層級越高——由單一蛋白到複合物到分子級聯。</p>
+
+<div class="section-title">九、Pharma、VC、研究：本質上都係投資組合優化</div>
+
+<p>成集另一個有意思嘅 meta-point：<strong>「Pharma、VC、研究本質上全部都係投資組合優化」</strong>——藥廠嘅 portfolio 係一系列候選藥物，VC 嘅 portfolio 係一系列公司，研究嘅 portfolio 係一系列假設。而「更好嘅技術點樣改變成個 portfolio」係同一個問題：</p>
+
+<ul>
+  <li>工具好咗 → 更多、更好嘅候選分子入 lab / 動物實驗 → 更多毒性篩選、更好遞送 → <strong>推向臨床嘅成功率更高</strong>；</li>
+  <li>呢個唔係單點改善，係成個 pipeline 嘅期望值上移；</li>
+  <li>所以藥廠願意為工具畀錢——因為佢哋買嘅係「成個 portfolio 嘅期望值提升」，而唔係一個分子。</li>
+</ul>
+
+<p>呢個框架仲可以解釋點解「賣工具」而家先 run 得起：<strong>以前工具唔夠好，買工具嘅期望值提升唔夠 cover 成本；而家跨過臨界點，成個算盤打返轉。</strong></p>
+
+<div class="section-title">十、同業界敘事嘅互相呼應</div>
+
+<p>呢集同近期其他幾集嘅脈絡咬得好實：</p>
+
+<ul>
+  <li><strong>對照 8/11 已收錄嘅硅谷101 E248（中國式 FDE）</strong>：「企業算得過帳，背後用咩 token 老闆唔在乎」——Chai 賣畀藥廠嘅都係「算得過帳嘅價值」，而唔係模型炫技。BioAI 同企業 AI 嘅商業化邏輯，喺 2026 年夏天收斂到同一條線：<strong>客戶為「可驗證嘅結果」畀錢，唔係為「SOTA 模型」畀錢。</strong></li>
+  <li><strong>對照屠龍之術「一切皆 loop」</strong>：design-verify loop 閉環之後工程化碾壓——Chai 只係將呢個 loop 搬咗去蛋白質領域，而個 verify 端係物理世界。</li>
+  <li><strong>編輯特別澄清</strong>：Chai AI（另一檔熱門播客）同 Chai Discovery 無關，唔好撈亂。</li>
+</ul>
+
+<div class="section-title">十一、我嘅 takeaway</div>
+
+<p>第一，<strong>「工具好到肯信」係一個可觀測嘅拐點信號。</strong>AI 製藥由 2020 年講到而家，敘事一直係「遲早會得」；今年一月 JPM 四筆工具 deal 同時官宣，係第一次有市場級證據話「工具時代到咗」。對做 AI 應用嘅人嚟講，呢個 case 最值得學嘅係：<strong>點樣知道「賣工具」嘅臨界點到咗？——睇客戶嘅「信任行為」：佢哋肯唔肯為工具畀預付。</strong></p>
+
+<p>第二，<strong>「設計唔係對話」——產品形態決定市場。</strong>分子編輯器做成 CAD/Photoshop 而唔係 chatbot，呢個選擇睇落細，其實係「工具模式」嘅本質：<strong>你賣嘅唔係一個聰明嘅聊天對象，而係一個專業工作流入面嘅儀器。</strong>藥廠設計團隊唔需要同 AI 傾偈，佢哋需要畫到以前畫唔到嘅分子。呢個 lesson 對所有垂直領域 AI 產品都通用。</p>
+
+<p>第三，<strong>「蛋白 token 下游價值最高」嘅深層含義：可驗證性就係商業化速度。</strong>文字、圖片生成嘅驗證要等人睇；蛋白序列嘅驗證等物理世界答。驗證 loop 越短、越硬，AI 工具嘅信任建立越快——呢個可能係 BioAI 比其他生成式 AI 領域更快商業化嘅根本原因。對照返 Dwarkesh 嗰集 Ryan Greenblatt 講「AI 研發可驗證所以適合 AI 自己嚟做」——<strong>同一條原理，喺製藥市場以「藥廠肯畀錢」嘅形式再出現一次。</strong></p>
+
+<hr>
+<div class="highlight-box">
+<strong>一句話總結：</strong>兩歲、OpenAI 投資、40 億估值嘅 Chai Discovery 首次上播客，講「AI 製藥賣工具」點解今年一月突然 run 得起：結構模型變成結合模型、解鎖「設計」；「好到藥廠設計團隊肯信」係分水嶺，係 step change 唔係效率論；「一步到位攞到好分子」將科學變成工程；分子編輯器做成 CAD 而唔係 chatbot；蛋白 token 係下游價值最高嘅 token（物理世界即刻俾 verdict）；今年夏天 Lilly、Novartis、argenx 三筆新 deal 加 Eli Lilly 擴張——但記住 Biobucks 現實：頭條金額通常只有 2–5% 係預付。Matt 嗰句「我能打敗老鼠嗎？然後我能做到老鼠做不到的事嗎？」會係今年 BioAI 圈最出名嘅一句。
+</div>
+
+<footer>
+  <p>來源：<a href="https://www.latent.space/p/chai-discovery">Latent Space：The BioAI Phase Shift（官方 Show Notes）</a> ｜ 相關：<a href="https://techcrunch.com/2026/01/16/from-openais-offices-to-a-deal-with-eli-lilly-how-chai-discovery-became-one-of-the-flashiest-names-in-ai-drug-development/">TechCrunch：Chai Discovery 故事</a> ｜ <a href="https://www.latent.space/p/esmfold2">ESMFold2：Bitter Lesson 降臨蛋白質領域（本網 Deep Dive #09）</a></p>
+  <p style="margin-top:0.3rem;">深度復述生成時間：2026-08-12 06:35 UTC ｜ JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
