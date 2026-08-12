@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 硅谷101 E248——阿里瓴羊朋新宇：一個「催發貨」AI 要跑通 260 步，中國式 FDE 同 Palantir 反著走</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">硅谷101 · E248｜一个「催发货」AI 要跑通 260 步，和阿里瓴羊朋新宇聊聊中国式 FDE（2026-08-10）</div>
+  <h1>「老闆唔會在乎背後用咩 token」——阿里瓴羊 CEO 朋新宇：唔接定制大單、唔做 1000 人天駐場，中國式 FDE 同 Palantir 反著走</h1>
+  <div class="meta">
+    <span>📅 2026-08-10（發布 08-11 01:45 UTC）</span><span>·</span><span>⏱️ 1 小時 03 分</span><span>·</span><span>🎙️ 泓君 Jane（硅谷101 創辦人）</span><span>·</span><span>👤 朋新宇（花名小芃），阿里巴巴集團副總裁、瓴羊 CEO</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+硅谷最火新職位 FDE（前線部署工程師）喺中國係咪同一個劇本？瓴羊做咗 5 年「FDE」工作——比呢個詞流行仲要早。佢哋嘅答案係：唔係。硅谷派最聰明嘅人、開最高嘅薪、駐場深度定制；瓴羊揀咗完全相反嘅路——做標準化 agent + 接入企業私有數據，搵企業最痛嘅環節，一個催發貨 agent 要跑通 260 步流程。呢集係 E240（OpenAI 聯手 PE 砸 40 億美元押注硅谷 FDE）嘅中國篇，亦係「AI 商業化主戰場返返 B 端」嘅一個清晰信號。
+</p>
+
+<div class="section-title">一、硅谷風向變咗：AI 戰場由 C 端回到 B 端</div>
+
+<p>泓君開場就點題：<strong>2026 年 AI 商業化嘅主戰場返咗去企業服務。</strong>硅谷最熱嘅新職位 FDE——前沿部署工程師（Field Deployment Engineer）——代表嘅邏輯係：AI 要入企業，就要開行業最高嘅薪、派一批最聰明嘅人駐扎入去。OpenAI 甚至聯手 PE 砸 40 億美元落注呢個模式（E240 報道過）。</p>
+
+<p>但朋新宇嘅答案係「同一份工，中國行咗另一條路」。瓴羊脫胎於阿里數據中台體系，做企業數據同 AI 落地已經 5 年——比「FDE」呢個詞流行早好多。佢哋發布嘅企業級 Agent 平台 <strong>AgentOne</strong>，路線同硅谷完全相反：</p>
+
+<blockquote class="strong">
+「不接定制化的大單，不做 1000 人天的駐場開發。我們找的是企業裡最耗人、最耗錢、最耗時的環節，把預設好的 agent 接入企業私有數據，去解決真實的業務難題。」
+<span class="attribution">— 朋新宇，瓴羊 AgentOne 嘅路線選擇</span>
+</blockquote>
+
+<div class="section-title">二、一個「催發貨」背後藏住 260 步流程</div>
+
+<p>成集最 concrete 嘅例子係<strong>催發貨客服 agent</strong>。外人睇「催發貨」好似好簡單——但落場先知道，一個完整嘅催發貨流程要跑通 <strong>260 步</strong>：由訂單狀態查詢、物流節點判斷、異常識別、供應商溝通、承諾時間更新，到升級路徑、話術選擇、客戶安撫……每一步都係真實業務規則。</p>
+
+<div class="data-point">
+<span>關鍵數字</span>
+一個催發貨流程，客服 agent 需要跑通 <strong>260 步</strong>流程——呢個先係「企業 Agent」同「Chatbot」嘅真正分別。
+</div>
+
+<p>朋新宇嘅意思係：<strong>企業場景冇「一步到位」嘅魔法</strong>，每一個 agent 都係由一格格業務規則砌出嚟。而呢啲規則唔係 AI 自己諗出嚟——係由企業入面最熟悉崗位嘅人，一格一格教俾 agent。呢個亦解釋咗瓴羊點解揀「最痛嘅環節」而唔係「最大嘅單」：因為只有最痛嘅環節，先值得企業付出咁大心力去調教。</p>
+
+<div class="section-title">三、90 天調價一萬次：AI 向最優秀嘅投手偷師</div>
+
+<p>第二個例子更精彩——<strong>頂級人類投手</strong>（應該係電商營運入面負責定價/促銷策略嘅人）。一個頂級投手，90 日內要調價 <strong>10000 次</strong>。呢 10000 次調價嘅表面動作好容易複製，但 AI 要學嘅係<strong>呢 10000 次調價背後嘅決策邏輯</strong>——點解嗰日加價、點解嗰個 SKU 唔跟、點解呢個渠道要優先。</p>
+
+<blockquote class="strong">
+「一個頂級人類投手，90 天內調價 10000 次，AI 要學會的是這 10000 次調價背後的決策邏輯。」
+<span class="attribution">— 朋新宇：AI 偷師嘅唔係動作，係決策模型</span>
+</blockquote>
+
+<p>呢度有個好重要嘅 insight：<strong>企業 AI 落地嘅本質係「把老師傅嘅決策邏輯變成可運行嘅系統」</strong>。調價 10000 次入面，邊啲係規則、邊啲係判斷、邊啲係直覺——呢個萃取過程本身，就係 FDE 最核心嘅工作。而呢啲嘢靠嘅唔係模型 SOTA，係「團隊配合同工程化嘅推進」。</p>
+
+<div class="section-title">四、點解順利嘅部署都係「自上而下」</div>
+
+<p>朋新宇講咗一個反直覺嘅觀察：<strong>順利嘅 AI 部署都係「自上而下」嘅。</strong>佢用銷售 Agent 做例子——由最落後嘅區域做起，做到銷冠。點解係自上而下？因為 AI 落地首先係<strong>組織同流程問題</strong>，唔係技術問題：</p>
+
+<ul>
+  <li>老闆落 order，先有資源同權限打通數據；</li>
+  <li>流程唔改，agent 只能喺舊流程入面打轉；</li>
+  <li>考核機制唔變，銷售團隊冇動力用 agent。</li>
+</ul>
+
+<p>呢個觀察同好多 AI 落地案例吻合：<strong>失敗嘅 pilot 通常係「下而上」——一線團隊自發試用，但冇組織授權，最後淹沒喺流程同 KPI 入面。</strong>朋新宇嘅結論好實際：AI 落地嘅第一道坎唔係模型，係老闆。</p>
+
+<div class="section-title">五、做標準化增長 agent，同 Palantir 反著走</div>
+
+<p>講到路線之爭，朋新宇好坦白：<strong>瓴羊做嘅係「標準化 + 可複製」嘅產品路線，同 Palantir 反著走。</strong>Palantir 係深度定制化、諮詢式交付——派精英團隊入客戶現場，一年做幾個大單；瓴羊揀嘅係「預設 agent + 私有數據接入」嘅規模化交付，唔接 1000 人天嘅駐場開發。</p>
+
+<blockquote class="strong">
+「做標準化增長 agent，跟 Palantir 反著走。」
+<span class="attribution">— 朋新宇：可複製、可規模化，先係中國市場嘅答案</span>
+</blockquote>
+
+<p>呢個選擇背後係三樣嘢嘅差異（節目尾段詳細講）：</p>
+
+<ol>
+  <li><strong>信息化地基</strong>：中國企業嘅數字化底子同美國唔同，冇咁多「乾淨數據」可以畀精英團隊做定制；</li>
+  <li><strong>付費習慣</strong>：中國企業唔慣為「駐場人天」畀錢，但願意為「算得過賬」嘅產品畀錢；</li>
+  <li><strong>工作方向</strong>：美國 FDE 係「人海戰術 + 深度定制」，中國 FDE 係「工程化 + 標準化」。</li>
+</ol>
+
+<p>呢個係成集最值得同 E240 對照睇嘅位：<strong>同一份工，兩個市場行咗兩條完全唔同嘅路。</strong></p>
+
+<div class="section-title">六、部署周期：三份一、三份一、三份一</div>
+
+<p>朋新宇仲畀咗一個好具體嘅部署配方——一個 agent 落地嘅周期點樣分：</p>
+
+<div class="data-point">
+<span>部署配方</span>
+<strong>1/3</strong> 熟悉崗位（理解業務流程同痛點）｜ <strong>1/3</strong> 做建模（萃取決策邏輯、做規則）｜ <strong>1/3</strong> 調教 AI（讓 agent 喺真實場景跑順、打磨邊角位）。
+</div>
+
+<p>呢個三份一結構透露咗佢嘅人才觀：<strong>FDE 團隊唔係「AI 專家團」，而係一個三角組合</strong>——</p>
+
+<ul>
+  <li><strong>BA（業務分析師）定方向</strong>：搞清楚邊個環節最痛、agent 要解決咩問題；</li>
+  <li><strong>AI 架構師選模型</strong>：揀啱模型、搭好工程框架；</li>
+  <li><strong>業務首席當教練</strong>：由最熟悉崗位嘅人，負責將老師傅嘅決策邏輯教俾 AI。</li>
+</ul>
+
+<p>留意：<strong>呢個組合入面冇「算法科學家」嘅位置。</strong>朋新宇嘅意思好清楚——中國式 FDE 嘅核心能力係懂 AI、懂業務、懂數據三樣嘢湊埋，而唔係模型 research。</p>
+
+<div class="section-title">七、「老闆唔會在乎背後用咩 token」</div>
+
+<p>講到模型策略，朋新宇拋出咗成集最金句嘅一句：</p>
+
+<blockquote class="strong">
+「企業算得過來賬，背後用什麼 token，老闆不會在乎。」
+<span class="attribution">— 朋新宇：模型選擇係算賬問題，唔係信仰問題</span>
+</blockquote>
+
+<p>呢句同硅谷嘅 token-maxxing/minimizing 討論形成好靚嘅對照（CR 嘅 Flo Crivello 同集就喺度計 DeepSeek 平 100 倍）。<strong>硅谷仲喺度辯論「邊個模型最強」，中國企業直接問「邊個 model 最抵」。</strong>冇對 SOTA 模型嘅迷信，亦冇全能型嘅個人英雄——「務實，算賬，打地基，這就是 FDE 在中國的故事。」</p>
+
+<p>呢個立場亦解釋咗瓴羊點解可以做「標準化」：<strong>因為模型層已經商品化，價值唔再喺模型，而喺數據接入、流程嵌入同調教方法論。</strong>同樣嘅 agent 模板，換個模型、接入唔同客戶嘅私有數據，就可以複製去下一個客戶。</p>
+
+<div class="section-title">八、中美 FDE 對比：地基、付費、方向</div>
+
+<p>節目尾段泓君將話題拉返去中美對比，朋新宇畀咗一個好完整嘅框架：</p>
+
+<blockquote class="strong">
+「沒有全能型的個人英雄，也沒有對 SOTA 模型的迷信。務實，算賬，打地基，這就是 FDE 在中國的故事。」
+<span class="attribution">— 朋新宇，成集嘅核心總結</span>
+</blockquote>
+
+<ul>
+  <li><strong>硅谷 FDE</strong> = 高薪精英駐場、人海戰術、深度定制——適合信息化地基好、願意為人天付費、客戶單價高嘅市場；</li>
+  <li><strong>中國 FDE</strong> = 標準化 agent + 數據接入、工程化、規模化——適合地基參差、付費謹慎、要求「算得過賬」嘅市場。</li>
+</ul>
+
+<p>差異嘅根源，朋新宇歸納做三點：<strong>信息化地基、付費習慣、工作方向</strong>。呢個框架其實可以推廣去任何新興市場——中國式 FDE 可能先係大多數市場嘅答案，而唔係硅谷式。</p>
+
+<div class="section-title">九、我嘅總結：呢集嘅三個 meta-takeaway</div>
+
+<p>第一，<strong>「中國式 FDE」可能先係 AI 落地嘅主流劇本。</strong>硅谷式 FDE 好性感——最聰明嘅人、最高嘅薪、40 億美元 PE 落注——但佢假設客戶有錢、有數據、有耐心。中國式 FDE 嘅假設係「算得過賬就得」：標準化、可複製、嵌入流程。如果 AI 商業化要 scale 出利潤，後者嘅可複製性先似係大數法則入面贏嗰個。呢個同 42章經/屠龍之術近期講嘅「AI 商業化睇毛利同規模」係同一條線。</p>
+
+<p>第二，<strong>企業 Agent 嘅護城河唔喺模型，喺流程萃取。</strong>260 步催發貨、10000 次調價嘅決策邏輯——呢啲先係客戶唔會走嘅原因。模型商品化令「用咩 token」變成無所謂，但「識唔識將你嘅業務變成 agent」係另一回事。呢個亦係瓴羊可以「同 Palantir 反著走」嘅底氣：<strong>定制化護城河喺人，標準化護城河喺方法論沉澱。</strong></p>
+
+<p>第三，<strong>「自上而下」先係企業 AI 落地嘅常態。</strong>呢個觀察好平實，但好少人講得咁直接：AI 落地首先係組織同流程問題。由最落後區域做到銷冠嘅銷售 Agent、1/3 熟悉崗位、業務首席當教練——呢啲細節拼埋，係一幅「AI 落地嘅中國現實圖」：<strong>冇英雄、冇魔法、冇 SOTA 迷信，只有算賬、打地基同慢慢調教。</strong>對照同日 CR 嗰集嘅「Iron Man suit」願景，兩者正好係光譜嘅兩端。</p>
+
+<hr>
+<div class="highlight-box">
+<strong>一句話總結：</strong>硅谷101 嘅「FDE 中國篇」——阿里瓴羊 CEO 朋新宇用 5 年實戰回應 E240 嘅 40 億美元硅谷 FDE 熱潮：中國唔玩「高薪精英駐場 + 深度定制」，玩「標準化 agent + 私有數據接入」；一個催發貨 agent 要跑通 260 步、AI 要學頂級投手 90 天 10000 次調價背後嘅決策邏輯；部署周期三份一熟悉崗位、三份一建模、三份一調教 AI；FDE 團隊 = BA 定方向 + AI 架構師選模型 + 業務首席當教練；「企業算得過賬，背後用咩 token，老闆唔會在乎」；路線之爭暗含對 Palantir 模式嘅批評——「務實、算賬、打地基，就係 FDE 喺中國嘅故事」。
+</div>
+
+<footer>
+  <p>來源：<a href="https://sv101.fireside.fm/261">硅谷101 E248（官方 Show Notes）</a> ｜ 相關：<a href="https://www.xiaoyuzhoufm.com/episode/6a333603351c82c12b264c56">E240｜OpenAI 聯手 PE 砸下 40 億美元，聊聊硅谷最火新職位 FDE</a>、<a href="https://www.lydaas.com/agentone">瓴羊 AgentOne</a></p>
+  <p style="margin-top:0.3rem;">深度復述生成時間：2026-08-11 06:25 UTC ｜ JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
