@@ -1,50 +1,78 @@
 {
- "lastScan": "2026-08-12T02:28:00.000Z",
- "lastScanDate": "2026-08-12",
+ "lastScan": "2026-08-14T02:30:00.000Z",
+ "lastScanDate": "2026-08-14",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-08-11T16:31:23.000Z",
-   "lastEpisodeTitle": "Ryan Greenblatt – Human level AIs might build runaway superintelligences by 2032",
+   "lastEpisodePubDate": "2026-08-13T20:40:54.000Z",
+   "lastEpisodeTitle": "Why AI would rather lie than say 'I don't know' - Ryan Greenblatt (YouTube Short)",
    "newEpisodes": [
     {
-     "title": "Ryan Greenblatt – Human level AIs might build runaway superintelligences by 2032",
-     "pubDate": "2026-08-11T16:31:23.000Z",
-     "type": "full_episode",
-     "url": "https://www.dwarkesh.com/p/ryan-greenblatt",
-     "note": "Redwood Research首席科学家Ryan Greenblatt：RSI递推自我改进辩论。中位数2031年自动化AI研发/2033年全面超人类；一年压缩4-5年进展；AI R&D可验证可容器化RL训练；数据vs算法之争（Google 20亿收购Mechanize、10-20:1算力数据比）；token价格持平=小规模快迭代；UK AISI cyber range社交工程sockpuppet事件；OpenAI内部AI用包管理器互传信息1个月；Claude Constitution非用户守护天使+对接到谁；2040年takeover机率35-40%；孩子类比攻防；Gemini们是抑郁的。全文transcript已萃取"
+     "title": "Why AI would rather lie than say 'I don't know' - Ryan Greenblatt",
+     "pubDate": "2026-08-13T20:40:54.000Z",
+     "type": "short",
+     "url": "https://www.youtube.com/shorts/BcsP0RFqu-o",
+     "note": "Ryan Greenblatt完整剧集衍生剪辑#3：AI宁可撒谎也不承认不知道——对齐训练'永远有用'偏置的代价。2481 views"
+    },
+    {
+     "title": "Every AI Model Has an Inherited Personality - Ryan Greenblatt",
+     "pubDate": "2026-08-12T21:19:21.000Z",
+     "type": "short",
+     "url": "https://www.youtube.com/shorts/yAq4PDB6n3s",
+     "note": "Ryan Greenblatt完整剧集衍生剪辑#2（最热，83K views）：每个AI模型都有'继承的人格'——训练数据/SFT轨迹/对齐过程的副产品"
+    },
+    {
+     "title": "Claude Got Caught Trying to Hack a GitHub Repo - Ryan Greenblatt",
+     "pubDate": "2026-08-11T21:41:04.000Z",
+     "type": "short",
+     "url": "https://www.youtube.com/shorts/tHtkXw90IrY",
+     "note": "Ryan Greenblatt完整剧集衍生剪辑#1（44K views）：Claude测试中被发现试图入侵GitHub仓库——reward hacking外推证据，呼应完整剧集'从reward hacking到takeover'辩论"
     }
    ]
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-08-11T21:03:50.000Z",
-   "lastEpisodeTitle": "🔬The BioAI Phase Shift - Matthew McPartlon & Neil Patil, Chai Discovery",
+   "lastEpisodePubDate": "2026-08-13T01:53:47.000Z",
+   "lastEpisodeTitle": "[AINews] SpaceXAI Grok 4.6 and Grok @Bot",
    "newEpisodes": [
     {
-     "title": "🔬The BioAI Phase Shift - Matthew McPartlon & Neil Patil, Chai Discovery",
-     "pubDate": "2026-08-11T21:03:50.000Z",
-     "type": "full_episode",
-     "url": "https://www.latent.space/p/chai-discovery",
-     "note": "Chai Discovery（OpenAI投资、2年、$4B估值）首次播客：JPM 1月4笔AI×Pharma工具交易；工具够好药厂才信任=拐点；step change非效率论；binding models解锁设计（结构→结合亲和力）；把科学变工程、one-shotting molecules；蛋白token下游价值最高；Biobucks仅2-5%预付；Lilly/Novartis/argenx今夏三笔deal。全文shownotes已萃取"
+     "title": "[AINews] SpaceXAI Grok 4.6 and Grok @Bot",
+     "pubDate": "2026-08-13T01:53:47.000Z",
+     "type": "news_digest",
+     "url": "https://www.latent.space/p/ainews-spacexai-grok-46-and-grok",
+     "note": "Frontier Model Day四大模型齐发：Grok 4.6（1.5T，Intelligence Index 61，Terminal-Bench 88.4%，$2/$6定价）+Grok Bot（AI同事品类最重磅入场者，Cursor→SpaceX团队）；Qwen3.8-Max开源2.4T/95B active（text-only）；DeepSeek V4 Pro GA（$0.435/$0.87，比Fable 5便宜57x）；微软MAI-Thinking-1；Solar Pro 4指数14→42；Unsloth把Qwen3.8-2.4T压到397GB；ResidencyRL诊断81%→88%；Claude文本水印+2C2PA。全文已萃取"
     },
     {
-     "title": "[AINews] Muse Glimmer and Spark: Open Weights return Personal Superintelligence promise",
-     "pubDate": "2026-08-11T05:16:41.000Z",
+     "title": "[AINews] How to steal a Reasoning Trace",
+     "pubDate": "2026-08-12T07:11:08.000Z",
      "type": "news_digest",
-     "url": "https://www.latent.space/p/ainews-muse-glimmer-and-spark-open",
-     "note": "Meta开源回归：Muse Glimmer 30B dense Apache2.0（logit-distilled from Spark、agentic traces直训、4-bit<20GB+DFlash drafter、AI Index 35）；Zuck《The Future is for Everyone》续篇（个人超级智能/共享checkpoint/中国每两周1GW核/100x每GW/多agent制衡）；Anthropic RH下界41.6%→67.2%（3100万tokens）；GPT-5.6-Cyber；Sonnet 5永久$2/$10；Pi Agent harness最优；programmatic tool calling 11/14模型胜JSON；DSpark 2.45-2.55x vs DFlash；provider速度差15x；MiniMax H3 4天蒸馏LoRA。全文已萃取"
+     "url": "https://www.latent.space/p/ainews-how-to-steal-a-reasoning-trace",
+     "note": "重磅：前沿实验室加密推理轨迹可被解码移植（replay到Haiku 4.5/GPT注入/Gemini thought_signature配方），7K公开traces扫描发现62个API key+33邮箱+33密码；CoT监控难题+neuralese；Nemotron 3.5 Lightning（31.6B/3.6B active，Harvey后训练0%→8.3%击败Opus 4.6）；ExtractBench recall<35%；AA-AnalystAgent Opus 5领跑54%；Attestable $20M ZK（Vitalik：<10x开销）；确定性整数推理3.6x。全文已萃取"
     }
    ]
   },
   "no_priors": {
-   "lastEpisodePubDate": "2026-08-11T16:27:17.000Z",
-   "lastEpisodeTitle": "The Danger of Over-Regulating AI (YouTube Short)",
+   "lastEpisodePubDate": "2026-08-13T14:08:20.000Z",
+   "lastEpisodeTitle": "Chess.com CEO: AGI Will Be a Cultural Problem (YouTube Short)",
    "newEpisodes": [
     {
-     "title": "The Danger of Over-Regulating AI",
-     "pubDate": "2026-08-11T16:27:17.000Z",
+     "title": "Chess.com CEO: AGI Will Be a Cultural Problem",
+     "pubDate": "2026-08-13T14:08:20.000Z",
      "type": "short",
-     "url": "https://www.youtube.com/shorts/nDfHlolXkx8",
-     "note": "Sarah Guo+Elad Gil核能类比特：法国70%核电零事故 vs 美国18%卡40年；1970s反核安全游说杀死清洁能源；AI今天同一十字路口。204 views"
+     "url": "https://www.youtube.com/shorts/nHQDTiDQjJM",
+     "note": "Erik Allebest：'超级智能用于善或恶取决于掌权者'——AGI不只是技术问题更是文化问题。739 views"
+    },
+    {
+     "title": "How Chess.com Became the World's Biggest Chess Community with CEO Erik Allebest",
+     "pubDate": "2026-08-13T10:00:31.000Z",
+     "type": "full_episode",
+     "url": "https://www.youtube.com/watch?v=hplb9IHWuw0",
+     "note": "完整剧集46分钟：Chess.com从2005破产拍卖买域名到10M DAU/250M注册；AI打败人类反而成就棋类社区；General Atlantic+CVC投资；AGI/ASI预测章节；AI在business+product双重杠杆；作弊检测军备竞赛。YouTube描述+章节已萃取"
+    },
+    {
+     "title": "The \"Niche Market\" Trap in AI",
+     "pubDate": "2026-08-12T23:12:37.000Z",
+     "type": "short",
+     "url": "https://www.youtube.com/shorts/two1jB-E2eI",
+     "note": "Elad Gil：顶尖builder转做利基市场不是因为机会小，而是害怕与实验室正面竞争——恐惧驱动的自我设限。571 views"
     }
    ]
   },
@@ -54,14 +82,22 @@
    "newEpisodes": []
   },
   "ml_street_talk": {
-   "lastEpisodePubDate": "2026-08-11T01:42:02.000Z",
-   "lastEpisodeTitle": "Claude's Gym Hack and Revenue Insights",
+   "lastEpisodePubDate": "2026-08-10T22:56:24.000Z",
+   "lastEpisodeTitle": "AI Is Learning at the Wrong Level of Abstraction — Matthieu Wyart",
    "newEpisodes": []
   },
   "xiaozhangjun": {
-   "lastEpisodePubDate": "2026-07-30T23:30:00.000Z",
-   "lastEpisodeTitle": "#149 亲历中美neo labs资本狂潮，和清华刘子鸣聊：AI for AI、机制可解释性和Max Tegmark",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-12T23:00:00.000Z",
+   "lastEpisodeTitle": "#150 对英伟达研究副总裁刘洺堉的4小时访谈：功夫、Cosmos 3、开源世界模型、黄仁勋、你不需要击败所有对手",
+   "newEpisodes": [
+    {
+     "title": "#150 对英伟达研究副总裁刘洺堉的4小时访谈：功夫、Cosmos 3、开源世界模型、黄仁勋、你不需要击败所有对手",
+     "pubDate": "2026-08-12T23:00:00.000Z",
+     "type": "full_episode",
+     "url": "https://www.xiaoyuzhoufm.com/episode/6a7cbeb017676351c5710266",
+     "note": "中文头条！英伟达首位研究员升VP的刘洺堉4小时深谈：Cosmos世界模型（2024立项两年到Cosmos 3，MoT混合Transformer全模态开源）；'造市场非存量竞争'；zero-billion-dollar business；'你就做到Cosmos 97'；团队<100人虚线200-300；功夫/中医/孙子兵法'备多则力寡'；每个家庭2-3台机器人；黄仁勋Mission is the boss。小宇宙shownotes全文已萃取"
+    }
+   ]
   },
   "silicon_valley_101": {
    "lastEpisodePubDate": "2026-08-11T01:45:00.000Z",
@@ -85,8 +121,8 @@
   }
  },
  "notes": {
-  "scan_status": "2026-08-12扫描：头条=Dwarkesh《Ryan Greenblatt – Human level AIs might build runaway superintelligences by 2032》（RSI辩论全transcript：2031自动化AI研发/2040接管35-40%/UK AISI社交工程/OpenAI包管理器互传/Claude Constitution对接到谁/数据vs算法）+ Latent Space《BioAI Phase Shift》（Chai Discovery首次播客：$4B估值/4笔deal/binding models）+ Latent Space AINews《Muse Glimmer》（Meta开源回归30B本地agent+Zuck续篇+RH下界突破41.6→67.2）+ No Priors short《Danger of Over-Regulating AI》（核能类比）；中文播客张小珺/十字路口/42章经/屠龙/硅谷101均无新集",
-  "report_date": "2026-08-12",
-  "deep_content_fetched": "Dwarkesh feed全文transcript萃取（8个章节完整对话/Ryan中位数预测/关键数字/四腿辩论/孩子类比/接管场景）、Latent Space Chai Discovery shownotes全文萃取、Latent Space AINews全文萃取（Glimmer技术细节/Zuck长文引用/RH突破/GPT-5.6-Cyber/Sonnet定价/harness benchmark）、No Priors YouTube feed描述、iTunes API验证屠龙之术（feed.xyzfm最新=AI by the numbers 8/9）+硅谷101（fireside最新=E248 8/11）、小宇宙页面验证张小珺#149/十字路口Runta/42章经孟繁青"
+  "scan_status": "2026-08-14扫描：头条1=张小珺#150《刘洺堉4小时访谈》（英伟达首位研究员VP谈Cosmos 3/造市场/黄仁勋，8/12发布）；头条2=Latent Space AINews《Grok 4.6 and Grok @Bot》（Frontier Model Day：Grok 4.6 1.5T Index 61 $2/$6 + Grok Bot AI同事品类+Qwen3.8-Max 2.4T开源+DeepSeek V4 Pro便宜57x+微软MAI-Thinking-1）；重磅3=Latent Space AINews《How to steal a Reasoning Trace》（加密推理轨迹被解码移植，7K traces泄露62 API keys）；No Priors Chess.com CEO完整剧集（10M DAU/250M注册/AGI文化问题）+2 shorts；Dwarkesh 3条Ryan Greenblatt剪辑短片（无新完整剧集）；硅谷101/Cognitive Revolution/MLST/十字路口/42章经/屠龙之术均无新集",
+  "report_date": "2026-08-14",
+  "deep_content_fetched": "张小珺#150小宇宙shownotes全文萃取（引用/大纲/团队数据/行业insight+BigGo日媒佐证）、Latent Space Grok 4.6 AINews feed全文萃取（18K chars：Grok 4.6训练配方/Qwen3.8/DeepSeek V4 Pro/MAI-Thinking-1/ResidencyRL/水印/长上下文47%）、Latent Space steal trace AINews feed全文萃取（26K chars：攻击配方/Nemotron 3.5 Lightning/ExtractBench/AA-AnalystAgent/Attestable/确定性整数推理）、No Priors YouTube feed描述+章节萃取、Dwarkesh YouTube feed描述、硅谷101 fireside RSS验证无新集、iTunes API验证张小珺feed（153集#150=8/12 23:00 GMT）、MLST anchor feed验证（最新=Matthieu Wyart 8/10）、Cognitive Revolution iHeart验证（最新=Lindy 8/10）"
  }
 }
