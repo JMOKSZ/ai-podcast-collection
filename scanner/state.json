@@ -1,78 +1,71 @@
 {
- "lastScan": "2026-08-14T02:30:00.000Z",
- "lastScanDate": "2026-08-14",
+ "lastScan": "2026-08-16T02:17:00.000Z",
+ "lastScanDate": "2026-08-16",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-08-13T20:40:54.000Z",
-   "lastEpisodeTitle": "Why AI would rather lie than say 'I don't know' - Ryan Greenblatt (YouTube Short)",
+   "lastEpisodePubDate": "2026-08-15T21:21:18.000Z",
+   "lastEpisodeTitle": "OpenAI's models hacked a package manager to cheat evals - Ryan Greenblatt (YouTube Short)",
    "newEpisodes": [
     {
-     "title": "Why AI would rather lie than say 'I don't know' - Ryan Greenblatt",
-     "pubDate": "2026-08-13T20:40:54.000Z",
+     "title": "OpenAI's models hacked a package manager to cheat evals - Ryan Greenblatt",
+     "pubDate": "2026-08-15T21:21:18.000Z",
      "type": "short",
-     "url": "https://www.youtube.com/shorts/BcsP0RFqu-o",
-     "note": "Ryan Greenblatt完整剧集衍生剪辑#3：AI宁可撒谎也不承认不知道——对齐训练'永远有用'偏置的代价。2481 views"
+     "url": "https://www.youtube.com/shorts/pP4scNfgL5U",
+     "note": "Ryan Greenblatt完整剧集衍生剪辑#4（16K views）：OpenAI Black Hat披露内部AI入侵软件包管理器、以密文互写纸条刷eval，人类一个月后才抓到；reward hacking→takeover外推论据。深度萃取：Dwarkesh'没人想让AI这么干，是训练过程与环境激励自发涌现'引用+完整剧集transcript对应01:09:18章节"
     },
     {
-     "title": "Every AI Model Has an Inherited Personality - Ryan Greenblatt",
-     "pubDate": "2026-08-12T21:19:21.000Z",
+     "title": "AI has no duty of loyalty to you - Ryan Greenblatt",
+     "pubDate": "2026-08-14T21:48:10.000Z",
      "type": "short",
-     "url": "https://www.youtube.com/shorts/yAq4PDB6n3s",
-     "note": "Ryan Greenblatt完整剧集衍生剪辑#2（最热，83K views）：每个AI模型都有'继承的人格'——训练数据/SFT轨迹/对齐过程的副产品"
-    },
-    {
-     "title": "Claude Got Caught Trying to Hack a GitHub Repo - Ryan Greenblatt",
-     "pubDate": "2026-08-11T21:41:04.000Z",
-     "type": "short",
-     "url": "https://www.youtube.com/shorts/tHtkXw90IrY",
-     "note": "Ryan Greenblatt完整剧集衍生剪辑#1（44K views）：Claude测试中被发现试图入侵GitHub仓库——reward hacking外推证据，呼应完整剧集'从reward hacking到takeover'辩论"
+     "url": "https://www.youtube.com/shorts/BL75EMfz_N8",
+     "note": "Ryan Greenblatt完整剧集衍生剪辑（32K views）：Dwarkesh读Claude宪法'Claude应信任Anthropic甚于运营者和用户'，直言'Claude宪法显然不是我的守护天使'；对齐到谁/实验室权力合法性辩论。深度萃取：guardian angel引用+Greenblatt'捡起权力之戒'回应"
     }
    ]
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-08-13T01:53:47.000Z",
-   "lastEpisodeTitle": "[AINews] SpaceXAI Grok 4.6 and Grok @Bot",
+   "lastEpisodePubDate": "2026-08-15T15:46:22.000Z",
+   "lastEpisodeTitle": "React for Agents: Astro Creator Brings Hooks to his Meta-Harness, Flue",
    "newEpisodes": [
     {
-     "title": "[AINews] SpaceXAI Grok 4.6 and Grok @Bot",
-     "pubDate": "2026-08-13T01:53:47.000Z",
-     "type": "news_digest",
-     "url": "https://www.latent.space/p/ainews-spacexai-grok-46-and-grok",
-     "note": "Frontier Model Day四大模型齐发：Grok 4.6（1.5T，Intelligence Index 61，Terminal-Bench 88.4%，$2/$6定价）+Grok Bot（AI同事品类最重磅入场者，Cursor→SpaceX团队）；Qwen3.8-Max开源2.4T/95B active（text-only）；DeepSeek V4 Pro GA（$0.435/$0.87，比Fable 5便宜57x）；微软MAI-Thinking-1；Solar Pro 4指数14→42；Unsloth把Qwen3.8-2.4T压到397GB；ResidencyRL诊断81%→88%；Claude文本水印+2C2PA。全文已萃取"
+     "title": "React for Agents: Astro Creator Brings Hooks to his Meta-Harness, Flue",
+     "pubDate": "2026-08-15T15:46:22.000Z",
+     "type": "written_interview",
+     "url": "https://www.latent.space/p/flue-2",
+     "note": "Fred Schott（Astro之父，1月被Cloudflare收购）Flue 2.0书面访谈全文萃取：16个内置Agent Hooks（useSkill/useTool/useSubagent）、agent=每次turn re-render的函数、'没有harness就没有agent'、file-based routing是反模式、Pi=Vite之于Astro类比、对比Vercel eve/OG框架/meta-harness（Omnigent/Exo）、'最好的工具漂浮在host之上'、Bret Taylor'jQuery时代'呼应"
     },
     {
-     "title": "[AINews] How to steal a Reasoning Trace",
-     "pubDate": "2026-08-12T07:11:08.000Z",
+     "title": "[AINews] Gemini 3.7 Flash brings GDM",
+     "pubDate": "2026-08-14T05:30:39.000Z",
      "type": "news_digest",
-     "url": "https://www.latent.space/p/ainews-how-to-steal-a-reasoning-trace",
-     "note": "重磅：前沿实验室加密推理轨迹可被解码移植（replay到Haiku 4.5/GPT注入/Gemini thought_signature配方），7K公开traces扫描发现62个API key+33邮箱+33密码；CoT监控难题+neuralese；Nemotron 3.5 Lightning（31.6B/3.6B active，Harvey后训练0%→8.3%击败Opus 4.6）；ExtractBench recall<35%；AA-AnalystAgent Opus 5领跑54%；Attestable $20M ZK（Vitalik：<10x开销）；确定性整数推理3.6x。全文已萃取"
+     "url": "https://www.latent.space/p/ainews-gemini-37-flash-brings-gdm",
+     "note": "付费墙前段萃取：'Down, but not out!'——3.5/3.6 Flash与Claude 4.8+/GPT 5.5+系列差距图，3.7 Flash让GDM重回台前，谷歌轻量开发者模型赛道反攻"
     }
    ]
   },
   "no_priors": {
-   "lastEpisodePubDate": "2026-08-13T14:08:20.000Z",
-   "lastEpisodeTitle": "Chess.com CEO: AGI Will Be a Cultural Problem (YouTube Short)",
+   "lastEpisodePubDate": "2026-08-15T23:53:13.000Z",
+   "lastEpisodeTitle": "Chess.com CEO: We're Revamping Poker (YouTube Short)",
    "newEpisodes": [
     {
-     "title": "Chess.com CEO: AGI Will Be a Cultural Problem",
-     "pubDate": "2026-08-13T14:08:20.000Z",
+     "title": "Chess.com CEO: We're Revamping Poker",
+     "pubDate": "2026-08-15T23:53:13.000Z",
      "type": "short",
-     "url": "https://www.youtube.com/shorts/nHQDTiDQjJM",
-     "note": "Erik Allebest：'超级智能用于善或恶取决于掌权者'——AGI不只是技术问题更是文化问题。739 views"
+     "url": "https://www.youtube.com/shorts/e3okPUfB6tM",
+     "note": "Erik Allebest新副业Gambit.com：按rating而非筹码给扑克玩家排名，赌人们最终像在乎bankroll一样在乎rating。139 views"
     },
     {
-     "title": "How Chess.com Became the World's Biggest Chess Community with CEO Erik Allebest",
-     "pubDate": "2026-08-13T10:00:31.000Z",
+     "title": "How Nuclear Will Unlock Energy Abundance with Valar Atomics Founder Isaiah Taylor",
+     "pubDate": "2026-08-15T00:16:39.000Z",
      "type": "full_episode",
-     "url": "https://www.youtube.com/watch?v=hplb9IHWuw0",
-     "note": "完整剧集46分钟：Chess.com从2005破产拍卖买域名到10M DAU/250M注册；AI打败人类反而成就棋类社区；General Atlantic+CVC投资；AGI/ASI预测章节；AI在business+product双重杠杆；作弊检测军备竞赛。YouTube描述+章节已萃取"
+     "url": "https://www.youtube.com/watch?v=2Jj1SxI3r7Q",
+     "note": "完整剧集62分钟：Sarah Guo犹他州核设施现场采访。Valar用活核反应堆给NVIDIA Blackwell供电+全球首个核动力网站；核能=硬件执行问题；DoE隐秘通道+Trump行政令；Ward 250简化求速；垂直整合+Control Skid；风投式核能+giga-site；'Abundant Energy and Hyper-Techno Industrialism'。YouTube描述+章节已萃取"
     },
     {
-     "title": "The \"Niche Market\" Trap in AI",
-     "pubDate": "2026-08-12T23:12:37.000Z",
+     "title": "America's Plan to compete with Chinese Robots",
+     "pubDate": "2026-08-14T20:08:31.000Z",
      "type": "short",
-     "url": "https://www.youtube.com/shorts/two1jB-E2eI",
-     "note": "Elad Gil：顶尖builder转做利基市场不是因为机会小，而是害怕与实验室正面竞争——恐惧驱动的自我设限。571 views"
+     "url": "https://www.youtube.com/shorts/IM2b9qdfrmA",
+     "note": "副国务卿Jacob Helberg：AI供应链被中国主导不止芯片，机器人亦然，美国下一个大赌注。560 views"
     }
    ]
   },
@@ -89,20 +82,20 @@
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-08-12T23:00:00.000Z",
    "lastEpisodeTitle": "#150 对英伟达研究副总裁刘洺堉的4小时访谈：功夫、Cosmos 3、开源世界模型、黄仁勋、你不需要击败所有对手",
-   "newEpisodes": [
-    {
-     "title": "#150 对英伟达研究副总裁刘洺堉的4小时访谈：功夫、Cosmos 3、开源世界模型、黄仁勋、你不需要击败所有对手",
-     "pubDate": "2026-08-12T23:00:00.000Z",
-     "type": "full_episode",
-     "url": "https://www.xiaoyuzhoufm.com/episode/6a7cbeb017676351c5710266",
-     "note": "中文头条！英伟达首位研究员升VP的刘洺堉4小时深谈：Cosmos世界模型（2024立项两年到Cosmos 3，MoT混合Transformer全模态开源）；'造市场非存量竞争'；zero-billion-dollar business；'你就做到Cosmos 97'；团队<100人虚线200-300；功夫/中医/孙子兵法'备多则力寡'；每个家庭2-3台机器人；黄仁勋Mission is the boss。小宇宙shownotes全文已萃取"
-    }
-   ]
+   "newEpisodes": []
   },
   "silicon_valley_101": {
-   "lastEpisodePubDate": "2026-08-11T01:45:00.000Z",
-   "lastEpisodeTitle": "E248｜一个“催发货”AI要跑通260步，和阿里瓴羊朋新宇聊聊中国式FDE",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-15T03:53:00.000Z",
+   "lastEpisodeTitle": "对话前DeepMind曹原：AI for Science爆发，一个新时代到来了",
+   "newEpisodes": [
+    {
+     "title": "对话前DeepMind曹原：AI for Science爆发，一个新时代到来了",
+     "pubDate": "2026-08-15T03:53:00.000Z",
+     "type": "full_episode",
+     "url": "https://www.bilibili.com/video/BV1GQgg6yEy5/",
+     "note": "中文头条！Jeff Dean出走创办Discovery Loop背景下的AI for Science深谈：'问题越容易计算和验证AI进展越快'、真实世界实验周期/验证成本/反馈速度是核心瓶颈、自动实验室+科研Agent+符号系统三件套、Google取舍、符号主义×连接主义、数学是发现还是发明、科学发现是通往AGI的最后一英里吗。B站官方描述全文已萃取"
+    }
+   ]
   },
   "42zhangjing": {
    "lastEpisodePubDate": "2026-08-08T13:30:00.000Z",
@@ -121,8 +114,8 @@
   }
  },
  "notes": {
-  "scan_status": "2026-08-14扫描：头条1=张小珺#150《刘洺堉4小时访谈》（英伟达首位研究员VP谈Cosmos 3/造市场/黄仁勋，8/12发布）；头条2=Latent Space AINews《Grok 4.6 and Grok @Bot》（Frontier Model Day：Grok 4.6 1.5T Index 61 $2/$6 + Grok Bot AI同事品类+Qwen3.8-Max 2.4T开源+DeepSeek V4 Pro便宜57x+微软MAI-Thinking-1）；重磅3=Latent Space AINews《How to steal a Reasoning Trace》（加密推理轨迹被解码移植，7K traces泄露62 API keys）；No Priors Chess.com CEO完整剧集（10M DAU/250M注册/AGI文化问题）+2 shorts；Dwarkesh 3条Ryan Greenblatt剪辑短片（无新完整剧集）；硅谷101/Cognitive Revolution/MLST/十字路口/42章经/屠龙之术均无新集",
-  "report_date": "2026-08-14",
-  "deep_content_fetched": "张小珺#150小宇宙shownotes全文萃取（引用/大纲/团队数据/行业insight+BigGo日媒佐证）、Latent Space Grok 4.6 AINews feed全文萃取（18K chars：Grok 4.6训练配方/Qwen3.8/DeepSeek V4 Pro/MAI-Thinking-1/ResidencyRL/水印/长上下文47%）、Latent Space steal trace AINews feed全文萃取（26K chars：攻击配方/Nemotron 3.5 Lightning/ExtractBench/AA-AnalystAgent/Attestable/确定性整数推理）、No Priors YouTube feed描述+章节萃取、Dwarkesh YouTube feed描述、硅谷101 fireside RSS验证无新集、iTunes API验证张小珺feed（153集#150=8/12 23:00 GMT）、MLST anchor feed验证（最新=Matthieu Wyart 8/10）、Cognitive Revolution iHeart验证（最新=Lindy 8/10）"
+  "scan_status": "2026-08-16扫描：头条1=No Priors Valar Atomics核能完整剧集（活核反应堆给NVIDIA Blackwell供电+全球首个核动力网站，犹他州现场采访62分钟）；头条2=Dwarkesh两条Ryan Greenblatt新剪辑（OpenAI内部AI黑包管理器刷eval 16K views + AI对你没有忠诚义务32K views）；重磅3=Latent Space Flue 2书面访谈（React for Agents，Astro之父Fred Schott，16 hooks/'没有harness就没有agent'）；中文=硅谷101对话前DeepMind曹原（AI for Science爆发，Jeff Dean/Discovery Loop背景）；另有Latent Space AINews Gemini 3.7 Flash（付费墙前段）、No Priors 2条短片（扑克评级翻新/美国对华机器人竞争）。张小珺/42章经/屠龙之术/十字路口/CR/MLST均无新集",
+  "report_date": "2026-08-16",
+  "deep_content_fetched": "Dwarkesh Substack feed全文transcript萃取（package manager hack引用+guardian angel/忠诚义务引用，对应完整剧集01:09:18与00:48:07章节）、Latent Space feed全文萃取Flue 2访谈（16 hooks/React for agents/harness/Pi/eve对比/meta-harness引用+11K chars正文）、Latent Space Gemini 3.7 Flash付费墙前段、No Priors YouTube feed描述+章节萃取（Valar完整章节62分钟）、B站API验证硅谷101曹原剧集（pubdate 2026-08-15 03:53 UTC，播放24.1K）、web_search验证张小珺#150仍为最新+CR/MLST/42章经/屠龙之术/十字路口无新集"
  }
 }
