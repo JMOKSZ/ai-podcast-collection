@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 張小珺 Ep.150——英偉達研究副總裁劉洺堉：功夫、Cosmos 3、造市場哲學</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">張小珺Jùn｜商業訪談錄 · Ep.150（2026-08-12 發布，4 小時）</div>
+  <h1>「你就做到 Cosmos 97」——英偉達研究副總裁劉洺堉：功夫、造市場哲學、同世界模型嘅盡頭</h1>
+  <div class="meta">
+    <span>📅 2026-08-12（北京時間 8/13 07:00）</span><span>·</span><span>🎙️ 張小珺（主持人）</span><span>·</span><span>👤 劉洺堉（Ming-Yu Liu，英偉達研究副總裁）</span><span>·</span><span>⏱ 4 小時+</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+英偉達第一位由研究員擢升至副總裁嘅人，領導世界基座模型 Cosmos——呢位凌晨四點起身練功夫、然後跳冰桶嘅台灣裔研究者，喺黃仁勳訪華一個月後同張小珺傾足四個鐘。四小時入面冇乜宏大敘事，反而係一份「巨型基礎設施公司點樣做研究」嘅罕見內部視角：由 GauGAN 到 DALL·E 嘅當頭棒喝、由 22 個模型收到 1 個嘅 Cosmos 3、以及貫穿全場嘅一句話——「我沒有打算把別人殺死，我們的心態係點樣去造市場。」
+</p>
+
+<div class="section-title">一、呢集係咩：GSD 式嘅研究副總裁</div>
+
+<p>劉洺堉喺英偉達內部嘅畫像同「典型研究者」好唔同。英偉達內部人同張小珺講：「佢唔似一個典型嘅研究者，更像一個工程上嘅領導者。」黃仁勳畀佢嘅評價係三個字母：<strong>GSD——Getting Shit Done</strong>。</p>
+
+<p>佢現任研究副總裁兼 Cosmos Lab 副總裁，直屬團隊八、九十人，成個 Cosmos 項目兩、三百人——「英偉達裏面好重大嘅一個項目」。今年年初英偉達內部有過一次組織變化：佢離開 Research 體系（原本向首席科學家 Bill Dally 匯報），改向 Dwight Diercks 匯報——英偉達第一位軟件工程師、黃仁勳傳記入面有故事嘅人物；原 Deep Imagination Research 團隊改名 Cosmos Lab，「到咗一個一定要成功嘅階段，所需嘅資源更加龐大」。</p>
+
+<p>佢每年嚟中國兩三次：「公司給我嘅任務、我個人嘅興趣喺機器狗 AI，中國呢度發展非常蓬勃。」今次觀察係靈巧手喺關鍵科技上不斷突破，「速度非常快，每次都能學到好多嘢」。</p>
+
+<div class="section-title">二、一條由「馬變斑馬」開始嘅研究弧線</div>
+
+<p>劉洺堉嘅職業生涯，係一部生成式 AI 嘅前傳。十年前佢加入英偉達時嘅 job talk 論點，喺電影特效仲靠傳統 graphics pipeline 嘅年代顯得激進：</p>
+
+<blockquote class="strong">
+「有一天，主要的視頻生成運算將會是 deep learning，而唔會係傳統嘅 computer graphics。」
+<span class="attribution">— 劉洺堉：十年前加入英偉達時嘅判斷，甚至可以「把小說當成 input 放進去，產出電影」</span>
+</blockquote>
+
+<p>佢係英偉達較早將生成方向立起嚟嘅人，早期做 unpaired image translation——利用 information bottleneck，喺冇對應 input-output 嘅條件下學識「馬變斑馬」。之後係 <strong>GauGAN</strong>（中文譯「馬良神筆」）：塗色即變山水畫，令英偉達建立起「唔單止做到好 GPU，都可以做到好 AI 模型」嘅形象。算法本身叫 AdaIN（adaptive instance normalization），黃仁勳睇 demo 好興奮，但嫌 AdaIN「唔係用戶語言」；marketing 天才 Greg Estes 改名 GauGAN（高更）——畫家同畫畫 app 形成直觀聯繫。</p>
+
+<p>GauGAN 原計劃喺 GTC keynote 宣布，最後因產品太多臨時改為新聞稿+媒體 demo——結果媒體反而認為佢係 GTC 最受矚目嘅工作之一。線上 app 嘅用戶反饋令佢意識到：「我能影響嘅唔止係讀我 paper 嘅研究員。」</p>
+
+<p>然後係 DALL·E 嘅當頭棒喝。OpenAI 發布 DALL·E 嗰一刻，佢嘅自白毫不修飾：</p>
+
+<blockquote class="strong">
+「我先理解到我的野心不夠大，我不夠勇敢，冇下定決心將呢樣嘢做出嚟。」
+<span class="attribution">— 劉洺堉：身在算力最多嘅地方，卻冇意識到「當算力和數據足夠嘅時候，其實已經具備呢個條件」</span>
+</blockquote>
+
+<p>行動係寫信畀黃仁勳：「未來已經好明確，就係靠 deep learning 做影像生成，英偉達唔可以落後」——要嚟<strong>一千張 A100</strong>（「嗰陣時非常多，將一千張 GPU 串埋一齊做高效訓練都唔容易」）。同時寫信畀 Getty Images 尋求合作，後來形成數據、算力同 text-to-image 模型嘅合作方案，項目名 Picasso——研究第一次長成「幫客戶成功嘅產品」。</p>
+
+<p>仲有一段值得記低嘅插曲：<strong>Sora 出自佢舊部</strong>。Tim Brooks 實習時「就一直想做 video 生成、想做後來 Sora 嘅嘢」，但當時技術未成熟，畢業後佢冇留住 Tim，Tim 去咗 OpenAI 做出 Sora。Sora 發布後劉洺堉「非常開心」，同時反覆自省：「到底我嘅決策、判斷過程中邊啲地方冇睇啱，導致冇喺正確嘅時期做出正確嘅事？」</p>
+
+<div class="section-title">三、點解平台公司要自己做研究</div>
+
+<p>張小珺問咗一條好尖銳嘅問題：基礎設施公司賣卡畀前沿實驗室就得，點解要自己做研究？答案落喺周期：</p>
+
+<blockquote class="strong">
+「設計芯片、設計電腦架構的周期很長，你不能說我現在馬上改。」
+<span class="attribution">— 劉洺堉：必須自己行客戶可能行嘅路，先可以設計出滿足 AI 大公司嘅芯片同 infrastructure</span>
+</blockquote>
+
+<p>更深一層係信念：「呢個世界上如果每個有抱負、有理想嘅人都有工具，可以做出佢哋想做出嚟嘅嘢，呢個世界會係一個更好嘅世界。」</p>
+
+<p>開源嘅邏輯亦係同一條線：模型免費放上網，但真正落地「仲有好多嘢要做，尤其具身領域，有好多硬件問題、商業問題要解決」。開源係一個承諾信號——睇到英偉達由一代、二代、二點五代到三代一路投資，「大家有咗呢個信心，就可以將資源投喺更重要嘅地方」。同客戶競爭？「具身咁難、咁多嘢要解，我哋做呢啲模型幫佢哋分擔部分壓力——我唔覺得係競爭，我覺得係幫大家成功。」</p>
+
+<div class="section-title">四、Cosmos 3 拆解：22 個模型收到 1 個</div>
+
+<p>Cosmos 項目大約 2024 年 3 月、Sora 之後立項：佢、Sanja Fidler、負責 NeMo 團隊嘅 Bryan Catanzaro 等一班做生成式模型同媒體生成嘅人，一齊寫信畀黃仁勳：「必須將呢樣嘢做出嚟。」會前共識已成，會議主要係具體化點做、邊個負責——黃仁勳叫佢同 Sanja Fidler 牽頭。</p>
+
+<p>取名插曲藏住一堂產品課：佢本來想直接問黃仁勳個名，被要求自己諗——「名字同產品嘅定位非常相關。叫 Cosmos，目標就唔係產生 content、唔係創作，而係解決物理世界嘅問題。」</p>
+
+<div class="data-point">
+<span>Cosmos 數字</span>
+<strong>2024 年立項</strong>，兩年多迭代至 <strong>Cosmos 3</strong>｜ 直屬團隊 <strong>不到 100 人</strong>，虛線匯報 <strong>200–300 人</strong>｜ 已到 <strong>萬卡級 GPU</strong> 訓練規模｜ Cosmos 3：<strong>MoT 混合 Transformer</strong>，統一視覺推理 / 世界生成 / 動作預測三大能力｜ <strong>完全開源</strong>（Apache 2.0，模型 + 訓練框架 + 部分數據）
+</div>
+
+<p>Cosmos 1 時期為滿足唔同 partner，佢算過需要 <strong>22 個模型</strong>，向黃仁勳匯報，先得到一句「Very good, very hard」，再聽到 LV 嘅故事：<strong>路易威登減少陳列嘅商品數之後，銷售額反而提升</strong>——「你唔希望太多嘢困惑你嘅消費者。」佢承認「我自己都分唔清要用 A 定 B」，而且每個模型發布後都要維護，「備多則利寡，影響迭代速度」。</p>
+
+<p>統一嘅理論依據有二：呢啲模型描述嘅係同一個世界，學嘅係同一個 internal representation；foundation model 嘅核心係納百川——將 Reason、Predict、Transfer、Policy 嘅數據合埋一齊，「模型嘅上限更高」。於是 2.5 收尾後走向 Cosmos 3 嘅 Omni model：「一到二係數據嘅提升，二到三係好大嘅一個 gap」——去年十月前後啟動，做咗超過半年。</p>
+
+<p>面對「Cosmos 3 創新不多」嘅爭議（有中國世界模型創業者睇足一週論文，評價係「大嘅技術創新唔多，但將好多細節都工程驗證出嚟」），佢唔迴避：</p>
+
+<blockquote class="strong">
+「我哋係第一個將模型 scale 到咁大，並將 audio、video、action 合埋一齊嘅。概念上合埋一齊容易，真正做出嚟唔係咁容易。」
+<span class="attribution">— 劉洺堉：所有大語言模型都可能係 Transformer 架構，但細節仍會令某啲模型比另啲好</span>
+</blockquote>
+
+<p>佢話自己越來越唔重視係咪革命性原創——「有冇用、可唔可以產生 impact、可唔可以解決大家想解決嘅問題，先係重點」。Frontier labs 走向閉源、寫 paper 唔講關鍵環節，「我哋決定行一條唔一樣嘅路」——「能講嘅嘢都講清楚」。</p>
+
+<div class="section-title">五、Action 係 first class citizen：回應楊植麟與謝賽寧之爭</div>
+
+<p>Cosmos 3 輸入層同時收 language、video、audio、action，呢個設計判斷直接回應咗中文 AI 圈近期最著名嘅一場路線之爭——楊植麟擔心 vision 拉低語言模型嘅智商，謝賽寧擔心「語言對視覺嘅污染、語言只係人類嘅腳手架」。劉洺堉嘅裁決係目的論：</p>
+
+<blockquote class="strong">
+「大模型基本上思路有兩個：讓 language 當 first class citizen（coding、chat），或讓視覺信號當 first class citizen。物理世界的 agent 會 take action、會改變呢個世界的狀態——一個好的物理世界 foundation model 要將 action 都當成 first class citizen。」
+<span class="attribution">— 劉洺堉：video 更精準 capture 物理運作，language 難啲；但模型最後要服務人，唔識 language 冇辦法溝通</span>
+</blockquote>
+
+<p>佢嘅目標宣言好清晰：「我嘅目標唔係追求 AGI——也許由視覺信號直接學出 intelligence、發展出另一個文明，由嗰個角度語言係干擾。睇你要嘅係乜嘢，我好明確咁知道我嘅目標係乜嘢。」</p>
+
+<p>融合嘅證據鏈好具體：Cosmos Policy 發現 predict action 時同時 predict 之後嘅 observation 可以幫助訓練收斂（video 幫 action）；「咔」一聲可以幫助標定接觸時間（audio 幫 video）；文字描述越詳盡，video 越容易生成（text 幫 video）。至於 secret sauce？「做大模型冇乜嘢 secret sauce——嚴格嘅實驗、控制變量、累積知識，一步一步紮實咁做就啱。」</p>
+
+<p>仲有佢最鍾意嘅比喻——<strong>「deep learning 就好似中醫，係試出嚟嘅」</strong>：喺試嘅過程中做詳細實驗記錄，從裏面理解中間嘅規律。雙塔設計（離散塔做 understanding、連續塔做 generation）係現階段嘅實用選擇：客戶 post-training 時可以將兩邊嘅影響切開——若全連埋一齊，改變 generation 嘅 distribution 可能連帶影響 understanding 能力。「佢相對唔夠 elegant，理想情況係讓 data 嚟決定架構。下一步目標係更簡單——點解要兩個塔？一個塔就夠。」</p>
+
+<div class="section-title">六、黃仁勳方法論：十億美元、mission is the boss、Are you a crybaby?</div>
+
+<p>成個訪談，黃仁勳係隱形嘅第二受訪者。劉洺堉由早年黃仁勳成日傳論文畀佢寫 summary 講起：</p>
+
+<blockquote class="strong">
+「佢當初唔懂 computer graphics 敢做 GPU，唔懂 deep learning 敢進入 AI 領域。」
+<span class="attribution">— 劉洺堉：黃仁勳嘅決策靠 first principles——「將事情嘅本質理清楚，不受外界信號干擾」</span>
+</blockquote>
+
+<p>最核心嘅經營哲學係 <strong>zero-billion-dollar business</strong>（由零到十億美元嘅生意）：</p>
+
+<blockquote class="strong">
+「Jensen 經常講，要造市場，而唔係存量競爭。佢講我哋就要做 zero-billion-dollar business——你可以唔賺錢，但當呢個生意成功嘅時候，必須係好 influential（有影響力）嘅。唔可以話滿足每年賺 100 個 million——呢種 scale 對好多公司都好大，但對英偉達而言，呢個係一個 distraction（分心）。」
+<span class="attribution">— 劉洺堉：Jensen 嘅十億美元標準</span>
+</blockquote>
+
+<p>「你就做到 Cosmos 97」係另一個名場面。做完 Cosmos 1 佢問黃仁勳要唔要繼續，得到嘅答覆係：「你就做到 Cosmos 九十七。」佢嘅解讀：「數字係隨口講嘅，但佢嘅決心展現在呢個數字上——呢樣嘢會一直行落去。」若果每半年一代要四十幾年，「AI 發展速度極快，也許唔需要四十幾年」。</p>
+
+<p>黃仁勳嘅紀律面同樣重要：有啲嘢即使好重要，「佢會叫你 pace, pace your steps，等你唔好急」——佢擅長打馬拉松戰。時機方面，Sora 之前要說服比較難，睇到 Sora 之後就唔難，「佢一睇就知道呢件事對公司嘅影響」。</p>
+
+<p>兩個獨門機制：「top-five 郵件」令「公司各處嘅微小訊號擴散出去」——兩個團隊係咪做緊一模一樣嘅事會自然顯現；同埋「<strong>mission is the boss</strong>」——英偉達似有機體而唔係固定框架，「公司要走向一個方向時，有相關技能嘅團隊就自動 align 過嚟，Cosmos 就係咁嘅一個案例」。</p>
+
+<p>仲有一個名場面——<strong>「Are you a crybaby?」</strong>：一次內部比較兩個 solution，佢解釋對方 setting 唔 fair 所以己方落後，黃仁勳回敬：「Are you a crybaby? 呢個世界上冇乜嘢係公平嘅。你嘅目標如果係解決問題，就去攞到解決問題所需要嘅條件。」「西點軍校講 no excuse 我早聽過，但佢講令我印象更深刻——我後來就唔再搵理由喇。」</p>
+
+<div class="section-title">七、組織哲學：唔裁員、唔賽馬、三百人點共同做決定</div>
+
+<p>黃仁勳嘅自我鞭策變成咗公司儀式：「佢每日都覺得公司只剩三十日嘅現金流，三十日後就要破產——每次開會都咁樣提醒自己做出對公司最正確嘅決定。」疫情時經濟唔好，英偉達考慮削減 travel、研究可唔可以唔用 Slack（「反正我哋有 email」）、係咪取消一個 cloud 慳成本——「有啲公司透過裁員降低人事開支，英偉達諗嘅係慳啲不必要嘅開銷，照顧員工一齊度過困難」。</p>
+
+<p>劉洺堉話，喺佢喺英偉達嘅時間入面冇聽過裁員，亦冇末位淘汰。邏輯係：「員工對公司有認同感、有安全感，先願意講出喺擔心被淘汰時唔願意講嘅嘢。喺一個全部都要搶出頭嘅地方，反而唔容易促成團結合作。」代價亦直接講：技術成熟轉型時員工要時間重新學習，比直接 lay off 再請識嘅人慢——「但你得到員工嘅信任」。亦唔賽馬：「你 take 呢個 mission 我哋就相信你，但畀你好高嘅 bar——用老黃嘅話講，torture you to greatness。」</p>
+
+<p>三百人點樣共同做決定？佢嘅表述極精確：</p>
+
+<blockquote class="strong">
+「你希望所有人目標一致，但又希望所有人可以自主做決定。」
+<span class="attribution">— 劉洺堉：只有少數人拍板就緩慢；人人拍板但目標不一致就發散，進而產生賽馬</span>
+</blockquote>
+
+<p>解法係信息透明加提前畫願景——Cosmos 3 論文出嚟之前，佢已經向各團隊描述成品嘅樣，「可能百分之九十相似」；「好似籃球選手罰球前想像個波空心落網」。仲要容錯：「害怕決定錯誤嘅人係唔會做決定嘅，但錯誤時要能快速修正。」</p>
+
+<p>會議密度驚人：每週超過十次，video、understanding 各定期兩三次。「你可以都唔開會各做各嘅，唔見得成功；都可以一直開會乜嘢都唔做，都唔會成功——要揀一個均衡。」OpenAI 自下而上、Anthropic 自上而下，英偉達屬於邊種？「都有。物極必反，天下分久必合——要喺嗰個時間點了解乜嘢對團隊最正確，而唔係一味順住一個模式操作。」</p>
+
+<div class="section-title">八、競爭觀：「模型競爭唔係魷魚遊戲」</div>
+
+<p>全場最貫穿嘅主題係競爭觀。劉洺堉反覆強調：佢冇任何競爭對手，冇同任何人競爭，所有人都可以係合作夥伴。英偉達同時投資咗李飛飛嘅 World Labs 同楊立昆嘅 AMI：「每間公司睇到嘅點唔一樣、想解嘅問題唔一樣，我哋都幫助佢哋，亦希望佢哋成功。」</p>
+
+<blockquote class="strong">
+「乜嘢叫戰爭呢？我冇打算將別人殺死。我哋嘅心態唔係話想將別人殺死，我哋嘅心態係我哋要點樣去造市場。」
+<span class="attribution">— 劉洺堉：英偉達嘅競爭觀</span>
+</blockquote>
+
+<p>對「模型能力會唔會收斂」嘅判斷，佢自稱 controversial：</p>
+
+<ul>
+  <li><strong>「從來冇一間公司掌握所有科技、其他公司都追唔上」</strong>——人才會流動，know-how 自然擴散，AI 唔會係例外，「呢個本身唔係一個穩定嘅社會狀態」；</li>
+  <li><strong>模型會 commodity 化</strong>：「咁多人做唔同嘗試，最後就係一套學問，好多人都會，關鍵係你要攞佢嚟做乜嘢。」每間公司都要訓自己嘅大模型嗎？「如果係 commodity，你需要建自己嘅電廠嗎？」；</li>
+  <li><strong>收斂之後拼整合</strong>——同自己生態、自己產品嘅整合，佢舉 Google 為例：模型與 Docs、Search、Gmail 成個平台結合，反饋越多，模型越容易對公司產生貢獻；</li>
+  <li><strong>畀創業者嘅空間喺巨頭盲區</strong>：英偉達對細過十億美元嘅生意冇興趣，「但嗰度面本身就有好值得做嘅嘢」；「你而家開公司同 OpenAI、Anthropic 做一樣嘅嘢好危險……要去解佢哋冇辦法解嘅痛點——唔係唔想解，係冇辦法 justify」；</li>
+  <li><strong>范本係 Anthropic</strong>：早期被認為落後 OpenAI，當 OpenAI 做分散式投資、雞蛋唔放喺同一個籃嘅時候，Anthropic 做集中式投資，最早相信 coding——「策略往往就關乎你決定可以放棄乜嘢」。</li>
+</ul>
+
+<p>最後嗰句回應「模型競爭係咪魷魚遊戲」：「如果大家想解嘅嘢一模一樣，嗰就係魷魚遊戲。所以模型競爭唔應該係魷魚遊戲——呢個世界上要被解決嘅問題咁多，可以提供價值嘅嘢咁多。」</p>
+
+<div class="section-title">九、ChatGPT moment for Physical AI 同中美機器人</div>
+
+<p>劉洺堉對 physical AI 嘅「ChatGPT moment」畀咗一個好具體嘅畫面：</p>
+
+<blockquote class="strong">
+「人簡單示範一下點樣操作，機器就能直接學識；畀 physical AI 讀個說明書，佢就知道點樣操作儀器——如果我睇到咁嘅產品，嗰就係 ChatGPT moment for physical AI。」
+<span class="attribution">— 劉洺堉：「也許今年，也許明年，我不知道，但我覺得佢必然會發生」</span>
+</blockquote>
+
+<p>資金流入、創業者湧入、各項條件「都逐漸喺收斂當中」。人形機器人之爭：人形嘅優勢係能利用大量人類數據；輪式底盤加半人形上身都能解決好多問題；完整人形會係重要方向，因為人類環境係為人形設計嘅——但關鍵仲係運營成本。DeepMind 譚傑預測 2035–2036 係人形拐點，佢話「我希望早啲，但我不確定」。</p>
+
+<p>中美對比：美國做本體嘅公司少，主要係 Tesla 同 Figure AI；中國好多公司做本體，「可以控制嘅嘢更多，軟硬一體嘅操作空間更大；中國強大嘅製造業令呢啲公司做到一啲美國唔容易做到嘅事」。美國輕硬件係咪錯？「好難講——但如果軟硬體整合係機器人嘅趨勢，冇硬件當然處於被動狀態。」</p>
+
+<p>對世界模型嘅定義之爭，佢嘅態度好務實：建世界模型嘅目的唔同，形態就唔同（預測未來 / 理解工廠產線點解卡住 / 重建三維世界）——「終究我哋喺同一個世界裏面，呢啲模型係經由唔同嘅觀察描述同一件事。」佢而家主要做物理世界嘅理解同生成（prediction），唔再做重建。至於定義爭論本身？「world model 會重蹈 AGI 覆轍——經過咁多年仲係冇一個共同嘅定義。定義出嚟對人類有乜影響？我覺得唔係好重要。」Cosmos 嘅自我定位係 World Foundation Model：「我哋希望係更底層嘅嘢——哪怕佢係一個要做世界模型嘅人，都可以基於我哋嘅 foundation 嚟做。」</p>
+
+<div class="section-title">十、功夫、冰浴同四點起身：控制自己</div>
+
+<p>劉洺堉 18 歲起師從著名武術家徐紀（神槍李書文一脈傳人）練中國功夫，至今未輟。師承線係徐紀師承劉雲樵，上溯「神槍」李書文嘅八極拳、劈掛掌。入門因為金庸小說，練落去發現係自我修煉：「打出嚟嘅一拳嘅最大力量嚟自全身協調，將力量由腳一路傳到手——要經由不斷練習、不斷自我修改，同我鍾意一直自我檢討有好深嘅關係。」凌晨四點幾起身：一個人蹲樁、打拳，做完全套之後跳進冰桶（ice plunge）幫助身體修復。</p>
+
+<blockquote class="strong">
+「中國武術最重要嘅係控制自己。我並唔係為咗展現強大嘅破壞能力。」
+<span class="attribution">— 劉洺堉：呢種克制，恰好映射英偉達作為巨型基礎設施企業嘅姿態</span>
+</blockquote>
+
+<p>呢種「控制自己」亦延伸到佢嘅研究哲學：三個 lesson——數學之美嘅陷阱（「假設令數學變得乾淨，亦令你離現實比較遠。AI 本身就係應用，我越來越鍾意接近問題嘅本質，唔被花俏嘅數學迷惑」）；一百分講十分（「我自己做一百分，但我嘅解釋只有十分」——從此將「令一般人懂你做咗乜」當成研究嘅一部分）；同埋 n² 溝通（人與人溝通係 N²，「唔容易 scale」——要做出巨大貢獻，需要大家團結合作，亦必須將事情講得非常明確）。</p>
+
+<p>佢仲有一個簽名式比喻：「經濟嘅茂盛程度係根據錢幾快由一個人嘅口袋流到另一個口袋，研究嘅茂盛程度應該係根據 idea 幾快由一個人嘅腦袋流到另一個腦袋。」所以英偉達招收唔同背景嘅實習生保持交流——「我好多實習生都比我優秀，我覺得呢個係一件好開心嘅事。」佢留意到中美喺呢方面嘅差異：「美國呢啲 frontier labs 而家好少招實習生，know-how 只留喺內部；中國公司招好多實習生，幫助將 know-how 傳遞出去——對人類成個知識嘅擴散係一件好事。」</p>
+
+<div class="section-title">十一、我嘅 takeaway：一份「基礎設施公司」嘅世界觀</div>
+
+<p>四小時訪談最值錢嘅，唔係 Cosmos 3 嘅技術細節，而係一套完整嘅「巨型基礎設施企業世界觀」——同張小珺之前訪問嘅 neo labs 創辦人（謝賽寧、洪樂潼、劉子鳴）形成強烈對照：</p>
+
+<ul>
+  <li><strong>「造市場」係理解成個 Physical AI 競爭嘅鑰匙</strong>：劉洺堉反覆強調冇競爭對手、所有人都係潛在合作伙伴——呢個唔係公關辭令，而係英偉達生意模式嘅必然：佢哋賺錢嘅方式係賣算力，客戶越成功，佢哋越成功。「世界模型係工具，最終要解嘅問題只有世界模型係唔夠嘅。你用我哋開源嘅嘢做出比我哋更好嘅模型，嗰個模型都係開源嘅，都係好事。」呢種姿態，同「模型即商品」嘅判斷一脈相承；</li>
+  <li><strong>「備多則力寡」係佢成個職業生涯嘅方法論</strong>：由 22 個模型收到 1 個、由 GAN 轉 diffusion、由「唔做 LLM 因為冇貢獻」——每一次都係主動放棄。策略嘅本質就係決定放棄乜嘢，呢句嘢對 James 呢類同時睇住多條業務線嘅人嚟講，係好直接嘅提醒；</li>
+  <li><strong>世界模型賽道嘅中美角力正式成形</strong>：英偉達以「開源 + 全模态 + 基礎設施」三重身份切入，同 Google（Genie 系列）、OpenAI（Sora 系列）、World Labs、AMI 形成差異化卡位。Cosmos 3 完全開源（Apache 2.0，連訓練框架同部分數據）——「frontier labs 走向閉源，我哋決定行一條唔一樣嘅路」，呢個同 DeepSeek「產生影響、將細節講清楚」嘅層面相通，但目標唔同：「我哋係希望幫助使用者成功，希望 physical AI 更快進入現實世界」；</li>
+  <li><strong>「Mission is the boss」對組織管理嘅啟示</strong>：三百人團隊靠「目標一致 + 人人可拍板 + 信息透明」運轉，冇裁員文化換嚟安全感同信任——同 2026 年矽谷裁員潮下嘅普遍做法好唔同。黃仁勳「每日當公司只剩三十日現金流」嘅自我鞭策，亦係一種可操作嘅決策紀律；</li>
+  <li><strong>最後係嗰句「要活得久」</strong>：由「highly competitive、要擊敗所有人」嘅研究員弧線，到「具備 number one 嘅能力，但做出對呢個世界貢獻最大嘅事」——「你可以做出最強嘅模型但只畀好少人用、令權力過度集中喺好少人手裏，我覺得唔見得係一件啱嘅事。」呢句嘢喺 2026 年「機構超級智能 vs 個人超級智能」嘅路線之爭入面，係一個罕見嘅、由內部人講出嚟嘅注腳。</li>
+</ul>
+
+<hr>
+<div class="highlight-box">
+<strong>一句話總結：</strong>英偉達研究副總裁劉洺堉四小時長談，由 18 歲練功夫講到世界模型嘅盡頭：GauGAN 建立信心、DALL·E 打醒「野心不夠大」、一千張 A100 換嚟 Picasso、Cosmos 由 22 個模型收到 1 個 Omni model——「備多則力寡」；黃仁勳嘅「zero-billion-dollar business」「你就做到 Cosmos 97」「mission is the boss」「Are you a crybaby?」貫穿全場；佢嘅競爭觀係「冇打算將別人殺死，心態係點樣去造市場」，判斷係模型終將 commodity 化、整合先係護城河；佢畀 physical AI 嘅 ChatGPT moment 落咗一個具體定義——「人示範一次機器就學識、讀說明書就識操作儀器」，而且「也許今年，也許明年，但必然會發生」。
+</div>
+
+<footer>
+  <p>來源：<a href="https://www.xiaoyuzhoufm.com/podcast/626b46ea9cbbf0451cf5a962">張小珺Jùn｜商業訪談錄 Ep.150（小宇宙）</a> ｜ <a href="https://scripod.com/episode/vjgl1r5hp60eagv443p4qexw">Scripod 節目筆記</a> ｜ <a href="https://bidclub.ai/e/zhangxiaojun-2026-08-12-150-4">BidClub 全場轉述</a> ｜ <a href="https://podcasts.apple.com/cn/podcast/id1634356920">Apple Podcasts</a></p>
+  <p style="margin-top:0.3rem;">深度復述生成時間：2026-08-15 06:20 UTC ｜ JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
