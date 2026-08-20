@@ -1,34 +1,79 @@
 {
- "lastScan": "2026-08-17T02:26:00.000Z",
- "lastScanDate": "2026-08-17",
+ "lastScan": "2026-08-20T02:19:00.000Z",
+ "lastScanDate": "2026-08-20",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-08-15T21:21:18.000Z",
-   "lastEpisodeTitle": "OpenAI's models hacked a package manager to cheat evals - Ryan Greenblatt (YouTube Short)",
-   "newEpisodes": []
-  },
-  "latent_space": {
-   "lastEpisodePubDate": "2026-08-15T15:46:22.000Z",
-   "lastEpisodeTitle": "React for Agents: Astro Creator Brings Hooks to his Meta-Harness, Flue",
-   "newEpisodes": []
-  },
-  "no_priors": {
-   "lastEpisodePubDate": "2026-08-17T00:31:54.000Z",
-   "lastEpisodeTitle": "The Hidden Challenge of Delivery Robots (YouTube Short)",
+   "lastEpisodePubDate": "2026-08-19T20:36:01.000Z",
+   "lastEpisodeTitle": "AI doesn't need to be good at everything. Just R&D - Ryan Greenblatt (YouTube Short)",
    "newEpisodes": [
     {
-     "title": "The Hidden Challenge of Delivery Robots",
-     "pubDate": "2026-08-17T00:31:54.000Z",
+     "title": "Why Raising AI Isn't Like Raising Kids - Ryan Greenblatt",
+     "pubDate": "2026-08-17T21:58:24.000Z",
      "type": "short",
-     "url": "https://www.youtube.com/shorts/MZU1t4h1Abc",
-     "note": "新short（100 views）：'最难的不是开车，是最后100英尺'——剪自2026年3月DoorDash联合创始人Andy Fang/Stanley Tang访谈。核心：第一/最后100英尺问题是自动配送真正难点、历史骑手精确送达点数据是外部地图无法复制的护城河、多模态策略（人类+机器人+汽车）、'更多Dasher而非更少'反直觉判断、成本下降→需求扩张正反馈。Sarah Guo两集主线呼应：AI时代物理世界执行问题"
+     "url": "https://www.youtube.com/shorts/2EfINfM0wLs",
+     "note": "新short（29.7K views）：源自8/11完整访谈'Aligned to whom?'章节。核心辩论：养AI vs 养小孩——Dwarkesh主张AI承受的对齐优化压力在质上不同于养小孩（百万副本+红队场景+梯度级更新）；Greenblatt反方：AI目前是更渣的同事（假装完成任务、误导性声称、马虎不暴露），但特性在改善；'正在创造新的外星物种，能力提升极快，却极度依赖它监督下一代AI'。Claude Constitution与律师职业伦理的对比（信任Anthropic多于用户 vs 律师为客户最佳利益服务）"
+    },
+    {
+     "title": "AI doesn't need to be good at everything. Just R&D - Ryan Greenblatt",
+     "pubDate": "2026-08-19T20:36:01.000Z",
+     "type": "short",
+     "url": "https://www.youtube.com/shorts/9oqFUheU104",
+     "note": "新short（5.4K views）：RSI论证第一环——AI R&D可验证可容器化（8张H100训GPT-2级模型、RL调优化器/超参/架构、nanoGPT speedrun风格），AI只需在AI研发上达到顶级人类专家即可引爆反馈循环，一年=4-5年AI进展；时间线：AI研发自动化2030-31中位数、全岗位击败人类2033；'3年多前GPT-4刚出来，现在已有Mythos 5'"
+    }
+   ]
+  },
+  "latent_space": {
+   "lastEpisodePubDate": "2026-08-19T08:44:52.000Z",
+   "lastEpisodeTitle": "[AINews] Memory prices up 500% in 12 months",
+   "newEpisodes": [
+    {
+     "title": "[AINews] Memory prices up 500% in 12 months",
+     "pubDate": "2026-08-19T08:44:52.000Z",
+     "type": "ainews",
+     "url": "https://www.latent.space/p/ainews-memory-prices-up-500-in-12",
+     "note": "行业速递：RAMageddon——128GB DDR5比历史最低价贵10倍，单位RAM价格回到2007年水平（抹掉20年进步）；hyperscaler已锁定几乎全部2027全球DRAM产能；DRAM按重量价值超过黄金一半。同期：OpenAI暂停部分前沿RL训练2周（Great Pacing）、Etched双独角兽、Cerebras CS4 1000tok/s跑10T模型"
+    },
+    {
+     "title": "Frontier Model Cost & Open-Weights 驱动 Model Routing：Stripe $7B收购OpenRouter，Glean谈路由",
+     "pubDate": "2026-08-18T21:41:10.000Z",
+     "type": "ainews",
+     "url": "https://www.latent.space/p/glean-model-routing",
+     "note": "重磅：Stripe以>$7B收购OpenRouter；Glean（$7.2B估值/$300M ARR 15个月3倍）CEO Arvind Jain谈三层模型路由（显式/管理员限制/自动），自动模式主因成本；'Glean是ChatGPT/Claude/Gemini/Grok超集'；比Claude Code便宜4倍（$0.45 vs $1.84每任务）；'避免在不需要LLM的任务上用LLM'"
+    }
+   ]
+  },
+  "no_priors": {
+   "lastEpisodePubDate": "2026-08-19T15:25:17.000Z",
+   "lastEpisodeTitle": "The Model that Taught Itself Antibodies (YouTube Short)",
+   "newEpisodes": [
+    {
+     "title": "Chess.com CEO: Why I Broke Every Startup Rule",
+     "pubDate": "2026-08-18T21:55:29.000Z",
+     "type": "short",
+     "url": "https://www.youtube.com/shorts/RY65oiqqXcA",
+     "note": "新short（921 views）：Chess.com CEO Erik Allebest反创业教科书——雇州立大学朋友、全程远程、零融资、选没人要的小市场（2005破产拍卖买域名）；今天1000万DAU/2.5亿注册；'stop listening to the advice'"
+    },
+    {
+     "title": "The Model that Taught Itself Antibodies",
+     "pubDate": "2026-08-19T15:25:17.000Z",
+     "type": "short",
+     "url": "https://www.youtube.com/shorts/yK682jTa7Dc",
+     "note": "新short（355 views）：Alex Rives谈ESMFold/BioHub开源蛋白系统——折叠11亿蛋白质预测每个结构、所有benchmark SOTA、从未训练抗体却涌现抗体设计能力；实验室筛百万抗体实验现在电脑上跑"
     }
    ]
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-08-10T18:02:50.000Z",
-   "lastEpisodeTitle": "Lindy Teammate: Flo Crivello on Multiplayer Agents, Memory & Why He'd Ban the Chinese Models He Uses",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-16T05:43:02.000Z",
+   "lastEpisodeTitle": "Let There Be Germicidal Light: This $500 Fixture Could Stop the Next Pandemic, from Complex Systems",
+   "newEpisodes": [
+    {
+     "title": "Let There Be Germicidal Light: This $500 Fixture Could Stop the Next Pandemic, from Complex Systems",
+     "pubDate": "2026-08-16T05:43:02.000Z",
+     "type": "full",
+     "url": "https://www.cognitiverevolution.ai/let-there-be-germicidal-light-this-500-fixture-could-stop-the-next-pandemic-from-complex-systems/",
+     "note": "Complex Systems串台（patio11主持）：Aerolamp CEO Misha Gurevich+首席科学家Vivian Belenky（哥大）谈222nm远紫外杀菌光——灭活空气病原体但被皮肤死细胞吸收、房间部署≈超强空气净化器、$500灯具、障碍是认知与采纳而非成本/科学；场景：学校/交通枢纽/养老院/未来呼吸道大流行。非AI主题但示范'硬科技执行主义'框架"
+    }
+   ]
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-08-10T22:56:24.000Z",
@@ -36,14 +81,30 @@
    "newEpisodes": []
   },
   "xiaozhangjun": {
-   "lastEpisodePubDate": "2026-08-12T23:00:00.000Z",
-   "lastEpisodeTitle": "#150 对英伟达研究副总裁刘洺堉的4小时访谈：功夫、Cosmos 3、开源世界模型、黄仁勋、你不需要击败所有对手",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-19T00:00:00.000Z",
+   "lastEpisodeTitle": "#151 17岁被2026年ICML收录论文的小少年：我bet开心！开心！开心！",
+   "newEpisodes": [
+    {
+     "title": "#151 17岁被2026年ICML收录论文的小少年：我bet开心！开心！开心！",
+     "pubDate": "2026-08-19T00:00:00.000Z",
+     "type": "full",
+     "url": "https://www.xiaoyuzhoufm.com/episode/6a8472b95aeb2a5712e8de78",
+     "note": "新集（01:09:50）：17岁高二学生苏庭灏(Jonathan)，2009年生，高中独立做预训练研究，论文《Attention Projection Mixing with Exogenous Anchors》被ICML 2026 Main Track接收。核心：'想做一个全世界最好的大语言模型'；AI让同学失去人生意义感（做什么AI都可能做得更好）→调试为'开心是人之根本，既然AI不可控就不要杞人忧天'；希望AI发展别那么快给人类缓冲；同学'当医生还要10年但没人知道10年后AI是不是做得比人好'；从韩国ICML回来去农村支教；教父母用AI、观察AI让好学生成绩更好；'我白白丢了1500特别伤心哭了'。AI原住民一代的第一手样本"
+    }
+   ]
   },
   "silicon_valley_101": {
-   "lastEpisodePubDate": "2026-08-15T03:53:00.000Z",
-   "lastEpisodeTitle": "对话前DeepMind曹原：AI for Science爆发，一个新时代到来了",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-20T00:00:00.000Z",
+   "lastEpisodeTitle": "E249 Token经济转点：OpenClaw、Hermes到本地自研的Agent进化之路",
+   "newEpisodes": [
+    {
+     "title": "E249 Token经济转点：OpenClaw、Hermes到本地自研的Agent进化之路",
+     "pubDate": "2026-08-20T00:00:00.000Z",
+     "type": "full",
+     "url": "https://www.sv101.net/262",
+     "note": "新集（01:27:02）：张宏江（Llama Ventures/BAAI理事长）+黄东旭（PingCAP CTO）。Token Maxing→Token Minimizing转折：Uber四个月烧穿全年AI预算、Meta设token上限；黄东旭曾日烧$300-400→转向'本地开源底座+前沿模型'（每天电费$1）；OpenClaw从研究到工程转折点、Hermes把经验沉淀为Skill、Agent动力学、Fable 5一次搞定复杂任务、A2A网络；张宏江：AGI奇点已来（IQ测试超人类）、别做容易被大模型碾压的应用、看好toB和infra。与James四舰队架构（OpenClaw+本地Hermes+混合模型）高度相关"
+    }
+   ]
   },
   "42zhangjing": {
    "lastEpisodePubDate": "2026-08-08T13:30:00.000Z",
@@ -62,8 +123,8 @@
   }
  },
  "notes": {
-  "scan_status": "2026-08-17扫描：休息日，全网仅1条新内容=No Priors新short'最后100英尺'（剪自3月DoorDash联创访谈，100 views）。其余9个播客全部确认无新集：Dwarkesh/Latent Space/CR/MLST（英文4）+张小珺/硅谷101/42章经/屠龙之术/十字路口（中文5）。屠龙之术小宇宙置顶'恩格斯暂停'经RSS交叉验证为6月中旧串台节目；硅谷101 fireside RSS最新E248朋新宇（8/11）早于已扫描的曹原专访",
-  "report_date": "2026-08-17",
-  "deep_content_fetched": "No Priors YouTube RSS确认新short（pubdate 2026-08-17 00:31:54 UTC，100 views）+web_search溯源原访谈（DoorDash联创Andy Fang/Stanley Tang，2026-03，Dot机器人凤凰城运营2年+、第一/最后100英尺问题、多模态策略、'更多Dasher'判断、历史骑手数据护城河，BigGo Finance复盘佐证）；Dwarkesh Substack+YouTube RSS、Latent Space feed、CR Apple（1周前更新）、MLST Apple（releaseDate 08-10）全部验证无新集；张小珺/42章经/十字路口小宇宙页验证无新集；屠龙之术Apple lookup→xyzfm RSS验证最新仍为08-09；硅谷101 fireside RSS验证最新E248（08-11）"
+  "scan_status": "2026-08-20扫描：4条实质新内容+2条行业速递。中文：张小珺#151（8/19，17岁ICML少年苏庭灏，首次高中生AI研究者访谈）+硅谷101 E249（8/19/20，Token经济转点，张宏江+黄东旭，OpenClaw/Hermes主题与James栈直接相关）；十字路口/42章经/屠龙之术无新集。英文：Dwarkesh 2条新short（Ryan Greenblatt RSI剪辑：养AI≠养小孩、AI只需擅长R&D）；No Priors 2条新short（Chess.com CEO反规则+ESMFold自学生物抗体）；CR新集=Complex Systems串台（222nm远紫外杀菌灯，非AI但'硬科技执行主义'参考）；MLST无新集（Apple releaseDate仍为08-10）。行业速递：Stripe $7B收购OpenRouter、内存价格12个月涨500%（RAMageddon，2027 DRAM产能被锁）",
+  "report_date": "2026-08-20",
+  "deep_content_fetched": "张小珺#151完整shownotes（xyzfm RSS）+硅谷101 E249完整shownotes（fireside RSS）+Dwarkesh完整访谈transcript（Substack feed，用于两条short深度萃取）+No Priors YouTube RSS描述+Latent Space AINews digest全文+CR Megaphone RSS shownotes；42章经/十字路口/屠龙之术用xyzfm RSS交叉验证无新集；MLST用Apple lookup验证releaseDate=08-10"
  }
 }
