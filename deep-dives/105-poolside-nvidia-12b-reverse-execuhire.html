@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space [AINews]——史上首宗「反向 execuhire」：NVIDIA $6B 買走 Poolside 模型工廠、109 名員工上車</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · [AINews] Poolside gets $12B reverse-execuhire to NVIDIA（2026-08-21 發布）</div>
+  <h1>「反向 execuhire」誕生——NVIDIA $6B 授權費買走 Poolside 模型工廠、$1B 入股、109 名員工上車：資本垂直上升時代，連明星公司都保唔住自己嘅集群</h1>
+  <div class="meta">
+    <span>📅 2026-08-21（05:45 UTC）</span><span>·</span><span>🎙️ Latent Space（swyx + Alessio Fanelli）AINews 日報</span><span>·</span><span>📰 Poolside × NVIDIA / 當日 AI 生態新聞全景</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+一個月前 Latent Space 先啱啱喺 podcast 度訪問完 Poolside CEO Eiso Kant（「Model Factory」專場），一個月後 Jensen 就用行動證明「真係好鍾意 Poolside」：<strong>非排他性授權協議 $6B、另投 $1B（$12B pre-money）、仲挖走 109 名員工</strong>。創辦人留低、員工被收編——Latent Space 稱之為史上首宗「反向 execuhire」，同 Windsurf-Google、Character-Google、Scale-Meta 嗰種「高管出走、員工拿錢留低」嘅模式正好相反。呢單新聞背後，係一個關於算力即權力嘅殘酷物理現實。
+</p>
+
+<div class="section-title">一、呢單係咩：一單「唔係收購、亦唔係 acquihire」嘅交易</div>
+
+<p>根據 Eric Newcomer 取得嘅投資者信：<strong>Poolside 同 NVIDIA 達成 $6B 非排他性 Model Factory 授權協議，另加 $1B 投資（$12B pre-money），NVIDIA 聘請 109 名 Poolside 員工</strong>。創辦人（Eiso Kant 等）留喺 Poolside——所以先叫「反向」：以前係高管走、員工留低攞錢；今次係創辦人留、員工被巨頭收編。</p>
+
+<blockquote class="strong">
+「呢個行動等於創辦人將公司極度 hard pivot 去『某啲嘢』，同時為投資者同員工搵到一個極之舒適嘅 golden parachute——員工可以繼續原任務或者上車新 pivot。」
+<span class="attribution">—— Latent Space 對「反向 execuhire」嘅定義</span>
+</blockquote>
+
+<p>Elie Bakouch 嘅 bet：<strong>「新 Poolside」會非常 hard pivot 去基礎設施，唔再訓練模型</strong>。而 Poolside Infrastructure Company（PIC，2026 年 1 月分拆嘅基建公司）仍然喺德州起緊一個 <strong>1.2GW 數據中心</strong>——兩個月前換咗 CEO、三日之前換咗 CFO，目標係 7GW neocloud。創辦人話「未 ready 分享更新後嘅願景」，但所有人都攞住好多錢出嚟——而 OG Poolside 正在分化成三個方向。</p>
+
+<div class="section-title">二、點解要賣：6 週融資窗口失敗，丟失 40,000 張 GB300</div>
+
+<p>創辦人信入面最坦白嘅一段，係資本需求垂直上升嘅殘酷故事：</p>
+
+<blockquote class="strong">
+「過去三年半，我哋喺一場資本需求垂直上升嘅競賽入面方向一直都啱。上年年底，我哋有一個 6 星期嘅窗口去融 $2B，用嚟畀 1 月上線嘅 40,000 張 GB300 集群。我哋冇準時 close，然後我哋失去咗個集群。」
+<span class="attribution">—— Poolside 創辦人信（節錄）</span>
+</blockquote>
+
+<blockquote>
+「我哋亦知道：10,000–20,000 張 GB300 已經可以做出匹敵當前前沿嘅好模型。但明年前沿模型所需嘅規模，係要大超過一個數量級。而家嘅瓶頸已經唔只係資本——係實體數據中心空間同合約算力。」
+</blockquote>
+
+<p>呢段係成單新聞嘅核心洞察：<strong>前沿模型競賽嘅算力門檻，已經超出單一公司嘅融資能力</strong>。連 $12B 估值嘅明星公司都因為錯過 6 星期窗口而丟失集群——而 Eiso Kant 上個月先喺 podcast 度話「全球最高嘅個人影響力/人數比」：<strong>少於 70 人建咗呢個模型，工程+研究合共 115 人完成成個 effort</strong>。人好掂，但物理世界嘅數據中心空間同合約算力唔係人多就得。</p>
+
+<div class="data-point">
+  <span>關鍵數據</span>
+  $6B 非排他性 Model Factory 授權 + $1B 投資（$12B pre-money）+ NVIDIA 僱用 109 名員工 ｜ 40,000 GB300 集群因融資窗口錯過而丟失 ｜ 10,000–20,000 GB300 可匹敵當前前沿 ｜ 明年前沿規模需大逾一個數量級。
+</div>
+
+<div class="section-title">三、創辦人信嘅世界觀：intelligence-bound vs experiment-bound</div>
+
+<p>今次交易最值得反覆咀嚼嘅，係創辦人信入面嘅兩個判斷——佢哋幾乎係喺度描述「AI 行業嘅兩種經濟價值」：</p>
+
+<blockquote class="strong">
+「我哋相信：人類級智能能力將被開源模型完全商品化，而超級智能大概率唔會。」
+<span class="attribution">—— Poolside 創辦人信</span>
+</blockquote>
+
+<blockquote>
+「世界有兩種有經濟價值嘅問題：intelligence-bound（靠擴展智能解決：寫軟件、做賬、證數學定理），同 experiment-bound（必須真實世界實驗反饋：攻克癌症——就算將全世界 100,000 個最聰明嘅大腦放埋一齊，冇真實世界實驗回路，佢哋好可能永遠推進唔到）。AI 嘅終極價值唔會嚟自第一種——嗰啲會變成低毛利商品——而係嚟自第二種：<strong>AI 會成為世界上最有價值嘅科學發現引擎</strong>。」
+</blockquote>
+
+<p>呢個框架對判斷「AI 應用邊啲有真正價值」好有用：寫 code、做賬呢類 intelligence-bound 工作會被開源商品化（margin 歸零）；真正嘅護城河喺 experiment-bound——有真實世界數據 moat 嘅科學發現。Latent Space 都忍唔住話：「我哋做 AI for Science podcast 嘅時機真係好正。」</p>
+
+<div class="section-title">四、行業 impact：新併購形態、算力即權力、開源食企業中段</div>
+
+<p>Latent Space 將呢單新聞放喺更大嘅脈絡：</p>
+
+<ul>
+  <li><strong>「反向 execuhire」成為新併購形態</strong>：巨頭唔再買成間公司，而係買「工廠/產能 + 人才」，創辦人留喺原殼 pivot——Poolside 或成 neocloud。Windsurf-Google 模式反轉嚟玩。</li>
+  <li><strong>算力即權力嘅物理現實</strong>：連 $12B 明星公司都因 6 週窗口丟集群——「the constraint today is not only capital, it is physical data center space and contracted compute」。</li>
+  <li><strong>AT&T 數據點＝開源侵蝕企業市場嘅標誌性案例</strong>（見下節）。</li>
+</ul>
+
+<div class="section-title">五、一個月前嘅對照：Eiso Kant 仲喺 podcast 度講「Model Factory」</div>
+
+<p>要完全理解呢單新聞嘅荒謬感，要回帶一個月：Latent Space 7 月先啱啱訪問完 Poolside CEO Eiso Kant，主題就係佢哋嘅「Model Factory」模式——即係將模型訓練能力當做「工廠」咁輸出。當時 Kant 嘅 pitch 係：</p>
+
+<blockquote>
+「我哋每一個可能嘅 applied research 同 engineering 崗位都喺度請人，由 training 到 evals 到 post-training architecture。我哋仲係喺一個『個人可以有巨大影響力』嘅世界。我哋嘅 pitch 係：呢度係個人對影響力比率最高嘅地方之一——少過 70 人建咗呢個模型，工程加研究合共少過 115 人完成成個 effort。」
+<span class="attribution">—— Eiso Kant，Latent Space「Poolside Model Factory」專訪（2026 年 7 月）</span>
+</blockquote>
+
+<p>結果一個月後，呢 115 人入面有 109 人收咗 NVIDIA 嘅 offer。Latent Space 特別點出呢個對比：「Unless things changed drastically, this accounts for the overwhelming majority of the technical Poolside employees.」——即係話<strong>NVIDIA 基本買走咗成個技術團隊</strong>。呢個先係「reverse-execuhire」最震撼嘅地方：唔係挖高管，係成隊研究員同工程師一鑊過上車。</p>
+
+<div class="section-title">六、同日 AI 生態速覽：AT&T 開源路由、OpenAI Rubin、Anthropic 平台 GA</div>
+
+<p>今期 AINews 仲有幾單值得記低嘅行業信號：</p>
+
+<ul>
+  <li><strong>AT&T 混合路由（最重要企業數據點）</strong>：內部 40% 員工 AI 用量已路由到開源模型，目標 60–70%；編碼成本降 <strong>56%</strong>，質量只跌 2%，流量 45B tokens/天。amir 直指呢個係 OpenAI/Anthropic 企業護城河嘅警告信號——前沿閉源模型正退守「最難任務」，開源食走企業需求嘅廣大中段。</li>
+  <li><strong>OpenAI 上 Rubin</strong>：首批 NVIDIA Vera Rubin racks 已安裝並跑緊訓練棧，直接對應下一代前沿 pre-training；gdb 稱之為 OpenAI-NVIDIA 夥伴關係嘅重大里程碑。</li>
+  <li><strong>Anthropic 平台 GA</strong>：computer use、browser tool、Skills API（版本化可重用流程）、Files API（5 倍限速至 500 RPM、1TB/org），仲發布咗 Claude Managed Agents 嘅 AG-UI adapter。</li>
+  <li><strong>定價壓力</strong>：GPT-5.6 Sol 喺 Router 上 5 折；有用戶投訴 $200/月 OpenAI Pro 一個重度 Codex 日就燒完——實驗室仲喺度搵「高端模型 vs 可持續 agentic 用量」嘅產品邊界。</li>
+  <li><strong>開源生態擴散</strong>：Kimi K3 已鋪到 Ollama 訂閱用戶一半以上（美/歐托管、零數據留存）；Gemma 下載破 10 億；GLM-5.3 Max 以 1597 pts / $3.65/M 擠身 Code Arena WebDev Pareto 前沿 #2（開源）/ #8（整體）；Gemini 3.7 Flash ARC-AGI-2 84.6% @ $0.25/task——「平又強」證據持續累積。</li>
+  <li><strong>基建/推理</strong>：Cerebras CS-4 同 5nm wafer 上效能翻倍（250 PFLOPs/WSE-3 Turbo、43.2 PB/s、GPT-OSS-120B 每用戶 4,400+ tok/s）；agent runtime 變成系統瓶頸（theo：Linux 對 agent workload 明顯好過 macOS）；semantic caching 57.1% hit rate、gisting 慳 ~40% latency。</li>
+  <li><strong>Agent 記憶與 harness</strong>：Chroma 發布 Foundation（由 agent session 建構嘅自改進記憶）；最有趣嘅 agent 研究係 harness evolution——prompts/memories/skills/routing rules 獨立於模型演化，關鍵 failure mode 係「harness-level forgetting」，guarded harness evolution（提案同 commit 分離）有 >10% 增益；反面證據亦有：控制 task order 同 eval variance 之後，memory-based self-improving agents 睇落冇咁好。</li>
+</ul>
+
+<div class="section-title">七、三條出路：OG Poolside 分化成三個方向</div>
+
+<p>交易之後，原本嘅 Poolside 正在分裂成至少三個方向，Latent Space 直言「我哋都 confused」：</p>
+
+<ul>
+  <li><strong>方向一（員工）</strong>：109 名技術員工加入 NVIDIA——大概率係去搞 NVIDIA 嘅模型/推理能力建設，將「Model Factory」內化。</li>
+  <li><strong>方向二（PIC 基建）</strong>：Poolside Infrastructure Company（2026 年 1 月分拆）繼續喺德州起 1.2GW 數據中心，目標 7GW neocloud，新 CEO 兩個月前上任、CFO 三日前先換——elie 嘅 bet 係「新 Poolside」會極度 hard pivot 去基建、唔再訓練模型。</li>
+  <li><strong>方向三（創辦人）</strong>：創辦人留喺原殼，話「未 ready 分享更新後嘅願景」——但佢哋啱啱喺創辦人信度寫低咗「AI 會成為世界上最有價值嘅科學發現引擎」。如果真係信呢句，下一站可能就係 AI for Science 嘅重注。</li>
+</ul>
+
+<p>呢個三岔口正正反映咗 2026 年 AI 行業嘅結構性張力：<strong>模型競賽（燒錢燒算力）、基建生意（收租）、科學發現（長線 moat）</strong>——三條路要嘅資源、團隊、心態完全唔同，冇一間公司可以同時行晒。Poolside 用一單交易將三條路拆開畀三批人分別行。</p>
+
+<div class="highlight-box">
+  <strong>對 James ／四艦隊嘅啟示</strong>：① AT&T 混合路由 = 硅谷101 E249 黃東旭「本地開源底座 + 前沿模型」策略嘅美國企業級驗證——開源食中段、閉源守最難任務，呢個分工正在成為全球共識；②「intelligence-bound vs experiment-bound」係判斷 AI 應用價值嘅好框架——寫 code 會商品化，有真實世界數據 moat 嘅先有長遠價值；③ 算力即權力嘅教訓對 Trinity 呢類硬件+模型項目尤其切身：合約算力同數據中心空間先係真正嘅 constraint；④ Poolside 三岔口提醒我哋：AI 公司嘅路線選擇（模型/基建/應用）會隨資本環境急劇重組，判斷公司要睇佢綁定咗邊種資源。
+</div>
+
+<hr>
+<footer>
+  <p>來源：Latent Space [AINews]「Poolside gets $12B reverse-execuhire to NVIDIA」（2026-08-21）｜latent.space/p/ainews-poolside-gets-12b-reverse｜交易細節源自 Eric Newcomer 取得嘅投資者信</p>
+  <p style="margin-top:0.3rem;">深度復述由 Vee Mok 生成 · 2026-08-22 06:00 UTC · 引用均取自節目原文/官方文件</p>
+</footer>
+</div>
+</body>
+</html>

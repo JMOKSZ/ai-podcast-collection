@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space——Joon Sung Park（Simile AI）：模擬就係新 Scaling Law，由 Smallville 小鎮到 80 億人數字孿生</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #d4a574; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #d4a574;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #d4a574;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · Simulation: the new Scaling Law — Joon Sung Park, Simile AI（2026-08-21 發布）</div>
+  <h1>「不如直接重建我哋住緊嘅世界」——Simile AI 創辦人 Joon Sung Park：模擬就係新 Scaling Law，由 Smallville 小鎮到 80 億人數字孿生</h1>
+  <div class="meta">
+    <span>📅 2026-08-21（23:37 UTC）</span><span>·</span><span>🎙️ Latent Space（swyx + Vibhu）</span><span>·</span><span>⏱️ 01:07:00+</span><span>·</span><span>👤 Joon Sung Park（Simile AI CEO）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+2024 年 Latent Space 寫過「Summer of Simulative AI」，當時判斷模擬只係短暫嘅夏天。兩年後，呢個夏天帶住復仇返嚟：4 月 Shopify 嘅 SimGym、7 月 Simile AI 嘅 $2B Series B——綠橡資本（GreenOaks）+ Index Ventures 領投，李飛飛同 Andrej Karpathy 站台，距 $100M Series A 只係五個月。今集由 Simile CEO、2023 年 Generative Agents（Smallville）論文一作 Joon Sung Park 親身拆解：點樣由一個遊戲小鎮，走向「模擬 80 億人」嘅終極願景，同埋點解佢認為——模擬先係個人 agent 時代真正嘅前置技術。
+</p>
+
+<div class="section-title">一、呢集係咩：模擬嘅第二個夏天，由爆款論文到獨角獸</div>
+
+<p>Joon Sung Park 嘅成名作係 2023 年嘅 <strong>Generative Agents 論文（Smallville）</strong>——一群 AI 角色喺一個 2D 小鎮度生活，會記憶、會規劃、會社交、會發展出湧現行為。Google Scholar 引用 <strong>7,200+</strong>，被譽為「近年最佳論文」級別嘅作品，swyx 話佢係「人哋問『最近讀過最好嘅論文』時最常出現嘅答案」。</p>
+
+<p>但今集唔係懷舊。由 Smallville 到 Simile，Joon 講嘅係一條完整嘅路線圖：</p>
+
+<ul>
+  <li><strong>起點</strong>：2020 年入讀史丹福博士，正值 GPT-3 誕生前夕。佢哋一齊寫咗《Opportunities and Risks of Foundation Models》——「foundation model」呢個term就係由佢 co-founder Percy Liang 命名嘅。</li>
+  <li><strong>時間機器遊戲</strong>：Joon、Michael Bernstein、Percy Liang 三個人玩一個遊戲——坐上時間機器快進十年，返嚟睇吓邊個應用最有意義。</li>
+  <li><strong>答案</strong>：「What if we can just recreate the world that we live in?」——唔係某個 app，而係直接重建成個世界。</li>
+  <li><strong>今日</strong>：Simile 為 Fortune 100 客戶（如 CVS）跑數千萬次模擬，聲稱對真人焦點小組有 <strong>85–99%</strong> 準確率；每周收集數萬人數據，全球面板夥伴覆蓋數千萬人。</li>
+</ul>
+
+<blockquote class="strong">
+"What if we can just recreate the world that we live in? It's really hard to get more ambitious than that. Like, let's just create a world."
+<span class="attribution">—— Joon Sung Park，喺「時間機器遊戲」入面揾到嘅答案</span>
+</blockquote>
+
+<p>第二選擇係乜？係個人化 agent 自動化工具——「但係好接近第二」。而呢個「第二選擇」正正帶出 Joon 最重要嘅一個論點：<strong>要做好個人 agent，你首先要有人類用戶嘅深度模型</strong>。</p>
+
+<div class="section-title">二、「買宵夜會買夏威夷薄餅」——點解個人 Agent 需要用戶深度模型</div>
+
+<p>Joon 用一個好生活化嘅例子解釋：</p>
+
+<blockquote>
+「我叫個模型幫我買宵夜，佢幫我嗌咗夏威夷薄餅——但我唔鍾意菠蘿。咁就完全失敗咗。要唔犯呢個錯，唯一方法就係對『我係邊個』有深度理解。」
+</blockquote>
+
+<p>呢個論點對 James 嘅四艦隊架構（尤其 Hermes 嘅 memory / 用戶畫像設計）係直接嘅價值論證——<strong>模擬（理解人）要行先於自動化（為人做事）</strong>。Joon 嘅 bet 係：模擬技術、創造準確嘅人類表徵，應該 precede 更加複雜嘅自動化世界嘅 agents。</p>
+
+<p>仲有段好有意思嘅對話：swyx 直接問 Joon 對 OpenClaw 呢類個人 agent 有咩期望。Joon 話 OpenClaw 用 Markdown 檔案做記憶「好聰明」——</p>
+
+<blockquote class="strong">
+「OpenClaw 用緊嘅係 Markdown 檔案，我覺得好聰明。呢個同我哋 Generative Agents 論文嘅直覺同源——2022 年嗰陣我哋諗：要唔要整 knowledge graph？要唔要 train 個 bespoke model？最後決定：唔好，語言模型好擅長處理文字，直接將所有嘢放喺 Markdown / text file，搞掂。……但係有局限：要喺極大量數據入面檢索同理解，係好多功夫。」
+<span class="attribution">—— Joon Sung Park 對 OpenClaw Markdown 記憶架構嘅點評</span>
+</blockquote>
+
+<p>佢仲補充一個關鍵立場：<strong>有啲嘢淨靠 prompting 係塑造唔到嘅，要掂 model 嘅參數本身</strong>。幾時要 train？Joon 畀咗一條好清晰嘅分界線——</p>
+
+<blockquote>
+「如果模型要學習佢所處世界嘅新社會物理（new social physics），就要 train / post-train；如果基礎統計已經有、只係對環境做反應，咁 prompting 就夠。我認為公開模型仲未學識人類社會嘅完整社會物理映射——呢個係 Simile 嘅核心論點之一。」
+</blockquote>
+
+<div class="section-title">三、行為基礎模型：「模型要同我一樣蠢」</div>
+
+<p>Simile 想做嘅嘢叫 <strong>行為基礎模型（Behavioral Foundation Model）</strong>——同 ChatGPT / Claude 呢啲「超理性客觀機器」完全相反。Joon 講得直接到肉：</p>
+
+<blockquote class="strong">
+「前沿模型嘅數據來自 Mercor、Scale，佢哋搵專業程式員、科學家做標注，整出嚟嘅模型擅長推理——呢啲就係佢哋做嘅嘢。Simile 完全唔 care 呢啲。我哋想創造嘅係『同我一樣蠢』嘅模型——如果我會犯某啲錯，個模型就要犯同樣嘅錯。」
+<span class="attribution">—— Joon Sung Park 對「模型應該幾理性」嘅反主流立場</span>
+</blockquote>
+
+<p>swyx 即刻接：「你喺解決 Murphy's paradox。」（要準確模擬人類嘅非理性，比模擬理性更難。）呢個立場同 AI 行業追求「更理性」嘅主流方向直接對立，亦係 Simile 最易被誤解、又最核心嘅差異點。</p>
+
+<p>點解網絡數據唔夠？Joon 嘅講法係——</p>
+
+<blockquote>
+「模型訓練自 web 數據：社交媒體、Wikipedia。呢啲本質上係『自我曝露嘅態度數據』，加埋零星嘅行為數據。佢仲未學到人類嘅深層行為本質——唔係人哋喺網上話自己會做啲乜，而係現實生活中佢哋真正做啲乜。呢個係我稱之為『人類嘅 dark knowledge』嘅嘢。」
+</blockquote>
+
+<div class="section-title">四、數據三桶理論：訪問、行為、因果</div>
+
+<p>要補返呢個 dark knowledge，Simile 將數據分三桶：</p>
+
+<ul>
+  <li><strong>① 訪談數據（Interview）</strong>：長尾定性信息。「講吓你嘅人生故事」——童年記憶、創傷、初戀。呢啲嘢好難預測但提供大量「texture」。</li>
+  <li><strong>② 行為數據（Observational / Transaction）</strong>：交易記錄、可以 scrape 到嘅網絡數據——提供人嘅 base statistics。</li>
+  <li><strong>③ 因果數據（Causal / RCT）</strong>：Joon 認為最重要嘅一桶——<strong>隨機對照試驗（RCT）</strong>。「飲咖啡嗰日 vs 唔飲咖啡嗰日，行為有冇變化？」呢啲先係人點解做決定嘅 whys。</li>
+</ul>
+
+<p>後訓練（post-training）嘅思路就係用 RCT 數據去教模型「人點解做決定」嘅因果機制，而唔係只學 base statistics。呢度有個好靚嘅數據來源：<strong>Open Science Framework</strong>——社會科學複現危機之下，科學家開始註冊研究（先寫低假設、唔准事後改），平台累積咗數以萬計高品質嘅真人行為實驗同 RCT。Simile 用呢批數據 post-train 模型，實驗證明可以顯著提升模型預測人類行為嘅能力。</p>
+
+<div class="section-title">五、1,000 人數字孿生：85% 準確率點樣驗證</div>
+
+<p>「LLM 會幻覺，你咪淨係一層層疊幻覺？」——Vibhu 問出所有人嘅疑慮。Joon 用佢哋嘅奠基論文《Generative Agent Simulations of 1000 People》回應，呢個亦係模擬/合成面板領域嘅地基：</p>
+
+<ul>
+  <li>將 <strong>1,000 名代表美國人口樣本</strong>嘅受試者請入虛擬實驗室；</li>
+  <li>用 <strong>2 小時</strong>收集廣泛數據——訪談（劇本源自 American Voices Project）+ 行為數據；</li>
+  <li>受試者離開後，用數據建立佢哋嘅<strong>數字孿生</strong>；</li>
+  <li>兩星期後請真人返嚟做一籃子測試：行為經濟學博弈、Big Five 人格、General Social Survey、甚至 PNAS 上發表過嘅隨機對照試驗；</li>
+  <li>數字孿生預測原人會點做——<strong>準確率 85%，等於人自己重複自己答案嘅準確率</strong>。</li>
+</ul>
+
+<div class="data-point">
+  <span>關鍵數據</span>
+  85% = 數字孿生復現原人行為/態度嘅準確率，與真人自己復現自己嘅準確率持平；測試包括行為經濟學博弈、Big Five、GSS、PNAS 已發表 RCT。
+</div>
+
+<p>而對比之下，前沿模型喺呢類任務嘅表現：<strong>一般人群大概 50–60%，落入特定小眾人群（客戶真正 care 嘅群體）可以跌到 20–30%</strong>——「你唔會想用呢啲結果去做商業決定」。將準確率由 50% 拉到 85%，就係客戶興奮嘅原因。</p>
+
+<p>點解前沿模型咁差？因為佢哋被訓練成「理性機器」，而模擬需要嘅係「同你一樣蠢」——複製人嘅偏見同錯誤。呢個係完全唔同嘅數據同訓練目標。</p>
+
+<div class="section-title">六、模擬 ≠ 預測：你唔係想知結果，係想改變結果</div>
+
+<p>Joon 反覆強調一個概念區分：<strong>模擬（simulation）同預測（prediction）係兩回事</strong>。預測係「個 survey 會得到咩答案」，模擬係「畀個 goal 你，行返條 path 出嚟」：</p>
+
+<blockquote class="strong">
+「模擬嘅最高形態係：你唔係問『人哋會點答條 survey』，你係話『呢度有個目標——喺《基地》入面，我哋想將混亂維持喺 1,000 年以內，而家要行邊條路先到嗰個未來？』」
+<span class="attribution">—— Joon Sung Park 引用阿西莫夫《基地》嘅心理史學（psychohistory）</span>
+</blockquote>
+
+<p>《基地》第一幕就係心理史學模擬器計出嚟嘅第一步係「將預言帝國崩潰嘅科學家流放去銀河邊陲」——反直覺到極，但喺模擬入面就係正確嘅第一步。現實版本：車廠想谷 EV 銷量，但模擬可能話你知「咁樣會改變公眾對非 EV 車款嘅觀感，搞到整體銷售跌」——你淨係 track EV 銷量嘅話，永遠睇唔到呢個 counterintuitive 嘅路徑。</p>
+
+<p>呢個亦係 Simile 同 Shopify SimGym（Mikhail Parakhin）嘅共通點：唔係問態度，係影響多輪行為互動。</p>
+
+<div class="section-title">七、由 Schelling 到 80 億人：社會級模擬嘅野心</div>
+
+<p>Joon 嘅精神祖師係 <strong>Thomas Schelling</strong>——1970-80 年代 agent-based modeling 嘅開創者，佢嘅種族隔離網格模型（紅點藍點）證明咗一個震撼結論：即使人對同色鄰居嘅偏好極之輕微，社會最終都會完全隔離——呢個發現啟發咗混合收入住房政策，Schelling 亦因此拎咗諾貝爾經濟學獎。Joon 話：紅點藍點唔係對人嘅豐富描述，所以 agent-based modeling 之後被遺忘；但 generative AI 提供咗高保真度嘅機會——「如果真係work，呢個就係會攞諾貝爾獎嘅工作」。</p>
+
+<p>由 Schelling 嘅網格世界到「模擬 80 億人」，Joon 描繪嘅終極願景係：</p>
+
+<ul>
+  <li><strong>社會級問題</strong>：氣候變化（wicked problem——多主體競爭激勵）、民主崩潰嘅訊號、貨幣體系起源、UBI；</li>
+  <li><strong>「呢度有一座諾貝爾經濟學獎等緊人攞」</strong>；</li>
+  <li><strong>成本</strong>：今日模擬規模係數萬到數十萬人；但「我確實認為未來幾年內，我哋會開始建造成本等於訓練一個基礎模型嘅模擬——可能對社會太有價值，變成 no-brainer」；</li>
+  <li><strong>複用性</strong>：一個人為一個研究收集咗數據，可以喺之後所有研究複用——因為 agent 係 domain-agnostic，你想理解嘅係「呢個人嘅根本本質、社會物理」。風險容忍度呢類特質基本上唔會隨時間變。</li>
+</ul>
+
+<p>仲有 scaling law 嘅早期跡象：</p>
+
+<blockquote>
+「我哋喺 Simile 自己 post-train 嘅模型度，見到模擬 scaling law 嘅早期跡象——人類數據同算力投入越多，模擬人類行為嘅表現獲得可預測、可復現嘅提升。」
+</blockquote>
+
+<div class="section-title">八、市場：市場研究只係起點，TAM 冇辦法界定</div>
+
+<p>今日 Simile 嘅商業切入點包括：概念測試（concept testing）、焦點小組、A/B 測試、行為實驗、甚至<strong>上市公司財報電話會模擬</strong>（幫公司預演分析師會問咩）。客戶包括 CVS、Gallup、Deloitte、Wealthfront——Wealthfront 仲係第一批想超越「問人點諗」、做真行為測試嘅客戶，agent 可以畀個 website URL 佢自己上去用一段時間。</p>
+
+<p>但 Joon 好清醒：</p>
+
+<blockquote class="strong">
+「市場研究係一個 $1,000 億嘅行業。但模擬唔係市場研究工具——模擬係人類決策工具。『TAM 係幾多？』呢條問題本身就好 tricky。如果模擬可以 informing 每一個『為人而做、關於人』嘅決定，咁 TAM 係咩？真係好唔清楚。」
+<span class="attribution">—— Joon Sung Park 對「模擬嘅市場規模」嘅回答</span>
+</blockquote>
+
+<p>佢仲畀咗個好有力嘅價值主張：模擬嘅長期價值唔係「取代現有預算」，而係「更好嘅決策幫你慳咗/賺咗幾億甚至幾十億」。而最打動我嘅係佢對「聲音被聽見」嘅講法：</p>
+
+<blockquote>
+「組織入面每日有咁多決定，人人都想話『我哋有聽用戶講』——但現實係好少做到，因為搵真人問問題又貴又慢，最關鍵係：人根本唔得閒。模擬可以確保：為人做決定嘅房間入面，人嘅聲音永遠被代表。」
+</blockquote>
+
+<div class="section-title">九、繪畫、分形同「我哋係咪已經活在模擬入面」</div>
+
+<p>Joon 本科原本係讀藝術嘅——油畫人物畫，讀嘅係 realism studios。佢用繪畫做咗全場最靚嘅比喻：</p>
+
+<blockquote class="strong">
+「模擬好似畫畫。最好嘅畫教你關於被描繪對象嘅深層嘢——永遠唔係完美嘅再現，冇一幅畫係完美嘅，但佢會嘗試 highlight 對象最重要嘅嗰樣嘢。」
+<span class="attribution">—— Joon Sung Park（受訓於寫實畫室嘅 AI 創辦人）</span>
+</blockquote>
+
+<p>佢嘅世界觀係「世界係分形形狀」：可以向外探索，或者向內——因為內外形狀相似。佢做藝術家嗰陣最鍾意畫「平凡生活嘅人」——一個鄉村小鎮，影相影人哋「冇做緊咩特別事，只係過緊日常」。模擬就係咁：<strong>理解人最平凡嘅一面，拼埋一齊，教曉你好深嘅嘢</strong>。</p>
+
+<p>最後 Vibhu 問：我哋係咪已經活在模擬入面？Joon 嘅答案好謙遜：</p>
+
+<blockquote>
+「我哋係咪喺模擬入面，我覺得唔會令我哋嘅體驗冇咁真實。可能係，可能唔係——但對我嚟講，我唔 care。等我死嗰陣先會擔心。」
+</blockquote>
+
+<p>而佢最後嘅註腳，係成個願景嘅濃縮——</p>
+
+<blockquote>
+「我鍾意科幻小說。你睇任何科幻入面嘅先進文明，都有兩條支柱技術：一種形式嘅 AGI，同埋模擬。所以我覺得個市場幾大吓。」
+</blockquote>
+
+<div class="highlight-box">
+  <strong>對 James ／四艦隊嘅啟示</strong>：①「個人 agent 需要用戶深度模型」直接論證咗 Hermes 記憶/用戶畫像嘅價值——Joon 仲親自點名 OpenClaw 嘅 Markdown 記憶架構「好聰明」兼同 Generative Agents 同源；②「數據三桶」框架（訪談/行為/因果）可以借鑒做用戶畫像嘅數據分層；③「intelligence-bound vs experiment-bound」式嘅思考——AI 最終價值來自邊度，係判斷產品方向嘅好框架。
+</div>
+
+<hr>
+<footer>
+  <p>來源：Latent Space「Simulation: the new Scaling Law — Joon Sung Park, Simile AI」（2026-08-21）｜latent.space/p/simile｜YouTube: KpOW9Pk4BUs</p>
+  <p style="margin-top:0.3rem;">深度復述由 Vee Mok 生成 · 2026-08-22 06:00 UTC · 引用均取自節目原文/官方 show notes</p>
+</footer>
+</div>
+</body>
+</html>
