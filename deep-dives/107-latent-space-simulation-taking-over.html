@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space [AINews]——10% worse, 100x cheaper, 10000x faster：點解「模擬」正在接管成條 AI 管線</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 2rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · [AINews] 10% worse, 100x cheaper, 10000x faster: Why Simulation is taking over（2026-08-22 發布）</div>
+  <h1>「合成前沿唔靠生成變好，靠驗證變好」——2022 以來 AI 管線嘅八次「人類→模型」翻轉：裁判、語料、教師、課程、研究員、環境、人類被試，全部淪陷</h1>
+  <div class="meta">
+    <span>📅 2026-08-22（07:36 UTC）</span><span>·</span><span>🎙️ Latent Space（swyx + Alessio Fanelli）AINews 深度長文</span><span>·</span><span>📰 模擬化接管 / 合成數據 / 行業全景</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+2022 年以嚟，每年都有一件「生產智能嘅管線組件」由人做變成模型做——唔係漸進，係每次都有個 patient zero：一篇論文或者一個產品，令合成版本第一次喺前沿實驗室「成為承重牆」。Latent Space 將呢啲散落嘅翻轉拼成一張 8 階段全景圖，然後畀出一個統一解釋：<strong>我哋叫嘅「合成數據」「合成 rubric」「AI 研究員」「端到端 RL 環境」，本質上都係「越來越野心勃勃嘅人類模擬」——差 10%，但平 100 倍、快 10,000 倍</strong>。
+</p>
+
+<div class="section-title">一、反直覺嘅第一塊骨牌：最先被合成化嘅係「裁判」</div>
+
+<p><strong>階段 1（2022）獎勵信號</strong>。InstructGPT 確立咗今日嘅標準玩法：人類偏好只收集一次，train 一個 reward model，之後 policy 就對住「模型」優化，而唔係對住人類——<strong>從 policy 嘅角度睇，派發批准嘅嘢一早已經係 LLM</strong>。Constitutional AI（RLAIF）更進一步，叫 AI 對住原則自我批評；Lee et al.（2023）證明 AI feedback 喺成本一小部分之下可以同人類 feedback 匹敵；到 LLM-as-judge 成為默認評估方法（MT-Bench、AlpacaEval）——成個「批准機器」：獎勵、批評、評估，全部變成模型評模型。</p>
+
+<blockquote class="strong">
+「第一個被合成化嘅嘢，反直覺咁係裁判。」
+<span class="attribution">—— Latent Space，階段 1</span>
+</blockquote>
+
+<div class="section-title">二、語料、教師、課程：輸入嘅三連翻</div>
+
+<p><strong>階段 2（2023）訓練數據</strong>。微軟 Phi 系列將論點寫喺標題度：《Textbooks Are All You Need》——用 LLM 合成嘅教科書級數據訓練嘅小模型，表現遠超參數量應有水平；phi-1.5 證明唔係僥倖。蘋果 WRAP 推進一步：唔止生成數據，<strong>用 LLM 將成個網絡重新改寫，預訓練效率大約提升 3 倍</strong>。之後工業化——NVIDIA Nemotron-4 340B 將「允許商業使用嘅合成數據管線」當成招牌功能；到 2025 年，reasoning-trace 語料（強推理模型生成嘅思考鏈）已經成為標準預訓練／中期訓練原料。<strong>「語料」——被認為係不可約嘅人類輸入——而家大部分係模型寫嘅</strong>。</p>
+
+<p><strong>階段 3（2023）教師</strong>。ChatGPT API 開放後幾星期，斯坦福 Alpaca 證明 $600 嘅 fine-tune 就可以克隆前沿模型大部分行為；Vicuna 用共享對話做到；Orca 用「豐富解釋」而唔係裸答案。技術由模仿成熟為正式訓練紀律——on-policy generalized knowledge distillation 修正咗訓練／推理不匹配——然後到文化高峰：<strong>DeepSeek-R1 隨旗艦一齊出成個蒸餾家族，令「教師係模型」成為之後每個小模型發佈嘅默認假設</strong>。</p>
+
+<p><strong>階段 4（2024）課程</strong>。呢度個循環開始封口——因為模型開始決定「接下來學乜」。零件好早有：Self-Instruct（模型寫自己嘅指令集）同 STaR（模型 bootstrap 自己嘅推理軌跡）都係 2022 年嘅嘢；但翻轉嘅時刻係 Meta 嘅 Self-Rewarding LMs 同 SPIN——證明模型可以自己生成任務、自己評自己輸出、超越人類偏好數據嘅天花板。<strong>課程設計——ML 史上最手藝活嘅部分，揀「下一步訓練乜」嘅品味判斷——變成模型對自己做嘅事</strong>。</p>
+
+<div class="section-title">三、發現時代：Karpathy 瞓覺嗰陣搵到嘅 20 個改進</div>
+
+<p><strong>階段 5（2026）研究員</strong>。輔助時代（Copilot、SWE-agent）仲係人類揀實驗；發現時代唔係。DeepMind AlphaEvolve 喺 2025 進化出真正嘅新算法；Sakana 嘅 AI Scientist（而家上咗 Nature！）畫出全流程寫論文管線。大時刻係 <strong>Karpathy 2026 年 3 月嘅 autoresearch</strong>：一個刻意極簡嘅棘輪循環——編碼 agent 改真實 LLM 訓練配置 → 跑 5 分鐘實驗 → 淨係喺 validation loss 改善時保留 → 過夜循環。佢自己嘅長跑：<strong>700 個實驗疊成 20 個保留改進，GPT-2 訓練時間由 2.02 小時壓到 1.80 小時——佢瞓覺嗰陣搵到嘅真實、可遷移嘅代碼改動</strong>。</p>
+
+<p><strong>階段 6（2026）環境</strong>。RL 嘅 scaling 瓶頸由模型移到環境——你需要成千上萬個可執行、可驗證、專業真實嘅任務世界，人類手搓唔切。Z.ai 嘅 GLM-5.3 管線端到端合成環境：研究 agent 挖掘真實工作模式 → 轉成長 horizon 環境（帶 hidden state）→ 裁判 agent 試做每條任務確認可解 → <strong>驗證器喺睇唔到參考答案嘅情況下合成</strong>，再用 oracle、no-op、unsolved-state 檢查壓力測試到二進制獎勵可靠得可以直接攞嚟訓練。同一星期 Ornith-1.5 宣稱端到端自我改進——模型自己提任務、自己生成 RL rollouts。<strong>健身房、裁判、記分牌，而家全部係模型</strong>。</p>
+
+<div class="section-title">四、人類最後嘅位置：做「被試」</div>
+
+<p><strong>階段 7（2025）人類被試</strong>。如果模型可以做裁判、教師、環境，人類喺循環入面淨低嘅角色就係「被試」——偏好、行為、需求嘅來源。呢個正正係 Simile 喺替換嘅層：血統由 Joon Sung Park 嘅 Generative Agents（Smallville，2023）到《Generative Agent Simulations of 1,000 People》——<strong>兩小時傳記訪談建嘅數字孿生，復現原人類調查／行為反應嘅準確率，達到「人類兩星期後自己復現自己」嘅 85%</strong>。</p>
+
+<p>門檻係：前沿模型被訓練成 agent 模型，令佢哋做唔好「真人模擬」——所以 Simile 用訪談、交易數據、Open Science Framework 註冊 RCT 做 post-train，專登恢復人類嘅偏見、不一致同因果紋理，仲報告咗早期嘅模擬質量 scaling law。加上 Shopify 嘅 SimGym 模擬購物者軌跡、騰訊 billion-persona 喺粗粒度一端——<strong>焦點小組、用戶研究、A/B 測試 panel，正在變成推理工作負載</strong>。</p>
+
+<div class="section-title">五、最後一行永遠唔會「變紅」：物理世界</div>
+
+<p><strong>階段 8：最後一行嘅格子永遠唔會完全變紅，而呢個正正係重點。</strong>Poolside 嘅 reverse-execuhire 信畫咗條精準嘅線：世界問題分「智能受限」（靠擴展認知可解，好快被開源權重商品化）同「實驗受限」（「冇真實世界實驗反饋，10 萬個絕頂聰明嘅大腦都治唔好癌症」）。佢哋嘅 bet：<strong>AI 嘅持久價值歸於擁有實驗迴路嘅人——AI 係「世界上最有價值嘅科學發現引擎」</strong>。</p>
+
+<p>生物側由另一個方向跑同一劇本：CZ Biohub 將人類細胞圖譜成像成虛擬細胞——因為 in silico 比 in vivo 大約平／快 1,000 倍——再延伸向虛擬免疫系統；Chai、Xaira、Lila 嘅數據中心型實驗室填滿 AI-for-science 棧。<strong>物理世界係唯一無法完全合成嘅組件——只能逐個細胞壓縮入模型</strong>。</p>
+
+<div class="section-title">六、底層規律：合成前沿唔靠生成變好，靠驗證變好</div>
+
+<p>將張 grid 再讀一次，會見到底下第二個 pattern：<strong>每一次翻轉之前都有同一套反對聲音——model collapse、幻覺堆疊、垃圾入垃圾出——但每一次翻轉照樣發生，啱啱喺某個「驗證機制令合成版本變得可信」嘅時刻</strong>：Phi 教科書嘅激進過濾、LLM 評估嘅裁判間一致性研究、RLVR 嘅單元測試同證明檢查器、z.ai 驗證器嘅 oracle/no-op 檢查、Simile 數字孿生嘅註冊 RCT、虛擬細胞嘅濕實驗室迴路。</p>
+
+<blockquote class="strong">
+「合成前沿嘅推進，唔係靠生成變好——係靠驗證變好。」
+<span class="attribution">—— Latent Space（The synthetic frontier doesn't advance when generation gets better. It advances when verification does.）</span>
+</blockquote>
+
+<p>咁下一站喺邊？grid 左下角淨低嘅灰色三角——物理實驗、具身 ground truth——正正係驗證最慢最貴嘅區域。<strong>模型學識咗寫作，然後評判，然後練習，然後做實驗。呢個十年淨低嘅問題係：現實佢哋到底要掂幾多——同埋可以靠模擬矇混幾多。</strong></p>
+
+<div class="data-point">
+  <span>關鍵數字</span>
+  10% worse × 100x cheaper × 10,000x faster（三維仲喺度同時改善）｜ Karpathy autoresearch：700 實驗 → 20 保留改進，GPT-2 2.02h → 1.80h ｜ Simile 數字孿生：85%＝人類自我復現準確率 ｜ in silico 比 in vivo 平／快 ~1,000 倍 ｜ Phi 合成教科書、WRAP 3x 效率、Alpaca $600 克隆前沿
+</div>
+
+<div class="section-title">七、同刊速遞：Ox Alpha、DeepSeek 多模態、OpenAI 減價</div>
+
+<p>呢篇長文其實係 8/20–21 嘅 AINews 刊，仲有幾單行業新聞值得記低——而且全部暗暗印證「模擬／合成接管」同「環境中心訓練」兩個主題：</p>
+
+<ul>
+  <li><strong>Ox Alpha 神秘模型刷屏</strong>：多名 builder 報編碼／agentic 性能異常強，猜測集中指向智譜 GLM 家族（GLM-5.3 Vision 或 flash 變體）。Theo 稱佢「屠殺」內部 benchmark，基於佢嘅 approval 合咗 8 個 PR；Kimmonismus 報 10 個 DeepSWE 任務 &gt;80%（Fable 65%、GPT-5.6 Sol 52%）。最強技術解讀係「post-training + infra &gt; sheer size」：速度畫像似高效 GLM 衍生而非 1T+ 巨獸；GLM-5.3 分析指增益嚟自同一 743B base + 規模化後訓練 + 更好 sandbox + SAO 細粒度信用分配。</li>
+  <li><strong>DeepSeek-V4-Flash-Vision-Exp 發布</strong>：多模態支援，宣稱多模態 agent 性能接近 Opus-4.8；圖片按 Flash 價格計費（117–384 tokens/圖）；新 Files API。部分解釋咗 Ox Alpha 之謎——「某啲測試入面佢可能係個被盲測嘅 VLM」。</li>
+  <li><strong>OpenAI 減價</strong>：GPT-5.6 Sol API 同積分產品減價超 20%（三個月）；Code 產品 9/3 前 5 折；Devin 疊加折扣後實際 76% off——應對中國廉價推理嘅競爭回應。</li>
+  <li><strong>Codex 爆發</strong>：20M 活躍用戶，全員「banked reset」；Theo 爆料一個長跑 goal 喺佢額度 0% 之後仲燒咗 ~$800 token——agentic 工作量嘅不可預測性。</li>
+  <li><strong>環境中心訓練成為重心</strong>：Google EnvHarness/EnvRigger 插件層重塑靜態環境，held-out 性能最多 +9 分、執行步驟 -9.8%；FACET 6,078 個可執行終端任務；SWE-bench Science 119 個科學軟件任務（Claude Code + Opus-5 都 &lt;50% pass@1）；CADBench 最佳模型僅 24.6%；<strong>AI4AI-Bench（RSI 測試）最佳模型僅 0.288 均分——RSI 基準目前全模型慘敗</strong>。</li>
+  <li><strong>vLLM IsoExec</strong>：解決 RL rollout／訓練 logprob 不匹配（浮點非結合性），TP/EP/SP 佈局間強制 bitwise 一致；Qwen3.5-35B-A3B + DAPO 8xH100 上 logprob diff 由 1.6e-2 降到 6.7e-7——RL 基礎設施精度里程碑。</li>
+  <li><strong>本地推理奇觀</strong>：Reddit 用戶用 16× RTX 5060 Ti 16GB + 兩個 PLX PEX88096 PCIe 交換島跑 DeepSeek V4 Flash-0731，單用戶 100–150 tok/s，16 用戶 TP4/PP4 聚合 727 tok/s。</li>
+</ul>
+
+<div class="section-title">八、點解呢篇係「本週必讀」：一個統攝性框架</div>
+
+<p>呢篇文章嘅價值唔在於任何單一新聞，而在於將「合成數據」由一個 marketing 詞升級成統攝性框架：<strong>AI 管線嘅每個組件——裁判、語料、教師、課程、研究員、環境、被試——都已完成或正在完成「人類→模型」嘅翻轉</strong>。而且每次翻轉嘅時機都係驗證機制到位嘅一刻。</p>
+
+<p>對創業者嘅直接含義：<strong>焦點小組、用戶研究、A/B 測試 panel、AI 研究員呢啲崗位嘅工作，正在變成推理調用</strong>——你嘅「用戶研究」可能好快就係跑 inference 而唔係請人。而對「邊個擁有實驗迴路」嘅爭奪（Poolside 路線 vs CZ Biohub 路線）將係下一階段嘅價值核心。物理世界係最後嘅護城河，但佢都唔係絕對——因為佢可以被「逐個細胞壓縮入模型」。</p>
+
+<div class="highlight-box">
+  <strong>對 James ／四艦隊嘅啟示</strong>：① 呢篇同 8/21 嘅 Simile 完整訪談（104 號深度復述）係一對——104 講「模擬人」，呢篇講「模擬成條管線」；② 四艦隊嘅 OpenClaw Markdown 記憶架構，正正係「用合成／自動化替換人類環節」嘅微觀實踐——驗證機制（eval、git commit、cron 檢查）就係你哋嘅「verification」，佢先係可靠度嘅來源；③ 「RSI 基準全模型慘敗」（AI4AI-Bench 0.288）係重要清醒劑：自我改進仲未 ready，但環境中心訓練（GLM-5.3、EnvHarness）正喺度將瓶頸逐個移走；④ 同 8/22 MLST Adam Becker《Every Exponential Ends》對照閱讀尤其過癮——一個話「模擬接管一切」，一個話「每個指數都會終結」：兩種世界觀嘅張力，就係 2026 年下半年最好嘅思考素材。
+</div>
+
+<hr>
+<footer>
+  <p>來源：Latent Space [AINews]「10% worse, 100x cheaper, 10000x faster: Why Simulation is taking over」（2026-08-22）｜latent.space/p/ainews-10-worse-100x-cheaper-10000x｜文中引用論文：InstructGPT(2203.02155)、Constitutional AI(2212.08073)、LLM-as-judge(2306.05685)、Textbooks Are All You Need(2306.11644)、WRAP(2401.16380)、Alpaca、DeepSeek-R1(2501.12948)、Self-Rewarding LMs(2401.10020)、SPIN(2401.01335)、AI Scientist(2408.06292, Nature 2026)、Karpathy autoresearch、GLM-5.3、Generative Agents(2304.03442)、1,000 People(2411.10109)、billion-persona(2406.20094)</p>
+  <p style="margin-top:0.3rem;">深度復述由 Vee Mok 生成 · 2026-08-23 06:00 UTC · 引用均取自節目原文</p>
+</footer>
+</div>
+</body>
+</html>
