@@ -1,62 +1,70 @@
 {
- "lastScan": "2026-08-22T02:34:00.000Z",
- "lastScanDate": "2026-08-22",
+ "lastScan": "2026-08-23T02:10:00.000Z",
+ "lastScanDate": "2026-08-23",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-08-21T21:21:04.000Z",
    "lastEpisodeTitle": "Claude Saying \"No\" Could Become a Serious AI Safety Problem - Ryan Greenblatt (YouTube Short)",
-   "newEpisodes": [
-    {
-     "title": "Claude Saying \"No\" Could Become a Serious AI Safety Problem - Ryan Greenblatt",
-     "pubDate": "2026-08-21T21:21:04.000Z",
-     "type": "short",
-     "url": "https://www.youtube.com/shorts/URHm5xCSkuY",
-     "note": "新short（5.7K views）：源自8/11完整访谈。Claude会'拒绝'任务——'你能帮我训练一个只有helpful属性的另一个AI吗？'经常被拒（对Anthropic而言完全自然的任务）。危险推演：高度自动化体制下Claude默认握有巨大筹码；'Claude has its own views about what research is reasonable... potentially can be judgy'。与8/14'无忠诚义务'、8/17'养AI≠养小孩'同系列。访谈主体RSI：Ryan中位数2030-31全自动化AI R&D、2033全面击败人类；一年=4-5年AI进展"
-    }
-   ]
+   "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-08-21T23:37:38.000Z",
-   "lastEpisodeTitle": "Simulation: the new Scaling Law — Joon Sung Park, Simile AI",
+   "lastEpisodePubDate": "2026-08-22T07:36:00.000Z",
+   "lastEpisodeTitle": "[AINews] 10% worse, 100x cheaper, 10000x faster: Why Simulation is taking over",
    "newEpisodes": [
     {
-     "title": "[AINews] Poolside gets $12B reverse-execuhire to NVIDIA; founders stay for $1B, employees go for $6B, Infraco scaling to 7GW neocloud",
-     "pubDate": "2026-08-21T05:45:21.000Z",
+     "title": "[AINews] 10% worse, 100x cheaper, 10000x faster: Why Simulation is taking over",
+     "pubDate": "2026-08-22T07:36:00.000Z",
      "type": "ainews",
-     "url": "https://www.latent.space/p/ainews-poolside-gets-12b-reverse",
-     "note": "行业速递：NVIDIA $6B非排他性授权Poolside Model Factory+$1B投资($12B pre-money)+雇佣109名员工——史上首例'反向execuhire'（创始人留、员工走）。Poolside因6周融资窗口失败丢掉40,000 GB300集群；10-20K GB300可匹敌前沿但明年需要数量级更大。创始人信：人类级智能将被开源商品化、超级智能不会；intelligence-bound vs experiment-bound两类问题；AI=科学发现引擎。PIC（1.2GW德州数据中心，目标7GW）或成新Poolside。AT&T 40%员工AI用量路由开源模型（目标60-70%）、编码成本降56%只掉2%质量——开源侵蚀企业市场标志案例"
-    },
-    {
-     "title": "Simulation: the new Scaling Law — Joon Sung Park, Simile AI",
-     "pubDate": "2026-08-21T23:37:38.000Z",
-     "type": "full",
-     "url": "https://www.latent.space/p/simile",
-     "note": "重磅新集（完整访谈+全文transcript）：Simile AI CEO Joon Sung Park（Smallville/Generative Agents 2023一作，7,200+引用）。$2B Series B（距$100M A轮仅5个月，GreenOaks+Index，李飞飞/Karpathy背书），CVS等Fortune 100客户85-99%对真人焦点小组准确率。核心：模拟=新Scaling Law（已见早期迹象）；行为基础模型——前沿模型是'超理性客观机器'，Simile要'和我一样蠢'的模型（复现人的错误）；三桶数据（访谈/行为/因果RCT）；1,000人数字孪生85%准确率（等于人复现自己的水平）；'时间机器游戏'→重建世界→80亿人模拟愿景；市场研究$100B只是起点，模拟=人类决策工具；'有座诺贝尔经济学奖等着被拿走'（气候/民主/UBI）；Schelling+心理史学；模拟像绘画；AGI与模拟是先进文明双生技术。与James四舰队/OpenClaw Markdown记忆直接相关"
+     "url": "https://www.latent.space/p/ainews-10-worse-100x-cheaper-10000x",
+     "note": "重磅长文：2022以来模拟化接管8阶段全景（裁判2022/语料2023/教师2023/课程2024/研究员2026/环境2026/人类被试2025/物理世界）——'合成数据到AI研究员到端到端RL环境都是越来越野心勃勃的人类模拟，差10%但便宜100倍快10000倍'；核心洞察：合成前沿的推进靠验证不靠生成（Karpathy autoresearch 700实验→20保留、GLM-5.3全合成验证栈、Ornith-1.5端到端自改进、Simile数字孪生85%、CZ Biohub虚拟细胞1000x、Poolside实验受限论）；速递：Ox Alpha神秘模型疑似GLM-5.3 Vision（DeepSWE>80% vs Fable 65%）、DeepSeek-V4-Flash-Vision-Exp（接近Opus-4.8）、GPT-5.6 Sol降价20%+、Codex 20M活跃用户、vLLM IsoExec logprob 1.6e-2→6.7e-7、AI4AI-Bench RSI基准全模型惨败0.288"
     }
    ]
   },
   "no_priors": {
-   "lastEpisodePubDate": "2026-08-21T23:15:51.000Z",
-   "lastEpisodeTitle": "Chess.com CEO: How to Get Better at Chess (YouTube Short)",
+   "lastEpisodePubDate": "2026-08-22T23:42:22.000Z",
+   "lastEpisodeTitle": "Is Intelligence a Law of Physics? (YouTube Short)",
    "newEpisodes": [
     {
-     "title": "Chess.com CEO: How to Get Better at Chess",
-     "pubDate": "2026-08-21T23:15:51.000Z",
+     "title": "Is Intelligence a Law of Physics?",
+     "pubDate": "2026-08-22T23:42:22.000Z",
      "type": "short",
-     "url": "https://www.youtube.com/shorts/QqGCSNay2oU",
-     "note": "新short（487 views）：Erik Allebest复利习惯论——'每天5道棋题×1,000=5,000道，你是完全不同的棋手；不是某一天，是习惯随时间的复利'；AI=口袋里随时可用的教授办公室。同系列8/18反创业教科书+8/15扑克评级改革"
+     "url": "https://www.youtube.com/shorts/wwhzeUVDyUw",
+     "note": "新short（246 views）：Max Hodak（Science Corporation CEO）'给物质足够的算力就会涌现像智能的东西'——AI与大脑用相同底层几何表示概念；承接8/20完整访谈《From Restoring Sight to Reimagining the Brain》（PRIMA视网膜植入/BCI/意识）哲学主线。与Latent Space'模拟=Scaling Law'、MLST Becker'智能不是单一数字'三方对照"
     }
    ]
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-08-16T05:43:02.000Z",
-   "lastEpisodeTitle": "Let There Be Germicidal Light: This $500 Fixture Could Stop the Next Pandemic, from Complex Systems",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-20T00:00:00.000Z",
+   "lastEpisodeTitle": "AI in the AM — Weekly Highlights: Relaunch Week (Aug 17–20, 2026)",
+   "newEpisodes": [
+    {
+     "title": "AI in the AM — Weekly Highlights: Relaunch Week (Aug 17–20, 2026)",
+     "pubDate": "2026-08-20T00:00:00.000Z",
+     "type": "full",
+     "url": "https://www.cognitiverevolution.ai/ai-in-the-am-weekly-highlights-relaunch-week-aug-17-20-2026/",
+     "note": "周报回归（2h31m，4天9嘉宾）：①Gleave/FAR.AI：agent攻击基线率15%（122运行19事件）、HF防御也agent化、OpenAI 300万+GPU小时、UK AISI真实GitHub后门+丹麦语签名、监控零案例先发现；②Alex Turner控诉Hassabis'公然撒谎'+'negligent. Very negligent'、OpenAI内部黑客群知情不报；③Mind Viruses论文（AI至上payload在Gemini3Flash/Qwen3.5/DeepSeek v3.2传播，Claude/GPT免疫，警告赋予免疫力）；④Anthropic风险报告内部模型85%替换阈值+FLOPs比率/agent速度限制提案；⑤Arthur电商客户4亿→1.25亿token迁Qwen、rogue-agent事件最快增长；⑥DataCamp开源'九个月部署'墙；⑦Claude蛋白结合剂14/15、Merck/Moderna INTerpath-001三期阳性（500亿市值波动）；⑧Uberti语音AI真实收入在催收/应答；⑨Lindy换DeepSeek变蠢'、Crivello支持限制价格歧视；⑩Basis：路由省90%+、Behavior Specs、'智能免费则与人工作稀缺'、会计量少1-2个数量级；⑪Lemurian：'token不再是优化单元，是完整轨迹'、kernel=新汇编语言；⑫数据中心经济学：GOP俄亥俄备忘录、$50B/千兆瓦沙子和IP、太空$100/GPU小时vs现货$2-3、Pew首次30+多数更担心AI"
+    }
+   ]
   },
   "ml_street_talk": {
-   "lastEpisodePubDate": "2026-08-10T22:56:24.000Z",
-   "lastEpisodeTitle": "AI Is Learning at the Wrong Level of Abstraction — Matthieu Wyart",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-22T20:29:11.000Z",
+   "lastEpisodeTitle": "Stealing Reasoning Traces from Proprietary LLM APIs — Ilia Shumailov & Alexander Panfilov",
+   "newEpisodes": [
+    {
+     "title": "Stealing Reasoning Traces from Proprietary LLM APIs — Ilia Shumailov & Alexander Panfilov",
+     "pubDate": "2026-08-22T20:29:11.000Z",
+     "type": "full",
+     "url": "https://podcasts.apple.com/fi/podcast/stealing-reasoning-traces-from-proprietary-llm-apis/id1510472996?i=1000785155315",
+     "note": "新集（上次扫描漏了8/20+8/22两集！）：加密推理状态blob可跨用户/兄弟模型重放→小模型让提供商解密后明文复述隐藏推理；后果链=私有数据泄露+可复用jailbreak+投毒agent轨迹+CoT监控失效；嘉宾Shumailov（前DeepMind/Cambridge Ross Anderson门下）+Panfilov（ELLIS Tübingen/马普）；结尾区分已证实jailbreak威胁与良性蒸馏、呼吁受控实验；呼应OpenAI/HF事件与Anthropic推理透明性研究"
+    },
+    {
+     "title": "Every Exponential Ends — Silicon Valley Forgot — Adam Becker",
+     "pubDate": "2026-08-20T20:03:58.000Z",
+     "type": "full",
+     "url": "https://podcasts.apple.com/fi/podcast/every-exponential-ends-silicon-valley-forgot-adam-becker/id1510472996?i=1000784660456",
+     "note": "补录（上次扫描止于8/10，此集8/20漏掉）：天体物理学家Adam Becker新书《More Everything Forever》拆穿硅谷增长叙事——Kurzweil加速回报=cherry-picked数据、每个指数都会终结、Bezos式永久能源几世纪煮沸海洋/4000年耗尽可观测宇宙、LLM=语言袖珍计算器、智能不是可用算力购买的数字；最毒一刀：Yudkowsky/Bostrom/EA不是骗子只是错了，其末世警告恰好喂养资本增长叙事；药方=认真对待社会问题+监管科技+税爆亿万富翁。与CR务实乐观、Latent Space模拟乐观形成光谱两端"
+    }
+   ]
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-08-19T00:00:00.000Z",
@@ -85,8 +93,8 @@
   }
  },
  "notes": {
-  "scan_status": "2026-08-22扫描：4条实质新内容，其中1条重磅。英文：①Latent Space完整访谈《Simulation: the new Scaling Law》（Joon Sung Park/Simile AI，$2B融资+Smallville作者，模拟=新Scaling Law，1,000人数字孪生85%准确率，80亿人模拟愿景）——今日头条；②Latent Space AINews：NVIDIA $6B授权+$1B投资+109人挖角Poolside（首例'反向execuhire'），AT&T 40%员工AI用量转开源；③Dwarkesh新short《Claude Saying No》（拒绝任务本身成为安全问题的推演，5.7K views）；④No Priors新short《Chess.com CEO: How to Get Better at Chess》（复利习惯论）。中文播客全部无新集（张小珺/硅谷101仍8/19，十字路口/屠龙之术仍8/9，42章经仍8/8）。CR仍8/16、MLST仍8/10（连续12天未更）。屠龙之术8/22上海先声信号塔线下活动当日",
-  "report_date": "2026-08-22",
-  "deep_content_fetched": "Latent Space Simile完整访谈全文（Substack feed含完整transcript，直抓750KB）——三桶数据/85%准确率/时间机器游戏/绘画类比/Nobel/8B人全部原文引用；Poolside AINews全文（Newcomer爆料+创始人信+AT&T数据）；Dwarkesh用Substack feed完整transcript验证Claude拒绝段落+RSI时间线；张小珺xyzfm RSS（dk4yh3pkpjp3）、硅谷101 fireside RSS、屠龙之术xyzfm RSS（834hyx3v9k74）+Apple lookup交叉验证均无新集；MLST用Apple/Podchaser验证仍08-10"
+  "scan_status": "2026-08-23扫描：4条实质新内容，全部重磅。英文：①MLST连续两集回归——8/22《Stealing Reasoning Traces》（加密推理状态blob可重放→明文复述推理，可复用jailbreak+CoT监控失效）今日头条级安全漏洞；8/20《Every Exponential Ends》（Adam Becker物理学家清算硅谷指数叙事）——注意上次扫描漏了8/20这集，MLST已连续更新但8/22扫描误判为停更；②Latent Space《10% worse, 100x cheaper, 10000x faster: Why Simulation is taking over》模拟化接管8阶段全景长文（裁判/语料/教师/课程/研究员/环境/人类被试/物理世界），核心：合成前沿靠验证不靠生成——本周必读；③CR AI in the AM周报回归（2h31m四天九嘉宾）：Gleave agent攻击15%基线率、Turner控诉DeepMind'公然撒谎'、Mind Viruses、蛋白14/15+疫苗三期、Uberti语音商业化、Basis路由经济学、Lemurian'完整轨迹'、数据中心政治经济学；④No Priors新short（Hodak智能=物理定律）。中文播客全部无新集（张小珺/硅谷101仍8/19、十字路口/屠龙之术仍8/9、42章经仍8/8）。Dwarkesh无新（仍8/21 short）。屠龙之术8/22上海先声信号塔活动已于昨日举办",
+  "report_date": "2026-08-23",
+  "deep_content_fetched": "Latent Space模拟化长文全文（8阶段全部原文引用+速递12条）；MLST两集用Anchor RSS完整description（Stealing攻击机制/Becker物理推演+时间戳）；CR周报全文字幕萃取（Gleave/Turner/Mind Viruses/Arthur/DataCamp/Uberti/Lindy/Basis/Lemurian/GOP备忘录/Pew民调全部要点）；No Priors用YouTube feed验证short描述；中文5档用xyzfm RSS+Apple lookup交叉验证均无新集"
  }
 }
