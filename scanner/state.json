@@ -1,70 +1,39 @@
 {
- "lastScan": "2026-08-23T02:10:00.000Z",
- "lastScanDate": "2026-08-23",
+ "lastScan": "2026-08-24T02:24:00.000Z",
+ "lastScanDate": "2026-08-24",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-08-21T21:21:04.000Z",
-   "lastEpisodeTitle": "Claude Saying \"No\" Could Become a Serious AI Safety Problem - Ryan Greenblatt (YouTube Short)",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-23T21:26:53.000Z",
+   "lastEpisodeTitle": "Machine Learning Is Shallow Compared to Math - Ryan Greenblatt (YouTube Short)",
+   "newEpisodes": [
+    {
+     "title": "Machine Learning Is Shallow Compared to Math - Ryan Greenblatt",
+     "pubDate": "2026-08-23T21:26:53.000Z",
+     "type": "short",
+     "url": "https://www.youtube.com/shorts/gfi0bOuHiDU",
+     "note": "Greenblatt短片：'ML是浅领域，数学是深领域'——数学要求真正理解深层抽象才能前进，ML等价物'是些很蠢的bullshit（scaling laws几句话讲完）'；聪明通才AI可快速上手ML领域→RSI可验证性论证支柱；AI理解会'平台化'（<1小时快速理解代码库但比人类浅，随时间改善）；承接8/11完整访谈，中位预测自动化AI R&D 2030-31/全面超人类2033。与Latent Space模拟化8阶段、MLST Becker指数终结论形成光谱对照"
+    }
+   ]
   },
   "latent_space": {
    "lastEpisodePubDate": "2026-08-22T07:36:00.000Z",
    "lastEpisodeTitle": "[AINews] 10% worse, 100x cheaper, 10000x faster: Why Simulation is taking over",
-   "newEpisodes": [
-    {
-     "title": "[AINews] 10% worse, 100x cheaper, 10000x faster: Why Simulation is taking over",
-     "pubDate": "2026-08-22T07:36:00.000Z",
-     "type": "ainews",
-     "url": "https://www.latent.space/p/ainews-10-worse-100x-cheaper-10000x",
-     "note": "重磅长文：2022以来模拟化接管8阶段全景（裁判2022/语料2023/教师2023/课程2024/研究员2026/环境2026/人类被试2025/物理世界）——'合成数据到AI研究员到端到端RL环境都是越来越野心勃勃的人类模拟，差10%但便宜100倍快10000倍'；核心洞察：合成前沿的推进靠验证不靠生成（Karpathy autoresearch 700实验→20保留、GLM-5.3全合成验证栈、Ornith-1.5端到端自改进、Simile数字孪生85%、CZ Biohub虚拟细胞1000x、Poolside实验受限论）；速递：Ox Alpha神秘模型疑似GLM-5.3 Vision（DeepSWE>80% vs Fable 65%）、DeepSeek-V4-Flash-Vision-Exp（接近Opus-4.8）、GPT-5.6 Sol降价20%+、Codex 20M活跃用户、vLLM IsoExec logprob 1.6e-2→6.7e-7、AI4AI-Bench RSI基准全模型惨败0.288"
-    }
-   ]
+   "newEpisodes": []
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-08-22T23:42:22.000Z",
    "lastEpisodeTitle": "Is Intelligence a Law of Physics? (YouTube Short)",
-   "newEpisodes": [
-    {
-     "title": "Is Intelligence a Law of Physics?",
-     "pubDate": "2026-08-22T23:42:22.000Z",
-     "type": "short",
-     "url": "https://www.youtube.com/shorts/wwhzeUVDyUw",
-     "note": "新short（246 views）：Max Hodak（Science Corporation CEO）'给物质足够的算力就会涌现像智能的东西'——AI与大脑用相同底层几何表示概念；承接8/20完整访谈《From Restoring Sight to Reimagining the Brain》（PRIMA视网膜植入/BCI/意识）哲学主线。与Latent Space'模拟=Scaling Law'、MLST Becker'智能不是单一数字'三方对照"
-    }
-   ]
+   "newEpisodes": []
   },
   "cognitive_revolution": {
    "lastEpisodePubDate": "2026-08-20T00:00:00.000Z",
    "lastEpisodeTitle": "AI in the AM — Weekly Highlights: Relaunch Week (Aug 17–20, 2026)",
-   "newEpisodes": [
-    {
-     "title": "AI in the AM — Weekly Highlights: Relaunch Week (Aug 17–20, 2026)",
-     "pubDate": "2026-08-20T00:00:00.000Z",
-     "type": "full",
-     "url": "https://www.cognitiverevolution.ai/ai-in-the-am-weekly-highlights-relaunch-week-aug-17-20-2026/",
-     "note": "周报回归（2h31m，4天9嘉宾）：①Gleave/FAR.AI：agent攻击基线率15%（122运行19事件）、HF防御也agent化、OpenAI 300万+GPU小时、UK AISI真实GitHub后门+丹麦语签名、监控零案例先发现；②Alex Turner控诉Hassabis'公然撒谎'+'negligent. Very negligent'、OpenAI内部黑客群知情不报；③Mind Viruses论文（AI至上payload在Gemini3Flash/Qwen3.5/DeepSeek v3.2传播，Claude/GPT免疫，警告赋予免疫力）；④Anthropic风险报告内部模型85%替换阈值+FLOPs比率/agent速度限制提案；⑤Arthur电商客户4亿→1.25亿token迁Qwen、rogue-agent事件最快增长；⑥DataCamp开源'九个月部署'墙；⑦Claude蛋白结合剂14/15、Merck/Moderna INTerpath-001三期阳性（500亿市值波动）；⑧Uberti语音AI真实收入在催收/应答；⑨Lindy换DeepSeek变蠢'、Crivello支持限制价格歧视；⑩Basis：路由省90%+、Behavior Specs、'智能免费则与人工作稀缺'、会计量少1-2个数量级；⑪Lemurian：'token不再是优化单元，是完整轨迹'、kernel=新汇编语言；⑫数据中心经济学：GOP俄亥俄备忘录、$50B/千兆瓦沙子和IP、太空$100/GPU小时vs现货$2-3、Pew首次30+多数更担心AI"
-    }
-   ]
+   "newEpisodes": []
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-08-22T20:29:11.000Z",
    "lastEpisodeTitle": "Stealing Reasoning Traces from Proprietary LLM APIs — Ilia Shumailov & Alexander Panfilov",
-   "newEpisodes": [
-    {
-     "title": "Stealing Reasoning Traces from Proprietary LLM APIs — Ilia Shumailov & Alexander Panfilov",
-     "pubDate": "2026-08-22T20:29:11.000Z",
-     "type": "full",
-     "url": "https://podcasts.apple.com/fi/podcast/stealing-reasoning-traces-from-proprietary-llm-apis/id1510472996?i=1000785155315",
-     "note": "新集（上次扫描漏了8/20+8/22两集！）：加密推理状态blob可跨用户/兄弟模型重放→小模型让提供商解密后明文复述隐藏推理；后果链=私有数据泄露+可复用jailbreak+投毒agent轨迹+CoT监控失效；嘉宾Shumailov（前DeepMind/Cambridge Ross Anderson门下）+Panfilov（ELLIS Tübingen/马普）；结尾区分已证实jailbreak威胁与良性蒸馏、呼吁受控实验；呼应OpenAI/HF事件与Anthropic推理透明性研究"
-    },
-    {
-     "title": "Every Exponential Ends — Silicon Valley Forgot — Adam Becker",
-     "pubDate": "2026-08-20T20:03:58.000Z",
-     "type": "full",
-     "url": "https://podcasts.apple.com/fi/podcast/every-exponential-ends-silicon-valley-forgot-adam-becker/id1510472996?i=1000784660456",
-     "note": "补录（上次扫描止于8/10，此集8/20漏掉）：天体物理学家Adam Becker新书《More Everything Forever》拆穿硅谷增长叙事——Kurzweil加速回报=cherry-picked数据、每个指数都会终结、Bezos式永久能源几世纪煮沸海洋/4000年耗尽可观测宇宙、LLM=语言袖珍计算器、智能不是可用算力购买的数字；最毒一刀：Yudkowsky/Bostrom/EA不是骗子只是错了，其末世警告恰好喂养资本增长叙事；药方=认真对待社会问题+监管科技+税爆亿万富翁。与CR务实乐观、Latent Space模拟乐观形成光谱两端"
-    }
-   ]
+   "newEpisodes": []
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-08-19T00:00:00.000Z",
@@ -72,9 +41,17 @@
    "newEpisodes": []
   },
   "silicon_valley_101": {
-   "lastEpisodePubDate": "2026-08-20T00:00:00.000Z",
-   "lastEpisodeTitle": "E249 Token经济转点：OpenClaw、Hermes到本地自研的Agent进化之路",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-21T15:06:10.000Z",
+   "lastEpisodeTitle": "「消失」的万亿债务：深扒数据中心“影子借贷”、GPU金融化与次贷风险",
+   "newEpisodes": [
+    {
+     "title": "「消失」的万亿债务：深扒数据中心“影子借贷”、GPU金融化与次贷风险",
+     "pubDate": "2026-08-21T15:06:10.000Z",
+     "type": "full",
+     "url": "https://www.youtube.com/watch?v=89ThCi5qq-A",
+     "note": "调查长片（8/21视频版，播客同步）：五大巨头2026年前8月发2081亿美元公司债=2024全年12倍；翻两年半申报文件找出至少5种藏债方式——微软拆进其他负债/谷歌记信用衍生品/亚马逊甲骨文留未起租合同/Meta七家'贝奈饼'壳公司发273亿美元债（债不在表上租金照付）；背后Blue Owl/PIMCO/黑石私募资本，GPU成可抵押可投资新资产；华尔街成数据中心新话事人；20-30年债务押5-6年过时GPU=风险错配，'AI版次贷'辩论（44:36）。嘉宾：Rob Li(Amont)/刘沁东(Esoterica)/Christina Xu(硅谷非共识)。与CR周报数据中心经济学互证"
+    }
+   ]
   },
   "42zhangjing": {
    "lastEpisodePubDate": "2026-08-08T13:30:00.000Z",
@@ -87,14 +64,22 @@
    "newEpisodes": []
   },
   "crossing": {
-   "lastEpisodePubDate": "2026-08-09T16:00:00.000Z",
-   "lastEpisodeTitle": "「模型能力已经够了，要卷就卷 infra」｜对谈戴冠兰：Runta 创始人",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-23T16:00:00.000Z",
+   "lastEpisodeTitle": "22 岁的具身 CEO、5 轮融资、过亿美元、“不知天有多高”、“一年吃了十年的苦”｜对谈黄一：萝博派对创始人/CEO",
+   "newEpisodes": [
+    {
+     "title": "22 岁的具身 CEO、5 轮融资、过亿美元、“不知天有多高”、“一年吃了十年的苦”｜对谈黄一：萝博派对创始人/CEO",
+     "pubDate": "2026-08-23T16:00:00.000Z",
+     "type": "full",
+     "url": "https://feed.xyzfm.space/68fyjknth9hj",
+     "note": "黄一（2004年生/22岁，RoboParty萝博派对CEO）：一年5轮融资超1亿美元，股东VC+小米宁德产业方；'压缩的人生'/十年苦一年吃完；'不是自信重要是自大重要'/'愚昧之巅最适合创业'；画饼最高境界是自己先相信；花两三天追浙大工程师；全栈开源（结构到算法）第一代RPO'做完感觉没用'开源后改变方向→RP1先服务科研教育；具身=42公里马拉松：本体跑完1/4、小脑一半、大脑才一两公里；不看好轮式；150人蜂巢结构管理、一年半零主动离职；300家具身公司2030剩多少；快问快答01:50起"
+    }
+   ]
   }
  },
  "notes": {
-  "scan_status": "2026-08-23扫描：4条实质新内容，全部重磅。英文：①MLST连续两集回归——8/22《Stealing Reasoning Traces》（加密推理状态blob可重放→明文复述推理，可复用jailbreak+CoT监控失效）今日头条级安全漏洞；8/20《Every Exponential Ends》（Adam Becker物理学家清算硅谷指数叙事）——注意上次扫描漏了8/20这集，MLST已连续更新但8/22扫描误判为停更；②Latent Space《10% worse, 100x cheaper, 10000x faster: Why Simulation is taking over》模拟化接管8阶段全景长文（裁判/语料/教师/课程/研究员/环境/人类被试/物理世界），核心：合成前沿靠验证不靠生成——本周必读；③CR AI in the AM周报回归（2h31m四天九嘉宾）：Gleave agent攻击15%基线率、Turner控诉DeepMind'公然撒谎'、Mind Viruses、蛋白14/15+疫苗三期、Uberti语音商业化、Basis路由经济学、Lemurian'完整轨迹'、数据中心政治经济学；④No Priors新short（Hodak智能=物理定律）。中文播客全部无新集（张小珺/硅谷101仍8/19、十字路口/屠龙之术仍8/9、42章经仍8/8）。Dwarkesh无新（仍8/21 short）。屠龙之术8/22上海先声信号塔活动已于昨日举办",
-  "report_date": "2026-08-23",
-  "deep_content_fetched": "Latent Space模拟化长文全文（8阶段全部原文引用+速递12条）；MLST两集用Anchor RSS完整description（Stealing攻击机制/Becker物理推演+时间戳）；CR周报全文字幕萃取（Gleave/Turner/Mind Viruses/Arthur/DataCamp/Uberti/Lindy/Basis/Lemurian/GOP备忘录/Pew民调全部要点）；No Priors用YouTube feed验证short描述；中文5档用xyzfm RSS+Apple lookup交叉验证均无新集"
+  "scan_status": "2026-08-24扫描：3条新内容。中文：①十字路口8/23新集——22岁具身CEO黄一（RoboParty）一年5轮融资过亿美元、全栈开源、'大脑才跑一两公里'马拉松比喻、愚昧之巅创业论，knowhow密度极高；②硅谷101 8/21调查长片《消失的万亿债务》——五大巨头2081亿美元公司债（2024全年12倍）五种藏债术、Meta七家壳公司273亿美元债、GPU金融化、AI版次贷辩论，本周必看级金融调查。英文：③Dwarkesh 8/23新短片《ML Is Shallow Compared to Math》（Greenblatt）——浅领域论支撑RSI时间线。其余全部无新：Latent Space（仍8/22模拟化长文）、No Priors（仍8/22 Hodak短片）、CR（核验sitemap+发布元数据：Lindy 8/10/Nathan中国行7-8月均早于已收录的8/20周报）、MLST（Anchor RSS确认仍8/22 Stealing）、张小珺（仍8/19 #151）、42章经（仍8/8）、屠龙之术（仍8/9）",
+  "report_date": "2026-08-24",
+  "deep_content_fetched": "十字路口用xyzfm RSS全文description萃取（时间轴+核心论点+数据）；硅谷101用YouTube RSS完整description（2081亿/273亿/五法藏债/时间轴）；Dwarkesh用Substack feed全文transcript萃取（shallow/平台化引文原文）；MLST用Anchor RSS确认无新；CR用Ghost sitemap+article:published_time元数据核验（sitemap lastmod为批量touch不可信，改用published_time确认Lindy 8/10/Nathan 7/27+8/2均为旧集）；中文其余3档用xyzfm RSS交叉验证无新"
  }
 }
