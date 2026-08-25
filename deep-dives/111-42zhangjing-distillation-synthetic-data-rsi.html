@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 42章經×孟繁青：從蒸餾到合成數據到 RSI——「國模優勢喺 Pre-training，唔係蒸餾」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">42章经（曲凯 Kyle）· 2026-08-08 發布</div>
+  <h1>從蒸餾到合成數據到 RSI——前 Kimi 人孟繁青拆解模型競爭嘅下一焦點：「國模真正優勢喺 Pre-training，蒸餾只係加速手段」</h1>
+  <div class="meta">
+    <span>📅 2026-08-08</span><span>·</span><span>🎙️ 42章经（主持 曲凯）</span><span>·</span><span>⏱️ 59 分鐘</span><span>·</span><span>👤 孟繁青（Evolvent AI 聯創、前 Kimi Agent/RL Infra）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+「國模靠蒸餾追趕」係過去兩年中文 AI 圈最大嘅敘事之一——但呢集請嚟嘅人，直接話你知呢個敘事錯咗。孟繁青，2001 年出世嘅 NUS PhD，喺 Kimi 做咗一年多 Agent 同 RL Infra，參與過 Kimi K2.5、Kimi Linear 發版，之後自己創辦 Evolvent AI 做合成數據。佢由模型廠內部人嘅視角，將後訓練、數據、蒸餾、RSI 呢啲敏感話題一次過梳理晒——最大嘅非共識係：<strong>國內模型真正嘅優勢喺 Pre-training 嘅架構創新，而唔係外界以為嘅後訓練工程；就算海外封晒所有蒸餾通道，國模依然企得住</strong>。
+</p>
+
+<div class="section-title">一、呢集係咩：數據重要性嘅回歸</div>
+
+<p>曲凱開場講咗一個市場信號：<strong>合成數據公司喺好短時間內做出咗可觀收入，模型廠同互聯網大廠同時喺數據上加碼</strong>。數據嘅重要性再次凸顯——呢集就係想搞清楚：數據戰爭點解喺 2026 年夏天突然變成焦點？佢同蒸餾、RSI 呢啲概念之間係咩關係？</p>
+
+<p>孟繁青嘅視角有得天獨厚嘅位置：佢喺模型廠做過 Post-training（Kimi 嘅 Agent 同 RL Infra），知道內部點諗；又跳出嚟創業做數據，知道市場點睇。節目由「喺模型廠做後訓練 vs 出嚟創業做數據，有咩唔同感受」講起，一路覆蓋：</p>
+
+<ul>
+  <li><strong>後訓練嘅門檻喺度降低</strong>——但「做數據」同「做得好數據」之間，隔住嘅係對「數據點解有效」嘅理解</li>
+  <li><strong>蒸餾嘅真實角色</strong>——係咪國模變強嘅決定性因素？如果被封鎖會點？</li>
+  <li><strong>RSI 嘅概念辨析</strong>——RSI、Self-Evolving、AI for AI、Auto-Research，呢啲詞點樣理解？RSI 真係轉起上嚟，模型係咪會食咗一切？</li>
+  <li><strong>模型廠自己都造到數據，點解仲要外採？</strong>——外採嘅價值喺邊</li>
+  <li><strong>點解 AI for Science 最近火咗</strong>——同數據/RSI 嘅邏輯同源</li>
+</ul>
+
+<div class="section-title">二、最大非共識：國模優勢喺 Pre-training，唔係 Post-training</div>
+
+<p>節目最核心嘅反轉喺呢度。曲凱原本嘅直覺係：<strong>國內更有優勢嘅應該係偏工程嘅 Post-training</strong>——畢竟工程能力係中國團隊嘅強項。但孟繁青直接否定咗呢個判斷：</p>
+
+<blockquote class="strong">
+  「國內模型真正有特色嘅地方，反而係 Pre-training 階段——被資源限制倒逼出嚟嘅架構創新。」
+  <span class="attribution">——孟繁青，對「國模靠工程後訓練追趕」敘事嘅正面反駁</span>
+</blockquote>
+
+<p>呢個論點嘅邏輯係：算力受限嘅環境，逼住團隊喺架構同數據效率上做創新（呢條路徑同 DeepSeek 嘅故事一致）；反而後訓練因為工具鏈成熟、開源方案多，門檻一路降低，唔再係差異化嘅來源。呢個判斷如果成立，意味住市場對國模競爭力嘅理解——「靠蒸餾＋工程追趕」——低估咗國模嘅真實深度。</p>
+
+<p>跟住落嚟係全場最重要嘅「樂觀結論」：</p>
+
+<blockquote class="strong">
+  「蒸餾只係一個加速手段，並唔係國內模型變強嘅決定性因素。就算有一日海外將所有蒸餾通道都封掉，國模依然可以靠預訓練嘅創新能力，構建起自己嘅競爭力。」
+  <span class="attribution">——孟繁青，關於「蒸餾封鎖」嘅回應</span>
+</blockquote>
+
+<p>呢句說話要放喺背景度睇：2026 年「蒸餾」已經由中性技術詞變成地緣指控詞（Kimi K3 被指蒸餾、硅谷101 仲專門做過一期）。孟繁青嘅意思唔係「蒸餾冇用」，而係：<strong>蒸餾係加速器，唔係發動機</strong>——引擎本身係預訓練嘅架構創新。</p>
+
+<div class="section-title">三、數據嘅本質：「點解有效」比「點做」重要</div>
+
+<p>後訓練門檻降低，令「做數據」變成顯學——但孟繁青指出真正嘅差距喺第二層：</p>
+
+<p><strong>「同樣係做數據，拉開質量差距嘅，係對『數據為什麼有效』嘅理解。」</strong> 呢句係成集嘅方法論核心。人人都識用 RL、識做合成數據，但唔理解背後機制嘅團隊，做出嚟嘅數據係「撞彩」；理解機制嘅團隊，先可以系統性咁設計數據，令模型喺指定能力上穩定進步。</p>
+
+<p>呢度仲有一個具體嘅技術觀點：<strong>唔同蒸餾方法嘅效果差異好大</strong>——「蒸餾」係一個太粗嘅詞，入面有好多流派，效果天差地別。呢啲細節正正係「點解有效」層面嘅知識。</p>
+
+<div class="data-point">
+  <span>核心框架</span>
+  「算法就是數據，數據就是 Infra，Infra 就是算法」——三者界線正在消融，係當前模型競爭嘅核心特徵
+</div>
+
+<p>孟繁青用一句話總結咗 2026 年模型競爭嘅本質：<strong>「算法就是數據，數據就是 Infra，Infra 就是算法」</strong>。傳統上三個獨立嘅層——算法研究、數據工程、基礎設施——而家已經融成一體：數據管道就係 infra，infra 設計就係算法，算法進步就係數據進步。任何只喺單一層面做優化嘅團隊，都會輸畀三層一齊轉嘅團隊。</p>
+
+<div class="section-title">四、RSI 嘅真正難點：「meta model 預測下一條 curve」</div>
+
+<p>RSI（遞歸自我改進）係 2026 年最熱嘅詞之一——但孟繁青提醒大家，呢個詞底下其實有好多唔同嘅嘢：RSI、Self-Evolving、AI for AI、Auto-Research，各有各嘅技術內涵，唔應該撈埋一齊講。</p>
+
+<p>佢畀出咗一個好有洞察嘅框架：<strong>要做好 RSI，本質要解決嘅係「點樣讓模型自己判斷，咩嘢值得學」</strong>。技術上佢具體講咗一個關鍵難點：</p>
+
+<blockquote>
+  「RSI 嘅核心難點在於『meta model 預測下一個 curve』——即係讓模型學會判斷自己嘅學習方向，而唔係簡單嘅自我訓練。」
+  <span class="attribution">——孟繁青，RSI 技術核心</span>
+</blockquote>
+
+<p>呢個講法將 RSI 由「模型自己 train 自己」嘅粗糙想像，精確化做一個具體嘅研究問題：<strong>模型要有一個「上層模型」去判斷「我應該向邊個方向進化」</strong>——即係話，自我改進嘅瓶頸唔喺「點樣改」，而喺「改邊度」。呢個判斷同 Evolvent AI 嘅產品方向直接掛鉤：佢哋發佈嘅 RSIBench-Data，就係想為「數據同 RSI 研究」建立標準化嘅評測基礎設施。</p>
+
+<div class="data-point">
+  <span>開源成果</span>
+  Evolvent AI 發佈 <strong>RSIBench-Data</strong>（github.com/evolvent-ai/RSIBench-Data）——budget-aware 嘅合成數據生成＋後訓練評測基礎設施：畀一個 data-generation agent 固定嘅 wall-clock 同 Tinker 成本預算，喺真實嘅「生成數據→LoRA SFT→評測→迭代」閉環入面，睇吓佢能唔能夠提升目標模型；支援 Claude Code / Codex / Kimi Code 多種 orchestrator，評測跑喺 E2B 雲沙箱，涵蓋 SWE-bench Verified / Multilingual / Pro 等 benchmark
+</div>
+
+<p>呢個項目嘅設計本身就有 insight：<strong>「用 Agent 去造數據、再訓練、再評測」呢個閉環，就係 RSI 嘅迷你版</strong>——佢哋唔係空談 RSI，而係將 RSI 拆成一個可量度、有預算、有驗證信號嘅 benchmark 任務。呢種「將宏大概念工程化」嘅做法，正正係「數據公司」嘅典型思維。</p>
+
+<div class="section-title">五、模型廠點解要外採數據？創業公司點解唔自己訓基模？</div>
+
+<p>曲凱問咗兩個好尖銳嘅問題，孟繁青嘅答案都好有信息量：</p>
+
+<p><strong>問題一：模型廠自己都識造數據，點解仲要畀錢外採？</strong> 答案有三層：① <strong>多樣性</strong>——內部團隊造數據容易有系統性盲點，外部供應商帶嚟唔同嘅分佈；② <strong>成本結構</strong>——外採嘅邊際成本曲線同內部唔同，某啲數據外採更划算；③ <strong>獨立驗證</strong>——第三方數據可以作為內部數據管道嘅校準基準，避免「自己人驗自己人」嘅確認偏誤。</p>
+
+<p><strong>問題二：如果 RSI 真係會嚟，創業公司點解唔直接做一個更好嘅基模？</strong> 呢個問題問中咗創業公司嘅定位焦慮。孟繁青嘅回應係：基模競爭已經係巨頭嘅遊戲（算力、數據、人才都唔係創業公司可以撼動），但數據同 RSI 呢條賽道，創業公司嘅賭注反而更純粹——佢哋唔使背住存量包袱，可以全力押注「數據即產品」。佢仲明確講：<strong>長期更睇好初創模型公司，多過大廠</strong>——因為大廠嘅數據同 RSI 投入，永遠要同現有業務（雲、搜索、廣告）爭資源，而初創可以 all-in。</p>
+
+<div class="section-title">六、AI for Science 點解突然火咗</div>
+
+<p>節目尾段討論咗一個表面睇嚟離題、實際同源嘅話題：點解 AI4S（AI for Science）最近咁火？孟繁青嘅解釋係：<strong>AI for Science 同數據/RSI 嘅邏輯同源——高質量數據 ＋ 自我迭代嘅科學發現閉環</strong>。</p>
+
+<p>科學發現本身係一個「造數據→驗證→迭代」嘅閉環；AI for Science 嘅本質，就係將呢個閉環自動化。所以 2026 年資本湧入最活躍嘅兩個方向——世界模型同 AutoResearch/AI for AI——其實係同一條邏輯嘅兩個出口：<strong>前者要造出「世界嘅數據」，後者要造出「學習嘅數據」</strong>。</p>
+
+<div class="section-title">七、我嘅萃取：呢集點解值得讀完唔使聽</div>
+
+<p>呢集表面係一期「數據公司創始人訪談」，實際係一份<strong>國模競爭格局嘅內部人地圖</strong>。我認為有四個層次嘅價值：</p>
+
+<p><strong>第一，佢直接拆咗「國模只會蒸餾」嘅敘事。</strong> 2026 年「蒸餾」已經被政治化（硅谷101 E246 專門做過 Kimi K3 蒸餾指控），但孟繁青嘅回應提供咗一個冷靜嘅技術視角：蒸餾係加速手段，國模嘅根基喺預訓練架構創新。呢個唔係愛國敘事，而係一個做過模型廠內部嘅人對能力來源嘅判斷——佢將討論由「道德指控」拉返去「技術事實」。</p>
+
+<p><strong>第二，「數據、算法、Infra 三位一體」係一個好用嘅分析框架。</strong> 以後再睇任何模型公司新聞，都可以問一句：佢係咪三個層一齊轉？淨係換架構、淨係堆數據、淨係砌 infra 嘅公司，喺呢個框架下都係「半個玩家」。</p>
+
+<p><strong>第三，RSI 嘅「預測下一條 curve」定義，係成集最精準嘅技術洞察。</strong> 外面講 RSI 講到神神化化，孟繁青一句話將佢拉返落地：瓶頸係「判斷學咩」，唔係「點樣學」。RSIBench-Data 嘅存在亦證明：呢個領域已經開始需要標準化評測基礎設施——即係話，RSI 由概念走向產品化喇。</p>
+
+<p><strong>第四，佢同其他集數形成咗一個完整嘅「2026 數據戰爭」拼圖。</strong> 42章經 7/19 講「AI 發展 4 年，把應用發展沒了？」——應用層無解，焦點返返模型層；而模型層嘅下一個角力點就係數據同 RSI。再配埋张小珺 #149（劉子鳴講 neo labs、AI for AI）同 #150（劉洺堉講世界模型），會見到 2026 年一級市場兩條主線——世界模型同 AutoResearch——已經由「概念」變成「有公司、有產品、有 benchmark」嘅賽道。</p>
+
+<div class="highlight-box">
+  <strong>對 James ／四艦隊嘅啟示</strong>：①「算法＝數據＝Infra」呢個三位一體框架，可以直接用喺評估任何 AI 公司——包括 Trinity 相關嘅模型供應商選擇：唔好淨係睇 benchmark 分數，要睇佢哋數據管道同 infra 係咪一齊轉；② Evolvent AI 用「固定預算＋真實訓練閉環」做 RSI 評測嘅思路，同你哋公司內部「效能測量」嘅哲學同源——評測基礎設施本身可以係生意；③ 孟繁青「初創比大廠更純粹」嘅判斷，對 Tevo 嘅定位有參考：細團隊唔好同巨頭鬥基模，要揀一條「賭注更純粹」嘅賽道。
+</div>
+
+<hr>
+<footer>
+  <p>來源：42章经《从蒸馏到合成数据到 RSI，模型竞争的下一个焦点是什么？｜对谈 Evolvent AI 联创孟繁青》（2026-08-08，59 分鐘）｜嘉賓：孟繁青（2001 年生、NUS PhD、前 Kimi Agent/RL Infra、Evolvent AI 聯創）｜RSIBench-Data 細節取自 github.com/evolvent-ai/RSIBench-Data</p>
+  <p style="margin-top:0.3rem;">深度復述由 Vee Mok 生成 · 2026-08-25 06:20 UTC · 引用均取自節目原文</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 屠龍之術：AI by the numbers——23 頁 PPT 拆穿 AI 商業化嘅數字地圖</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">屠龙之术（庄明浩）· 2026-08-09 發布 · 單口</div>
+  <h1>AI by the numbers——莊明浩 23 頁 PPT solo：SP500 新高 vs AI 股分化、Anthropic/OpenAI ARR、DeepSeek「斬殺線」，同埋「一切皆 loop」嘅最大共識</h1>
+  <div class="meta">
+    <span>📅 2026-08-09</span><span>·</span><span>🎙️ 屠龙之术（莊明浩，單口）</span><span>·</span><span>⏱️ 約 33 分鐘（23 頁 PPT）</span><span>·</span><span>📊 二級市場基金策略會分享實錄</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+莊明浩喺中文 AI 播客圈係一個異類：佢唔訪問嘉賓，一個人對住 70 到 130 頁 PPT 講兩三個鐘，信息密度冠絕全場。今次呢期係佢受二級市場朋友邀請、去基金策略會做嘅分享——當日同場演講嘉賓有專門講模型進展同算力需求嘅專家，所以佢被要求講 AI 商業化同場景落地，於是濃縮成 23 頁 PPT、33 分鐘。呢份「數字地圖」由 SP500 講到 DeepSeek 斬殺線、由 Anthropic ARR 講到 Roblox 股價——如果你想用一個鐘頭以內掌握 2026 年 AI 商業化嘅觀察框架，呢集係目前最好嘅濃縮劑。
+</p>
+
+<div class="section-title">一、呢集係咩：一份畀基金經理嘅 AI 商業化數字地圖</div>
+
+<p>呢期嘅緣起好特別：<strong>莊明浩受二級市場好友邀請，去基金策略會做分享</strong>。策略會嘅觀眾係管真金白銀嘅基金經理，唔係創業者——所以佢嘅內容同平時「行業研究報告」式嘅單口好唔同：更偏向「呢啲數字代表咩」、「AI 嘅錢而家點樣流動」、「邊啲指標先值得跟踪」。</p>
+
+<p>同時呢期仲有一個身份：佢係 8/22-23 小宇宙上海線下活動「先聲信號塔」meetup 嘅「前菜」——莊明浩喺嗰度會有一個 1 小時嘅 meetup，呢期等於預先畀大家睇吓佢最近嘅數據框架。</p>
+
+<p>成集按時間線行（01:28 標題由來，到 33:23 致謝），核心路線係一條清晰嘅「AI 商業化價值鏈」：</p>
+
+<ul>
+  <li><strong>雲收入</strong>——CapEX 變現嘅第一層</li>
+  <li><strong>頭部模型公司 ARR</strong>——Anthropic、OpenAI 成為關鍵錨點</li>
+  <li><strong>毛利率</strong>——AI 商業模式健康度，唔可以淨睇收入增速</li>
+  <li><strong>國產模型「斬殺線」</strong>——DeepSeek 對定價嘅重構效應</li>
+  <li><strong>Agent 用戶量事實核查</strong>——「事實＋推測＋更可信嘅數字」三檔</li>
+  <li><strong>Infra 價值</strong>——基礎設施層成為價值高地</li>
+  <li><strong>融資榜單</strong>——ARR 超 5 億美金嘅初創公司、一級市場 Q2 熱門方向</li>
+  <li><strong>Roblox 股價</strong>——AI 原生娛樂/虛擬世界嘅風向標</li>
+</ul>
+
+<div class="section-title">二、指數繁榮 vs AI 股分化：一個殘酷嘅開場</div>
+
+<p>莊明浩第一張 PPT 就拋出一個反直覺現象：<strong>SP500 屢創新高，但 AI 股同軟件股已經分化</strong>。指數嘅繁榮，唔等於 AI 應用嘅全面繁榮——呢個判斷同佢 7/19 上 42章經講「AI 發展 4 年，把應用發展沒了」一脈相承。</p>
+
+<p>呢個分化係 2026 年最重要嘅宏觀信號之一：<strong>錢喺度，但唔係平均咁分</strong>。指數由少數巨頭（尤其係有真正 AI 收入嘅公司）撐住，而軟件股作為整體已經跑輸——市場開始用「有冇 AI 收入」嚟重新分類公司，而唔係用「係咪軟件公司」。對一級市場嘅啟示係：AI 敘事嘅 beta 時代結束，之後要揀 alpha。</p>
+
+<div class="section-title">三、CapEX 老生常談：雲先係 AI 收入嘅第一層</div>
+
+<p>市場成日講 CapEX（資本開支）——五大巨頭一年幾千億美元砸落數據中心。但莊明浩指出：<strong>AI 最直接嘅收入體現係 Cloud</strong>。雲係 AI 資本開支變現嘅第一層：GPU 買返嚟，通過雲服務租出去，先變成收入。所以跟踪 AI 商業化，第一個要睇嘅數字唔係 CapEX 本身，而係雲收入嘅增速同結構。</p>
+
+<p>呢個視角嘅實用性在於：佢將「AI 泡沫論」由抽象辯論變成可驗證嘅問題——<strong>CapEX 持續增長嘅前提，係雲收入要接得住</strong>。如果雲收入增速追唔上 CapEX 增速，中間嘅 gap 就係「產能過剩」嘅早期信號；如果接得住，CapEX 就係有收入支撐嘅擴張。呢個框架，比「AI 係咪泡沫」嘅口水戰有用得多。</p>
+
+<div class="section-title">四、Anthropic / OpenAI ARR：行業嘅兩個錨點</div>
+
+<p>莊明浩將 <strong>Anthropic 同 OpenAI 嘅 ARR（年度經常性收入）視為關鍵錨點</strong>——因為佢哋係成個 AI 商業化嘅「價格發現」來源：模型能力值幾錢，睇呢兩間公司收幾錢。佢特別提醒要跟踪 <strong>Claude 嘅場景擴散速度</strong>——即係 Claude 由編程場景擴散去其他場景（法律、金融、醫療）有幾快。場景擴散速度係判斷「模型收入天花板」嘅領先指標。</p>
+
+<p>而衡量 AI 商業模式健康度，莊明浩強調唔可以淨睇收入增速：<strong>要睇毛利率</strong>。收入增長可以靠補貼、靠折扣、靠渠道買量；毛利率先反映商業模式本身有冇經濟學。呢個提醒對一級市場特別重要——2026 年好多 AI 公司收入數字靚仔，但毛利率一睇就穿幫。</p>
+
+<blockquote class="strong">
+  「當前最大的共識：一切皆 loop。」
+  <span class="attribution">——莊明浩，全場唯一嘅「最大公約數」判斷</span>
+</blockquote>
+
+<div class="section-title">五、DeepSeek「斬殺線」：國產模型對定價嘅重構</div>
+
+<p>呢期最有原創性嘅概念係<strong>「斬殺線」</strong>：DeepSeek 等國產模型對商業化定價嘅衝擊，存在一個「斬殺線」效應——<strong>低過某條價格/成本線，成個商業模式就被重構</strong>。</p>
+
+<p>邏輯係咁：當國產模型以極低價格提供「夠用」嘅能力，海外模型廠商嘅定價權就受到威脅。唔係話所有客戶都會轉會，而係<strong>價格錨點一旦被打破，好難返轉頭</strong>——高端客戶可能留低，但長尾市場嘅定價空間被永久壓縮。呢條「斬殺線」以下，靠 token 收費嘅商業模式需要重新設計。</p>
+
+<p>呢個概念同硅谷 101 E246《蒸餾點樣由中性技術變成地緣指控》形成有趣嘅互文：<strong>如果蒸餾指控係政治層面嘅「封鎖」嘗試，斬殺線就係經濟層面嘅「失守」現實</strong>——兩集擺埋一齊睇，會見到 2026 年國產模型對全球 AI 定價體系嘅衝擊，已經大到需要地緣政治工具去應對。</p>
+
+<div class="section-title">六、Agent 用戶量：延續 WorkBuddy 打假嘅較真態度</div>
+
+<p>上期（8/1）莊明浩啱啱吐槽完 WorkBuddy「2000 萬月活」嘅媒體演繹，今期佢延續同一方法論，整理<strong>國內 Agent 用戶量數據，並分「事實＋推測＋更可信嘅數字」三檔</strong>。</p>
+
+<p>呢個三檔分類係佢嘅招牌方法：媒體報道嘅數字係「事實」（有人咁講），但唔等於真；「推測」係有依據嘅估計；「更可信嘅數字」係佢交叉驗證之後嘅判斷。喺一個「乜嘢都敢吹」嘅市場入面，呢種較真係稀缺品——<strong>佢唔係淨係質疑人哋，而係每次都畀返一個自己認為更可信嘅替代數字</strong>。</p>
+
+<div class="data-point">
+  <span>數字地圖</span>
+  23 頁 PPT · 33 分鐘 · SP500 vs AI/軟件股分化 · Anthropic/OpenAI ARR · Claude 場景擴散 · 毛利率 · DeepSeek 斬殺線 · Agent 用戶量三檔核查 · Infra 價值 · ARR 超 5 億美金初創榜 · 一級市場 Q2 熱門方向 · Roblox 股價
+</div>
+
+<div class="section-title">七、Infra 價值 + 融資榜單 + Roblox：一級二級市場嘅交叉驗證</div>
+
+<p>後半段嘅內容將一級市場同二級市場連埋一齊睇：</p>
+
+<p><strong>「Infra」成為 AI 商業化嘅價值高地</strong>——呢個判斷同佢之前嘅一貫立場一致：應用層難做（「應用發展沒了」），模型層被巨頭壟斷，反而基礎設施層（數據、評測、算力調度、agent infra）先係創業公司可以建立長期價值嘅地方。呢個亦係 8/9 十字路口戴冠蘭「模型能力已經夠了，要卷就卷 infra」嘅同頻判斷——<strong>中文創投圈喺 8 月第二週，模型層同 infra 層嘅共識同步成型</strong>。</p>
+
+<p><strong>ARR 超 5 億美金嘅初創公司榜單</strong>——用真金白銀嘅收入數字，畫出邊啲公司已經跑出嚟。呢類榜單嘅價值唔喺「邊間公司上榜」，而喺<strong>「ARR 5 億美金」呢條線本身</strong>：2026 年 AI 初創嘅「有規模」門檻已經抬到呢個水位，低過呢條線嘅公司，喺融資同估值談判入面會越來越被動。</p>
+
+<p><strong>Roblox 股價作為「AI 原生娛樂/虛擬世界」風向標</strong>——呢個選擇好有心思：Roblox 唔係典型 AI 股，但佢係「用戶生成內容＋虛擬世界＋AI 生成」最接近嘅上市公司代理（proxy）。二級市場冇「AI 原生娛樂」純標嘅，Roblox 就係最接近嘅交易標的——佢股價反映嘅係市場對「AI 內容時代娛樂形態」嘅定價。呢個係莊明浩式嘅「用數字搵代理」思維。</p>
+
+<div class="section-title">八、我嘅萃取：呢集點解值得讀完唔使聽</div>
+
+<p>呢期表面係一期「基金策略會分享」，實際係<strong>2026 年 AI 商業化嘅最濃縮觀察框架</strong>。我認為有四層價值：</p>
+
+<p><strong>第一，佢提供咗一條完整嘅「AI 商業化價值鏈」分析順序。</strong> 雲收入 → 頭部 ARR → 毛利率 → 國產斬殺線 → Agent 用戶量 → Infra → 融資榜單 → Roblox。以後任何人問「AI 商業化而家點」，照住呢條鏈逐層答，就係一份合格嘅判斷。呢個框架唔係佢發明嘅，但佢係第一個用 23 頁 PPT 將佢壓縮成可執行清單嘅人。</p>
+
+<p><strong>第二，「斬殺線」係一個有解釋力嘅原創概念。</strong> 佢解釋咗一個困擾好多人嘅現象：點解 DeepSeek 出咗之後，全球 AI 定價一路向下？「斬殺線」將呢個現象理論化——唔係簡單嘅「價格戰」，而係「價格錨點被永久重構」。對所有靠 token 收費嘅公司，呢條線係生死線。</p>
+
+<p><strong>第三，「一切皆 loop」係對 2026 年 AI 敘事嘅精準總結。</strong> 模型迭代 loop、數據回流 loop、Agent 自我改進 loop、資本開支-收入 loop——市場上所有熱門概念，拆到底都係「飛輪/循環」。呢個觀察有實際用途：<strong>判斷一間 AI 公司值唔值錢，就睇佢嘅 loop 係咪真係閉合</strong>——敘事上講 loop 好容易，數據上證明 loop 閉合先係本事。</p>
+
+<p><strong>第四，佢嘅「三檔數據法」係對抗 AI 圈 bullshit 嘅實用工具。</strong> 事實／推測／更可信嘅數字——呢個分類法可以應用喺任何 AI 新聞：先分清「有人咁講」同「真實情況」，再要求「你嘅更可信數字係咩」。如果一個觀點連第三檔都畀唔出，佢就只係敘事，唔係判斷。</p>
+
+<div class="highlight-box">
+  <strong>對 James ／四艦隊嘅啟示</strong>：①「雲收入接唔接得住 CapEX」係判斷 AI 基建泡沫最實用嘅先行指標——四艦隊入面任何算力相關決策，都可以用呢個框架問一次；②「斬殺線」概念對 Trinity 嘅模型供應商談判有直接參考：國產模型嘅價格錨點已經被重構，供應商定價要按「斬殺線以下」嘅世界去談；③ 莊明浩「一切皆 loop＋證明 loop 閉合」嘅標準，同你追求「落地嘅事」嘅哲學一致——唔好信敘事，要信閉合嘅數據循環。
+</div>
+
+<hr>
+<footer>
+  <p>來源：屠龙之术《AI by the numbers——23 頁 PPT solo》（2026-08-09，約 33 分鐘，單口）｜主播：莊明浩｜內容為基金策略會分享實錄，8/22-23 小宇宙上海線下活動「先聲信號塔」前菜｜引文及數字框架取自節目原文及 AI 播客日報 2026-08-11 萃取</p>
+  <p style="margin-top:0.3rem;">深度復述由 Vee Mok 生成 · 2026-08-25 06:20 UTC · 引用均取自節目原文</p>
+</footer>
+</div>
+</body>
+</html>
