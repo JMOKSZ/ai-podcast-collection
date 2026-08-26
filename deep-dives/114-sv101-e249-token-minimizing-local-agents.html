@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 硅谷101 E249：Token 經濟轉點——由「燒得越多越光榮」到「本地自研 Agent 日燒一蚊電費」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">硅谷101 · E249 · 2026-08-20 發布（08:00 CST）</div>
+  <h1>Token 經濟轉點：由「日燒四五百蚊」到「日燒一蚊電費」——黃東旭嘅本地開源底座轉向，同張宏江「AGI 奇點已到」嘅三波浪潮判斷</h1>
+  <div class="meta">
+    <span>📅 2026-08-20</span><span>·</span><span>🎙️ 硅谷101（泓君 Jane 主持）</span><span>·</span><span>⏱️ 1:27:02</span><span>·</span><span>👤 嘉賓：張宏江（Llama Ventures）、黃東旭（PingCAP CTO）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+「Token Maxing」——去年年底硅谷最潮嘅姿勢：創始人同工程師爭住晒 Token 賬單，比邊個燒得狠、燒得靚，用真金白銀嘅 token 消耗量證明自己「全力押注 AI」。但半年之後，呢場燒錢競賽到咗轉折點：Uber 四個月燒穿全年 AI 預算，Meta 被迫限制員工 token 用量，公司開始提醒員工「注意成本」。今集請嚟 Token Maxing 嘅親歷者黃東旭——佢由「每日只揀最強最貴、日燒三四百蚊美金」，轉向「本地開源模型底座 + 前沿模型」嘅組合拳，得出一個極簡經濟賬：<strong>大量日常任務「只燒電費、唔燒 Token」，成本由每日四五百蚊降到每日約一蚊電費</strong>。而經歷過互聯網、移動互聯網、AI 三波浪潮嘅張宏江，則畀咗一個更宏觀嘅判斷：Token Maxing 折射出所有人面對 AI 浪潮嘅不知所措；AGI 奇點已經到嚟——但要小心，「唔好做容易被大模型碾壓嘅應用」。
+</p>
+
+<div class="section-title">一、呢集係咩：一場「Token 文化急轉彎」嘅親歷者口述</div>
+
+<p>呢集表面係兩個投資人嘅對談，實際係一本<strong>「Token 文化半年變遷史」</strong>：由去年底嘅 Maxing（燒得越多越光榮），到今年年中嘅 Minimizing（ROI、預算、歸因、節流）——全行業對 AI 成本嘅一次集體認賬。節目用一條清晰嘅時間軸（見後文 data point），由「Token Maxing 係咪泡沫」講到「當新崗位都唔再需要人，人類點自處」，橫跨工程經濟學、Agent 進化史同文明級問題。</p>
+
+<p>兩位嘉賓嘅組合特別有意思：<strong>黃東旭</strong>（PingCAP CTO、Llama Ventures 合伙人）係一線親歷者——佢自己就係「日燒四五百蚊美金、只揀最強最貴模型」嘅人；<strong>張宏江</strong>（美國國家工程院外籍院士、智源研究院理事長、前微軟亞洲工程院院長、前金山 CEO）則帶住三波浪潮嘅歷史感，將呢場 token 競賽放返入「人類面對技術革命嘅不知所措」嘅長鏡頭入面。</p>
+
+<div class="section-title">二、Token Maxing 係咪泡沫？——半年內嘅急轉彎</div>
+
+<p>開場第一條問題（04:55）就係「Token Maxing，係咪泡沫？」。答案係一個過程：<strong>去年底，晒 Token 賬單係硅谷嘅社交貨幣</strong>——比邊個燒得狠，等於比邊個更信 AI；但今年年中，成本失控同「虛假生產力」令到呢場競賽觸頂。Uber 四個月燒穿全年 AI 預算，Meta 被迫畀員工設 Token 使用上限，公司開始提醒員工注意成本——<strong>「用得越多越光榮」嘅文化，半年內急轉彎成「Token Minimizing」</strong>。</p>
+
+<p>張宏江嘅解讀好 sharp：<strong>Token Maxing 折射出嘅係所有人在面臨 AI 浪潮時嘅不知所措</strong>——大家唔知點樣衡量「我用 AI 用得好唔好」，於是唯有用最膚淺嘅指標：燒咗幾多錢。呢種「以消費量代替生產力」嘅衝動，喺每一波技術革命都出現過——今次唔同嘅只係單位由「伺服器數量」變成「token 數量」。</p>
+
+<blockquote class="strong">
+  「Token Maxing 折射出的是所有人在面临 AI 浪潮时的不知所措。」
+  <span class="attribution">——張宏江：燒 Token 競賽本質係「唔知點衡量，就用消費量代替」</span>
+</blockquote>
+
+<div class="section-title">三、黃東旭嘅轉向：由日燒四五百蚊，到本地底座 + 前沿模型</div>
+
+<p>黃東旭係全場最有說服力嘅案例，因為佢自己就係「重症患者」：<strong>每日燒三四百蚊美金，只揀最強最貴嘅前沿模型</strong>（09:52）。佢嘅轉變由中國開源模型嘅崛起開始——大量日常任務，本地開源模型已經搞得掂，而且「只燒電費、唔燒 Token」。</p>
+
+<p>佢嘅結論係一句極簡嘅「組合拳」哲學：<strong>唔係前沿模型用不起，而係「本地開源模型底座 + 前沿模型」嘅搭配，成本可控、更具性價比</strong>。具體經濟賬（37:20）：本地開源模型每日電費約 1 蚊美金——對比日燒四五百蚊美金，係三個數量級嘅差距。而複雜任務仍然交畀前沿模型：佢提到 Fable 5 一次搞掂複雜任務，「智商碾壓」（35:12）——即係話混合架構唔係犧牲品質，而係「日常用平嘢、關鍵用貴嘢」。</p>
+
+<blockquote class="strong">
+  「不是前沿模型用不起，而是本地开源模型底座+前沿模型的搭配，成本可控，更具性价比。」
+  <span class="attribution">——黃東旭：混合架構嘅經濟學——大量日常任務只燒電費，唔燒 Token</span>
+</blockquote>
+
+<p>呢個判斷對中文 AI 圈尤其重要：<strong>中國開源模型（Qwen、GLM、Kimi 等）已經將「本地跑得起」由口號變成經濟事實</strong>——唔單止係技術可行，而係「成本低到唔使諗」。呢個係 2026 年中文開源生態最實在嘅勝利，唔係 benchmark 分數，而係「電費賬單」。</p>
+
+<div class="section-title">四、OpenClaw → Hermes → Agent 蜂群：半年 Agent 進化史</div>
+
+<p>節目中段（14:15-43:42）用大量時間重構咗過去半年嘅 Agent 產品進化史，而呢條線對本報告嘅讀者有特別意義——因為佢就係我哋自己行緊嘅路：</p>
+
+<ul>
+  <li><strong>OpenClaw：由研究到工程嘅轉折點（14:15）</strong>——黃東旭認為 OpenClaw 嘅意義係將 Agent 由「研究玩具」變成「工程基礎設施」；節目仲有一個生動嘅比喻：「龍蝦退潮：普羅米修斯完成咗使命」（20:31）——即係當一個工具普及到人人都在用，佢嘅開創者就可以功成身退。</li>
+  <li><strong>Hermes：將成功經驗沉澱成 Skill（23:09）</strong>——下一步係將反覆驗證成功嘅工作流，固化成為可重用嘅「技能」（Skill），而唔係每次都由零開始。呢個「經驗→技能」嘅抽象化，係 Agent 由「好用」走向「可靠」嘅關鍵一步。</li>
+  <li><strong>「Agent 動力學」：七嘴八舌燒 Token 換深度（30:09）</strong>——多 Agent 協作時，用 Token 消耗換取討論深度——但呢個亦係 Token 成本最失控嘅地方，需要「Agent 經濟學」去約束。</li>
+  <li><strong>Token 消耗唔會停（43:42）</strong>——黃東旭強調：成本要慳，但趨勢唔會逆轉；未來會有更複雜嘅 A2A（Agent-to-Agent）網絡，Token 消耗會繼續增長——慳係「效率」，唔係「退場」。</li>
+</ul>
+
+<p>呢段進化史嘅隱藏主線係：<strong>「燒 Token 換能力」同「慳 Token 換成本」兩股力量同時存在</strong>——前者推動能力邊界，後者推動工程化。一個成熟嘅 Agent 系統，就係喺呢兩股力量之間搵到平衡點。呢個正正係四艦隊架構（本地 Hermes + 雲上前沿模型 + 技能庫優化）每日做緊嘅事。</p>
+
+<div class="data-point">
+  <span>時間軸</span>
+  04:55 Token Maxing 係咪泡沫 · 09:52 日燒四五百蚊美金嘅親身體驗 · 14:15 OpenClaw：研究→工程轉折點 · 20:31 「龍蝦退潮」 · 23:09 Hermes：經驗沉澱成 Skill · 30:09 Agent 動力學 · 35:12 Fable 5 智商碾壓 · 37:20 本地開源經濟賬：每日電費 1 蚊 · 43:42 Token 消耗唔會停 · 52:36 Agent 創業好時機？toB + infra · 01:03:24 彩蛋：辦公室政治同超預期行為 · 01:15:30 IQ 測試超人類，AGI 奇點已到 · 01:18:19 當新崗位唔再需要人
+</div>
+
+<div class="section-title">五、張宏江：AGI 奇點已到，但「唔好做容易被碾壓嘅應用」</div>
+
+<p>節目後半段（52:36 之後）係張宏江嘅主場。佢嘅判斷分三層：</p>
+
+<p><strong>第一層：AGI 奇點已經到嚟（01:15:30）。</strong> 佢嘅依據好具體——IQ 測試已超人類。作為經歷過三波浪潮（互聯網、移動互聯網、AI）嘅人，佢認為今次唔同：之前嘅技術革命係「增強人類能力」，今次係「第一次出現能力超越人類嘅工具」。</p>
+
+<p><strong>第二層：而家係做 Agent 嘅好時機，但要揀啱戰場。</strong> 佢嘅投資判斷係看好 <strong>toB 同 infra</strong>（52:36）——同佢哋自己嘅 Llama Ventures 定位一致。關鍵警句係：<strong>「別做容易被大模型碾壓的應用」</strong>——即係話，如果應用嘅核心價值只係「調用大模型能力」，當模型本身變強，呢層應用價值就會被碾壓；真正有護城河嘅，係模型層同 infra 層之間嘅工程能力。</p>
+
+<p><strong>第三層：一個未解嘅文明問題（01:18:19）。</strong> 當新崗位都唔再需要人，人類點自處？呢個問題佢冇答案——但佢提出咗一個有意思嘅角度：Token Maxing 時代嘅「辦公室政治」同「超預期行為」（01:03:24 彩蛋），證明人類即使面對 AGI，仍然會用人類嘅方式（政治、博弈、超預期）去回應——呢啲「非理性」因素，可能先係人類最後嘅護城河。</p>
+
+<blockquote class="strong">
+  「现在做 Agent 是好时机，但关键是：别做容易被大模型碾压的应用。」
+  <span class="attribution">——張宏江：Agent 創業嘅選題標準——護城河喺工程能力，唔喺「調用能力」</span>
+</blockquote>
+
+<div class="section-title">六、行業 insight：呢集對 2026 年 AI 圈嘅三點信號</div>
+
+<p><strong>信號一：Token 文化嘅急轉彎，係全行業對 AI 成本真實化嘅集體認賬。</strong> 由 Maxing 到 Minimizing 只係半年——Uber、Meta 嘅動作說明「AI 預算」已經由「無限彈性」變成「有限資源」。企業 Agent 落地嘅硬約束，由「能力夠唔夠」變成「算唔算得過賬」——預算、歸因、節流成為新關鍵詞。</p>
+
+<p><strong>信號二：本地開源底座 + 前沿模型嘅混合調用，正成為性價比最優解。</strong> 黃東旭嘅「日燒四五百蚊 → 日燒一蚊電費」唔係個案，而係一個可複製嘅工程模式。呢個模式同四艦隊架構（本地 Hermes 快速響應 + 雲上前沿模型處理複雜任務）高度同頻——連 Agent 進化史（OpenClaw → Hermes → Skill）都係同一條路。</p>
+
+<p><strong>信號三：OpenClaw 被明確點名為「研究到工程」嘅轉折點。</strong> 由中文主流播客嘅投資人口中聽到呢個判斷，係一個生態信號：Agent 基礎設施已經由小圈子進入主流視野——本報告本身就行喺 OpenClaw 之上，屬同一生態嘅親證。</p>
+
+<div class="section-title">七、前後脈絡：同其他集數嘅互證</div>
+
+<p>呢集同兩條線互證：<strong>其一</strong>，同 8/9 十字路口 Runta 戴冠蘭集（「Token Maxxing 點解三到六個月內轉向 Token Minimizing」）形成時間線互證——兩集分別由「工程師視角」（黃東旭）同「創業者視角」（戴冠蘭）確認同一轉向；<strong>其二</strong>，同 8/25 Latent Space 中 Andrew Ng 嘅 AI Engineering 四大技能（evals、agents、product sense）呼應——Token 效率同工程化正在成為 2026 下半年嘅主線。另外，張宏江「AGI 奇點已到」嘅判斷，同 8/26 Dwarkesh × Dylan Patel 三期「Anthropic/OpenAI 2028 年控制全球大部分算力」互為鏡像：一個睇能力、一個睇算力，結論都指向「集中化 + 工程化」嘅時代。</p>
+
+<div class="section-title">八、我嘅萃取：呢集點解值得讀完唔使聽</div>
+
+<p><strong>第一，佢提供咗 Token 時代第一個「平民化」嘅成本框架。</strong> 之前講 Agent 成本，都係雲廠商嘅 $/M token 定價表；黃東旭將佢翻譯成「每日一蚊電費」——呢個單位嘅轉換，先係令 Agent 由「公司級基建」變成「個人級日常」嘅關鍵。成本降低三個數量級，唔係改良，係變態（phase change）。</p>
+
+<p><strong>第二，「慳 Token」同「燒 Token」嘅平衡，係 Agent 工程嘅核心技藝。</strong> 節目清楚咁展示：Agent 動力學要靠燒 Token 換深度，但企業預算要求慳 Token 換生存——一個合格嘅 Agent 架構師，就係要識得喺「能力邊界」同「成本邊界」之間做 routing。呢個就係混合架構嘅本質，唔係技術炫耀，而係經濟學。</p>
+
+<p><strong>第三，張宏江「唔好做容易被大模型碾壓嘅應用」係 2026 年最重要嘅選題警句。</strong> 佢將應用層創業嘅風險講得好清楚：如果大模型能力升級可以直接取代你嘅產品，你嘅「創業」其實係「幫大模型打工」。呢個判斷對所有 Agent 創業者（包括 Tevo 團隊）都適用——產品價值要building喺「工程 + 場景 + 數據閉環」入面，而唔係「調用能力」入面。</p>
+
+<p><strong>第四，「人類點自處」唔係雞湯，而係 Agent 產品設計嘅約束條件。</strong> 當 AI 可以處理一切「可預期」任務，人類嘅價值退到「超預期行為」同「辦公室政治」——呢啲聽落似笑話，實際係 Agent 產品嘅真實邊界：凡係需要「人際博弈」嘅場景，短期內都係人類嘅安全區。呢個對 Agent 產品嘅市場定位，係一個好實用嘅參考。</p>
+
+<div class="highlight-box">
+  <strong>對 James ／四艦隊嘅啟示</strong>：① 黃東旭嘅混合架構經濟賬，正正係四艦隊「本地 Hermes + 雲上前沿」嘅理論確認——由「日燒四五百蚊」到「日燒一蚊電費」嘅成本曲線，係你哋架構嘅最大隱形優勢；② 節目點名 OpenClaw 係「研究→工程」轉折點、Hermes 係「經驗→Skill」嘅下一步——同你「優化技能庫、泛化現有技能」嘅方向完全一致，Skill 化就係 Agent 價值沉澱嘅正確路徑；③ 張宏江「唔好做容易被大模型碾壓嘅應用」——Trinity 嘅護城河應該清晰定義喺「工程 + 場景 + 數據」層面，並定期問一次：如果豆包下個版本直接內置呢個功能，我哋仲有冇存在價值？
+</div>
+
+<hr>
+<footer>
+  <p>來源：硅谷101《E249｜Token经济转点：OpenClaw、Hermes到本地自研的Agent进化之路》（2026-08-20 發布，1:27:02，泓君主持，嘉賓張宏江／Llama Ventures 高級技術合伙人、黃東旭／PingCAP CTO &amp; Llama Ventures 合伙人）｜引文取自節目官方 show notes 及 AI 播客日報 2026-08-26 萃取</p>
+  <p style="margin-top:0.3rem;">深度復述由 Vee Mok 生成 · 2026-08-26 06:20 UTC · 引用均取自節目原文</p>
+</footer>
+</div>
+</body>
+</html>
