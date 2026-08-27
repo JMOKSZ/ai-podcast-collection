@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space × Anima Anandkumar：語言有 foundation model，物理冇——Neural Operator 同「唔靠 token」嘅科學尺度</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-08-26 發布（15:15 GMT）</div>
+  <h1>「語言有 foundation model，物理冇」——Anima Anandkumar：天氣、聚變同流體點樣抵抗 Scaling Law，同埋 Neural Operator 呢條「砌結構入去」嘅第二條路</h1>
+  <div class="meta">
+    <span>📅 2026-08-26</span><span>·</span><span>🎙️ Latent Space（swyx + Alessio Fanelli，文章 Brandon Anderson）</span><span>·</span><span>⏱️ 1:23:31</span><span>·</span><span>👤 嘉賓：Anima Anandkumar（Caltech Bren Professor、Accelerated Understanding 聯創）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+「Tenemos modelos fundacionales para el lenguaje, no para la física」——一句話震動咗「越多 token 越好模型」嘅根基。Anima Anandkumar 喺 AI 圈打滾咗二十年：由經典數學，到深度學習，再到而家返去「principled」嘅路。佢用十五年時間研究物理世界嘅 AI 建模——天氣、聚變、流體——得出一個同主流 scaling 敘事完全相反嘅結論：<strong>呢啲領域嘅數據根本唔存在（開源數據只有幾萬到幾十萬樣本），而物理要求嘅解析度會將 context length 推到數千億甚至一萬億——「全世界嘅算力都唔夠」</strong>。出路唔係等數據，而係將物理世界已有嘅結構砌入模型：Neural Operators。佢仲帶嚟兩個新鮮嘢——喺 Lean proof assistant 入面形式化驗證神經網絡嘅 TorchLean，同埋佢同 Benedikt Jenik 創辦嘅 Accelerated Understanding：一個放棄 transformer、用 neural operators 嘅 4D（三維空間＋時間）物理模型，預訓練 1T 參數、推理超過 5T context。
+</p>
+
+<div class="section-title">一、呢集係咩：Latent Space 科學系列嘅「連續物理」補完</div>
+
+<p>Latent Space 至今出咗約 15 集科學主題——原子、分子、材料、生物、數學——今次終於補上<strong>連續物理系統</strong>：天氣、聚變、流體同熱傳導。呢啲領域巨大、混沌、根本上 multi-scale，係 AI 社群一路忽略、但預期會快速增長嘅大片處女地。幾年前，Anima 決定做第一個開源 AI 天氣模型，去請教領域專家，換嚟一片懷疑：天氣係混沌嘅、物理模擬開發咗幾十年、需要超級電腦、數據根本唔夠。佢冇理會，照做——<strong>一年之內，佢哋嘅 FourCastNet 已經同最好嘅物理模擬競爭</strong>，而家任何人都可以用消費級 GPU 準確預測短期天氣。</p>
+
+<p>呢個故事嘅深層意義，用 Latent Space 自己嘅話講：<strong>呢個領域「resist the scaling ideas that have permeated the rest of the field」</strong>——但呢個唔係天花板，只係一條慢啲嘅路：進步嚟自 building in structure and inductive biases。文章仲補咗一句抵死嘅：「Sorry for all you bitter-lesson-pilled language modelers.」</p>
+
+<blockquote class="strong">
+  「If each dimension is even a few hundred grid points, which is where industrial scale starts… we're talking hundreds of billions to even a trillion context length. So forget ever having a transformer for anything of this scale, all of the world's compute will not be enough.」
+  <span class="attribution">——Anima Anandkumar：物理模擬嘅 context length 係數千億到一萬億——任何 transformer 都唔使諗，全世界嘅算力加埋都唔夠</span>
+</blockquote>
+
+<div class="section-title">二、點解物理世界食唔落「token scaling」</div>
+
+<p>Anima 嘅論證分兩半，兩半都好致命。第一半係<strong>數據唔存在</strong>：好多物理領域嘅開源數據集只有「tens or hundreds of thousands of examples」——幾萬到幾十萬樣本，距離 token-hungry transformer 嘅胃口差幾個數量級。唔似語言（互聯網免費供應幾萬億 token）或者代碼（GitHub 任攞），天氣同聚變嘅高質量觀測數據，由物理上就係稀缺——你冇辦法「合成」多啲真實颱風。</p>
+
+<p>第二半更致命：<strong>就算有數據，context 都裝唔落</strong>。物理建模嘅「token」係空間格點——每個維度幾百個 grid point 先係工業級起點，乘埋時間維度，context length 直接去到數千億甚至一萬億。呢個數字令「throw more tokens at the problem」變成笑話：唔係貴，係物理上不可能。所以 transformer 嘅 scaling 敘事，喺呢度由「第一性原理」就失效——唔係欠算力，而係問題嘅本質形狀同語言唔同。</p>
+
+<div class="data-point">
+  <span>數據</span>
+  物理領域開源數據：幾萬至幾十萬樣本（vs 語言嘅萬億 token）· 物理格點解析度：數百 grid points/維度 → context length 數千億至一萬億 · 結論：唔係「數據唔夠」，係「問題形狀根本唔係 token 形狀」
+</div>
+
+<div class="section-title">三、Neural Operators：每一層都係一個函數</div>
+
+<p>Anima 用嚟打呢場仗嘅武器係佢開創嘅 <strong>Neural Operators</strong>（arXiv:2108.08481）——Latent Space 形容為「近十年 AI 最美麗嘅理論發展之一」。核心思想一句講晒：<strong>唔好再 modeling a grid，改為 modeling a function that evolves over many scales</strong>——「如果每一層本身都係一個函數呢？」呢個轉換令你可以將數據同物理定律結合，支持 multi-scale 嘅輸入輸出，仲可以根據物理直覺砌入 priors。</p>
+
+<p>點樣睇物理 prior 仲有冇用？返去全球天氣預測：<strong>地球係一個球體</strong>，所以準確建模要用啱嘅 basis set——球諧函數（Spherical Harmonics）。用笛卡爾格點跑天氣模型，好快就 blow up；轉去問題嘅自然 basis，就可以穩定好多——穩定到可以 roll out 幾個月而唔係幾日。Anima 嘅 <strong>Fourier Neural Operator</strong>（arXiv:2010.08895）直接喺頻域學習，佢嘅球面變體正正驅動住 <strong>FourCastNet 3</strong>（arXiv:2507.12144）——一個橫跨全球、可以穩定跑入遙遠未來嘅天氣模型。用 Latent Space 嘅金句：<strong>「地球（幾乎）係個球體——將球諧函數烤入你個網絡！」</strong></p>
+
+<blockquote class="strong">
+  「All of the things that work with deep learning, let's take them, but make them a bit more principled.」
+  <span class="attribution">——Anima Anandkumar：深度學習好嘅嘢全部留低，但將佢哋做得更有原則——用結構換數據，用物理直覺換 token</span>
+</blockquote>
+
+<div class="section-title">四、物理世界比想像中「寬容」：幾千個樣本搞掂聚變</div>
+
+<p>Anima 將 Neural Operators 推去其他物理領域，有一個 striking 嘅觀察：<strong>物理世界比你想像中寬容</strong>。喺核聚變入面，<strong>幾千個樣本就夠預測等離子體 disruption</strong>——而且比傳統模擬快一百萬倍。呢個發現對「scaling 教」嚟講係一記悶棍：語言模型要靠幾百萬條 instruction 先學識聽話；聚變物理用幾千條樣本就可以預測一個可能炸燬反應堆嘅事件——因為你將「物理結構」本身當咗 inductive bias 砌咗入去，模型唔使由零開始估。</p>
+
+<p>呢度要澄清一個常見誤解：Anima <strong>唔係反對 scale</strong>。佢嘅終極目標依然係一個「physics 嘅 foundation model」——一個跨越好多現象、同時做 simulation 同 design 嘅模型。分別在於點去到：<strong>將物理世界已有嘅結構砌入去，而唔係等一啲永遠唔會存在嘅數據</strong>。佢承認呢條路會比 token-driven 嘅 AI 慢——因為「for the physical world, tokens were never the answer」。</p>
+
+<div class="section-title">五、TorchLean：神經網絡都可以「形式化驗證」</div>
+
+<p>今集仲覆蓋 Anima 其他近期工作，其中一個對工業界尤其重要：<strong>TorchLean</strong>（arXiv:2602.22631）——一個喺 proof assistant Lean 入面寫 PyTorch 風格網絡、並對佢做形式化驗證嘅框架。點解咁重要？想像你要將一個神經網絡加入核聚變反應堆嘅 control loop——一個錯誤可能物理上炸咗個堆。傳統軟件工程有 formal verification，但神經網絡一路係「黑盒、冇得證明」；TorchLean 將「證明神經網絡嘅 bound」變成可能——對任何想喺安全關鍵系統（fusion reactor、醫療、航空）加 AI 嘅人嚟講，呢個係由「benchmark 好睇」到「可以過 safety case」嘅關鍵一步。</p>
+
+<p>另外，Anima 啱啱獲任命為<strong>聯合國科學諮詢委員會成員</strong>，今集佢講咗佢嘅目標：將 evidence-based 嘅觀點帶入政策，用科學 AI 改善全球各地嘅生活。佢亦啱啱喺杜拜攞咗 TIME100 AI Impact Award，喺領獎時提到佢工程師父母——印度電腦化製造嘅先驅——對佢嘅影響。</p>
+
+<div class="section-title">六、Accelerated Understanding：放棄 transformer 嘅 4D 物理基礎模型</div>
+
+<p>學術工作已經有商業落地：<strong>Accelerated Understanding Inc</strong>——Anima 同 Benedikt Jenik 共同創辦——推出咗一個基於 neural operators（而唔係 transformers）嘅 4D 模型（三維空間＋時間）。規模數字令人瞪眼：<strong>訓練處理最多 1 萬億 tokens、推理超過 5 萬億、預訓練 scaling 到 1 萬億參數</strong>（同 8/27 報告 Hot Chips 集互相呼應——嗰度講嘅「無 subsampling/patching」就係指佢）。有趣嘅背景：創辦之前，佢哋曾被邀請領導 Jeff Bezos 支持嘅 Project Prometheus——然後婉拒咗。</p>
+
+<p>公司目標市場全部係「長銷售週期、嚴格驗證」嘅行業：能源優化、芯片設計、機械人、天氣預測、醫療創新——即係傳統模擬 incumbent 累積咗幾十年信任、新玩家好難入嘅地方。呢個選擇本身好有意思：<strong>佢哋唔係去同 OpenAI 搶 agent 市場，而係去一個「驗證嚴格到 transformer 入唔到場」嘅地方，用結構性優勢建立護城河。</strong></p>
+
+<div class="data-point">
+  <span>規模</span>
+  Accelerated Understanding：4D（空間×3＋時間）· neural operators 取代 transformer · 預訓練 1T 參數 · 訓練 1T context · 推理 &gt;5T context（無 subsampling/patching）· 婉拒 Jeff Bezos 嘅 Project Prometheus · 目標：能源、芯片設計、機械人、天氣、醫療
+</div>
+
+<div class="section-title">七、行業 insight：AI 天氣已經贏咗——同埋「唔靠 token」嘅護城河</div>
+
+<p>呢集唔係紙上談兵——<strong>AI 天氣模型已經喺真實世界贏咗</strong>。2025 颶風季，AI 模型唔單止追平、仲超越咗物理模型：Google DeepMind 幾乎喺所有預報時限贏過美國國家颶風中心（NHC）官方預報，仲領先「強度預測」——歷史上電腦氣象學最弱嘅一環。TIME 形容 FourCastNet 類模型「比傳統天氣模型快幾萬倍，預測熱浪同颶風等極端事件仲成日更準」。數字上：<strong>NOAA 估算佢 AI 版全球模型只用物理版 0.3% 嘅算力</strong>；DeepMind 2026 季將 ensemble 由 50 個擴大到 1,000 個成員。中國團隊都喺度追：Ocean Engineering（2026）刊出一個 PINN–GAN 混合模型耦合傳統 SWAN 系統，喺颱風下海浪高度預測誤差最多降 34.9%。</p>
+
+<p>對創業者嚟講，呢集畀咗三個實用教訓：<strong>一</strong>，「更多數據」唔係唯一槓桿——如果你嘅產品活在低數據領域（聚變、芯片設計、天氣、材料），帶 inductive bias 嘅架構可以係對抗「乜都塞入 transformer」嘅競爭優勢；<strong>二</strong>，睇 inference 成本而唔係淨係睇 benchmark——物理 AI 模型喺 laptop 行，傳統模型要 supercomputer，呢個差距本身係銷售話術同 margin；<strong>三</strong>，形式化驗證係新 moat——喺受監管行業（醫療、能源、航天），一個喺 Lean 入面可驗證嘅模型，開到一啲 opacity LLM 永遠開唔到嘅門。</p>
+
+<blockquote class="strong">
+  「None of this is a rejection of scale, it is a different route to it. You get there by building in the structure the physical world already has, not by waiting for data that will never exist.」
+  <span class="attribution">——Latent Space 文章總結：唔係拒絕 scale，而係另一條通去 scale 嘅路——砌入物理世界已有嘅結構，而唔係等永遠唔會出現嘅數據</span>
+</blockquote>
+
+<div class="section-title">八、我嘅萃取：呢集點解值得「讀完唔使再聽」</div>
+
+<p><strong>第一，佢提供咗「token scaling 萬能論」嘅第一份有力反面教材。</strong> 2026 年嘅主流敘事係「數據＋算力＝智能，冇嘢唔可以 scaling」；Anima 用兩個物理事實反駁：數據唔存在、context 裝唔落。呢個唔係「中國芯片」或者「算法效率」層面嘅爭論，而係話：<strong>有一整類問題，由形狀上就唔適合 transformer——呢個認知對任何做「乜都用 LLM 硬套」嘅產品決策，都係一盆冷水</strong>。當你見到有人用 RAG＋LLM 去預測天氣或者做流體模擬，你可以肯定佢行錯咗路。</p>
+
+<p><strong>第二，「結構優先」係「數據優先」之外嘅另一個正當 scaling 路線。</strong> 語言模型嘅成功令大家以為「只要有夠多 token，模型自己會搵到結構」；Anima 嘅路線相反——將已知嘅物理結構（球諧函數、頻域、函數演化）直接砌入架構，用少幾個數量級嘅數據達到同等甚至更好嘅結果。對四艦隊嘅啟示好直接：我哋嘅技能庫、工作流模板、memory 結構，本身就係「砌入去嘅 inductive bias」——用結構換數據，唔單止係物理 AI 嘅專利。</p>
+
+<p><strong>第三，形式化驗證係「可信 AI」嘅下一個戰場。</strong> TorchLean 嘅意義超越聚變：當 AI 由「建議工具」變成「控制 loop 入面嘅一環」，客戶要求嘅嘢會由「準唔準」變成「可唔可以證明佢唔會做錯嘢」。呢個轉變會重塑 B2B AI 嘅銷售話術——而而家開始砌 verification 能力嘅團隊，會攞到下一代嘅信任紅利。</p>
+
+<p><strong>第四，佢同今日其他新聞形成一個清晰嘅分野：</strong> 同一日，NVIDIA 用 $13B 買 HuggingFace 卡位模型分發、OpenAI 出自家推理芯片、GLM-5.3-Flash 喺中國芯片上跑 100T tokens/日——全部係「token 經濟」嘅延長線；而 Anima 呢集係少數講「token 唔係萬能」嘅主流平台聲音。兩條線並行，先係 2026 下半年嘅完整圖畫：一邊係 token 嘅性價比戰爭，另一邊係「唔靠 token」嘅結構性智能。投資同產品決策，值得兩邊都落注。</p>
+
+<div class="highlight-box">
+  <strong>對 James ／四艦隊嘅啟示</strong>：① Trinity 嘅「豆包＋PMS＋硬件」組合如果碰物理／IoT 數據（酒店能源管理、設備預測性維護），記住「結構優先」——用領域物理＋少量真實數據嘅架構，好過硬塞 LLM；② 「形式化驗證」會成為企業級 AI 嘅信任門檻——酒店行業對「出錯成本」極敏感，可驗證、可解釋嘅 agent 決策先過到法務同運營嗰關；③ 呢集嘅「砌入結構」哲學，同你一直叫我「泛化技能、將經驗沉澱成 Skill」係同一件事——結構就係效率，而效率就係護城河。
+</div>
+
+<hr>
+<footer>
+  <p>來源：Latent Space《"We have foundation models for language, not for physics" — Anima Anandkumar, Bren Professor of Computing》（2026-08-26 發布，1:23:31，swyx + Alessio Fanelli 主持、Brandon Anderson 撰稿）｜官方 show notes、FourCastNet/FNO/Neural Operator 論文（arXiv:2202.11214、arXiv:2010.08895、arXiv:2108.08481）、TorchLean（arXiv:2602.22631）、FourCastNet 3（arXiv:2507.12144）、TIME/NOAA/DeepMind 報導及 AI 播客日報 2026-08-27 萃取</p>
+  <p style="margin-top:0.3rem;">深度復述由 Vee Mok 生成 · 2026-08-27 06:25 UTC · 引用均取自節目原文</p>
+</footer>
+</div>
+</body>
+</html>
