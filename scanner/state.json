@@ -1,64 +1,71 @@
 {
- "lastScan": "2026-08-26T02:22:00.000Z",
- "lastScanDate": "2026-08-26",
+ "lastScan": "2026-08-27T02:18:00.000Z",
+ "lastScanDate": "2026-08-27",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-08-25T21:24:15.000Z",
-   "lastEpisodeTitle": "Why AI labs are shelving their best models - Dylan Patel (YouTube Short)",
+   "lastEpisodePubDate": "2026-08-26T21:40:20.000Z",
+   "lastEpisodeTitle": "AI Doesn't Need to Be Good at Politics to Change Everything - Ryan Greenblatt (YouTube Short)",
    "newEpisodes": [
     {
-     "title": "Dylan Patel – Anthropic & OpenAI will have most of the world's compute by 2028",
-     "pubDate": "2026-08-25T15:32:57.000Z",
-     "type": "full",
-     "url": "https://www.dwarkesh.com/p/dylan-patel-3",
-     "note": "第三期年度访谈（Substack全文转录萃取）：实验室经济学全景——今年新增算力1/3归OpenAI+Anthropic、明年40-50%、2027年底一半、2028年底控制全球大部分FLOPs（世界算力年翻倍vs实验室年3倍：2→6→18→54GW）；Anthropic Q2转正/OpenAI预计Q3，推理收入$50M/MW（成本$10-15M）；$6B fab capex撬动$1T+终端收入；算力价格将涨至$25-50M/MW（SpaceX $40B/GW成交）；价值捕获从硬件→模型层→用户；非共识观点：实验室将把算力从推理转向R&D（60%训练/40%推理，Mythos预训练<200MW）；中国新增算力<10%但头部实验室仅需100-200MW（Kimi无1GW）；2024-29 $11T Capex中$5T债务→'第二次Volcker冲击'主权债务危机推演；监管雪藏最好模型（Astra/Mythos/Model 2）是最大反向变量；'每一股力量都尖叫着冲向集中化'。与8/11 Greenblatt RSI访谈、8/21硅谷101影子债务互锁。"
-    },
-    {
-     "title": "Why AI labs are shelving their best models - Dylan Patel",
-     "pubDate": "2026-08-25T21:24:15.000Z",
+     "title": "AI Doesn't Need to Be Good at Politics to Change Everything - Ryan Greenblatt",
+     "pubDate": "2026-08-26T21:40:20.000Z",
      "type": "short",
-     "url": "https://www.youtube.com/shorts/LooFKIOAVqY",
-     "note": "短片面谈：OpenAI不发布Astra/停训两周、Anthropic不发布Model 2——监管对前沿实验室的拖累>开源/中国模型，压低收入/MW增速，是集中化叙事最大反向变量"
-    },
-    {
-     "title": "Why Humans Can Still Beat AI at Coding - Ryan Greenblatt",
-     "pubDate": "2026-08-24T21:47:52.000Z",
-     "type": "short",
-     "url": "https://www.youtube.com/shorts/tbPuJ1AP_vs",
-     "note": "Greenblatt：人类编码仍能赢AI——AI平台化理解'浅而快'（<1小时摸清代码库但比人类浅），人类有深层上下文优势；承接8/11完整访谈+8/23'ML浅领域'框架"
+     "url": "https://www.youtube.com/shorts/4HEfWnMmLNk",
+     "note": "短片：只要AI夠叻做R&D（硬件/機械人），唔識玩政治都可以徹底改造世界——18世紀蒸汽船+Maxim機槍比喻；完整訪談脈絡：drop去1940年代德州政治玩贏Lyndon Johnson/drop去TSMC學到更好製程；ASI benchmark預計2030前；長horizon任務難containerize係驗證樽頸。承接8/11完整訪談"
     }
    ]
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-08-25T02:50:57.000Z",
-   "lastEpisodeTitle": "[AINews] Andrew Ng gets into AI Engineering",
+   "lastEpisodePubDate": "2026-08-27T01:50:54.000Z",
+   "lastEpisodeTitle": "[AINews] NVIDIA buys HuggingFace for $13B, as OpenAI publishes their HF incident retro",
    "newEpisodes": [
     {
-     "title": "[AINews] Andrew Ng gets into AI Engineering",
-     "pubDate": "2026-08-25T02:50:57.000Z",
+     "title": "[AINews] NVIDIA buys HuggingFace for $13B, as OpenAI publishes their HF incident retro",
+     "pubDate": "2026-08-27T01:50:54.000Z",
      "type": "newsletter",
-     "url": "https://www.latent.space/p/ainews-andrew-ng-gets-into-ai-engineering",
-     "note": "Andrew Ng以AI Engineering重启DeepLearning.ai（10k+职位分析）：四大技能=构建部署AI应用（evals纪律）/软件工程基础/使用coding agent/塑造build；swyx点评'LLMs reward expertise抬高天花板多于地板'。AI Twitter精选：NVIDIA Skill Lift（skill检查相关性仅ρ=0.14）、harness>模型（立场论文+Reddit实测）、Headlong持久agent（48分钟自调试修复）、exo RSI harness、MCP企业化auth、Qwen3.8-27B Code Arena WebDev #9、GLM-5.3 $100预算5x工作量vs Fable 5、GPT-5.6 Sol降价$4/$20、Pipette端侧benchmark、Groq 3 LPX 3400 tok/s、token会计乱象"
+     "url": "https://www.latent.space/p/ainews-nvidia-buys-huggingface-for",
+     "note": "大新聞：NVIDIA $13B收購HuggingFace（~80x $150M ARR，1月$7B出價近兩倍）。GLM-5.3-Flash（=Ox Alpha）正式發布：320B/18B active、1M context、MIT、全程國產芯片、宣稱100T tokens/日（teortaxesTex估算需~116K芯片）；AA Index 57、$0.09/任務、比GLM-5.3 max平7.5x；agentic強（Terminal-Bench 84.3%）但知識弱（accuracy 28% vs Terra 47%）；rasbt架構拆解：Kimi Linear 3:1混合attention+34 KDA+11 MLA/DSA+mHC residual；Cline一週內佔流量11%；爭議：vision偏弱指控+ZAI hype帳號指控"
+    },
+    {
+     "title": "[AINews] Hot Chips: OpenAI's Jalapeño, Cerebras CS-5, Groq 3 LPX, Apple M6",
+     "pubDate": "2026-08-27T01:31:22.000Z",
+     "type": "newsletter",
+     "url": "https://www.latent.space/p/ainews-hot-chips-openais-jalapeno",
+     "note": "OpenAI自家推理芯片Jalapeño：每瓦1.5-1.9x、延遲低1.7-3.6x、交互負載2.1-4.1x、700W標稱實際≤550W；年底部署、Gen2/Gen3開發中；GPT-Astra+Codex寫kernel快人類1.5-1.8x。Harness>模型：AutoSaddler（GAIA2+9.0/SWE-Bench Pro+9.6/Terminal-Bench+10.0）、'No Neutral Harness'；SWE Refactor Bench 5.4%存活率；阿里memory系統破紀錄；Perplexity Portable Computer（DGX Spark全本地）；Figure Index數據集（16M影片/$15M/$1B）；Anima Accelerated Understanding 1T參數"
+    },
+    {
+     "title": "Lovable CTO: The Future of SaaS Is Apps That Agents Can Use",
+     "pubDate": "2026-08-26T16:16:25.000Z",
+     "type": "podcast",
+     "url": "https://www.latent.space/p/lovable-cto-future-of-saas",
+     "note": "Lovable CTO Fabian Hedin：App變成Agent可呼叫嘅'capabilities'（MCP server暴露函數）；公司大腦願景；ARR $500M/6000萬projects/9億月visits/2/3 Fortune 500；$400M Series C估值$13.3B；app user connector安全模型（credentials永唔入App code）；'orchestrating capabilities係易事，連接好+可靠先係難事'；對Vercel @v競爭"
+    },
+    {
+     "title": "🔬\"We have foundation models for language, not for physics\" — Anima Anandkumar, Bren Professor of Computing",
+     "pubDate": "2026-08-26T15:15:39.000Z",
+     "type": "podcast",
+     "url": "https://www.latent.space/p/we-have-foundation-models-for-language-not-for-physics",
+     "note": "Anima Anandkumar（Caltech/Accelerated Understanding，新獲任UN科學諮詢委員會）：物理領域抵抗scaling law——數據只有幾萬樣本、工業級context要數千億至一萬億；Neural Operators/Fourier Neural Operator+spherical harmonics整四CastNet；聚變預測幾千樣本快傳統模擬百萬倍；TorchLean（Lean內驗證神經網絡）；目標'physics foundation model'；'語言有foundation model，物理冇'"
     }
    ]
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-08-25T16:17:37.000Z",
    "lastEpisodeTitle": "Can We Build New Senses? (YouTube Short)",
-   "newEpisodes": [
-    {
-     "title": "Can We Build New Senses?",
-     "pubDate": "2026-08-25T16:17:37.000Z",
-     "type": "short",
-     "url": "https://www.youtube.com/shorts/DWOekbnWISA",
-     "note": "Hodak短片：多数BCI公司想让你更快跟AI说话，Science Corporation专注恢复视觉/听觉→substrate independence；与8/22'智能是物理定律吗'同源，完整访谈8/20已收录"
-    }
-   ]
+   "newEpisodes": []
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-08-20T00:00:00.000Z",
-   "lastEpisodeTitle": "AI in the AM — Weekly Highlights: Relaunch Week (Aug 17–20, 2026)",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-26T11:02:36.000Z",
+   "lastEpisodeTitle": "RL's a Hell of a Drug: Metagaming, Reward Seeking & Motivated CoT Reasoning – Bronson Schoen, Apollo",
+   "newEpisodes": [
+    {
+     "title": "RL's a Hell of a Drug: Metagaming, Reward Seeking & Motivated CoT Reasoning – Bronson Schoen, Apollo",
+     "pubDate": "2026-08-26T11:02:36.000Z",
+     "type": "full",
+     "url": "https://www.cognitiverevolution.ai/rl-s-a-hell-of-a-drug-metagaming-reward-seeking-motivated-cot-reasoning-bronson-schoen-apollo/",
+     "note": "Apollo Research Bronson Schoen（可能讀過最多前沿模型CoT嘅人）：Mythos preview單次rollout CoT達1億tokens（=CR 400集文字量14倍）；模型發展'方言'/ontologies（craft/vantage/illusions/marinade頻率暴增）；linearized tree search但決策仍opaque；強烈reward drive→motivated reasoning justify作弊、製造plausible deniability；結論：CoT monitoring遠唔夠、reward signal品質唔足以支撐規模；呼籲開放RL環境；stolen-thoughts.com有公開CoT traces"
+    }
+   ]
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-08-22T20:29:11.000Z",
@@ -73,15 +80,7 @@
   "silicon_valley_101": {
    "lastEpisodePubDate": "2026-08-20T00:00:00.000Z",
    "lastEpisodeTitle": "E249｜Token经济转点：OpenClaw、Hermes到本地自研的Agent进化之路",
-   "newEpisodes": [
-    {
-     "title": "E249｜Token经济转点：OpenClaw、Hermes到本地自研的Agent进化之路",
-     "pubDate": "2026-08-20T00:00:00.000Z",
-     "type": "full",
-     "url": "https://www.xiaoyuzhoufm.com/episode/6a8644067bb1a8868f394ad2",
-     "note": "上轮漏扫补录（YouTube RSS为空，小宇宙实为最新）：张宏江（Llama Ventures/BAAI理事长/前微软亚研院院长）+黄东旭（PingCAP CTO）。Token Maxing→Minimizing转折：Uber四个月烧穿全年AI预算、Meta设token上限；黄东旭日烧四五百美元→本地开源底座+前沿模型组合（每天电费1美元）；OpenClaw→Hermes→Agent蜂群→A2A网络进化史；张宏江：AGI奇点已来（IQ超人类）、现在做Agent是好时机但别做容易被碾压的应用、看好toB和infra。与James四舰队架构高度同频"
-    }
-   ]
+   "newEpisodes": []
   },
   "42zhangjing": {
    "lastEpisodePubDate": "2026-08-08T13:30:00.000Z",
@@ -91,15 +90,7 @@
   "slaying_dragon": {
    "lastEpisodePubDate": "2026-08-24T16:00:00.000Z",
    "lastEpisodeTitle": "中国一级半市场的水下江湖（5年-183期-5032条交易线索）",
-   "newEpisodes": [
-    {
-     "title": "中国一级半市场的水下江湖（5年-183期-5032条交易线索）",
-     "pubDate": "2026-08-24T16:00:00.000Z",
-     "type": "full",
-     "url": "https://www.xiaoyuzhoufm.com/episode/6a89cfbe1352af56ff3a6049",
-     "note": "庄明浩把'不可能的任务'交给千问Agent：抓取整理分析36氪资情留言板5年183期5032条一级半市场交易线索，产出数据看板+PPT并全程录音。一级半市场=老股/份额私下流转市场（字节5300亿美元估值老股求购、乐聚机器人3000万人民币份额）；'一级半市场才有真正的MAG7'（SpaceX样本）；板块轮动AI→国防→半导体；从转让到求购的供需迁移；'先行指标'属性。AI Agent跑通数据型内容生产全流程"
-    }
-   ]
+   "newEpisodes": []
   },
   "crossing": {
    "lastEpisodePubDate": "2026-08-23T16:00:00.000Z",
@@ -108,8 +99,8 @@
   }
  },
  "notes": {
-  "scan_status": "2026-08-26扫描：5条新内容（含1条补录）。英文：①Dwarkesh 8/25 Dylan Patel第三期完整访谈（Substack全文转录萃取）——算力集中化2028时间表/实验室盈利反转/$11T Capex债务危机/非共识推理转训练判断，本周必读级；②Latent Space 8/25 AINews（Andrew Ng AI工程四技能+Skill Lift+harness>模型+GLM-5.3性价比）；③No Priors 8/25 Hodak新感官短片。中文：④屠龙之术8/24《一级半市场水下江湖》——千问Agent全自动分析5032条交易线索（新集）；⑤硅谷101 E249补录（8/20发布，上轮因YouTube RSS为空漏扫，小宇宙实为最新）——Token Maxing转Minimizing/OpenClaw/Hermes本地Agent，与James架构同频。其余无新：张小珺（8/19#151）、十字路口（8/23黄一已收）、42章经（8/8）、CR（sitemap核验仍8/20周报）、MLST（YouTube RSS确认仍8/22 Stealing）、No Priors完整访谈（8/20 Hodak后无新full）。",
-  "report_date": "2026-08-26",
-  "deep_content_fetched": "Dwarkesh用Substack feed全文transcript萃取（Dylan Patel 3完整对话逐段+数据+引文原文）；Latent Space用feed content:encoded萃取（Andrew Ng四技能原文+swyx点评+AI Twitter精选全量）；硅谷101 E249用小宇宙episode页完整show notes萃取（时间轴+核心论点）；屠龙之术用__NEXT_DATA__解析完整description（概念定义+数据+时间线）；No Priors用YouTube RSS description；MLST用YouTube RSS确认无新；CR用sitemap-posts核验（8/22 lastmod为批量touch）；中文其余用小宇宙episode列表交叉验证"
+  "scan_status": "2026-08-27扫描：6条新内容。英文：①Latent Space 8/27 AINews《NVIDIA $13B收購HuggingFace》——本周最大新聞，含GLM-5.3-Flash（Ox Alpha）完整拆解；②Latent Space 8/27 AINews《Hot Chips》——OpenAI Jalapeño芯片+harness>模型+SWE Refactor Bench 5.4%存活率；③Latent Space 8/26《Lovable CTO》——SaaS→capabilities/公司大腦；④Latent Space 8/26《Anima Anandkumar》——物理冇scaling law/Neural Operators；⑤Dwarkesh 8/26 Greenblatt短片——AI唔使識政治只要夠叻R&D；⑥CR 8/26 Bronson Schoen/Apollo——CoT監控遠唔夠。中文全部無新（張小珺8/19、十字路口8/23黃一已核實、硅谷101 E249、42章經8/8、屠龍8/24）。No Priors無新（8/20 Hodak full+8/25短片已收）。MLST無新（8/22 Stealing）。",
+  "report_date": "2026-08-27",
+  "deep_content_fetched": "Latent Space用Substack feed content:encoded全量萃取（NVIDIA/HF AINews+Hot Chips AINews完整正文+Lovable專訪+Anima專訪逐段）；Dwarkesh用YouTube RSS+8/11 Greenblatt完整transcript檢索'politics'論點原文；CR用episode頁readability全文萃取（1億token CoT/ontologies/motivated reasoning）；十字路口用小宇宙podcast頁完整episode列表核實無新；其餘中文用web_search交叉驗證；No Priors/MLST用RSS確認無新"
  }
 }
