@@ -1,42 +1,58 @@
 {
- "lastScan": "2026-08-28T02:16:00.000Z",
- "lastScanDate": "2026-08-28",
+ "lastScan": "2026-08-29T02:12:00.000Z",
+ "lastScanDate": "2026-08-29",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-08-27T20:26:04.000Z",
-   "lastEpisodeTitle": "Why Isn't China Further Behind in AI? - Dylan Patel (YouTube Short)",
+   "lastEpisodePubDate": "2026-08-28T21:31:38.000Z",
+   "lastEpisodeTitle": "Why Jane Street Makes More From Claude Than Anthropic Does - Dylan Patel (YouTube Short)",
    "newEpisodes": [
     {
-     "title": "Why Isn't China Further Behind in AI? - Dylan Patel",
-     "pubDate": "2026-08-27T20:26:04.000Z",
+     "title": "Why Jane Street Makes More From Claude Than Anthropic Does - Dylan Patel",
+     "pubDate": "2026-08-28T21:31:38.000Z",
      "type": "short",
-     "url": "https://www.youtube.com/shorts/JdLf3xO1hB0",
-     "note": "短片：完整訪談00:33:27中國章節獨立成片——中國新增算力<10%（2022年30-35%→今日sub-10%，美國70%）、頭部實驗室總算力僅100-200MW（Kimi連1GW都冇，ByteDance Seed係例外）vs Anthropic年底>5GW；Dwarkesh承認出口管制算成功（'notable success'）；2028 SMIC/CXMT量產、2029 +50GW但質素打折≈20GW美國芯片價值；實驗室算力預算60% training/40% inference（=50% research+10% dev+40% inference）；Mythos預訓練sub-200MW兩個月。承接8/25完整訪談"
+     "url": "https://www.youtube.com/shorts/4NMBwT1qYew",
+     "note": "短片：8/25完整訪談00:18:22章節獨立成片——價值捕獲：Jane Street（GPT-5.6 Ultrafast獨家合同+Anthropic最大客戶之一）從token變現價值遠超Anthropic利潤；Meta一度佔Anthropic業務10%、互動時長+5%；Anthropic收入$50M/兆瓦 vs 基礎成本$10-15M；牛鞭效應（內存漲價最快/TSMC最慢/SpaceX $25-40M賣算力一年回本）；大部分算力< $20B/吉瓦成交因先簽約後建設；2027年底$50-80M/兆瓦預測。承接8/25完整訪談（8/26已覆蓋）"
     }
    ]
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-08-27T01:50:54.000Z",
-   "lastEpisodeTitle": "[AINews] NVIDIA buys HuggingFace for $13B, as OpenAI publishes their HF incident retro",
-   "newEpisodes": []
-  },
-  "no_priors": {
-   "lastEpisodePubDate": "2026-08-27T10:00:04.000Z",
-   "lastEpisodeTitle": "Rethinking Legacy Data Infrastructure with Eon Co-Founders Ofir Ehrlich and Gonen Stein",
+   "lastEpisodePubDate": "2026-08-28T07:12:10.000Z",
+   "lastEpisodeTitle": "[AINews] OpenAI to reach AGI bar by end-2026",
    "newEpisodes": [
     {
-     "title": "Rethinking Legacy Data Infrastructure with Eon Co-Founders Ofir Ehrlich and Gonen Stein",
-     "pubDate": "2026-08-27T10:00:04.000Z",
+     "title": "[AINews] OpenAI to reach AGI bar by end-2026",
+     "pubDate": "2026-08-28T07:12:10.000Z",
      "type": "full",
-     "url": "https://www.youtube.com/watch?v=YscDZpVF4CQ",
-     "note": "Eon聯創Ofir Ehrlich/Gonen Stein（前CloudEndure被AWS收購）：數據係AI時代最後護城河——Google $10M破產拍賣買Spirit Airlines數據（非飛機）、Mercor據報競爭出價；實驗室去華爾街向對沖基金買數據；NHI非人類身份成企業頭號安全問題（agent帶合法權限秒級drop table，六個月前無人肯傾而家人人中過）；Fivetran/dbt世代管道已唔適用；PLG而家對infra有效（推翻多年定律）；forward-deployed成主流GTM；Longlake收購式AI轉型；反直覺：agent時代儀表板會更多唔會消失；端點安全被本地agent執行顛覆（產品空白）；AWS客戶案例60%環境遭勒索軟件暴露（未mapping/分類）；Enron電郵都有人拎嚟訓練；先分類後建管道"
+     "url": "https://www.latent.space/p/ainews-openai-to-reach-agi-bar-by",
+     "note": "AINews週報8/22-24：OpenAI AGI時鐘（Altman年底內部AGI/Mark Chen 80%/Pachocki Astra=自動化研究實習生9月目標）；Microduck $399開源雙足機器人（HF×Pollen、25cm、15執行器、sim-to-real、每5秒一台、$1M銷售）；Ox Alpha=GLM-5.3-Flash（320B總/18B激活/1M上下文/混合注意力、3-bit 128GB RAM、122+TPS）；Gemini Omni 1.1 Flash（T2V Arena第1）；H3 Max 50x；agent harness一級公民（JIT-Agent/FSM）；116機構網絡防禦聯署；DeepMind雙盲評測；EvoMal共享技能庫自毒化；Hermes真實瀏覽器身份；Anthropic科學家計劃$15/月"
+    }
+   ]
+  },
+  "no_priors": {
+   "lastEpisodePubDate": "2026-08-28T10:29:59.000Z",
+   "lastEpisodeTitle": "The Rise of Shadow AI (YouTube Short)",
+   "newEpisodes": [
+    {
+     "title": "The Rise of Shadow AI",
+     "pubDate": "2026-08-28T10:29:59.000Z",
+     "type": "short",
+     "url": "https://www.youtube.com/shorts/VGPs7mBr8xk",
+     "note": "短片：8/27 Eon完整訪談剪輯（8/28已深度覆蓋）——影子AI興起：員工自建agent不懂安全/合規/數據去向，不受追蹤的agent帶合法權限觸發其他agent連鎖執行；NHI非人類身份成企業安全頭號議題"
     }
    ]
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-08-26T11:02:36.000Z",
-   "lastEpisodeTitle": "RL's a Hell of a Drug: Metagaming, Reward Seeking & Motivated CoT Reasoning – Bronson Schoen, Apollo",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-29T00:00:00.000Z",
+   "lastEpisodeTitle": "AI:AM Highlights: Recursive Self-Improvement, Rushed and Vibe-Coded?",
+   "newEpisodes": [
+    {
+     "title": "AI:AM Highlights: Recursive Self-Improvement, Rushed and Vibe-Coded?",
+     "pubDate": "2026-08-29T00:00:00.000Z",
+     "type": "full",
+     "url": "https://www.cognitiverevolution.ai/ai-am-highlights-recursive-self-improvement-rushed-and-vibe-coded/",
+     "note": "Week 35三場直播濃縮（8/24-26、七嘉賓、2h10m）：主線=單位不再是單模型而是模型間分工。Inherent Faraday 27B研究agent勝Opus4.8/GPT-5.5複現論文但用GPT-5.5 Codex實現（小模型管大模型）；Malte Ubl：Kimi K3已有未定價攻擊性安全能力、Fable 5拒絕防守安全、6個月窗口；RL環境供應鏈無人審計+前員工爆料'rushed and vibe coded'+Nathan對RSI的真實疑慮；Astra據報10T+參數（TIME二手）；super-persuasion未出現；'slow down because we're wise'；深圳$5芯片+$10包月token創業算術、80%亞馬遜電子經深圳"
+    }
+   ]
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-08-22T20:29:11.000Z",
@@ -44,14 +60,30 @@
    "newEpisodes": []
   },
   "xiaozhangjun": {
-   "lastEpisodePubDate": "2026-08-19T00:00:00.000Z",
-   "lastEpisodeTitle": "#151 17岁被2026年ICML收录论文的小少年：我bet开心！开心！开心！",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-26T17:33:46.000Z",
+   "lastEpisodeTitle": "#152 领读Kimi K3技术报告：从架构创新聊起，注意力美学、多教师蒸馏和开源MoE",
+   "newEpisodes": [
+    {
+     "title": "#152 领读Kimi K3技术报告：从架构创新聊起，注意力美学、多教师蒸馏和开源MoE",
+     "pubDate": "2026-08-26T17:33:46.000Z",
+     "type": "full",
+     "url": "https://www.douban.com/podcast_episode/510243",
+     "note": "2h04m技術報告領讀：Kimi K3（Moonshot開源旗艦、全球首個開源3萬億級MoE、約2.8T參數）——896專家+16激活、每token激活~1040億(1/27)、KDA混合注意力、原生視覺、1M上下文；多教師同策略蒸餾MOPD（九領域RL模型逐token按領域/難度條件教師打分指導、融合為單一可切檔模型）；'注意力美學'=工程約束下設計取捨；開源MoE戰略直擊閉源商業模式。承接8/19 #151，與硅谷101 E246 K3討論互補"
+    }
+   ]
   },
   "silicon_valley_101": {
-   "lastEpisodePubDate": "2026-08-20T00:00:00.000Z",
-   "lastEpisodeTitle": "E249｜Token经济转点：OpenClaw、Hermes到本地自研的Agent进化之路",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-28T08:40:40.000Z",
+   "lastEpisodeTitle": "E250｜mRNA的第二战场：对话英博，拆解Moderna人类首个肿瘤疫苗三期突破",
+   "newEpisodes": [
+    {
+     "title": "E250｜mRNA的第二战场：对话英博，拆解Moderna人类首个肿瘤疫苗三期突破",
+     "pubDate": "2026-08-28T08:40:40.000Z",
+     "type": "full",
+     "url": "https://www.douban.com/podcast_episode/510737",
+     "note": "1h17m：Moderna×默沙東個體化mRNA腫瘤疫苗三期成功（intismeran autogene+Keytruda、高危黑色素瘤術後輔助、RFS終點）、Moderna股價+177%/默沙東+13%；嘉賓英博博士（艾博生物創始人CEO、前Moderna核心研發）——不是預防疫苗是'一人一藥'治療性疫苗；4-6週製造、34新抗原撒網、手術刀+疫苗+PD-1組合、LNP是AI還算不動的難題、'AI離開自動化就是空談'、成本'做大容易做小難'、與CAR-T安全對比、等了二三十年的原因"
+    }
+   ]
   },
   "42zhangjing": {
    "lastEpisodePubDate": "2026-08-08T13:30:00.000Z",
@@ -59,19 +91,19 @@
    "newEpisodes": []
   },
   "slaying_dragon": {
-   "lastEpisodePubDate": "2026-08-24T16:00:00.000Z",
+   "lastEpisodePubDate": "2026-08-25T16:00:00.000Z",
    "lastEpisodeTitle": "中国一级半市场的水下江湖（5年-183期-5032条交易线索）",
    "newEpisodes": []
   },
   "crossing": {
-   "lastEpisodePubDate": "2026-08-23T16:00:00.000Z",
+   "lastEpisodePubDate": "2026-08-24T16:00:00.000Z",
    "lastEpisodeTitle": "22 岁的具身 CEO、5 轮融资、过亿美元、“不知天有多高”、“一年吃了十年的苦”｜对谈黄一：萝博派对创始人/CEO",
    "newEpisodes": []
   }
  },
  "notes": {
-  "scan_status": "2026-08-28扫描：2条新内容。英文：①No Priors 8/27《Eon數據基礎設施》完整集——數據護城河/Google買Spirit Airlines數據$10M/NHI安全/PLG+forward-deployed；②Dwarkesh 8/27短片《點解中國冇落後更多》——中國算力<10%/100-200MW vs Anthropic 5GW/出口管制算成功（承接8/25完整訪談，該集8/26已深度覆蓋）。Latent Space無新（8/27 01:50 NVIDIA/HF已收）、CR無新（8/26 Bronson Schoen已收）、MLST無新（8/22 Stealing）。中文全部無新（張小珺8/19、十字路口8/23黃一已核實、硅谷101 E249、42章經8/8、屠龍8/24）。No Priors YouTube RSS 404一度失效，改用@NoPriorsPodcast頻道頁+YouTube RSS重試成功。",
-  "report_date": "2026-08-28",
-  "deep_content_fetched": "Dwarkesh用Substack feed content:encoded全量transcript萃取（00:33:27中國章節原文+Dylan Patel完整訪談77,846字元，前後脈絡對照8/26深度覆蓋）；No Priors用YouTube RSS描述+teahose深度摘要（關鍵主題/反直覺觀點/公司生態/操作啟示，含精確時間戳quote）；中文用小宇宙podcast頁+web_search交叉驗證無新；Latent Space/CR/MLST用RSS確認無新"
+  "scan_status": "2026-08-29扫描：6条新内容。中文2条：①張小珺#152《領讀Kimi K3技術報告》8/26——架構創新/KDA混合注意力/多教師蒸餾MOPD/開源MoE（豆瓣核實155集，state原8/19 #151）；②硅谷101 E250《mRNA第二戰場》8/28——Moderna腫瘤疫苗三期突破+英博博士拆解（Apple Podcasts全量show notes）。英文4条：①Dwarkesh 8/28短片《Jane Street從Claude賺得比Anthropic多》——價值捕獲章節獨立成片（Substack feed content:encoded全量transcript萃取00:18:22章節）；②Latent Space 8/28 AINews《OpenAI年底達AGI》——OpenAI AGI時鐘/Microduck/GLM-5.3-Flash=Ox Alpha/Gemini Omni 1.1/H3 Max/116機構網絡防禦（全量文章萃取）；③Cognitive Revolution 8/29《AI:AM Highlights RSI rushed and vibe-coded》——Week 35七嘉賓濃縮、Inherent Faraday 27B、RL環境供應鏈審計、Astra 10T（iHeart+cognitiverevolution.ai show notes全量）；④No Priors 8/28短片《Shadow AI興起》——Eon剪輯。無新：42章經（8/8）、屠龍（8/25已核實）、十字路口（8/24黃一已核實）、MLST（8/22）。中文改用豆瓣podcast頁直接核實（比web_search可靠），英文全量transcript/show notes萃取。",
+  "report_date": "2026-08-29",
+  "deep_content_fetched": "Dwarkesh用Substack feed content:encoded全量transcript萃取（00:18:22價值捕獲章節原文，含Jane Street/Meta/SpaceX數據）；Latent Space用全量文章萃取（AGI時鐘/Microduck/GLM-5.3-Flash/Gemini Omni 1.1/安全大事）；CR用cognitiverevolution.ai AI:AM show notes全量（含四部分結構/時間戳/引用/來源flag）；硅谷101用Apple Podcasts全量show notes（章節+術語表）；張小珺用豆瓣+web_search交叉驗證K3技術細節（896專家16激活/KDA/MOPD九領域）；中文核實流程改為豆瓣podcast episodes頁直讀（十字路口126集/張小珺155集/硅谷101 253集/42章經69集/屠龍128集）"
  }
 }

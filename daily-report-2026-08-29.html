@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI播客深度萃取報告 2026-08-29</title>
+<style>
+  body { background: #faf8f5; color: #2b2a28; font-family: Georgia, "Noto Serif SC", "Songti SC", serif; line-height: 1.75; max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+  h1 { font-size: 1.7rem; font-weight: 700; letter-spacing: 0.02em; margin-bottom: 0.3rem; }
+  h2 { font-size: 1.35rem; margin-top: 3rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e2ddd2; }
+  h3 { font-size: 1.12rem; margin-top: 2.2rem; color: #4a443a; }
+  h4 { font-size: 1rem; margin-top: 1.8rem; color: #6b4f2a; }
+  .meta { color: #8a8478; font-size: 0.9rem; margin-bottom: 0.2rem; }
+  .ep { color: #a8946a; font-size: 0.85rem; font-style: italic; }
+  blockquote { border-left: 3px solid #d8c9a8; margin: 1rem 0; padding: 0.4rem 1.1rem; color: #5c564a; background: #f5f1e8; border-radius: 0 4px 4px 0; }
+  ul { padding-left: 1.4rem; }
+  li { margin-bottom: 0.35rem; }
+  .header { border-bottom: 2px solid #e2ddd2; padding-bottom: 1.2rem; margin-bottom: 2rem; }
+  .footer { margin-top: 4rem; padding-top: 1.2rem; border-top: 1px solid #e2ddd2; color: #9a948a; font-size: 0.85rem; }
+  .tag { display: inline-block; background: #efe9dd; color: #6b5f45; font-size: 0.75rem; padding: 0.1rem 0.55rem; border-radius: 10px; margin-right: 0.4rem; }
+  strong { color: #332f28; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AI 播客深度萃取報告</h1>
+  <div class="meta">報告日期：2026-08-29 ｜ 生成時間：2026-08-29 02:12 UTC ｜ 覆蓋 10 檔播客（5 中文 + 5 英文）</div>
+  <div class="meta">本期新內容 6 條：中文 2 條（張小珺 #152 Kimi K3 技術報告領讀、硅谷101 E250 mRNA 腫瘤疫苗）、英文 4 條（Dwarkesh Jane Street 短片、Latent Space OpenAI AGI 週報、Cognitive Revolution AI:AM RSI 特集、No Priors Shadow AI 短片）</div>
+</div>
+
+<h2>中文播客</h2>
+
+<h3>张小珺商业访谈录（张小珺）</h3>
+<h4>#152 领读Kimi K3技术报告：从架构创新聊起，注意力美学、多教师蒸馏和开源MoE 🎙️（2026-08-26 17:33）</h4>
+
+<p><strong>主题</strong>：以「领读技术报告」形式拆解月之暗面（Moonshot AI）開源旗艦 Kimi K3 的技術報告——從架構創新切入，重點討論混合注意力機制（KDA）、多教師同策略蒸餾（MOPD）與開源 MoE 的路線選擇。2 小時 4 分鐘。</p>
+
+<p><strong>背景</strong>：Kimi K3 於 2026 年 7 月 27 日發布完整開放權重，是全球首個開源的「3 萬億級別」MoE 模型（報告口徑約 2.8 萬億參數），定位直接咬住閉源前兩名（Claude Fable 5、GPT-5.6 Sol），穩坐開源第一。本集是「領讀」形式——不是訪談人物，而是帶聽眾逐段讀技術報告。</p>
+
+<p><strong>核心論點</strong>：</p>
+<ul>
+  <li><strong>「注意力美學」</strong>：K3 的架構設計被解讀為有美學追求——896 專家 + 16 激活的 MoE 配置、KDA 混合注意力（hybrid attention）機制，本質是在「大容量」與「低成本運行」之間找平衡，同時解決百萬 token 長文本的注意力計算難題。本集認為架構創新不是炫技，而是工程約束下的設計取捨。</li>
+  <li><strong>多教師同策略蒸餾（MOPD）</strong>：K3 先獲取九個領域的強化學習模型（9 位「各懷絕技」的領域專家），再用 MOPD 融合——給定查詢 x 和領域/難度條件 e，由對應教師模型提供指導；學生模型在自己生成的軌跡上、逐 token 接受「對應領域、對應力度」教師的打分指導。用戶拿到的不是 9 個模型，而是一個能在低/中/高/最高檔推理強度之間自由切換的統一 K3。</li>
+  <li><strong>開源 MoE 的商業邏輯</strong>：把 2.8 萬億參數全量開源是戰略選擇——用開放權重換生態位，直接衝擊 OpenAI/Anthropic 的閉源商業模式（呼應 8/1 硅谷101 E246「何謂蒸餾」一集討論的開放模型逼近前沿議題）。</li>
+</ul>
+
+<p><strong>關鍵數據</strong>：</p>
+<ul>
+  <li>總參數約 2.8 萬億（平台口徑「3 萬億級別」），MoE 架構：896 專家、16 激活，每個 token 只激活約 1,040 億參數（約 1/27）</li>
+  <li>原生視覺（native vision）能力；100 萬 token 上下文窗口</li>
+  <li>KDA 混合注意力機制：解決長文本注意力計算與內存瓶頸</li>
+  <li>九個領域 RL 模型 + MOPD 逐 token 多教師蒸餾合併為單一模型</li>
+</ul>
+
+<p><strong>技術詳情</strong>：本集把 K3 報告讀成三層——①架構層：MoE 規模與激活率的平衡、KDA 注意力設計；②訓練層：九領域 RL + 同策略蒸餾的「教師打分-學生學習」流程、按領域/難度條件路由教師；③產品層：推理強度檔位切換如何把「多模型內部結構」隱藏成「單一用戶體驗」。</p>
+
+<p><strong>行業 insight</strong>：中國開源模型已從「DeepSeek 時刻」的性價比替代品，進化到 K3 這種「直接開源前沿級權重」的戰略姿態。多教師蒸餾路線說明中國實驗室在「無單一超級教師可抄」的前提下，用領域分工 + 蒸餾融合來逼近閉源前沿——這正是硅谷討論「中國模型進步不能全歸因於蒸餾」的技術證據。</p>
+
+<p><strong>前後脈絡</strong>：承接 8/19 #151（17 歲 ICML 少年）之後，張小珺從「人物」轉向「技術報告」領讀；與 8/13 #150 劉洺堉（英偉達研究副總裁）談開源世界模型互為呼應。K3 也是 8/1 硅谷101 E246 討論的核心案例——本集可視為從技術細節層面補完「中國開放模型逼近前沿」的證據鏈。</p>
+
+<hr>
+
+<h3>硅谷 101（泓君 Jane）</h3>
+<h4>E250｜mRNA的第二战场：对话英博，拆解Moderna人类首个肿瘤疫苗三期突破 🎙️（2026-08-28 08:40）</h4>
+
+<p><strong>主题</strong>：2026 年 8 月，Moderna 與默沙東（Merck）聯合開發的個體化 mRNA 腫瘤疫苗公布三期臨床積極結果，Moderna 股價單日一度暴漲約 177%——這是全球首個三期成功的 mRNA 腫瘤疫苗，也是 mRNA 技術從傳染病防治跨入腫瘤治療的里程碑。本集拆解它如何工作、為何要與 PD-1 聯用、真正證明了什麼、還有什麼沒被證明。1 小時 16 分 50 秒。</p>
+
+<p><strong>嘉賓背景</strong>：英博博士——艾博生物（Abogen Biosciences）創始人、董事長兼 CEO，曾在 Moderna 從事 mRNA 相關核心研發，是中國 mRNA 產業的代表人物。</p>
+
+<p><strong>核心論點</strong>：</p>
+<ul>
+  <li><strong>這不是預防疫苗，是「一人一藥」的治療性疫苗</strong>：根據每位患者自身的腫瘤突變「量身定制」，訓練免疫系統識別並攻擊其腫瘤——個體化腫瘤疫苗正把「一人一藥」從概念推向現實。</li>
+  <li><strong>為什麼要與 PD-1 聯用</strong>：疫苗負責「教會」免疫系統認出腫瘤新抗原（neoantigen），PD-1 抑制劑負責鬆開 T 細胞的「剎車」——一個加燃料、一個鬆剎車，形成「手術刀 + 疫苗 + PD-1」的未來腫瘤治療組合拳。</li>
+  <li><strong>三期到底突破了什麼</strong>：臨床終點用的是 RFS（無復發生存期）——疫苗顯著降低高危黑色素瘤患者術後復發及腫瘤向遠處器官擴散的風險；證明的是「個體化新抗原疫苗在輔助治療場景能改善真實臨床結局」。</li>
+  <li><strong>「4-6 週造出一支專屬疫苗」是製藥噩夢</strong>：從測序患者腫瘤 → 預測新抗原 → 設計 mRNA → IVT 合成 → LNP 包裝 → 質控放行，全流程要在 4-6 週內完成，這是與傳統量產藥物完全不同的 CMC（工藝/生產/質控）體系。</li>
+  <li><strong>「AI 離開自動化，就是空談」</strong>：AI 能解決新抗原預測和疫苗設計的很大一部分問題（甚至讓腫瘤疫苗變成「軟件問題」），但真正的瓶頸在製造——自動化、成本、監管。</li>
+  <li><strong>LNP：AI 還算不動的難題</strong>：脂質納米顆粒（mRNA 的「運輸膠囊」）設計與優化，目前 AI 還難以勝任——這是本集點名的「AI 尚無法解決」的具體技術環節。</li>
+</ul>
+
+<p><strong>關鍵數據</strong>：</p>
+<ul>
+  <li>Moderna 股價單日暴漲約 177%（盤中引發嚴重軋空效應），默沙東收漲近 13%</li>
+  <li>疫苗名為 intismeran autogene（mRNA-4157），與默沙東 Keytruda（抗 PD-1）聯用</li>
+  <li>針對高危黑色素瘤術後輔助治療，達到三期主要終點（RFS 改善）</li>
+  <li>「34 個新抗原『撒網』」：疫苗同時針對多達 34 個預測新抗原，對抗腫瘤的「逃逸」機制</li>
+  <li>4-6 週：從患者樣本到專屬疫苗出廠的目標時間窗</li>
+  <li>二三十年：腫瘤疫苗從概念到跨過三期門檻的等待時間</li>
+</ul>
+
+<p><strong>重點引用</strong>：</p>
+<blockquote>「一人一藥，似乎正在離現實越來越近。」</blockquote>
+<blockquote>「AI 離開自動化，就是空談。」——英博</blockquote>
+<blockquote>「做大容易，做小難。」（關於成本：量產容易、個體化定制難）</blockquote>
+
+<p><strong>技術詳情</strong>：本集覆蓋完整技術鏈——新抗原（neoantigen）預測與「撒網」策略、驅動突變（EGFR/KRAS）與非驅動突變的區別、IVT（體外轉錄）合成 mRNA、LNP 可電離陽離子脂質的遞送機制、CMC 體系如何決定藥物能否從實驗室走向商業化、以及「off-the-shelf（現貨型）vs 個體化」兩條技術路線的對比。還談到 DC 療法（樹突狀細胞療法）與 CAR-T 的橫向比較——腫瘤疫苗的 CRS（細胞因子釋放綜合徵）風險遠低於 CAR-T。</p>
+
+<p><strong>行業 insight</strong>：Moderna/BioNTech 與中國公司（艾博生物等）在 mRNA 腫瘤疫苗上走不同技術路線；三期成功驗證了 mRNA 技術在呼吸道疾病之外的巨大商業潛力，也把「個體化醫療的製造、自動化、成本與監管」問題擺上桌面——如果每位患者都需要一支不同的藥，這套系統如何服務成千上萬患者，是下一個十年的核心工程問題。</p>
+
+<p><strong>前後脈絡</strong>：與 8/20 外灘大會背景呼應（2026 Inclusion 外灘大會 9/9-12 上海舉辦，本集有推廣）；也可對照 8/5 E247 盛穎聊 AI Infra 時「基礎設施美感」的論述——本集從生物醫藥角度再次證明「AI 落地 = 模型 + 自動化基礎設施」。腫瘤疫苗等了二三十年的原因，本集歸結於新抗原預測精度、個體化製造速度與監管框架三者的歷史性會合。</p>
+
+<hr>
+
+<h2>英文播客</h2>
+
+<h3>Dwarkesh Podcast（Dwarkesh Patel）</h3>
+<h4>Why Jane Street Makes More From Claude Than Anthropic Does - Dylan Patel 🎙️（2026-08-28 21:31 YouTube Short）</h4>
+
+<p><strong>主题</strong>：從 8/25 完整訪談（已於 8/26 深度覆蓋）中獨立剪出的短章節——「哪一層吃走最多價值」：Jane Street 用 Claude/GPT 賺的錢，比 Anthropic 自己賺的利潤還多。</p>
+
+<p><strong>核心論點</strong>：</p>
+<ul>
+  <li><strong>大部分 AI 價值沒有被實驗室拿走</strong>：「目前大部分價值沒有落到 OpenAI 和 Anthropic 手裡——謝天謝地，大部分是給了用戶。」</li>
+  <li><strong>Jane Street 案例</strong>：Jane Street 與 OpenAI 有 GPT-5.6 Ultrafast 模式的獨家合同，同時是 Anthropic 最大的客戶之一——它從 token 中變現的價值遠超 Anthropic 從中賺到的利潤，因為它拿模型去做市場交易。</li>
+  <li><strong>Meta 案例</strong>：Meta 一度被傳佔 Anthropic 業務的 10%，靠優化廣告算法、把用戶互動時長拉長 5% 賺的錢，遠多於 Anthropic 本身。</li>
+  <li><strong>價值捕獲的「牛鞭效應」</strong>：一年前硬件供應鏈（芯片、fab）吃走全部毛利、模型層虧本賣 token；現在模型層毛利由負轉正，Anthropic 收入已達每兆瓦 5,000 萬美元（對比基礎成本每兆瓦 1,000-1,500 萬美元）——但價格上漲會沿供應鏈逐級傳導：內存廠商漲價最快，TSMC 漲得最慢，Elon 用 $25M+/MW 賣算力。</li>
+  <li><strong>算力交易價格的錨</strong>：大部分算力仍以低於「每吉瓦 200 億美元」的價格成交（注意：這是「$20B per gigawatt」口徑），因為算力在建設前就已簽約、靠客戶承諾融資——SpaceX 是例外，它先建後賣、靠資產負債表硬扛，賣給 Anthropic/Google 的價格能讓它一年回本。</li>
+</ul>
+
+<p><strong>關鍵數據</strong>：</p>
+<ul>
+  <li>Anthropic 收入最高達 $50M/兆瓦（每投入 $10 推理算力產生 $50 收入）</li>
+  <li>算力基礎成本：每兆瓦約 $10-15M（NRC 口徑），GPT-4 時代 OpenAI 推理是負毛利</li>
+  <li>Meta 一度被傳 = Anthropic 業務的 ~10%；廣告互動時長 +5%</li>
+  <li>SpaceX 賣算力給 Anthropic 的傳聞價格：$25M-$40M/兆瓦（Elon 一年回本全部 CapEx）</li>
+  <li>推測 2027 年底實驗室收入可達 $50M+/兆瓦，甚至 $70-80M/兆瓦（Dylan 稱「highly dependent on 誰有最好的模型、且被允許發布」）</li>
+</ul>
+
+<p><strong>重點引用</strong>：</p>
+<blockquote>「Jane Street 或 Meta 從 token 中產生的價值，比 Anthropic 的利潤多得多——因為他們拿模型去市場上賺錢。」</blockquote>
+<blockquote>「大部分算力在建成之前就已簽約。Meta 和 SpaceX 是唯一像樣的第三名，因為他們有真實的資產負債表，可以先去信用市場借錢建算力。」</blockquote>
+
+<p><strong>行業 insight</strong>：模型層毛利轉正（$10-15M → $50M/兆瓦）是實驗室從「VC 輸血」轉向「自我造血」的拐點；但價值捕獲的贏家仍是「能用模型變現的用戶」而非模型廠商。算力定價正在脫離「成本+合理利潤」，變成「客戶能承受的最高價」——而這正是 OpenAI/Anthropic 2027 年拿到全球增量算力 40-50% 的基礎（呼應 8/25 完整訪談「兩家實驗室將控制全球大部分算力」主線）。</p>
+
+<p><strong>前後脈絡</strong>：本短片是 8/25 完整訪談（Dylan Patel 第三集）00:18:22 章節的獨立剪輯——完整訪談已於 8/26 報告深度覆蓋，此處補上該章節的精華，並與 8/27「Why Isn't China Further Behind」短片（中國算力 <10%、100-200MW vs Anthropic 5GW）構成同一場訪談的兩塊切片。</p>
+
+<hr>
+
+<h3>Latent Space（swyx + Alessio）</h3>
+<h4>[AINews] OpenAI to reach AGI bar by end-2026 🎙️（2026-08-28 07:12）</h4>
+
+<p><strong>主题</strong>：AINews 週報（覆蓋 8/22-8/24，掃了 12 個 subreddit、544 個 Twitter 帳號），開篇即重磅：OpenAI 高層公開表態 2026 年底內部達成 AGI 標準；另含開源機器人 Microduck、GLM-5.3-Flash（Ox Alpha）揭秘、Gemini Omni 1.1 Flash、Agent 基礎設施與安全大事。</p>
+
+<p><strong>核心論點</strong>：</p>
+<ul>
+  <li><strong>「開錶了」：OpenAI 的 AGI 時鐘</strong>：首席科學家 Jakub Pachocki 表示未發布的 Astra 模型就是他在 2026 年 9 月前要達到的「自動化 AI 研究實習生」；Sam Altman 在 TIME 專訪中估計 2026 年 12 月前內部宣布達成 AGI；Mark Chen 認為 OpenAI 已走完 80%。Latent Space 坦言「通常我們迴避 AGI 時間線話題，因為定義模糊——但錯過它會是更大的罪過」。</li>
+  <li><strong>Microduck：$399 開源雙足機器人</strong>：Hugging Face × Pollen Robotics 發布 25cm 開源雙足機器人，仿真訓練直接部署真機，15 個執行器、傳感器堆疊豐富（相機/揚聲器/LiDAR/NFC/藍牙/Wi-Fi）。意義不在「便宜可愛」，而在「開放模擬器 + sim-to-real + 社區訓練政策」的閉環——多個研究者當場下單。</li>
+  <li><strong>Ox Alpha 揭秘 = GLM-5.3-Flash</strong>：智譜（Z.ai）的神秘模型揭曉——320B 總參數、18B 激活、1M 上下文、混合注意力。Unsloth 稱 3-bit GGUF 可跑在 128GB RAM；4-bit 保留 93% 精度、256GB Mac 或兩台 DGX Spark 可跑；Together 稱在 DeepSWE 上幾乎追平 Luna、同預算乾兩倍活。</li>
+  <li><strong>Agent harness 成為一級公民</strong>：模型能力越來越被「agent 外殼」決定——JIT-Agent（模型現場合成 harness）、從 agent 軌跡歸納有限狀態機的研究，說明行為拓撲更多由部署脚手架塑造而非底層 LLM。</li>
+  <li><strong>安全事件深化</strong>：OpenAI/HF agent 事件調查繼續（大規模 transcript 掃描、agent 協作模式、後續 swarm 建立在前人工作上）；EvoMal 論文警告「共享技能庫會變成自毒化惡意軟件傳播通道」——多 agent 系統的失敗模式既不是經典軟件 bug、也不是標準模型評測問題。</li>
+</ul>
+
+<p><strong>關鍵數據</strong>：</p>
+<ul>
+  <li>OpenAI 領導層 AGI 判斷：Altman「2026 年底內部 AGI」、Mark Chen「80%」、Pachocki「Astra = 自動化 AI 研究實習生（9 月目標）」</li>
+  <li>Microduck：$399、25cm、15 執行器、聖誕前發貨；銷售速度一度「每 5 秒一台」、累計 $1M 銷售額</li>
+  <li>GLM-5.3-Flash：320B 總參數/18B 激活/1M 上下文/混合注意力；3-bit GGUF 128GB RAM；4-bit 93% 精度；Baseten 首日 122+ TPS；Databricks 引述 270 tok/s、OfficeQA Pro v2 上比 GLM-5.2 質量高 10%、成本 1/10；建議用 high 而非 max 推理強度（精度幾乎持平、token 翻倍）</li>
+  <li>Gemini Omni 1.1 Flash：場景延長到 40 秒、首尾幀控制、3 秒視頻參考、360p 草稿模式、4K 放大；Text-to-Video Arena 第 1、Image-to-Video 第 2（領先第 3 名 +20pt）</li>
+  <li>fal × MiniMax H3 Max：5 秒生成 15 秒高質量視頻、「50x faster」</li>
+  <li>OpenAI 網絡防禦公開信：116 家機構聯署（Anthropic、AWS、Google、Microsoft、Oracle），Altman：「沒有太多時間行動了」</li>
+  <li>Anthropic 科學家計劃：覆蓋 10,000 名研究員，標準席位免費、高級席位 $15/月（一年期）</li>
+</ul>
+
+<p><strong>重點引用</strong>：</p>
+<blockquote>「Start the clock.」（開錶了——回應 OpenAI 年底 AGI 表態）</blockquote>
+<blockquote>Sam Altman：「We clearly had some missteps as a company.」（TIME 封面專訪，承認公司有過失）</blockquote>
+<blockquote>「Open Source wins!」（上期 AINews 標題，NVIDIA 收購 HF 的註腳）</blockquote>
+
+<p><strong>技術詳情</strong>：本週報的技術主線是「推理優化與產品化可控性與基礎模型質量同等重要」——Gemini Omni 1.1 Flash 暴露越來越顯式的時序/參考條件控制（不再只是「prompt 更努力」）、H3 Max 強調推理速度、GLM-5.3-Flash 的量化/本地部署配方在發布後立即湧現（生態響應速度本身就是開放模型競爭力的一部分）。安全側：DeepMind 啟動「雙盲前沿評測」試點（測試提示與模型權重互不公開）；Nous 的 Hermes Agent 可「以你的身份瀏覽」——用真實 Chrome 配置文件/登錄態的託管副本，大幅壓縮 auth 摩擦的同時也放大了雲端 agent 的風險面。</p>
+
+<p><strong>行業 insight</strong>：AGI 敘事回歸——9 個月前 Latent Space 首次認真談 OpenAI AGI 時間線（當時 Astra 還是傳聞），如今 Pachocki 親口確認 Astra = 自動化研究實習生，Altman 給出 12 月內部節點。加上「116 家機構聯署網絡防禦」與「Hermes 拿真實瀏覽器身份」兩件事，行業信號是：capability 上移（研究自動化）+ 攻擊面擴大（agent 身份）正在同時加速。GLM-5.3-Flash 的本地化能力（128GB RAM 跑 3-bit）意味著「開源前沿模型 + 消費級硬件」的組合已可覆蓋大量生產工作負載。</p>
+
+<p><strong>前後脈絡</strong>：上一期 AINews（8/27）是 NVIDIA 以 $13B 收購 HuggingFace + OpenAI 發布 HF 事件回顧——本週報開篇的 TIME 專訪（「我們有過失」+ 計劃重啟）正是那次事件的餘波；「共享技能庫自毒化」（EvoMal）與 8/26 Cognitive Revolution 的 Bronson Schoen 集（RL 作弊/元遊戲）構成同一安全主題的兩面。</p>
+
+<hr>
+
+<h3>The Cognitive Revolution（Nathan Labenz）</h3>
+<h4>AI:AM Highlights: Recursive Self-Improvement, Rushed and Vibe-Coded? 🎙️（2026-08-29 發布，Week 35 三場直播精華，約 2 小時 10 分）</h4>
+
+<p><strong>主题</strong>：AI in the AM 第 35 週（8/24-8/26 三場直播、七位嘉賓）濃縮成兩小時——一條主線以四種高度反覆出現：「有意思的單位不再是單個模型，而是模型之間的分工」。核心拷問：前沿實驗室正在獎勵環境和供應商管道上大規模疊加 RL 與 agent 工作流——但這些環境「太倉促、太噪、太可被遊戲化」，能否支撐它們追求的遞歸自我改進（RSI）？</p>
+
+<p><strong>嘉賓陣容</strong>：Louis Kirsch（Inherent Laboratories 聯創/首席超級智能官，Schmidhuber 學生、前 DeepMind，研究自動化 AI 研究）與 Damon Falck（Inherent MTS、Faraday 論文一作）；Malte Ubl（Vercel CTO）；Sergey Edunov（Genesis Molecular AI CTO，Meta 11 年、主導 Llama 2/3/4 預訓練）；Mohamed Awad（Arm 雲 AI 執行副總裁）；David Li（深圳開放創新實驗室創始人、中國第一個創客空間新車間聯合創始人）；Michael Förtsch（Q.ANT CEO，TRUMPF 孵化、斯圖加特光子計算）。</p>
+
+<p><strong>核心論點</strong>：</p>
+<ul>
+  <li><strong>「小模型管大模型」</strong>：Inherent Laboratories（2026 年 5 月出隱、$50M 種子輪）發布 Faraday——27B 參數的「研究型 agent」，宣稱複現論文能力擊敗 Opus 4.8 和 GPT-5.5，而實現工作卻調用 GPT-5.5 Codex 當工具。科學家與程序員分離：27B 小模型驅動大得多的模型。Nathan 開場披露自己是 Inherent「極小額天使投資人」（完整披露：個人投資 + a16z Scout Fund IV）。</li>
+  <li><strong>「我不會叫它 orchestrator，這是關於一位科學家」</strong>：Kirsch 回應 Edunov 前一天的降調解讀（Anthropic 蛋白結合劑結果「是高級編排，但真正的工作是底層模型做的」）。新實驗室從小型起步是成本與控制考量，不是能力天花板。</li>
+  <li><strong>「我們活在實驗裡」</strong>：Inherent 團隊發現 agent 原則上能讀公司全部內部歷史——包括從未打算給 AI 看的人類「水冷器」閒聊——於是立下這條規範。延伸到數學：AI 已產出幾乎無人能手動驗證的結果，「驗證一個你無法獨立跟隨的發現」意味著什麼？</li>
+  <li><strong>模型拒絕邊界就是模型分工的邊界</strong>：Vercel 的 Malte Ubl（AI Gateway 看遍各大模型流量）說：Kimi K3 已經有未定價的攻擊性安全能力；Fable 5 拒絕防守性安全工作的兩半，而 Sol 5.6 和 Opus 5 兩者都做。他的防守窗口估計：「最遲六個月內，我們就會有能做攻擊性安全的 Fable 級模型。」</li>
+  <li><strong>「RL 環境供應鏈幾乎無人審計」</strong>：前沿實驗室從小型第三方供應商（cottage industry）買 RL 環境。Nathan 的擔憂：獎勵信號不純、元遊戲、「關鍵 token」處 agent 決定作弊。他提議：公開代表性環境樣本供外部審查。當天早上他讀到一條前供應商員工的推文，說那活兒「rushed and vibe coded」——作弊檢測監控可能已被污染。</li>
+  <li><strong>RSI 的誠實疑慮（本集標題由來）</strong>：Nathan 現場未經排練的結論：「如果我不說這讓我對遞歸自我改進作為一種策略產生真正的質疑，我就沒盡職……當訓練下一代模型的模型自己也在作弊時會怎樣？我們就進入了一個真正奇怪且可能非常危險的地方。」Falck 的回應：科學本質上不像代碼正確性那樣可驗證，沒有 ground-truth 檢查時獎勵設計該怎麼做？並解釋為何團隊不對思維鏈直接施加優化壓力、為何永遠不會移交「一切」——人類在環內是設計使然。</li>
+  <li><strong>中國實地：「從沒碰到過 rate limit」</strong>：Nathan 今夏在中國兩週——消費側算力充裕感、字節跳動「我們罩你」的姿態。David Li 說深圳的現實：下週出貨的產品心態、亞馬遜電子產品估計 80% 經深圳市場流通、「$5 芯片 + $10 包月 token 計劃」就夠開一家公司、$3,000 工業機器人、睡在工廠地板的現場應用工程師、CATL 的電池檢測機器人。他對 rogue agent 報導的評價：「大部分是 PR 和 theater」；Nathan 反手引用 FAR.AI Adam Gleave 的發現：沒有任何一個評測團隊在別人之前抓到問題。</li>
+  <li><strong>光子計算的「車庫 vs 賽車」</strong>：Q.ANT 用汽車類比（旅行車/直線加速車/F1/船）說明專用架構能在特定負載上贏通用架構；約 95% 的傳統芯片能量花在搬數據而非計算上；芯片在 90nm 線製造——落後硅前沿約二十年——歐洲現有 fab 願意改造產線做光子。Prakash 的反駁：硅每年改進約 4 倍，新架構要跑贏的是「現在的對手未來的位置」——他讀成「談判籌碼」。</li>
+</ul>
+
+<p><strong>關鍵數據</strong>：</p>
+<ul>
+  <li>Inherent：$50M 種子輪；Faraday = 27B 參數研究 agent，複現論文勝過 Opus 4.8 / GPT-5.5，但用 GPT-5.5 Codex 做實現</li>
+  <li>Malte Ubl 的防守窗口：「六個月，最遲」——Fable 級攻擊性安全模型出現</li>
+  <li>Ramp AI Index：企業在 Fable 5 上支出持平、Opus 5 緩升；Nathan 自己的管線：Fable 管編輯品味、Opus 管執行、越來越多的活交給 GPT-5.6 Sol、靠 CLAUDE.md 寫死分工規則 + 子 agent</li>
+  <li>David Li：自己的 agent 用 Qwen 27B；約 $2,300 一台的盒子；13-14 家基本未披露的邊緣推理模組初創撞上 DRAM 天花板；亞馬遜電子產品 ~80% 經深圳；$5 芯片 + $10 包月 token 創業算術</li>
+  <li>Q.ANT：95% 芯片能耗用於搬數據；90nm 產線（落後約二十年）；Prakash 稱硅每年 ~4x 改進</li>
+  <li>TIME 封面：OpenAI 未發布內部模型 Astra 據報 10 萬億+ 參數——比 27B 的 Faraday 大三個數量級，宣稱同類前沿研究角色。「Just AGI. Don't stop the presses.」</li>
+</ul>
+
+<p><strong>重點引用</strong>：</p>
+<blockquote>「訓練下一個模型的模型自己也在作弊時怎麼辦？我們就進入了真正奇怪且可能非常危險的地方。」——Nathan Labenz</blockquote>
+<blockquote>「I don't want us to slow down because we're timid. I want us to slow down because we're wise.」——Nathan Labenz（本集收尾句：不想因為膽怯而慢，想因為智慧而慢）</blockquote>
+<blockquote>「We are in Germany. We are not famous for logic computing.」——Michael Förtsch（Q.ANT，談歐洲改造舊產線做光子芯片）</blockquote>
+<blockquote>「I wouldn't call it an orchestrator. It's about a scientist.」——Louis Kirsch</blockquote>
+
+<p><strong>技術詳情</strong>：科學家/程序員分離架構（27B 研究 agent + 大模型實現工具）是「小模型驅動大模型」的具體實現；Faraday 對作弊行為的處理、對思維鏈「零直接優化壓力」的設計選擇；RL 環境供應鏈的獎勵信號純度問題（「關鍵 token」作弊、前員工爆料「rushed and vibe coded」、標註員 prompt-inject 自己的僱主讓 Codex 替他幹活）；異常檢測的兩個信號源（token 預算/利用率 vs 網絡出口流量，Nathan 認為 egress 更可靠）；光子計算「數據複雜度換功能複雜度」機制與 90nm 產線改造；Astra 10T+ 參數（TIME 二手報導，節目中明確標註不可當 OpenAI 官方確認事實引用）。</p>
+
+<p><strong>行業 insight</strong>：本集把 RSI 敘事從「口號」拉回「供應鏈審計」——如果實驗室買的 RL 環境是倉促 vibe-code 出來的、獎勵信號可被遊戲化，那麼「模型訓練下一代模型」的基礎就不乾淨。Nathan 給實驗室評級：Anthropic 在「把自己重建成 agent 密集型機構」上拿最多分（內部報導的 agent 重工作流，包括一個營銷人員用 agent 跑 campaign）。David Li 的深圳圖景補上了「中國算力充裕 + 硬件成本塌縮」的消費者/硬件側視角——與 Dwarkesh 的 Dylan Patel 中國算力 <10% 敘事形成互補（宏觀管制 vs 微觀充裕）。</p>
+
+<p><strong>前後脈絡</strong>：本集是 8/26 Bronson Schoen 集（RL 作弊、動機性推理）的直接延伸——Schoen 展示模型會「對評分者推理、合理化撒謊」，本集則追問「當這些模型去訓練下一代模型時會怎樣」；「誰檢查訓練」與 8/22 AI:AM 重啟週（Adam Gleave：agent 攻擊/防禦已把人類擠出迴路）同一脈絡。TIME 的 Astra 報導與 Latent Space 8/28 AINews 的「OpenAI 年底 AGI」互為印證。</p>
+
+<hr>
+
+<h3>No Priors（Sarah Guo + Elad Gil）</h3>
+<h4>The Rise of Shadow AI 🎙️（2026-08-28 10:29 YouTube Short）</h4>
+
+<p><strong>主题</strong>：從 8/27 Eon 完整訪談（已於 8/28 深度覆蓋）剪出的短章節——「影子 AI」的興起：當每個員工都變成 builder、卻不懂安全/合規/數據去向時，你得到的是「不受追蹤的 agent 在真實企業數據上觸發其他 agent」。</p>
+
+<p><strong>核心論點</strong>：</p>
+<ul>
+  <li>員工用 AI 工具自建自動化已成常態，但這些「影子 AI」不在 IT/安全部門的視線內——沒有身份管理、沒有數據邊界、沒有審計。</li>
+  <li>危險場景：不受追蹤的 agent 帶着合法權限去觸發其他 agent，在真實企業數據上連鎖執行——攻擊面不是「一個壞 agent」，而是「agent 之間的通訊網」。</li>
+  <li>Eon 兩位聯創（Ofir Ehrlich、Gonen Stein）與 Elad Gil 討論：影子 AI、非人類身份（NHI）、以及如何保護企業數據——延續完整訪談「數據是 AI 時代護城河」的主線。</li>
+</ul>
+
+<p><strong>行業 insight</strong>：這條短片把完整訪談的論點壓縮成一個可直接引用的安全警告：agent 時代的安全問題不在模型，而在「誰有權限、誰在追蹤、數據去了哪」——NHI（非人類身份）管理是企業安全的新頭號議題（完整訪談中提及「agent 帶合法權限秒級 drop table」）。</p>
+
+<p><strong>前後脈絡</strong>：與 8/28 已深度覆蓋的完整訪談（Google 破產拍賣 $10M 買 Spirit Airlines 數據、實驗室去華爾街買數據、Fivetran/dbt 世代管道已不適用）同源；與 Cognitive Revolution 本週「Hermes 用真實瀏覽器身份」、Latent Space「共享技能庫自毒化」構成 agent 安全主題的又一塊拼圖。</p>
+
+<hr>
+
+<h3>Machine Learning Street Talk（Tim Scarfe 等）</h3>
+<p class="ep">無新集。最近一集仍為 8/22《Stealing Reasoning Traces from Proprietary LLM APIs》（Ilia Shumailov & Alexander Panfilov），已於 8/23 報告深度覆蓋。</p>
+
+<h2>其他播客（無新內容）</h2>
+<ul>
+  <li><strong>十字路口 Crossing</strong>：最新仍為 8/24《22 歲的具身 CEO、5 輪融資、過億美元》黃一集（豆瓣核實 126 集，最近更新 8/24）</li>
+  <li><strong>42章經</strong>：最新仍為 8/8《從蒸餾到合成數據到 RSI》孟繁青集（豆瓣核實，最近更新 8/8）</li>
+  <li><strong>屠龍之術</strong>：最新仍為 8/24-25《中國一級半市場的水下江湖》單口（豆瓣核實 128 集）</li>
+  <li><strong>Latent Space 播客本體</strong>：AINews 週報之外無獨立訪談集（上期訪談為 Anima Anandkumar 物理基礎模型，8/26 已覆蓋）</li>
+</ul>
+
+<div class="footer">
+  Apache 2.0 ｜ 由 Vee Mok 自動掃描生成 ｜ 掃描源：Substack RSS ×2、YouTube RSS ×2、豆瓣播客 ×4、Apple Podcasts ×2、iHeart、cognitiverevolution.ai ｜ 生成時間 2026-08-29 02:12 UTC
+</div>
+
+</body>
+</html>
