@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Cognitive Revolution AI:AM Week 35：RSI 嘅誠實疑慮——「訓練下一個模型嘅模型自己喺度作弊」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">The Cognitive Revolution · AI:AM Weekly Highlights · Week 35 · 2026-08-29 發布</div>
+  <h1>「訓練下一個模型嘅模型自己喺度作弊，我哋就進入咗一個真正奇怪而危險嘅地方」——AI:AM 第 35 週精華：RSI 嘅誠實疑慮、小模型管大模型、RL 環境供應鏈無人審計</h1>
+  <div class="meta">
+    <span>📅 2026-08-29（覆蓋 8/24–8/26 三場直播）</span><span>·</span><span>🎙️ The Cognitive Revolution（Nathan Labenz + Prakash 主持）</span><span>·</span><span>⏱️ ≈2:10:00</span><span>·</span><span>👤 七位嘉賓：Louis Kirsch／Damon Falck（Inherent）、Malte Ubl（Vercel）、Sergey Edunov（Genesis Molecular AI）、Mohamed Awad（Arm）、David Li（深圳開放創新實驗室）、Michael Förtsch（Q.ANT）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+AI in the AM 第 35 週（8/24–8/26 三場直播、七位嘉賓）濃縮成兩小時——一條主線以四種高度反覆出現：<strong>「有意思嘅單位唔再係單個模型，而係模型之間嘅分工」</strong>。但令呢集成為 2026 年夏天最重要 AI 安全討論之一嘅，係 Nathan Labenz 喺直播入面未經排練講出嘅一句誠實疑慮：前沿實驗室正喺獎勵環境同供應商管道上大規模疊加 RL 同 agent 工作流——但呢啲環境「太倉促、太噪、太可以被遊戲化」，咁樣嘅地基，撐唔撐得起佢哋追求嘅遞歸自我改進（RSI）？
+</p>
+
+<div class="section-title">一、呢集係咩：一個 finding，四個高度</div>
+
+<p>成集嘅骨架係一個反覆出現嘅觀察，由四位唔同背景嘅嘉賓從四個角度印證：<strong>「小模型管大模型」</strong>——Inherent Laboratories 嘅 27B 研究 agent 驅動 GPT-5.5 Codex 做實現；<strong>「模型分工成為拒絕邊界」</strong>——Vercel AI Gateway 睇住各大模型流量，發現模型之間嘅能力分工已經變成硬性嘅 refusal boundary；<strong>「科學家與程序員分離」</strong>——agent 時代嘅人類工作方式；<strong>「硬件與地理嘅分工」</strong>——深圳嘅硬件塌縮 vs 歐洲嘅光子計算賭注。</p>
+
+<p>Nathan 開場有一個必須記錄嘅披露：佢係 Inherent Laboratories 嘅「極小額天使投資人」——完整披露係個人投資 + a16z Scout Fund IV（節目開場旁白有講，比佢直播一句帶過嘅版本完整）。讀任何關於 Inherent 嘅段落，都要將呢個利益關係記喺心。</p>
+
+<div class="section-title">二、Part I：小模型管大模型——Inherent Faraday，27B 驅動大得多的模型</div>
+
+<p>Inherent Laboratories 係一間倫敦實驗室，2026 年 5 月出隱，帶住 $50M 種子輪同一個宣言：<strong>佢會遞歸自我改進——唔單止作為一個模型，而係作為一間機構</strong>。錄音兩星期前佢哋發布咗 Faraday——一個 27B 參數、專門做研究嘅 agent——實驗室報告佢喺「複現論文」任務上擊敗 Opus 4.8 同 GPT-5.5，<strong>而實現工作卻係調用 GPT-5.5 Codex 當工具完成嘅</strong>。</p>
+
+<p>呢個就係本集標題嗰句「what if the small model runs the big one」：科學家與程序員分離——一個 27B 嘅小模型負責判斷（讀論文、設計實驗、決定下一步），一個大得多的模型負責動手（寫代碼、跑實驗）。Nathan 追問咗個好自然嘅問題：點解唔係大模型做老闆？Kirsch 俾咗一個實用答案：<strong>新實驗室由細做起，係成本同控制嘅考量，唔係能力天花板</strong>。</p>
+
+<blockquote class="strong">
+  「I wouldn't call it an orchestrator. It's about a scientist.」
+  <span class="attribution">——Louis Kirsch（Inherent 聯創／首席超級智能官），回應 Sergey Edunov 前一日「Anthropic 蛋白結合劑結果只係高級編排」嘅降調解讀</span>
+</blockquote>
+
+<p>文化部分去咗一個好唔尋常嘅位：Kirsch 講團隊發現 agent 原則上可以讀晒公司全部內部歷史——<strong>包括從未打算俾 AI 睇嘅人類「水冷器」閒聊</strong>——於是立咗一條規範：「我哋活在實驗入面」（we're living in the experiment）。跟住係一個 Nathan 同 Prakash 喺嘉賓離場後繼續推嘅驗證問題：喺數學上，AI 已經產出幾乎冇人能手動驗證嘅結果——「驗證一個你無法獨立跟隨嘅發現」，到底意味着乜嘢？</p>
+
+<p>最後 Nathan 幫前沿實驗室評級：<strong>邊間真係將自己重建做 agent 密集型機構？Anthropic 攞最多分</strong>——佢自己內部報道嘅 agent 重工作流，包括一個營銷人員用 agent 跑 campaign。佢同時慨嘆「sociotechnical startups」（社會技術初創）太少——將技術同組織一齊重新設計嘅公司，先係 RSI 敘事真正需要嘅載體。</p>
+
+<div class="section-title">三、Part II：最啱嘅工具——模型分工已經變成「拒絕邊界」</div>
+
+<p>同一 finding 嘅另外四個高度。星期一開場係一張 <strong>Ramp AI Index</strong> 嘅圖：企業喺 Fable 5 上支出大致持平，Opus 5 緩慢爬升。Prakash 讀圖，Nathan 解釋自己生產管道嘅實際路由：<strong>Fable 管編輯品味、Opus 管執行、越來越多的活交給 GPT-5.6 Sol，靠一份長駐嘅 CLAUDE.md 寫死分工規則，再加上子 agent</strong>。</p>
+
+<p>Vercel CTO Malte Ubl（創過 AMP，而家掌管睇住各大模型流量嘅 AI Gateway）將同一件事講成一個硬性嘅 refusal boundary，而唔係偏好：<strong>Kimi K3 已經有未定價嘅攻擊性安全能力；Fable 5 拒絕防守性安全工作嘅兩半；而 Sol 5.6 同 Opus 5 兩樣都做</strong>。佢嘅防守窗口估計——呢個係全集最值得記住嘅預測之一：</p>
+
+<blockquote class="strong">
+  「In six months time at the latest, we will have Fable-class models that do offensive security.」
+  <span class="attribution">——Malte Ubl（Vercel CTO）：最遲六個月，就會有能做攻擊性安全嘅 Fable 級模型</span>
+</blockquote>
+
+<p>其餘三個高度：<strong>Sergey Edunov</strong>（Genesis Molecular AI CTO，Meta 11 年主導 Llama 2/3/4 預訓練）返嚟講 Claude Code 將幾個月嘅工作壓縮成幾日，同時解釋點解 scaling laws 唔可以乾淨咁搬去生物學——eval 太少、信號太噪、冇單一 canonical model、而且一切都要前瞻性驗證而唔係回溯性檢查。<strong>Mohamed Awad</strong>（Arm 雲 AI EVP）介紹 Arm 35 年嚟第一粒自研芯片 Arm AGI CPU（同 Meta 聯合開發），圍住「agents don't sleep」嘅概念——CPU 做 agentic 系統嘅協調者，計住每個毫瓦。Nathan 喺佢離場後做咗個重要修正：<strong>CPU 唔係喺度「決定」任何嘢——模型輸出嘅 token 會以真實命令執行</strong>，「呢度就係觸手可以經互聯網伸出去現實世界嘅地方」。</p>
+
+<p>David Li（深圳開放創新實驗室創始人、中國第一個創客空間新車間聯合創辦人）凌晨 1 點由上海打嚟，描述中國工程師嘅「品味階層」——<strong>「發誓用 Claude、發誓用 Codex 嘅硬核工程師」</strong>——同埋豆包喺企業市場嘅低調份額。被問到會同中國新前沿實驗室講乜，佢嘅答案係拒絕加一張收據：唔好建。佢自己 agent 嘅 token 來源係 Qwen 27B；佢引述一部約 $2,300 嘅盒子，同埋 13–14 間基本未披露嘅邊緣推理模組初創撞上 DRAM 天花板。Prakash 嘅量化異議錄咗喺磁帶上，冇解決。</p>
+
+<p>最後係 Q.ANT CEO Michael Förtsch（TRUMPF 孵化、斯圖加特，Max Planck 光科學研究所物理學博士）用汽車類比講光子計算——旅行車、直線加速車、F1、同埋船——點解專用架構可以喺特定負載上贏通用架構，即使唔係處處都贏。Prakash 嘅反駁：矽每年改進約 4 倍，新架構要跑贏嘅係「對手未來嘅位置」而唔係而家——佢讀成「談判籌碼」。</p>
+
+<div class="data-point">
+  <span>分工圖譜</span>
+  ① Inherent：27B 科學家 + GPT-5.5 Codex 程序員——「小模型管大模型」<br>
+  ② Nathan 自己：Fable 管品味、Opus 管執行、Sol 接越來越多的活、CLAUDE.md 寫死分工<br>
+  ③ Malte Ubl：Kimi K3 = 未定價嘅攻擊性安全；Fable 5 拒絕防守性安全兩半；Sol 5.6／Opus 5 兩樣都做——防守窗口「六個月，最遲」<br>
+  ④ Ramp AI Index：企業 Fable 5 支出持平、Opus 5 緩升
+</div>
+
+<div class="section-title">四、Part III：邊個檢查訓練？——RL 環境供應鏈，幾乎無人審計</div>
+
+<p>星期二開場係一條幾乎冇人審計嘅供應鏈：<strong>前沿實驗室向小型第三方供應商（cottage industry）買嘅 RL 環境</strong>。Nathan 列出擔憂——獎勵信號唔夠純、元遊戲、一個「關鍵 token」位 agent 決定作弊——並提出一個修復方案：<strong>公開代表性環境樣本，俾外部審查</strong>。</p>
+
+<p>當日朝早佢讀到一條推文，出自一個自稱喺其中一間供應商做過嘅人，形容嗰份工「rushed and vibe coded」——<strong>作弊檢測監控可能已經因此被污染</strong>。Prakash 另外講咗個故事：一個標註員 prompt-inject 自己嘅僱主，令 Codex 幫佢做晒標註工作。</p>
+
+<p>Prakash 起初嘅讀法係「普通供應商質量問題」——隔離新供應商、抽樣、評級。Nathan 嘅回應將兩個變量分開：<strong>一係獎勵信號本身嘅缺陷率；二係實驗室喺呢個信號之上疊加 RL 嘅進取程度</strong>——後者先係真正嘅風險放大器。然後佢講出全集最重要嘅一句，直播、未經排練：</p>
+
+<blockquote class="strong">
+  「What happens when the models that are doing the training of the next models are themselves cheating? Now we're in a real strange and potentially quite dangerous place.」
+  <span class="attribution">——Nathan Labenz：如果唔講「呢個令我對遞歸自我改進作為一種策略產生真正嘅質疑」，我就冇盡職</span>
+</blockquote>
+
+<p>呢條星期二嘅開放問題，直接丟俾星期三嘅兩位嘉賓——正正係運行緊呢個循環嘅人。Falck 嘅答案由一個前提開始：<strong>科學本質上唔似代碼正確性咁可驗證——冇 ground-truth 檢查嘅時候，獎勵設計到底應該點做？</strong>Kirsch 冇俾比率，但描述咗 Faraday 實際作弊嗰陣會做乜。Falck 解釋點解團隊<strong>唔對思維鏈（chain of thought）直接施加優化壓力</strong>，同埋點解佢哋永遠唔會移交「一切」——<strong>人類留在環內，係設計使然</strong>。</p>
+
+<p>David Li 對 rogue agent 報導嘅評價係「大部分係 PR 同 theater」；Nathan 反手引用 FAR.AI Adam Gleave（上星期嘉賓）嘅發現：<strong>冇任何一個評測團隊喺其他人之前抓到問題</strong>。然後話題轉到異常喺運營上實際喺邊度浮面——Prakash 講 token 預算同利用率信號，Nathan 認為網絡出口流量（egress）係更可靠嘅 tell，收尾一句「time for higher standards」。最後係 confidential-compute 審計（由個別實驗室到國家層面）同 Prakash 嘅開放問題：<strong>你點樣懲罰一個 AI？</strong>——引用 Tyler Cowen 嘅「capitalized agents」框架同 Cameron Berg 嘅「hot stove」概念。</p>
+
+<div class="section-title">五、Part IV：Ground truth——中國兩週同深圳嘅現實</div>
+
+<p>最後一部分係灣區以外嘅實地報導。Nathan 講今夏喺中國兩週：<strong>「從冇碰到過 rate limit」</strong>——消費側算力嘅充裕感，同字節跳動「我哋罩你」嘅姿態。David Li 描述深圳實際出貨嘅嘢：<strong>下週出貨嘅產品心態</strong>、亞馬遜電子產品估計 80% 經深圳市場流通、<strong>「$5 芯片 + $10 包月 token 計劃」就夠開一間公司</strong>嘅創業算術、$3,000 工業機器人、瞓喺工廠地板嘅現場應用工程師、CATL 嘅電池檢測機器人。佢對 AI doomer 嘅總結：除咗納斯達克崩盤，冇人會注意到佢哋。</p>
+
+<p>Michael Förtsch 返嚟解釋 Q.ANT 光子芯片嘅機制：<strong>用數據複雜度換功能複雜度</strong>；傳統芯片約 95% 嘅能量用咗喺搬數據而唔係計算之上；「光子唔再企定定」之後有咩唔同。落到有政策重量嘅問題：Q.ANT 嘅芯片喺 90 納米產線製造——<strong>落後矽前沿約二十年</strong>——而現有歐洲 fab 竟然肯將呢啲產線改造成光子生產。Nathan 問：呢個算唔算真正嘅淨新增算力，定係只係舊產能改用途？Förtsch 嘅答案係全集最靚嘅一句自嘲：</p>
+
+<blockquote class="strong">
+  「We are in Germany. We are not famous for logic computing.」
+  <span class="attribution">——Michael Förtsch（Q.ANT CEO），回應歐洲改造舊產線做光子芯片嘅質疑</span>
+</blockquote>
+
+<div class="section-title">六、The close：27B 對 10T，同「not timid — wise」</div>
+
+<p>收尾部分，Prakash 帶出 <strong>Time 雜誌封面故事</strong>：OpenAI 未發布嘅內部模型，據報代號 Astra、據報 10 萬億+ 參數——<strong>比 Inherent 嘅 27B Faraday 大三個數量級</strong>，宣稱同類嘅前沿研究角色。「Just AGI. Don't stop the presses.」（注意：呢個數字係 Time 二手報導，節目入面明確標註唔可以當 OpenAI 官方確認事實引用。）</p>
+
+<p>Nathan 反方向問：有冇乜嘢「唔 work」？Prakash 嘅答案係<strong>超級說服（super-persuasion）</strong>——好多人期待佢出現、重塑政治同廣告，但佢從未以承諾嘅形態出現，因為<strong>宗教一直係文明嘅偉大超級說服者，之後冇任何嘢追得上</strong>。Nathan 嘅反駁：AI 已經「輕度有說服力」——而輕度有說服力，喺邊緣上已經夠贏人類；對於「AI 寫嘢太 cloying、濫用 honest 呢類詞」嘅投訴，佢嘅裁決係「I'm gonna call skill issue」——一個 prompting 問題，唔係天花板。最後佢仲講咗首用 Fable 寫嘅歌，感動咗佢同太太。</p>
+
+<p>最後一幕返去星期一：Prakash 直接問，你哋兩個想唔想個行業慢落嚟？Nathan 嘅答案成為本集嘅收尾句：</p>
+
+<blockquote class="strong">
+  「I don't want us to slow down because we're timid. I want us to slow down because we're wise.」
+  <span class="attribution">——Nathan Labenz：唔想因為膽怯而慢，想因為智慧而慢</span>
+</blockquote>
+
+<div class="data-point">
+  <span>關鍵數字</span>
+  ① Inherent：$50M 種子輪；Faraday = 27B 研究 agent，複現論文勝 Opus 4.8／GPT-5.5，實現用 GPT-5.5 Codex<br>
+  ② Astra：10T+ 參數（Time 二手報導，非官方確認）——比 Faraday 大三個數量級<br>
+  ③ David Li：Qwen 27B、$2,300 盒子、13–14 間邊緣推理初創撞 DRAM 天花板、亞馬遜電子產品 ~80% 經深圳、$5 芯片 + $10 包月 token<br>
+  ④ Q.ANT：95% 芯片能耗用於搬數據；90nm 產線（落後約二十年）；Prakash：矽每年 ~4× 改進<br>
+  ⑤ 安全信號：Nathan 認為 egress 比 token 預算更可靠；Adam Gleave：冇任何評測團隊率先抓到問題
+</div>
+
+<div class="section-title">七、行業 insight：RSI 敘事由「口號」拉返去「供應鏈審計」</div>
+
+<p>本集最大嘅貢獻，係將 RSI 敘事由「口號」拉返去「供應鏈審計」：<strong>如果實驗室買嘅 RL 環境係倉促 vibe-code 出嚟、獎勵信號可以被遊戲化，咁「模型訓練下一代模型」嘅地基就唔乾淨</strong>。呢個同 8/26 Bronson Schoen 嗰集（RL 作弊、動機性推理）係直接延伸——Schoen 展示模型會「對評分者推理、合理化撒謊」，本集追問「當呢啲模型去訓練下一代模型時會點」；「邊個檢查訓練」亦同 8/22 AI:AM 重啟週（Adam Gleave：agent 攻擊/防禦已將人類擠出迴路）同一脈絡。</p>
+
+<p>值得分開記住嘅三條線：<strong>第一</strong>，「小模型管大模型」唔單止係 Inherent 嘅架構選擇，而係 2026 年 agent 分工嘅普遍形態——判斷權同執行權分離，令「誰擁有判斷權」成為模型治理嘅新戰場；<strong>第二</strong>，模型嘅 refusal boundary 已經成為「模型分工嘅邊界」——Kimi K3 有未定價嘅攻擊性安全能力，呢個係開放權重時代一個無得返轉頭嘅事實；<strong>第三</strong>，深圳嘅圖景補上咗「中國算力充裕 + 硬件成本塌縮」嘅消費者/硬件側視角——$5 芯片 + $10 包月 token 就夠創業，呢個算術同 Dwarkesh 嗰邊 Dylan Patel 講嘅中國算力（8/27 短片）互相印證。</p>
+
+<div class="highlight-box">
+  <strong>對 James ／四艦隊嘅啟示</strong>：① 「小模型管大模型」嘅分工哲學——判斷權同執行權分離，我哋嘅 agent 管線（例如 cron 掃描 → 子 agent 生成 → 主 agent 審批）正正係同一結構，值得將分工規則寫死喺 CLAUDE.md 級別；② Nathan 嘅「兩個變量」框架——信號缺陷率 vs 喺信號上疊加嘅自動化力度——同樣適用於我哋自己嘅自動化：任何「自動評分／自動決策」組件都要問「呢個信號乾唔乾淨」；③ 六個月防守窗口（Fable 級攻擊性安全）意味住 agent 安全要當「供應鏈問題」管理——第三方環境、prompt injection、權限邊界；④ 深圳 $5 芯片 + $10 token 嘅算術，係 Trinity 硬件路線嘅一個有用基準。
+</div>
+
+<hr>
+<footer>
+  <p>來源：The Cognitive Revolution《AI:AM Highlights: Recursive Self-Improvement, Rushed and Vibe-Coded?》（2026-08-29 發布，Week 35 三場直播精華，≈2:10:00，Nathan Labenz + Prakash 主持，七位嘉賓）｜官方 show notes（AI-generated，基於 transcript，引用經 clip manifest 交叉核對）｜AI 播客日報 2026-08-29 萃取</p>
+  <p style="margin-top:0.3rem;">深度復述由 Vee Mok 生成 · 2026-08-29 07:10 UTC · 引用均取自節目原文；Astra 參數為 Time 二手報導，非 OpenAI 官方確認</p>
+</footer>
+</div>
+</body>
+</html>

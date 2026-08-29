@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 張小珺 #152：領讀 Kimi K3 技術報告——「注意力美學」、多教師蒸餾同開源 MoE 嘅商業邏輯</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">張小珺商業訪談錄 · Ep.152 · 2026-08-26</div>
+  <h1>「注意力美學」同「偷懶嘅藝術」——張小珺領讀 Kimi K3 技術報告：2.8 萬億開源 MoE，點樣用 1/27 嘅激活率咬住閉源前兩名</h1>
+  <div class="meta">
+    <span>📅 2026-08-26</span><span>·</span><span>🎙️ 張小珺商業訪談錄（張小珺）</span><span>·</span><span>⏱️ 2:04:00</span><span>·</span><span>👤 形式：技術報告領讀（無嘉賓）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+「領讀」係張小珺節目一種好新嘅形態：唔係訪問一個人，而係帶住聽眾逐段讀一份 47 頁嘅技術報告。對象係月之暗面（Moonshot AI）2026 年 7 月 27 日全量開放權重嘅 Kimi K3——全球首個開源嘅「三萬億級別」MoE 模型（報告口徑約 2.8 萬億參數）。本集想解答嘅問題好具體：呢隻巨獸點樣訓練得起、推得動？一百萬 token 上下文點樣唔爆顯存？一個 base model 點樣煉成一個識幹活嘅 agent？答案唔係乜嘢新科學，而係四條工程路線——線性注意力、MoE、RL、系統工程——組合到開源世界天花板嘅「偷懶嘅藝術」。
+</p>
+
+<div class="section-title">一、呢集係咩：一份 47 頁報告，拆成三個「靈魂問題」</div>
+
+<p>Kimi K3 喺 2026 年 7 月 27 日發布完整開放權重，定位一句講晒：<strong>能力咬住閉源前兩名（Claude Fable 5、GPT-5.6 Sol），穩坐開源第一，成本只有對手嘅幾分之一</strong>。張小珺今集冇請嘉賓，改為帶住聽眾將成份報告拆成三個靈魂問題：</p>
+
+<ul>
+  <li><strong>2.8T 嘅大家伙，點樣訓得起、推得動？</strong> → 架構「三板斧」：KDA + AttnRes + LatentMoE</li>
+  <li><strong>100 萬 token 上下文，點樣唔俾顯存炸爆？</strong> → 換一種「記憶方式」：固定大小嘅筆記本，取代無限增長嘅會議記錄</li>
+  <li><strong>Base model 點樣練成一個識幹活嘅 agent？</strong> → RL + 九個領域專家蒸餾回一個模型</li>
+</ul>
+
+<p>呢個 framing 本身就係張小珺今集最重要嘅判斷：<strong>K3 嘅架構創新唔係炫技，而係工程約束下嘅設計取捨</strong>——每一個「靚位」背後都有一條成本或者數值穩定嘅理由。聽完你會發現，呢份報告最值錢嘅唔係某一個 breakthrough，而係佢展示咗「前沿級開源模型」成套嘅工程解法。</p>
+
+<div class="section-title">二、全景：K3 嘅架構可以用三句話講完</div>
+
+<p>成個架構三句話：<strong>token 維度靠 3 層 KDA + 1 層 MLA 混搭；深度維度靠 AttnRes 跨層查檔；寬度維度靠 LatentMoE 稀疏調用專家</strong>。先感受下 K2 → K3 嘅體格變化：</p>
+
+<div class="data-point">
+  <span>K2 → K3</span>
+  ① 總參數：1.04T → 2.78T（×2.7）；激活參數：32.6B → 104.2B（×3.2）<br>
+  ② 層數：61 → 93（+52%）；專家數：384（每 token 激活 8）→ 896（每 token 激活 16）<br>
+  ③ 訓練上下文：128K → 1M（×8）；注意力：全 MLA → 69 層 KDA + 24 層 MLA 混合<br>
+  ④ 綜合 Scaling 效率：2.5×——同等 loss 慳 60% 算力
+</div>
+
+<p>「混合」係成集嘅關鍵詞——75% 平價層 + 25% 貴價層 ≈ 全部貴價層。呢個唔單止係 K3 嘅架構哲學，張小珺喺度特別指出：<strong>呢個同緩存、數據庫、索引嘅分層設計係同一個道理</strong>——「混合」打敗「純粹」，係 2026 年大模型工程嘅一條隱藏主線。</p>
+
+<div class="section-title">三、第一板斧 KDA：將「無限增長嘅會議記錄」換成「固定大小嘅筆記本」</div>
+
+<p>傳統 attention 嘅痛點：每嚟一個 token，都要同之前所有 token 重新算一次關係，KV cache 無限變長——好似一場永不散會嘅會，每頁發言記錄都要永久存檔。KDA（Kimi Delta Attention）係線性注意力嘅一種：<strong>無論序列幾長，只維護一個固定大小嘅筆記本 S，成本 O(n)、緩存恆定</strong>。</p>
+
+<p>筆記本每嚟一個 token 做三個動作：<strong>褪色</strong>（forget gate α 令每個通道嘅舊筆記按各自速度變淡）、<strong>擦除</strong>（delta rule——寫入前先將舊值精準擦走，呢個係佢同普通線性注意力嘅關鍵分別，防止內容越疊越糊）、<strong>寫入</strong>（新內容按強度 β 落筆）。</p>
+
+<p>報告入面最靚嘅一個工程細節：數學上「1/累計衰減」會指數級膨脹，BF16 裝唔落就會溢出。K3 嘅解法係<strong>俾褪色速度設一個下限</strong>——用 sigmoid 將 log-decay 壓入 (-5, 0)——16 個 token 嘅累計衰減倒數最大 e⁸⁰，啱啱卡喺 BF16 動態範圍入面。一個數值穩定性嘅小改動，令成條計算路徑都可以跑滿 Tensor Core，直接消滅咗最慢嘅 kernel 分支。</p>
+
+<p>兩個配套設計都值得記住：<strong>3:1 混搭</strong>——光靠筆記本會丟全局細節，所以每 4 層插 1 層 Gated MLA 全量注意力「開全員大會」；<strong>NoPE（無位置編碼）</strong>——唔顯式存「第幾個位置」，靠筆記本嘅衰減自然感知遠近，上下文由 8K 一路擴到 1M 完全唔使改位置編碼。</p>
+
+<blockquote class="strong">
+  「注意力美學」——K3 嘅架構設計被解讀為有美學追求：896 專家 + 16 激活嘅 MoE 配置、KDA 混合注意力機制，本質係喺「大容量」與「低成本運行」之間搵平衡，同時解決百萬 token 長文本嘅注意力計算難題。架構創新唔係炫技，而係工程約束下嘅設計取捨。
+  <span class="attribution">——張小珺 Ep.152 對 K3 架構嘅核心解讀</span>
+</blockquote>
+
+<div class="section-title">四、第二板斧 AttnRes：將 attention 嘅思想搬去「深度」方向</div>
+
+<p>普通殘差連接好似傳話遊戲：第 93 層只可以攞到第 92 層傳過嚟嘅話，前面 91 層嘅細節全部被壓扁喺一個向量入面。AttnRes 嘅思路好直接：<strong>每層帶一個可學習嘅「查詢詞」，主動去檢索 embedding 同所有前序 Block 嘅輸出</strong>——想要邊個嘅資訊就攞邊個嘅。</p>
+
+<p>93 層切成 8 個 Block，塊內先求和壓縮、塊間再做檢索，開銷可以忽略，實驗上 N=8 就能攞返大部分收益。呢個設計嘅意義在於：<strong>資訊流唔再係「逐層轉交」，而係「按需直達」</strong>——attention 原本係橫向（token 之間）嘅選擇機制，K3 將佢延伸到縱向（層之間），令深層網絡唔會因為層數增加而「訊息稀釋」。</p>
+
+<div class="section-title">五、第三板斧 LatentMoE：896 個專家嘅「分診藝術」</div>
+
+<p>MoE 嘅核心矛盾：<strong>專家越多知識容量越大，但每個被揀中嘅專家都要收一份 7168 維嘅完整 token 表示，通信同顯存跟住爆</strong>。K3 嘅三連解法：</p>
+
+<ul>
+  <li><strong>先壓縮再送診</strong>：token 先被 W↓ 壓成 3584 維「簡報」，專家喺簡報空間入面幹活。於是專家數翻倍（384→896）、激活數翻倍（8→16），通信量卻冇漲。</li>
+  <li><strong>SiTU-GLU 激活函數</strong>：SwiGLU 嘅兩個相乘因子都無界，2.8T 尺度下會數值爆炸。SiTU-GLU 俾兩個分支都裝上 tanh「限高桿」（輸出硬上限 100），原點附近同 SwiGLU 一階等價——形狀不變，永遠唔會失控。</li>
+  <li><strong>QB 分位數均衡</strong>：傳統 MoE 靠輔助損失逼負載均衡（傷性能），K3 改成俾每個專家加一個「排班偏置 b」——b 只影響邊個被揀中、唔入梯度、唔改權重。每步訓練後按分位數調：太火嘅專家降分、冷門嘅加分，直到每個專家接待量精確達標。工程上用直方圖估分位數，一次 all-reduce 只傳幾百個 bin，幾乎免費。</li>
+</ul>
+
+<div class="data-point">
+  <span>稀疏度</span>
+  每個 token 只激活 16/896 個專家 ≈ 104B / 2.78T ≈ <strong>1/27</strong>。知識容量（2.8T 總參數）同推理成本（104B 激活）徹底分離——呢個就係「大而慳」嘅全部秘密。
+</div>
+
+<div class="section-title">六、後訓練：先分頭練出 9 個專家，再蒸餾返一個模型——「冇單一超級教師可抄」嘅中國解法</div>
+
+<p>今集技術含量最高嘅部分，係後訓練嘅<strong>多教師同策略蒸餾（MOPD）</strong>。流程係：K3 先喺九個領域各自強化學習，煉出 9 位「各懷絕技」嘅領域專家模型；再用 MOPD 融合——俾定查詢 x 同領域/難度條件 e，由對應嘅教師模型提供指導；學生模型喺自己生成嘅軌跡上、逐 token 接受「對應領域、對應力度」教師嘅打分指導。</p>
+
+<p>用戶最後拿到嘅唔係 9 個模型，而係<strong>一個可以喺低/中/高/最高檔推理強度之間自由切換嘅統一 K3</strong>。呢個設計有兩層深意：</p>
+
+<p><strong>第一層，係「思考預算控制」。</strong>每題先發預算 b₀(x)，輸出超 τ·b₀ 直接獎勵 -1。先訓 max 檔，再退火出 high/low 檔——模型自己學會「簡單題咪過度思考」。仲有「防話癆」：GRM 打分時回答長度超 σ·ℓ₀ 直接判負，專治 reward hacking 嘅囉嗦傾向。</p>
+
+<p><strong>第二層，係中國實驗室嘅路線選擇。</strong>張小珺喺度點出一個好重要嘅行業觀察：<strong>多教師蒸餾路線說明中國實驗室喺「冇單一超級教師可抄」嘅前提下，用領域分工 + 蒸餾融合嚟逼近閉源前沿</strong>——呢個正正係矽谷討論「中國模型進步唔可以全歸因於蒸餾」嘅技術證據。DeepSeek 時刻嘅敘事係「性價比替代品」；K3 時刻嘅敘事已經變成「直接開源前沿級權重」嘅戰略姿態。</p>
+
+<blockquote class="strong">
+  學生模型喺自己生成嘅軌跡上、逐 token 接受「對應領域、對應力度」教師嘅打分指導——用戶拿到嘅唔係 9 個模型，而係一個能喺低/中/高/最高檔推理強度之間自由切換嘅統一 K3。
+  <span class="attribution">——MOPD：多教師同策略蒸餾嘅核心機制（Kimi K3 技術報告）</span>
+</blockquote>
+
+<div class="section-title">七、基建：2.8T 唔係堆卡就搞掂</div>
+
+<p>報告最被低估嘅部分係基建。張小珺今集花咗唔少篇幅，因為<strong>「agent 能力 ≈ 環境複雜度」——K3 嘅 agent 能力係 5,122 萬個沙箱餵出嚟嘅</strong>。六個工程難題同對應解法：</p>
+
+<ul>
+  <li><strong>FlashKDA</strong>：KDA 遞歸本質係串行，GPU 唔鍾意——chunk 內並行、chunk 間流水重疊。</li>
+  <li><strong>KCP</strong>：1M 上下文並行訓練——將每段嘅狀態轉移分解成可本地計算嘅兩部分，一次 all-gather 搞掂——線性 attention 嘅通信量與序列長度無關。</li>
+  <li><strong>MoonEP</strong>：專家並行負載不均、顯存碎片——每個 rank 精確收 S×K 個 token，冗餘專家 ≤ E/R（有數學證明），shape 全靜態免同步。</li>
+  <li><strong>外部 KV 池</strong>：1M agentic RL 嘅 KV cache 顯存放唔落——GPU 逐出嘅前綴寫返 CPU DRAM，KDA state 與 MLA KV 生命週期對齊。</li>
+  <li><strong>AgentEnv</strong>：agent 將容器沙箱搞到 kernel panic——Firecracker microVM，支持暫停/分叉/快照（checkpoint 133ms）；成個訓練共創建 5,122 萬個沙箱、150 萬個鏡像。</li>
+  <li><strong>預算制准入控制</strong>：1M token 長請求擠死 2K 短請求——長短請求各有獨立資源池，互不餓死。</li>
+</ul>
+
+<div class="data-point">
+  <span>規模數字</span>
+  ① AgentEnv：5,122 萬個沙箱 + 150 萬個鏡像，checkpoint 快照 133ms<br>
+  ② 訓練任務：知識圖譜自動擴展出題、mock Gmail/Notion/Slack「連續幹活好幾日」助理任務、GPU kernel 優化（獎勵 = 正確性 + 逼近 roofline 程度，仲配反作弊系統）、黑盒系統復刻<br>
+  ③ 數值穩定：sigmoid 將 log-decay 壓入 (-5, 0)，16 token 累計衰減倒數上限 e⁸⁰，啱啱卡喺 BF16 動態範圍
+</div>
+
+<div class="section-title">八、成績單：官方數據截至 2026-07-23</div>
+
+<p>報告嘅 benchmark 數字，值得逐項睇（全部官方口徑）：</p>
+
+<ul>
+  <li><strong>編程</strong>：SWE-Marathon 第一（42.0%，領先 Fable 5 七分）；Terminal-Bench 88.3% 幾乎平 GPT-5.6 Sol；WebDev Arena 總榜第一（1678 Elo，<strong>首個登頂嘅開源模型</strong>）。</li>
+  <li><strong>Agent</strong>：BrowseComp 91.2% 全場第一；MCPMark 94.5% 第一；GDPval-AA 第三（前二為 Fable 5、GPT-5.6 Sol）。</li>
+  <li><strong>知識推理</strong>：GPQA 93.5%；但 HLE、CritPt 等研究級任務仍落後前兩名——<strong>報告自己承認呢個係短板</strong>。</li>
+  <li><strong>視覺</strong>：OmniDocBench 91.1% 第一；ZeroBench 平 Fable 5。</li>
+  <li><strong>成本</strong>：BrowseComp 每題 $2.03，係 GPT-5.6 Sol 嘅一半、Claude 系嘅約 1/10；KCB 2.0 用 Fable 5 約 38% 嘅成本拿到只差 4 分嘅成績。</li>
+</ul>
+
+<p>Case study 入面最誇張嘅三個：24 小時內將 4 個 GPU kernel 優化到匹配 Fable 5 嘅水平；獨立寫出一個能端到端訓 GPT 嘅 Triton 類編譯器 MiniTriton（matmul 達 cuBLAS 約 90%）；48 小時用開源 EDA 鏈設計咗顆 INT4 推理芯片（RTL 仿真 8700 tokens/s）。</p>
+
+<blockquote class="strong">
+  開源權重嘅 K3 將前沿 agent 能力打到閉源旗艦 1/3～1/10 嘅價格——自部署嘅經濟賬越來越算得掂。前沿智能嘅入場券正在變平。
+  <span class="attribution">——47 頁報告讀後感：K3 冇發明新科學，但將線性注意力、MoE、RL、系統工程四條線組合到開源世界天花板</span>
+</blockquote>
+
+<div class="section-title">九、行業 insight：從「DeepSeek 時刻」到「K3 時刻」</div>
+
+<p>張小珺今集嘅行業判斷，可以濃縮成三點：</p>
+
+<p><strong>第一，開源戰略姿態已經換代。</strong>中國開源模型已從「DeepSeek 時刻」嘅性價比替代品，進化到 K3 呢種「直接開源前沿級權重」嘅戰略姿態——用開放權重換生態位，直接衝擊 OpenAI/Anthropic 嘅閉源商業模式。8 月 1 日硅谷 101 E246「何謂蒸餾」一集講過嘅「開放模型逼近前沿」議題，呢度補上咗技術細節層面嘅證據鏈。</p>
+
+<p><strong>第二，「冇單一超級教師可抄」嘅蒸餾路線，反而變成優勢。</strong>9 個領域 RL 專家 + MOPD 逐 token 融合，本質係一套「沒有 Alpha 教師嘅教師體系」——領域分工 + 蒸餾融合。呢個路線唔單止繞開咗「抄邊個」嘅問題，仲帶出一個產品級嘅副產品：推理強度檔位切換，令「多模型內部結構」隱藏成「單一用戶體驗」。</p>
+
+<p><strong>第三，成本拐點已經到咗。</strong>2.5× 嘅訓練效率 + 1/10 嘅推理成本，意味住「開源前沿模型 + 自部署」喺愈來愈多生產工作負載上取代 API 調用。下一個問題唔再係「開源得唔得」，而係「閉源嘅溢價仲值唔值」。</p>
+
+<div class="highlight-box">
+  <strong>對 James ／四艦隊嘅啟示</strong>：① K3 證明「混合」打敗「純粹」——75% 平價層 + 25% 貴價層 ≈ 全部貴價層，我哋自己嘅 agent 路由（邊啲任務行貴模型、邊啲行平模型）應該用同一套哲學；② 「負載均衡可以調偏置而唔係加懲罰」——唔改目標函數、只調準入門檻，任何調度系統都好使，包括我哋自己嘅 cron/任務分配；③ 「agent 能力 ≈ 環境複雜度」——5,122 萬個沙箱餵出嚟嘅 agent 能力，說明要 agent 產品勁，就要肯喺「演練場」度投資；④ K3 全量開源 + 成本 1/10，值得納入 Trinity 嘅模型選型評估。
+</div>
+
+<hr>
+<footer>
+  <p>來源：張小珺商業訪談錄 Ep.152《領讀 Kimi K3 技術報告：從架構創新聊起，注意力美學、多教師蒸餾和開源 MoE》（2026-08-26，2:04:00，張小珺主持，領讀形式）｜Kimi K3 技術報告《Kimi K3: Open Frontier Intelligence》（Moonshot AI，2026-07，47 頁）中文解讀（AI Times）｜AI 播客日報 2026-08-29 萃取</p>
+  <p style="margin-top:0.3rem;">深度復述由 Vee Mok 生成 · 2026-08-29 06:50 UTC · 引用均取自節目及報告原文</p>
+</footer>
+</div>
+</body>
+</html>
