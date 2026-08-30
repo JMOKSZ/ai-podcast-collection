@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 42章經：一个人、两周、数百美元——點樣訓出登頂 Hugging Face 嘅模型（逯雨鑫）</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">42章經（曲凱 Kyle）· 人類博物館 52 號珍藏 · 2026-08-29 發布</div>
+  <h1>「個人訓模型」時代：唔係 AI PhD、冇 Lab 經歷，兩週 + 數百美元點樣訓出登頂 Hugging Face 嘅模型？——對談研究員逯雨鑫</h1>
+  <div class="meta">
+    <span>📅 2026-08-29 13:00 UTC（北京 8/29 21:00）</span><span>·</span><span>🎙️ 42章經（曲凱 Kyle）</span><span>·</span><span>👤 嘉賓：逯雨鑫（yuxinlu1，某知名 AI Lab 研究員）</span><span>·</span><span>🎧 小宇宙</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+2026 年夏天，硅谷冒出一個新熱點叫「主權 AI / Personal Intelligence」——愈來愈多人相信，未來應用公司甚至個人，會自己訓練模型。呢集 42章經請嚟嘅嘉賓逯雨鑫，正正係呢個敘事最生猛嘅活案例：<strong>冇 AI Lab 經歷、唔係 AI PhD，用兩週時間 + 數百美元，後訓練出兩個登頂 Hugging Face Model Trending 榜首嘅模型</strong>。曲凱話，節目錄製前一個月市場仲喺度講「AI 應用遭受冷遇」，錄完呢期，「好似又睇到咗應用嘅曙光」。
+</p>
+
+<div class="section-title">一、呢集係咩：一齣「個人訓模型」嘅完整實戰拆解</div>
+
+<p>逯雨鑫（Hugging Face 帳號 yuxinlu1）以個人開發者身份，用數百美元成本微調嘅模型兩次登頂 Hugging Face 熱度榜；而家喺某知名 AI Lab 做研究員，focus 喺 post-training（蒸餾、SFT）同數據工程，近期方向係 continued pre-training。佢嘅兩個爆款模型都係基於 Google 嘅 Gemma4-12B，被佢用 GGUF 量化成喺本地可跑嘅版本——<strong>最小先 4.5GB，一張消費級顯卡或者帶統一內存嘅 Mac 就跑到</strong>。核心操作係將一個叫 Fable 5 嘅編程推理能力，透過蒸餾塞入呢個細模型入面。</p>
+
+<p>兩個模型兩套方案：<strong>V1（Coder 版）</strong>專攻寫代碼、解題——訓練數據係「可驗證嘅代碼推理」：每一條思維鏈對應嘅代碼要真係跑過測試、通過咗先會留低；教師數據主要嚟自 Cursor 嘅 Composer 2.5 同 Fable 5，後者被下線之後，佢硬係用 Claude Opus 4.8 一條條重新生成缺失嘅推理軌跡。<strong>V2（Agentic 版）</strong>加咗多步工具調用，可以做本地 Agent——喺 tau2-bench telecom 子集上，基座 Gemma4-12B 得分 15%，V2 直接去到 55%，<strong>翻咗 3.5 倍</strong>。</p>
+
+<blockquote class="strong">
+  「整個訓練數據只有約 1 萬條 examples。數據量不重要，真正關鍵的是質量、篩選和驗證。」
+  <span class="attribution">——逯雨鑫（據 2026-06 媒體報導）：一萬條樣本，靠「可驗證」三個字建立品質門檻</span>
+</blockquote>
+
+<p>成本帳好誇張：佢自費燒光咗成個 Claude Max 20× 套餐，淨係 V2 就花咗 40 幾個鐘；硬件只有一張 RTX 5090（32GB VRAM）加 96GB 本地 SSD，總資源約 128GB——同大廠嘅算力池比，「好似揸住木棍入戰場」。而最耗時嘅唔係訓練，係數據處理：agentic 數據嘅真實對話長到十幾步、上萬 token，而佢顯存有限，一次只餵到 2048 token，於是佢做咗個「滑動窗口」處理——以最近一次用戶消息做錨點，圍住一次工具調用，將上下文裁到預算以內。</p>
+
+<div class="section-title">二、核心論點一：訓練模型非常簡單，「門檻」係偽命題</div>
+
+<p>呢個係成集嘅第一個炸彈。逯雨鑫冇 Lab 經歷、唔係 PhD，照樣用兩週 + 數百美元做出榜一模型——佢嘅結論係：<strong>關鍵在於將 post-training 當成一門可複製嘅工程，而唔係一門神秘嘅科學</strong>。訓練本身唔係瓶頸，嗰種「你冇資格做呢樣嘢」嘅門檻敘事，喺佢嘅實戰面前企唔住。</p>
+
+<p>呢個講法同 2026 年嘅產業趨勢係一致嘅：<strong>後訓練工具鏈（SFT、蒸餾、RL）已經成熟到「個人可負擔」</strong>——模型開源、量化工具成熟（llama.cpp／Ollama／LM Studio／Jan 全部兼容，幾乎零門檻）、API 成本暴跌。訓練一個模型嘅「固定成本」跌到數百美元量級，意味住「人人訓模型」由口號變成可執行嘅工程路徑。</p>
+
+<div class="section-title">三、核心論點二：最大卡點係數據，唔係算力</div>
+
+<p>如果訓練唔係門檻，乜嘢先係？答案係<strong>數據</strong>。個人訓模型最大嘅難題係數據——從邊度嚟、用幾多、點樣配比。逯雨鑫嘅做法係「可驗證過濾」：V1 嘅每一條思維鏈都要對應真係通過咗測試嘅代碼；呢種「以驗證代替人工標註」嘅數據工程，係佢用一萬條樣本打贏大廠數百萬條樣本嘅關鍵。</p>
+
+<p>曲凱喺度俾咗個好精準嘅比喻，成為成集最被引用嘅一句：</p>
+
+<blockquote class="strong">
+  「現在 AI Lab 砸錢買數據，就有一點像移動互聯網早期字節砸錢買用戶。」
+  <span class="attribution">——曲凱（42章經）：數據收購戰 = 移動互聯網早期嘅用戶補貼戰</span>
+</blockquote>
+
+<p>市場信號係一致嘅：一批合成數據公司喺好短時間內做出咗可觀收入；模型廠同互聯網大廠都喺數據上更投入。節目判斷：<strong>下一波數據機會喺「乾淨、可配比、可複用嘅真實數據」</strong>——而唔係量。</p>
+
+<div class="section-title">四、核心論點三：合成數據效果並唔好，同「Capacity Gap」</div>
+
+<p>好多人以為個人訓模型要靠合成數據「無中生有」，但逯雨鑫嘅實測結論係：<strong>合成數據效果並唔好</strong>。真實、乾淨、配比合理嘅數據先係核心。呢個同主流市場情緒（合成數據公司如雨後春筍）形成直接張力——佢企喺「真實數據派」嗰邊。</p>
+
+<p>佢仲提出一個好有用嘅概念：<strong>「Capacity Gap」——數據效果難以提前預估</strong>。模型容量同數據之間存在缺口，令你冇辦法事前判斷某批數據會帶嚟幾大提升——只能靠實驗迭代去試。呢個「實驗迭代」先係個人訓模型真正嘅日常工作：跑一輪、睇結果、調配比、再跑。換句話講，<strong>呢個領域嘅「know-how」唔係知識，而係流程</strong>。</p>
+
+<div class="section-title">五、核心論點四：「聰明地蒸」vs 硬蒸</div>
+
+<p>蒸餾（distillation）係個人後訓練嘅核心手段，但逯雨鑫強調蒸餾路線有講究——<strong>唔係簡單複製教師輸出，而係理解何時、點樣蒸先有價值</strong>。佢自己嘅案例好有代表性：Fable 5 被下線之後，佢冇放棄，而係用 Claude Opus 4.8 一條條重新生成缺失嘅推理軌跡——呢個「教師切換」過程入面，佢揀嘅唔係「最強嘅教師」，而係「可以穩定供應可驗證數據嘅教師」。</p>
+
+<p>「聰明地蒸」嘅反面係「硬蒸」：盲目複製大模型輸出、唔理數據品質同可驗證性，結果就係「垃圾入、垃圾出」。呢個同 8/8 嗰集 Evolvent AI 孟繁青嘅判斷互相呼應——蒸餾只係加速手段，唔係模型變強嘅決定性因素；<strong>真正嘅競爭力喺數據工程同驗證閉環</strong>。</p>
+
+<div class="section-title">六、核心論點五：自己訓、自己用，性價比唔一定更高</div>
+
+<p>呢個係成集最清醒嘅一句冷水：<strong>自己訓、自己用，性價比唔一定更高——要算清楚機會成本</strong>。個人訓模型嘅隱性成本好高：數據處理時間、實驗迭代、踩坑、維護……如果目標只係「用一個模型」，直接用現成嘅 SOTA API 可能仲平。</p>
+
+<p>但佢同時透露咗一個實用知識：<strong>「坑最少嘅開源模型」係有確定答案嘅</strong>（節目入面有指名，但唔喺公開摘要——呢啲「指名道姓」嘅實戰判斷，正正係 42章經呢類節目的核心價值）。對想入門嘅人嚟講，揀一個生態成熟、工具鏈齊、社區活躍嘅開源模型，比揀「紙面上最強」嘅模型實際得多。</p>
+
+<div class="section-title">七、核心論點六：應用公司會成為 Neo Lab，Local AI 係 PC 級別機會</div>
+
+<p>落到格局判斷，逯雨鑫同曲凱俾咗兩個預言式嘅觀點。第一，<strong>應用公司可能反而成為 Neo Lab</strong>：訓練模型可能商品化，未來 AI Lab 同應用公司嘅分工會重構——應用公司手握場景數據，有機會自己成為模型公司。呢個同硅谷「應用公司自己訓模型」嘅討論（Leonis Capital Jenny 嗰集都問過呢條問題）係同一條線。</p>
+
+<p>第二，<strong>Local AI 可能係 PC 級別嘅機會</strong>：個人擁有模型可能好似當年個人電腦普及一樣，成為下一輪平台級機會。但佢哋都好誠實：用戶最終會唔會回流 SOTA 級智能，係一個開放問題——本地模型贏喺隱私同免費（「唔使將代碼傳上雲、唔使每個月交保護費」），但能力上追唔追到雲端，就要睇後訓練同量化技術嘅進步速度。</p>
+
+<blockquote class="strong">
+  「也許在不久的將來，越來越多的應用公司都會成為 Neo Lab，Local AI 也可能成為一個 PC 級別的機會。而擁抱模型訓練和 Local AI，最好的時間可能就是現在。」
+  <span class="attribution">——曲凱（節目導語）：主權 AI 敘事嘅實質——當訓練成本跌到數百美元量級，「人人訓模型」由口號變成工程路徑</span>
+</blockquote>
+
+<div class="data-point">
+  <span>關鍵數字</span>
+  ① 兩週 + 數百美元 → 兩個登頂 Hugging Face Model Trending 榜首嘅模型<br>
+  ② 基座 Gemma4-12B，GGUF 量化後最小 4.5GB（Q2_K）；推薦 Q4_K_M ≈6.87GB；高配 Q8_0 ≈11.8GB<br>
+  ③ V2 Agentic：tau2-bench telecom 子集 15% → 55%，翻 3.5 倍<br>
+  ④ 訓練數據僅 ~1 萬條 examples；V2 訓練花咗 40+ 小時<br>
+  ⑤ 硬件：RTX 5090（32GB VRAM）+ 96GB SSD；一次只餵 2048 token，用滑動窗口裁 agentic 數據<br>
+  ⑥ 下載量 70 萬+；8GB 統一內存 Mac 都跑到（3bit 量化）
+</div>
+
+<div class="section-title">七點五、前後脈絡：由「應用已死」到「應用嘅曙光」</div>
+
+<p>曲凱喺年中復盤（AI 年中復盤）曾經講過「應用已死」——當時係過度悲觀嘅判斷。本集錄完，佢明顯轉向樂觀：「又睇到咗應用嘅曙光」。中間發生咗乜？除咗模型成本繼續跌，更關鍵嘅係「應用公司可以自己訓模型」呢條路開始被驗證——如果應用公司手握場景數據、可以自己成為 Neo Lab，咁「應用層冇嘢好做」嘅焦慮就冇咗根據。呢個轉向本身，就係 2026 下半年 AI 投資敘事嘅一個重要訊號。</p>
+
+<p>同系列嘅承接關係亦好清晰：上集《从蒸馏到合成数据到 RSI，模型竞争的下一个焦点是什么？｜对谈 Evolvent AI 联创孟繁青》（8/8）已經鋪墊「數據重要性回歸」；本集將同一主題落到「個人也能訓」嘅實操層面，並將話題由合成數據延伸到 Local AI 與主權 AI。而 9 月 12 日，曲凱會邀請逯雨鑫做線上活動（主辦方 42章經）——個人訓模型嘅社群討論，仲會繼續發酵。</p>
+
+<div class="section-title">八、深度分析：呢集點解重要——「模型生產」嘅民主化信號</div>
+
+<p><strong>第一，佢將「主權 AI」由宏大敘事拉返去工程算術。</strong>「人人訓模型」講咗好耐，但當一個非 PhD 用數百美元做出榜一模型，「模型只能由少數 Lab 供給」呢個產業假設就開始鬆動。曲凱嘅判斷好準：<strong>錄完呢集「好似又睇到咗應用嘅曙光」</strong>——因為模型生產成本塌縮，意味住應用公司同個人可以喺模型層自己話事。</p>
+
+<p><strong>第二，「數據戰略地位上升」再次被印證。</strong>節目嘅市場信號（合成數據公司短期做出可觀收入）+ 實戰經驗（合成數據效果並唔好）合埋一齊，指向同一個結論：<strong>下一波數據機會喺「乾淨、可配比、可複用嘅真實數據」</strong>。同 8/8 孟繁青嗰集（從蒸餾到合成數據到 RSI）係直接承接——佢哋將同一主題由「模型廠層面」落到「個人實操層面」。</p>
+
+<p><strong>第三，同今日報告另一條線形成互補。</strong>張小珺 #152 領讀 Kimi K3（2.8 萬億開源 MoE、1/27 激活率）係「頂級 Lab 嘅萬億參數開源架構創新」；呢集係「個人開發者喺數百美元預算下嘅後訓練實操」——<strong>兩端同時說明「模型生產」正在民主化</strong>：大嘅越大（萬億 MoE 開源），細嘅越細（4.5GB 本地跑）。中間嘅應用公司，就係曲凱講嘅「Neo Lab」候選人。</p>
+
+<p><strong>第四，呢集最值得記住嘅係「誠實」。</strong>逯雨鑫冇將個人訓模型講成萬能——「自己訓自己用性價比唔一定更高」「用戶最終可能回流 SOTA」「合成數據效果並唔好」。呢種唔吹水嘅態度（連媒體報導都形容佢「強就係強，弱就係弱」）喺 AI 圈好罕見，亦係佢喺社區攞到 70 萬下載嘅原因之一。</p>
+
+<div class="highlight-box">
+  <strong>對 James ／四艦隊嘅啟示</strong>：① 「數據 > 算力」嘅判斷同我哋自己嘅運作一致——TencentDB 記憶系統、FTS + embedding 嘅組合，本質就係「乾淨可配比嘅真實數據」資產；② 「可驗證過濾」係通用方法論——我哋任何 agent 任務（例如深度復述）都可以設計「驗證閉環」：引用要有來源、事實要可核對，就係我哋嘅「跑得過測試先留低」；③ Local AI 嘅成本算術（一張 RTX 5090 + 數百美元）係 Mini Mok／Stu Mok 本地 Hermes 路線嘅有用基準——「坑最少嘅開源模型」呢類指名判斷值得持續記錄；④ 「Capacity Gap」提醒我哋：任何新數據管道嘅效果都要靠實驗迭代驗證，唔好事前過度自信。
+</div>
+
+<hr>
+<footer>
+  <p>來源：42章經《一个人、两周、数百美元，如何训出登顶 Hugging Face 的模型｜对谈研究员逯雨鑫》（2026-08-29 發布，小宇宙，曲凱主持，嘉賓逯雨鑫）｜背景材料：AI内参《一个人干翻大厂？他靠一个12B模型杀穿HuggingFace热榜》（2026-06-28）｜AI 播客日報 2026-08-30 萃取</p>
+  <p style="margin-top:0.3rem;">深度復述由 Vee Mok 生成 · 2026-08-30 06:35 UTC · 引用均取自節目導語／重點引用及公開報導；「坑最少嘅開源模型」喺節目中指名，未公開披露</p>
+</footer>
+</div>
+</body>
+</html>
