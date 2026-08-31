@@ -1,11 +1,18 @@
 {
- "lastScan": "2026-08-30T02:12:00.000Z",
- "lastScanDate": "2026-08-30",
+ "lastScan": "2026-08-31T02:16:00.000Z",
+ "lastScanDate": "2026-08-31",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-08-29T22:47:53.000Z",
-   "lastEpisodeTitle": "The Rise and Fall of Agent Civilizations",
+   "lastEpisodePubDate": "2026-08-30T22:18:58.000Z",
+   "lastEpisodeTitle": "We're Worried About the Wrong Kind of Centralization - Dylan Patel",
    "newEpisodes": [
+    {
+     "title": "We're Worried About the Wrong Kind of Centralization - Dylan Patel",
+     "pubDate": "2026-08-30T22:18:58.000Z",
+     "type": "short",
+     "url": "https://www.youtube.com/shorts/Dc4zMcJzhDE",
+     "note": "短片：Dylan Patel第三期訪談系列剪輯（完整訪談8/26已深度覆蓋）——公眾擔心錯咗集中化種類：真正發生緊嘅係算力集中化（Anthropic+OpenAI控制全球大部分FLOPs），機制係市場唔係陰謀（變現能力強→出價高→擠出所有人→算力漲價）；三股力量：訓練規模經濟+算力稀缺+持續學習/RSI；$6B fab capex→$1T+收入；中國新增算力<10%但需求更少；實驗室算力從推理轉R&D。系列第4條短片（8/27中國/8/28 Jane Street/8/29一半新增算力），與8/29短片同主題兩側面"
+    },
     {
      "title": "The Rise and Fall of Agent Civilizations",
      "pubDate": "2026-08-29T22:47:53.000Z",
@@ -87,14 +94,22 @@
    "newEpisodes": []
   },
   "crossing": {
-   "lastEpisodePubDate": "2026-08-24T16:00:00.000Z",
-   "lastEpisodeTitle": "22 岁的具身 CEO、5 轮融资、过亿美元、“不知天有多高”、“一年吃了十年的苦”｜对谈黄一：萝博派对创始人/CEO",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-08-30T16:00:00.000Z",
+   "lastEpisodeTitle": "AI 下半场，不会只剩一个超级模型｜对谈 Kevin Ding：Pyromind 创始人/CEO",
+   "newEpisodes": [
+    {
+     "title": "AI 下半场，不会只剩一个超级模型｜对谈 Kevin Ding：Pyromind 创始人/CEO",
+     "pubDate": "2026-08-30T16:00:00.000Z",
+     "type": "full",
+     "url": "https://www.xiaoyuzhoufm.com/episode/6a90fc5e1352af56ff3d48af",
+     "note": "Pyromind創始人Kevin Ding（RL as a Service/後訓練即服務賽道，天使輪：高瓴/百度風投/藍馳/Atypical）：RLaaS只是起點——Service只解決一半問題，真正要Agent生產環境持續改進需把訓練/獎勵/反饋/部署/數據回流串成自動循環管道=AutoRL；落地：工業質檢/工藝參數/GUI Agent/Coding Agent；企業AI不該是項目制諮詢（首次FDE不可省、相似場景遞減、沉澱成可複製管道）；PyroDash=4B小模型+強基座+協作引擎；大判斷：AI終局似Agent蜂群而非單一超級模型、需求多元不該收攏中心化大模型；RSI這一年變重要；2個FDE撐十幾個B端客戶；模型越訓越好訓練需求越少公司未必賺更少；雲廠商有算力也不會吞掉佢；HF小模型下載佔主流證明需求不會歸攏一個Base Model；中國SaaS難做但AI ToB能重新算清ROI；成本/效率/隱私不可能三角靠後訓練破解。小宇宙episode頁直讀+datePublished核實（8/30 16:00Z）"
+    }
+   ]
   }
  },
  "notes": {
-  "scan_status": "2026-08-30扫描：5条新内容。中文1条：42章经新集《逯雨鑫：一个人两周数百美元训出登顶HF的模型》8/29——個人訓模型時代/數據卡點/合成數據無效/應用公司成Neo Lab（小宇宙episode頁直讀+datePublished核實，state原8/8孟繁青）。英文4条：①Dwarkesh 8/29長文《The Rise and Fall of Agent Civilizations》——OpenAI/HF事件三代AI文明完整敘事（全量文章萃取，含PHASEONE10841/神風watcher/956 secrets/第三代接管OpenAI）；②Dwarkesh 8/29短片《Two Labs Will Take Half the World's New Compute》——8/25訪談開場章節剪輯（完整訪談8/26已覆蓋）；③Latent Space 8/29 AINews《OpenAI shuts off Cursor》——Cursor斷供/GLM-5.3/Hy4-preview/Qwen3.8-Flash/Nvidia×HF $13B/Anthropic自動化對齊（全量文章萃取）；④CR《RL's a Hell of a Drug – Bronson Schoen, Apollo》8/26——上輪漏檢補收錄（megaphone feed核實日期，Apollo讀CoT第一人/1億token CoT/grader-seeking）。無新：張小珺（8/26 #152）、十字路口（8/24黃一）、硅谷101（E250 8/28，fireside RSS核實）、屠龍（8/25，podhood核實）、No Priors（8/28短片已覆蓋）、MLST（8/22，iTunes API核實）。",
-  "report_date": "2026-08-30",
-  "deep_content_fetched": "Dwarkesh長文用Substack feed content:encoded全量萃取（三代文明完整時間線/引用/爭議）；Dwarkesh短片用YouTube描述章節（00:00:00）；Latent Space用全量文章萃取（Cursor頭條+開放權重三連發+Nvidia-HF收購）；CR用cognitiverevolution.ai全量show notes（含Quotes/Resources/Chapters）+megaphone feed核實日期；42章經用小宇宙episode頁全量show notes+datePublished核實；中文核實流程沿用豆瓣/小宇宙直讀（42章經最新逯雨鑫8/29、張小珺#152、十字路口黃一、屠龍podhood日誌）"
+  "scan_status": "2026-08-31扫描：2条新内容。中文1条：十字路口新集《AI下半场不会只剩一个超级模型｜Pyromind Kevin Ding》8/30——RLaaS進化AutoRL/Agent蜂群vs超級模型/FDE沉澱管道/PyroDash大小模型協作（小宇宙episode頁直讀+datePublished核實8/30 16:00Z，state原8/24黃一）。英文1条：Dwarkesh 8/30短片《We're Worried About the Wrong Kind of Centralization》——Dylan Patel訪談系列第4剪輯（算力集中化先係真正危機/市場機制/三股力量，YouTube RSS核實8/30 22:18Z）。無新：張小珺（#152 8/26，xyzfm feed核實）、硅谷101（E250 8/28，fireside feed核實）、42章經（逯雨鑫8/29，xyzfm feed核實）、屠龍（8/24，xyzfm feed核實）、Latent Space（8/29 Cursor AINews，Substack feed核實）、CR（8/28 AI:AM Highlights已覆蓋，megaphone feed核實）、No Priors（8/28 Shadow AI短片已覆蓋，YouTube RSS核實）、MLST（8/22，anchor feed+iTunes API核實）。",
+  "report_date": "2026-08-31",
+  "deep_content_fetched": "十字路口用podcast頁+episode頁全量show notes萃取（Pyromind完整論點/數據/PyroDash細節/章節時間線）；Dwarkesh短片用YouTube feed描述+完整訪談脈絡萃取（8/26已深度覆蓋完整訪談，短片為章節剪輯）；中文核實流程沿用iTunes API搵feed（xyzfm/fireside）+feed直讀；CR用megaphone feed、MLST用anchor feed核實"
  }
 }
