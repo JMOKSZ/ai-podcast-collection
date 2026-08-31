@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space：Lovable CTO Fabian Hedin——SaaS 末日？未來嘅 App 係俾 Agent 用嘅「capabilities」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space（swyx + Alessio Fanelli）· Fabian Hedin（Lovable CTO）· 2026-08-26 發布</div>
+  <h1>一個 App 兩個界面：人類 UI + Agent 界面——Lovable CTO Fabian Hedin 講 SaaS 嘅未來，係「Agent 可以直接呼叫嘅 capabilities」</h1>
+  <div class="meta">
+    <span>📅 2026-08-26 16:16 UTC</span><span>·</span><span>🎙️ Latent Space（swyx + Alessio Fanelli，記者 Richard MacManus）</span><span>·</span><span>👤 嘉賓：Fabian Hedin（Lovable CTO）</span><span>·</span><span>📝 latent.space/p/lovable-future-of-saas</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+好諷刺嘅一幕：Lovable 係一間靠「AI 起 App」出名嘅公司，但佢而家押注嘅未來，係<strong>越來越少人會用傳統 App</strong>。CTO Fabian Hedin 喺呢集 Latent Space 清楚咁講：軟件會變成 Agent 可以直接呼叫嘅「capabilities」，人類會越來越透過 AI 層同軟件互動——<strong>「10 個 SaaS 併成一個 Agent 入口」</strong>。佢哋最近完成 $400M Series C（估值 $13.3B），公司正由「AI 起 App 平台」轉向「公司大腦」。
+</p>
+
+<div class="section-title">一、呢集係咩：一間「AI 起 App」公司點解要親手終結 App 時代</div>
+
+<p>Lovable 嘅源起好短暫但好戲劇化：<strong>2023 年開源工具 GPT Engineer</strong>（最初 focus 喺 prototyping）→ 2024 年 11 月商業化 → 2024 年 12 月改名 Lovable。三年內由「AI 寫 App 嘅玩具」變成「全棧軟件建立 + 托管公司」——月收入早就破億人民幣級，而家 ARR 超過 $500M、6,000 萬個 projects、每月 9 億次 visits、<strong>Fortune 500 近三分之二公司嘅員工用過</strong>。</p>
+
+<p>關鍵轉折係用戶行為嘅變化：先係有人喺平台上面唔再淨係起 prototype 或者 MVP，而係起「真嘢」——「an actual product that serves real customers」；之後再進一步，用戶開始建立內部軟件——CRM、admin panel、客服 console 呢啲支撐公司營運嘅工具。「People started creating not only software to enable a business, in terms of a customer-facing product, but also the operations behind the company.」Lovable 由「AI 生成軟件平台」變成同 Vercel、Cloudflare 爭食嘅「軟件建立同托管公司」。</p>
+
+<blockquote class="strong">
+  「You can get to a place where you're using one entry point to all the work that you're doing.」
+  <span class="attribution">——Fabian Hedin（Lovable CTO）：公司大腦願景——一個入口點連接你所有工作</span>
+</blockquote>
+
+<div class="section-title">二、核心論點一：Capability——App 嘅有用部分可以直接俾 Agent 呼叫</div>
+
+<p>Hedin 定義咗一個會成為 2026 下半年關鍵詞嘅概念：<strong>Capability = 一個應用程式入面，Agent 可以直接呼叫嘅有用部分；唔使有人類用戶打開個 App</strong>。技術上係將 App 嘅函數透過 hosted MCP server 暴露成 tools——結果係一個 App 有兩個界面：傳統人類 UI + 一個可以由 ChatGPT、Claude 或者其他 MCP-compatible AI client 使用嘅 Agent 界面。</p>
+
+<p>呢個 shift 對 SaaS 嘅含義好深：<strong>應用程式變成「capabilities 嘅集合」，用戶會透過組織 Agent 存取——代替，或者係喺實際應用之外</strong>。Hedin 強調平台嘅職責係「確保所有獨立 capabilities 透過一個 Agent 連接——唔係你為每個任務都要建一個唔同嘅 agent」。佢哋自己都咁用：內部建咗一個俾 support team 用嚟發 credits、管理平台嘅工具，而家啲 capabilities 已經可以透過 Lovable agent 用。</p>
+
+<blockquote class="strong">
+  「Orchestrating these capabilities is the easy part. Making sure they are well connected, built correctly and reliable is the hard part.」
+  <span class="attribution">——Fabian Hedin（Lovable CTO）：點解 Lovable 嘅 wedge 係「最適合 build capabilities 嘅地方」——編排容易，可靠性先係難</span>
+</blockquote>
+
+<div class="section-title">三、核心論點二：公司大腦——「context + capabilities」而唔係「agent」</div>
+
+<p>Lovable 嘅長期願景叫「公司大腦」：<strong>一個界面，連接你嘅日常工具；有盡量多嘅 context（你、你公司、世界），加上通用 + 公司特定嘅 capabilities</strong>。最終目標係「everything that you're building can be reused in an agentic way」——你 build 嘅一切都可以 agentic 重用。</p>
+
+<p>Hedin 仲解釋咗點解用「brain」而唔係「agent」呢個詞——呢段係成集最有哲學味嘅部分：</p>
+
+<blockquote class="strong">
+  「I'm careful about using the word 'agent.' It suggests something like an employee performing a task, which is an easy way to think about it. But underneath, it is really about connecting the right context and capabilities.」
+  <span class="attribution">——Fabian Hedin（Lovable CTO）：點解用「大腦」而唔係「agent」——底層係連接正確嘅 context 同 capabilities</span>
+</blockquote>
+
+<p>公司大腦仲要異步工作：<strong>agent 可以 schedule 自己之後 resume</strong>——例如檢查 deployment 或者監察 recurring process，然後將結果返返同一段 conversation。呢個「異步公司大腦」係佢哋同「即問即答 chatbot」式 agent 嘅根本分別。</p>
+
+<div class="section-title">四、核心論點三：SaaS 未來——人會越嚟越少開 tab，但垂直能力仍然值錢</div>
+
+<p>Hedin 對 SaaS 命運嘅判斷好直接：<strong>人類會越來越透過 AI 層同軟件互動</strong>——「People are not going to have as many tabs open in different tools as they have historically. That experience is going to consolidate, but the vertical capabilities those tools provide will remain valuable.」即係話：<strong>開 tab 嘅體驗會收斂，但工具提供嘅垂直能力依然有價值</strong>。有啲傳統 SaaS 會「fight」呢個趨勢，死守傳統 App 唔適應；但 Lovable 想做嘅係一個開放平台——「anyone can connect to, anyone can use」。</p>
+
+<p>最後佢俾 SaaS 公司嘅 advice 已經成為被引用最多嘅一句：</p>
+
+<blockquote class="strong">
+  「I think SaaS businesses are going to have to focus more on providing the shovel for AI to use their capabilities.」
+  <span class="attribution">——Fabian Hedin（Lovable CTO）：SaaS 公司嘅未來——做「AI 用你 capabilities 嘅鏟」</span>
+</blockquote>
+
+<div class="data-point">
+  <span>關鍵數字</span>
+  ① ARR $500M+、6,000 萬 projects、每月 9 億次 visits、Fortune 500 近 2/3 公司員工用過<br>
+  ② $400M Series C（Menlo Ventures 領投 + EQT Scaleup Europe Fund），估值 $13.3B；Menlo 嘅 Deedy Das 確認數字<br>
+  ③ 3 年進化史：GPT Engineer（2023 原型）→ 2024/11 商業化 → 2024/12 改名 Lovable → 而家全棧軟件建立 + 托管公司<br>
+  ④ Connectors 安全模型：app user connector 保留用戶身份同源系統權限；credentials 加密存 server-side，App 只攞 bound 到用戶嘅 short-lived key<br>
+  ⑤ 競爭者：Vercel CEO Guillermo Rauch 嘅 @v（「Vercel 每個日常職位都用 @v」，每日互動同 token 使用指數增長）
+</div>
+
+<div class="section-title">五、安全：capabilities 時代嘅最大挑戰——permissioning graph</div>
+
+<p>Hedin 承認 agent + capabilities 範式嘅最大挑戰係安全：<strong>如果一個員工用 Lovable 起咗個連住公司 Slack 嘅 App，你要確保佢唔會意外將私人訊息或者其他機密暴露俾公司大腦</strong>。佢哋嘅答案係 Connectors + 一套「permissioning graph」。</p>
+
+<p>技術細節（Lovable 官方技術文章）：<strong>app user connector</strong> 保留每個用戶嘅身份同源系統權限；credentials 加密存 server-side，由 connector gateway 處理，<strong>生成嘅 App 永遠攞唔到 credentials</strong>——App 只攞一個 bound 到相關用戶嘅 short-lived key。Hedin 嘅總結：「We separate the connection to external systems from the application code being written. The application interfaces with the Lovable platform, but the application itself never gets access to those credentials.」呢個設計令「員工 build 嘅 App」同「公司系統嘅權限」徹底分離——App 代碼可以自由生成，但權限永遠由平台閘道控制。</p>
+
+<div class="section-title">六、深度分析：呢集點解重要——「harness > model」由觀點變成產品現實</div>
+
+<p><strong>第一，呢係「App 即 capabilities」敘事最清晰嘅一次產品化陳述。</strong>過去一年「Agent 會取代 UI」「SaaS 會死」嘅討論好多，但多數停留喺觀點層面；Lovable 係第一間用實際產品路線圖（hosted MCP server 暴露 functions）將呢個願景工程化嘅大平台。MCP 作為「App 嘅 Agent 界面」標準開始落地——呢個同 Kimi Code Remote Control、Claude /resume、appshots 等 harness 第一公民化嘅趨勢完全同頻。<strong>「harness 成為模型系統嘅一部分」由觀點變成產品現實。</strong></p>
+
+<p><strong>第二，佢對「agent」呢個詞嘅警惕好有價值。</strong>「agent 令人聯想到一個執行任務嘅員工」——呢個諗法太容易令人低估底層嘅複雜性：真正難嘅唔係「搵個 agent 去做嘢」，而係<strong>連接正確嘅 context 同 capabilities，而且保證佢可靠</strong>。Hedin 話編排容易、可靠性先係難——呢個判斷同 8/22 Latent Space「The Evolution of the Agent Harness」（模型持續吸收 harness 入 weights）互相呼應：層次越嚟越清楚，<strong>「買模型不如砌 harness」已經成為實證結論</strong>。</p>
+
+<p><strong>第三，安全模型係呢集最被低估嘅部分。</strong>「App 永遠攞唔到 credentials、只攞 short-lived key」呢個設計，本質上係將「代碼」同「身份權限」分離——呢個係 agent 時代 SaaS 安全嘅基本盤，亦係 permissioning graph 概念點解會變成企業級需求嘅原因。企業容許員工「亂咁 build App」嘅前提，就係平台層面有能力做權限隔離。</p>
+
+<p><strong>第四，同今日報告另一條線互為鏡像。</strong>呢集講「軟件變成 agent 可以呼叫嘅 capabilities」；而 8/29 AINews 頭條係「OpenAI 切斷 Cursor」、Cursor 回應「OpenAI 模型僅佔流量 5%」——兩件事夾埋睇，<strong>AI 編程工具鏈同 SaaS 分發層正在被重新劃分</strong>：一邊係陣營對立，另一邊係「capabilities 中立化」。Lovable 想企喺邊？佢嘅答案係「open platform，anyone can connect」——呢個中立姿態喺兩大陣營對立嘅世界入面，本身就係一種策略。</p>
+
+<div class="highlight-box">
+  <strong>對 James ／四艦隊嘅啟示</strong>：① 「公司大腦 = context + capabilities」同我哋嘅記憶系統設計一致——TencentDB 記憶 + 技能庫，本質就係「context + capabilities」；② 「一個 App 兩個界面」嘅思路可以直接套用——我哋每個 workflow（深度復述、日報、掃描）都可以諗「agent 可呼叫版本」；③ permissioning graph 提醒我哋：四艦隊之間嘅工具權限要設計清楚，尤其係有外部寫入能力嘅環節；④ 「提供鏟俾 AI 用你嘅 capabilities」係一個好犀利嘅商業視角——James 嘅酒店 AI 平台如果將酒店嘅業務能力包裝成 agent 可呼叫嘅 capabilities，就係喺做「AI 時代嘅鏟」。
+</div>
+
+<hr>
+<footer>
+  <p>來源：Latent Space《Lovable CTO: The Future of SaaS Is Apps That Agents Can Use》（2026-08-26 發布，Richard MacManus 採訪 Fabian Hedin，latent.space/p/lovable-future-of-saas）｜背景材料：Lovable 官方技術文章（Connectors）、Vercel CEO Guillermo Rauch 關於 @v 嘅推文｜AI 播客日報 2026-08-27 萃取</p>
+  <p style="margin-top:0.3rem;">深度復述由 Vee Mok 生成 · 2026-08-31 06:16 UTC · 引用均取自 Latent Space 原文採訪及公開資料，無虛構內容</p>
+</footer>
+</div>
+</body>
+</html>

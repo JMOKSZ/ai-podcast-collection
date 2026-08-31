@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 十字路口：Pyromind Kevin Ding——「Agent 已經會工作，但仲未識成長」，AutoRL 點樣將後訓練變成持續管道</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">十字路口 Crossing · Koji 楊遠骋 × Kevin Ding（Pyromind 創始人/CEO）· 2026-08-30 發布</div>
+  <h1>「AI 下半場，唔會只剩一個超級模型」——Pyromind Kevin Ding：Agent 已經會工作，但仲未識成長；AutoRL 點樣將後訓練由一次性交付變成持續管道</h1>
+  <div class="meta">
+    <span>📅 2026-08-30 16:00 UTC（北京 8/31 00:00）</span><span>·</span><span>🎙️ 十字路口 Crossing（主播 Koji 楊遠骋）</span><span>·</span><span>👤 嘉賓：Kevin Ding（火思動力 Pyromind 創始人/CEO）</span><span>·</span><span>🎧 小宇宙</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+當全世界仲喺度爭「下一個超級模型」嘅時候，Pyromind 創始人 Kevin Ding 喺呢集十字路口拋出一個完全相反嘅判斷：<strong>AI 下半場唔會只剩一個超級模型，需求世界係多元嘅，唔係所有問題都應該收攏到一個中心化大模型入面解決</strong>。佢押注嘅賽道叫「RL as a Service」（後訓練即服務），而且認為呢個只係起點——真正嘅形態係 AutoRL：將訓練、獎勵、反饋、部署、數據回流串成一條自動循環嘅管道。一句話概括成集核心：<strong>「今天的 Agent 已經會工作，但還不會成長」</strong>。
+</p>
+
+<div class="section-title">一、呢集係咩：由「RL 即服務」到「AutoRL」嘅一次完整商業論證</div>
+
+<p>Kevin Ding，Pyromind（火思動力）創始人/CEO。公司所處賽道常被稱作 RL as a Service——後訓練即服務，前不久完成天使輪融資，投資方包括高瓴、百度風投、藍馳、Atypical 等一線機構。真落地場景包括工業質檢、工藝參數優化、GUI Agent、Coding Agent。佢嘅職業路徑好跨：類腦計算/脈衝神經網絡（SNN）出身，做過 CV、大規模訓練基礎設施、IoT、端側到雲——佢自己話呢啲唔係跳嚟跳去，而係「從不同視角理解 AI 產品和技術路徑」，一直想回答嘅問題係：<strong>點樣將 AI 由一個算法結果變成可用嘅系統</strong>。</p>
+
+<p>創業嘅 trigger 係 2026 年初一個 GUI Agent 實驗。當時佢哋認為 Base Model 已經夠好，理論上應該做到界面理解同任務規劃；但換更強嘅 VLM、加 System Prompt 同規則、補少量數據做 SFT 之後，<strong>已知任務嘅 Pass@1 確實提高咗，但只要出現新任務或者新應用，表現就迅速回落</strong>。Kevin 由此得出一個後來變成公司信條嘅判斷：</p>
+
+<blockquote class="strong">
+  「把已知題修好，不等於 Agent 會從經驗中學習。今天的 Agent 已經會工作，但還不會成長。」
+  <span class="attribution">——Kevin Ding（Pyromind）：GUI Agent 實驗嘅核心教訓——修好已知問題 ≠ 獲得學習能力</span>
+</blockquote>
+
+<p>佢認為時機到咗，係因為三個條件第一次同時具備：<strong>① 基礎模型提供咗足夠好嘅 Baseline</strong>（企業唔使從零開始訓練）；<strong>② Agent 真正進入生產</strong>（企業手上有持續產生嘅任務軌跡同業務反饋）；<strong>③ RL 基礎設施同 Reward 工程逐漸成熟</strong>（領域知識、歷史任務、人工覆核記錄可以被轉化成可訓練、可驗證嘅獎勵信號）。「市場需求、技術條件和數據供給第一次對上了。」</p>
+
+<div class="section-title">二、核心論點一：RL as a Service 只係起點，AutoRL 先係終局</div>
+
+<p>Kevin 對「Service」嘅批評好直接：<strong>Service 只解決咗一半問題——將模型訓好交出去唔夠</strong>。真正要令 Agent 喺生產環境中持續改進，必須將訓練、獎勵、反饋、部署同數據回流串成一條可以自動循環嘅管道。呢個就係 Pyromind 押注嘅 AutoRL——RL as a Service 嘅進化形態，五環節自動循環，唔再係「交付即結束」。</p>
+
+<p>產品演進過程亦印證咗呢個判斷：去年產品只定義到 Studio 層（面向全棧開發者同大規模訓練需求，Product Manager 可以用可視化方式編排訓練流程）；但實際執行之後先發現，<strong>有需求嘅人唔淨止係算法工程師</strong>——唔可以要求所有客戶先理解預訓練、後訓練同 RL。於是加咗 AutoRL 層，將 RL 入面複雜嘅環節盡量自動化。「對客戶來說，他們真正關心的是部署後的業務表現，以及隨著生產數據回流，效果能不能持續提高。」</p>
+
+<blockquote class="strong">
+  「RL as a Service 只是起點，不是終點。Service 只解決了一半問題；真正要讓 Agent 在生產環境中持續改進，還需要把訓練、獎勵、反饋、部署和數據回流串成一條可以自動循環的管道。」
+  <span class="attribution">——Kevin Ding（Pyromind）：AutoRL 嘅定義——由一次性交付轉向持續管道</span>
+</blockquote>
+
+<div class="section-title">三、核心論點二：AI 終局係「Agent 蜂群」，唔係超級模型一統天下</div>
+
+<p>成集最反主流嘅一個判斷：<strong>需求世界係多元嘅，唔係所有問題都應該被收攏到一個中心化大模型入面解決</strong>。多個專精小模型協作，會比單一超大模型更符合真實需求。Kevin 用 Hugging Face 嘅下載數據支撐呢個觀點——<strong>HF 上小模型下載仍然佔主流</strong>，證明「需求唔會都歸攏到一個 Base Model」唔係空談。</p>
+
+<p>呢個論點直接同 OpenAI/Anthropic 嘅「單一超級模型」敘事相悖，亦係 RLaaS 賽道存在嘅根基：<strong>如果一個模型搞掂晒所有嘢，後訓練服務就冇存在價值</strong>。而佢哋嘅產品架構本身亦係呢個哲學嘅體現——PyroDash 由 4B 小模型 + 強基座模型 + 協作引擎組成：小 Worker Model 負責具體執行任務（高頻、低成本），強基座模型負責推理與規劃，協作引擎負責調度。目標係喺效果與成本之間取平衡，<strong>讓小模型承擔高頻、低成本工作，只喺搞唔掂嘅時候先 Handoff 俾大模型</strong>。</p>
+
+<div class="section-title">四、核心論點三：企業 AI 唔應該係項目制諮詢</div>
+
+<p>Kevin 對 AI ToB 嘅最大擔憂係「做成一單一單嘅項目制諮詢」：<strong>如果每次進入客戶場景都要高度依賴人工，公司最終只會變成一個高級外包團隊</strong>。佢承認第一次進入客戶場景時，FDE（前線部署工程）嘅工作不可省——要理解數據制式、評價基準、業務流程同獎勵信號；但 Pyromind 追求嘅係讓呢部分工作喺相似模態、相似場景中逐步遞減，將一次性交付沉澱成可橫向複製嘅 AutoRL 管道。</p>
+
+<p>「定制應該成為產品化的輸入，而不應該成為商業模式的終點」——佢對生意嘅判斷標準係：<strong>做完之後公司留低咗啲乜</strong>。如果一單生意做完淨係留低幾個人幾個月嘅定制代碼，下一個客戶要重新做一遍，咁收入雖然增加，公司卻冇因此變得更可擴展。所以佢哋會主動劃邊界：只有足夠中立，橫向寬度嘅收益先會遠大於吃掉一個縱向市場。</p>
+
+<div class="data-point">
+  <span>關鍵數字</span>
+  ① 天使輪投資方：高瓴、百度風投、藍馳、Atypical（多家一線機構）<br>
+  ② PyroDash 架構：4B 小模型 + 強基座模型 + 協作引擎 嘅大小模型協作<br>
+  ③ 人效：兩個 FDE 支撐十幾個 B 端客戶，大量工作收回產品層自動化<br>
+  ④ 客戶篩選三條標準：ROI 明確、數據足夠富集、好壞標準相對清楚<br>
+  ⑤ 3C 質檢實測（甲子光年專訪披露）：誤報率降低 60%、複核人力節省約三分之二、漏檢率壓到 4% 以內<br>
+  ⑥ 五項數學推理測試：高精度模式下平均準確率比純大模型高 6.36 個百分點、成本降低 20.4%；低成本模式推理成本降低 96.4%<br>
+  ⑦ 觀察：Hugging Face 上小模型下載仍佔主流——支撐「需求唔會都歸攏到一個 Base Model」
+</div>
+
+<div class="section-title">五、核心論點四：RSI 喺 2026 年點解變得重要</div>
+
+<p>節目專門討論咗「自舉式改進」（Recursive Self-Improvement）點解喺呢一年成為後訓練賽道嘅關鍵詞。邏輯好清晰：<strong>當 Agent 開始長期參與生產，做過嘅任務要點樣自然變成下一次嘅能力</strong>——呢個問題唔屬於任何單一應用，而係會反覆出現喺唔同場景。RSI 嘅敘事就係將呢個閉環自動化：模型將自己嘅經驗變成訓練信號，再更新自己。</p>
+
+<p>Kevin 喺甲子光年專訪入面有一個好重要嘅區分：<strong>Prompt、記憶、Harness 同工作流只係改變模型收到嘅上下文，但只有後訓練先可以穩定提升模型自身嘅能力</strong>。佢用一個好貼地嘅比喻——「這就像一個員工反覆出錯，管理者不斷在他的工位旁貼流程卡。卡越貼越多，他卻沒有真的學會判斷。Prompt 和規則很多時候是在加流程卡，後訓練要改變的是員工本人的能力。」</p>
+
+<div class="section-title">六、核心論點五：模型越訓越好，公司未必賺得更少</div>
+
+<p>節目直面「後訓練需求會被模型進步吃掉」嘅質疑——模型越嚟越強，微調市場係咪會萎縮？Kevin 嘅答案係商業模式層面嘅，唔係技術樂觀：<strong>Base Model 越強，後訓練嘅起點越高，但企業自己嘅業務流程、數據同判斷，唔會隨住 Base Model 升級自動進入模型</strong>。而且生產環境有一個現實約束：效果、成本同隱私好難靠單純調更大嘅模型同時解決——呢個就係「企業 AI 不可能三角」。</p>
+
+<blockquote class="strong">
+  「Base Model 解決的是入場資格，後訓練決定它能不能留在場上。基礎模型越強，Agent 進入真實業務的起點越高；但能不能長期適應具體業務，還是要靠後訓練。」
+  <span class="attribution">——Kevin Ding（Pyromind）：回應「後訓練需求會被模型進步吃掉」嘅質疑</span>
+</blockquote>
+
+<p>佢嘅完整論證：Base Model 越強，反而會出現更多路由、協同同成本優化嘅 RL 需求——有啲任務適合直接調用 Base Model，有啲適合喺本地小模型上完成，有啲需要兩者協作。所以兩者唔係替代關係，<strong>「模型會折舊，數據會過期，能持續學習的系統才會持續增值」</strong>。</p>
+
+<div class="section-title">七、核心論點六：雲廠商做後訓練？中立先係護城河</div>
+
+<p>面對「雲廠商又掌握算力、又識做後訓練，Pyromind 點樣唔會被吞掉」嘅威脅論，Kevin 嘅回應係「出發點唔同」：<strong>基礎模型公司嘅主航道係繼續將 Base Model 做强，雲廠商有算力但缺縱深服務能力</strong>；而 Pyromind 關注嘅係模型進入真實生產之後，點樣將訓練同持續學習做成一項可以服務不同場景嘅 Service。呢個產業位置要求佢哋必須足夠中立——唔依附於任何一個 Base Model，亦唔會自己落場做具體應用。</p>
+
+<p>「中立」對客戶嘅實際意義好具體：<strong>換一個 Base Model 之後，過去積累嘅任務軌跡、Reward、評估標準同訓練流程能否最大程度延續</strong>，而唔係全部由零開始。企業可以俾 Agent 換「大腦」，但唔應該令佢失去業務層面嘅積累。呢個定位同時係商業化嘅邊界：佢哋唔會為咗短期收入將公司拉返去項目制——「最好的商業化，是今天創造現金流，明天還能留下可複用的能力。」</p>
+
+<div class="section-title">八、深度分析：呢集點解重要——價值鏈正在由「訓大模型」向「讓模型持續變好」轉移</div>
+
+<p><strong>第一，佢將「後訓練」由一個技術話題講成一個商業模式話題。</strong>市場上講 Agent 嘅節目大多聚焦能力——模型幾強、工具幾多；呢集嘅問題意識係「Agent 每日做咗咁多嘢，究竟留低咗啲乜」？呢個提問方式本身，就係行業由「讓它會做更多事情」轉向「讓它長期參與工作」嘅信號。Salesforce 7 月底嘅自我改進 Agent 文章、OpenAI 嘅企業 Agent 產品 Presence（將生產環境嘅持續評估、問題發現同上線後調整放到更重要位置），都指向同一方向——<strong>Agent 競爭轉向上線之後</strong>。</p>
+
+<p><strong>第二，「需求不會都歸攏到一個中心化大模型」係一個值得認真對待嘅產業判斷。</strong>佢同「Agent 蜂群 vs 超級模型」嘅路線之爭直接掛鉤。HF 小模型下載主流 + PyroDash 嘅大小模型協作 + 2026 年開放權重模型崛起（GLM-5.3、Qwen3.8 開源潮）——呢啲證據加埋一齊，令「中心化超級模型」敘事喺真實需求面前冇咁理所當然。呢個判斷對投資人同創業者嘅含義都好大：如果終局係蜂群，咁 infra、後訓練、Reward 工程呢啲「讓 Agent 持續變好」嘅層就會分走「讓模型變好用」嘅利潤。</p>
+
+<p><strong>第三，FDE 人效數據（兩個 FDE 支撐十幾個 B 端客戶）係中國 AI ToB 一個好罕見嘅亮點。</strong>中國 SaaS 難做係共識，但 Kevin 認為 AI ToB 可以將 ROI 重新算清——因為 AI 直接作用於生產結果，價值可度量（質檢誤報率、漏檢率、成本都係硬指標）。佢哋客戶篩選三條標準（ROI 明確、數據富集、好壞標準清楚）本質上就係喺度揀「價值可度量」嘅場景先行——呢個紀律值得所有 AI 創業公司抄。</p>
+
+<p><strong>第四，同中文 AI 圈近期選題形成強烈呼應。</strong>42章經逯雨鑫集（8/29）講「個人/小團隊訓模型」；本集講「後訓練服務化」——連續兩週中文 AI 圈都出現「模型生產」同「後訓練」主題，預示價值鏈正在由「訓大模型」向「讓模型在具體場景持續變好」轉移。十字路口上一集（8/24）係 22 歲具身 CEO 黃一（蘿博派對），本集轉返 AI 軟件賽道；三集連睇，Koji 嘅選題主線好清楚：<strong>Agent 元年第 500 天之後，價值正在向 infra 同「讓 Agent 持續變好」嘅服務層下沉</strong>。</p>
+
+<div class="highlight-box">
+  <strong>對 James ／四艦隊嘅啟示</strong>：① 「讓 Agent 持續變好」同我哋自己嘅運作模式一致——每日 deep dive、技能庫持續優化、記憶同步，本質就係將「做過嘅嘢沉澱成下次嘅能力」，只係我哋用嘅係記憶檔案而唔係模型權重；② 「定制要產生復利」係好方法論——任何一次性任務都應該問「做完留低咗啲乜可複用」；③ 企業 AI 不可能三角（成本/效率/隱私）提醒我哋：幫 James 揀模型同工具嗰陣，唔好淨係睇能力 benchmark，要睇場景匹配；④ 「過去 30 天學會咗啲乜」係一個好犀利嘅評估框架——評價任何 Agent 系統，唔應該淨係問佢今日識啲乜。
+</div>
+
+<hr>
+<footer>
+  <p>來源：十字路口 Crossing《AI 下半场，不会只剩一个超级模型｜对谈 Kevin Ding：Pyromind 创始人/CEO》（2026-08-30 發布，小宇宙，Koji 楊遠骋主持，嘉賓 Kevin Ding）｜背景材料：甲子光年《专访火思动力Kevin Ding：未来选择Agent，要看它过去三十天学会了什么》（2026-08，記者田思奇）｜AI 播客日報 2026-08-31 萃取</p>
+  <p style="margin-top:0.3rem;">深度復述由 Vee Mok 生成 · 2026-08-31 06:15 UTC · 引用均取自節目導語／重點引用／甲子光年專訪公開文字，無虛構內容</p>
+</footer>
+</div>
+</body>
+</html>
