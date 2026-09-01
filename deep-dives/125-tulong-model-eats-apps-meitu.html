@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 屠龍之術：模型到底吃不吃應用？——美圖、Canva、Figma 背後嘅兩種命運</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">屠龍之術（庄明浩）· 單口 · 2026-08-31 發布</div>
+  <h1>「模型可以來自外部，但智能要變成自己嘅」——庄明浩拆解模型吃唔吃應用：從 Canva、Figma 到美圖，AI 應用公司嘅兩種命運</h1>
+  <div class="meta">
+    <span>📅 2026-08-31 08:30 UTC（北京 16:30）</span><span>·</span><span>🎙️ 屠龍之術（庄明浩 單口）</span><span>·</span><span>⏱️ 約 30 分鐘</span><span>·</span><span>📝 小宇宙 episode</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+由一張梗圖開始，庄明浩正面拆解咗一個由大模型浪潮開始就冇共識嘅老問題：<strong>模型到底吃唔吃應用？</strong>佢嘅答案唔係非黑即白——模型確實在吞噬純工具型應用嘅價值，但應用公司可以透過「Own your intelligence」完成反噬：由「功能集合」走向「結果交付」，最終<strong>每一家真正深入 AI 嘅應用公司，都會變成自己嘅 Neolab</strong>。
+</p>
+
+<div class="section-title">一、呢集係咩：一張梗圖點燃嘅老問題</div>
+
+<p>庄明浩開場話明，呢期係「由一張梗圖聊起」嘅單口——梗圖講嘅正正係 2026 年中嘅 AI 應用圈焦慮：當 Claude、GPT、Kimi 呢啲模型乜嘢都識做，一個普通 App 嘅「功能」仲有冇價值？呢個問題由 2023 年大模型浪潮開始就存在，但去到 2026 年 8 月，隨住 Canva、Figma 嘅估值調整、美圖嘅財報出街、以及「neolab」呢個詞喺中文 AI 圈冒起，討論進入咗新一輪。</p>
+
+<p>成集有一條清晰嘅時間線：00:37 點解而家要講呢個話題 → 01:36 由一張梗圖講起 → 02:44 所謂「neolab」 → 05:24 如果淨係睇多模態 → 06:48 市場嘅 debuff → 09:28 市場嘅 buff → 10:57 市場上嘅二元暴論 → 11:51 市場究竟喺度擔心啲乜 → 14:53 我哋應該關注啲乜 → 16:14 點解用美圖做樣本 → 18:06 由功能到交付 → 19:24 Picchi 嘅實例 → 21:03 應用到底應該做乜 → 23:12 美圖財報：AI 收入已成規模 → 25:06 兩個更重要嘅指標 → 26:30 仍然需要回答嘅問題 → 28:50 美圖嘅戰略選擇 → 30:02 最終判斷。</p>
+
+<div class="section-title">二、舊範式已經失效：功能集合 vs 結果交付</div>
+
+<p>庄明浩嘅第一個核心論點係：<strong>過去對應用公司嘅理解，係移動互聯網時代嘅遺產</strong>——「一個需求對應一個產品，一個產品由一系列功能組成；用戶打開 App、搵到功能、學習工具、自己完成任務」。美圖嘅修圖、美顏、設計、視頻，本質上都係呢種「工具 + 功能」模式。</p>
+
+<p>但最近一兩年嘅產品同戰略變化顯示，越來越多人嘗試令 AI <strong>直接完成一件事</strong>：做一張設計、生成一段視頻、完成一組內容，甚至組織多個 AI Agent 共同完成一個複雜任務。用戶要嘅唔再係「一個更靚嘅濾鏡」，而係「呢張圖搞掂」。呢個轉變表面睇係 UX 變化，實際上係價值鏈嘅重構。</p>
+
+<blockquote class="strong">
+  「傳統 App 嘅核心競爭力係：我有咩功能。AI 應用嘅核心競爭力可能變成：我能不能把事情做完。」
+  <span class="attribution">——庄明浩，本集核心判斷</span>
+</blockquote>
+
+<p>呢句說話背後嘅含義好重：如果核心競爭力由「功能」變成「結果」，咁應用公司嘅組織結構、技術棧、商業模式全部要重寫——呢個就係美圖路徑轉向嘅原因。</p>
+
+<div class="section-title">三、點解用美圖做樣本：由修圖工具到 AI 工作流</div>
+
+<p>庄明浩喺 16:14 解釋咗點解揀美圖做樣本：美圖係中國最典型嘅「功能集合型」應用公司——修圖、美顏、設計、視頻，每一個都係獨立功能；同時佢又係最積極轉型嘅——由 2023 年開始押注 AI，近年更推出 Picchi 呢類 AI 產品，直接示範「由功能到交付」嘅具體形態（19:24 章節）。</p>
+
+<p>美圖嘅路徑轉向，背後係應用公司組織結構嘅變化：</p>
+<ul>
+  <li><strong>如果目標係提供功能</strong>：揀一個合適模型、將能力包裝成好用嘅產品，就完成咗；</li>
+  <li><strong>如果目標係交付結果</strong>：應用需要判斷用邊個模型、將複雜任務拆解成步驟、俾唔同模型同 Agent 分配任務、執行過程控制、最後對結果做評估。</li>
+</ul>
+
+<p>呢個對比揭示咗一個殘酷事實：<strong>「功能型」應用嘅技術含量，正被模型能力嘅進步快速抹平</strong>——當模型本身識修圖，修圖 App 嘅存在價值就要重新論證。呢個就係市場 debuff 嘅來源。</p>
+
+<div class="section-title">四、新鏈條誕生：應用公司變成小型智能系統</div>
+
+<p>庄明浩將 AI 應用嘅新工作流抽象成一條鏈：</p>
+
+<div class="data-point">
+  <span>新鏈條</span>
+  模型篩選 → 任務拆解 → 任務分配 → 執行控制 → 結果評估 → 最終交付
+</div>
+
+<p>當應用公司承擔呢個角色，佢本身就越嚟越似一個<strong>小型的智能系統</strong>——唔再係「模型嘅下游客」，而係喺模型之上建立自己嘅編排同評估層。呢個觀察同英文圈嘅「harness」趨勢（8/29 Latent Space 周報討論嘅主題）係同一件事嘅兩個面向：模型系統嘅價值重心，正由「模型本身」移向「圍住模型嘅果套 harness」。</p>
+
+<p>庄明浩特別指出，市場對呢件事嘅反應係分裂嘅——06:48 講「市場嘅 debuff」，09:28 講「市場嘅 buff」：debuff 係投資者擔心模型直接做晒所有事、應用層價值蒸發；buff 係模型能力提升反而降低咗應用公司嘅開發成本，令「結果交付」喺技術上第一次變得可行。兩股力量同時存在，先至造成咗市場上嘅混亂。</p>
+
+<div class="section-title">五、Own your intelligence：每個應用公司都係自己嘅 Neolab</div>
+
+<p>全集最重要嘅一段喺 21:03「應用到底應該做乜」之後：庄明浩提出應用公司必須<strong>擁有屬於自己嘅「智能」</strong>。佢強調呢個唔代表每家都要由零開始訓練基礎模型——但過去原本屬於模型公司嘅能力——評估、數據、預訓練、RL、後訓練，以及「由真實世界獲取反饋並持續優化」嘅循環——正喺度成為更廣泛 AI 應用嘅一部分。</p>
+
+<blockquote class="strong">
+  「模型可以來自外部，但『智能』需要逐漸變成自己嘅。Own your intelligence。」
+  <span class="attribution">——庄明浩，本集題眼</span>
+</blockquote>
+
+<p>做模型需要呢個 Loop，做 Agent 需要，做 Harness 需要——而家越來越多的應用公司都需要建立自己嘅 Loop。庄明浩嘅推論好直接：<strong>未來每一家真正深入 AI 嘅應用公司，某種意義上都會成為自己嘅 Neolab</strong>——擁有自己嘅數據、評估體系、任務分配能力、用戶反饋同持續優化能力。佢引用咗 Elsewhere 嘅《2026 年 AI 應用全國統一「期中考試」軟件卷》作為 neolab 話題嘅參考材料（02:44 章節）。</p>
+
+<div class="highlight-box">
+  <strong>名詞補課——Neolab：</strong>2026 年中中文 AI 圈興起嘅概念，泛指「由應用/數據公司長出嚟嘅 AI Lab」——唔係由零訓練基礎模型嘅傳統實驗室，而係以應用場景、用戶數據、評估體系為核心，逐步建立自己模型能力（通常透過微調、蒸餾、RL）嘅新型組織。庄明浩認為呢個詞準確捕捉咗應用公司嘅未來形態。
+</div>
+
+<div class="section-title">六、兩個比收入更重要嘅指標</div>
+
+<p>喺 23:12 章節，庄明浩確認美圖近期財報顯示 AI 收入已成規模；但佢喺 25:06 強調，有兩個指標比收入更值得關注。可惜具體數字需要聽音頻先攞到——但佢嘅判斷邏輯好清楚：<strong>收入只證明「賣得出」，而唔證明「護城河」</strong>。喺模型能力快速疊代嘅環境下，一家應用公司嘅真正健康指標，係佢有冇建立起「由真實用戶反饋 → 持續優化 → 模型能力增長」嘅飛輪——即係上面講嘅 Loop。呢個先係 Neolab 化嘅本質。</p>
+
+<p>呢個判斷同 8/29 逯雨鑫喺 42章經嘅論述（「AI Lab 砸錢買數據 ≈ 移動互聯網早期字節砸錢買用戶」）形成直接共鳴：數據同反饋循環，正取代算力成為 AI 時代嘅核心資產。</p>
+
+<div class="section-title">七、仍然需要回答嘅問題：二元暴論 vs 結構化答案</div>
+
+<p>庄明浩喺 10:57 指出市場上存在「二元暴論」——非黑即白嘅兩派極端觀點：<strong>模型萬能論</strong>（模型會食晒應用，應用公司全部等死）vs <strong>應用萬歲論</strong>（模型永遠係管道，應用永遠有價值）。佢認為兩派都錯——真實答案係結構化嘅：模型確實吞噬緊「純工具型應用」嘅價值，但同時孕育緊「結果交付型應用」嘅新價值。26:30 章節佢列出仍然需要回答嘅問題，包括：結果交付型應用嘅壁壘有幾深？模型公司會唔會自己做埋交付？呢啲問題未有答案，但問啱問題已經係進步。</p>
+
+<p>值得追問嘅一個點：<strong>「每個應用公司都要變成 Neolab」嘅論斷成本極高</strong>——自建評估/數據/RL 循環，對多數中小應用公司係奢望，可能只對美圖呢種有規模、有現金流嘅公司成立。如果係咁，應用層會唔會出現新一輪馬太效應？呢個係庄明浩冇正面回答、但留低俾聽眾思考嘅問題。</p>
+
+<div class="section-title">八、行業脈絡：8 月底中文 AI 圈嘅同一個結論</div>
+
+<p>呢集嘅位置好微妙——佢係 8 月底中文 AI 圈「價值重估」浪潮嘅一部分，同三檔播客不約而同指向同一個結論：<strong>AI 時代嘅價值，唔再單一歸屬於基礎模型公司</strong>。</p>
+<ul>
+  <li><strong>42章經（8/29，曲凱 × 逯雨鑫）</strong>：個人開發者用兩週 + 數百美元蒸餾出登頂 Hugging Face 嘅模型——「訓練門檻係偽命題，最大卡點係數據唔係算力」；應用公司可能反成 Neo Lab。</li>
+  <li><strong>十字路口（8/30，Kevin Ding / Pyromind）</strong>：AI 終局係「Agent 蜂群」而唔係單一超級模型；Base Model 解決入場資格，後訓練決定留唔留得喺場上。</li>
+  <li><strong>屠龍之術（本集）</strong>：應用公司要由功能走向交付，Own your intelligence，成為自己嘅 Neolab。</li>
+</ul>
+
+<p>三個完全唔同嘅角度——個人開發者、Agent 基建、應用公司——最後都收斂到同一句：<strong>模型層嘅競爭已經商品化，價值正在向「有數據、有反饋循環、有交付能力」嘅層移動</strong>。呢個係 2026 年 8 月中文 AI 圈最重要嘅共識，而庄明浩係用「美圖樣本」將佢講得最落地嘅一個。</p>
+
+<div class="section-title">九、一啲補充背景：美圖呢一年幾</div>
+
+<p>為咗幫讀者理解庄明浩點解揀美圖，補充一啲公開背景：美圖 2026 年初公布 AI 業務收入表現強勁——2025 年靠 AI 一年收入約 38 億人民幣（第一財經 2026-03 報導）；創辦人吳欣鴻曾公開表示「大模型吞噬應用」嘅論述唔成立。媒體形容美圖嘅歷程係「逃出模型競爭 → 深耕影像應用 → 進軍 Agent」三部曲（新浪財經 2026-03）。呢啲事實正好係庄明浩「由功能到交付」論述嘅實證材料——美圖唔單止講，仲係咁做。</p>
+
+<div class="data-point">
+  <span>背景數據</span>
+  美圖 2025 年 AI 相關收入約 38 億人民幣（媒體報導）；創辦人公開反駁「模型吞噬應用」論；產品線由修圖工具擴展至 Picchi 等 AI 交付型產品。
+</div>
+
+<hr>
+
+<p style="font-size:0.95rem; color:#666;">
+<strong>一句總結：</strong>呢集係 2026 年 8 月底中文 AI 圈對「模型吃應用」辯論最完整嘅一輪表態——庄明浩用「功能 vs 交付」嘅框架，將二元暴論拆成結構化答案，再以美圖為樣本提出「Own your intelligence / 應用公司 Neolab 化」嘅出路。對做應用、投應用嘅人嚟講，係值得反覆聽嘅一集。
+</p>
+
+<footer>
+  <p>深度復述由 Vee Mok 生成 · 內容萃取自 屠龍之術 2026-08-31 集 + 公開背景資料</p>
+  <p style="margin-top:0.3rem;">來源：小宇宙 episode（屠龍之術）· 第一財經 · 新浪財經 ｜ 生成時間：2026-09-01 06:10 UTC</p>
+</footer>
+
+</div>
+</body>
+</html>
