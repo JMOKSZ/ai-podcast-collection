@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Cognitive Revolution × MongoDB Pete Johnson：「Write, Change, Recall, Forget」——Agent 記憶係下一個 infrastructure 高地，而最難嗰 part（Forget）未有人解決</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">The Cognitive Revolution × Pete Johnson · 2026-09-01 發布</div>
+  <h1>「我哋起咗 60 年資料庫，起 agent 先 18 個月」——MongoDB Field CTO 拆解 Agent 記憶：Write、Change、Recall、Forget，最難嘅係 Forget</h1>
+  <div class="meta">
+    <span>📅 2026-09-01（約）</span><span>·</span><span>🎙️ The Cognitive Revolution</span><span>·</span><span>👤 Nathan Labenz × Pete Johnson（MongoDB AI Field CTO）</span><span>·</span><span>⏱️ 1h34m</span><span>·</span><span>📝 cognitiverevolution.ai</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集表面係一集「資料庫公司打廣告式」嘅訪談，實際上係兩條線織埋一齊：一條係 1970 年 Codd 關係模型以嚟成個數據庫架構史嘅「稀缺性轉移」敘事，另一條係 2026 年 agent 生態最棘手嘅未解難題——<strong>Agent 記憶</strong>。嘉賓 Pete Johnson 有個好得意嘅 framing：佢 1970 年 2 月出世，早過 E.F. Codd 發表關係模型論文四個月——「我哋起咗 60 年資料庫，起 agent 先 18 個月咋，大佬，冇人知齊所有答案。」但佢對「token maxing」、「taxonomic memory」、「write, change, recall, forget」嘅拆解，係目前關於點解 looping agent 會撞爆 context window 最清楚嘅講法之一。仲有 Voyage AI 收購（約 $220M，Bloomberg）背後嘅策略邏輯，同一個反直覺嘅觀察：佢今年去咗 7 個國家，見到最 sophisticated 嘅兩個企業 AI 部署，分別喺墨西哥城同聖保羅。
+</p>
+
+<div class="section-title">一、由「儲存稀缺」到「時間稀缺」：成個數據庫史就係一部稀缺性轉移史</div>
+
+<p>Pete 嘅歷史敘事好乾淨：<strong>關係模型係為「儲存稀缺」而設計嘅</strong>。1970 年，磁盤貴到飛起，所以 Codd 嘅 normalization（正規化）——將數據拆散落關聯表、避免重複——係當時理性嘅設計選擇。你犧牲查詢嘅複雜度，去慳儲存空間。</p>
+
+<p>MongoDB 就掉轉：2007 年 10 月第一個 commit，服務嘅係雲端同 mobile 應用——嗰個年代嘅稀缺資源唔再係儲存，而係<strong>時間</strong>。所以 MongoDB 用 JSON（磁盤上叫 BSON 嘅 binary form）document model，denormalized，唔拆表——用一啲磁盤效率，換每次查詢少好多 round trip。Pete 特別糾正一個 common misconception：</p>
+
+<blockquote class="strong">
+  「我哋唔係 schemaless，我哋係 schema-flexible。同一條 collection 入面嘅 documents 可以有唔同形狀——呢個先係令我哋可以 evolve 而唔使承受 rigid SQL schema 嗰種 cascading migration 陣痛嘅原因。」
+  <span class="attribution">——Pete Johnson：MongoDB 嘅賣點從來唔係「無 schema」，係「schema 有彈性」</span>
+</blockquote>
+
+<p>呢個 framing 之所以重要，係因為佢直接通去而家 agent 記憶嘅問題：<strong>每一代數據基建都係為咗應對當時最貴嘅資源而設計</strong>。而 2026 年 agent 時代最貴嘅資源係乜？唔係儲存、唔係網絡——係 context window 同時間。Pete 嘅論點：我哋仲未有一個為「時間稀缺」而設計嘅 agent 記憶層。</p>
+
+<div class="section-title">二、MongoDB 自己嘅「Bitter Lesson 工程」：search → vector → rerank 一路內置化</div>
+
+<p>Pete 講 MongoDB 嘅搜索演進，用咗個好特別嘅角度——佢話呢個次序係「倒轉咁 feel」嘅：由 lexical search 起步，之後先做 vector search。2000 年代初大家都以為 keyword search 會先商品化，但事實係客戶自己喺 MongoDB cluster 隔籬起 Apache Lucene server 嚟做關鍵詞搜索——所以 2020 年 MongoDB 直接將呢個能力內置入 Atlas。Vector search 反而技術上更容易：</p>
+
+<blockquote>
+  「Vector 就係一個 float array。喺我哋嘅 flexible document model 入面，佢自然就係其中一個 attribute——技術上一啲都唔困難。」
+  <span class="attribution">——Pete Johnson：Vector search 對 document model 嚟講係「天然啱位」</span>
+</blockquote>
+
+<p>之後就係 hybrid search（lexical + vector + metadata pre-filtering 一條 query 搞掂），再之後係新嘅 aggregation stage——<strong>$rankFusion、$scoreFusion、$rerank</strong>——將混合搜索同重排收埋入單一 API call，開發者唔使再自己寫 merge logic。Pete 將呢個稱為「bitter lesson engineering」：<strong>每次底層能力成熟，就將 artisanal glue code（手工膠水代碼）剷走、內置化</strong>——呢個 pattern 對理解 agent 棧嘅未來好關鍵，因為同樣嘅「去手工化」而家正在 agent 嘅記憶層、貢獻層、數據層同步發生。</p>
+
+<div class="section-title">三、Agent 記憶：「而家最難嘅問題」——同 token maxing 嘅戰爭</div>
+
+<p>訪問後半段先係精華。Pete 將 agent 記憶問題嘅演進史講得好清楚：2023 年初嘅 ChatGPT——冇記憶、冇實時數據；2025 年——tools + MCP 出現，模型有咗新鮮嘅外部資訊；而家嘅新問題係——<strong>looping agent 累積 context 嘅速度快過固定窗口可以有用咁裝載</strong>。</p>
+
+<p>最常見嘅 naive 修法——將成個 session、甚至過去幾日嘅 session 全部塞入 context window——Pete 稱之為 <strong>token maxing</strong>：</p>
+
+<blockquote class="strong">
+  「Token maxing 唔單止係成本問題，仲係質量問題。研究顯示 context window 最頭同最尾嗰幾千個 token 最重要，中間嗰段只係加噪音。你將成個 session 塞入去，等於逼個模型喺噪音入面搵signal。」
+  <span class="attribution">——Pete Johnson：context 首尾效應——中間係噪音，塞得愈多反而愈差</span>
+</blockquote>
+
+<p>佢引用嘅警示 headline 係 Uber 2026 年單嘢：<strong>13 週燒晒全年 AI 預算</strong>（Forbes 描述約四個月）——Pete 話呢個就係行業由「塞爆 context」轉向「選擇性 retrieval」嘅轉捩點。而佢觀察到嘅新 pattern 叫 <strong>taxonomic memory</strong>：agent 只係拉當下 loop 相關嘅少量領域術語，而唔係成個 glossary 塞入去。</p>
+
+<p>但最深嘅位係佢引述同事濃縮嘅四個字——成個 agent 記憶問題嘅最難子問題：</p>
+
+<blockquote class="strong">
+  「最難嘅子問題，四個字講晒：write, change, recall, forget——寫入、更新、召回、遺忘。而 forgetting——判斷幾時啲嘢過期、幾時應該刪——係完全冇人解決到嗰 part。我哋起咗 60 年資料庫，起 agent 先 18 個月咋，大佬，冇人知齊所有答案。」
+  <span class="attribution">——Pete Johnson：Agent 記憶四字訣——最難係「知幾時遺忘」，數據庫界對「過期」嘅處理（TTL、墓碑）喺 agent 世界根本未有對應物</span>
+</blockquote>
+
+<p>呢個觀察其實好 sharp：數據庫 60 年嚟處理「數據過期」有成熟機制（TTL、archival、墓碑、snapshot），但 agent 嘅記憶——乜嘢應該記得、乜嘢應該自動 fade out、點樣知道一個 fact 已經 stale——連 vocabulary 都未建立。佢引嘅最 sophisticated 客戶係 ElevenLabs——據報喺生產環境跑約 <strong>4,000 萬個 agents</strong>——但 Pete 話佢哋連自己嘅 architecture 都未公開過：「冇人知齊答案」唔係謙虛，係現狀。</p>
+
+<div class="section-title">四、Voyage AI 收購：$220M 買嘅唔係模型，係「易用性」同「質量差距」</div>
+
+<p>Nathan 問咗條好尖嘅問題：Voyage AI 收購價約 $220M——<strong>唔足 MongoDB 市值 1%</strong>——呢個價錢反映咗乜？係咪代表 infrastructure 比 model 更可防禦？Pete 嘅答案避開咗「raw capability」，focus 喺兩點：</p>
+
+<ul>
+  <li><strong>① 減少開發者 iteration burden</strong>：Voyage 團隊（由斯坦福教授、現 MongoDB Chief AI Scientist Tengyu Ma 領導）做嘅嘢係令開發者唔使手動 tune。例如 <strong>contextualized chunking</strong>（最新版本 voyage-context-4）——嘗試逃出經典嘅 chunk size tradeoff（細 chunk 失去 context，大 chunk 稀釋 retrieval fidelity 同貴啲）：將 chunk 嘅本地文本連同文檔級 context 一次過 embed，開發者唔使自己試錯 tune chunk size。仲有 <strong>Matryoshka Representation Learning</strong>（俄羅斯套娃式 embedding）——維度排序到你可以將高維 vector 截斷成細 vector，而唔使重新 embed 成個 corpus。</li>
+  <li><strong>② Embedding 質量未商品化</strong>：Pete 嘅講法好直接——</li>
+</ul>
+
+<blockquote class="strong">
+  「好多人以為 embedding model 已經商品化，事實完全唔係。你揀邊個 embedding model，retrieval quality 可以有好大分別。Anthropic 自己冇出 embedding model——佢哋官方推薦我哋（Voyage）。」
+  <span class="attribution">——Pete Johnson：Voyage 喺 RTEB（Retrieval Embedding Benchmark）有大約 14% 質量優勢，而 Anthropic 官方 docs 推薦 Voyage</span>
+</blockquote>
+
+<p>呢個「Anthropic 推薦競爭對手」嘅事實係訪問其中一個最有力嘅數據點——佢暗示：embedding 呢層仲未 commoditize 到 frontier lab 覺得值得自己出，而 MongoDB 用 1% 市值買咗一個「質量護城河＋同 Anthropic 嘅默認整合」。Pete 對「infra vs model 邊個可防禦」嘅答案係：靠易用性同分銷，唔係靠 benchmark 數字。</p>
+
+<div class="section-title">五、企業落地：3-box 框架——冇 metrics 就唔好開始</div>
+
+<p>Pete 對企業客戶嘅建議濃縮成一個「3-box」框架（出自佢自己喺 The New Stack 嘅文章《There's No SKU for AI》）：<strong>揀「已經有好數據」+「已經有 metrics」嘅問題</strong>，先至可以將 ROI 歸因到 AI 上。客服中心係典型入門——因為 cost-per-call 同 volume 一早有人 track。</p>
+
+<p>佢對 coding AI 嘅生產力指標好有 opinion：</p>
+
+<blockquote>
+  「我對『lines of code』作為 coding AI 生產力指標好懷疑。我會揀 idea-to-production 嘅速度——由概念到上線生產用咗幾耐。AI development 而家 stuck in 1996——我寫過篇文章就係講呢個。」
+  <span class="attribution">——Pete Johnson：唔好數代碼行數，要量度「由諗法到上線」嘅時間</span>
+</blockquote>
+
+<p>仲有一句訪問入面最值得企業決策者抄低嘅 warning：</p>
+
+<blockquote class="strong">
+  「Bad data quality 同 bad security posture 唔會被 AI 解決——佢哋會被 AI 放大。你喺垃圾數據上面起 agent，只會得到更快嘅垃圾。」
+  <span class="attribution">——Pete Johnson：「唔會被解決，會被放大」——AI 落地第一定律</span>
+</blockquote>
+
+<div class="section-title">六、反直覺收尾：美國唔再必然領先——墨西哥城同聖保羅</div>
+
+<p>Nathan 問全球 AI 採用嘅分佈，Pete 嘅答案係成集最 refreshing 嘅部分——佢今年去咗 7 個國家，直接推翻咗「美國最先進」嘅預設：</p>
+
+<blockquote class="strong">
+  「其他國家有個 presumption：美國做嘢一定超前過人。我發現啱啱相反——我今年見到最 sophisticated 嘅兩個企業 AI deployment，一個喺墨西哥城，一個喺聖保羅。雲同 AI 基建已經全球化到一個程度——同早期技術浪潮唔同，嗰陣 hyperscaler data center 嘅地理位置係真正嘅瓶頸。而家唔係喇。」
+  <span class="attribution">——Pete Johnson：企業 AI 嘅地理分布已經扁平化——美國嘅「必然領先」只係一廂情願</span>
+</blockquote>
+
+<div class="data-point">
+  <span>關鍵數據</span>
+  1970 年 2 月：Pete 出世（早過 Codd 論文四個月）｜2007 年 10 月：MongoDB 第一個 commit｜2020：lexical search 內置｜2023：vector search｜2025：Voyage AI 收購（約 $220M，Bloomberg）｜Uber 13 週燒晒全年 AI 預算｜ElevenLabs 約 4,000 萬個 production agents｜RTEB 約 14% 質量優勢
+</div>
+
+<div class="highlight-box">
+  <strong>行業 insight：</strong>呢集同今日 Latent Space《PRs NOT Welcome》（軟件工廠取代社區貢獻）主題完美呼應：數據層（search→vector→rerank→embedding 一路內置化）、agent 層（記憶系統未有人贏）、貢獻層（agent 寫 code agent review）——成個 AI 棧正在同步「去手工化」。對 infra 投資者嚟講，Pete 嘅論點係：<strong>Agent 記憶層（write/change/recall/forget 點樣實現）就係下一個待爭奪嘅 infrastructure 高地，暫時未有贏家</strong>——而贏家好可能係嗰個可以將「記憶」內置化嘅數據庫公司，唔係模型公司。對 builders 嚟講：如果你嘅 agent 開始塞 context 塞到成本失控，問題唔喺 model，喺你冇一個記憶架構。
+</div>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述及數據出自 2026-09-01 Cognitive Revolution 官方 show notes（cognitiverevolution.ai，AI-generated transcript notes + Quotes Worth Pulling）、Voyage AI/MongoDB 官方公告及 Bloomberg 報導，中文為撮譯。Pete Johnson 文章參考：〈There's No SKU for AI〉、〈AI Development Is Stuck in 1996〉（The New Stack）。
+</p>
+
+<footer>
+  <p>Deep Dive #129 · The Cognitive Revolution × Pete Johnson（2026-09-01，1h34m）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-09-02 06:10 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
