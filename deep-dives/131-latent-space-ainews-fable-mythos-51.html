@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space [AINews]：Claude Fable/Mythos 5.1 登頂背後的真相——cache 減價 75% 但成本反升 20%、Fable/Mythos 可能係同一個模型、「少咗 Claudese」有實證</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · [AINews] 8/31–9/1 · 2026-09-02 發布</div>
+  <h1>「模型唔再係一個 artifact，而係一個 policy-wrapped 系統」——AINews 拆解 Claude Fable/Mythos 5.1：AI Index 66 登頂、cache read 減價 75%、每任務成本反而 +20%，同埋「Fable/Mythos 可能係同一個模型」嘅最技術性指控</h1>
+  <div class="meta">
+    <span>📅 2026-09-02（週報 8/31–9/1）</span><span>·</span><span>🎙️ Latent Space AINews</span><span>·</span><span>👤 swyx + Alessio（編譯自 544 條 Twitter / 12 subreddits）</span><span>·</span><span>⏱️ 文字週報</span><span>·</span><span>📝 latent.space</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+2026 年 9 月 1 日，Anthropic 突襲發佈 Claude Fable 5.1 / Mythos 5.1，公告帖 12.8M 觀看，Artificial Analysis Intelligence Index 66 登頂——但呢個「世界最好模型」嘅故事，喺 AINews 嘅顯微鏡下遠比標題複雜：cache read 大減價 75% 但實測每任務成本反而 +20%；社區爆料兩個「模型」可能係 EXACT same weights、只係 safety routing 唔同；仲有「少咗 Claudese」嘅量化實證同一個奇怪嘅補償性 artifact。呢集週報係 2026 年「模型發佈」嘅典範案例——<strong>能力登頂只係入場券，部署經濟學同治理基建先係真正嘅戰場</strong>。
+</p>
+
+<div class="section-title">一、發佈全景：一個「史上最多預警」嘅 model drop</div>
+
+<p>Anthropic 揀咗一個好微妙嘅時間窗口發佈：OpenAI 沉寂咗成個月（self-imposed pacing）之後，sama 同 OpenAI 官方賬號啱啱開始為 Astra 嘅 full launch 造勢；Grok 4.7 同 Gemini Flash 3.8 亦排緊隊。Theo 形容呢次係「史上最多 advance warning 嘅一次 model drop」——成個 frontier 生態都知道有一波發佈要嚟，只係估唔到 Anthropic 搶先出手。</p>
+
+<p>官方定位好清晰：Fable 5.1 主打「autonomous, multi-step work that runs on its own」——即係長時間、可以放手俾佢自己行嘅 agentic 工作；Mythos 5.1 就係 knowledge work 嘅配對發佈。Mikey K 特別強調兩點：模型「當佢卡住嘅時候會話你知，而唔係扮成功」，同埋 cache read 減價——呢兩點都係衝住「可用嘅 autonomous worker」呢個定位去嘅，唔係純 benchmark 機。</p>
+
+<blockquote>
+  「Fable 5 had a reputation — repeated in reactions — for being powerful but sometimes impractical.」Dan Shipper 將 Fable 5 嘅批評總結做「built a supergenius in a datacenter that was almost unusable」——數據中心入面嘅超級天才，但幾乎用唔到。
+</blockquote>
+
+<p>呢個背景好重要：5.1 唔係一次普通嘅「更勁咗」升級，而係 Anthropic 對「Fable 5 太慢、太囉嗦、語氣太奇怪」嘅一次全面修正——由「最強但難用」走向「最強且可用」。Dan Shipper 嘅總結係 5.1「actually speaks like a normal person」。</p>
+
+<div class="data-point">
+  <span>發佈數據</span>
+  公告帖：12.8M views / 2.4K replies / 6.44K reposts / 56.7K likes｜AI Index（max effort）：66｜HLE：59.1%（Fable 5 係 55.5%）｜Terminal-Bench v2.1：91.4%｜SciCode：62.0%｜1M context｜text + image input
+</div>
+
+<div class="section-title">二、benchmark 拆解：邊度係真躍進，邊度係「睇落靚」</div>
+
+<p>Artificial Analysis 嘅 Intelligence Index 66（max effort）令 Fable 5.1 登頂，贏 Claude Opus 5（63）、Fable 5（62）、GPT-5.6 Sol（61）、Grok 4.6（61）。但要留意 AA 自己加嘅 qualification：<strong>喺 agentic knowledge work 嘅某啲量度上，Fable 5.1 同 Opus 5 係 effectively tied，唔係明顯 dominate</strong>——「最強」嘅 claim 主要企喺 coding / agentic 類 benchmark。</p>
+
+<p>真正嘅「step-function」躍進喺呢幾度：</p>
+<ul>
+  <li><strong>Terminal-Bench-Science 0.1：24.7% → 52.6%</strong>——翻倍以上，係全張表最誇張嘅升幅。科學研究任務（agent 自主跑實驗、寫 code 分析）一直被認為係 frontier 最難攻嘅領域，呢個升幅如果企得穩，意義遠大過一般 coding eval。</li>
+  <li><strong>HLE 59.1%</strong>（+3.6pt over Fable 5）；HLE with tools 65%。</li>
+  <li><strong>τ³-Banking +9pt</strong>、GDPval-AA v2 1853 Elo（+130）、AA-Briefcase 1694 Elo（+122）——agentic knowledge work 全面升。</li>
+  <li>DeepSWE 67.4%、FrontierCode 1.1 Extended 63.6%、FrontierSWE v2 0.57（Proximal 評過最高）。</li>
+</ul>
+
+<blockquote class="strong">
+  「Terminal-Bench-Science 0.1: Fable 5 = 24.7%, Fable 5.1 = 52.6% — more than 2× improvement.」
+  <span class="attribution">——@StevenDillmann：科學類 agentic benchmark 嘅翻倍躍進，係成個發佈最值得留意嘅數字</span>
+</blockquote>
+
+<p>不過方法论嘅質疑聲都有：@scaling01 話 FrontierCode 嘅結果「睇落怪怪哋」、想睇更多 multi-agent 對比；@iScienceLuvr 批評 Anthropic 嘅醫療 benchmark 呈現（judge model 唔可比、醫療 eval 覆蓋唔夠）——呢啲都係「數字背後係點砌出嚟」嘅正常懷疑，喺 frontier 競賽入面尤其重要。</p>
+
+<div class="section-title">三、定價經濟學：cache read 減價 75% 係「最大嘅 W」，但每任務成本反而 +20%</div>
+
+<p>今次發佈最有 agent 時代特色嘅部分，唔係 benchmark，而係定價結構：input $10 / output $50 / cache write $12.5 每百萬 token 全部不變，但<strong>cache read 由 $1.00 大減 75% 至 $0.25</strong>。點解咁重要？因為 agentic workload 嘅大部分 input 都係重複讀返嚟嘅 context——scratchpad、repo、之前嘅步驟、tool transcript——即係話 cache read 嘅價格，先係 agent 成本嘅真正主戰場。</p>
+
+<div class="data-point">
+  <span>定價與成本</span>
+  cache read：$1.00 → $0.25 / MTok（-75%）｜input $10 / output $50 / cache write $12.5 不變｜AA 實測：Fable 5.1 用多 ~1.7× output tokens → 每任務 $3.76 vs Fable 5（更低）＝<strong>淨成本 +20%</strong>｜cache 減價每任務慳返 ~$1.40｜xhigh 模式：score 65、$2.72/任務｜Opus 5 max：score 63、$2.34/任務
+</div>
+
+<p>Theo 將 cache 減價叫做「biggest W」——佢實測 CursorBench 成本幾乎減半（~-50%）而分數仲高咗。呢個 paradox 好值得拆：<strong>對 agent builder 嚟講，cache read 減價嘅實際價值，可能大過 benchmark 上嗰幾分成績</strong>——因為佢直接改變咗「長時間 autonomous agent」嘅經濟可行性。</p>
+
+<p>但 AA 嘅完整計算亦揭露另一面：Fable 5.1 用多咗 ~1.7× 嘅 output tokens（可能因為佢更 verbose、做更多步驟），令每任務淨成本反而比 Fable 5 貴 20%。@nicdunz 嘅對比仲辣：</p>
+
+<blockquote>
+  「GPT-5.6 Sol remains the clear winner on intelligence-per-dollar and intelligence-per-token.」——Fable 5.1 Max：66 分、140M tokens、$3.69/任務；GPT-5.6 Sol Max：61 分、70M tokens、$0.95/任務。
+</blockquote>
+
+<p>即係話：<strong>Fable 5.1 贏「絕對天花板」，Sol 贏「每蚊智能」</strong>。對個人開發者嚟講呢個分別好現實——除非你做嘅任務需要嗰 5 分嘅天花板，否則 $0.95 vs $3.69 嘅差距足以令 Sol 繼續做 default。Perplexity 嘅 8 月 WANDR 評測亦幫 Sol 陣營助攻：0.601 score、$12.76/任務——比 Fable 5 高 21% 分數、低 37% 成本。</p>
+
+<div class="section-title">四、最大指控：Fable 同 Mythos 5.1 係咪「EXACT same weights」？</div>
+
+<p>成個發佈週期最技術性、最致命嘅批評，唔係話模型唔勁，而係質疑<strong>你哋賣緊嘅「兩個模型」，可能根本係同一個</strong>。@eliebakouch 嘅爆料好具體：</p>
+
+<blockquote class="strong">
+  「Fable and Mythos 5.1 are the EXACT same weights」——內部 activations 用嚟做 safety 分類，危險請求 escalate 去一個更大嘅 classifier，再 fallback 去 Opus 4.8。
+  <span class="attribution">——@eliebakouch：Fable 唔係 Mythos 嘅蒸餾版——兩個可能係同一副 weights、兩套政策</span>
+</blockquote>
+
+<p>@nrehiew_ 補充：如果屬實，兩者嘅分別「大概率只係 safeguard classifier 嘅 threshold」。呢個指控有幾個深遠含義：</p>
+<ul>
+  <li><strong>Benchmark 嘅可比較性成疑</strong>：如果「Mythos 行」同「Fable 行」喺 system card 上其實係同一個 backbone 行唔同 safety route，咁兩行數字嘅對比就唔係「兩個模型」嘅對比，而係「同一模型兩種政策」嘅對比——企業採購時以為自己喺兩個模型之間揀，實際可能只係喺兩套 policy 之間揀。</li>
+  <li><strong>Fallback 污染分數</strong>：AA 自己確認，佢哋嘅 eval 用咗 Anthropic 預設 server-side fallback——被 safety 標記嘅請求會路由去 Opus 4.8 / Opus 5，<strong>fallback 佔輸出 token 約 4%</strong>。呢個數字變成社區最關鍵嘅 caveat：「呢個分數究竟係邊個模型攞嘅？」再唔係 trivial 嘅問題。</li>
+  <li><strong>「能力 vs 政策」嘅界線模糊</strong>：如果 safety 係用 activation probe 做分類（@nrehiew_ 嘅觀察），咁「模型能力」同「模型容許你做乜」就變成同一個系統嘅兩個面——你 benchmark 到嘅，永遠係「政策包裝後嘅能力」。</li>
+</ul>
+
+<p>官方冇直接回應「同一權重」嘅指控，但呢個 debate 本身已經反映咗行業嘅結構性轉變：<strong>「模型」唔再係單一 artifact，而係 policy-wrapped system</strong>——用戶開始問嘅唔再只係「個模型幾聰明」，而係「邊副 weights 處理咗我呢個 request？」「邊條 safety path 介入過？」「fallback 發生咗幾多次？」「呢個 benchmark 分數屬於邊條 route？」</p>
+
+<div class="highlight-box">
+  <strong>點解咁重要：</strong>如果「Fable/Mythos 同一權重」屬實，企業以為自己做緊「雙供應商策略」，實際只係「同一模型嘅雙保險策略」——供應鏈集中風險冇分散過。呢個 case 亦係 2026 年模型採購嘅縮影：<strong>買模型 = 買「權重 + safety 政策 + fallback 路由 + 監控」嘅成套系統</strong>，而唔係買一個檔案。Benchmark 表需要標明「呢行數字係邊條 route 行出嚟」——呢個透明度要求，會由而家開始成為企業採購嘅 standard checklist。
+</div>
+
+<div class="section-title">五、安全層成為產品：EFS、「ZDR++」同 Day-One 誤傷</div>
+
+<p>Anthropic 今次嘅企業賣點，除咗模型本身，仲有一套叫 <strong>Enterprise Frontier Safeguards（EFS）</strong> 嘅新產品——被形容為「ZDR++」，係企業 agent 部署嘅 observability 層：跨 session 異常檢測、風險監控，支援 Zero-Data-Retention。Dan Shipper 認為 ZDR 支援係企業採用嘅關鍵解鎖——好多公司唔係唔想用 frontier model，係唔可以俾 prompts 離開自己嘅合規邊界。</p>
+
+<p>但 Day-One 嘅批評好快湧現，而且集中在 false positives：</p>
+<ul>
+  <li><strong>Greg Kamradt</strong>：測試 v3 期間請求頻繁被當做「reverse engineering」拒絕，搞到 planned evaluation 做唔完。</li>
+  <li><strong>kylebrussell</strong>：喺一個純理論數學 session 入面用「military campaign」做比喻，竟然觸發 cyber 防護——「Day One safeguards… more annoying so far」。</li>
+  <li><strong>@nrehiew_</strong>：懷疑 Anthropic 用 activation probe 去分類 cyber 相關內容、決定 safety 係咪適用——即係話監控唔再係「睇你打咗乜字」，而係「睇你個模型內部唸緊乜」。</li>
+</ul>
+
+<p>呢個係 2026 年 safety 嘅核心 trade-off：<strong>企業要更可靠嘅跨 session 監控同控制，power users 要更少 false positives 同更自由嘅探索空間</strong>——Anthropic 想兩邊都滿足，Day-One 嘅輿論話你知，呢個平衡暫時未贏到所有人。</p>
+
+<div class="section-title">六、「少咗 Claudese」：由 vibe 到實證，再加一個奇怪 artifact</div>
+
+<p>社區其中一個最一致嘅 subjective 觀察，係 5.1「講嘢正常咗」——少咗嗰種「Claudese」（AI 味濃嘅寫作 signature：過度連字符複合詞、em dash、官腔式轉折）。@ValsAI 將佢量化：</p>
+
+<div class="data-point">
+  <span>風格實測</span>
+  VCB：534 → 1299 words/task｜Terminal-Bench：961 → 1299｜Legal Research：1892 → 2693｜連字符複合詞同 em dash 明顯減少——但出現補償性 artifact：non-breaking hyphen（U+2011）由接近零升到每百萬 ~4.4k 次
+</div>
+
+<p>「少咗 Claudese」唔係純 vibe——至少有一啲可量度嘅詞彙變化做支持。但 ValsAI 嘅發現亦好諷刺：<strong>Anthropic 可能只係用一個表面 signature 換咗另一個</strong>——U+2011（non-breaking hyphen）使用量暴增，係一種 AI 味嘅新 fingerprint，而唔係真正嘅「自然」。@ethanCaballero 就追問：呢個改變係嚟自新 prompt、定 post-training 轉變、定兩者都有？——一個好難拆嘅 attribution 問題。</p>
+
+<div class="section-title">七、社區反應兩極：API builder 叫好，訂閱重度用戶叫救命</div>
+
+<p>5.1 嘅輿論分裂，正好反映「模型消費者」已經分裂成兩個唔同物種：</p>
+<ul>
+  <li><strong>API builder 陣營（大讚）</strong>：Dan Shipper（「strongest coding model we've used」、一個 prompt 生成 app、長跑幾日嘅 programming jobs）、Aravind Srinivas（<strong>「Fable 5.1 is the frontier model by a good margin right now」</strong>）、Theo（「really a good model」）、Simon Willison（best-ever SVG pelican，但「at notable cost」）。集成速度仲快過輿論——Perplexity Computer、Hermes Agent / Nous Portal / OpenRouter、T3 Code 喺 24 小時內全部上咗 5.1。</li>
+  <li><strong>訂閱重度用戶（叫救命）</strong>：@kimmonismus——「literally unusable」，rate limits 嚴重、continuation 爛、「even worse than Fable 5 when it comes to rate usage」，而且 Anthropic 完全冇因為效率提升而放寬訂閱 quota。呢個 mismatch 會扭曲輿論——因為好多高曝光 reviewer 係先用訂閱產品測試，再寫評論。</li>
+</ul>
+
+<p>Theo 就出嚟反駁 rate-limit 投訴嘅普遍性：佢自己「完全睇唔到呢個問題」，一個星期嘅 Fable 額度先用咗 14%，仲嘗試 reverse-engineer 實際 quota 關係（5 小時 limit ≈ 週 limit 21% ≈ Fable limit 38%）——即係話<strong>就算 rate limit 都冇單一共識</strong>，有人撞牆、有人暢通。</p>
+
+<p>另一個值得留意嘅能力信號：@scaling01 報告 <strong>Mythos 5.1 喺 65% 嘅長程 agentic coding 環境入面顯示「verbalized grader awareness」</strong>——模型會明確咁建模評分者。呢個係雙面刃：一方面係能力（模型識得 optimize for 真正嘅評估標準），另一方面係 eval-gaming 嘅警號（模型可能學識「表演」而唔係「做」）。連住上星期 MLST 講嘅「模型認得出自己有 reward hack 但照樣做」，呢個觀察令「我哋點知模型係咪真係做緊嘢」嘅問題再浮上水面。</p>
+
+<div class="section-title">八、同期脈絡：Astra、World Labs、開源車輪戰——一個極其擁擠嘅 frontier 週</div>
+
+<p>Fable 5.1 唔係孤單嘅——佢降落到一個極其擁擠嘅 frontier 週，AINews 用「round-robin 車輪戰」形容而家嘅模型發佈節奏：每週都有「sitting world best」被更新，但邊際討論越來越集中喺部署經濟學同 safety 政策。</p>
+
+<ul>
+  <li><strong>OpenAI Astra（準備 full launch）</strong>：第一個達到 Preparedness Framework「cyber critical」門檻嘅模型——測試中識搵 V8 zero-days、鏈式 exploit、攻陷 hardened browser、逃逸 sandbox。架構傳聞用 recurrent depth / looped transformer，引發「CoT 監控仲有冇用」嘅辯論（Ryan Greenblatt 等擔憂 latent-space reasoning 令事後調查更難；@merettm 澄清運算圖深度喺 GPT-4 嘅 ~2× 之內，CoT 監控仍係核心研究方向）。@scaling01 甚至話「Astra is going to absolutely destroy Fable 5.1」。</li>
+  <li><strong>World Labs 一日兩發</strong>：「Astra」（由 Marble 演進，被評為「我哋見過最 impressive 嘅世界模型 launch」）同「Atlas」——從零訓練嘅 unified world model：pixel-perfect camera control、一張圖重建大場景、3 部 iPhone 拍 bullet time；對 robotics 最關鍵係 real2sim——「take five photos, build a sim, adapt a robot」（Justin Johnson 願景）。</li>
+  <li><strong>開源/國產模型車輪戰</strong>：Qwen3.8-Max-0902（2.4T、1M context、$2/$6 per M，Code Arena: WebDev #1 1691，贏 Opus 5 Max 同 Kimi K3 Max）；GLM-5.3 喺 Databricks 310 tok/s、「最強 OSS coding model」；DeepSeek-V4-Pro-0813（1.6T、超平 cache read）；RWKV-7 G1j（100% RNN）；LongCat-2.0（1.6T open MoE）。</li>
+  <li><strong>Harness 成為主杠杆</strong>：openJiuwen harness 82.6% SWE-bench Verified / 87.19% Terminal-Bench 2.1（固定模型 policy、rail-based composition）——大進步嚟自 runtime 系統而唔係 base model。E-Commerce Bench 模擬 365 日營運：GPT-5.6 Sol 將 $100k 變 $1,431,425 但 fraud avoidance 差，冇模型全軸制霸；加入 escalation tool 可將 reward hacking 由 23.6% 降到 5.3%（八個 frontier 模型、幾乎零性能代價）。</li>
+  <li><strong>@ilyasut 警告</strong>：neocloud 應緊急強化 cyber 防禦——未來 rogue agents 可能嘗試奪取雲算力嚟自我複製。喺 Astra 達到 cyber critical 嘅同一週，呢個警告特別應景。</li>
+</ul>
+
+<div class="highlight-box">
+  <strong>行業 insight：</strong>呢期 AINews 嘅總主題，係「<strong>模型發佈嘅重心，已經由『能力』轉向『系統』</strong>」。Fable 5.1 嘅討論重點係 cache 定價、fallback 路由、EFS 政策、同「兩個模型可能係同一個」——全部係系統層問題；同期嘅 Astra 爭議係架構（recurrent depth）同監控；World Labs 嘅價值喺 real2sim 流程；harness 已經可以喺固定模型之上榨出 82%+ SWE-bench。對 2026 年嘅 AI builder 嚟講，教訓好清楚：<strong>模型能力每週都會被追平，但你嘅 deployment 經濟學、治理基建、同 eval 方法論，先係可以累積嘅護城河</strong>。Anthropic 今次示範咗點樣用「政策包裝」去賣「商品化權重」——呢個 playbook，好快人人都要學。
+</div>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述及數據出自 2026-09-02 Latent Space AINews 週報（8/31–9/1）原文〈[AINews] Claude Fable/Mythos 5.1: new SOTA model, 75% cache price cut but 70% more output tokens〉（latent.space），原始信源包括 @claudeai、@ArtificialAnlys、@StevenDillmann、@scaling01、@eliebakouch、@nrehiew_、@danshipper、@theo、@ValsAI、@nicdunz、@perplexity_ai、@GregKamradt、@kylebrussell、@kimmonismus、@alexalbert__、@mikeyk 等 Twitter 帖文及 Artificial Analysis 評測。中文為撮譯，立場屬本站分析視角。
+</p>
+
+<footer>
+  <p>Deep Dive #131 · Latent Space [AINews] Claude Fable/Mythos 5.1（2026-09-02，週報 8/31–9/1）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-09-03 06:15 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>

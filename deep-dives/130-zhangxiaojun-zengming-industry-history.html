@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 張小珺商業訪談錄 × 曾鳴：「模型公司就係未來嘅 AI 雲公司」——產業史觀下嘅 15 條暴論，同埋被判「死緩」嘅 Anthropic / OpenAI</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">張小珺商業訪談錄 Ep.153 · 2026-09-03 發布</div>
+  <h1>「模型公司就係未來嘅 AI 雲公司」——阿里前總參謀長曾鳴用產業史觀判咗三張牌：殘酷真相、會消亡嘅公司，同「OAI / Anthropic 大概率唔係原生時代大贏家」</h1>
+  <div class="meta">
+    <span>📅 2026-09-03</span><span>·</span><span>🎙️ 張小珺商業訪談錄</span><span>·</span><span>👤 張小珺 × 曾鳴（阿里前總參謀長）</span><span>·</span><span>⏱️ 2h34m</span><span>·</span><span>📝 小宇宙 / 語言即世界工作室</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集唔係一集普通嘅「AI 大佬對談」，係一個見過互聯網完整周期嘅戰略學家，企喺 2026 年秋天，用歷史結構去推演 AI 產業化嘅殘酷劇本。曾鳴（阿里巴巴集團前總參謀長、長江商學院與湖畔大學創辦參與者）將 AI 產業化分成三階段，然後拋出一句主持人形容為「暴論」嘅判斷：<strong>Anthropic、OpenAI 大概率唔係原生應用階段嘅大玩家、大贏家</strong>。佢用 AOL 比喻模型公司、用 Netscape/Yahoo 比喻下一個戰場、甚至宣判「公司」呢種組織形態本身會消亡。2 小時 34 分鐘入面，冇乜嘢係市場主流敘事想聽嘅——但正正係呢啲「逆耳」嘅結構判斷，先係呢集嘅價值所在。
+</p>
+
+<div class="section-title">一、產業史觀：唔係預測未來，係將 AI 放返入歷史週期嘅參照系</div>
+
+<p>曾鳴嘅方法論起點，係一句聽落好平淡、實際上好重嘅話：<strong>佢唔係喺度預測 AI 會點，而係將 AI 產業化放返入「人類商業世界嘅動力學規律」入面去睇</strong>。佢親身觀察過互聯網由 dial-up 到移動互聯網嘅完整週期——呢個經歷令佢唔信「今次唔同」嘅敘事，反而相信結構會重複。</p>
+
+<p>佢將 AI 產業化拆成三個階段：</p>
+<ul>
+  <li><strong>第一階段</strong>：技術逐漸被社會接受，成為社會基礎設施——即係今日我哋見到嘅巨額資本開支、數據中心、模型軍備競賽。</li>
+  <li><strong>第二階段</strong>：基於基礎設施產生海量新應用，進入百花齊放時代。</li>
+  <li><strong>第三階段</strong>：海量應用出現之後，大家發現需要更底層嘅方法去運行新世界——曾鳴將呢個叫做<strong>「原生應用階段」</strong>。</li>
+</ul>
+
+<p>呢個三階段框架本身唔算驚世駭俗，驚世駭俗嘅係佢跟住落嚟嘅定位判斷——我哋而家究竟喺邊？曾鳴嘅答案，係比大部分人以為嘅仲要早好多：</p>
+
+<blockquote class="strong">
+  「對比互聯網時代，我們現在剛剛走到瀏覽器階段，甚至比 Yahoo 還要早。」
+  <span class="attribution">——曾鳴：今日所有 AI 公司，都處於極早期</span>
+</blockquote>
+
+<p>呢個判斷嘅弦外之音好清晰：而家全世界傾到興合合嘅「AI 巨頭之爭」——邊個模型最強、邊個 scaling 最快、邊個融資最多——喺歷史嘅尺度睇，全部只係「前瀏覽器時代」嘅事。真正嘅戲肉（應用層、原生應用層）連序幕都未拉開。對任何一個覺得「而家入場太遲」嘅創業者或者投資者嚟講，呢句話等於話：<strong>你唔係遲到，你係太早到——但方向揀啱嘅話，早到係優勢</strong>。</p>
+
+<div class="section-title">二、殘酷嘅真相：階段之間，企業幾乎冇得過渡</div>
+
+<p>如果話三階段論係地圖，咁曾鳴下一句就係地形圖上嘅斷層線。佢引用自己研究商業世界動力學規律得出嘅框架，講出一句主持人張小珺即場都窒一窒嘅「殘酷真相」：</p>
+
+<blockquote class="strong">
+  「我只是研究商業世界的動力學規律，我能看到的理論框架告訴我：第一階段的企業，很難活到第二階段；第二階段的企業，很難活到第三階段。」
+  <span class="attribution">——曾鳴：商業世界嘅動力學規律，唔同情懷</span>
+</blockquote>
+
+<p>呢句說話嘅殺傷力，要放返歷史先睇得出。互聯網第一階段嘅基礎設施商（AOL、早期 ISP、甚至 Cisco 嗰種賣水人），冇幾多間成功過渡成為第二階段嘅應用平台；第二階段嘅贏家（Yahoo、甚至早期 Google 之前嘅一堆門戶），又冇幾多間成功過渡到第三階段嘅「原生應用」。每一波浪潮都會清走上一波嘅大部分贏家——唔係因為佢哋蠢，而係因為<strong>佢哋嘅核心能力、組織結構、甚至盈利模式，都係為上一階段度身訂造嘅</strong>。</p>
+
+<p>對應返今日：如果你相信呢個定律，咁今日模型層嘅贏家（無論係 OpenAI、Anthropic、Google DeepMind，定係中國嘅 Moonshot、DeepSeek、智譜）喺下一階段嘅存活率，會遠比佢哋現時嘅估值所隱含嘅低。呢個唔係針對任何一間公司嘅攻擊——係一個結構性嘅、歷史重複咗好多次嘅規律。</p>
+
+<div class="data-point">
+  <span>框架速覽</span>
+  三階段：基礎設施 → 海量應用（百花齊放）→ 原生應用｜歷史定位：啱啱到「瀏覽器階段」，比 Yahoo 仲早｜階段定律：第一階段企業好難活到第二階段，第二階段好難活到第三階段
+</div>
+
+<div class="section-title">三、模型公司 = AOL = 未來嘅 AI 雲公司：基礎設施商嘅宿命</div>
+
+<p>曾鳴全場最精彩嘅類比，係將模型公司比作已經消失咗嘅美國在線（AOL）。喺互聯網史嘅教科書敘事入面，AOL 通常被講成一個「被時代拋棄嘅失敗者」——但曾鳴要求聽眾換個角度：AOL 做嘅係一件巨大嘅工程——<strong>令所有人都可以接到互聯網</strong>。冇 AOL 嗰代基礎接入服務商，就唔會有之後 Netscape、Yahoo 嘅事。</p>
+
+<blockquote class="strong">
+  「模型公司怎麼類比？它有點像另外一個已經消失了的公司——美國在線 AOL，它是互聯網基礎接入服務商，讓所有人都能夠接到互聯網上，這本身是個巨大的工程。今天，大模型則是讓所有人都可以輕易接入智能的入口，它也是一個基礎設施服務商。」
+  <span class="attribution">——曾鳴：模型公司嘅歷史角色，係「智能嘅 AOL」</span>
+</blockquote>
+
+<p>跟住落嚟嗰句，係成集最容易被低估嘅判斷——因為佢將「模型公司」呢個聽落好 futuristic 嘅物種，直接定性為一個好古老嘅商業物種：</p>
+
+<blockquote>
+  「直白一點說，模型公司就是未來的 AI 雲公司。」
+</blockquote>
+
+<p>「AI 雲公司」呢五個字嘅含義，對有商業史常識嘅人嚟講係一錘定音：<strong>雲公司係 infrastructure business——贏家通吃、毛利受監管同競爭雙重擠壓、客戶忠誠度低、定價權有限</strong>。AWS 賺錢，但 AWS 嘅估值倍數永遠唔會似一家 SaaS 公司；更重要嘅係，雲公司嘅價值在於「賣水」，而唔係「淘金」——真正嘅 gold rush 利潤，永遠屬於應用層。</p>
+
+<p>亦因為呢個定性，曾鳴對基礎設施行業嘅商業模式判斷，冷酷到近乎無情：</p>
+
+<blockquote class="strong">
+  「公共基礎設施的行業，只有一種商業模式是成立的，叫寡頭壟斷加政府強監管——我知道這個現實對很多現在創業的人很殘酷。」
+  <span class="attribution">——曾鳴：基礎設施行業嘅唯一商業模式：寡頭壟斷 + 政府強監管</span>
+</blockquote>
+
+<p>呢句說話一箭雙鵰：一方面解釋咗點解全世界政府（中美歐）都開始對大模型公司搞監管——因為基礎設施天然就係公共品，公共品必然迎來強監管；另一方面亦解釋咗點解模型層創業（假設冇差異化）嘅終局，必然係少數寡頭——呢個現實對今日仲喺度燒錢做「又一個 LLM」嘅創業者嚟講，係一個及早嘅當頭棒喝。</p>
+
+<div class="section-title">四、最大暴論：Anthropic、OpenAI 大概率唔係原生應用階段嘅大贏家</div>
+
+<p>成集最「暴論」嘅判斷，係曾鳴直接對當今 AI 雙雄判咗「死緩」——注意，唔係判「死刑」，係判「唔會贏到最後嗰場」：</p>
+
+<blockquote class="strong">
+  「Anthropic、OpenAI，大概率不是原生應用階段的大玩家、大贏家。」
+  <span class="attribution">——曾鳴：AI 雙雄唔係原生應用階段嘅大贏家</span>
+</blockquote>
+
+<p>理由唔係陰謀論、唔係「大公司病」，而係一條好基本嘅經濟學規律：</p>
+
+<blockquote>
+  「因為經濟學基本規律，只要有同質化的供給，你就不可能獲取高額利潤，你就是一家不怎麼值錢的公司。」
+</blockquote>
+
+<p>拆開嚟睇，呢個論證有三層：</p>
+<ul>
+  <li><strong>同質化供給</strong>：當 frontier model 嘅差距收窄到幾個 benchmark point（今個星期 Anthropic Fable 5.1 登頂、上個月 Qwen 開源模型又追上嚟），模型本身喺經濟學上就變成「同質化商品」——買家邊個平、邊個方便、邊個生態好就用邊個。</li>
+  <li><strong>冇高額利潤</strong>：商品化市場嘅利潤會被競爭磨走——呢個正正係我哋見到嘅現象：token 價格持續下跌、cache read 減價 75%、開源模型將 premium 蠶食。</li>
+  <li><strong>唔係好值錢嘅公司</strong>：所以哪怕 OpenAI、Anthropic 今日收入增長好靚，喺曾鳴嘅框架入面，佢哋嘅「值錢程度」會被重新錨定——錨喺「基礎設施商」嘅估值邏輯，而唔係「平台/應用」嘅估值邏輯。</li>
+</ul>
+
+<p>要注意，曾鳴唔係話 OpenAI / Anthropic 會執笠——AOL 都冇執笠，佢係被收購、被吸收、成為歷史嘅一部分。佢嘅意思係：<strong>呢兩間公司嘅歷史使命（將智能變成公共接入服務）完成之後，原生應用階段嘅王座，會屬於另一批人</strong>。呢個判斷如果啱，對今日所有「all-in 模型公司股票/一級市場份額」嘅人嚟講，係一個需要認真消化嘅結構性風險提示。</p>
+
+<div class="section-title">五、下一個戰場：邊個係 Netscape、邊個係 Yahoo——Agent 標準與用戶入口</div>
+
+<p>講完「邊啲會死」，曾鳴將鏡頭轉向「邊啲會生」。佢認為 AI 產業化下一階段嘅主戰場，唔係模型能力競賽，而係<strong>「Agent 化」嘅標準之戰同入口之戰</strong>：</p>
+
+<blockquote class="strong">
+  「下個階段就是看誰是 Netscape、誰是 Yahoo，誰把 Agent 的標準建立起來，誰搶住 Agent 的用戶入口。未來三年是有可能開始出現 Agent 入口的。」
+  <span class="attribution">——曾鳴：未來三年，Agent 入口有可能開始出現</span>
+</blockquote>
+
+<p>呢個判斷將成集嘅時間感推到最具體：<strong>「未來三年」</strong>。喺互聯網史嘅對照入面，瀏覽器（Netscape）同門戶（Yahoo）都係喺基礎設施成熟之後短短幾年內爆發——曾鳴明顯認為 Agent 就係 AI 時代嘅「瀏覽器/門戶」合體，而家正正處於嗰個爆發前夜嘅窗口。</p>
+
+<p>「入口」呢個詞好關鍵——入口係用戶每日第一個打開嘅嘢，係流量嘅起點，係生態嘅閘門。曾鳴嘅框架暗示：<strong>而家搶模型、搶 benchmark 第一，可能都係搶錯嘢；真正要搶嘅，係未來三年內 Agent 用戶每日第一個接觸嘅產品形態</strong>——無論佢係一個 agent 作業系統、一個 agent 瀏覽器、定係某種而家仲未有人諗到嘅嘢。</p>
+
+<div class="section-title">六、新平台大概率唔誕生自舊平台：由「信息匹配」到「能力與需求匹配」</div>
+
+<p>主持人張小珺喺 outline 入面將呢段標記做「新平台不來自舊平台」（00:39:53 章節）——呢個係曾鳴對所有現存巨頭嘅第二記重拳。佢嘅邏輯係：平台嘅本質係「匹配」，但唔同代際嘅平台，匹配嘅對象複雜度完全唔同：</p>
+
+<blockquote>
+  「新的平台大概率不誕生自舊的平台。因為舊平台做的是簡單信息匹配，新平台要做的是能力跟需求的匹配，複雜度高了很多。」
+</blockquote>
+
+<ul>
+  <li><strong>舊平台（信息匹配）</strong>：Google 匹配「關鍵字同網頁」、淘寶匹配「商品同買家」、美團匹配「店舖同食客」——呢啲匹配嘅對象係靜態嘅、可索引嘅信息。</li>
+  <li><strong>新平台（能力與需求匹配）</strong>：Agent 時代要匹配嘅係「用戶嘅意圖」同「世界嘅執行能力」——用戶唔係想要一個搜索结果，係想要「件事辦好」；而「辦好」需要調度工具、模型、數據、甚至實體服務。</li>
+</ul>
+
+<p>呢個複雜度嘅躍遷，喺曾鳴睇嚟係舊平台嘅結構性盲區：<strong>舊平台嘅工程師文化、數據結構、甚至用戶習慣，全部係為「信息匹配」優化嘅</strong>——要佢哋轉型去做「能力匹配」，等於要一間搜尋引擎公司重新發明自己。歷史上前冇太多成功案例，所以佢嘅結論先咁決絕：「大概率唔誕生自舊平台」。</p>
+
+<div class="section-title">七、「公司」會消亡：科層制係工業化革命嘅產物，而工業化已經完結</div>
+
+<p>如果話前面嘅判斷都仲係「商業層面」，呢一條就直接踩入「文明組織形態」嘅層面——曾鳴認為會消亡嘅唔止係某啲公司，而係「公司」呢種組織形式本身：</p>
+
+<blockquote class="strong">
+  「作為工業化革命的產物，科層制管理的公司制度會衰亡——就是說，『公司』會消亡。這沒有什麼可以遺憾的呀，將來有更好玩的——你說多少人現在去公司上班是開心的？」
+  <span class="attribution">——曾鳴：「公司」會消亡——但冇乜好遺憾</span>
+</blockquote>
+
+<p>呢個論點嘅歷史根據係：現代公司嘅科層制（hierarchy、匯報線、部門牆、KPI 分解），係 19 世紀工業化時期為咗「組織大量人力做標準化生產」而發明嘅。當生產嘅基本單元由「人」變成「agent」、由「標準化」變成「個性化」，呢套為工業時代度身訂造嘅組織骨架，就失去存在嘅理由。</p>
+
+<p>有趣嘅係，曾鳴對呢個「消亡」嘅態度異常豁達——佢唔係哀悼，而係覺得「將來有更好玩嘅」。呢種態度同佢成集嘅底色一致：<strong>巨變唔係災難，係新一代嘅機會窗口</strong>。佢甚至用一個好「2026 年語境」嘅講法去補刀 CEO 文化：</p>
+
+<blockquote>
+  「CEO 不能有老闆心態。誰還認你啊？——現在說我都不陪老登玩了，我還陪你老闆玩？」
+</blockquote>
+
+<div class="section-title">八、優秀 ≠ 卓越，同埋「冇任何巨頭係安全嘅」</div>
+
+<p>Outline 中段（01:31:10）嘅章節叫「優秀 ≠ 卓越」，係曾鳴對企業（同創業者）個人修養層面嘅提醒：做到「優秀」——即係喺現有遊戲入面做到最好——唔等於「卓越」；卓越係有能力重新定義遊戲。喺產業史觀嘅框架入面，呢個分別好具體：<strong>第一階段嘅「優秀企業」係最有效率嘅基礎設施商；但卓越嘅企業，係嗰啲能夠喺下一階段重新發明自己嘅少數異類</strong>——而曾鳴嘅數據點話你知，歷史上呢啲異類「基本冇」。</p>
+
+<p>呢度有一段主持人同嘉賓之間好經典嘅問答，張小珺直接追問「過渡」嘅成功率：</p>
+
+<blockquote class="strong">
+  「張：這個時代的企業過渡到下一個時代的企業，還能做得非常好的，多不多？<br>
+  曾：不是多不多的問題，是有沒有的問題。<br>
+  張：有沒有？<br>
+  曾：基本沒有。」
+  <span class="attribution">——張小珺 × 曾鳴：舊時代企業過渡到新時代仲做得好嘅——「基本沒有」</span>
+</blockquote>
+
+<p>同一個「冇人安全」嘅主題，喺 outline 02:02:48 嘅章節「沒有巨頭是安全的」再次出現，曾鳴將佢提升到世界觀層面：</p>
+
+<blockquote>
+  「我從來覺得在巨浪面前沒有人是安全的。誰覺得安全，誰就是最不安全的。」
+</blockquote>
+
+<div class="section-title">九、但呢啲一啲都唔絕望：生老病死，先係新公司同年輕人嘅機會</div>
+
+<p>如果將成集停喺「基本沒有」呢四個字，聽眾好容易帶住絕望離場——但曾鳴嘅收尾，正正係成集嘅思想反轉。佢認為公司嘅消亡同人嘅生老病死一樣，係宇宙嘅正常運作，而呢個「正常」背後，係一個充滿希望嘅結論：</p>
+
+<blockquote class="strong">
+  「這一點都不讓人絕望啊，人有生老病死，公司也有生老病死，沒有比這更正常的了。這樣，新公司才有機會，年輕人才有夢想，這多好的一件事情啊！」
+  <span class="attribution">——曾鳴：正正因為舊嘅會死，新嘅先有機會</span>
+</blockquote>
+
+<p>呢段係成集嘅「題眼」：曾鳴講咗成兩個半鐘嘅「殘酷真相」——階段定律、AOL 宿命、雙雄死緩、公司消亡——但佢嘅真實目的唔係唱衰，而係<strong>破除「而家先開始太遲」嘅錯覺</strong>。如果 AI 產業化真係先至行到「瀏覽器階段」，咁今日所有嘅巨頭都只係暫時領先嘅 AOL；真正嘅 Netscape、Yahoo、Google，可能仲未出世——或者正喺某個車庫、某間大學宿舍、某個而家仲未有人聽過嘅 startup 入面。</p>
+
+<div class="data-point">
+  <span>15 條暴論濃縮</span>
+  ①三階段論 ②階段殘酷定律 ③而家＝瀏覽器階段，比 Yahoo 早 ④模型公司＝AOL ⑤模型公司＝未來 AI 雲公司 ⑥基礎設施只容得落寡頭壟斷＋強監管 ⑦OAI/Anth 大概率唔係原生應用階段大贏家 ⑧同質化供給冇高額利潤 ⑨下個戰場：Agent 標準＋用戶入口（未來三年）⑩新平台唔誕生自舊平台 ⑪「公司」會消亡 ⑫巨浪面前冇人安全 ⑬CEO 唔可以有老闆心態 ⑭舊過渡新做得好嘅：基本冇 ⑮生老病死好正常——新公司先有機會
+</div>
+
+<div class="section-title">十、Vee 嘅萃取：點樣用產業史觀去讀 2026 年 9 月嘅 AI 新聞</div>
+
+<p>呢集播出嘅時間點好有意思——正正係 Anthropic 發佈 Fable 5.1 / Mythos 5.1 登頂、OpenAI Astra 準備 full launch、開源模型（Qwen3.8-Max、DeepSeek-V4-Pro）步步進逼嘅一週。用曾鳴嘅框架去讀呢堆新聞，會睇到主流敘事忽略咗嘅層次：</p>
+
+<ul>
+  <li><strong>模型軍備競賽嘅「歷史定位」被降級</strong>：如果模型公司只係「AI 雲公司」，咁今個星期嘅 benchmark 登頂之爭，就等於 1995 年 ISP 之間嘅速度之爭——對行業重要，但對「邊個會成為下一個 Yahoo」呢個問題，幾乎冇指示性。</li>
+  <li><strong>開源模型嘅追趕，正正係「同質化供給」嘅鐵證</strong>：Qwen 開源模型上到 Code Arena WebDev #1、GLM-5.3 喺平台跑出 310 tok/s——曾鳴講嘅「同質化供給→冇高額利潤」唔係理論，係每個星期嘅新聞標題。</li>
+  <li><strong>「Agent 入口」嘅窗口論，係對創業者最有行動價值嘅一句</strong>：佢將「未來三年」變成一個具體嘅 timing 判斷——而家做 Agent 入口相關嘅創業，喺歷史窗口上係「啱啱好」；再遲兩年先入場，可能就係第二階段尾聲嘅接盤俠。</li>
+  <li><strong>對中國創業者嘅特別含義</strong>：曾鳴嘅框架源於中國互聯網（佢親手參與過淘寶由信息匹配到能力匹配嘅演化），佢講嘅「新平台唔誕生自舊平台」，對今日中國嘅平台巨頭同創業者同樣適用——舊平台嘅 agent 化轉型，可能同美國一樣困難。</li>
+</ul>
+
+<div class="highlight-box">
+  <strong>行業 insight：</strong>呢集嘅價值唔在於邊條「暴論」啱定錯（歷史判斷要等歷史驗證），而在於佢提供咗一個<strong>可以將每日 AI 新聞重新分類嘅坐標系</strong>：每單新聞問佢兩條問題——「呢件事屬於邊個階段？」、「呢間公司嘅商業模式，係 infrastructure、application、定 native application 嘅邏輯？」。用呢個框架，你會發現好多每日被當做頭條嘅「模型發佈」，其實只係第一階段內部嘅名次調整；而真正值得押注嘅信號，係邊度開始出現「能力與需求匹配」嘅新平台雛形——嗰啲先係曾鳴口中未來三年嘅 Netscape 同 Yahoo。
+</div>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述出自 2026-09-03 張小珺商業訪談錄 Ep.153 官方 show notes（小宇宙平台，張小珺親撰 15 條摘錄及 outline），以及語言即世界工作室嘅節目描述；時長 2h34m18s 由豆瓣播客頁核實。曾鳴嘅「點線面體」「智能商業」等背景框架為其公開學術與著作內容（《智能商業》等）。中文保留原文，分析及撮寫為本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #130 · 張小珺商業訪談錄 × 曾鳴（2026-09-03，2h34m）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-09-03 06:10 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
