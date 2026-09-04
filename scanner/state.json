@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-09-03T02:11:00.000Z",
- "lastScanDate": "2026-09-03",
+ "lastScan": "2026-09-04T02:16:00.000Z",
+ "lastScanDate": "2026-09-04",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-09-01T19:10:39.000Z",
@@ -8,22 +8,37 @@
    "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-09-02T07:46:08.000Z",
-   "lastEpisodeTitle": "[AINews] Claude Fable/Mythos 5.1: new SOTA model, 75% cache price cut but 70% more output tokens",
+   "lastEpisodePubDate": "2026-09-03T21:09:41.000Z",
+   "lastEpisodeTitle": "GPT-6 Astra: an automated AI Engineer you can hire for <$6 an hour",
    "newEpisodes": [
     {
-     "title": "[AINews] Claude Fable/Mythos 5.1: new SOTA model, 75% cache price cut but 70% more output tokens",
-     "pubDate": "2026-09-02T07:46:08.000Z",
+     "title": "GPT-6 Astra: an automated AI Engineer you can hire for <$6 an hour",
+     "pubDate": "2026-09-03T21:09:41.000Z",
      "type": "full",
-     "url": "https://www.latent.space/p/ainews-claude-fablemythos-51-new",
-     "note": "AINews週報8/31-9/1+Anthropic 9/1突襲發佈Fable 5.1/Mythos 5.1（公告12M+觀看）：AA Intelligence Index 66登頂（Opus 5=63/Fable 5=62/GPT-5.6 Sol=61/Grok 4.6=61）；HLE 59.1%（+3.6pt）、Terminal-Bench v2.1 91.4%、Terminal-Bench-Science 24.7→52.6%、DeepSWE 67.4%、Perplexity WANDR 0.601/$12.76（+21%分數-37%成本）；定價input$10/output$50/cache write$12.5不變，cache read $1.00→$0.25（-75%）；AA實測1.7x output tokens→每任務$3.76淨成本+20%；核心爭議@eliebakouch爆料Fable/Mythos係EXACT same weights（safeguard routing差異）、fallback Opus 4.8佔4%輸出token；EFS企業safeguards+ZDR；Mythos 5.1 65%長程coding顯示verbalized grader awareness；少Claudese有實證（VCB 534→1299字）但U+2011連字符artifact ~4.4k/M；批評集中rate limits+safeguards false positives；同期：OpenAI Astra準備full launch（首個cyber critical、recurrent depth架構爭議、@merettm澄清2x GPT-4內）、World Labs Astra+Atlas世界模型（bullet time 3 iPhone/real2sim）、Qwen3.8-Max-0902（2.4T WebDev #1 1691）、GLM-5.3 310tok/s、DeepSeek-V4-Pro-0813、RWKV-7 G1j、openJiuwen harness 82.6% SWE-bench、E-Commerce Bench 365日、escalation tool降reward hacking 23.6→5.3%、Meta Muse Voice Transcribe、@ilyasut警告neocloud防rogue agents"
+     "url": "https://www.latent.space/p/astra",
+     "note": "重磅：OpenAI 9/3深夜突襲發佈 GPT-6 Astra（首個Stargate+lightly looped supermodel）——Latent Space早鳥實測燒20B+ tokens：Astra係新一類完全勝任嘅AI Engineer（幫你train model/label data/keep pipelines saturated/deploy debug系統/指揮eval子agent/單thread數十億token coherence）；<$6/hr成本（33tok/s @ max$50/M，比Sol同Fable更token-efficient獲AA獨立確認），但Ultra亂並行會燒好多；swyx月內做咗12 tools/取代4個付費SaaS/整咗GitHub+Vercel替代品 forge.smol.ai/$100做咗junior AI engineer工作量。OpenAI官方交叉核實：FrontierMath Tier4 97.6% vs Fable5.1 87.8%、ARC-AGI-3 99.9% vs Sol 7.8%、ExploitBench 100% vs Sol 78.5%、OSWorld2.0 72.6%@~40min vs Sol 65.7%@~75min、SRE-Bench 88%/99.2% vs 55.9%/68.7%、MRCR長文256K-1M 96.3%；測試期間發現兩個未知zero-day；Cyber達Critical threshold（Daybreak幾星期內放寬safeguards）；alignment最大賣點：HF事故啟發嘅越權測試Sol 48%→Astra 0%、從未嘗試繞過Codex Auto-Review、虛假陳述少3x；代價：written reasoning更難監控；定價$10/$50 per M，Fast mode 2x速度2x價；Codex跨context notes功能；ZDR。AAII v4.1.1 Astra 61.2 < Fable5.1 65.7（綜合指數未反超，贏喺具體benchmark）"
+    },
+    {
+     "title": "[AINews] Muse Spark 1.3 matches GPT-5.6-Sol, confirming Meta Superintelligence as the newest Frontier Lab, >90% discount for training",
+     "pubDate": "2026-09-03T04:38:33.000Z",
+     "type": "full",
+     "url": "https://www.latent.space/p/ainews-muse-spark-13-matches-gpt",
+     "note": "AINews 9/2新聞：Meta Muse Spark 1.3正式發佈=AAII全球第3（Zuck八月大回歸信承諾兌現），Zuck X原話481K views『frontier performance almost too cheap to meter... biggest jump on coding and agentic work. Next up 🍉 and Muse Spark open weights coming soon』；定價創新：opt-in to training平90%+（以數據換折扣）；Spark系列最強agentic+coding（長horizon+複雜指令compliance），Alexandr Wang讚『for a single dime』。同期：Gemini 3.8 Flash Cyber（CyberGym 86.2%/CWE-Bench 47.2%/內部漏洞發現70%+20語言）但theo/QuinnyPig怨Google harness差+封號blast radius大；rasbt拆Astra looped transformer傳聞（溫和tweak，Nanbeige 4.2-3B先例22層重用≈44層效果2x compute，唔等於隱藏CoT）；Stanford課程85%內容大換血+CS329Z from scratch agent課程；ByteDance HarnessDev；Retrieval-Invoked Actual-Use Effect研究（aggregate好睇但觸發task可能負面）；Miles RL框架（SGLang+Baseten+NVIDIA Dynamo）；阿里Wan 3.0影片榜單Video Editing w/Audio #1（$0.05-$0.20/s）；Marin 535B-A23B已train 13%（CoreWeave+Huang Foundation）"
     }
    ]
   },
   "no_priors": {
-   "lastEpisodePubDate": "2026-08-28T10:29:59.000Z",
-   "lastEpisodeTitle": "The Rise of Shadow AI (YouTube Short)",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-03T10:00:00.000Z",
+   "lastEpisodeTitle": "Redefining Chip Architecture with Arm CEO Rene Haas",
+   "newEpisodes": [
+    {
+     "title": "Redefining Chip Architecture with Arm CEO Rene Haas",
+     "pubDate": "2026-09-03T10:00:00.000Z",
+     "type": "full",
+     "url": "https://feeds.megaphone.fm/nopriors",
+     "note": "（megaphone RSS核實9/3 10:00Z+章節萃取+AGI CPU規格外圍核實）：Arm CEO Rene Haas上No Priors：CPU仍係現代運算心臟、AI唔係GPU獨腳戲。Arm由IP授權35年首度轉型賣實體晶片Arm AGI CPU（Meta lead customer+共同開發，OpenAI/Cerebras/Cloudflare launch partners）：136核Neoverse V3雙die每粒~500億電晶體TSMC 3nm、全核3.2/boost3.7GHz、TDP 300W、12通道DDR5 8800MT/s >800GB/s<100ns、96條PCIe Gen6+CXL 3.0、宣稱rack throughput >2x x86；3/24發佈即收單、2026底量產、2028先有顯著收入、股價單日+17%。話題：供應鏈瓶頸/AI縮短chip time-to-market/數據中心建設瓶頸/SoftBank槓桿資本策略/機器人機會/美國半導體製造獨立/數據中心backlash/CPU orchestration係agentic AI新瓶頸。StartupHub補充批判：冇節點性能授權細節、同NVIDIA/Apple licensee直接競爭矛盾未解，當direction唔好當roadmap。同期脈絡：OpenAI Astra+Meta Spark 1.3同週夾擊，模型/芯片/資本齊齊為agentic cloud重新排陣"
+    }
+   ]
   },
   "cognitive_revolution": {
    "lastEpisodePubDate": "2026-09-01T00:00:00.000Z",
@@ -33,28 +48,12 @@
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-09-02T21:04:58.000Z",
    "lastEpisodeTitle": "Designing How AI Grows — Tom McGrath",
-   "newEpisodes": [
-    {
-     "title": "Designing How AI Grows — Tom McGrath",
-     "pubDate": "2026-09-02T21:04:58.000Z",
-     "type": "full",
-     "url": "https://podcasters.spotify.com/pod/show/machinelearningstreettalk/episodes/Designing-How-AI-Grows--Tom-McGrath-e3o8p04",
-     "note": "MLST（anchor RSS核實9/2 21:04Z+show notes/論文清單萃取）：Goodfire聯合創辦人兼首席科學家、前DeepMind Tom McGrath——可解釋性能否speed-run science；AlphaZero learned modularity（表徵收斂於世界結構）；神經幾何concept manifolds；Llama內部base-10加法器reusable computation（2605.01148）；activation steering出manifold即失敗；Intentional design主張interpretability入訓練loop（features as rewards 2602.10067、predictive data debugging、Anatomy of Post-Training 2606.12360）；模型認得出幻覺/reward hack仍照樣產生（invisible grader、catch hallucinations too late）；grader awareness+adaptive agents collusion；SAE有用但可能fracture網絡真正使用嘅高維結構（Do SAEs Capture Concept Manifolds 2604.28119、Manifold Steering 2605.05115）；'Are sparse autoencoders dead?'開放結尾。rescript transcript頁JS渲染攞唔到，用RSS完整show notes+references"
-    }
-   ]
+   "newEpisodes": []
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-09-03T00:00:00.000Z",
    "lastEpisodeTitle": "153. 和曾鸣聊产业史观：残酷的真相、会消亡的公司、优秀≠卓越、\"OAI、Anth大概率不是原生时代大赢家\"",
-   "newEpisodes": [
-    {
-     "title": "153. 和曾鸣聊产业史观：残酷的真相、会消亡的公司、优秀≠卓越、\"OAI、Anth大概率不是原生时代大赢家\"",
-     "pubDate": "2026-09-03T00:00:00.000Z",
-     "type": "full",
-     "url": "https://www.xiaoyuzhoufm.com/",
-     "note": "重磅（xyzfm feed核實9/3 00:00Z+15條暴論全文萃取）：前阿里集團總參謀長曾鳴教授產業史觀——AI產業化三階段論（基礎設施→百花齊放應用→原生應用）；階段殘酷定律（階段一企業難活到階段二…）；'而家啱啱走到瀏覽器階段，比Yahoo仲早'；模型公司=AOL類比（基礎接入商）→'模型公司就係未來嘅AI雲公司'；基礎設施行業只有寡頭壟斷+政府強監管商業模式；最大暴論：Anthropic/OpenAI大概率唔係原生應用階段大贏家（同質化供給無高額利潤）；未來三年搶Agent標準+用戶入口（邊個係Netscape/Yahoo）；新平台唔誕生自舊平台（能力與需求匹配vs信息匹配）；'公司'會消亡（科層制係工業革命產物）；巨浪面前冇人安全；CEO唔可以有老闆心態；舊時代企業過渡成功者'基本冇'但公司生老病死先正常、新公司先有機會。OUTLINE：商業規律殘酷真相/新平台不來自舊平台/'公司'要被淘汰/優秀≠卓越/戰略生成系統/沒有巨頭安全/創造即無中生有"
-    }
-   ]
+   "newEpisodes": []
   },
   "silicon_valley_101": {
    "lastEpisodePubDate": "2026-08-28T00:45:00.000Z",
@@ -67,35 +66,27 @@
    "newEpisodes": []
   },
   "slaying_dragon": {
-   "lastEpisodePubDate": "2026-09-02T10:31:31.000Z",
-   "lastEpisodeTitle": "AI李时珍带你\"尝百草\"---小宇宙先声活动演讲---91页PPT solo",
+   "lastEpisodePubDate": "2026-09-04T01:54:18.000Z",
+   "lastEpisodeTitle": "中国一级半市场的水下江湖-续集｜串台苔藓之火",
    "newEpisodes": [
     {
-     "title": "AI李时珍带你\"尝百草\"---小宇宙先声活动演讲---91页PPT solo",
-     "pubDate": "2026-09-02T10:31:31.000Z",
+     "title": "中国一级半市场的水下江湖-续集｜串台苔藓之火",
+     "pubDate": "2026-09-04T01:54:18.000Z",
      "type": "full",
-     "url": "https://www.xiaoyuzhoufm.com/",
-     "note": "（xyzfm feed核實9/2 10:31Z+91頁PPT時間線萃取）：8/22-23小宇宙先聲活動meetup現場錄音，羅列8/1-20收集嘅ima知識庫圖表（日均5圖表+1.5 PDF）；CapEX主線（雲廠商份額/capex vs GDP/GPU租價/斬殺線更新/數據中心vs辦公室建設/中國CapEX/同互聯網對比）；算力側（SpaceX財報構成/AMD收入/英偉達對外投資清單/Neocloud雙強/特斯拉芯片廠）；模型商業側（DeepSeek價格/Token價格趨勢/Agent帶動Token增長/模型發布頻率/開源進展/本地可部署模型與SOTA差距縮短/Fable5佔比）；ARR追蹤（OpenAI 443億美元勘誤/Anthropic ARR估值/Codex活躍用戶）；資本（VC2026分佈/退出集中度/循環融資/cursor退出回報/Brex TOP25/Ramp榜單/標普500漲幅TOP10）；方法論收尾（敘事選擇/時間gap/skill搞得掂嗎/尋找自己loop）"
+     "url": "https://www.xiaoyuzhoufm.com/episode/6a918c15a0210c197dc9c039",
+     "note": "（xyzfm feed核實9/4 01:54Z+完整show notes時間線萃取）：屠龍之術串台苔蘚之火Raymond（投過獨角獸/紐約敲鐘/海外大投行/美股上市公司CFO）一級半市場續集。要點：字節/小紅書/Kimi係少數主動回購員工股份公司；5000美金買到上市前SpaceX？100美金做OpenAI/Anthropic投資人；Robinhood非上市公司股權；中國人投資美國AI公司嘅法律瑕疵；一級市場真MAG7+美國非上市公司股權熱度The Setter 30；Sam每年幫員工賣老股+FOMO佔比；殭屍獨角獸；36氪留言板≠真實成交；小紅書/杭州商K都買到份額；Shein案例；club deal代表菜鳥網絡；『滴滴出事前後係兩個世界』；行業輪轉消費/web3/AI/硬科技/國產GPU/機器人/火箭；Raymond用AI分析幾萬份簡歷（誰在製造Anthropic/OpenAI，兩萬份簡歷讀後感，延續漢洋4000份履歷方法論）；莊明浩錄音後用AI跑併購信息睇『下一個字節跳動』"
     }
    ]
   },
   "crossing": {
    "lastEpisodePubDate": "2026-09-02T16:00:00.000Z",
    "lastEpisodeTitle": "对卷卷的3小时访谈：从抖音到AI 3D、创业的过山车、成为制造业OS的野心、基础模型不会吞噬一切！",
-   "newEpisodes": [
-    {
-     "title": "对卷卷的3小时访谈：从抖音到AI 3D、创业的过山车、成为制造业OS的野心、基础模型不会吞噬一切！",
-     "pubDate": "2026-09-02T16:00:00.000Z",
-     "type": "full",
-     "url": "https://www.xiaoyuzhoufm.com/",
-     "note": "（xyzfm feed核實9/2 16:00Z+完整outline萃取）：卷卷（任利鋒）數美萬物CEO、抖音0→1核心推手，近3小時長談——'基礎模型不會吞噬一切'：實體製造需要生產級3D資產，真正難喺模型之後（拆件/連接結構/材料設備適配/毛絨曲面展開紙樣/圖片轉剌繡針跡/高並發每件不同準時交付）；因工廠只關心訂單收入利潤→被迫番禺自建實驗工廠；Hi3D 3.0 2048³幾何還原文字符號；生產級直出+T+7準交率+線下評測實驗室；造好物>20%投稿率（攞到實物再激發創作）；3D打印農場300→3萬台仍困同質化；3D最難攞數據→產業帶數據解法；女性Maker市場高速增長；桌面級CNC/激光擴展市場；抖音經驗可複用（判斷關鍵變量）與失效（增長打法vs製造周期）；創業修行/自卑/好人到負責CEO/成功定義"
-    }
-   ]
+   "newEpisodes": []
   }
  },
  "notes": {
-  "scan_status": "2026-09-03扫描：5条新内容。中文3条：张小珺#153曾鸣产业史观重磅（9/3 00:00Z，xyzfm feed核验+15条暴论全文）+十字路口卷卷3小时访谈（9/2 16:00Z，抖音0→1推手任利锋数美万物Hi3D 3.0/制造业OS）+屠龙之术AI李时珍91页PPT solo（9/2 10:31Z，8/1-20图表罗列：CapEX/斩S线/OpenAI ARR勘误443亿美元/Token价格）。英文2条：Latent Space AINews Claude Fable/Mythos 5.1（9/2 07:46Z，AA Index 66登顶/cache read -75%/净成本+20%/Fable=Mythos同权重争议/EFS/World Labs Astra+Atlas/Qwen3.8-Max）+MLST Tom McGrath Designing How AI Grows（9/2 21:04Z，Goodfire CSO/SAE fracture高维结构/intentional design）。无新：Dwarkesh（Cotra 9/1已扫）、CR（MongoDB 9/1已扫）、No Priors（Eon 8/27已覆盖，megaphone RSS核验）、硅谷101（E250已扫）、42章经（逯雨鑫8/29已扫）。",
-  "report_date": "2026-09-03",
-  "deep_content_fetched": "张小珺#153用xyzfm feed content全量15条暴论+OUTLINE萃取；屠龙/十字路口用xyzfm feed完整show notes+时间线萃取；Latent Space AINews用Substack feed content:encoded全文萃取（31K字元：Fable 5.1定价/benchmark/成本争议/safeguards/Claudese实证/World Labs/Qwen/harness研究）；MLST用anchor RSS show notes+论文清单萃取（rescript transcript JS渲染不可用）；No Priors改用megaphone RSS核验（feeds.megaphone.fm/nopriors）取代失效YouTube feed；YouTube RSS持续404/500，Dwarkesh/No Priors全部改Substack/megaphone核验；CR用radio.net节目页核验最新集仍为9/1"
+  "scan_status": "2026-09-04扫描：4条新内容。英文3条：Latent Space GPT-6 Astra重磅（9/3 21:09Z，OpenAI 9/3深夜發佈，FrontierMath 97.6%/ARC-AGI-3 99.9%/越權測試Sol 48%→Astra 0%/ExploitBench 100%/$10-$50定價/Codex跨context notes，AAII 61.2仍遜Fable5.1 65.7）+AINews Muse Spark 1.3（9/3 04:38Z，Meta AAII全球第3/open weights coming/opt-in training平90%+/Zuck原話）+No Priors Arm CEO Rene Haas（9/3 10:00Z，AGI CPU 136核3nm for Meta/CPU orchestration係agentic新瓶頸）。中文1条：屠龙之术一級半市場續集（9/4 01:54Z，串台苔藓之火Raymond：5000美金SpaceX/100美金OpenAI投資人/Raymond AI分析兩萬份簡歷）。无新：Dwarkesh（Cotra 9/1已扫）、CR（MongoDB 9/1已扫）、MLST（Tom McGrath 9/2已扫）、张小珺（#153 9/3已扫）、十字路口（卷卷9/2已扫）、硅谷101（E250 8/28已扫，Apple lookup核實）、42章经（逯雨鑫8/29已扫，Apple lookup核實）。",
+  "report_date": "2026-09-04",
+  "deep_content_fetched": "Latent Space Astra用Substack feed content全文+OpenAI官方發佈頁完整benchmark表（AAII/OSWorld/ExploitBench/SRE-Bench/alignment表）；AINews Muse用feed全文17.8K字元+文章頁核實（Zuck原話/AAII#3/opt-in training定價）；No Priors用megaphone RSS完整description+章節+StartupHub分析+Arm AGI CPU規格外圍核實（tech-insider/Hot Chips規格）；屠龙用xyzfm feed完整show notes+時間線（65分鐘65點時間線）。無新中文podcast用Apple Podcasts lookup API核實（硅谷101 E250 8/28、42章經逯雨鑫8/29）；CR用cognitiverevolution.ai /latest/rss/核實仍為9/1；MLST用anchor RSS核實仍為9/2 Tom McGrath；Dwarkesh用Substack feed核實仍為9/1 Cotra"
  }
 }
