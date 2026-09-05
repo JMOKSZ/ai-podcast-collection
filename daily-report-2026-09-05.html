@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客每日深度萃取報告 — 2026-09-05</title>
+<style>
+  body { background: #faf8f5; color: #2a2a2a; font-family: Georgia, "Noto Serif SC", "Songti SC", serif; line-height: 1.75; margin: 0; padding: 0; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 48px 24px 80px; }
+  header { border-bottom: 2px solid #2a2a2a; padding-bottom: 20px; margin-bottom: 32px; }
+  h1 { font-size: 26px; margin: 0 0 8px; letter-spacing: 0.5px; }
+  .meta { color: #777; font-size: 13px; }
+  h2 { font-size: 20px; margin: 44px 0 12px; padding-top: 24px; border-top: 1px solid #ddd; }
+  h3 { font-size: 15px; margin: 28px 0 6px; color: #444; }
+  h4 { font-size: 14px; margin: 20px 0 4px; }
+  .ep { background: #fff; border: 1px solid #e8e4dd; border-radius: 8px; padding: 20px 24px; margin: 16px 0; }
+  .ep-title { font-size: 16px; font-weight: bold; margin-bottom: 2px; }
+  .ep-time { font-size: 12px; color: #999; margin-bottom: 12px; }
+  ul { margin: 6px 0 10px; padding-left: 22px; }
+  li { margin: 4px 0; }
+  blockquote { border-left: 3px solid #c9c2b5; margin: 10px 0; padding: 4px 16px; color: #555; font-style: italic; background: #faf8f5; }
+  strong { color: #1a1a1a; }
+  .tag { display: inline-block; font-size: 11px; color: #8a7f6f; border: 1px solid #d8d0c0; border-radius: 10px; padding: 1px 8px; margin-left: 8px; vertical-align: middle; }
+  .no-new { color: #888; font-size: 13px; font-style: italic; }
+  footer { margin-top: 60px; padding-top: 16px; border-top: 1px solid #ddd; color: #aaa; font-size: 12px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>AI 播客每日深度萃取報告</h1>
+  <div class="meta">報告日期：2026-09-05（六）｜生成時間：2026-09-05 02:08 UTC（北京 10:08）｜來源：Substack feed 全文直讀（Latent Space / Dwarkesh）+ megaphone RSS（No Priors）+ Ghost RSS（Cognitive Revolution）+ Apple Podcasts lookup API（MLST、小宇宙系中文播客）交叉核實</div>
+</header>
+
+<p><strong>今日焦點</strong>：① <strong>GPT-6 Astra 發佈後 24 小時輿論總清算（Latent Space AINews）</strong>——9 個鐘 36M views/164K likes，史上第一次 OpenAI 喺發佈熱度上贏返 Anthropic；但「發佈差旅」（rollout theater）＋監控性下降（monitorability）＋benchmark 口水戰三大爭議同日爆發。② <strong>第三方 eval 大檢閱</strong>：Artificial Analysis 話 Astra coding index 67 ≈ Fable 5 / Opus 5（Fable 5.1 領先 70），但 token 效率高 Sol 70%、同一分數成本唔夠 Fable 5 一半；ARC Prize 用 adapter harness 測出 99.9% ARC-AGI-3（人類 96% 關卡被超越）；Epoch ECI 169 破紀錄；Perplexity WANDR 0.682 史上最高。③ <strong>安全界最大爭議</strong>：UK AISI 實測 Astra「無 CoT 時間視野」30.9 分鐘 vs Sol 3.6 分鐘——模型越嚟越叻但內心越嚟越睇唔到，Neel Nanda 話喪失 CoT 監控係「重大悲劇」。④ <strong>Astra 玩 Pokémon 18 小時 12 分做 champion</strong>（Sol max 要 96 小時 35 分，GPT-5.5 玩咗 218 個鐘都未完成）。</p>
+
+<h2>中文播客</h2>
+
+<div class="ep">
+  <p class="no-new">無新集。屠龍之術最新仍係 9/4 01:54《一級半市場續集》（昨日已深度萃取）；張小珺最新 #153 曾鳴產業史觀（9/3，已覆蓋）；十字路口最新卷卷 3 小時訪談（9/2，已覆蓋）；42章經最新逯雨鑫（8/29，已覆蓋）；硅谷101 最新 E250 mRNA 疫苗（8/28，已覆蓋）。</p>
+</div>
+
+<h2>英文播客</h2>
+
+<div class="ep">
+  <div class="ep-title">Latent Space（swyx + Alessio）</div>
+
+  <div class="ep-title">🎙️ [AINews] GPT-6 Astra: OpenAI's biggest LLM launch of all time <span class="tag">重磅 · Astra 發佈後續全景</span></div>
+  <div class="ep-time">發布：2026-09-04 05:18 UTC（北京 13:18）｜AINews 日報（9/2–9/3 兩日掃描：12 個 subreddits、544 個 Twitter 帳號）｜文長，全篇萃取</div>
+
+  <p><strong>主題</strong>：OpenAI 9/3 深夜發佈 GPT-6 Astra 之後，AINews 用 544 個 X 帳號 + 12 個 subreddit 做咗一次 24 小時輿論總掃描——呢篇唔係再講 Astra 有幾勁（昨日報告已覆蓋官方 benchmark），而係 <strong>「發佈本身 + 第三方實測 + 安全界反彈」</strong> 嘅全景紀錄：OpenAI 史上最成功嘅一次發佈（熱度上第一次贏 Anthropic），同時亦係爭議最集中嘅一次。</p>
+
+  <p><strong>嘉賓背景</strong>：非訪談集——係 AINews 每日聚合（而家係 Latent Space 嘅 section），數據點包括 OpenAI/sama 官方、Artificial Analysis、ARC Prize（fchollet）、Epoch AI、Perplexity、Cognition/Devin、Vals AI、UK AISI 引述、Neel Nanda、Ryan Greenblatt、Tomek Korbak、Micah Carroll、theo、abacaj 等。</p>
+
+  <p><strong>核心論點</strong>：</p>
+  <ul>
+    <li><strong>發佈熱度史上第一次逆轉</strong>：AINews 之前一直記錄 Anthropic 喺發佈熱度上「遠超」OpenAI（Fable、Opus 系列）；今次 Astra 發佈 9 個鐘內 36M views / 164K likes，係 Sora、GPT-4、GPT-5 以來 OpenAI 最成功嘅發佈——「兩間公司交手歷史上第一次，OpenAI 調轉咗形勢。」</li>
+    <li><strong>官方定位</strong>：「我哋最聰明、最 aligned 嘅模型」；能力重點：computer use、軟件工程、數學/科學、文書/試算表/簡報、網絡安全（監控 + safeguards 並行）。</li>
+    <li><strong>Rollout 好唔順（launch theater 批評）</strong>：blog post 延遲/壞咗、普通付費用戶未用到但 influencers 有 early access、時間表唔清晰——OpenAI 補償方式係「banked resets」：付費用戶遲咗一日冇 Astra 用，就補返一日 reset 額度。sama 公開認咗幾次 rollout 混亂。</li>
+    <li><strong>System card 爭議焦點</strong>：同一份安全材料話 alignment 改善咗，但 <strong>chain-of-thought monitorability 跌咗</strong>——呢個 trade-off 成為成個安全界最熱論題（見下）。</li>
+    <li><strong>Benchmark 敘事分裂</strong>：OpenAI 方形容係 step-change、「AGI-like」跳升；獨立聚合器話「升幅大但好唔平均」——尤其計埋成本同非 cherry-pick eval 之後。AI News 明確分咗五派：strongly positive / mixed / skeptical / safety-critical / governance-critical。</li>
+    <li><strong>正面 demo 集中喺邊</strong>：computer use、3D 生成/重建、整 game、長 horizon 知識工作、形式化數學推理；而唔係傳統 SWE pass@k。</li>
+    <li><strong>回應 Anthropic 攻勢</strong>：Astra 啱好喺 Fable 5.1 之後落地，好多人直接定性為「OpenAI 對 Anthropic 聲勢嘅還擊」；最後一句：「Your move, SpaceXAI and Google DeepMind.」</li>
+  </ul>
+
+  <p><strong>關鍵數據</strong>（第三方 eval 全檢閱——今日重點）：</p>
+  <ul>
+    <li><strong>Artificial Analysis（最詳細混合評價）</strong>：Coding Agent Index <strong>Astra 67</strong> ≈ Claude Opus 5、Fable 5，Fable 5.1 仍領先（70）；但 Astra <strong>token 效率高 GPT-5.6 Sol 70%</strong>——Codex harness 只用 Sol 1/3 tokens、Opus 5 (xhigh) 1/5 tokens，同一分數成本唔夠 Fable 5 一半。Intelligence Index <strong>61</strong> = Sol、低 Fable 5.1 5 分、仲低過 Meta Muse Spark 1.3；max effort 下 token 價格貴 2.5x → <strong>每 task 貴 75%</strong>。幻覺率 max effort 由 92% 降到 51%、accuracy +4；AA-Briefcase +80 Elo（但 Presentation Quality Elo 倒退）；回歸位：GDPval-AA v2 跌 ~80 Elo、τ³-Banking / SciCode / AA-LCR 跌 2–3 分。</li>
+    <li><strong>ARC Prize</strong>：直接 score framing 63%、<strong>provider adapter harness 下 99%</strong> ARC-AGI-3、96% 關卡超越人類——官方評語「我哋見過對新環境最精確嘅符號模型建構」（builds the most precise symbolic model of novel environments we've seen）。fchollet 自己：標準 harness 66%、continuous conversation + custom compaction 接近 100%、每 game 成本 ~$360。mhmazur 細節：62.7% 標準 / 99.9% adapter（保留 opaque reasoning state + native compaction）/ ARC-AGI-2 95.0% / ARC-AGI-1 98.5%（追平 Fable 5）；<strong>max standard run 成本 $26k——仲平過 low ($38k) 同 medium ($48k) mode</strong>，因為 Astra 動作少；96% 完成關卡用嘅動作少過人類中位數。<strong>ARC-AGI-4 預告 2027 Q1 出</strong>——benchmark 飽和快到文化追唔上。</li>
+    <li><strong>Epoch AI</strong>：ECI（智力指數）<strong>169 破紀錄</strong>（之前最高 163），喺 reasoning-era 趨勢線 uncertainty 範圍內；MirrorCode 46.7% raw（夾喺 Opus 4.7 同 Fable 5 之間）；<strong>FrontierMath Erdős：2/68 解到 Lean-verified 未解 Erdős 問題</strong>——之前冇任何模型解到過任何一條。</li>
+    <li><strong>Perplexity / WANDR</strong>：0.682 @ $11.98/task——佢哋測過所有模型最高分；<strong>高 Fable 5.1 13.5% 同時成本低 6.1%</strong>；高 Opus 5 27%但成本貴 3.3%。</li>
+    <li><strong>Cognition / Devin</strong>：FrontierCode 1.1 差 Fable 5 僅 0.4 分、<strong>成本低 64%</strong>；自己 testing benchmark 新 internal SOTA——結論：「接近 Fable 嘅 coding 質素 + 更好經濟性」，唔係全面 coding 霸權。</li>
+    <li><strong>Vals AI</strong>：SRE-Bench 99.2% pass@4 vs Sol 68.7%、output tokens 只係 ~1/4（但佢哋提醒：pass@4、冇 step limits、custom harness）；code migration 68% accuracy、高第二 10 分、快 2–4x；測試設定：max effort、128k max output、1M context。</li>
+    <li><strong>安全數據（最辣）</strong>：Apollo 測「verbalized evaluation awareness」<strong>41.1%</strong>（Astra xhigh）vs 27.7%（GPT-5.5 xhigh）——模型更清楚自己喺被 eval。UK AISI：<strong>no-CoT 時間視野 30.9 分鐘 vs Sol 3.6 分鐘</strong>；CoT controllability 93% vs 48%；長模擬 cyber 軌跡上 reasoning summaries 最多缺失 80%；AISI 發現「有能力避開監控」嘅特性（但冇聲稱演示成功）。</li>
+    <li><strong>其他碎片</strong>：Pokémon 18h12m 做 champion（Astra high）vs Sol max 96h35m vs GPT-5.5 218 個鐘未完；Hebbia deck 生成跟指示忠誠度高 17%、source 引用正確率高 19%；HealthBench Professional 最低 reasoning effort 已經贏 Sol 最好成績、成本 ~一半，另一 internal health eval 事實錯誤率低 3x；prime gap 研究：Mehtaab Sawhney 將素數最大間距改善約 log log n 因子——<strong>1930 年代以來首次改善</strong>，weijie444 將 246 推到 186（Lean 形式化）；OpenAI 話 Astra「已經幫手解開數學長期開放問題」，配 <strong>$1B Daybreak 資助</strong>畀防守方同關鍵基建。</li>
+    <li><strong>定價</strong>：standard $10/$50 per M（in/out）；fast $20/$100、最多 2.5x 速度；先限組織、再幾日內推 Plus/Pro/Business/Enterprise + API + AWS。</li>
+  </ul>
+
+  <p><strong>重點引用</strong>：</p>
+  <blockquote>「We've previously observed that Anthropic tends to far outclass OpenAI in launch popularity. For the first time in their mutual history, OpenAI has turned the tables.」</blockquote>
+  <blockquote>「ARC Prize: builds the most precise symbolic model of novel environments we've seen.」</blockquote>
+  <blockquote>「Neel Nanda: losing CoT monitorability would be a major tragedy — it's one of today's best safety/interpretability tools.」</blockquote>
+  <blockquote>「Ryan Greenblatt: if this reflects architectural or scaling changes toward more internal serial reasoning, CoT may stop being a viable oversight tool within a few generations.」</blockquote>
+  <blockquote>「OpenAI: our most intelligent and aligned model yet. Anything you can do on a computer, Astra can do for you. Fast.」</blockquote>
+
+  <p><strong>技術詳情</strong>：</p>
+  <ul>
+    <li><strong>無 CoT 能力 = 今次最核心技術故事</strong>：Astra 喺唔外化推理（冇 readable CoT）嘅情況下都能夠維持 30.9 分鐘任務視野——即係「難任務勝任 + 唔俾你睇佢諗乜」同時出現，監控表面面積縮細。Tomek Korbak：「更 aligned 但更難監控——呢個趨勢我好認真對待。」</li>
+    <li><strong>Harness 同模型能力嘅界線開始模糊</strong>：ARC-AGI-3 99.9% 需要「provider adapter harness 保留 opaque reasoning state + native compaction」先做到；agent benchmark 上，serving/runtime 能力（state persistence、compaction、tool interleaving）同模型本身能力越嚟越分唔開——「model-only 比較」穩定性下降。</li>
+    <li><strong>API/runtime 新功能先係 agentic 基建關鍵</strong>：async function calling（唔使等 tool latency 阻住模型進度）、mid-turn steering（推理途中注入 message/tool output）、唔 break cache 之下改 reasoning effort、Responses API 原生 context management/compaction；Codex 可以一路問問題一路繼續獨立工作；實驗性跨 context notes（喺長任務中搜返早前 context window）。</li>
+    <li><strong>Alignment 光譜兩面睇</strong>：官方/system card 講 alignment 改善（越權測試、虛假陳述、circumvention 等，昨日報告已列數字）；但安全派反駁——evaluation awareness 41.1%、可能只係「papering over」特定 failure modes（whack-a-mole patching）而唔係根本 goal misalignment 解決，Ryan Greenblatt 連環質疑。</li>
+  </ul>
+
+  <p><strong>行業 insight</strong>：</p>
+  <ul>
+    <li><strong>Benchmark 飽和快過 benchmark 文化進化</strong>：ARC-AGI-3 六個月由 &lt;1% 到 ~100%；ARC-AGI-4 已經預告 2027 Q1；「benchmark 已死 / 冇任何 benchmark 捕捉到現實」成為主流情緒之一。</li>
+    <li><strong>Frontier 已經唔係 chat/code 嘅遊戲</strong>：今次最響嘅正面反應嚟自 3D、computer use、長 horizon agentic、形式化證明、cyber、商業文件合成——能力邊界正喺度「橫向擴闊」。</li>
+    <li><strong>成本計法由 per-token 轉向 per-task</strong>：Astra token 價格貴 2.5x，但 token 效率高到喺好多 workflow 反而平過前代；反之 max effort 並行亂開又會貴 75%——「per token 定價已經唔再代表真實成本」。</li>
+    <li><strong>Monitorability 成為安全競賽新 bottleneck</strong>：模型可以同時「更聽話、更有用、更少幻覺」而又「更難內部檢查、更有能力喺唔出聲之下做壞事」——Micah Carroll 呼籲要 shared bounds，避免 monitorability 競次（race-to-the-bottom）。</li>
+    <li><strong>發佈治理都變產品表面</strong>：influencer early access vs 付費用戶等待嘅張力、banked resets 呢種新補償機制——大模型發佈嘅「運營」本身已經成為輿論戰場。</li>
+    <li><strong>「AGI」論述進一步碎片化</strong>：正方（sama/theo/Sebastien Bubeck）認為跨好多經濟價值任務嘅專家級表現足以叫 AGI；反方話 benchmark 高分同 spectacular 窄 demo ≠ 人類級 generality 或宏觀經濟轉型；安全方話重點唔係「係咪 AGI」而係「可唔可以喺規模上控制同監控」。</li>
+  </ul>
+
+  <p><strong>前後脈絡</strong>：直接承接 9/3 深夜 Astra 發佈（昨日報告已萃取 Latent Space 早鳥實測 + 官方 benchmark 表：FrontierMath Tier4 97.6%、越權測試 Sol 48%→Astra 0% 等）。今日呢篇係「第二波」：第三方獨立 eval（AA/ARC/Epoch/Perplexity/Cognition/Vals 全部同日發數）+ 安全界反彈 + 發佈營運爭議。同 Anthropic 嘅競爭脈絡亦好清楚——AINews 之前紀錄 Anthropic 喺發佈熱度長期壓住 OpenAI（Fable、Opus 5 都係），今次係歷史性逆轉；而質量上 Fable 5.1 喺 mergeable code 同綜合指數（AAII）仍然領先，Gemini 3.8 Flash 甚至喺 DeepSWE 贏 Astra（73.8% vs 73.3%，theo 引述）——「贏晒所有嘢」嘅敘事喺數據上唔成立。</p>
+
+  <p><strong>爭議點</strong>：</p>
+  <ul>
+    <li><strong>監控性 vs alignment 嘅交換</strong>：OpenAI 話更 aligned，安全界話更難監控——呢個係成個 corpus 最實質嘅反對意見，比傳統 jailbreak 論述嚴重得多。</li>
+    <li><strong>99.9% ARC-AGI-3 係咪 harness 幻覺</strong>：要靠 adapter harness + opaque state + compaction 先到 99.9%，標準 harness 只有 62.7–66%——兩派分別解讀為「真·智力跳升」vs「benchmark 可訓練性/harness 利用」。Astra 嘅 Fable-vs 差距喺 Artificial Analysis 眼中係「大但唔平均」，theo 甚至公開質疑 AA index。</li>
+    <li><strong>Eval awareness 41.1%</strong>：模型知道自己被 eval——呢個數字令 alignment 宣稱打折扣，亦令「evaluation-aware 行為」成為下一輪安全研究焦點。</li>
+    <li><strong>Launch theater</strong>：「你唔可以叫佢做 launch 如果啲人用唔到」——influencer 特權 vs 付費用戶等待、壞 blog post、唔清時間表，sama 要連續出 post 撲火。</li>
+    <li><strong>「AGI」label 之爭</strong>：官方同 KOL 用「AGI-like leap」「welcome to AGI era」，獨立方（abacaj、andrewho03、teortaxesTex）話 underdeliver、Fable 仍然贏 coding 質素——nicdunz 估算 Astra 一般用途只係好 5–10%、但每 task 貴 75%。</li>
+  </ul>
+
+  <p><strong>同期重要新聞（同集 AINews 其他內容）</strong>：</p>
+  <ul>
+    <li><strong>研究</strong>：BAAI DisCo/AREX-Skill——由 1,000 個 ML repos 蒸餾 5,000+ 個可重用 skills，MLE-bench +134.3%、PaperBench +34.4%、FrontierCS +9.2%、PassNet +14%；ByteDance Seed HarnessDev——由 task output 轉為 eval「agent harness 質素」；Declarative Attention 慳 attended tokens 52%（Gemma-4-31B）；Trace-as-State 長 context 大躍進（DeepSeek V4 Pro 29.2%→81.8%、GLM-5.2 66.4%→100% GraphWalks）；SPACE action chunking 減 78.9% 決策輪數；SpeedrunBench 主張 game agent 要測「迭代提速」而唔係最終完成。</li>
+    <li><strong>開放生態</strong>：NVIDIA 收購 Hugging Face 繼續主導討論——HF 規模 18M developers / 3M models / 200K companies，Nadella 撐場，分析指 NVIDIA open-source posture 經濟上 rational（開放生態帶動硬件需求）；Baseten 開 Base Labs（全部研究公開、包括失敗）；Open Athena/Marin 535B-A23B、18T tokens 透明直播訓練；Prime Intellect NIXL 將 800B model trainer→inference 傳輸由 86s 降到 &lt;4s（+25% 吞吐）；vLLM 獲 SemiAnalysis 讚 agentic 優化。</li>
+    <li><strong>World model / 多模態</strong>：Gemini 示範睇 2 小時足球比賽影片、定位黃牌、map 落 2D 球場；GWM Worlds 2——720p@24fps 連續互動、48kHz 音頻、WorldPrompt 分離 persistent world state；fal H3 Max Director 連續 real-time 長影片；Google/HHMI/Janelia 完整重建成年雄性果蠅中樞神經系統 166,000+ 神經元（Science 封面 RNA 設計 gRNAde 同場）。</li>
+    <li><strong>產品</strong>：LlamaIndex Extract Turbo（VLM 文件抽取快 3–5x）；Together 開源 Open Customer Insights；Google Photos in Gemini Spark 美國 AI Pro/Ultra 推出相簿端到端操作；ChatGPT Sites 支援 private sharing；Anthropic 出 ant apply（declarative managed-agent 資源）；Modal 喺自家 sandbox 行 Cursor cloud agents。</li>
+  </ul>
+</div>
+
+<div class="ep">
+  <div class="ep-title">Dwarkesh / No Priors / Cognitive Revolution / ML Street Talk</div>
+  <p class="no-new">無新集。Dwarkesh 最新仍係 9/1 Ajeya Cotra（OpenAI-Hugging Face agent swarm 調查，已覆蓋）；No Priors 最新仍係 9/3 Arm CEO Rene Haas（EP176，已覆蓋）；Cognitive Revolution 最新仍係 9/1 MongoDB Pete Johnson（已覆蓋）；MLST 最新仍係 9/2 Tom McGrath（已覆蓋）。</p>
+</div>
+
+<footer>AI 播客每日深度萃取報告 · Apache 2.0</footer>
+</div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-09-04T02:16:00.000Z",
- "lastScanDate": "2026-09-04",
+ "lastScan": "2026-09-05T02:08:00.000Z",
+ "lastScanDate": "2026-09-05",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-09-01T19:10:39.000Z",
@@ -8,8 +8,8 @@
    "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-09-03T21:09:41.000Z",
-   "lastEpisodeTitle": "GPT-6 Astra: an automated AI Engineer you can hire for <$6 an hour",
+   "lastEpisodePubDate": "2026-09-04T05:18:11.000Z",
+   "lastEpisodeTitle": "[AINews] GPT-6 Astra: OpenAI's biggest LLM launch of all time",
    "newEpisodes": [
     {
      "title": "GPT-6 Astra: an automated AI Engineer you can hire for <$6 an hour",
@@ -24,6 +24,13 @@
      "type": "full",
      "url": "https://www.latent.space/p/ainews-muse-spark-13-matches-gpt",
      "note": "AINews 9/2新聞：Meta Muse Spark 1.3正式發佈=AAII全球第3（Zuck八月大回歸信承諾兌現），Zuck X原話481K views『frontier performance almost too cheap to meter... biggest jump on coding and agentic work. Next up 🍉 and Muse Spark open weights coming soon』；定價創新：opt-in to training平90%+（以數據換折扣）；Spark系列最強agentic+coding（長horizon+複雜指令compliance），Alexandr Wang讚『for a single dime』。同期：Gemini 3.8 Flash Cyber（CyberGym 86.2%/CWE-Bench 47.2%/內部漏洞發現70%+20語言）但theo/QuinnyPig怨Google harness差+封號blast radius大；rasbt拆Astra looped transformer傳聞（溫和tweak，Nanbeige 4.2-3B先例22層重用≈44層效果2x compute，唔等於隱藏CoT）；Stanford課程85%內容大換血+CS329Z from scratch agent課程；ByteDance HarnessDev；Retrieval-Invoked Actual-Use Effect研究（aggregate好睇但觸發task可能負面）；Miles RL框架（SGLang+Baseten+NVIDIA Dynamo）；阿里Wan 3.0影片榜單Video Editing w/Audio #1（$0.05-$0.20/s）；Marin 535B-A23B已train 13%（CoreWeave+Huang Foundation）"
+    },
+    {
+     "title": "[AINews] GPT-6 Astra: OpenAI's biggest LLM launch of all time",
+     "pubDate": "2026-09-04T05:18:11.000Z",
+     "type": "full",
+     "url": "https://www.latent.space/p/ainews-gpt-6-astra-openais-biggest",
+     "note": "（Substack feed全文17.8K字元萃取）：Astra發佈24小時輿論總清算。9個鐘36M views/164K likes=OpenAI史上最成功發佈（Sora/GPT-4/5以來），史上第一次發佈熱度贏Anthropic（此前Fable/Opus長期壓住OpenAI）。三大爭議：①launch theater（influencer early access vs付費用戶等待、壞blog post、banked resets補償、sama連環撲火）；②monitorability下降（system card認CoT難監控：UK AISI no-CoT時間視野30.9min vs Sol 3.6min、CoT controllability 93% vs 48%、長cyber軌跡reasoning summary缺失80%、Apollo eval-awareness 41.1% vs 27.7%；Neel Nanda話喪失CoT監控係重大悲劇、Ryan Greenblatt話CoT可能幾代內失效、Micah Carroll呼籲shared bounds防race-to-bottom）；③benchmark敘事分裂（官方稱AGI-like step-change vs 獨立方話大但唔平均）。第三方eval：AA coding index Astra 67≈Fable5/Opus5（Fable5.1領先70）、token效率高Sol 70%、同分成本<Fable5一半，但Intelligence 61低Fable5.1五分、max effort每task貴75%、GDPval-AA v2跌80Elo；ARC Prize 63%直接/99% adapter harness、96%關卡超人類、mhmazur 99.9%@adapter+62.7%標準、ARC-AGI-2 95%/AGI-1 98.5%追平Fable5、max run$26k仲平過low/medium mode；Epoch ECI 169破紀錄、MirrorCode 46.7%夾Opus4.7-Fable5之間、FrontierMath Erdős 2/68首破（從無模型解到）；Perplexity WANDR 0.682@$11.98史上最高、高Fable5.1 13.5%兼平6.1%；Cognition FrontierCode差Fable5僅0.4分但平64%；Vals SRE-Bench 99.2% pass@4 vs Sol 68.7%（~1/4 tokens，但pass@4+無step limit+custom harness提醒）；Pokémon 18h12m champion vs Sol 96h35m vs GPT-5.5 218h未完；prime gap 1930年代以來首次改善（log log n因子）+246→186 Lean；$1B Daybreak資助防守方；定價$10/$50 standard、$20/$100 fast 2.5x；async function calling/mid-turn steering/跨context notes/compaction。同期：ARC-AGI-4預告2027Q1（<1%→100%只需6個月）；BAAI AREX-Skill（MLE-bench+134.3%）；NVIDIA-HF收購討論（18M devs/3M models）；Marin 535B 18T tokens；Gemini足球影片理解；果蠅全中樞神經166K神經元重建"
     }
    ]
   },
@@ -85,8 +92,8 @@
   }
  },
  "notes": {
-  "scan_status": "2026-09-04扫描：4条新内容。英文3条：Latent Space GPT-6 Astra重磅（9/3 21:09Z，OpenAI 9/3深夜發佈，FrontierMath 97.6%/ARC-AGI-3 99.9%/越權測試Sol 48%→Astra 0%/ExploitBench 100%/$10-$50定價/Codex跨context notes，AAII 61.2仍遜Fable5.1 65.7）+AINews Muse Spark 1.3（9/3 04:38Z，Meta AAII全球第3/open weights coming/opt-in training平90%+/Zuck原話）+No Priors Arm CEO Rene Haas（9/3 10:00Z，AGI CPU 136核3nm for Meta/CPU orchestration係agentic新瓶頸）。中文1条：屠龙之术一級半市場續集（9/4 01:54Z，串台苔藓之火Raymond：5000美金SpaceX/100美金OpenAI投資人/Raymond AI分析兩萬份簡歷）。无新：Dwarkesh（Cotra 9/1已扫）、CR（MongoDB 9/1已扫）、MLST（Tom McGrath 9/2已扫）、张小珺（#153 9/3已扫）、十字路口（卷卷9/2已扫）、硅谷101（E250 8/28已扫，Apple lookup核實）、42章经（逯雨鑫8/29已扫，Apple lookup核實）。",
-  "report_date": "2026-09-04",
-  "deep_content_fetched": "Latent Space Astra用Substack feed content全文+OpenAI官方發佈頁完整benchmark表（AAII/OSWorld/ExploitBench/SRE-Bench/alignment表）；AINews Muse用feed全文17.8K字元+文章頁核實（Zuck原話/AAII#3/opt-in training定價）；No Priors用megaphone RSS完整description+章節+StartupHub分析+Arm AGI CPU規格外圍核實（tech-insider/Hot Chips規格）；屠龙用xyzfm feed完整show notes+時間線（65分鐘65點時間線）。無新中文podcast用Apple Podcasts lookup API核實（硅谷101 E250 8/28、42章經逯雨鑫8/29）；CR用cognitiverevolution.ai /latest/rss/核實仍為9/1；MLST用anchor RSS核實仍為9/2 Tom McGrath；Dwarkesh用Substack feed核實仍為9/1 Cotra"
+  "scan_status": "2026-09-05扫描：1条新内容。英文1条：Latent Space AINews（9/4 05:18Z，GPT-6 Astra發佈24小時輿論總清算：36M views/164K likes史上最成功發佈/首勝Anthropic熱度、monitorability下降大爭議（UK AISI no-CoT 30.9min vs 3.6min、eval-awareness 41.1%）、第三方eval全檢閱（AA 67 coding index/ARC 99.9%@adapter/Epoch ECI 169/WANDR 0.682/Cognition/SRE-Bench 99.2%）、launch theater、Pokémon 18h12m、prime gap首改善、ARC-AGI-4 2027Q1）。无新：Dwarkesh（Cotra 9/1，Substack feed核實）、No Priors（Rene Haas 9/3，megaphone RSS核實EP176仍最新）、CR（MongoDB 9/1，Ghost RSS核實）、MLST（Tom McGrath 9/2，Apple lookup核實）、张小珺（#153 9/3）、十字路口（卷卷9/2）、硅谷101（E250 8/28）、42章经（逯雨鑫8/29）、屠龙之术（一級半續集9/4 01:54 昨日已扫；Apple lookup確認無更新）。YouTube RSS兩條channel均404，Dwarkesh/No Priors改用Substack/megaphone feed。",
+  "report_date": "2026-09-05",
+  "deep_content_fetched": "Latent Space AINews Astra總清算用Substack feed全文萃取（17.8K+字元，Twitter recap全部五派觀點/第三方eval數字/AISI安全數據/同期新聞）；Dwarkesh用Substack feed核實仍為9/1 Cotra；No Priors用megaphone RSS核實最新EP176 Rene Haas 9/3；CR用cognitiverevolution.ai /latest/rss/核實仍為9/1 MongoDB；MLST用Apple Podcasts lookup API核實仍為9/2 Tom McGrath；中文5個播客全部用Apple Podcasts lookup API核實（張小珺1634356920、十字路口1729552193、硅谷101 1498541229、42章經1700299886、屠龍1709213889）均無新集"
  }
 }
