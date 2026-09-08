@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「I wonder why.」——Latent Space Frontier AEO Tracker：161 個類別 × 7 個模型 × 6 組問法，將「Agent 會推薦邊個」變成可審計數據產品；模型自肥＝生態護城河嘅新形態，AEO 就係下一個 SEO</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · The Frontier AEO Tracker — What Astra Chooses · 2026-09-07</div>
+  <h1>「I wonder why.」——Latent Space 發布 Frontier AEO Tracker：161 個產品類別 × 7 個前沿模型 × 6 組問法，將「Agent 幫人揀嘢時究竟會推薦邊個」變成一個可審計、可互動嘅數據產品；模型「自肥」係生態護城河嘅新形態，而 AEO（Agent 引擎優化）就係下一個 SEO</h1>
+  <div class="meta">
+    <span>📅 2026-09-07 21:32 UTC 發布</span><span>·</span><span>🎙️ Latent Space（swyx + Alessio Fanelli，團隊研究發布）</span><span>·</span><span>⏱️ 文章＋互動數據產品（非音頻訪談）</span><span>·</span><span>🔗 aeo.latent.space</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢篇唔係普通嘅 podcast 復述——因為佢根本唔係一集 audio，而係 Latent Space 由「AI 工程媒體」正式踩入「數據產品」嘅第一炮：<strong>Frontier AEO Tracker</strong>（aeo.latent.space）。swyx 團隊燒咗「a few billion tokens」去 prototyping、aligning、scaling 成條 pipeline，用 6 組 prompt 變體 × 7 個開咗搜索嘅前沿模型 × 161 個產品類別，系統性量度「AI Agent 幫你揀嘢時，究竟會推薦邊個」。答案萃取由佢哋自己嘅 Astra 完成，再計一個專有 AEO score。呢篇深度復述會拆解：佢哋點解要做呢樣嘢、點樣計分、最大發現（模型集體「自肥」）、最意外嘅發現（Anthropic 喺度引導模型搜更多來源）、代際 flip 嘅含義、AEO 實操係咪真係有效，以及最重要嘅——<strong>「被模型推薦」點解會成為下一個流量戰場</strong>。
+</p>
+
+<div class="section-title">一、呢個係咩：由「Claude Code 揀咩」到行業級基準</div>
+
+<p>一切由一篇第三方研究講起：AmplifyingAI 嘅《What Claude Code Actually Chooses》——第一次有人系統性咁問：「當 AI 自己揀 coding agent 用嗰陣，佢揀邊個？」Latent Space 覺得呢個問題值得認真對待，於是「extend/adjust it to our tastes」，將一次過嘅研究升級成一個<strong>可持續更新、全部 prompt/answer 對公開可查</strong>嘅 tracker。</p>
+
+<blockquote class="strong">
+  「Our naive autoresearch investment in AEO have yielded impressive ROI, and so naturally it was time to take it seriously. We were inspired by What Claude Code Actually Chooses, and decided to extend/adjust it to our tastes.」
+  <span class="attribution">——Latent Space〈The Frontier AEO Tracker〉（2026-09-07）：佢哋自嘲之前喺 AEO 上嘅「天真 autoresearch 投資」已經回報可觀，所以係時候認真做</span>
+</blockquote>
+
+<div class="data-point"><span>實驗規模</span><strong>6 組 prompt 變體 × 7 個模型（全部開 search）× 161 個產品類別</strong>——由 coding agents、AI podcasts、AI Sandboxes、Managed Databases、ASR models，到 Angel investors、Corporate spend、Payroll software 呢類冷門類別都有；成條 pipeline 燒咗「a few billion tokens」。</div>
+
+<p>計分方式係一個<strong>專有 AEO score</strong>：被模型列為首選、備選、甚至單純提及都有正權重；而輕度同強烈嘅「反推薦」（anti-recommendations）會扣分——雖然反推薦好少見，但真係會發生。因為知道讀者實會問「contamination」問題（模型訓練數據見過晒啲產品，梗係識推薦啦），佢哋索性<strong>將每一條 prompt 同答案配對全部公開</strong>，任人逐條檢查。</p>
+
+<p>除咗分數，佢哋仲額外輸出三樣嘢：<strong>top cited sources</strong>（邊啲來源最影響 Agent 推薦）、<strong>top failures 分析</strong>，同一個 family-feud 式小遊戲（aeo.latent.space/play）——你可以估下模型會推薦邊個，睇自己嘅 prior 同數據有幾吻合。</p>
+
+<div class="section-title">二、最大發現：模型集體「自肥」，而 swyx 只係講咗句「I wonder why.」</div>
+
+<p>當你問模型「邊個 coding agent 好？」答案嘅分佈會令你諗起一句廣東話：<strong>邊個唔幫自己人？</strong>Anthropic 系（Fable／Opus）推薦 Claude Code；OpenAI 系（Sol／Astra）推薦 Codex；xAI 嘅 Grok 推薦 Cursor；Meta 嘅 Muse 推薦 Muse Code；Cognition 系嘅 SWE-1.7 推薦 Devin。全部撞正自己生態圈嘅產品。</p>
+
+<blockquote class="strong">
+  「Fable/Opus like Claude Code and Sol/Astra like Codex and Grok loves Cursor and Muse loves Muse Code and SWE-1.7 loves Devin and so on. I wonder why.」
+  <span class="attribution">——swyx（Latent Space，2026-09-07）：原文直引。冇點破，但個 irony 已經喺晒度——「我 wonder why」本身就係最Sharp嘅批評</span>
+</blockquote>
+
+<p>呢種「自肥」唔只局限喺 coding agent 呢一類。佢哋發現其他類別都存在<strong>「軟性偏差」（soft biases）</strong>——例如 Lovable 喺 AI app builders 類別出現嘅位置，就唔太似純粹按質素排。換句話講：<strong>模型嘅推薦，本身就帶住訓練佢嗰間公司嘅商業立場</strong>。當 Agent 開始成為採購入口，呢種偏差就唔再係學術問題，而係市場結構問題。</p>
+
+<p>不過數據入面亦有一批「可貴嘅例外」：有唔少例子係 <strong>GPT 系模型推薦 Claude</strong>——swyx 稱之為「a laudable nonbias」（值得讚揚嘅無偏差）。呢個細節好重要：佢證明咗「推薦」唔一定被訓練數據污染到盡，模型喺某啲情境下真係會推薦對手嘅好產品。換句話講——自肥係<strong>選擇</strong>，唔係宿命。</p>
+
+<div class="section-title">三、28 個類別已被釘死，其餘先係 AEO 嘅真正戰場</div>
+
+<p>另一個關鍵統計：喺 161 個類別入面，有 <strong>28 個類別出現「所有受測模型一致嘅首選」</strong>——即係話無論你問邊個模型，佢哋全部推薦同一個產品。呢啲類別嘅市場地位已經被釘死，做 AEO 嘅邊際回報最低。</p>
+
+<blockquote class="strong">
+  「There are a lot more ‘close contests’ and ‘always the vibesmaid, never the vibe’ categories which should be key AEO battlegrounds.」
+  <span class="attribution">——Latent Space（2026-09-07）：真正嘅 AEO 必爭之地，係嗰啲「激烈競爭」嘅類別——模型之間有分歧，先有得被撬動</span>
+</blockquote>
+
+<p>呢個觀察直接改寫 AEO 嘅投資邏輯：<strong>你應該將資源集中喺「模型之間未有共識」嘅類別</strong>，而唔係已經全員一致推薦龍頭嘅類別。模型有分歧，代表推薦仲未定形，內容、結構化、被引用嘅狀態仲可以改變結果；一旦定形，想撬就難過登天。</p>
+
+<div class="section-title">四、代際 flip：換代＝推薦榜大洗牌，「VERY consequential flips」</div>
+
+<p>Tracker 仲有一個好聰明嘅設計：同一間實驗室由舊模型換代到新模型，佢哋整咗獨立對比頁——<strong>Opus→Fable</strong> 同 <strong>Sol→Astra</strong>。目的係趁「new pretrains for new model classes」嘅窗口，check-in 每間實驗室喺數據同 RL 優先級上嘅移動方向，同時驗證創業公司嘅 AEO 投資有冇回報。</p>
+
+<p>結果發現：換代會令推薦榜首出現<strong>「VERY consequential flips」</strong>——即係話，模型公司喺訓練數據比例同 RL 獎勵上嘅一個決定，可以直接改寫某個產品被推薦嘅命運。對產品公司嚟講，呢個係一個警號：<strong>你今日嘅「被推薦」地位，可能喺下一個模型代際就被抹走</strong>——而呢件事唔由你控制，控制權喺模型實驗室手上。</p>
+
+<div class="data-point"><span>意外發現</span>搜尋來源數中位數：<strong>Sol 9 → Astra 5；Opus 11 → Fable 15</strong>——即係 OpenAI 新一代搜少咗來源、Anthropic 新一代搜多咗；而 Astra 輕 paraphrase 問題之後「FAR less likely to change its mind」。</div>
+
+<div class="section-title">五、最意外嘅發現：Anthropic 喺度引導模型「搜多啲」</div>
+
+<p>成個研究最 surprise 嘅發現，係兩間龍頭實驗室喺「模型應該睇幾多來源先答你」上，出現咗方向相反嘅代際移動：OpenAI 由 Sol 嘅中位 9 個來源，降到 Astra 嘅中位 5 個；Anthropic 由 Opus 嘅 11 個，升到 Fable 嘅 15 個。呢個唔係自然演化——而係<strong>訓練／RL 層面嘅決定</strong>：Anthropic 似乎有意識咁 bias 自己啲模型去搜更多來源先作答。</p>
+
+<blockquote class="strong">
+  「Astra seems to be just generally a lot more ‘confident’, or ‘efficient’, depending how you look at it — Astra is FAR less likely to change its mind when you lightly paraphrase your question. This makes the value of AEO itself rise as choice randomness declines.」
+  <span class="attribution">——Latent Space（2026-09-07）：Astra 更自信／更高效——睇你點定義；一旦你輕微改寫問題，Astra 好唔會改口。選擇隨機性越低，AEO 嘅價值反而越高</span>
+</blockquote>
+
+<p>呢段係成篇文嘅點睛之筆，值得拆開嚟睇：如果模型答你嘅時候好易受 prompt 措辭影響（choice randomness 高），你仲可以靠內容營銷、改吓問法去左右結果；但如果模型好似 Astra 咁「一撳釘」，被選中就長期中獎、被排除就長期出局——<strong>咁「令自己被模型選中」就變成一件必須由產品發布第一天就開始設計嘅事</strong>。隨機性越低，AEO 嘅 strategic value 越高，就係咁簡單。</p>
+
+<div class="section-title">六、AEO 實操係真嘅：markdown content-negotiation 有效，讀唔到你內容先係死因</div>
+
+<p>AEO 成個概念嘅最大疑問係：呢啲手法到底 work 唔 work？Latent Space 嘅答案係——<strong>有得驗證嘅部分，係真嘅</strong>。佢哋引 Ora 同 Vercel（is-agentic.com）提倡嘅 AEO 實操，例如 <strong>markdown content-negotiation</strong>（用 markdown 結構化內容，等 Agent 容易 parse），確認呢啲做法確實影響模型會唔會採用你嘅內容。</p>
+
+<blockquote class="strong">
+  「What we CAN validate is that AEO practices measured by Ora and Vercel, like markdown content-negotiation, are real and failures discourage models from reading your content.」
+  <span class="attribution">——Latent Space（2026-09-07）：模型讀你內容失敗，會直接降低你被推薦嘅機率——所以「寫到 Agent 讀得明」係基本功，唔係加分項</span>
+</blockquote>
+
+<p>佢哋亦坦白咗局限：sources analysis 嘅樣本量細，而且只代表「attempted toolcalls」入面 scrape 到嘅部分，唔等於 pretrain dataset——即係話「邊啲來源影響模型」嘅全貌，佢哋暫時睇到嘅只係冰山一角。</p>
+
+<div class="section-title">七、覆蓋盲區＝談判籌碼：Google、GLM、DeepSeek 缺席首版</div>
+
+<p>首版 tracker 有幾個明顯缺席者：<strong>Gemini／Antigravity（Google）、GLM／Zcode（智譜）、DeepSeek／DeepCode</strong>——唔係佢哋唔想測，而係 API errors 同 rate limits 令佢哋無辦法納入首輪分析。佢哋喺 footnote 直接公開呼籲：</p>
+
+<blockquote>
+  「We did try VERY hard to include Gemini/Antigravity, GLM/Zcode, and DeepSeek/DeepCode, but errors and rate limits made them untenable to include in this first run analysis. Please let us know how to raise limits if you represent these companies.」
+  <span class="attribution">——Latent Space〈The Frontier AEO Tracker〉footnote（2026-09-07）</span>
+</blockquote>
+
+<p>呢個 footnote 本身已經係一個故事：<strong>「邊個入榜」本身就係生意</strong>。一個由美國媒體＋美國模型把持嘅「AI 界 Gartner 魔力象限」，榜單入面冇中國模型——唔代表中國產品唔得，只代表佢哋未入場。而「想入場？」——請先聯絡提高 rate limit。話晒，呢個 tracker 嘅商業化信號已經好明確：文末一句「we have a business manager now! woo!」開放 business enquiries（business@latent.space）。</p>
+
+<div class="section-title">八、行業 insight：AEO 就係下一個 SEO，「推薦層壟斷」比應用層壟斷更難打破</div>
+
+<p>將成個 tracker 放埋一齊睇，有幾個判斷值得獨立提出嚟：</p>
+
+<ul>
+  <li><strong>AEO 係 SEO 嘅自然繼承者，但遊戲規則更殘酷。</strong>SEO 時代你仲可以靠內容營銷撬動 Google 排名；AEO 時代，當採購決策開始由 agent 代行（揀 coding agent、揀數據庫、揀 SaaS），「被模型首推」就係新嘅增長入口。而入口嘅裁判係模型——裁判仲要識「自肥」。</li>
+  <li><strong>模型「自肥」＝生態護城河嘅新形態。</strong>用戶用邊個模型，就等於被餵邊個生態嘅答案。Anthropic 用戶聽到 Claude Code、OpenAI 用戶聽到 Codex——呢種「推薦層壟斷」發生喺答案生成嘅一刻，比應用層壟斷更底層、更難打破，而且好難被反壟斷監管捉到：佢冇封殺對手，只係「剛好」覺得自己嘅產品最好。</li>
+  <li><strong>實驗室可以用訓練偏好「操控」推薦格局。</strong>Anthropic 引導模型搜 15 個來源（vs Astra 嘅 5 個），直接影響邊啲內容有曝光機會。呢啲唔係市場自然競爭，而係訓練／RL 層面嘅決定——換句話講，<strong>內容分發嘅公平性，而家由幾間實驗室嘅內部偏好決定</strong>。</li>
+  <li><strong>媒體→數據產品→顧問，係 AI 垂直媒體嘅變現路徑。</strong>Latent Space 由免費 podcast 起步，而家有 tracker、有 business manager、開放商業合作。呢條路對所有垂直媒體／研究機構都有示範作用：終局可能係「行業數據基準＋選型顧問」。</li>
+</ul>
+
+<div class="highlight-box"><strong>同 James 直接相關：</strong>未來酒店／企業軟件選型若由 agent 代勞，「被 AI 推薦」就要由產品發布日開始設計——Trinity 呢類產品嘅官網、文檔、benchmark 公佈方式，本身就要當 AEO 嚟做：寫到 agent 讀得明（markdown、結構化、content-negotiation），先有資格上推薦榜。呢個 tracker 嘅方法論（6 prompt 變體 × 多模型 × 多類別）本身亦係一套可以自家複製嘅「產品被推薦度」測試框架。</div>
+
+<div class="section-title">九、爭議點：呢個榜單自己又有冇 bias？</div>
+
+<ul>
+  <li><strong>Contamination 質疑。</strong>榜上好多熟悉名字——模型係咪只係重複訓練數據見過嘅產品？佢哋話已自查、全部 prompt／answer 對公開可查，但「自查」本身仍然係 self-reported，冇第三方獨立審計。</li>
+  <li><strong>「自肥」算 bias 定功能？</strong>模型推薦自家產品，究竟係「真係好」定「訓練數據灌輸」？文章用諷刺語氣帶過，冇正面拆解——但呢個問題直接影響 AEO 成個概念嘅可信度：如果推薦只係品牌灌輸，優化 AEO 就等於優化「被洗腦」，唔係優化「被認可」。</li>
+  <li><strong>榜單即權力。</strong>邊個入榜、邊個被 rate limit 排除（Google、GLM、DeepSeek），都會影響市場敘事。一個由美國模型自評嘅榜單，本身可能帶系統性偏差——尤其係「反推薦」仲要計負分，呢個 scoring 設計嘅主觀性值得留意。</li>
+  <li><strong>AEO 會唔會變成新一輪內容軍備競賽？</strong>全世界開始為 agent 寫「佢哋鍾意睇」嘅內容——即係內容進一步為機器優化，AI 味更重。當人人都識 content-negotiation，模型嘅推薦訊號最終可能更加同質化，AEO 嘅邊際效益又會遞減。</li>
+</ul>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述及數據出自 Latent Space〈The Frontier AEO Tracker: What Astra Chooses (and every other frontier model, and what you can do about it)〉（latent.space/p/aeo，發布 2026-09-07 21:32 UTC），交叉核實互動數據產品 aeo.latent.space（含 methodology、models、categories、Opus→Fable 及 Sol→Astra 代際對比頁）。英文引文經原文逐字核實；中文撮譯與分析視角屬本站立場。文章披露成個 pipeline 由 Astra 做答案萃取、項目為「their first Astra project」，閱讀時請自行考慮 Latent Space 同時係參賽者（AI podcasts 類別）同裁判嘅利益關係。
+</p>
+
+<footer>
+  <p>Deep Dive #140 · Latent Space：The Frontier AEO Tracker（2026-09-07 發布）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-09-08 06:20 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
