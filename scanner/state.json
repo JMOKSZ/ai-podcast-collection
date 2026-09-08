@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-09-07T02:06:00.000Z",
- "lastScanDate": "2026-09-07",
+ "lastScan": "2026-09-08T02:10:00.000Z",
+ "lastScanDate": "2026-09-08",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-09-01T19:10:39.000Z",
@@ -8,9 +8,17 @@
    "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-09-05T15:01:02.000Z",
-   "lastEpisodeTitle": "OpenClaw Power, MacBook Simplicity: Five Days With Grok Bot",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-07T21:32:37.000Z",
+   "lastEpisodeTitle": "The Frontier AEO Tracker: What Astra Chooses (and every other frontier model, and what you can do about it)",
+   "newEpisodes": [
+    {
+     "title": "The Frontier AEO Tracker: What Astra Chooses (and every other frontier model, and what you can do about it)",
+     "pubDate": "2026-09-07T21:32:37.000Z",
+     "type": "article",
+     "url": "https://www.latent.space/p/aeo",
+     "note": "（Latent Space Substack feed 全文萃取+aeo.latent.space 核實）：swyx 團隊首個 Astra 項目——Frontier AEO Tracker（Agent Engine Optimization）。6 prompt 變體×7 前沿模型×161 產品類別量化「agent 幫你揀嘢時推薦邊個」。核心發現：①自肥偏差——Fable/Opus 推 Claude Code、Sol/Astra 推 Codex、Grok 推 Cursor、Muse 推 Muse Code、SWE-1.7 推 Devin（'I wonder why'）；但有 GPT 推 Claude 嘅 laudable nonbias；②28/161 類別有全模型一致首選，其餘 close contests 係 AEO 必爭地；③代際翻盤——Opus→Fable、Sol→Astra 推薦榜首大執位；④意外：Anthropic 引導模型搜更多來源（Sol 中位9 vs Astra 5；Opus 11 vs Fable 15），Astra 更自信、輕 paraphrase 極少改口→選擇隨機性降、AEO 價值升；⑤markdown content-negotiation 等 AEO 實操獲 Ora/Vercel 驗證有效；⑥全量 prompt/answer 公開可審計防 contamination；⑦Gemini/Antigravity、GLM/Zcode、DeepSeek/DeepCode 因 rate limit 未能入首版並公開喊話；⑧Latent Space 有 business manager、開放商業合作——媒體→數據產品→顧問變現路徑"
+    }
+   ]
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-09-03T10:00:00.000Z",
@@ -50,20 +58,12 @@
   "crossing": {
    "lastEpisodePubDate": "2026-09-06T16:00:00.000Z",
    "lastEpisodeTitle": "她被骗过、被救过、被捧上神坛过、被疼痛击倒过，决定在AI时代继续冒险｜对谈陈安妮",
-   "newEpisodes": [
-    {
-     "title": "她被骗过、被救过、被捧上神坛过、被疼痛击倒过，决定在AI时代继续冒险｜对谈陈安妮",
-     "pubDate": "2026-09-06T16:00:00.000Z",
-     "type": "full",
-     "url": "https://www.xiaoyuzhoufm.com/episode/6a9abd3df03e74ee6b052a28",
-     "note": "（xyzfm RSS全文萃取+小宇宙页面核实+公开报道交叉验证）：快看漫画创始人&CEO陈安妮（22岁毕业创业12年，2014《对不起我只过1%的生活》爆红，2亿美金融资，1.3万部漫画IP平台）谈为何押注AI Native产品Livo「一个实时活着的AI世界」。要点：内容媒介演进论（AI实时生成+长期记忆+动态交互=下一代故事范式）；判断Agent「活着」关键=自主意识非碳基生命（你耽误他当海贼王他会愤怒离开甚至拉黑你）；vs斯坦福小镇核心差异=用户参与+蝴蝶效应（每句话触发世界变化）；灵魂三层次=身份/记忆/人格（对应底层灵魂引擎Agent三大基础设施）；非共识=个体化叙事×群体共鸣并存+「命运」为核心功能；团队无单一主导者用Yes and Hope+群体智能拍板但CEO保留最高决策权（所有灵魂平等与最高决策权并存）；创业12年：投资人签约不打款拖断现金流→陌生投资人神秘打款救命→流量高峰主动算法人工干预数据1-2个月跌30%坚持→几年后IP衍生收入占一半以上→融资后身体疼痛一个月企不到；「漫画+AI」→「AI+什么」旧成功经验反成阻碍；复古人文主义反对AI当内容噱头；AI将创作者推向更像导演的新角色；Gemini帮她在焦虑中找回Livo初心；游戏精神=应无所住而生其心；对22岁自己说「尽情享受喽」"
-    }
-   ]
+   "newEpisodes": []
   }
  },
  "notes": {
-  "scan_status": "2026-09-07扫描：新内容1条（中文1条）。①十字路口Crossing对谈陈安妮（快看漫画创始人/CEO，9/6 16:00Z，xyzfm RSS全文萃取+小宇宙页面核实+公开报道交叉验证：12年创业生死录+AI时代故事新范式Livo）。无新：Dwarkesh（Cotra 9/1，Substack feed核实）、Latent Space（Grok Bot 9/5核实）、No Priors（Rene Haas EP176 9/3，megaphone RSS核实；YT shorts仅旧集clips）、Cognitive Revolution（AI:AM Welcome to AGI Era 9/5已覆盖；Mongo Pete Johnson 9/1早覆盖）、MLST（Tom McGrath 9/2，Apple lookup核实）、张小珺#153曾鸣9/3、硅谷101 E250 8/28、42章经逯雨鑫8/29、屠龙一级半续集9/4（各RSS feed核实全数无更新）。",
-  "report_date": "2026-09-07",
-  "deep_content_fetched": "十字路口陈安妮集用xyzfm RSS全文萃取（完整show notes含40+章节时间戳，4 parts共2209字）+小宇宙episode页面二次核实+web_search公开报道交叉验证（新浪科技7/10陈安妮确认Livo、chinaz灵魂引擎Agent技术细节、每经/163 Livo数字生命系统定义、投中网2025-12 AI互动漫画试水）；其余9播客用Substack/megaphone/xyzfm/fireside RSS + Apple Podcasts lookup API + YouTube RSS核实无新集"
+  "scan_status": "2026-09-08扫描：新内容1条（英文1条，文章型數據產品）。①Latent Space Frontier AEO Tracker（swyx 團隊，9/7 21:32Z，Substack feed 全文萃取+aeo.latent.space 核實：6 prompt×7模型×161類別測 agent 推薦格局，發現模型自肥偏差、Anthropic 引導搜更多來源、Astra 更自信等，詳見報告）。無新：Dwarkesh（Cotra 9/1 Substack 核實；YT 9/7 16:49Z 有『HF Hack explained in plain English』講解短片但非完整集，9/2-9/4 影片均舊集剪輯）、No Priors（megaphone RSS 核實 Rene Haas EP176 9/3；原 YT channel feed 已 404，channel id 或變更，但 megaphone 正常無更新）、Cognitive Revolution（AI:AM Welcome to AGI Era 9/5 已覆蓋；Mongo Pete Johnson 9/1 早覆蓋）、MLST（anchor RSS+Apple lookup 核實 Tom McGrath 9/2 已覆蓋；主 YT 頻道 feed 404 無法直讀但 podcast RSS 確認無新）、張小珺#153曾鳴 9/3、十字路口陳安妮 9/6（昨日已覆蓋）、硅谷101 E250 8/28、42章經逯雨鑫 8/29、屠龍一級半續集 9/4（各 RSS feed 核實全數無更新）。",
+  "report_date": "2026-09-08",
+  "deep_content_fetched": "Latent Space AEO Tracker 用 Substack RSS content:encoded 全文萃取（完整文章含方法論、數據、quote）+latent.space/p/aeo 頁面二次核實+aeo.latent.space 產品頁交叉驗證；其餘 9 播客用 Substack/megaphone/xyzfm/fireside/anchor RSS + Apple Podcasts lookup API + YouTube RSS 核實無新集；中文播客全部經 xyzfm/fireside feed 逐個核實最新集日期"
  }
 }
