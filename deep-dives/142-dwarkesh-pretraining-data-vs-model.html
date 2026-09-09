@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「預訓練嘅進步主要嚟自數據」——Dwarkesh 研究長文拆解 2019–2025：數據改進嘅算力效率貢獻係模型嘅 3.24 倍（12.0x vs 3.7x）、R²=0.88 純加法效應、帆船 vs 貨櫃船、同埋「數據牆」最大隱憂</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Dwarkesh Podcast · 研究長文（非音頻訪談）· Dwarkesh Patel × Jerry Han</div>
+  <h1>「預訓練嘅進步，主要嚟自數據」——Dwarkesh 首篇研究長文拆解 2019–2025：7×7 控制實驗首次將「數據 vs 模型」分開計量——數據改進嘅算力效率貢獻係模型嘅 3.24 倍（12.0x vs 3.7x）、88% 方差係純加法效應、帆船 vs 貨櫃船比喻，同埋成篇最尖嘅問題：我哋係咪就嚟裝完貨？</h1>
+  <div class="meta">
+    <span>📅 2026-09-08 16:10 UTC 發布</span><span>·</span><span>🎙️ Dwarkesh Podcast（Dwarkesh Patel × Jerry Han）</span><span>·</span><span>📄 研究文章型，非訪談</span><span>·</span><span>🔗 dwarkesh.com（Substack）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢篇復述嘅主角，唔係一場訪問，而係一篇研究長文——<strong>Dwarkesh Patel</strong>（同 Jerry Han 合作）喺自己 Substack 發佈嘅實驗研究：<em>「Pretraining progress is mostly coming from data」</em>（副題：拆解六年預訓練進步入面，數據同模型各自嘅貢獻）。佢哋用 7 個「年度代表模型 recipe」× 7 個「年度代表語料庫」嘅交叉格仔，由 2019（GPT-2 × OpenWebText）一路 train 到 2025（OLMo-2 × UltraFineWeb），喺 1e17 到 1e19 FLOPs 五個算力預算做控制實驗。結論一句講晒：<strong>喺 1e19 FLOPs 預算下，數據改進帶嚟嘅算力效率增益係模型改進嘅 3.24 倍</strong>。呢個數字極容易被斷章取義成「六年模型研究近乎白做」——但作者用成篇文章力挽，話模型研究真正嘅貢獻係「令更大規模嘅算力首次變得可用」。我哋會由實驗設計拆起，逐個論點行落去，最後睇「數據牆」呢個佢哋自己都承認未解嘅最大未知數。
+</p>
+
+<div class="section-title">一、點解呢篇值得讀：一個訪問節目主持，點解出咗篇研究論文</div>
+
+<p>Dwarkesh Patel 以〈AI 2027〉、〈Agent Civilizations〉等長訪問聞名，佢嘅 Substack 平時係播客 RSS。但今次呢篇係<strong>原創實驗研究</strong>——佢同 Jerry Han 真金白銀 train 咗 7×7 個模型組合嘅 scaling curves 出嚟。呢種「Podcaster 自己做研究」本身已經係訊號：佢訪問咁多算力經濟學嘅人（Anson Ho、Ryan Greenblatt、Dylan Patel），終於忍唔住出手自己量度。</p>
+
+<p>篇文承接嘅脈絡好清晰：Epoch AI 嘅 Anson Ho 等人 2024 年估算預訓練軟件效率每年提升約 3 倍（95% CI 1.5x–64x），並喺〈The least understood driver of AI progress〉度猜：「大部分軟件進步，可能實際上係數據質量改進」。但呢個講法從來冇人用控制實驗驗證過——因為要拆開「數據」同「模型」嘅貢獻，你需要同一個 eval、cross-train 唔同年代嘅模型同數據，而呢個實驗貴、慢、冇人肯做。Dwarkesh 篇文就係第一次有人大規模咁做。</p>
+
+<blockquote class="strong">
+  "Most software progress might actually be due to data quality improvements."
+  <span class="attribution">——Anson Ho（Epoch AI，2024）——一句講足兩年嘅猜測，今次終於有人用實驗秤佢</span>
+</blockquote>
+
+<div class="section-title">二、問題同方法：點樣「秤」數據同模型嘅貢獻</div>
+
+<p>問題本身好簡單：<strong>過去幾年 AI 嘅急速進步，幾多嚟自數據（data）改進，幾多嚟自模型（model／算法）改進？</strong>答案直接影響前沿實驗室嘅經濟學同未來進步速度。但量度方法有個經典陷阱：唔可以用固定數據集比較 cross-entropy loss——因為唔同年代嘅模型係喺唔同數據度 train 嘅，數據集本身喺度變。所以佢哋改用<strong>最終能力（end capability）</strong>做量度：用 OLMES eval——一個聚合 10 個相對簡單 benchmark（大部分係多選題 QA）嘅評估套件。</p>
+
+<p>實驗設計係成篇文嘅核心資產，值得完整拆一次：</p>
+
+<ul>
+  <li><strong>模型軸（recipe）：</strong>每年揀一個「代表嗰年公開算法水平」嘅開源模型配方——2019 年係 GPT-2，2025 年係 OLMo-2，中間涵蓋 optimizers、warmup＋decay schedules、RoPE 取代 learned absolute positions、RMSNorm＋SwiGLU gated MLPs、norm reordering、QK-norm、Z-loss regularization、cleaner inits 等一串創新。</li>
+  <li><strong>數據軸（corpus）：</strong>每年揀一個「代表嗰年公開數據水平」嘅語料庫——2019 年係 OpenWebText（Reddit 高讚網頁、去重過濾後只有約 <strong>90 億 tokens</strong>，基本上就係 GPT-2 當年食嘅嘢）；2025 年係 UltraFineWeb（成個互聯網咁刮，再用「train 一個 classifier 去預測邊啲數據實證上會提升模型表現」嘅精密過濾）。</li>
+  <li><strong>算力格仔：</strong>五個 compute budget——1e17、3.16e17、1e18、3.16e18、1e19 FLOPs（用 C = 6ND 記帳）；每個 scaling point 至少 3 個獨立 seed；7×7 全格仔喺 3.16e18 FLOPs 度行，每格 1 個 seed。</li>
+  <li><strong>控制變量：</strong>全部 run 共用 GPT-2 BPE tokenizer（50,257 vocab）、context length T=2048、batch 262,144 tokens。peak learning rate 當作最主要嘅超參處理——用 5 個 anchor point（3 種模型大小 × 2 種 D/N 比）掃出最優 LR，再 fit 一條參數化形式；唯獨 OLMo-2 直接用 Ai2 官方公佈嘅小模型 ladder 指定最優 LR。</li>
+</ul>
+
+<p>「點樣計 compute multiplier」都值得講清楚：攞參考模型／語料喺某算力水平達到嘅能力，再喺候選模型／語料嘅 scaling curve 度搵「最早達到同一水平」嘅點，兩者算力嘅比例就係乘數。誤差棒用成個 estimation pipeline 嘅 parametric bootstrap（1 個標準差）。</p>
+
+<div class="data-point"><span>實驗規模</span><strong>7 模型 recipe × 7 語料庫 × 5 個算力預算（1e17–1e19 FLOPs）</strong>，最高至 1e19 FLOPs、每個 scaling point ≥3 seeds、全格仔喺 3.16e18 FLOPs——呢個規模喺開放研究入面算係「小型但認真」，作者自己都話「extremely small scale」。</div>
+
+<div class="section-title">三、主結果：數據 12.0x vs 模型 3.7x——3.24 倍</div>
+
+<p>核心發現一句講晒（以下係原文直接引用）：</p>
+
+<blockquote class="strong">
+  "We find that from 2019 to 2025, 3.24x more compute efficiency gains have come from data improvements rather than model improvements (12.0x for data and 3.7x for models), at the 1e19 FLOPs compute budget."
+  <span class="attribution">——Dwarkesh Patel × Jerry Han〈Pretraining progress is mostly coming from data〉（2026-09-08）：同一能力水平，數據工程「慳」到嘅算力係模型創新嘅 3.24 倍</span>
+</blockquote>
+
+<p>即係話：由 2019 到 2025，如果你要達到某個 OLMES 能力水平，單靠將數據由 OpenWebText 換成 UltraFineWeb，可以慳 12 倍算力；單靠將模型由 GPT-2 換成 OLMo-2，可以慳 3.7 倍。兩個乘埋就係六年聯合嘅進步（實際聯合乘數因為加性效應而唔係 44.4x，下文再講）。年度化睇：模型側每年算力效率增益（CEG）<strong>1.24x</strong>（95% CI 1.19–1.29），數據側 <strong>1.51x</strong>（1.45–1.57），聯合 <strong>1.57x</strong>（1.49–1.65）。</p>
+
+<div class="data-point"><span>核心數字</span><strong>2019→2025（1e19 FLOPs 預算）：數據改進 12.0x vs 模型改進 3.7x ＝ 3.24 倍</strong>；年度化 CEG：模型 1.24x／數據 1.51x／聯合 1.57x——遠低過 Anson Ho et al. 嘅平均估算 3x/年。</div>
+
+<p>呢個結果同 Anson Ho 嘅猜測（「大部分軟件進步可能實質係數據質量改進」）完全印證——Ho 嘅 3x/年估算入面，數據貢獻佔大頭，而且仲要扣返「好多增益係 scale-dependent、喺細規模實現唔到」。聯合 1.57x 亦明確低過 1.24×1.51＝1.87x，因為「2019 起點 → 2025 終點」嘅聯合乘數係喺同一條 scaling curve 度量，唔係兩個獨立乘數直接相乘。</p>
+
+<div class="section-title">四、但係：模型研究嘅價值，唔係「慳算力」</div>
+
+<p>成篇文章最用力闢嘅謠，就係呢度。佢哋自己寫明：</p>
+
+<blockquote class="strong">
+  "A naive interpretation of our result is that most of the AI progress from 2019-2024 (the era of pretraining) was just better data engineering... But this is probably the wrong way to think about the value of model improvements. Their main contribution was not necessarily compute efficiency... Rather, it was making larger amounts of compute usable in the first place."
+  <span class="attribution">——Dwarkesh × Jerry Han（原文）：模型改進嘅主貢獻唔係同算力下慳 FLOPs，而係「令更大規模嘅算力首次變得可用」</span>
+</blockquote>
+
+<p>拆開講：隨住參數量、context length、run 時長、集群規模一路 scale up，乜嘢都會壞——梯度爆炸／消失、記憶體同頻寬見底、訓練慢到唔可行。大量模型研究本質上係<strong>「移走或者推後 scaling 嘅約束」（addressing constraints to scaling）</strong>：MoE、稀疏注意力變體、穩定性創新（norm 位置、初始化）、以及 FlashAttention 呢類 system／kernel 級優化——全部屬於呢類。冇呢啲嘢，幾十萬 GPU、數百 T token 嘅訓練根本企唔穩。所以「模型改進只值 3.7x」係一個極易被斷章取義嘅數字：<strong>佢量度嘅只係「同算力下嘅效率」，而模型研究嘅主戰場喺「算力嘅可及性」——兩個唔同嘅價值維度</strong>。</p>
+
+<p>呢個區分對理解前沿實驗室嘅經濟學好關鍵：如果你以為「模型研究次要、數據工程主導」，你會完全睇錯 labs 嘅護城河——真正嘅護城河可能係「令超大規模訓練可行」嘅整套系統能力，而唔係單一算法 trick。</p>
+
+<div class="section-title">五、加法效應：88% 方差，數據同模型改進幾乎唔互動</div>
+
+<p>第二個主結果係「獨立性」。用線性模型 OLMES score = mean + model effect + data effect 去 fit 3.16e18 FLOPs 嗰格 7×7 grid：<strong>R² = 0.88</strong>——88% 嘅方差可以由「加法效應」解釋，得返 ~12% 係交互項／高階項／eval 噪聲。</p>
+
+<div class="data-point"><span>關鍵發現</span><strong>R² = 0.88</strong>：模型改進同數據改進嘅增益幾乎完全獨立——實現某個模型改進嘅收益，唔需要特定嘅數據堆（反之亦然）；「呢個模型改進必須配嗰款數據工程」嘅複雜耦合，喺呢個規模度搵唔到。</div>
+
+<p>呢個發現嘅實務含義好直接：如果增益係加法獨立，咁研究路線圖可以平行推進——模型團隊照改架構、數據團隊照砌語料，兩邊嘅收益唔會互相抵消，亦唔需要為咗遷就對方而犧牲。對 scaling 計劃嚟講，呢個係「兩條引擎可以各自踩油」嘅好消息。</p>
+
+<div class="section-title">六、帆船 vs 貨櫃船：規模愈大，數據 curation 愈唔重要？</div>
+
+<p>但作者好誠實咁加咗一大桶冷水：<strong>呢個「數據主導」結論，可能只啱細模型</strong>。佢哋嘅論證係咁：細模型容量細，裝唔落咁多嘢，所以要極小心揀數據先有效；大模型容量過剩——「就算大部分係垃圾都照塞」，SGD 嘅 magic 自然會將信號同噪聲分開。如果你對大模型仲要激進過濾數據，你就被迫做幾十個 epoch，而實證上咁做表現更差。再加上前沿模型相對 Chinchilla-optimal 已經過度訓練最多 <strong>100 倍</strong>（為咗慳 RL 同部署時嘅推理算力），激進 curation 嘅傷害會更加大。</p>
+
+<blockquote class="strong">
+  "An analogy might be the difference between a sailboat and a container ship - the container ship doesn't necessarily go faster, but it can lug thousands of tons of cargo... and won't be toppled by choppy waters."
+  <span class="attribution">——Dwarkesh × Jerry Han（原文）——帆船比喻：2019 年嘅細模型係脆弱帆船，要精挑最值錢嘅貨；而家嘅大模型係貨櫃船，塞滿一切「勉強有機會有用」嘅嘢，仲要喺驚濤駭浪（數十萬 GPU 嘅訓練穩定性）度企得穩</span>
+</blockquote>
+
+<p>呢個比喻係全篇最靚嘅 passage，亦係理解「數據 vs 模型」規模依賴性嘅鑰匙：<strong>2019 年嘅進步 bottleneck 係「點樣喺有限容量度裝最多價值」；2025 年嘅 bottleneck 係「點樣開到一架咁大嘅船唔會沉」</strong>——前者係數據工程問題，後者係模型／系統研究問題。所以隨住規模增大，兩個槓桿嘅相對權重會自然調轉。</p>
+
+<div class="section-title">七、最大隱憂：「數據牆」同有限庫存</div>
+
+<p>如果預訓練進步嘅本質係「不停裝更多貨」，咁最尖嘅問題就係：<strong>貨會唔會裝完？</strong>作者好坦白：佢哋完全冇研究合成數據——而合成數據正正係所有前沿實驗室重度倚賴嘅擴充手段。佢哋寫道：</p>
+
+<blockquote class="strong">
+  "If the gains are limited, then the main driver of pretraining progress will stall, because we're not generating more internet, and you can only curate a fixed set of data by so much. To be clear, we have no active reason to think this."
+  <span class="attribution">——Dwarkesh × Jerry Han（原文）：若合成數據增益有限，預訓練進步嘅主引擎就會停滯——但佢哋強調：冇積極理由相信會咁，只係因為數據咁重要，呢個係必須研究嘅問題</span>
+</blockquote>
+
+<p>仲有一個被忽略嘅 fact：<strong>佢哋研究嘅語料庫，大部分係同一個 Common Crawl 嘅 curation 子集，而唔係擴展可用數據集合</strong>。即係話，數據工程呢個槓桿一直以嚟都係喺度「消耗一個有限庫存」——將同一堆 Common Crawl 越濾越精。呢個槓桿有盡頭：新來源數據（人類專家生成、新領域）、合成數據放大，先係未來嘅出路。文章最後列咗幾條前瞻研究路線：更大規模重複實驗、novel 高質數據對 pre/post-training 嘅邊際價值、合成數據「放大高質小語料 vs 直接多 epoch 訓練」嘅對比、以及用實驗室喺數據經紀／環境生產者 vs 算力／研究員嘅實際支出，去推算數據嘅隱含價值。</p>
+
+<div class="section-title">八、同自動化 AI 研究嘅關聯（Ryan Greenblatt 嘅注腳）</div>
+
+<p>作者引 Ryan Greenblatt 嘅觀察：歷史上嘅數據改進，好多睇落正正係「自動化研究員可以純靠實證試出嚟」嘅進步類型——例如用唔同數據做 ablation、睇模型表現。數據 curation 嘅 search space（揀咩數據、點樣 filter、比例幾多）好適合機械化暴力試錯，唔似架構創新咁需要概念突破。所以若 AI R&D 自動化成真，<strong>數據主導嘅進步速度可能大幅加快</strong>——呢個同「RSI 會先喺數據工程度爆發」嘅直覺一致。</p>
+
+<p>但佢哋同時提醒：預訓練進度本身提速定減速，<strong>唔係整體 AI 進度最重要嘅問題</strong>——因為過去兩年大部分收益嚟自 RL（強化學習）。預訓練只係成個 training 流程嘅一段，RL 階段嘅數據（互動、評測、環境）係另一套完全唔同嘅槓桿。</p>
+
+<div class="section-title">九、點解計出嚟只有 1.57x/年，遠低過 Anson Ho 嘅 3x/年</div>
+
+<p>呢度要細心啲讀，因為「1.57x vs 3x」嘅差距本身係重要資訊。作者列咗幾個原因：</p>
+
+<ul>
+  <li><strong>好多增益可能係 scale-dependent：</strong>尤其喺長 context 先顯現——佢哋喺 T=2048、細模型嘅規模度做，實現唔到好多大規模先有嘅增益。</li>
+  <li><strong>推理效率優化唔會以 compute multiplier 形式出現：</strong>例如 Llama-3 嘅 GQA 屬 KV cache 優化，喺「預訓練算力 vs 能力」嘅記帳度完全睇唔到；tokenizer 改進都冇研究。</li>
+  <li><strong>結果對「每年揀邊個代表」好敏感：</strong>佢哋揀咗自己認為最具代表性嘅 recipe 同語料庫，但唔敢話係每年最好嗰個。</li>
+  <li><strong>benchmark 選擇會令數字完全唔同：</strong>OLMES 係「10 個較易任務」；如果睇 coding 或 problem-solving benchmark，會獎勵好唔同嘅數據工程方法，得出好唔同嘅圖景。</li>
+</ul>
+
+<p>另外有幾個值得留意嘅 anomaly：<strong>NeoX 喺 1e19 表現差過 GPT-2</strong>（但喺 1e17–3.16e18 範圍較好；喺 FineWeb-Edu 嘅 held-out loss 上 NeoX 確實較好——作者估計係 OLMES 噪聲）；<strong>The Pile 遠差過 OpenWebText</strong>——呢個唔意外，因為 The Pile 嘅主賣點係多樣性而唔係過濾（22 個來源：PubMed、arXiv、GitHub、法律判詞、專利、議會紀錄），跨域遷移到「英文網頁散文多選題」OLMES 嘅效果有限，但作者預期佢喺更大規模會追返上嚟。仲有個技術註腳：佢哋嘅 GPT-3 實作喺 The Pile 上遇到訓練不穩定（gradient spikes）。</p>
+
+<div class="data-point"><span>誠實聲明</span>作者明確話：<strong>真實不確定度大過誤差棒顯示</strong>（超參掃描有限，尤其 peak LR）；「我們 definitely think it's plausible that there is something we missed——好想睇其他人點研究呢條問題」。呢種「實驗規模極細＋歡迎打臉」嘅姿態，喺呢類會影響政策同投資判斷嘅數字面前，係負責任嘅做法。</div>
+
+<div class="section-title">十、行業 insight：呢篇研究對 2026 年 AI 格局意味住乜</div>
+
+<ul>
+  <li><strong>「數據圍欄」嘅戰略價值可能被低估：</strong>如果數據改進真係算力效率嘅 3.24 倍來源，咁擁有獨家高質數據（或者數據管道）嘅公司，喺「同算力競賽」入面有隱藏優勢。但要即刻補返一句：結論可能只喺細規模成立，而且「數據 curation」本身係消耗緊 Common Crawl 嘅有限庫存——真正嘅長遠 moat 係「新數據來源嘅入口」而唔係「同一堆網頁濾得幾靚」。</li>
+  <li><strong>前沿實驗室嘅真正護城河 = 令超大規模訓練可行嘅系統能力：</strong>模型研究嘅價值維度係 constraint removal——FlashAttention、MoE、穩定訓練。呢啲嘢唔會以「compute multiplier」計到數，但佢哋決定咗你開唔開到嗰架貨櫃船。呢個睇法同「Scaling Law 下模型研究 = 移走約束」嘅框架完全一致。</li>
+  <li><strong>「加法獨立」對行業係重要訊號：</strong>數據團隊同模型團隊嘅成果可以各自累加，唔使互相遷就——實驗室嘅組織設計（數據組同架構組分開跑）喺呢個發現下係合理嘅；相反，任何聲稱「我哋嘅模型改進必須配獨家數據先有效」嘅講法，喺呢個規模嘅證據下要打個折。</li>
+  <li><strong>對「數據牆」辯論嘅貢獻：</strong>呢篇文將「數據牆」由口號變成一個具體嘅量度問題——數據工程嘅槓桿有幾長、合成數據補唔補到。雖然作者冇畀答案，但佢哋嘅框架（有限庫存 + 新來源 + 合成放大）係目前最清晰嘅提問方式。</li>
+  <li><strong>RL 時代嘅提醒：</strong>就算預訓練數據真係見底，過去兩年嘅收益已經轉移到 RL 階段——所以「預訓練數據牆」唔等於「AI 進步牆」。對投資同政策判斷嚟講，呢個區分好重要。</li>
+</ul>
+
+<div class="highlight-box"><strong>同 James 嘅工作相關：</strong>呢篇研究講嘅「數據改進 = 有限庫存嘅 curation + 新來源先係未來」，同 Trinity（豆包＋PMS＋硬件）嘅數據策略直接對得上——酒店行業每日產生嘅營運數據，就係「未被 Common Crawl 覆蓋嘅新來源」；邊個有系統咁收集呢啲垂直數據入口，邊個就有下一個時代嘅槓桿。另一層啟示係「加法獨立」：產品嘅 AI 能力（模型）同數據管道（數據）係兩條可以獨立優化嘅引擎，唔好等模型 ready 先開始儲數據。</div>
+
+<div class="section-title">十一、可以繼續追問嘅問題</div>
+
+<ul>
+  <li><strong>規模外推：</strong>1e19 FLOPs 嘅「數據主導」，喺前沿級 1e25+ FLOPs 會唔會完全反轉？作者自己都話「數據 vs 模型嘅相對重要性可能隨規模大幅改變」——呢個係成篇文最關鍵嘅未答問題，亦係點解唔應該將「數據 3.24 倍」直接拎去評論前沿 labs 嘅原因。</li>
+  <li><strong>Benchmark 依賴：</strong>換做 coding／agentic benchmark，「數據工程」嘅權重會點變？如果數據 curation 對 coding 能力嘅貢獻遠細過對 MCQ 嘅貢獻，咁「預訓練進步主要嚟自數據」就要加好多條件句。</li>
+  <li><strong>合成數據放大：</strong>「高質小語料 × 合成放大」vs「直接多 epoch 死操」——佢哋引嘅 arXiv 2605.19407 話激進過濾 + 多 epoch 實證更差，但合成數據嘅對比實驗仲未有人做。呢個直接決定數據牆有冇得繞。</li>
+  <li><strong>數據嘅隱含價值：</strong>用實驗室實際支出（數據經紀、環境生產者 vs 算力、研究員）去推算——如果數據嘅邊際價值咁高，點解 labs 嘅數據預算唔見得咁大？定係數據經紀市場太唔透明，大家根本未識得為數據俾錢？</li>
+</ul>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>直接引用全部出自 Dwarkesh Patel × Jerry Han〈Pretraining progress is mostly coming from data〉（dwarkesh.com，發布 2026-09-08 16:10 UTC），經原文頁面完整核實；中文撮譯與分析視角屬本站立場。Anson Ho 引言出自其 Epoch AI 文章〈The least understood driver of AI progress〉（2024，經本篇轉引）。實驗細節（FLOPs 記帳、LR 掃描、誤差棒方法）以原文 footnotes 為準。篇文屬 Substack 研究文章（非音頻），Dwarkesh 嘅 RSS creator 為 Dwarkesh Patel。
+</p>
+
+<footer>
+  <p>Deep Dive #142 · Dwarkesh Podcast × Jerry Han：預訓練進步嘅數據 vs 模型拆解（2026-09-08 發布）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-09-09 06:15 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
