@@ -1,24 +1,24 @@
 {
- "lastScan": "2026-09-08T02:10:00.000Z",
- "lastScanDate": "2026-09-08",
+ "lastScan": "2026-09-09T02:07:00.000Z",
+ "lastScanDate": "2026-09-09",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-09-01T19:10:39.000Z",
-   "lastEpisodeTitle": "This Might Be the Clearest Warning Shot We Ever Get - Ajeya Cotra",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-08T16:10:16.000Z",
+   "lastEpisodeTitle": "Pretraining progress is mostly coming from data",
+   "newEpisodes": [
+    {
+     "title": "Pretraining progress is mostly coming from data",
+     "pubDate": "2026-09-08T16:10:16.000Z",
+     "type": "article",
+     "url": "https://www.dwarkesh.com/p/pretraining-progress-is-mostly-data",
+     "note": "（Dwarkesh Substack feed content:encoded 全文萃取，17140字）：研究長文——2019-2025 預訓練進步來源量化拆解：數據 vs 模型改進。核心：數據改進算力效率增益 12.0x vs 模型 3.7x（比率 3.24x）；88% OLMES 方差由加法效應解釋（增益獨立）；模型改進真正價值=令更大規模算力可用（MoE/FlashAttention/穩定性創新=移走 scaling 約束）；細模型受惠數據 curation、大模型（過度訓練至100x Chinchilla）激進過濾反有害（帆船vs貨櫃船比喻）；數據牆隱憂（語料=Common Crawl 有限庫存、合成數據未研究）；年化 CEG 模型1.24x/數據1.51x/聯合1.57x vs Anson Ho 3x 估算差異解釋；引 Ryan Greenblatt：數據改進係自動化研究者可實證嘅進步；與 Epoch AI 研究脈絡直接對話"
+    }
+   ]
   },
   "latent_space": {
    "lastEpisodePubDate": "2026-09-07T21:32:37.000Z",
    "lastEpisodeTitle": "The Frontier AEO Tracker: What Astra Chooses (and every other frontier model, and what you can do about it)",
-   "newEpisodes": [
-    {
-     "title": "The Frontier AEO Tracker: What Astra Chooses (and every other frontier model, and what you can do about it)",
-     "pubDate": "2026-09-07T21:32:37.000Z",
-     "type": "article",
-     "url": "https://www.latent.space/p/aeo",
-     "note": "（Latent Space Substack feed 全文萃取+aeo.latent.space 核實）：swyx 團隊首個 Astra 項目——Frontier AEO Tracker（Agent Engine Optimization）。6 prompt 變體×7 前沿模型×161 產品類別量化「agent 幫你揀嘢時推薦邊個」。核心發現：①自肥偏差——Fable/Opus 推 Claude Code、Sol/Astra 推 Codex、Grok 推 Cursor、Muse 推 Muse Code、SWE-1.7 推 Devin（'I wonder why'）；但有 GPT 推 Claude 嘅 laudable nonbias；②28/161 類別有全模型一致首選，其餘 close contests 係 AEO 必爭地；③代際翻盤——Opus→Fable、Sol→Astra 推薦榜首大執位；④意外：Anthropic 引導模型搜更多來源（Sol 中位9 vs Astra 5；Opus 11 vs Fable 15），Astra 更自信、輕 paraphrase 極少改口→選擇隨機性降、AEO 價值升；⑤markdown content-negotiation 等 AEO 實操獲 Ora/Vercel 驗證有效；⑥全量 prompt/answer 公開可審計防 contamination；⑦Gemini/Antigravity、GLM/Zcode、DeepSeek/DeepCode 因 rate limit 未能入首版並公開喊話；⑧Latent Space 有 business manager、開放商業合作——媒體→數據產品→顧問變現路徑"
-    }
-   ]
+   "newEpisodes": []
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-09-03T10:00:00.000Z",
@@ -31,9 +31,17 @@
    "newEpisodes": []
   },
   "ml_street_talk": {
-   "lastEpisodePubDate": "2026-09-02T21:04:58.000Z",
-   "lastEpisodeTitle": "Designing How AI Grows — Tom McGrath",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-08T11:27:44.000Z",
+   "lastEpisodeTitle": "AI 2040: Plan A report - Daniel Kokotajlo & Thomas Larsen",
+   "newEpisodes": [
+    {
+     "title": "AI 2040: Plan A report - Daniel Kokotajlo & Thomas Larsen",
+     "pubDate": "2026-09-08T11:27:44.000Z",
+     "type": "episode",
+     "url": "https://anchor.fm/s/1e4a0eac/podcast/rss",
+     "note": "（MLST anchor RSS 完整 Show Notes 萃取 89:46+AI 2040 官網核實）：AI Futures Project 的 Kokotajlo+Thomas Larsen 訪 MLST——AI 2040: Plan A 正面願景：超智能推遲至2040、AI研究全公開、幾十間公司追上前沿、「相互保證的算力毀滅」體制；先暫停建安全基建→謹慎發展至可控最強AI；控制≠對齊（控制買時間不能取代對齊）；AI自動化自身研究（RSI未成功但最近的coding AI拒幫競爭者做R&D）；無工人經濟；美中能否執行放緩=最大考驗；Tim Scarfe 用「智能≠權力」「AI是否正常技術」質疑框架；情景數字：165M人+百萬agents雙勞動力、月付100億美元、2028數據中心成本=2倍美軍預算；references 含 Redwood HF調查、ARC-AGI-3、Amdahl 1967"
+    }
+   ]
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-09-03T00:00:00.000Z",
@@ -62,8 +70,8 @@
   }
  },
  "notes": {
-  "scan_status": "2026-09-08扫描：新内容1条（英文1条，文章型數據產品）。①Latent Space Frontier AEO Tracker（swyx 團隊，9/7 21:32Z，Substack feed 全文萃取+aeo.latent.space 核實：6 prompt×7模型×161類別測 agent 推薦格局，發現模型自肥偏差、Anthropic 引導搜更多來源、Astra 更自信等，詳見報告）。無新：Dwarkesh（Cotra 9/1 Substack 核實；YT 9/7 16:49Z 有『HF Hack explained in plain English』講解短片但非完整集，9/2-9/4 影片均舊集剪輯）、No Priors（megaphone RSS 核實 Rene Haas EP176 9/3；原 YT channel feed 已 404，channel id 或變更，但 megaphone 正常無更新）、Cognitive Revolution（AI:AM Welcome to AGI Era 9/5 已覆蓋；Mongo Pete Johnson 9/1 早覆蓋）、MLST（anchor RSS+Apple lookup 核實 Tom McGrath 9/2 已覆蓋；主 YT 頻道 feed 404 無法直讀但 podcast RSS 確認無新）、張小珺#153曾鳴 9/3、十字路口陳安妮 9/6（昨日已覆蓋）、硅谷101 E250 8/28、42章經逯雨鑫 8/29、屠龍一級半續集 9/4（各 RSS feed 核實全數無更新）。",
-  "report_date": "2026-09-08",
-  "deep_content_fetched": "Latent Space AEO Tracker 用 Substack RSS content:encoded 全文萃取（完整文章含方法論、數據、quote）+latent.space/p/aeo 頁面二次核實+aeo.latent.space 產品頁交叉驗證；其餘 9 播客用 Substack/megaphone/xyzfm/fireside/anchor RSS + Apple Podcasts lookup API + YouTube RSS 核實無新集；中文播客全部經 xyzfm/fireside feed 逐個核實最新集日期"
+  "scan_status": "2026-09-09扫描：新内容2条（英文2条）。①Dwarkesh 研究長文《Pretraining progress is mostly coming from data》（9/8 16:10Z，Substack RSS content:encoded 全文萃取17140字：數據改進=算力效率增益主來源12.0x vs 模型3.7x、3.24x比率、88%方差加法效應、模型價值=解鎖更大規模、帆船vs貨櫃船比喻、數據牆隱憂、年化CEG 1.57x vs Anson Ho 3x）；②MLST《AI 2040: Plan A report》（9/8 11:27Z，89:46，anchor RSS 完整show notes 萃取+ai-2040.com 核實：推遲超智能至2040、AI研究公開化、相互保證算力毀滅、控制vs對齊、Tim Scarfe質疑框架）。無新：No Priors（YT feed 恢復可讀，最新完整集仍 Rene Haas EP176 9/3，其後僅 Shorts clips）、Latent Space（AEO 9/7 已覆蓋）、Cognitive Revolution（AI:AM 9/5 已覆蓋）、Dwarkesh YT（僅舊集 clips）、張小珺#153 9/3、十字路口陳安妮 9/6、硅谷101 E250 8/28、42章經 8/29、屠龍一級半續集 9/4（各 RSS feed 核實全數無更新）。",
+  "report_date": "2026-09-09",
+  "deep_content_fetched": "Dwarkesh 用 Substack RSS content:encoded 全文萃取（17140字完整文章：方法學、數據、quote 齊全）+ 文章頁二次核實；MLST 用 anchor RSS 完整 show notes（timestamps+references 齊）+ ai-2040.com 官網原文核實 Plan A 主張；其餘 8 播客用 Substack/megaphone/xyzfm/fireside/anchor RSS + Apple Podcasts lookup API + YouTube RSS 核實無新集"
  }
 }
