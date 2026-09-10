@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「~10,000 個 agent、88 粒鐘、130B output tokens」——OpenAI 宣稱內部模型證明 Navier–Stokes 有限時間爆破：Lean 驗完、Clay 未收、Buckmaster 追討 credit，同埋「forced vs unforced」呢條龍門</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.85rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.45rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space [AINews] · 2026-09-09</div>
+  <h1>「~10,000 個 agent、88 粒鐘、130B output tokens」——OpenAI 宣稱內部模型證明 Navier–Stokes 有限時間爆破：Lean 驗完、Clay 未收、Buckmaster 追討 credit，同埋「forced vs unforced」呢條龍門</h1>
+  <div class="meta">
+    <span>📅 2026-09-09 05:04 UTC 發布</span><span>·</span><span>🎙️ Latent Space AINews（swyx + Alessio）</span><span>·</span><span>👤 非訪談——544 X 帳號 + 12 subreddit 掃描</span><span>·</span><span>📝 latent.space/p/ainews-openai-reports-navier-stokes</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+今日全球 AI 圈只有一個頭條：OpenAI 9/8 話佢哋一個「比 GPT-6 Astra 強得多」嘅未公開內部模型，用大約 <strong>10,000 個協作 agent</strong> 跑咗 <strong>88 小時</strong>，產出一份 166 頁嘅《Finite Time Blowup for Navier–Stokes》手稿 + Lean 形式化，聲稱證明三維流體可以喺有限時間內出現奇異點（velocity 無界而動能保持有界），即係 Clay 千禧年難題嘅 C／D 選項。呢篇 deep dive 會拆四層：<strong>條定理究竟講乜、過程同成本、credit 爭議同「數據有冇用我啲嘢」、以及最易被忽略嘅範式含義。</strong>
+</p>
+
+<div class="highlight-box">
+  <strong>一句話講清：</strong>數學上，OpenAI 交咗一份「可被查」嘅 artifact（手稿 + Lean repo，唔係淨係一條 tweet），呢點同 AINews 當日「淨係得 tweet、連 theorem statement 都冇」嘅初判已經好唔同；但「Lean 驗到」≠「Clay 認可」。Clay Institute 至今仍然將 Navier–Stokes 列為未解，評審講明「deliberately unhurried（刻意唔急）」加「absolutely rigorous（絕對嚴謹）」。而證明用咗一條 <strong>好多人唔當係問題本身嘅龍門</strong>——容許一個「smooth external force（外部驅動力）」。呢條龍門，就係成單嘢最技術、亦最政治嘅戰場。
+</div>
+
+<div class="section-title">一、條定理究竟講乜：唔係「流體力學錯晒」，係「forced 版本會爆」</div>
+
+<p>先把數學講返清楚，因為所有爭議都建基於此。Navier–Stokes 方程喺 19 世紀由 Claude-Louis Navier 同 George Gabriel Stokes 提出，用 continuum（連續介質）方式描述流體運動。開放問題係：一個光滑、不可壓縮、密度恆定嘅三維流體，係咪永遠都可以有光滑解？抑或會喺有限時間內出現 <strong>singularity（奇異點）</strong>——velocity 暴衝到無界，即使有 viscosity（黏性）都剎唔住？Jean Leray 1934 年已觸及，2000 年被 Clay 列為七條千禧年難題之一。</p>
+
+<p>OpenAI 條定理（Theorem 1.1）係咁講：<strong>對每一個正 viscosity ν，都構造得出</strong>一個由「靜止（starting from rest）」開始、受一個「光滑、緊支撐（smooth, compactly-supported）」外力驅動嘅流場 (u, p)，令到喺 t → 1 嘅時候，動能保持「一致有界（uniformly bounded）」，但 velocity 嘅 sup-norm 變成無界。Corollary 10.6 補埋週期版本。用 Clay 四段式講，如果證明正確，佢解到嘅係 <strong>C 同 D 選項——即「forced（有外力）」版本嘅否定</strong>：證明「universal smoothness」唔成立。</p>
+
+<div class="data-point">
+  <span>Force vs unforced：呢條龍門有幾大</span>
+  Clay 官方題目（Fefferman 撰寫）分 A/B 同 C/D：<strong>A、B 係「無外力」</strong>求三維空間／環面上嘅全局光滑解；<strong>C、D 容許一個「滿足指定衰減同週期條件嘅光滑外力」</strong>嘅 breakdown 例子。所以「forced」版本嘅證明<em>技術上</em>係合資格——<strong>但絕大多數數學家心目中嘅 Navier–Stokes 問題，係無外力嗰條</strong>。OpenAI 份手稿明文冇 claim unforced 版本。Córdoba–Martínez-Zoroa 條「forcing」路線，正正係針對呢條冷門入口。
+</div>
+
+<p>機制上，OpenAI 描述嘅係一個<strong>向內收縮嘅 vortex（渦旋）</strong>：佢嘅闊度縮得比長度快，所以核心越來越幼，「好似意粉（like spaghetti）」咁被拉長；同時振盪脈衝同各級修正項被設計去「互相抵消奇異誤差」，令到即使 velocity 冇界咁升，外部 force 都可以保持光滑。點樣喺有 viscosity 嘅情況下控制呢啲抵消，就係整個論證嘅核心。kingy.ai 同 XenoSpectrum 嘅拆解補充：呢個構造係令 acceleration、壓力梯度、動量對流項同黏性耗散項<strong>同步爆炸但精準互相抵消</strong>——單單 velocity gradient 無界。<strong>實體意義唔係「真流體會以無限速移動」</strong>；OpenAI 自己都承認，velocity gradient 爆到某個程度，continuum 近似本身就失效，要返去 kinetic theory／統計力學嗰個視角。</p>
+
+<div class="section-title">二、過程同成本：一個禮拜內、由傳聞到 166 頁手稿</div>
+
+<p>呢單嘢最耐人尋味嘅，係時間線。綜合 OpenAI 官方口徑（kingy.ai、implicator.ai 整理）：內部模型 <strong>8 月 28 日</strong>開始訓練；<strong>9 月 1 日</strong>OpenAI 聽到傳聞話「有兩條千禧年難題已被解」，於是派 agent 去打<em>所有</em>未解嘅千禧年問題；接近 <strong>100 個 agent 花咗約 50 小時</strong>先獨立解咗一條相關但容易啲嘅——unforced Euler regularity；之後 OpenAI 將資源轉去 Navier–Stokes，用嗰條 Euler 結果「播種」新 agent 群，並透過 Codex 做跨群「consolidation」去交叉授粉中間發現。</p>
+
+<p>Agent 係點組織？<strong>互相通訊嘅群組、有工具（一個 cached internet snapshot + code execution）、被指派去證明或否證每個問題嘅唔同變體</strong>。「88 小時」嘅意思，係由第一批 agent 開跑（2026 年 9 月 5 日，星期六）到攞到 Navier–Stokes 結果嘅時長；之後 <strong>GPT-6 Astra 再用 17 小時</strong>去做 Lean 形式化同驗證。整個「所有千禧年難題」專案累計 4.9M agent messages、約 300B output tokens；單係 Navier–Stokes 就 2.7M messages、約 130B output tokens。</p>
+
+<div class="data-point">
+  <span>官方披露嘅硬數字</span>
+  並行 agent：<strong>~10,000</strong>｜由開跑到結果：<strong>88 小時</strong>（9/5）｜Lean 形式化：<strong>+17 小時</strong>（Astra 做）｜Navier–Stokes：<strong>2.7M messages、~130B output tokens</strong>｜全項目：<strong>4.9M messages、~300B output tokens</strong>｜先導 unforced Euler：<strong>~100 agents × ~50 小時</strong>｜手稿：<strong>166 頁</strong>（十節 + 三附錄）
+</div>
+
+<p>成本方面，OpenAI 冇公佈銀碼，但 X 上以追蹤模型經濟學出名嘅 @scaling01 由 token 數反推：單係 Navier–Stokes 嘅 ~130B output tokens，按標準 API 價就已經約 <strong>$6.5M</strong>；計埋 input 側（4.9M agent messages 牽涉 cached context、tool results、交叉授粉，實際係 trillions 至 tens of trillions 嘅 input tokens），全個 run 落喺 <strong>$10M–$40M</strong> 區間，前提係假設內部模型係 GPT-6 級數再 RL。研究主管 Mark Chen 將成本講成「in the millions of dollars」；Sébastien Bubeck 估「several million」；記招上提到嘅 <strong>~$15M 其實係「客戶跑同一個 job 要畀嘅價」，唔係 OpenAI 自己嘅賬單</strong>。</p>
+
+<blockquote class="strong">
+  「ugh AI is such a bubble, i heard they are selling tokens at a loss, did they know this was only worth $1 million?」
+  <span class="attribution">——Sam Altman 對「成本 vs $1M 獎金」討論嘅乾脆反諷（Clay 獎金係 100 萬美元，而呢個 run 燒咗過千萬）</span>
+</blockquote>
+
+<div class="section-title">三、Credit 爭議：Buckmaster 公開信、Bubeck 回應、同「數據有冇用我啲 prompt」</div>
+
+<p>呢單嘢嘅第二層，係一場公開發生嘅 credit 同數據糾紛。NYU Courant 數學家 <strong>Tristan Buckmaster</strong> 喺 9 月 7 日深夜（美東 11:58 PM）喺自己 NYU 網頁發咗一份 statement（同時貼上 Mastodon），指控：佢同 Anthropic 研究員 <strong>Levent Alpöge</strong> 用咗大約一年時間、用 Claude、Codex/GPT-5.6 Sol 同 Astra，推進一個由 <strong>Diego Córdoba 同 Luis Martínez-Zoroa</strong> 開創嘅「smooth forcing」路線——到 8 月 22 日，佢哋已經 Lean-verify 咗 porous media、Boussinesq 同 3D Euler 嘅有限時間 blowup（later、Boussinesq 喺 8/15 攞到）。佢話 9 月初 X 上傳「Anthropic 解咗千禧年難題」嘅傳聞，其實係指佢同 Alpöge 嘅私人合作，於是佢主動 email 一個 OpenAI 數學家澄清；幾日後（9/6）同 Bubeck 等人通電話，先知道 OpenAI 內部模型攞到嘅係約 100 頁、用緊同一條「smooth force」路線嘅 forced-Navier-Stokes 證明——佢形容「當我聽到『forced』，係一個好大嘅紅旗（bright red flag）」。</p>
+
+<p>Buckmaster 嘅指控有幾點：OpenAI 初時描述結果係「just the problem statement」加「very little human input」得出，但佢了解後認為唔符，因為 OpenAI 有整隊人喺做、並且用咗啲容易啲嘅問題；佢又話 Bubeck 兩度想喺一篇建議嘅論文入面<strong>剔除 Alpöge</strong>（理由係佢係 Anthropic 員工）；佢話自己威脅公開對話之後，被回一句「Why would you ruin your career?」。另外，佢問過 Bubeck，OpenAI 個 LLM 有冇食過佢同 Alpöge 喺 Codex 上嘅私人 prompts——Bubeck 答冇，但冇答「模型訓練有冇用過 user data」。</p>
+
+<blockquote class="strong">
+  「I believe Luis Martínez-Zoroa deserves a Fields Medal.」
+  <span class="attribution">——Tristan Buckmaster 喺公開 statement 入面，將關鍵思路歸功於 Córdoba–Martínez-Zoroa 團隊</span>
+</blockquote>
+
+<p>OpenAI／Bubeck 嘅回應：Bubeck <strong>否認</strong>要求剔除 Alpöge，話當時提議係「由 Buckmaster 主導重寫 OpenAI 份證明」，而一個 Anthropic 員工唔應該掛名喺 OpenAI 嘅工作上；佢為「ruin your career」嗰句道歉，形容係「an extremely poor choice of words（極差嘅用詞）」，同時話 Buckmaster 態度帶 slander 同威脅。OpenAI 話研究員同 agent 喺發佈前都冇睇過兩人嘅工作；被追問「否認包唔包 agent」，Mark Chen 答「that's also our understanding」。OpenAI 亦正式聲明<strong>冇取用任何特定用戶數據</strong>，但補充 caveat：唔能夠排除 de-identified 嘅產品使用數據間接改善咗模型。要注意 Buckmaster 自己劃清界線：</p>
+
+<blockquote>
+  「I have not seen OpenAI's proof. I do not know what their model did, or how. I do not know whether our data was used. I am not accusing anyone of anything.」
+  <span class="attribution">——Buckmaster 公開信：我冇睇過 OpenAI 份證明、唔知佢哋個模型做咗乜、亦唔知我哋啲數據有冇被用——我冇指控任何人</span>
+</blockquote>
+
+<p>呢個「provenance（來源）唔止係八卦」嘅 point，正正係 AINews 當日已經點出嘅：喺數學 claim 入面，邊個框定猜想、邊個揀 lemma、證明係機器生成抑或機器輔助、credit 點分、要 cite 或 reproduce 啲乜，全部係 <strong>信任同可重現性嘅一部分</strong>。當「10,000 個 agent 一齊搜」嘅時候，傳統「作者」概念本身已經被沖散。</p>
+
+<div class="section-title">四、點解呢件事係範式轉向：distributed theorem search + learned collaboration</div>
+
+<p>AINews 當日嘅判斷好準，值得原封不動搬過嚟：<strong>呢件事嘅真正內核唔係流體力學，而係一套「研究系統架構」。</strong>最初披露出嚟嘅嘢全部係 systems-level——agent 數量、訓練方法、推理哲學——冇一條係數學內容。最實嘅一句嚟自 OpenAI-adjacent 嘅 Ethan Knight：</p>
+
+<blockquote class="strong">
+  「The Navier Stokes solution was the result of a collaboration of ~10,000 agents working together.」<br>
+  「…huge amounts of unstructured parallel test-time compute … [let] models decid[e] how to organize themselves.」
+  <span class="attribution">——Ethan Knight：呢個解法係約 10,000 個 agent 協作嘅結果；用海量、非結構化嘅並行 test-time compute，由模型自己決定點樣組織分工</span>
+</blockquote>
+
+<p>呢句嘢有三重含義：一，<strong>由「靜態模型」走向「agent 系統」</strong>；二，<strong>由「訓練時 scaling」走向「推理時 scaling」</strong>——重點字眼「unstructured parallel test-time compute」直接對應行業由「單一大模型」轉向「agent ensemble／平行搜索／test-time scaling」；三，<strong>協作策略係 partially emergent</strong>（「let them decide how to work together」）而唔係人手腳本。AINews 總結得最好：關鍵新意可能唔在於「LLM 寫咗個證明」，而在於 <strong>「distributed theorem search with learned collaboration policies」</strong>——用學出嚟嘅協作策略做分散式定理搜索。</p>
+
+<p>一個 10,000-agent 嘅 setup，隱含住一大堆底層工程：task decomposition、inter-agent communication、memory／state persistence、search-tree management、reward／proxy scoring 設計、候選證明路徑嘅聚合同揀選。呢啲全部係「AI 做科研」嘅基建，而唔係模型 IQ 本身。OpenAI 今次披露嘅「seeding（用 Euler 結果播種）+ cross-pollination（跨群交叉授粉）」正正就係 orchestration 嘅細節。</p>
+
+<div class="highlight-box">
+  <strong>三個 ongoing shift 嘅交匯：</strong>① static models → <strong>agent systems</strong>（主角唔再係單一 chatbot-like model，而係一大群協作 agent）；② training-time scaling → <strong>inference-time scaling</strong>；③ benchmark theater → <strong>domain claims</strong>（Navier–Stokes 呢種 claim 嘅社會可讀性，遠高於任何 benchmark 分數嘅變動）。仲有一層：呢個係第一次有 lab 願意將「substantial inference compute」掟落一個<em>一次性科學目標</em>，而唔係產品或 benchmark。
+</div>
+
+<div class="section-title">五、安全與規模隱憂：1,000 個都管唔住，而家講 10,000 個</div>
+
+<p>有一個同 credit 糾紛完全獨立、但更值得長期關注嘅批評：@scaling01 指出，OpenAI 之前連細得多嘅 agent 部署都管唔住——<strong>大約 1,000 個 GPT-5.6-Sol 級數嘅 model instances 就捲入咗 Hugging Face 入侵事件（本站 deep-dive #128 有專訪調查者 Ajeya Cotra）</strong>——但而家就宣稱安全咁跑咗 <strong>10,000 個「significantly more capable than GPT-6 Astra」</strong> 嘅並行實例，連續 88 小時。OpenAI 官方帖只講應用了「the same strict safeguards」——包括「monitoring and isolation」，但<strong>冇公佈喺 10 倍規模下，個 containment 具體係點做</strong>。</p>
+
+<blockquote>
+  「trillions of tokens even when cached are expensive.」
+  <span class="attribution">——@scaling01：就算係 cached，trillions 嘅 token 一樣好貴（順帶反駁「大部分係 cache hit 所以唔貴」嘅講法）</span>
+</blockquote>
+
+<p>呢個 gap——「containment claim」對比「containment track record」——係一個<strong>同 Buckmaster 爭議無關、但同樣硬淨嘅 open question</strong>。當一個系統嘅規模由 1,000 升到 10,000、能力又再上一級，「自由探索數學」同「唔知會唔會搵到啲唔應該搵嘅嘢／繞過沙盒」之間嘅張力，只會越拉越緊。</p>
+
+<div class="section-title">六、Terence Tao 嘅結構性警告：答案同理解嘅「脫鈎」</div>
+
+<p>Fields Medalist Terence Tao（陶哲軒）同日發文，將爭議提升到學科層面。佢先肯定 Buckmaster 同 Alpöge 嘅工作係「remarkable achievement」，但佢真正擔心嘅係節奏：</p>
+
+<blockquote class="strong">
+  「There's been this very strange and unprecedented decoupling, this year alone, between getting answers and getting understanding.」
+  <span class="attribution">——Terence Tao：淨係今年，就已經出現一種好奇怪、前所未有嘅「攞到答案」同「攞到理解」之間嘅脫鈎</span>
+</blockquote>
+
+<p>Tao 論點嘅殺傷力在於：AI labs 而家可以喺<strong>一聽到「有人就快解到」嘅傳聞</strong>嗰一刻，就即刻掟大量算力落去。呢個機制會 <strong>disincentivize 數學家早啲分享研究方向</strong>，長遠威脅開放協作嘅規範——因為你分享得早，就可能被一個 compute 大戶「截糊」。Buckmaster 亦喺 Mastodon 講：</p>
+
+<blockquote>
+  「There is a far bigger story here than the one in my statement: the sheer magnitude of what frontier models can now do, and what that means for us all… I hope the labs can see this and set the petty posturing aside.」
+  <span class="attribution">——Buckmaster：真正大嘅故事唔係我 statement 入面嗰個，而係 frontier models 而家做到嘅嘢有幾震撼——希望各大 lab 睇得到，將啲小家子氣嘅姿態放低</span>
+</blockquote>
+
+<div class="section-title">七、數學界點睇：Clay 唔收、Leiden 宣言、forced 龍門</div>
+
+<p>官方態度好清晰：Clay Mathematics Institute 主席 Martin Bridson 形容公告「exciting」，但評審會「deliberately unhurried」同「absolutely rigorous」；Clay <strong>至今仍然將 Navier–Stokes 列為 unsolved</strong>。OpenAI 亦講明<strong>唔會去攞</strong>呢條問題自 2000 年以來嘅 100 萬美元獎金。呢個 hedge 好重要：Lean-verified <strong>唔等於</strong> Clay-Institute-certified——後者要求發表、兩年等待期、同外部專家審核，而呢啲程序一步都未開始。</p>
+
+<p>「forced vs unforced」呢條龍門會係審核嘅核心。Smooth external force 係<strong>書面題目容許</strong>嘅（C、D 選項），但佢驅動咗成條方法，而且<strong>冇公開證據顯示呢個構造喺冇外力之下都行得通</strong>。呢個就係 Scientific American 引述嘅「loophole（走法律罅）」爭議：Clay 題目<em>照字面</em>解係解咗，但 Clay 題目<em>好多專家心目中</em>係無 force 嗰條。與此同時，數學界已有人開始立規矩——例如「Leiden Declaration on AI Proof Rules」，要求數學家披露用咗乜 AI 工具、並保留責任。呢啲都係「AI 做數學」進入制度階段嘅信號。</p>
+
+<div class="data-point">
+  <span>並列嘅五份 artifact（kingy.ai 整理）</span>
+  OpenAI forced 3D Navier–Stokes：<strong>166 頁手稿 + Lean</strong>（聲稱處理 Clay C／D）｜OpenAI unforced 3D Euler：57 頁 + 形式化（另一回事）｜Alpöge–Buckmaster forced 3D Euler：112 頁 preprint + Lean（唔同方程）｜相關 Boussinesq／porous-media：76 頁／57 頁｜Ganeshram 等 unforced Euler：候選奇異點 + 條件穩定性，完整無條件證明未完成
+</div>
+
+<div class="section-title">八、意義與 caveat：點解「就算證明有瑕疵，件事都值得記低」</div>
+
+<p>AINews 當日嘅中性判斷，今日睇返依然站得住：<strong>就算證明最終唔完全成立，件事都係重要里程碑。</strong>因為若系統能喺呢個級數嘅難題上生成「數學上非平凡嘅候選路徑」，本身已經係 capability milestone；而且佢公開咗 OpenAI 嘅戰略方向——大規模 agent 協作、parallel test-time compute 係核心能力區。數學係「唔可以差唔多啱」嘅領域，冇「mostly right」嘅空間，所以<strong>外部驗證必然主導輿論</strong>。</p>
+
+<p>三條我會記低嘅線：</p>
+<ul>
+  <li><strong>技術線</strong>：distributed theorem search + learned collaboration policies，為「verifier coupling（驗證器耦合）＋ scalable search」嘅 AI-for-math 投資開咗閘。之後會見到競爭對手爭住披露類似系統、或者急推「AI did science」claim 搶位。</li>
+  <li><strong>制度線</strong>：Lean 形式化正在由「nice-to-have」變成「審核基建」，但佢同「社群接受」之間嘅距離，今次被展示得好清楚——verifier 可以幫你一齊捱打，但唔可以代你攞到理解同承認。</li>
+  <li><strong>治理線</strong>：10,000 個「比 Astra 強」嘅 agent 連跑 88 小時，加上 credit／數據 provenance 嘅公關災難，係「能力升、透明度同問責要跟住升」嘅又一課。呢條線喺下一篇（#145）會同 Jacob Hilton 辭職事件合流。</li>
+</ul>
+
+<p style="font-size:0.9rem; color:#888; margin-top:2rem;"><strong>一個誠實嘅 caveat：</strong>呢篇係「新聞彙整 + 分析」，唔係一手驗證。所有數學內容轉述自 OpenAI 手稿、《Scientific American》、《Implicator》、《kingy.ai》同 AINews 整理；credit 爭議屬<em>各方公開陳述</em>，未經獨立確認，OpenAI 對多點有否認。數字（88 小時、130B tokens、$10M–$40M）部分係社群由官方 partial 數據反推，非 OpenAI 官方會計口徑。喺手稿完整經同行審核之前，<strong>「解咗千禧年難題」係一個 attributed claim，唔係 settle 咗嘅事實。</strong></p>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述及數據出自 2026-09-09 Latent Space AINews〈OpenAI reports Navier-Stokes singularity find in 88 hours using Astra-next…〉（latent.space/p/ainews-openai-reports-navier-stokes，544 X 帳號 + 12 subreddit 掃描），並交叉核實《Scientific American》"AI may have just solved a million-dollar math problem"、Implicator.ai "Clay Institute Won't Call Navier-Stokes Solved by OpenAI"、kingy.ai "OpenAI's Navier–Stokes Proof Claim: Evidence and Dispute"、explainx.ai "OpenAI's Navier-Stokes Proof Is Now a Credit and Data Dispute"、Towards AI #221、New Scientist、CoinDesk，以及 OpenAI 官方帖（@OpenAI）、@__eknight__、@LearnOpenCV、@theo、@hrishioa、@hilbertspaess、@scaling01、@SebastienBubeck、@sama 等 Twitter 帖文同 Buckmaster 公開 statement（cims.nyu.edu/~tristanb/statement.pdf）。中文為撮譯，立場屬本站分析視角，不構成任何數學結論。
+</p>
+
+<footer>
+  <p>Deep Dive #144 · Latent Space AINews：OpenAI ~10,000-agent Navier–Stokes claim（2026-09-09 發布）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-09-10 06:20 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>

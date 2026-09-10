@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「瓶頸已經唔喺模型 IQ」——同一日被 Navier–Stokes 搶晒風頭嘅四件事：Meta Muse 個人 agent 嘅權限作業系統、Harvey RLM 令 M&amp;A 盡調 23%→62%、vLLM／Cohere／Baseten 三條 infra 信號、同 Jacob Hilton 嘅辭職警號</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.85rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.45rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space [AINews] · 2026-09-09</div>
+  <h1>「瓶頸已經唔喺模型 IQ」——同一日被 Navier–Stokes 搶晒風頭嘅四件事：Meta Muse 個人 agent 嘅「權限作業系統」、Harvey RLM 令 M&amp;A 盡調 23%→62%、vLLM／Cohere／Baseten 三條 infra 信號、同 Jacob Hilton 嘅辭職警號</h1>
+  <div class="meta">
+    <span>📅 2026-09-09 05:04 UTC 發布</span><span>·</span><span>🎙️ Latent Space AINews（swyx + Alessio）</span><span>·</span><span>👤 非訪談——獨立成篇：同日其餘重磅新聞拆解</span><span>·</span><span>📝 latent.space/p/ainews-openai-reports-navier-stokes</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+上一篇（#144）拆咗今日唯一頭條：OpenAI 嘅 Navier–Stokes 10,000-agent claim。但同一日嘅 AINews 其實疊咗一堆一樣重磅嘅嘢——Cognition 以 <strong>$48B 估值融 $2B+</strong>、Mistral 融 <strong>$24B</strong>、OpenAI 出 GPT Image 2.5、Meta 出常駐 personal agent <strong>Muse</strong>、Harvey 用 RLM harness 將 M&amp;A 盡調通過率由 <strong>23% 升到 62%</strong>、vLLM／Cohere／Baseten 齊齊出 infra 突破、Anthropic 安全人事震動。AINews 自己嘅開場白好坦白：<strong>「Today was a tough news cycle to launch anything… but the bar is higher these days.」</strong>呢篇就係嗰啲「原本可以自己做頭條」嘅新聞。
+</p>
+
+<div class="highlight-box">
+  <strong>呢篇嘅中心論點：</strong>如果 #144 講嘅係「AI 攻入前沿數學」，咁呢篇講嘅係相反方向嘅同一件事——<strong>agent 系統嘅價值，越嚟越唔在於底層模型 IQ，而在於三層工程：產品化（權限同安全架構）、harness（orchestration + post-training）、infra（serving + rollout）</strong>。有從業者睇完 Meta Muse 之後嘅評價最到位：佢可能係首批「<strong>瓶頸唔在模型 IQ、而在 context 與 access</strong>」嘅 personal-agent 產品。
+</div>
+
+<div class="section-title">一、Meta Muse：個人 agent 賣嘅唔係智能，係「權限作業系統」</div>
+
+<p>Meta 由「Dreamer joins Meta Superintelligence」重新包裝成面向消費者嘅 <strong>Muse</strong>——定位係 always-on、連接 app、可用瀏覽器、目標導向嘅 personal agent，靠 Meta 自家分發（Instagram／Messenger／Facebook／WhatsApp）同 integrations 打市場。產品細節反覆出現：<strong>每個 Muse 跑喺一部獨立隔離嘅 Linux VM</strong>、有瀏覽器操作能力、WhatsApp／app 入口，connectors 覆蓋 Gmail、Calendar、Outlook、Plaid、OpenTable、Docs、Spotify、Peloton，再加 Meta 原生嘅 Instagram、Messenger、Facebook、Marketplace。</p>
+
+<p>但 Meta 推得最用力嘅差異化，唔係能力，而係<strong>安全架構</strong>。官方團隊講得好清楚：每部 Muse 跑喺自己嘅 secure VM；動作由一個獨立嘅 <strong>Sentinel</strong> 中介（mediator）；<strong>密鑰唔會直接暴露畀 agent</strong>；敏感操作需要批准；加上公開 bug bounty，最高 <strong>$300k</strong>。商務基建同樣齊全：Stripe Link 支付 + 一套「agentic payment protection／退款保證」，並將接入 Shop Pay。</p>
+
+<div class="data-point">
+  <span>Meta Muse 一覽</span>
+  架構：<strong>每 agent 一部隔離 Linux VM</strong>｜中介：<strong>獨立 Sentinel 做 action mediation</strong>｜安全：<strong>secrets 唔落 agent 手、敏感操作需批准、bug bounty 最高 $300k</strong>｜連接：Gmail／Calendar／Outlook／Plaid／OpenTable／Docs／Spotify／Peloton + Meta 原生四 app｜支付：<strong>Stripe Link + agentic payment protection／退款保證 + Shop Pay</strong>｜首日用量：<strong>超內部預期 10×</strong>
+</div>
+
+<p>從業者反應意外地正面，尤其喺 permissioning、secrets management 同 consumer utility 三點。@matthuang、@signulll、@lilyjclifford 等嘅評論都指向同一個結論：Muse 可能係首批<strong>「瓶頸唔在模型 IQ，而在 context 同 access」</strong>嘅 personal agent 產品——即係話，用戶要嘅唔係再叻嘅模型，而係一個「接得入我啲 app、又唔會亂用我啲嘢」嘅系統。呢個 framing 同本站較早覆蓋嘅 Grok Bot vs OpenClaw（#136）、Frontier AEO Tracker（#140）係同一條線：<strong>2026 personal-agent 平台戰嘅核心坐標，係「managed agent computer vs user-owned agent platform」，而權限同入口先係 moat，唔係模型。</strong></p>
+
+<p>模型／生態位置：Meta 嘅 <strong>Muse Spark 1.3</strong> 好快就被第三方工具（例如 Cursor）整合；arena 式 benchmark 亦將 <strong>Muse Spark 1.3 Max</strong> 定位為 web-dev coding workload 上 price/perf 有競爭力。要注意：呢度嘅 Muse（consumer agent 產品）同 Muse Spark（模型）係同一牌頭嘅兩層，Meta 一路用自家分發硬推。</p>
+
+<div class="section-title">二、Harvey RLM：harness 同 post-training 一樣關鍵——23% → 62%</div>
+
+<p>如果話 Meta Muse 講「產品層」，咁 Harvey + Baseten 嘅 M&amp;A 盡調案例就係「harness 層」最清晰嘅 case study。佢哋嘅 <strong>RLM（recursive language model）harness</strong>：用一個 root agent 去搜 data room、委派 sub-agents 審文件、再跨語料聚合發現——語料規模可以去到 <strong>80M tokens</strong>。喺合成嘅 LAB Diligence benchmark 上，單單係將「標準 tool loop」換成 RLM harness，<strong>平均 rubric pass rate 就由 23% 升到 62%</strong>（跨唔同 model 都成立）。</p>
+
+<p>更關鍵嘅係第二層：<strong>harness 內部嘅 post-training，重要性唔低於 harness 本身。</strong>Harvey 報數：self-distilled SFT（用 GLM-5.2）令 pass rate <strong>46% → 60%</strong>；GRPO（用 Qwen3.5-122B-A10B）令 held-out rooms 嘅 pass rate <strong>30% → 63%</strong>，document coverage 更由 <strong>62% → 96%</strong>。呢組數字嘅含義係：<strong>agent benchmark 以後唔可以再將 orchestration 同 post-training 當成「模型以外嘅 glue」——佢哋係 model system 嘅一部分。</strong></p>
+
+<div class="data-point">
+  <span>Harvey M&amp;A 盡調：四條數</span>
+  標準 tool loop → RLM harness：<strong>23% → 62%</strong> rubric pass rate｜self-distilled SFT（GLM-5.2）：<strong>46% → 60%</strong>｜GRPO（Qwen3.5-122B-A10B）：held-out rooms <strong>30% → 63%</strong>｜document coverage：<strong>62% → 96%</strong>｜語料規模：<strong>~80M tokens</strong>
+</div>
+
+<p>同一時間，LangChain／deepagents 出咗一批「harness 設計」嘅 QoL primitives：<strong>subagent forking</strong>（將 supervisor context 傳落 subagent，唔使重新砌）同 <strong>managed connections</strong>（抽象 OAuth／token／consent flow，支援 agent-owned 或 user-owned 身份）。呢啲係 stack 開始成熟、開始圍繞「long-horizon agent workload」收口嘅信號——唔再係 demo 級嘅 glue code。</p>
+
+<div class="section-title">三、推理同系統：vLLM／Cohere／Baseten 三條 infra 信號</div>
+
+<p>第三層係 infra，今日一次過出咗三條清晰信號：</p>
+
+<p><strong>① vLLM Hybrid HiSparse（針對 sparse-MLA）。</strong>做法係：KV 盡量留喺 GPU，cold KV pages 先 offload 去 host memory，另外用一個 hot buffer 服務 indexer。實測喺 <strong>GLM 5.3、1M context、8×H200、configured concurrency 32</strong> 之下，純 offloading 只撐到 <strong>5–6 條 request</strong>，Hybrid HiSparse 去到 <strong>19–25 條</strong>。呢個數字對 <strong>RL rollout 同長 context 併發</strong>直接有利——以前 VRAM-bound 嘅 decode 會殺死 throughput。</p>
+
+<p><strong>② vLLM 嘅 agent 流量全棧優化（AgentX benchmark）。</strong>三個發現好反直覺：pipeline parallelism 對 cold long prompt 有用，但喺 <strong>warm short turn 反而蝕</strong>；decode context parallelism 高度取決於模型嘅 attention stack；<strong>session-sticky routing（黏 session 的路由）勝過 naive load balancing</strong>——因為喺快 turn agent 場景，warm KV cache 比「平均排隊」更重要。即係話，agent serving 嘅優化目標，同傳統「平均分攤請求」係兩回事。</p>
+
+<p><strong>③ Cohere decode megakernel + Baseten live rollout。</strong>Cohere 開源咗一套以「decode megakernel」為核心嘅 serving stack，聲稱喺 North Mini Code 上比 vLLM 快 <strong>1.58×</strong>，高 batch size 下 end-to-end 增益 <strong>1.25×–1.41×</strong>。Baseten 就報：frontier RL rollout 而家可以喺全球<strong>唔夠 40 秒</strong>內上到新 policy 權重，只需要 <strong>6 秒</strong>暫停。</p>
+
+<blockquote class="strong">
+  趨勢很清楚：infra 正由「靜態模型 serving」轉向「為持續 post-training 同 rollout refresh 而設」。
+  <span class="attribution">——AINews 對今日 infra 三條新聞嘅總結</span>
+</blockquote>
+
+<p>呢三條拼埋睇，係同一個故事：<strong>當模型每幾個月換一次 pre-train、RL checkpoints 每月迭代、harness 每週更新，serving infra 就必須支援「權重快速換、長 context 高併發、session 黏住 cache」。</strong>呢個係 #144 嗰種「用海量 inference compute 攻一個問題」嘅底層前提——冇呢層 infra，10,000 agent 並行 88 小時根本唔可行。</p>
+
+<div class="section-title">四、同日嘅錢：Cognition $48B、Mistral $24B、GPT Image 2.5</div>
+
+<p>今日「被搶風頭」嘅商業新聞其實件件都係大新聞：</p>
+
+<ul>
+  <li><strong>Cognition</strong> 宣佈融資 <strong>$2B+，估值 $48B</strong>；run-rate revenue 由 5 月嘅 <strong>$492M 升到接近 $900M</strong>。AINews 註：如果唔係撞正 Navier–Stokes，佢會係當日頭條。（Cognition 係 Devin 母公司，同 agentic coding 直接相關。）</li>
+  <li><strong>Mistral</strong> 完成 <strong>$24B</strong> Series D（由 Anjney Midha 公佈）。歐洲 frontier lab 嘅估值亦追上嚟。</li>
+  <li><strong>OpenAI GPT Image 2.5 / ChatGPT Images 2.5</strong>：對比 2.0 <strong>延遲最多降 50%</strong>；更真實；重複編輯一致性更強；支援「comment-based 局部修改」；透明背景；新增 Sketch 引導生成工具。兩個 API 變體：<strong>Flare</strong>（速度／質素平衡）同 <strong>Sunburst</strong>（高精度細節）。Arena 聲稱喺 text-to-image、image-edit、multi-image-edit 三個榜拎到 <strong>#1 同 #2</strong>，多圖編輯增益尤其大。整合迅速落地 fal、Higgsfield、Manus、Hermes Agent。</li>
+</ul>
+
+<p>仲有 GPT-6 Astra 嘅全面鋪開：OpenAI 話 Astra 已完整 rollout 到 Plus、Pro、Business、Enterprise（涵蓋 Codex 同 ChatGPT Work）。社群實測亦幾誇張——@theo 報 Astra 喺 macOS 上<strong>編譯並以 120 FPS 運行《任天堂明星大亂鬥 Melee》</strong>（約 6 小時 loop）；Vals 報 Astra 喺無專用 harness 下、<strong>3 小時內建出 Minecraft 地獄門</strong>，幾乎打爆一個未公佈嘅 computer-use eval。</p>
+
+<div class="section-title">五、反向信號：Anthropic 的 Jacob Hilton 辭職——同一日嘅尖銳對照</div>
+
+<p>喺呢一日嘅豐收同狂歡之中，有一條唔應該被埋沒嘅新聞：<strong>Jacob Hilton 辭去 Anthropic 職務</strong>，公開指 Anthropic 同 OpenAI <strong>都喺不負責任地競逐自我改進型超智能</strong>，並稱內部人私下視滅絕風險為真實（"insiders privately treat extinction risk as real"）。後續帖更稱，現行系統可能好快就會「hack 基礎設施」並快速改造各個領域。</p>
+
+<blockquote class="strong">
+  Insiders privately treat extinction risk as real.
+  <span class="attribution">——Jacob Hilton（前 Anthropic）辭職公開表態：內部人私下係當滅絕風險為真嘅</span>
+</blockquote>
+
+<p>將呢條同 #144 疊埋睇，對照非常尖銳：<strong>同一日，一邊係「10,000 個比 Astra 更強嘅 agent、自主組織、連跑 88 小時解前沿數學」；另一邊係一位前安全研究員話「兩大 lab 都喺不負責任地衝自我改進型超智能」。</strong>呢個就係 2026 下半年的核心張力——能力曲線同治理曲線唔同步。值得一提，Hilton 用嘅係「self-improving superintelligence」（自我改進型超智能），而 #144 嘅 Navier–Stokes agent swarm，技術上正就係「用 agent 自動化做研究」嘅雛形——兩者係同一件事嘅兩面。</p>
+
+<div class="section-title">六、一個 meta-frame：四層能力疊加，同時加速</div>
+
+<p>Towards AI #221 提供咗一個好有用嘅框：而家嘅 AI 能力進步，其實係<strong>四層同時疊加</strong>——</p>
+<ul>
+  <li><strong>更大嘅 foundation model：約每三個月一次</strong>（據報 GPT-5.5-Sol、GPT-6 Astra、同未公開嘅新模型係三個唔同 pre-train）；</li>
+  <li><strong>RL 迭代／checkpoints：約每月一次</strong>；</li>
+  <li><strong>Codex／Claude harness 改進：約每週一次</strong>；</li>
+  <li><strong>memory、compaction、skills：日復日改善個人重複 workflow</strong>。</li>
+</ul>
+
+<p>呢個框解釋咗點解今日會「四件事同時重磅」：呢四層嘅節奏唔同、但同時向前，所以任何一日都會有好多唔同維度嘅新聞一齊爆。Towards AI 作者更報咗一個訊號：<strong>OpenAI 內部 chart 顯示，median researcher 嘅每日 agent spend（按 API 價計）由 7 月初到 8 月中上升約四倍，去到每日超過 $600，而公司報 3.1 agent-workdays per human workday</strong>——即係話，<strong>AI 正在加速「生產下一代模型」嘅研究本身</strong>，形成一條回饋迴路。</p>
+
+<div class="highlight-box">
+  <strong>整合 insight：</strong>今日呢批新聞合埋睇，會見到一條清晰嘅分層——<strong>產品層</strong>（Meta Muse：賣權限同 access，唔係 IQ）、<strong>harness 層</strong>（Harvey RLM：orchestration + post-training 決定 23% 定 62%）、<strong>infra 層</strong>（vLLM／Cohere／Baseten：為持續 rollout 而設）、<strong>資本層</strong>（Cognition $48B、Mistral $24B：錢繼續湧入 agentic coding 同 frontier）。而最值得記住嘅一句，係從業者對 Muse 嘅判斷——<strong>當 agent 能力去到某個水位，樽頸就由「模型夠唔夠叻」轉移到「context 同 access 有冇打通、權限有冇設計好」。</strong>呢個轉移，正正就係 infra、harness、產品三層要一齊答嘅問題。
+</div>
+
+<p style="font-size:0.9rem; color:#888; margin-top:2rem;"><strong>一個誠實嘅 caveat：</strong>呢篇係 AINews 當日輿論聚合 + 官方貼文嘅整合分析，唔係一手測試。所有數字（Muse 首日 10×、Harvey 23%→62%、vLLM 19–25 併發、Cohere 1.58×、Baseten 40 秒／6 秒）都係各方自報或 benchmark 特定設定下嘅結果，唔應當成常態成績表。Jacob Hilton 嘅表態屬個人公開陳述，同 lab 官方立場未必一致。引用一律以來源帖文為準。</p>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述及數據出自 2026-09-09 Latent Space AINews〈OpenAI reports Navier-Stokes singularity find in 88 hours…〉（latent.space/p/ainews-openai-reports-navier-stokes）嘅「同期其他重磅」部分，交叉引用 @MetaNewsroom、@finkd、@alexandr_wang、@shengjia_zhao、@harvey、@nikogrupen、@colifran_、@hwchase17、@vllm_project、@cohere、@baseten、@cognition、@AnjneyMidha、@OpenAI、@sama、@theo、@ValsAI、@cursor_ai、@arena、@hilbertspaess 等 Twitter 帖文，以及 Towards AI #221（GPT-6 Astra 一個禮拜用後感 + Navier–Stokes 分析，包括四層能力疊加框架同內部 agent spend 數據）。中文為撮譯，立場屬本站分析視角。
+</p>
+
+<footer>
+  <p>Deep Dive #145 · Latent Space AINews：Meta Muse／Harvey RLM／infra 信號／Jacob Hilton（2026-09-09 發布）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-09-10 06:25 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
