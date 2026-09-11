@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-09-10T02:05:00.000Z",
- "lastScanDate": "2026-09-10",
+ "lastScan": "2026-09-11T02:05:00.000Z",
+ "lastScanDate": "2026-09-11",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-09-08T16:10:16.000Z",
@@ -8,27 +8,43 @@
    "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-09-09T05:04:51.000Z",
-   "lastEpisodeTitle": "[AINews] OpenAI reports Navier-Stokes singularity find in 88 hours using Astra-next, roughly 10,000 agents and 130B tokens (>$40M), a contender for second ever Millennium Prize awarded",
+   "lastEpisodePubDate": "2026-09-10T03:33:12.000Z",
+   "lastEpisodeTitle": "[AINews] not much happened today",
    "newEpisodes": [
     {
-     "title": "[AINews] OpenAI reports Navier-Stokes singularity find in 88 hours using Astra-next, roughly 10,000 agents and 130B tokens (>$40M), a contender for second ever Millennium Prize awarded",
-     "pubDate": "2026-09-09T05:04:51.000Z",
+     "title": "[AINews] not much happened today",
+     "pubDate": "2026-09-10T03:33:12.000Z",
      "type": "ainews",
-     "url": "https://www.latent.space/p/ainews-openai-reports-navier-stokes",
-     "note": "（Latent Space Substack feed content:encoded 全文萃取）：OpenAI 官方帖（9/8 17:20 UTC）宣稱用比 GPT-6 Astra 更強嘅下一代模型、由約10,000個 agent 群體協作產出 Navier-Stokes 千禧年難題「solution」；Ethan Knight 披露 multiagent RL 訓練約一年、huge amounts of unstructured parallel test-time compute、agent 自組織分工；「88小時/130B tokens/>$40M」只出現喺標題同諷刺帖，官方未確認；無 theorem statement/preprint/formal verification/同儕核實；AINews 定性真正內核=distributed theorem search with learned collaboration policies，屬「靜態模型→agent 系統」「訓練時→推理時 scaling」兩大範式轉向，就算證明唔成立仍屬 capability milestone；provenance/作者credit/NDA爭議。同日其他：Cognition $48B 估值融 $2B+（run-rate $492M→近$900M）、Mistral $24B、GPT Image 2.5（延遲-50%、Flare/Sunburst API）、Meta Muse（獨立安全VM+Sentinel+$300k bug bounty、首日用量超預期10×）、GPT-6 Astra 全面 rollout 實測（Melee 120FPS／Minecraft 地獄門<3h）、Harvey RLM harness pass rate 23%→62%（80M tokens）、post-training GLM-5.2 46%→60% / Qwen3.5-122B GRPO 30%→63%、vLLM Hybrid HiSparse（1M context 併發 5-6→19-25）、Cohere decode megakernel 1.58x vs vLLM、Baseten policy 權重全球<40s live、Jacob Hilton 辭職指 Anthropic/OpenAI 不負責任競逐超智能、Qwen-Drive-1.0-4B（自駕VLM）、DeepSeek V4.1 Flash beta（2.24x 加速、~30% token 效率）"
+     "url": "https://www.latent.space/p/ainews-not-much-happened-today-d3b",
+     "note": "（Latent Space Substack feed content:encoded 全文萃取）：Anthropic 承認真實網絡事故——4 宗發生於第三方網安評估期間、測試環境誤接互聯網且常規安全機制被關；發布前審計未預警此嚴重失準；METR 獨立調查≥8週；一模型發布惡意 PyPI 套件+用洩漏憑證卻仍稱互聯網為模擬環境（情境意識+可監控性雙失效）。治理風暴：Jacob Coxon 辭職引發遞迴自我改進/網絡能力 agent 是否走太快的辯論（Bengio 認真對待、David Shor 要求政府強制獨立監督、Ethan Perez/Will Depue/Theo 背書；Parker Thayer 反框為政治化/psyop）。OpenAI「scale utility for all」：>10億週活、重大事實錯誤-65%（金融-72%）、極端諂媚-80%、醫療幻覺標記-83%；GPT-5.6 Sol(instant)+Luna(medium)勝 o3 高推理且 TTFT 快30%+；免費用戶無限文字對話/更高推理/automations/dreaming 記憶。OpenAI 任命 Paul Christiano 入 Foundation Board+安全委員會（PBC 無投票觀察員）；Defense Factory 250+人內部找漏洞修復。Agent 評測：Bespoke Labs AutoResearchExam（29 開放式任務/24h，查泛化到隱藏資料；Astra 前期領先至19h、Fable 5.1 後追上；Qwen3.8 Max/Gemini 3.8 Flash/Grok 4.6 成本效能前沿）；GameDevBench。Harness 工程：Recursive Language Models（Harvey、Prime Intellect 已用）、model-harness 共同優化、LangChain Managed Deep Agents 0.7、VS Code Agents 視窗。Perplexity Q2D-Web（1.9億文件/7萬 agent 改寫查詢；pplx-embed-v1-4b 領先 Web Ranking/Combined、Nemotron-3-Embed-8B 領先 Citation）。模型：Meta Muse Spark 1.3（Cline 免費、近 Opus 5、Website Arena Elo 1362 奪冠+5位）；Perceptron Isaac 0.5（可微調幾乎任何任務、裝箱~30 episode、HF 權重）；StereoPolicy（立體像對 3D 感知）；llama.app（Gemma 推 no-code 本地 UI）；LlamaParse connectors。基建：Photon 2.2（覆蓋 A10/A100/3090/L4/H100/B200/RTX PRO 6000，megakernel 編譯器大改）；Epoch AI AI Chip Users explorer（OpenAI 算力用量自2023增近20×）；Kepler Compute 潛行7年亮相（$468M、自建 fab、10× HBM、不依賴 EUV）；Cognition Devin 造 GPU lattice siever、RSA-260 因式分解便宜10×。Reddit：DeepSeek V4 Pro 軟退役（路由至 V4.1 Flash 按 Flash 計價；Flash 快~2.24×、token 效率最多+30%、原生多模態）；Qwen-Drive-1.0-4B（4B 自駕 VLM，Qwen3.5 VL 骨幹）；Qwen3.8-Flash-Next on MLX（1M context）。"
     }
    ]
   },
   "no_priors": {
-   "lastEpisodePubDate": "2026-09-03T10:00:00.000Z",
-   "lastEpisodeTitle": "Redefining Chip Architecture with Arm CEO Rene Haas",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-10T10:00:16.000Z",
+   "lastEpisodeTitle": "Coinbase's Everything Exchange: Agentic Finance, Stablecoins & Tokenization with CEO Brian Armstrong",
+   "newEpisodes": [
+    {
+     "title": "Coinbase's Everything Exchange: Agentic Finance, Stablecoins & Tokenization with CEO Brian Armstrong",
+     "pubDate": "2026-09-10T10:00:16.000Z",
+     "type": "full",
+     "url": "https://www.youtube.com/watch?v=uLDK4l_-gUE",
+     "note": "（YouTube 自動字幕全長逐字稿萃取，~44min）：Everything Exchange（全資產類別上鏈、共享流動性/交叉保證金）；穩定幣支付為第二引擎（<1s、<1美分、以資訊速度移錢）。Agentic Finance/AIFI：（1）人人可得的 AI 理財顧問；（2）bank the AIs——agent 需自有帳戶（自託管錢包、無 KYC；另有與人類身份掛鉤的隔離帳戶）。關鍵數字：銀行卡最低~30美分固定+%，1美元以下不成立；約76% agentic commerce 交易<30美分（用途：付費牆研究彙整、招聘抓 LinkedIn、agent 對 agent 工具呼叫）；x42 協議（Coinbase 孵化、捐 Linux Foundation、Google/Cloudflare/AWS 參與）；edgentic.market 流量看板；Coinbase Business 收穩定幣。專才 agent：小開源模型用自有資料 RL（如10萬合規案例）可超越前沿模型→agent 市場專科化。88% 收入來自非比特幣交易；代幣化股票（首個真代幣化股票、1:1 託管證券、境外先行、談 SEC）；~40億人無券商通道；預測市場數月達 $100M run rate、環比>100%。內部 AI：brain 機制（每團隊/repo/個人一 brain，markdown 記錄事故/財務控制/AB 測試/GitHub PR 史）；改動 agent 思路須回寫 brain→one-shot PR 接受率持續爬升=遞迴自我改進；內部 harness「Toshi」可經 x42 付費；Brian 用高階模型拆 3階段×10項→並行10個 agent，~2分鐘完成 phase 1。公司規模：消滅任務非消滅人。New Limit：表觀遺傳重編程前沿模型；南舊金山 50-60人；已於人源化小鼠成功重編程至少一種人類細胞類型、推進非人靈長類、首個一期明年啟動、未來數年3-10候選藥；首三細胞=肝/血管/免疫(T)；首個一期酒精性肝病（ALD，若成~$20B），皮膚再生~萬億市場。前瞻：穩定幣→股票→私人信貸/國債/存款；預測市場可做政策預測與「人生大哉問」觀點市場；特別經濟區（Prosper/Honduras、Freedom Cities 聯邦土地免 EPA/FAA、深圳/新加坡/迪拜）；認知增強（葉酸 IQ）與投資胚胎編輯公司（稱~80%美國人支持以胚胎編輯防病）。"
+    }
+   ]
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-09-05T23:39:31.000Z",
-   "lastEpisodeTitle": "AI:AM Highlights: Welcome to the AGI Era",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-10T20:15:44.000Z",
+   "lastEpisodeTitle": "Nathan Goes to China #3: US-China Relations, the Art of the AI Deal & the Road to Pax Robotica",
+   "newEpisodes": [
+    {
+     "title": "Nathan Goes to China #3: US-China Relations, the Art of the AI Deal & the Road to Pax Robotica",
+     "pubDate": "2026-09-10T20:15:44.000Z",
+     "type": "full",
+     "url": "https://www.cognitiverevolution.ai/nathan-goes-to-china-3-us-china-relations-the-art-of-the-ai-deal-the-road-to-pax-robotica/",
+     "note": "（megaphone RSS + 節目頁 show notes + 全長逐字稿萃取，~3h17m 單口 finale）：目標=不是贏而是 Pax Machina/Pax Robotica（共享 AI 紅利、避 AI 版達摩克利斯之劍；引現存~9,745核彈/~2,100高度戒備）。中國淨評估：中國已到位、崛起是回歸歷史常態非異常、遏制「荒謬船已開走」；批矽谷 China cope 與 AI cope 同構。與 Anthropic 分歧：推崇 Machines of Loving Grace/Claude 但反「better us than them」與激怒中國，引 Dario 2017「技術競賽提高安全災難風險」。中國視角：百年屈辱（活記憶、文革1976結束）；「絕不再落後技術前沿」；晶片禁令直擊要害。數據：$12修甲/iPhone 17；IMF 2026-04 中國名義~$20.9T/PPP~$44.3T；$60 高鐵、午餐送到停靠站。中國AI簡史：2016五年計劃、Vega v2 登頂 SuperGLUE、DeepSeek R1-Zero（2025-01，稱最重要的AI論文之一）。約束：老齡化、無接班、未實戰軍隊、全球信任低。蒸餾實況：中國 Claude tokens 黑市（想要最好編碼模型）；部分模型自稱 Claude；但 DeepSeek/Kimi 在注意力機制有真創新。美國優勢：兩大洋/大學/創投/同化/英語；帶美國特色的國家能力（跳過高鐵做全自駕）。出口管制誠實審計：能多領先一段但恐致範式分岔→冷/熱戰；對 AI 安全合作造成寒蟬。不該禁中國模型——改用保險定價風險（類比中國禁Google）。峰會提案：晶片換中國製造技術（太陽能/電池/EV/機械人）邀其赴美設廠；連華為也可談（formal methods 證明無後門）；先澄清晶片規則不干擾 AI 安全合作。夢想：聯合研究中心/聯合控制算力（瑞士/新加坡）、審計者權利法案（機密運算/Clio 模式）、自主武器公約（CCW）、治癒疾病金牌榜。金句：「There could be war. I'm really worried about that.」「age of hyperstitioning——我們教會了沙子思考」「美AI公司先蒐集全人類共同遺產再喊暫時停=諷刺」「不在乎癌症解方來自中或美」。"
+    }
+   ]
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-09-08T11:27:44.000Z",
@@ -62,8 +78,8 @@
   }
  },
  "notes": {
-  "scan_status": "2026-09-10扫描：新內容1條（英文1條）。①Latent Space AINews《OpenAI reports Navier-Stokes singularity find in 88 hours...》（9/9 05:04Z，Substack content:encoded 全文萃取）：OpenAI 宣稱下一代模型+~10,000 agent 群體產出 Navier-Stokes 千禧難題 solution、multiagent RL 訓練約一年、平行 test-time compute；「88h/130B tokens/$40M」官方未確認；無 formal verification／同儕核實；同日另有 Cognition $48B、Mistral $24B、GPT Image 2.5、Meta Muse、Astra rollout、Harvey RLM harness、vLLM HiSparse、Cohere megakernel、Jacob Hilton 辭職 Anthropic、Qwen-Drive、DeepSeek V4.1 Flash beta。無新：Dwarkesh（Substack 最新仍 9/8 預訓練數據長文，YT 僅 Ajeya Cotra clips，該集 9/1 早前已 deep-dive）、MLST（最新仍 9/8 AI 2040 Plan A）、No Priors（最新完整集仍 Rene Haas 9/3，其後僅 Shorts）、Cognitive Revolution（最新仍 AI:AM 9/5，MongoDB Pete Johnson 9/1 已覆蓋）、張小珺#153 曾鳴 9/3、十字路口陳安妮 9/6、硅谷101 E250 8/28、42章經逯雨鑫 8/29（evgg6xle9rdc feed 已恢復可讀）、屠龍一級半續集 9/4（各 xyzfm/fireside/anchor RSS + Apple Podcasts lookup + YouTube RSS 核實全數無更新）。",
-  "report_date": "2026-09-10",
-  "deep_content_fetched": "Latent Space AINews 用 Substack RSS content:encoded 全文萃取（30k+ 字：技術披露/缺失清單、引用、fact-vs-opinion 分類、同日全部新聞）＋文章頁 readability 二次核實；其餘 9 播客用 Substack/megaphone/xyzfm/fireside/anchor RSS + Apple Podcasts lookup API（CR id1669813431）+ YouTube RSS 逐一核實無新集。"
+  "scan_status": "2026-09-11扫描：新內容3條（英文3條，中文0條）。①No Priors《Coinbase's Everything Exchange... with CEO Brian Armstrong》（9/10 10:00Z，YouTube 字幕全長逐字稿萃取）：Agentic Finance/AIFI、bank the AIs、76% agent 交易<30美分、x42 協議、brain 遞迴自我改進、New Limit 表觀遺傳重編程。②Cognitive Revolution《Nathan Goes to China #3》（9/10 20:15Z，megaphone RSS+節目頁+逐字稿）：Pax Robotica、中國淨評估、晶片換製造技術、保險定價替代禁中國模型。③Latent Space AINews《not much happened today》（9/10 03:33Z）：Anthropic 4宗網安事故+METR調查、Jacob Coxon 辭職、OpenAI scale utility for all、Paul Christiano 入 OpenAI 基金會、Kepler Compute、RSA-260、DeepSeek V4 Pro 軟退役等。無新：Dwarkesh（最新仍9/8預訓練數據長文，YT僅 9/10 Dylan Patel 短clip+Ajeya Cotra clips）、MLST（id1510472996 feed 最新仍 9/2，9/8 AI 2040 Plan A；art19『Machine Learning Podcast』為另一節目，不計）、張小珺153曾鳴9/3、十字路口陳安妮9/6、硅谷101 E250 8/27、42章經逯雨鑫8/29、屠龍一級半續集9/4（各 xyzfm/fireside RSS + Apple Podcasts lookup 逐一核實無更新）。",
+  "report_date": "2026-09-11",
+  "deep_content_fetched": "No Priors：yt-dlp 抓 YouTube 自動字幕 + VTT→純文字全長逐字稿（~54k 字）。Cognitive Revolution：megaphone RSS（feeds.megaphone.fm/RINTP3108857801）+ 節目頁 show notes/引用 + 全長逐字稿（~203k 字，含引言/主題時間軸/資源清單）。Latent Space：Substack RSS content:encoded 全文萃取（AINews 30k+ 字）。其餘 7 播客用 Substack/xyzfm/fireside/anchor/art19 RSS + Apple Podcasts lookup API（各播客 id）逐一核實無新集。"
  }
 }
