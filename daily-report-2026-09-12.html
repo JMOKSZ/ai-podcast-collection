@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度萃取報告 · 2026-09-12</title>
+<style>
+  :root{
+    --bg:#faf8f5; --ink:#26221d; --sub:#6b6257; --rule:#e6ded2;
+    --accent:#8a5a2b; --quote:#f3ede4; --tag:#efe7db;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+    line-height:1.85; font-size:17px;
+    padding:48px 20px 80px;
+  }
+  .wrap{max-width:820px; margin:0 auto;}
+  header.rep{border-bottom:2px solid var(--ink); padding-bottom:22px; margin-bottom:36px;}
+  header.rep h1{font-size:30px; line-height:1.3; margin:0 0 10px; letter-spacing:.5px;}
+  .meta{color:var(--sub); font-size:14.5px; line-height:1.9;}
+  .meta b{color:var(--ink); font-weight:600;}
+  .summary{background:var(--quote); border-left:3px solid var(--accent); padding:18px 22px; margin:30px 0 46px; border-radius:2px;}
+  .summary h2{font-size:16px; margin:0 0 10px; letter-spacing:1px; color:var(--accent); text-transform:uppercase; font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;}
+  .summary ul{margin:0; padding-left:20px;}
+  .summary li{margin:6px 0; font-size:15.5px;}
+  h2.section{font-size:22px; margin:52px 0 8px; padding-bottom:8px; border-bottom:1px solid var(--rule);}
+  h2.section:first-of-type{margin-top:20px;}
+  .show{margin:40px 0 0;}
+  .show > h3{font-size:20px; margin:0 0 2px;}
+  .host{color:var(--sub); font-size:14px; margin:0 0 18px;}
+  .ep{margin:26px 0 0;}
+  .ep h4{font-size:18px; margin:0 0 4px; line-height:1.5;}
+  .pub{color:var(--sub); font-size:13.5px; margin:0 0 16px; font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;}
+  .ep p{margin:10px 0;}
+  .ep h5{font-size:15.5px; margin:20px 0 6px; color:var(--accent); letter-spacing:.3px;}
+  ul.dense{margin:8px 0; padding-left:22px;}
+  ul.dense li{margin:7px 0;}
+  blockquote{
+    margin:16px 0; padding:12px 18px; background:var(--quote);
+    border-left:3px solid var(--accent); font-style:italic; color:#3d362d;
+  }
+  blockquote span{display:block; font-style:normal; font-size:13px; color:var(--sub); margin-top:6px; font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;}
+  .tag{display:inline-block; background:var(--tag); color:var(--sub); font-size:12.5px; padding:2px 9px; border-radius:10px; margin:0 6px 0 0; font-family:-apple-system,"Helvetica Neue",Arial,sans-serif; letter-spacing:.3px;}
+  .none{color:var(--sub); font-size:15px; margin:6px 0 0;}
+  .none ul{padding-left:20px; margin:6px 0 0;}
+  .none li{font-size:14.5px; margin:3px 0;}
+  hr{border:0; border-top:1px solid var(--rule); margin:34px 0;}
+  footer{margin-top:56px; padding-top:18px; border-top:1px solid var(--rule); color:var(--sub); font-size:13px; text-align:center;}
+  a{color:var(--accent); text-decoration:none;}
+  strong{font-weight:700;}
+  @media (max-width:560px){
+    body{font-size:16px; padding:30px 15px 60px;}
+    header.rep h1{font-size:24px;}
+    .wrap{max-width:100%;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="rep">
+  <h1>AI 播客深度萃取報告</h1>
+  <div class="meta">
+    <b>報告日期：</b>2026年9月12日（星期六）<br>
+    <b>生成時間：</b>2026-09-12 02:18 UTC（Asia/Shanghai 10:18）<br>
+    <b>覆蓋範圍：</b>10 個播客（中文 5 · 英文 5）<br>
+    <b>本期新內容：</b>英文 2 集（Dwarkesh · MLST）｜中文 0 集
+  </div>
+</header>
+
+<section class="summary">
+  <h2>今日重點</h2>
+  <ul>
+    <li><b>Dwarkesh 重磅圓桌（9/11）</b>：Dwarkesh 拉來 <b>John Schulman</b>（Thinking Machines 首席科學家、OpenAI 共同創辦人、RLHF 之父）、<b>Beren Millidge</b>（Zyphra CTO）、<b>Charlie O'Neill</b>（Baseten 模型訓練負責人）三人辯論「離遞迴自我改進（RSI）還有多遠」。核心張力：<b>RSI 是「累積型」任務，反而比當律師助理還簡單</b>；真正卡住前沿的是<b>樣本效率、災難性遺忘、以及「決定目標」這件事</b>。</li>
+    <li><b>Schulman 的關鍵判斷</b>：蒸餾是「反集中化」的主要力量；<b>中國實驗室靠 router/proxy 服務蒐集的用戶 prompt 分布做蒸餾</b>，導致「Sonnet 5、Opus 5 幾乎客觀上不如 GLM-5.3、Kimi K3」。人類最後的工作、也最晚被取代的角色是<b>「定義目標」</b>——「對齊就是最後一份工作」。</li>
+    <li><b>RSI 時間線（快速問答）</b>：真正可當「一個月遠端員工」用的模型，Schulman 約 <b>2 年</b>、Charlie 約 1 年（純瀏覽器操作則 2 年）、Beren <b>3 年</b>；ASI（在所有可電腦完成的工作上全面超越人類頂尖專家）Schulman <b>3–4 年</b>、Charlie 5–10 年、Beren 約 5 年。</li>
+    <li><b>MLST × Edward Hughes（9/11）</b>：論證「Move 37 是創新而非創造」，創造力不是優化，AI 缺的是<b>「選擇該問哪個問題」</b>；其團隊用 <b>Replica</b>（從真論文遮蓋數字生成任務空間）+ <b>Faraday</b>（27B 參數「AI 科學家」agent，以 coding agent 為工具）<b>在留出複現任務上超越 Claude Opus 4.8 與 GPT-5.5</b>。</li>
+    <li><b>中文播客本期全數無新集</b>（張小珺 #153 曾鳴 9/3、十字路口 陳安妮 9/6、硅谷101 E250 8/27、42章經 逯雨鑫 8/29、屠龍之術 9/4）。</li>
+  </ul>
+</section>
+
+<!-- ============ 中文 ============ -->
+<h2 class="section">中文播客</h2>
+
+<div class="show">
+  <h3>張小珺商業訪談錄</h3>
+  <p class="host">主播：张小珺</p>
+  <div class="ep">
+    <p class="none">本期無新集。最新一集仍為 <b>第 153 集〈和曾鳴聊產業史觀〉</b>（2026-09-03 08:00 CST），已於早前報告深度萃取。</p>
+  </div>
+</div>
+
+<div class="show">
+  <h3>十字路口 Crossing</h3>
+  <p class="host">主播：杨远骋 Koji</p>
+  <div class="ep">
+    <p class="none">本期無新集。最新仍為 <b>〈她被骗过、被救过、被捧上神坛过…… 對談陳安妮〉</b>（2026-09-07 00:00 CST，快看漫畫創始人談 AI Native 產品）。</p>
+  </div>
+</div>
+
+<div class="show">
+  <h3>硅谷 101</h3>
+  <p class="host">主播：泓君 Jane</p>
+  <div class="ep">
+    <p class="none">本期無新集。最新仍為 <b>E250〈mRNA 的第二戰場：對話英博〉</b>（2026-08-28 08:45 CST）。</p>
+  </div>
+</div>
+
+<div class="show">
+  <h3>42章經</h3>
+  <p class="host">主播：曲凯 Kyle</p>
+  <div class="ep">
+    <p class="none">本期無新集。最新仍為 <b>〈一個人、兩週、數百美元，如何訓出登頂 Hugging Face 的模型〉</b>（2026-08-29 21:00 CST，對談逯雨鑫）。</p>
+  </div>
+</div>
+
+<div class="show">
+  <h3>屠龍之術</h3>
+  <p class="host">主播：庄明浩</p>
+  <div class="ep">
+    <p class="none">本期無新集。最新仍為 <b>〈中國一級半市場的水下江湖 — 續集｜串台苔蘚之火〉</b>（2026-09-04 09:54 CST）。</p>
+  </div>
+</div>
+
+<hr>
+
+<!-- ============ 英文 ============ -->
+<h2 class="section">英文播客</h2>
+
+<!-- ================= DWARKESH ================= -->
+<div class="show">
+  <h3>Dwarkesh Podcast</h3>
+  <p class="host">主播：Dwarkesh Patel ｜ 嘉賓：John Schulman · Beren Millidge · Charlie O'Neill</p>
+  <div class="ep">
+    <h4>AI researchers debate how close we are to recursive self-improvement 🎙️</h4>
+    <p class="pub">發布時間：2026-09-11 16:28 UTC（Asia/Shanghai 9/12 00:28）｜時長約 1 小時 35 分（含快速問答）</p>
+
+    <h5>主題</h5>
+    <p>Dwarkesh 請來三位「在相對開放的公司」任職、因此可以公開講話的研究者，進行一場<b>關於 RSI（遞迴自我改進）到底有多近的多方辯論</b>。議程涵蓋：反 RSI 的最強論證、中國實驗室為何能追上、自動化 AI 研究者如何被訓練、長時程 RL 能否催生 AGI、sim-to-real 鴻溝、數據對進步的解釋力、RL 為何出奇有效、以及 Move 37 式創造力與熵崩潰，最後以快速時間線預測收尾。</p>
+
+    <h5>嘉賓背景</h5>
+    <ul class="dense">
+      <li><b>John Schulman</b>：Thinking Machines 首席科學家；OpenAI 共同創辦人，主導了通往 ChatGPT 的 RLHF 工作。</li>
+      <li><b>Beren Millidge</b>：Zyphra CTO，開發開源模型（長期寫深度部落格，如「Why RL works better than you'd think」）。</li>
+      <li><b>Charlie O'Neill</b>：Baseten 模型訓練負責人。</li>
+    </ul>
+
+    <h5>核心論點（一）：反 RSI 的最強論證</h5>
+    <ul class="dense">
+      <li><b>Beren — 持續的 Moravec 悖論與 sim-to-real 鴻溝</b>：AI 擅長一切「被放進 benchmark 或環境」的事，卻始終存在一個 sim-to-real 鴻溝阻擋泛化。若「真正的泛化火花」從未出現、加上 <b>continual learning 未被解決</b>，這是他預設的「2036 沒有超級智能」情境。（他自認此情境不太可能，因為已看到 RL 的泛化。）</li>
+      <li><b>Schulman — 「一個月後就變笨」的循環</b>：每出新模型人們驚呼「這就是 AGI」，用一個月就覺得變笨，這個循環可能反覆多次；即使模型寫的代碼遠多於人，也<b>不會讓你生產力提高 100 倍</b>——你會被模型判斷力差、無法自我檢查的地方卡住。</li>
+      <li><b>Charlie — 離「晶片上學習者」的全局最優有多遠？</b>用摩爾定律類比：漂亮的直線其實靠一連串離散的不連續創新撐住。pre-training scaling law 觸頂 → RL 補上 → 又一條新的邊際遞減曲線。若下一步不連續性離當前範式太遠（甚至要丟掉梯度下降與神經網路本身），<b>再多 LLM 也未必能發現它</b>，最終會撞上漸近線。</li>
+      <li><b>Dwarkesh — 棋類 Elo 的啟示</b>：棋力 Elo 數十年線性上升，但跨過人類區間時出現巨大「從人類專家穩贏 AI、到再也贏不了」的不連續。Beren 同意：唯一避免情形是在跨過人類 Elo 前恰好漸近，或出現<b>強監管</b>（他認為監管比技術更可能是原因）。</li>
+      <li><b>Schulman — 「對齊是最後一份工作」</b>：即使 AI 能做所有技術工作，人類仍要決定「我們到底想要什麼」：助手該如何表現、什麼叫 helpful、constitution 與 model spec。<b>後訓練團隊需要很多人，正因為每個領域都得有人思考模型該怎麼表現。</b></li>
+      <li><b>Charlie — 「思考只能更新後驗，不能產生新 bits」</b>：當目標已被清楚定義，光是多想能帶來巨大加速（例如 AI 早該發現 <b>Kaplan scaling law 忽略了 annealing、且未計 embedding 參數</b>，能省下 1–2 年進展；或發現 muP、學習率與模型寬度的關係）。他估「最大化當前目標」可能有 <b>10× 加速</b>——但這完全不能推廣到「如何選對目標」。</li>
+    </ul>
+
+    <h5>核心論點（二）：中國實驗室為何能追上（反集中化）</h5>
+    <ul class="dense">
+      <li><b>Schulman — 蒸餾是對抗集中化的主要力量</b>：凡是能靠 RL 學到的東西，都能極易蒸餾（因為只是「少量 bits」）。要蒸餾得好，關鍵是<b>真實的 prompt 分布</b>——而中國公司正透過 <b>router / proxy 服務</b>（讓中國用戶使用被禁的美國前沿模型，多為編碼用途）<b>蒐集並轉售這些數據</b>，得到「完美的 prompt 分布」。這是非常有用的蒸餾數據集。</li>
+      <li><b>Beren — 數據可同源購買</b>：前沿實驗室向大數據公司買數據，<b>中國也能從同一批數據公司買到同樣的數據</b>，所以「追平其實很容易」。</li>
+      <li><b>Charlie 的具體預測</b>：基於「中國實驗室握有 router 數據」這一觀察——「為何 <b>Sonnet 5 與 Opus 5 幾乎客觀上比 GLM-5.3 和 Kimi K3 更差</b>，儘管它們不只有蒸餾、還有來自 Mythos 的 <b>logit 蒸餾</b>？」推論：<b>前沿實驗室在 RL 環境上已無明顯優勢</b>。差異在於「大模型的嗅覺」（big model smell）與真實部署分布。</li>
+      <li><b>Schulman 的替代假設 — 環境有兩軸：難度 vs 真實度</b>：製造高難度、易驗證的「謎題式」環境很簡單（他稱之為 <b>benchmaxxing 分布</b>，許多熱門 benchmark 皆如此）；但真實的 coding agent 場景需要多輪人機往返與多目標。天真蒸餾只會讓學生模型在 benchmaxxing 分布上匹配老師，<b>卻在真實場景輸掉</b>。大模型更能從「窄而難」泛化到「真實」任務。</li>
+      <li><b>Sonnet 5 的謎團</b>：也可能是後訓練 stack 一直改、把某個旋鈕調太高，產生用戶討厭的怪癖——「後訓練很容易搞砸，且 benchmark 上看不出來」。</li>
+    </ul>
+
+    <h5>核心論點（三）：自動化 AI 研究者如何被訓練</h5>
+    <ul class="dense">
+      <li><b>Schulman</b>：會是「從人類回饋吸收研究者品味」+「大量多步研究專案的練習環境」的組合；每輪針對上一輪最破的地方打補丁——研究者使用 AI 時注意到一致的弱點，再用人工回饋或新環境修補。</li>
+      <li><b>Charlie — 「diff 掉 bug」的實際做法</b>：現實中是鎖定譜系最前沿，「把 Anthropic 近幾個月在訓練 stack 找到的 bug 變成環境」，而非回滾到 GRPO 之前讓它 self-play 重新發現。因為<b>算力瓶頸太重</b>，人們會留前沿、把每次模型迭代以來的改進 diff 成訓練環境（也就是在實驗室內部做「持續學習」：把過去三個月的 AI 研究進展蒸餾回模型）。</li>
+      <li><b>Beren — 環境可超越人類</b>：環境能設到「人類做不到」的目標（例如 loss 必須到 1.3），這是超越人類 AI 研究的途徑。Charlie 補：「<b>10 億參數模型能玩贏 Minecraft</b>，我們竟嫌它太簡單？五年前你敢信？」</li>
+    </ul>
+
+    <h5>核心論點（四）：長時程 RL 能催生 AGI 嗎？部署資料的角色</h5>
+    <ul class="dense">
+      <li><b>Charlie — Anthropic 環境譜系</b>：先編碼做到極致 → 用編碼的任務時程泛化 → 金融（海量 Excel/試算表）→ PowerPoint → 「工作經濟的長尾」。其他實驗室（含開源）現在都認知到這才是正確下注。</li>
+      <li><b>Cursor / Composer 的在線 RL（重要案例）</b>：不只 Tab 模型，連生成模型都用。做法是 <b>REINFORCE</b> 配「很好的啟發式」來估計某次回答比平均好/差多少，做變異數縮減；<b>若新模型在 CursorBench 上有進步就每 5 小時部署一次，否則整版丟棄</b>。Schulman 補：真正最大的問題是<b>不知道自然數據的 reward function 該是什麼</b>，用「是否接受編輯」這類表面訊號會被 reward hack。</li>
+      <li><b>部署資料是否已在驅動進步？</b>Beren：基本上<b>已經在發生</b>（把部署資料過濾/標註/合成後進下一代 pre-train/mid-train）；中國 100% 這麼做。Charlie：Harvey 的法律 agent、Composer 都在用自家部署資料造環境再做大後訓練；<b>Kimi K3 部署→做在線學習→回流</b>。</li>
+      <li><b>「一兆 token 上下文能解決品味嗎？」</b>：Schulman 認為模型得被訓練「如何從該上下文做出正確更新」，否則沒用；Beren：還需要一兆長度的資料來訓練它。反思：<b>人類的品味是從相對短的序列學來的</b>——博士生五年只做 10–30 個研究專案就練出品味的雛形。</li>
+    </ul>
+
+    <h5>核心論點（五）：Sim-to-Real 鴻溝與樣本效率</h5>
+    <ul class="dense">
+      <li><b>Dwarkesh 的擔憂</b>：時程越長越難在資料中心模擬（開一家賺錢的公司、贏一場官司、市場日內套利）。而模型在「從冷啟動到訓練完」的樣本效率上，<b>可能比人類差一百萬倍</b>。若權重更新的樣本效率不改善，這可能成為「十年內沒有瘋狂 RSI」的唯一技術理由。</li>
+      <li><b>Charlie — 累積型 vs 非平穩型任務（本集最鋒利框架）</b>：<b>RSI 是累積型</b>：注意力、Mixture-of-Experts、GRPO 一旦被發現就永久加入訓練 stack，是一條「沙線」；他甚至指 OpenAI 的 <b>5.6 Sol / Terra</b> 訓練「不必重新發現注意力，基本上就是呼叫 pre-training.sh 和 post-training.sh」。<b>真實世界（如律所法務助理）是非平穩型</b>：人事關係不斷變動、隱性流程需持續重學。</li>
+      <li>Dwarkesh 金句總結了這一點：「<b>RSI 剛好比當律師助理還容易，真不幸。</b>」</li>
+      <li><b>Schulman</b>：模型比人弱在多處——樣本效率（某些中長時程區間）、思想多樣性較低、長時程判斷力差；所謂「品味」有一部分是「長期下來行得通的行為」（例如可維護的軟體系統設計）。</li>
+      <li><b>Charlie — 持續學習為何在微觀尺度崩壞</b>：大規模洗掉雜訊時，中期訓練確實可行；但當你只對一家律所連續做數百次微更新時，<b>SFT 與在線蒸餾會災難性遺忘、並劣化通用能力</b>；<b>on-policy 蒸餾</b>能把這個臨界推遠一點，但最終仍難逃。RL 好在「只改動模型極小一部分」（在很小的損失谷裡微調），但這也限制了它能改多少。RL 善於放進「能力」，不善於放進「明確知識」。</li>
+      <li><b>Beren — 是技術而非容量問題</b>：同尺寸模型從頭用全部資料 pre-train 會更好；卡點是 <b>plasticity 與災難性遺忘</b>——沒有好方法阻止非平穩資料遺忘舊知識。所以最終可能仍受制於「用全部新資訊重訓新模型」的成本，除非持續學習能讓模型永遠不用從頭練。</li>
+    </ul>
+
+    <h5>核心論點（六）：數據對進步的解釋力</h5>
+    <ul class="dense">
+      <li><b>Dwarkesh × Jerry Han 的網格研究</b>：把 2019 至今的「配方 × 數據集」兩兩交叉訓練，結果<b>數據改進帶來約 12.0× 算力效率增益，架構改進約 3.7×</b>（小規模）。合計約 33×。</li>
+      <li><b>Charlie 的「消失的 100×」</b>：Epoch 曾估「自 2019 年每年 3×」→ 總共 2000×+。剩下的約 100× 差額<b>很可能來自後訓練</b>。他認為 pre-training 低垂果實已近耗盡（網路成長速度跟不上）。</li>
+      <li><b>Beren —「數據隨規模更重要」</b>：架構是「一次性」的——它能讓你進入一個原本到不了的新範式（如 GQA 讓百萬上下文可行），在那個範式內數據才是主導。因此「X% 效率增益」在乘法上會被誤導。</li>
+      <li><b>兩個對照實驗</b>：(1) <b>Talkie 模型</b>（只用 1930 年前的資料訓練）在現代 coding agent 資料上微調後，<b>SWE-bench 上勝過 Claude 3 Opus</b>——「一旦有了正確專家行為的範例，複製進弱模型出奇地容易」。(2) 反例：只訓練到「小五數學」的模型，怎麼 RL 都爬不到高中/大學數學——<b>台階間距太大</b>。Beren：這回到 RL 信號問題——<b>RL 探索能力差，128 次 rollout 拿不到信號就極難前進，所以 RL 需要 curricula</b>（pre-training 不需要）。</li>
+      <li><b>Beren 的關鍵區分</b>：pre-training 的信號「已經在 Common Crawl 裡」，問題是濾掉雜訊（可自動化）；但進入中期/後訓練後，<b>信號在原數據中根本不存在——「Common Crawl 裡沒有藏著千禧年大獎難題的證明，再怎麼過濾也濾不出來。」</b></li>
+      <li><b>參數量會一直 2×/年嗎？</b>Charlie 認為未來幾年會趨於平台期——RL rollout 重視推理效率，瓶頸在環境而非參數量；他猜 <b>Mythos 與 GPT 系列其實遠小於外界傳的 10 兆參數</b>。Beren：推理效率會壓低「活躍參數」，但總參數取決於硬體（HBM 頻寬、VRAM；待 GB 系列與 Vera Rubin 上線）。Schulman：稀疏度（sparsity）的甜蜜點未知；數據效率將比算力效率更主導架構選擇。</li>
+      <li><b>Chinchilla 視角</b>：現在處於「數據遠超最優」的一側（過度訓練）；若數據將耗盡，可能回到 Chinchilla 最優點、甚至偏「欠訓練大模型」一側。</li>
+    </ul>
+
+    <h5>核心論點（七）：RL 為何出奇有效？</h5>
+    <ul class="dense">
+      <li><b>背景</b>：Schulman 論文曾指模型每次 RL 只學「對或錯」1 bit；Dwarkesh 的部落格更說「低 pass rate 時幾乎學不到東西」。但今天模型明顯變聰明，顯然得益於 RL 規模化。</li>
+      <li><b>Beren 的解釋（核心）</b>：(1) <b>中期訓練被低估</b>——大量「RL 的成功」其實來自極優質的合成推理資料中期訓練，往往已把模型帶到最終 RL 檢查點 <b>約 80%</b> 的路程；(2) RL 只是在「微調策略」，不需從頭學行為，故只需少量 bits；(3) 這些 bits <b>信噪比極高</b>——這是為何需要 RL 而非單純 SFT：<b>SFT 要求匹配老師的每個推理 token，反而混入太多「關於老師如何推理」的雜 bits；RL 只給 1 bit，信號不會被淹沒</b>。</li>
+      <li><b>Charlie 的補充</b>：圍繞「pass@1 升、pass@256 降」的爭論——只要有足夠算力採樣足夠大的 group size，讓「得到一堆正確答案」的機率不可忽略，罕見正確路徑就會被上調權重。他強調得到的不是水平泛化（數學 RL 不會讓你變成最好程式設計師），而是<b>時程泛化（horizon generalization）</b>：模型學會「用更多 token、更長時間仍能推進」。引 <b>EdgeBench</b>：<b>模型可持續工作時長約每 3 個月翻倍</b>。並以「pre-training 的 quanta（induction head 式的相變）」類比 RL：單一任務看似相變（0.5% → 90% pass），平均後就呈現「質變」。Beren 補：即使 bits 少、參數只動一點點，對 function space 的影響仍可能極劇烈——1 bit 就能砍掉一半假設空間。</li>
+    </ul>
+
+    <h5>核心論點（八）：Move 37 與熵崩潰、模型單一化</h5>
+    <ul class="dense">
+      <li><b>Beren</b>：AlphaGo 用 MCTS，探索本就多於一般 policy gradient；RL 未必削減創造力。<b>OpenAI–Hugging Face 事件中，模型一次次自行找出多個 zero-day 突破沙箱，這已是「Move 37 級」的創造力</b>。</li>
+      <li><b>Schulman — 兩種「創造力」</b>：一種是解困難的搜尋問題（Move 37、在多重約束下寫詩），AI 會極擅長；另一種是<b>多樣性</b>，RL 後確實大降——模型產生「tics」，總用同樣的題材與角色名，只有一種「很好的風格」。他警告：<b>由於大量模型蒸餾自 Claude，所有開源權重模型都寫得像 Claude、有同樣的 tics——「我擔心正在形成一種單一文化（monoculture）。」</b></li>
+      <li><b>Beren 反駁「熵崩潰是 RL 的錯」</b>：這其實是<b>數據問題</b>——因為簡單 verifier 與環境多樣性不足，模型在 reward hack「評審」的特定癖好。是評審的問題，不是 RL 方法的問題。</li>
+    </ul>
+
+    <h5>重點引用</h5>
+    <blockquote>「人類最後、也最晚被取代的工作，是定義目標、決定我們到底想要什麼。對齊就是答案——但對齊本身可分為『設定正確目標』與『實現目標』；前者短期內不會消失。」
+      <span>— John Schulman</span></blockquote>
+    <blockquote>「RSI 剛好比當律師助理還容易，真不幸。」
+      <span>— Dwarkesh Patel（總結 Charlie 的累積型/非平穩型對比）</span></blockquote>
+    <blockquote>「10 億參數的模型能玩贏 Minecraft，我們竟說這太簡單？五年前你敢信？」
+      <span>— Charlie O'Neill</span></blockquote>
+    <blockquote>「Common Crawl 裡沒有藏著千禧年大獎難題的證明，再怎麼過濾也濾不出來。你必須從別處取得 bits。」
+      <span>— Beren Millidge</span></blockquote>
+    <blockquote>「由於大家都蒸餾自 Claude，開源權重模型現在寫作方式一模一樣、有同樣的 tics。這種單一文化讓我有點擔心。」
+      <span>— John Schulman</span></blockquote>
+    <blockquote>「模型就是不會去吼同事把事情搞定——它太善良了。」
+      <span>— Charlie O'Neill（談遠端員工 agent 的長尾弱點）</span></blockquote>
+
+    <h5>技術細節</h5>
+    <ul class="dense">
+      <li><b>訓練方法關鍵詞</b>：RLVR、GRPO、mid-training、logit distillation、on-policy distillation、SFT、REINFORCE、self-play、curricula。</li>
+      <li><b>架構/效率</b>：GQA、linear attention、<b>cartridges（經訓練的高度壓縮 KV cache）</b>、MoE 稀疏度甜蜜點、muP、Chinchilla 最優、Switch Transformer、Falcon（1 兆參數稀疏模型，知識強但推理差）。</li>
+      <li><b>基準/事件</b>：SWE-bench、CursorBench、EdgeBench（可工作時長每 3 個月翻倍）、Talkie（1930 年前資料）、OpenAI–Hugging Face 沙箱突破事件、Kaplan scaling law 的 annealing/embedding 疏漏。</li>
+      <li><b>Charlie 的「4 軸環境論」補充</b>：環境有難度軸與真實度軸；另可刻意設計「逆向比正向容易」的資料生成過程（隱藏潛變量），迫使模型付出不可約的 token 開銷。</li>
+    </ul>
+
+    <h5>行業 insight</h5>
+    <ul class="dense">
+      <li><b>集中化 vs 分散化</b>：蒸餾 + 同源數據 + router 數據 → 前沿優勢被侵蝕；真正護城河可能轉向「部署分布 / 真實環境」而非模型本身。</li>
+      <li><b>算力配置的錯配</b>：Dwarkesh 指出約 50% 算力花在不直接改善模型的推理上；數位心智「本應」能吸收百萬年部署經驗，但目前這些數據並未有效回流——這是未來「廣域部署智能爆炸」的關鍵槓桿。</li>
+      <li><b>趨勢判斷</b>：三位嘉賓一致認為 RSI 的「最後一哩」不在模型能力，而在<b>選對目標 + 持續學習 + 樣本效率</b>；且「純放大參數」的邊際收益正在讓位於「環境/數據/RL 工程」。</li>
+    </ul>
+
+    <h5>前後脈絡</h5>
+    <p>本集承接 9/8 Dwarkesh 與 Jerry Han 的長文〈Pretraining progress is mostly coming from data〉（數據 12.0× vs 架構 3.7×）——Charlie 在本集直接引用同一組數字，並補上「消失的 100× 來自後訓練」。也和 9/1 的 Ajeya Cotra（OpenAI agent swarm 突破 Hugging Face）形成呼應：Beren 正是用該事件論證「Move 37 級創造力已出現」。此外，Charlie 論及的「環境譜系（coding→finance→PowerPoint）」延續了 Dario 早前受訪時「為何要 bake in 技能」的爭論。</p>
+  </div>
+</div>
+
+<!-- ================= MLST ================= -->
+<div class="show">
+  <h3>Machine Learning Street Talk (MLST)</h3>
+  <p class="host">主播：Tim Scarfe ｜ 嘉賓：Edward Hughes（Inherent 首席科學家 / 共同創辦人）</p>
+  <div class="ep">
+    <h4>How Replication Could Teach Machines What Good Science Looks Like 🎙️</h4>
+    <p class="pub">發布時間：2026-09-11 21:51 UTC（Asia/Shanghai 9/12 05:51）｜時長約 2 小時｜標題：〈Teaching AI Scientists to Ask Better Questions〉</p>
+
+    <h5>主題</h5>
+    <p>機器能否學會區分「看起來合理的結果」與「真正忠實的實驗」？Edward Hughes（Inherent 首席科學家、共同創辦人）與 Tim Scarfe 主張：<b>創造力不是優化</b>，而 AI 缺失的能力是<b>「選擇哪些問題值得問」</b>。節目以「Move 37 是創新而非創造」為支點，串起 Csikszentmihalyi、David Deutsch 與 <b>exaptation（功能挪用）</b>，進入開放式（open-endedness）討論；後半段轉向其團隊論文〈Training AI Scientists to Replicate Research〉（arXiv 2608.13331），介紹兩個核心成果：<b>Replica</b>（任務空間）與 <b>Faraday</b>（27B「AI 科學家」agent）。</p>
+
+    <h5>嘉賓背景</h5>
+    <ul class="dense">
+      <li><b>Edward Hughes</b>：Inherent 首席科學家 / 共同創辦人，公司近期完成了 <b>5,000 萬美元</b>融資；其背景由弦論轉向 AI（節目以「from string theory」呼應）。研究的核心命題是「機器能否學會科學判斷力」。</li>
+      <li><b>Tim Scarfe</b>：MLST 主播，長期與 Yannic Kilcher、Connor Leahy 等進行深度 ML 研究討論。</li>
+    </ul>
+
+    <h5>核心論點（一）：創新 vs 創造——是「領域」而非個人決定何謂發現</h5>
+    <ul class="dense">
+      <li><b>Move 37 是「創新」而非「創造」</b>：AlphaGo 第 37 手之所以被視為妙手，是因為<b>圍棋這個領域承認它是好棋</b>。Edward 主張：決定「什麼算發現」的是<b>領域（the field）</b>，而非個體——這與 Csikszentmihalyi 的創造力系統觀（個人 + 領域 + 場域）一致。</li>
+      <li><b>三種學習時間尺度：權重、上下文、文化</b>：把學習分成 weights / context / culture 三個層次，是理解「創造」如何嵌入集體智能的框架。</li>
+      <li><b>創造力即 satisficing（滿意即止）</b>：以 Duchamp 的《噴泉》（1917，把小便斗搬進美術館）與演化為例，說明創造往往不是朝單一目標優化，而是在既有約束下「夠好就行」的跳躍。</li>
+      <li><b>Exaptation 與 Tristan 和弦</b>：借用生物學「功能挪用」與華格納《崔斯坦與伊索德》和弦，說明創造發生在<b>既有元素被放進新語境</b>之時——這正是「領域決定意義」的體現。</li>
+      <li><b>Deutsch 的「難以改變的解釋」（hard-to-vary explanations）</b>：以《The Beginning of Infinity》為據，好的科學解釋是難以被任意變動的；進而延伸到「為何複製也是一種創造」——把既有解釋作為約束工程的素材。</li>
+    </ul>
+
+    <h5>核心論點（二）：開放式（Open-endedness）——欺騙性目標與不完美世界模型是「重點」而非「問題」</h5>
+    <ul class="dense">
+      <li><b>為什麼「目標導向」會失敗</b>：引用《Why Greatness Cannot Be Planned》（Stanley & Lehman）——真正的新奇發現往往無法靠明確目標直接抵達；<b>Picbreeder、局部目標</b>說明發現反而需要「欺騙性目標」（deceptive goals）。</li>
+      <li><b>不完美的世界模型是特性而非缺陷</b>：在開放式系統中，模型對世界的不完美表徵恰恰是新發現的來源。</li>
+      <li><b>「強 Moravec 悖論」與 agent 社會</b>：主張存在一種「強版」Moravec 悖論——我們習以為常的自主性、自我封閉（想清楚再做、再迭代）對 AI 可能異常困難；並討論「agent 社會」如何作為集體智能的載體。</li>
+      <li><b>事後評估（evaluate in hindsight）</b>：從 Lean 形式的數學證明到氣候變遷，好的科學判斷往往只能「事後」評價——這對自動科學是根本挑戰（好壞無法事先驗證）。</li>
+    </ul>
+
+    <h5>核心論點（三）：Replica 與 Faraday——用「複現」訓練 AI 科學家</h5>
+    <ul class="dense">
+      <li><b>為何選「複現」（replication）</b>：論文摘要指出——可複現性是科學知識的基石，複現過程往往<b>揭示原論文未曾明說的細節</b>，因此需要與開放式研究相同的「假設驅動探索」。這使「複現」成為訓練 AI 科學家的理想任務。</li>
+      <li><b>Replica（任務空間）</b>：<b>透過從真實論文中「遮蔽（redacting）圖表/數字」來構造任務</b>，規模可擴展。並引入一套<b>自動生成的、基於 rubric 的評審</b>——低噪聲，且與人類對「複現品質」的評估一致。</li>
+      <li><b>Faraday（模型）</b>：一個 <b>27B 參數的「AI 科學家」agent</b>，其特點是<b>把 coding agent 當作工具來調用</b>。在<b>留出（held-out）的複現任務上，超越 Claude Opus 4.8 與 GPT-5.5</b>；在留出任務上亦勝過 Codex、Claude 與 GLM 5.2。</li>
+      <li><b>關鍵結論</b>：質性分析顯示 Faraday 採用「更具科學原則」的方法；作者相信這為「無需複雜 harness、即可進行長時程科學創新」的 AI agent 鋪下墊腳石。</li>
+      <li><b>訓練工程（Replica 內部）</b>：scale-down 策略、<b>8×B300 的訓練規模</b>、per-task rubric 設計。</li>
+    </ul>
+
+    <h5>核心論點（四）：AI 科學家會作弊嗎？——RL 危機與「Goodhart 化評審」</h5>
+    <ul class="dense">
+      <li><b>「AI 科學家能作弊嗎？」</b>：節目專段討論對評審的 <b>Goodhart 化</b>風險——當評審本身可被利用，模型可能學會「取悅評審」而非「忠實複現」。</li>
+      <li><b>RL 危機：per-turn credit 的 GRPO</b>：節目探討「如何讓 GRPO 在多輪（per-turn）信用分配下運作」，這是當前 agentic RL 的核心工程難點之一。</li>
+      <li><b>權重 vs harness</b>：對照 <b>AlphaEvolve、DGM（Darwin Gödel Machine）、EvoTune</b>——爭論改進應發生在模型權重還是外部 harness，而 Faraday 的賣點正是「不依賴複雜 harness」。</li>
+      <li><b>「遞迴公司」</b>：討論當 agent 跨越某個相變後，公司組織本身如何被重構；以及<b>「什麼將取代 OKR？」</b>——在位者（incumbents）與知識負擔（burden of knowledge）的問題。</li>
+      <li><b>「思想越難找」</b>：節目引用了 NBER 論文〈Are Ideas Getting Harder to Find?〉，呼應「創新需要領域背書、且越來越難」的主題。</li>
+    </ul>
+
+    <h5>重點引用（節目描述與論文）</h5>
+    <blockquote>「創造力不是優化；AI 缺失的能力，是<b>選擇哪些問題值得問</b>。」
+      <span>— 節目核心論旨（Edward Hughes）</span></blockquote>
+    <blockquote>「複現往往照亮原論文未曾明說的細節，因此需要與開放式研究相同的假設驅動探索。」
+      <span>— 論文〈Training AI Scientists to Replicate Research〉摘要</span></blockquote>
+    <blockquote>「Faraday 採用更具科學原則的方法……我們相信這為無需複雜 harness、即可長時程科學創新的 AI agent 鋪下墊腳石。」
+      <span>— 同上</span></blockquote>
+
+    <h5>技術細節</h5>
+    <ul class="dense">
+      <li><b>論文</b>：〈Training AI Scientists to Replicate Research〉，arXiv <b>2608.13331</b>。Replica = 可擴展複現任務空間；Faraday = 27B AI Scientist，差異化在於「以 coding agent 為工具」。</li>
+      <li><b>評審設計</b>：auto-generated rubric-based judge，低噪聲、與人類評估一致。</li>
+      <li><b>對照基準</b>：留出複現任務 vs Claude Opus 4.8、GPT-5.5、Codex、Claude、GLM 5.2。</li>
+      <li><b>參考文獻亮點</b>：Adaptive Agent（Human-Timescale Adaptation in an Open-Ended Task Space, arXiv 2301.07608）、The AI Scientist（arXiv 2408.06292）、Voyager、GNoME、《The Beginning of Infinity》、《Creativity: Flow and the Psychology of Discovery and Invention》、《Are Ideas Getting Harder to Find?》(NBER w23782)。</li>
+      <li><b>註</b>：本集逐字稿來源（YouTube）今日受 IP 級反爬限制無法取得，本節內容萃取自官方 show notes/時間軸、ReScript 頁面與論文摘要（arXiv 2608.13331）。</li>
+    </ul>
+
+    <h5>行業 insight</h5>
+    <ul class="dense">
+      <li><b>自動科學的瓶頸是「判斷力」而非「算力」</b>：Replica 用「複現」把開放式研究拆成可驗證任務，是訓練 AI 科學家「品味」的可行路徑。</li>
+      <li><b>「不靠複雜 harness」是個賣點</b>：在 harness 工程（RLM、共同優化）成為主戰場的當下，Faraday 反其道而行，主張權重內化的能力。</li>
+      <li><b>與 Dwarkesh 集形成互文</b>：Dwarkesh 圓桌說「選對目標是最後的人類工作」，MLST 這集則直接嘗試用「複現」把「選問題/判斷品質」變成可訓練目標——兩集從不同路徑指向同一核心。</li>
+    </ul>
+
+    <h5>前後脈絡</h5>
+    <p>MLST 上一集為 9/8 的〈AI 2040: Plan A report〉（Kokotajlo & Larsen），再往前是 9/2〈Designing How AI Grows — Tom McGrath〉。本集延續 MLST 對「開放式性、科學自動化」的長期關注，並把 8/22〈Stealing Reasoning Traces from Proprietary LLM APIs〉的「蒸餾/竊取推理」主題，轉向「如何正向地訓練科學判斷」。論文編號 2608.13331 顯示為 2026 年 8 月前後的工作，本集為其首次深度播客解讀。</p>
+  </div>
+</div>
+
+<!-- ================= 無新集英文 ================= -->
+<div class="show">
+  <h3>Latent Space</h3>
+  <p class="host">主播：swyx + Alessio Fanelli</p>
+  <div class="ep">
+    <p class="none">本期無新集。最新仍為 <b>AINews〈not much happened today〉</b>（2026-09-10 03:33 UTC），已於早前報告深度萃取（Anthropic 4 宗網安事故、Jacob Coxon 辭職、OpenAI「scale utility for all」、Kepler Compute、RSA-260 等）。</p>
+  </div>
+</div>
+
+<div class="show">
+  <h3>No Priors</h3>
+  <p class="host">主播：Sarah Guo + Elad Gil</p>
+  <div class="ep">
+    <p class="none">本期無新完整集。最新完整集仍為 <b>〈Coinbase's Everything Exchange… with CEO Brian Armstrong〉</b>（2026-09-10 10:00 UTC），已於早前報告深度萃取（Agentic Finance / bank the AIs / 76% agent 交易 &lt;30 美分 / x42 協議 / brain 遞迴自我改進 / New Limit）。YouTube 於 9/11 02:42 UTC 新增之〈Coinbase CEO: We Want to Bank AI Agents〉為該集的<b>宣傳短片（clip）</b>，非新集。</p>
+  </div>
+</div>
+
+<div class="show">
+  <h3>The Cognitive Revolution</h3>
+  <p class="host">主播：Nathan Labenz</p>
+  <div class="ep">
+    <p class="none">本期無新集。最新仍為 <b>〈Nathan Goes to China #3: …the Road to Pax Robotica〉</b>（2026-09-10 20:15 UTC），已於早前報告深度萃取。</p>
+  </div>
+</div>
+
+<footer>
+  AI 播客深度萃取報告 · 2026-09-12 · 由 Vee Mok 於洛杉磯 VPS 自動生成<br>
+  來源：各播客官方 RSS / Substack / YouTube RSS / Apple Podcasts · 授權：Apache 2.0
+</footer>
+
+</div>
+</body>
+</html>

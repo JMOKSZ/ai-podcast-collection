@@ -1,11 +1,19 @@
 {
- "lastScan": "2026-09-11T02:05:00.000Z",
- "lastScanDate": "2026-09-11",
+ "lastScan": "2026-09-12T02:20:00.000Z",
+ "lastScanDate": "2026-09-12",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-09-08T16:10:16.000Z",
-   "lastEpisodeTitle": "Pretraining progress is mostly coming from data",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-11T16:28:11.000Z",
+   "lastEpisodeTitle": "AI researchers debate how close we are to recursive self-improvement",
+   "newEpisodes": [
+    {
+     "title": "AI researchers debate how close we are to recursive self-improvement",
+     "pubDate": "2026-09-11T16:28:11.000Z",
+     "type": "full",
+     "url": "https://www.dwarkesh.com/p/john-beren-charlie",
+     "note": "（Substack RSS content:encoded 全長逐字稿萃取，~101k 字，約1h35m 圓桌）：嘉賓 John Schulman（Thinking Machines 首席科學家/OpenAI 共同創辦人/RLHF）、Beren Millidge（Zyphra CTO）、Charlie O'Neill（Baseten 模型訓練負責人）。主題=離 RSI 多遠。核心：①反 RSI 論證：Moravec 悖論/持續 sim-to-real 鴻溝、continual learning 未解、「一個月就變笨」循環、離全局最優的範式不連續性（類比摩爾定律）；「對齊/定義目標是最後的人類工作」。②中國實驗室追上=蒸餾（少 bits 易蒸餾）+ router/proxy 服務蒐集完美 prompt 分布 + 同源買數據；Charlie 斷言 Sonnet 5/Opus 5 客觀上不如 GLM-5.3/Kimi K3；Schulman 反以「難度軸 vs 真實度軸」benchmaxxing 分布解釋。③自動化研究者訓練=RLHF 品味+練習環境，實務上是『diff Anthropic 近幾個月 bug 成環境』。④累積型(RSI 像呼叫 pre-training.sh)vs 非平穩型(律所助理)任務；Dwarkesh『RSI 剛好比當律師助理還容易』。⑤持續學習微觀崩壞：SFT/在線蒸餾災難性遺忘，on-policy 蒸餾推遠但終仍敗；RL 只改很小損失谷。⑥數據：Dwarkesh×Jerry Han 網格=數據 12.0× vs 架構 3.7×（合計33×）；Charlie『消失的100×』來自後訓練；Talkie(1930前資料)微調勝 Claude 3 Opus on SWE-bench；反例=小五數學爬不到大學數學需 curricula。⑦RL 有效=mid-training 走80%路程+RL微調策略+信噪比（SFT雜bits淹沒信號）；horizon generalization（EdgeBench 每3月翻倍）；quanta 相變類比。⑧Move 37 創造力（OpenAI-HF 事件多個 zero-day 即證據）；但 RL 後多樣性降、蒸餾 Claude 致開源模型 monoculture；熵崩潰=評審被 reward hack 非 RL 之過。⑨時間線：drop-in 遠端員工 Charlie 1年(Browser 2年)/Beren 3年/Schulman~；AI研究員10×加速 Schulman 2年/Charlie 5-10年；ASI Schulman 3-4年/Charlie 5-10/Beren~5年。"
+    }
+   ]
   },
   "latent_space": {
    "lastEpisodePubDate": "2026-09-10T03:33:12.000Z",
@@ -23,15 +31,7 @@
   "no_priors": {
    "lastEpisodePubDate": "2026-09-10T10:00:16.000Z",
    "lastEpisodeTitle": "Coinbase's Everything Exchange: Agentic Finance, Stablecoins & Tokenization with CEO Brian Armstrong",
-   "newEpisodes": [
-    {
-     "title": "Coinbase's Everything Exchange: Agentic Finance, Stablecoins & Tokenization with CEO Brian Armstrong",
-     "pubDate": "2026-09-10T10:00:16.000Z",
-     "type": "full",
-     "url": "https://www.youtube.com/watch?v=uLDK4l_-gUE",
-     "note": "（YouTube 自動字幕全長逐字稿萃取，~44min）：Everything Exchange（全資產類別上鏈、共享流動性/交叉保證金）；穩定幣支付為第二引擎（<1s、<1美分、以資訊速度移錢）。Agentic Finance/AIFI：（1）人人可得的 AI 理財顧問；（2）bank the AIs——agent 需自有帳戶（自託管錢包、無 KYC；另有與人類身份掛鉤的隔離帳戶）。關鍵數字：銀行卡最低~30美分固定+%，1美元以下不成立；約76% agentic commerce 交易<30美分（用途：付費牆研究彙整、招聘抓 LinkedIn、agent 對 agent 工具呼叫）；x42 協議（Coinbase 孵化、捐 Linux Foundation、Google/Cloudflare/AWS 參與）；edgentic.market 流量看板；Coinbase Business 收穩定幣。專才 agent：小開源模型用自有資料 RL（如10萬合規案例）可超越前沿模型→agent 市場專科化。88% 收入來自非比特幣交易；代幣化股票（首個真代幣化股票、1:1 託管證券、境外先行、談 SEC）；~40億人無券商通道；預測市場數月達 $100M run rate、環比>100%。內部 AI：brain 機制（每團隊/repo/個人一 brain，markdown 記錄事故/財務控制/AB 測試/GitHub PR 史）；改動 agent 思路須回寫 brain→one-shot PR 接受率持續爬升=遞迴自我改進；內部 harness「Toshi」可經 x42 付費；Brian 用高階模型拆 3階段×10項→並行10個 agent，~2分鐘完成 phase 1。公司規模：消滅任務非消滅人。New Limit：表觀遺傳重編程前沿模型；南舊金山 50-60人；已於人源化小鼠成功重編程至少一種人類細胞類型、推進非人靈長類、首個一期明年啟動、未來數年3-10候選藥；首三細胞=肝/血管/免疫(T)；首個一期酒精性肝病（ALD，若成~$20B），皮膚再生~萬億市場。前瞻：穩定幣→股票→私人信貸/國債/存款；預測市場可做政策預測與「人生大哉問」觀點市場；特別經濟區（Prosper/Honduras、Freedom Cities 聯邦土地免 EPA/FAA、深圳/新加坡/迪拜）；認知增強（葉酸 IQ）與投資胚胎編輯公司（稱~80%美國人支持以胚胎編輯防病）。"
-    }
-   ]
+   "newEpisodes": []
   },
   "cognitive_revolution": {
    "lastEpisodePubDate": "2026-09-10T20:15:44.000Z",
@@ -47,9 +47,17 @@
    ]
   },
   "ml_street_talk": {
-   "lastEpisodePubDate": "2026-09-08T11:27:44.000Z",
-   "lastEpisodeTitle": "AI 2040: Plan A report - Daniel Kokotajlo & Thomas Larsen",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-11T21:51:23.000Z",
+   "lastEpisodeTitle": "How Replication Could Teach Machines What Good Science Looks Like — Edward Hughes",
+   "newEpisodes": [
+    {
+     "title": "How Replication Could Teach Machines What Good Science Looks Like — Edward Hughes",
+     "pubDate": "2026-09-11T21:51:23.000Z",
+     "type": "full",
+     "url": "https://www.youtube.com/watch?v=P4bYjTJvD28",
+     "note": "（YouTube 逐字稿今日受 IP 級反爬限制；萃取自官方 show notes/19 段時間軸 + ReScript 頁 + 論文 arXiv 2608.13331 摘要，約2h）：嘉賓 Edward Hughes（Inherent 首席科學家/共同創辦人，剛完成 $50M 融資，弦論背景）。主題〈Teaching AI Scientists to Ask Better Questions〉。核心：①Move 37 是『創新』非『創造』——由領域(field)而非個人決定何謂發現（Csikszentmihalyi 系統觀）。②三學習時間尺度 weights/context/culture。③創造力=satisficing（Duchamp《噴泉》1917、演化）；exaptation 與 Tristan 和弦=既有元素入新語境；Deutsch『hard-to-vary explanations』《The Beginning of Infinity》，複製也是創造。④開放式：欺騙性目標與不完美世界模型是重點非問題（《Why Greatness Cannot Be Planned》、Picbreeder、局部目標）；強 Moravec 悖論；事後評估（Lean 證明→氣候變遷）。⑤論文〈Training AI Scientists to Replicate Research〉：Replica=從真論文遮蔽(redact)圖表/數字生成的複現任務空間+自動 rubric judge（低噪聲、與人類一致）；Faraday=27B『AI 科學家』agent，以 coding agent 為工具，在留出複現任務超越 Claude Opus 4.8/GP T-5.5，亦勝 Codex/Claude/GLM 5.2，採更具科學原則方法，無需複雜 harness。⑥訓練工程：scale-down、8×B300、per-task rubric。⑦AI 科學家會作弊嗎=Goodhart 化評審；RL 危機=GRPO per-turn credit；權重 vs harness（AlphaEvolve/DGM/EvoTune）；遞迴公司/取代 OKR/知識負擔；引 NBER〈Are Ideas Getting Harder to Find?〉。"
+    }
+   ]
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-09-03T00:00:00.000Z",
@@ -78,8 +86,9 @@
   }
  },
  "notes": {
-  "scan_status": "2026-09-11扫描：新內容3條（英文3條，中文0條）。①No Priors《Coinbase's Everything Exchange... with CEO Brian Armstrong》（9/10 10:00Z，YouTube 字幕全長逐字稿萃取）：Agentic Finance/AIFI、bank the AIs、76% agent 交易<30美分、x42 協議、brain 遞迴自我改進、New Limit 表觀遺傳重編程。②Cognitive Revolution《Nathan Goes to China #3》（9/10 20:15Z，megaphone RSS+節目頁+逐字稿）：Pax Robotica、中國淨評估、晶片換製造技術、保險定價替代禁中國模型。③Latent Space AINews《not much happened today》（9/10 03:33Z）：Anthropic 4宗網安事故+METR調查、Jacob Coxon 辭職、OpenAI scale utility for all、Paul Christiano 入 OpenAI 基金會、Kepler Compute、RSA-260、DeepSeek V4 Pro 軟退役等。無新：Dwarkesh（最新仍9/8預訓練數據長文，YT僅 9/10 Dylan Patel 短clip+Ajeya Cotra clips）、MLST（id1510472996 feed 最新仍 9/2，9/8 AI 2040 Plan A；art19『Machine Learning Podcast』為另一節目，不計）、張小珺153曾鳴9/3、十字路口陳安妮9/6、硅谷101 E250 8/27、42章經逯雨鑫8/29、屠龍一級半續集9/4（各 xyzfm/fireside RSS + Apple Podcasts lookup 逐一核實無更新）。",
-  "report_date": "2026-09-11",
-  "deep_content_fetched": "No Priors：yt-dlp 抓 YouTube 自動字幕 + VTT→純文字全長逐字稿（~54k 字）。Cognitive Revolution：megaphone RSS（feeds.megaphone.fm/RINTP3108857801）+ 節目頁 show notes/引用 + 全長逐字稿（~203k 字，含引言/主題時間軸/資源清單）。Latent Space：Substack RSS content:encoded 全文萃取（AINews 30k+ 字）。其餘 7 播客用 Substack/xyzfm/fireside/anchor/art19 RSS + Apple Podcasts lookup API（各播客 id）逐一核實無新集。"
+  "scan_status": "2026-09-12掃描：新內容2條（英文2條，中文0條）。①Dwarkesh《AI researchers debate how close we are to recursive self-improvement》（9/11 16:28Z，Substack content:encoded 全長逐字稿~101k字）：John Schulman×Beren Millidge×Charlie O'Neill 圓桌——RSI 遠近、蒸餾/中國實驗室、sim-to-real、數據12×架構3.7×、RL 為何有效、Move 37/熵崩潰、時間線預測。②MLST《How Replication Could Teach Machines What Good Science Looks Like — Edward Hughes》（9/11 21:51Z，anchor feed；YouTube 逐字稿受 IP 反爬，用 show notes+arXiv 2608.13331）：Replica+Faraday 27B 超越 Claude Opus 4.8/GPT-5.5。無新：Latent Space（最新仍 9/10 AINews）、No Priors（最新完整集仍 9/10 Coinbase，9/11 02:42 YT 新增僅為該集 clip）、Cognitive Revolution（9/10 Nathan China #3）、張小珺 #153 9/3、十字路口 9/6、硅谷101 E250 8/27、42章經 8/29、屠龍之術 9/4（各 xyzfm/fireside/anchor/megaphone RSS 逐一核實）。",
+  "report_date": "2026-09-12",
+  "deep_content_fetched": "Dwarkesh：Substack RSS content:encoded 全長逐字稿（~101k 字，含全部 9 段時間軸與快速問答）。MLST：anchor RSS show notes/itunes summary（19 段時間軸+完整引用與參考文獻清單）；YouTube 逐字稿因 IP 級 bot 阻擋（yt-dlp 各 player_client 均失敗、Invidious/timedtext/transcript 服務全阻）無法取得，改用 arXiv 2608.13331 摘要補足。其餘 8 播客逐一核實無新集。",
+  "youtube_blocked": "2026-09-12 YouTube 出現 IP 級反爬（Sign in to confirm you're not a bot），yt-dlp 各 client、Invidious、tactiq、youtube-transcript-api 均失敗；本地代理 1080/1087 不可用。MLST/No Priors 逐字稿本次未取得。"
  }
 }
