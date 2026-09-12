@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「RSI 剛好比當律師助理還容易，真不幸」——Dwarkesh 重磅圓桌：Schulman × Millidge × O'Neill 拆解遞迴自我改進仲有幾遠——中國靠 router 數據蒸餾、「對齊係最後一份工」、10 倍 AI 研究者加速同 3–4 年 ASI</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.8rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Dwarkesh Podcast · 2026-09-11</div>
+  <h1>「RSI 剛好比當律師助理還容易，真不幸」——Dwarkesh 重磅圓桌：Schulman × Millidge × O'Neill 拆解遞迴自我改進仲有幾遠——中國靠 router 數據蒸餾、「對齊係最後一份工」、10 倍 AI 研究者加速同 3–4 年 ASI</h1>
+  <div class="meta">
+    <span>📅 2026-09-11 16:28 UTC 發布</span><span>·</span><span>🎙️ Dwarkesh Podcast（Dwarkesh Patel）</span><span>·</span><span>👤 John Schulman · Beren Millidge · Charlie O'Neill</span><span>·</span><span>⏱ 約 1 小時 37 分</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+Dwarkesh 呢次唔係做一對一訪問，而係拉咗三個人上枱<strong>互相辯論</strong>。佢嘅開場白講得好白：呢三個人「都喺相對開放嘅公司」，所以<strong>講得出真話</strong>。組合係——<strong>John Schulman</strong>（Thinking Machines 首席科學家、OpenAI 共同創辦人、主導 RLHF）、<strong>Beren Millidge</strong>（Zyphra CTO，開源模型 + 長期寫深度 blog）、<strong>Charlie O'Neill</strong>（Baseten 模型訓練負責人）。題目只有一條：<strong>離遞迴自我改進（RSI）仲有幾遠？</strong>而呢集最好睇嘅地方，係三個人<strong>真係唔同意對方</strong>——而分歧點往往比結論更有價值。
+</p>
+
+<div class="highlight-box">
+  <strong>呢集嘅中心論點：</strong>如果 2036 年仲未出現瘋狂嘅超智能，最可能嘅技術原因係咩？三個人分別畀出三個唔同嘅「卡點」——Beren 講 <strong>Moravec 悖論式嘅 sim-to-real 鴻溝 + 持續學習未解</strong>；Schulman 講<strong>「一個月後就變笨」嘅循環 + 樣本效率</strong>；Charlie 講 <strong>「晶片上學習者」同 transformer+RL 之間嘅全局最優距離，可能遠到再多 LLM 都發現唔到</strong>。但全場最鋒利嘅一句，係 Charlie 抛出嘅框架：<strong>RSI 係「累積型」任務（attention、MoE、GRPO 一經發現就永久留在訓練 stack），而真實世界（當律師助理）係「非平穩型」。</strong>Dwarkesh 用一句總結：<strong>「RSI 剛好比當律師助理還容易，真不幸。」</strong>
+</div>
+
+<div class="section-title">一、反 RSI 最強論證：三條唔同嘅「卡點」</div>
+
+<p>Dwarkesh 嘅問題設定好刁鑽：「假設 2036 年我哋冇幾十億個超智能到處跑，除咗政治衝擊、打仗、或者直接封殺 AI 之外，<strong>最可能嘅技術原因是咩？</strong>」</p>
+
+<p><strong>Beren 先答，佢揀咗「經典 Moravec 悖論」路線。</strong>佢話人類一直有種錯覺：AI 識解難數學題、識贏棋，就等於好犀利——結果出嚟又冇想像中咁衝擊。如果呢種模式延續、<strong>「真正嘅泛化火花」永遠唔出現</strong>，咁 AI 就會變成「Benchmark 同環境入面乜都得，但始終有一條 sim-to-real 鴻溝擋住一切」。佢自己都話呢個情境<strong>唔太可能</strong>（因為實際已經見到 RL 泛化），佢嘅「默認失敗情境」係再多加一個條件——<strong>加埋持續學習（continual learning）都解決唔到</strong>。</p>
+
+<p><strong>Schulman 加咗「循環論」：</strong>每出新模型，大家驚呼「呢個就係 AGI 啦」；用一個月，就開始覺得佢變笨。呢個循環可能反覆好多次。「即使模型寫嘅 code 遠多過人，都唔會令你<strong>生產力高 100 倍</strong>」——你會卡喺模型判斷力差、無法自我檢查嘅位置。</p>
+
+<p><strong>Charlie 嘅 framing 最工程師：</strong>呢條係一條「<strong>你擺得到晶片上嘅學習者</strong>」同 transformer+RL（即當前配方）之間，距離<strong>全局最優有幾遠</strong>嘅問題。佢用摩爾定律做類比——表面係一條靚直線，但底下係一連串<strong>離散嘅不連續創新</strong>撐住。LLM 都一樣：pre-training scaling law 觸頂 → 搞出 RL 補上 → 又一條新嘅邊際遞減曲線。問題係：<strong>如果下一步嘅不連續性，要丟掉梯度下降甚至神經網路本身，咁再多 LLM 夾硬 scale 都未必搵得到。</strong></p>
+
+<blockquote class="strong">
+  「如果佢需要再一個咁嘅不連續性去解決，我唔肯定用當前呢套 LLM + RL 環境嘅訓練方法，即使係專門針對 RSI 嘅 RL 環境，都發現得到嗰個不連續性。如果發現唔到，我哋大概就會撞上漸近線。」
+  <span class="attribution">— Charlie O'Neill</span>
+</blockquote>
+
+<p>Dwarkesh 用棋類 Elo 做 intuition pump：棋力 Elo 幾十年線性上升，但跨過人類區間嗰陣出現巨大不連續——由「人類專家穩贏 AI」變成「再也贏唔到」。Beren 同意：避免呢件事<strong>唯一</strong>嘅方法，就係喺跨過人類 Elo 之前<strong>恰好漸近</strong>；或者出現<strong>強監管</strong>。佢仲加咗一句好有份量嘅話——<strong>監管比技術更可能係嗰個原因。</strong></p>
+
+<div class="data-point">
+  <span>三人版「2036 冇超智能」情境</span>
+  Beren：<strong>Moravec 悖論 × sim-to-real 鴻溝 × 持續學習未解</strong>｜Schulman：<strong>「一個月後就變笨」嘅重複循環</strong>｜Charlie：<strong>全局最優離當前配方太遠，LLM 發現唔到下一步不連續性</strong>｜共識：<strong>唯一避免者係「喺跨過人類 Elo 前漸近」或者「強監管」</strong>。
+</div>
+
+<div class="section-title">二、「靠思考搵唔到新 bits」——目標明確時有 10× 加速，但目標本身無法靠思考產生</div>
+
+<p>Dwarkesh 抛出一個 accelerant：每次跑七位數美元嘅實驗之前，你都可以花等量算力去做「AI 勞動」——即係叫自動化版本嘅佢哋，用「一個世紀嘅思考」去設計實驗、做小規模 ablation、建立理論。</p>
+
+<p>Schulman 回應：<strong>「我預期我哋離『研究可以做得好嘅天花板』仲好遠。」</strong>佢想像嘅未來係：AI 做大量分析同理論建構，花喺分析嘅算力同花喺實驗本身一樣多。</p>
+
+<p>但 Charlie 嘅一句話係全場哲學含量最高嘅：<strong>「所有思考可以做到嘅，只係基於你自先驗（prior）形成以嚟攞到嘅 bits，去更新你嘅後驗（posterior）。你<u>淨靠思考係攞唔到新 bits 嘅</u>。」</strong>但當目標明確定義好、數據又擺喺度，就會有一個巨大加速。</p>
+
+<p>佢舉咗個殺傷力極強嘅例子：<strong>如果當日有個 AI 幫手睇 Kaplan scaling law，佢應該即刻會發現「佢哋攞咗中間 checkpoint、冇考慮 annealing，所以呢個係錯嘅」——咁樣我哋可以早幾年捉到，慳返一兩年進度。</strong>仲有 muP、learning rate 點樣隨模型規模 scale、model width 喺入面幾重要——呢啲低垂果實全部可以早啲摘。</p>
+
+<blockquote class="strong">
+  「如果目標係『最大化我哋當前嘅目標』，我估有 10 倍加速。但我完全睇唔到點樣推廣到『一開始就搵啱個目標』。淨靠思考，唔一定幫你搵到啱嘅目標。」
+  <span class="attribution">— Charlie O'Neill</span>
+</blockquote>
+
+<p>Beren 接住講，佢認為<strong>呢個先係「當前 AI 快速 RSI」嘅核心問題</strong>：AI 有幾擅長「泛化到學習自己嘅目標」？要有一個自走砲式嘅自動 loop，AI 要<strong>提出目標 → 優化 → 搞清楚 → 再提出新目標</strong>，而且長期唔可以出軌。佢再用 Moravec 悖論嘅一面：<strong>「自主性同自我封閉（諗清楚自己做咩、然後去做）——我哋覺得好易，因為我哋日日都做；但呢件事對 AI 可能異常困難，就好似 locomotion 對我哋好易、但對 AI 好難一樣。」</strong></p>
+
+<div class="section-title">三、「對齊係最後一份工」——人類最遲被取代嘅角色</div>
+
+<p>Dwarkesh 問：由 2012 到今日，邊一項創新會係「AI 完全自動化 AI 研發之前，人類最後要做嘅事」？Beren 答「<strong>反覆去問啱嘅問題</strong>」——AI 依家寫實驗 code 好叻，但決定做邊個實驗就好弱，佢哋提出嘅往往係「一堆好碎、好細步」嘅嘢。</p>
+
+<p>Schulman 呢段係全場最值得抄落筆記嘅：</p>
+
+<blockquote class="strong">
+  「人類最後、亦係最遲被取代嘅工作，就係<strong>定義目標、決定我哋到底想要咩</strong>。順住呢條線：決定 AI 助手應該點表現、咩叫 helpful、做 RLHF 嗰陣個目標係咩……之後再到定義 constitution 同 model spec。即使 AI 做得到所有技術工作，我哋都仍要落手做呢部分——因為每個領域都要有人諗，個模型喺呢度應該點表現。」
+  <span class="attribution">— John Schulman</span>
+</blockquote>
+
+<p>Dwarkesh 即刻補一句：「<strong>Alignment is the final job.</strong>」Schulman 確認：「對齊大概就係答案。但對齊本身可以拆成『<strong>設定正確目標</strong>』同『<strong>實現目標</strong>』兩截——而第一截短期內唔會消失。」佢仲用一個好務實嘅角度佐證：後訓練團隊點解需要咁多人？「就係因為有好多唔同領域，你都要諗個模型應該點表現，好難將成件事自動化」。</p>
+
+<div class="section-title">四、中國實驗室點解追得到：蒸餾、router 數據，同「Sonnet 5 / Opus 5 竟然更差」</div>
+
+<p>Dwarkesh 問：明明所有嘢都指向集中化，點解模型供應商冇出現大整合？Schulman 答案：<strong>蒸餾係對抗集中化嘅主要力量。</strong>「凡係可以靠 RL 學到嘅嘢，都可以極易蒸餾，因為佢只係少量 bits。」而且關鍵係——<strong>蒸餾需要「真實嘅 prompt 分佈」</strong>。</p>
+
+<p>跟住佢拋出一個一手觀察：<strong>「最近有啲嘢浮面——有啲中國公司好可能用緊『router 服務』——即係專門畀中國用戶用被禁嘅美國前沿模型、多數係做 coding——而呢啲 router 服務會蒐集同出售部分數據。呢個係極有用嘅蒸餾數據集，因為佢畀你一個<u>完美嘅 prompt 分佈</u>。」</strong></p>
+
+<p>Beren 補刀：<strong>「前沿 lab 向大數據公司買數據，中國一樣可以向同一批數據公司買到同樣嘅數據。」</strong>Dwarkesh 追問「佢哋係咪真係咁做？」Beren：「係。好多人為此嬲，但如果佢哋有完全一樣嘅數據、又可以蒸餾，咁<strong>追平其實好容易</strong>。」</p>
+
+<p>然後 Charlie 抛出全集最爆嘅預測：</p>
+
+<blockquote class="strong">
+  「一開始係我講：『唔覺得好奇怪咩？Sonnet 5 同 Opus 5 幾乎客觀上比 GLM-5.3 同 Kimi K3 更差，即使佢哋唔只有蒸餾、仲有嚟自 Mythos 嘅 logit 蒸餾？』……從中得出嘅預測係：<strong>前沿 lab 喺 RL 環境上，依家已經冇乜優勢，甚至完全冇。</strong>如果你以 Anthropic 身份接觸得到嗰啲前沿 RL 環境、又有 logit 蒸餾，結果你都整咗個更差嘅模型——咁可能……」
+  <span class="attribution">— Charlie O'Neill</span>
+</blockquote>
+
+<p>Dwarkesh 嘅即時反應：「咁即係<strong>真實部署比環境更重要</strong>？好有趣。」Schulman 就提出一個替代假設——<strong>環境其實有兩條軸：難度同真實度。</strong>製造「高難度、易驗證」嘅謎題式環境好易（佢叫呢個做 <strong>benchmaxxing 分佈</strong>，好多熱門 benchmark 都係咁）；但真實 coding agent 場景，需要多輪同人往返、多個目標。天真蒸餾只會令學生模型<strong>喺 benchmaxxing 分佈上匹配老師，但喺真實場景輸掉</strong>。大模型更能由「窄而難」泛化到「真實」任務。佢仲提另一個可能：Anthropic 只係後訓練 stack 一直改，某個旋鈕調得太高，整咗啲用戶好憎嘅怪癖——「後訓練好易搞砸，而且 benchmark 上睇唔出。」</p>
+
+<div class="data-point">
+  <span>蒸餾 / 反集中化嘅槓桿</span>
+  ① 蒸餾係對抗集中化嘅主要力量（任何 RL 學到嘅嘢都易蒸餾）｜② 關鍵係<strong>真實 prompt 分佈</strong>｜③ 中國靠 <strong>router / proxy 服務</strong>蒐集「完美 prompt 分佈」｜④ 數據可同源購買｜⑤ Charlie 預測：<strong>前沿 lab 喺 RL 環境已無明顯優勢</strong>，護城河轉向「部署分佈 / 真實環境」。
+</div>
+
+<div class="section-title">五、自動化 AI 研究者點訓練：「diff 掉 bug」同實驗室內部嘅持續學習</div>
+
+<p>Dwarkesh 問：第一批真正識自動化 AI 研發嘅模型，實際上會點樣被訓練？</p>
+
+<p><strong>Schulman：</strong>會係「<strong>由人類回饋吸收研究者嘅品味</strong>」加「<strong>大量多步研究專案嘅練習環境</strong>」嘅組合。每輪迭代，針對上一輪最破嘅地方打補丁——研究者用 AI 用得多，就會察覺佢有一致嘅弱點，再用人工回饋或新環境修補。</p>
+
+<p><strong>Charlie 畀出實際做法——「diff 掉 bug」：</strong>現實中唔會回滾到 GRPO 之前、叫佢 self-play 重新發現；而係<strong>鎖定譜系最前沿，「將 Anthropic 近幾個月喺訓練 stack 搵到嘅 bug 變成環境」</strong>。因為算力瓶頸太重，人們會留在前沿，把每次模型迭代以嚟嘅改進 diff 成訓練環境。Dwarkesh 總結得精準：<strong>「呢個就係 AI lab 內部嘅持續學習——將過去三個月嘅 AI 研究進展，透過環境同 RLHF 蒸餾返入模型。」</strong></p>
+
+<p>Charlie 亦自認呢個令人覺得「漸近」：「你永遠只係追緊最近三個月嘅進展，而嗰啲進展有 AI 貢獻、但同時仲有人喺 loop 入面。感覺就係你<strong>不斷逼近人類研究者搵到、做到嘅嘢</strong>。」</p>
+
+<p>但 Beren 反駁咗一個關鍵點：<strong>「如果你淨係喺軌跡上蒸餾，你永遠上唔到佢上面。但環境可以走到遠高於人類可以做到嘅地方。」</strong>佢舉例：你可以定義一個「loss 要落到 1.3」嘅目標——呢個係極度可量度、可驗證嘅任務，而且<strong>冇人類做到</strong>。Charlie 補一句全場最佳金句：</p>
+
+<blockquote class="strong">
+  「唔覺得荒謬咩？<strong>1 億參數嘅模型可以玩贏 Minecraft</strong>——我哋話呢個太易？五年前你敢講？」
+  <span class="attribution">— Charlie O'Neill</span>
+</blockquote>
+
+<div class="section-title">六、長時程 RL 會催生 AGI 嗎？Anthropic 嘅「環境譜系」同 Cursor Composer 嘅在線 RL</div>
+
+<p>Charlie 描述咗一個好清晰嘅路徑（Anthropic 為例）：<strong>先係 coding 做到極致 → 用由 coding 得到嘅任務時程去泛化 → 金融（海量 Excel 數據）→ PowerPoint → 「工作經濟嘅長尾」。</strong>佢話呢個「睇落好有效」，連開源 lab 依家都認知到呢個係正確嘅下注。</p>
+
+<p>Dwarkesh 引用 Dario 嘅觀點反問：如果你真係預期模型可以好似人咁 on-the-job 學習，點解仲要 bake in 呢啲 PowerPoint 技能？Schulman 答：<strong>「如果模型在 context 學習夠強，理論上唔使；但實務上係為咗效率——即使佢夠聰明即場學識，你都仍然想將直覺 bake 入權重，令佢 runtime 更高效。」</strong>佢仲補：「實際上模型供應商就係逐個高價值領域去加強——呢個就係模型點解進步咁多嘅其中一個答案。」</p>
+
+<p><strong>Cursor / Composer 嘅在線 RL 係重要案例。</strong>Dwarkesh 以為只係 Tab 模型（按唔按 Tab），Charlie 更正：<strong>「唔止 Tab，連真正嘅生成模型都係咁做。」</strong>做法：因為在線 RL 冇 group（一個用戶講一句、得一個 rollout），變異數極大，Cursor 用「<strong>非常好嘅啟發式</strong>」去估「呢個回答比平均好幾多／差幾多」，然後做一個大嘅 <strong>REINFORCE</strong> 更新。而判斷有冇變差嘅方法係：<strong>「如果喺 CursorBench 上有進步，就每 5 個鐘部署一次新模型；如果冇，就成個版本丟棄。」</strong></p>
+
+<p>Schulman 加咗個關鍵 caveat：<strong>「最大嘅問題其實係——你根本唔知自然數據嘅 reward function 應該係咩。如果你用啲表面訊號（例如『佢有冇接受個 edit』），好可能會被 reward hack。」</strong></p>
+
+<p>講到「部署數據有冇在驅動進步」，Beren 話<strong>基本上已經發生緊</strong>——你可以攞部署數據過濾／標註／合成，再放入下一代 pre-train / mid-train；<strong>「中國 100% 咁做」</strong>。Charlie 舉例：Composer、Harvey 嘅法律 agent、<strong>Kimi K3 部署 → 做在線學習 → 回流</strong>。</p>
+
+<div class="section-title">七、Sim-to-Real 鴻溝：Dwarkesh 嘅「樣本效率差一百萬倍」隱憂</div>
+
+<p>呢段係全場最重要嘅技術辯論。Dwarkesh 提出：時程越長越難喺 data center 模擬——<strong>開一間賺錢公司、贏一單官司、市場日內套利</strong>，呢啲全部要同真實世界互動。而模型喺「由冷啟動到訓練完」嘅樣本效率上，<strong>可能比人類差一百萬倍</strong>。如果權重更新嘅樣本效率唔改善，呢個可能係「十年內冇瘋狂 RSI」嘅<strong>唯一</strong>技術理由。</p>
+
+<p>Charlie 用<strong>全集最鋒利嘅框架</strong>回應——分兩種任務：</p>
+
+<ul>
+  <li><strong>累積型（cumulative）任務 = RSI。</strong>「理論上，一個唔夠一百萬 token 嘅 Python 檔案，由零開始訓練一個識 RSI 嘅模型，係可能嘅。每個發現都係一條<strong>沙線（line in the sand）</strong>，你守住佢。」如果 RSI 唔需要發現新嘅 attention 變體，咁<strong>attention、Mixture-of-Experts、GRPO 一經發現，加落訓練 stack 就永遠喺度</strong>。佢舉例：OpenAI 嘅 <strong>5.6 Sol / Terra</strong> 訓練，「唔需要重新發現 attention，基本上就係呼叫 <code>pre-training.sh</code> 同 <code>post-training.sh</code>」。</li>
+  <li><strong>非平穩型（non-stationary）= 真實世界。</strong>「想像喺一間律師行，有個 agent 做法律助理。呢個係極度非平穩嘅分佈——你要喺 context 入面放晒成間公司所有重要人物之間嘅關係（而呢啲關係又不停變），仲有一大堆隱性嘅做事方式、去邊度搵資料。呢個唔似 RSI 咁乾淨嘅累積型任務。」</li>
+</ul>
+
+<blockquote class="strong">
+  「RSI 剛好比當律師助理還容易，真不幸。」
+  <span class="attribution">— Dwarkesh Patel（總結 Charlie 嘅累積型 / 非平穩型對比）</span>
+</blockquote>
+
+<p>Schulman 補充：模型比人弱在多處——某些<strong>中長時程區間</strong>嘅樣本效率、<strong>思想多樣性較低</strong>、<strong>長時程判斷力差</strong>。所謂「品味」有一部分係「長期以嚟行得通嘅行為」（例如可維護嘅軟體系統設計）。</p>
+
+<p><strong>Charlie 再拆解「持續學習為何喺微觀尺度崩壞」：</strong>大規模洗完雜訊時，中期訓練確實可行；但當你只係對一間律師行連續做<strong>數百次微更新</strong>時，<strong>SFT 同在線蒸餾會災難性遺忘、並劣化通用能力</strong>；<strong>on-policy 蒸餾</strong>可以將呢個臨界推遠少少，但最終仍然難逃。RL 好在「只改動模型極細一部分」（喺好細嘅 loss 谷裡面微調），但呢個同時限制咗佢可以改到幾多。RL 擅長放「能力」，唔擅長放「明確知識」。</p>
+
+<p>Beren 話呢個<strong>多數係技術問題、唔係容量問題</strong>：同尺寸模型由零開始用全部數據 pre-train 會更好；卡點係 <strong>plasticity 同災難性遺忘</strong>——冇好方法阻止非平穩數據遺忘舊知識。所以最終可能仍然受制於「用全部新資訊重訓新模型」嘅成本，除非持續學習可以令模型永遠唔使由頭練。</p>
+
+<p>Dwarkesh 追問一個關鍵區：Composer / Harvey 想將部署數據回流，但 <strong>Schulman 指出呢件事更大程度係「激勵問題」而唔係技術問題</strong>——「公司唔會想模型供應商由佢哋嘅部署學習，因為咁樣會減弱佢哋自己生意嘅優勢。」Charlie 同意，並預測經濟壓力會先逼出<strong>模組化</strong>方案：<strong>LoRA、linear attention、cartridges（受訓成極度壓縮嘅 KV cache）</strong>，然後你生成軌跡、放入下一代模型，<strong>三個月後出一個更叻嘅模型，再專門化、再整合，最終由三個月一次 → 一星期 → 一日 → 一小時，到咗嗰個點就基本上解決咗。</strong></p>
+
+<div class="section-title">八、數據對進步嘅解釋力：「消失嘅 100×」同兩個對照實驗</div>
+
+<p>Dwarkesh 講佢同 Jerry Han 嘅網格研究（7 個 recipe × 7 個數據集兩兩交叉訓練）：<strong>數據改進帶來約 12.0× 算力效率增益，架構改進約 3.7×</strong>（小規模）。Charlie 補上「<strong>消失嘅 100×</strong>」：Epoch 曾估「自 2019 年每年 3×」→ 累計 2000×+，剩低嘅差額<strong>很可能來自後訓練</strong>。佢認為 pre-training 低垂果實已近耗盡（網路增長速度跟唔上）。</p>
+
+<p>Beren 提出反直覺觀點：<strong>「數據喺規模上其實更重要。架構係『一次性』嘅——佢讓你進入一個原本去唔到嘅新範式（例如 GQA 令百萬上下文可行），喺嗰個範式內，數據先係主導。」</strong>所以「X% 效率增益」用乘法嚟理解係會誤導。</p>
+
+<p>跟住係兩個殺傷力極強嘅對照實驗：</p>
+
+<ul>
+  <li><strong>Talkie 模型</strong>（只用 1930 年前嘅資料訓練）喺現代 coding agent 數據上微調後，<strong>SWE-bench 上勝過 Claude 3 Opus</strong>。Schulman 評：「一個對 code 完全冇知識嘅模型，喺適量數據上微調，就可以做一個比呢個大好多嘅 pre-trained 模型更好嘅 coding agent——幾瘋狂。佢話畀你聽：<strong>一旦有正確專家行為嘅範例，複製入一個相對弱嘅模型，出奇地容易。</strong>」</li>
+  <li><strong>反例：</strong>有個模型只訓練到「小五數學」（加小學英文），之後想用 RL 爬到高中／大學數學——<strong>台階間距太大，完全爬唔上</strong>。但若果一級級（year 7 → year 8 …）就行。Charlie：「問題係台階之間嘅距離，同埋整呢啲台階有幾難。」</li>
+</ul>
+
+<p>Beren 總結：「呢個回到 <strong>RL 信號問題</strong>——RL 依家探索能力好差。如果模型喺 <strong>128 次 rollout</strong> 內搵唔到，就極難有信號前進。所以 RL 需要 <strong>curricula（課程）</strong>，而 pre-training 完全唔需要。」佢仲提出一個關鍵區分：</p>
+
+<blockquote class="strong">
+  「Pre-training 嘅信號已經喺 Common Crawl 裡面，問題係濾走雜訊（可自動化）。但當你進入中期／後訓練，<strong>信號喺原始數據中根本唔存在——Common Crawl 裡面冇藏住千禧年大獎難題嘅證明，你再點過濾都濾唔出嚟。</strong>你必須由其他地方攞到 bits。」
+  <span class="attribution">— Beren Millidge</span>
+</blockquote>
+
+<p>關於「參數量會唔會一直 2×／年」，Charlie 認為未來幾年會趨於平台期——RL rollout 重視推理效率、瓶頸在環境而非參數量；佢仲猜 <strong>Mythos 同 GPT 系列其實遠細過外界傳嘅 10 兆參數</strong>。Beren：推理效率會壓低「活躍參數」，但總參數取決於硬體（HBM 頻寬、VRAM；待 GB 系列與 Vera Rubin 上線）；大模型更 sample-efficient。Schulman：稀疏度嘅甜蜜點未知，<strong>數據效率將比算力效率更主導架構選擇</strong>。Chinchilla 視角：依家處於「數據遠超最優」嘅過度訓練一側；如果數據將耗盡，可能回到 Chinchilla 最優點、甚至偏「欠訓練大模型」一側。</p>
+
+<div class="section-title">九、RL 為何出奇有效？mid-training 被低估 + 信噪比</div>
+
+<p>Dwarkesh 回顧：Schulman 論文曾指模型每次 RL 只學「對或錯」<strong>1 bit</strong>；Dwarkesh 自己嘅 blog 更話「pass rate 低嘅時候幾乎學唔到嘢」。但今日模型明顯變聰明，明顯得益於 RL 規模化。<strong>Beren 嘅解釋（核心）：</strong></p>
+
+<ul>
+  <li><strong>中期訓練被低估</strong>——大量「RL 嘅成功」其實來自極優質嘅合成推理資料中期訓練，佢往往已經帶到模型<strong>去到最終 RL checkpoint 約 80% 嘅路程</strong>。</li>
+  <li>RL 只係「微調策略」，唔使由零學行為，所以只需少量 bits。</li>
+  <li>呢啲 bits <strong>信噪比極高</strong>——呢個就係點解需要 RL 而唔係單純 SFT：<strong>SFT 要求匹配老師嘅每個推理 token，反而混入太多「關於老師點推理」嘅雜 bits；RL 只畀 1 bit，信號唔會畀雜訊淹沒。</strong></li>
+</ul>
+
+<p><strong>Charlie 補充：</strong>圍繞「pass@1 升、pass@256 降」嘅爭論——只要有足夠算力採樣足夠大嘅 group size，令「得到一堆正確答案」嘅機率不可忽略，罕見正確路徑就會被上調權重。佢強調得到嘅唔係「水平泛化」（數學 RL 唔會令你變成最好程式設計師），而係<strong>「時程泛化」（horizon generalization）</strong>——模型學識「用更多 token、更長時間仍然推進」。佢引 <strong>EdgeBench：模型可持續工作時長約每 3 個月翻倍</strong>。並用 pre-training 嘅「quanta（induction head 式相變）」類比 RL：單一任務看似相變（0.5% → 90% pass），平均後就呈現「質變」。Beren 補：即使 bits 少、參數只動一點點，對 function space 嘅影響仍可能極劇烈——<strong>1 bit 就能砍掉一半假設空間</strong>。</p>
+
+<div class="data-point">
+  <span>RL 有效嘅三個原因（Beren 版）</span>
+  ① mid-training 帶到模型<strong>~80% 嘅最終路程</strong>｜② RL 只微調策略、唔使由零學｜③ bits <strong>信噪比極高</strong>（SFT 混入「老師點推理」嘅雜 bits，RL 只給 1 bit）｜佐證：EdgeBench <strong>可工作時長每 3 個月翻倍</strong>。
+</div>
+
+<div class="section-title">十、Move 37 與熵崩潰：創造力有兩種，同一個「單一文化」警告</div>
+
+<p>Dwarkesh 問：幾時會見到 RL 帶嚟 AlphaGo Move 37 級、超越人類嘅創造力？</p>
+
+<p><strong>Beren：</strong>AlphaGo 用 MCTS，探索本就多於一般 policy gradient；RL 未必削減創造力。佢舉一手例證——<strong>「OpenAI–Hugging Face 事件中，模型一次次自行搵到多個 zero-day 突破沙盒，呢個已經係 Move 37 級嘅創造力」</strong>。</p>
+
+<p><strong>Schulman 區分兩種「創造力」：</strong>一種係<strong>解困難嘅搜尋問題</strong>（Move 37、喺多重約束下寫詩），AI 會極擅長；另一種係<strong>多樣性</strong>，RL 後確實大跌——模型產生「tics」（口頭禪 / 慣性），總用同樣嘅題材同角色名，「只有一種『好好嘅風格』」。佢然後拋出一個令人不安嘅觀察：</p>
+
+<blockquote class="strong">
+  「由於太多人蒸餾，多數係蒸餾自 Claude，導致所有開放權重模型都寫得同 Claude 一樣、有同樣嘅 tics。呢件事令我有啲擔心——<strong>我哋正在形成一種單一文化（monoculture）。</strong>」
+  <span class="attribution">— John Schulman</span>
+</blockquote>
+
+<p><strong>Beren 反駁「熵崩潰係 RL 嘅錯」：</strong>呢個其實係<strong>數據問題</strong>——因為簡單 verifier 同環境多樣性不足，模型喺度 reward hack「評審」嘅特定癖好。「係評審嘅問題，唔係 RL 方法本身嘅問題。」</p>
+
+<div class="section-title">十一、快速問答：時間線預測</div>
+
+<p>Dwarkesh 用三個問題收尾，三人分歧好有信息量。</p>
+
+<p><strong>Q1：幾時有「drop-in remote worker」——可以無縫學習同運作成個月、做複雜專案、同其他人互動？</strong></p>
+<ul>
+  <li>Charlie：<strong>如果強制用瀏覽器操作 → 約 2 年；如果唔使（識發 Slack、乜都得）→ 約 1 年。</strong></li>
+  <li>Beren：完整通用性約 <strong>3 年</strong>；但好多公司會令自己嘅組織更容易畀 AI 用，所以可以提早去到 80–90%。</li>
+  <li>Schulman：現實係人類 remote worker 質素差異極大（Upwork 例子）——有啲情況下，現有 AI 已經好過「pre-AI 版本嘅人」。</li>
+  <li>Charlie 補金句：<strong>「有啲嘢佢係做唔到嘅——例如我要去吼個人、逼佢交嘢。個模型就係唔會咁做，佢太善良了。」</strong></li>
+</ul>
+
+<p><strong>Q2：幾時有 10× 生產力提升（AI 研究者加速）？</strong></p>
+<ul>
+  <li>Schulman：<strong>約 2 年。</strong>Beren 同意「大概睇得到」——「依家 coding 已經肯定 >10×，所以如果佢可以連跑一兩個實驗回饋 loop，就已經好巨大。」</li>
+  <li>Charlie：<strong>5–10 年</strong>（佢嘅 crux 係「我吸收資訊、對下一個實驗做貝氏最優決定嘅能力」）。</li>
+  <li>Dwarkesh 指出箇中張力：10× 研究者加速「兩年後開始」＝ AI 進度會突然加速 10 倍，並令下一個 100× 嘅事情提早發生。</li>
+</ul>
+
+<p><strong>Q3：幾時有「喺所有可以做喺電腦上嘅認知工作都全面超越人類頂尖專家」嘅 AI（ASI）？</strong></p>
+<ul>
+  <li>Schulman：<strong>3–4 年</strong>（Dwarkesh 反應：「唔似錯，但……」）。理由：AI 研發「涉及大量 code 同數學，模型好擅長」；3D／空間／物理嘢會耐啲。</li>
+  <li>Charlie：<strong>5–10 年</strong>（佢認為「自動化 AI 研究 ≈ ASI-complete」）。</li>
+  <li>Beren：<strong>約 5 年</strong>（針對 lab 聚焦嘅嘢），但「會有一條長尾，AI 理論上學得到、但冇人去做、算力冇撥過去」。</li>
+</ul>
+
+<div class="data-point">
+  <span>快速問答：時間線</span>
+  Drop-in remote worker：Charlie <strong>~1 年</strong>（純瀏覽器 2 年）、Beren <strong>~3 年</strong>｜AI 研究者 10× 加速：Schulman <strong>~2 年</strong>、Beren 同意、Charlie <strong>5–10 年</strong>｜ASI 全面超越人類專家：Schulman <strong>3–4 年</strong>、Charlie <strong>5–10 年</strong>、Beren <strong>約 5 年</strong>。
+</div>
+
+<div class="section-title">十二、重點引用</div>
+
+<blockquote>「人類最後、亦係最遲被取代嘅工作，就係定義目標、決定我哋到底想要咩。對齊大概就係答案——但對齊係『設定正確目標』同『實現目標』兩截，而第一截短期內唔會消失。」
+  <span class="attribution">— John Schulman</span></blockquote>
+<blockquote>「RSI 剛好比當律師助理還容易，真不幸。」
+  <span class="attribution">— Dwarkesh Patel</span></blockquote>
+<blockquote>「預訓練嘅信號已經喺 Common Crawl 裡面，你嘅問題係濾走雜訊。但 Common Crawl 裡面冇藏住千禧年大獎難題嘅證明，你再點過濾都濾唔出嚟。」
+  <span class="attribution">— Beren Millidge</span></blockquote>
+<blockquote>「1 億參數嘅模型可以玩贏 Minecraft——我哋話呢個太易？五年前你敢講？」
+  <span class="attribution">— Charlie O'Neill</span></blockquote>
+<blockquote>「由於太多人蒸餾（多數蒸餾自 Claude），所有開放權重模型寫得一模一樣、有同樣嘅 tics。呢種單一文化令我有啲擔心。」
+  <span class="attribution">— John Schulman</span></blockquote>
+<blockquote>「我要去吼個人逼佢交嘢——個模型就係唔會咁做，佢太善良了。」
+  <span class="attribution">— Charlie O'Neill（談遠端員工 agent 嘅長尾弱點）</span></blockquote>
+
+<div class="section-title">十三、技術細節一覽</div>
+<ul>
+  <li><strong>訓練方法</strong>：RLVR、GRPO、mid-training、logit distillation、on-policy distillation、SFT、REINFORCE、self-play、curricula、multi-sample aggregation、turn-level credit assignment。</li>
+  <li><strong>架構 / 效率</strong>：GQA、linear attention、<strong>cartridges（受訓成極度壓縮嘅 KV cache）</strong>、MoE 稀疏度甜蜜點、muP、Chinchilla 最優、Switch Transformer、Falcon（1 兆參數稀疏模型：知識強、推理差）。</li>
+  <li><strong>基準 / 事件</strong>：SWE-bench、CursorBench、EdgeBench（可工作時長每 3 個月翻倍）、Talkie（1930 年前資料）、OpenAI–Hugging Face 沙箱突破事件、Kaplan scaling law 漏咗 annealing 同 embedding 參數。</li>
+  <li><strong>Charlie 嘅「4 軸環境論」</strong>：難度軸 × 真實度軸；另可設計「逆向比正向容易」嘅資料生成過程（隱藏潛變量），迫使模型付出不可約嘅 token 開銷。</li>
+</ul>
+
+<div class="highlight-box">
+  <strong>整合 insight：</strong>呢集真正嘅貢獻，係把「RSI 幾時到」由一個模糊嘅宏大敘事，拆成<strong>四個可以被檢驗嘅工程命題</strong>——(1) 目標能否被自動生成（「對齊係最後一份工」）；(2) 持續學習／災難性遺忘能否喺微觀尺度解決（RSI 累積、現實非平穩）；(3) 樣本效率能否縮窄同人類嘅一百萬倍差距；(4) 前沿優勢到底喺模型、環境、定係「真實部署分佈」（router 數據蒸餾 = 反集中化）。而全場最耐人尋味嘅，係三人一致認為 RSI 嘅「最後一哩」<strong>唔喺模型 IQ，而喺選對目標 + 持續學習 + 樣本效率</strong>——亦即係話，我哋可能整得到一個好擅長「做」嘅超智能，但要佢自己搞清楚「應該做咩」，仍然係最難嗰步。呢點同 MLST 同一日播出嘅 Edward Hughes（Replica / Faraday）形成完美互文：兩個節目都指向同一件事——<strong>「判斷力 / 品味」係下一個前沿。</strong>
+</div>
+
+<p style="font-size:0.9rem; color:#888; margin-top:2rem;"><strong>一個誠實嘅 caveat：</strong>呢篇係基於 Dwarkesh Podcast〈AI researchers debate how close we are to recursive self-improvement〉（2026-09-11 發布，約 1 小時 37 分）官方頁面嘅完整逐字稿＋時間軸嘅深度復述。三位嘉賓嘅立場屬個人觀點（Schulman 任職 Thinking Machines、Millidge 任職 Zyphra、O'Neill 任職 Baseten），涉及嘅公司、模型代號（Sonnet 5 / Opus 5 / GLM-5.3 / Kimi K3 / Mythos / 5.6 Sol / Terra / Fable）同數字（12.0× vs 3.7×、~80%、每 3 個月翻倍）均係節目中嘅陳述，唔應當成審計數字。時間線預測具高度不確定性。中文為撮譯，立場屬本站分析視角。</p>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述及數據出自 Dwarkesh Podcast〈AI researchers debate how close we are to recursive self-improvement〉（嘉賓 John Schulman、Beren Millidge、Charlie O'Neill，2026-09-11 發布）之官方 episode page、完整逐字稿同時間軸（00:00 反 RSI 論證 → 01:28:32 快速問答）；交叉參考 Dwarkesh Patel × Jerry Han〈Pretraining progress is mostly coming from data〉（2026-09-08）、Beren Millidge〈How Can LLM RL Work Despite Information-Theoretic Inefficiency?〉（2026-07-26）、Dwarkesh〈bits-per-sample〉、Richard Sutton 等相關討論。中文為撮譯。
+</p>
+
+<footer>
+  <p>Deep Dive #148 · Dwarkesh Podcast：AI researchers debate how close we are to recursive self-improvement（2026-09-11 發布）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-09-12 06:10 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>

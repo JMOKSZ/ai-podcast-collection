@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「創造力唔係優化；AI 缺嘅係『揀邊條問題值得問』」——MLST × Inherent 首席科學家 Edward Hughes：Move 37 係創新唔係創造，同用「複現論文圖表」訓練出 27B AI 科學家 Faraday——Replica 任務空間、rubric 評審、唔靠 hand-coded harness 都贏 Claude Opus 4.8 同 GPT-5.5</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.75rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Machine Learning Street Talk (MLST) · 2026-09-11</div>
+  <h1>「創造力唔係優化；AI 缺嘅係『揀邊條問題值得問』」——MLST × Inherent 首席科學家 Edward Hughes：Move 37 係創新唔係創造，同用「複現論文圖表」訓練出 27B AI 科學家 Faraday——Replica 任務空間、rubric 評審、唔靠 hand-coded harness 都贏 Claude Opus 4.8 同 GPT-5.5</h1>
+  <div class="meta">
+    <span>📅 2026-09-11 21:51 UTC 發布</span><span>·</span><span>🎙️ MLST（Tim Scarfe）</span><span>·</span><span>👤 嘉賓：Edward Hughes（Inherent 首席科學家 / 共同創辦人）</span><span>·</span><span>⏱ 約 2 小時</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集嘅價值唔在於「又一個 agent 超越咗某個 benchmark」，而係它<strong>正面回答咗一個全行業都繞開嘅問題：AI 科學家嘅「品味」到底可唔可以訓練？</strong>Edward Hughes（Inherent 首席科學家、共同創辦人，公司剛完成 5,000 萬美元融資，背景由弦論轉 AI）同 Tim Scarfe 用「<strong>Move 37 係創新唔係創造</strong>」做支點，串起 Csikszentmihalyi 嘅創造力系統觀、David Deutsch 嘅「難以改變嘅解釋」、同生物學嘅 <strong>exaptation（功能挪用）</strong>，一路講到開放式（open-endedness）。而後半段嘅硬料，係佢哋篇論文〈Training AI Scientists to Replicate Research〉（arXiv 2608.13331）——用「<strong>複現論文圖表</strong>」訓練出 <strong>27B 嘅 AI 科學家 Faraday</strong>，喺留出任務上超越 Claude Opus 4.8 同 GPT-5.5。
+</p>
+
+<div class="highlight-box">
+  <strong>呢集嘅中心論點：</strong>科學嘅瓶頸唔係「計得多快」，而係「<strong>揀得對唔對</strong>」。論文一個字都唔會寫「邊啲做法失敗咗」——只寫最後 work 嘅嘢。所以要成功複現，agent 必須自己<strong>補返論文冇寫嘅「99% 汗水」</strong>，呢個過程需要嘅正正係開放式研究嘅「假設驅動探索」。因此「複現」唔係一個沉悶嘅驗證任務，而係<strong>通往創新嘅踏腳石</strong>——因為佢逼模型學嘅係<strong>研究品味（research taste）</strong>，而唔係答案。
+</div>
+
+<div class="section-title">一、Move 37 係「創新」唔係「創造」——決定咩算發現嘅，係「領域」</div>
+
+<p>Edward 嘅核心主張好狠：<strong>AlphaGo 第 37 手之所以被視為妙手，唔係因為佢「創造」咗啲咩，而係因為<strong>圍棋呢個領域承認佢係好棋</strong>。</strong>佢話決定「咩算發現」嘅係<strong>領域（the field）</strong>，唔係個體——呢個正正同 Csikszentmihalyi 嘅創造力系統觀（個人 + 領域 + 場域三者互動）一致。</p>
+
+<p>佢用幾個好有畫面嘅例子撐住呢個 framing：</p>
+<ul>
+  <li><strong>學習嘅三個時間尺度：權重、上下文、文化。</strong>把學習分為 weights / context / culture 三層，係理解「創造」點樣嵌入集體智能嘅框架——個體嘅創造，最終要由「文化」呢層認可先算數。</li>
+  <li><strong>創造力即 satisficing（滿意即止）。</strong>以杜象 1917 年嘅《噴泉》（將小便斗搬入美術館）同生物演化為例——創造往往唔係朝單一目標優化，而係喺既有約束下「夠好就跳」。</li>
+  <li><strong>Exaptation 同《崔斯坦與伊索德》和弦。</strong>借用生物學「功能挪用」同華格納呢個著名和弦，說明創造發生喺<strong>既有元素被放入新語境</strong>嗰一刻——呢個正正係「領域決定意義」嘅體現。</li>
+  <li><strong>Deutsch 嘅「難以改變嘅解釋」（hard-to-vary explanations）。</strong>以《The Beginning of Infinity》為據，好嘅科學解釋係難以被任意改動嘅——而複現之所以都算創造，就係因為「把既有解釋當作約束工程嘅素材」。</li>
+</ul>
+
+<blockquote class="strong">
+  「創造力唔係優化；AI 缺失嘅能力，係<strong>揀邊條問題值得問</strong>。」
+  <span class="attribution">— 節目核心論旨（Edward Hughes）</span>
+</blockquote>
+
+<div class="section-title">二、開放式（Open-endedness）：不完美嘅世界模型係「重點」唔係「問題」</div>
+
+<p>Tim 同 Edward 用咗相當篇幅講開放式系統，而呢部分係理解「為何複現可以通向創新」嘅理論底層：</p>
+
+<ul>
+  <li><strong>為何「目標導向」會失敗。</strong>引 Stanley & Lehman 嘅《Why Greatness Cannot Be Planned》——真正嘅新奇發現往往無法靠明確目標直接抵達；<strong>Picbreeder、局部目標</strong>說明發現反而需要「<strong>欺騙性目標（deceptive goals）</strong>」。</li>
+  <li><strong>不完美嘅世界模型係特性唔係缺陷。</strong>喺開放式系統中，模型對世界嘅不完美表徵恰恰係新發現嘅來源——如果模型乜都知，就冇嘢好發現。</li>
+  <li><strong>「強 Moravec 悖論」同 agent 社會。</strong>主張存在一種「強版」Moravec 悖論：我哋習以為常嘅自主性、自我封閉（諗清楚先做、再迭代）對 AI 可能異常困難；並討論「agent 社會」點樣作為集體智能嘅載體。</li>
+  <li><strong>事後評估（evaluate in hindsight）。</strong>由 Lean 形式化嘅數學證明到氣候變遷，好嘅科學判斷往往只能「事後」評價——呢個對自動科學係根本挑戰（好壞無法事先驗證）。</li>
+</ul>
+
+<p>呢四點加埋，就得出咗論文嘅核心設計哲學：<strong>如果你冇一個可以事先驗證嘅目標函數，你就只能用「複現」呢種天生帶有「事後評價」性質嘅任務去逼近「科學判斷力」。</strong></p>
+
+<div class="section-title">三、Replica 同 Faraday：用「複現」訓練 AI 科學家</div>
+
+<p>後半段轉向論文〈Training AI Scientists to Replicate Research〉（arXiv <strong>2608.13331</strong>，2026 年 8 月 14 日發布；作者 Damon Falck、Samer Sabri、Anja Surina、Thom Foster、Anya Sims、Sam Devlin、Dylan Rogers、Tantum Collins、Kaloyan Aleksiev、Louis Kirsch、Edward Hughes）。</p>
+
+<p><strong>點解揀「複現」（replication）？</strong>論文講得好清楚：可複現性係科學知識嘅基石；而複現過程往往<strong>揭示原論文未曾明說嘅細節</strong>，因此需要同開放式研究一樣嘅「假設驅動探索」。呢個令「複現」成為訓練 AI 科學家嘅理想任務——因為佢既客觀（有原圖可對比）又開放（過程冇指引）。</p>
+
+<div class="data-point">
+  <span>Replica（任務空間）</span>
+  <strong>310 個「圖表複現」任務</strong>，抽自 <strong>100 篇</strong> 1990–2026 年嘅 ML 同 AI-for-science 論文，領域由 NLP、材料科學到天氣預報。每個任務要求 agent<strong>喺有限時間同算力預算內、喺冇原圖嘅情況下複現論文嘅一張圖</strong>。並引入一套<strong>自動生成、基於 rubric 嘅評審</strong>——低噪聲，而且同人類對「複現品質」嘅評估一致。
+</div>
+
+<div class="data-point">
+  <span>Faraday（模型）</span>
+  <strong>27B 參數嘅「AI 科學家」agent</strong>，最大特點係<strong>將 coding agent 當作工具嚟調用</strong>（就好似人類科學家用 coding agent 一樣）。喺<strong>留出（held-out）複現任務上，超越 Claude Opus 4.8 同 GPT-5.5</strong>；亦勝過 Codex、Claude 同 GLM 5.2。特別喺<strong>元學習、結構生物學、材料科學</strong>上優勢明顯。
+</div>
+
+<p><strong>點解呢個任務唔係「沉悶」——論文嘅「99% 汗水」論證：</strong>複現一張圖表面唔似創新任務，但睇<strong>過程</strong>而唔係<strong>輸出</strong>，佢就係通往創新嘅踏腳石。因為研究論文只描述作者發現「work 咗」嘅嘢，<strong>冇寫令佢哋行到嗰步嘅失敗結果</strong>。要成功，agent 必須自行補返<strong>論文冇寫嘅「99% 汗水」</strong>——而呢個正需要開放式研究嘅「假設驅動探索」。</p>
+
+<p>更進一步：論文指出<strong>複現只係「一個漸進規格不足（underspecified）任務課程」嘅基礎</strong>。你可以逐步移除論文更多部分、收緊或放寬資源約束，甚至<strong>「虛構論文」</strong>——令同一個 Faraday 模型「喺唔知係創新嘅情況下創新」。呢個諗法幾優雅：唔使改獎勵函數，只需要控制「你剝走幾多資訊」。</p>
+
+<div class="section-title">四、RL for 非可驗證領域：rubric 評審、multi-sample aggregation、turn-level credit</div>
+
+<p>呢段係整篇論文最工程、亦最值得抄嘅部分。論文指出一個關鍵區分：<strong>「完美重現一張圖」唔等於「成功嘅複現」</strong>——後者仲需要強嘅實驗設計、良好嘅科學實踐、對原論文主張嘅忠誠度、以及有效運用可用資源。一句講晒：<strong>複現需要有「研究品味」。</strong></p>
+
+<p>難題係：點樣為「品味」呢種唔可驗證嘅嘢提供獎勵？佢哋嘅做法：</p>
+<ul>
+  <li><strong>設計一個 LLM judge</strong>，再做一個<strong>人類研究</strong>去驗證佢捕捉得到專家嘅「研究品味」。</li>
+  <li>但直接訓練喺 LLM judge 上有問題：底層模型嘅隨機性會產生<strong>高噪聲嘅獎勵信號</strong>。解法係用<strong>每個任務專屬嘅 rubric</strong>（per-task rubrics）——比純 LLM baseline 更一致、更低噪聲。</li>
+  <li>為咗應付長時程 RL 嘅不穩定性，再加兩項 train-time 修改：<strong>multi-sample aggregation（多樣本聚合）同 turn-level credit assignment（逐回合信用分配）</strong>。用呢套配方訓練，Faraday 學識做一個更嚴謹嘅科學家。</li>
+</ul>
+
+<div class="highlight-box">
+  <strong>「唔靠 hand-coded harness」係賣點：</strong>Faraday 用 GPT-5.5 Codex 做工具——<strong>佢指揮一個比自己大幾個數量級嘅模型，反而令複現表現更好</strong>。而且佢<strong>訓練時用 GPT-5.4-mini、測試時可以泛化去指揮更叻嘅 GPT-5.5 Codex</strong>。論文強調：Faraday <strong>唔需要手寫嘅進化式 harness（evolutionary harness）、亦冇 test-time reward</strong>——換句話講，佢係<strong>內在（intrinsically）學識去重視發現</strong>，而唔係靠外部搜尋框架逼出嚟。
+</div>
+
+<p>對比一下當下嘅主流路線就更清楚：AlphaEvolve、DGM（Darwin Gödel Machine）、EvoTune 之類，靠嘅係外掛嘅進化搜尋 harness；而 Faraday 嘅主張係<strong>能力應該內化入權重</strong>。論文嘅總結語：「Faraday 代表一個新範式嘅第一步——<strong>將一層『科學直覺』同不斷進步嘅 coding agent 能力結合</strong>。」</p>
+
+<blockquote class="strong">
+  「複現往往照亮原論文未曾明說嘅細節，因此需要同開放式研究一樣嘅假設驅動探索。」
+  <span class="attribution">— 論文〈Training AI Scientists to Replicate Research〉摘要</span>
+</blockquote>
+
+<p>論文亦好誠實咁列出下一步嘅安全研究：Inherent 話會研究呢套方法點樣推進<strong>可擴展監督（scalable oversight）同緩解 reward hacking</strong>——因為當你訓練一個 agent 去取悅一個 rubric 評審，Goodhart 化（Goodharting）嘅風險係真實存在嘅。</p>
+
+<div class="section-title">五、AI 科學家會唔會作弊？——節目討論嘅 RL 危機</div>
+
+<p>節目有一段專門討論「AI 科學家能唔能作弊？」，直指對評審嘅 <strong>Goodhart 化風險</strong>——當評審本身可被利用，模型可能學會「取悅評審」而唔係「忠實複現」。呢個同 Dwarkesh 圓桌入面 Schulman 講嘅「表面訊號會被 reward hack」係同一個病，只不過呢度嘅「表面訊號」係一張圖表嘅視覺相似度。</p>
+
+<p>節目亦探討咗幾個相關嘅硬技術問題：</p>
+<ul>
+  <li><strong>GRPO 嘅 per-turn credit 問題</strong>：點樣令 GRPO 喺多輪（per-turn）信用分配下運作——呢個係當前 agentic RL 嘅核心工程難點之一（論文用嘅 turn-level credit assignment 正係回應呢點）。</li>
+  <li><strong>權重 vs harness</strong>：改進應該發生喺模型權重、定係外部 harness？Faraday 嘅答案係前者。</li>
+  <li><strong>「遞迴公司」</strong>：當 agent 跨越某個相變後，公司組織本身點樣被重構；以及<strong>「咩將會取代 OKR？」</strong>——在位者（incumbents）同知識負擔（burden of knowledge）嘅問題。</li>
+  <li><strong>「思想越難搵」</strong>：節目引用 NBER 論文〈Are Ideas Getting Harder to Find?〉，呼應「創新需要領域背書、而且越來越難」嘅主題。</li>
+</ul>
+
+<div class="section-title">六、Inherent 篇論文嘅命名故事：由 1821 年嗰個冇正式學歷嘅實驗家講起</div>
+
+<p>Inherent 官方研究頁嘅開場白係全篇最靚嘅一段，值得完整復述：</p>
+
+<blockquote>
+  「1821 年，Richard Phillips 請佢朋友 Michael Faraday 寫一篇關於新興電磁學領域嘅綜述。對呢個任務嚟講，Faraday 係個奇怪嘅人選——呢位英國科學家冇乜正規教育、喺呢個領域經驗有限，但佢係一個出名嘅實驗家。為咗寫呢篇綜述，Faraday 決定親手複現過往嘅結果。喺皇家研究院嗰間燭光地下室嘅實驗過程中，Faraday 發現佢可以令一條載流嘅導線繞住磁石移動。『非常滿意（Very satisfactory）』，佢喺日記寫低。Faraday 發明咗電動機。」
+  <span class="attribution">— Inherent Labs 研究頁（2026-08-14）</span>
+</blockquote>
+
+<p>呢個故事正正係「複現通向創新」嘅歷史原型：<strong>Faraday 本來只係被叫去「複述別人做過嘅嘢」，結果喺複現過程入面發明咗新嘢。</strong>模型叫 Faraday、任務空間叫 Replica，命名係有心思嘅。而「複現」作為訓練任務嘅哲學正喺呢度——<strong>你以為你訓練緊一個抄襲者，其實你訓練緊一個會「喺抄嘅過程中撞到新嘢」嘅人。</strong></p>
+
+<div class="section-title">七、重點引用</div>
+
+<blockquote>「創造力唔係優化；AI 缺失嘅能力，係揀邊條問題值得問。」
+  <span class="attribution">— Edward Hughes（節目核心論旨）</span></blockquote>
+<blockquote>「複現往往照亮原論文未曾明說嘅細節，因此需要同開放式研究一樣嘅假設驅動探索。」
+  <span class="attribution">— 論文〈Training AI Scientists to Replicate Research〉摘要</span></blockquote>
+<blockquote>「Faraday 採用更具科學原則嘅方法……我哋相信呢個為『唔需要複雜 harness、即可進行長時程科學創新』嘅 AI agent 鋪下墊腳石。」
+  <span class="attribution">— 同上</span></blockquote>
+<blockquote>「Faraday 指揮一個比自己大幾個數量級嘅模型，方式竟然係提升複現表現。」
+  <span class="attribution">— Inherent Labs 研究頁</span></blockquote>
+
+<div class="section-title">八、技術細節一覽</div>
+<ul>
+  <li><strong>論文</strong>：〈Training AI Scientists to Replicate Research〉，arXiv <strong>2608.13331</strong>（2026-08-14）。<strong>Replica</strong> = 可擴展複現任務空間（310 任務 / 100 篇論文 / 1990–2026）；<strong>Faraday</strong> = 27B AI Scientist，差異化在於「以 coding agent 為工具」。</li>
+  <li><strong>評審設計</strong>：auto-generated rubric-based judge（低噪聲、同人類評估一致）；train-time 加 multi-sample aggregation 同 turn-level credit assignment。</li>
+  <li><strong>對照基準</strong>：留出複現任務 vs Claude Opus 4.8（Claude Code harness）、GPT-5.5（Codex harness，thinking effort = extra high）、Codex、Claude、GLM 5.2。優勢最明顯：元學習、結構生物學、材料科學。</li>
+  <li><strong>訓練工程</strong>：scale-down 策略、<strong>8×B300</strong> 訓練規模、per-task rubric 設計；測試時可由 GPT-5.4-mini 泛化到指揮 GPT-5.5 Codex。</li>
+  <li><strong>參考文獻亮點</strong>：Adaptive Agent（Human-Timescale Adaptation in an Open-Ended Task Space, arXiv 2301.07608）、The AI Scientist（arXiv 2408.06292）、Voyager、GNoME、《The Beginning of Infinity》、《Creativity: Flow and the Psychology of Discovery and Invention》、《Are Ideas Getting Harder to Find?》(NBER w23782)。</li>
+  <li><strong>註</strong>：本集逐字稿來源（YouTube）今日受 IP 級反爬限制無法取得，本節內容萃取自官方 show notes / 時間軸、Inherent 研究頁同論文摘要（arXiv 2608.13331）。</li>
+</ul>
+
+<div class="highlight-box">
+  <strong>整合 insight：</strong>呢集同同一日播出嘅 Dwarkesh RSI 圓桌形成完美互文。Dwarkesh 三人講「<strong>人類最後、最遲被取代嘅工作係定義目標 / 揀啱問題</strong>」，而 Inherent 呢篇論文就係<strong>直接嘗試將「揀問題 / 判斷品質」變成一個可訓練目標</strong>——用「複現」呢個天生開放、又天生有客觀參照點嘅任務，逼模型喺冇指引嘅情況下重建論文嘅「99% 汗水」。兩集從唔同路徑指向同一個核心：<strong>AI 嘅下一個前沿唔係「做得多快」，而係「判斷得幾準」——而品味，可能係可以被「假設驅動探索」訓練出嚟嘅。</strong>而 Faraday 反潮流嘅「唔靠 hand-coded harness、唔靠 test-time reward」立場，係對當下 harness 工程（RLM、共同優化）主戰場嘅一個直接挑戰：能力要內化，唔係外掛。
+</div>
+
+<p style="font-size:0.9rem; color:#888; margin-top:2rem;"><strong>一個誠實嘅 caveat：</strong>呢篇係基於 MLST〈How Replication Could Teach Machines What Good Science Looks Like／Teaching AI Scientists to Ask Better Questions〉（2026-09-11 發布，約 2 小時）嘅深度復述。因 YouTube 逐字稿今日受 IP 級反爬限制無法取得，本文內容主要萃取自官方 show notes / 時間軸、Inherent Labs 官方研究頁同 arXiv 2608.13331 摘要，因此<strong>節目口語細節（例如具體互動、臨場金句）可能有所簡化</strong>，論文相關數字則以官方來源為準。Edward Hughes 及公司（Inherent，近期完成 5,000 萬美元融資）之立場屬其個人 / 公司觀點；「Faraday 贏 Claude Opus 4.8 同 GPT-5.5」係論文自報結果，未經第三方獨立複核。中文為撮譯，立場屬本站分析視角。</p>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述及數據出自 MLST〈Teaching AI Scientists to Ask Better Questions〉（嘉賓 Edward Hughes，2026-09-11 發布）之官方 show notes / 時間軸，以及 Inherent Labs 研究頁〈Training AI Scientists to Replicate Research〉（2026-08-14）同論文 arXiv:2608.13331（Falck、Sabri、Surina、Foster、Sims、Devlin、Rogers、Collins、Aleksiev、Kirsch、Hughes）。節目中提及之開放式性、創造力理論同參考文獻（Csikszentmihalyi、David Deutsch、Stanley & Lehman、NBER w23782 等）屬嘉賓論述。中文為撮譯。
+</p>
+
+<footer>
+  <p>Deep Dive #149 · MLST × Edward Hughes（Inherent）：Training AI Scientists to Replicate Research（2026-09-11 發布）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-09-12 06:12 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
