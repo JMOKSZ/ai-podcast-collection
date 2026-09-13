@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「巨鯨歸來」——DeepSeek V4.1-Flash：763B-P8B-D16B 全新因果 Encoder–Decoder、KV cache 壓到 1/8、每題成本僅 $0.27（約同行 1/7），同「改數據品質嘅 ROI 已高過搞新演算法」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.8rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · AINews · 2026-09-12</div>
+  <h1>「巨鯨歸來」——DeepSeek V4.1-Flash：763B-P8B-D16B 全新因果 Encoder–Decoder、KV cache 壓到 1/8、每題成本僅 $0.27（約同行 1/7），同「改數據品質嘅 ROI 已高過搞新演算法」</h1>
+  <div class="meta">
+    <span>📅 2026-09-12 05:56 UTC 發布</span><span>·</span><span>🎙️ Latent Space（swyx + Alessio）</span><span>·</span><span>📰 AINews 週報（覆蓋 9/9–9/10）</span><span>·</span><span>🏷 架構 / 推理效率 / 模型評測</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢一期 AINews 表面上只係一條模型發布——DeepSeek 出咗個叫「V4.1-Flash」嘅嘢。但凡係只讀版本號同 benchmark 標題嘅人，正正就係 DeepSeek 今次想「愚弄」嘅對象。Latent Space 嘅判斷好直接：版本號只升咗 0.1，實際上係<strong>一整個全新架構家族</strong>，佢哋甚至順手<strong>軟退役咗 V4 Pro</strong>。Sebastian Raschka 講得最白——「佢哋應該叫佢做 DeepSeek V5」。呢篇復述會由架構、評測數字、成本經濟學、本地部署，一路拆到社群爭議同同集其他信號，讀完你可以完全跳過原文。
+</p>
+
+<div class="highlight-box">
+  <strong>呢集嘅中心論點：</strong>DeepSeek 喺 R1 引爆之後潛伏咗差不多一年，任由 GLM 同 Kimi 領跑開源，今次用一個「看似只有 v4.1 小版本號」嘅命名回歸。真正嘅技術突破唔係參數變大，而係<strong>prefill／decode 分離</strong>——總參 763B，但輸入（prefill）只激活 <strong>8B</strong>、輸出（decode）激活 <strong>16B</strong>，稀疏度低到 1–2%。配合 Sliding-Window Attention Bounded Replay 等新技巧，<strong>KV cache footprint 最低可以做到 V4 Flash 嘅 1/8</strong>。結果係一個「最囉嗦」但「每題只收 $0.27」嘅前沿模型——大約係 GLM-5.3 同 Kimi K3 嘅七分之一。而 DeepSeek 自己嘅判詞更值得記低：<strong>「現階段改進數據品質嘅 ROI，已經超過鑽研新奇嘅後訓練演算法。」</strong>
+</div>
+
+<div class="section-title">一、命名係一場「閱讀理解測試」：V4.1 Flash 嘅真身係新架構家族</div>
+
+<p>Latent Space 對 DeepSeek 嘅研究節奏有個好精準嘅觀察：喺每個大版本之間（v2 → v3 → v4），DeepSeek 會發「中間論文」，每次都係一個極度聚焦嘅架構改進，而且命中率近乎 100%——由 Math（尤其 GRPO）、Coder、R1，到近期嘅 Manifold Constrained Hyperconnections 同 Compressed Sparse Attention，全部係咁。</p>
+
+<p>R1 喺 2025 上半年引爆之後，DeepSeek 開始「潛水」，大約一年時間樂意讓 GLM、Kimi 喺開源模型度領跑。今次回歸，佢哋做嘅嘢反而矛盾又耐人尋味：<strong>搞一個全新架構、軟退役 V4 Pro、全押新家族，但偏偏只叫佢 v4.1 Flash。</strong>作者嘅解讀係——呢個係一個「測試你識唔識穿過表面標題、睇出真正進展」嘅命名遊戲。</p>
+
+<blockquote class="strong">
+  「如果你係嗰種只讀模型版本號同 benchmark 標題嘅人，你就正正係 DeepSeek 想愚弄嘅嗰類膚淺嘅人。」
+  <span class="attribution">— AINews 編輯按</span>
+</blockquote>
+
+<p>官方 X 帖文（9/10）講嘅係「smarter, faster, more efficient」，並自稱係「新建構家族中最小嘅成員，帶原生視覺理解」，設計目標係「更強能力、更快推理、更高吞吐，同可以 scale 到更大模型」。留意「最小嘅成員」——即係話仲有大模型排隊。呢句低調嘅表述，其實已經預告咗整個新家族。</p>
+
+<div class="section-title">二、核心突破：prefill／decode 分離（763B-P8B-D16B）</div>
+
+<p>最受討論嘅技術新意，係一個<strong>因果 Encoder–Decoder（causal Encoder–Decoder）</strong>設計，目的係壓低激活算力同 KV／cache 成本。Artificial Analysis 指出，呢個模型用咗全新嘅因果 Encoder–Decoder 架構：<strong>輸入／prefill 激活 8B 參數，輸出／decode 激活 16B 參數。</strong></p>
+
+<p>Latent Space 把呢件事延伸成佢哋嘅「字母湯」記號——<strong>「DeepSeek v4.1-Flash: 763B-P8B-D16B」</strong>，即係沿用 MoE 記號：總參 763B、prefill 主動 8B、decode 主動 16B。呢個稀疏度係 1–2% 嘅量級。配上新技巧「Sliding-Window Attention Bounded Replay」，令 KV cache footprint 最低可以做到 V4 Flash 嘅 <strong>1/8</strong>——對長時程 agent 嚟講係「更好、更快、更便宜」。</p>
+
+<div class="data-point">
+  <span>架構一句總結</span>
+  總參 <strong>763B</strong>｜prefill 主動 <strong>8B</strong>／decode 主動 <strong>16B</strong>（稀疏度 1–2%）｜<strong>因果 Encoder–Decoder</strong>｜Sliding-Window Attention Bounded Replay｜<strong>KV cache ≤ V4 Flash 嘅 1/8</strong>（~890 bytes/token）｜<strong>1M context</strong>｜文字＋圖像輸入｜<strong>MIT 授權</strong>。
+</div>
+
+<p>社群對「現代 GPT 式 LLM 點解會返去用 encoder」有好大反應。Reddit r/LocalLLaMA 上嘅技術討論集中喺：<strong>個 encoder 對長 prompt 做咩？</strong>係將 prompt embed 定係壓縮之後先交畀 decoder self-attention？如果長輸入按句子／段落／模態切開，點 scale？其中一種解讀係——呢個非對稱設計可能代表一條<strong>結構上唔同於標準 decoder-only transformer</strong> 嘅生成路徑。</p>
+
+<p>Stochastic Chasm 嘅精簡讀法係：同 HySparse、NSA、以及 DeepSeek 自家 V4 嘅 CSA/HCA 對比，呢個設計哲學可以總結為<strong>「local sliding-window 分支 ＋ sparse retrieval 分支」</strong>，並指呢種「稀疏／局部混合」正逐漸成為行業普遍模式。</p>
+
+<p>TeortaxesTex 就指出 DeepSeek 一貫嘅一個怪癖：<strong>總係喺前 N 層做啲唔尋常嘅事</strong>——以前係 dense 或 hash-routed，而家變成 SWA-only。佢推測呢個可能反映「早期層反覆訓練困難」。佢後來仲話整個 stack「降到 40 層，當中有爭議地只有 20 層係真正嘅 decoder 層」——即係 DeepSeek 可能喺 decode 關鍵路徑上極度壓縮有效深度。</p>
+
+<div class="section-title">三、KV cache 壓縮：呢個模型嘅真正主角</div>
+
+<p>Nrehiew 嘅技術筆記將 KV cache 壓縮放喺設計嘅中心，稱呢篇報告係「<strong>點樣迷戀 KV cache 壓縮，就得到一個超高效嘅前沿模型</strong>」嘅案例研究。佢由報告摘出多項基建細節：</p>
+
+<ul>
+  <li>為減少長尾停頓而設計嘅 <strong>dispatch 策略</strong>；</li>
+  <li><strong>router replay</strong>——沿用前一個 checkpoint 嘅 router；</li>
+  <li>用 <strong>dataset-level capping</strong> 管理「短 completion 嘅 off-policy 效應」；</li>
+  <li>丟棄機制、bounded off-policy ratio 同 loss masking；</li>
+  <li>新 checkpoint 更新時<strong>持久化 KVs 同 routers</strong>；</li>
+  <li>末端有一個對 <strong>40+ 個教師模型</strong>嘅 full-vocab OPD（on-policy distillation）。</li>
+</ul>
+
+<p>佢總結呢個設計比 V4 舊有嘅 HSA + CSA 組合「更乾淨」，而且「非常清楚係為推理而設計」，並引用一個相當驚人嘅數字：喺 benchmarked 分數區間，KV 大小約 <strong>~890 bytes/token</strong>。Stochastic Chasm 進一步推斷 KV cache 用咗 <strong>QAT（量化感知訓練）</strong>——呢個可以解釋點解喺 FP4 KV cache 之下，佢表現仍然優於同儕。</p>
+
+<blockquote class="strong">
+  「怎麼迷戀 KV cache 壓縮，就能得到一個超高效嘅前沿模型。」
+  <span class="attribution">— Nrehiew 對技術報告嘅總結</span>
+</blockquote>
+
+<p>Reddit 另外有人由 HF safetensors 反推出一個更誇張嘅數字：<strong>自第一代以嚟 KV-cache 壓縮達 437×</strong>。如果屬實，呢種級別嘅縮減會從根本上改變長上下文服務嘅吞吐同部署經濟學——尤其對比傳統 decoder-only 嘅 attention caching。</p>
+
+<div class="section-title">四、原生視覺：3×3 pixel unshuffle，同 K3 明顯分岔</div>
+
+<p>今次 DeepSeek 直接內建視覺，唔使另等一個獨立視覺模型。Stochastic Chasm 指多模態改動「唔算激進」——DeepSeek 基本上係「<strong>讓骨幹處理大部分，畀佢視覺 token</strong>」，並用咗 <strong>3×3 pixel unshuffle</strong>，而唔係更常見嘅 2×2。佢之後仲特別指出，呢個視覺前端同近期中國同儕（如 K3）有「重大差異」。</p>
+
+<p>Reddit 上嘅人亦提出實際問題：視覺前端同 encoder 點樣配合？如果輸入按模態切開，編碼路徑係咪一致？呢啲問題喺報告公開後仍未完全解答，但已經足夠令人意識到：呢個唔係一個「加個 vision adapter」嘅簡單做法。</p>
+
+<div class="section-title">五、後訓練哲學：數據品質嘅 ROI 已超過新演算法</div>
+
+<p>其中一個最被廣傳嘅觀察，係 DeepSeek 喺後訓練上嘅表態。Latent Space 話佢哋「大致同意 Prof Jie Tang（唐傑）」嘅觀點。Jasper Lu 嘅評論一針見血：</p>
+
+<blockquote class="strong">
+  「呢個值得注意。DeepSeek——一個通常最先開拓新奇演算法同架構嘅 lab——而家話：現階段改進數據品質嘅 ROI，已經遠超過鑽研新奇嘅後訓練演算法。」
+  <span class="attribution">— Jasper Lu 引 DeepSeek 論述</span>
+</blockquote>
+
+<p>呢句話嘅份量在於「講嘅係邊個」。如果係一間產品公司咁講，可以理解為「唔想投資研究」；但當一間以架構創新見稱嘅實驗室都咁講，就係一個行業級嘅信號：<strong>2026 年模型進步嘅槓桿，可能已經由「發明新演算法」轉移到「數據工廠 + 獎勵設計 + 系統工程」。</strong></p>
+
+<p>當然，呢個結論唔係人人接受。Shikib Mehri 就明確反駁「研究已死」嘅講法，認為槓桿面只係<strong>由架構擴展到數據工廠同獎勵設計</strong>——研究依然存在，只係換咗戰場。呢個反駁好重要，因為佢阻止咗一個常見嘅過度解讀：唔好把「架構回報遞減」讀成「研究冇價值」。</p>
+
+<div class="section-title">六、獨立評測數字：AA Index 40、AutomationBench 追平 Astra</div>
+
+<p>Artificial Analysis 嘅評測係今次最硬嘅一手數據。V4.1 Flash 超越 V4 Pro 0813，但價錢平好多；AA Intelligence Index 得 <strong>40</strong>，略低於 GLM-5.3-Flash、高於最新 V4 Pro。完整數字如下：</p>
+
+<ul>
+  <li><strong>AutomationBench-AA：69%</strong>——<strong>追平 GPT-6 Astra（69%）</strong>、高於 Grok 4.6（67%）；比 V4 Flash 0731 提升 15 分，比 V4 Pro 0813（57%）高 12 分，比 GLM-5.3（62%）高 7 分。</li>
+  <li><strong>GDPval-AA v2：+164 Elo</strong>（1468 → 1632），<strong>反超 Kimi K3（1584）</strong>。</li>
+  <li><strong>AA-LCR v1.1：84%</strong>——同 GPT-5.6 Sol、Gemini 3.8 Flash 同級（84%）。</li>
+  <li><strong>Vals Index：#1 開源權重模型</strong>（超越 Kimi K3），每測試 <strong>$0.30</strong>，係開源前十中最便宜嘅；評測設定：1M context、384 max output tokens、temperature 1、預設 top-p/top-k、high reasoning effort。</li>
+</ul>
+
+<p>定價方面：<strong>$0.30 / 1M 輸入、$1.20 / 1M 輸出</strong>，cached input <strong>$0.006 / 1M</strong>，另有 <strong>50% 離峰折扣</strong>；1M-token 上下文、文字＋圖像輸入、<strong>MIT 授權</strong>、美國 API 可用。Baseten 同日 day-0 支援，定位為「比 V4 Pro 0813 更聰明、更快、更高效，帶文字同視覺，US-only，ZDR，1M context」。Ollama 亦開始向 Max、Team 帳戶推出，再擴展到 Pro 訂閱者。</p>
+
+<div class="section-title">七、成本經濟學：「最囉嗦」嘅模型，每題只收 $0.27</div>
+
+<p>呢度有個反直覺嘅細節。Artificial Analysis 指 V4.1 Flash 係<strong>量度過最囉嗦嘅模型之一</strong>——平均 <strong>89k tokens / 題</strong>：比 GLM-5.3（71k）多 25%、比 GLM-5.3-Flash（69k）多 29%、比 V4 Pro 0813（55k）多 62%，甚至高過 Fable 5.1（78k）同 Claude Opus 5（73k）。</p>
+
+<p>但即使咁囉嗦，AA 估計每題成本只係 <strong>$0.27</strong>——大約係 GLM-5.3（$2.01）同 Kimi K3（$2.00）嘅 <strong>1/7</strong>，約 V4 Pro 0813（$0.67）嘅 1/2.5。呢個就係「極平 token 單價」帶嚟嘅槓桿：講多咗，但總成本仍然遠低。</p>
+
+<div class="data-point">
+  <span>成本對照（AA 每題估算）</span>
+  V4.1 Flash <strong>$0.27</strong>（89k tokens/題）｜GLM-5.3 <strong>$2.01</strong>（71k）｜Kimi K3 <strong>$2.00</strong>｜V4 Pro 0813 <strong>$0.67</strong>（55k）｜→ Flash 每題成本約為頭兩者嘅 <strong>1/7</strong>。Vals 每測試 <strong>$0.30</strong>，開源前十最便宜。
+</div>
+
+<p>有個社群帖文更進取咁講：V4.1 Flash 喺 DeepSWE 上表現好過 GPT-5.6 Sol 同 Opus 5，而 API 成本低 <strong>94%</strong>。但 Latent Space 特別註明：呢個係<strong>二手轉述</strong>，唔係一手 benchmark 帖文，所以唔應該當成已驗證嘅事實。呢個 caveat 好重要——當一個模型發布，社群好容易將「疑似」講成「證實」。</p>
+
+<div class="section-title">八、本地部署：4 張消費級 GPU、128GB M5 Max SSD 串流</div>
+
+<p>呢一 part 係令 systems 圈最興奮嘅地方。多個一手報告顯示，V4.1-Flash 喺「平民級」硬件上跑得意外地順：</p>
+
+<ul>
+  <li><strong>Fraser Price：</strong>全精度 V4.1 Flash ＋ DSpark，喺 <strong>4 張 Max-Q</strong>、只有 <strong>64GB 系統 RAM</strong> 上跑到 <strong>200 TPS</strong>，做法係將 200GB 嘅 Engram／hash table offload 到 NVMe；之後喺 <strong>4 張 RTX Pro</strong> 上提升到 <strong>300+ TPS</strong>，峰值 RAM 仍低於 <strong>32GB</strong>（用自訂 vLLM fork ＋ SSD 支援）。</li>
+  <li><strong>Antirez：</strong>用 DwarfStar 喺 <strong>128GB M5 Max</strong> 上跑 V4.1 Flash，話 SSD 串流令佢「意外地快」；佢推測除咗近期 SSD-streaming 改進，DS4.1「用同一批專家多咗」都可能係原因。</li>
+  <li><strong>TeortaxesTex：</strong>「簡直難以置信——你可以把前沿模型大部分放在 SSD 上跑。」</li>
+</ul>
+
+<p>推理基建亦緊跟：vLLM 新版將 DeepSeek-V4 嘅 shared experts 融進 <strong>MegaMoE</strong>，而 <strong>Mooncake Store</strong> 可以 offload decode KV。呢個組合正正解釋咗，點解呢一類模型嘅 serving 喺開放基建上迅速變易。</p>
+
+<p>不過，Reddit 有另一條重要嘅反駁線：<strong>唔好被「本地可跑」沖昏頭腦</strong>。有人由 safetensors 檢查後指出，V4.1 Flash 其實係 <strong>~748.5B 參數</strong>（backbone 551.566B ＋ engram 196.929B；加埋可選 DSpark/MTP 14.225B ＋ 視覺 encoder 0.485B，儲存版約 <strong>763.21B / 511.76 GB</strong>），並認為「552B」「485B」等數字係計數／metadata 錯誤（例如 HF 把 FP4 packed weights 當成 bytes 而唔係兩個參數／byte）。結論係：即使有稀疏激活，<strong>552B 總參令本地推理對多 DGX Spark／Strix 級設置仍然唔現實</strong>。實務建議係——用大型 V4 級模型做 planning，再用細啲嘅蒸餾模型（Q38-27B、Q38-35B-Distill、Ornith35B）做本地 agentic coding 嘅執行。</p>
+
+<div class="data-point">
+  <span>本地部署嘅兩個平行事實</span>
+  ① 已有實測：<strong>4×Max-Q / 64GB RAM = 200 TPS</strong>、<strong>4×RTX Pro / &lt;32GB = 300+ TPS</strong>、<strong>128GB M5 Max SSD 串流</strong>可行（關鍵：200GB Engram 放 NVMe）｜② 但總參實測約 <strong>748B（儲存 763B / ~512GB）</strong>，對多 Spark 級設置仍吃力；實務上 planning 用大模型、執行用細蒸餾模型。KV <strong>~890 bytes/token</strong>、自第一代壓縮 <strong>437×</strong>。
+</div>
+
+<div class="section-title">九、軟退役 V4 Pro：細模型贏大模型嘅怪現象</div>
+
+<p>其中一條高熱度嘅討論，係 DeepSeek「軟退役」V4 Pro——V4 Pro 嘅流量會自動 route 去 V4.1 Flash，並按更便宜嘅 Flash 價錢計費，直到 V4.1 Pro 推出。官方理由係：V4.1 Flash 喺性能、成本、速度同總使用時間上都勝過舊 V4 Pro。</p>
+
+<p>社群有幾個耐人尋味嘅觀察：</p>
+
+<ul>
+  <li>有人指 V4 Pro GA 可能「深受 reward hacking 困擾」，而且「雖然差不多 6 倍大，但表現冇實質好過 Flash 模型」。呢個令退役變得理性——如果大模型嘅每 token 成本高但能力冇拉開，就冇理由繼續服務。</li>
+  <li>有人將 DeepSeek 同 Google 嘅情況並列——兩個案例都出現「細 Flash 變體追平或超越大模型」，並推測呢啲唔一定係由單一大型訓練 run 蒸餾出嚟，gap 可能來自<strong>唔同架構、訓練 pipeline 差異、或數據 mix</strong>。</li>
+  <li>有人區分「API 退役」同「模型消失」：DeepSeek 停咗服務 V4 Pro，但權重據報仍然可得。</li>
+</ul>
+
+<p>呢個「細模型贏大模型」嘅現象，其實同 DeepSeek 自己嘅敘事一致——真正嘅前沿唔再係「邊個參數大」，而係「邊個 leverage 用得好」。</p>
+
+<div class="section-title">十、爭議：TeortaxesTex 唱反調，同「單打可能勝團隊」</div>
+
+<p>AI 圈最出名嘅 DeepSeek 咬人者 TeortaxesTex，今次一如既往唱反調。佢嘅核心論點係：DeepSeek「<strong>出嘅係內部研究產物而非產品</strong>」，所以常見「<strong>內部評測高、外部穩健性弱、脆弱、技能缺口怪異</strong>」。佢稱部分評測結果「非常奇怪」，尤其係 AutomationBench 排第一同 CritPt 退步，並叫 DeepSeek 團隊「冥想一下」。</p>
+
+<p>佢亦指 V4.1 一個優點：相比 V4 GA（受益於大量 tool／skills harness access），V4.1 喺「minimal harnesses」下表現更好、較唔依賴 scaffolding。</p>
+
+<p>最實用嘅一手觀察係關於 multi-agent：佢報告話，除非個 project 有非常清晰嘅模組化，否則 multi-agent「DSH agent teams」會<strong>降低質素</strong>——子代理產出 slop、浪費 token 喺唔必要嘅研究上，至少喺一個例子裡面，<strong>V4.1 單打勝過團隊模式</strong>。呢個同 AINews 同集其他 agent 研究（例如 Salesforce 指「喺更強專家完整軌跡上訓練弱模型」反而降分）互相呼應。</p>
+
+<blockquote>
+  「簡直難以置信——你可以把前沿模型大部分放在 SSD 上跑。」
+  <span class="attribution">— TeortaxesTex（同一帳號，時而盛讚、時而開炮）</span>
+</blockquote>
+
+<p>另一邊，Gordic Aleksa 借呢篇論文做 pretraining-data 分類，將 DeepSeek 放入「organic data」陣營，並對「佢哋根據出版物睇，好似連合成 rephrasing 都唔用」表示驚訝。呢點同「改數據品質 ROI」嘅宣言形成一個張力：DeepSeek 講數據重要，但佢哋強調嘅似係「真實數據嘅品質」，而唔係合成數據嘅量。</p>
+
+<div class="section-title">十一、同集其他重磅信號（9/9–9/10）</div>
+
+<p>AINews 一期覆蓋 12 個 subreddit、544 個 Twitter 帳號。除咗 DeepSeek，以下幾條同樣值得記低：</p>
+
+<ul>
+  <li><strong>OpenAI GPT-Live-1（語音）：</strong>以 API 形式推出，係一個<strong>全雙工語音介面</strong>——可以邊聽邊講，並將 tool use 或推理委派畀後端模型。開發者可控制語氣、節奏、表現力、回覆長度同語言。OpenAI 自家 benchmark 稱：搭配 GPT-6 Astra 時，Tau3 首次任務完成率 <strong>83.6%</strong>、AA Conversational Dynamics <strong>97.3%</strong>、Full Duplex Bench v1 響應起始延遲 <strong>0.798s</strong>。同日亦公布 <strong>Agents API 公測</strong>（Codex harness）同 OpenAI 託管沙盒。生態跟進：LiveKit、HeyGen、Telnyx、Speak、Cognition Devin Voice。</li>
+  <li><strong>企業數據成產品原語：</strong>ChatGPT Work 推出 Data agent（對接公司數據源，輸出儀表板／答案／動作）；Box 定位自己做「AI 嘅檔案系統」。</li>
+  <li><strong>Cognition SWE-2：</strong>自稱「最接近前沿嘅自家模型」，在主流 coding 評測上以「<strong>低至 70% 成本</strong>」取得相近表現，並明確講<strong>把 RL 擴展到數萬億參數</strong>；團隊自建演算法／基建／數據。同日發布 Devin Voice（基於 GPT-Live 同 SWE-2），Dioxus Labs 併入 Cognition 負責 Devin 嘅 VM、computer use 同測試。</li>
+  <li><strong>Cursor「Projects」：</strong>持久線程 ＋ coordinator agent、跨 agent 共享記憶／工件、跨裝置同「agent 電腦」同步——由「一任務一對話」走向<strong>長生命週期嘅軟件專案基質</strong>。配合 Claude Code 新嘅 pane pop-outs 同 managed-agent session viewer，市場正收斂到一個共識：coding agent 需要<strong>持久上下文、可檢視 session、同顯式編排控制</strong>，唔只係更好嘅 completion。</li>
+  <li><strong>Agent 研究：</strong>Salesforce 論文指「喺更強專家完整軌跡上訓練弱模型，經 harness 演進後反而降 4–30 分」（因學到不相容嘅規劃風格），修法係「只重寫失敗輪次於弱模型自身 rollout 中」；ByteDance HarnessDev 讓 agent 自建並迭代 harness（僅 34/64 改動可方向性遷移）；Qwen <strong>Elastic Horizon</strong> 用「成功軌跡長度 90 分位」自適應調整互動視野，最多省 25% 軌跡 token；<strong>PARSER</strong> 用平行凍結子代理 ＋ RL 主代理做 scatter-gather，896K 上下文 +12 分、延遲降至 1/11；SkillAdam 將技能自演化當離散優化；Google ToolGrad 先產出 tool-use chain 得近 100% 資料通過率。</li>
+  <li><strong>安全／治理：</strong>Anthropic 發布迄今最詳盡嘅濫用報告（網絡攻擊、影響力操作、監控、生物、武器），聲稱已瓦解所有描述嘅行動；Redwood Research 提出「透明性規範」，針對可能削弱或消除 CoT 可見性嘅架構；Ryan Greenblatt 主張部署前先公布證據同政策；Neel Nanda 認為 GPT-6 Astra 係「無 CoT 推理」嘅可疑躍升，可能代表超出普通 scaling 嘅架構變化；Hugging Face 新設 Open Alignment 團隊；Richard Ngo 批評 Paul Christiano 加入 OpenAI 董事會、以及「安全社群被 AGI 公司俘虜」。另有 OpenAI 因 Astra 產能問題暫停新 $200 Pro 註冊（現有使用者不受影響）。</li>
+</ul>
+
+<div class="section-title">十二、重點引用</div>
+
+<blockquote>「我們還沒有能精煉捕捉 V4.1、乃至 DeepSeek 整體研究議程所瞄準之物嘅 benchmark——那是我們見過最富創造性、最有效率地運用上下文嘅公開說明。」
+  <span class="attribution">— AINews 編輯按</span></blockquote>
+<blockquote>「DeepSeek 說：現階段改進數據品質嘅 ROI 已超過鑽研新奇嘅後訓練演算法。」
+  <span class="attribution">— Jasper Lu 引 DeepSeek 論述</span></blockquote>
+<blockquote>「怎麼迷戀 KV cache 壓縮，就能得到一個超高效嘅前沿模型。」
+  <span class="attribution">— Nrehiew</span></blockquote>
+<blockquote>「如果你係嗰種只讀模型版本號同 benchmark 標題嘅人，你就正正係 DeepSeek 想愚弄嘅嗰類人。」
+  <span class="attribution">— AINews 編輯按</span></blockquote>
+<blockquote>「簡直難以置信——你可以把前沿模型大部分放在 SSD 上跑。」
+  <span class="attribution">— TeortaxesTex</span></blockquote>
+
+<div class="highlight-box">
+  <strong>整合 insight：</strong>呢條發布真正嘅份量，唔在於 V4.1 Flash 喺任何單一 benchmark 上排第幾，而在於佢清晰勾勒出 2026 下半年嘅主線——<strong>由「更大更密嘅聊天模型」轉向「可以便宜、本地服務嘅稀疏、長上下文、Agent 導向系統」。</strong>三個詞係關鍵：<strong>servability（可服務性）</strong>（能塞進 offload pipeline、量化 KV stack、本地部署、開放推理伺服器）、<strong>KV cache 即產品</strong>（890 bytes/token 直接決定長上下文經濟學）、同<strong>「prefill／decode 分離」嘅經濟學重構</strong>（唔再為每個 token 付前沿 dense 模型嘅價）。而一句「改數據品質嘅 ROI 高過搞新演算法」，無論同意與否，都係 2026 年最有分量嘅研究路線宣言之一——如果連最擅長發明架構嘅實驗室都咁講，就說明模型進步嘅瓶頸已經由「想新點子」搬到「餵對數據 + 收斂獎勵」。最後一個反身提醒：TeortaxesTex 嘅「內部評測高、外部脆弱」批評同樣值得警惕——benchmark 排名同真實 workflow 之間嘅鴻溝，往往就係「殺傷力」所在。
+</div>
+
+<p style="font-size:0.9rem; color:#888; margin-top:2rem;"><strong>一個誠實嘅 caveat：</strong>呢篇係基於 Latent Space AINews〈[AINews] DeepSeek v4.1-Flash: 763B-P8B-D16B novel causal Encoder–Decoder architecture with vision marks the Return of the Whale〉（2026-09-12 05:56 UTC 發布，覆蓋 9/9–9/10）之 Substack 全文（content:encoded 萃取）、以及社群一手帖文同 Reddit r/LocalLLaMA 討論嘅深度復述。所有 benchmark 數字（AA Index 40、AutomationBench 69%、GDPval +164 Elo、AA-LCR 84%、$0.27/題、89k tokens/題）、參數規模（官方 763B／社群反推 748.5B／552B 之爭）同本地 TPS 數字，均為 Artificial Analysis、Vals、Fraser Price、Antirez、TeortaxesTex 等第三方／個人嘅陳述，並非 DeepSeek 官方審計數字；「DeepSWE 好過 GPT-5.6 Sol 而便宜 94%」為二手轉述，未經一手 benchmark 證實。社群對「encoder 做咩」「係咪真 V5」等均屬解讀而非官方確認。中文為撮譯，立場屬本站分析視角。</p>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述及數據出自 Latent Space AINews〈[AINews] DeepSeek v4.1-Flash: 763B-P8B-D16B…〉（2026-09-12 發布）之 Substack 全文，交叉參考 Artificial Analysis（@ArtificialAnlys）、Vals AI（@ValsAI）、Sebastian Raschka（@rasbt）、Stochastic Chasm（@stochasticchasm）、Nrehiew（@nrehiew_）、TeortaxesTex（@teortaxesTex）、Jasper Lu（@lu__jasper）、Shikib Mehri（@shikibmehri）之帖文，同 Reddit r/LocalLLaMA 相關技術討論（「DeepSeek V4.1 Flash…」「Deepseek V4.1 Flash is 748B, not 552B」「DeepSeek Has Soft Retired DeepSeek V4 Pro」）。中文為撮譯。
+</p>
+
+<footer>
+  <p>Deep Dive #150 · Latent Space AINews：DeepSeek v4.1-Flash — 763B-P8B-D16B novel causal Encoder–Decoder（2026-09-12 發布）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-09-13 06:20 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>

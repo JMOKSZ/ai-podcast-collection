@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「你要收集名詞與動詞」——前 Palantir Project Frontline 主持人 Vinoo Ganesh 拆解 FDE 熱潮：護城河唔係模型／人才／客戶地圖，而係「被修正過嘅行業營運真相」；「多數公司打造顧問，卻向董事會描述平台」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.8rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 客座長文 · 2026-09-12</div>
+  <h1>「你要收集名詞與動詞」——前 Palantir Project Frontline 主持人 Vinoo Ganesh 拆解 FDE 熱潮：護城河唔係模型／人才／客戶地圖，而係「被修正過嘅行業營運真相」；「多數公司打造顧問，卻向董事會描述平台」</h1>
+  <div class="meta">
+    <span>📅 2026-09-12 15:01 UTC 發布</span><span>·</span><span>🎙️ Latent Space（客座專欄）</span><span>·</span><span>✍️ Vinoo Ganesh（Kepler CEO）</span><span>·</span><span>📄 深度長文 ~21.5k 字</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+FDE（Forward Deployed Engineer，前線部署工程師）係當前 AI 圈最熱門嘅職位——實驗室、初創同 PE 都在招「坐進客戶營運裡面解決問題」嘅工程師。但 Latent Space 開宗明義：<strong>幾乎冇人對呢個角色嘅目的同玩法有共識。</strong>作者 Vinoo Ganesh 唔係旁觀者——佢三次親手搭建呢個職能（Palantir、Citadel、Kepler），仲一手打造咗 Palantir 把軟件工程師輪調成 FDE 嘅 <strong>Project Frontline</strong>（約 250 人經此計畫，許多人今日在 OpenAI、Anthropic、xAI、Anduril 帶 FDE 團隊）。呢篇復述會把全文嘅骨架、案例同金句一次過抽乾。
+</p>
+
+<div class="highlight-box">
+  <strong>呢篇嘅中心論點：</strong>低垂果實已摘完——「能被一套產品原樣賣給一千間公司」嘅問題大多已解決，剩低嘅藏在牆內、流程雜亂、幾乎無法從外部推斷。<strong>「你無法從 discovery call 推斷一間公司點樣關帳。」</strong>所以 FDE 嘅工作唔係「令客戶開心」，而係<strong>把現場所學變成每個未來客戶都能拿到嘅產品</strong>。核心動作係<strong>「收集名詞與動詞（collect nouns and verbs）」</strong>——名稱係表層，底下係營運模型／文化。最終護城河唔係模型（每月貶值）、唔係人才（價格見底）、亦唔係任何一間客戶嘅地圖（抽取幾乎免費）；<strong>而係「累積的、當前的、可驗證的」行業營運真相。草稿唔係資產，知道邊部分錯咗才是資產——而那只來自被修正過。</strong>
+</div>
+
+<div class="section-title">一、FDE 一詞已被濫用到幾乎無意義</div>
+
+<p>作者由一個場景講起：a16z 幾個月前推出 <strong>Forward Deployed Engineer Fellowship</strong>，佢被提名為 fellow 之一。佢去咗三藩市嘅第一次 fellow 晚餐，枱上有來自 Snowflake、Anthropic 同多間初創嘅 FDE。成晚傾落嚟，佢發現大家用<strong>同兩個詞（forward deployed）</strong>去描述幾乎冇共同點嘅工作：</p>
+
+<ul>
+  <li>有啲位置嘅 FDE 係「<strong>第二次通話才出現嘅 sales engineer</strong>」；</li>
+  <li>另一邊係「<strong>識寫 Python 嘅背配額業務</strong>」；</li>
+  <li>再隔幾個位，係「<strong>帶筆電同 SOW 嘅顧問</strong>，被帶入嚟交付一件產品做唔到嘅嘢」。</li>
+</ul>
+
+<p>幾日後，有人認真喺 WhatsApp 群問：佢哋嘅 FDE 團隊應該點同「已經坐在帳戶裡面嘅顧問公司」拆 scope？作者嘅評語係——「係一條合理嘅問題，但對於我理解中 FDE 係咩嚟講，係一條奇怪到要答嘅問題。」</p>
+
+<p>佢強調自己唔係想「守門（gatekeeping）」個詞，意思會漂移，呢個詞漂得比大部分人快。但有趣嘅係：呢班「當前 FDE 專家」描述嘅係<strong>根本唔同嘅工作，有唔同匯報線同唔同激勵</strong>。所以任何關於 FDE 嘅 YouTube 影片下面，一半留言都係「<strong>呢個唔就係重新發明顧問業？</strong>」——一啲都唔奇怪。</p>
+
+<div class="section-title">二、低垂果實已摘完，價值遷移到「最後一哩」</div>
+
+<p>為咗講清楚 FDE 點嚟，作者返去講 Palantir 嘅歷史。由接近一開始，Palantir 就分成兩個職能：</p>
+
+<ul>
+  <li><strong>Product Development（PD）</strong>——起平台；</li>
+  <li><strong>Business Development（BD）</strong>——名義上係 BD，但實際上裝住兩批人：一批技術 BD（已經叫 FDE），一批非工程、面向客戶嘅人（叫 Embedded Analysts 或 Deployment Strategists）。</li>
+</ul>
+
+<p>問題係：PD <strong>大部分情況下唔直接接觸客戶</strong>，BD <strong>大部分情況下唔直接貢獻核心通用平台</strong>。PD 靠二手途徑做客戶發現——同 BD 傾、或者將「現場成功嘅功能」吸收入核心。而呢啲<strong>冇一個係流程</strong>——全靠關係運作：邊個 FDE 咁啱同邊個 PD 工程師熟到可以拉佢過嚟。所以一個好嘅現場 insight 能唔能夠入平台，取決於「當時房入面邊個在場」。</p>
+
+<p>跟住就係全篇最核心嘅判斷：</p>
+
+<blockquote class="strong">
+  「低垂果實已經冇咗。可以由一個設計良好嘅產品、原樣賣畀一千間公司嘅問題，大部分已經解決。剩低嘅，係藏喺牆入面嘅工作——流程雜亂、冇文件、幾乎無法從外部代理（proxy）。」
+  <span class="attribution">— Vinoo Ganesh</span>
+</blockquote>
+
+<p>「你無法從 discovery call 推斷一間特定公司點樣關帳（close its books）」，而<strong>「抗拒被推斷嘅嗰部分，才係剩低嘅部分」</strong>。所以「聖杯」靜靜地移動咗：以前係「可重複嘅動作（repeatable motion）」——同一套 SaaS 產品，用同一種方式賣完一次又一次；如果你賣嘅係 tokens、bytes 或實體嘢，呢個野心依然正確。但對其他人嚟講，價值已經遷移到<strong>定制化、最後一哩、嗰 20% 冇任何產品可以預料到、卻決定其餘 80% 用唔用得上嘅流程</strong>。「Being forward deployed」已經等同「解決最後一哩」。</p>
+
+<p>但解決只係一半。作者補上關鍵一句：<strong>「你在一個客戶解決嘅最後一哩問題，就係告訴你平台邊部分需要變得通用嘅信號。一個只係解決最後一哩、從唔將呢個信號送返屋企嘅 FDE 職能，就係一個改咗個靚名嘅 services／consulting 團隊。」</strong></p>
+
+<div class="section-title">三、FDE 嘅工作：收集名詞與動詞（nouns and verbs）</div>
+
+<p>呢個係全文最有實用價值嘅框架。作者話：喺一間公司行一個星期，你就會留意到——<strong>同一個概念通常至少有四個唔同嘅名</strong>：</p>
+
+<ul>
+  <li>Sales 講 customer；</li>
+  <li>Ops 講 client；</li>
+  <li>Finance 記 billing entity；</li>
+  <li>Engineering 寫 org_id。</li>
+</ul>
+
+<p>每個團隊之間嘅接縫，都藏住一個翻譯——而當有人改咗個定義，翻譯就即刻斷。呢啲名係表層，<strong>底下係營運模型（operating model）</strong>。所以「你可以真正藉名詞與動詞，去代理一間公司點運作」。</p>
+
+<p><strong>名詞（nouns）</strong>係一間公司嘅人當作真實嘅嘢——通常係「一樣東西」：一個倉位、一筆交易、或一個對手方。每個團隊為單位，通常有幾個對象係整個運作繞住佢轉，但冇一個係用教科書方式定義。因為兩間公司可以喺 PPT 上一模一樣咁描述一個倉位，喺 code 入面就完全唔同。呢個唔係 bug——<strong>「如果每間公司嘅名詞完全一樣，咁你真係只需要一間公司。」</strong></p>
+
+<p><strong>動詞（verbs）</strong>係名詞點移動——一筆交易點樣入帳、關帳前咩事必須成立、夜晚十一點邊個批准例外、而嗰個人放假時會點。</p>
+
+<blockquote class="strong">
+  「幾乎冇一樣係寫低嘅——係活出來嘅。係一個組織賴以存活嘅營運系統。係文化。佢活喺嗰六個做得夠耐、已經停止注意到佢嘅人嘅腦裡面，同一份四年前有人整嘅 spreadsheet——而今日成個團隊都靜靜地依賴佢。呢個就係點解佢咁值錢，亦係點解你唔可以直接問佢攞。」
+  <span class="attribution">— Vinoo Ganesh</span>
+</blockquote>
+
+<p>仲有更反直覺嘅一點：<strong>通常持呢啲知識嘅人，唔知道自己擁有佢。</strong>作者舉咗一個親身案例（見下文 Parquet 遷移）——一位數據品質工程師屢屢擋住遷移，理由次次都唔同，但根因係佢用肉眼掃 CSV 做品質檢查，而 Parquet 當時冇原生檢視器。「佢唔係故意刁難，佢只係保護緊唯一令佢做得成呢份工嘅工具。」而呢樣嘢，佢<strong>永遠唔會喺訪談講出嚟</strong>——因為由佢嗰個位置睇，理由明顯到唔值得提。</p>
+
+<div class="section-title">四、產出必須係「產品」，唔係一個開心嘅客戶</div>
+
+<p>名詞同動詞話你知問題<strong>係咩</strong>，但唔話你知<strong>點做</strong>——而呢度就係大部分 FDE 職能靜靜地出錯嘅地方，因為「解決眼前嘅問題令人滿足、易被看見，而且當週就有人感謝你」。</p>
+
+<p>作者嘅立場好清晰：令客戶開心係真工作，而且係好工作——<strong>但嗰個係 solutions architect 嘅職責</strong>，佢哋被咁量度係合理嘅。<strong>FDE 存在嘅唯一理由，係把現場教佢嘅嘢，變成每個未來客戶都能拿到嘅東西。</strong>一個以「一個開心帳戶、上游冇任何改變」結尾嘅 FDE engagement，<strong>喺呢個角色唯一存在嘅理由上失敗咗</strong>——「你拿到了 context，卻在本地花掉了（you spent it locally）。」</p>
+
+<p>佢用一個「<strong>vinoo.groovy</strong>」嘅故事，講呢個教訓有幾貴：</p>
+
+<div class="data-point">
+  <span>vinoo.groovy</span>
+  有位客戶需要一個數據保留（data retention）工作，作者臨急寫咗個 groovy 腳本「vinoo.groovy」頂住——一個下午嘅工作，本來唔預期捱得過一個星期。<strong>一年後，佢跑在一間接近十萬人嘅客戶身上，仲掛住佢個名。</strong>團隊索性叫佢 vinoo.groovy。<strong>佢哋解決咗問題，但從未把修復變成產品</strong>——結果用咗幾年去維護一個本應即刻死掉嘅 hack。「每個你交付嘅捷徑，都變成你日後要養嘅東西。紀律就係知道邊啲修復屬於平台、邊啲要喺完成任務嘅一刻故意丟掉。」
+</div>
+
+<div class="section-title">五、分岔：顧問 vs 平台</div>
+
+<p>呢度就係整個故事嘅分水嶺：</p>
+
+<ul>
+  <li><strong>冇平台喺底下做同樣嘅工作：</strong>你學到一間公司嘅模型，度身訂造地 ship 一件嘢，engagement 一結束就全部失去。下一個客戶由零開始，之後嗰個都係。呢個叫顧問——「佢畀得好、人好出色，但唔會複利（doesn't compound）。」</li>
+  <li><strong>放一個平台喺同樣工作底下：</strong>你每 map 一間公司，下一個 deployment 就更快、產品就更利——因為工程師帶返屋企嘅嘢有個地方可以住落去。「<strong>呢個就係賣鐘數同建立資產之間嘅分別，而我對呢場淘金熱嘅誠實讀法係：大部分喺裡面嘅公司，正建立緊第一種（顧問），卻向董事會描述第二種（平台）。</strong>」</li>
+</ul>
+
+<p>「嗰個就係你嘅工作：建立平台。」Kepler 由第一日就這樣設定職能——<strong>在仲未有客戶去 justify 佢之前</strong>。否則你就會喺第 14 個月發現，你嘅工程師一直為錯嘅嘢做優化。由一開始，Kepler 嘅 FDE 就<strong>作為產品團隊嘅延伸（an extension of the product team）</strong>——「而呢個就係其他一切依從嘅結構性決定。」</p>
+
+<div class="section-title">六、護城河：累積的、當前的、可驗證的</div>
+
+<p>Kepler 賣畀對沖基金、投行、PE 同其他金融機構。呢啲機構 mandate 各異，但都共享一個不可妥協嘅點：<strong>數字必須正確，而且必須有人能說明點解佢正確。</strong>呢個約束逼使營運模型走到陽光底下——冇一間參與其中嘅公司，可以喺冇清晰 provenance（來源可追溯）軌跡嘅情況下產出一份工作成果。呢個 invariant 定義咗 Kepler 嘅平台。</p>
+
+<p>作者強調一個關鍵區分：</p>
+
+<blockquote>
+  「呢啲問題係普世的。詞彙唔係。每一間呢啲公司，底下都跑住某個版本嘅同一套本體（ontology），但每一間都描述得唔同。一個倉位，喺信用枱係一回事，喺同一間銀行嘅股票枱係相鄰嘅另一回事。兩個基金會用完全相同嘅語言去講一個回報計算，但對分母入面放咩有分歧。大部分差異存在，係因為有人喺（比如）2011 年做咗個合理嘅決定，而個決定活過咗嗰個人；而且，佢冇寫喺任何你搵得到嘅地方。」
+  <span class="attribution">— Vinoo Ganesh</span>
+</blockquote>
+
+<p>「<strong>一個 schema 話你知儲存咗咩。佢唔話你知意思係咩，而兩者之間嘅距離，正正就係一個『聽落正確』嘅系統產出『錯誤數字』嘅地方。</strong>」</p>
+
+<p>Provenance 對 Kepler 客戶而言係正確性要求，但對公司自己仲有另一個作用——<strong>令現場工作可以複利</strong>：一個可以喺錯誤編碼周圍「即興應變（improvise）」嘅系統，永遠唔會話你知個編碼錯咗。<strong>Kepler 嘅系統唔會即興</strong>。當佢哋誤解一間公司點定義某樣嘢，呢個誤解會以<strong>失敗</strong>嘅形式浮現，而唔係一個「只係睇落合理」嘅答案。搞錯嘅工程師，係由系統得知，而唔係六個星期後喺客戶會議上得知。</p>
+
+<p>Deployment 之後反過來話你知平台要擴展乜——但係一個比聽落更窄嘅問題：<strong>唔係「邊個基金想要邊個 feature」，而係「平台邊度太窄、hold 唔到我哋不斷撞到嘅嘢」。</strong>三間公司要同一個 feature——容易察覺，價值相對低。<strong>三間公司需要一啲 provenance 層表達唔到嘅嘢——才係真正在乎嘅信號；而佢通常靜靜地嚟，表現為同一個工程師第三次繞過同一個限制。</strong></p>
+
+<div class="data-point">
+  <span>護城河嘅三個形容詞（每個都 load-bearing）</span>
+  <strong>Accumulated（累積的）</strong>：一次 deployment 係軼事，第十次才係模式｜<strong>Current（當前的）</strong>：營運會漂移，一個過時嘅模型會靜默地喺 AI 系統底下失效——呢種失敗以前擺喺分析師面前係會被抓到嘅｜<strong>Verified（可驗證的）</strong>：「貌似合理嘅編碼」同「正確嘅編碼」，喺壞掉之前長得一模一樣。
+</div>
+
+<p>「呢個唔係買得到嘅。對手可以請走你嘅工程師、抄你嘅界面、讀呢篇文章（我哋嘅對手三樣都試緊！）。佢哋冇得走捷徑嘅，係嗰個<strong>sequence</strong>——喺客戶裡面搞錯、被修正、把修正摺入平台、然後到達下一間公司時已經知道邊啲問題係 load-bearing。」每一個循環都令下一個更便宜，而<strong>呢個複利就係你擁有嘅嘢</strong>。</p>
+
+<div class="section-title">七、匯報線唔係行政細節</div>
+
+<p>作者反覆強調一個常被當成細節嘅結構決定：</p>
+
+<blockquote class="strong">
+  「把職能指向 sales，激勵就變成『拿下眼前呢一單』——呢個係真工作，公司入面應該有人做，但唔係呢個角色。把職能指向 product，每次 deployment 都被要求產出啲嘢，令下一次 deployment 可以起跑。」
+  <span class="attribution">— Vinoo Ganesh</span>
+</blockquote>
+
+<p>Kepler 由第一日就把 FDE 設為产品團隊嘅延伸；「而呢個就係其他一切依從嘅結構性決定」。作者仲加咗一個好務實嘅論證：如果冇平台槓桿，「你每次客戶得一個昂貴嘅猜測。你小心 scope、build 幾個月，如果猜錯，你已經用咗一個帳戶同一季去發現。」反之，「<strong>我哋寧願一個月錯四次，因為每一次嘗試都比上一次平。</strong>」</p>
+
+<div class="section-title">八、兩個具名案例：Phoenix 事故同 Parquet viewer</div>
+
+<p>全文嘅硬料，主要喺兩個案例度。</p>
+
+<div class="sub-title">案例一：Phoenix 事故（2013，Palantir）</div>
+
+<p>2013 年，作者早期喺 Palantir 參與一個叫 <strong>Phoenix</strong> 嘅交易存儲。個 store 由佢見過最好嘅工程師設計，設計極乾淨，scope 到一組清晰嘅客戶用例——但嗰啲用例係<strong>二手轉述</strong>返嚟嘅。佢哋明白設計要求（聚焦商業上嘅 retention period 要求），亦有巧妙方案把數據分桶、令滾動窗口可行。喺佢哋控制嘅每一個環境，佢都「完全按規格運作」。</p>
+
+<p>然後佢哋將佢部署到一間銀行，<strong>真實財務數據原來有洞——測試數據由冇出現過嘅洞</strong>：一個空白 timestamp 跌落 epoch，於是 retention 邏輯「盡忠職守」地為 <strong>1970 年 1 月 1 日至今每一個窗口</strong>都請求一個十分鐘桶。呢個總共約 <strong>230 萬個 keyspace</strong>——而 backing tech Cassandra 每個 file handle 大約需要 <strong>5MB</strong>。伺服器理所當然地 OOM，重新啟動將需要 <strong>14TB RAM</strong>——即係話，呢個程序實際上「一到埗就死」。</p>
+
+<p>作者強調根因：<strong>唔係缺乏用戶研究。</strong>「我哋有 spec、明白用例、亦讀咗好多關於呢類機構點存數據嘅嘢。我哋從未做嘅，係<strong>企喺嗰棟樓裡面，讓系統對住佢哋嘅生產數據跑</strong>。即係話，我方冇人擁有『設計』同『日常現實』之間嘅鴻溝。我哋所知道關於嗰間銀行嘅一切，都係二手轉述——由一班心腸好、但對佢哋嚟講壞數據只係另一種常態嘅人轉述。」</p>
+
+<p>呢個「錯誤」最終把作者變成 FDE：當 Phoenix 喺 Palantir 商業客戶群推開，佢發現自己要飛出去修自己 ship 嘅嘢，於是第一次企喺真實用戶面前（今次嘅用戶係 Palantir 自己嘅 FDE，好彩——因為佢哋可以用佢熟悉嘅語言話佢知咩事錯）。佢開始為佢哋想達成嘅嘢而 build 同擴展系統。</p>
+
+<p>呢個故事仲未完：「<strong>呢個就係普通版本故事結束嘅地方</strong>——帶住一個關於留意用戶嘅教訓。但 Phoenix 變成更耐人尋味嘅嘢。佢變成一個平台，Palantir 嘅 FDE 開始喺上面 build，橫跨 cybersecurity、KYC、AML，同一大堆冇人 scope 過嘅用例。」最終 PD 要諗點擴展 Phoenix 平台去支撐所有呢啲用例。「我當時睇唔到，但嗰個迭代循環就係成件事嘅核心思想：<strong>FDE 解決客戶問題，係為咗賺取那個話你知下一步要 build 咩嘅 insight。呢個角色係產品團隊嘅延伸。</strong>」</p>
+
+<div class="sub-title">案例二：Parquet 遷移（Kepler / 一間初創）</div>
+
+<p>作者喺自己一間初創（喺 Kepler 之前）經歷：佢哋花咗接近一年，試圖令一個客戶由 CSV 轉去 Parquet，<strong>但一位數據品質工程師每次都擋住</strong>。理由次次都唔同，但總係某個版本嘅「parquet 更差」「唔 work」「對我嚟講唔合理」。佢哋用過客戶儲存縮減、算力最小化、pipeline 優化嘅論據——全部打動唔到佢，<strong>因為冇一個係針對真正嘅問題</strong>。</p>
+
+<p>然後佢哋派咗一個 FDE 入去，睇呢位工程師點做嘢：<strong>佢由 S3 拉 CSV 落一部 Windows 筆電、雙擊打開、用肉眼掃啲行。嗰個就係佢嘅數據品質檢查。</strong>Parquet 當時冇原生檢視器——所以佢哋建議嘅嘢，等於拿走佢唯一嘅數據品質儀器，又冇畀返任何嘢佢。「佢唔係難頂，佢只係保護緊唯一令佢做得成呢份工嘅嘢。」</p>
+
+<div class="data-point">
+  <span>Parquet 案例嘅結果</span>
+  「<strong>我哋當晚就做咗一個 Parquet viewer，佢兩日後批准咗遷移，pipeline 執行由約 17 個鐘降到 2 個鐘。</strong>佢永遠唔會喺訪談講任何呢啲。由佢嗰個位置睇，理由明顯到唔值得提。理解同定義呢位分析師嘅營運系統（名詞與動詞），令佢哋唔單止明白個問題，仲 build 到一個可以交付畀一大群有同樣問題客戶嘅解決方案。」
+</div>
+
+<p>呢兩個案例合起來，就係作者想講嘅完整迴路：<strong>現場觀察（唔係訪談）→ 理解名詞與動詞 → 解決最後一哩 → 把學到嘅嘢變成通用產品 → 令下一次部署更平。</strong></p>
+
+<div class="section-title">九、重點引用</div>
+
+<blockquote>「你要收集名詞與動詞。」
+  <span class="attribution">— FDE 核心動作</span></blockquote>
+<blockquote>「草稿唔係資產。知道其中邊部分係錯嘅，才係資產——而那只來自於被修正過。」
+  <span class="attribution">— 論護城河</span></blockquote>
+<blockquote>「每個你交付嘅捷徑，都變成你日後要養嘅東西。」
+  <span class="attribution">— 論 vinoo.groovy 教訓</span></blockquote>
+<blockquote>「我嘅誠實讀法係：呢波淘金熱裡面，多數公司正打造第一種（顧問），卻向董事會描述第二種（平台）。」
+  <span class="attribution">— 論 FDE 分化</span></blockquote>
+<blockquote>「一個 schema 話你知儲存咗咩，佢唔話你知意思係咩，而兩者之間嘅距離，正正就係一個『聽落正確』嘅系統產出『錯誤數字』嘅地方。」
+  <span class="attribution">— 論 provenance</span></blockquote>
+<blockquote>「請 FDE 只買到一樣嘢——就係識別邊啲問題值得解決嘅權利。大部分公司從未行到咁遠。但嗰個係入場費，唔係獎品。」
+  <span class="attribution">— 全文結語</span></blockquote>
+
+<div class="highlight-box">
+  <strong>整合 insight：</strong>呢篇長文表面上係一篇「FDE 職涯指南」，實際上係對 <strong>SaaS 模式嘅一次重估</strong>。當「可推斷嘅問題」被解決完，剩下嘅係「不可推斷嘅營運模型」——呢個就解釋咗點解 labs、startup、PE 會同時湧入 FDE，亦解釋咗點解 a16z 要辦 FDE Fellowship。三個詞係關鍵：<strong>accumulated</strong>（一次部署係軼事、十次才係模式）、<strong>current</strong>（營運會漂移，過時模型會喺 AI 系統底下<em>靜默失效</em>——唔似以前擺喺分析師面前會被抓到）、<strong>verified</strong>（「貌似合理嘅編碼」同「正確嘅編碼」喺壞掉前長得一模一樣）。而對 Agent／AI 產品嘅更深啟示係——<strong>provenance（來源可追溯）唔單止係合規成本，而係一個「讓系統以失敗形式浮現誤解」嘅正確性機制</strong>：一個識即興應變嘅系統永遠唔會話你知它搞錯咗。呢點同本站近期多篇 deep dive（Meta Muse 嘅權限 OS、Coinbase 嘅 agentic finance、Dwarkesh 圓桌講「部署分佈 > 模型 IQ」）形成同一條主線——<strong>2026 年嘅護城河，正由「模型 IQ」轉向「被驗證過嘅領域真相 + 可審計嘅最後一哩」。</strong>亦可以對照中文側〈硅谷 101 E248：中國式 FDE〉——同一個職位，兩地嘅文化土壤唔同。
+</div>
+
+<p style="font-size:0.9rem; color:#888; margin-top:2rem;"><strong>一個誠實嘅 caveat：</strong>呢篇係基於 Latent Space 客座長文〈The Rise of the Forward Deployed Engineer — and How To Do the Job Right〉（Vinoo Ganesh 撰，2026-09-12 15:01 UTC 發布，Substack content:encoded 全文，約 21.5k 字）嘅深度復述。作者身兼 Kepler CEO，文中對 Kepler 產品（provenance / ground-truth 層）嘅描述帶有明顯立場，屬其個人觀點與公司定位，唔應當成中立審計。文中提及嘅數字（Phoenix 約 230 萬 keyspace、重啟需 14TB RAM、Project Frontline 約 250 人、pipeline 17h→2h、「近十萬人」客戶）均為作者自述，本站無法獨立核實。中文為撮譯。</p>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述及數據出自 Latent Space〈The Rise of the Forward Deployed Engineer — and How To Do the Job Right〉（Vinoo Ganesh，2026-09-12 發布）之 Substack 全文。Vinoo Ganesh：Kepler CEO；前 Palantir（Spark 負責人，打造 Project Frontline FDE 輪調計畫；曾於 Bagram 空軍基地前線部署）；前 Citadel business engineering；a16z FDE Fellowship fellow。
+</p>
+
+<footer>
+  <p>Deep Dive #151 · Latent Space：The Rise of the Forward Deployed Engineer — and How To Do the Job Right（Vinoo Ganesh，2026-09-12 發布）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-09-13 06:25 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
