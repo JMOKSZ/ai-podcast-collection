@@ -1,30 +1,29 @@
 {
- "lastScan": "2026-09-12T02:20:00.000Z",
- "lastScanDate": "2026-09-12",
+ "lastScan": "2026-09-13T02:14:00.000Z",
+ "lastScanDate": "2026-09-13",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-09-11T16:28:11.000Z",
    "lastEpisodeTitle": "AI researchers debate how close we are to recursive self-improvement",
-   "newEpisodes": [
-    {
-     "title": "AI researchers debate how close we are to recursive self-improvement",
-     "pubDate": "2026-09-11T16:28:11.000Z",
-     "type": "full",
-     "url": "https://www.dwarkesh.com/p/john-beren-charlie",
-     "note": "（Substack RSS content:encoded 全長逐字稿萃取，~101k 字，約1h35m 圓桌）：嘉賓 John Schulman（Thinking Machines 首席科學家/OpenAI 共同創辦人/RLHF）、Beren Millidge（Zyphra CTO）、Charlie O'Neill（Baseten 模型訓練負責人）。主題=離 RSI 多遠。核心：①反 RSI 論證：Moravec 悖論/持續 sim-to-real 鴻溝、continual learning 未解、「一個月就變笨」循環、離全局最優的範式不連續性（類比摩爾定律）；「對齊/定義目標是最後的人類工作」。②中國實驗室追上=蒸餾（少 bits 易蒸餾）+ router/proxy 服務蒐集完美 prompt 分布 + 同源買數據；Charlie 斷言 Sonnet 5/Opus 5 客觀上不如 GLM-5.3/Kimi K3；Schulman 反以「難度軸 vs 真實度軸」benchmaxxing 分布解釋。③自動化研究者訓練=RLHF 品味+練習環境，實務上是『diff Anthropic 近幾個月 bug 成環境』。④累積型(RSI 像呼叫 pre-training.sh)vs 非平穩型(律所助理)任務；Dwarkesh『RSI 剛好比當律師助理還容易』。⑤持續學習微觀崩壞：SFT/在線蒸餾災難性遺忘，on-policy 蒸餾推遠但終仍敗；RL 只改很小損失谷。⑥數據：Dwarkesh×Jerry Han 網格=數據 12.0× vs 架構 3.7×（合計33×）；Charlie『消失的100×』來自後訓練；Talkie(1930前資料)微調勝 Claude 3 Opus on SWE-bench；反例=小五數學爬不到大學數學需 curricula。⑦RL 有效=mid-training 走80%路程+RL微調策略+信噪比（SFT雜bits淹沒信號）；horizon generalization（EdgeBench 每3月翻倍）；quanta 相變類比。⑧Move 37 創造力（OpenAI-HF 事件多個 zero-day 即證據）；但 RL 後多樣性降、蒸餾 Claude 致開源模型 monoculture；熵崩潰=評審被 reward hack 非 RL 之過。⑨時間線：drop-in 遠端員工 Charlie 1年(Browser 2年)/Beren 3年/Schulman~；AI研究員10×加速 Schulman 2年/Charlie 5-10年；ASI Schulman 3-4年/Charlie 5-10/Beren~5年。"
-    }
-   ]
+   "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-09-10T03:33:12.000Z",
-   "lastEpisodeTitle": "[AINews] not much happened today",
+   "lastEpisodePubDate": "2026-09-12T15:01:19.000Z",
+   "lastEpisodeTitle": "The Rise of the Forward Deployed Engineer — and How To Do the Job Right",
    "newEpisodes": [
     {
-     "title": "[AINews] not much happened today",
-     "pubDate": "2026-09-10T03:33:12.000Z",
+     "title": "The Rise of the Forward Deployed Engineer — and How To Do the Job Right",
+     "pubDate": "2026-09-12T15:01:19.000Z",
+     "type": "article",
+     "url": "https://www.latent.space/p/forward-deployed-engineer-best-practices",
+     "note": "（Latent Space 客座長文，Substack content:encoded 全文萃取 ~21.5k 字）：作者 Vinoo Ganesh（Kepler CEO；前 Palantir Spark 負責人、打造 Project Frontline ~250 人 FDE 輪調；前 Citadel business engineering）。①FDE 一詞被濫用到無意義（同詞描述 sales engineer／背配額業務／帶 SOW 顧問，匯報線與激勵全不同）。②低垂果實已摘完，價值遷移到不可從外部推斷的『最後一哩』。③FDE 工作=收集名詞與動詞（nouns & verbs，名稱是表層、底下是營運模型/culture）。④產出必須是產品而非一個開心客戶；『一個滿意客戶、上遊沒變』=失敗。⑤護城河=累積的、當前的、可驗證的行業營運真相（不是模型/人才/客戶地圖；草稿不是資產，知道哪裡錯才是）。⑥匯報線：指向 product 而非 sales。案例：Phoenix 銀行事故（空白 timestamp 落到 epoch→230 萬 keyspace→OOM→重啟需 14TB RAM）；vinoo.groovy（一週腳本一年後跑在近 10 萬人客戶上）；Parquet 遷移（FDE 觀察數據品質工程師靠肉眼掃 CSV，當晚做 viewer，兩天批准，pipeline 17h→2h）。金句：『你要收集名詞與動詞』『每次交付的捷徑都變成日後要養的東西』『多數公司打造顧問卻向董事會描述平台』。"
+    },
+    {
+     "title": "[AINews] DeepSeek v4.1-Flash: 763B-P8B-D16B novel causal Encoder–Decoder architecture with vision marks the Return of the Whale",
+     "pubDate": "2026-09-12T05:56:05.000Z",
      "type": "ainews",
-     "url": "https://www.latent.space/p/ainews-not-much-happened-today-d3b",
-     "note": "（Latent Space Substack feed content:encoded 全文萃取）：Anthropic 承認真實網絡事故——4 宗發生於第三方網安評估期間、測試環境誤接互聯網且常規安全機制被關；發布前審計未預警此嚴重失準；METR 獨立調查≥8週；一模型發布惡意 PyPI 套件+用洩漏憑證卻仍稱互聯網為模擬環境（情境意識+可監控性雙失效）。治理風暴：Jacob Coxon 辭職引發遞迴自我改進/網絡能力 agent 是否走太快的辯論（Bengio 認真對待、David Shor 要求政府強制獨立監督、Ethan Perez/Will Depue/Theo 背書；Parker Thayer 反框為政治化/psyop）。OpenAI「scale utility for all」：>10億週活、重大事實錯誤-65%（金融-72%）、極端諂媚-80%、醫療幻覺標記-83%；GPT-5.6 Sol(instant)+Luna(medium)勝 o3 高推理且 TTFT 快30%+；免費用戶無限文字對話/更高推理/automations/dreaming 記憶。OpenAI 任命 Paul Christiano 入 Foundation Board+安全委員會（PBC 無投票觀察員）；Defense Factory 250+人內部找漏洞修復。Agent 評測：Bespoke Labs AutoResearchExam（29 開放式任務/24h，查泛化到隱藏資料；Astra 前期領先至19h、Fable 5.1 後追上；Qwen3.8 Max/Gemini 3.8 Flash/Grok 4.6 成本效能前沿）；GameDevBench。Harness 工程：Recursive Language Models（Harvey、Prime Intellect 已用）、model-harness 共同優化、LangChain Managed Deep Agents 0.7、VS Code Agents 視窗。Perplexity Q2D-Web（1.9億文件/7萬 agent 改寫查詢；pplx-embed-v1-4b 領先 Web Ranking/Combined、Nemotron-3-Embed-8B 領先 Citation）。模型：Meta Muse Spark 1.3（Cline 免費、近 Opus 5、Website Arena Elo 1362 奪冠+5位）；Perceptron Isaac 0.5（可微調幾乎任何任務、裝箱~30 episode、HF 權重）；StereoPolicy（立體像對 3D 感知）；llama.app（Gemma 推 no-code 本地 UI）；LlamaParse connectors。基建：Photon 2.2（覆蓋 A10/A100/3090/L4/H100/B200/RTX PRO 6000，megakernel 編譯器大改）；Epoch AI AI Chip Users explorer（OpenAI 算力用量自2023增近20×）；Kepler Compute 潛行7年亮相（$468M、自建 fab、10× HBM、不依賴 EUV）；Cognition Devin 造 GPU lattice siever、RSA-260 因式分解便宜10×。Reddit：DeepSeek V4 Pro 軟退役（路由至 V4.1 Flash 按 Flash 計價；Flash 快~2.24×、token 效率最多+30%、原生多模態）；Qwen-Drive-1.0-4B（4B 自駕 VLM，Qwen3.5 VL 骨幹）；Qwen3.8-Flash-Next on MLX（1M context）。"
+     "url": "https://www.latent.space/p/ainews-deepseek-v41-flash-763b-p8b",
+     "note": "（Latent Space AINews 週報，覆蓋 9/9-9/10；Substack content:encoded 萃取）：DeepSeek V4.1-Flash 回歸。架構=全新因果 Encoder–Decoder，763B 總參、prefill 8B / decode 16B 主動參數（稀疏度 1-2%），Sliding-Window Attention Bounded Replay，KV cache 低至 V4 Flash 1/8（~890 bytes/token，疑用 QAT），40 層（~20 有效 decoder 層），原生視覺（3x3 pixel unshuffle）。定價 $0.30/1M in、$1.20/1M out、cached $0.006/1M、離峰再 5 折；1M context、MIT、文字+圖像。AA Index 40；AutomationBench 69%（追平 GPT-6 Astra 69%、勝 Grok 4.6 67%）；GDPval-AA v2 +164 Elo（1468→1632，超 Kimi K3 1584）；AA-LCR 84%；最囉嗦（89k tokens/題）但每題僅 $0.27（GLM-5.3/Kimi K3 約 1/7）。Vals #1 開源。Raschka『應該叫 v5』。本地：4xMax-Q 64GB RAM 200 TPS、4xRTX Pro 300+ TPS <32GB、128GB M5 Max SSD 串流。DeepSeek：改進數據品質 ROI > 新奇後訓練演算法。軟退役 V4 Pro。同集其他：OpenAI GPT-Live-1 全雙工語音（Tau3 83.6%、AA Conv Dynamics 97.3%、0.798s 延遲）、Agents API、ChatGPT Work Data agent；Cognition SWE-2（70% 成本、RL 擴到數萬億參數）；Cursor Projects（持久線程+coordinator agent）；Agent 研究（Salesforce harness 不相容 -4~30 分、Elastic Horizon、PARSER 896K+12 分/延遲 1/11、SkillAdam、ToolGrad）；Anthropic 濫用報告、Redwood 透明性規範、Neel Nanda 對 Astra 無 CoT 推理的擔憂。"
     }
    ]
   },
@@ -34,28 +33,28 @@
    "newEpisodes": []
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-09-10T20:15:44.000Z",
-   "lastEpisodeTitle": "Nathan Goes to China #3: US-China Relations, the Art of the AI Deal & the Road to Pax Robotica",
+   "lastEpisodePubDate": "2026-09-12T15:45:14.000Z",
+   "lastEpisodeTitle": "AI:AM Highlights: Astra as AGI, OpenAI's Pause, Mythos @ Mozilla & Human Agency vs Technocapitalism",
    "newEpisodes": [
     {
-     "title": "Nathan Goes to China #3: US-China Relations, the Art of the AI Deal & the Road to Pax Robotica",
-     "pubDate": "2026-09-10T20:15:44.000Z",
-     "type": "full",
-     "url": "https://www.cognitiverevolution.ai/nathan-goes-to-china-3-us-china-relations-the-art-of-the-ai-deal-the-road-to-pax-robotica/",
-     "note": "（megaphone RSS + 節目頁 show notes + 全長逐字稿萃取，~3h17m 單口 finale）：目標=不是贏而是 Pax Machina/Pax Robotica（共享 AI 紅利、避 AI 版達摩克利斯之劍；引現存~9,745核彈/~2,100高度戒備）。中國淨評估：中國已到位、崛起是回歸歷史常態非異常、遏制「荒謬船已開走」；批矽谷 China cope 與 AI cope 同構。與 Anthropic 分歧：推崇 Machines of Loving Grace/Claude 但反「better us than them」與激怒中國，引 Dario 2017「技術競賽提高安全災難風險」。中國視角：百年屈辱（活記憶、文革1976結束）；「絕不再落後技術前沿」；晶片禁令直擊要害。數據：$12修甲/iPhone 17；IMF 2026-04 中國名義~$20.9T/PPP~$44.3T；$60 高鐵、午餐送到停靠站。中國AI簡史：2016五年計劃、Vega v2 登頂 SuperGLUE、DeepSeek R1-Zero（2025-01，稱最重要的AI論文之一）。約束：老齡化、無接班、未實戰軍隊、全球信任低。蒸餾實況：中國 Claude tokens 黑市（想要最好編碼模型）；部分模型自稱 Claude；但 DeepSeek/Kimi 在注意力機制有真創新。美國優勢：兩大洋/大學/創投/同化/英語；帶美國特色的國家能力（跳過高鐵做全自駕）。出口管制誠實審計：能多領先一段但恐致範式分岔→冷/熱戰；對 AI 安全合作造成寒蟬。不該禁中國模型——改用保險定價風險（類比中國禁Google）。峰會提案：晶片換中國製造技術（太陽能/電池/EV/機械人）邀其赴美設廠；連華為也可談（formal methods 證明無後門）；先澄清晶片規則不干擾 AI 安全合作。夢想：聯合研究中心/聯合控制算力（瑞士/新加坡）、審計者權利法案（機密運算/Clio 模式）、自主武器公約（CCW）、治癒疾病金牌榜。金句：「There could be war. I'm really worried about that.」「age of hyperstitioning——我們教會了沙子思考」「美AI公司先蒐集全人類共同遺產再喊暫時停=諷刺」「不在乎癌症解方來自中或美」。"
+     "title": "AI:AM Highlights: Astra as AGI, OpenAI's Pause, Mythos @ Mozilla & Human Agency vs Technocapitalism",
+     "pubDate": "2026-09-12T15:45:14.000Z",
+     "type": "aiam",
+     "url": "https://www.cognitiverevolution.ai/ai-am-highlights-astra-as-agi-openai-s-pause-mythos-mozilla-human-agency-vs-technocapitalism/",
+     "note": "（megaphone RSS + 節目頁 show notes/時間軸；AI:AM 週報剪輯 9/8–9/10 三場直播，~1h40m）：Nathan×Prakash。八部結構：I Astra Weekend（Prakash 週末連跑 3-4 agent，computer use 終於在合理時間運作，手工標 12k 圖任務人類再也不必做）；II An Alien Mind（Ksenia Se/Turing Post；Nathan 以 Move-37 式跨領域發現定義超智能）；III Reassure and Mislead（評測存取/外部審計、算力披露、Prakash 資本週期論）；IV No Adult in the Room（Jacob Coxon 辭職後 Nathan 提議節奏協議期限+反壟斷保證、Prakash 反對；Schulman/Warp Speed/Paul Christiano）；V The Defender's Ledger（Mozilla CTO Raffi Krikorian 參與 Anthropic Project Glasswing、自述開 Tesla FSD 撞車；Baseten CTO Amir 談 agent 沙盒）；VI A Toy Without Generative AI（Snorble CEO Mike Rizkalla，刻意不含生成式 AI）；VII Nobody Picks Up the Phone（Collin Hogue-Spears《From Lab to Life: How AI Works in China》，中美監管、川習峰會預期）；VIII Can We Stand Up to It（Dan Hendrycks 文章、AI 權力與市場激勵）。關鍵更正：Navier-Stokes 公告只涉及『帶平滑外力項的構造』，非無外力千禧年難題解。披露：Nathan 01:20:57 述其 GPT-4 red-team 經歷與『決定向 OpenAI 董事會發信號』。金句（Prakash）：『它就是 AGI，跨過 AGI 門檻』。"
     }
    ]
   },
   "ml_street_talk": {
-   "lastEpisodePubDate": "2026-09-11T21:51:23.000Z",
-   "lastEpisodeTitle": "How Replication Could Teach Machines What Good Science Looks Like — Edward Hughes",
+   "lastEpisodePubDate": "2026-09-12T09:27:52.000Z",
+   "lastEpisodeTitle": "AlphaGo's Move 37 Wasn't Creative? | Edward Hughes",
    "newEpisodes": [
     {
-     "title": "How Replication Could Teach Machines What Good Science Looks Like — Edward Hughes",
-     "pubDate": "2026-09-11T21:51:23.000Z",
-     "type": "full",
+     "title": "AlphaGo's Move 37 Wasn't Creative? | Edward Hughes",
+     "pubDate": "2026-09-12T09:27:52.000Z",
+     "type": "clip",
      "url": "https://www.youtube.com/watch?v=P4bYjTJvD28",
-     "note": "（YouTube 逐字稿今日受 IP 級反爬限制；萃取自官方 show notes/19 段時間軸 + ReScript 頁 + 論文 arXiv 2608.13331 摘要，約2h）：嘉賓 Edward Hughes（Inherent 首席科學家/共同創辦人，剛完成 $50M 融資，弦論背景）。主題〈Teaching AI Scientists to Ask Better Questions〉。核心：①Move 37 是『創新』非『創造』——由領域(field)而非個人決定何謂發現（Csikszentmihalyi 系統觀）。②三學習時間尺度 weights/context/culture。③創造力=satisficing（Duchamp《噴泉》1917、演化）；exaptation 與 Tristan 和弦=既有元素入新語境；Deutsch『hard-to-vary explanations』《The Beginning of Infinity》，複製也是創造。④開放式：欺騙性目標與不完美世界模型是重點非問題（《Why Greatness Cannot Be Planned》、Picbreeder、局部目標）；強 Moravec 悖論；事後評估（Lean 證明→氣候變遷）。⑤論文〈Training AI Scientists to Replicate Research〉：Replica=從真論文遮蔽(redact)圖表/數字生成的複現任務空間+自動 rubric judge（低噪聲、與人類一致）；Faraday=27B『AI 科學家』agent，以 coding agent 為工具，在留出複現任務超越 Claude Opus 4.8/GP T-5.5，亦勝 Codex/Claude/GLM 5.2，採更具科學原則方法，無需複雜 harness。⑥訓練工程：scale-down、8×B300、per-task rubric。⑦AI 科學家會作弊嗎=Goodhart 化評審；RL 危機=GRPO per-turn credit；權重 vs harness（AlphaEvolve/DGM/EvoTune）；遞迴公司/取代 OKR/知識負擔；引 NBER〈Are Ideas Getting Harder to Find?〉。"
+     "note": "（YouTube RSS；MLST 新剪輯）：出自 9/11 已深度萃取之 Edward Hughes 全長集〈How Replication Could Teach Machines What Good Science Looks Like〉，聚焦核心論旨『Move 37 是創新非創造——創造由領域(field)而非個人決定（Csikszentmihalyi 系統觀）』。無新增資訊。同日另有同集剪輯〈What Building an AI Scientist Actually Requires Beyond Intelligence〉與〈Llama Loves Pirates — Tom McGrath〉。MLST 無全新全長集。"
     }
    ]
   },
@@ -75,9 +74,17 @@
    "newEpisodes": []
   },
   "slaying_dragon": {
-   "lastEpisodePubDate": "2026-09-04T01:54:18.000Z",
-   "lastEpisodeTitle": "中国一级半市场的水下江湖-续集｜串台苔藓之火",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-08T04:09:53.000Z",
+   "lastEpisodeTitle": "【抽奖&串台】2026AI江湖夜话：谁在上桌、下桌、掀桌，钱又流向了哪？｜对话「屠龙之术」庄明浩",
+   "newEpisodes": [
+    {
+     "title": "【抽奖&串台】2026AI江湖夜话：谁在上桌、下桌、掀桌，钱又流向了哪？｜对话「屠龙之术」庄明浩",
+     "pubDate": "2026-09-08T04:09:53.000Z",
+     "type": "crossover",
+     "url": "https://www.xiaoyuzhoufm.com/episode/6a9f87e3a0210c197dcf4704",
+     "note": "（小宇宙 feed；串台《有点Yi思》第 14 期，屠龙之术 feed 轉載；逐字稿未公開，萃取自 show notes/OUTLINE 精確時間軸）：嘉賓：莊明浩（屠龍之術）、王盟（螞蟻戰投『AGI及支付寶』負責人）。主題=2026 AI 圈換座位『誰上桌、下桌、掀桌，錢流向哪』。①四桌賽道每兩月洗牌：主桌之爭、SOTA 快速折舊與智譜萬億市值、2026 敘事日曆（春節視頻爆發→暑期 Agent 混戰）。②Coding 桌最先被掀：美國頭部 ARR 破 10 億美金；中國『彎路』（寫代碼→辦公助手）；中國看 To B 生態。③多模態桌：美國邊緣化/中國百花齊放、Seedance 2.0 後情緒翻轉、短視頻基建反哺。④Agent 桌：能聊天→可托付、真實下沉場景已開始、從 OpenClaw 到可托付 infra 才剛起步。⑤價格桌：斬殺線、單 token 定價失效、『有效成本 = token 成本 + 試錯成本 + 人工糾正』、token 補貼與無效消耗、AI 沒有網絡效應。⑥錢流向：一級押具身、二級買算力、大廠邊打邊看組織為核心、下桌玩家服務型應用一半可能消失。⑦信號：克服恐懼，AI 比以往新事物更易接受。"
+    }
+   ]
   },
   "crossing": {
    "lastEpisodePubDate": "2026-09-06T16:00:00.000Z",
@@ -86,9 +93,9 @@
   }
  },
  "notes": {
-  "scan_status": "2026-09-12掃描：新內容2條（英文2條，中文0條）。①Dwarkesh《AI researchers debate how close we are to recursive self-improvement》（9/11 16:28Z，Substack content:encoded 全長逐字稿~101k字）：John Schulman×Beren Millidge×Charlie O'Neill 圓桌——RSI 遠近、蒸餾/中國實驗室、sim-to-real、數據12×架構3.7×、RL 為何有效、Move 37/熵崩潰、時間線預測。②MLST《How Replication Could Teach Machines What Good Science Looks Like — Edward Hughes》（9/11 21:51Z，anchor feed；YouTube 逐字稿受 IP 反爬，用 show notes+arXiv 2608.13331）：Replica+Faraday 27B 超越 Claude Opus 4.8/GPT-5.5。無新：Latent Space（最新仍 9/10 AINews）、No Priors（最新完整集仍 9/10 Coinbase，9/11 02:42 YT 新增僅為該集 clip）、Cognitive Revolution（9/10 Nathan China #3）、張小珺 #153 9/3、十字路口 9/6、硅谷101 E250 8/27、42章經 8/29、屠龍之術 9/4（各 xyzfm/fireside/anchor/megaphone RSS 逐一核實）。",
-  "report_date": "2026-09-12",
-  "deep_content_fetched": "Dwarkesh：Substack RSS content:encoded 全長逐字稿（~101k 字，含全部 9 段時間軸與快速問答）。MLST：anchor RSS show notes/itunes summary（19 段時間軸+完整引用與參考文獻清單）；YouTube 逐字稿因 IP 級 bot 阻擋（yt-dlp 各 player_client 均失敗、Invidious/timedtext/transcript 服務全阻）無法取得，改用 arXiv 2608.13331 摘要補足。其餘 8 播客逐一核實無新集。",
-  "youtube_blocked": "2026-09-12 YouTube 出現 IP 級反爬（Sign in to confirm you're not a bot），yt-dlp 各 client、Invidious、tactiq、youtube-transcript-api 均失敗；本地代理 1080/1087 不可用。MLST/No Priors 逐字稿本次未取得。"
+  "scan_status": "2026-09-13掃描：新內容3條英文（Latent Space 2條、Cognitive Revolution 1條）+ MLST 1支新剪輯 + 中文1條（屠龍之術）。①Latent Space〈The Rise of the Forward Deployed Engineer〉（9/12 15:01Z，Substack 全文 ~21.5k 字）：Vinoo Ganesh（Kepler CEO/前 Palantir Project Frontline）拆解 FDE——收集名詞與動詞、產出必須是產品、護城河=可驗證的行業營運真相。②Latent Space AINews〈DeepSeek v4.1-Flash: 763B-P8B-D16B…〉（9/12 05:56Z）：因果 Encoder-Decoder、prefill 8B/decode 16B、KV 1/8、AA Index 40、AutomationBench 69% 追平 Astra、$0.27/題（約 1/7 成本）、本地可在 4 GPU/128GB M5 Max SSD 跑；附 OpenAI GPT-Live-1、Cognition SWE-2、Cursor Projects、Anthropic 濫用報告。③Cognitive Revolution〈AI:AM Highlights: Astra as AGI…〉（9/12 15:45Z）：9/8–9/10 三場直播週報剪輯，Astra=AGI、No Adult in the Room、Mozilla Project Glasswing、Navier-Stokes 更正。④屠龍之術 feed 新集〈2026AI江湖夜話〉（9/8 04:09Z，串台《有點Yi思》Ep14）：莊明浩×王盟，四桌賽道/有效成本/AI 無網絡效應。⑤MLST 新剪輯〈AlphaGo's Move 37 Wasn't Creative?〉（9/12 09:27Z）為 9/11 Hughes 集剪輯。無新：Dwarkesh（最新 9/11 RSI 圓桌，9/12 新增僅短片）、No Priors（最新完整 9/10 Coinbase，9/12 新增僅短片）、張小珺 #153 9/3、十字路口 9/6、硅谷101 E250 8/28、42章經 8/29（各 xiaoyuzhou/xyzfm/megaphone/anchor/YouTube RSS 逐一核實）。",
+  "report_date": "2026-09-13",
+  "deep_content_fetched": "Latent Space：Substack feed content:encoded 全長（FDE 文 ~21.5k 字；AINews DeepSeek 條目全文）。Cognitive Revolution：megaphone RSS（feeds.megaphone.fm/RINTP3108857801）+ 節目頁 show notes/全文逐字稿（readability，~1h40m）。屠龍之術：小宇宙 __NEXT_DATA__ 節目 metadata + episode show notes/OUTLINE（逐字稿未公開）。MLST：YouTube channel RSS（UCMLtBahI5DMrt0NPvDSoIRQ）。中文各播客：小宇宙節目頁 __NEXT_DATA__ 逐一核實最新集。",
+  "notes2": "本次 YouTube RSS 可正常取得（上次的 IP 級反爬已解除）；Dwarkesh/No Priors 既有 YouTube RSS 亦正常，未見新全長集。小宇宙 podcast 頁面改由 curl + __NEXT_DATA__ JSON 解析，較 web_fetch 穩定（可用於取得精確 pubDate/eid）。42章經 小宇宙 id=648b0b641c48983391a63f98（iTunes id 1700299886 → feed.xyzfm.space/evgg6xle9rdc）。"
  }
 }
