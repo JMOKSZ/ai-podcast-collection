@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「有效成本 = token 成本 + 試錯成本 + 人工糾正」——屠龍之術 × 有點Yi思〈2026 AI 江湖夜話〉：四張飯桌、每兩月一次洗牌、Coding 中國走咗彎路，同「AI 沒有網絡效應」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.8rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .tl { font-size: 0.85rem; color: #8b5e3c; font-weight: 600; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  blockquote.strong.chain { font-size: 1.25rem; text-align: center; letter-spacing: 0.02em; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">屠龍之術 · 串台《有點Yi思》第 14 期 · 2026-09-08</div>
+  <h1>「有效成本 = token 成本 + 試錯成本 + 人工糾正」——2026 AI 江湖夜話：四張飯桌、每兩月一次洗牌、Coding 中國走咗彎路，同「AI 沒有網絡效應」</h1>
+  <div class="meta">
+    <span>📅 2026-09-08 04:09 UTC 發布（北京 12:09）</span><span>·</span><span>🎙️ 屠龍之術（莊明浩）</span><span>·</span><span>👤 嘉賓：王盟（螞蟻戰投「AGI及支付寶」負責人）</span><span>·</span><span>🎬 串台《有點Yi思》第 14 期</span><span>·</span><span>🏷 資本 / 賽道 / 定價</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係一次串台：《屠龍之術》feed 轉載《有點Yi思》第 14 期，莊明浩同螞蟻戰投王盟坐低，把 2026 上半年 AI 圈講成一張「<strong>不斷換座位嘅飯桌</strong>」。大模型仍坐主位，但多模態、Coding、Agent、視頻模型各自又坐成一桌。呢篇復述會把「誰上桌、誰下桌、誰掀桌、錢流向邊」逐頁翻返，包括嗰條最可操作嘅定價公式、同幾個偏空但具體嘅判斷。原文逐字稿未公開，以下係基於官方 OUTLINE（含精確時間軸）同節目描述嘅深度萃取。
+</p>
+
+<div class="highlight-box">
+  <strong>呢集嘅中心論點：</strong>2026 嘅 AI 圈唔係一條直線，而係<strong>四張平行嘅飯桌</strong>——模型主桌、Coding 桌、多模態桌、Agent 桌——每兩個月一次洗牌。最值得記低嘅唔係邊個賽道熱，而係三條<strong>反直覺但可操作嘅判斷</strong>：① 單 token 定價已經失效，要改用「<strong>有效成本 = token 成本 + 試錯成本 + 人工糾正</strong>」；② 「<strong>AI 沒有網絡效應</strong>」，所以護城河唔會自動複利；③ 下桌嘅玩家——「服務型應用一半可能消失」。投資判斷則收斂成最赤裸嘅一句：<strong>一級押具身，二級買算力</strong>。
+</div>
+
+<div class="section-title">一、兩位講者：一個遊走江湖，一個機構視角</div>
+
+<ul>
+  <li><strong>莊明浩｜《屠龍之術》主理人</strong>——遊走互聯網與風投圈嘅邊緣人士（2C 互聯網、文娛、二次元、電競、直播、美元 VC），以中文 AI 圈單口密度見長。</li>
+  <li><strong>王盟｜螞蟻戰投「AGI 及支付寶」負責人</strong>——機構投資視角（一級市場／戰略投資），負責螞蟻喺 AGI 同支付寶生態嘅佈局。</li>
+</ul>
+
+<p>呢個組合嘅有趣之處，係<strong>「江湖視角」撞「機構視角」</strong>：莊明浩睇嘅係敘事同玩家輪換嘅節奏，王盟睇嘅係資本同組織嘅真實流向。兩者交疊，先砌得出「邊個真係喺做事、邊個只係啱好站喺風口」呢個問題嘅答案。</p>
+
+<div class="section-title">二、AI 江湖座次：四條賽道分桌而立，每兩個月一輪行業洗牌</div>
+
+<p class="tl">OUTLINE：03:29 主桌之争｜07:40 SOTA 模型快速折舊與智譜的萬億市值｜13:06 2026 敘事日曆</p>
+
+<p>「主桌之争」仍然係模型本身嘅問題——但呢張主桌唔再穩定。講者指出 <strong>SOTA 模型正快速折舊</strong>：今日嘅前沿，可能兩三個月後就被追平甚至反超；佢哋用「<strong>智譜嘅萬億市值</strong>」做敘事錨點，說明市場點樣為「國產模型頭部」定價，同時亦暗示呢種定價帶有情緒成分。</p>
+
+<p>2026 嘅敘事日曆被切成兩段：<strong>春節嘅視頻模型爆發 → 暑期嘅 Agent 混戰</strong>。呢個「兩段式」嘅觀察好有用——佢解釋咗點解上半年嘅注意力喺視頻／多模態，而年中開始急速轉向 Agent。而貫穿全年嘅底色，係「每兩個月一輪洗牌」：座次未定，敘事先行。</p>
+
+<blockquote class="strong">
+  「2026 年的 AI 圈，像一張不斷換座位的飯桌。」
+  <span class="attribution">—《有點Yi思》第 14 期開場設定</span>
+</blockquote>
+
+<div class="section-title">三、第一張被掀嘅桌：Coding——國內外路線已分叉</div>
+
+<p class="tl">OUTLINE：20:25 美國頭部 ARR 已破 10 億美金｜23:02 中國 Coding 的「彎路」：從寫代碼變成辦公助手｜27:49 Coding 桌誰會留下：中國要看 To B 生態</p>
+
+<p>四張桌入面，<strong>最先被掀翻嘅係「Coding 桌」</strong>——但唔係因為佢冇價值，而係因為佢嘅<strong>贏家已經明顯分化</strong>。</p>
+
+<p>美國側嘅事實好硬：頭部 Coding 應用嘅 <strong>ARR 已經突破 10 億美金</strong>。呢個數字嘅份量在於，佢證明咗「寫代碼」呢件事本身係一個可以養出巨型公司嘅市場，唔係一個功能。</p>
+
+<p>中國側嘅診斷就辛辣啲：中國 Coding 走咗一條「<strong>彎路</strong>」——由「寫代碼」漂移成「<strong>辦公助手</strong>」。呢個觀察直指一個產品定位嘅偏離：當國產 Coding 產品為咗迎合更廣嘅用戶而弱化咗「工程師工具」嘅定位，佢就同時失去咗兩邊——既唔夠硬核畀專業開發者長期付費，又唔夠輕巧去贏辦公場景嘅通用助手之爭。</p>
+
+<p>所以「Coding 桌邊個最後留得低」嘅答案係：<strong>中國要看 To B 生態</strong>，而唔係單純睇模型 benchmark。呢句同 Latent Space 側嘅 FDE 熱潮（Vinoo Ganesh 講「護城河係被修正過嘅行業營運真相」）形成跨語言嘅共鳴：<strong>Coding 嘅終局唔喺模型，喺企業落地同生態。</strong></p>
+
+<div class="data-point">
+  <span>Coding 桌</span>
+  美國頭部 Coding 應用 ARR <strong>已破 10 億美金</strong>｜中國路線漂移：由「寫代碼」→「辦公助手」（講者稱之為「彎路」）｜下一階段勝負手：<strong>To B 生態</strong>，唔係 benchmark 排名。
+</div>
+
+<div class="section-title">四、第二張多模態桌：中國領跑係唔係成立？</div>
+
+<p class="tl">OUTLINE：30:36 美國多模態邊緣化、中國百花齊放？｜31:35 Seedance 2.0 之後，情緒面大翻轉｜33:24 中國短視頻基建如何反哺視頻模型？</p>
+
+<p>呢一節嘅論述係「美國多模態邊緣化、中國百花齊放」。呢個講法本身帶有情緒成分，但講者畀出咗一個相對結構性嘅解釋。</p>
+
+<p>轉折點係 <strong>Seedance 2.0</strong>——佢之後，<strong>情緒面出現大翻轉</strong>。所謂「情緒面」，即係市場同從業者對「中國視頻模型能唔能夠追上／反超」嘅集體判斷。呢類情緒轉折通常先於硬指標，但佢會直接影響資本同人才嘅流向。</p>
+
+<p>而更值得記低嘅係佢哋提出嘅<strong>結構性原因</strong>：<strong>中國短視頻基建反哺視頻模型</strong>——包括數據、分發同工程基建嘅複用。呢個係一個「中國特有嘅供給側優勢」論證：短視頻平台累積嘅海量視頻數據同高效分發／工程能力，令中國做視頻模型嘅邊際成本更低、迭代更快。呢個唔係單純嘅「模型做得好」，而係<strong>生態位嘅差異</strong>。</p>
+
+<div class="section-title">五、第三張桌 Agent：由「能聊天」到「可托付」</div>
+
+<p class="tl">OUTLINE：35:41 Agent：從「能聊天」到「能幹活」｜38:23 Agent 破圈：真實下沉場景已經開始｜41:33 從 OpenClaw 到「可托付」：Agent 基礎設施才剛起步</p>
+
+<p>Agent 桌嘅核心命題係<strong>「由能聊天到可托付」</strong>。呢個講法比「Agent 好唔好用」精準得多——「能聊天」係 demo 階段，「能幹活」係能力階段，而「<strong>可托付</strong>」係信任階段：你敢唔敢真係把一件有後果嘅事交畀佢，唔使肉眼覆核每步。</p>
+
+<p>講者指出，Agent 嘅<strong>真實下沉場景已經開始</strong>——即係唔再局限喺技術圈嘅玩具 demo，而係開始滲入具體行業同真實工作流。但佢同時畀咗一盆冷水：<strong>由 OpenClaw 到「可托付」，Agent 基礎設施才剛剛起步</strong>。呢句關鍵在於把問題由「模型夠唔夠聰明」搬去「<strong>infra 夠唔夠穩</strong>」：權限、隔離、審計、可靠性、失敗恢復——呢啲先係「可托付」嘅真正門檻。呢個判斷同近期 Latent Space 講 Meta Muse 個人 agent 嘅「權限作業系統」、以及 OpenAI Agents API／沙盒嘅方向完全一致。</p>
+
+<div class="section-title">六、第四張桌 價格：斬殺線橫亙，單 token 定價正在失效</div>
+
+<p class="tl">OUTLINE：43:30 價格戰：從中國燒到矽谷的「斬殺線」｜46:31 有效成本 = token 成本 + 試錯成本 + 人工糾正｜48:52 Token 補貼與無效消耗：AI 沒有網絡效應</p>
+
+<p>呢一節係全期<strong>最可操作</strong>嘅部分。價格戰由中國燒到矽谷，「斬殺線」橫亙——即係某個價位以下，玩家基本上冇得玩。但講者真正想講嘅係：<strong>單 token 定價正在失效</strong>，因為佢反映唔到真實成本結構。</p>
+
+<blockquote class="strong chain">
+  有效成本 = token 成本 + 試錯成本 + 人工糾正
+  <span class="attribution">— OUTLINE 04-48 段「價格桌」論點</span>
+</blockquote>
+
+<p>呢條公式嘅價值在於佢把「AI 平唔平」呢個問題拆成三截。當 token 單價因為補貼而趨近於零時，用戶體驗到嘅總成本其實由另外兩截主宰：<strong>試錯成本</strong>（問錯、猜錯、重跑嘅消耗）同<strong>人工糾正</strong>（agent 做錯之後，人要花幾多時間去執手尾）。呢個正好解釋咗一個反直覺現象：token 越來越平，但企業嘅 AI 總支出反而上升——因為佢哋買嘅唔係 token，係「可交付嘅結果」。</p>
+
+<p>講者仲點名 <strong>token 補貼同「無效消耗」</strong> 嘅問題，並拋出一個全場最反直覺嘅判斷：</p>
+
+<blockquote class="strong">
+  「AI 沒有網絡效應。」
+  <span class="attribution">—《有點Yi思》第 14 期「價格桌」</span>
+</blockquote>
+
+<p>呢句值得停一停。傳統互聯網嘅護城河公式係「用戶越多 → 數據越多 → 產品越好 → 用戶更多」，但 AI 應用嘅呢條迴路明顯更弱：模型能力係租返嚟嘅（會折舊）、數據嘅邊際增益唔一定複利、用戶轉換成本亦未必隨規模上升。如果「AI 沒有網絡效應」成立，咁多數 AI 應用嘅估值邏輯就要由「平台」改回「生意」——呢個係一個偏空、但極具體嘅判斷。</p>
+
+<div class="section-title">七、2026 年 AI 嘅錢流向邊？</div>
+
+<p class="tl">OUTLINE：50:02 投資人視角：掀桌子太快，但人在江湖身不由己｜56:18 一級押具身，二級買算力｜01:01:22 大廠身位：邊打邊看，組織是核心變量｜01:18:24 下桌的玩家：服務型應用一半可能消失</p>
+
+<ul>
+  <li><strong>投資人視角：</strong>「掀桌子太快，但人在江湖身不由己」——呢句道盡一級市場嘅兩難：明知賽道輪換太快、估值有泡沫，但唔落注又怕錯過，落咗注又怕接火棒。</li>
+  <li><strong>一級押具身，二級買算力：</strong>呢個係全期最赤裸嘅資金流向判斷。<strong>一級市場</strong>押注具身智能（希望押中下一波硬件浪潮嘅頭部），<strong>二級市場</strong>則買確定性最高嘅算力（賣鏟人邏輯）。呢個「一級風險、二級確定」嘅分野，係 2026 資本市場最清楚嘅一條線。</li>
+  <li><strong>大廠身位：</strong>大廠嘅策略係「邊打邊看」，而講者點名<strong>「組織是核心變量」</strong>——即係話大廠勝負唔喺模型本身，喺能唔能夠快速重組團隊、迭代打法。</li>
+  <li><strong>下桌嘅玩家：</strong>最扎心嘅一句——<strong>服務型應用一半可能消失</strong>。呢個判斷同「AI 沒有網絡效應」+「單 token 定價失效」構成一套邏輯：當模型能力被平台化、而應用層冇網絡效應護城河，中間好多「套殼服務」會被上下夾擊而消失。</li>
+</ul>
+
+<div class="data-point">
+  <span>2026 錢流向一圖睇</span>
+  <strong>一級：押具身</strong>（風險注）｜<strong>二級：買算力</strong>（確定性）｜大廠：邊打邊看、<strong>組織為核心變量</strong>｜下桌：<strong>服務型應用一半可能消失</strong>｜定價邏輯：單 token 失效 → 改用<strong>有效成本</strong>。
+</div>
+
+<div class="section-title">八、俾「唔投 AI、唔創業」嘅人：克服恐懼</div>
+
+<p class="tl">OUTLINE：01:29:56 克服恐懼，AI 比以往所有新事物都更容易接受</p>
+
+<p>收尾一節，講者跳出賽道，回到普通人嘅角度：對「唔投 AI、唔創業」嘅人嚟講，該關注咩信號？佢哋嘅結論意外地溫和——<strong>克服恐懼</strong>。理由係：AI 比以往所有新事物都更容易被接受，因為佢嘅門檻係「用」，而唔係「造」。呢句作為全場收尾，把前面所有關於資本、賽道、定價嘅冷靜拆解，重新拉回一個更樸素嘅觀察：<strong>無論江湖點洗牌，最終受益嘅係肯用嘅人。</strong></p>
+
+<div class="section-title">九、關鍵引用</div>
+
+<blockquote>「2026 年的 AI 圈，像一張不斷換座位的飯桌。」
+  <span class="attribution">— 開場設定</span></blockquote>
+<blockquote>「有效成本 = token 成本 + 試錯成本 + 人工糾正。」
+  <span class="attribution">—「價格桌」核心公式</span></blockquote>
+<blockquote>「AI 沒有網絡效應。」
+  <span class="attribution">—「價格桌」反直覺判斷</span></blockquote>
+<blockquote>「誰在上桌，誰在下桌，誰又在掀下一張桌？……錢往哪去，機會往哪去，下一張桌又會是誰來擺。」
+  <span class="attribution">— 節目主旨</span></blockquote>
+
+<div class="section-title">十、行業 insight</div>
+
+<ul>
+  <li><strong>「價格桌」係隱形殺手：</strong>單 token 定價失效、需按「有效成本」重估，係本期最可操作嘅框架——對應用／Agent 創業者而言，<strong>token 便宜 ≠ 生意便宜</strong>，試錯同人工糾正才是成本大頭。呢個直接解釋點解企業 AI 支出同 token 單價走勢可以相反。</li>
+  <li><strong>「服務型應用一半可能消失」＋「AI 沒有網絡效應」</strong>係兩個偏空但具體嘅判斷，同本期英文側 Cognitive Revolution 講「服務業被 Agent 重構」形成呼應。</li>
+  <li><strong>Coding 喺中國嘅「彎路」</strong>（寫代碼 → 辦公助手）係少見嘅、以中國視角拆解嘅路線反思，可對照矽谷 FDE／Coding Agent 熱潮同 Latent Space 嘅 FDE 長文。</li>
+  <li><strong>「組織是核心變量」</strong>同「真實下沉場景已經開始」兩句，把 AI 競爭由模型層拉回組織同落地層——同近期一眾「瓶頸唔喺模型 IQ、而在 context／access／組織」嘅討論同頻。</li>
+</ul>
+
+<div class="section-title">十一、前後脈絡</div>
+
+<p>《屠龍之術》上一集為 2026-09-04〈中國一級半市場的水下江湖-續集〉，再前為 2026-09-02〈AI 李時珍帶你「嘗百草」〉；本集為 9/8 嘅串台特輯（《有點Yi思》第 14 期）。節目近期主線持續圍繞「一級半市場／資本流向」同「AI 應用公司嘅兩種命運」（8/31〈模型到底吃不吃應用？——從 Canva、Figma 到美圖〉），本集把「四桌賽道」同「錢的流向」合併成一張總圖。橫向可對照同期《42章經》「蒸餾 → 合成數據 → RSI」、9/13《十字路口》具身圓桌（一級押具身 vs 二級買算力）——兩者喺「錢流向邊」呢個問題上高度一致。</p>
+
+<div class="highlight-box">
+  <strong>整合 insight：</strong>呢集最有用嘅唔係「邊個賽道熱」嘅清單，而係<strong>兩個可以拎走嘅工具</strong>：一條公式（有效成本 = token + 試錯 + 人工糾正）同一個否定命題（AI 沒有網絡效應）。兩者合起來，其實係在拆穿一種常見嘅估值錯覺——「模型越強 → 應用越賺」。真相更可能係：模型係租返嚟、會折舊；應用層冇網絡效應、護城河唔會自動複利；而用戶真正付嘅係「可交付結果」，成本大頭喺試錯同人工執手尾。至於資本嘅答案，其實好老實——<strong>一級押具身（賭未來），二級買算力（收當下）</strong>，而中間嘅服務型應用，講者估有一半會消失。聽完呢集，你至少唔會再把「token 補貼價」誤當成「生意成本」。
+</div>
+
+<p style="font-size:0.9rem; color:#888; margin-top:2rem;"><strong>一個誠實嘅 caveat：</strong>呢篇係基於《屠龍之術》feed 轉載《有點Yi思》第 14 期〈2026 AI 江湖夜話：誰在上桌、下桌、掀桌，錢又流向了哪？｜對話「屠龍之術」莊明浩〉（2026-09-08 04:09 UTC 發布，嘉賓王盟）之官方 show notes／OUTLINE（含精確時間軸 03:29–01:29:56，共七大板塊），以及節目描述之深度萃取。<strong>本集逐字稿未公開</strong>，所有「論點」係對 OUTLINE 要點同公開摘要嘅撮譯與分析，並非逐字原文；「美國頭部 Coding ARR 破 10 億美金」「智譜萬億市值」「Seedance 2.0」等為節目中提及之市場數字／事件，未經獨立核實。「AI 沒有網絡效應」「服務型應用一半可能消失」「一級押具身、二級買算力」等均為兩位講者嘅個人判斷，非共識事實。中文為撮譯，立場屬本站分析視角。</p>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述出自《有點Yi思》第 14 期（《屠龍之術》串台）官方 OUTLINE 同小宇宙節目頁 show notes。中文為撮譯。
+</p>
+
+<footer>
+  <p>Deep Dive #153 · 屠龍之術 ×《有點Yi思》第 14 期：2026 AI 江湖夜話（2026-09-08 發布）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-09-14 06:20 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
