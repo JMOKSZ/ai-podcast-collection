@@ -1413,6 +1413,18 @@ function togglePastReports() {
   <p class="note">The Cognitive Revolution（9/12，1h40m，Nathan Labenz ＋ Prakash Narayanan，八段週報）：Prakash 週末連跑 3–4 個 Astra agent 後斷言「它就是 AGI」；Nathan 拆解持久性來自長壽 notes file＋回溯搜尋，並指 METR 圖因「任務長度追唔上迭代速度」而失效。最硬嘅係治理偵查——Apollo 只得 3 日測 Astra、Redwood 薪酬 35–85 萬／METR 拒收前沿資金、OpenAI 圖表「non-Astra」被質疑公然誤導（RL 只停咗一半）、資本循環點解迫住 Anthropic 向前跑；Mozilla CTO Raffi 講 Project Glasswing（Firefox 掃描自費數十萬、每月開支）同「只有人類可以先 commit」；Baseten 90% 收入嚟自客戶自訂模型。收尾回到 Dan Hendrycks〈Suicidal Compassion〉同「金融市場先係真正嘅 paper clipper：我哋能唔能夠攞返控制權？」· The Cognitive Revolution</p>
 </div>
 
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/156-cognitive-revolution-anton-leicht-balance-of-ai-power.html">「AI 時代嘅權力平衡」——CR × Anton Leicht（Carnegie）：pacing deals 點解咁難、中等強國用「數據中心換模型訪問」、同一個 10% 的 doom 估算</a></h3>
+  <p class="note">The Cognitive Revolution（9/15，約 2h9m，Nathan Labenz × Anton Leicht——Carnegie Endowment fellow、《Threading the Needle》作者）：唔問「會唔會毀滅世界」，問「當 AI 愈強，邊個仍然揸住權力？」——關切超越災難事故，指向「國家同個人變得更富有、同時失去影響所依賴系統嘅能力」。開場分歧：Nathan 指向 Hugging Face「OpenFace incident」＋ METR 獨立調查，Anton 對現時能力較不恐慌、更怕下一個門檻（實驗室內部自動化研究、可媲美 Mythos 嘅生物能力）。Pause 之爭：僅凍結前沿訓練＝中國可喺製造／電力／機器人／國產芯片（含 SMIC 供應鏈）自由推進，Nathan 願接受中國一定程度追趕；市場韌性分歧＝Nathan 見「現有模型大量未被使用嘅經濟價值」vs Anton 擔心估值已預期「更豐厚嘅研究自動化」。監督：行政壓力推獨立事故調查＋ METR／Redwood 持續訪問權、讚 FRONTIER Act 部分條文同 CAISI、自願協議陣營判斷「OpenAI＋Anthropic 有共同點、DeepMind 可能參與、Meta／xAI 阻力大」，障礙係反壟斷不確定性同政治選擇性執法。中等強國策略＝compute-for-access（數據中心換訪問）＋安全實踐對齊＋用 ASML／ZEISS 嚇阻脅迫斷供；國家巡禮挪威／澳洲／新加坡／UAE；台海風險以既有芯片＋TSMC Arizona 部分吸收但唔聲稱已解決；物質繁榮 vs 能動性（agency）。軌道數據中心＝若每塊新芯片都上太空，SpaceX／發射能力更核心、地面宿主議價權消失、反衛星進入威懾。Doom 估算約 10%（含永久失權＋穩定極權，單計滅絕顯著更低）。金句：「相對 agents 實際上做到嘅嘢，佢哋失控嘅時間點比人們想像中更早」「法律制度唔係為完美執法而設」「確保實驗室唔會喺權力同控制上同美國政府拉開距離」。· The Cognitive Revolution</p>
+</div>
+
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/157-sv101-e251-inference-chips-groq-cerebras-jalapeno-bill-dally.html">「訓練看算力，推理看帶寬」——硅谷101 E251 推理芯片之戰：Groq、Cerebras、OpenAI Jalapeño 三條路線，同 Bill Dally 嘅設計哲學</a></h3>
+  <p class="note">硅谷 101（9/16，1h31m，泓君 Jane，嘉賓 Mark（Bill Dally 學生）＋徐子揚，均為 SRAM 推理芯片創業者）：Token 經濟成形下，把推理芯片牌桌逐一手術台——去年年底英偉達以約 200 億美元 acqui-hire Groq、Cerebras 今年 6 月 IPO 市值 670 億、OpenAI 聯手博通推出自研推理芯片 Jalapeño（9 個月流片、選 HBM4、「不缺錢但缺電」）。骨架一句：Prefill 算力密集型 vs Decode 內存帶寬密集型——「訓練看算力，推理看帶寬」；KV Cache／緩存命中、Attention「找關係」vs FFN「加工信息」、SRAM（6 晶體管／bit、0.3–3ns、容量極小）／DRAM（50–100ns、需刷新）／HBM（3D 堆疊、極度缺貨）三兄弟。路線取捨：Groq＝確定性靜態編譯（軟肋動態性不足）；Cerebras＝晶圓級大芯片（軟肋良率、成本、系統適配）；尖銳判斷「推理時代 CUDA 一定會被繞過」。護城河收窄成速度／性價比／耗電量，反直覺一句「速度越快，AI 越聰明」；面對模型迭代要抓「不變量」；「消失的算力」為何利用率跑不滿；芯片設計全流程＋流片成本數百萬美元。Bill Dally 哲學：為未來 AI 補齊強邏輯、「一切圍繞局部性展開」、跳出 local minimum 要想清楚犧牲什麼。下半場懸念：SRAM 優勢還能保持多久、芯片內異構、暗矽。· 硅谷101</p>
+</div>
+
 <footer>
   <p>JMOKSZ / ai-podcast-collection</p>
   <p style="margin-top:0.3rem;">每日 10:03 自動掃描更新 · Apache 2.0</p>

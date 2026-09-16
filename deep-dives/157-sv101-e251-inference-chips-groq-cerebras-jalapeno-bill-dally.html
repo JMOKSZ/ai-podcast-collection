@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「訓練看算力，推理看帶寬」——硅谷101 E251 推理芯片之戰：Groq、Cerebras、OpenAI Jalapeño 三條路線，同 Bill Dally 嘅設計哲學</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">硅谷 101 · E251 · 2026-09-16</div>
+  <h1>「訓練看算力，推理看帶寬」——推理芯片之戰：Groq、Cerebras、OpenAI Jalapeño 三條路線，同 Bill Dally 嘅設計哲學</h1>
+  <div class="meta">
+    <span>📅 2026-09-16 00:00 UTC（北京 09-16 08:00）發布</span><span>·</span><span>🎙️ 硅谷 101（泓君 Jane）</span><span>·</span><span>⏱ 1 小時 31 分 32 秒</span><span>·</span><span>🏷 推理芯片 / 半導體 / 算力經濟</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+過去幾年推理消耗嘅 Token 爆炸式增長，Token 經濟成形，推理專用芯片持續升溫。硅谷 101 呢集請嚟兩位一線 AI 芯片創業者——Mark（英偉達首席科學家 <strong>Bill Dally</strong> 嘅學生）同徐子揚——把推理芯片牌桌上嘅主要玩家逐一放上手術台：Groq、Cerebras、OpenAI 自研嘅 Jalapeño，加上之前傾過嘅 Google TPU。拆解嘅核心問題係三個：<strong>呢場仗各家真正比拼嘅係咩？點解佢哋走向唔同嘅技術路徑？未來又會向咩方向收斂？</strong> 中間仲插入咗一段對 Bill Dally 設計哲學嘅側寫——呢位被稱為「現代 GPU 並行架構最重要奠基者之一」嘅人，點樣思考取捨。
+</p>
+
+<div class="highlight-box">
+  <strong>呢集嘅中心論點：</strong>一句話總結全集骨架——<strong>「訓練看算力，推理看帶寬。」</strong>推理分兩個階段：<strong>Prefill（預填充）</strong>係<strong>算力密集型</strong>，<strong>Decode（解碼）</strong>係<strong>內存帶寬密集型</strong>——每生成一個詞，都要將成個模型權重由存儲讀入計算單元。所以推理芯片嘅戰爭本質上係<strong>「帶寬之戰」</strong>。由此推出一個相當尖銳嘅判斷：<strong>「推理時代，CUDA 一定會被繞過」</strong>——當推理成為主戰場、任務高度定型，專用芯片同新編譯棧有機會繞開英偉達嘅軟件護城河。而推理時代嘅芯片護城河收窄成三個指標：<strong>速度、性價比、耗電量</strong>；其中最有反直覺色彩嘅一句係——<strong>「速度越快，AI 越聰明」</strong>。
+</div>
+
+<div class="section-title">一、呢集係咩場合：Token 經濟下嘅推理芯片牌桌</div>
+
+<p>呢集係一份「推理芯片競爭格局」嘅即時快照。三個動作喺同一時間發生，指向同一件事——<strong>推理（而唔係訓練）正在成為算力競爭嘅主戰場</strong>：</p>
+
+<ul>
+  <li><strong>英偉達以約 200 億美元對 Groq 進行「收購」（acqui-hire）</strong>——唔係傳統併購，而係連人帶技術一齊吸走。</li>
+  <li><strong>Cerebras 今年 6 月 IPO，市值達 670 億美元</strong>——做晶圓級「大芯片」嘅公司得到公開市場認可。</li>
+  <li><strong>OpenAI 聯手博通推出首款自研推理芯片 Jalapeño</strong>——<strong>從設計到流片僅用 9 個月</strong>，通用芯片、低能耗，選擇 <strong>HBM4</strong> 而唔係 SRAM 路線；一句話概括佢哋嘅處境：「<strong>不缺錢，但缺電</strong>」。</li>
+</ul>
+
+<p>嘉賓背景值得記低：Mark 同徐子揚都係做 <strong>SRAM 推理芯片方案</strong>嘅創業者，即係話佢哋並非中立評論員，而係身處牌桌上嘅玩家——呢個令佢哋對「取捨」嘅講法特別有實感。而 Mark 師承 Bill Dally，可以從學生視角還原 Dally 點樣思考創新同取捨。</p>
+
+<div class="section-title">二、技術底層：Prefill / Decode、KV Cache、Attention / FFN</div>
+
+<p>呢段係理解全集嘅基礎，硅谷 101 特登喺 show notes 附名詞解釋，抵讚。</p>
+
+<div class="sub-title">Prefill vs Decode：兩種完全唔同嘅負載</div>
+<ul>
+  <li><strong>Prefill（預填充）</strong>：一次性並行處理完整輸入提示詞，生成 KV 緩存同第一個 Token。屬<strong>計算密集型</strong>，瓶頸在<strong>算力</strong>。</li>
+  <li><strong>Decode（解碼）</strong>：基於 KV 緩存逐個自回歸生成後續 Token。屬<strong>內存帶寬密集型</strong>——每生成一個詞，都要把整個模型權重由存儲讀到計算單元。瓶頸在<strong>帶寬</strong>。</li>
+</ul>
+<p>呢個區分係「訓練看算力，推理看帶寬」嘅技術根據。而佢亦解釋咗一個實務現象：Decode 階段嘅成本，主要由「讀權重」主導，所以模型壓縮（量化）同權重放置位置（放喺邊種存儲）比純算力更關鍵。</p>
+
+<div class="sub-title">KV Cache 同「緩存命中」</div>
+<p><strong>KV Cache（鍵值緩存）</strong>係注意力機制中嘅中間計算結果，避免每次生成新 Token 時重複計算歷史 Token 嘅鍵值向量。當新請求同之前處理過嘅內容有相同前綴（prefix），就可直接複用已有 KV Cache——呢個叫<strong>「緩存命中（cache hit）」</strong>。呢個機制係所有推理優化（尤其係 cache-aware routing）嘅基礎。</p>
+
+<div class="sub-title">Attention / FFN：模型靜態權重嘅主體</div>
+<ul>
+  <li><strong>Attention（注意力機制）</strong>：負責「找關係」，讓每個 Token 關注序列中其他 Token 嘅信息，參數量較小，但<strong>計算模式隨上下文長度變化</strong>。</li>
+  <li><strong>FFN（前饋網絡）</strong>：負責「加工信息」，獨立處理每個 Token，<strong>參數量極大</strong>，係模型靜態權重嘅主要部分。</li>
+</ul>
+<p>呢個區分唔止係學術細節——佢直接決定芯片點設計：FFN 權重巨大，所以 Decode 階段嘅帶寬壓力主要嚟自 FFN 權重讀取；而 Attention 嘅 KV cache 則隨上下文長度膨脹。兩者對存儲層級嘅需求唔同。</p>
+
+<div class="sub-title">SRAM / DRAM / HBM：三種存儲嘅取捨</div>
+<ul>
+  <li><strong>SRAM</strong>：用 <strong>6 個晶體管存 1bit</strong>，延遲僅 <strong>0.3–3ns</strong>，帶寬性價比極高，但<strong>容量極小</strong>。</li>
+  <li><strong>DRAM</strong>：用 <strong>1 晶體管＋1 電容</strong>，容量大、成本低，但延遲 <strong>50–100ns</strong> 且<strong>需刷新</strong>。</li>
+  <li><strong>HBM</strong>：本質係 <strong>3D 堆疊嘅 DRAM</strong>，通過超寬總線實現高帶寬，容量較大但<strong>成本高</strong>，而且市場上<strong>極度缺貨</strong>。</li>
+</ul>
+<p>呢張表係理解 Groq 同 Cerebras 路線分歧嘅鎖匙：Groq（同兩位嘉賓自己嘅方案）押注 <strong>SRAM 嘅超低延遲</strong>；而 OpenAI Jalapeño 選擇 <strong>HBM4</strong>——唔跟 SRAM 路線，理由係佢哋「不缺錢，但缺電」，容量同功耗嘅平衡更重要。</p>
+
+<div class="section-title">三、三條路線嘅取捨：Groq、Cerebras，同「CUDA 會被繞過嗎」</div>
+
+<div class="sub-title">Groq：確定性、靜態編譯調度——軟肋在動態性不足</div>
+<p><strong>Groq 路線</strong>嘅核心係<strong>確定性（determinism）＋ 靜態編譯調度</strong>。編譯期就決定晒執行計劃，運行時唔使動態調度。優點係<strong>可預測、低抖動（low jitter）</strong>——對延遲敏感嘅推理場景極有價值。但軟肋亦好清楚：<strong>動態性不足</strong>。一旦模型或請求形態變化，靜態編譯嘅優勢可能<strong>反成包袱</strong>——你冇辦法即時適應新嘅負載模式。呢個「確定性 vs 動態性」嘅張力，係推理芯片設計嘅一條主線。</p>
+
+<div class="sub-title">Cerebras：晶圓級大芯片——軟肋在良率、成本與系統適配</div>
+<p><strong>Cerebras 路線</strong>係把<strong>整片晶圓當一顆芯片</strong>（wafer-scale），賣點係<strong>片上帶寬驚人</strong>。但軟肋亦有三個：</p>
+<ul>
+  <li><strong>良率（yield）</strong>——晶圓越大，出缺陷嘅概率越高；良率直接決定成本。</li>
+  <li><strong>成本</strong>——承接上面嘅良率問題，單片成本壓力大。</li>
+  <li><strong>系統適配（system integration）</strong>——點樣同現有數據中心、模型生態融合，係落地門檻。</li>
+</ul>
+
+<div class="sub-title">英偉達為何要 acqui-hire Groq？</div>
+<p>節目有一段專門討論呢個問題。表面上 Groq 係英偉達嘅競爭對手，但英偉達用約 200 億美元「收購」佢——呢個動作嘅解讀係：<strong>英偉達唔想喺推理時代被繞過，所以直接把手持「繞過方案」嘅團隊收編。</strong> 換句話講，呢單交易本身就係對「CUDA 可能被繞過」呢個判斷嘅一個默認。</p>
+
+<div class="sub-title">「推理時代，CUDA 一定會被繞過」</div>
+<p>呢個係全集最尖銳嘅判斷。邏輯係：CUDA 嘅護城河建立在「通用性＋生態鎖定」之上——你寫咩模型都要用佢。但<strong>當推理成為主戰場，任務高度定型</strong>（大量重複嘅 attention／FFN 運算），專用芯片＋新編譯棧就有機會繞開呢個護城河。當然，呢個係一個有時間尺度嘅判斷——唔係話 CUDA 明日就死，而係話「推理時代嘅贏家，未必需要 CUDA」。</p>
+
+<div class="section-title">四、推理時代嘅芯片護城河：速度、性價比、耗電量</div>
+
+<p>兩位嘉賓認為，推理時代嘅芯片護城河收窄成<strong>三個指標：速度、性價比、耗電量</strong>。其中最有反直覺色彩嘅論點係——</p>
+
+<blockquote class="strong">
+  「速度越快，AI 越聰明。」
+</blockquote>
+
+<p>點解？因為推理延遲本身係能力嘅一部分：更快嘅推理＝更多「思考時間（think time）」可以塞入同一時間預算，或者更好嘅體驗。對 agent 場景尤其明顯——如果每個工具調用要等幾秒，一個需要 50 步嘅任務就會慢到唔可用。<strong>速度唔止係體驗問題，而係能力邊界問題。</strong></p>
+
+<div class="sub-title">面對模型快速迭代，要抓住「不變量」</div>
+<p>一條好實用嘅創業建議：<strong>芯片生命周期遠長於模型版本</strong>（一顆芯片要賣幾年，一個模型架構可能半年就換）。所以芯片設計要押注嗰啲<strong>唔隨模型架構劇變而失效嘅底層特性</strong>——例如局部性（locality）、帶寬需求、數值格式等「不變量」。如果你嘅芯片只係為今日嘅某個模型架構度身訂造，好快就會變成孤兒。</p>
+
+<div class="sub-title">「消失的算力」：為何芯片利用率跑不滿</div>
+<p>呢個係一個好真實嘅痛點：<strong>真實負載下，算力常常用唔盡</strong>。原因係設計同調度共同造成嘅——記憶體瓶頸、同步開銷、負載不均、請求形態變化，都令「理論峰值」變成紙上數字。呢個現象解釋咗點解「帶寬」比「算力」更關鍵：你買到嘅算力，實際用得到嘅可能只有一部分。</p>
+
+<div class="sub-title">芯片設計全流程</div>
+<p>節目完整走咗一次芯片設計流程，值得記低作 checklist：<strong>需求 → 架構 → RTL → 驗證 → 後端 → 流片 → 封裝測試 → 良率 → 交付</strong>。其中 <strong>Kernel（算子）</strong>係連接 AI 算法同芯片硬件嘅「翻譯官」——將矩陣乘法、注意力等算法操作轉化為硬件可執行指令，屬內核級編程，直接決定推理速度、能耗同兼容性。</p>
+
+<div class="data-point">
+  <span>流片成本</span>
+  先進製程<strong>一次流片成本可達數百萬美元</strong>，而且<strong>若設計有誤，整批芯片可能報廢</strong>。流片（Tape Out）＝設計完成後將電路版圖交晶圓廠製造；晶圓廠據此製作掩模（Mask），再經光刻等工序生產。
+</div>
+
+<div class="section-title">五、國內優勢與「創業者如何同模型廠商競爭」</div>
+
+<p>節目有一段講中國芯片創業嘅現實：<strong>國內優勢＝供應鏈 ＋ 基礎設施 ＋ 開源生態</strong>。呢三樣加埋，令中國團隊可以更快、更便宜地迭代硬件方案。</p>
+
+<p>但同時有一個結構性難題：<strong>創業者做芯片，要面對「如何同模型廠商競爭／協同」嘅現實問題。</strong> 呢個問題嘅本質係：如果模型廠商自己落場做芯片（好似 OpenAI 做 Jalapeño、Google 做 TPU），咁獨立芯片創業者嘅空間喺邊？答案可能係「做模型廠商唔想做嘅部分」（例如特定負載嘅專用加速），或者「做佢哋做唔到嘅速度」。</p>
+
+<div class="section-title">六、Bill Dally 嘅芯片設計哲學</div>
+
+<p>呢段係全集最有「傳承味道」嘅部分，由學生 Mark 還原。</p>
+
+<div class="sub-title">為未來 AI 補齊「強邏輯」</div>
+<p>現有 GPU 嘅強項係<strong>並行數值計算</strong>，但<strong>邏輯／控制能力相對弱</strong>。Dally 嘅方向係為未來 AI <strong>補齊「強邏輯」</strong>——當模型需要更多推理、分支、控制流，單純嘅數值吞吐就會撞牆。呢個判斷同近兩年「推理模型」興起嘅方向完全一致。</p>
+
+<div class="sub-title">「一切圍繞局部性展開」</div>
+<blockquote class="strong">
+  「一切圍繞局部性展開。」（memory locality 係並行架構設計嘅第一性原理）
+</blockquote>
+<p>呢句係 Dally 設計哲學嘅核心。局部性（locality）指嘅係：數據放得離計算單元越近，訪問越快越省電。所有並行架構嘅取捨——邊個層級放幾多緩存、點樣劃分計算單元——本質上都係局部性問題。呢個亦解釋咗點解 SRAM 路線咁有吸引力：把權重放喺超低延遲嘅片上存儲，就係局部性嘅極致。</p>
+
+<div class="sub-title">跳出 local minimum，必須想清楚「犧牲什麼」</div>
+<p>第三條哲學：<strong>架構取捨冇免費午餐</strong>，關鍵係<strong>有意識地選擇 trade-off</strong>，而唔係盲目優化。如果你只係喺現有設計上做局部改良，好容易困喺 local minimum；要跳出嚟，就必須<strong>想清楚自己願意犧牲咩</strong>——例如放棄通用性換專用性能，放棄容量換延遲。</p>
+
+<p>節目仲提到 <strong>Bill 給學生嘅創業建議</strong>，以及佢對<strong>亞馬遜工程哲學</strong>嘅觀察（呢部分係側寫，無詳細數字）。呢啲內容嘅價值唔在於「八卦」，而在於揭示一個頂尖架構師點樣把「物理約束」翻譯成「設計原則」。</p>
+
+<div class="section-title">七、OpenAI Jalapeño 解析：9 個月流片、揀 HBM4、「不缺錢但缺電」</div>
+
+<p>呢段係全集最新嘅料。Jalapeño 嘅特點：</p>
+<ul>
+  <li><strong>通用芯片、低能耗</strong>。</li>
+  <li><strong>從設計到流片僅用 9 個月</strong>——對比傳統芯片 2–3 年週期，呢個速度極快。</li>
+  <li>選擇 <strong>HBM4</strong>（而唔係 SRAM 路線）——即係話，OpenAI 選擇「容量同生態兼容性」而唔係「超低延遲」。</li>
+  <li>一句話概括佢哋嘅約束：「<strong>不缺錢，但缺電</strong>」——呢個係 2026 年 AI 基建嘅核心瓶頸轉移：由「買唔買到芯片」變成「有冇電同散熱」。</li>
+</ul>
+
+<p>節目亦提出一個架構層面嘅對比：<strong>系統級異構（system-level heterogeneous）</strong>——喺系統層面組合唔同類型嘅計算芯片（GPU、SRAM 推理芯片、專用加速器），用最啱嘅硬件做對應部分。而 <strong>OpenAI Jalapeño 則選擇將異構收進單顆芯片內部（芯片內異構）</strong>。呢個係兩種完全唔同嘅哲學：一個係「喺外面拼」（模組化、可替換），一個係「喺入面拼」（緊耦合、高效率）。</p>
+
+<p>最後嘅懸念：「<strong>SRAM 優勢還能保持多久</strong>」同「<strong>芯片內異構、暗矽（dark silicon）</strong>」被列為下半場嘅關鍵問題。暗矽指芯片上因為功耗／散熱限制而唔能夠同時點亮嘅晶體管區域——呢個係摩爾定律放緩後嘅核心設計約束。</p>
+
+<div class="data-point">
+  <span>三大玩家數字</span>
+  英偉達以約 <strong>200 億美元</strong>對 Groq 進行 acqui-hire（去年年底）；Cerebras <strong>2026 年 6 月 IPO，市值 670 億美元</strong>；OpenAI Jalapeño <strong>9 個月流片</strong>、選 <strong>HBM4</strong>、聯手博通。
+</div>
+
+<div class="data-point">
+  <span>存儲三兄弟</span>
+  <strong>SRAM</strong>：6 晶體管/bit，延遲 <strong>0.3–3ns</strong>，帶寬性價比極高、容量極小。<strong>DRAM</strong>：1 晶體管＋1 電容，延遲 <strong>50–100ns</strong>，需刷新、容量大、成本低。<strong>HBM</strong>：3D 堆疊 DRAM＋超寬總線，容量較大、成本高、<strong>極度缺貨</strong>。
+</div>
+
+<div class="section-title">八、重點引用</div>
+
+<blockquote class="strong">「訓練看算力，推理看帶寬。」</blockquote>
+<blockquote class="strong">「推理時代，CUDA 一定會被繞過。」</blockquote>
+<blockquote class="strong">「一切圍繞局部性展開。」<span class="attribution">— Bill Dally 設計哲學</span></blockquote>
+<blockquote class="strong">「速度越快，AI 越聰明。」</blockquote>
+<blockquote>「跳出 local minimum，必須想清楚犧牲什麼。」<span class="attribution">— 論 Bill Dally 嘅架構取捨觀</span></blockquote>
+<blockquote>「不缺錢，但缺電。」<span class="attribution">— 概括 OpenAI Jalapeño 嘅約束</span></blockquote>
+
+<div class="highlight-box">
+  <strong>整合 insight：</strong>呢集等於一份「推理芯片競爭格局」嘅即時快照，而且佢嘅價值唔止於技術科普。三個動作同時指向同一件事：<strong>推理（而唔係訓練）正成為算力競爭嘅主戰場</strong>。而嘉賓認為專用芯片有機會繞開 CUDA，意味著<strong>英偉達嘅軟件護城河在推理時代未必牢不可破</strong>——英偉達自己似乎亦默認咗呢點（用 200 億收編 Groq）。NVIDIA 自己（透過 Dally 哲學）則喺往「強邏輯＋局部性」方向補課。對做 AI Infra 嘅人嚟講，最可操作嘅三個要點係：① <strong>Decode 階段係帶寬瓶頸，唔係算力瓶頸</strong>——優化方向要對；② <strong>推理延遲係能力嘅一部分</strong>——速度唔止係體驗；③ <strong>芯片要押「不變量」</strong>——唔好為今日嘅模型架構度身造。
+</div>
+
+<div class="section-title">九、前後脈絡 / 行業背景</div>
+
+<ul>
+  <li><strong>同 9/16 同期 Latent Space AINews（AEF-1 標準）對照：</strong>芯片係「能力」嘅物理基礎，評估標準係「治理」嘅制度基礎——同一日嘅兩條線，一個講硬件、一個講制度。</li>
+  <li><strong>同硅谷 101 自家系列互補：</strong>呢集係繼〈挑戰 GPU、繞過 HBM，深挖史上最大芯片背後的 Cerebras〉同〈谷歌 TPU 能撼動英偉達嗎？前 TPU 工程師首次揭秘〉之後嘅第三集，構成「推理芯片三部曲」。前兩集分別講 Cerebras 同 TPU，呢集把 Groq、Cerebras、OpenAI Jalapeño 三條路線並置。</li>
+  <li><strong>同 9/3 No Priors × Rene Haas（Arm）對照：</strong>Arm 嗰集講「agent 時代瓶頸係 orchestration——memory hierarchy、data movement、inference routing 全部係 CPU 本行」；呢集由芯片創業者視角講「推理看帶寬」——兩者係同一個診斷嘅兩個切面：<strong>記憶體層級同數據移動，係推理時代嘅真正戰場。</strong></li>
+</ul>
+
+<p style="font-size:0.9rem; color:#888; margin-top:2rem;"><strong>一個誠實嘅 caveat：</strong>呢篇係基於《硅谷 101》E251〈推理芯片之战：聊聊 Groq、Cerebras 与 OpenAI 三大路径与 Bill Dally 的设计哲学〉（2026-09-16 00:00 UTC 發布，1:31:32）sv101.fireside.fm/264 官方 Show Notes ＋ 完整章節時間軸（04:17–01:27:03）＋ 名詞解釋萃取。官方逐字稿 API 未提供，故直接引用以 show notes 標題句同嘉賓論點為準。嘉賓 Mark、徐子揚均為 AI 芯片創業者（做 SRAM 推理芯片方案），其技術判斷帶有行業立場，未必中立。節目提及之「200 億美元 acqui-hire」「670 億美元市值」「9 個月流片」等數字出自節目敘述，未必經第三方審計；Cerebras IPO 時間（節目講「今年 6 月」）同另一來源嘅「5 月上市」有出入，以節目口徑為準並存疑。中文為撮譯整理，立場屬本站分析視角。</p>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述出自《硅谷 101》E251 官方 show notes 同章節時間軸（04:17–01:27:03），並交叉參考硅谷 101 相關閱讀〈挑戰 GPU、繞過 HBM，深挖史上最大芯片背後的 Cerebras〉同〈谷歌 TPU 能撼動英偉達嗎？前 TPU 工程師首次揭秘〉。中文為撮譯。
+</p>
+
+<footer>
+  <p>Deep Dive #157 · 硅谷 101 E251：推理芯片之战 — Groq、Cerebras、OpenAI 三大路径与 Bill Dally 的设计哲学（2026-09-16 發布）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-09-16 06:12 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
