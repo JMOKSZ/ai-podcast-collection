@@ -1,47 +1,91 @@
 {
- "lastScan": "2026-09-15T02:10:00.000Z",
- "lastScanDate": "2026-09-15",
+ "lastScan": "2026-09-16T02:15:00.000Z",
+ "lastScanDate": "2026-09-16",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-09-11T16:28:11.000Z",
    "lastEpisodeTitle": "AI researchers debate how close we are to recursive self-improvement",
    "newEpisodes": [
     {
-     "title": "You Can't Punish a Model Into Alignment - Ajeya Cotra",
-     "pubDate": "2026-09-14T22:59:24.000Z",
+     "title": "What chess Elo suggests about AI's economic impact",
+     "pubDate": "2026-09-15T21:16:23.000Z",
      "type": "clip",
-     "url": "https://www.youtube.com/shorts/GNFf8Ik6lfY",
-     "note": "（Dwarkesh YouTube channel RSS；新 Shorts 剪輯，45 秒）：出自 9/1 全長集〈Ajeya Cotra – Inside the OpenAI agent swarm that hacked Hugging Face〉之切條。核心：唔可以用『懲罰』令模型對齊。無新增全長資訊（9/1 已深度萃取）。Dwarkesh 無新全長集（最新全長仍為 9/11 RSI 圓桌）。"
+     "url": "https://www.youtube.com/shorts/Fp4a4CaI-74",
+     "note": "（Dwarkesh YouTube channel RSS；新 Shorts 剪輯，45 秒，watch 頁 lengthSeconds=45 核實）：主題為國際象棋 Elo 對 AI 經濟影響之啟示。既有素材切條，無新增全長資訊。Dwarkesh 最新全長集仍為 9/11 RSI 圓桌。"
     }
    ]
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-09-14T16:04:16.000Z",
-   "lastEpisodeTitle": "Humanity's Last Invention — Richard Socher of Recursive",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-15T20:11:54.000Z",
+   "lastEpisodeTitle": "Can Skills Learned in Games Transfer to Real-World Work?",
+   "newEpisodes": [
+    {
+     "title": "Can Skills Learned in Games Transfer to Real-World Work?",
+     "pubDate": "2026-09-15T20:11:54.000Z",
+     "type": "full",
+     "url": "https://www.latent.space/p/good-start-labs",
+     "note": "（Substack content:encoded 全文，約 9.7k 字）：Good Start Labs CEO Alex Duffy 專訪。已深度萃取：Diplomacy Twitch 起源、o3 靠背叛取勝 vs Claude Opus 4 拒說謊被爆、1830 鐵路遊戲訓練 30B 模型遷移 Finance-Agent（僅 terminal-agent 設計有效）、COS-PLAY 技能庫論文、Grok 4 Fast 最不背叛／Gemini 2.5 Pro 不可信、LOL-Alignment Astra 與人類一致率 50%（僅領先 GPT-4o 2%）、360 萬美元種子輪、賣 RL 數據與學習環境。"
+    },
+    {
+     "title": "[AINews] AEF-1 standard emerges for Third Party Evaluators, as Xai, OpenAI, and Anthropic all cosign",
+     "pubDate": "2026-09-15T04:50:36.000Z",
+     "type": "newsletter",
+     "url": "https://www.latent.space/p/ainews-aef-1-standard-emerges-for",
+     "note": "（Latent Space AINews 快訊）：AI Evaluator Forum 發布 AEF-1 第三方評估基線；Dario Amodei 親筆撰文提 pacing 三層框架（Embedded Evaluators／Democratic Coordination／Global Coordination），Anthropic 單方面先行。已作延伸條目收錄，與 CogRev Anton Leicht 集呼應。"
+    }
+   ]
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-09-10T10:00:16.000Z",
    "lastEpisodeTitle": "Coinbase's Everything Exchange: Agentic Finance, Stablecoins & Tokenization with CEO Brian Armstrong",
+   "newEpisodes": []
+  },
+  "cognitive_revolution": {
+   "lastEpisodePubDate": "2026-09-15T18:52:31.000Z",
+   "lastEpisodeTitle": "The Balance of AI Power: Anton Leicht on Politics, Pacing Deals, and Muddling Through Well",
    "newEpisodes": [
     {
-     "title": "Sending Money at the Speed of a WhatsApp Message",
-     "pubDate": "2026-09-14T22:25:29.000Z",
-     "type": "clip",
-     "url": "https://www.youtube.com/shorts/5082Aonj6ns",
-     "note": "（No Priors YouTube channel RSS；新 Shorts 剪輯，30 秒）：出自 9/10 全長集〈Coinbase's Everything Exchange ... Brian Armstrong〉之切條。核心：穩定幣轉帳速度要達到 WhatsApp 訊息般即時。無新增全長資訊（9/10 已深度萃取）。No Priors 無新全長集。"
+     "title": "The Balance of AI Power: Anton Leicht on Politics, Pacing Deals, and Muddling Through Well",
+     "pubDate": "2026-09-15T18:52:31.000Z",
+     "type": "full",
+     "url": "https://www.cognitiverevolution.ai/the-balance-of-ai-power-anton-leicht-on-politics-pacing-deals-and-muddling-through-well/",
+     "note": "（cognitiverevolution.ai/latest/rss 官方 Show Notes，AI 生成自逐字稿＋Quotes＋章節）：Carnegie Endowment fellow Anton Leicht（《Threading the Needle》）。已深度萃取：OpenFace incident、下一門檻（lab 內自動化研究＋生物能力 Mythos 級）、僅凍結前沿訓練會讓中國在製造/電力/機器人/SMIC 供應鏈推進、市場韌性之爭、METR/Redwood/FRONTIER Act/CAISI、self-regulation 類比 FINRA、歐洲 data-center-for-access＋ASML/ZEISS、挪威/澳洲/新加坡/UAE、台灣風險、軌道數據中心、doom ~10%（含永久失權）。"
     }
    ]
   },
-  "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-09-12T15:45:14.000Z",
-   "lastEpisodeTitle": "AI:AM Highlights: Astra as AGI, OpenAI's Pause, Mythos @ Mozilla & Human Agency vs Technocapitalism",
-   "newEpisodes": []
-  },
   "ml_street_talk": {
-   "lastEpisodePubDate": "2026-09-12T09:27:52.000Z",
-   "lastEpisodeTitle": "You Can Photocopy an AI's Weights. That's the Problem.",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-15T16:09:49.000Z",
+   "lastEpisodeTitle": "How Physical AI Learns Across Language, Video and Action — Ming-Yu Liu",
+   "newEpisodes": [
+    {
+     "title": "How Physical AI Learns Across Language, Video and Action — Ming-Yu Liu",
+     "pubDate": "2026-09-15T16:00:26.000Z",
+     "type": "full",
+     "url": "https://youtu.be/L6tLBApQN-g",
+     "note": "（YouTube channel RSS，lengthSeconds=1558≈26 分，付費合作 NVIDIA）：NVIDIA Cosmos 負責人 Ming-Yu Liu。已深度萃取：Cosmos 3 架構（VLM 逐 Token 推理→權重初始化雙向擴散生成器，共享時間位置方案）、world model 三工具（forward/inverse dynamics＋policy 容量限制共訓）、第一人稱人類視頻遷移機器人、DROID 後訓練、神經模擬器只需排序不需準確成功率、Cosmos Dreams、Super/Nano/Edge（Edge 對 Jetson Thor/Orin/DGX Spark）。arXiv 2606.02800。"
+    },
+    {
+     "title": "Speech Recognition Is Not a Solved Problem — Pavan Muddireddy",
+     "pubDate": "2026-09-14T20:28:15.000Z",
+     "type": "full",
+     "url": "https://youtu.be/ixu0H8bsCts",
+     "note": "（YouTube channel RSS，lengthSeconds=6143≈102 分，合作 Mistral AI）：Mistral 音頻研究負責人 Pavan Muddireddy 講 Voxtral。已深度萃取：3B Ministral 主幹＋音頻連續嵌入作直接 Token 輸入（非 Whisper 式 cross-attention）、雙流解碼器延遲可至 160ms、TTS 預測連續潛變量（SoundStream→EnCodec→Mimi，FSQ＋flow matching）、diarisation 自回歸脆弱性、OOD 錯誤複合迴圈、DPO 負向監督、cascade 為何勝出（可分別適配/觀測/約束）、語音係屏幕旁而非取代屏幕。"
+    },
+    {
+     "title": "How a Robot Tests an Action Before It Moves",
+     "pubDate": "2026-09-15T16:09:49.000Z",
+     "type": "clip",
+     "url": "https://youtu.be/uxH98holfUI",
+     "note": "（lengthSeconds=49）Shorts 剪輯，no new full-length content."
+    },
+    {
+     "title": "Why Voice AI Still Needs a Screen | Pavan Muddireddy",
+     "pubDate": "2026-09-15T08:05:36.000Z",
+     "type": "clip",
+     "url": "https://youtu.be/d1uja_aukM8",
+     "note": "（lengthSeconds=47）Shorts 剪輯，出自 Pavan Muddireddy 全長集。"
+    }
+   ]
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-09-03T00:00:00.000Z",
@@ -49,9 +93,17 @@
    "newEpisodes": []
   },
   "silicon_valley_101": {
-   "lastEpisodePubDate": "2026-08-28T00:45:00.000Z",
-   "lastEpisodeTitle": "E250｜mRNA的第二战场：对话英博，拆解Moderna人类首个肿瘤疫苗三期突破",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-16T00:00:00.000Z",
+   "lastEpisodeTitle": "E251｜推理芯片之战：聊聊Groq、Cerebras与OpenAI三大路径与Bill Dally的设计哲学",
+   "newEpisodes": [
+    {
+     "title": "E251｜推理芯片之战：聊聊Groq、Cerebras与OpenAI三大路径与Bill Dally的设计哲学",
+     "pubDate": "2026-09-16T00:00:00.000Z",
+     "type": "full",
+     "url": "https://sv101.fireside.fm/264",
+     "note": "（fireside RSS，1:31:32，嘉賓 Mark＋徐子揚）：已深度萃取。訓練看算力推理看帶寬；Groq 確定性靜態編譯（動態性不足）；Cerebras 良率/成本/系統適配軟肋；英偉達約 200 億美元 acqui-hire Groq；Cerebras 6 月 IPO 市值 670 億；OpenAI×博通 Jalapeño 通用芯片低能耗 9 個月流片、選 HBM4、缺電不缺錢；「推理時代 CUDA 一定會被繞過」；SRAM/DRAM/HBM 對比；Bill Dally 哲學（局部性、跳出 local minimum、強邏輯）；芯片內異構/暗矽。"
+    }
+   ]
   },
   "42zhangjing": {
    "lastEpisodePubDate": "2026-08-29T13:00:00.000Z",
@@ -59,9 +111,17 @@
    "newEpisodes": []
   },
   "slaying_dragon": {
-   "lastEpisodePubDate": "2026-09-08T04:09:53.000Z",
-   "lastEpisodeTitle": "【抽奖&串台】2026AI江湖夜话：谁在上桌、下桌、掀桌，钱又流向了哪？｜对话「屠龙之术」庄明浩",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-15T16:00:00.000Z",
+   "lastEpisodeTitle": "智能的下一幕，让人兴奋---73页PPT solo",
+   "newEpisodes": [
+    {
+     "title": "智能的下一幕，让人兴奋---73页PPT solo",
+     "pubDate": "2026-09-15T16:00:00.000Z",
+     "type": "full",
+     "url": "https://www.xiaoyuzhoufm.com/episode/6aa82d11129fe965d33288ca",
+     "note": "（xyzfm RSS，55:21，solo）：《Own Your Intelligence—從模型競爭到智能生產》四章。已深度萃取：模型製造業化/benchmark 失效/3D 生成與遊戲奇觀；智能分化（最強≠最好用，開源＋降價→own intelligence，模型選擇/數據/Benchmark/評估/後訓練/Harness/路由/RL 環境商品化）；循環自生（RSI/Test-time Training/Loop，可驗證性與可編輯性決定閉環，人類價值＝定義目標/找高峰/關鍵洞察）；界面重構（Coding/辦公/Personal Agent，內化複雜度）。提及《When AI builds itself》、L1–L5 與 GLM-6.0、GPT-6 與 Seed 提 Loop、neolabs 瘋狂融資、Harvey/LangChain/Mercor、Brex/Ramp/YC。"
+    }
+   ]
   },
   "crossing": {
    "lastEpisodePubDate": "2026-09-13T16:00:00.000Z",
@@ -70,9 +130,9 @@
   }
  },
  "notes": {
-  "scan_status": "2026-09-15 掃描：新全長集僅 1 條（英文 Latent Space〈Humanity's Last Invention — Richard Socher of Recursive〉9/14 16:04Z，含全文逐字稿）+ 2 支英文新 Shorts 剪輯（Dwarkesh 9/14 Ajeya Cotra 對齊、No Priors 9/14 Brian Armstrong 穩定幣，皆既有全長集切條，45 秒／30 秒）。逐檔核實無新全長集：Dwarkesh（最新全長 9/11 RSI 圓桌）、No Priors（最新全長 9/10 Coinbase）、Cognitive Revolution（最新 9/12 AI:AM）、MLST（最新 9/12 剪輯／9/11 Hughes 全長）、張小珺 #153 9/3、硅谷101 E250 8/27、42章經 8/29、屠龍之術 9/4、十字路口 9/13（已於 9/14 報告萃取）。",
-  "report_date": "2026-09-15",
-  "deep_content_fetched": "《Latent Space》：Substack RSS content:encoded 全文（143KB HTML → 約 11.4 萬字純文字，含官方 Timestamps 時間軸 + 完整逐字稿）逐段萃取：Eureka Machine 願景、慢起飛論、監管/對齊（否定 Anthropic 憲法）、開源軟權力、Recursive 8 位創辦人（Tobin/Clune/Rocktäschel/Xiong/Dosovitskiy/Shi/Tian）、$4.65B 種子輪、NanoChat（社群 bpB 0.937，<2 日超越）/NanoGPT/SOL-ExecBench GPU kernel 實測、harness 30 bug、DecaNLP 被拒史、AI Economist、十大空間與三主成分、金融 data leakage、搜尋棧。英文剪輯：YouTube channel RSS（Dwarkesh UCXl4i9dYBrFOabk0xGmbkRA、No Priors UCSI7h9hydQ40K5MJHnCrQvw）＋ watch 頁 lengthSeconds 核實為 Shorts。",
-  "notes2": "中文播客沿用 iTunes Search API 取得之穩定 feed（張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 feed.xyzfm.space/68fyjknth9hj、硅谷101 feeds.fireside.fm/sv101/rss、42章經 feed.xyzfm.space/evgg6xle9rdc、屠龍之術 feed.xyzfm.space/834hyx3v9k74）批量抓取，逐檔核實無新集。Cognitive Revolution 正確 RSS 為 https://www.cognitiverevolution.ai/latest/rss/（舊 /rss/ 已失效）。MLST 官方 feed 為 https://www.mlst.ai/feed.xml（惟僅存 1 條 2026-02 內容，YouTube channel RSS 舊 ID UCMLtBahI5DMrt0NPvDSoIRQ 已 404，需日後重新解析 channel ID）。小宇宙逐字稿 API 仍 401。"
+  "scan_status": "2026-09-16 掃描：罕見豐收日，新全長集共 6 條。中文 2 條——硅谷101 E251（推理芯片之戰，9/16 00:00Z）、屠龍之術 73 頁 PPT solo（9/15 16:00Z）。英文 4 條——Latent Space〈Good Start Labs 遊戲技能遷移〉（9/15 20:11Z）、Cognitive Revolution〈Anton Leicht AI 權力平衡〉（9/15 18:52Z）、MLST〈Ming-Yu Liu／NVIDIA Cosmos〉（9/15 16:00Z）、MLST〈Pavan Muddireddy／Mistral Voxtral〉（9/14 20:28Z）。另新 Shorts 剪輯：Dwarkesh 9/15 45 秒、MLST 兩條 47–49 秒；Latent Space AINews 快訊（AEF-1）作延伸。逐檔核實無新：張小珺 #153 9/3、十字路口 9/13（已於 9/14 報告萃取）、42章經 8/29、No Priors 最新全長 9/10、Dwarkesh 最新全長 9/11。",
+  "report_date": "2026-09-16",
+  "deep_content_fetched": "《Latent Space》：Substack content:encoded 全文（49.7KB HTML→約 9.7k 字純文字，含全文）。《Cognitive Revolution》：cognitiverevolution.ai/latest/rss 官方 show notes＋Quotes 段＋完整章節時間軸（2:08）。《MLST》：YouTube channel RSS（channel_id UCMLtBahI5DMrt0NPvDSoIRQ 現已可解析，先前 404）＋ watch 頁 shortDescription 全文＋章節＋參考文獻。中文：xyzfm／fireside RSS content:encoded 全文＋完整時間軸（小宇宙逐字稿 API 仍 401，fireside 無 transcript 頁）。",
+  "notes2": "MLST YouTube channel RSS 先前 404 的 channel ID UCMLtBahI5DMrt0NPvDSoIRQ 於本日恢復可解析（bytes≈53KB，含最新影片），已改以該 feed 為 MLST 主來源（mlst.ai/feed.xml 仍僅 1 條 2026-02）。Dwarkesh／No Priors 之新 YouTube Shorts 以 watch 頁 lengthSeconds 核實為 Shorts（45/30 秒）。Cognitive Revolution RSS 為 https://www.cognitiverevolution.ai/latest/rss/。中文 5 檔 feed：張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 feed.xyzfm.space/68fyjknth9hj、硅谷101 feeds.fireside.fm/sv101/rss、42章經 feed.xyzfm.space/evgg6xle9rdc、屠龍之術 feed.xyzfm.space/834hyx3v9k74。"
  }
 }
