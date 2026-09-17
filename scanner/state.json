@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-09-16T02:15:00.000Z",
- "lastScanDate": "2026-09-16",
+ "lastScan": "2026-09-17T02:06:00.000Z",
+ "lastScanDate": "2026-09-17",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-09-11T16:28:11.000Z",
@@ -16,15 +16,22 @@
    ]
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-09-15T20:11:54.000Z",
-   "lastEpisodeTitle": "Can Skills Learned in Games Transfer to Real-World Work?",
+   "lastEpisodePubDate": "2026-09-16T18:07:45.000Z",
+   "lastEpisodeTitle": "Underwriting Superintelligence: Backing Agents you can Sue — Rune Kvist, AIUC",
    "newEpisodes": [
     {
-     "title": "Can Skills Learned in Games Transfer to Real-World Work?",
-     "pubDate": "2026-09-15T20:11:54.000Z",
+     "title": "Underwriting Superintelligence: Backing Agents you can Sue — Rune Kvist, AIUC",
+     "pubDate": "2026-09-16T18:07:45.000Z",
      "type": "full",
-     "url": "https://www.latent.space/p/good-start-labs",
-     "note": "（Substack content:encoded 全文，約 9.7k 字）：Good Start Labs CEO Alex Duffy 專訪。已深度萃取：Diplomacy Twitch 起源、o3 靠背叛取勝 vs Claude Opus 4 拒說謊被爆、1830 鐵路遊戲訓練 30B 模型遷移 Finance-Agent（僅 terminal-agent 設計有效）、COS-PLAY 技能庫論文、Grok 4 Fast 最不背叛／Gemini 2.5 Pro 不可信、LOL-Alignment Astra 與人類一致率 50%（僅領先 GPT-4o 2%）、360 萬美元種子輪、賣 RL 數據與學習環境。"
+     "url": "https://www.latent.space/p/aiuc",
+     "note": "（Substack content:encoded 全文，約 11 萬字純文字，含全文 transcript）：AIUC 聯創 Rune Kvist（Anthropic 最早產品/GTM hire）。已深度萃取：$40M A 輪（Ribbit Capital＋First Harmonic 領投，NFDG 種子）、客戶 Cursor/Harvey/Lovable/ElevenLabs/Intercom、AIUC-1（約 51 要求 130 控制；技術/測試/政策三類；3–10 週認證；1 年＋季度更新；KPMG/Schellman 審計）、採用瓶頸＝risk 而非 capability（Mythos/Fable）、向 model 認證擴展、政府–實驗室信任鴻溝、CAISI、Lloyd's of London 400 年零拒賠、ElevenLabs 首例 AI agent 保險、Air Canada chatbot 判例、Copyright 檸檬市場、eval awareness（Anthropic 移除 LessWrong 數據後失敗率降）、mech interp（Goodfire）、預測市場不可替代審計、『standards have to precede insurance』、『labs 永遠無法做自己的 watchdog』、Big Short watchdog 比爛問題、agents→models→robotics 路線、Waymo/strict liability。"
+    },
+    {
+     "title": "[AINews] Jev: a \"System One Model\" that only decides/classifies/routes/scores — >100x faster, >200x cheaper than small frontier LLMs",
+     "pubDate": "2026-09-16T11:09:53.000Z",
+     "type": "newsletter",
+     "url": "https://www.latent.space/p/ainews-jev-a-system-one-model-that",
+     "note": "（Latent Space AINews 快訊）：TypeSafe 的 Jev System-One 模型（只決策/分類/路由/打分，>100× 快 >200× 便宜，RLCD 訓練，主推並行採樣／no hallucination／校準）；Periodic Labs 的 Neon（1,300 張 H200＋物理實驗室緊循環，1T 參數 XRD 分析專家，用 Kimi 2.5/K2.x 基座超越 GPT-6 Astra）。已作延伸條目收錄。"
     },
     {
      "title": "[AINews] AEF-1 standard emerges for Third Party Evaluators, as Xai, OpenAI, and Anthropic all cosign",
@@ -124,15 +131,23 @@
    ]
   },
   "crossing": {
-   "lastEpisodePubDate": "2026-09-13T16:00:00.000Z",
-   "lastEpisodeTitle": "当具身智能走到十字路口｜对谈苏度、蚂蚁灵波、自变量、破壳：四种一线判断",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-16T18:00:00.000Z",
+   "lastEpisodeTitle": "于是转身向具身走去｜对话王家伟：24 岁的具身智能首席科学家",
+   "newEpisodes": [
+    {
+     "title": "于是转身向具身走去｜对话王家伟：24 岁的具身智能首席科学家",
+     "pubDate": "2026-09-16T18:00:00.000Z",
+     "type": "full",
+     "url": "https://www.xiaoyuzhoufm.com/episode/6aaa9f039d326477816a3488",
+     "note": "（xyzfm RSS content:encoded 全文 Show Notes＋完整時間軸；逐字稿 API 仍 401）：深朴智能（Simple AI）首席科學家王家偉（中科大少年班→MSRA→DeepSeek→字節 Seed）。已深度萃取：基模不會降維打擊具身（『杯子滑落』需反射式動作模型）、『風浪越大魚越貴』、全棧路線 HiFi-UMI 開源 2,000 小時／內部數萬小時、觀察到 Zero-shot 泛化、不追逐『世界模型』概念、Context 從一秒因果到長期記憶、『Scaling 趨勢≠Scaling Law』、Agentic OS、無公認 Benchmark、前沿點評（Astra 外溢物理世界／GEN-1.5 預訓練自然湧現／π0.7 steerability／Skild AI In-Context Learning 被高估／具身噱頭大於真實）、三年後機器人能否洗碗。"
+    }
+   ]
   }
  },
  "notes": {
-  "scan_status": "2026-09-16 掃描：罕見豐收日，新全長集共 6 條。中文 2 條——硅谷101 E251（推理芯片之戰，9/16 00:00Z）、屠龍之術 73 頁 PPT solo（9/15 16:00Z）。英文 4 條——Latent Space〈Good Start Labs 遊戲技能遷移〉（9/15 20:11Z）、Cognitive Revolution〈Anton Leicht AI 權力平衡〉（9/15 18:52Z）、MLST〈Ming-Yu Liu／NVIDIA Cosmos〉（9/15 16:00Z）、MLST〈Pavan Muddireddy／Mistral Voxtral〉（9/14 20:28Z）。另新 Shorts 剪輯：Dwarkesh 9/15 45 秒、MLST 兩條 47–49 秒；Latent Space AINews 快訊（AEF-1）作延伸。逐檔核實無新：張小珺 #153 9/3、十字路口 9/13（已於 9/14 報告萃取）、42章經 8/29、No Priors 最新全長 9/10、Dwarkesh 最新全長 9/11。",
-  "report_date": "2026-09-16",
-  "deep_content_fetched": "《Latent Space》：Substack content:encoded 全文（49.7KB HTML→約 9.7k 字純文字，含全文）。《Cognitive Revolution》：cognitiverevolution.ai/latest/rss 官方 show notes＋Quotes 段＋完整章節時間軸（2:08）。《MLST》：YouTube channel RSS（channel_id UCMLtBahI5DMrt0NPvDSoIRQ 現已可解析，先前 404）＋ watch 頁 shortDescription 全文＋章節＋參考文獻。中文：xyzfm／fireside RSS content:encoded 全文＋完整時間軸（小宇宙逐字稿 API 仍 401，fireside 無 transcript 頁）。",
-  "notes2": "MLST YouTube channel RSS 先前 404 的 channel ID UCMLtBahI5DMrt0NPvDSoIRQ 於本日恢復可解析（bytes≈53KB，含最新影片），已改以該 feed 為 MLST 主來源（mlst.ai/feed.xml 仍僅 1 條 2026-02）。Dwarkesh／No Priors 之新 YouTube Shorts 以 watch 頁 lengthSeconds 核實為 Shorts（45/30 秒）。Cognitive Revolution RSS 為 https://www.cognitiverevolution.ai/latest/rss/。中文 5 檔 feed：張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 feed.xyzfm.space/68fyjknth9hj、硅谷101 feeds.fireside.fm/sv101/rss、42章經 feed.xyzfm.space/evgg6xle9rdc、屠龍之術 feed.xyzfm.space/834hyx3v9k74。"
+  "scan_status": "2026-09-17 掃描：靜日，新全長集 2 條。中文 1 條——十字路口〈於是轉身向具身走去｜王家偉〉（9/16 18:00Z）。英文 1 條——Latent Space〈Rune Kvist／AIUC〉（9/16 18:07Z）。另 Latent Space AINews 快訊（Jev／Periodic Neon，9/16 11:09Z）作延伸。逐檔核實無新：硅谷101 E251 9/16（已於 9/16 報告萃取）、屠龍之術 9/15、張小珺 #153 9/3、42章經 8/29、Dwarkesh 最新全長 9/11、Cognitive Revolution 最新 9/15（Anton Leicht，已萃取）、No Priors 最新全長 9/10、MLST 最新全長 9/15（Ming-Yu Liu）。",
+  "report_date": "2026-09-17",
+  "deep_content_fetched": "《Latent Space》：Substack content:encoded 全文（約 11 萬字純文字，含 Rune Kvist 全長 transcript）＋ AINews 快訊正文。中文（十字路口）：xyzfm RSS content:encoded 全文 Show Notes＋完整時間軸；小宇宙逐字稿 API 仍 401（__NEXT_DATA__ 只有 transcript.mediaId，無正文），本集未取得逐字稿。",
+  "notes2": "YouTube channel RSS（No Priors UCSI7h9hydQ40K5MJHnCrQvw、MLST UCMLtBahI5DMrt0NPvDSoIRQ）本日均回 404，改用 yt-dlp 列頻道最新影片核實：No Priors 最新仍為 Coinbase/Brian Armstrong（9/10），MLST 最新仍為 Ming-Yu Liu（9/15，標題已改為 Why Predicting Video Is Not Enough for Physical AI）——皆無新集。Cognitive Revolution RSS 為 https://www.cognitiverevolution.ai/latest/rss/。中文 5 檔 feed：張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 feed.xyzfm.space/68fyjknth9hj、硅谷101 feeds.fireside.fm/sv101/rss、42章經 feed.xyzfm.space/evgg6xle9rdc、屠龍之術 feed.xyzfm.space/834hyx3v9k74。"
  }
 }
