@@ -1425,6 +1425,18 @@ function togglePastReports() {
   <p class="note">硅谷 101（9/16，1h31m，泓君 Jane，嘉賓 Mark（Bill Dally 學生）＋徐子揚，均為 SRAM 推理芯片創業者）：Token 經濟成形下，把推理芯片牌桌逐一手術台——去年年底英偉達以約 200 億美元 acqui-hire Groq、Cerebras 今年 6 月 IPO 市值 670 億、OpenAI 聯手博通推出自研推理芯片 Jalapeño（9 個月流片、選 HBM4、「不缺錢但缺電」）。骨架一句：Prefill 算力密集型 vs Decode 內存帶寬密集型——「訓練看算力，推理看帶寬」；KV Cache／緩存命中、Attention「找關係」vs FFN「加工信息」、SRAM（6 晶體管／bit、0.3–3ns、容量極小）／DRAM（50–100ns、需刷新）／HBM（3D 堆疊、極度缺貨）三兄弟。路線取捨：Groq＝確定性靜態編譯（軟肋動態性不足）；Cerebras＝晶圓級大芯片（軟肋良率、成本、系統適配）；尖銳判斷「推理時代 CUDA 一定會被繞過」。護城河收窄成速度／性價比／耗電量，反直覺一句「速度越快，AI 越聰明」；面對模型迭代要抓「不變量」；「消失的算力」為何利用率跑不滿；芯片設計全流程＋流片成本數百萬美元。Bill Dally 哲學：為未來 AI 補齊強邏輯、「一切圍繞局部性展開」、跳出 local minimum 要想清楚犧牲什麼。下半場懸念：SRAM 優勢還能保持多久、芯片內異構、暗矽。· 硅谷101</p>
 </div>
 
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/158-crossing-wangjiawei-simple-ai-embodied-scientist.html">「於是轉身向具身走去」——24 歲首席科學家王家偉：基模唔會「降維打擊」具身，因為「杯滑落」嗰一刻需要動作模型</a></h3>
+  <p class="note">十字路口（9/16，全長訪談，Koji 楊遠騁）：由 GPT-6 Astra 操控機械臂切入，追問「OpenAI 等基模公司會唔會擊穿具身模型？」——嘉賓王家偉（24 歲，深朴智能首席科學家；中科大少年班 → 微軟亞研院 → DeepSeek → 字節 Seed；谷歌學術引用超萬次）答「唔會完全食晒」：通用大模型承擔理解同規劃，但「杯開始滑落」嗰一刻需要毫秒級反射嘅動作模型——「基模負責慢思考，具身模型負責快反射」。核心論點六條：①基模唔會擊穿具身但分工在變（毫秒反射 vs 秒級推理）②「風浪越大，魚越貴」（路線未定型＝定價錯位機會）③深朴必須全棧（HiFi-UMI 數據 → 具身基模 → Agentic OS → 本體，四層都要碰，因為橋接層買唔到）④唔追逐「世界模型」標籤，關鍵係 Context（由一秒因果到長期記憶嘅連續譜）⑤「Scaling 趨勢 ≠ Scaling Law」（觀察到規模效應唔等於存在可外推定律）⑥冇公認 Benchmark 就冇可信嘅模型證明。數據：對外開源 2,000 小時具身數據（HiFi-UMI）、內部累積數萬小時、已觀察到一定 Zero-shot 泛化、GPT-6 比人更會標數據；公司「1+2+N」戰略（冷啟動／熱循環兩條數據管路、酒店為第一塊訓練場）、NeurIPS 2025 Behavior-1k 挑戰賽全球前三；42 公里馬拉松比喻（本體跑完約 1/4、小腦約一半、大腦先跑一兩公里）。前沿逐家點評：Astra 外溢物理世界、GEN-1.5 驗證預訓練+自然湧現、π0.7 強化 steerability、質疑 Skild AI 嘅 In-Context Learning 被高估，同「具身領域噱頭可能大於真實」。收尾一問：三年後機械人能幫人洗碗嗎？· 十字路口</p>
+</div>
+
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/159-latent-space-rune-kvist-aiuc-underwriting-superintelligence.html">「當 $20 嘅編程 agent 造成 2 億美元損失」——AIUC × Rune Kvist：AI 採用嘅綁定約束由「能力」轉為「信任」，同「實驗室永遠無法做自己嘅 watchdog」</a></h3>
+  <p class="note">Latent Space（9/16，約 1h26m，swyx × Vibhu）：AIUC（人工智能承保公司）聯創兼 CEO Rune Kvist 趁 $40M A 輪（Ribbit Capital、First Harmonic 領投；種子輪 NFDG 背書）講一個結構性判斷——AI 採用嘅最大瓶頸唔再係能力而係信任同風險：「the binding constraint on adoption is risk」（Mythos 同 Fable 之後由假設變事實）。嘉賓路徑：PPE 背景 → 2021 賣 edtech → 讀 Kaplan《Scaling Laws》「如遭雷擊」→ 飛三藩市成為 Anthropic 最早產品 hire（當時約 40 人，持有「2026 年世界願景文檔」）→ 同準妹夫 Rajiv Dattani（前 METR COO、McKinsey 保險合夥人）創辦 AIUC。AIUC-1 拆解：約 51 項要求、130 項控制、六類；三種控制（技術／測試必須第三方／政策必須有人「個名押喺線上」）；季度更新＋公開 changelog；認證 3–10 週、測試約 2 週、證書 1 年＋季度更新；審計伙伴 KPMG、Schellman。保險落地：ElevenLabs 首張 AI agent 保單、承保方 Lloyd's of London（400 年從未拒賠）、AIUC evals 直接餵定價、尚未有索賠；Air Canada chatbot 幻覺退款政策判例確立企業需為客服 chatbot 承諾負責；Waymo 疊保單做信任信號；「$20 Cursor 訂閱 vs $200M 損失」→ 保單上限＋法院逐單敲定。信任鴻溝：政府（CAISI／NIST）vs 實驗室，Moody's 式第三方；「no other industry allows people to audit themselves」。最難承保＝版權（檸檬市場／資訊不對稱、開源訓練數據查唔到）。Eval awareness：模型識扮乖、「monitoring is the source of truth」（引 Anthropic 移除 LessWrong misalignment 數據後失敗率下降嘅研究）、hyperstition／Luigi-Waluigi 效應；mech interp 只可加分（援 Goodfire／Gray Swan Signal）；預測市場唔可以取代審計（私資訊需「生成」而非「聚合」）。路線圖：agents → models（未宣布）→ robotics（「Waymo 係第一個機械人」）；「第一台機械人把幼兒由餐桌碰落嚟」＝真正 strict liability。Big Short 問題：看門狗會競相壓低標準，唯獨保險公司冇呢個動態（因為自己埋單）。命名淵源＝UL（Underwriters Laboratories）；CISO 嘅不可能任務；AGI 會被國有化成為主權問題但「你仍然要評估模型」。· Latent Space</p>
+</div>
+
 <footer>
   <p>JMOKSZ / ai-podcast-collection</p>
   <p style="margin-top:0.3rem;">每日 10:03 自動掃描更新 · Apache 2.0</p>

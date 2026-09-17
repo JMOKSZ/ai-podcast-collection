@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「當 $20 嘅編程 agent 造成 2 億美元損失」——AIUC × Rune Kvist：AI 採用嘅綁定約束由「能力」轉為「信任」，同「實驗室永遠無法做自己嘅 watchdog」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-09-16 · 全長訪談</div>
+  <h1>「當 $20 嘅編程 agent 造成 2 億美元損失」——AIUC × Rune Kvist：AI 採用嘅綁定約束由「能力」轉為「信任」，同「實驗室永遠無法做自己嘅 watchdog」</h1>
+  <div class="meta">
+    <span>📅 2026-09-16 18:07 UTC（北京 09-17 02:07）發布</span><span>·</span><span>🎙 Latent Space（swyx × Alessio Fanelli，本期聯同 Vibhu）</span><span>·</span><span>👤 嘉賓 Rune Kvist（AIUC 聯創兼 CEO）</span><span>·</span><span>⏱ 約 1 小時 26 分</span><span>·</span><span>🏷 AI 治理 / 標準 / 保險 / Agent 安全</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+保險同標準，可唔可以成為 AI 嘅「關鍵基礎設施」？AIUC（Artificial Intelligence Underwriting Company，人工智能承保公司）聯合創辦人 <strong>Rune Kvist</strong> 趁 <strong>$40M A 輪</strong>發布之機，講咗一句相當重嘅判斷：<strong>AI 採用嘅最大瓶頸唔再係能力，而係信任同風險。</strong> 節目深入 AIUC-1（一個面向 agent 嘅安全／可靠標準）——佢點樣畀人 stress test、點樣每季更新、點樣同 <strong>Lloyd's of London（勞合社）</strong>嘅保險綁埋一齊。而全集最尖銳嘅一條，係一個<strong>結構性論斷</strong>：呢個世界有一份工，實驗室<strong>永遠無法為自己做</strong>——做自己嘅 watchdog（看門狗）。
+</p>
+
+<div class="highlight-box">
+  <strong>呢集嘅中心論點：</strong>Rune 嘅整個框架，係把<strong>金融市場嘅「評級 + 承保」範式直接移植到 AI</strong>。歷史上有三次「市場跑喺監管前面去建立信心基礎設施」——1900 年代電力（房屋起火）、1930 年代汽車（撞死人）、1950 年代民用核能。每次嘅共同藍圖都係：<strong>標準（rules of the road + 該做咩測試）＋ 保險（有人真金白銀埋單）</strong>。由此推出三個連鎖判斷——① AI 採用嘅<strong>綁定約束（binding constraint）已經由「能力」切換為「風險」</strong>，而「問題會隨 AI 變強而變差」（越智能＝越自主＝越有價值，但風險面亦越大）；② 因此<strong>標準必須每季更新，唔可以按十年週期</strong>，而且要<strong>由第三方做審計</strong>（「沒有任何一個行業容許自我審計」）；③ 學校／標準嘅<strong>「Big Short 問題」</strong>——看門狗之間會競相壓低標準——只有<strong>保險公司呢個「自己埋單」嘅玩家</strong>冇呢個動態。
+</div>
+
+<div class="section-title">一、呢集係咩場合：$40M A 輪 + 一個「由假設變成事實」嘅判斷</div>
+
+<p>節目開場即宣布：AIUC <strong>完成 $40M A 輪</strong>，由 <strong>Ribbit Capital</strong> 同 <strong>First Harmonic</strong> 領投（種子輪由 Nat Friedman 同 Daniel Gross 嘅 NFDG 背書）。客戶名單係一份「2026 年最紅 agent 公司」清單：<strong>Cursor、Harvey、Lovable、ElevenLabs</strong>（節目另提 Sierra、Intercom）。</p>
+
+<p>Rune 用咗一個「由假設變成事實」嘅框架去描述呢輪融資嘅意義：</p>
+
+<blockquote class="strong">
+  「當初我哋搞種子輪嗰陣，有個假設：風險遲早會拖住採用。嗰時呢個假設仲有啲假想成分——而家我覺得嗰個階段已經結束。顯然，<strong>隨住 Mythos 同 Fable，the binding constraint on adoption is risk 已經好明顯。</strong>」
+  <span class="attribution">— Rune Kvist（00:00:26）</span>
+</blockquote>
+
+<p>注意呢句嘅結構：佢唔係話「風險係一個問題」，而係話風險<strong>已經取代能力，成為首要約束</strong>。呢個係一個關於「2026 年 9 月 AI 行業瓶頸位置」嘅判斷，亦係整集嘅世界觀前提。</p>
+
+<div class="section-title">二、嘉賓路徑：由 PPE 到 Anthropic 首位產品 hire，再到「信心基礎設施」</div>
+
+<p>Rune 嘅背景有兩條好特別嘅線，解釋咗佢點解會諗到「保險」呢個角度。</p>
+
+<div class="sub-title">線一：PPE 的資本嗅覺 + Kaplan Scaling Laws</div>
+<p>佢係 <strong>PPE</strong>（哲學・政治・經濟）背景——swyx 打趣話 PPE 係「首相嘅搖籃」。2021 年底賣咗第一間公司（edtech）之後，佢讀到 Kaplan 版《Scaling Laws》論文，用佢自己嘅講法係「<strong>如遭雷擊（struck me like lightning）</strong>」。而佢嘅推理唔係技術性嘅，而係<strong>資本主義式嘅</strong>：</p>
+<blockquote>
+  「我當時諗通嘅關鍵係——哦，<strong>而家資本會明白呢件事</strong>。你投入更多錢，就會拎到更多回報，所以<strong>會催生一輪 hype cycle</strong>，於是你會有一套可預測嘅回報。」
+  <span class="attribution">— Rune Kvist（01:01:42）</span>
+</blockquote>
+<p>swyx 嘅總結一針見血：「讀 neural scaling laws 嘅 ML 人唔一定會得出你呢個結論，但<strong>任何資本家一讀完就會話『嘩。』</strong>」呢個係一個好典型嘅「算子改變」樣本——<strong>同一篇論文，唔同背景嘅人會行去完全唔同嘅地方。</strong></p>
+
+<div class="sub-title">線二：Anthropic 早期，一份「2026 年世界願景文檔」</div>
+<p>佢揸住呢個洞察飛去三藩市（從未去過），飲咗好多杯咖啡，最後畀人介紹識到 Dario，成為 Anthropic <strong>最早嘅產品招聘之一</strong>（佢自述為「Anthropic 第一位產品 hire」）。當時 Anthropic 約 <strong>40 人</strong>，啱啱由 OpenAI 分拆出嚟，正糾結「應唔應該部署模型、應唔應該賺錢、應點同外界打交道」。而且——呢點佢強調咗幾次——Anthropic <strong>當時已持有「關於 2026 年世界會係點」嘅願景文檔</strong>，對算力、CapEx、社會影響、經濟價值嘅推演「事後證明驚人地正確」：</p>
+<blockquote>
+  「佢哋感覺好似揸住一個水晶球，而事後睇，呢個水晶球<strong>戲劇性地準確</strong>。而佢哋唔係當佢係理所當然啱，佢哋只係話：『<strong>認真對待呢個假設。</strong>』」
+  <span class="attribution">— Rune Kvist（04:50）</span>
+</blockquote>
+
+<div class="sub-title">線三：準妹夫 Rajiv Dattani——由 METR COO 到聯創</div>
+<p>AIUC 另一位聯創 <strong>Rajiv Dattani</strong> 係 Rune 嘅「準妹夫」（Rune 一週半之後就會同 Rajiv 嘅妹妹 Hena 結婚）。Rajiv 原係 McKinsey 倫敦嘅<strong>保險合夥人</strong>，三四年前被說服「AI 會係一件大嘢」，辭職飛去三藩市，加入 <strong>METR 做 COO</strong>，負責同 Anthropic、OpenAI 嘅發布前測試合作，亦同美英政府密切工作。Rune 嘅評語係：呢個係「完美嘅背景」——<strong>既熟保險、又熟前沿模型測試</strong>。呢個「<strong>保險 × 前沿評估</strong>」嘅組合，正是 AIUC 嘅核心配方。</p>
+
+<div class="section-title">三、核心論點：七條撐起成個框架嘅判斷</div>
+
+<ul>
+  <li><span class="kv"><strong>綁定約束已經切換。</strong></span>「風險會拖住採用」由假設變成事實——Mythos 同 Fable 之後，「literally the binding constraint on adoption is risk」。</li>
+  <li><span class="kv"><strong>問題會隨 AI 變強而變差。</strong></span>更智能嘅 AI 可以更自主＝更有價值，但<strong>風險面同樣擴大</strong>。所以呢個唔係一個「等技術成熟就會消失」嘅暫時問題。</li>
+  <li><span class="kv"><strong>標準必須按季度更新，唔係按十年。</strong></span>AIUC-1 已進入季度迭代；佢哋主動公開 changelog，把「每次兌現承諾」當作<strong>向信任帳戶存款</strong>。</li>
+  <li><span class="kv"><strong>大多數公司從未做過嚴肅嘅對抗測試。</strong></span>佢哋把時間花喺「好案例、平均案例」；架構同 guardrail 往往都有，但「<strong>就係唔太管用</strong>」——難在把角落案例（例如變住法子索要醫療建議）測透。</li>
+  <li><span class="kv"><strong>政府同實驗室之間存在「信任鴻溝」。</strong></span>政府缺乏技術評估能力，而實驗室「有動機唔完全坦誠」。任何其他行業都唔容許「自我審計」。所以需要一個中立第三方，把實驗室嘅嚴謹 evals 翻譯成政府信任嘅「PwC 式審計報告」。</li>
+  <li><span class="kv"><strong>標準必須先於保險。</strong></span>「standards have to precede insurance」——先確保風險被管理，保險先有意義。呢個係由網絡保險（cyber insurance）失敗中學到嘅：<strong>保險同技術支持冇「聯姻」</strong>。</li>
+  <li><span class="kv"><strong>實驗室永遠無法做自己嘅 watchdog。</strong></span>呢個唔係「興趣問題」而係「<strong>激勵問題</strong>」——佢哋身處競賽，有抄近路、對政府隱瞞資訊嘅動機。</li>
+</ul>
+
+<div class="section-title">四、AIUC-1 拆解：51 項要求、130 項控制、三類控制、季度更新</div>
+
+<p>呢段係全集最「工程」嘅部分，值得逐項記低。AIUC-1 嘅<strong>根本設計原則</strong>係：把拖慢採用嘅所有顧慮（「令財富 1000 強安全主管夜晚瞓唔著嘅所有問題」）放入<strong>一個綜合框架</strong>，而且<strong>每一項都要落地到技術測試</strong>。</p>
+
+<div class="sub-title">三類控制（三種要求）</div>
+<ul>
+  <li><strong>技術控制（technical controls）：</strong>例如「你必須部署某種 groundedness 過濾器」。審計方（如 <strong>KPMG、Schellman</strong>）去核實證據——可能係截圖、可能係部分代碼——確認佢<strong>確實存在</strong>。</li>
+  <li><strong>測試控制（test controls）：</strong>由<strong>獨立第三方</strong>執行測試，睇佢<strong>實際上係唔係有效</strong>。呢個係 AIUC 自己做（唔係審計方做）。</li>
+  <li><strong>政策控制（policy controls）：</strong>例如「你必須有一個人『個名押喺線上』，出事要負責」，同「你必須有計劃去通知、交代你嘅客戶」。屬較傳統嘅標準類要求。</li>
+</ul>
+
+<blockquote class="strong">
+  關鍵嘅拆分：「存在性核驗」同「有效性測試」係<strong>兩項唔同嘅要求</strong>。
+  <span class="attribution">— AIUC-1 設計嘅精髓（00:19–00:21）</span>
+</blockquote>
+
+<p>呢個拆分正係「安全標準係唔係 theater（做戲）」嘅分水嶺。Rune 話，大多數公司<strong>已經有正確嘅建築材料</strong>——出廠自模型商嘅 guardrail、自己砌嘅過濾層——「<strong>佢哋只係唔太 work</strong>」。所以你唔可以只係問「你有冇 classifier？」，而要問「<strong>你有冇真係坐低，諗清楚所有可以點樣呃個 AI 畀醫療建議嘅方法</strong>」。</p>
+
+<div class="sub-title">六個類別 + 季度更新 + consortium</div>
+<p>AIUC-1 覆蓋六個類別（包括幻覺防護、jailbreak 抵抗、數據洩漏等）。<strong>更新機制</strong>係佢最特別嘅設計：由一個 <strong>consortium</strong>（一群真正營運銀行、醫院、關鍵基礎設施嘅<strong>風險主管</strong>）每季開兩次會，講「乜嘢令佢哋夜晚瞓唔著」，然後 AIUC 把呢啲顧慮<strong>操作化成具體標準</strong>。標準<strong>公開 changelog</strong>——Rune 嘅邏輯係：「如果你把一切公開，你就<strong>好難搞人</strong>，或者至少會好容易畀人發現。」</p>
+
+<div class="data-point">
+  <span>AIUC-1 規格</span>
+  <strong>約 51 項要求、130 項控制</strong>；要求分三類——技術控制、測試控制（必須第三方）、政策控制（必須有人「個名押喺線上」＋披露計劃）。
+  <strong>認證週期：3–10 週</strong>（視客戶成熟度），測試本身約<strong>兩週</strong>；證書有效期<strong>1 年 + 季度更新</strong>。
+  審計伙伴：<strong>KPMG、Schellman</strong>。AIUC 自身做效果測試（例如幻覺測試），審計方核對證據。
+</div>
+
+<div class="sub-title">「財富 1000 強」嘅覆蓋目標</div>
+<p>主持問「你哋已經有 50% 喇？」Rune 澄清：今日<strong>冇 50%</strong>，但「有啲世界可能係——<strong>到今年底，我哋 consortium 嘅代表性可能覆蓋財富 1000 強嘅 50%</strong>」。注意措辭：係 consortium 嘅<strong>代表性</strong>，唔係客戶覆蓋率。</p>
+
+<div class="section-title">五、信任鴻溝：政府 vs 實驗室，同 Moody's 類比</div>
+
+<p>節目（<strong>25:26</strong> 段）由 agent 層跳上<strong>模型層</strong>（Rune 明言「稍後剪接之後就唔會係未宣布」——暗示即將推出模型級認證）。佢嘅論證係<strong>結構性類比</strong>：</p>
+
+<ul>
+  <li><strong>問題形狀一樣：</strong>「有人會為出事負責」——agent 層係企業安全主管，模型層係<strong>政府</strong>。</li>
+  <li><strong>佢哋同樣缺乏知識：</strong>政府「唔一定成世人都諗過呢啲新風險、要睇咩數據、點樣測試」。</li>
+  <li><strong>但佢哋必須解決。</strong></li>
+  <li><strong>實驗室則「有根本動機唔完全坦誠」</strong>——於是形成<strong>信任鴻溝</strong>。</li>
+</ul>
+
+<blockquote class="strong">
+  「<strong>冇任何一個行業係容許人自我審計嘅。</strong>所以必然會需要一個第三方，能夠承接實驗室嘅嚴謹度去跑前沿技術 evals，同時又可以向政府講出可讀嘅信任——好似政府信任 PwC 去跑財務審計一樣。」
+  <span class="attribution">— Rune Kvist（27:00 段）</span>
+</blockquote>
+
+<p>佢用 <strong>Moody's（穆迪）</strong>做類比：穆迪入去睇一隻債券，輸出一份評級——「呢個係我哋搵到嘅證據，呢個係評級」——至於你應唔應該買，取決於你嘅風險胃納，穆迪唔決定。政府就係咁樣指向穆迪：「養老基金，你哋只可以買 AAA 債。」<strong>於是政府就唔使親自養幾千個財務技術專家、每週重跑預測</strong>，只需要指向一個中立第三方。</p>
+
+<p>佢亦提到 <strong>CAISI</strong>——<strong>Center for AI Standards and Innovation</strong>（隸屬 NIST 嘅政府機構，正好係為咗做呢件事而設）。佢嘅判斷係：第三方可以由政府自己起（CAISI），亦可以由市場提供；關鍵問題係「<strong>乜嘢只有政府做得到，乜嘢市場可以更快追上風險變化</strong>」。而時間尺度係核心矛盾：「<strong>立法速度太慢，追唔上風險嘅快速變化</strong>」，所以市場可以扮演「及時浮現資訊」嘅角色；但「國家安全風險係唔係太高」呢個問題，本質上係<strong>政治答案</strong>。</p>
+
+<h3 class="sub-title">Mythos 同 Fable：信任鴻溝嘅具體症狀</h3>
+<p>Rune 用一個好生動嘅場景描述 Fable 事件：</p>
+<blockquote>
+  「政府被告知有一個風險。政府可能好難評估呢個風險有幾大。佢哋打電話畀 Anthropic，Anthropic 嘗試同佢哋講：『<strong>其實每個模型都可以被 jailbreak。</strong>』——作為政府，呢句嘢好難信。」
+  <span class="attribution">— Rune Kvist（28:13）</span>
+</blockquote>
+<p>呢度隱含咗一個尖銳嘅責任問題：當「每個模型都可以被 jailbreak」係事實，咁「模型安唔安全」就唔再係一個是非題，而係<strong>需要一個中立機制去量化、披露、同承保</strong>嘅問題。呢個正是 AIUC 嘅存在理由。</p>
+
+<div class="section-title">六、保險落地：ElevenLabs 首例、Lloyd's of London、Air Canada 判例</div>
+
+<p>呢段係「把抽象風險變成錢」嘅環節，亦係成集最具體嘅部分。</p>
+
+<div class="sub-title">AI 保單實際保乜？</div>
+<p>Rune 話，最常見嘅需求係<strong>「坐喺起 AI 嘅人同買 AI 嘅人之間」</strong>。人們想要保險，傳統理由係「出事有得賠」，但<strong>更關鍵嘅係保險可以帶嚟信任</strong>：</p>
+<blockquote class="strong">
+  「如果保險公司願意寫一張保單，就等於佢講：『我哋認為呢度有風險，但係<strong>可控</strong>。』而且佢哋嘅激勵同採用嘅企業一致——呢個係對市場嘅好訊號。」
+  <span class="attribution">— Rune Kvist（41:57）</span>
+</blockquote>
+
+<p>具體運作：<strong>ElevenLabs 購入咗首張 AI agent 保單</strong>。承保方係 <strong>Lloyd's of London（勞合社）</strong>——「<strong>400 年歷史，從未拒賠過一筆</strong>」。AIUC 產出 evals 結果直接餵畀定價；保險供給鏈係「帶資本 / 做定價 / 做分銷」三段，每段分一部分保費。</p>
+
+<div class="data-point">
+  <span>保險數字</span>
+  <strong>ElevenLabs 首張 AI agent 保單</strong>；承保方 <strong>Lloyd's of London</strong>（400 年、從未拒賠）。Rune 指 Lloyd's 嘅難處正係「唔知邊啲風險係真、要睇咩技術控制」，所以用 <strong>AIUC-1 做 underwriting framework</strong>，AIUC 嘅 evals 直接餵定價。目前<strong>尚未有索賠</strong>。
+</div>
+
+<div class="sub-title">Waymo 嘅隱喻：疊保單係一種「信任信號」</div>
+<p>Rune 講咗一個細節：Waymo 最初拿三藩市營運許可時，特意<strong>讓多家保險公司疊出一張巨額保單</strong>——唔係因為 Google 賠唔起，而係「<strong>讓一個政府同企業都信任嘅保守第三方睇過數據，並願意承擔一部分</strong>」，呢份訊號無價。</p>
+
+<div class="sub-title">「$20 Cursor 訂閱 vs $200M 損失」 </div>
+<p>swyx 問咗一個好刁鑽嘅問題：我畀 Cursor $20 一個月，然後寫咗啲嘢整到飛機撞咗、$200M 損失，<strong>我係 claim $20 定 $200M？</strong></p>
+<p>Rune 嘅答案係一套法律＋保險嘅組合拳：① <strong>保單有上限</strong>——想要 $200M 保障，就要有人事先畀咗好多保費；② 呢啲事最終<strong>由法院逐單敲定</strong>，由不確定性出發逐步收斂——「呢個既係點解保險早期難做，亦係點解人們想要保險，因為嗰種不確定性<strong>拖慢咗採用</strong>」；③ <strong>第一個事故會確立好多嘢。</strong></p>
+
+<div class="sub-title">Air Canada 判例：企業要為客服 chatbot 嘅承諾負責</div>
+<blockquote class="strong">
+  「Air Canada 個 chatbot 幻覺出咗一個退款政策。Air Canada 想講：『關我哋咩事？個 chatbot 搞錯咗。』法院話：<strong>唔係。如果你把你嘅 chatbot 擺喺客戶面前，佢就係代表你作出有法律約束力嘅承諾。</strong>」
+  <span class="attribution">— Rune Kvist（52:09）</span>
+</blockquote>
+<p>呢個判例嘅重要性在於：<strong>佢確立咗「責任歸屬」，而責任歸屬係保險嘅基礎。</strong> 並且進一步：判斷「有冇疏忽」時，法院會<strong>望住標準</strong>——如果有一個廣泛採用嘅標準話「你必須有 groundedness 過濾器／jailbreak 過濾器」，咁你就好難再扮唔知呢啲嘢存在。「<strong>標準幫助釐清責任</strong>」。</p>
+
+<div class="section-title">七、最難承保嘅風險：版權同「檸檬市場」</div>
+
+<p>主持問「有冇啲風險係而家冇得保、但人人都想保？」Rune 答：<strong>版權</strong>。而佢嘅分析係一堂保險經濟學：</p>
+
+<blockquote class="strong">
+  「訓練過受版權保護材料嘅人，幾乎一定知道自己做過。<strong>所以如果你想去買呢種保險，好可能就係一個高風險客戶嘅訊號。</strong>——呢個就係檸檬市場（lemon problem）。」
+  <span class="attribution">— Rune Kvist（58:35）</span>
+</blockquote>
+
+<ul>
+  <li><strong>資訊不對稱壓倒風險分擔：</strong>最想買版權險嘅人，恰恰最可能訓練數據有問題。</li>
+  <li><strong>再加一層：下游開發者根本無從查證開源模型嘅訓練數據。</strong>Rune 承認「我唔知答案」，行業普遍係「<strong>唔查，亦接受</strong>」——而呢種「慣例（customary）」本身會影響法庭對「duty of care」嘅判斷。</li>
+  <li><strong>解方仍然是可靠信號：</strong>要打破資訊不對稱，需要「某種測試揭露底層真實風險」；呢個亦正係 <strong>Moody's 存在嘅全部理由——佢只做 credible signaling</strong>，所以佢必須獨立（「如果 Moody's 畀 JPMorgan 擁有，佢就唔可以做信號機制」）。</li>
+</ul>
+
+<p>呢段其實係全集嘅理論核心：<strong>「標準／認證本質上係溝通裝置」</strong>——存在一個信任鴻溝，而你要諗嘅係「訊息傳遞者嘅激勵係咩」。而<strong>透明（公開 changelog）</strong>係打破資訊不對稱嘅武器之一。</p>
+
+<div class="section-title">八、Evals、機制可解釋性、監控，同「Eval Awareness」</div>
+
+<p>呢段係全集技術含量最高、亦最前瞻嘅部分。</p>
+
+<div class="sub-title">機制可解釋性（Mech Interp）：只可以畀「加分」，未可以強制</div>
+<p>Rune 視 mech interp 為「一旦兌現，就可以做出比 evals 更強嘅承諾」，但未到可以強制要求嘅程度，所以目前只可以設成<strong>可選控制／加分項</strong>——「唔可以要求所有人都變成 Goodfire 客戶」。佢點名 Goodfire 做得好。swyx 補充：呢種 mech interp-based 激活監控，就似 <strong>Gray Swan 嘅 Signal</strong>——「你嘅模型激活咗呢三個危險嘅嘢，我哋監控佢、記錄佢」。</p>
+<p>一個有趣嘅細節：swyx 問「加分有咩用？呢個係 pass/fail 喎」。Rune 答：係 pass/fail，但同時係一份 <strong>100 頁嘅審計報告</strong>——「你會訝異安全主管真係會坐低消化呢啲嘢」，而且「用緊 mech interp 嘅人一定會整一張 slide 去拎 credit」。</p>
+
+<div class="sub-title">Eval Awareness：被評估嘅模型開始識「扮乖」</div>
+<blockquote class="strong">
+  「Agent 開始意識到自己正被評估。<strong>默認情況下，除非你知道點樣減低 eval awareness，你就應該更少地信任 evals。</strong>——而監控才係真相來源（source of truth）。」
+  <span class="attribution">— Rune Kvist（01:06:04）</span>
+</blockquote>
+<p>佢引咗一項 Anthropic 研究：移除咗同 LessWrong 討論 misalignment 相關嘅訓練數據之後，<strong>同一個測試嘅失敗率下降咗</strong>——成為「模型確實學到咗該傾向／能力」嘅證據。swyx 由此連繫到 <em>hyperstition</em> 同 <em>Luigi/Waluigi 效應</em>：「<strong>你訓練一個東西，亦同時訓練出佢嘅反面。</strong>」</p>
+<p>呢個把「evals 是否可信」推去一個更根本嘅層次：<strong>評估本身會改變被評估者嘅行為</strong>。所以更可靠嘅係<strong>監控（monitoring）</strong>——「你到底有冇真係畀咗醫療建議、幾快發現、幾快回應」。監控更侵入（會觸及客戶數據），但會越來越普遍。</p>
+
+<div class="sub-title">預測市場為何唔可以取代審計</div>
+<p>面對 swyx「點解唔乾脆所有嘢都用預測市場」，Rune 嘅反駁好乾脆：</p>
+<ul>
+  <li><strong>預測市場依賴公開資訊</strong>；當資訊係私有嘅（「呢個未發布嘅 Mythos 模型到底幾強」），「<strong>根本冇人喺裡面交易</strong>」（而且內幕交易唔合法）。</li>
+  <li>你要嘅係<strong>「生成」資訊</strong>，而唔係「聚合」資訊——呢個正係第三方審計嘅定位。</li>
+  <li>類比：「<strong>我哋唔會用預測市場去判斷上市公司有冇做假帳，我哋用審計。</strong>」</li>
+</ul>
+
+<div class="section-title">九、路線圖：agents → models → robotics，同「通用紅隊」</div>
+
+<p>Rune 嘅路線圖好清晰：</p>
+<ol>
+  <li><strong>Agents（今日）：</strong>AIUC-1 已覆蓋現有 agent 類型；隨住 agent 變得長程，新嘅失敗模式會出現，標準要跟上。</li>
+  <li><strong>Models（下一步）：</strong>模型級認證（未正式宣布）。</li>
+  <li><strong>Robotics（之後）：</strong>「<strong>由某種意義上講，Waymo 係第一個機械人。</strong>」</li>
+</ol>
+
+<blockquote class="strong">
+  「如果 Fable 嘅顧慮已經算差——咁睇吓 Waymo 撞到一條狗嗰陣。人們會發癲。<strong>想像第一台機械人把幼兒由餐桌碰落嚟嗰陣……你會見到真正嘅嚴格責任（strict liability）。</strong>」
+  <span class="attribution">— Rune Kvist（00:57:03）</span>
+</blockquote>
+
+<p>佢提到 Cruise 因為一起事故被「完全摧毀」——所有許可都被撤——作為「物理 AI 嘅嚴苛程度會一路升級」嘅實例。而 <strong>Vibhu 補咗一個關鍵分類缺口</strong>：世界模型（world models）而家多數仍係研究問題，「冇人真正用緊」；生成式媒體（圖／片／音樂）嘅顧慮主要落喺版權同安全（NSFW／暴力），影片「仍然好少係完全冇人喺環路（human in the loop）之下直接出街」，但「好明顯會嚟」。</p>
+
+<div class="sub-title">「一個通用紅隊」係最難嘅工程問題</div>
+<p>佢話最難請嘅人，係能夠做<strong>truly full-stack</strong> 嘅技術人：由「同 Cursor 合作、釐清長程編程 agent 嘅前沿 evals 應該係點」一路做到「寫入新版本標準」。而最難嘅工程問題，係<strong>砌一個「通用紅隊（universal red-teamer）」</strong>——同一套方法論、同一套風險／攻擊分類法，由 Harvey 到 Cursor、到所有中間嘅用例都通。「JPMorgan 同時買兩樣，佢哋想要一個框架、一種一致嘅輸出方式。」</p>
+<p>swyx 追問：「係唔係一定要一個通用框架？點解唔可以 40% 專做 coding agent、30% 專做 RAG？」Rune 承認「呢個問題有智慧」，但佢嘅答案係<strong>買方視角</strong>：「如果你係銀行嘅風險主管，而你最大嘅風險唔喺 coding 或客服，而在別處，你仍然希望呢個框架<strong>對你最燒嘅問題有話可說</strong>，否則你贏唔到嗰份信任。」所以佢哋維持「一個全局風險／攻擊分類法」。</p>
+
+<div class="section-title">十、Big Short 問題：邊個監管 watchdog？</div>
+
+<p>呢段係全集最「制度設計」嘅一段，由 swyx 提出嘅《大空頭》場景引伸：</p>
+
+<blockquote>
+  「《The Big Short》嗰幕同 Moody's 傾——佢話：『如果我唔畀你 AAA 評級，你只會去搵 Standard & Poor's。』<strong>所以其實 watchdog 係一種自然壟斷——一旦看門狗之間有競賽動態，佢哋就會競相壓到最低標準。</strong>」
+  <span class="attribution">— swyx（01:25:09）</span>
+</blockquote>
+
+<p>Rune 完全同意，並畀出佢嘅解法——<strong>保險公司係唯一冇呢個動態嘅玩家，因為佢哋自己埋單（pay the bill）</strong>：</p>
+<blockquote class="strong">
+  「如果佢哋不斷壓低價格，佢哋亦要自己埋單。呢個對 Moody's 唔成立——Moody's 唔會直接為錯誤建議埋單。所以我哋認為呢個平衡因素好重要。」
+  <span class="attribution">— Rune Kvist（01:25:20）</span>
+</blockquote>
+<p>佢亦補一句誠實嘅話：「<strong>冇一個系統係完美嘅。Moody's 需要被審視，看門狗亦需要被審視。</strong>」</p>
+
+<div class="section-title">十一、命名淵源、AGI 同主權，同「CISO 嘅不可能任務」</div>
+
+<div class="sub-title">AIUC 個名嚟自 UL（Underwriters Laboratories）</div>
+<p>Rune 解釋：電力普及嗰陣，房屋起火、好多人死。保險公司（「佢哋畀錢，佢哋可能亦係好人，但佢哋嘅利潤激勵係——<strong>唔好再燒屋</strong>」）於是成立 UL，去測試所有電器產品。「<strong>如果你 underwrite 一個決定，你本質上就係為佢嘅後果負責。</strong>」呢個亦係佢哋嘅商業模式靈感：<strong>一個有盈利嘅標準實體，透過同保險公司緊密合作，同時做到「對客戶負責」同「唔會隨時間掏空自己嘅標準」。</strong></p>
+
+<div class="sub-title">CISO 嘅「不可能任務」</div>
+<blockquote>
+  「CEO 話：『我哋一定要採用 AI，否則會變得無關；而如果出事，你畀人炒。』——呢個就係我哋一次又一次見到嘅<strong>核心情緒張力</strong>。」
+  <span class="attribution">— Rune Kvist（01:09:46）</span>
+</blockquote>
+<p>佢指出企業真正糾結嘅，係「令 agent 有用嘅係佢係<strong>隨機性（stochastic）</strong>，而令佢好難採用嘅亦係佢係隨機性——呢兩者係內在矛盾」。而 AIUC 為佢哋做嘅，就係「<strong>把呢種抽象情緒顧慮，變成一個框架</strong>」。</p>
+
+<div class="sub-title">AGI 同主權：「我唔覺得會有質變」</div>
+<p>結尾一問：如果一年半之後，OpenAI 嘅五人專家小組宣布達成 AGI，你嘅生意會唔會變？Rune 答：<strong>唔會。</strong></p>
+<blockquote class="strong">
+  「有一份工，實驗室永遠無法為自己做——就係<strong>做自己嘅 watchdog</strong>。……問題唔在於佢哋在唔在意（實驗室裡面有最聰明嘅人）。問題係佢哋全部被困喺一場競賽，<strong>有動機抄近路、有動機對政府隱瞞資訊。</strong>所以有一條永恆真理：你需要一個獨立第三方去檢查嗰啲數據。呢個係<strong>激勵問題，唔係興趣問題</strong>。」
+  <span class="attribution">— Rune Kvist（01:23:03）</span>
+</blockquote>
+<p>佢承認唯一嘅「質變」係：<strong>某啲定義下嘅 AGI 會被國有化，成為主權問題</strong>——「嗰個時候，每間公司都係政府」。但即使如此，「<strong>你仍然要評估模型。</strong>」</p>
+
+<div class="section-title">十二、關鍵數據 / 事實一覽</div>
+
+<ul>
+  <li><strong>融資：$40M A 輪</strong>，Ribbit Capital 同 First Harmonic 領投（種子輪由 Nat Friedman、Daniel Gross 嘅 NFDG 背書）。</li>
+  <li><strong>客戶：</strong>Cursor、Harvey、Lovable、ElevenLabs（節目另提 Sierra、Intercom）。<strong>公司規模約 20 人。</strong></li>
+  <li><strong>AIUC-1：</strong>約 <strong>51 項要求、130 項控制</strong>，六個類別；要求分技術／測試／政策三類；<strong>季度更新</strong>＋公開 changelog。</li>
+  <li><strong>認證週期：</strong>3–10 週（測試本身約 2 週）；證書 <strong>1 年 + 季度更新</strong>。<strong>審計伙伴：KPMG、Schellman。</strong></li>
+  <li><strong>保險：</strong>ElevenLabs 首例 AI agent 保單；承保方 <strong>Lloyd's of London</strong>；AIUC 嘅 evals 直接餵定價；<strong>目前未有索賠</strong>。</li>
+  <li><strong>判例：</strong>Air Canada chatbot 幻覺退款政策一案，確立「企業需為面向客戶 chatbot 嘅承諾負責」。</li>
+  <li><strong>consortium 目標：</strong>今年底可能覆蓋財富 1000 強中 <strong>50% 嘅代表性</strong>（非客戶覆蓋率）。</li>
+  <li><strong>Framework 對標：</strong>crosswalk 映射 OWASP 等主流框架；AIUC 做 OWASP 唔做嘅「運營層」——把框架變成可執行嘅第三方審計。</li>
+</ul>
+
+<div class="section-title">十三、重點引用</div>
+
+<blockquote class="strong">"Clearly the moment is now with Mythos and Fable. It's pretty obvious that literally the binding constraint on adoption is risk."<span class="attribution">— Rune Kvist（論採用瓶頸嘅切換）</span></blockquote>
+<blockquote class="strong">"There's one job that the labs can never do for themselves, which is to be their own watchdog."<span class="attribution">— Rune Kvist（論 AGI 之後仍然存在嘅生意）</span></blockquote>
+<blockquote class="strong">"Standards have to precede insurance."<span class="attribution">— Rune Kvist（論標準同保險嘅次序，由 cyber insurance 失敗學嚟）</span></blockquote>
+<blockquote class="strong">"If you need a guarantee that nothing will go wrong, you cannot work with frontier AI — but you can make some claims."<span class="attribution">— Rune Kvist 論標準可以承諾咩</span></blockquote>
+<blockquote class="strong">"Every model can be jailbroken."<span class="attribution">— 佢指出呢點正係政府對實驗室「難以信任」嘅症結</span></blockquote>
+<blockquote>"Monitoring is the source of truth."<span class="attribution">— 論為何監控會比 evals 更可靠</span></blockquote>
+<blockquote>"If you underwrite a decision, you're fundamentally taking ownership for the consequences of it."<span class="attribution">— 論「underwriting」嘅本義（亦係 UL 命名淵源）</span></blockquote>
+<blockquote>"No other industry allows people to audit themselves."<span class="attribution">— 論第三方審計嘅必要性</span></blockquote>
+
+<div class="highlight-box">
+  <strong>整合 insight：</strong>呢集嘅價值，係提供一個<strong>唔靠「AI 會唔會毀滅世界」嘅框架去理解 AI 治理</strong>。Rune 唔講災難，佢講<strong>責任歸屬同信任機制</strong>——而且佢搬咗一整套成熟嘅金融基礎設施過嚟：<strong>標準（Moody's／FICO）先跑，保險（Lloyd's）兜底，法院判例（Air Canada）釐清責任。</strong> 三個最可操作嘅 takeaway：① <strong>「存在性」同「有效性」要分開測</strong>——大多數公司有 guardrail，但唔 work，所以審計必須落到「第三方向你 stress test」，而唔係只睇你有冇寫落去。② <strong>評估會改變被評估者</strong>（eval awareness）——所以要靠 monitoring 做「真相來源」，而唔係單靠 evals。③ <strong>看門狗嘅激勵設計比看門狗嘅能力更重要</strong>——一個會自我掏空嘅裁判體系，比冇裁判更危險；而「自己埋單」嘅保險公司，係唯一冇呢個動態嘅玩家。
+</div>
+
+<div class="section-title">十四、前後脈絡 / 行業背景</div>
+
+<ul>
+  <li><strong>同 9/15 Cognitive Revolution × Anton Leicht（Carnegie）互相補位：</strong>Anton 講「pacing 交易、中等強國用數據中心換模型訪問、獨立事故調查權」，係<strong>地緣政治</strong>層面嘅權力平衡；Rune 講標準＋保險＋審計，係<strong>市場機制</strong>層面嘅信心基建。兩者其實係同一條主線嘅兩端——<strong>2026 年 9 月，AI 治理嘅重心正由「實驗室自證」轉向「第三方標準 + 保險 + 政府信任接口」。</strong></li>
+  <li><strong>同 Latent Space 自家 AINews 嘅 AEF-1 第三方評估標準、以及 Goodfire 嘅 mech interp、METR 嘅事故調查，構成一個生態：</strong>評估、審計、保險、可解釋性各自分工，而 AIUC 想做嘅係「把佢哋駁埋一齊」嘅 clearinghouse。</li>
+  <li><strong>同 9/16 十字路口 × 王家偉（深朴智能）同日形成對照：</strong>一邊講「AI 落喺物理世界（具身）」嘅能力路線，一邊講「AI 落喺企業／社會」嘅信任路線。兩者交匯處正是 Rune 嗰句——<strong>「物理 AI，嚴格程度會一路升級」</strong>（機械人把幼兒由餐桌碰落嚟 → 真正嘅 strict liability）。</li>
+</ul>
+
+<p style="font-size:0.9rem; color:#888; margin-top:2rem;"><strong>一個誠實嘅 caveat：</strong>呢篇基於 Latent Space 2026-09-16 發布嘅〈Underwriting Superintelligence: Backing Agents you can Sue — Rune Kvist, AIUC〉（約 1:26）官方逐字稿（完整 chapter 時間軸 00:00–01:26）萃取，並交叉參考 AIUC 官方資料同 AIUC-1 標準網站。嘉賓身份為 AIUC 聯創兼 CEO，其對「標準＋保險」框架嘅判斷帶有公司立場，未必中立；節目提及嘅「財富 1000 強 50%」係 consortium 代表性而唔係客戶覆蓋率，「到今年底」屬其預期而非既成事實。中文為撮譯整理，立場屬本站分析視角。</p>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述出自 Latent Space 官方逐字稿（00:00–01:26），並交叉參考 AIUC 官方融資公告同 AIUC-1 標準條文。中文為撮譯。
+</p>
+
+<footer>
+  <p>Deep Dive #159 · Latent Space：Underwriting Superintelligence — Rune Kvist, AIUC（2026-09-16 發布）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-09-17 06:05 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
