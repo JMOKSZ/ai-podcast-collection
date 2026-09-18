@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「No code is code」——Zapier CEO Wade Foster：約 600 項真實知識工作最高成功率得 40%，大部分任務其實應該用確定性代碼</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">The Cognitive Revolution · 2026-09-17 · 全長訪談（第二次做客）</div>
+  <h1>「No code is code」——Zapier CEO Wade Foster：約 600 項真實知識工作最高成功率得 40%，大部分任務其實應該用確定性代碼</h1>
+  <div class="meta">
+    <span>📅 2026-09-17 13:56 UTC（北京 09-17 21:56）發布</span><span>·</span><span>🎙 The Cognitive Revolution（Nathan Labenz）</span><span>·</span><span>👤 嘉賓 Wade Foster（Zapier 聯創兼 CEO）</span><span>·</span><span>⏱ 全長訪談</span><span>·</span><span>🏷 AI 落地 / Agent / 企業轉型 / 基準</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係本週最「潑冷水」嘅一集。當行業（Dwarkesh × Noam Brown）喺度講 10,000 個 agent 解千禧年難題嘅時候，一位真正把 AI 賣畀企業嘅 CEO——<strong>Zapier 聯創兼 CEO Wade Foster</strong>——帶住一組硬數據上嚟：Zapier 自家嘅 <strong>AutomationBench 基準，涵蓋約 600 項真實知識工作任務（市場、銷售、HR、運營），最高成功率（GPT-6 Astra）都只係大約 40%</strong>。而佢最落地嘅一句判斷係：<strong>「大部分人用 agent 做嘅嘢，其實應該用返『舊式確定性代碼』去做。」</strong>
+</p>
+
+<div class="highlight-box">
+  <strong>呢集嘅中心論點：</strong>Wade 嘅框架係一個<strong>「形狀勝於功能」</strong>嘅判斷——過去兩年 Zapier 乜都砌咗（Agents、Chatbots、MCP server、SDK、AI Guardrails），但真正學到嘅唔係功能，而係「AI 工作實際會喺邊度發生」。答案係：<strong>大部分人只揀一個「daily driver（日常主力入口）」，然後所有嘢喺嗰度做</strong>。由此推出三個連鎖判斷——① <strong>「headless（無頭）」係贏家</strong>：唔好迫用戶入嚟你嘅平台，而係把你嘅能力「做入」用戶已經用開嘅 harness（Zapier MCP 就係呢個邏輯）；② <strong>「No code is code」</strong>——構建方式已經反轉：agent 負責寫同改，人類睇視覺化流程做驗證；③ <strong>真正嘅競爭對手唔係 OpenAI／Anthropic，而係「唔採用」</strong>——平均用戶「坦白講冇做幾多嘢」，市場比 Zapier 原本諗嘅「大一千倍」。
+</div>
+
+<div class="section-title">一、場合：兩年之後，Zapier 由「No-code 先驅」變成「乜都砌齊」</div>
+
+<p>這是 Wade Foster 第二次做客 Nathan Labenz 嘅節目。第一次係 <strong>2024 年 9 月</strong>——當時 Zapier 係一間「學緊 call LLM」嘅 no-code 自動化公司，已有 <strong>40 萬客戶、用 Zapier 把 1 億+ 任務委託畀 AI</strong>，YC 主席 Garry Tan 稱佢為「未來嘅 AI 驅動知識工作者」。</p>
+
+<p>兩年後，Zapier 已經「砌晒一切」（Nathan 嘅講法）：</p>
+<ul>
+  <li>任何一步都可以 invoke AI 嘅 <strong>workflows</strong>；</li>
+  <li><strong>Agents</strong>（agents.zapier.com）；</li>
+  <li><strong>Chatbots</strong>；</li>
+  <li><strong>MCP server</strong>；</li>
+  <li><strong>SDK</strong>（docs.zapier.com）；</li>
+  <li><strong>AI Guardrails</strong>。</li>
+</ul>
+
+<p>但問到「呢啲建設教咗你啲咩」，Wade 嘅答案係關於<strong>「形狀」</strong>而非功能：<strong>2024 年佢哋唔知道「AI 工作實際會喺邊度發生」</strong>——係喺現有產品入面？新產品入面？定係實驗室自己嘅 app 入面？結果係：<strong>大部分人揀咗一個 daily driver（Cursor、Claude Code、ChatGPT），然後大部分工作喺嗰度做。</strong></p>
+
+<div class="section-title">二、核心形狀：daily driver 收斂，同「headless 贏」</div>
+
+<p>呢個「daily driver 收斂」嘅現象，直接決定了 Zapier MCP 嘅定位——<strong>把一個人嘅上下文同數據，帶入佢已經用開嘅任何 harness</strong>。Wade 視之為「知識工作移動嘅方向」。</p>
+
+<p>佢仲觀察到市場出現一條分界線：</p>
+<ul>
+  <li><strong>一邊</strong>：仍然試圖迫用戶去用佢哋自家嘅 agent 構建平台；</li>
+  <li><strong>另一邊（headless 陣營）</strong>：話「bring it wherever you want（帶去你邊度都用得）」——佢點名 <strong>Salesforce Headless</strong>。</li>
+</ul>
+
+<blockquote class="strong">
+  「我絕對認為後者（headless）係贏嘅策略。」
+  <span class="attribution">— Wade Foster</span>
+</blockquote>
+
+<p>Wade 自己嘅 daily driver 係 <strong>Cursor</strong>，再加 Zapier 自家嘅 internal harness——一個<strong>「虛擬文件系統 context 層」＋ automations ＋ 可部署 app</strong>——透過 MCP 拉入去。</p>
+
+<p>Nathan 引入 <strong>Tasklet 創辦人 Andrew Lee</strong> 嘅論點（「所有人喺度砌同一個橫向嘅『機械外骨骼』，只有少數會贏」）。Wade 同意前提——<strong>冇人想被單一模型供應商綁死</strong>——並用數據back佢：<strong>AutomationBench</strong> 就係佢嘅證據。</p>
+
+<div class="data-point">
+  <span>AutomationBench</span>
+  約 <strong>600 項</strong>真實知識工作任務，覆蓋<strong>市場推廣、銷售、HR、運營</strong>。公開任務集（github.com/zapier/AutomationBench）＋論文（arXiv:2604.18934）<strong>全部開源</strong>。最新 <strong>SOTA：GPT-6 Astra，約 40% 任務正確完成</strong>；<strong>Gemini 3.7 Flash</strong>「做得幾好，但成本係一小部分」。
+</div>
+
+<p>「成本 vs 能力」呢條曲線，正係為什麼「任何現代組織都想要一層『可以逐任務換模型』嘅中間層」。Wade 讀出一個樣本任務，好具體：</p>
+<blockquote>
+  「敲定 Meridian Core 單 deal、標記為成交、按 routing policy 派發成交通知、對照 hierarchy spreadsheet 核對帳戶、換算貨幣、檢查有冇未結嘅 escalation。」
+  <span class="attribution">— AutomationBench 樣本任務（Wade 朗讀）</span>
+</blockquote>
+<p>Nathan 補一句：呢種任務喺任何成交頻繁嘅公司<strong>一日會觸發好多次，唔係一次性嘅</strong>——而個基準「離飽和仲遠」。</p>
+
+<div class="section-title">三、最耐用嘅一句：「大部分嘢應該用確定性代碼」</div>
+
+<p>呢個係全集最值錢、亦最可操作嘅判斷。Wade 由 2024 年講到 2026 年，而今次有更多證據back佢：</p>
+
+<blockquote class="strong">
+  「大部分人用 agent 做嘅絕大多數嘢，其實佢哋<strong>應該用返舊式嘅確定性（deterministic）代碼</strong>。你真正想 AI 去推理嘅，只係嗰啲你確實需要佢推理嘅步驟。」
+  <span class="attribution">— Wade Foster</span>
+</blockquote>
+
+<p>Zapier MCP 就係圍繞呢個分工去砌：<strong>模型負責起 workflow、為「應該便宜同可靠」嘅部分寫代碼，而把推理（佢叫「the ghost in the machine」）留返畀真正需要嘅步驟。</strong></p>
+
+<p>Nathan 追問「如果畀模型一個 Zapier 當工具，分數會升幾多？」Wade 話：<strong>AutomationBench V2 就係要量度呢個 lift</strong>——「分數會升幾多、成本會降幾多」。</p>
+
+<div class="sub-title">「No-code is code」：構建方式已經反轉</div>
+<blockquote class="strong">
+  「『喺 no-code 入面構建』呢個諗法，我覺得已經好過時——<strong>就好似一種新代碼：no-code is code。</strong>」
+  <span class="attribution">— Wade Foster</span>
+</blockquote>
+<p>人類由視覺化 workflow 中得到嘅好處，仍然係<strong>驗證同文件</strong>；但編輯由 agent 做，越嚟越係<strong>當一個 hardening 咗嘅 workflow 壞咗嗰陣，由 agent 去 troubleshoot</strong>。</p>
+
+<div class="section-title">四、內部樣本：五個 agent 嘅「陪審團」</div>
+
+<p>呢段係一個好具體嘅「agent 落地」示範。喺 Zapier 自家嘅 support org 入面，一個「自動 email 排障」程序會<strong>起五個獨立 agent</strong>：</p>
+<ul>
+  <li>當 <strong>五個之中有四個同意</strong>同一個診斷，通常就係啱嘅；</li>
+  <li>人類審閱者畀一個 <strong>thumbs-up 或 thumbs-down，並附上一個理由</strong>；</li>
+  <li><strong>呢啲理由會回饋入系統</strong>，形成一個改進迴路。</li>
+</ul>
+
+<p>Nathan 探問「底層係唔係有個好精巧嘅檢索堆疊？」Wade 唔上釣：</p>
+<blockquote class="strong">
+  「好多呢啲嘢，歸根究柢都唔特別花巧。就係——<strong>攞個例子，你鍾唔鍾意，然後洗、沖、重複（rinse, wash, and repeat）。</strong>」
+  <span class="attribution">— Wade Foster</span>
+</blockquote>
+
+<p>護城河係咩？<strong>「15 年嘅自動化數據，加埋同乜都接得埋嘅 hook」</strong>——如果呢啲可以淬煉成一個「單憑模型做唔到」嘅產品。</p>
+
+<div class="section-title">五、競爭：唔驚實驗室，驚「一片相同」同「唔採用」</div>
+
+<p>呢段係全集最有商業洞察嘅部分。Wade 唔擔心 labs，佢擔心另一樣嘢。佢記得 Paul Graham 喺 Zapier 過 YC 時嘅建議：問題永遠係「如果 Google 砌呢樣嘢會點？」而 PG 嘅答案係——</p>
+
+<blockquote class="strong">
+  「你唔係同 Larry 同 Sergey 競爭，你係同<strong>『一個想升職嘅中層產品總監』</strong>競爭。」
+  <span class="attribution">— Wade Foster 引 Paul Graham</span>
+</blockquote>
+
+<p>今日：「OpenAI、Anthropic——佢哋而家係大科技公司……<strong>佢哋冇可能砌晒所有嘢。佢哋真係砌唔到。</strong>」真正更難嘅問題係「<strong>一片相同（sea of sameness）</strong>」，以及一個事實：<strong>平均用戶「坦白講冇做幾多嘢」</strong>——少少 ChatGPT 或 Gemini，返工用 Copilot。</p>
+
+<div class="data-point">
+  <span>Wade 嘅市場判斷</span>
+  真正嘅競爭對手係<strong>「唔採用（non-adoption）」</strong>；而機會係去教育一個市場——佢而家估計呢個市場<strong>「可能比我哋當初著手去砌嘅嘢大一千倍」</strong>。
+</div>
+
+<p>Nathan 坦承自己錯估咗經濟改變嘅速度；Wade（由密蘇里州連線）同意——佢嘅朋友同家人「生活大致一樣」，用 ChatGPT 整 meal plan 同度假計劃，而唔係用 Astra 級嘅嘢。佢認為真正會打動人嘅，係<strong>「具體性（specificity）」——一個會觀察你做咩嘅 agent</strong>。</p>
+
+<div class="sub-title">Wade 自己嘅「每週自動化」</div>
+<p>佢有一個每週 automation：<strong>透過 Zapier MCP 收集 Gmail、Slack、瀏覽器上嘅 event stream，然後主動「提議」佢應該砌嘅工具</strong>。佢打算把呢套產品化。點解用 log 而唔係 screen recording？答案好務實：「<strong>我哋擅長 API</strong>」——而 Nathan 補一句：AI 讀 log 本來就叻過人類顧問。</p>
+<p>佢嘅標準好寬鬆：啲 idea「<strong>50% 夠好</strong>」就可以開始 brainstorm——呢個係一個好重要嘅「唔好過度設計」訊號。</p>
+
+<div class="section-title">六、定價：「座位制已死或將死」</div>
+
+<blockquote class="strong">
+  「座位制（seat-based）定價已經死咗，或者正在死。」
+  <span class="attribution">— Wade Foster</span>
+</blockquote>
+<p>Wade 嘅拆解：</p>
+<ul>
+  <li><strong>商品類產品</strong>漂向<strong>用量制（usage-based）</strong>——Sam Altman 嘅「intelligence too cheap to meter／utility」框架；</li>
+  <li><strong>企業產品</strong>則伸手去搵<strong>結果制（outcome）</strong>，例如客服工具「按解決咗嘅 ticket 收費」；</li>
+  <li>但大多數產品停喺「乾淨結果」前一兩步，最後仍然係「<strong>賣緊某些部分嘅工作</strong>」。</li>
+</ul>
+<p>問到「模型公司嘅消費者方案 token 補貼，係唔係對生態嘅價格歧視？」Wade 傾向自由市場，但引用<strong>微軟捆綁時代（United States v. Microsoft）</strong>作為「用優勢去『box out』更好產品」嘅案例，並話規則應由各國去定；佢嘅工作係喺規則內搵 edge。</p>
+
+<div class="section-title">七、向內：點解由「首席人力官」管 AI 轉型？</div>
+
+<p>呢段係全集最反直覺嘅組織觀察。Zapier 把<strong>首席人力官 Brandon Sammut（現為 Chief People &amp; AI Transformation Officer）</strong>放喺 AI 轉型嘅位——同 Wade 2024 年「AI 應該係每個人嘅事」嘅講法有張力。</p>
+
+<p>Wade 嘅解釋係：<strong>瓶頸換咗。</strong> ChatGPT 出現之後約一年內，Zapier 幾乎 <strong>100% 員工每日用 AI</strong>——所以「採用」已經唔再係問題。真正嘅挑戰係<strong>把個人流暢度轉化成公司級嘅 production-grade workflow</strong>，而呢個睇落係「人的工作」——重寫 job description、重新諗 compensation、re-skilling 團隊——Brandon 嘅團隊本來就最擅長。</p>
+
+<blockquote class="strong">
+  「佢本來都好容易係 CMO、CPO，或者任何其他角色。<strong>關鍵係：把個 leader 配對去個瓶頸。</strong>」
+  <span class="attribution">— Wade Foster</span>
+</blockquote>
+
+<div class="sub-title">「默認透明」：有幾多嘢其實唔需要保密？</div>
+<p>Zapier 嘅「default to transparency」價值，今次得到升級：Slack 嘅 public／private 讀數顯示<strong>工作正漂移入 DM</strong>；同時 <strong>agent 有齊 Slack 上下文明顯更有效</strong>；於是佢哋搞咗個「友好嘅高管隊際比賽」，鬥把更多嘢放喺 public channel。仍然保持私密嘅係：<strong>HR 事件同活躍嘅安全漏洞</strong>。</p>
+<blockquote>
+  「大部分人<strong>遠為高估</strong>『需要保密』嘅事情數量，而<strong>嚴重低估</strong>『當人類同 agent 都有齊全公司上下文時會發生咩』嘅威力。」
+  <span class="attribution">— Wade Foster</span>
+</blockquote>
+
+<div class="section-title">八、安全：揸住最多 credential 嘅公司，同 Mythos 級模型</div>
+
+<p>Nathan 預期呢度會令 Wade 驚——因為 Zapier 代好多用戶揸住好多服務嘅 credential，「僅次於冇人」。Wade 嘅答案係：<strong>呢種 stewardship（受託管理）已經係佢哋 15 年嘅工作</strong>。新嘅嘢係 <strong>Mythos 級模型</strong>——佢可以「<strong>耐心地逐個 issue 逐個 issue 去 loop</strong>」，搵到漏洞。</p>
+
+<blockquote class="strong">
+  「每個軟件項目都有漏洞。問題只係：<strong>有冇人搵到佢哋。</strong>」
+  <span class="attribution">— Wade Foster</span>
+</blockquote>
+
+<p>而同一啲模型亦令 patching 更容易，「所以醒目嘅公司會用佢嚟做攻同防」。佢形容 <strong>Hugging Face 事件</strong>係「直接由科幻小說走出來」，並預期會有<strong>一次性嘅重新適應，然後進入新嘅 steady state</strong>。佢確認 Zapier 想要前沿模型嘅早期訪問權；Nathan 主張「好似 <strong>Project Glasswing</strong> 呢類計劃嘅會員資格，可能成為『任何人都要求揸住你 credential』時嘅真正差異化」。</p>
+
+<div class="data-point">
+  <span>花費數字</span>
+  工程師每月跑 <strong>$30,000 token</strong>（Wade 自己嘅帖）——佢話呢啲人係<strong>outlier</strong>，而家仲未有個人預算；但 Zapier 砌咗 dashboard，令員工睇到「同一 workflow 用強模型 vs 平模型」嘅成本。有人「極度高效」，有人「根本唔需要用 Fable 或者 Astra 去做呢樣嘢」。對一間近 800 人嘅公司嚟講，呢個係<strong>教育問題</strong>——佢預期「綁定流暢度嘅 token 預算」會成為常態。
+</div>
+
+<div class="section-title">九、AI 寫作：唔係禁 AI，係反低質</div>
+
+<p>Nathan 好小心咁提出 AI 輔助寫作——「唔係想捉你，因為我喺同一條船」，並自認佢自己嘅 <strong>Pangram 分數</strong>有時讀落都似 AI，同時指出 Zapier 部分輸出都係咁。Wade 嘅答案係一套<strong>規範（norms）而唔係禁令</strong>：</p>
+
+<blockquote class="strong">
+  「問題唔係 AI，而係<strong>低質量嘅溝通</strong>——而 AI 令一個低判斷力嘅人可以<strong>用高產量嘅垃圾淹沒同事</strong>。」
+  <span class="attribution">— Wade Foster</span>
+</blockquote>
+
+<p>佢嘅具體規範：</p>
+<ul>
+  <li><strong>自己負責你自己發嘅嘢</strong>——「你投入去 author 呢樣嘢嘅時間，應該多過讀者去讀嘅時間」；</li>
+  <li><strong>要理解到可以答問題</strong>；</li>
+  <li><strong>把請求講明</strong>；</li>
+  <li><strong>核實細節</strong>——「一個有 Slack access 嘅 agent 可以拉一個三個月前相關但錯嘅 project 出嚟」，而「AI 摘要會變成『AI 摘要嘅摘要』」；</li>
+  <li><strong>洗走啲 tell</strong>：「it's not this, it's that」、em dash（破折號）、「the honest truth」、「the load-bearing point」。</li>
+</ul>
+
+<blockquote class="strong">
+  「用 AI 唔係問題。問題係低質量——呢個先係要打嘅仗。」
+  <span class="attribution">— Wade Foster</span>
+</blockquote>
+
+<div class="section-title">十、團隊組成：EPD 冇咗，但「公司感覺差唔多」</div>
+
+<p>最後一條問到 team composition，Wade 畀咗一個好有層次嘅答案：經典嘅 <strong>EPD（Engineering–Product–Design）大幅消失</strong>、管理層扁平化、<strong>人人都變成自己嘅 mini data analyst</strong>——但，「<strong>公司感覺上仲係幾似</strong>」。方向係一個「<strong>軟件工廠 + support 工廠</strong>」，人類設計 loop，而每次模型發布就啃走剩餘嘅 human-in-the-loop 步驟。</p>
+
+<p>Wade 嘅收尾 plug：「<strong>去裝 Zapier MCP。</strong>」</p>
+
+<div class="section-title">十一、關鍵數據 / 事實一覽</div>
+
+<ul>
+  <li><strong>AutomationBench：約 600 項</strong>真實知識工作任務（市場／銷售／HR／運營）；<strong>SOTA 約 40%（GPT-6 Astra）</strong>；公開任務集＋論文（arXiv:2604.18934）。</li>
+  <li><strong>Zapier AI 產品矩陣：</strong>Agents、Chatbots、MCP server、SDK、AI Guardrails。</li>
+  <li><strong>歷史對照：</strong>2024 年 9 月，<strong>40 萬客戶</strong>已用 Zapier 委託 AI <strong>1 億+ 任務</strong>。</li>
+  <li><strong>內部流暢度：</strong>約一年內近 <strong>100% 員工</strong>每日用 AI。</li>
+  <li><strong>門檻：</strong>五個 agent 排障，<strong>四個同意</strong>就通常啱；人類 thumbs-up／down＋一個理由回饋入系統。</li>
+  <li><strong>花費：</strong>工程師每月 <strong>$30,000 token</strong>（outlier）；公司近 <strong>800 人</strong>。</li>
+  <li><strong>市場判斷：</strong>目標市場「<strong>大一千倍</strong>」；競爭對手係「唔採用」。</li>
+  <li><strong>護城河：</strong>15 年自動化數據＋同乜都接得埋嘅 hook。</li>
+</ul>
+
+<div class="section-title">十二、重點引用</div>
+
+<blockquote class="strong">"The vast majority of what people are using an agent for, in fact, they probably should be using old-fashioned deterministic code. You really only want the AI to reason over the things that you need it to reason for."<span class="attribution">— Wade Foster（全集最耐用嘅一句）</span></blockquote>
+<blockquote class="strong">"The idea of building in no-code, it feels antiquated to me. It's like the new code — no-code is code."<span class="attribution">— Wade Foster</span></blockquote>
+<blockquote class="strong">"Seat-based pricing is dead or dying."<span class="attribution">— Wade Foster（論定價範式轉移）</span></blockquote>
+<blockquote class="strong">"You're rarely competing with Larry and Sergey — you're competing with a potential mid-level product director who's trying to get a promo."<span class="attribution">— Wade Foster 引 Paul Graham（論競爭）</span></blockquote>
+<blockquote class="strong">"Using AI is not the problem. It's low quality — that's the fight, at the end of the day."<span class="attribution">— Wade Foster（論 AI 寫作規範）</span></blockquote>
+<blockquote>"Most people far overestimate the number of things where [privacy] is required, and definitely underestimate the power of what happens when both humans and agents have access to the full context."<span class="attribution">— Wade Foster（論默認透明）</span></blockquote>
+<blockquote>"Every software project has vulnerabilities. It's just, has someone found them yet?"<span class="attribution">— Wade Foster（論安全）</span></blockquote>
+<blockquote>"A lot of this is not particularly fancy at the end of the day. It's just — take the example, did you like it, did you not like it, and just rinse, wash, and repeat."<span class="attribution">— Wade Foster（論五 agent 排障迴路）</span></blockquote>
+
+<div class="highlight-box">
+  <strong>整合 insight：</strong>呢集係本週「反泡沫」嘅關鍵鏡頭。當整個行業喺講千禧年難題同 RSI（Dwarkesh／Noam）嘅時候，一位把 AI 賣畀<strong>真實企業</strong>嘅 CEO 帶嚟：約 600 項真實知識工作，最高自動化成功率<strong>只係 40%</strong>，白領工作被改造嘅程度<strong>遠低於炒作</strong>。三個可操作嘅 takeaway：① <strong>「確定性代碼 + 結構化驗證」應該係 agent 落地嘅默認架構</strong>——只把真正需要推理嘅步驟交畀模型（呢個對錦鯤 13,000+ 酒店、Trinity 呢類企業級場景直接相關）；② <strong>headless 策略</strong>——唔好迫用戶入嚟你嘅平台，而係把能力做入佢哋已經用開嘅 daily driver；③ <strong>「採用」唔係問題，「把流暢度轉化成 production-grade workflow」先係問題</strong>——瓶頸係人的工作（job description、compensation、re-skilling），所以由 HR 定由 CMO 去管唔重要，重要嘅係「把 leader 配對去個瓶頸」。
+</div>
+
+<div class="section-title">十三、前後脈絡 / 行業背景</div>
+
+<ul>
+  <li><strong>同 9/17 Dwarkesh × Noam Brown 同日形成「雙重現實檢查」：</strong>Noam 講「10,000 個 agent 解千禧年難題」（能力前沿），Wade 講「約 600 項真實知識工作最高成功率 40%」（落地現實）。兩者其實指向同一件事——<strong>基準上嘅能力爆發，同真實經濟產出之間，存在一條需要工程去填嘅鴻溝。</strong></li>
+  <li><strong>同 9/17 Latent Space AINews 呼應：</strong>AINews 同日講「Steve Yegge 關停 Gas Town、承認用 AI 編碼從未真建成過任何嘢」，以及「Databricks 上 Astra 後代碼支出 +60%」。Wade 嘅「deterministic code &gt; 盲目用 agent」正好係同一條主線嘅企業版本——<strong>「模型越強 ≠ 一切越便宜、越可靠」。</strong></li>
+  <li><strong>同 Andrew Lee（Tasklet）嘅「三種軟件會存活」一集互補：</strong>Andrew 講橫向平台嘅競爭結構，Wade 提供一個「已經活咗 15 年嘅橫向平台」嘅實戰答案——<strong>護城河唔係模型，係數據＋連接＋驗證迴路。</strong></li>
+</ul>
+
+<p style="font-size:0.9rem; color:#888; margin-top:2rem;"><strong>一個誠實嘅 caveat：</strong>呢篇基於 The Cognitive Revolution 2026-09-17 發布嘅〈No Code Is Code: Zapier CEO Wade Foster on Headless Tools, Zapier MCP &amp; Automation Bench〉官方 show notes（AI 生成，基於 episode transcript）＋官方 chapter／topic list 萃取，並交叉參考 Zapier 官方 AutomationBench 頁面同論文。該集節目方明言章節時間戳會被廣告位移，故本文不附精確時間碼；嘉賓為 Zapier CEO，其對「40% 成功率」「座位制已死」「市場大一千倍」嘅判斷帶有公司立場。中文為撮譯整理，立場屬本站分析視角。</p>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述出自 The Cognitive Revolution 官方 show notes（基於 episode transcript），並交叉參考 Zapier 官方 AutomationBench 頁面同 arXiv 論文。中文為撮譯。
+</p>
+
+<footer>
+  <p>Deep Dive #161 · The Cognitive Revolution：No Code Is Code — Zapier CEO Wade Foster（2026-09-17 發布）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-09-18 06:00 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
