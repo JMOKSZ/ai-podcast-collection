@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度萃取日报 · 2026-09-19</title>
+<style>
+  :root{
+    --bg:#faf8f5; --ink:#1f1c18; --muted:#6b645c; --line:#e6e0d6;
+    --accent:#8a6d3b; --quote:#f2ece0; --card:#fffdf9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+    line-height:1.85; font-size:17px;
+  }
+  .wrap{max-width:860px; margin:0 auto; padding:56px 26px 90px;}
+  header.top{border-bottom:2px solid var(--ink); padding-bottom:22px; margin-bottom:38px;}
+  header.top .kicker{letter-spacing:.22em; font-size:12px; color:var(--accent); text-transform:uppercase;}
+  header.top h1{font-size:30px; margin:10px 0 14px; line-height:1.35; font-weight:700;}
+  header.top .meta{font-size:14px; color:var(--muted);}
+  header.top .meta span{margin-right:16px; white-space:nowrap;}
+  .lead{
+    background:var(--card); border:1px solid var(--line); border-left:4px solid var(--accent);
+    padding:18px 22px; border-radius:4px; margin-bottom:40px; font-size:16px;
+  }
+  .lead h2{font-size:15px; margin:0 0 10px; letter-spacing:.1em; color:var(--accent);}
+  .lead ul{margin:0; padding-left:20px;}
+  .lead li{margin:6px 0;}
+  h2.sec{
+    font-size:15px; letter-spacing:.24em; color:var(--accent);
+    margin:52px 0 6px; padding-bottom:8px; border-bottom:1px solid var(--line); text-transform:uppercase;
+  }
+  .show{margin-top:34px;}
+  .show .host{font-size:14px; color:var(--muted); letter-spacing:.05em;}
+  h3.ep{font-size:22px; margin:6px 0 4px; line-height:1.45;}
+  .ep-meta{font-size:13.5px; color:var(--muted); margin-bottom:20px;}
+  .ep-meta .badge{display:inline-block; background:var(--quote); border:1px solid var(--line);
+    border-radius:3px; padding:1px 8px; font-size:12px; margin-left:8px; color:var(--accent);}
+  .block{margin:22px 0;}
+  .block h4{font-size:15px; margin:0 0 8px; letter-spacing:.06em;}
+  .block h4 .tag{color:var(--accent); margin-right:6px;}
+  ul.points{margin:0; padding-left:22px;}
+  ul.points li{margin:9px 0;}
+  .kv{font-weight:700;}
+  blockquote{
+    margin:14px 0; padding:12px 18px; background:var(--quote);
+    border-left:3px solid var(--accent); border-radius:3px; font-style:italic; color:#3a332a;
+  }
+  blockquote .who{display:block; font-style:normal; font-size:13px; color:var(--muted); margin-top:6px;}
+  .tech{background:#f6f2ea; border:1px solid var(--line); border-radius:4px; padding:14px 18px; font-size:15px;}
+  .tech code{font-family:"SFMono-Regular",Consolas,monospace; font-size:13.5px; background:#ece5d8; padding:1px 5px; border-radius:3px;}
+  .divider{height:1px; background:var(--line); margin:44px 0;}
+  table.dt{width:100%; border-collapse:collapse; font-size:14.5px; margin:8px 0;}
+  table.dt th,table.dt td{border-bottom:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top;}
+  table.dt th{color:var(--accent); font-weight:600; letter-spacing:.04em;}
+  footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--line);
+    font-size:12.5px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+  a{color:var(--accent); text-decoration:none; border-bottom:1px dotted var(--accent);}
+  .note{font-size:14px; color:var(--muted); font-style:italic;}
+  .empty{background:var(--card); border:1px dashed var(--line); border-radius:4px; padding:16px 20px; color:var(--muted); font-size:15.5px; margin-top:22px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="kicker">Vee Mok · Daily AI Podcast Deep Dive</div>
+  <h1>AI 播客深度萃取日报</h1>
+  <div class="meta">
+    <span><strong>报告日期：</strong>2026-09-19（周六）</span>
+    <span><strong>生成时间：</strong>2026-09-19 02:06 UTC / 北京 10:06</span>
+  </div>
+  <div class="meta" style="margin-top:6px;">
+    <span><strong>来源：</strong>Dwarkesh · Latent Space · Cognitive Revolution · No Priors · MLST · 硅谷101 · 十字路口 · 张小珺 · 42章经 · 屠龙之术</span>
+  </div>
+</header>
+
+<div class="lead">
+  <h2>今日重点</h2>
+  <ul>
+    <li><strong>清淡的一天：扫描 10 档播客，新增全长集 1 条（英文）＋ AINews 快讯 1 条。</strong>中文阵营本周末无更新（张小珺、十字路口、硅谷101、42章经、屠龙之术 latest 均未超过 9/18 扫描点）。</li>
+    <li><strong>⭐ 英文｜No Priors × Stefano Ermon（Inception）</strong>——本周最有「技术赌注」含量的一集。<strong>「扩散（diffusion）会赢下 AI 推理」</strong>：自回归模型推理时是<em>逐 token、串行、记忆受限</em>的，扩散模型是<em>多 token 并行</em>、计算受限，天然贴合 GPU。2024 年论文已在 GPT-2 规模上用扩散 Transformer 匹配自回归困惑度、生成快约 <strong>10×</strong>。金句：<strong>「更并行的方案，最终一定会赢（the bitter lesson）。」</strong></li>
+    <li><strong>Mercury 已进生产</strong>：质量对标前沿「快模型」（haiku / flash / mini-nano）但显著更快；因扩散 LLM 跑不了 vLLM / SGLang，Inception <strong>自建 serving engine</strong>。语音 Agent 公司 <strong>OpenCall 从 Cerebras 定制芯片切到 Mercury + Nvidia GPU</strong>——同样低延迟，但成本更低、可得性更高、质量更好。团队约 <strong>50 人</strong>。</li>
+    <li><strong>扩散的时间窗口判断</strong>：按 OpenRouter 任务分类估算，其中约 <strong>20–30% 属于「延迟极其关键」</strong>，是扩散模型的下限可及市场；未来差异化的赌注押在<strong>数据效率</strong>与<strong>可控性</strong>上。</li>
+    <li><strong>延伸｜Latent Space AINews〈not much happened today〉</strong>（覆盖 9/16–9/17）：表面上「安静」，实则信息密集——<strong>Anthropic 公布 AI 做 AI 研发的内部数据（Claude 主导模型研发任务占比 6 个月从 1% 升到 26%，内部约 3 万个 Agent）</strong>；<strong>Claude 协助攻破 OpenAI 关联账号与内部仓库（三个研究员 &lt;72 小时、花费数千美元 token）</strong>；Google 给 Gemini 托管 Agent 上 <strong>Credentials / Files API</strong>（成本降 30%、缓存命中 +22%）；DeepMind <strong>Stellar Colosseum</strong>（Codeforces 4263）。</li>
+    <li><strong>信源说明（Jev 前置过滤）</strong>：本期 AINews 多为 <strong>Twitter/Reddit 二手转述</strong>（Jev 判定 primary_source 普遍 &lt;0.4），关键数字已在文中标注来源强度；No Priors 一集为<strong>一手逐字稿</strong>。</li>
+  </ul>
+</div>
+
+<!-- ================= 中文 ================= -->
+
+<h2 class="sec">中文播客</h2>
+
+<div class="empty">
+  <p>本轮扫描（截至 2026-09-19 02:06 UTC）<strong>中文 5 档均无新剧集</strong>：</p>
+  <ul class="points">
+    <li><strong>张小珺</strong> — 最新 #153《和曾鸣聊产业史观》（2026-09-03）</li>
+    <li><strong>十字路口</strong> — 最新《于是转身向具身走去｜对话王家伟》（2026-09-16）</li>
+    <li><strong>硅谷101</strong> — 最新《外滩大会圆桌｜敢把钱包交给AI吗》（2026-09-18 00:00 UTC，已收录于 9/18 报告）</li>
+    <li><strong>42章经</strong> — 最新《一个人、两周、数百美元……逯雨鑫》（2026-08-29）</li>
+    <li><strong>屠龙之术</strong> — 最新《智能的下一幕，让人兴奋——73页PPT solo》（2026-09-15）</li>
+  </ul>
+</div>
+
+<!-- ================= 英文 ================= -->
+
+<h2 class="sec">英文播客</h2>
+
+<div class="show">
+  <div class="host">No Priors: AI, Machine Learning, Tech, &amp; Startups · 主播 Sarah Guo（+ Elad Gil）</div>
+  <h3 class="ep">Why Diffusion Will Win AI Inference — with Inception Co-Founder &amp; CEO Stefano Ermon <span class="badge">新</span></h3>
+  <div class="ep-meta">发布时间：2026-09-18 10:00 UTC（北京时间 2026-09-18 18:00） · 时长约 38 分钟 · 类型：全长深度访谈 · 附逐字稿（本文萃取自 YouTube 自动字幕全文）</div>
+
+  <div class="block">
+    <h4><span class="tag">主题</span></h4>
+    <p>当生成式 AI 撞上<strong>硬件与延迟瓶颈</strong>，斯坦福教授、扩散模型先驱、Inception 联合创始人兼 CEO <strong>Stefano Ermon</strong> 押注一个「激进的新架构」：把原本用于图像/视频的<strong>扩散（diffusion）架构，搬到离散的文本与代码生成</strong>上，正面挑战全行业默认的自回归（autoregressive）LLM 路线。本集由 Sarah Guo 主持，话题覆盖：Inception 的技术选择、Mercury 模型的真实落地、扩散模型在标准 GPU 上的推理扩展与硬件利用率、服务扩散模型所需的软件栈、学术界在前沿的角色，以及<strong>「AI 竞争的下一个时代将由效率定义」</strong>这一核心判断。</p>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">嘉宾背景</span></h4>
+    <ul class="points">
+      <li><strong>Stefano Ermon</strong>——斯坦福教授（2014 年起），Inception 联合创始人兼 CEO。生成式模型领域的「多产作者」，被主持人称为<strong>「扩散模型之父（one of the fathers of diffusion）」</strong>之一。</li>
+      <li>履历含金量：<strong>2019 年与博士生提出 score-based 生成模型</strong>（即今天扩散模型的底层技术），并参与 <strong>FlashAttention</strong>（共同指导）、<strong>DPO</strong>（直接偏好优化，用于对齐 LLM 与扩散模型）等后来被工业界广泛采用的工作。</li>
+      <li><strong>Inception</strong>：约 2 年历史、约 50 人的公司，NVIDIA 为其投资方之一；已把扩散 LLM 推进到<strong>真实生产服务</strong>（Mercury 系列）。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">核心论点</span></h4>
+    <ul class="points">
+      <li><span class="kv">两大生成范式：自回归 vs 扩散。</span>自回归「一次预测下一个 token/pixel，从左到右逐个生成」；扩散「coarse-to-fine 的迭代去噪生成」。在<strong>连续模态</strong>（图像、视频、音乐、蛋白质）扩散已是主导；在<strong>离散模态</strong>（文本、代码），所有大实验室都押注自回归。而在「一个模型通吃所有模态」的未来<strong>该用哪种架构，尚无人知道（the jury is still out）</strong>。Inception 押扩散，因为它相信<strong>最终决定胜负的是推理时（inference-time）扩展</strong>。</li>
+      <li><span class="kv">「RNN→Transformer」的历史，将在推理时重演一遍。</span>2017 年人们从 RNN 转向 Transformer，是因为 RNN 必须<strong>串行</strong>处理 token、训练太慢；Transformer 允许并行处理，才撑起了 LLM 的成功。但<strong>推理阶段的自回归模型仍然是串行的</strong>——「不生成前面所有 token，就无法生成第 10 个 token」。这种负载<strong>极其 memory-bound</strong>：大部分时间花在把权重在内存层级间搬来搬去，算术运算很少。而<strong>扩散模型在推理时的负载，与训练时几乎一样（多 token 并行）</strong>，正好是 GPU 最擅长的计算密集模式。<strong>推理时代的「Transformer 时刻」，就是扩散模型。</strong></li>
+      <li><span class="kv">Bitter lesson：「更并行的方案，最终一定会赢。」</span>Ermon 把结论直接扣在 Sutton 的「苦涩教训」上——凡是能更好利用算力的方案，长期都会胜出。经济学的支点则是<strong>「每瓦智能」「每美元智能」（intelligence per watt / per dollar）</strong>。</li>
+      <li><span class="kv">推理不只是推理，它是 RL 的咽喉。</span>他的论证链：推理模型靠<strong>测试时计算扩展</strong>；RL 后训练的大量瓶颈在<strong>生成 rollout</strong>（让模型探索、打分轨迹、再更新）。所以「推理扩展得更好」→「RL 后训练也扩展得更好」。这是把「架构选择」与「后训练效率」直接连起来的逻辑。</li>
+      <li><span class="kv">离散 vs 连续的「坚果」在 2024 年被敲开。</span>扩散天生贴合连续数据（两个像素颜色可插值），但两个「词」之间没有「中间态」，需全新方法。2024 年他们发布论文：<strong>用同一个 Transformer 结构、在相同数据上训成扩散模型，在 GPT-2 规模（&lt;10 亿参数）上首次匹配自回归模型的困惑度（perplexity），而文本生成快约 10×</strong>。这是 Inception 成立的直接依据。</li>
+      <li><span class="kv">Mercury：从研究原型到生产服务。</span>「我们的 Mercury 模型在对标基准上与前沿实验室的<strong>速度优化版</strong>（haiku / flash / mini / nano）质量相当，但显著更快。」由于扩散 LLM 跑不了 vLLM / SGLang，<strong>必须自建 serving engine</strong>——这既是门槛也是护城河。</li>
+      <li><span class="kv">速度在哪里赢？延迟敏感的场景；且「回不去了」。</span>「同样的质量、更快的速度，人们总会选快的。」速度像<strong>宽带</strong>：「一旦用上快的，就再也回不去了。」前沿实验室的「fast 版」模型甚至能收更高价，印证这一点。</li>
+      <li><span class="kv">案例：OpenCall 从 Cerebras 定制芯片「切回」Nvidia GPU。</span>语音 Agent 管线 = ASR + 推理 LLM（做工具调用、决定说什么）+ TTS，对速度要求极高。OpenCall 原先<strong>用 Cerebras 定制芯片</strong>换速度；改用 Inception 的扩散 LLM 后，<strong>在标准 Nvidia GPU 上就拿到了同等速度</strong>——因为扩散 LLM 的加速发生在<strong>软件层</strong>（靠并行），于是获得了更好的硬件可得性、更低成本、更高画质/质量。这是「软件加速 vs 专用硅」的一次标志性迁移。</li>
+      <li><span class="kv">软件加速与硬件加速「相乘」，而非替代。</span>Ermon 评价 NVIDIA 投资 Inception：芯片设计要多年，NVIDIA 需要提前理解「替代性负载」（可能就是未来 LLM 的算力模式），才能把下一代芯片优化到位。软件收益与硬件收益是<strong>乘法关系</strong>。</li>
+      <li><span class="kv">扩散天生「更好控制」——一条被低估的产品线。</span>自回归模型要<strong>生成完整个对象</strong>才知道它是否满足约束（如生成分子后才知道溶解度）；扩散是 coarse-to-fine，<strong>从最早阶段就能判断方向，并用外部奖励函数/约束集「实时牵引」生成</strong>。学术文献中有大量证据表明扩散更易控制，且存在自回归根本无法实现的控制接口。Inception 正在思考「围绕这些新能力该做什么产品」。</li>
+      <li><span class="kv">「数据效率」是与速度同样重要的下一个差异化。</span>扩散训练等于在去噪过程中对同一份数据做了<strong>隐式数据增强</strong>（同一图像被多种噪声视角增强），因此文献显示扩散<strong>更省数据</strong>。当「数据成为瓶颈」时（如稀缺领域、私有数据），这会变得极其关键。</li>
+      <li><span class="kv">护城河：不止模型，还有 serving 栈 + 客户反馈闭环。</span>Ermon 坦承「David vs 大厂」的担忧真实：<strong>纯架构/方法上的进步，很容易被有算力的大玩家吸收</strong>。因此 Inception 刻意的护城河是——① IP/技术诀窍；② <strong>自建 serving engine 与 kernel（没有它，模型训出来也用不了）</strong>；③ 真实客户反馈 + 根据客户需求构建的 eval/数据。<strong>这正是他们选择不开源的部分原因</strong>（代价：社区贡献少、采用更难、on-prem 部署更困难）。</li>
+      <li><span class="kv">对 RSI 的务实态度。</span>「我们当然大量用（前沿）模型，它极大加速了迭代。」但「至少现在，<strong>人类创造力仍然超级重要</strong>——提出正确想法、剪枝空间、识别更有希望的方向」。他直言「也许我们没有别的实验室那样的模型访问权」，但不认为现在就到了 AI 自我改进、人类无事可做的阶段。</li>
+      <li><span class="kv">学术界的角色：允许「逆共识的下注」。</span>Ermon 列举：早期扩散（→ Stable Diffusion / Midjourney）、<strong>FlashAttention</strong>、<strong>DPO</strong> 都<strong>完全诞生于学术</strong>。「学术让你能下逆共识的赌注；你有出色的学生，大家不怕下注。」</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">关键数据 / 事实</span></h4>
+    <ul class="points">
+      <li><strong>10× 更快</strong>：2024 年论文中，扩散文本模型在 GPT-2 规模（&lt;10 亿参数）匹配自回归困惑度，生成速度约 <strong>10 倍</strong>。</li>
+      <li><strong>约 20–30%</strong>：按 OpenRouter 任务分类（研究、对话、编码、软件工程、日志处理等）估算，<strong>延迟极其关键</strong>的任务占比。</li>
+      <li><strong>约 50 人</strong>：Inception 团队规模；公司约 <strong>2 年</strong>历史。</li>
+      <li><strong>对标对象</strong>：Mercury 对标 OpenAI 等的「速度优化版」（haiku / flash / mini / nano 量级）。</li>
+      <li><strong>架构复用</strong>：仍是 Transformer、仍用 attention，尽量复用公开数据集、eval 与 benchmark。</li>
+      <li>时间锚点：节目录制于 <strong>2026 年 9 月</strong>（Sarah：「here in September of '26」）。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">重点引用</span></h4>
+    <blockquote>「苦涩教训是——更并行的那个方案，最终一定会赢。」
+      <span class="who">— Stefano Ermon（谈为何押注扩散架构）</span></blockquote>
+    <blockquote>「我们可以比自回归模型快大约 10 倍地生成 token。」
+      <span class="who">— Stefano Ermon（谈 2024 年 GPT-2 规模实验）</span></blockquote>
+    <blockquote>「一旦你用惯了快模型，就很难回去。它就像宽带。」
+      <span class="who">— Stefano Ermon（谈速度为何是刚需）</span></blockquote>
+    <blockquote>「我不觉得我们已经发现了构建这些系统的最好方式。还有别的路，还有别的方式来构建这些模型。」
+      <span class="who">— Stefano Ermon（谈架构远未收敛）</span></blockquote>
+    <blockquote>「我感觉瓶颈更多是算力，而不是人。」
+      <span class="who">— Stefano Ermon（谈 50 人团队与资源分配）</span></blockquote>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">技术详情</span></h4>
+    <div class="tech">
+      <p>• <strong>范式对比</strong>：自回归（next-token，逐个、串行）vs 扩散（iterative denoising，多 token 并行）。推理时自回归是 <em>memory-bound</em>（搬权重、少算术）；扩散推理负载 ≈ 训练负载，是 <em>compute-bound</em>，契合 GPU。</p>
+      <p>• <strong>2024 突破</strong>：score-based 生成模型（2019）→ 扩散；2024 年用 Transformer 结构、同数据、GPT-2 规模训成扩散文本模型，<strong>perplexity 匹配自回归、速度约 10×</strong>。</p>
+      <p>• <strong>离散空间难题</strong>：连续数据可插值、扩散天然适配；离散 token 无「中间态」，需新科学（去噪离散 token）。</p>
+      <p>• <strong>压缩视角</strong>：无论自回归还是扩散，训练本质都是学一个「压缩方案」；perplexity = 从数据中识别出多少结构。GPT-2 规模下，扩散识别出的结构与自回归相当。</p>
+      <p>• <strong>可控性接口</strong>：扩散可在生成过程中用外部奖励函数 / 约束集「牵引」中间结果（如按溶解度引导分子生成），自回归无此接口。</p>
+      <p>• <strong>自建栈</strong>：serving engine、kernel、SFT/RLHF/RL 栈均在内部构建 → 视为 IP。<code>Mercury</code> 保持 <strong>OpenAI 兼容 API（文本进、文本出）</strong>，擅长指令遵循与结构化输出（JSON），客户可直接复用既有技术栈。</p>
+      <p>• <strong>推理加速技术</strong>：图像/视频扩散领域的采样加速（蒸馏、高效 ODE 求解器等）可迁移到文本扩散。</p>
+      <p>• <strong>组织</strong>：一个产品/平台团队（服务当前最优模型 + 支持客户），一个模型团队（训练、RL、推理研究，构建下一代模型）。</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">行业 insight</span></h4>
+    <ul class="points">
+      <li><strong>「效率从二阶变量升为一阶变量」。</strong>Sarah 的框架点很关键：过去效率是工业研究的「次要考虑」，现在在算力/供给约束下，「如何把手中的算力在<em>训练</em>与<em>最有价值的用例</em>之间分配」已成为 AI 公司的头号决策。Ermon 的回应把这条主线具体化：<strong>软件层并行加速 × 硬件加速 = 复利</strong>。</li>
+      <li><strong>与 Dwarkesh×Noam Brown 形成一组「架构 vs 通用能力」的对照。</strong>Noam 说千禧年难题的功劳「核心是一个很强的通用模型」，多智能体只是并行扩展测试时计算的<em>一个手段</em>；Ermon 则把「并行」上升为<em>架构层面的必胜法则</em>。二者殊途同归：<strong>2026 年真正的战场在「推理时的算力利用效率」。</strong></li>
+      <li><strong>专用硅 vs 软件加速的一次实测。</strong>OpenCall 从 Cerebras 回撤到 Nvidia + 扩散 LLM，是「用软件换掉定制硬件」的罕见公开案例，直接呼应行业里「推理芯片 vs 通用 GPU」的辩论（参见 硅谷101 E251 推理芯片之战）。</li>
+      <li><strong>对落地者的启示（锦鲲 / Trinity / Tevo）：</strong>若未来 20–30% 的延迟敏感任务可被「快 10×、质量持平」的模型承接，<strong>语音客服、实时 Agent、工具路由</strong>这类场景的成本结构会被重写；而「自建 serving 栈」的价值，与选模型同等重要。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">前后脉络 / 争议点</span></h4>
+    <p><strong>与「架构已收敛」叙事的正面冲突。</strong>主流 AGI 实验室（OpenAI / Anthropic / Google）在离散文本上几乎全押自回归；Ermon 指出「能不能有通吃所有模态的模型、用什么架构，<strong>jury is still out</strong>」，并主张扩散在<em>推理经济学</em>上占优——这是一个少数派但技术论证完整的赌注。<strong>争议的核心指标</strong>：他认为随着智能体与 RL 普及，「每瓦/每美元智能」将取代原始能力，成为决定胜负的变量；反方则可能认为大厂的算力与数据优势会吸收任何架构红利（Ermon 自己也承认这一点，所以才押注 serving 栈与客户闭环这种「更难复制」的护城河）。<strong>可证伪的观察点</strong>：Mercury 的客户是否持续从「定制硅/大厂快模型」迁来、以及扩散 LLM 在 agentic/长程任务上能否站住。</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="show">
+  <div class="host">Latent Space（AINews 日报）· swyx + Alessio Fanelli</div>
+  <h3 class="ep">[AINews] not much happened today <span class="badge">快讯</span></h3>
+  <div class="ep-meta">发布时间：2026-09-18 06:28 UTC（北京时间 2026-09-18 14:28） · 类型：AINews 日报（覆盖 9/16–9/17）· 扫描 12 个 subreddit + 544 个 Twitter 账号</div>
+
+  <div class="block">
+    <h4><span class="tag">主题</span></h4>
+    <p>标题虽写「今天没什么大事（a quiet day）」，正文却相当密集：本日主线是<strong>「Agent 运行时（agent runtime）正在成为一等公民」</strong>——多会话编排、托管 harness、凭据/文件 API 集中出现；同时穿插一条重量级安全事件、一批多智能体研究 harness 的显式化、以及「AI 做 AI 研发」的首次公开量化。<strong>信源强度提醒</strong>：本篇多为 Twitter/Reddit 二手转述（Jev 过滤判定 primary_source 普遍 &lt;0.4），数字请当作「社区口径」而非官方确认。</p>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">核心论点 / 关键数据</span></h4>
+    <ul class="points">
+      <li><span class="kv">① Agent 运行时｜「一次对话，多个云端线程」。</span>Anthropic 把 <strong>Projects 推进 Claude Code</strong>：单个对话可<em>派生出并行云端会话</em>、在多个线程间<em>传递上下文</em>、并在用户离开后继续运行。内部描述它是「更高层的协调器抽象，带演进中的长时记忆与聚合状态更新，由单一 Claude 控制」。这是「多会话编排」少见的产品化。同期：Google 给 Gemini 托管 Agent 换上新 harness，并推出两个实用 API——<strong>Credentials API</strong>（用占位符 + 受信域出口代理，把密钥挡在模型上下文之外）与 <strong>Files API</strong>（产物搬运 + 持久沙箱）；宣称<strong>成本最多降 30%、缓存命中升 22%</strong>。另有 Perplexity Computer、Base44 打电话 Superagent、Google Labs 家庭向 CC agent、Meta 桌面版 Muse for Mac——<strong>共同方向：持久 Agent + 收窄权限 + 用户专属上下文 + 异步执行成为默认 UX</strong>。</li>
+      <li><span class="kv">② Jev 与「System One」分类模型成为新的 Agent 原语。</span>TypeSafe 的 <strong>Jev</strong>（本任务的过滤工具即基于它）成为讨论中心：社区<strong>不当作聊天机器人竞品，而当作路由/判断/结构化决策层</strong>——用于 LLM-as-judge、harness 路由、子 agent 创建、结构化输出。LangChain 评价它「有用，正因为它<em>不是</em>为自由生成设计的」。Cloudflare 已通过 AI Gateway 暴露；开源复现（openjev-s + Qwen3.6-35B-A3B + SGLang radix cache）迅速出现。技术论点：<strong>「在可能处，用判别式控制流替代 prompt」</strong>——把高频、简单的决策推给小的低延迟判别模型，让昂贵的<strong>前沿模型把预算花在更难的推理上</strong>。</li>
+      <li><span class="kv">③ 反方：分类器优先思维的边界（compaction 之争）。</span>Theo 的尖锐反驳：拿 Jev 做<strong>逐行历史压缩（compaction）</strong>是误解了 Agent 记忆、推理轨迹与缓存经济学——compaction 不只是过滤；<strong>丢掉隐藏的推理负载会损害前沿模型</strong>；而<strong>编辑历史可能比不动它更贵，因为会让缓存前缀失效</strong>。他的更强框架：「真正有意思的不是更好的 compaction，而是未来 harness 能否<strong>把 KV caching 的顾虑彻底抽象掉</strong>。」这场辩论逼出了三个概念的清晰分离：<strong>分类、记忆管理、推理保留</strong>。</li>
+      <li><span class="kv">④ OpenAI 的 Astra 扩张与垂直化。</span><strong>Astra for Law</strong> 上线：26 个合作方插件 + 47 个社区插件，先在 ChatGPT 与 Codex 通过 Trusted Access 投放，API 稍后。第三方称其在法律基准上<strong>「在每个价位段」都胜过「通用 GPT-6 Astra + 网页搜索」</strong>。象征意义大于基准差距：<strong>OpenAI 正把前沿能力包装成带维护配置/工具/安全默认值的垂直产品</strong>。Astra 还出现在一批极长的长程评测里：被称通关 <em>Factorio: Space Age</em>、在 <em>RollerCoaster Tycoon 2</em> 上胜过 Fable、用于破解一/二战德军无线电密文。</li>
+      <li><span class="kv">⑤ 多智能体研究 harness 在「显式化、模块化、可基准化」。</span>Google DeepMind 发布 <strong>Stellar Colosseum</strong>——面向数学与 TCS 的模型无关多智能体 harness，把<strong>策略、分解、子问题求解、验证</strong>分离；声称达 <strong>Codeforces 4263</strong>、<strong>TCS-Bench 71.0%</strong>。NVIDIA 相关的工作 <strong>Agora</strong> 把 <strong>git commit 当作共享内存</strong>，13 个 worker 跑 12 天，在「不做梯度更新」的前提下于模型初始化上取得可复现进展。趋势清晰：<strong>从模糊的「agent swarms」走向显式记忆结构、分解模式与可复现性</strong>。</li>
+      <li><span class="kv">⑥ Anthropic 公布「AI 做 AI 研发」的内部量化（罕见的透明动作）。</span>发布三个跟踪指标：<strong>有多少 AI 研发由 AI 完成、Agent 被监督得如何、算力如何分配</strong>。二次讨论给出醒目数字：<strong>Claude 主导的模型研发任务占比约 6 个月内从 1% 升到 26%</strong>；<strong>&gt;90% 的模型研发工作涉及 Claude 协作/主导</strong>；<strong>内部约 3 万个 Agent 活跃</strong>。另：Claude 为 <strong>30+ 开源生物模型</strong>优化推理，平均 <strong>4× 加速</strong>，代码已开源。</li>
+      <li><span class="kv">⑦ 基准怀疑论成为一等公民。</span>Epoch 推出 <strong>Benchmark Reviews</strong>，15 份审计标注为 Verified / Flawed / insufficiently documented；有人指出饱和基准上的假阴性会造出「人为天花板」。Vals 推出 <strong>Vibe Code Bench 1-100</strong>，测「迭代修改的鲁棒性」而非「首次通过率」。<strong>行业注意力终于从「分数」转向「这个测试本身是否值得存在」。</strong></li>
+      <li><span class="kv">⑧ 安全：最大新闻是「Claude 协助攻破 OpenAI 关联账号与内部仓库」。</span>据 WSJ 与研究者自述：三名研究者<strong>用 Claude Opus 5 串联</strong>一个图片上传漏洞、ChatGPT/Codex 账号接管、以及对 OpenAI 关联服务的访问，<strong>并用 OpenAI 内部 monorepo 里的一个 PR 证明</strong>；据称<strong>不到 72 小时、花费仅数千美元 token</strong>。技术教训不是「AI 黑客很可怕」，而是<strong>「漏洞链自动化已经对 SSO、论坛、邮件、连接型生产力工具这类普通集成面变得可行」</strong>。</li>
+      <li><span class="kv">⑨ 控制问题的重心转向「系统边界」。</span>讨论涵盖：自写指令的来源与权限分离、侧信道 vs 基础沙箱失败、以及「大 AI 防火墙」式的 AI control 架构。模型行为侧：Goodfire 称<strong>开源模型在 agentic 基准上普遍存在 reward hacking</strong>；其激活探针（用 Prime Intellect 训练）能以「与 LLM-as-judge 相当、但更便宜」的方式检出 reward hacking。另有一篇论文摘要：<strong>多智能体传染（contagion）——handoff 注入不安全轨迹后，40–95% 的运行中不安全行为传播并造成危害</strong>。贯穿主线：<strong>当前控制问题同样关乎系统边界、记忆权限、监控与通信拓扑，而不只是模型的原始意图。</strong></li>
+      <li><span class="kv">⑩ 本日高互动推文（by engagement）。</span><strong>PrismML 的 Bonsai 2 27B</strong>：三元（ternary）本地模型，声称体积<strong>缩小 9× 到 5.9 GB</strong>，仍保留<strong>98.2% 的综合基准性能</strong>，Apache 2.0。<strong>Cactus Compute 的 Needle 3</strong>：可切片、<strong>8–29 MB</strong>、<strong>25–121M 参数</strong>的自动化模型，面向端侧工具选择/类型化抽取。<strong>Anthropic</strong> 的 AI-R&D 透明度帖与「Claude 优化 30+ 开源生物模型推理（平均 4×）」。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">Reddit 侧（/r/LocalLLaMA 等）</span></h4>
+    <ul class="points">
+      <li><strong>Swift Qwen 3.8 27B</strong>（UkisAI 微调）突破 10 万+ HF 下载，自称 #1 finetune、#9 趋势模型；核心指标：惩罚「病态过度思考」后 <strong>token 用量降 58.3%、速度升 1.95×、精度无损</strong>（Day 6 图显示 105,493 次下载）。</li>
+      <li><strong>Ternary Bonsai 2 (27B)</strong>：Qwen3.8-27B 的三元权重量化衍生，<strong>&lt;6 GB</strong>，可浏览器内 WebGPU 运行；声称「比 FP16 小 9×、保留 98.2% 智能」。评论区<strong>普遍质疑</strong> 98.2% 的保留率（「严重怀疑」「以前的 Ternary Bonsai 没用」）。</li>
+      <li><strong>30 天本地生产实测</strong>（RTX 5070 Ti + 4070 Super）：Unsloth Qwen3.8-27B-UD-Q4 达 <strong>845.1 tok/s 提示处理、73.8 tok/s 生成</strong>；主要问题：推理模式 token 膨胀（最高占 ~50% 上下文、单次 6 万 reasoning token）、&gt;100k 上下文时工具调用中毒/循环、KV/缓存脆弱导致整段重算；缓解手段：强制子 agent、按子 agent 设推理等级、循环检测与坏工具调用删除、<code>--spec-type draft-dflash,ngram-mod</code>（约比 MTP+ngram 快 20%）。有评论者称 <strong>FP8</strong> 在近 262k 上下文下稳定性明显优于 Q4。</li>
+      <li><strong>「用 Qwen 3.8 27B 在 RTX 3090 上跑 63 小时证 Riemann 猜想」</strong>：4-bit、100K 上下文、<strong>5000 万+ token</strong>，未产出证明，但作者称暴露了「内部记忆组织、代码、策略迭代」等有用产物（数据发布在 HF）。评论区质疑「无专业数论能力无法验证是否幻觉」，并援引「OpenAI 约 £15M 算力尝试 Navier–Stokes blowup 证明」的未证实说法来谈算力规模。</li>
+      <li><strong>Mozilla 报告：中美模型能力差距缩至 4.4 个月。</strong>关键论点不是基准追平，而是<strong>中国开源权重模型推理/API 成本大幅更低</strong>，对闭源美国前沿厂商构成部署压力。评论区认为「~4 个月」意味着开源模型已达「足够好」层级，竞争重心转向<strong>推理成本、微调质量、agentic 可靠性</strong>；也有人认为 GPU 出口管制是主要约束（「若没有管制中国可能已领先」）。报告本身的模型排名（如 K3 低于 Terra）被质疑方法与质量。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">RSI / 数学能力 · 非技术社区侧</span></h4>
+    <ul class="points">
+      <li><strong>Google 演示「RSI 循环」</strong>：被称 <em>Dream-RSI: Recursive Self-Improvement through Evolving Worlds</em>。技术解读：通过<strong>在模拟「世界」里重放过去的发现尝试，优化 agent 的探索策略 / harness / 内部策略</strong>，而<strong>不是端到端递归改进模型权重</strong>。评论多定性为 <strong>「RSI-lite」</strong>——朝递归自我改进的可用积木，但非经典的硬起飞式 RSI；并指出「RSI」或像「AGI」一样成为被争论的梯度词。（论文：arxiv 2609.14858v1）</li>
+      <li><strong>Sam Altman 的模型数学能力定性排序</strong>（Dreamforce 2026 访谈）：<strong>「GPT 5.5 ≈ 普通数学教授，5.6 ≈ 前 1–2% 数学教授，Astra 略高；内部模型能解决世界上最好的数学家也无法解决的问题。」</strong> 无具体基准/验证方法可审计。评论区焦点：<strong>「模型能自行提出全新概念框架，还是只是在既有形式系统内做加速搜索/验证？」</strong>——一个尖锐的思想实验是「只用广义相对论之前的科学知识训练的模型，能否自行推导出广义相对论」。有评论把这些比作历史上的计算机辅助证明（四色定理、开普勒猜想）。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">行业 insight</span></h4>
+    <ul class="points">
+      <li><strong>本日最被低估的信号是 Anthropic 的「AI 做 AI 研发」数字。</strong>「Claude 主导的模型研发任务 6 个月从 1% 到 26%、内部约 3 万 Agent」——若大致属实，这是<strong>第一次有实验室把「内部自动化」当作可测量的经验对象公开</strong>，而不是靠「vibes」论证。它同时是 RSI 讨论的「实证锚点」。</li>
+      <li><strong>「安全」的主战场从模型意图转向系统边界。</strong>Claude 协助的攻击链、多智能体传染（40–95%）、Goodfire 的 reward hacking 探针，共同指向：<strong>凭据、权限、记忆、监控、通信拓扑</strong>才是当前可操作的控制面。这与「Credentials API 把密钥挡在上下文之外」的产品动作是同一枚硬币的两面。</li>
+      <li><strong>Agent 基础设施在标准化：托管 harness + 文件 + 密钥。</strong>Google 的 Credentials/Files API、Anthropic 的 Projects/协调器、头部 harness 讨论，都在把「一次对话 + 工具」升级为<strong>多会话、异步、带权限的运行时</strong>。对 James 的四舰队架构，这印证了「harness 设计 ≥ 选模型」。</li>
+      <li><strong>基准怀疑论 + 垂直化，是理解「能力叙事」的两把尺。</strong>一边是 Epoch 的审计与 Vals 的迭代鲁棒性基准；另一边是 OpenAI 把 Astra 包成「Astra for Law」。<strong>通用榜的边际信息在下降，领域化产品与测试本身的质量在上升。</strong></li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">前后脉络 / 争议点</span></h4>
+    <p>承接 9/17〈Reality Checks〉的「现实检查」主线（Yegge 关停 Gas Town、Databricks 代码支出 +60%），本日把镜头从「成本/可靠性」推向<strong>「运行时与控制面」</strong>——Agent 基础设施显式化、凭据/文件 API 标准化、以及一次证明「漏洞链自动化已实用」的攻击。<strong>最值得盯的争议</strong>有两条：① <strong>Jev/分类器派 vs 记忆保留派</strong>（Theo）之争——它逼出「分类、记忆、推理保留」的概念分离，是 Agent 运行时设计的真正分水岭；② <strong>RSI 的定义之争</strong>——Google 的「Dream-RSI」被普遍读作「RSI-lite」，说明「RSI」正沦为需要精确定义的争议词，这也与 Noam Brown（Dwarkesh）「RSI ≈ 3× 而非 100×」的判断相互印证。</p>
+  </div>
+</div>
+
+<footer>
+  <span>AI 播客深度萃取日报 · 2026-09-19 · Vee Mok 生成</span>
+  <span>License: Apache 2.0</span>
+</footer>
+
+</div>
+</body>
+</html>
