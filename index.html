@@ -1461,6 +1461,18 @@ function togglePastReports() {
   <p class="note">The Cognitive Revolution（9/17，全長訪談，Nathan Labenz × Wade Foster 第二次做客）：本週最「潑冷水」嘅一集。Zapier 自家 AutomationBench（約 600 項真實知識工作任務：市場／銷售／HR／運營，公開任務集＋論文 arXiv:2604.18934）最高成功率（GPT-6 Astra）僅約 40%，Gemini 3.7 Flash「做得幾好但成本一小部分」。核心形狀：大部分人只揀一個 daily driver（Cursor／Claude Code／ChatGPT），所以「headless（bring it wherever you want）」係贏嘅策略（點名 Salesforce Headless）。最耐用一句：「絕大多數人用 agent 做嘅嘢，其實應該用返舊式確定性代碼；你只想 AI 推理真正需要推理嘅步驟」；Zapier MCP 就係咁砌（模型起 workflow＋寫平價可靠部分嘅代碼，推理留返必要步驟）；「no-code is code」構建反轉。內部樣本：support 排障起五個獨立 agent，四個同意通常啱，人類 thumbs-up/down＋理由回饋。競爭：唔驚實驗室（「佢哋冇可能砌晒所有嘢」），驚「一片相同」同「唔採用」——市場「大一千倍」；引 PG：你係同「想升職嘅中層產品總監」競爭。定價：「座位制已死或將死」，用量 vs 結果制。組織：由首席人力官（Brandon Sammut，現 Chief People & AI Transformation Officer）管轉型，因為瓶頸係「人的工作」；近 100% 員工每日用 AI；默認透明 Slack（HR 事件／安全漏洞除外）；工程師每月 $30K token 係 outlier。AI 寫作：唔係禁 AI 係反低質——「用 AI 唔係問題，低質量先係要打嘅仗」。收尾：EPD 冇咗、管理扁平、人人都係 mini data analyst，但「公司感覺差唔多」。· Cognitive Revolution</p>
 </div>
 
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/162-no-priors-stefano-ermon-diffusion-inference.html">「擴散會贏下推理」——No Priors × Stefano Ermon：RNN→Transformer 嘅歷史將喺推理時重演，Mercury 比自回歸快 10×，OpenCall 由 Cerebras 切返 Nvidia</a></h3>
+  <p class="note">No Priors（9/18，約 38 分鐘，Sarah Guo × Stefano Ermon——Stanford 教授、Inception 聯創兼 CEO、擴散／score-based 生成模型先驅、FlashAttention 共同指導、DPO 發源）。核心判斷：架構之爭「陪審團仲喺度」，但推理時擴散勝——自回歸推理係串行、極度 memory-bound（搬權重、少算術）；擴散推理負載 ≈ 訓練負載（多 token 並行、compute-bound），正好映射 GPU。苦澀教訓：「更並行嘅方案最終一定會贏」。硬料：2024 年論文（同架構同數據、GPT-2 規模）首次匹配自回歸 perplexity、生成快約 10×；Mercury 質量對標 haiku／flash／mini／nano 但顯著更快；因擴散跑唔到 vLLM／SGLang，自建 serving engine 變護城河；OpenCall 由 Cerebras 定製芯片切到 Mercury + Nvidia GPU（同速度、更低成本、更高可得性）。判斷：約 20–30% 工作負載「延遲極關鍵」= 下限可及市場；差異化下一步押數據效率同可控性（擴散可喺生成途中用外部獎勵／約束實時牽引）。最耐用一句：「一旦用慣快模型就返唔到轉頭，好似寬帶」；「瓶頸更加係算力而唔係人」。· No Priors</p>
+</div>
+
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/163-latent-space-ainews-agent-runtime-anthropic-rsi-security.html">「今日冇乜大事」——Latent Space AINews（9/16–9/17）：Agent 運行時升為一等公民、Anthropic「AI 做 AI 研發」1%→26%、同一次證明漏洞鏈自動化已實用嘅攻擊</a></h3>
+  <p class="note">Latent Space AINews（9/18，swyx + Alessio，掃 12 subreddit + 544 Twitter；信源多為二手轉述，數字屬社區口徑）。主線：Agent 運行時成為一等公民——Anthropic 把 Projects 推進 Claude Code（一次對話派生並行雲端線程、異步續跑）、Google 給 Gemini 託管 Agent 上新 harness + Credentials API（密鑰擋喺上下文外）＋ Files API（成本最多降 30%、緩存命中 +22%）；Jev／System One 分類模型成新 Agent 原語（「用判別式控制流替代 prompt」），並引出 Theo 嘅 compaction 反駁（丟推理負載傷模型、編輯歷史令緩存前綴失效）→ 逼出「分類／記憶管理／推理保留」概念分離。最重料：Anthropic 首次公開量化「AI 做 AI 研發」——Claude 主導模型研發任務 6 個月由 1%→26%、>90% 研發涉 Claude 協作、內部約 3 萬 Agent；Claude 協助攻破 OpenAI 關聯帳號＋內部 monorepo（<72h、數千美元 token）；多智能體傳染 40–95%。另：Stellar Colosseum（Codeforces 4263）、Agora（git commit 做共享記憶）、Astra for Law（26+47 插件）、Epoch Benchmark Reviews、Mozilla 中美差距 4.4 個月。· Latent Space</p>
+</div>
+
 <footer>
   <p>JMOKSZ / ai-podcast-collection</p>
   <p style="margin-top:0.3rem;">每日 10:03 自動掃描更新 · Apache 2.0</p>

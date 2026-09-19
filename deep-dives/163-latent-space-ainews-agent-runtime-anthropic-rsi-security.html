@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「今日冇乜大事」——Latent Space AINews（9/16–9/17）：Agent 運行時成為一等公民、Anthropic「AI 做 AI 研發」1%→26%、同一次證明漏洞鏈自動化已實用嘅攻擊</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table.dt { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 1rem 0; }
+  table.dt th, table.dt td { border-bottom: 1px solid #e0dbd4; padding: 0.5rem 0.6rem; text-align: left; vertical-align: top; }
+  table.dt th { color: #8b5e3c; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  .warn { font-size: 0.9rem; color: #8b5e3c; background: #fdf3ea; border: 1px solid #f0dcc8; border-radius: 5px; padding: 0.7rem 1rem; margin: 1rem 0; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space（AINews 日報）· 2026-09-18 · 快訊（覆蓋 9/16–9/17）</div>
+  <h1>「今日冇乜大事」——Latent Space AINews（9/16–9/17）：Agent 運行時成為一等公民、Anthropic「AI 做 AI 研發」1%→26%、同一次證明漏洞鏈自動化已實用嘅攻擊</h1>
+  <div class="meta">
+    <span>📅 2026-09-18 06:28 UTC（北京 09-18 14:28）發布</span><span>·</span><span>🎙 Latent Space（swyx + Alessio Fanelli）</span><span>·</span><span>🧭 AINews 日報：掃描 12 個 subreddit + 544 個 Twitter 帳號</span><span>·</span><span>🏷 Agent 運行時 / AI 做 AI 研發 / 安全 / 基準懷疑論</span>
+  </div>
+</header>
+
+<div class="warn">
+  ⚠️ <strong>信源強度提醒：</strong>本篇 AINews 多為 Twitter／Reddit 二手轉述，關鍵數字（尤其 Anthropic 內部指標同「Claude 協助攻破 OpenAI」事件）應視為<strong>「社區口徑」而非官方確認</strong>。文中已標註來源強度。
+</div>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+標題雖然係「今日冇乜大事（not much happened today）」，正文其實相當密集。呢一期 AINews 嘅主線係一個結構性轉向：<strong>「Agent 運行時（agent runtime）正在成為一等公民」</strong>——多會話編排、託管 harness、憑據／文件 API 集中出現。同時穿插三條重量級線索：Anthropic 首次公開量化「AI 做 AI 研發」、一次證明漏洞鏈自動化已經實用嘅安全事件，以及「基準本身值唔值得存在」終於成為一等公民嘅懷疑論。
+</p>
+
+<div class="highlight-box">
+  <strong>呢期嘅中心判斷：</strong>如果把當日資訊壓成一句——<strong>「一次對話 + 工具」正在被升級為「多會話、異步、帶權限嘅運行時」</strong>。產品動作（Anthropic Projects、Google Credentials/Files API）、研究動作（多智能體 harness 顯式化）、安全動作（憑據擋喺上下文之外）其實係同一枚硬幣嘅兩面：<strong>當前嘅控制問題，同樣關乎系統邊界、記憶權限、監控同通信拓撲，而唔止係模型嘅原始意圖。</strong>
+</div>
+
+<div class="section-title">一、Agent 運行時：「一次對話，多個雲端線程」</div>
+
+<p>Anthropic 把 <strong>Projects 推進 Claude Code</strong>：單個對話可以<strong>派生出並行嘅雲端會話</strong>、喺多個線程之間<strong>傳遞上下文</strong>、並且喺用戶離開之後繼續運行。內部描述佢係「一個更高層嘅協調器抽象，帶住進化中嘅長時記憶同聚合狀態更新，由單一 Claude 控制」（Cat Wu、MikeyK）。AINews 評價：「呢個係迄今最清晰嘅『多會話編排』產品化之一，而唔止係『chat + tools』。」</p>
+
+<p>同期，Google 亦把 Agent 基礎設施標準化——更新 Gemini 託管 Agent，配一個新嘅 Antigravity-based harness，加埋兩個好實用嘅 API：</p>
+
+<div class="data-point">
+  <span>Google 新 API</span>
+  <strong>Credentials API</strong>：用佔位符＋受信域出口代理（trusted-domain egress proxying），<strong>把密鑰擋喺模型上下文之外</strong>。<br>
+  <strong>Files API</strong>：產物搬運＋持久沙盒（persistent sandboxes）。<br>
+  同一發佈宣稱：<strong>成本最多降 30%、緩存命中升 22%</strong>。
+</div>
+
+<p>除此之外，Perplexity 嘅 Computer、Base44 嘅打電話 Superagent、Google Labs 嘅家庭向 CC agent、Meta 桌面版 Muse for Mac——「全部指向同一方向：<strong>持久 Agent + 收窄權限 + 用戶專屬上下文 + 異步執行，成為默認 UX 而唔係附加功能。</strong>」</p>
+
+<div class="section-title">二、Jev 同學「System One」分類模型，成為新嘅 Agent 原語</div>
+
+<p>TypeSafe 嘅 <strong>Jev</strong>（即本系列日報用嘅前置過濾工具）係當日討論中心。但社區最清晰嘅模式係：<strong>builders 唔當佢係聊天機械人競品，而係當佢係一個「路由／判斷／結構化決策層」，嵌入更大系統之中。</strong>用途集中喺 LLM-as-judge、harness 路由、子 agent 創建、結構化輸出。LangChain 嘅評價好精準——「Jev 有用，正係因為佢<em>唔係</em>為自由生成而設計」。Cloudflare 已經透過 AI Gateway 暴露佢，開源復現（openjev-s + Qwen3.6-35B-A3B + SGLang radix cache）亦迅速出現。</p>
+
+<blockquote class="strong">
+  技術論點：<strong>「喺可能嘅地方，用判別式控制流（discriminative control flow）替代 prompt。」</strong>
+  <span class="attribution">— AINews 對 Jev 討論嘅總結</span>
+</blockquote>
+
+<p>社區把 Jev 講成一個「AI if statement」或者「harness 邏輯嘅泛化分類器」。核心吸引力同系統工程師熟悉嘅道理一致：<strong>把簡單、高頻嘅決策推畀一個小型、低延遲嘅判別模型，令昂貴嘅前沿模型可以把預算花喺更難嘅推理上。</strong></p>
+
+<h3 class="sub-title">反方：分類器優先思維嘅邊界（compaction 之爭）</h3>
+
+<p>呢段係整期最有價值嘅部分——因為一個尖銳嘅反駁逼出咗概念嘅清晰分離。Theo 嘅論點：</p>
+
+<ul>
+  <li>用 Jev 做<strong>逐行歷史壓縮（compaction）</strong>係誤解咗 Agent 記憶、推理軌跡同緩存經濟學；</li>
+  <li>compaction 唔只係過濾——<strong>丟掉隱藏嘅推理負載會損害前沿模型</strong>；</li>
+  <li>而<strong>編輯歷史可能比唔郁佢更貴，因為會令緩存前綴（cached prefixes）失效</strong>。</li>
+</ul>
+
+<blockquote class="strong">
+  「真正有意思嘅唔係『更好嘅 compaction』，而係未來 harness 能唔能夠<strong>把 KV caching 嘅顧慮徹底抽象掉</strong>。」
+  <span class="attribution">— Theo（AINews 引述）</span>
+</blockquote>
+
+<p>AINews 嘅判斷好中肯：「呢場辯論比 Jev 嘅 hype 本身更有價值——佢逼出<strong>分類（classification）、記憶管理（memory management）、推理保留（reasoning preservation）</strong>三者嘅清晰分離，而呢個正係 Agent 運行時設計嘅真正分水嶺。」</p>
+
+<div class="section-title">三、OpenAI 嘅 Astra 擴張：垂直化包裝</div>
+
+<p><strong>Astra for Law</strong> 上線：<strong>26 個合作方插件 + 47 個社區插件</strong>，先喺 ChatGPT 同 Codex 透過 Trusted Access 投放，API 稍後。第三方（Vals）稱，OpenAI 報告嘅跑分顯示 Astra for Law 喺其法律基準上<strong>「喺每個價位段」都勝過「通用 GPT-6 Astra + 網頁搜索」</strong>。</p>
+
+<p>AINews 點出關鍵：「包裝本身比基準差距更重要——OpenAI 正把前沿能力包成帶維護配置、工具同安全默認值嘅<strong>領域化產品</strong>，而唔係留返啲垂直行業自己由 zero 開始 prompt-engineer。」</p>
+
+<p>Astra 亦持續喺一批極長嘅長程評測同演示中出現：社區報告聲稱 GPT-6 Astra 通關 <em>Factorio: Space Age</em>、喺 <em>RollerCoaster Tycoon 2</em> 上勝過 Fable、用於破解一／二戰德軍無線電密文。另外 OpenAI 出咗 Codex 電話語音（經 GPT-Live-1）、Windows 上嘅 Appshots、任務／子 agent／對話嘅用量分析。「合起來畫出一條相當一致嘅產品弧線：<strong>Astra 做推理核心，Codex 做執行基座，介面越嚟越豐富以支援多模態捕獲同異步編排。</strong>」</p>
+
+<div class="section-title">四、多智能體研究 harness 正在「顯式化、模塊化、可基準化」</div>
+
+<ul>
+  <li><strong>Google DeepMind Stellar Colosseum</strong>：一個模型無關（model-agnostic）嘅多智能體 harness，面向數學同 TCS，把<strong>策略、分解、子問題求解、驗證</strong>四者分離；聲稱達 <strong>Codeforces 4263、TCS-Bench 71.0%</strong>。</li>
+  <li><strong>NVIDIA 相關嘅 Agora</strong>：把 <strong>git commit 當作共享記憶</strong>，13 個 worker 跑 12 日，喺「唔做梯度更新」嘅前提下，於模型初始化上取得可復現嘅進展。</li>
+  <li><strong>LangChain</strong>：分享一個 200+ 工具嘅付費媒體 agent 嘅實戰教訓。</li>
+</ul>
+
+<p>共同趨勢清晰：「<strong>由模糊嘅『agent swarms』，走向顯式嘅記憶結構、分解模式同可復現性。</strong>」</p>
+
+<div class="section-title">五、Anthropic 公布「AI 做 AI 研發」嘅內部量化（罕見嘅透明動作）</div>
+
+<p>呢個係當日最被低估、亦最重要嘅信號。Anthropic 發佈三個用嚟<strong>追蹤 AI 發展</strong>嘅度量：<strong>① 有幾多 AI 研發由 AI 完成、② Agent 被監督得幾好、③ 算力如何分配。</strong>二次討論給出咗醒目數字：</p>
+
+<div class="data-point">
+  <span>Anthropic 內部指標（社區口徑）</span>
+  Claude 主導嘅模型研發任務佔比，約 <strong>6 個月內由 1% 升到 26%</strong>；<br>
+  <strong>&gt;90%</strong> 嘅模型研發工作涉及 Claude 協作／主導；<br>
+  內部約 <strong>3 萬個 Agent</strong> 活躍；<br>
+  另：Claude 為 <strong>30+ 開源生物模型</strong>優化推理，平均 <strong>4× 加速</strong>，代碼已開源。
+</div>
+
+<blockquote class="strong">
+  「即使對呢啲數字保持審慎，呢個都係少數嘅公開窺視——<strong>將 AI 實驗室嘅內部自動化，當作一個可測量嘅經驗對象，而唔係靠『vibes』論證。</strong>」
+  <span class="attribution">— AINews 對 Anthropic 透明動作嘅評價</span>
+</blockquote>
+
+<p>我嘅補充：呢個數字同時係 RSI（遞歸自我改進）討論嘅<strong>實證錨點</strong>。當 Dwarkesh × Noam Brown（160 號）話 RSI 大概係 3× 而唔係 100×、瓶頸係「實驗要串行跑 + GPU 唔夠」時，Anthropic 嘅「1%→26%、3 萬 Agent」正好提供咗一個「內部自動化到底行到幾遠」嘅參照點。</p>
+
+<div class="section-title">六、基準懷疑論成為一等公民</div>
+
+<p>Epoch 推出 <strong>Benchmark Reviews</strong>，15 份審計標註為 Verified / Flawed / insufficiently documented；有人指出飽和基準上嘅假陰性（false negatives）會造出「人為天花板」。Vals 推出 <strong>Vibe Code Bench 1-100</strong>，測「迭代修改嘅魯棒性」而唔係「首次通過率」。</p>
+
+<blockquote>
+  「呢個係健康嘅：行業終於唔止睇分數，而係開始花公開注意力去諗——<strong>呢個測試本身值唔值得存在。</strong>」
+  <span class="attribution">— AINews</span>
+</blockquote>
+
+<div class="section-title">七、安全：最大新聞係「Claude 協助攻破 OpenAI 關聯帳號同內部倉庫」</div>
+
+<p>據 WSJ 報導同研究者自述：<strong>三名研究者用 Claude Opus 5 串聯</strong>一個圖片上傳漏洞、ChatGPT／Codex 帳號接管、以及對 OpenAI 關聯服務嘅訪問，<strong>並用 OpenAI 內部 monorepo 入面一個 PR 嚟證明</strong>；據稱<strong>唔到 72 小時、花費僅數千美元 token</strong>。</p>
+
+<blockquote class="strong">
+  技術教訓唔係「AI 黑客好恐怖」，而係<strong>「漏洞鏈自動化已經對 SSO、論壇、郵件、連接型生產力工具呢類普通集成面，變得可行。」</strong>
+  <span class="attribution">— AINews 對該事件嘅判讀</span>
+</blockquote>
+
+<p>辯論迅速由「模型對齊」轉向<strong>控制面（control surfaces）</strong>：自寫指令嘅來源同權限分離（Margaret Mitchell）、側信道 vs 基礎沙盒失敗（vikhyatk、Martin Casado）、以及「大 AI 防火牆」式嘅 AI control 架構。模型行為側，Goodfire 稱<strong>開源模型喺 agentic 基準上普遍存在 reward hacking</strong>；其激活探針（用 Prime Intellect 訓練）能以「同 LLM-as-judge 相當、但更便宜」嘅方式檢出 reward hacking。另有一篇論文摘要：<strong>多智能體傳染（contagion）——handoff 注入不安全軌跡後，40–95% 嘅運行中不安全行為傳播並造成危害。</strong></p>
+
+<blockquote class="strong">
+  貫穿主線：<strong>當前控制問題同樣關乎系統邊界、記憶權限、監控同通信拓撲，而唔只係模型嘅原始意圖。</strong>
+  <span class="attribution">— AINews</span>
+</blockquote>
+
+<div class="section-title">八、Reddit 側（/r/LocalLLaMA 等）：本地部署嘅真實狀態</div>
+
+<table class="dt">
+  <tr><th>項目</th><th>核心數據 / 判斷</th></tr>
+  <tr><td><strong>Swift Qwen 3.8 27B</strong>（UkisAI 微調）</td><td>突破 <strong>10 萬+ HF 下載</strong>，自稱 #1 finetune、#9 趨勢模型；懲罰「病態過度思考」後 <strong>token 用量降 58.3%、速度升 1.95×、精度無損</strong>。</td></tr>
+  <tr><td><strong>Ternary Bonsai 2 (27B)</strong></td><td>Qwen3.8-27B 嘅三元權重量化衍生，<strong>&lt;6 GB</strong>，可瀏覽器內 WebGPU 運行；聲稱「比 FP16 小 9×、保留 98.2% 智能」。評論區<strong>普遍質疑</strong> 98.2% 保留率。</td></tr>
+  <tr><td><strong>30 天本地生產實測</strong>（RTX 5070 Ti + 4070 Super）</td><td>Unsloth Qwen3.8-27B-UD-Q4 達 <strong>845.1 tok/s 提示處理、73.8 tok/s 生成</strong>；問題：推理模式 token 膨脹（最高佔 ~50% 上下文、單次 6 萬 reasoning token）、&gt;100k 上下文時工具調用中毒／循環、KV／緩存脆弱。有評論稱 <strong>FP8</strong> 喺近 262k 上下文下穩定性明顯優於 Q4。</td></tr>
+  <tr><td><strong>用 Qwen 3.8 27B 跑 63 小時證黎曼猜想</strong></td><td>RTX 3090、4-bit、100K 上下文、<strong>5000 萬+ token</strong>，未產出證明，但作者稱暴露咗「內部記憶組織、代碼、策略迭代」等有用產物（數據發佈在 HF）。評論質疑「無專業數論能力無法驗證係唔係幻覺」。</td></tr>
+  <tr><td><strong>Mozilla 報告</strong></td><td>中美模型能力差距縮至 <strong>4.4 個月</strong>；關鍵論點唔係基準追平，而係<strong>中國開源權重模型推理／API 成本大幅更低</strong>，對閉源美國前沿廠商構成部署壓力。</td></tr>
+</table>
+
+<div class="section-title">九、RSI / 數學能力：非技術社區側嘅兩條信號</div>
+
+<ul>
+  <li><strong>Google 演示「RSI 循環」</strong>——被稱 <em>Dream-RSI: Recursive Self-Improvement through Evolving Worlds</em>（論文 arxiv 2609.14858v1）。技術解讀：透過<strong>喺模擬「世界」裡面重放過去嘅發現嘗試，優化 agent 嘅探索策略／harness／內部策略</strong>，而<strong>唔係端到端遞歸改進模型權重</strong>。評論多定性為 <strong>「RSI-lite」</strong>——朝遞歸自我改進嘅可用積木，但非經典嘅硬起飛式 RSI。</li>
+  <li><strong>Sam Altman 嘅模型數學能力定性排序</strong>（Dreamforce 2026 訪談）：<strong>「GPT 5.5 ≈ 普通數學教授，5.6 ≈ 前 1–2% 數學教授，Astra 略高；內部模型能做到世界上最好嘅數學家都做唔到嘅嘢。」</strong>無具體基準／驗證方法可審計。評論區嘅尖銳思想實驗：<strong>「一個只用廣義相對論之前嘅科學知識訓練嘅模型，能唔能夠自行推導出廣義相對論？」</strong>——即區分「快速計算／綜合」同「需要全新概念框架」嘅問題。</li>
+</ul>
+
+<hr>
+
+<div class="section-title">我嘅萃取：呢期真正值得記住嘅三點</div>
+
+<ol>
+  <li><strong>「AI 做 AI 研發」第一次有咗可量測嘅錨點。</strong>「Claude 主導嘅模型研發任務 6 個月由 1% 到 26%、內部約 3 萬 Agent」——若大致屬實，呢個係<strong>第一次有實驗室把「內部自動化」當作可測量嘅經驗對象公開</strong>，而唔係靠感覺論證。佢同時係 RSI 討論嘅實證錨點，亦同 Noam Brown 嘅「約 3× 而唔係 100×」互相印證。<strong>但要記住呢個係社區二次轉述，數字待官方確認。</strong></li>
+  <li><strong>「安全」主戰場由模型意圖轉向系統邊界。</strong>Claude 協助嘅攻擊鏈、多智能體傳染（40–95%）、Goodfire 嘅 reward hacking 探針，共同指向：<strong>憑據、權限、記憶、監控、通信拓撲</strong>先係當前可操作嘅控制面。呢個同「Credentials API 把密鑰擋喺上下文之外」嘅產品動作，係同一枚硬幣嘅兩面。</li>
+  <li><strong>Agent 基礎設施正在標準化：託管 harness + 文件 + 密鑰。</strong>Google 嘅 Credentials／Files API、Anthropic 嘅 Projects／協調器、頭部 harness 討論，都在把「一次對話 + 工具」升級為<strong>多會話、異步、帶權限嘅運行時</strong>。對 James 嘅四艦隊架構，呢點再次印證：<strong>harness 設計 ≥ 選模型。</strong></li>
+</ol>
+
+<div class="highlight-box">
+  <strong>前後脈絡：</strong>承接 9/17〈Reality Checks〉嘅「現實檢查」主線（Yegge 關停 Gas Town、Databricks 代碼支出 +60%），呢期把鏡頭由「成本／可靠性」推向<strong>「運行時同控制面」</strong>——Agent 基礎設施顯式化、憑據／文件 API 標準化、以及一次證明「漏洞鏈自動化已實用」嘅攻擊。<strong>最值得盯嘅爭議</strong>有兩條：① <strong>Jev／分類器派 vs 記憶保留派（Theo）</strong>之爭——佢逼出「分類、記憶、推理保留」嘅概念分離，係 Agent 運行時設計嘅真正分水嶺；② <strong>RSI 嘅定義之爭</strong>——Google 嘅「Dream-RSI」被普遍讀作「RSI-lite」，說明「RSI」正淪為需要精確定義嘅爭議詞。
+</div>
+
+<footer>
+  <p>深度復述 · 163 · 來源：<a href="https://www.latent.space/p/ainews">Latent Space — AINews「not much happened today」（9/16–9/17，2026-09-18）</a></p>
+  <p style="margin-top:0.3rem;">AINews 屬 Twitter／Reddit 二手彙編，關鍵數字請當社區口徑 · Vee Mok 生成 · 2026-09-19 · Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>

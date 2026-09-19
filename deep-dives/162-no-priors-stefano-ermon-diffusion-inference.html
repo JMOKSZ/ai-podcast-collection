@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「擴散會贏下推理」——No Priors × Stefano Ermon：RNN→Transformer 嘅歷史，將喺推理時重演一次，Mercury 比自回歸快 10×</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">No Priors: AI, Machine Learning, Tech, &amp; Startups · 2026-09-18 · 全長訪談</div>
+  <h1>「擴散會贏下推理」——No Priors × Stefano Ermon：RNN→Transformer 嘅歷史，將喺推理時重演一次，Mercury 比自回歸快 10×</h1>
+  <div class="meta">
+    <span>📅 2026-09-18 10:00 UTC（北京 09-18 18:00）發布</span><span>·</span><span>🎙 No Priors（主持人 Sarah Guo，嘉賓 Stefano Ermon）</span><span>·</span><span>👤 Stefano Ermon（Stanford 教授、Inception 聯創兼 CEO、擴散模型與 score-based 生成模型先驅）</span><span>·</span><span>⏱ 約 38 分鐘</span><span>·</span><span>🏷 架構 / 推理 / Serving / 效率</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係本週最有「技術賭注」含量嘅一集。當全行業默認 LLM 就等於「一次預測下一個 token」嘅自回歸架構時，斯坦福教授、擴散模型先驅、Inception 聯創兼 CEO <strong>Stefano Ermon</strong> 上嚟講一個少數派但技術論證完整嘅判斷：<strong>「擴散（diffusion）會贏下 AI 推理」</strong>。佢唔係講圖像——圖像/視頻擴散早就橫掃——佢講嘅係<strong>離散嘅文本同代碼</strong>：一個原本為連續像素而設嘅架構，點樣被搬到 token 上面，點樣喺標準 GPU 上跑得比自回歸快約 <strong>10×</strong>，以及點樣令一間語音 Agent 公司由定制芯片「切返」Nvidia。
+</p>
+
+<div class="highlight-box">
+  <strong>呢集嘅中心論點：</strong>Ermon 嘅框架係一條<strong>歷史類比</strong>——2017 年行業由 RNN 轉向 Transformer，原因係 RNN 必須<strong>串行</strong>處理 token、訓練太慢；Transformer 允許並行，先撐得起 LLM 嘅成功。但佢指出：<strong>推理階段嘅自回歸模型，仍然係串行嘅</strong>。呢種負載「極度 memory-bound」——大部分時間花喺把權重喺內存層級之間搬嚟搬去，算術運算好少。而<strong>擴散模型喺推理時嘅負載，同訓練時幾乎一樣（多 token 並行）</strong>，正好係 GPU 最擅長嘅計算密集模式。於是佢把結論直接扣喺 Sutton 嘅「苦澀教訓」上：<strong>「更並行嘅方案，最終一定會贏。」</strong> 推理時代嘅「Transformer 時刻」，就係擴散模型。
+</div>
+
+<div class="section-title">一、人物：由「唔熱門嘅領域」到擴散模型之父之一</div>
+
+<p>Sarah Guo 開場嘅介紹好準：Ermon 係「生成模型領域一個極廣嘅工作體系」，被稱為<strong>「擴散模型之父之一（one of the fathers of diffusion）」</strong>。佢 2014 年加入斯坦福做助理教授，一開始就做生成模型——「當時呢個研究領域一啲都唔熱門」。佢回憶嗰個年代嘅標準低到難以置信：</p>
+
+<blockquote>
+  「我哋仲係喺度砌一啲喺 MNIST 上面嘅小型生成模型，能生成嗰啲<strong>帶顆粒感嘅數字圖像</strong>，已經算係一個大成功。當時連喺呢個題目上發表論文都好難——你要 justify 訓練生成模型係一種『由無標籤數據學特徵』嘅方法，因為監督學習先係當時人人關注嘅嘢。」
+  <span class="attribution">— Stefano Ermon（談 2014 年嘅起點）</span>
+</blockquote>
+
+<p>佢當時嘅動力唔係 LLM，而係<strong>世界模型（world model）</strong>嘅直覺：「我有一個世界模型，我就可以想像如果我企起身行出門口會發生咩事——呢種世界模型對做決策、對 model predictive control 好重要。」佢當時以為呢個問題「會佔用我成個職業生涯」，結果「我錯得好緊要，事情發展得快好多」。</p>
+
+<p>研究路徑清晰可查：<strong>自回歸模型（好慢、好模糊）→ VAE → GAN 當道</strong>。但 GAN 唔穩定、難復現，於係 2019 年佢同博士生提出 <strong>score-based 生成模型</strong>——即今日擴散模型嘅底層。「訓練一個神經網絡去<strong>去噪</strong>圖像；如果你能去噪，你就真係理解咗圖像嘅結構，咁就可以基於呢啲去噪器構建一個生成程序。」呢個技術後來橫掃圖像、視頻、音樂、蛋白質。除此之外，佢仲係 <strong>FlashAttention</strong> 嘅共同指導、<strong>DPO</strong>（直接偏好優化）嘅發源實驗室——兩者後來都被工業界廣泛採用。</p>
+
+<div class="section-title">二、兩種範式：連續世界已經分出勝負，離散世界未定</div>
+
+<p>Ermon 把當下嘅世界狀態描述成「一個對研究者而言好有趣嘅狀態」——生成模型有兩條路：</p>
+
+<ul>
+  <li><strong>自回歸（autoregressive）</strong>：預測下一個 token / 下一個像素，然後從左到右逐個生成。</li>
+  <li><strong>擴散（diffusion）</strong>：coarse-to-fine 嘅迭代去噪生成——由純噪聲開始，逐次精煉，最後得到一致嘅結果。</li>
+</ul>
+
+<p>分野係：<strong>連續模態（圖像、視頻、音樂、蛋白質），擴散已經係主導；離散模態（文本、代碼），所有大實驗室都押自回歸。</strong>而當行業走向「一個模型通吃所有模態」嘅未來，Ermon 講得非常坦白：</p>
+
+<blockquote class="strong">
+  「當我哋走向更多模態、走向『一個模型可以處理所有模態、知道世間一切』嘅諗法時——<strong>究竟嗰個架構會係自回歸定擴散？冇人知道。陪審團仲喺度（the jury is still out）。</strong>」
+  <span class="attribution">— Stefano Ermon（談架構之爭）</span>
+</blockquote>
+
+<p>Inception 選擇押擴散，理由唔係「擴散更聰明」，而係佢相信<strong>最終決定勝負嘅係推理時擴展（inference-time scaling）</strong>，而擴散喺推理時有結構性優勢。</p>
+
+<div class="section-title">三、核心論證：RNN→Transformer 嘅歷史，將喺推理時重演</div>
+
+<p>呢個係全集最有份量嘅一段，值得完整復述。Ermon 嘅論證鏈係層層遞進：</p>
+
+<p><strong>第一步，回顧歷史。</strong>2017 年人們由 RNN 轉向 Transformer，原因好清楚——RNN 必須<strong>串行</strong>處理 token，一個接一個，訓練太慢。於是行業造出一個可以<strong>同時並行處理好多 token</strong> 嘅架構，佢喺訓練上擴展得更好，先撐得起 LLM 嘅成功。</p>
+
+<p><strong>第二步，指出盲點。</strong>但如果你睇<strong>推理</strong>而唔係訓練——自回歸模型<strong>仍然係串行嘅</strong>：</p>
+
+<blockquote class="strong">
+  「你唔可能生成第 10 個 token，直到你已經生成咗佢前面所有嘢。呢種負載<strong>同 GPU 完全唔夾</strong>——佢極度 memory-bound：你大部分時間都花喺把權重喺內存層級之間搬嚟搬去，做嘅算術運算好少。呢個係自回歸模型嘅根本問題。」
+  <span class="attribution">— Stefano Ermon（談推理時嘅串行瓶頸）</span>
+</blockquote>
+
+<p><strong>第三步，提出對應物。</strong>「如果 RNN→Transformer 係訓練時代嘅對應，咁<strong>推理時代嘅對應物就係擴散模型</strong>」——因為擴散模型天生就係為「推理時同時處理多 token」而設計，佢嘅推理負載幾乎同訓練負載一樣，正好映射到 GPU 最擅長嘅計算密集模式。</p>
+
+<p><strong>第四步，扣上經濟學。</strong>佢把呢個架構選擇連到「每一瓦智能、每一美元智能（intelligence per watt / per dollar）」——經濟學由效率主導。而且推理唔止係推理：</p>
+
+<ul>
+  <li>推理模型靠<strong>測試時計算擴展（test-time compute scaling）</strong>；</li>
+  <li>RL 後訓練嘅大量瓶頸喺<strong>生成 rollout</strong>（讓模型探索、打分軌跡、再更新）。</li>
+</ul>
+
+<p>所以「推理擴展得更好」→「RL 後訓練都擴展得更好」。呢條邏輯鏈把「架構選擇」同「後訓練效率」直接扣埋一齊。最後佢亮出全集嘅金句：</p>
+
+<blockquote class="strong">
+  「苦澀教訓係——<strong>更並行嘅方案，就係最終一定會贏嗰個。</strong>」
+  <span class="attribution">— Stefano Ermon（談為何押注擴散架構）</span>
+</blockquote>
+
+<div class="section-title">四、點樣敲開「離散」呢粒堅果</div>
+
+<p>擴散天生貼合連續數據——「兩個像素顏色之間可以插值，中間嘅嘢都仲講得通」。但文本唔同：</p>
+
+<blockquote>
+  「如果你攞兩個詞，「好」同「壞」中間究竟係咩？兩個唔同詞嘅意思之間冇明確嘅嘢。<strong>呢個空間冇真正嘅幾何結構。</strong>為連續空間開發嘅數學，唔會自動翻譯到離散空間。」
+  <span class="attribution">— Stefano Ermon（談離散空間嘅困難）</span>
+</blockquote>
+
+<p>Sarah 追問：咁喺 embedding 空間做擴散得唔得？Ermon 話呢條路試過，但唔成功，原因好務實：<strong>「你最終要解碼返做文本。你唔可以畀 embedding 用戶或者客戶。而擴散模型最終會犯一些小錯誤，可能唔會落喺字典入面任何一個詞上面。」</strong> 呢個解碼問題令 latent-space 擴散好難做得好。</p>
+
+<p>真正打破僵局嘅係 2024 年嘅一篇論文。Ermon 特別強調呢個實驗有幾乾淨——「幾乎好似一個 A/B test，唔係一個好唔公平嘅比較」：</p>
+
+<div class="data-point">
+  <span>2024 年突破</span>
+  用<strong>完全相同嘅 Transformer 架構、完全相同嘅參數量、完全相同嘅數據</strong>，一邊按自回歸訓練（預測下一個 token），另一邊當擴散模型訓練。喺 <strong>GPT-2 規模（少於 10 億參數）</strong>上，擴散模型<strong>首次匹配自回歸模型嘅困惑度（perplexity）</strong>——即識別出同樣多嘅數據結構——而文本生成速度快約 <strong>10×</strong>（需要嘅神經網絡評估次數約少 10 倍）。差異「完全來自建模範式本身」。
+</div>
+
+<p>呢個結果係 Inception 成立嘅直接依據。Ermon 講：「我好想睇吓如果 scale up、如果訓練更大嘅模型會點。」於係佢成立咗 Inception。</p>
+
+<div class="section-title">五、Mercury：由研究原型走到生產服務</div>
+
+<p>現時嘅成果：</p>
+
+<blockquote class="strong">
+  「我哋已經訓練出<strong>質量上可以同前沿實驗室嘅『速度優化版』模型（haiku、flash、mini／nano）媲美</strong>嘅擴散 LLM，同時明顯更快。我哋由純研究原型，走到今日真係喺生產環境服務緊。」
+  <span class="attribution">— Stefano Ermon（談 Mercury）</span>
+</blockquote>
+
+<p>但呢度有個關鍵嘅「門檻即護城河」細節：<strong>擴散 LLM 跑唔到 vLLM 或者 SGLang 上面，必須自建 serving engine。</strong></p>
+
+<blockquote>
+  「你冇 serving engine，就真係服務唔到呢啲模型。所以我哋由一開始就迫自己端到端部署，學識點 serve 呢啲模型、點砌佢哋需要嘅軟件——呢啲本身又變成 IP。就算你訓練咗一個擴散 LLM，如果冇 serving engine，你仍然卡住。」
+  <span class="attribution">— Stefano Ermon（談自建棧）</span>
+</blockquote>
+
+<h3 class="sub-title">案例：OpenCall 由 Cerebras 定製芯片「切返」Nvidia GPU</h3>
+
+<p>呢個係全集最落地嘅一個案例，Sarah 亦話係佢最想問嘅部分。語音 Agent 嘅管線係 <strong>ASR + 推理 LLM（做工具調用、決定講咩）+ TTS</strong>，對速度要求極高。OpenCall 原本<strong>用 Cerebras 定製芯片</strong>換取所需嘅速度。改用 Inception 嘅 Mercury 之後：</p>
+
+<blockquote class="strong">
+  「佢哋切去我哋嘅擴散 LLM，因為佢哋可以得到同『自回歸模型跑喺定製硬件上』一樣嘅速度——<strong>只要個擴散 LLM 係為並行而建、喺軟件層加速，你就可以喺 Nvidia GPU 上拿到同樣速度。</strong>咁就意味住更好嘅可得性（GPU 雖然稀缺，但都比定製芯片多）、更低嘅成本、更高嘅質量。」
+  <span class="attribution">— Stefano Ermon（談 OpenCall 案例）</span>
+</blockquote>
+
+<p>Ermon 強調軟件加速同硬件加速係<strong>相乘（multiplicative）</strong>而唔係替代關係：「呢個係最令人興奮嘅一點——你由軟件拿到嘅增益，同你由硬件拿到嘅增益係相乘嘅。」NVIDIA 投資 Inception 亦係同一邏輯：芯片設計要幾年，NVIDIA 需要提前理解「替代性負載」（未來 LLM 嘅算力模式），先可以將下一代芯片優化到位。</p>
+
+<div class="section-title">六、「一旦用過快嘅，就返唔到轉頭」——速度喺邊度贏</div>
+
+<p>Sarah 問到 2026 年 9 月、速度喺邊度已經夠重要。Ermon 嘅答案分兩層：</p>
+
+<blockquote class="strong">
+  「一般嚟講，人人都想要速度——如果可以畀我同樣質量但更快，人們總會揀快嗰個。你睇前沿實驗室嘅『fast 版』模型，人們願意畀更多錢去用更快嘅模型。<strong>一旦你習慣咗快模型，就好難返轉頭。佢就好似寬帶。</strong>」
+  <span class="attribution">— Stefano Ermon（談速度為何係剛需）</span>
+</blockquote>
+
+<p>具體到市場規模，佢用咗 OpenRouter 嘅任務分類法（研究、對話、編程、軟件工程、日誌處理——一個相當清晰嘅硬分類）做估算：</p>
+
+<div class="data-point">
+  <span>20–30%</span>
+  按 OpenRouter 任務分類估算，大約 <strong>20–30% 嘅工作負載「延遲真係好重要」</strong>。作為下限，呢啲係擴散模型可以觸及嘅市場——「喺畀定嘅延遲預算內，佢哋會畀到最高嘅質量」。
+</div>
+
+<div class="section-title">七、三個被低估嘅產品線：數據效率、可控性、兼容 API</div>
+
+<p>Sarah 問：五年——唔，兩年後，擴散同傳統模型嘅工作負載會點分？Ermon 先謙虛：「我哋仲未到前沿水平嘅智能，好多工作負載真係需要前沿智能。」然後指出速度只係「楔子」，真正未知嘅係擴散喺其他地方嘅能力。</p>
+
+<h3 class="sub-title">① 數據效率</h3>
+<p>學術文獻顯示擴散模型<strong>更省數據</strong>——因為去噪訓練等於對同一份數據做咗隱式數據增強（同一張圖被好多個加噪視角增強過）：「所以當數據成為瓶頸、要掂啲少數據任務嘅時候，呢點就會變得更加有趣。」</p>
+
+<h3 class="sub-title">② 可控性——一條自回歸根本冇嘅接口</h3>
+<p>呢一段係 Sarah 最尖銳嘅提問（語音 Agent 之所以要「中間放個 LLM」，正因為可控性／對齊），Ermon 嘅回答好有信息量：</p>
+
+<blockquote class="strong">
+  「自回歸模型你必須<strong>生成完整個對象</strong>，先知道佢滿唔滿足某個約束。但擴散係 coarse-to-fine——由最早階段就知『呢個係唔係我想要嘅嘢』，你可以用<strong>外部獎勵函數或者一組約束，實時牽引生成方向</strong>。學術文獻有大量證據顯示擴散更容易控制，而且存在啲<em>自回歸根本冇嘅</em>操控方式。」
+  <span class="attribution">— Stefano Ermon（談可控性）</span>
+</blockquote>
+
+<p>佢舉例：生成分子、你關心溶解度——自回歸要生成完整個分子先可以用獎勵函數打分；擴散就可以喺生成途中就引導。「呢個可能係一個自回歸根本提供唔到嘅<strong>新接口</strong>，我哋一直喺度諗圍繞呢啲新能力應該砌咩產品體驗。」</p>
+
+<h3 class="sub-title">③ 兼容 API——「text in, text out」</h3>
+<p>落地層面，Mercury 保持 <strong>OpenAI 兼容 API</strong>，擅長指令遵循同結構化輸出（例如 JSON）。呢點對 OpenCall 嘅遷移至關重要：「接口一樣，你就可以直接复用你原本嘅技術棧。」</p>
+
+<div class="section-title">八、David vs Goliath：護城河唔止係模型</div>
+
+<p>Sarah 提出一個結構性擔憂（而且 Ermon 坦承係「我哋 top of mind 嘅嘢」）：<strong>今日好難投資新架構，因為如果架構或者方法有咩突破，擁有算力嘅大玩家可以輕易吸收。</strong>Ermon 嘅回應係佢整個商業策略嘅核心：</p>
+
+<ul>
+  <li><strong>IP／技術訣竅</strong>：模型本身嘅想法同秘密。</li>
+  <li><strong>自建 serving engine 同 kernel</strong>：「就算你訓練咗擴散 LLM，冇 serving engine 你都仲係卡住用唔到。」呢啲軟件本身就係 IP。</li>
+  <li><strong>真實客戶反饋閉環</strong>：「我哋同真實客戶合作、攞反饋，知道咩得咩唔得，有時由佢哋收數據，基於佢哋睇到嘅嘢建 eval。」呢啲「比較難複製」。</li>
+</ul>
+
+<p>呢個亦係佢哋選擇<strong>唔完全開源</strong>嘅原因。佢老實講出代價：「社區貢獻嘅機會少咗、採用更難、on-prem 部署更困難——兩個選擇各有優劣。」</p>
+
+<div class="section-title">九、對 RSI 嘅務實態度，同學術嘅角色</div>
+
+<p>Sarah 提到「用模型做遞歸自我改進（RSI）」呢個令研究朋友又興奮又絕望嘅話題。Ermon 嘅回答好克制：</p>
+
+<blockquote class="strong">
+  「我哋當然<strong>大量用模型</strong>，佢好大程度加速咗我哋迭代嘅速度……但至少現在，<strong>人類嘅創造力仍然超重要</strong>——提出啱嘅想法、剪枝空間、識別更有希望嘅方向。或者我哋冇其他實驗室咁嘅模型訪問權，但（起碼而家）我唔覺得已經到咗 AI 自我改進、人類冇事可做嘅階段。」
+  <span class="attribution">— Stefano Ermon（談 RSI）</span>
+</blockquote>
+
+<p>組織層面：Inception 約 <strong>50 人</strong>、公司約 <strong>2 年</strong>歷史，分一個產品／平台團隊（服務當前最優模型、支援客戶）同一個模型團隊（訓練、RL、推理研究）。Sarah 驚訝 50 人唔算多，Ermon 嘅回應直指本質：</p>
+
+<blockquote>
+  「公司細，但每個人都好有才華、好勤力，我哋可以用 agent 令自己高效好多。而好多時候，<strong>我覺得瓶頸更加係算力，而唔係人。</strong>」
+  <span class="attribution">— Stefano Ermon（談 50 人團隊）</span>
+</blockquote>
+
+<p>最後，Sarah 問佢喺 2024 年結果出嚟之前，點樣對方向有信心。Ermon 列舉咗一批「完全誕生於學術」嘅成果——早期擴散（→ Stable Diffusion／Midjourney）、FlashAttention、DPO：</p>
+
+<blockquote class="strong">
+  「學術嘅一個好處係，佢<strong>容許你落啲逆共識嘅賭注（contrarian bets）</strong>。你有出色嘅學生，大家唔怕落注。」
+  <span class="attribution">— Stefano Ermon（談學術界嘅角色）</span>
+</blockquote>
+
+<hr>
+
+<div class="section-title">我嘅萃取：呢集真正講緊嘅三件事</div>
+
+<ol>
+  <li><strong>呢個唔係「擴散 vs 自回歸」嘅口水戰，而係一條可證偽嘅工程命題。</strong>Ermon 嘅論證有清晰嘅結構——(a) 推理係 memory-bound、(b) 擴散推理負載 ≈ 訓練負載、係 compute-bound、(c) GPU 偏好 compute-bound、(d) 所以擴散喺推理時更有效率。呢條鏈每一環都可被測量。佢押嘅係「苦澀教訓」——能更好利用算力嘅方案長期會贏。<strong>可觀察嘅驗證點：Mercury 客戶會唔會持續由定製硅／大廠快模型遷過嚟，以及擴散 LLM 喺長程 agentic 任務上能唔能夠站住。</strong></li>
+  <li><strong>「呢個架構之爭，其實係一個『推理經濟學』之爭」。</strong>Sarah 嘅框架點係全集的隱藏主線：過去效率係工業研究嘅「二階變量」，而家喺算力／供給約束下，「點樣把手上嘅算力喺訓練同最有價值嘅用例之間分配」已經係 AI 公司嘅頭號決策。Ermon 把呢條主線具體化成一句話：<strong>軟件層並行加速 × 硬件加速 = 複利</strong>。呢個判斷對任何要為推理付帳嘅組織都有直接含義。</li>
+  <li><strong>最被低估嘅一點：自建 serving 棧嘅價值。</strong>「擴散 LLM 跑唔到 vLLM／SGLang」表面睇係劣勢，實際上係護城河。當大玩家可以吸收任何「純架構」突破時，<strong>能唔能夠把模型真正跑起喺生產環境</strong>（serving engine、kernel、SFT／RL 棧、客戶 eval 閉環）反而係更難複製嘅資產。呢點同 Zapier CEO（見 161 號深度復述）「harness 設計 ≥ 選模型」嘅判斷不謀而合。</li>
+</ol>
+
+<div class="highlight-box">
+  <strong>同本週其他集嘅對照：</strong>Dwarkesh × Noam Brown（160 號）話千禧年難題嘅功勞「核心係一個好強嘅通用模型」，多智能體只係並行化測試時計算嘅一個手段；Ermon 就將「並行」上升為<strong>架構層面嘅必勝法則</strong>。二者殊途同歸：<strong>2026 年真正嘅戰場，在於「推理時算力利用效率」。</strong>而 OpenCall 由 Cerebras 回撤到 Nvidia + 擴散 LLM，係「用軟件換掉定製硬件」嘅罕見公開案例——直接呼應硅谷 101 E251 推理芯片之戰（157 號）裡面「推理芯片 vs 通用 GPU」嘅辯論。
+</div>
+
+<div class="data-point">
+  <span>一頁摘要</span>
+  <strong>核心人物：</strong>Stefano Ermon（Stanford、Inception 聯創兼 CEO、擴散／score-based 生成模型先驅、FlashAttention 共同指導、DPO 發源）。<br>
+  <strong>核心判斷：</strong>推理時擴散勝——因為更並行（苦澀教訓）。<br>
+  <strong>核心證據：</strong>2024 年論文，GPT-2 規模，同架構同數據，perplexity 匹配自回歸、生成快約 10×。<br>
+  <strong>核心產品：</strong>Mercury——質量對標 haiku／flash／mini／nano，顯著更快，OpenAI 兼容 API，需自建 serving engine。<br>
+  <strong>核心案例：</strong>OpenCall 由 Cerebras 定製芯片切到 Mercury + Nvidia GPU（同速度、更低成本、更高可得性、更高質量）。<br>
+  <strong>核心市場：</strong>約 20–30% 工作負載「延遲極關鍵」= 下限可及市場。<br>
+  <strong>核心護城河：</strong>IP + serving 棧 + 客戶反饋閉環（所以唔開源）。
+</div>
+
+<footer>
+  <p>深度復述 · 162 · 來源：<a href="https://www.youtube.com/watch?v=N1rjtDs8blY">No Priors — Why Diffusion Will Win AI Inference with Inception Co-Founder and CEO Stefano Ermon</a>（2026-09-18）</p>
+  <p style="margin-top:0.3rem;">萃取自官方逐字稿全文 · Vee Mok 生成 · 2026-09-19 · Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>
