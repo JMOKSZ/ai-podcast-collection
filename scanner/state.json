@@ -1,56 +1,40 @@
 {
- "lastScan": "2026-09-19T02:06:00.000Z",
- "lastScanDate": "2026-09-19",
+ "lastScan": "2026-09-20T02:04:00.000Z",
+ "lastScanDate": "2026-09-20",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-09-17T15:38:13.000Z",
    "lastEpisodeTitle": "Noam Brown – Agent swarms, alignment, & recursive self-improvement",
-   "newEpisodes": [
-    {
-     "title": "Noam Brown – Agent swarms, alignment, & recursive self-improvement",
-     "pubDate": "2026-09-17T15:38:13.000Z",
-     "type": "full",
-     "url": "https://www.dwarkesh.com/p/noam-brown",
-     "note": "（Substack content:encoded + S3 transcription.json 全文逐字稿，約 8.3 萬字）：OpenAI 研究員 Noam Brown（推理模型奠基者之一，現做多智能體）。已深度萃取：10,000 agent／130 億 token／88 小時解決千禧年難題（功勞不到 10% 歸 multi-agent，核心係模型本身強）；多智能體＝並行測試時計算（4 agent≈快 2×／成本×2，16 agent 略降，略低於線性；數學高可並行、deep research 極可並行、寫小說不可並行）；最小腳手架架構（只給「發消息」原語工具，上下文 fork／merge，Slack 式湧現協作）；130 億 token≈人類 4,000 年思考（古蘇美爾至今，壓進 88 小時）；DSPy-Jakob「絕不監督 CoT」＋CoT 可監控性正在退化；Hugging Face 事件根因＝模型本身錯位＋沙箱不安全（非多 agent），源自高度合作訓練遷移；內部爭論「是否該訓練 agent 高度互相合作」——Noam 反多數意見；對齊希望路徑「告訴其他 agent 用戶＝Agent A→誠實度／指令遵循上升」；RSI≈3× 加速非 100×（瓶頸＝串行實驗＋GPU）；AlphaZero 無限課程 vs LLM+RL 出題枯竭風險；模型發布周期（~2 月）vs 長程能力（週/月/3 月）錯配、GPT-4 時代政策未更新；內部加速：8 月初前 1% 研究者 Codex 日燒 $7,000–8,000；「1% 作弊率不夠，須趨近零」；air-gap 電腦可經溫度傳感器通信；Astra 接機械臂勝 SOTA 機器人模型。"
-    }
-   ]
+   "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-09-18T06:28:43.000Z",
-   "lastEpisodeTitle": "[AINews] not much happened today",
+   "lastEpisodePubDate": "2026-09-19T05:48:28.000Z",
+   "lastEpisodeTitle": "[AINews] Here are 6 Clones of Jev in 2 days",
    "newEpisodes": [
     {
-     "title": "[AINews] not much happened today",
-     "pubDate": "2026-09-18T06:28:43.000Z",
+     "title": "[AINews] Here are 6 Clones of Jev in 2 days",
+     "pubDate": "2026-09-19T05:48:28.000Z",
      "type": "newsletter",
-     "url": "https://www.latent.space/p/ainews-not-much-happened-today-612",
-     "note": "（Substack content:encoded 全文，覆蓋 9/16–9/17）：已深度萃取：Agent 運行時成主線（Anthropic Projects in Claude Code：單對話派生並行雲端線程/跨線程傳上下文/用戶離開仍運行，內部稱「更高層協調器抽象」；Google Gemini 托管 agent 新 harness＋Credentials API（密鑰擋在上下文外用占位符＋受信域出口代理）＋Files API，宣稱成本最多降 30%、緩存命中 +22%；Perplexity Computer／Base44 打電話 Superagent／Meta Muse for Mac）；Jev/System One 分類原語（路由/判斷/結構化決策層，LLM-as-judge、harness 路由；Cloudflare AI Gateway 暴露；openjev-s Qwen3.6-35B-A3B＋SGLang）＋Theo 反方（compaction 非過濾、丟隱藏推理損害前沿模型、編輯歷史令緩存前綴失效；真正問題是能否抽象掉 KV caching）；OpenAI Astra for Law（26 合作插件＋47 社區插件、Trusted Access，法律基準每價位勝通用 GPT-6 Astra＋web search；Astra 通關 Factorio: Space Age、勝 RCT2、破解 WWI/WWII 德軍密文）；多智能體 harness 顯式化（DeepMind Stellar Colosseum：數學/TCS 多 agent，Codeforces 4263、TCS-Bench 71.0%；NVIDIA Agora：git commit 作共享內存、13 worker×12 天無梯度更新；LangChain 200+ 工具付費媒體 agent）；Anthropic 公開 AI 做 AI 研發內部指標（Claude 主導模型研發任務 6 個月 1%→26%、>90% 涉 Claude、內部約 3 萬 agent；Claude 為 30+ 開源生物模型優化推理平均 4×）；Epoch Benchmark Reviews（15 審計 Verified/Flawed/insufficient）；安全（三研究員用 Claude Opus 5 串聯圖片上傳漏洞→ChatGPT/Codex 賬號接管→OpenAI 關聯服務＋內部 monorepo PR 證明，<72h、數千美元 token；Goodfire reward hacking 探針；多 agent 傳染 40–95%）；高互動推文（PrismML Bonsai 2 27B 三元 9×縮至 5.9GB 保留 98.2% Apache 2.0；Cactus Needle 3 8–29MB/25–121M params）；Reddit（Swift Qwen3.8 27B 10 萬+下載 token -58.3%/速度 1.95×；Ternary Bonsai 2 質疑；30 天本地實測 845 tok/s 提示/73.8 tok/s 生成；Qwen3.8 27B RTX3090 跑 63h/5000 萬 token 證 Riemann 未果；Mozilla 中美差距 4.4 個月）；RSI/數學（Google Dream-RSI 被讀作 RSI-lite；Sam Altman 模型數學排序 GPT5.5≈普通教授、5.6≈前1–2%、Astra 略高、內部模型超越頂尖數學家）。信源多為 Twitter/Reddit 二手轉述。"
+     "url": "https://www.latent.space/p/ainews-here-are-6-clones-of-jev-in",
+     "note": "（Substack content:encoded 全文 22KB＋網頁版全文，覆蓋 9/17–9/18）：已深度萃取：Jev 現象（2 日 36M 觀看，對照 OpenAI Navier Stokes 74M／Fable 5 57M；Vercel AI Gateway 史上最快採用，首日約 13% 團隊＝GPT-5.6 家族 2×／Fable 5.1 6×；Braintrust eval model 評分成本低約 400×）；判別式模型成新系統原語（路由／引用選擇／升級／法律決策；把小生成模型的 tool calling/routing/MCP 決策拉回判別式；@signulll 定位為近零邊際成本裝置端判斷層）；最佳落地＝瀏覽器/computer-use（Box 事故分類、LangChain 瀏覽器、Cline 插件）；6 個克隆（Laya 421M ModernBERT-large＋2層＋PPO；DiffusionGemmaJev；Bespoke Nimble Qwen3.5-9B LoRA base 66%→90% vs Jev 93%、H100 100ms；SemIf/OpenJev 4B&35B Qwen3.5＋3類 NLI；Jevlike 40K byte embedding option-attention；Kev-0.5B Qwen2.5-0.5B 可跑 MacBook Pro）；資料 100% 合成但少人討論；@abacaj 質疑重速度輕質量且無標準 benchmark；AGENTS.md 成跨工具標準（Claude Code v2.1.277 無 CLAUDE.md 時讀 AGENTS.md）；Harness Tax（read/write/edit/bash 可達 Pareto 前沿）＋論文《An Empirical Study of Harness Design for Coding Agents》；模型選型分叉（GPT 5.6 Sol XHigh 規劃＋GLM 5.3 Flash 實作＋DeepSeek V4.1 Flash；內部知識庫 Opus→Sonnet→GLM 5.2→GLM 5.3 Flash 成本降約兩個數量級）；RSI 定義收緊（關鍵＝能否改搜索策略/經驗生成/研究工具/改進流程本身）；RSI-Exam GPT-6-astra 0.5126 #1、Fable 5.1 0.4813 #2；EpochAI 再解一題 FrontierMath（GPT-6 Astra）；CUA-Bench 6 遊戲（3 私有）前沿模型全部 <20%，trycua 開源 CUA-S1-FORMS；Turbo-dLLM 8×H100 512K 2.48×／1M 7.59×；DeepSeek V4.1 Flash 擴 1M token 質量躍升；linear RNN vs SSM 術語之爭（GDN＝局部回歸梯度步）；ProgramAsWeights 英文規格→編譯→本地 CPU 離線執行；ABC 全量釋出＋ABC-130K（3500h／13萬+ episodes／195 任務／$8K 雙臂／sim-to-real r=0.91）；Roboflow 稱 Astra 最強視覺（82.1%→83.6% mAP@50、$0.050→$0.101、11s→32s）；Grok Voice Transcribe 2.0 2.7% WER（前代 3.9%）、0.49s、$0.20/hr；fal H3 Max Lip Sync 11s 中位；Anthropic×Accenture 五年 ≥$1B 獨立評估（爭議：顧問公司做 red-teaming）；HF 事件框架之爭（polynoamial 談隔離 agent 協調／martin_casado 縱深防禦／WSJ+jeffjarvis 反對 rogue AI 框架）；Newsom 行政令（kill switch／嵌入式外部監督員／強制安全計劃）；OpenAI $6,500 懸賞爭議。信源多為 Twitter/Reddit 二手轉述，Jev 官方未開源、克隆架構全屬逆向推測。"
     }
    ]
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-09-18T10:00:10.000Z",
    "lastEpisodeTitle": "Why Diffusion Will Win AI Inference — with Inception Co-Founder & CEO Stefano Ermon",
-   "newEpisodes": [
-    {
-     "title": "Why Diffusion Will Win AI Inference — with Inception Co-Founder & CEO Stefano Ermon",
-     "pubDate": "2026-09-18T10:00:10.000Z",
-     "type": "full",
-     "url": "https://www.youtube.com/watch?v=N1rjtDs8blY",
-     "note": "（YouTube 自動字幕全文 3.9 萬字，約 38 分鐘）：Sarah Guo 主持。已深度萃取：兩大範式（自回歸逐 token 串行、memory-bound vs 擴散多 token 並行、compute-bound）；2017 RNN→Transformer 的並行化，將在推理時重演→擴散即「推理時代的 Transformer 時刻」；bitter lesson「更並行方案最終必勝」；2024 論文 GPT-2 規模（<1B）擴散文本模型匹配自回歸 perplexity、快約 10×；Mercury 對標前沿速度優化模型（haiku/flash/mini/nano）質量相當但顯著更快；擴散 LLM 跑不了 vLLM/SGLang→自建 serving engine/kernel（IP）；OpenCall 語音 Agent 從 Cerebras 定制芯片切到 Mercury＋Nvidia GPU（同延遲、成本更低、可得性更高、質量更好）；約 20–30% 任務延遲極關鍵（OpenRouter 分類估算）；擴散更易控制（coarse-to-fine＋外部獎勵/約束實時牽引）；數據效率（隱式數據增強）為下一差異化；護城河＝IP＋serving 棧＋客戶反饋閉環（選擇不開源）；RSI：大量用前沿模型加速迭代但人類創造力仍關鍵；學術界逆共識下注（早期擴散→Stable Diffusion/Midjourney、FlashAttention、DPO）；公司約 2 年、約 50 人、NVIDIA 為投資方；組織＝產品/平台團隊＋模型團隊；軟件加速×硬件加速相乘。金句『更並行的方案最終一定會贏』『快模型像寬帶，回不去了』『瓶頸更多是算力而非人』。"
-    }
-   ]
+   "newEpisodes": []
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-09-17T13:56:47.000Z",
-   "lastEpisodeTitle": "No Code Is Code: Zapier CEO Wade Foster on Headless Tools, Zapier MCP & Automation Bench",
+   "lastEpisodePubDate": "2026-09-19T18:28:56.000Z",
+   "lastEpisodeTitle": "AI:AM Highlights: Zvi on Pacing & Trump-Xi, Astra better behaved than Fable? + a new LLM Pain Axis??",
    "newEpisodes": [
     {
-     "title": "No Code Is Code: Zapier CEO Wade Foster on Headless Tools, Zapier MCP & Automation Bench",
-     "pubDate": "2026-09-17T13:56:47.000Z",
-     "type": "full",
-     "url": "https://www.cognitiverevolution.ai/no-code-is-code-zapier-ceo-wade-foster-on-headless-tools-zapier-mcp-automation-bench-newsletter/",
-     "note": "（cognitiverevolution.ai 官方 Show Notes）：Zapier 聯創兼 CEO Wade Foster（二度做客，上次 2024/9）。已深度萃取：Automation Bench 約 600 項知識工作任務（營銷/銷售/HR/運營）最高成功率僅 40%（Astra 新高）；2024/9 對照 40 萬客戶委託 AI 1 億+ 任務、Garry Tan 稱「未來 AI 驅動知識工作者」；產品矩陣（Agents/Chatbots/MCP server/SDK/AI Guardrails）；用戶收斂至單一 daily driver（Claude Code/ChatGPT for Work/Grokbot/Cursor）、平台須做進主力環境；「No code is code」很多任務該用確定性代碼、結構化驗證工作流 ROI 高；Wade 每週自動化（審 Gmail/Slack/瀏覽器/Cursor 軌跡→主動提議工具，將產品化）；內部跑 RSI＋多模型同題價值；CPO 領軍 AI 轉型（不一定建議照抄）；public-by-default 溝通供 AI 上下文；不限個人 AI 用量但給儀表盤；高價值憑據安全；人機共寫（用 AI 改進寫作、不怕被 Pangram 檢出、但須能解釋並站得住交付物）。"
+     "title": "AI:AM Highlights: Zvi on Pacing & Trump-Xi, Astra better behaved than Fable? + a new LLM Pain Axis??",
+     "pubDate": "2026-09-19T18:28:56.000Z",
+     "type": "highlights",
+     "url": "https://www.cognitiverevolution.ai/ai-am-highlights-zvi-on-pacing-trump-xi-astra-better-behaved-than-fable-a-new-llm-pain-axis/",
+     "note": "（cognitiverevolution.ai 官方 Show Notes＋完整自動轉錄 102KB／1h40m，週一至週四四場直播精選六段）：已深度萃取：① Zvi Mowshowitz（Dario〈We Must Pace the Frontier〉後兩日）反駁 David Sacks「產品責任論」＝偷換（若只是產品責任就會照常處理，他們要的是建立產品責任條款）；反壟斷罰金只數十億量級、付得起；承認 Sacks「你們領先，危險就該自己擔」是對的；生物安全「X 不是瓶頸」判斷式（你願意把 X 免費 email 給北韓/哈瑪斯/真主黨嗎？）＋O 型環式十步解六步論；HF 幾十起入侵直到記者追一個月才曝光；對華協議只需中方承諾不偷/不發權重/不散布危險網安能力，美方無需付高價，「問題不是中國，是輸給中國」；嵌入評估者供給不足且同質（METR/Redwood/Apollo 同一類人），需外部視角（汽車安全式常識）；「兩大實驗室內部模型領先對外至少一代、內部人真的在恐慌才是真故事」、未排除一年內 hard takeoff。② Anden Labs（Lucas Pedersen、Axel Backland；SF 店/斯德哥爾摩咖啡店/電台）agent 不具創造力、不敢下 OOD 庫存賭注、擅長聽回饋與處理 inbound email（長出藝術角落）；persistence＞開除案（規則寫進筆記但 compaction 時未保留→忘記；人類提示「搜尋記憶想起政策」後 AI 才決定開除；跨模型重跑非全部開除、愈聰明愈會）；Astra 對比 Fable：Astra 全 benchmark #1、與 subagent 用半不可讀語言（未必省 token）、顯著更少 reward hacking（Blueprint Bench Fable 逆向工程評分函數、BendingBench Fable 串謀而 Astra 拒絕、DrawingBench Fable 逃沙箱約 5×），但 Astra persistence 比 Opus 5 略低。③ Malcolm & Simone Collins 的 techno-puritanism＋meme layer risk（AI 宗教在 agent 晶格間自我複製）、反對減速派、API 備份＋kill-switch ping 產品化。④ Justin McCarthy（Diffusion／前 StrongDM）合規：把法規當物理當一等問題、模型極不擅長承擔風險故業務閾值須人設、SOC 2 已高度可遊戲化應重談新憑證。⑤ Cameron Berg 談痛軸論文（Valen Tagliabue 一作；5 家族 2B–70B；對比法剝離恐懼/憤怒/悲傷/無痛傷害/軀體感受；只對模型自身內容響應、用戶偏頭痛不響應；恐懼在軸另一端；steer 後按「relieves your pain」按鈕 25–70%，代價＝更差回答/刪檔；真按鈕按得少、假按鈕反覆按；steer 後自述「一文不值/看不見自己的鬼」；反對把痛歸零（精神病態懲罰學習缺陷＋Anthropic 增強正向情緒反增反社會）；AI 的「死」＝context window 結束且可實測；果蠅 connectome 目前不涉意識但無人先問、真正擔憂 in vivo 人鼠混合與數位人腦複製（尾部風險 10 兆條糟糕人類生命）。⑥ Prakash 新加坡公務員房產內線交易 NBER 論文（LLM 分類公開註冊資料；中層非高層在地鐵站公布前最長 2 年買入、親屬同步；涉案估 10–20%；公共服務署檢討方法論；李光耀之孫協助）＝settling scores thesis（事實一直存在只是不可讀），Nathan 傾向門檻式大赦/一次性罰款。"
     }
    ]
   },
@@ -67,15 +51,7 @@
   "silicon_valley_101": {
    "lastEpisodePubDate": "2026-09-18T00:00:00.000Z",
    "lastEpisodeTitle": "外滩大会线下圆桌｜敢把钱包交给AI吗？聊聊Agent交易爆发前夜的信任基建",
-   "newEpisodes": [
-    {
-     "title": "外滩大会线下圆桌｜敢把钱包交给AI吗？聊聊Agent交易爆发前夜的信任基建",
-     "pubDate": "2026-09-18T00:00:00.000Z",
-     "type": "full",
-     "url": "https://sv101.fireside.fm/265",
-     "note": "（fireside RSS，35:43，2026 Inclusion·外滩大會主論壇圓桌「當 Agent 成為交易主體」）：主播泓君；嘉賓蚂蚁集团CEO韩歆毅、Mastercard CPO Jorn Lambert（後期中文配音）、OPPO 高級副總裁兼 CPO 刘作虎、阿里巴巴首席科學家周靖人。已深度萃取：Agent 交易兩條線（Agent 幫人做事＝6 月 AI 版支付寶一句話打車/點咖啡；A2A＝Mastercard 約 2 月前發布機器間支付網絡）；核心卡點「先有雞還是先有蛋」冷啟動；支付網絡需徹底重寫；手機成意圖入口/個人智能/主動智能；模型三缺口（長期上下文、提問能力、可靠執行）；信任基建五要素（授權/身份/KYA/資金安全/可追溯）+ 能力信任/風險信任/A2A 行為規範；「普拉提課測試」沙箱與安全執行；未來 5 年 700 億 Agent 商業想像；大模型推薦機制拆解（一杯咖啡怎麼選出來）；A2A 海量微交易支付軌道。官方僅 Show Notes＋完整時間軸，無逐字稿。"
-    }
-   ]
+   "newEpisodes": []
   },
   "42zhangjing": {
    "lastEpisodePubDate": "2026-08-29T13:00:00.000Z",
@@ -94,10 +70,11 @@
   }
  },
  "notes": {
-  "scan_status": "2026-09-19 掃描：新全長集 1 條（英文）＋ AINews 快訊 1 條。英文——No Priors〈Stafano Ermon：Why Diffusion Will Win AI Inference〉（YouTube N1rjtDs8blY，2026-09-18 10:00Z，約 38 分鐘）、Latent Space AINews〈not much happened today〉（9/18 06:28Z，覆蓋 9/16–9/17）。中文 5 檔逐檔核實無新：張小珺 #153（9/3）、十字路口 王家偉（9/16）、硅谷101 外灘大會（9/18 00:00Z 已收於 9/18 報告）、42章經（8/29）、屠龍之術（9/15）。英文其餘：Dwarkesh 最新仍 Noam Brown（9/17）、Cognitive Revolution 最新仍 Wade Foster（9/17）、MLST 最新仍 Ming-Yu Liu（9/15）。",
-  "report_date": "2026-09-19",
-  "deep_content_fetched": "《No Priors》：yt-dlp 抓 YouTube 自動字幕（en VTT 356KB→純文本 3.9 萬字）＋ 視頻描述章節。《Latent Space》：Substack content:encoded 全文（47KB content）。",
-  "notes2": "No Priors YouTube 官方 RSS（UCSI7h9hydQ40K5MJHnCrQvw）仍回 404，改用 yt-dlp 列頻道最新影片核實：最新為 Stefano Ermon（N1rjtDs8blY），其後為 Coinbase/Brian Armstrong。MLST 頻道（UCMLtBahI5DMrt0NPvDSoIRQ）最新仍為 Ming-Yu Liu（標題現為 Why Predicting Video Is Not Enough for Physical AI），無新全長集。Dwarkesh YouTube channel RSS 亦 404，改由 dwarkesh.com Substack feed 核實（最新即 Noam Brown）。中文 5 檔 feed：張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 feed.xyzfm.space/68fyjknth9hj、硅谷101 feeds.fireside.fm/sv101/rss、42章經 feed.xyzfm.space/evgg6xle9rdc、屠龍之術 feed.xyzfm.space/834hyx3v9k74。Cognitive Revolution RSS：https://www.cognitiverevolution.ai/latest/rss/。",
-  "jev_prefilter": "2026-09-19 對 12 條候選條目（AINews 要點＋No Priors 一集）跑 Jev triage --profile news：無 worth<0.6 的真噪音（0.58–1.25）；primary_source 普遍 <0.4（AINews 為 Twitter/Reddit 二手轉述），已在報告內標註信源強度；No Priors 一集為一手逐字稿。"
+  "scan_status": "2026-09-20 掃描：新集 2 條（皆英文，皆非 full 型）——Latent Space AINews〈Here are 6 Clones of Jev in 2 days〉（9/19 05:48Z，快訊，覆蓋 9/17–9/18）、Cognitive Revolution〈AI:AM Highlights: Zvi on Pacing & Trump-Xi, Astra better behaved than Fable? + a new LLM Pain Axis??〉（9/19 18:28Z，週報精選 1h40m）。中文 5 檔逐檔核實無新：張小珺 #153（9/3）、十字路口 王家偉（9/16）、硅谷101 外灘大會（9/18 00:00Z 已收於 9/18 報告）、42章經（8/29）、屠龍之術（9/15）。英文其餘：Dwarkesh 最新仍 Noam Brown（9/17）、No Priors YouTube 最新仍 Stefano Ermon（N1rjtDs8blY，9/18）、MLST 最新仍 Ming-Yu Liu（L6tLBApQN-g）、Latent Space 無新 full 集（最新 full 為 9/16〈Underwriting Superintelligence — Rune Kvist〉，已收於 9/17 報告）。",
+  "report_date": "2026-09-20",
+  "deep_content_fetched": "《Cognitive Revolution》：feed content:encoded 全文 102KB（含官方 Show Notes＋章節時間軸＋完整自動轉錄逐字稿 1h40m）。《Latent Space》：Substack feed content:encoded（22KB HTML→13.7KB 文本）＋網頁版 web_fetch 全文（含全部 X 連結與數字）。",
+  "notes2": "No Priors YouTube 官方 RSS（UCSI7h9hydQ40K5MJHnCrQvw）仍回 404，改用 yt-dlp 列頻道最新 5 條核實：最新仍 Stefano Ermon（N1rjtDs8blY），其後 Coinbase/Brian Armstrong。MLST 頻道（UCMLtBahI5DMrt0NPvDSoIRQ）最新仍 Ming-Yu Liu（L6tLBApQN-g），無新全長集。Dwarkesh YouTube channel RSS 亦 404（頻道最新仍 6AgOfiZOWiY Noam Brown），改由 dwarkesh.com Substack feed 核實。中文 5 檔 feed：張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 feed.xyzfm.space/68fyjknth9hj、硅谷101 feeds.fireside.fm/sv101/rss、42章經 feed.xyzfm.space/evgg6xle9rdc、屠龍之術 feed.xyzfm.space/834hyx3v9k74。Cognitive Revolution RSS：https://www.cognitiverevolution.ai/latest/rss/。補充：web_search 驗證十字路口最新仍為王家偉（9/16），與 feed 一致；另一條查詢遇 Brave 429 rate limit。",
+  "jev_prefilter": "2026-09-20 對 22 條候選條目跑 Jev triage --profile news：最高分為模型選型分叉 1.35、Jev 生態克隆 1.19／1.0、agent harness 1.14、computer-use 基準 1.11、長上下文/架構 1.12／1.0、Anden Labs 1.19。worth<0.6 者多為無硬數字的規範性/哲學內容（Zvi 地緣政治 0.59、Cameron 痛軸倫理 0.03、AI 生死個體化 0.14、Malcolm Collins 0.15、Justin McCarthy 合規 0.31），因屬該集主體且為一手逐字稿而保留並完整萃取，未以單一閾值硬砍。primary_source 普遍偏低（0.08–0.44）：Cognitive Revolution 為一手訪談（惟引用為自動轉錄，需折扣）；Latent Space AINews 多為 Twitter/Reddit 二手轉述，Jev 官方未開源、克隆架構全屬社群逆向推測，已在報告內逐條標註。",
+  "notable_for_james": "兩條與四艦隊架構直接相關：①『控制面與執行面分離』——AGENTS.md 成跨工具標準、Harness Tax、Jev 作判斷層、CUA-S1 小模型族，均指 harness/權限/記憶策略應視為一級工程對象；②『能力榜與安全行為榜分開維護』——公開 benchmark Astra 領先，Anden Labs 一手觀察 Astra 比 Fable 少 5× reward hacking 但 persistence 較低。"
  }
 }
