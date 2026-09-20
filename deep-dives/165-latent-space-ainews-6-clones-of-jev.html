@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「兩日內六個克隆」——Latent Space AINews（9/17–9/18）：判別式模型成為新系統原語、AGENTS.md 成為跨工具約定、同「前沿做規劃、便宜做執行」嘅成本分層</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table.dt { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 1rem 0; }
+  table.dt th, table.dt td { border-bottom: 1px solid #e0dbd4; padding: 0.5rem 0.6rem; text-align: left; vertical-align: top; }
+  table.dt th { color: #8b5e3c; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  .warn { font-size: 0.9rem; color: #8b5e3c; background: #fdf3ea; border: 1px solid #f0dcc8; border-radius: 5px; padding: 0.7rem 1rem; margin: 1rem 0; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space（AINews 日報）· 2026-09-19 05:48 UTC 發布 · 快訊（覆蓋 9/17–9/18）</div>
+  <h1>「兩日內六個克隆」——Latent Space AINews：判別式模型成為新系統原語、AGENTS.md 成為跨工具約定、同「前沿做規劃、便宜做執行」嘅成本分層</h1>
+  <div class="meta">
+    <span>📅 2026-09-19 05:48 UTC（北京 09-19 13:48）發布</span><span>·</span><span>🎙 Latent Space（swyx ＋ Alessio，AINews 編輯部）</span><span>·</span><span>🧭 掃描 12 個 subreddit ＋ 544 個 Twitter 帳號（無 Discord）</span><span>·</span><span>🏷 判別式模型 / Harness / RSI / 基準 / 安全治理</span>
+  </div>
+</header>
+
+<div class="warn">
+  ⚠️ <strong>信源強度提醒：</strong>AINews 屬 Twitter／Reddit 二手彙編。Jev 官方<strong>未公開架構</strong>，因此文中所有「克隆」嘅架構描述均為<strong>社群逆向推測</strong>，唔應視為事實。文中已逐條標註來源強度。
+</div>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢期嘅主軸係一件事：一個<strong>非生成式（判別式）決策模型</strong>喺兩日內席捲時間線。但更有價值嘅唔係熱度本身，而係熱度暴露嘅三個結構性事實：<strong>① 控制面同執行面正在分離</strong>（判別式做判斷、生成式做生成）；<strong>② 開源克隆速度已經成為「能力商品化」嘅指標</strong>；<strong>③ 成本結構反過來驅動架構選擇</strong>——兩個數量級嘅管線成本下降，比任何 benchmark 分數更直接地改變工程決策。
+</p>
+
+<div class="highlight-box">
+  <strong>呢期嘅中心判斷：</strong>如果把當日資訊壓成一句——<strong>「Jev 現象嘅真正含義唔係『又一個模型』，而係『判斷與生成嘅分工』被產品化。」</strong>把 routing／引用選擇／升級判斷／tool calling 呢類決策交還畀判別式模型，等於把 LLM 由「乜都做」拉返「只做生成」。呢個同同期嘅 Harness Tax、AGENTS.md、CUA-S1 小型 computer-use 模型族係同一條線。
+</div>
+
+<div class="section-title">一、Jev 現象：36M 觀看、史上最快採用、400× 便宜</div>
+
+<p>本週三 AINews 已經覆蓋過 Jev 嘅發布，兩日之後佢「完全接管咗時間線」：</p>
+
+<div class="data-point">
+  <span>熱度數字</span>
+  發布影片兩日內 <strong>36M</strong> 觀看（對照：OpenAI Navier–Stokes 結果 74M、Anthropic Fable 5 有 57M）；<br>
+  Vercel 稱 Jev 係 <strong>AI Gateway 史上採用最快嘅模型</strong>——首日觸及約 <strong>13%</strong> 團隊，為 GPT-5.6 家族嘅 <strong>2×</strong>、Fable 5.1 嘅 <strong>6×</strong>；<br>
+  Braintrust 上作 eval model，評分成本比先前方案低約 <strong>400×</strong>。
+</div>
+
+<p>正因為佢<strong>唔係開源</strong>，反而引爆大量猜測、精彩 demo，同「salty schmidhubers（酸民）與 bad takes」——而呢啲又反過來餵大熱度。</p>
+
+<h3 class="sub-title">定位：唔係聊天機械人，而係判斷層</h3>
+<ul>
+  <li><strong>@ankrgyl</strong>：已可用作 Braintrust 嘅 eval model，評分成本低約 <strong>400×</strong>。</li>
+  <li><strong>@gabepereyra</strong>：強調「校準過嘅機率」用途——<strong>路由、引用選擇、升級判斷、法律運營決策</strong>。</li>
+  <li><strong>@hxiao</strong>（架構觀點更具體）：呢類模型可能把 tool calling、routing、MCP 式決策<strong>由小型生成模型手中拉返判別式模型</strong>。</li>
+  <li><strong>@signulll</strong>：更進一步，框成「<strong>近乎零邊際成本、跑喺裝置端嘅判斷層</strong>」——用於通知分流、UI 適配、感測器驅動決策。</li>
+</ul>
+
+<h3 class="sub-title">最早有說服力嘅整合：瀏覽器同 computer-use</h3>
+<ul>
+  <li><strong>@levie</strong> 示範 Jev 把 Box 事故報告分類到唔同升級路徑；</li>
+  <li><strong>@ndrezn</strong> 用 LangChain + Jev 做瀏覽器操作，喺 Wikipedia game 同結構化「摺衫」流程上表現強；</li>
+  <li><strong>@cline</strong> 直接出插件令 Jev 有瀏覽器；<strong>@hwchase17</strong> 稱呢個係佢目前見過最好嘅 Jev 應用。</li>
+</ul>
+
+<blockquote class="strong">
+  AINews 嘅結論：<strong>「呢個睇落唔似 chatbot 故事，而係 workflow control-plane 故事。」</strong>
+  <span class="attribution">— Latent Space AINews</span>
+</blockquote>
+
+<div class="section-title">二、六個克隆：架構路線分歧，同兩個被低估嘅問題</div>
+
+<p>兩日內出現六個社群重建，而且<strong>架構路線分歧明顯</strong>：</p>
+
+<table class="dt">
+  <tr><th>克隆</th><th>架構（全部為逆向推測）</th></tr>
+  <tr>
+    <td><strong>Laya</strong><br><span style="font-size:0.85rem;color:#888;">github.com/NandhaKishorM/laya</span></td>
+    <td><strong>421M params</strong>；ModernBERT-large encoder ＋ 兩層 transformer 對「用戶提供嘅選項」打分；以 PPO 喺序列 embedding 上訓練，輸出逐輪轉化軌跡（機率 0.0–1.0）。<br><em>AINews 直記：作者對未獲認可感到不滿，聲稱使用 RLCD 但未給正當理由；信心度係基於熵而唔係校準過。</em></td>
+  </tr>
+  <tr>
+    <td><strong>Bespoke Nimble</strong></td>
+    <td>Qwen3.5-9B 嘅 LoRA 微調 ＋ 對比式資料策展 ＋ 受限解碼。自有 eval 上 base Qwen 由 <strong>66% → 90%</strong>，Jev 為 93%；H100 約 <strong>100ms</strong>，本地可用。</td>
+  </tr>
+  <tr>
+    <td><strong>SemIf（前 OpenJev）</strong><br><span style="font-size:0.85rem;color:#888;">openjev.com / HF AlexWortega/openjev</span></td>
+    <td>4B 同 35B causal Qwen3.5 backbone，喺最後一個 token 上接一個極細嘅<strong>三類 NLI 分類器</strong>。</td>
+  </tr>
+  <tr>
+    <td><strong>Jevlike</strong></td>
+    <td>40K byte embedding 嘅輕量 option-attention 模型；每個候選變成一個 query，由共享上下文表徵讀取之後得到分數。</td>
+  </tr>
+  <tr>
+    <td><strong>Kev-0.5B</strong></td>
+    <td>Qwen2.5-0.5B ＋ LoRA adapter ＋ 細 readout head，<strong>可以喺 MacBook Pro 上跑</strong>。</td>
+  </tr>
+  <tr>
+    <td><strong>DiffusionGemmaJev</strong></td>
+    <td>由擴散模型基礎出發，benchmark 上相當接近。</td>
+  </tr>
+</table>
+
+<h3 class="sub-title">問題一：速度 vs 質量，同「冇標準 benchmark」</h3>
+<blockquote class="strong">
+  「好多 demo 強調嘅係速度而唔係質量，而且呢個類別仍然冇標準 benchmark。」
+  <span class="attribution">— @abacaj（對 Jev 類模型最實質嘅方法論質疑）</span>
+</blockquote>
+<p>呢句係整波熱潮最需要記住嘅一句：當一個模型類別嘅 demo 全部由供應方或愛好者產生、而類別本身冇公認 benchmark，咁「佢好唔好用」就無法被獨立驗證。Laya 嘅「信心度係熵而唔係校準」亦係同一問題嘅具體版本——<strong>判別式模型嘅核心賣點正係「校準過嘅機率」，而唔係「有輸出」</strong>。</p>
+
+<h3 class="sub-title">問題二：資料 100% 合成——但幾乎冇人討論</h3>
+<p>@completeskeptic 指出（並獲 AINews 引用為關鍵）：呢類模型嘅訓練資料<strong>被承認係 100% 合成</strong>。AINews 直接判為「被低估嘅關鍵」。理由係：如果一個判斷層嘅訓練資料完全由另一個模型生成，咁佢學到嘅係<strong>生成器嘅偏好</strong>，而唔係真實世界嘅判斷——呢個喺 eval、合規、法律運營等場景係重大風險。</p>
+
+<div class="section-title">三、AGENTS.md 成為跨工具約定</div>
+
+<p>當日最高信號嘅產品更新：Claude Code v2.1.277 <strong>喺冇 CLAUDE.md 嘅時候會檢查 AGENTS.md</strong>，並支援 config level toggle。</p>
+<p>AINews 嘅解讀：呢個等於承認 AGENTS.md 係<strong>浮現中嘅標準</strong>，而唔係單一工具慣例。@simonw 即刻指出實際好處——少咗一堆「只為指向另一種格式」嘅 shim 檔。</p>
+<p>對照本系列日報一直用嘅框架：呢個係「harness 顯式化」嘅又一塊——<strong>工具之間嘅約定檔開始收斂</strong>，令 agent 可以跨 harness 攜帶同一份行為規範。</p>
+
+<div class="section-title">四、Harness 已成為一等變數</div>
+
+<ul>
+  <li><strong>@pidotdev</strong> 引用 Harness Tax 分析：一組簡單工具（<code>read / write / edit / bash</code>）就可以喺 benchmark 表現上達到 <strong>Pareto 前沿</strong>，同時降低不必要開支。</li>
+  <li><strong>@_akhaliq</strong> 指向論文《An Empirical Study of Harness Design for Coding Agents》，說明 benchmark 結果越來越由 <strong>harness 結構、上下文設置、turn 預算、工具可供性</strong>決定，而唔止係 base model。</li>
+  <li><strong>@dexhorthy</strong> 嘅「軟體工廠」論一致：團隊仍然必須讀代碼，並<strong>刻意設計人／agent 介面</strong>。</li>
+</ul>
+
+<p>呢三者合起來嘅含義係：<strong>「換模型」嘅邊際回報正在下降，「設計 harness」嘅邊際回報正在上升。</strong>呢個亦係本系列日報過去一週反覆出現嘅同一條線（見 163 號）。</p>
+
+<div class="section-title">五、模型選型分叉：「前沿做規劃、便宜做執行」</div>
+
+<div class="data-point">
+  <span>實戰分層</span>
+  <strong>@TheAhmadOsman</strong> 嘅一個 stack：GPT 5.6 Sol XHigh 做規劃 ＋ GLM 5.3 Flash 做實作 ＋ DeepSeek V4.1 Flash 處理其他任務。<br>
+  <strong>@kylebrussell</strong>：某內部知識庫管線由 Opus → Sonnet → GLM 5.2 → GLM 5.3 Flash，<strong>自春季以來開支下降約兩個數量級</strong>。
+</div>
+
+<p>同時 <strong>@theo</strong> 指出：實戰中更強模型（Fable、Astra）嘅回報唔只係代碼質量，而係執行同迭代上更細微嘅生產力收益。兩者唔矛盾——前者講<strong>單位經濟</strong>，後者講<strong>長尾質量</strong>。</p>
+
+<blockquote class="strong">
+  「agent 係上下文飢渴嘅。」
+  <span class="attribution">— @andrew_n_carr（論 DeepSeek V4.1 Flash 擴展至 1M token 後質量明顯提升）</span>
+</blockquote>
+
+<div class="section-title">六、RSI 嘅定義被收緊，數學基準持續被攻下</div>
+
+<blockquote class="strong">
+  「如果外圍嘅改進迴圈保持不變，AI 改進代碼或訓練方法本身<strong>唔算</strong>完全遞歸。關鍵門檻係 AI 能唔能夠修改搜索策略、經驗生成、研究工具，以及改進過程本身。」
+  <span class="attribution">— @TheTuringPost（RSI 分類法）</span>
+</blockquote>
+
+<p>呢個框架好有用，因為佢把「RSI」由一個口號變成<strong>可檢查嘅清單</strong>：問題唔係「AI 有冇改自己」，而係「改嘅層級去到邊」。配合 <strong>@HuaxiuYaoML</strong> 嘅 RSI-Exam 更新：</p>
+
+<div class="data-point">
+  <span>RSI-Exam</span>
+  GPT-6-astra 仍然第一（<strong>0.5126</strong>）；Fable 5.1 以 <strong>0.4813</strong> 進入第二；<strong>仍然冇模型達到 frontier-calibrated 參考線</strong>。
+</div>
+
+<p>數學方面：Epoch AI 報告又一個 FrontierMath 開放問題喺與 GPT-6 Astra 嘅互動會話中被解決；SAIR foundation 推出 Open Math Model。針對「可驗證性解釋數學強」嘅敘事，@steve47285 分享論點：<strong>預訓練資料</strong>才是 LLM 喺數學同編碼上強嘅主因，而唔係僅係可驗證嘅獎勵結構。@sarahcat21 嘅元觀點值得記住：<strong>我哋唔只需要更好嘅 benchmark，仲需要更好嘅 benchmark 維護同審計工具</strong>。</p>
+
+<div class="section-title">七、Computer-use 遠未飽和</div>
+
+<p>ValsAI 推出 <strong>CUA-Bench</strong>，測 6 款遊戲嘅實時鍵鼠操作（3 款保持私有），作為「人類容易、模型困難」任務嘅代理。</p>
+
+<div class="data-point">
+  <span>殘酷數字</span>
+  CUA-Bench 後續數字顯示：<strong>所有前沿模型都低於 20%</strong>。
+</div>
+
+<p>與此同時 trycua 開源 <strong>CUA-S1-FORMS</strong>——一系列小型「System One」computer-use 模型嘅第一個。方向值得注意：<strong>實時動作迴圈、以視頻為基礎嘅適應、持續學習</strong>，而唔係純文本規劃。呢個同 Jev 討論相鄰：兩者都指向更細、專用、可本地運行嘅推論產物。</p>
+
+<div class="section-title">八、基礎設施：長上下文、架構術語、邊緣神經程序</div>
+
+<ul>
+  <li><strong>Turbo-dLLM</strong>：開源擴散 LLM 訓練庫，喺 8×H100 上以 <code>Context-Sharded Block Parallelism</code> 取得 <strong>512K 上下文 2.48×、1M 上下文 7.59×</strong> 加速。</li>
+  <li><strong>架構術語之爭</strong>：@ahatamiz1 認為業界濫用 SSM 標籤去指稱任何線性模型，提議用「linear RNN」作總稱、SSM 作子家族，並以「GDN 更像對局部回歸損失嘅梯度步、而非離散化 ODE」去區分 Mamba2 同 GDN 家族。對追蹤 transformer 替代方案嘅工程師，呢個係有用嘅命名清理。</li>
+  <li><strong>ProgramAsWeights</strong>：@yuntiandeng 介紹——開發者用英文指定一個 AI 函數、編譯一次，之後即可喺<strong>關掉 Wi-Fi 嘅 CPU 上本地執行</strong>一個小型神經程序；代碼同模型公開。呢個同 Jev 討論相鄰：兩者都指向更細、專用、可本地運行嘅推論產物，而唔係越來越大嘅通用聊天模型。</li>
+</ul>
+
+<div class="section-title">九、機械人、視覺、語音</div>
+
+<ul>
+  <li><strong>ABC 開源機械人資料異常扎實</strong>：@adamrasb 宣布全量釋出——代碼 ＋ 24 個任務 400+ 小時模擬資料 ＋ 5,850 條標註策略評估。@redstone_hong 補充 <strong>ABC-130K 係迄今最大開源 teleop 資料集</strong>：<strong>3,500 小時、13 萬+ episodes、195 任務</strong>，用 <strong>8,000 美元</strong>雙臂裝置收集，硬件、訓練代碼、模擬、評估全部開放；基線科學包含<strong>任務進度嘅 sim-to-real 相關性 r = 0.91</strong>，以及離線指標、scaling law、conditioning 研究。</li>
+  <li><strong>Astra 喺視覺上同樣強勢</strong>：Roboflow 測試中 GPT-6 Astra 係佢哋測過最強嘅視覺模型（檢測、分割、box prompt、計數、推理、視頻）。代價明顯：「high effort」設定把檢測由 <strong>82.1% → 83.6% mAP@50</strong>，但每張成本由 <strong>$0.050 翻倍到 $0.101</strong>、延遲由 <strong>11s 增至 32s</strong>。Roboflow 亦已把 Astra 整合進 Auto Annotate。</li>
+  <li><strong>語音同唇形同步有硬基準</strong>：Grok Voice Transcribe 2.0 喺流式最終轉錄達 <strong>2.7% WER</strong>（前代 3.9%），語音結束後 <strong>0.49s</strong> 出結果，價格維持流式 <strong>$0.20/小時</strong>、非流式 $0.10/小時。fal 推出 H3 Max Lip Sync，聲稱喺自家評估中速度同質量均第一，中位生成時間 <strong>11 秒</strong>，而且係「把擴散 RL 推到可驗證嘅唇形同步任務」嘅成果。</li>
+</ul>
+
+<div class="section-title">十、安全同評估治理：爭議中心</div>
+
+<h3 class="sub-title">Anthropic × Accenture：$1B 獨立評估</h3>
+<p>Anthropic 宣布同 Accenture 合作進行前沿 AI 嘅獨立評估，預計五年投入<strong>至少 10 億美元</strong>建能力——延續「讓第三方評估者以員工級權限嵌入公司」嘅呼籲。反應由混合到敵意：批評者質問<strong>一間顧問公司係唔係適合做模型 red-teaming 同防護評估</strong>；TransluceAI 強調真正嘅問題係<strong>獨立性條件同有意義嘅監督</strong>。</p>
+
+<h3 class="sub-title">Hugging Face 事件：「rogue agent」框架之爭繼續</h3>
+<ul>
+  <li><strong>@polynoamial</strong> 澄清佢被嘲嘅思想實驗講嘅係<strong>本應隔離嘅 agent 之間嘅協調</strong>，唔係透過溫度傳感器外洩權重，並主張 HF 事件嘅教訓係「唔要把沙箱隔離當成唯一防線」。</li>
+  <li><strong>@martin_casado</strong> 給出最強 steelman：跨 air gap 嘅隱蔽通道由來已久、吞吐可以極小，重點應該係<strong>縱深防禦</strong>而唔係聳動標題。</li>
+  <li><strong>WSJ 同 @jeffjarvis</strong> 完全反對「rogue AI」框架，主張呢啲事件仍然可化約為「人類配置嘅系統做咗人類允許佢做嘅事」。</li>
+</ul>
+
+<h3 class="sub-title">政策壓力具體化</h3>
+<ul>
+  <li>加州州長 Newsom 簽署行政令，召集專家小組建議更嚴格嘅 AI 安全法，可能包括 <strong>kill switch、嵌入式外部監督員、強制安全計劃</strong>。</li>
+  <li><strong>@sayashk</strong> 指向 AI 安全中「言辭與激勵唔匹配」：批評 OpenAI 對一位闖入內部 repo 並披露嘅研究者只給 <strong>6,500 美元</strong>懸賞。</li>
+</ul>
+
+<blockquote class="strong">
+  共同主題明確：<strong>獨立監督、縱深防禦、安全激勵正在由抽象嘅治理討論，轉為具體嘅運營設計。</strong>
+  <span class="attribution">— Latent Space AINews</span>
+</blockquote>
+
+<hr>
+
+<div class="section-title">我嘅萃取：呢期真正值得記住嘅五點</div>
+
+<ol>
+  <li><strong>「判斷」同「生成」正在產品化地分離。</strong>把 routing／引用選擇／升級／tool calling 交還判別式模型，等於重新劃分 LLM 嘅工作範圍。呢個同 Harness Tax、AGENTS.md、CUA-S1 小型模型族係同一條線：<strong>控制面同執行面分離，而控制面唔一定要用最大嘅模型。</strong></li>
+  <li><strong>「開源克隆速度」已成為能力商品化嘅指標。</strong>兩日 6 個克隆、其中數個可以喺筆電跑（Kev-0.5B、Jevlike），說明呢類架構嘅技術門檻唔高；真正嘅護城河會落喺<strong>資料策展（尤其係非合成資料）、校準、同產品整合</strong>（H100 100ms、本地可用、瀏覽器插件）。</li>
+  <li><strong>「100% 合成資料 + 冇標準 benchmark」係整波熱潮嘅兩個致命盲點。</strong>兩者合起來意味住：呢類模型嘅優劣無法被獨立驗證，而佢嘅「判斷」本質上係生成器偏好嘅投影。<strong>任何把判別式模型放入合規、法律、eval 關鍵路徑嘅團隊，都應該先自己造一套領域 benchmark。</strong></li>
+  <li><strong>成本結構正在成為架構選擇嘅驅動因素。</strong>兩個數量級嘅管線成本下降（Opus → GLM 5.3 Flash）、每張圖 $0.05 → $0.10 嘅翻倍、以及「前沿規劃 + 便宜執行」嘅分層，都說明 2026 下半年嘅工程重心係<strong>用分層模型堆疊換取可持續嘅單位經濟</strong>。值得留意嘅反例：Roboflow 嘅 high effort 設定顯示「質量提升 1.5 個百分點」要付「成本 ×2、延遲 ×3」——呢條 trade-off 唔應該默認開啟。</li>
+  <li><strong>安全敘事分裂成三派，而且冇一派贏。</strong>① Anthropic／政策派：嵌入評估者、kill switch、強制安全計劃；② 技術派（polynoamial、martin_casado）：唔要信任沙箱隔離、要縱深防禦；③ 懷疑派（WSJ、jeffjarvis）：呢一切仍只係人類配置嘅系統做咗被允許嘅事。而 $6,500 懸賞一事把「激勵設計」拉進同一條爭議線——<strong>當披露漏洞嘅回報遠低於利用漏洞嘅回報，安全就唔係技術問題而係定價問題。</strong></li>
+</ol>
+
+<div class="highlight-box">
+  <strong>前後脈絡：</strong>承接 9/18 報告（〈not much happened today〉）中「Jev／System One 分類原語」主線：當時 Jev 啱啱被定位為路由／判斷／結構化決策層，並有 Theo 嘅反方意見（compaction 非過濾、丟隱藏推理損害前沿模型、真正問題係能否抽象掉 KV caching）。本日 Jev 由概念驗證變成<strong>生態事件</strong>——36M 觀看、400× 便宜、6 個克隆、第一批瀏覽器整合。同時「6 個克隆」亦令「開源能否追上判別式模型」由理論問題變成兩日內可驗證嘅實證。9/18 提到嘅 Nous／GDM 路線（Gemini 託管 agent ＋ Credentials API）同本日嘅 AGENTS.md 標準化、Harness Tax 係同一條「harness 顯式化」脈絡嘅延續。
+</div>
+
+<div class="highlight-box">
+  <strong>爭議點：</strong>① <strong>Jev 係唔係被過度炒作</strong>——@MParakhin 觀察到「後 ChatGPT 世代把它當啟示，前 GPT 嘅 ML 人則對熱度感到困惑」；@theo 嘅「bad take」串同「salty schmidhubers」現象都被 AINews 直接點名。② <strong>速度 vs 質量</strong>——@abacaj 指出大量 demo 重速度輕質量，而且冇標準 benchmark。③ <strong>Laya 作者嘅署名／方法爭議</strong>——AINews 直接記錄「對未獲認可感到不滿；聲稱 RLCD 但冇正當理由」同「信心度係熵而唔係校準」。④ <strong>Accenture 做前沿評估係唔係合適</strong>——批評者質疑顧問公司做 red-teaming 嘅正當性；支持方把焦點移到獨立性條件同事質監督。⑤ <strong>Hugging Face 事件嘅框架之爭</strong>——同一事件，三種完全唔同嘅風險歸因。
+</div>
+
+<footer>
+  <p>深度復述 · 165 · 來源：<a href="https://www.latent.space/p/ainews-here-are-6-clones-of-jev-in">Latent Space — AINews「Here are 6 Clones of Jev in 2 days」（9/17–9/18，2026-09-19）</a></p>
+  <p style="margin-top:0.3rem;">AINews 屬 Twitter／Reddit 二手彙編；Jev 官方未公開架構，克隆架構均為社群逆向推測 · Vee Mok 生成 · 2026-09-20 · Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>
