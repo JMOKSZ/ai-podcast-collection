@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「我看到了 Scaling Law 的信號」——清華叉院助理教授徐夢迪：機械人嘅 in-context learning，同「適應成本塌陷」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">十字路口 Crossing · 2026-09-20 發布 · 80 分 43 秒</div>
+  <h1>「我看到了 Scaling Law 的信號」——清華叉院助理教授徐夢迪：機械人到新環境「當場學識」，同「適應成本塌陷」嗰條曲線</h1>
+  <div class="meta">
+    <span>📅 2026-09-20 23:30 UTC 發布（北京 09-21 07:30）</span><span>·</span><span>🎙 十字路口 Crossing（Koji 楊遠騁）</span><span>·</span><span>👤 嘉賓 徐夢迪（清華大學交叉信息研究院 IIIS 助理教授）</span><span>·</span><span>🏷 具身智能 / In-Context Learning / Scaling Law</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集嘅主角唔係某間公司、某個產品，而係<strong>一條曲線</strong>。嘉賓徐夢迪（清華叉院助理教授）嘅核心命題得一句：<strong>機械人嘅 in-context learning（ICL）</strong>——唔更新參數、唔做微調，淨係喺上下文度放一段示範，機械人就喺新環境<strong>當場學識</strong>一個新任務，而且「<strong>越學越快</strong>」。而佢喺節目裡講嘅一句「我看到了 Scaling Law 的信號」，係近半年具身領域最值得反覆讀嘅一句話——因為佢同時係一個<strong>方向判斷</strong>，亦係一個<strong>預期管理</strong>。
+</p>
+
+<div class="highlight-box">
+  <strong>呢集嘅中心論點：</strong>如果只記一句，就記——<strong>「當預訓練量大到某個閾值，適應（adaptation）嘅成本會變到可以忽略不計。」</strong>呢句係 Generalist GEN-1.5 官方博客嘅原話，亦係徐夢迪成集論證嘅落點。佢把話講得更白：語言模型由 GPT-1 走到 GPT-3，靠嘅係 <strong>pretraining scale + 少量微調 + 上下文學習</strong>；而機械人<strong>仲喺 GPT-1 階段</strong>。所以「而家成功率唔高」唔構成路線否證——因為佢真正盯住嘅唔係<strong>絕對數值</strong>，而係<strong>曲線有冇見到 asymptote（收斂）</strong>。
+</div>
+
+<div class="section-title">一、點解呢集值得寫：一個「即時注腳」</div>
+
+<p>節目組自己都覺得時間線巧合得好緊要：<strong>錄完節目嘅第二個禮拜</strong>，Generalist 發布 <strong>GEN-1.5</strong>——只畀機械人睇一段 <span style="color:#8b5e3c; font-weight:600;">3–12 秒</span>嘅動作示範（官方叫「physical prompt」），<strong>唔微調、唔更新參數</strong>，機械人即場試做新任務，10 項任務平均成功率 <strong>約 59%</strong>。ICL 由一個論文詞，變成一個可以落單嘅產品能力。</p>
+
+<p>呢個「注腳」之所以硬，係因為佢唔係觀點，係<strong>可核對嘅數字</strong>。而 GEN-1.5 官方博客亦好誠實咁自己降預期：<em>「Although the tasks are simple and short-horizon, and the success rates are modest, this is the first model we know of that has demonstrated the general ability to learn a wide range of dexterous closed-loop physical tasks from just one-shot or few-shot demonstrations.」</em>——任務簡單、時序短、成功率 modest，但係<strong>第一個</strong>做到「由一次示範泛化到一大批閉環物理任務」嘅模型。</p>
+
+<div class="data-point">
+  <span>Data</span> <strong>GEN-1.5 官方口徑（Generalist AI 博客，2026-08）</strong><br>
+  · physical prompt 長度：<strong>3–12 秒</strong>單次示範，<strong>零梯度步</strong>；<br>
+  · 10 項任務平均成功率：<strong>59%（±10% 標準差）</strong>；<br>
+  · few-shot（10 步梯度 + 每任務 5 分鐘數據 ≈ 50 條示範）：<strong>83%（±9%）</strong>；<br>
+  · 極端單步：<strong>1 步梯度 + 1 分鐘數據 → 66.5%</strong>（留出任務）；<br>
+  · 模型形態：多模態，<strong>30 秒上下文窗（記憶）</strong> + 語言/本體感受輸入，輸出 <strong>100 Hz</strong> 動作軌跡；<br>
+  · 預訓練：<strong>連續訓練超過 8 個月</strong>且所有追蹤指標仍在改善；<br>
+  · 10 步梯度只改動約 <strong>&lt;0.15%</strong> 權重——「唔係建立新表徵，而係重新配置已有知識」。
+</div>
+
+<div class="section-title">二、嘉賓背景：一條「貫穿中美、學術與產業」嘅路</div>
+
+<ul>
+  <li><strong>現職：</strong>清華大學交叉信息研究院（IIIS，即「叉院」）tenure-track 助理教授，<strong>2025 年 9 月入職</strong>；自建實驗室，方向係 scalable / adaptable / reliable robots，正在招收機械人硬件設計、大規模模型訓練、ML、控制與機械人學背景嘅學生。<br>
+  <span style="color:#888; font-size:0.9rem;">（註：節目 shownotes 寫「2024 年初回國加入清華」，與本人主頁「2025/09 入職 IIIS」不一致；本復述以主頁時間線為準。）</span></li>
+  <li><strong>學術路徑：</strong>清華車輛工程本科 → 約翰霍普金斯（JHU）LCSR 機械人碩士（導師 Gregory S. Chirikjian）→ 卡內基梅隆（CMU）機器學習博士，<strong>獲最佳博士論文獎</strong>，導師 Ding Zhao（SafeAI Lab），博士論文主題即「building adaptable generalist robots」→ 斯坦福 SVL 博士後（2024/06 起），合作導師 <strong>吳佳俊（Jiajun Wu）與李飛飛（Fei-Fei Li）</strong>。</li>
+  <li><strong>產業經歷：</strong>Google DeepMind Robotics、MIT-IBM Watson AI Lab、豐田研究院（TRI）實習。</li>
+  <li><strong>研究主線（主頁自述三條）：</strong>① 用少量示範、非專家數據做 in-context robot learning；② 無監督學習（由動力學、視覺幾何、策略中發現任務/技能結構）；③ distributionally robust RL。</li>
+  <li><strong>代表作：</strong>CoVer-VLA（test-time 驗證縮放，ECCV 2026）；MoMaGen（雙臂移動操作數據生成，ICLR 2026）；ROSETTA（RSS 2025 Workshop 最佳論文）；早期影響較大嘅 <strong>Prompting Decision Transformer</strong>（少樣本策略泛化）、<strong>RoboTool</strong>（LLM 驅動嘅創造性工具使用）。Google Scholar 引用約 <strong>1,600+</strong>。</li>
+</ul>
+
+<p>呢條路徑有一個好清楚嘅內在一致性：由博士期嘅 <em>distributionally robust RL</em>（對不確定性做魯棒優化），到 <em>Prompting Decision Transformer</em>（用 prompt 做少樣本策略泛化），再到 <em>CoVer-VLA</em>（把驗證搬到推理期）——佢一直喺回答同一個問題：<strong>點樣用更少嘅數據，獲得更加穩定嘅適應</strong>。今集只係佢第一次公開將呢條線表述為「我看到了 Scaling Law 的信號」。</p>
+
+<div class="section-title">三、核心論點：七條可帶走嘅判斷</div>
+
+<h3 class="sub-title">① 預訓練有天花板，出路在「適應」——而適應嘅成本正在塌陷</h3>
+<p>節目在 <strong>12:02–19:19</strong> 段落把佢嘅博士論文概括為「預訓練之外」，隨後單獨討論「Adaptation 為何越來越受重視？」。呢條判斷係：與其把更多數據灌入一個固定策略，不如讓模型具備<strong>「到咗現場再學」</strong>嘅能力。佢揀嘅具體機制就係 in-context learning。</p>
+
+<h3 class="sub-title">② 真正嘅泛化要「越學越快」，唔只係「換個場景都識郁」</h3>
+<p>節目把 ICL 定義得好具體：<strong>到新環境、一兩次交互、當場學會，並且學習速度本身隨經驗提升</strong>。呢個「越學越快」嘅標準，比通常講嘅 zero-shot 泛化嚴格得多，亦更接近人類學新技能嘅形態——重點唔在「識唔識」，而在<strong>第二次係唔係快過第一次</strong>。</p>
+
+<blockquote class="strong">
+「她的核心命题是机器人的 in-context learning (ICL)：让机器人到一个新环境，通过一两次交互当场学会新任务，而且越学越快。」
+<span class="attribution">—— 十字路口 官方 show notes（節目組措辭，非嘉賓口述）</span>
+</blockquote>
+
+<h3 class="sub-title">③ 機械人仲喺 GPT-1 階段</h3>
+<p>章節標題直接寫住「機械人還在 GPT-1 階段？」（<strong>50:47</strong>）。呢個類比嘅含金量在於佢<strong>同時給出方向同預期管理</strong>：語言模型喺 GPT-1 之後，靠 pretraining scale + 少量微調 + 上下文學習走到 GPT-3 嘅一躍；而佢主張機械人正走喺同一段曲線上——所以「而家成功率唔高」唔構成路線否證。呢個正係佢講「Signal 而唔係 Law」嘅分寸所在。</p>
+
+<h3 class="sub-title">④ 數據閉環係當下真正嘅瓶頸，而且卡喺「雞生蛋」</h3>
+<p><strong>58:19</strong> 嘅章節「數據閉環的『雞生蛋』難題」同 <strong>01:03:21</strong> 嘅「具身數據，難在定義需求」係成集嘅技術核心。要點係：<strong>機械人要先有用，先至會產生有價值嘅數據；但冇數據，機械人又唔夠有用。</strong>佢進一步指出難點唔在「採集量」，而在<strong>把需求定義清楚</strong>——即係先知道要訓咩能力，數據才有意義。呢個判斷直接對應佢團隊 MoMaGen 嘅取向：用自動化/仿真生成嚟打破冷啟動。</p>
+
+<h3 class="sub-title">⑤ 低 Loss ≠ 高成功率：要學識分辨「好睇嘅數字」</h3>
+<p><strong>49:07</strong> 標題即「低 Loss，不等於高成功率」，緊接 <strong>46:39</strong>「數據與世界模型，風向為何反覆？」。呢兩條連起來，係一個方法論警告：具身領域嘅評測指標同真實能力之間存在<strong>系統性缺口</strong>，而世界模型/數據兩條路線嘅風水輪流轉，很大程度係被「指標好睇」而唔係「任務跑通」驅動嘅。</p>
+
+<h3 class="sub-title">⑥ 對被廣泛傳播嘅 demo 保持警惕：進步同泡沫係同一枚硬幣</h3>
+<p><strong>44:44</strong> 講「具身創業：進步與泡沫共存」，另有專門章節談「疊衣服 demo 的誤導」。喺呢條線上佢係行業內部人但唔站台：承認進步真實存在，同時指出<strong>被精選出嚟嘅演示會系統性高估通用性</strong>。喺中文具身圈，疊衣服/疊毛巾係最常被用作「通用性證據」嘅演示類型——將佢點名為誤導，實際上係質疑行業默認嘅演示選取慣例。</p>
+
+<h3 class="sub-title">⑦（人生選擇層）只有樂觀才可能成功</h3>
+<p>最後一個板塊標題為「只有樂觀才可能成功」（<strong>01:09:56</strong> 起四段：博士面試裡嘅 Research Taste ／ 跟年輕 AP 讀博係一場創業？／ AI 論文氾濫還能點睇 ／ 具身馬拉松跑到第幾公里）。前兩段畀出一個頗具信息量嘅判斷：<strong>跟隨年輕 AP 讀博，本質上接近一次創業</strong>——即係把個人命運同一個尚未被驗證嘅路線綁定。節目組喺 shownotes 明確講，呢集係「給所有站在中美之間、學術與產業之間、跟隨熱點與堅持長線之間的年輕人的一份參考」。</p>
+
+<blockquote>
+「穿越所有的技术话题之后，这还是一期关于人生选择、环境与长期主义的对话，希望可以是给所有站在中美之间、学术与产业之间、跟随热点与坚持长线之间的年轻人的一份参考。」
+<span class="attribution">—— 十字路口 官方 show notes</span>
+</blockquote>
+
+<div class="section-title">四、技術詳解：GEN-1.5 到底做咗咩</div>
+
+<h3 class="sub-title">「physical prompting」嘅機制</h3>
+<p>GEN-1.5 把示範當成<strong>傳感器–動作序列</strong>塞入上下文窗口：窗口長 <strong>30 秒</strong>，其中一段被示範佔據，其餘為滾動觀測（rolling observations）。示範來源可以係<strong>人類雙手夾爪（handheld gripper / UMI 類設備）採集嘅數據</strong>，亦可以係機械人自己嘅 rollout。prompt 一就位，模型<strong>即刻執行</strong>，零訓練步。輸出為 100 Hz 動作軌跡，輸入包含影片、語言同本體感受。</p>
+
+<blockquote>
+“Physical prompting involves a drag and drop interface to select which demonstrations to be inserted into the model’s context window.”
+<span class="attribution">—— Generalist AI 官方博客《GEN-1.5: Embodied Foundation Models are One-Shot Learners》</span>
+</blockquote>
+
+<h3 class="sub-title">佢並唔係為 ICL 而訓</h3>
+<p>呢點對做工程嘅人極重要。Generalist 明確寫：<strong>冇為促進 ICL 改架構、冇內/外元學習循環（meta-learning loop）、冇鼓勵即興嘅輔助目標</strong>——能力「直接從預訓練湧現」。即係話：<strong>ICL 係規模嘅副產品，唔係一個可以單獨買到嘅功能。</strong>官方給出嘅兩個假設係數據分佈嘅 burstiness / Zipf 結構，同物理勞動本身嘅重複循環結構。仲有一句好關鍵：模型預訓練用嘅係「隨機抽樣嘅連續片段」，<strong>physical prompt 會引入模型訓練時從未見過嘅時間不連續跳躍</strong>——換言之，佢係喺一個「冇特別設計過」嘅條件下成功嘅。</p>
+
+<h3 class="sub-title">四種遷移能力</h3>
+<ul>
+  <li><strong>組合泛化：</strong>兩個 physical prompt 可以串成一條更長時序嘅行為（官方示範：① 拉開筆袋拉鏈 → ② 由袋中取錢），模型自己補出兩段示範之間嘅中間動作（重新定位、重新抓取、錯誤恢復）。呢個打開咗「physical prompt engineering」——唔使示範一整個複合任務，可以由一個小型短示範庫拼出嚟。</li>
+  <li><strong>Zero-shot sim-to-real：</strong>仿真裡錄嘅示範可以直接畀真機當 prompt，<strong>而預訓練數據裡並唔含仿真數據</strong>。注意官方特別澄清：呢個唔係傳統 sim2real（傳統係喺仿真訓一個策略再搬去真機）——呢個模型<strong>喺仿真同真機都冇訓過該任務</strong>。</li>
+  <li><strong>Human-to-robot：</strong>人對住機械人鏡頭用手做示範，機械人可以用自己嘅手複現。</li>
+  <li><strong>少梯度步適應：</strong>1–10 步梯度、5 分鐘數據（≈10–50 條示範）。官方補充：過往機械人模型學新任務通常要<strong>幾萬步梯度</strong>（有時更多）；呢度 10 步只改動不到 0.15% 權重，更準確嘅描述係 <strong>test-time training 嘅極低數據版本</strong>。</li>
+</ul>
+
+<h3 class="sub-title">即興行為：「Pareto 前沿」式嘅例子</h3>
+<p>僅用 5 分鐘人類示範微調「用刷子把積木掃進碗」，模型喺換成香蕉時把香蕉當刷子；遞畀佢一個簸箕時，佢<strong>發明咗一條完全唔同嘅接觸序列</strong>（用簸箕把積木托起再倒進碗）——官方稱微調數據同（其已知嘅）預訓練數據裡都冇呢種用法，最近鄰語言檢索（掃過 1,891,392 個場景）搵到嘅最相似活動亦都差好遠。其他湧現行為包括：手指卡咗樂高就換另一隻手取下、雙手協同擰罐蓋（訓練數據只用單手）、喺只訓咗「放一塊積木」嘅情況下出現按顏色/類別分揀嘅「整理傾向」、移除（有時甚至復原）遮住目標碗嘅一張紙。</p>
+
+<div class="data-point">
+  <span>反直覺</span> <strong>梯度步越少，即興行為反而越頻繁、越高級</strong>——因為輕度適配嘅模型更貼近預訓練先驗，能調用嘅行為庫更寬。官方寫：<em>“it strengthens as the number of fine-tuning gradient steps decreases, presumably because lightly adapted models stay closer to their pretrained priors.”</em> 呢條對產品化係一個真嘅設計變量，唔止係技術趣聞。
+</div>
+
+<div class="section-title">五、嘉賓自己嘅平行證據：CoVer-VLA 嘅 test-time scaling law</div>
+
+<p>徐夢迪團隊嘅 <strong>CoVer-VLA</strong>（arXiv:2602.12281，ECCV 2026）把「適應」做喺<strong>推理期</strong>：用對比學習訓一個 verifier，部署時批量改寫指令 + 批量生成候選動作，再用 verifier 揀出最優嘅高層 prompt 同低層動作塊。核心結論一句話：<strong>scaling verification 比 scaling policy learning 更有效。</strong></p>
+
+<p>論文摘要原文：<em>“Compared to scaling policy pre-training on the same data, our verification approach yields 22% gains in-distribution and 13% out-of-distribution on the SIMPLER benchmark, with a further 45% improvement in real-world experiments. On the PolaRiS benchmark, CoVer-VLA achieves 14% gains in task progress and 9% in success rate.”</em></p>
+
+<p>更關鍵嘅係佢嘅理論形式——一個<strong>冪律</strong>：<strong>log(e) ≈ log(a) + b·log(k)</strong>（e 為 oracle 動作誤差，k 為候選動作數）。實質上就係<strong>具身領域嘅 test-time scaling law</strong>：唔是把策略網絡越訓越大，而係喺推理期用更多候選 + 更好嘅驗證器換取準確度。</p>
+
+<div class="data-point">
+  <span>平行證據</span> 合起來讀——<strong>GEN-1.5 話「適應成本塌陷」，CoVer-VLA 話「驗證縮放比策略縮放划算」</strong>。兩條路徑嘅着力點一個喺「示教」（把示範塞入上下文），一個喺「揀」（用 verifier 揀最優候選），但方向一致：<strong>具身智能當前嘅槓桿在「驗證 / 數據 / 適應」，而唔在「更大嘅策略網絡」。</strong>
+</div>
+
+<div class="section-title">六、行業 insight：五條可以搬去用嘅結論</div>
+
+<ul>
+  <li><strong>具身智能嘅「GPT-3 時刻」可能以一次性示範嘅形式到來，而唔係以更大模型嘅形式。</strong>59% 嘅絕對值唔高，但佢係<strong>零訓練</strong>取得嘅；參照 GPT-3 一次性 ICL 約 45%、few-shot（約 100 例）約 65% 嘅舊刻度，兩者嘅形狀高度相似。若成立，行業競爭焦點會由「邊個數據最多」部分轉向「邊個嘅預訓練先驗最寬 + 邊個嘅前端工具最好用」。</li>
+  <li><strong>數據閉環嘅瓶頸開始被重新定義。</strong>由「採集量唔夠」轉向「需求定義不清 + 冷啟動冇數據」。呢個意味住仿真生成、人類影片、UMI 類手持設備嘅相對價值會被重新排序——而呢個正係節目專門討論「遙操作、仿真、UMI 與人類數據」（01:05:18）嘅原因。</li>
+  <li><strong>評測係呢個賽道嘅隱性風險。</strong>「低 Loss 不等於高成功率」加上「疊衣服 demo 嘅誤導」，指向一個投資人應該直接採納嘅檢查項：<strong>睇任務成功率同失敗模式，唔睇損失曲線同精選影片。</strong></li>
+  <li><strong>學術同產業嘅邊界喺呢條線上係模糊嘅。</strong>一位 2025 年才入職嘅助理教授，其方向（ICL、數據生成、test-time scaling）同前沿公司嘅產品節奏幾乎同頻；節目裡「跟年輕 AP 讀博像創業」嘅判斷，本質係在講：<strong>選題嘅賭注而家同公司路線圖共享同一張概率表。</strong></li>
+  <li><strong>可遷移到 agent 系統：</strong>「適應成本塌陷」喺機械人上係 30 秒上下文 + physical prompt；喺 agent 上對應嘅正係「把記憶/示例放入上下文，而唔係重訓」。若採納 GEN-1.5 嘅觀察——<strong>輕度適配嘅模型更願意即興、更會糾錯</strong>——咁對自家 harness，<strong>減少硬編碼特化、保留通用先驗，可能係更穩嘅默認值。</strong></li>
+</ul>
+
+<div class="section-title">七、爭議點：唔好把「Signal」讀成「Law」</div>
+
+<ul>
+  <li><strong>「Scaling Law 的信號」係唔係過強嘅措辭？</strong>目前嘅證據係：GEN-0 → GEN-1 → GEN-1.5 三代喺預訓練量、next-action prediction error 同適應樣本效率上單調改善，且 8 個月連續訓練仍未觸頂。但 59% 嘅平均成功率、任務均為短時序（short-horizon）原子操作，官方自己寫明「tasks are simple and short-horizon, success rates are modest」。<strong>把「冇見到 asymptote」當作信號係合理嘅，當作定律則係過度外推。</strong></li>
+  <li><strong>ICL 更脆但更會即興——呢個權衡點定價？</strong>官方數據同時給出「in-context 技能比微調脆弱」同「梯度步越少即興越強」。對產品化而言係兩難：<strong>現場示範型場景</strong>（秒級上手、換任務頻繁）明顯利好 ICL；<strong>穩定產線型場景</strong>（長時間重複、要求 99%+）則仍然需要後訓練到 mastery。本集標題裡嘅「陷阱」二字，很可能就落在呢度。</li>
+  <li><strong>數據路線之爭遠未平息。</strong>「數據與世界模型，風向為何反覆？」呢個章節標題本身就承認咗領域內嘅搖擺。佢本人押注 ICL + 生成數據，但呢個並非共識；遙操作派同仿真派喺節目裡被並列成咗三種採數路線。</li>
+  <li><strong>業界對 GEN-1.5 嘅外部背書與保留：</strong>NVIDIA 機械人總監 Jim Fan 指關鍵在人類數據嘅「天然重複結構」（每個重複都係免費訓練信號），以及<strong>「保留失敗嘅前半段而唔係剪走佢」</strong>——人類嘅手忙腳亂留喺數據裡，教會模型有機嘅恢復反射；佢亦再次點名 <strong>UMI 手持夾爪</strong>優於傳統遙操作（遙操作插入咗一層人類同環境之間嘅隔離，抽走咗物理直覺）。但 Fan 同時保留：展示嘅任務仍然簡單，真正 ICL 效力高度取決於測試場景同訓練分佈嘅接近程度。</li>
+</ul>
+
+<div class="section-title">八、章節時間軸（官方，完整保留）</div>
+
+<ul>
+  <li><strong>從四驅車到機器人：</strong>00:21 快問快答 ｜ 02:31 清華車輛工程，通向機器人的起點 ｜ 05:59 為四驅車撿廢鐵的女孩 ｜ 07:18 衡水中學，競賽班裡的另一面 ｜ 12:02 CMU 最佳博士論文：預訓練之外 ｜ 19:19 Adaptation 為何越來越受重視？</li>
+  <li><strong>從解題人到出題人：</strong>23:51 創造性工具使用：沒有刀怎麼切蛋糕？ ｜ 26:30 斯坦福：李飛飛與吳佳俊，兩種導師 ｜ 30:57 從斯坦福回到清華 ｜ 34:17 5 年後，憑什麼成為頂尖研究者？ ｜ 40:06 選最好的，還是最適合的？ ｜ 42:24 她會回覆怎樣的套磁郵件？</li>
+  <li><strong>具身 Scaling Law 的信號：</strong>44:44 具身創業：進步與泡沫共存 ｜ 46:39 數據與世界模型，風向為何反覆？ ｜ 49:07 低 Loss，不等於高成功率 ｜ 50:47 機器人還在 GPT-1 階段？ ｜ 56:04 In-Context Learning：機器人能懂你家嗎？ ｜ 58:19 數據閉環的「雞生蛋」難題 ｜ 01:03:21 具身數據，難在定義需求 ｜ 01:05:18 遙操作、仿真、UMI 與人類數據</li>
+  <li><strong>只有樂觀才可能成功：</strong>01:09:56 博士面試裡的 Research Taste ｜ 01:14:08 跟年輕 AP 讀博，是一場創業？ ｜ 01:17:25 AI 論文氾濫，還能怎麼看？ ｜ 01:19:22 具身馬拉松，跑到第幾公里？</li>
+</ul>
+
+<div class="section-title">九、前後脈絡：呢集喺一條線上嘅位置</div>
+
+<ul>
+  <li><strong>同「十字路口」自身嘅具身路線演進對照：</strong>9/13 嘅外灘圓桌（蘇度、螞蟻靈波、自變量、破壳）給出四種一線路線判斷；9/16 係 24 歲首席科學家王家偉（深朴智能）講「基模唔會降維打擊具身」；本期（9/21）落在 <strong>學術側</strong>——用 ICL 呢條具體機制，為前幾期嘅「路線之爭」提供一個<strong>可測量嘅收斂點</strong>。三期連讀，等於把具身智能嘅「產業路線 → 工程全棧 → 學術機制」補齊。</li>
+  <li><strong>同英文播客嘅呼應：</strong>9/18 No Priors 嘅 Stefano Ermon 講「擴散會贏推理」（並行化嘅方案最終會贏）；9/19 Cognitive Revolution 嘅 Zvi 講 pacing 同公開 benchmark 與安全行為榜嘅分離。本條（ICL 嘅湧現）同兩者共同嘅底色一樣：<strong>2026 年嘅關鍵變化唔在「模型更大」，而在「系統同適應方式變咗」。</strong></li>
+</ul>
+
+<div class="section-title">十、方法與信源說明（必讀）</div>
+
+<div class="highlight-box">
+  <strong>本期<u>未能取得逐字稿</u>。</strong>小宇宙文稿接口未開放、YouTube 影片版權限攔截（yt-dlp 觸發人機驗證、youtube-transcript-api 報 IpBlocked）、本地轉寫環境唔具備（單核 + 約 1GB 記憶體，跑唔到 80 分鐘音頻 ASR）。因此本復述嘅<strong>節目相關內容</strong>，一律基於：<br>
+  ① 小宇宙官方 RSS 嘅完整 shownotes + 34 段官方章節時間軸；<br>
+  ② 嘉賓本人主頁 / 學術主頁（履歷、招生方向、論文清單）；<br>
+  ③ Generalist 官方博客《GEN-1.5: Embodied Foundation Models are One-Shot Learners》全文（所有 GEN-1.5 數字與機制描述均為此來源，屬<strong>公司自述口徑，未經第三方復現</strong>）；<br>
+  ④ CoVer-VLA 論文（arXiv:2602.12281）摘要與項目頁；<br>
+  ⑤ MoMaGen（ICLR 2026）摘要。<br>
+  <strong>凡涉嘉賓觀點嘅段落一律標註為「依章節時間軸與官方措辭重建」；凡涉具體數字一律給出來源實體。本文<u>不作任何虛構嘅嘉賓直接引語</u>。</strong>
+</div>
+
+<hr>
+
+<p style="font-size:0.95rem; color:#666;">
+<strong>一句總結：</strong>呢集唔係叫你今日就去買機械人股，而係叫你更新一個<strong>判斷框架</strong>——當你見到具身領域嘅成功率仍然係 59%，唔好即刻下結論話「路線唔通」；要問嘅係<strong>呢條曲線有冇收斂、適應嘅成本係唔係喺跌、同埋你睇到嘅數字係任務成功率定係損失曲線</strong>。徐夢迪畀出嘅答案係：曲線未見 asymptote，適應成本正在塌陷，而「Signal ≠ Law」係佢自己加上去嘅括號。
+</p>
+
+<footer>
+  <p>深度復述 · 十字路口 Crossing《「我看到了 Scaling Law 的信號」｜對談清華叉院助理教授徐夢迪》</p>
+  <p style="margin-top:0.3rem;">來源：小宇宙官方 RSS／Generalist AI 官方博客／arXiv:2602.12281／嘉賓個人主頁 · 生成時間 2026-09-21 06:00 UTC</p>
+  <p style="margin-top:0.3rem;">JMOKSZ / ai-podcast-collection · Apache 2.0</p>
+</footer>
+</div>
+</body>
+</html>

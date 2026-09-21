@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「你敢把錢包交給 AI 嗎？」——硅谷 101 外灘大會圓桌：Agent 交易爆發前夜，KYA 成為新身份基建</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">硅谷 101 · 2026-09-18 發布 · 外灘大會主論壇圓桌</div>
+  <h1>「你敢把錢包交給 AI 嗎？」——硅谷 101 外灘大會圓桌：Agent 交易爆發前夜，KYA 成為新身份基建</h1>
+  <div class="meta">
+    <span>📅 2026-09-18 00:00 UTC 發布（原錄於 2026-09-10 外灘大會主論壇）</span><span>·</span><span>🎙 硅谷 101（泓君 Jane）</span><span>·</span><span>👤 韓歆毅（螞蟻集團 CEO）· Jorn Lambert（萬事達卡首席產品官）· 劉作虎（OPPO 高級副總裁兼首席產品官）· 周靖人（阿里巴巴集團首席科學家）</span><span>·</span><span>🏷 Agentic Commerce / 支付基建 / 信任</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係一段線下圓桌錄音，但佢嘅價值唔在「四位高管同台」，而在一句幾乎冇人願意公開講嘅話——螞蟻 CEO <strong>韓歆毅</strong>坦言：今年 Agentic Commerce 實際落地嘅速度，<strong>「比大家預想的要慢很多」</strong>。呢句係成集嘅定調。當 AI 由「會答問題」走到「會辦事」，再走到<strong>「會交易」</strong>，真正卡住嘅唔再係模型能力，而係一整套<strong>信任基建</strong>：授權、身份、權限、責任。四位嘉賓分別代表支付網絡、超級 App、手機終端、雲與模型四種位置，講嘅其實係同一件事嘅四個切面。
+</p>
+
+<div class="highlight-box">
+  <strong>呢集嘅中心論點：</strong>如果只記一句，就記——<strong>「互聯網交易靠 KYC / KYB，Agent 交易要多一層 KYA（Know Your Agent）。」</strong>呢句出自韓歆毅，係成集最有結構性嘅概念。佢嘅意思係：當交易主體由「人」變成「人 + 人的 Agent + 商家的 Agent」，你唔單止要確認<strong>對面係邊個</strong>，仲要確認<strong>呢個 Agent 係唔係真嘅、佢嘅權限有幾大、佢做嘅嘢係唔係你真係授權咗、出事之後追得到邊個</strong>。萬事達卡 CPO Jorn Lambert 用電子商務 25 年前嘅歷史做類比——當年消費者喺陌生網站輸入銀行卡號都係一件令人不安嘅事，最後令電商普及嘅唔係支付技術本身，而係<strong>身份認證、交易規則、爭議處理、消費者保護</strong>呢四樣嘢慢慢建立起來。
+</div>
+
+<div class="section-title">一、四位嘉賓，四個位置，一個共同瓶頸</div>
+
+<ul>
+  <li><strong>韓歆毅（螞蟻集團 CEO）</strong>——代表「超級 App + 支付」嘅供給側。佢嘅核心詞係「催化劑」同「雞同蛋」。</li>
+  <li><strong>Jorn Lambert（萬事達卡首席產品官）</strong>——代表支付網絡。佢嘅核心詞係 superbloom（超級綻放）、A2A Commerce、新憑證、支付軌道。（節目說明：Jorn 先生嘅發言為後期中文配音呈現。）</li>
+  <li><strong>劉作虎（OPPO 高級副總裁兼首席產品官）</strong>——代表終端/OS。佢嘅核心詞係「意圖入口」、「主動智能」、「能力信任 vs 風險信任」。</li>
+  <li><strong>周靖人（阿里巴巴集團首席科學家）</strong>——代表雲同模型。佢嘅核心詞係「意圖理解係 Agent System 嘅工作」、沙箱、強約束 vs 數據。</li>
+</ul>
+
+<div class="section-title">二、核心論點：八條可帶走嘅判斷</div>
+
+<h3 class="sub-title">① 「雞同蛋」：Agentic Commerce 卡喺供需兩端嘅冷啟動</h3>
+<p>韓歆毅嘅診斷好具體：<strong>「用戶想用，但商家沒有很好的 Agent 服務；商家看到沒有用戶在用，就不太敢投入去開發 Agent。」</strong>呢個係典型嘅雙邊市場冷啟動問題——唔係技術唔得，而係<strong>兩邊都喺等對方先郁</strong>。螞蟻嘅定位就係做「智能體時代嘅催化劑」：幫更多商家開發更多 Agent，令佢哋被用戶搵到、用得起、用得好，個循環先轉得動。</p>
+
+<blockquote class="strong">
+「今年 Agentic Commerce 实际落地的速度，比大家预想的要慢很多。……用户想用，但商家没有很好的 Agent 服务；商家看到没有用户在用，就不太敢投入去开发 Agent。」
+<span class="attribution">—— 韓歆毅，蚂蚁集团 CEO（2026 Inclusion·外滩大会主论坛）</span>
+</blockquote>
+
+<p>呢句嘅分量在於發言人身份：講「慢」嘅唔係旁觀者，而係擁有全球最大支付生態之一嘅公司 CEO。行業普遍嘅敘事係「Agent 交易即將爆發」，而供給側嘅一號位親自降預期。</p>
+
+<h3 class="sub-title">② 「先有雞還是先有蛋」——節目自己用咗呢個做第一段標題</h3>
+<p>官方章節時間軸嘅第一段就係 <strong>04:25「先有雞還是先有蛋」：智能體商業為什麼卡住了</strong>。呢個編排說明主持人泓君都認為呢個係全場最實嘅一段：唔係暢想，而係<strong>卡點診斷</strong>。</p>
+
+<h3 class="sub-title">③ 意圖理解唔係模型嘅工作，係 Agent System 嘅工作</h3>
+<p>周靖人嘅判斷係全場技術含量最高嘅一句：<strong>「意圖的理解不單單是模型的工作，是 Agent System（智能體系統）的工作。」</strong>佢嘅解釋係：模型需要歷史記錄等嚟建立對上下文嘅理解，從而更好地理解人，而呢啲資訊要由 Agent System 有效組織起來。佢嘅結論分兩半——<strong>技術層面已經達到一定程度，但系統、產品維度上仍然需要一系列創新。</strong></p>
+
+<blockquote>
+「意图的理解不单单是模型的工作，是 Agent System（智能体系统）的工作。……从技术方面，我认为已经达到了一定的程度。但今天在系统、产品的维度上，还需要一系列的创新。」
+<span class="attribution">—— 周靖人，阿里巴巴集团首席科学家</span>
+</blockquote>
+
+<p>呢句同 agent 圈近半年嘅主線高度一致（可對照本集 #163 講嘅「Agent 運行時升為一等公民」）：<strong>瓶頸由模型移到 harness / runtime / context 管理。</strong></p>
+
+<h3 class="sub-title">④ 終端由「連接人和 App」走向「連接意圖同結果」</h3>
+<p>劉作虎嘅表述好清楚：<strong>「以前我們做得更多的是連接人和 App。接下來在 Agent 時代，人只需要有一個意圖，你想做什麼，這個手機就可以幫你去完成。」</strong>手機未來嘅價值有兩半：一半係做<strong>用戶表達意圖嘅入口</strong>，另一半係結合長期記憶、實時上下文同更多設備服務，<strong>更好地理解用戶</strong>。</p>
+
+<p>佢仲推咗一步：Agent 會由「響應式服務」走向<strong>「主動智能」</strong>——例如個人 Agent 結合用戶日程、興趣同習慣，主動建議某個時間去睇一場演唱會，並進一步幫用戶完成安排。呢個係由「工具」到「代理」嘅質變，亦係信任問題變得尖銳嘅原因。</p>
+
+<h3 class="sub-title">⑤ 信任要拆成兩層：能力信任 vs 風險信任</h3>
+<p>劉作虎嘅拆解值得單獨抄低：</p>
+<ul>
+  <li><strong>能力信任</strong>——Agent 到底能唔能夠把任務做好；</li>
+  <li><strong>風險信任</strong>——Agent 未來越來越自主，用戶會覺得越來越不可控。</li>
+</ul>
+<p>佢指出呢度有一個矛盾，而<strong>解決方法唔係叫用戶相信 Agent 永遠唔會犯錯，而係建立一套約束，令佢喺可控嘅基礎上完成任務</strong>——呢個需要精確嘅授權邊界、可追溯機制等基礎能力。作為提供操作系統能力嘅手機廠商，佢主張聯合行業生態夥伴，一齊建立一套針對 <strong>A2A（Agent-to-Agent）嘅行為規範</strong>。</p>
+
+<blockquote class="strong">
+「要解决的问题不是让用户相信 Agent 永远不会犯错，而是能否建立一套约束，使其在可控的基础上完成任务，这需要精确的授权边界、可追溯机制等基础能力。」
+<span class="attribution">—— 劉作虎，OPPO 高级副总裁兼首席产品官</span>
+</blockquote>
+
+<p>呢個係成集最「落地」嘅一句：<strong>把信任問題由「模型可靠性」翻譯成「權限工程」。</strong>亦呼應章節 19:59「手機廠商視角：能力信任、風險信任與 A2A 行為規範」。</p>
+
+<h3 class="sub-title">⑥ KYA：身份基建嘅第三層</h3>
+<p>韓歆毅將信任體系概括為幾個方面：<strong>授權、身份、Agent 能力評估、資金安全，以及可追溯、可審計機制</strong>。喺身份層面，佢指出過去互聯網交易主要強調 <strong>KYC（Know Your Customer）同 KYB（Know Your Business）</strong>；Agent 開始進入交易之後，仲要進一步建立 <strong>KYA——Know Your Agent</strong>。</p>
+
+<p>佢認為未來仲要解決<strong>Agent 之間嘅能力信任問題</strong>：「一個用戶個人的 Agent，憑什麼相信商家的 Agent 能夠很好地滿足我的需求？」而佢坦白<strong>目前行業喺呢方面做得仍然比較少</strong>，最終需要時間，讓大家建立起「唔係對於技術本身，而係對於 Agent 幫你執行任務同支付嘅信任感同安全感」。</p>
+
+<div class="data-point">
+  <span>金句</span> <strong>周靖人嘅簡化法：</strong>「今天對 Agent 信任，最後來講沒有那麼複雜，今天我們就把 Agent 想成一個人就好了。」——人們畀同事或助理派任務時，都會同時畀出<strong>權限、約束同執行空間</strong>，Agent 都係類似邏輯。關鍵三件事：<strong>① 把約束條件講清楚；② 建立安全嘅沙箱執行環境；③ 讓模型能夠區分邊啲係必須遵守嘅強約束、邊啲只係任務過程中需要處理嘅數據。</strong>佢仲補一句：安全執行唔止係模型自身嘅問題，<strong>Agent Harness 同 Agent Framework 層仲需要承擔權限管控、授權、追溯、審計等能力</strong>。
+</div>
+
+<h3 class="sub-title">⑦ 支付網絡要為「機器高速交易」重寫</h3>
+<p>Jorn Lambert 表示萬事達卡而家非常關注 <strong>Agent-to-Agent Commerce</strong>。佢嘅判斷係：<strong>今日嘅支付體系仍然係按照「人參與交易」設計嘅</strong>，但未來 Agent 可能需要<strong>同銀行卡、傳統支付賬戶不同嘅新型憑證</strong>，同時仲需要新嘅權限機制，以及<strong>能夠適應機器高速交易嘅基礎設施</strong>。</p>
+
+<blockquote class="strong">
+「未来究竟会变成什么样，其实非常难预测。与其试图预测未来，不如先把基础设施铺好，让其他人能够在它之上创新。」
+<span class="attribution">—— Jorn Lambert，万事达卡首席产品官</span>
+</blockquote>
+
+<p>呢個係一個典型嘅「賣鏟人」姿態，亦係章節 31:15「A2A 商業，海量微交易所需的支付軌道」嘅由來。值得留意嘅係「海量微交易」呢個詞：當 Agent 對 Agent 傾偈，交易頻率會由「人嘅操作頻率」變成「機器嘅調用頻率」，而<strong>每次交易嘅金額可以細到接近零</strong>——傳統卡組織嘅固定費率模型根本跑唔通。呢個正係 Lambert 講「支付網絡一切都要徹底重寫」（章節 06:26）嘅意思。</p>
+
+<h3 class="sub-title">⑧ 流量嘅邏輯由「時長」變成「意圖」</h3>
+<p>韓歆毅畀出一個頗有洞察嘅商業判斷：<strong>流量嘅邏輯正在從時長變成意圖。</strong>以商戶端嘅營銷轉化為例——商家嘅營銷由原來嘅「投流、提高轉化率」，變成「如何能夠按照用戶嘅個人意圖去解決問題」，從而更精準咁提供服務。供給側亦有新變化，例如<strong>為智力付費</strong>——讓人的經驗可以被泛化同複製，透過 AI 大模型把供給擴大化，帶來許多新機會。</p>
+
+<div class="section-title">三、行業 insight：呢集同其他幾集拼埋一齊讀</div>
+
+<ul>
+  <li><strong>同 9/11 No Priors × Brian Armstrong（#146）對照：</strong>Armstrong 講嘅係「everything exchange」——所有資產、所有交易最終會上鏈、由 agent 代理。外灘圓桌講嘅係同一件事嘅<strong>另一面</strong>：當 agent 真係可以動錢，<strong>法律同信任層需要咩</strong>。一個講願景，一個講基建，缺一不可。</li>
+  <li><strong>同「硅谷 101」自己嘅路線對照：</strong>9/16 嘅 E251（#157）講推理芯片——「訓練看算力，推理看帶寬」；本期講 Agent 交易——「交易看信任」。兩集合埋係一條完整嘅 agent 經濟基建鏈：<strong>算力 → 推理成本 → 應用 → 交易軌道 → 信任</strong>。</li>
+  <li><strong>同 AIUC × Rune Kvist（#159）嘅結構性對應：</strong>Rune 嘅一句話係「the binding constraint on adoption is risk」——採用嘅綁定約束由「能力」轉為「信任」。外灘圓桌四位嘉賓用四種語言講咗同一句：<strong>韓歆毅講 KYA、劉作虎講風險信任、周靖人講沙箱、Lambert 講重寫支付軌道。</strong>東西方兩邊、保險同支付兩個行業，收斂到同一個瓶頸。</li>
+  <li><strong>可操作檢查項（投資/產品視角）：</strong>當你評估一個「Agent 交易」項目，唔好只問「佢個模型幾強」，要問四條——<strong>① 授權邊界點表達？② Agent 身份點認證（KYA 有冇方案）？③ 出事之後邊個埋單、點追溯？④ 沙箱同 harness 層邊個做審計？</strong>呢四條答唔到，商業化就仲喺 demo 階段。</li>
+  <li><strong>「800 億 Agent 的商業想像」（章節 26:03）：</strong>節目把未來 5 年新商業機會嘅量級擺喺呢個章節標題度——值得留意嘅係<strong>呢個數字係一個想像框架而唔係預測</strong>。真正可以量度嘅信號反而係韓歆毅嗰句「落地比預想慢很多」。</li>
+</ul>
+
+<div class="section-title">四、爭議點與未被回答嘅問題</div>
+
+<ul>
+  <li><strong>「把 Agent 想成一個人」係唔係足夠嘅工程類比？</strong>周靖人嘅簡化極之好用，但佢有一個盲點：人類助理犯錯可以被理解、被原諒、被追責；<strong>Agent 犯錯嘅頻率係機器級嘅</strong>——一日一千次調用，即使 99.9% 正確，都係一日一次事故。呢個正係劉作虎講「能力信任 vs 風險信任」嘅深層原因：<strong>類比解決咗理解問題，但解決唔到規模問題。</strong></li>
+  <li><strong>邊個應該定 A2A 標準？</strong>劉作虎主張手機廠商聯合生態夥伴建立 A2A 行為規範；Lambert 主張「先鋪好基建，畀其他人喺上面創新」；韓歆毅則以螞蟻做「催化劑」。三方都想做規則制定者，但節目冇觸及一個尖銳問題：<strong>跨國、跨平台嘅 A2A 身份體系，最終由邊個簽發憑證？</strong></li>
+  <li><strong>「慢」係週期性定係結構性？</strong>韓歆毅講嘅「雞同蛋」係一個典型嘅<strong>可解嘅協調問題</strong>（一邊先補貼就轉得動）。但如果真正嘅卡點係 KYA 標準、責任歸屬、監管定性，呢個就唔係補貼可以解決嘅——而節目冇明確區分呢兩者。</li>
+  <li><strong>模型仲缺咩？</strong>章節 12:34 標題列出「長期上下文、提問能力與可靠執行」——呢三樣係全場最接近「技術短板清單」嘅一段，但節目中四位嘉賓對此嘅展開相對簡略，說明<strong>行業對「可靠執行」嘅具體標準仍然未有共識</strong>。</li>
+</ul>
+
+<div class="section-title">五、章節時間軸（官方，完整保留）</div>
+
+<ul>
+  <li>04:25 「先有雞還是先有蛋」：智能體商業為什麼卡住了</li>
+  <li>06:26 當 Agent 開始交易，支付網絡一切都要徹底重寫</li>
+  <li>10:15 手機將成為意圖入口、個人智能和主動智能</li>
+  <li>12:34 模型還缺什麼？長期上下文、提問能力與可靠執行</li>
+  <li>16:00 信任基建：授權、身份、KYA、資金安全與可追溯</li>
+  <li>19:59 手機廠商視角：能力信任、風險信任與 A2A 行為規範</li>
+  <li>22:55 「普拉提課測試」，授權、沙箱與安全執行</li>
+  <li>26:03 未來 5 年新商業機會：800 億 Agent 的商業想像</li>
+  <li>28:44 一杯咖啡怎麼選出來？大模型推薦機制拆解</li>
+  <li>30:36 未來 20 年，手機仍是最核心設備嗎</li>
+  <li>31:15 A2A 商業，海量微交易所需的支付軌道</li>
+</ul>
+
+<p style="font-size:0.95rem; color:#666;">（「普拉提課測試」係節目用嘅具體情境：把一門課嘅預訂、改期、付款交畀 Agent 去做，測試授權邊界同沙箱執行是否可靠——呢類「日常小額、低風險、高頻」嘅場景，係 Agent 交易最現實嘅起點。）</p>
+
+<div class="data-point">
+  <span>時間線</span> 節目引用嘅兩個真實錨點：<strong>① 今年 6 月上線嘅 AI 版支付寶</strong>——「一句話就能打車、點咖啡」，代表 agent 替人完成任務嘅路線；<strong>② 兩個月前 Mastercard 發布專為機器間支付設計嘅網絡服務</strong>，代表 agent-to-agent 路線。兩條線並行展開，就係當前 agentic commerce 嘅真實版圖。
+</div>
+
+<div class="section-title">六、方法與信源說明</div>
+
+<div class="highlight-box">
+  本復述嘅來源：<br>
+  ① <strong>硅谷 101 小宇宙官方 RSS</strong> 嘅完整 shownotes 同章節時間軸（本集標題、嘉賓名單、11 段章節）；<br>
+  ② <strong>騰訊新聞《外灘大會熱議智能體交易——萬事達、螞蟻、阿里、OPPO 等高管談 Agent 信任與機遇》</strong>（2026-09-10，外灘大會主論壇現場報導），本集所有<strong>直接引語</strong>均出自該報導，並已逐句核對；<br>
+  ③ Generalist／螞蟻等官方公開材料僅用於背景對照。<br>
+  <strong>凡屬引語者均標明發言人；凡屬分析推斷者均以複述者語氣表述，不與嘉賓原話混淆。</strong>
+</div>
+
+<hr>
+
+<p style="font-size:0.95rem; color:#666;">
+<strong>一句總結：</strong>呢集表面係「四位大佬談 AI 交易」，實際上係一份<strong>卡點清單</strong>。最值得記住嘅唔係「Agent 會爆發」，而係螞蟻 CEO 親口講嘅「比預想慢很多」，加一個新詞 <strong>KYA</strong>。如果你只帶走一樣嘢，帶走呢條判斷：<strong>當交易主體變成 Agent，安全問題就由「模型對唔對」變成「權限對唔對、責任追唔追得到」——而後者係工程同制度問題，唔係模型問題。</strong>
+</p>
+
+<footer>
+  <p>深度復述 · 硅谷 101《外灘大會線下圓桌｜敢把錢包交給 AI 嗎？聊聊 Agent 交易爆發前夜的信任基建》</p>
+  <p style="margin-top:0.3rem;">來源：硅谷 101 小宇宙官方 RSS ／ 騰訊新聞外灘大會現場報導（2026-09-10）· 生成時間 2026-09-21 06:00 UTC</p>
+  <p style="margin-top:0.3rem;">JMOKSZ / ai-podcast-collection · Apache 2.0</p>
+</footer>
+</div>
+</body>
+</html>
