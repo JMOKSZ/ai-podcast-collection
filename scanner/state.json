@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-09-21T02:06:00.000Z",
- "lastScanDate": "2026-09-21",
+ "lastScan": "2026-09-22T02:04:00.000Z",
+ "lastScanDate": "2026-09-22",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-09-17T15:38:13.000Z",
@@ -8,9 +8,18 @@
    "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-09-19T05:48:28.000Z",
-   "lastEpisodeTitle": "[AINews] Here are 6 Clones of Jev in 2 days",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-21T22:13:49.000Z",
+   "lastEpisodeTitle": "Jev: System One models for Prod, not God — with Diogo Almeida, CEO, TypeSafe AI",
+   "newEpisodes": [
+    {
+     "title": "Jev: System One models for Prod, not God — with Diogo Almeida, CEO, TypeSafe AI",
+     "pubDate": "2026-09-21T22:13:49.000Z",
+     "duration_sec": 8460,
+     "type": "interview",
+     "url": "https://www.latent.space/p/jev",
+     "note": "已深度萃取（逐字稿＝Substack RSS content:encoded 官方全文，18.8 万字元，timestamps 至 02:20:51）：TypeSafe AI CEO Diogo Almeida（InstructGPT 共同作者）首次系统拆解 Jev。核心：①System One / machine-native / large programmable 新类别，目标 consumer 是 code，命名取自 Jevons Paradox，指标 intelligence per dollar；②RLHF 的 mode dropping(=collapse) 使字符串不适合决策（引 Yann LeCun doomed slide），產物=sycophancy/过度自信/幻觉/LM Arena 排版；③RLCD（Reinforcement Learning for Calibrated Decisions）＝第三北极星，對 System 1 任務給 epistemic honest probabilities，異於 RLHF（討好人）與 RLVR（其實是 optimize benchmarks→fractal jagged）；④the bitterest lesson：task+data > compute，TypeSafe 自稱 data lab、全合成資料、拒用用戶資料（LLM=UDP/我們=TCP）；⑤反公開 benchmark（靠 vibes&trust）、反 determinism 主張 robustness、反 safety alignment/refusal（type error，fracturing intelligence，「intelligence 更像 database 而非 coworker」）、反 frontier pacing（稱 RLVR 假設是 sleight of hand，暗示 2028 選舉政治）；⑥不 pre-train（十億也不做），mid-training 只是省成本，多數 neo-lab destroy value；⑦coding agents：Claude Code/Codex 領先但鎖死單一模型世界，KV cache 暴政解釋 routing/sub-agent/compaction 之難，新文《KV cache Rules Everything Around Me》；⑧API 原語 choice/score/noulli（皆新概念，刻意不映射 int/float），輸入輸出全可結構化 JSON，反對巨型 system message，建議拆成大量平行小問題＋每 message 掛 ID 省 state 成本。數據（受訪者口徑，未經第三方復現）：上線一週每日 tokens 破 1 兆、發布影片 ~40M 觀看、Discord 10 萬人、版本 Jev 1.13.0、TFP>3%/5年、經濟價值工作自動化 <1%、InstructGPT 上線即拿當時 50% LLM 市佔（自述）。"
+    }
+   ]
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-09-18T10:00:10.000Z",
@@ -64,12 +73,12 @@
   }
  },
  "notes": {
-  "scan_status": "2026-09-21 掃描（02:06 UTC）：新集 1 條（中文，十字路口 × 徐夢迪，9/20 23:30Z，80:43 一手訪談）。其餘 9 檔逐檔核實無新：Dwarkesh 最新仍 Noam Brown（9/17）、Latent Space 最新仍 AINews 6 Clones of Jev（9/19）、Cognitive Revolution 最新仍 AI:AM Highlights（9/19）、No Priors 最新仍 Stefano Ermon（9/18）、MLST 最新仍 Ming-Yu Liu（9/15）、張小珺 #153（9/3）、硅谷101 外灘大會（9/18 00:00Z 已收於 9/18 報告）、42章經（8/29）、屠龍之術（9/15）。web_search 交叉核實中文 5 檔最新集與 feed 一致。",
-  "report_date": "2026-09-21",
-  "deep_content_fetched": "《十字路口》：小宇宙官方 RSS 完整 shownotes（5961 字，含 34 段章節時間軸）＋小宇宙單集頁 __NEXT_DATA__（episode metadata、duration 4843s、mediaId）。《嘉賓一手材料》：mengdixu.me 主頁全文（履歷/News/Publications/項目連結）、arXiv 2510.18316 摘要、cover-vla.github.io 項目頁全文（幂律與全部增益數字）、Generalist 官方博客 gen-1.5 全文 28KB（落盤核校）。",
-  "transcript_attempts_failed": "本期逐字稿全數路徑失敗，已在報告內逐條記錄：①小宇宙文稿 API / oia 播放器 404 或降落頁；②YouTube av2-xfRc2_E 自動字幕 yt-dlp 觸發 Sign-in-to-confirm-you're-not-a-bot；③youtube-transcript-api 報 IpBlocked；④Invidious 三實例（inv.nadeko.net / invidious.nerdvpn.de / yewtu.be）字幕 API 全部反機器人頁；⑤youtubetotranscript.com 為 Cloudflare 驗證頁；⑥news.qq.com 節目文字版被 Jina Reader 以 abuse 策略封禁至 2026-09-21 03:05 UTC；⑦搜狗微信結果 JS 渲染無法解析；⑧本地 whisper 不可行（單核、可用內存 ~1GB、80 分鐘音頻）；⑨agent-reach 小宇宙轉寫後端未安裝（doctor: xiaoyuzhou=off，需 groq key + ffmpeg）。建議：配置 Groq 免費 key 後啟用 agent-reach transcribe，或為小宇宙文稿接口維護可用路徑。",
-  "jev_prefilter": "2026-09-21 對 5 條候選跑 Jev triage --profile news：GEN-1.5 技術數據 1.20/0.35（最高）、本集主題 0.40/0.37、嘉賓履歷 0.03/0.17、方法論要點 0.14/0.23、人生選擇類 0.04/0.21。按 profile 提示不以單一閾值硬砍：後三條屬該集主體或必要背景，保留並於文中標註來源屬性。primary_source 全部 <0.4，已在報告內明確：GEN-1.5 數字為 Generalist 官方口徑（公司自述、未第三方復現）、嘉賓履歷以本人主頁與論文為準、節目相關陳述為製作方措辭而非嘉賓原話。",
-  "notable_for_james": "兩條可執行提示已寫入報告：①若要把「聽」做實，需補轉寫管線（本機單核+1GB 做不了本地 ASR；可行＝Groq key + agent-reach transcribe，或小宇宙文稿接口）；②「適應成本塌陷」在機器人上＝30 秒上下文＋physical prompt，在 agent 上對應把記憶/示例放進上下文而非重訓；GEN-1.5 觀察「輕度適配的模型更願即興、更會糾錯」→ 對四艦隊 harness 的含義是減少硬編碼特化、保留通用先驗。",
+  "scan_status": "2026-09-22 掃描（02:04 UTC）：新集 1 條（英文，Latent Space × Diogo Almeida/TypeSafe AI，9/21 22:13Z，約 2h21m 一手長訪）。中文 5 檔逐檔核實無新：張小珺 #153（9/3）、十字路口最新仍 9/20 徐夢迪、硅谷101 最新仍 9/17 外灘大會、42章經（8/29）、屠龍之術（9/15）。英文其餘無新：Dwarkesh 最新仍 9/17 Noam Brown（其 YT 9/18-9/21 新增為該集剪輯片段，非新集）、Cognitive Revolution 最新仍 9/19 AI:AM、No Priors 最新仍 9/18 Stefano Ermon（YT feed 首次 500，重試後取得，9/20「Betting on Diffusion」為剪輯）、MLST 官方音頻 feed 最新 9/11、YouTube channel RSS 對多個 candidate channel_id 均 404（沿用 9/15 Ming-Yu Liu 為最新集）。",
+  "report_date": "2026-09-22",
+  "deep_content_fetched": "《Latent Space × Diogo Almeida》：Substack RSS content:encoded 內含官方完整逐字稿（188,106 字元 / 3,100 行，含官方 timestamps 至 02:20:51）＋ 完整 shownotes（patterns、cookbooks、Jev use cases、coding-agent guide、KV cache 文、Jev vs GLiNER 討論等連結）。無需 ASR。",
+  "transcript_attempts_failed": "本集逐字稿無需破解：官方全文已在 RSS。僅記 feed 層障礙：No Priors YouTube RSS 首次回 500（重試後成功）；MLST YouTube channel RSS 對 UCMLtBahI5DMrt0Nj7RyvXWQ 等 candidate id 均回 404；YouTube channel HTML 為 bot/consent 頁，無法解析 videoRenderer。",
+  "jev_prefilter": "2026-09-22 對 8 條候選跑 Jev triage --profile news：最高「十億也不 pre-train／neo-lab 批評」0.67，其次「反公開 benchmark」0.52、「coding agents/KV cache」0.43、「RLCD 技術對比」0.34、「不上用戶數據 data lab」0.34；最低「safety alignment/refusal」0.02、「frontier pacing」0.13。按 profile 提示不以單一閾值硬砍：低分兩條屬該集主題與必要背景，保留並標註。primary_source 全部 <0.4，已在報告內明確：所有數字與論斷均為 Diogo Almeida 一手自述（company claims），未經第三方復現。",
+  "notable_for_james": "①本集即 fleet 正在使用的 Jev 作者的系統性自白，兩條可執行含義：把 AI 拆成「小的、可量測的決策」＋用結構化 state 取代巨型 system message；以及「輕量適配的模型更願即興、更會糾錯」→ 對 fleet harness 即減少硬編碼特化、保留通用先驗。②Diogo 明確拒絕做 generic JevBench、稱模仿者是「第 55 個低努力度 clone」→ 若 fleet 想評測 Jev，應自建 workflow 級 eval，而非等公開榜。③KV cache 暴政一文（cache rules everything around me）值得直接找來讀，關乎 coding agent 的 state/memory 設計。",
   "index_html": "未更新 index.html：該落地頁手工維護且自 2026-07-19 起已停更（近期每日報告 commit 亦未動它），為避免引入不一致，維持既有慣例。"
  }
 }

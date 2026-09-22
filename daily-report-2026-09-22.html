@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度萃取日报 · 2026-09-22</title>
+<style>
+  :root{
+    --bg:#faf8f5; --ink:#1f1c18; --muted:#6b645c; --line:#e6e0d6;
+    --accent:#8a6d3b; --quote:#f2ece0; --card:#fffdf9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+    line-height:1.85; font-size:17px;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:56px 26px 90px;}
+  header.top{border-bottom:2px solid var(--ink); padding-bottom:22px; margin-bottom:38px;}
+  header.top .kicker{letter-spacing:.22em; font-size:12px; color:var(--accent); text-transform:uppercase;}
+  header.top h1{font-size:30px; margin:10px 0 14px; line-height:1.35; font-weight:700;}
+  header.top .meta{font-size:14px; color:var(--muted);}
+  header.top .meta span{margin-right:16px; white-space:nowrap;}
+  .lead{
+    background:var(--card); border:1px solid var(--line); border-left:4px solid var(--accent);
+    padding:18px 22px; border-radius:4px; margin-bottom:40px; font-size:16px;
+  }
+  .lead h2{font-size:15px; margin:0 0 10px; letter-spacing:.1em; color:var(--accent);}
+  .lead ul{margin:0; padding-left:20px;}
+  .lead li{margin:6px 0;}
+  h2.sec{
+    font-size:15px; letter-spacing:.24em; color:var(--accent);
+    margin:52px 0 6px; padding-bottom:8px; border-bottom:1px solid var(--line); text-transform:uppercase;
+  }
+  .show{margin-top:34px;}
+  .show .host{font-size:14px; color:var(--muted); letter-spacing:.05em;}
+  h3.ep{font-size:22px; margin:6px 0 4px; line-height:1.45;}
+  .ep-meta{font-size:13.5px; color:var(--muted); margin-bottom:20px;}
+  .ep-meta .badge{display:inline-block; background:var(--quote); border:1px solid var(--line);
+    border-radius:3px; padding:1px 8px; font-size:12px; margin-left:8px; color:var(--accent);}
+  .block{margin:22px 0;}
+  .block h4{font-size:15px; margin:0 0 8px; letter-spacing:.06em;}
+  .block h4 .tag{color:var(--accent); margin-right:6px;}
+  ul.points{margin:0; padding-left:22px;}
+  ul.points li{margin:9px 0;}
+  .kv{font-weight:700;}
+  blockquote{
+    margin:14px 0; padding:12px 18px; background:var(--quote);
+    border-left:3px solid var(--accent); border-radius:3px; font-style:italic; color:#3a332a;
+  }
+  blockquote .who{display:block; font-style:normal; font-size:13px; color:var(--muted); margin-top:6px;}
+  .tech{background:#f6f2ea; border:1px solid var(--line); border-radius:4px; padding:14px 18px; font-size:15px;}
+  .tech code{font-family:"SFMono-Regular",Consolas,monospace; font-size:13.5px; background:#ece5d8; padding:1px 5px; border-radius:3px;}
+  .caveat{background:#fbf6ee; border:1px dashed #d8c9ac; border-radius:4px; padding:12px 16px; font-size:14px; color:#5c5347;}
+  .divider{height:1px; background:var(--line); margin:44px 0;}
+  table.dt{width:100%; border-collapse:collapse; font-size:14.5px; margin:8px 0;}
+  table.dt th,table.dt td{border-bottom:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top;}
+  table.dt th{color:var(--accent); font-weight:600; letter-spacing:.04em;}
+  .tl{font-size:14.5px; color:#4a4238;}
+  .tl li{margin:3px 0;}
+  footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--line);
+    font-size:12.5px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+  a{color:var(--accent); text-decoration:none; border-bottom:1px dotted var(--accent);}
+  p.note{font-size:15px; color:#4a4238;}
+  .empty{background:var(--card); border:1px solid var(--line); border-radius:4px; padding:16px 20px; font-size:15px; color:#4a4238;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="kicker">AI 播客深度萃取日报</div>
+  <h1>2026-09-22（周二）</h1>
+  <div class="meta">
+    <span>生成时间：2026-09-22 10:04 CST（02:04 UTC）</span>
+    <span>扫描节目：10 档</span>
+    <span>本轮新集：1 集（英文）</span>
+  </div>
+  <div class="meta" style="margin-top:6px;">
+    <span>信源：RSS ×8（小宇宙 ×5、Substack/Fireside/CogRev ×3）· YouTube 频道核实 ×3 · 逐字稿：节目官方全文</span>
+  </div>
+</header>
+
+<div class="lead">
+  <h2>今日重点</h2>
+  <ul>
+    <li><span class="kv">Latent Space 罕见 2 小时 21 分技术长访</span>：TypeSafe AI 创始人兼 CEO <span class="kv">Diogo Almeida</span>（InstructGPT 共同作者）逐条拆解 Jev——这一集就是这把 System One 决策层、即本 fleet 正在用的工具的「作者自白」。</li>
+    <li><span class="kv">上线一周，每日 tokens 破 1 兆（1 trillion/day）</span>，且 Diogo 强调「不是昙花一现」——深夜仍是机器在调用，而非人类试玩；发布影片约 4,000 万观看，Discord 社群 10 万人。</li>
+    <li><span class="kv">三种后训练北极星正面对比</span>：RLHF（讨好人类）／RLVR（可验证但 jagged）／<span class="kv">RLCD（校准决策）</span>——Diogo 直言前两者都是错的方向，并把公开 benchmark 与 safety alignment 一并否掉。</li>
+    <li><span class="kv">「the bitterest lesson」</span>：任务与数据比算力重要得多；TypeSafe 自称 <span class="kv">data lab</span>，全合成数据、拒用用户数据，靠有品味的人逐条找模型 jaggedness 并手术式修补。</li>
+    <li><span class="kv">「给我十亿美元我也不 pre-train」</span>：主张 Frankensteining 多个模型、mid-training 只是省钱手段；并称多数 neo-lab「没方向、重复造轮子、destroy value」。</li>
+    <li><span class="kv">coding agents 与 KV cache 的暴政</span>：Claude Code / Codex 虽领先，却锁死在「单一模型世界」；他刚写了《KV cache Rules Everything Around Me》，呼吁重写 coding agent 的 state / memory / 多 agent 协调。</li>
+    <li><span class="kv">争议拉满</span>：反 refusal（「refusal 是 type error」）、反 frontier pacing（暗示背后是 2028 选举政治）、反公开 benchmark——已在时间线上引发公开 pushback。</li>
+    <li><span class="kv">中文 5 档本轮无新集</span>（逐档核过 RSS，最新一集仍为 9/20 十字路口 × 徐梦迪，已收于 9/21 报告）。</li>
+  </ul>
+</div>
+
+<h2 class="sec">中文播客</h2>
+
+<div class="empty">
+  <b>本轮（2026-09-21 02:06 UTC → 2026-09-22 02:04 UTC）中文 5 档均无新集。</b><br>
+  逐档核实结果：<span class="kv">张小珺商业访谈录</span> 最新 #153（9/3 00:00 UTC，与曾鸣聊产业史观）；<span class="kv">十字路口 Crossing</span> 最新为 9/20 23:30 UTC 对谈清华叉院徐梦迪（已收于 9/21 报告）；<span class="kv">硅谷 101</span> 最新为 9/17 外滩大会圆桌（已收于 9/18 报告）；<span class="kv">42 章经</span> 最新为 8/29 逯雨鑫；<span class="kv">屠龙之术</span> 最新为 9/15「智能的下一幕」73 页 PPT solo。以上与 feed 自身最新条目一致，web_search 交叉核实无更新。
+</div>
+
+<h2 class="sec">英文播客</h2>
+
+<div class="show">
+  <div class="host">Latent Space（swyx + Alessio Fanelli）· <a href="https://www.latent.space/p/jev">latent.space/p/jev</a></div>
+  <h3 class="ep">Jev: System One models for Prod, not God — with Diogo Almeida, CEO, TypeSafe AI 🎙️</h3>
+  <div class="ep-meta">
+    发布时间：2026-09-21 22:13 UTC（09-22 06:13 CST）<span class="badge">时长 ≈ 2:21</span><span class="badge">逐字稿：官方全文</span>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">主题</span></h4>
+    <p>Jev 上线一周后的「哲学与使命」长访：为什么现有 API 前沿模型都走错了路、什么是 System One / machine-native 模型、为什么 TypeSafe 选择「intelligence per dollar」而非 scaling，以及 RLCD 这条新北极星如何区别于 RLHF / RLVR。节目也深入 Jev 的 API 设计细节、coding agent 的未来形状，并以 Diogo 对 neo-lab、frontier pacing、安全对齐的尖锐批评收尾。</p>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">嘉宾背景</span></h4>
+    <ul class="points">
+      <li><span class="kv">Diogo Almeida</span>：TypeSafe AI 创始人兼 CEO；<span class="kv">InstructGPT（Ouyang et al. 2022）共同作者</span>，在 OpenAI 期间参与开创后训练（post-training）方向；此前曾参与 ChatGPT 之前的指令跟随（instruction following）工作，并自述「极力推动 InstructGPT 部署」。</li>
+      <li>自述在 OpenAI 多年反复主张「API 可用的前沿模型走错了路」——从对齐、refusal 到可靠性；认为 ChatGPT 的成功让整个领域丢掉了除「自回归 chat-tuned LLM」以外的所有模式。</li>
+      <li>创业历程：他自述这是「更像四年的旅程」（非表面上的两年），圣诞节前后曾趁假期拿空闲 GPU 做实验，发现有「生命迹象」；先问 Sasha 是否还缺东西，Sasha 当场决定关掉自己的创业加入；两周内拿到融资，团队搬进他公寓。X：@CompleteSkeptic。</li>
+      <li>本集主持为 swyx；Diogo 在节目中多次自称「unhinged / practical」，并承认自己「0% 创业型人格、从来没想过当 CEO」。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">核心论点</span></h4>
+    <ul class="points">
+      <li><span class="kv">1）需要一个新的模型类别：System One / machine-native / large programmable。</span>与「为互联网自动补全而生」的预训练 LLM、「为回复文字而生」的 RLHF 聊天模型不同，新类别的目标是<span class="kv">让「代码」成为消费者</span>——所以公司叫 TypeSafe。Jev 这个名字取自 <span class="kv">Jevons Paradox</span>，定义是「站在 intelligence per dollar 前沿的模型系列」。</li>
+      <li><span class="kv">2）RLHF 有结构性缺陷：mode dropping（=mode collapse）。</span>他以 Yann LeCun「LLMs are doomed」那张图切入：该图在数学上显然、经验上却明显不成立，原因正是 mode drop——为了在长字符串上不出错，模型必须极度保守，而这种校准是「对字符串概率分布的剧毒」。推论：<span class="kv">字符串根本不适合做决策</span>，「把字符串模型过载用于决策是糟糕的选择」。RLHF 的副产物即大众抱怨的一切：sycophancy、过度自信、幻觉，以及 LM Arena 风格的排版（粗体、斜体、emoji、反问式追问）。</li>
+      <li><span class="kv">3）RLCD = 新北极星。</span>「Reinforcement Learning for Calibrated Decisions」（未发表的新技术），优化目标是「在 System One 任务上给出<span class="kv">epistemically honest probabilities</span>」，而不是 human-rated feedback（RLHF：导致幻觉、谄媚、永久依赖人类），也不是 programmatically verifiable outputs with rubrics（RLVR：能解 Navier-Stokes 但加剧 jagged intelligence、与其他软件整合差）。他进一步指出 RLVR 的北极星其实是「<span class="kv">optimize benchmarks</span>」——因为 benchmark 按定义就是可程序验证的简单输出，所以模型在数学上呈「fractal（分形）」式 jagged。</li>
+      <li><span class="kv">4）the bitterest lesson（最苦的一课）：任务与数据胜过算力。</span>他的原话逻辑是：「You get what you optimize for and the bitterest lesson in ML is that the most important part of it isn't ML at all.」LLM 领域迄今只发生过约 2.2 次北极星转移：RLHF（把任务改成 instruction following，没人料到可行）→ RLVR（小修小补）→ RLCD（programs in the loop）。</li>
+      <li><span class="kv">5）TypeSafe 是 data lab，不是 model lab。</span>数据全为合成；即使可以也不训练用户数据，因为真实世界数据有 power law 偏差，会 overfit 到「现在」；他要为多年后的科幻用例准备——比喻是「<span class="kv">LLM 是 UDP，我们是 TCP</span>」。data team 的职责是研究这个 cognitive core、找出 jaggedness 并「手术式」修补，覆盖过去/现在/未来所有维度（他称 onboarding data 员工的内部 talk 比这集播客还长）。</li>
+      <li><span class="kv">6）反对公开 benchmark。</span>「public benchmark 极易 game……以前每个 lab 都有一队人专门收集像 MMLU 的样本来让分数好看，这只是 benchmarking with extra steps。」长期只能靠「vibes and trust」，再放进具体 workflow 自测。内部 evals 当然有，但要「有纪律不要 game 它们」；他真正在意的是 intelligence，而「cost 与 speed 是你付钱去换的东西」。</li>
+      <li><span class="kv">7）可靠性 ≠ 确定性。</span>他反对把 determinism（同输入→同输出）当北极星，主张 <span class="kv">robustness</span>（相似输入→相似输出）才是关键；测法是往 prompt 塞 nonce（UUID），看输出是否语义稳定。可为特定用例做 deterministic 模型，但那会换来「更低的 intelligence per dollar」。</li>
+      <li><span class="kv">8）反 safety alignment / refusal。</span>「refusal 就是 type error」——在 dependency 里运行时会让软件随机崩坏；安全对齐本质是「遵循他人的指令（OpenAI / Anthropic 的）」，与 capability alignment（做用户要的事）正好相反。他承认「被用于战争/杀人」是合理的政策分歧，但主张<span class="kv">不该在技术层设限</span>：「每一次为了某些奇怪用途 overfit，都是在 fracturing its intelligence。」他的世界观是「intelligence 更像 database，而非 coworker」——数据库不会去审查用户拿它干什么。</li>
+      <li><span class="kv">9）批评 frontier pacing。</span>他认为 pacing 论述的隐含前提是「所有人都必须做更多 RLVR」，但对 TypeSafe 而言「<span class="kv">zero 才是最佳量</span>」；这把「路线选择」包装成了「技术必然」，是一种 sleight of hand。swyx 转述研究者圈的说法：这更多是政治 positioning，关乎 2028 大选；Diogo 回应「beyond my pay grade」「that makes me lose faith in humanity a bit」。</li>
+      <li><span class="kv">10）neo-lab 与「不 pre-train」。</span>「给我十亿，我不会 pre-train……anything except pre-training」；Frankensteining 不优雅但解决问题；mid-training 本质是省成本手段。他称「多数 neo-lab 是 crap」「在 destroy value」「我没方向就不该拿钱」；并直言「<span class="kv">我不 value researchers，我 value 关心 right task 的人</span>」。</li>
+      <li><span class="kv">11）coding agents 与 KV cache 暴政。</span>Claude Code / Codex 是前二赢家，但建在「单一模型世界」上；开源 coding agents 正「getting their Jev on」，一旦有人做出只属于自己的 killer use case，所有人会涌过去。他刚写了《<span class="kv">KV cache Rules Everything Around Me</span>》，认为 KV cache 锁死了模型选择与状态管理，可以解释「routing 为何难、sub-agent 为何不 work、compaction 为何难」。</li>
+      <li><span class="kv">12）经济与产品观。</span>他关心「<span class="kv">5 年内 TFP growth 超过 3%</span>」；认为所有模型对「世界有经济价值的工作」的自动化程度现在都约等于 0（「我猜还不到 1%」）；AI 会带来巨大 shift 但<span class="kv">不会造成大规模失业</span>；他想要 AI「<span class="kv">disappear into the background</span>」（像 regex 一样不起眼），并预言「<span class="kv">inverse SaaS-pocalypse</span>」——SaaS 会被 AI 增能而非取代。</li>
+      <li><span class="kv">13）对 product-market fit 的反思。</span>上线前「超过一半试用者根本不懂」，公司几乎没有收入，非技术同事非常恐惧（「卖的是维他命而非止痛药」）；他要质疑 PMF 这个概念——产品与市场都在，是开发者的热情点着了 FOMO。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">关键数据</span></h4>
+    <table class="dt">
+      <tr><th>项目</th><th>数字 / 事实</th></tr>
+      <tr><td>每日 tokens</td><td>上线一周突破 <b>1 兆 tokens／日</b>（trillion/day），且夜间仍持续，说明是机器调用而非人类试玩</td></tr>
+      <tr><td>发布影片</td><td>约 <b>4,000 万</b>观看（Diogo 后来说 38M；对比：GPT-4o 22M、Fable 5 15M、Navier-Stokes 74M、Astra 6 137M）</td></tr>
+      <tr><td>社群</td><td>Discord <b>100,000</b> 人</td></tr>
+      <tr><td>当前模型版本</td><td><b>Jev 1.13.0</b>；未来可能对该版本提供 LTS</td></tr>
+      <tr><td>本集时长</td><td>官方 timestamps 至 <b>02:20:51</b>（约 2 小时 21 分）</td></tr>
+      <tr><td>创业时间线</td><td>Diogo 称是「4 年旅程」；起手以为「一周就能做完」</td></tr>
+      <tr><td>定价维度</td><td>intelligence per dollar（Jev 定位）vs intelligence per second（另一市场）；用户端 100ms 以下每减半 = 「double intelligence」</td></tr>
+      <tr><td>经济目标</td><td>TFP growth <b>&gt;3%／5 年</b>；当前 AI 对经济价值工作的自动化 ≈ 0（&lt;1%）</td></tr>
+      <tr><td>API 原语</td><td><code>choice</code>（enum/switch）· <code>score</code>（阈值/排序）· <code>noulli</code>（if 陈述，取自 Bernoulli）</td></tr>
+      <tr><td>InstructGPT 自述</td><td>上线「几乎立刻拿下当时 LLM 市场约 50% 份额」（Diogo 自述，受访者口径）</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">重点引用</span></h4>
+    <blockquote>「intelligence will be more like a database than a coworker.」
+      <span class="who">— Diogo Almeida，谈为何不设 refusal／不做使用者审查</span></blockquote>
+    <blockquote>「If you gave me a billion dollars, I wouldn't pre-train. … Anything except pre-training.」
+      <span class="who">— Diogo Almeida，谈他对 scaling 与 neo-lab 路线的反向押注</span></blockquote>
+    <blockquote>「You get what you optimize for and the bitterest lesson in ML is that the most important part of it isn't ML at all.」
+      <span class="who">— Diogo Almeida，the bitterest lesson</span></blockquote>
+    <blockquote>「Every single time you mean it to overfit to some weird stuff, you're fracturing its intelligence more and more.」
+      <span class="who">— Diogo Almeida，解释为何拒绝在技术层做安全对齐</span></blockquote>
+    <blockquote>「I believe that public benchmarks are antithetical to this … in the long run, it needs to be vibes and trust.」
+      <span class="who">— Diogo Almeida，谈 benchmark 与信任</span></blockquote>
+    <blockquote>「strings are so bad at decision-making … overloading the string models for decision-making is a bad time.」
+      <span class="who">— Diogo Almeida，mode collapse 与字符串模型的极限（原话要点）</span></blockquote>
+    <blockquote>「We are a data lab … data matters way more than compute. I can't emphasize it less.」
+      <span class="who">— Diogo Almeida，TypeSafe 的自我定位</span></blockquote>
+    <blockquote>「The goal is not to just be Jev as a company … I think there's gonna be an AWS of intelligence.」
+      <span class="who">— Diogo Almeida，谈下一步</span></blockquote>
+    <blockquote>「Fuck it, man. We ball.」
+      <span class="who">— Diogo Almeida，回忆决定离开 OpenAI 自己开实验室的那一刻</span></blockquote>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">技术详情</span></h4>
+    <div class="tech">
+      <p><b>三种后训练家族与其「数据形状」：</b>RLHF 的数据＝人类反馈；RLVR 的数据≈环境／可验证奖励；RLCD 有自己独有的数据形状。Diogo 强调 RLVR 的要点不只在 reward，还在「shape」与内嵌的 reasoning（一个 latent variable）；RLVR 让模型在「do anything」区做数学时呈现 fractal 式 jagged。</p>
+      <p><b>Jev 的 API 设计：</b>输入（state / instructions / criteria）<b>全部可为结构化 JSON</b>，输出亦为结构化类型。他反对把一切塞进 system message——「system message 是恶心的 global variable」，应该让程序把结构插到正确位置，并<b>把大 prompt 拆成大量平行的独立小问题</b>。省钱技巧：给长 state 里每条 message 挂 ID，只付一次 state 成本，然后对每个 ID 并行提问。</p>
+      <p><b>原语映射到编程原语：</b><code>choice</code>→enum 上的 switch；<code>noulli</code>→if；<code>score</code>→排序或阈值比较。三者都是<b>新概念</b>，故意不映射成 int/float，以免被 Instructor/Pydantic 式映射「cook」掉。</p>
+      <p><b>置信度与阈值：</b>thresholding 是用户主要杠杆；不提供 fine-tuning（<i>目前</i>），但可想象「calibration + model cascade」（不确定就升级到更大模型）甚至自动 fine-tuning。refusal 的正确做法不是问「要不要拒绝」，而是问许多独立问题＋设阈值。</p>
+      <p><b>其他能力边界：</b>长 context 抗退化自称「遥遥领先」；视觉／多模态「都在牌桌上」；不承诺 latent reasoning；context 便宜后可做「标签化子任务树 + 按需检索历史 context」的 coding agent 新范式。</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">行业 insight</span></h4>
+    <ul class="points">
+      <li><span class="kv">「machine-native 模型被程序消费」正在爆发</span>：一周 1 兆 tokens/day、且夜间仍在跑，是他用来论证「agent/runtime 消费模型」的最硬证据。</li>
+      <li><span class="kv">benchmark 政治</span>：他接受 private proxy benchmark，反对 public benchmark；这与整个行业以公开榜单做 launch 营销的惯例正面冲突。</li>
+      <li><span class="kv">供应链与地理</span>：他预期 GPU 约束长期存在；LTS 化模型可移植到其他 silicon（被追问时「不评论」）；他抱怨欧洲用户只快 3 倍而非 100 倍，因为当地没有服务器。</li>
+      <li><span class="kv">coding agent 市场结构</span>：单一模型 harness（Claude Code / Codex）vs 多模型开放 agent——他预言前者会被「只能在某个开放 agent 上做的 killer use case」搅乱。</li>
+      <li><span class="kv">宏观经济叙事</span>：TFP &gt;3%／5 年、AI「消失在背景里」、inverse SaaS-pocalypse——他把「AI 能否出现在经济统计里」当作衡量是否真的自动化的标尺。</li>
+      <li><span class="kv">对 neo-lab 生态的判断</span>：他认为大量资本正在被「没有方向的重复劳动」摧毁价值，这与他自己「不 pre-train、靠数据与任务取胜」的路线互为镜像。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">前后脉络</span></h4>
+    <ul class="points">
+      <li>本集是 Jev 上线一周后的深度补充：接续 9/16 AINews「Jev: a “System One Model” that only decides/classifies/routes/scores — &gt;100x fast」与 9/19 AINews「Here are 6 Clones of Jev in 2 days」。Diogo 在本集明确<b>拒绝做 generic JevBench</b>，并把模仿者称作「第 55 个低努力度的 Jev API 克隆」。</li>
+      <li>与同期英文节目形成三条路线对照：Dwarkesh × Noam Brown（agent swarms / RSI）、No Priors × Stefano Ermon（diffusion 赢下推理）、以及本集 Diogo（<b>不做更大模型，做 machine-native 的廉价智慧</b>）。三者对「下一步该往哪走」给出完全不同的答案。</li>
+      <li>对本 fleet 的直接含义（承 9/21 报告的笔记）：<span class="kv">Jev 正是四舰队 harness 在用的 System One 决策层</span>。Diogo 的「拆成小的、可量测的决策」「减少硬编码特化、保留通用先验」「结构化 state 取代巨型 system message」与本 fleet 的 harness 设计方向一致；他把「轻量适配的模型更愿即兴、更会纠错」讲得更系统。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">争议点</span></h4>
+    <ul class="points">
+      <li><span class="kv">公开反对 safety alignment / refusal</span>：直言 frontier lab 的 alignment 是「反使用者」，并称 API 层拒绝是 type error。Theo 已公开 pushback；Diogo 也写了 KV cache 一文回应。</li>
+      <li><span class="kv">指控 frontier pacing 背后有 2028 选举政治动机</span>（swyx 转述研究者圈说法，Diogo 表示「希望我没听到」）。这是本集最可能引战的一段。</li>
+      <li><span class="kv">直斥多数 neo-lab「crap / destroy value」</span>，并说「我不 value researchers」——直接冒犯研究社群与同行。</li>
+      <li><span class="kv">「十亿也不 pre-train」</span>与主流 scaling 叙事正面冲突；他同时承认自己「不认为 scaling law 是丢钱就变好」。</li>
+      <li><span class="kv">对 Jev 的自我宣称缺乏第三方验证</span>：1 兆 tokens/day、抗长 context 退化等均为公司口径（见下）。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">Jev 前置过滤（TypeSafe System One）</span></h4>
+    <div class="caveat">
+      对本集 8 条候选内容跑 <code>jev.py triage --profile news</code>（2026-09-22 02:04 UTC）：最高分为「十亿也不 pre-train／neo-lab 批评」<b>worth 0.67</b>，其次「反公开 benchmark」<b>0.52</b>、「coding agents / KV cache」<b>0.43</b>、「RLCD 技术对比」<b>0.34</b>、「不上用户数据的 data lab」<b>0.34</b>；最低为「safety alignment／refusal」<b>0.02</b> 与「frontier pacing」<b>0.13</b>。按 news profile 提示不以单一阈值硬砍（&lt;0.6 视为噪音但仅为相对排序）：后两条虽分低，属该集主题与必要背景，保留并于文中标注。
+    </div>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">信源属性（重要）</span></h4>
+    <div class="caveat">
+      本集全部数字与论断（1 兆 tokens/day、4,000 万观看、抗长 context 退化、InstructGPT 拿下 50% 市占等）<b>均出自 Diogo Almeida 本人在节目中的自述（company / first-party claims）</b>，未经第三方复现。Jev triage 的 <code>primary_source</code> 对本集所有条目均 &lt;0.4，因此上表已逐项标注「受访者口径」。技术性论断（RLCD、mode collapse、KV cache 暴政）属其公开主张，学术界尚未见同侪评审版本。
+    </div>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">逐字稿取得</span></h4>
+    <p class="note">本集逐字稿<b>顺利取得</b>：Latent Space Substack RSS 的 <code>content:encoded</code> 内含官方完整 transcript（约 18.8 万字元，含官方章节时间轴至 02:20:51），无需 ASR 或第三方转写。节目官方 shownotes 亦列出全部资源链接（patterns、cookbooks、Jev use cases、coding-agent guide、KV cache 文、Jev vs GLiNER 讨论等）。</p>
+  </div>
+
+</div>
+
+<footer>
+  <span>AI 播客深度萃取日报 · 生成于 2026-09-22 02:04 UTC（10:04 CST）</span>
+  <span>Apache License 2.0</span>
+</footer>
+
+</div>
+</body>
+</html>
