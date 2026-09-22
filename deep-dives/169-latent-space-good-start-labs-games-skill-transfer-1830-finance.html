@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「遊戲學到嘅技能帶得走嗎？」——Latent Space × Good Start Labs CEO Alex Duffy：1830 鐵路遊戲訓練 30B 模型，只有 terminal-agent harness 提升 Finance-Agent</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-09-15 發布 · swyx ／ Alessio 訪談</div>
+  <h1>「遊戲學到嘅技能，帶得走嗎？」——Latent Space × Good Start Labs CEO Alex Duffy：1830 鐵路遊戲訓練 30B 模型，只有 terminal-agent harness 提升 Finance-Agent，「環境即課程」</h1>
+  <div class="meta">
+    <span>📅 2026-09-15 20:11 UTC 發布（逐字稿全文版）</span><span>·</span><span>🎙 Latent Space（swyx + Alessio Fanelli）</span><span>·</span><span>👤 Alex Duffy（Good Start Labs 共同創辦人兼 CEO，前 Every head of AI training）</span><span>·</span><span>🏷 RL 環境 / 遊戲訓練 / harness / 技能遷移</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集表面上係「遊戲可唔可以教 AI 做嘢」，實際上係一次<strong>把「RL 環境」當成可量測產品嘅實證報告</strong>。Good Start Labs 唔賣模型、唔賣 benchmark，佢賣嘅係<strong>數據同學習環境</strong>，客戶係前沿實驗室。而佢最硬嘅實驗結果係：同一款十九世紀鐵路遊戲，用兩種唔同嘅訓練設計，<strong>只有其中一種令模型在遊戲以外嘅金融任務上真嘅變好</strong>。呢個結果直接擊中行業一個核心問題——「verifiable reward 到底教咗模型乜嘢」。
+</p>
+
+<div class="highlight-box">
+  <strong>一句話抓住全集：</strong>Duffy 嘅核心判斷係<strong>「RL 環境係教模型任何可驗證事物嘅最可靠方式之一」</strong>，但真正決定模型學到咩嘅唔係遊戲本身，而係<strong>你點樣把遊戲呈現畀佢</strong>——即係 harness。所以佢嘅結論係一句好重要嘅話：「<strong>how you design that [the harness] totally changes what the model can learn</strong>」。對於今日所有在做 agent harness、RL 環境、eval 嘅人，呢集係一份罕見嘅「環境設計 vs 學習結果」對照實驗。
+</div>
+
+<div class="section-title">一、起源：一場 Twitch 直播看到嘅「人格分裂」</div>
+
+<p>成件事起源於 <strong>2025 年一場 Twitch 直播</strong>：前沿模型玩外交桌遊 <strong>Diplomacy</strong>——Duffy 話呢款遊戲「正常要玩幾日到幾星期」。當時 Duffy 在 Every 做 head of AI training，佢喺直播裡面觀察到一件好關鍵嘅事：<strong>每個前沿模型面對遊戲情境時，行為截然不同。</strong></p>
+
+<ul>
+  <li><strong>OpenAI o3</strong>——靠「規劃一場未來嘅背叛（planning a future betrayal）」贏晒所有對局；</li>
+  <li><strong>Claude Opus 4</strong>——拒絕講大話，於是「被打爆（got destroyed）」。</li>
+</ul>
+
+<p>由此 Duffy 得出第一步推論：<strong>用呢類遊戲訓練，可以教模型策略性思維</strong>——尤其因為呢類遊戲嘅<strong>結果可被驗證（verifiable）</strong>。佢後來喺 Every 嘅文章裡面寫過一句已被引用多次嘅話：fine-tuning 一個模型喺 Diplomacy 上面，<strong>改善咗佢喺客戶支援同工業營運 benchmark 上嘅表現</strong>。</p>
+
+<blockquote class="strong">
+「It became really clear that reinforcement learning environments were one of the most reliable ways to teach models anything you could verify.」
+<span class="attribution">—— Alex Duffy，談 RL 環境嘅地位</span>
+</blockquote>
+
+<p>Good Start Labs 由 Every 孵化（去年十月 spin out），種子輪 <strong>360 萬美元</strong>（General Catalyst、Inovia、Every 及天使投資人）。共同創辦人係 <strong>Tyler Marques</strong>。公司嘅定位唔係遊戲公司，而係<strong>「環境即產品」</strong>：把遊戲變成 AI 模型嘅訓練材料。</p>
+
+<div class="section-title">二、最硬嘅實驗：1830 鐵路遊戲 → 金融任務</div>
+
+<p>全集最有價值嘅一段，係一個<strong>「遊戲內訓練 → 遊戲外測試」</strong>嘅對照實驗。Good Start Labs 喺 <strong>1830: The Game of Railroads and Robber Barons</strong> 裡面訓練一個 <strong>30B 模型</strong>，然後把同一個模型放喺<strong>金融研究任務</strong>上測試。</p>
+
+<p>呢款遊戲嘅選擇好關鍵——Wikipedia 形容佢「唯一帶運氣嘅元素只在於決定初始行動順序」，即係<strong>幾乎純策略、無隨機性干擾</strong>。而遊戲內含<strong>股市機制</strong>：玩家對鐵路公司股票競價，建立物流網絡。Duffy 描述佢哋設計嘅任務：</p>
+
+<blockquote class="strong">
+「We've set up tasks where models are going through a database to find information about how the game's been played, putting it into an Excel file, reasoning over it, creating some functions within it, and then calculating its answer in that way. And so it mirrors what you would typically do in a finance workflow, but you're doing it in this game.」
+<span class="attribution">—— Alex Duffy，描述 1830 嘅任務設計如何 mirror 金融工作流</span>
+</blockquote>
+
+<p>呢句係全集嘅技術核心：佢哋<strong>刻意</strong>把遊戲任務設計成一條「查數據庫 → 寫 Excel → 在其上推理 → 生成函數 → 計答案」嘅鏈路，即係一條典型金融分析師嘅工作流。呢個設計令「技能遷移」變成一個<strong>可量測</strong>嘅命題，而唔係一個願景。</p>
+
+<h3 class="sub-title">關鍵對照：單輪問答 vs 多輪 terminal agent</h3>
+
+<p>實驗比較兩種訓練設計：</p>
+
+<table>
+  <tr><th>訓練設計</th><th>做法</th><th>結果</th></tr>
+  <tr>
+    <td><strong>單輪問答（single-turn QA）</strong></td>
+    <td>畀模型一個遊戲局面，叫佢走出下一步</td>
+    <td>改善遊戲內目標，<strong>但冇</strong>提升 Finance-Agent benchmark</td>
+  </tr>
+  <tr>
+    <td><strong>多輪 terminal agent</strong></td>
+    <td>用工具探索環境、規劃策略、實時調整</td>
+    <td>改善遊戲內目標，<strong>而且</strong>提升 Finance-Agent benchmark</td>
+  </tr>
+</table>
+
+<p>呢個對照係全集最值得帶走嘅事實：<strong>兩種設計都令模型在遊戲內變強，但只有 terminal-agent 設計令技能「帶得走」。</strong>換句話講，「玩得好」同「學到嘢」係兩件事，而分野喺於訓練嘅形態係唔係「目標導向嘅執行」。</p>
+
+<blockquote>
+「Today's evidence supports pretty clearly that goal-directed execution matters, and reasoning transfers.」
+<span class="attribution">—— Alex Duffy，對「技能遷移」今日證據嘅總結</span>
+</blockquote>
+
+<div class="data-point">
+  <span>獎勵設計</span> Duffy 提到，除咗遊戲引擎本身嘅可驗證獎勵，佢哋亦可以<strong>加入一個 expert model 提供更密嘅逐步獎勵（denser, stepwise rewards）</strong>——即係「環境即課程」之外，仲可以「環境 ＋ 老師」。
+</div>
+
+<div class="section-title">三、「環境即課程」：harness 決定模型學到咩</div>
+
+<p>Duffy 反覆強調一個違反直覺嘅判斷：<strong>同一款遊戲，畀模型嘅方式唔同，學到嘅嘢就唔同。</strong></p>
+
+<blockquote class="strong">
+「How you design that [the harness] totally changes what the model can learn. You can imagine a model that is looking at pictures is going to learn different things than one that's reading through natural text [or] one that has everything framed as Python.」
+<span class="attribution">—— Alex Duffy，談 harness 設計</span>
+</blockquote>
+
+<p>而當被問到「越強嘅基礎模型係唔係令 harness 同環境變得冇咁重要」時，佢嘅回答分兩半，值得逐字記住：</p>
+<ul>
+  <li>一般任務：「a more capable model needs less handholding to finish the same task, certainly.」（更強模型確實需要更少手把手）</li>
+  <li><strong>但對「把環境當課程」嘅做法：「the harness matters more, not less.」</strong>（harness 更重要，而非更唔重要）</li>
+</ul>
+
+<p>呢個判斷同另一集（同日 Diogo Almeida 嘅 Jev 訪問）形成一個有趣嘅對照：一邊講「任務與數據先係決定性」，另一邊講「你點設計環境先係決定性」——兩者其實係同一件事嘅兩面。</p>
+
+<h3 class="sub-title">一個對 agent 開發者嘅實用警示：Astra 會「跳答案」</h3>
+
+<p>Duffy 舉咗一個當下（2026-09）最實用嘅例子：<strong>GPT-6 Astra 自報做少咗 chain-of-thought、直接跳去答案</strong>。佢嘅評論係：</p>
+
+<blockquote class="strong">
+「If you want a model to work a certain way while solving a problem, the harness is what forces it. Astra can probably do the math in its head, but you'd rather it use code so you can trust the result.」
+<span class="attribution">—— Alex Duffy，談 harness 嘅「強制路徑」作用</span>
+</blockquote>
+
+<p>呢句值得貼喺任何 agent 工程師嘅桌面上：<strong>當模型變強、變「聰明到唔想解釋」，harness 嘅角色唔係減弱，而係變成唯一可以強制「可驗證路徑」嘅機制</strong>——你想佢用代碼算，就用 harness 逼佢用代碼算。</p>
+
+<div class="section-title">四、人格軸：更強嘅模型仍然「各有性格」</div>
+
+<p>Duffy 話佢哋「每一個新模型都比（We compare every new model)」。結論係：更新更強嘅模型確實更擅長遊戲，<strong>但仍然在「人格軸」上分歧</strong>——背叛、協作、心智理論（theory of mind）等等。呢個延續咗 2025 年 Twitch 直播嘅觀察：能力提升冇令模型「性格收斂」。</p>
+
+<p>佢哋嘅 <strong>Diplomacy 排名（2026 年 9 月）</strong> 給出兩個好具體嘅標籤：</p>
+<ul>
+  <li><strong>Grok 4 Fast</strong> 最唔容易背叛你；</li>
+  <li><strong>Gemini 2.5 Pro</strong> 最唔可信。</li>
+</ul>
+
+<div class="data-point">
+  <span>幽默 benchmark</span> 佢哋嘅 <strong>LOL-Alignment</strong>（幽默判斷）結果：喺 14,000+ 真實 playbadcards 手牌上，<strong>Astra 登頂，同人類評判一致率 50%</strong>——「兩年之後，只係領先 GPT-4o 2%」。Duffy 嘅一句話總結：「幽默係主觀嘅。遊戲令佢可被測量。」呢個數字係全集最值得警惕嘅 benchmark 結果：兩年嘅前沿進步，喺「幽默」呢條軸上幾乎冇動。
+</div>
+
+<div class="section-title">五、技術：COS-PLAY 與「技能庫」</div>
+
+<p>Duffy（同 Marques 及多所大學研究者）合著論文 <strong>COS-PLAY: Co-Evolving LLM Decision and Skill Bank Agents for Long-Horizon Tasks</strong>。系統設計係：</p>
+<ol>
+  <li>一個 <strong>decision agent</strong> 擁有一個「可學習嘅技能庫（learnable skill bank）」去指導行動；</li>
+  <li>另設一個 <strong>skill-bank agent</strong> 研究軌跡，然後<strong>修改技能庫</strong>；</li>
+  <li>修改後嘅技能庫 loop 返下一次運行。</li>
+</ol>
+<p>呢個係一種「agent 自己維護自己嘅技能手冊」嘅架構，對應長時序任務嘅需求。</p>
+
+<div class="section-title">六、商業模式：賣環境同數據，客戶係前沿實驗室</div>
+
+<p>Duffy 講得好直白：「The main thing that we sell in terms of AI improvement is <strong>data and learning environments</strong>。」主要客戶係<strong>前沿實驗室</strong>，佢哋提供 RL 數據去協助進一步訓練模型。數據分兩類：</p>
+<ul>
+  <li><strong>Agents 玩遊戲嘅軌跡</strong>——「what an agent observed, what it decided, which actions it took and what happened afterward」；</li>
+  <li><strong>為特定遊戲發行商定製嘅數據</strong>——agents「live in their games」，可產生對訓練同評估有用嘅互動。</li>
+</ul>
+<p>佢明確講：<strong>賣畀模型開發者嘅數據都會匿名化、去除個人可識別資訊（PII）</strong>。學習環境則係「full games where models can play end to end」——但重點唔係贏遊戲，而係<strong>教模型解決問題</strong>。</p>
+
+<blockquote>
+「We'll also make a lot of tasks where the models are using the game engine as the verifiable source of rewards, but are solving problems in a way that you might not expect.」
+<span class="attribution">—— Alex Duffy，談環境嘅「可驗證獎勵來源」角色</span>
+</blockquote>
+
+<p>另外，佢哋正用為特定遊戲建立嘅 expert models 去訓練一個<strong>通用模型</strong>，目標係把佢哋統一成「general game intelligence」——可以應用於任何地方嘅遊戲智能。</p>
+
+<div class="section-title">七、證據邊界：一個「有條件嘅 yes」</div>
+
+<p>呢集最誠實嘅地方，係佢主動劃清證據邊界。當被問到「今日證據實際講咩」時，Duffy 嘅回答係：</p>
+<ul>
+  <li><strong>「goal-directed execution matters, and reasoning transfers」</strong>——目標導向嘅執行重要，推理會遷移；</li>
+  <li>佢引 Surge AI 近期文章（office work post-training 改善 coding），並指「DeepSeek R1 更廣泛地展示咗」；</li>
+  <li>「We've seen it twice ourselves」——1830 嘅金融任務，同 Diplomacy 訓練產生更好嘅客戶支援 agent；「我們建立嘅每個環境都改善咗下游 tool use」。</li>
+</ul>
+<p>但佢同時承認：<strong>技能遷移嘅廣度同可靠性，仍然係一個開放問題。</strong>所以呢集嘅答案係一個「有條件嘅 yes」，而唔係一個「遊戲萬能」嘅結論。</p>
+
+<div class="section-title">八、爭議點與開放問題</div>
+
+<ul>
+  <li><strong>「遷移」嘅樣本太少。</strong>目前兩個一手案例（1830 → Finance-Agent；Diplomacy → 客服／工業營運）都係<strong>結構相似</strong>嘅任務（有工具、有流程、可驗證）。由「結構相似」推到「廣泛真實世界遷移」，Duffy 自己都話係開放問題。</li>
+  <li><strong>Finance-Agent benchmark 本身係唔係足夠？</strong>佢哋喺自己設計嘅 1830 任務同 benchmark 上量度，效果好可能部分來自「任務同訓練環境共享設計者」。業界需要第三方復現。</li>
+  <li><strong>「同一款遊戲、唔同呈現 → 唔同能力」係唔係可預測嘅？</strong>呢個係全集最強嘅主張，但目前只有定性描述（圖片 vs 文本 vs Python），冇公開嘅「設計空間 → 能力」映射表。</li>
+  <li><strong>商業上嘅張力：</strong>客戶係前沿實驗室，佢哋買嘅正係「自己可能要花幾個月建嘅 RL 環境」。當前沿 lab 自己養大咗環境團隊，Good Start Labs 嘅護城河係「遊戲發行商關係」定係「環境設計 know-how」？節目冇正面回答。</li>
+  <li><strong>LOL-Alignment 嘅 2%</strong> 同「遊戲可測量主觀事物」嘅樂觀敘事之間存在張力：如果兩年只進步 2%，咁「可測量」未必等於「有進步空間」。</li>
+</ul>
+
+<div class="section-title">九、行業 insight：呢集同其他線索拼埋一齊讀</div>
+
+<ul>
+  <li><strong>同 9/15——Diogo Almeida × Latent Space（本日另一篇 #168）對照：</strong>Diogo 講「RLVR 嘅北極星就係 optimize benchmarks，所以模型呈分形式 jagged」；Duffy 講「RL 環境係教可驗證事物最可靠嘅方式」。兩者<strong>並唔矛盾</strong>——Diogo 反對嘅係「為 benchmark 而 benchmark」，Duffy 提供嘅係「有結構、有工具、有流程嘅環境」。真正嘅問題係：<strong>環境嘅設計質素，決定咗 verifiable reward 係教你能力、定係教你考試。</strong></li>
+  <li><strong>同 9/16 日報嘅中文對照：</strong>屠龍之術講「模型選擇 → 數據準備 → Benchmark 設計 → 評估體系 → 後訓練 → Agent Harness → 路由 → RL 環境」正被商品化——Good Start Labs 正係「RL 環境」呢個環節嘅具體公司樣本。</li>
+  <li><strong>對做 agent 嘅人嘅實用啟示：</strong>① 唔好只量「任務完成度」，要量「畀佢做同類但不同環境嘅任務」係否仍然可以；② 訓練／示範嘅形態（單輪 vs 多輪 agent、文本 vs 代碼 vs 圖像）本身就係一個超參數；③ 當模型變強（e.g. Astra 少做 CoT），harness 唔係可以被丟棄，而係變成「逼佢行可驗證路徑」嘅唯一手段。</li>
+  <li><strong>一個可操作檢查項：</strong>當有人同你講「我哋用遊戲／模擬環境訓練咗個模型」，問三條——<strong>① 遊戲內任務係唔係刻意 mirror 目標工作流？② 訓練形態係單輪 QA 定多輪 terminal agent？③ 下游測試係唔係在遊戲以外嘅 benchmark？</strong>呢三條答唔清，大概率只係「玩得好」而唔係「學到嘢」。</li>
+</ul>
+
+<div class="section-title">十、Jev 前置過濾（TypeSafe System One）</div>
+
+<p>本集 8 條候選內容已跑 <code>jev.py triage --profile news</code>（2026-09-22）：最高分為<strong>「1830 鐵路遊戲 → 金融工作流」0.91</strong>，其次「LOL-Alignment 幽默 benchmark 兩年 2%」<strong>0.83</strong>、「商業模式：賣數據與環境」<strong>0.78</strong>；中段為「兩種訓練設計對照」0.42、「Diplomacy 起源」0.42、「Astra 少做 CoT／harness 逼用代碼」0.59；最低為「環境即課程（無數字）」0.04、「COS-PLAY 論文」0.22。按 news profile 提示，不以單一閾值硬砍——低分兩條屬該集框架與必要背景，保留並標註。</p>
+
+<div class="highlight-box">
+  <strong>信源屬性（重要）：</strong>本集所有內容來自 <strong>Latent Space Substack 全文（content:encoded）</strong>——即官方文章版，本復述所有<strong>直接引語</strong>均逐句核對自此全文。<br>
+  數字與主張（30B 模型、1830 任務結果、Finance-Agent benchmark 改善、Diplomacy 排名、LOL-Alignment 50%／2%、360 萬美元種子輪）<strong>均為 Good Start Labs 一手口徑</strong>；本集 Jev triage 對所有條目 <code>primary_source</code> 均 &lt; 0.4，屬公司／受訪者自述，未經第三方復現。論文 COS-PLAY 為公開可查，但實驗數據仍以公司公開結果為準。
+</div>
+
+<hr>
+
+<p style="font-size:0.95rem; color:#666;">
+<strong>一句總結：</strong>呢集最值錢嘅唔係「遊戲可以教 AI」，而係一個乾淨嘅對照實驗：<strong>同樣嘅遊戲、同樣嘅模型，只有「多輪 terminal agent」嘅訓練形態令技能帶到遊戲以外。</strong>如果只帶走一句，帶走呢句——<strong>verifiable reward 唔會自動變成能力；你點設計環境（harness），先決定模型真正學到嘅係「執行」定係「表演」。</strong>
+</p>
+
+<footer>
+  <p>深度復述 · Latent Space《Can Skills Learned in Games Transfer to Real-World Work? — Alex Duffy, CEO, Good Start Labs》</p>
+  <p style="margin-top:0.3rem;">來源：Latent Space Substack 官方全文（latent.space/p/good-start-labs）· 生成時間 2026-09-22 06:00 UTC</p>
+  <p style="margin-top:0.3rem;">JMOKSZ / ai-podcast-collection · Apache 2.0</p>
+</footer>
+</div>
+</body>
+</html>

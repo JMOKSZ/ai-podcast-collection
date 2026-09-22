@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「十億美金我都唔 pre-train」——Latent Space × Diogo Almeida（TypeSafe AI）：Jev 一週 1 兆 tokens／日、RLCD 第三條北極星</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-09-21 發布 · swyx 專訪</div>
+  <h1>「十億美金我都唔 pre-train」——Latent Space × Diogo Almeida（TypeSafe AI）：Jev 一週破 1 兆 tokens／日、RLCD 成為第三條北極星、同「refusal 係 type error」</h1>
+  <div class="meta">
+    <span>📅 2026-09-21 22:13 UTC 發布</span><span>·</span><span>⏱ 約 2 小時 21 分（官方 timestamps 至 02:20:51）</span><span>·</span><span>🎙 swyx（Latent Space）</span><span>·</span><span>👤 Diogo Almeida（TypeSafe AI 創辦人兼 CEO，InstructGPT 共同作者）</span><span>·</span><span>🏷 System One 模型 / 後訓練北極星 / RLCD / coding agents</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集對本 fleet 有特殊意義：<strong>Jev 正是四艦隊 harness 現正使用嘅 System One 決策層</strong>。而呢集係佢作者嘅「自白」——一位 InstructGPT 共同作者，用兩個幾鐘講清楚佢點解認為過去幾年所有 API 前沿模型都「行錯路」，以及佢要用一個全新模型類別去修正嘅係乜嘢。呢集唔係產品發佈會嘅延伸，而係一份<strong>技術宣言加路線圖</strong>：從「究竟 RLHF 錯在邊」講到「code 應該係模型嘅消費者」，從「十億美金我都唔 pre-train」講到「coding agent 被 KV cache 鎖死」。
+</p>
+
+<div class="highlight-box">
+  <strong>一句話抓住全集：</strong>Diogo 認為 LLM 領域迄今只發生過約 <strong>2.2 次「北極星轉移」</strong>——RLHF（把任務改成 instruction following）→ RLVR（小修小補）→ 而家佢主張嘅 <strong>RLCD（Reinforcement Learning for Calibrated Decisions）</strong>。佢嘅核心斷言係：<strong>「You get what you optimize for（你得到你所優化嘅嘢）」，而 ML 最苦嘅一課係「最重要嘅部分根本唔係 ML」</strong>——係任務同數據。所以 TypeSafe 自稱 <strong>data lab 而非 model lab</strong>，指標係 <strong>intelligence per dollar</strong>（唔係更大，係更平），命名取自 Jevons Paradox。
+</div>
+
+<div class="section-title">一、Jev 是什麼：machine-native、large programmable 模型</div>
+
+<p>Diogo 開場唔講功能，先講「類別」。佢認為需要一類新模型，最準確嘅名係 <strong>System 1 models</strong>（佢刻意唔叫「decision models」，話「System 1 係超越呢個嘅，我哋 tank 裡面仲有嘢」）。佢對呢個類別嘅定義係：<strong>目標係「讓 code 成為消費者」</strong>——所以公司叫 TypeSafe。</p>
+
+<blockquote class="strong">
+「There's a class of models that we describe as machine-native, System 1, large programmable… the goal is for code to be the consumer. As opposed to pre-trained large language models, which are meant for autocomplete of the internet, or RLHF models which are meant to reply to text.」
+<span class="attribution">—— Diogo Almeida，定義 Jev 所屬嘅模型類別</span>
+</blockquote>
+
+<p>佢用對照方式講清楚三種模型嘅「用途形態」：</p>
+<ul>
+  <li><strong>預訓練 LLM</strong>——為「互聯網自動補全」而生；</li>
+  <li><strong>RLHF 聊天模型</strong>——為「回覆文字」而生；</li>
+  <li><strong>Jev / System One</strong>——為「被程式消費」而生。</li>
+</ul>
+
+<p>佢嘅名字邏輯亦一脈相承：<strong>Jev = Jevons Paradox</strong>。Jevons 悖論講嘅係效率提升反而令總消耗上升——放喺模型上就係「當智慧變平，用量會爆炸」。所以 Jev 嘅品牌定位係一句好硬嘅話：</p>
+
+<blockquote>
+「I don't care how much smarter it is, it needs to be in the Pareto frontier. That is what the brand of Jev is. It is the best thing at intelligence per dollar.」
+<span class="attribution">—— Diogo Almeida，談 Jev 嘅定位與「intelligence per second」嘅分別</span>
+</blockquote>
+
+<p>呢句值得停一停：佢將「intelligence per second」（實時、少數毫秒敏感行業，正如佢講「每減一半 100ms 以下延遲＝double intelligence」）同「intelligence per dollar」明確分開，並宣佈 Jev 唔會主打前者。呢個係一個市場定位選擇，唔係技術突破宣稱。</p>
+
+<div class="section-title">二、RLHF 的結構性缺陷：mode dropping（＝mode collapse）</div>
+
+<p>全集技術含金量最高嘅一段，係佢拆解「點解 Yann LeCun 嗰張『LLMs are doomed』圖，數學上顯然、經驗上明顯唔成立」。佢嘅答案係 <strong>mode dropping</strong>——而且佢直接話「mode dropping 同 mode collapse 係同一樣嘢」。</p>
+
+<p>佢嘅推理鏈係咁：</p>
+<ol>
+  <li>一張<strong>覆蓋整個分佈</strong>（mode covering / calibrated）嘅模型，會容許自己「有時 out of distribution、有時 in distribution」——即係會有時錯。呢個係舊式（GAN 之前）模型嘅行為：影像偏模糊。</li>
+  <li>但 <strong>GAN 選擇 mode drop</strong>——丟棄少數類別，只做最常見嗰啲。</li>
+  <li>同理，要生成<strong>極長字串而唔出錯</strong>，模型必須「極度保守」，因為錯誤好易被看見，而微妙嘅偏差好難被看見。</li>
+  <li>而呢種「校準」係<strong>對字串機率分佈嘅劇毒</strong>（total poison into the probability distributions of strings）。</li>
+</ol>
+
+<blockquote class="strong">
+「Strings are so bad at decision-making… overloading the string models for decision-making is a bad time.」
+<span class="attribution">—— Diogo Almeida，談 RLHF 嘅 mode dropping 為何令字串不適合承載決策</span>
+</blockquote>
+
+<p>佢進一步將大眾抱怨嘅一切，都歸因於呢個結構性缺陷：<strong>sycophancy（諂媚）、overconfidence（過度自信）、hallucination（幻覺），甚至 LM Arena 式排版</strong>（粗體、斜體、emoji、長篇大論再反問你一句）。佢嘅原話係：「呢啲全部係因為 strings 係好奇怪嘅嘢，你必須 miscalibrated、必須 mode drop、必須 hyper-confident，先唔會 off the rails，因為 reward model 一旦見到明顯錯誤就會狠狠懲罰你——而咁樣會扭曲整個機率空間。」</p>
+
+<div class="data-point">
+  <span>技術要點</span> <strong>mode covering vs mode dropping</strong>：前者保留少數模式、容許偶爾出錯，代價係模糊；後者丟棄少數模式、追求字面上唔出錯，代價係「對字串機率分佈有毒」。Diogo 認為 LLM 係後者，而呢個正係「點解 AI 可以解千禧年難題、但自動化唔到最基本嘅文書工作」嘅深層原因。
+</div>
+
+<div class="section-title">三、RLCD：第三條北極星</div>
+
+<p>Diogo 把後訓練嘅歷史拆成三次「北極星」：</p>
+
+<table>
+  <tr><th>家族</th><th>北極星（佢嘅定義）</th><th>佢嘅批評</th></tr>
+  <tr><td><strong>RLHF</strong></td><td>please humans（討好人類）</td><td>→ 幻覺、諂媚、<strong>永久依賴人類</strong>；且係 instruction following 嘅副產品</td></tr>
+  <tr><td><strong>RLVR</strong></td><td>optimize benchmarks（其實就係優化 benchmark）</td><td>→ 解到 Navier–Stokes，但加劇 <strong>jagged intelligence</strong>；同其他軟件整合差</td></tr>
+  <tr><td><strong>RLCD</strong></td><td>make it reliable for programmatic use</td><td>（未發表嘅新技術；TypeSafe 自家路線）</td></tr>
+</table>
+
+<p>佢對 RLVR 嘅批評最有結構性：<strong>「RLVR 嘅北極星其實就係 optimize benchmarks」</strong>——因為 benchmark 按定義就係「可被程式驗證嘅簡單輸出」，所以模型在數學上呈 <strong>fractal（分形）式 jagged</strong>：唔止「有尖峰」，而係「放大之後仍然有尖峰」。</p>
+
+<blockquote class="strong">
+「RLHF is please humans… RLVR is optimize benchmarks… And RLCD is make it reliable for programmatic use.」
+<span class="attribution">—— Diogo Almeida，三條北極星嘅一句話對照</span>
+</blockquote>
+
+<p>佢亦強調「RLHF」一詞本身被混淆使用：第一代係 Christiano 等 2017 年教機械人後空翻（ill-specified output），第二代係 OpenAI 嘅 learning-to-summarize（PPO on language models），而佢本人參與嘅係第三代 InstructGPT（Ouyang et al. 2022）。佢話「我稱之為 RLHF 嘅，係 instruction following 呢個任務，唔係 PPO 呢個 algorithm——algorithm 唔重要，北極星先重要」。</p>
+
+<div class="section-title">四、the bitterest lesson：任務與數據勝過算力</div>
+
+<p>呢段係佢整套世界觀嘅地基，亦係佢離開 OpenAI 創業嘅真正理由。佢引 Sutton「algorithms beats compute」再推一步：</p>
+
+<blockquote class="strong">
+「You get what you optimize for and the bitterest lesson in ML is that the most important part of it isn't ML at all.」
+<span class="attribution">—— Diogo Almeida，the bitterest lesson</span>
+</blockquote>
+
+<p>由此推出兩個自稱定位：</p>
+<ul>
+  <li><strong>TypeSafe 係 data lab，唔係 model lab。</strong>「Model capabilities means data. Data is so unbelievably complicated, and that is what gets nines.」佢話 onboaring data 員工嘅內部 talk「比呢集播客仲長」。</li>
+  <li><strong>數據全為合成，並拒用用戶數據——即使可以用。</strong>理由有兩個：① 真實世界數據有 power law 偏差（人人問同一樣嘢），會令模型 overfit 到「現在」；② 佢瞄準嘅係「幾年後嘅科幻未來用例」，要為未出現嘅情境準備。</li>
+</ul>
+
+<p>佢用一個好形象嘅比喻：<strong>「LLM 係 UDP，我哋係 TCP」</strong>——上面可以疊好多層、被好多唔可想像嘅東西建構。亦因此，data team 嘅職責係「研究呢個 cognitive core、找出 jaggedness、然後手術式修補」，覆蓋「過去／現在／未來所有維度」。</p>
+
+<div class="data-point">
+  <span>數據形狀</span> Diogo 強調「數據同合成數據取決於任務」——<strong>RLHF 嘅數據係人類反饋；RLVR 嘅數據≈環境／可驗證獎勵；RLCD 有自己獨特嘅數據形狀</strong>。佢刻意指出：RLVR 不只係 reward 唔同，仲有「shape」同內嵌嘅 reasoning（一個 latent variable）。
+</div>
+
+<div class="section-title">五、反公開 benchmark；可靠性 ≠ 確定性</div>
+
+<h3 class="sub-title">① 公開 benchmark 極易被 game</h3>
+<p>佢嘅態度非常鮮明：<strong>強烈反 public benchmark、中性對 private proxy benchmark</strong>。原因唔止「可以作弊」，而係一種結構性扭曲：</p>
+<blockquote class="strong">
+「Public benchmarks are antithetical to this… they are extremely gameable. Back in the old days, every lab had a team to collect data that looks like MMLU to make it look better, which is just benchmarking with extra steps.」
+<span class="attribution">—— Diogo Almeida</span>
+</blockquote>
+<p>佢嘅替代方案係：<strong>「vibes and trust」</strong>（直到你把模型放進具體 workflow 自測）。內部 evals 當然有——「但要有紀律唔好 game 佢」，並且「唔好呃自己個模型有幾聰明」係佢最看重嘅鐵律。佢甚至承認：「I don't believe in benchmarking」係佢延遲發佈嘅原因之一，並且「去年融資時冇人信我哋，因為佢哋只想要 benchmark」。</p>
+
+<h3 class="sub-title">② robustness &gt; determinism</h3>
+<p>swyx 問「冇 seed、同輸入會唔會同輸出？」Diogo 嘅回答係一個重要區分：<strong>determinism（同輸入→同輸出）係錯嘅北極星，robustness（相似輸入→相似輸出）先係關鍵</strong>。佢嘅測試方法好實用：<strong>往 prompt 塞 nonce（UUID）</strong>，睇輸出係唔係語義上仍然穩定。佢承認可以為特定用例做 deterministic 模型，但「嗰樣嘢係用 intelligence per dollar 換返嚟嘅」。</p>
+
+<div class="section-title">六、最具爭議：反 safety alignment／「refusal 係 type error」</div>
+
+<p>呢段係本集最可能引戰嘅部分，亦係佢 Discord 上被問得最多嘅問題（「你點解反對 safety alignment？點解唔 refuse？」）。佢嘅立場要逐一拆開：</p>
+
+<ul>
+  <li><strong>「我唔反對 safety 呢個原則，但我反對 safety alignment，因為佢一般係同用戶 misaligned 嘅。」</strong></li>
+  <li><strong>「Refusal 就係明顯嘅 type error。」</strong>佢嘅場景係：你喺 Claude Code 裡面做嘢，忽然彈一句「I'm sorry, I can't read DNA.py」——「你頂得順，因為你有 Stockholm syndrome」。但<strong>如果呢個係一個跑喺背景嘅 dependency 呢？</strong>「你想你套軟件因為有人傳咗句奇怪 message 就隨機崩壞？」</li>
+  <li><strong>capability alignment vs safety alignment</strong>：前者係「做用戶想嘅事」（對軟件工程師係好事，越可預測越唔使測試）；後者係「跟隨別人（OpenAI／Anthropic）嘅指令」。佢承認後者對 ChatGPT 呢類產品合理，但「喺 API 層就係 nuts」。</li>
+  <li><strong>對「用嚟殺人」嘅回應</strong>：swyx 直接 pushback「如果被用嚟殺人呢？」Diogo 答：「我當然希望唔好，我會用其他方式（開源、慈善）去影響，但<strong>我絕對唔會喺技術層做</strong>，因為每次你為某啲奇怪用途 overfit，都係喺 fracturing its intelligence。」</li>
+</ul>
+
+<blockquote class="strong">
+「I think intelligence will be more like a database than a coworker. I don't think it's up to databases to add checks on whether or not they're used for something that's not great.」
+<span class="attribution">—— Diogo Almeida，談為何 API 層不設 refusal</span>
+</blockquote>
+
+<p>佢嘅世界觀係：模型應該「像 regex 一樣不起眼」地消失在背景；而「refusal 應該係一個問題＋閾值嘅組合」——即唔係問「要唔要拒絕」，而係問一串獨立小問題再設閾值。</p>
+
+<div class="section-title">七、API 原語：choice／score／noulli</div>
+
+<p>呢段對正在用 Jev 嘅人最實用。三個原語都係<strong>故意新造嘅概念</strong>，唔映射到 int／float，目的係唔要被 Instructor／Pydantic 式映射「cook」掉：</p>
+
+<table>
+  <tr><th>原語</th><th>對應編程原語</th><th>說明</th></tr>
+  <tr><td><strong>choice</strong></td><td>enum 上嘅 switch／match</td><td>「最接近 function call，但 function call 係好 disgusting 嘅嘢」</td></tr>
+  <tr><td><strong>noulli</strong></td><td>if 陳述</td><td>名取自 Bernoulli；「Bool-ish 但連續」，因為「對我哋嚟講所有嘢都係機率」</td></tr>
+  <tr><td><strong>score</strong></td><td>排序／閾值比較（&gt;、&lt;）</td><td>類似 LM judging，但係一個獨立類型</td></tr>
+</table>
+
+<p>更實用嘅係佢對「點用」嘅建議：</p>
+<ul>
+  <li><strong>結構化 state／instructions／criteria</strong>——全部可以係 JSON object；「如果你仲係砌 template 或者塞入 system message，你係用緊舊思維」。</li>
+  <li><strong>「System message 係噁心嘅 global variable」</strong>——你將所有 instruction 塞一齊，然後希望每一句都中。應該由程式把結構插到正確位置。</li>
+  <li><strong>拆成大量平行嘅小問題</strong>——「The biggest saving grace… AI code bases are gonna be so much better」，因為每個小決策「extremely evaluable」。</li>
+  <li>省錢技巧：<strong>為長 state 裡面每條 message 掛 ID</strong>，只付一次 state 成本，然後對每個 ID 並行提問。</li>
+  <li><strong>thresholding 係用戶主要槓桿</strong>；目前不提供 fine-tuning，但可以想像「calibration + model cascade」（不確定就升級去更大模型）。</li>
+</ul>
+
+<div class="section-title">八、coding agents 與 KV cache 的暴政</div>
+
+<p>係全集最具前瞻性嘅一段。Diogo 認為 Claude Code／Codex 係當前前二贏家，但佢哋都建基於<strong>「單一模型世界」</strong>；而 KV cache 正係嗰個鎖：</p>
+
+<blockquote class="strong">
+「It locks you into one model… in order to do it efficiently, you need to keep on appending to it. So now you're not doing best software practices, like state management, abstraction, decomposition.」
+<span class="attribution">—— Diogo Almeida，談 KV cache 如何鎖死 coding agent 嘅設計空間</span>
+</blockquote>
+
+<p>佢話呢篇《KV cache Rules Everything Around Me》可以解釋三件業界一直覺得難嘅事：<strong>① routing 為何難、② sub-agent 為何唔 work、③ compaction 為何難</strong>——全部係「state 要點傳遞」嘅成本問題。而佢想去嘅未來係：<strong>「一旦 context 變便宜」</strong>，就可以做「標籤化子任務樹 ＋ 按需檢索歷史 context」；甚至多 agent 之間可以「讀彼此嘅 state」、「唔係用低能 lock，而係 Jev 決定邊個先寫」。</p>
+
+<p>佢仲提出一個好深嘅觀察：<strong>「continuous learning 其實係一個 memory management 問題」</strong>——因為你冇一個聰明嘅方式去 lookup memory，所以每次都要從零開始。</p>
+
+<div class="data-point">
+  <span>速度場景</span> 佢提到 <strong>computer use</strong> 同 <strong>遊戲</strong> 係「速度型」用例——因為每減一半 100ms 以下延遲＝double intelligence。佢自己最想做嘅「fun one」係「會思考嘅遊戲 NPC」（唔一定 call 遊戲 loop，state machine 就夠）；而 Ali 嘅 Doom demo（NPC 控制場景）係佢眼中嘅 proof of concept。
+</div>
+
+<div class="section-title">九、經濟觀與 neo-lab 批評</div>
+
+<h3 class="sub-title">① TFP growth &gt; 3% ／ 5 年，自動化 ≈ 0</h3>
+<p>佢講出一個罕見嘅宏觀指標：<strong>「5 年內 TFP growth 超過 3%」</strong>。swyx 話「我從未見過一間 lab 在意 TFP growth」。Diogo 嘅邏輯係：呢個先係「經濟革命」嘅定義，亦係 OpenAI 憲章舊日嘅精神（majority of the world's economically valuable work）。佢認為今日所有模型對「有經濟價值嘅工作」嘅自動化<strong>大約等於零</strong>（「我猜仲唔夠 1%」），而當佢真係發生，<strong>會出現喺經濟統計數字上面</strong>。</p>
+
+<blockquote>
+「It will not cause mass unemployment, but it will cause a whole bunch of awesome shifts… I'm really tired of AI always being the foreground character.」
+<span class="attribution">—— Diogo Almeida，談宏觀影響</span>
+</blockquote>
+
+<h3 class="sub-title">② inverse SaaS-pocalypse</h3>
+<p>佢提出一個反直覺預測：<strong>SaaS 唔會被 AI 取代，反而會被 AI 增能</strong>（inverse SaaS-pocalypse）。論據好具體：「2019 年嘅軟件好值錢，2026 年嘅軟件基本上完全一樣，除咗有時側邊多咗個 chat box」——因為 AI <strong>唔被信任去做「公司有 stake 嘅決策」</strong>。而 SaaS 公司係「最知道邊啲嘢值得自動化」嘅人。</p>
+
+<h3 class="sub-title">③ 「多數 neo-lab 係 crap」、「我唔 value researchers」</h3>
+<p>呢段係全集最得罪人嘅一段。佢原話：</p>
+<blockquote class="strong">
+「My sense is that most neo labs are crap… they are redoing work from scratch with a low probability of actually moving the frontier… they don't really have a direction.」
+<span class="attribution">—— Diogo Almeida，談 neo-lab 生態</span>
+</blockquote>
+<p>佢進一步講：「<strong>I don't really value researchers. I value people who give a lot of fucks about the right task.</strong>」——「當人們重視純研究 pedigree 而唔係『做正確任務』，係本末倒置」。同時佢亦講「<strong>如果你給我十億美金，我唔會 pre-train</strong>……Frankensteining 唔優雅但解決問題」，並將 mid-training 定義為「本質上係省成本手段」。</p>
+
+<div class="section-title">十、開放問題與爭議點</div>
+
+<ul>
+  <li><strong>「refusal 係 type error」係唔係混淆咗兩個層次？</strong>Diogo 嘅論證建立喺「API 應做成 software primitive」之上；但 frontier lab 嘅 refusal 係針對「模型權重本身嘅風險」，而唔係「某個 dependency 嘅錯誤處理」。技術層面「唔設限」同社會層面「唔想被用嚟殺人」之間，佢選擇咗前者。Theo 已公開 pushback（Diogo 亦寫咗 KV cache 一文回應）。</li>
+  <li><strong>「fracturing intelligence」係唔係一個可證偽嘅講法？</strong>呢個概念係全集嘅理論核心（refusal 會 fracture、多目標優化會 fracture），但佢冇提供任何公開度量方式——即係佢自己主張嘅「robustness/nonce 測試」都未必量度得到。</li>
+  <li><strong>1 兆 tokens／日、38M 觀看、Discord 10 萬人</strong>——全部係公司／受訪者一手口徑，未經第三方復現。Diogo 亦承認「signups 唔重要」，所以「用量」嘅真實性係呢間公司最需要被外界檢驗嘅部分。</li>
+  <li><strong>RLCD 未發表、無同儕評審</strong>——佢自己講「not yet published」。所以「第三條北極星」今日仍然係一個主張，而唔係一個已被驗證嘅結論。</li>
+  <li><strong>「Jev everything」會唔會係新一輪 overpromise？</strong>swyx 直接問「咩係 System 1 問題、咩唔係」，Diogo 答「that's a hard one」——然後話「呢個係 empirical problem」。即係話，連佢都認為邊界未清。</li>
+</ul>
+
+<div class="section-title">十一、章節時間軸（官方，完整保留）</div>
+
+<ul>
+  <li>00:00:00 Jev 發佈週與 AI 經濟革命</li>
+  <li>00:02:50 什麼是 Jev？System One 模型與可編程 AI</li>
+  <li>00:05:54 RLHF、Mode Collapse、校準，與 Yann LeCun</li>
+  <li>00:10:29 可編程 AI、Refusal 與 Safety Alignment</li>
+  <li>00:17:21 為何 TypeSafe 拒絕公開 Benchmark</li>
+  <li>00:20:43 The Bitterest Lesson：數據、算力與正確的任務</li>
+  <li>00:24:59 RLCD vs. RLHF 與 RLVR</li>
+  <li>00:28:42 為何強大的 AI 仍未自動化經濟</li>
+  <li>00:39:55 可靠性、魯棒性與確定性</li>
+  <li>00:48:11 模型版本、LTS、速度與 Intelligence per Dollar</li>
+  <li>00:54:04 Jev 的 API 與編程原語</li>
+  <li>00:58:28 如何用 Jev 建構：結構、分解與小決策</li>
+  <li>01:18:28 Inverse SaaS-pocalypse 與 AI 消失在軟件中</li>
+  <li>01:33:21 Computer Use、Dark Data 與 Jev 最大用例</li>
+  <li>01:38:48 Jev 如何重塑 Coding Agents</li>
+  <li>01:41:00 AI 安全、Frontier Pacing 與 RLVR 的極限</li>
+  <li>01:48:03 為何 Diogo 十億美金也不 Pre-train</li>
+  <li>01:55:19 TypeSafe 背後的 OpenAI 故事</li>
+  <li>02:01:41 為何 Diogo 認為多數 Neo-Lab 搞錯了 AI</li>
+  <li>02:08:00 超越 KV Cache 的 Coding Agents 與多智能體未來</li>
+</ul>
+
+<div class="section-title">十二、Jev 前置過濾（TypeSafe System One）</div>
+
+<p>本集內容已由 2026-09-22 日報跑過 <code>jev.py triage --profile news</code>（8 條候選）：最高分係「十億也不 pre-train／neo-lab 批評」<strong>0.67</strong>，其次「反公開 benchmark」<strong>0.52</strong>、「coding agents／KV cache」<strong>0.43</strong>、「RLCD 技術對比」<strong>0.34</strong>、「不上用戶數據的 data lab」<strong>0.34</strong>；最低為「safety alignment／refusal」<strong>0.02</strong>、「frontier pacing」<strong>0.13</strong>。按 news profile 提示，低分兩條屬該集主題與必要背景，保留並標註。本集所有條目 <strong>primary_source 均 &lt; 0.4</strong>，屬受訪者一手自述（company claims）。</p>
+
+<div class="highlight-box">
+  <strong>信源屬性（重要）：</strong>本復述嘅所有數字與斷言（1 兆 tokens／日、約 4,000 萬觀看、38M、Discord 10 萬人、Jev 1.13.0、抗長 context 退化、InstructGPT 上線即拿下當時約 50% LLM 市佔等）<strong>均出自 Diogo Almeida 本人在節目中的自述，未經第三方復現</strong>。技術性主張（RLCD、mode dropping、KV cache 暴政、fracturing intelligence）屬其公開主張，學術界尚未見同儕評審版本。<br>
+  本復述嘅來源：<strong>①Latent Space Substack RSS 內含之官方完整逐字稿</strong>（約 18.8 萬字元，timestamps 至 02:20:51）——本集所有<strong>直接引語</strong>均逐句核對自此逐字稿；<strong>②節目官方 shownotes</strong>（patterns、cookbooks、use cases、coding-agent guide、KV cache 文等連結）；<strong>③</strong>唯一未經逐字稿核實者為 swyx 轉述之第三方說法（如 2028 選舉政治），文中已明確標示為轉述。
+</div>
+
+<div class="section-title">十三、對本 fleet 嘅直接含義</div>
+
+<p>Jev 正是四艦隊 harness 現正使用嘅 System One 決策層。Diogo 喺呢集講嘅幾點，同本 fleet 嘅 harness 設計方向高度一致：</p>
+<ul>
+  <li><strong>拆成小的、可量測嘅決策</strong>——「decompose AI workflows into small, measurable decisions」，每個小決策都可獨立 eval。</li>
+  <li><strong>結構化 state 取代巨型 system message</strong>——「system message 係噁心嘅 global variable」；改用結構化 JSON 插入正確位置。</li>
+  <li><strong>減少硬編碼特化、保留通用先驗</strong>——對應佢「唔好為某啲奇怪用途 overfit，否則 fracturing intelligence」嘅主張。</li>
+  <li><strong>平行提問 ＋ 每 message 掛 ID</strong>——呢個係佢親口講嘅省成本技巧，直接可用。</li>
+  <li><strong>robustness 測試（塞 nonce 睇穩定性）</strong>——可以即刻納入 harness 嘅回歸測試。</li>
+</ul>
+
+<hr>
+
+<p style="font-size:0.95rem; color:#666;">
+<strong>一句總結：</strong>呢集嘅價值唔在於「Jev 好強」，而在於 Diogo 用一個可檢驗嘅框架講清楚：<strong>模型嘅上限取決於你揀咩北極星，而唔係你燒幾多算力</strong>。RLHF 優化「討好人」→ 得到諂媚；RLVR 優化「可驗證輸出」→ 得到分形式 jagged；佢要優化「可編程使用嘅可靠性」→ 得到一個似 database 多過似 coworker 嘅 cognitive core。你可以唔同意佢對 refusal 同 safety alignment 嘅立場（呢部分確實引戰），但佢對「字符串唔適合做決策」嘅技術論證，係今日 AI 工程圈最值得認真對待嘅一句。
+</p>
+
+<footer>
+  <p>深度復述 · Latent Space《Jev: System One models for Prod, not God — with Diogo Almeida, CEO, TypeSafe AI》</p>
+  <p style="margin-top:0.3rem;">來源：Latent Space Substack 官方完整逐字稿（timestamps 至 02:20:51）＋ 官方 shownotes · 生成時間 2026-09-22 06:00 UTC</p>
+  <p style="margin-top:0.3rem;">JMOKSZ / ai-podcast-collection · Apache 2.0</p>
+</footer>
+</div>
+</body>
+</html>
