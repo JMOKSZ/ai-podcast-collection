@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「我可以給你一個完美嘅西洋棋世界模型，你都唔會變成 Magnus Carlsen」——MLST × Alexander Mattick：預測 ≠ 控制</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Machine Learning Street Talk · 2026-09-21 15:02 UTC 發布 · Tim Scarfe 等 · 2 小時 14 分 20 秒</div>
+  <h1>「我可以給你一個完美嘅西洋棋世界模型，你都唔會變成 Magnus Carlsen」——MLST × Alexander Mattick：預測 ≠ 控制，同「world model 只係 branding」</h1>
+  <div class="meta">
+    <span>📅 2026-09-21 15:02 UTC（09-21 23:02 CST）</span><span>·</span><span>🎙 ML Street Talk（Tim Scarfe 等）</span><span>·</span><span>👤 Alexander Mattick（Fraunhofer IIS 研究員、UTN 博士生）</span><span>·</span><span>🏷 推論 / world model 批判 / constrained RL / 可靠性</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係本日最反共識嘅一集。當全世界都在講 world model 係通用智能嘅路線（Cosmos 3、JEPA 系、Dreamer 系），Mattick 用一條控制理論 + 複雜度嘅線，把它歸為<strong>重新命名嘅動態模型 + 品牌工程</strong>。而佢真正嘅題眼唔係「無用」，係——<strong>預測未來同推論出正確行動，係兩件唔同嘅事</strong>。呢個命題直接擊中 2026 年最熱嘅敘事地基。
+</p>
+
+<div class="highlight-box">
+  <strong>一句話抓住全集：</strong>把「推論（inference）」當成貫穿現代 ML 嘅主線——有了模型之後，要拿出一個答案要付多少代價？——再一路推到深度學習理論、constrained RL 與 world model 嘅批判。標題即主張：<strong>規模化預測能力，不能產生智能</strong>。但佢實際論證嘅係一個更窄、更硬嘅命題：<strong>預測能力 ≠ 控制能力</strong>。
+</div>
+
+<div class="section-title">一、嘉賓係邊個：Yannic Kilcher Discord 上嘅「Zigzag」</div>
+
+<p>主持人稱佢係 Yannic Kilcher Discord 上「最聰明嘅人」（handle：Zigzag）。Alexander Mattick 係 <strong>Fraunhofer IIS 研究員、紐倫堡理工大學（UTN）博士生</strong>（該校仍在建校階段，佢係最早嘅博士生之一），FAU Erlangen 計算機本科 + AI 碩士。</p>
+
+<p>佢 2022 年曾上過 MLST，協助製作咗 Yann LeCun 與 Randall Balestriero 那集關於「插值（interpolation）/ spline 理論」嘅訪談研究。研究主軸：<strong>constrained RL（安全 RL）、branch-and-bound 嘅節點選擇 RL、GFlowNets、energy-based models、diffusion / flow matching</strong>。本集係佢四年後嘅獨立專訪——從「協助研究」到「提出反共識主張」嘅角色轉變值得注意。</p>
+
+<div class="section-title">二、推論史：一部「把採樣成本搬來搬去」嘅歷史</div>
+
+<p>佢開場給咗一條完整嘅技術脈絡，把現代 ML 各家方法串成一條線——呢條線係全集最有教學價值嘅部分：</p>
+
+<table>
+  <tr><th>時代</th><th>方法</th><th>付出嘅代價 / 換到嘅嘢</th></tr>
+  <tr><td>古典</td><td>正規化參數密度（如高斯）</td><td>受限於分佈形狀</td></tr>
+  <tr><td>—</td><td>拒絕採樣（rejection sampling）</td><td>高維立刻敗給維度詛咒</td></tr>
+  <tr><td>—</td><td>MCMC</td><td>可以只採樣、唔需知道密度；但極慢、多模態逃逸困難</td></tr>
+  <tr><td>—</td><td>Energy-Based Models（EBM）</td><td>用能量函數學任意密度、訓練唔需計積分；但把最貴嘅採樣搬到推論期反覆執行</td></tr>
+  <tr><td>—</td><td>Diffusion</td><td>引入無限多層 latent，把問題重述成隨機微分方程，換來一個「時間」額外變數；但擺脫 accept/reject 與局部極小</td></tr>
+  <tr><td>—</td><td>Flow Matching / CNF</td><td>化為從初始分佈到目標分佈嘅梯度流／最優傳輸；代價只剩可逆性</td></tr>
+</table>
+
+<blockquote class="strong">
+「你為無限維付費，換來唔需要採樣。」
+<span class="attribution">—— Alexander Mattick，一句總結整條推論史</span>
+</blockquote>
+
+<p>呢個框架嘅威力在於：它把 diffusion、flow matching、EBM 睇成同一條權衡曲線上嘅唔同取捨，而唔係三個互不相干嘅發明。佢令「為何 diffusion 贏」有一個機制性答案，而唔係「因為表現好」。</p>
+
+<div class="section-title">三、EBM 現在唔值得，world model 係 branding</div>
+
+<p>佢最直率嘅兩個結論：</p>
+
+<blockquote class="strong">
+「我認為 energy-based models 唔係真嘅有用，或者至少而家唔再有用。」
+<span class="attribution">—— Alexander Mattick</span>
+</blockquote>
+
+<p>理由：即使原理上可採樣，<strong>算力上幾乎永遠唔划算</strong>；而且 EBM 唔提供任何樣本嘅機率（而呢個機率在異常檢測、動態模型展開時修正累積誤差時好有用）。佢亦指出 <strong>GFlowNets 冇解決同一個問題</strong>：它假設了一種結構，回到接近變分推論嘅假設世界。</p>
+
+<p>然後係全集最出圈嘅一句——</p>
+
+<blockquote class="strong">
+「我認為 world model，還有 JEPA，最終都只係 branding。」
+<span class="attribution">—— Alexander Mattick，被問 Cosmos 3 等「世界模型」係唔係真有新意時</span>
+</blockquote>
+
+<p>佢嘅論證唔係情緒化嘅：JEPA 之前就有類 JEPA 嘅模型，world model 之前也有 world model；Schmidhuber 那篇 world model 論文，其實就係 model-based RL。佢給出自己唯一覺得可用嘅切分：</p>
+
+<ul>
+  <li><strong>資料收集在迴路內 → 叫 model-based RL</strong>（要探索）；</li>
+  <li><strong>資料收集在迴路外 → 叫 world model</strong>（唔用探索）。</li>
+</ul>
+
+<p>而「world model」嘅三種常見定義（他都認為模糊）：①感測器／馬達預測模型；②純影像或影片生成模型；③JEPA 式含內部狀態嘅模型（問題係「內部狀態是否真有用」難以驗證，很多只是看起來漂亮、一致、但不可 benchmark）。Dreamer 系列以大規模影片擴散去玩 Minecraft——佢認為這些都被叫 world model，「已經冇合理嘅區分了」。</p>
+
+<div class="section-title">四、標題論證：預測 ≠ 控制</div>
+
+<p>針對「有了完美世界模型就唔需要 RL，只要在模型裡規劃」嘅論調，佢嘅反駁係全集核心：</p>
+
+<blockquote class="strong">
+「我可以給你一個完美嘅西洋棋世界模型，你都仍然解決唔到佢——你都唔會變成 Magnus Carlsen。因為『預測未來』同『推論出正確行動』之間是有差別嘅。」
+<span class="attribution">—— Alexander Mattick，全集標題論證</span>
+</blockquote>
+
+<p>佢用大學控制課嘅經驗補刀：NMPC 講到最後大家都想做 NMPC，然後發現<strong>模型稍大就即時算唔動、局部極小、加上約束後多數候選軌跡根本不可行</strong>，「於是熱情逐漸消退」——佢預測 world model 會走同一條路。</p>
+
+<p>佢嘅診斷係：<strong>目前用 world model 做嘅任務，從控制嘅角度睇根本唔難</strong>。所以 demo 睇落好，唔證明呢條路線可以處理真正困難嘅控制問題。</p>
+
+<div class="section-title">五、Constraints（先驗知識）唔係包袱，係現金</div>
+
+<p>反駁「reward is enough」與 The Bitter Lesson，佢嘅一句話好硬：</p>
+
+<blockquote class="strong">
+「資訊可以非常昂貴，事實上我會講大部分資訊都非常昂貴。」
+<span class="attribution">—— Alexander Mattick</span>
+</blockquote>
+
+<p>完全唔做先驗、乜都從頭學，等於把已經用血汗換嚟嘅資訊丟掉。佢舉 <strong>OpenAI Five（Dota 2）嘅獎勵函數附錄</strong>為例——一張巨大嘅權重表（一堆隨機數字），其中：</p>
+
+<ul>
+  <li>「<strong>待在錯誤車道超過一定時間 = 負獎勵</strong>」——本就係一條<strong>被改寫成 penalty 嘅約束</strong>（等同直接寫「唔好待超過 5 秒」）；</li>
+  <li>「<strong>擊殺敵方英雄給負獎勵</strong>」——因為殺敵本身已給金錢獎勵；兩者相關會導致模型在中央互殺刷分。</li>
+</ul>
+
+<p>改成約束就同時解決了<strong>相關性</strong>與<strong>重新調參</strong>兩個問題。呢個係全集最工程化、最可直接套用嘅一段——<strong>可組合性（composability）才係約束建模嘅真正賣點</strong>：把約束顯式化之後，新增一項目標唔再需要重新調整整組權重。</p>
+
+<div class="section-title">六、Constrained RL 嘅硬骨頭</div>
+
+<p>約束式 MDP 嘅目標係「最大化累積回報，同時讓期望累積成本低於閾值」。佢列咗整條方法演化，每一代嘅失敗模式都好具體：</p>
+
+<table>
+  <tr><th>方法</th><th>問題</th></tr>
+  <tr><td>CPO（從 TRPO 嘅改進界推導）</td><td>唔在約束集內時退化為貪婪下降、邊界震盪</td></tr>
+  <tr><td>投影法（密度空間中問題變成凸）</td><td>「幻覺約束」問題；<strong>求解器愈好反而愈糟</strong></td></tr>
+  <tr><td>拉格朗日／零對偶間隙</td><td>震盪</td></tr>
+  <tr><td>局部近似（CBVPO、FOCOPS）</td><td>精確但可能把自己弄進不可解嘅子問題；實質係帶約束嘅 MPC</td></tr>
+</table>
+
+<div class="data-point">
+  <span>理論事實</span>
+  <strong>Constrained RL 一般唔存在「平穩確定性策略」</strong>——呢意味著 <strong>Q-learning 呢條路直接失效</strong>。而佢亦坦承「要公平比較 constrained vs unconstrained 非常難」，因為設計一個「隱含某約束」嘅獎勵函數本身就極難。
+</div>
+
+<p>另一個複雜度層面嘅死結：<strong>動作約束相對簡單</strong>（投影到集合即可），難嘅係<strong>狀態約束</strong>——因為它需要模型與環境狀態互動；而且有些約束嘅強制本身係 NP-hard（CSP 類）。所以佢認為最終仍需把部分約束外置到生成過程（如擴散式或蒙地卡羅式）。</p>
+
+<div class="section-title">七、RL 給唔出最壞情況保證——機械人嘅死穴</div>
+
+<blockquote class="strong">
+「你可以有一個在期望上真嘅好嘅控制器，但它有一個極大嘅失敗案例。平均嚟講追蹤得好完美、只出咗一次大錯，同一路小幅漂移，係完全一樣嘅。」
+<span class="attribution">—— Alexander Mattick，為何需要 L∞ 式保證</span>
+</blockquote>
+
+<p>佢引〈Learning ReLU networks to high uniform accuracy is intractable〉說明：連放置／縮放這些「帽子」以求一致精度，都係 NP-hard、需要指數級數據。因此真實世界需要 robust RL 或 constrained RL + 模仿／先驗資料——「我唔想讓開心手術機械人從零開始探索」。</p>
+
+<p>呢度佢接上咗階層式 RL（HRL）嘅根本問題：<strong>下層給唔出上層可依賴嘅保證</strong>。控制理論之所以能做，係因為 H∞ 控制器能給出最壞情況（對抗性）保證；抽象好壞嘅唯一標準係「有冇用」——佢舉 fuzzy logic 為失敗嘅抽象（無法對 fuzzy logic 做 inference，而 Bayesian 可以對 Bayesian model 做 inference）。</p>
+
+<p>佢亦點名 Universal Approximation Theorem 常被濫用：人們把它當成「模型夠大就會做對嘅事」嘅不變量，但<strong>嗰個唔係定理實際上講嘅嘢</strong>。</p>
+
+<div class="section-title">八、機械人 demo 嘅可靠性陷阱</div>
+
+<blockquote class="strong">
+「如果你去 BMW，講『我這機器人 90% 嘅時間做對嘅事，另外 10% 會做別嘅事』——佢哋會講：唔，我唔會付你這筆錢。」
+<span class="attribution">—— Alexander Mattick，生產環境所需嘅可靠性水平</span>
+</blockquote>
+
+<p>佢用嘅比喻係全集最易記嘅畫面：</p>
+
+<blockquote class="strong">
+「你會看到這些中國、美國、德國嘅人形機械人總係在做後空翻同衝刺，卻從嚟唔做呢個任務：站起身、走入隔籬房、打開雪櫃、望入去、拿出一盒牛奶、拿畀我。」
+<span class="attribution">—— Alexander Mattick，解釋為何 demo 揀嘅係好表演嘅任務</span>
+</blockquote>
+
+<p>原因唔係技術落後，係<strong>嗰個任務難得多</strong>：接觸密集（contact-rich）、難建模、難採數據。佢亦點名 <strong>tactile sensing（觸覺感測）仍然未解</strong>，長期係瓶頸。最後一句總結咗軟硬體世界嘅差異：<strong>「軟件世界可以回滾，實體世界裡『刪掉你部電腦』等於『壓死人』。」</strong> 佢要嘅唔係峰值精度，而係<strong>每個狀態都存在最低正確機率</strong>，咁先可以用粒子濾波之類做多次量測收斂。</p>
+
+<div class="section-title">九、ML 理論現狀：盲人摸象，同沒有「物理學標準模型」嘅困境</div>
+
+<p>佢把理論分成兩種流派：<strong>參數派</strong>（spline 區域、ReLU 嘅局部結構，能解釋特定架構）vs <strong>函數空間派</strong>（neural tangent kernel、mean field、diffusion 式非參數解釋，能解釋「為何超參數化唔係壞事」——因為十億參數嘅函數比 50 參數更接近真實函數空間）。佢認為長遠睇函數派更有用（唔綁架構：MLP-mixer、gated activation 換掉都仍成立），但預測力仍不足。</p>
+
+<p>佢形容 ML 理論係「<strong>盲人摸象</strong>」——幾何派（Randall Balestriero）、可計算性派（Keith Duggar 嘅圖靈機問題）、複雜度派、統計物理派（自旋玻璃、重尾）、有效理論派。佢主張判準只有一個：<strong>能唔能做預測、能唔能被證偽</strong>。佢自曝曾因一個實作 bug 浪費 <strong>2–3 個月</strong>——「如果連延續既有工作嘅實作 bug 都分唔出，那就說明理論還不到位」。</p>
+
+<p>佢亦批評可解釋性（mechanistic interpretability）唔穩健：transformer circuits 假設路由在權重置換下不變（唔成立）、有些人把它當成大型 MLP-mixer 建模；並舉例「模型算術嘅 cos/sin 曲線」抽出嚟好靚，但「如果這就是它們做算術的方式，那我們絕無可能解釋它怎麼建模一隻鴨子」。</p>
+
+<div class="section-title">十、行業 insight（我嘅萃取）</div>
+
+<ol>
+  <li><strong>對「世界模型競賽」嘅一盆冷水。</strong>Mattick 直接把它歸為<strong>重新命名嘅動態模型 + 品牌工程</strong>，並指出其成敗取決於「接觸密集任務嘅可靠性」而唔係 demo 表演力。<strong>呢個係本週最重要嘅反面觀點</strong>——尤其對照同日 Platt 講嘅「Gemini 2.0→2.5 階躍」：能力曲線在上升，但可靠性鴻溝冇同步收窄。</li>
+  <li><strong>「可組合性」係約束建模嘅真正賣點。</strong>OpenAI Five 嘅分析給咗好工程化嘅理由：把約束顯式化之後，新增一項目標唔再需要重新調整整組權重——<strong>呢個對 agent 系統嘅 reward 設計與評測設計直接可用</strong>。</li>
+  <li><strong>與 Platt 同日互相印證嘅「可靠性鴻溝」。</strong>Platt：科學上要防「騙自己」（多假設檢定、隱藏 hold-out）；Mattick：工程上要防「期望上很好但偶爾大錯」（L∞ 保證）。<strong>兩者都指出平均值指標正在系統性高估能力。</strong></li>
+  <li><strong>預測 ≠ 控制 係一條可遷移嘅判斷。</strong>不止機械人：任何「模型夠好就可以少做探索／少做 RL」嘅主張，都要先回答「你點保證最壞情況」。呢個可直接用嚟審視 agent 產品嘅可靠性宣稱。</li>
+  <li><strong>理論現狀最誠實嘅表述。</strong>「問題唔係冇理論，而係冇一個能像物理標準模型那樣讓大家從同一起點出發、並能做出可被證偽嘅預測。」——呢句同學界「benchmark 爆炸、論文增量」嘅體感一致。</li>
+</ol>
+
+<div class="section-title">十一、前後脈絡同爭議點</div>
+
+<p><strong>延續 MLST 近期主線。</strong>9/11〈How Replication Could Teach Machines What Good Science Looks Like〉（Edward Hughes）與 9/15〈How Physical AI Learns Across Language, Video and Action〉（Ming-Yu Liu）都在談「世界模型／物理 AI」，本集則<strong>從控制理論與複雜度嘅角度給出系統性反駁</strong>。與 9/8〈AI 2040: Plan A〉（Kokotajlo & Larsen）形成尺度對照：一邊係宏觀治理路線圖，一邊係「你嘅控制器能唔能給出最壞情況保證」。</p>
+
+<h3 class="sub-title">爭議點 / 需留意之處</h3>
+<ul>
+  <li><strong>「World model 只係 branding」會直接冒犯一大批人。</strong>他同時承認「可以做得很遠」（world model 內做 RL、無限 rollout、GRPO 式嘅模擬採樣確實係範式轉移），立場其實係「有用但被高估」，而標題式嘅話容易被讀成「無用」。</li>
+  <li><strong>「預測不能創造智能」標題過強。</strong>他實際論證嘅係「預測唔等於控制」——呢個係關於<strong>決策</strong>嘅命題，而非關於「智能」嘅完整命題。標題嘅強度大於內文主張。</li>
+  <li><strong>佢坦承 constrained vs unconstrained RL 無法公平比較</strong>（連設計實驗都會偏袒一方），因此「約束更好」在佢那裡仍屬工程直覺＋局部證據，而非定論。</li>
+  <li><strong>對可解釋性（mechanistic interpretability）嘅整體否定</strong>係當前最受歡迎研究方向之一嘅當面挑戰。</li>
+  <li><strong>GBM/LLM 類比有爭議。</strong>佢把 GRPO「唔學價值函數、即時做優勢估計」類比為「便宜模擬器裡嘅蒙地卡羅 rollout」——呢個類比在部分 RL 研究者睇來過度簡化。</li>
+</ul>
+
+<hr>
+
+<div class="highlight-box">
+  <strong>如果只記一句：</strong>一個完美嘅世界模型畀你嘅係「未來會點」；但要落場贏棋，你需要嘅係「而家應該點做」——<strong>呢兩件事之間，隔住嘅唔係更多數據，而係控制理論嘅保證。</strong>
+</div>
+
+<footer>
+  <p>深度復述 · 來源：Machine Learning Street Talk（2026-09-21 15:02 UTC 發布，2:14:20，〈Why Scaling Prediction Cannot Create Intelligence — Alexander Mattick〉）</p>
+  <p style="margin-top:0.3rem;">主要依據：該集 YouTube 版自動字幕逐字稿（video id 1S1B4XkFCD8，約 14.2 萬字元）＋官方 shownotes（2 小時 14 分完整章節軸與約 20 條參考文獻）。引語按逐字稿原文引用，僅修正明顯嘅語音識別錯字（JEPA／LeJEPA／Fraunhofer 等）。</p>
+  <p style="margin-top:0.3rem;">生成：2026-09-23 · ai-podcast-collection deep dive #171</p>
+</footer>
+</div>
+</body>
+</html>

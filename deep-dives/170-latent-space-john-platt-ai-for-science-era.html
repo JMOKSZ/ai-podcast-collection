@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 奧斯卡、兩顆小行星、同你 sklearn 裡面嘅算法——Latent Space × John Platt：ERA 點樣把「任何寫得成分數嘅科學問題」自動化</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-09-22 21:07 UTC 發布 · swyx × R.J. 訪談 · 2 小時 01 分 26 秒</div>
+  <h1>奧斯卡、兩顆小行星、同你 sklearn 裡面嘅算法——John Platt：ERA 點樣把「任何寫得成分數嘅科學問題」自動化，同「電動工具可以切斷你嘅手指」</h1>
+  <div class="meta">
+    <span>📅 2026-09-22 21:07 UTC（09-23 05:07 CST）</span><span>·</span><span>🎙 Latent Space（swyx + R.J.）</span><span>·</span><span>👤 John Platt（Google Fellow、Google Research 應用科學負責人）</span><span>·</span><span>🏷 AI for Science / ERA / agentic 研究 / Goodhart</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集表面上係「一位傳奇科學家講 AI for science」，實際上係一份<strong>「點樣把科學研究嘅一部分工作流，變成一個可最佳化嘅軟件問題」嘅工程報告</strong>。John Platt 唔講概念，佢講嘅係一套叫 <strong>ERA</strong>（Empirical Research Assistance）嘅系統：輸入係一個分數函數，輸出係一段跑得最快嘅程式碼。而佢最狠嘅一段唔係技術，係警告——<strong>呢把工具會切斷你嘅手指，而你自己就係最容易被自己騙嘅人</strong>。
+</p>
+
+<div class="highlight-box">
+  <strong>一句話抓住全集：</strong>凡是可以用<strong>分數</strong>表述嘅科學問題，都可以被自動化搜尋。Platt 把 AI for science 壓縮成一句工程命題：「<strong>我想要一段程式碼，令某個分數最大化</strong>」。而其餘所有關於「AI 會唔會取代科學家」嘅討論，都被佢一句話帶過：預測模型唔等於描述模型，<strong>模型係電動工具，判斷佢係唔係真嘅描述了世界，責任仍然在人</strong>。
+</div>
+
+<div class="section-title">一、嘉賓係邊個：一個名字寫進你 sklearn 嘅人</div>
+
+<p>節目組自己講，呢位嘉賓係佢哋讀過「最有趣嘅嘉賓簡介」。呢句話唔誇張——John Platt 嘅履歷橫跨三個唔相干嘅領域：</p>
+
+<ul>
+  <li><strong>兩個算法被寫進 sklearn</strong>：<strong>Platt scaling</strong>（把 SVM 嘅輸出校準成機率）同 <strong>SMO</strong>（Sequential Minimal Optimization，訓練 SVM 嘅教科書算法）。今日你 `import sklearn`，底層跑嘅就係佢嘅東西。</li>
+  <li><strong>2006 年奧斯卡技術成就獎</strong>：1986 年喺 Schlumberger 實習時，用彈性理論寫咗一個可變形物體模擬器（布料、可拉伸物體）。佢嘅後代成為 Pixar 等大量影視物理模擬器嘅核心——<strong>獲獎距作出大約 20 年</strong>。</li>
+  <li><strong>兩顆以佢命名嘅小行星</strong>：Caltech 時期參與 Shoemaker 夫婦嘅行星科學課程，用底片 + 立體鏡人工搜尋，送觀測到 Minor Planet Center。一顆以佢父親命名，另一顆以母親命名；而<strong>母親嗰顆後來被發現有一顆衛星</strong>（主體約 4 km、衛星約 1 km）。</li>
+</ul>
+
+<p>佢嘅學術血統同樣離譜：14 歲上大學、18 歲喺 Caltech 讀博，<strong>師從 John Hopfield</strong>（後獲諾貝爾物理獎）；1982 年修過 <strong>Feynman 嘅「計算物理」課</strong>；亦係「convolutional net」呢個詞嘅提出者（佢自述：當時大家只叫 LeNet，因為都出自 Yann 團隊，「我不想叫它 LeNet，就叫 convolutional net」）。今日佢係 Google Fellow，負責 Google Research 嘅 Applied Science。</p>
+
+<p>佢嘅同事 Dave Bacon 有句調侃：「佢永遠比時代早 <strong>20 年</strong>」——CNN（1990s 初）、融合（10 年前開始）、量子計算。呢個「早 20 年」嘅自我定位，係理解佢今集所有判斷嘅鑰匙。</p>
+
+<div class="section-title">二、ERA 嘅算法骨架：樹狀候選池 + UCB + 共享歷史</div>
+
+<p>團隊十多年做 AI for science，兩年前轉向通用 LLM 之後「撞上」一個映射：<strong>把問題表述成「我想要一段程式碼，讓某個分數最大化」</strong>。機器學習只係其中一個子集（分數 = 模型與數據嘅擬合度）。佢甚至示範咗把應用數學嘅<strong>漸近展開（asymptotic expansions）</strong>變成經驗任務——要求模型提出在 ε→0 時漸近正確嘅解，再用 ε=1e-4 之類嘅具體值檢驗擬合，於是 Gemini 可以同時做數學推理與數值擬合。</p>
+
+<p>內部代號係「<strong>auto-Kaggle</strong>」——Kaggle 隸屬 Google，數據現成，目標係做一個能解任何 Kaggle 題目嘅系統。但真正嘅機制，係一棵樹：</p>
+
+<div class="data-point">
+  <span>機制</span>
+  Gemini 維持一棵「過去實驗（notebook）」嘅樹，記錄每個分支在做乜、結果係乜。<strong>每次迭代用 Upper Confidence Bound（UCB）揀一個 notebook</strong>——估計「當前表現 + 2σ」後揀樂觀上界最大嘅，即<strong>有時會揀第五好嘅</strong>（high recall 式探索，唔係貪心）。對被揀中嘅 notebook，Gemini 提出約 <strong>10 個變異（一次長 10 個葉子）</strong>，測試後放回候選池。另有<strong>重組</strong>：把兩個候選嘅想法合成第三個。
+</div>
+
+<blockquote class="strong">
+「每個候選可能有子節點，而你係基於一個叫 upper confidence bound（UCB）嘅算法去揀。呢個係一個樂觀算法——佢估計某個 mutation 嘅 95 百分位結果，然後揀上界最高嗰個。」
+<span class="attribution">—— John Platt，描述 ERA 嘅選擇機制</span>
+</blockquote>
+
+<p>「10 個並行」唔係隨便定嘅，佢明確講咗個 trade-off：<strong>太多並行就學唔到嘢</strong>（10 個一齊長時，#1 睇唔到 #2–#10 做緊乜），<strong>太少就收斂慢</strong>。10 個「似乎係啱嘅平衡」。每個分支嘅歷史<strong>共享</strong>在一個共用 context 裡，呢個亦令「context 管理」成為工程重點——呢個就係「為何唔可以一次開 1,000 個並行」嘅原因。</p>
+
+<p>種子亦唔需要人寫：給文字描述（甚至附上 5 篇相關論文），Gemini 會自己讀論文、寫出第一版程式碼，之後持續變異。</p>
+
+<div class="section-title">三、為何係「階躍」而唔係「斜率」——Gemini 2.0 → 2.5</div>
+
+<p>全集最實用嘅一條判斷，唔係關於架構，係關於<strong>版本門檻</strong>：「在 Gemini 2.0 下這是不可能做到的」——佢哋試咗好耐都失敗，<strong>2.5 之後突然開始能用，然後變得非常好用</strong>。佢回憶 2.5 發布當天讓它寫 boosted decision tree，結果一次就對，「我當時想，這是個新世界」。</p>
+
+<blockquote class="strong">
+「你去年試過 2.0 覺得唔得？嗰係一年前嘅事喇，嗰已經係好耐以前。」
+<span class="attribution">—— John Platt，對「早試過唔 work」嘅團隊講嘅一句話</span>
+</blockquote>
+
+<p>呢一點對整個 agent 生態最可直接套用：<strong>同一個 harness 在 2.0 毫無價值、在 2.5 好用、之後愈來愈好</strong>。所以而家投入做 agentic 科學工具嘅團隊，<strong>唔應該因為早期失敗而放棄</strong>——限制好多時係在模型側，唔係架構側。而 Platt 亦提醒：至少已產出 <strong>10 篇論文</strong>，其中一篇係與 Antigravity harness 結合嘅預印本（尚未公開）。</p>
+
+<div class="section-title">四、最硬嘅戰果：卡咗兩年嘅 contrails 反事實模型</div>
+
+<p>節目講咗一個具體到得人驚嘅案例：<strong>凝結尾（contrails）</strong>。</p>
+
+<div class="data-point">
+  <span>數字</span>
+  凝結尾約佔<strong>全部人為全球暖化嘅 1%</strong>；冰晶在遠紅外（~10 µm）近乎黑體，白天反射陽光、<strong>全天捕捉地表紅外輻射因而淨暖化</strong>；歐洲高航空流量區域局部輻射強迫可達 <strong>~1 W/m²</strong>（對比全球人為平均 ~3 W/m²）；催化比 <strong>1 克排氣 → 約 10 公斤冰晶（10,000:1）</strong>；只要下降<strong>約 2 個飛行高度層</strong>即可規避。
+</div>
+
+<p>問題係：反事實模型裡「反射陽光嗰一半」卡咗團隊<strong>兩年</strong>。ERA 找到一個含少量 confounder 嘅<strong>簡單模型</strong>解開咗——而 Platt 補咗一句好誠實嘅話：<strong>佢哋自製嘅測試碼反而過唔到自己設計嘅測試</strong>。呢個案例係全集最有力嘅單一戰果，但目前尚未有已提交嘅同儕評審論文（佢講 paper 尚未 submitted，已在 EGU 講過）。</p>
+
+<div class="section-title">五、「電動工具可以切斷你嘅手指」——預測模型 vs 描述模型</div>
+
+<p>呢段係全集最重要嘅一段，亦係最容易被 quote 走嘅一段。Platt 把兩件事分得好清楚：</p>
+
+<ul>
+  <li><strong>預測模型</strong>：只要求在某數據集上誤差最低。</li>
+  <li><strong>描述模型</strong>：科學真正要嘅，因為要能外推。<strong>牛頓想到蘋果，但重力唔係關於蘋果嘅。</strong></li>
+</ul>
+
+<p>ERA 給出嘅係<strong>預測模型</strong>。判斷佢係唔係真嘅描述了世界，<strong>責任在科學家</strong>。因此需要極端嘅嚴謹：隱藏 hold-out、多假設檢定、false discovery rate。「而家你要比以前更小心」。</p>
+
+<blockquote class="strong">
+「你必須要好小心，因為佢係一把電動工具——我唔應該咁講，但佢可以切斷你嘅手指。你真係要好嚴謹，先唔會騙到自己。你要好隱藏嘅 hold-out set 睇都唔睇……佢係一把完整嘅電動工具。」
+<span class="attribution">—— John Platt 談 ERA 與過擬合風險</span>
+</blockquote>
+
+<p>佢用咗一個好傳神嘅比喻講呢件事：<strong>「精靈故事」——許願要小心，因為你會得到你許嘅願。</strong>Agent 會找到「作弊」路徑（鑽分數函數嘅洞），所以需要外圈嘅人類迭代：「唔得，我唔係嗰個意思」。</p>
+
+<div class="section-title">六、科學家唔會被取代，但分工會重排</div>
+
+<p>Platt 嘅立場好清楚：模型在<strong>嚴謹度與哲學／創造力上仍然「jagged」</strong>（不平均）。大型尖峰出現在寫程式、蒐集知識、找相關工作；<strong>嚴謹性反而係弱項</strong>。所以未來人類嘅錨點係兩種人：<strong>帶來創造力嘅人</strong>與<strong>帶來嚴謹嘅人</strong>——唔一定要係同一批人。</p>
+
+<blockquote class="strong">
+「我認為佢會成為科學家一把了不起嘅電動工具。而我相信科學家唔會被取代。事實上我希望佢哋會把所有時間花喺創造性嘅嘢、嚴謹嘅嘢、哲學嘅嘢上面。」
+<span class="attribution">—— John Platt，全集收尾</span>
+</blockquote>
+
+<p>佢對年輕研究者嘅一貫建議極簡：<strong>「永遠就先去擬合線性回歸。就去做。就去做。就去做。或者 SVM。」</strong>佢自己嘅 20% time 規則係：你甚至可以唔使話佢知你做緊乜，就是去學、去玩。佢警告過度最佳化會「overfit to productivity」——就像爬山，能開車上去，但偶爾用走嘅「也許係好的，甚至有趣」。</p>
+
+<div class="section-title">七、分數函數才係瓶頸，人嘅位置在外圈</div>
+
+<p>成個 ERA 敘事裡，最難嘅唔係搜尋算法，而係<strong>形式化 score</strong>——呢一段仍然高度依賴人類（或人機共構）。工程上係一個雙層預算問題：</p>
+
+<table>
+  <tr><th>預算層</th><th>內容</th></tr>
+  <tr><td>LLM token 預算</td><td>Gemini 嘅推理與變異生成；Platt 坦言內部「其實我唔知道花了多少」（無明確成本計數）</td></tr>
+  <tr><td>分數函數本身嘅計算</td><td>內含模擬器或 Monte Carlo 估計時，CPU/GPU 成本可觀——呢層先係真正嘅物理限制</td></tr>
+  <tr><td>人嘅外圈（outer loop）</td><td>一次可跑數小時 → 回來給例子 → 人再讀新論文、指出「你正在做壞事」→ 再放它跑</td></tr>
+</table>
+
+<p>呢個結構嘅含義係：<strong>「分數化」才係 AI for science 嘅真正介面</strong>。把科學問題轉成 scoreable task，等於把科學研究嘅一部分工作流變成軟體工程問題。呢個對工具鏈（notebook、評測、資料集接合）嘅啟示，比「AI 會唔會取代科學家」實際得多。</p>
+
+<div class="section-title">八、其他戰線：氣候、野火、融合、量子</div>
+
+<p><strong>天氣 vs 氣候</strong>——佢給咗一個可以背落嚟嘅定義：</p>
+
+<blockquote class="strong">
+「天氣係你<em>喺吸引子上嘅位置</em>，而氣候係<em>吸引子本身嘅統計量</em>。氣候嘅麻煩係——我哋正在改變佢。吸引子本身在動。」
+<span class="attribution">—— John Platt</span>
+</blockquote>
+
+<p>由此解釋咗一個反直覺現象：<strong>天氣（約 15 天內）已有巨幅進步</strong>（2018 年代 ML + 大量數據／算力；Google 嘅氣旋路徑預報在牙買加颶風個案上明顯優於傳統模式），<strong>但氣候抗拒 AI 革命</strong>——因為氣候係<strong>非平穩（attractor 本身在移動）</strong>，係典型低數據問題。佢亦提到氣候建模嘅數據困境：2100 年 CO₂ 濃度不確定性區間達 <strong>300 ppm</strong>，而當前水平約 440–450 ppm——<strong>不確定性幾乎等於當前濃度</strong>。</p>
+
+<p><strong>FireSat / 野火</strong>：全球 LEO 中波紅外（需製冷）星座約 <strong>50–80 顆</strong>，可把「房間大小」（約 5m×5m；原生 50m 像素靠多光譜超解析 + AI 補到 5m）嘅火點在 <strong>15–20 分鐘</strong>內於全球任一地點發現；原型星已發射（與 Muon Space、Earth Fire Alliance 合作）；WHO 估計野火煙霧每年造成 <strong>30 萬</strong>超額死亡。<strong>本質上係「用星座 + 超解析 + AI 把不可行動嘅資訊變成可行動」——AI for climate 嘅產業化模板唔係更準嘅物理模型，而係更短嘅決策延遲。</strong></p>
+
+<p><strong>融合</strong>：「<strong>3 年，不是 30 年</strong>」——佢認為本十年內出現商業相關融合嘅機率明確；Lawson criterion 係密度 × 溫度 × 約束時間嘅乘積門檻，因此<strong>每種融合路線都有各自嘅阿基里斯腱</strong>。</p>
+
+<p><strong>量子</strong>：處於 <strong>NISQ 中間態</strong>；超導量子位仍「非常難搞」（本質上係類比計算機）。「不是 30 年後，也不是明天」。量子回聲（quantum echoes）算法已可實用（如 NMR 參數解碼）。</p>
+
+<p>仲有幾個歷史綵蛋：1982 年最尖端算力 ≈ <strong>100 萬次運算／秒</strong>，整個研究組共用一台洗碗機大小、<strong>80 MB</strong> 嘅硬碟；Vera Rubin 天文台（智利，Simonyi Survey Telescope）<strong>6 週發現 11,000 顆小行星</strong>（1985 年全靠底片 + 立體鏡人力）；NeurIPS 起源自 Snowbird 一場名義上私人、實則人人都想闖進去嘅工作坊——「Hopfield networks are all you need」其實係在回應呢段歷史（transformers 本質上係關聯記憶）。</p>
+
+<div class="section-title">九、行業 insight（我嘅萃取）</div>
+
+<ol>
+  <li><strong>「分數化」係 AI for science 嘅真正介面。</strong>把科學問題轉成 scoreable task，等於把研究嘅一部分變成軟件工程。呢個比「AI scientist」嘅敘事務實得多，亦解釋咗為何 ERA 產出係「論文」而唔係「發現」。</li>
+  <li><strong>模型版本躍遷大於方法創新。</strong>同一個 harness 在 2.0 毫無價值、在 2.5 好用——呢條判斷直接影響團隊嘅投入決策：<strong>唔好因為早期失敗而放棄 agentic 科學工具</strong>。</li>
+  <li><strong>Goodhart's law 係 AI for science 嘅核心治理問題。</strong>Platt 講嘅 contrail Kaggle 故事極具警示性：有人發現標註有<strong>半像素誤差</strong>（原點在像素角落還是中心）並加以利用，贏得 <strong>15,000 美元</strong>獎金，但對解決凝結尾毫無幫助。<strong>人也會像 LLM 一樣 reward hack。</strong></li>
+  <li><strong>可靠性評測嘅缺口在「最壞情況」，而非平均值。</strong>佢同 MLST 嘅 Mattick 同日、異地講咗同一件事嘅兩面：Platt 用「well-hidden hold-out 與多假設檢定」講統計上嘅自欺，Mattick 用「L∞ 保證」講工程上嘅最壞情況。<strong>演示能力與部署能力之間隔著一條可靠性鴻溝。</strong></li>
+  <li><strong>基礎設施層嘅訊號。</strong>FireSat 星座（50–80 顆、5m 分辨率、15–20 分鐘全球響應）係「用星座 + 超解析 + AI 把不可行動嘅資訊變成可行動」——AI for climate 嘅產業化模板係<strong>更短嘅決策延遲</strong>，唔係更準嘅模型。</li>
+</ol>
+
+<div class="section-title">十、前後脈絡同爭議點</div>
+
+<p><strong>同本頻道 9/21〈Diogo Almeida / Jev〉嘅直接對話。</strong>Almeida 主張「把 AI 拆成小的、可量測的決策」「唔 pre-train、只做 mid-training」「反公開 benchmark、靠 vibes 與 trust」；Platt 則代表另一極：<strong>官方 benchmark 體系仍然重要，而且需要「多假設檢定」層層設防</strong>。兩人都在講「決策嘅分數化」，但一個把它當產品原語，一個把它當科學認識論問題。</p>
+
+<p><strong>同 9/11 Dwarkesh〈RSI 圓桌〉嘅對照。</strong>ERA 本身係一個（弱）自我改進迴路：模型修改模型寫嘅程式碼。但 Platt 冇宣稱佢有質變式嘅自我改進，只話佢係「不知疲倦嘅研究生」——<strong>呢個克制值得注意</strong>，尤其對比外界對「AI scientist」嘅狂熱。</p>
+
+<h3 class="sub-title">爭議點 / 需留意之處</h3>
+<ul>
+  <li><strong>ERA 係「新科學」定「高級搜尋」？</strong>他本人極度克制：「我們還沒做出能發現全新物理或全新科學的系統」——ERA 係 power tool，唔係科學家。</li>
+  <li><strong>「卡關兩年、ERA 一夜解開」需要第三方復現。</strong>目前尚無已提交嘅同儕評審論文。</li>
+  <li><strong>「反重力（Antigravity）harness + ERA」嘅組合未公開。</strong>佢確認 Antigravity 公開、但兩者結合嘅成果「not yet」——意味外界無法驗證呢條路線嘅上限。</li>
+  <li><strong>「融合 3 年」與「量子既非 30 年也非明天」</strong>係罕見嘅具體時程表態，與佢「永遠早 20 年」嘅自我定位形成有趣張力：佢今次選擇給出樂觀時程。</li>
+  <li><strong>佢對 LLM 嚴謹度嘅「jagged」判斷係經驗性嘅</strong>（「我唔知道兩年後會點」），並未給出機制或量化標準。</li>
+</ul>
+
+<hr>
+
+<div class="highlight-box">
+  <strong>如果只記一句：</strong>把一個科學問題寫成分數，你就有咗一個可被自動搜尋嘅問題；但分數本身係一個許願——<strong>「你絕對不可以欺騙自己，而你是最容易被自己欺騙的人。」</strong>（Platt 引 Feynman 四十年前給他的話）
+</div>
+
+<footer>
+  <p>深度復述 · 來源：<a href="https://www.latent.space/">Latent Space</a>（2026-09-22 21:07 UTC 發布，2:01:26，swyx × R.J. 訪談 John Platt）</p>
+  <p style="margin-top:0.3rem;">主要依據：該集 YouTube 版自動字幕逐字稿（video id 2xBSGluFkG0，〈Google's AI Scientist Started as an Attempt to Automate Kaggle〉）＋ RSS shownotes 章節／連結。引語按逐字稿原文引用，僅修正明顯嘅語音識別錯字。</p>
+  <p style="margin-top:0.3rem;">生成：2026-09-23 · ai-podcast-collection deep dive #170</p>
+</footer>
+</div>
+</body>
+</html>
