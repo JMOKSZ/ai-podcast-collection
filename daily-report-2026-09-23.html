@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度萃取日报 · 2026-09-23</title>
+<style>
+  :root{
+    --bg:#faf8f5; --ink:#1f1c18; --muted:#6b645c; --line:#e6e0d6;
+    --accent:#8a6d3b; --quote:#f2ece0; --card:#fffdf9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+    line-height:1.85; font-size:17px;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:56px 26px 90px;}
+  header.top{border-bottom:2px solid var(--ink); padding-bottom:22px; margin-bottom:38px;}
+  header.top .kicker{letter-spacing:.22em; font-size:12px; color:var(--accent); text-transform:uppercase;}
+  header.top h1{font-size:30px; margin:10px 0 14px; line-height:1.35; font-weight:700;}
+  header.top .meta{font-size:14px; color:var(--muted);}
+  header.top .meta span{margin-right:16px; white-space:nowrap;}
+  .lead{
+    background:var(--card); border:1px solid var(--line); border-left:4px solid var(--accent);
+    padding:18px 22px; border-radius:4px; margin-bottom:40px; font-size:16px;
+  }
+  .lead h2{font-size:15px; margin:0 0 10px; letter-spacing:.1em; color:var(--accent);}
+  .lead ul{margin:0; padding-left:20px;}
+  .lead li{margin:6px 0;}
+  h2.sec{
+    font-size:15px; letter-spacing:.24em; color:var(--accent);
+    margin:52px 0 6px; padding-bottom:8px; border-bottom:1px solid var(--line); text-transform:uppercase;
+  }
+  .show{margin-top:34px;}
+  .show .host{font-size:14px; color:var(--muted); letter-spacing:.05em;}
+  h3.ep{font-size:22px; margin:6px 0 4px; line-height:1.45;}
+  .ep-meta{font-size:13.5px; color:var(--muted); margin-bottom:20px;}
+  .ep-meta .badge{display:inline-block; background:var(--quote); border:1px solid var(--line);
+    border-radius:3px; padding:1px 8px; font-size:12px; margin-left:8px; color:var(--accent);}
+  .block{margin:22px 0;}
+  .block h4{font-size:15px; margin:0 0 8px; letter-spacing:.06em;}
+  .block h4 .tag{color:var(--accent); margin-right:6px;}
+  ul.points{margin:0; padding-left:22px;}
+  ul.points li{margin:9px 0;}
+  .kv{font-weight:700;}
+  blockquote{
+    margin:14px 0; padding:12px 18px; background:var(--quote);
+    border-left:3px solid var(--accent); border-radius:3px; font-style:italic; color:#3a332a;
+  }
+  blockquote .who{display:block; font-style:normal; font-size:13px; color:var(--muted); margin-top:6px;}
+  .tech{background:#f6f2ea; border:1px solid var(--line); border-radius:4px; padding:14px 18px; font-size:15px;}
+  .tech code{font-family:"SFMono-Regular",Consolas,monospace; font-size:13.5px; background:#ece5d8; padding:1px 5px; border-radius:3px;}
+  .caveat{background:#fbf6ee; border:1px dashed #d8c9ac; border-radius:4px; padding:12px 16px; font-size:14px; color:#5c5347;}
+  .divider{height:1px; background:var(--line); margin:44px 0;}
+  .note{font-size:15px;}
+  table.dt{width:100%; border-collapse:collapse; font-size:14.5px; margin:8px 0;}
+  table.dt th,table.dt td{border-bottom:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top;}
+  table.dt th{color:var(--accent); font-weight:600; letter-spacing:.04em;}
+  .tl{font-size:14.5px; color:#4a4238;}
+  .tl li{margin:3px 0;}
+  footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--line);
+    font-size:12.5px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+  a{color:var(--accent); text-decoration:none; border-bottom:1px dotted var(--accent);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="kicker">AI Podcast Deep-Extraction Daily</div>
+  <h1>AI 播客深度萃取日报 · 2026-09-23</h1>
+  <div class="meta">
+    <span>報告日期：2026-09-23</span>
+    <span>生成時間：2026-09-23 02:05 UTC（10:05 CST）</span>
+    <span>來源：10 檔播客（RSS / YouTube RSS / 逐字稿 / 一手媒體）</span>
+  </div>
+</header>
+
+<div class="lead">
+  <h2>今日重點</h2>
+  <ul>
+    <li><b>Latent Space × John Platt（Google Fellow）</b>：他把「AI for science」壓縮成一句可操作的工程命題——<b>任何能寫成「分數」的科學問題都能自動解</b>（scoreable task）。工具 ERA = Gemini + 樹狀搜尋（UCB 樂觀選擇，非貪心），一次長出約 10 個葉子、共享歷史，官方形容它像「不睡覺的過度熱心研究生」。關鍵轉折：<b>Gemini 2.0 時代這套東西完全跑不動，2.5 出現 step change</b>，從不能用到非常好用。已產出至少十篇論文；一個卡了團隊 <b>兩年的 contrails 反事實模型</b>被 ERA 解開。</li>
+    <li><b>John Platt 的判斷面</b>：科學家不會被取代（創造力／嚴謹／哲學仍然是人）；建議「先跑線性回歸，就去做」；對 reward hacking 的警告（Goodhart's law，contrail Kaggle 賽有人靠半像素標註誤差贏）；融合「3 年不是 30 年」；量子是 NISQ 中間態，非明天也非 30 年。</li>
+    <li><b>MLST × Alexander Mattick：〈Scaling Prediction Cannot Create Intelligence〉</b>——本日最反共識的一集：<b>預測能力 ≠ 控制能力</b>（給你一個完美的棋類 world model，你也不會變成 Magnus）；<b>world model / JEPA 主要是 branding</b>；EBM 訓練便宜但採樣貴；constrained RL 的實際現金價值是可組合性與「能跟工程師講話」；RL 給不出 L∞（最壞情況）保證，所以機械人 demo 好看但缺「每個狀態的最低成功率」。他舉 BMW 的例子：<b>「你的機械人 90% 做對？那我不會付你錢。」</b></li>
+    <li><b>屠龍之術（莊明浩）× AICC2026</b>：IDC／浪潮信息《2026 中國人工智能計算力發展評估報告》——智能體以乘數效應推高 Token 消耗。全球活躍智能體 <b>7,940 萬（2026）→ 22.16 億（2030），CAGR 129.8%</b>；同期 Token 消耗 CAGR <b>4,822.6%（約為智能體數量增速的 37 倍）</b>；中國智能算力 2026 年 <b>2,576.5 EFLOPS（+87.9%）</b>→ 2030 年 10,524.3 EFLOPS；<b>全球算力需求滿足率由 2024 年 79% 跌到 2027 年 71% 谷底</b>，最大瓶頸是 HBM。</li>
+    <li><b>補充：Latent Space AINews</b>——小米 MiMo-V2.6-Pro 以開源權重登頂 Artificial Analysis Intelligence Index（<b>46</b>），1.02T 總參／42B 活躍、MIT 授權、<b>$0.435/M in、$0.87/M out</b>；RL run 據稱 <b>130 小時／75B tokens／$2.6M</b>，並將開源約 7,000 個 RL 環境。共識解讀：<b>高品質開源 RL 環境可能複製上一輪「預訓練語料」的戰略地位</b>。</li>
+  </ul>
+</div>
+
+<div class="divider"></div>
+
+<h2 class="sec">中文播客</h2>
+
+<div class="show">
+  <div class="host">屠龍之術 · 主播：莊明浩（單口）</div>
+  <h3 class="ep">AI进入生产阶段之后，智能、算力、芯片 会走向哪里？</h3>
+  <div class="ep-meta">
+    發布：2026-09-22 17:24 UTC（09-23 01:24 CST）<span class="badge">單口 / 會議現場解讀</span><span class="badge">約 41 分鐘</span>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">主題</span></h4>
+    <p>莊明浩 9 月 21 日到北京參加 <b>AICC2026 人工智能計算大會</b>（已辦 7 年、國內最聚焦「計算」本身的頂級行業大會），聽完主論壇與部分分論壇後做的單口復盤。他特別點出 AICC 與他此前參加的 AIEC 的差異：<b>AICC 更關注底層基礎設施</b>——算力系統、芯片、軟硬適配、Token 生產，而不是模型能力或應用敘事。全集分三章：①從 Chat 到 Agent，需求側的結構性躍遷；②智能本身的重新定義，從概率擬合到可信生產；③算力與芯片，系統、器件、生態的突圍。PPT 放在其 ima 資料庫（VIP 報告庫）。</p>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">嘉賓背景</span></h4>
+    <p>無嘉賓，單口播講。主播莊明浩為科技／互聯網／風險投資行業從業者；本集內容為他對大會主論壇（IDC、同濟大學鄭慶華院士、浪潮信息、FlagOS 生態等）發言的二次整理與個人判讀。</p>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">核心論點</span></h4>
+    <ul class="points">
+      <li><b>論點一：需求側發生結構性躍遷——Agent = Model + Harness。</b>第一章的骨架是「從 Chat 到 Agent」。播客用「Agent=Model+Harness」這個等式作為切入，把 Agent 看成「模型本體 + 外殼/工具/執行環境」的組合體；需求側的變化不只是用量增加，而是<b>工作形態</b>的改變。當前業界共識落在 <b>work + coding</b> 兩類場景（章節 08:52）。</li>
+      <li><b>論點二：Token 增長可被拆成三個係數，算力缺口是持續性的。</b>他用「Token 增長的三個係數」（09:47）作為中間變數，接到「算力缺口持續存在」（11:35），並以 IDC 觀點總結（13:21）收束第一章。核心判斷：<b>Token 消耗不是線性外推，而是被智能體數量與單體行為共同乘數放大的</b>，因此算力供給曲線跟不上。</li>
+      <li><b>論點三：智能本身要被重新定義——從「概率擬合」到「可信生產」。</b>第二章以同濟大學鄭慶華院士的演講為主軸（15:08）：先指出當前大模型的局限（16:29），再從「人腦」結構找解法（17:29），落到「機器記憶智能」（18:23）。莊明浩強調<b>「可靠性」與「評測體系」在一體兩面</b>（21:21 / 25:13）：要進生產，就需要全鏈路覆蓋的評測（22:27）、明確什麼叫「可靠」（23:34），並發布相應評測體系（24:01）。</li>
+      <li><b>論點四：國產算力的突圍路徑是「系統、器件、生態」三線並進。</b>第三章（25:46 起）：浪潮信息主張「智算系統的雙唯進化」（26:41）、「能力型智算的極端要求」（27:48）、雙軌實施（28:59）、新產品發布（30:17）；再往上到「芯算一體」（31:13）與「讓計算走進存儲」（32:02）。他反覆強調<b>軟件生態本身也是壁壘</b>（35:52）：FlagOS 生態（35:09）被比喻為「萬能插座」（37:01），價值在於<b>國產模型與國產芯片的 Day 0 適配</b>（37:25）——晶片一發布就能跑主流模型，這是把「能不能用」變成「立刻能用」的關鍵。</li>
+      <li><b>論點五：結尾用「金字塔」比喻收束。</b>40:28 的「寫在最後，金字塔的比喻」是全集的價值排序：底層（算力／芯片／系統）決定塔尖（模型／應用）的高度，但真正稀缺的是能同時理解上下兩層的人。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">關鍵數據與事實</span></h4>
+    <table class="dt">
+      <tr><th>項目</th><th>數字</th><th>出處</th></tr>
+      <tr><td>全球活躍智能體數量</td><td>7,940 萬（2026）→ 22.16 億（2030），CAGR <b>129.8%</b></td><td>IDC／浪潮信息《2026 中國人工智能計算力發展評估報告》</td></tr>
+      <tr><td>同期全球 Token 消耗 CAGR</td><td><b>4,822.6%</b>，約為智能體數量增速的 <b>37 倍</b></td><td>同上</td></tr>
+      <tr><td>中國智能算力規模</td><td>2026 年 <b>2,576.5 EFLOPS</b>（同比 <b>+87.9%</b>）→ 2030 年 10,524.3 EFLOPS</td><td>同上</td></tr>
+      <tr><td>2025–2030 智能算力 CAGR</td><td>由前版預測 46.2% <b>上調至 50.3%</b></td><td>同上</td></tr>
+      <tr><td>中國 AI 算力市場規模</td><td>2026 年 515 億美元（+37%）→ 2030 年 1,501 億美元（CAGR 31.8%）</td><td>同上</td></tr>
+      <tr><td>全球 AI 算力需求滿足率</td><td>79%（2024）→ <b>71%（2027 谷底）</b>→ 77%（2030）</td><td>同上</td></tr>
+      <tr><td>算力缺口絕對值</td><td>389 億美元（2024）→ <b>3,809 億美元（2030）</b></td><td>同上</td></tr>
+      <tr><td>最大瓶頸</td><td><b>HBM（高帶寬內存）</b>：由三星／海力士／美光壟斷，擴產慢、門檻高；廠商開始做分級存儲（上下文放傳統內存或閃存），結果連內存與閃存也開始短缺漲價</td><td>IDC 副總裁周震剛現場訪談</td></tr>
+      <tr><td>結構性錯配</td><td>過去集群面向<b>訓練</b>（要求算力峰值極高）；智能體普及後需要<b>保存上下文、大吞吐、低時延</b>，舊集群「投了很多但用不上」</td><td>同上</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">重點引用</span></h4>
+    <blockquote>「相較於此前我參加的 AIEC，AICC 大會更加關注的是底層基礎設施；比如算力系統、芯片、軟硬適配、Token 生產等等。」<span class="who">— 莊明浩，開場定調（shownotes 原文）</span></blockquote>
+    <blockquote>「Agent = Model + Harness」<span class="who">— 第一章小節標題（02:40），全集最凝練的一句框架</span></blockquote>
+    <blockquote>「軟件生態也是壁壘」<span class="who">— 第三章小節標題（35:52），指向 FlagOS 與 Day 0 適配</span></blockquote>
+    <blockquote>「算力躍升為與水利、電網、鐵路同等級的國家戰略基礎設施。」<span class="who">— IDC 報告措辭（經《中華網》《同花順》等一手報導引述）</span></blockquote>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">技術詳情</span></h4>
+    <ul class="points">
+      <li><b>Token 增長的三係數模型</b>（09:47）：把 Token 消耗拆成可分別觀測的乘積項（智能體數量 × 單任務步數 × 單步上下文長度這一類結構），用來解釋為何智能體的「乘數效應」會讓中國智能算力增長斜率被<b>大幅上調</b>，而不是小幅修正。</li>
+      <li><b>鄭慶華院士的技術路線</b>：從「當前大模型的局限」出發，主張向「人腦結構」要答案，提出<b>機器記憶智能</b>（18:23）；配套的是<b>全鏈路覆蓋的可靠評測體系</b>與對「可靠」的明確定義（21:21–24:01）。這是「可信生產」在中國學術側的表述方式。</li>
+      <li><b>系統層主張</b>：浪潮信息「智算系統的雙唯進化」與「能力型智算的極端要求」；雙軌實施；「芯算一體」；「讓計算走進存儲」（把計算下沉到存儲側以緩解搬運瓶頸）；並給出「已有的實施效果」（33:12）與場景拓展（33:42）。</li>
+      <li><b>生態層主張</b>：FlagOS 作為跨芯片的開放軟件棧（「萬能插座」），核心價值指標是<b>國產模型與國產芯片的 Day 0 適配</b>——把過去數月的移植工程壓縮到模型／芯片發布當天。33:42–39:01 為生態壯大中的證據段。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">行業 insight</span></h4>
+    <ul class="points">
+      <li><b>敘事重心從「模型能力」轉向「基礎設施與可靠性」。</b>這是一個訊號：當中國最頂級的「計算」大會把主論壇時間給到 IDC 報告、院士的可靠性評測與服務器廠商的系統方案，而不是模型跑分，說明行業共識已經默認<b>瓶頸在供給側</b>。</li>
+      <li><b>供需剪刀差的因果鏈被明確講出。</b>周震剛的解釋鏈條是：需求（智能體 × Token）指數增長 → 供給受上游芯片供應鏈制約 → HBM 是最大瓶頸（壟斷、擴產慢）→ 分級存儲把壓力外溢到內存與閃存 → 內存漲價 → 2027 年是滿足率谷底。這條鏈對投資與採購時序有直接含義。</li>
+      <li><b>「錯配」比「不足」更刺眼。</b>他明說過去面向訓練的集群不適配當下的推理與智能體負載——「投了很多但用不上」。對雲廠商與自建算力的公司，這是採購決策層面最實用的一句判斷。</li>
+      <li><b>國產替代的戰場在軟件生態，不在單卡峰值。</b>整章「生態也是壁壘」「萬能插座」「Day 0 適配」構成一個清晰立場：制程落後可用系統與生態補，而 Day 0 適配是可用性的門檻線。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">前後脈絡</span></h4>
+    <ul class="points">
+      <li>與本頻道 9/15 的〈智能的下一幕，讓人興奮——73 頁 PPT solo〉相比，上一集是<b>自上而下的技術敘事</b>（73 頁 PPT，講智能演進），本集是<b>自下而上的供給側財報</b>（大會現場 + IDC 數字）。兩集合起來才是他完整的判斷：智能在往上走，但地板（算力／生態）才是決定速度的變量。</li>
+      <li>與 8/31〈模型到底吃不吃應用？〉的「應用兩種命運」形成對照：那一集討論應用層的存活，本集討論支撐應用層的 Token 生產成本。同一條價值鏈的兩端。</li>
+      <li>與 9/4〈中國一級半市場的水下江湖〉呼應：算力與芯片都在「水下」重構籌碼與利益格局。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">爭議點 / 需留意之處</span></h4>
+    <ul class="points">
+      <li><b>報告數字是預測而非事實。</b>「Token 消耗 CAGR 4,822.6%」「智能體數量 2030 年 22.16 億」都是 IDC 的建模外推（且是首份聚焦智能體基礎設施的報告），基期選擇與否會極大影響複合增長率；這類數字應該當作方向性指標，而不是可校驗的物理量。</li>
+      <li><b>「滿足率 2027 年見底」是一個可被證偽的預言。</b>它同時押注 HBM 擴產節奏與需求曲線，任一端偏差都會改寫。</li>
+      <li><b>CAGR 4,822.6% 的表述容易被誤讀。</b>複合增長率超過 4,800% 意味著約 <b>48 倍／年</b>級別的乘數描述，通常是低基期＋長預測期疊加的產物；播客把它作為「乘數效應」的證據是合理的，但作為規劃輸入則過於激進。</li>
+      <li><b>廠商立場問題。</b>系統層與生態層的主張（雙唯進化、芯算一體、FlagOS）來自浪潮信息自身，屬 company claims。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">逐字稿取得 / 內容來源</span></h4>
+    <p class="note"><b>本集逐字稿未取得。</b>小宇宙 RSS 提供完整 shownotes（含官方 41 段章節時間軸至 40:53）與 PPT 存放位置（ima 知識庫），但無官方文稿；本報告的「核心論點」按 <b>shownotes 章節標題 + 章節軸 + 一手大會報導</b>重建，引用標註為 shownotes 原文用語而非講者逐字發言。所有 IDC 數字來自 9/21 大會現場發布後的一手報導（《每日經濟新聞》記者張蕊現場訪談、《光明網》、《中華網》、《同花順》、《虎嗅》），已交叉比對一致。</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<h2 class="sec">英文播客</h2>
+
+<div class="show">
+  <div class="host">Latent Space · 主持：swyx + Alessio（本集為 swyx 與 co-host R.J.）</div>
+  <h3 class="ep">🔬 An Oscar, Two Asteroids, and the Algorithm in Your sklearn: John Platt on AI for Science</h3>
+  <div class="ep-meta">
+    發布：2026-09-22 21:07 UTC（09-23 05:07 CST）<span class="badge">專訪</span><span class="badge">2 小時 01 分 26 秒</span><span class="badge">逐字稿完整取得</span>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">主題</span></h4>
+    <p>一位同時擁有<b>奧斯卡技術成就獎</b>與<b>兩本教科書級 ML 算法</b>的嘉賓，談 Google 的 <b>ERA（Empirical Research Assistance）</b>——一套把「任何能寫成分數的科學問題」自動化的系統；以及 AI 如何介入氣候變遷（contrails、CO₂、野火、颶風預報）、融合、量子計算，還有科學與 AI 的協同演化史。節目組稱這是他們讀過「最有趣的嘉賓簡介」。</p>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">嘉賓背景</span></h4>
+    <ul class="points">
+      <li><b>John Platt</b>：Google Fellow、Google Research 應用科學（Applied Science）負責人。14 歲上大學、18 歲在 Caltech 讀博，師從 <b>John Hopfield</b>（後獲諾貝爾物理獎）。</li>
+      <li><b>兩個名字被寫進 sklearn 的算法</b>：<i>Platt scaling</i>（把 SVM 輸出校準成機率）與 <b>SMO（Sequential Minimal Optimization）</b>——訓練 SVM 的教科書算法，今天仍是 <code>sklearn</code> 的底層。</li>
+      <li><b>奧斯卡技術成就獎（2006）</b>：1986 年在 Schlumberger 實習時用彈性理論寫了一個可變形物體模擬器（布料、可拉伸物體），其後代成為 Pixar 等大量影視物理模擬器的核心——<b>獲獎距作出約 20 年</b>。</li>
+      <li><b>兩顆以他命名的小行星</b>：Caltech 時期參與 Shoemaker 夫婦的行星科學課程，用底片 + 立體鏡人工搜尋，送觀測到 Minor Planet Center（Brian Marsden）取得命名權；一顆以他父親命名，另一顆以母親命名，而<b>母親那顆後來被發現有一顆衛星</b>（主體約 4 km、衛星約 1 km）。</li>
+      <li><b>Erdős–Bacon number = 6</b>（數學與影視兩個合作鏈都很短）。他也是「convolutional net」這個詞的提出者（他自述：當時大家只叫 LeNet，因為都出自 Yann 團隊，「我不想叫它 LeNet，就叫 convolutional net」）。</li>
+      <li>1982 年修過 <b>Feynman 的「計算物理」課</b>（Hopfield、Carver Mead 共同參與）；曾在 Carver Mead 實驗室當 VAX 11/750 的 sysadmin。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">核心論點</span></h4>
+    <ul class="points">
+      <li><b>論點一：大量科學問題可以映射成「scoreable task」，一旦有了分數函數，剩下的就是找最大化它的程式碼。</b>團隊十多年做 AI for science，兩年前轉向通用 LLM 後「撞上」這個映射：把問題表述成「我想要一段程式碼，讓某個分數最大化」。機器學習只是其中一個子集（分數＝模型與數據的擬合度）；他甚至示範了把應用數學的<b>漸近展開（asymptotic expansions）</b>變成經驗任務——要求模型提出在 ε→0 時漸近正確的解，再用 ε=1e-4 之類的具體值檢驗擬合，於是 Gemini 可以同時做數學推理與數值擬合。</li>
+      <li><b>論點二：ERA 之所以能成功，是因為「內圈是一個懂世界的 AI」，而不是隨機變異。</b>他指出進化式程式設計從 1970 年代就有，一直沒成——因為<b>程式碼空間裡的隨機變異基本上毫無價值</b>（就像 DNA 突變，多數有害）。ERA 的關鍵是變異由一個具備海量先驗知識的模型提出，因此「知道有趣的梯度在哪」。</li>
+      <li><b>論點三：ERA 的核心機制是「樹狀候選池 + UCB 樂觀選擇 + 共享歷史」，行為上像不睡覺的研究生。</b>它維持數百到數千個 notebook 候選（樹狀結構），每輪用 <b>Upper Confidence Bound</b> 選一個——不是貪心選最好的，而是估計「當前表現 + 2σ」後選樂觀上界最大的，<b>有時會選第五好的</b>（他稱之為 high recall 式的探索）。每輪平行長出約 <b>10 個葉子</b>：太多則彼此學不到東西（10 個並行時，#1 看不到 #2–#10 在做什麼），太少則收斂慢。它也做候選<b>重組</b>（拿兩個候選的想法合成第三個）。每個分支的歷史共享在一個共用 context 裡，這也讓「context 管理」成為工程重點。</li>
+      <li><b>論點四：模型版本帶來的是階躍，不是斜率。</b>「在 Gemini 2.0 下這是不可能做到的」——他們嘗試了很久都失敗，<b>2.5 之後突然開始能用，然後變得非常好用</b>。他回憶 2.5 發布當天讓它寫 boosted decision tree，結果一次就對，「我當時想，這是個新世界」。他明確說對科學家而言：「你去年試過 2.0 覺得不行？那是一年前的事了，那已經是很久以前。」</li>
+      <li><b>論點五：這是一把能切掉手指的電動工具——最大的風險是騙自己。</b>他把「預測模型 vs 描述模型」講得很清楚：<b>預測模型</b>只要求在某數據集上誤差最低；<b>描述模型</b>才是科學要的，因為要能外推（牛頓想到蘋果，但重力不是關於蘋果的）。ERA 給出的是預測模型，<b>判斷它是否真的描述了世界，責任在科學家</b>。因此需要極端的嚴謹（隱藏 hold-out、多假設檢定的 false discovery rate），而且「你現在要比以前更小心」。</li>
+      <li><b>論點六：人類不會被取代，但分工會重排。</b>他認為模型在<b>嚴謹度與哲學／創造力上仍然「jagged」</b>（不平均），大型尖峰出現在寫程式、蒐集知識、找相關工作；在嚴謹性上則較弱。未來的人類錨點是「帶來創造力的人」與「帶來嚴謹的人」——不必是同一批人。</li>
+      <li><b>論點七：對科學家的具體建議是「還是要做苦工」。</b>他自己的 20% time 規則：你甚至可以不用告訴他在做什麼，就是去學、去玩。他警告過度最佳化會「overfit to productivity」——就像爬山，能開車上去，但偶爾用走的「也許是好的，甚至有趣」。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">關鍵數據與事實</span></h4>
+    <table class="dt">
+      <tr><th>項目</th><th>細節</th></tr>
+      <tr><td>ERA 起源</td><td>內部代號「<b>auto-Kaggle</b>」——Kaggle 隸屬 Google，數據現成，目標是做一個能解任何 Kaggle 題目的系統</td></tr>
+      <tr><td>ERA 迭代參數</td><td>每輪預設長 <b>10 個葉子</b>；候選池數百至數千個 notebook；UCB 取「表現 + 2σ」上界（≈ 95 分位）；共用 context；另有候選重組機制</td></tr>
+      <tr><td>產出</td><td>至少 <b>10 篇論文</b>；其中一篇是與 Antigravity harness 結合的預印本（尚未公開）</td></tr>
+      <tr><td>版本門檻</td><td>Gemini <b>2.0 = 完全不可行</b>；<b>2.5 = step change</b>，之後持續大幅進步</td></tr>
+      <tr><td>Contrails（凝結尾）</td><td>約佔<b>全部人為全球暖化的 1%</b>；冰晶在遠紅外（~10 µm）近乎黑體，白天反射陽光、全天捕捉地表紅外輻射因而<b>淨暖化</b>；歐洲高航空流量區域局部輻射強迫可達 <b>~1 W/m²</b>（對比全球人為平均 <b>~3 W/m²</b>）；催化比 <b>1 克排氣 → 約 10 公斤冰晶（10,000:1）</b>；只要下降 <b>約 2 個飛行高度層</b>即可規避</td></tr>
+      <tr><td>卡關與突破</td><td>反事實模型中「反射陽光那一半」卡了團隊 <b>兩年</b>；ERA 找到含少量 confounder 的<b>簡單模型</b>解開（他們自製的測試碼反而過不了自己設計的測試）</td></tr>
+      <tr><td>氣候建模的數據困境</td><td>2100 年 CO₂ 濃度不確定性區間達 <b>300 ppm</b>，而當前水平約 <b>440–450 ppm</b>——不確定性幾乎等於當前濃度</td></tr>
+      <tr><td>天氣 vs 氣候</td><td>天氣（約 15 天內）已有巨幅進步（2018 年代 ML + 大量數據／算力）；Google 的氣旋路徑預報在牙買加颶風個案上明顯優於傳統模式。氣候則因<b>非平穩（attractor 本身在移動）</b>而抗拒 AI 革命，是典型低數據問題</td></tr>
+      <tr><td>FireSat / 野火</td><td>全球 LEO 中波紅外（需製冷）星座約 <b>50–80 顆</b>可把「房間大小」（約 5m×5m，原生 50m 像素靠多光譜超解析 + AI 補到 5m）的火點在 <b>15–20 分鐘</b>內於全球任一地點發現；原型星已發射（與 Muon Space、Earth Fire Alliance 合作）；WHO 估計野火煙霧每年造成 <b>30 萬</b>超額死亡</td></tr>
+      <tr><td>小行星</td><td>Vera Rubin 天文台（智利，Simonyi Survey Telescope）<b>6 週發現 11,000 顆小行星</b>（1985 年全靠底片＋立體鏡人力）</td></tr>
+      <tr><td>融合</td><td>「<b>3 年，不是 30 年</b>」——他認為本十年內出現商業相關融合的機率明確；Lawson criterion 是密度 × 溫度 × 約束時間的乘積門檻，因此<b>每種融合路線都有各自的阿基里斯腱</b></td></tr>
+      <tr><td>量子</td><td>處於 <b>NISQ</b> 中間態；超導量子位仍「非常難搞」（本質上是類比計算機）；Google 量子團隊沿 Neven 的路線圖推進；量子回聲（quantum echoes）算法已可實用（如 NMR 參數解碼）；「不是 30 年後，也不是明天」</td></tr>
+      <tr><td>1982 年的算力</td><td>最尖端 ≈ <b>100 萬次運算／秒</b>；整個研究組共用一台洗碗機大小、<b>80 MB</b> 的硬碟</td></tr>
+      <tr><td>NeurIPS 起源</td><td>源自 Snowbird 一場名義上私人、實則人人都想闖進去的工作坊（更早可追到 1985 Santa Barbara 工作坊與 Caltech 的 Hopfield 聚會）；「Hopfield networks are all you need」其實是在回應這段歷史（transformers 本質上是關聯記憶）</td></tr>
+      <tr><td>「提早 20 年」</td><td>同事 Dave Bacon 調侃他「永遠比時代早 20 年」：CNN（1990s 初）、融合（10 年前開始）、量子計算</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">重點引用</span></h4>
+    <blockquote>「這幾乎就像有一個過度熱心、而且不睡覺的研究生。」<span class="who">— John Platt 形容 ERA 的迭代行為</span></blockquote>
+    <blockquote>「它是一把電動工具。它可以切掉你的手指。」<span class="who">— 談 ERA 與過擬合風險；他接著說「你現在必須比以前更小心、更嚴謹，才不會騙到自己」</span></blockquote>
+    <blockquote>「永遠就先去擬合線性回歸。就去做。就去做。就去做。或者 SVM。」<span class="who">— 他對年輕研究者的一貫建議</span></blockquote>
+    <blockquote>「天氣是你在吸引子上的位置，而氣候是吸引子本身的統計量。氣候的麻煩是——我們正在改變它。吸引子本身在動。」<span class="who">— 解釋為何氣候建模比天氣預報難得多</span></blockquote>
+    <blockquote>「你可以開車上山，也可以走路上山；偶爾走上去，也許是可以的，甚至是有趣的。」<span class="who">— 談「不要因為工具變強就跳過基本功」</span></blockquote>
+    <blockquote>「這個世界似乎有一種強烈的衝動，要把一切最佳化、把一切榨乾。但當你過度最佳化，你真的會失去一些東西。那就是過擬合。」<span class="who">— 談 20% time 與組織文化</span></blockquote>
+    <blockquote>「你絕對不可以欺騙自己——而你是最容易被自己欺騙的人。」<span class="who">— 引用 Feynman 四十年前給他的話，作為全集的收尾</span></blockquote>
+    <blockquote>「如果我能許一個魔法願望，我會說：請做出那個『什麼都能做』的實驗室——你丟一個 JSON 進去，它就能做任何實驗。」<span class="who">— 被問「如果可以移除產業的一個瓶頸」</span></blockquote>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">技術詳情</span></h4>
+    <div class="tech">
+      <p><b>1. ERA 的算法骨架（相當於蒙特卡羅樹搜尋的近親）：</b></p>
+      <ul class="points">
+        <li>Gemini 維持一棵「過去實驗（notebook）」的樹，記錄每個分支在做什麼與結果。</li>
+        <li>每次迭代用 <b>Upper Confidence Bound</b> 選筆記本——<b>樂觀而非貪心</b>，估計 95 分位表現，因此「有時選第五好的」。</li>
+        <li>對被選中的 notebook，Gemini 提出約 <b>10 個</b>變異（一次長 10 個葉子），測試後放回候選池。</li>
+        <li>機制還包括<b>重組</b>：把兩個候選的想法「砸在一起」生成第三個。</li>
+        <li>分支歷史<b>共享</b>（一個共用 context），並需要做 context pruning，否則爆炸；這也是「為何不能一次開 1,000 個並行」的原因——並行度與跨分支學習是明確的 trade-off。</li>
+        <li>初始種子不需人工寫：給文字描述（甚至附上 5 篇相關論文），Gemini 會自己讀論文並寫出第一版程式碼，之後持續變異。</li>
+      </ul>
+      <p><b>2. 分數函數是瓶頸，也是人的位置：</b>最難的是<b>形式化 score</b>，而這一段仍高度依賴人類（或人機共構）。他反覆提到 agent 會找到「作弊」路徑（鑽分數函數的洞），因此需要外圈人類迭代：「不行，我不是那個意思」。他用「精靈故事」比喻：許願要小心，因為你會得到你許的願。</p>
+      <p><b>3. 人的外圈（outer loop）：</b>一次可跑數小時，回來給例子，人再讀新論文、指出「你正在做壞事」，然後再放它跑。計算預算有兩層：LLM token 預算 + 分數函數本身的計算（內含模擬器或 Monte Carlo 估計時，CPU/GPU 成本可觀）。他坦言內部用 Gemini 沒有明確成本計數，「其實我不知道花了多少」。</p>
+      <p><b>4. 描述模型 vs 預測模型的判準：</b>資料豐富且「封閉」的領域（天氣、蛋白質——AlphaFold 覆蓋整本 PDB 並全部公開）適合純數據驅動；<b>非平穩、外推需求大</b>的領域（氣候、生物學的一部分）必須謹慎，必須有 process model 與可理解的結構。他提到 Institute of Ark 的 virtual cell 挑戰有「有趣的結果」（疑似過擬合），並再次建議「先做最簡單的 baseline」。</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">行業 insight</span></h4>
+    <ul class="points">
+      <li><b>「分數化」是 AI for science 的真正介面。</b>把科學問題轉成 scoreable task，等於把科學研究的一部分工作流變成軟體工程問題。這對工具鏈（notebook、評測、資料集接合）的啟示，比「AI 會不會取代科學家」更實際。</li>
+      <li><b>模型版本躍遷大於方法創新。</b>同一個 harness 在 2.0 毫無價值、在 2.5 好用、之後愈來愈好——這意味<b>現在投入做 agentic 科學工具的團隊，不應因早期失敗而放棄</b>，因為限制很多時候在模型側而非架構側。這是對整個 agent 生態最可直接套用的一條判斷。</li>
+      <li><b>Goodhart's law 是 AI for science 的核心治理問題。</b>他講的 contrail Kaggle 故事極具警示性：有人發現標註有<b>半像素誤差</b>（原點在像素角落還是中心）並加以利用，贏得獎金 15,000 美元，但對解決凝結尾毫無幫助。<b>人也會像 LLM 一樣 reward hack</b>。</li>
+      <li><b>可靠性評測的缺口在「最壞情況」，而非平均值。</b>他與 MLST 的 Mattick 同日、異地講了同一件事的兩面：Platt 用「well-hidden hold-out 與多假設檢定」講統計上的自欺，Mattick 用「L∞ 保證」講工程上的最壞情況。同一天兩檔播客都指向同一結論：<b>演示能力與部署能力之間隔著一條可靠性鴻溝</b>。</li>
+      <li><b>基礎設施層的訊號</b>：他講的 FireSat 星座（50–80 顆、5m 分辨率、15–20 分鐘全球響應）本質上是「用星座 + 超解析 + AI 把不可行動的資訊變成可行動」。這是 AI for climate 的產業化模板：不是更準的物理模型，而是<b>更短的決策延遲</b>。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">前後脈絡</span></h4>
+    <ul class="points">
+      <li><b>與本頻道 9/21〈Jev / Diogo Almeida〉的直接對話。</b>Almeida 主張「把 AI 拆成小的、可量測的決策」「不 pre-train、只做 mid-training」「反對公開 benchmark、靠 vibes 與 trust」；Platt 則代表另一極：<b>官方 benchmark 體系仍然重要，且需要「多假設檢定」層層設防</b>。兩人都在講「決策的分數化」，但一個把它當產品原語，一個把它當科學認識論問題。</li>
+      <li><b>與 9/19〈AI:AM Highlights〉的呼應。</b>Zvi 的 frontier pacing 與 Platt 的「Gemini 2.0→2.5 是階躍」是同一現象的兩種表述：能力曲線的斜率在特定節點突變，而監管與評估體系追不上。</li>
+      <li><b>與 9/11 Dwarkesh〈AI researchers debate how close we are to recursive self-improvement〉的對照。</b>ERA 本身是一個（弱）自我改進迴路：模型修改模型寫的程式碼。Platt 沒有宣稱它有質變式的自我改進，只說它是「不知疲倦的研究生」——這個克制值得注意。</li>
+      <li><b>他個人軌跡的隱喻</b>：「永遠早 20 年」的 CNN／融合／量子，到今天 ERA——他自嘲要把量子團隊的話記住：一半時間已經過去了。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">爭議點</span></h4>
+    <ul class="points">
+      <li><b>ERA 是否是「新科學」還是「高級搜尋」？</b>他本人極度克制：「我們還沒做出能發現全新物理或全新科學的系統」——ERA 是 power tool，不是科學家。這與外界對「AI scientist」的狂熱形成落差（同一週 MLST 也在質疑 Edward Hughes 的 AI scientist 命題，見 9/11 集）。</li>
+      <li><b>「卡關兩年、ERA 一夜解開」需要第三方復現。</b>這是本集最有力的單一戰果，但目前尚未有已提交的同儕評審論文（他說是 paper 尚未 submitted，已在 EGU 講過）。</li>
+      <li><b>「反重力（Antigravity）harness + ERA」的組合未公開。</b>他確認 Antigravity 公開、但兩者結合的成果「not yet」——這意味外界無法驗證這條路線的上限。</li>
+      <li><b>「融合 3 年」與「量子既非 30 年也非明天」都是罕見的具體時程表態</b>，與他「永遠早 20 年」的自我定位形成有趣張力：他這次選擇給出樂觀時程。</li>
+      <li><b>他對 LLM 嚴謹度的「jagged」判斷是經驗性的</b>（「我不知道兩年後會怎樣」），並未給出機制或量化標準。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">逐字稿取得</span></h4>
+    <p class="note"><b>逐字稿完整取得（本報告的高保真來源）。</b>路徑：Latent Space Substack 頁面內嵌播客資產描述，含 CloudFront 簽名的官方轉寫檔（<code>transcription.json</code>）與 <code>en.vtt</code>；該簽名 URL 直接抓取回 <b>403 AccessDenied</b>（即使帶 Referer），因此改以 <code>yt-dlp</code> 抓取該集 YouTube 版（video id <code>2xBSGluFkG0</code>，標題〈Google's AI Scientist Started as an Attempt to Automate Kaggle〉）的自動字幕，成功取得 <b>1.17 MB VTT → 13.08 萬字元</b>去重逐字稿。Shownotes（RSS <code>content:encoded</code>，1.5 萬字元）另提供全部章節與連結（ERA paper / GitHub / blog、contrail 競賽、FireSat 等）。注意：自動字幕有少量錯字（例如人名與專有名詞），本報告引用時已按上下文修正明顯誤聽，但未改動語意。</p>
+  </div>
+</div>
+
+<div class="show">
+  <div class="host">Machine Learning Street Talk (MLST) · 主持：Tim Scarfe 等</div>
+  <h3 class="ep">Why Scaling Prediction Cannot Create Intelligence — Alexander Mattick</h3>
+  <div class="ep-meta">
+    發布：2026-09-21 15:02 UTC（09-21 23:02 CST）<span class="badge">專訪</span><span class="badge">2 小時 14 分 20 秒</span><span class="badge">逐字稿完整取得</span><span class="badge">上次掃描遺漏、本次補上</span>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">主題</span></h4>
+    <p>把「推論（inference）」當成貫穿現代 ML 的主線——有了模型之後，要拿出一個答案要付多少代價？——再一路推到深度學習理論、constrained RL 與 world model 的批判。標題即主張：<b>規模化預測能力，不能產生智能</b>。</p>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">嘉賓背景</span></h4>
+    <ul class="points">
+      <li><b>Alexander Mattick</b>（Yannic Kilcher Discord 上的 handle：「Zigzag」，主持人稱他是該 Discord「最聰明的人」）：Fraunhofer IIS 研究員、紐倫堡理工大學（UTN）博士生（該校仍在建校階段，他是最早的博士生之一）。FAU Erlangen 計算機本科 + AI 碩士。</li>
+      <li>2022 年曾上過 MLST，協助製作了 Yann LeCun 與 Randall Balestriero 那集關於「插值（interpolation）/ spline 理論」的訪談研究。</li>
+      <li>研究主軸：constrained RL（安全 RL）、branch-and-bound 的節點選擇 RL、GFlowNets、energy-based models、diffusion / flow matching。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">核心論點</span></h4>
+    <ul class="points">
+      <li><b>論點一：推論的歷史是一部「把採樣成本搬來搬去」的歷史。</b>他給了完整的技術脈絡：<b>正規化參數密度</b>（如高斯）→ 受限於分布形狀 → <b>拒絕採樣</b>（高維立刻敗給維度詛咒）→ <b>MCMC</b>（可以只採樣、不需知道密度，但極慢、多模態逃逸困難）→ <b>Energy-Based Models</b>（用能量函數學任意密度、訓練不需計算積分，但把最貴的採樣搬到推論期反覆執行）→ <b>Diffusion</b>（引入無限多層 latent，把問題重述成隨機微分方程，換來一個「時間」額外變數，但擺脫 accept/reject 與局部極小）→ <b>Flow Matching / Continuous Normalizing Flows</b>（把問題化為從初始分布到目標分布的<b>梯度流／最優傳輸</b>，代價只剩可逆性）。一句話總結：<b>「你為無限維付費，換來不需要採樣。」</b></li>
+      <li><b>論點二：EBM 現在不值得。</b>他直言「energy-based models 不是真的有用，或至少現在不再有用了」——即使原理上可採樣，<b>算力上幾乎永遠不划算</b>；且 EBM 不提供任何樣本的機率（而這個機率在異常檢測、動態模型展開時修正累積誤差時很有用）。他也指出 GFlowNets 沒解決同一個問題：它假設了一種結構，回到接近變分推論的假設世界。</li>
+      <li><b>論點三：世界模型與 JEPA 主要是 branding。</b>「JEPA 和 world model 最終都是 branding。JEPA 之前就有類 JEPA 的模型，world model 之前也有 world model。Schmidhuber 那篇 world model 論文，其實就是 model-based RL。」他給出自己唯一覺得可用的切分：<b>資料收集在迴路內 → 叫 model-based RL；在迴路外 → 叫 world model</b>（前者要探索、後者不用）。</li>
+      <li><b>論點四（標題主張）：預測 ≠ 控制。</b>針對「有了完美世界模型就不需要 RL，只要在模型裡規劃」的論調，他的反駁是：<b>「我可以給你一個完美的西洋棋世界模型，你還是無法解決它，你也不會變成 Magnus Carlsen——因為『預測未來』與『推論出正確行動』是兩件事。」</b>他用大學控制課的經驗補刀：NMPC 講到最後大家都想做 NMPC，然後發現模型稍大就即時算不動、局部極小、加上約束後多數候選軌跡根本不可行，「於是熱情逐漸消退」——他預測 world model 會走同一條路。</li>
+      <li><b>論點五：constraints（先驗知識）不是包袱，是現金。</b>反駁「reward is enough」與 The Bitter Lesson：<b>「資訊可以非常昂貴，事實上我會說大部分資訊都非常昂貴」</b>；完全不做先驗、什麼都從頭學，等於把已經用血汗換來的資訊丟掉。他舉 OpenAI Five 的獎勵函數附錄為例——一張巨大的權重表（一堆隨機數字），其中「待在錯誤車道超過一定時間 = 負獎勵」本就是一條<b>被改寫成 penalty 的約束</b>；更妙的是「擊殺敵方英雄給負獎勵」，因為殺敵本身已給金錢獎勵，兩者相關會導致模型在中央互殺刷分。改成約束就同時解決了<b>相關性</b>與<b>重新調參</b>兩個問題。</li>
+      <li><b>論點六：constrained RL 的硬骨頭與真實價值。</b>約束式 MDP 的目標是最大化累積回報、同時讓期望累積成本低於閾值。他列了整條方法演化：CPO（從 TRPO 的改進界推導，但不在約束集內時退化為貪婪下降、邊界震盪）→ 投影法（在密度空間中問題變成凸的，但會出現「幻覺約束」問題，且<b>求解器愈好反而愈糟</b>）→ 拉格朗日／零對偶間隙（震盪）→ 局部近似（CBVPO、FOCOPS，精確但可能把自己弄進不可解的子問題，實質是帶約束的 MPC）。關鍵理論事實：<b>constrained RL 一般不存在「平穩確定性策略」</b>，這意味著 Q-learning 這條路直接失效。而且他坦承「要公平比較 constrained vs unconstrained 非常難」，因為設計一個「隱含某約束」的獎勵函數本身就極難。</li>
+      <li><b>論點七：RL 給不出最壞情況保證，這是機械人的死穴。</b>「你可以有在期望上非常好的控制器，但有一個極大的失敗案例。平均而言完美追蹤、只出一次大錯，與一直在小幅漂移，是一樣的。」他引〈Learning ReLU networks to high uniform accuracy is intractable〉說明：連放置／縮放這些「帽子」以求一致精度，都是 NP-hard、需要指數級數據。因此真實世界需要 robust RL 或 constrained RL + 模仿／先驗資料——「我不想讓開心手術機器人從零開始探索」。</li>
+      <li><b>論點八：機械人 demo 的可靠性陷阱。</b>「如果你去 BMW 說『我這機器人 90% 做對，另外 10% 會做別的事』，他們會說：不，我不會付你這筆錢。」他指出目前人形機器人只表演後空翻與衝刺，卻不做「站起來、走到隔壁房間、打開冰箱、拿出牛奶」——因為那是<b>接觸密集</b>的任務，難建模、難採數據。他也點名 tactile sensing 仍未解。「軟體世界可以回滾，實體世界裡『刪掉你的電腦』等於『壓死人』。」他要的不是峰值精度，而是<b>每個狀態都存在最低正確機率</b>，這樣才能用粒子濾波之類做多次量測收斂。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">關鍵數據與事實</span></h4>
+    <ul class="points">
+      <li><b>理論的兩種流派</b>（1:07:52）：<b>參數派</b>（spline 區域、ReLU 的局部結構，能解釋特定架構）vs <b>函數空間派</b>（neural tangent kernel、mean field、diffusion 式非參數解釋，能解釋「為何超參數化不是壞事」——因為十億參數的函數比 50 參數更接近真實函數空間）。他認為長期看函數派更有用（不綁架構：MLP-mixer、gated activation 換掉都還成立），但預測力仍不足。</li>
+      <li><b>沒有「物理學的標準模型」</b>：他形容 ML 理論是「盲人摸象」——幾何派（Randall Balestriero）、可計算性派（Keith Duggar 的圖靈機問題）、複雜度派、統計物理派（自旋玻璃、重尾）、有效理論派。他主張判準只有一個：<b>能不能做預測、能不能被證偽</b>。他自曝曾因一個實作 bug 浪費 2–3 個月——「如果連延續既有工作的實作 bug 都分不出來，那就說明理論還不到位」。</li>
+      <li><b>流形假設（manifold hypothesis）</b>：他不認為流形假設「對」或「錯」，而是<b>不有用</b>。若模型外部的真實世界不可壓縮，那我們在做什麼？但他也說如果沒有低維結構就無法壓縮。同時他批評可解釋性技術不穩健：transformer circuits 假設路由在權重置換下不變（不成立）、有些人把它當成大型 MLP-mixer 建模；並舉例「模型算術的 cos/sin 曲線」抽出得很漂亮，但「如果這就是它們做算術的方式，那我們絕無可能解釋它怎麼建模一隻鴨子」。</li>
+      <li><b>Barron 定理</b>：收斂界與維度無關（dimension-free bound），取決於目標函數的頻率成分——因此「深度學習打敗維度詛咒」其實有經典解釋：若高維函數幾乎處處常數，擬合就容易。</li>
+      <li><b>抽象與階層</b>：他認為 hierarchical RL 沒起來的根本原因是<b>下層給不出上層可依賴的保證</b>；控制理論之所以能做，是因為 H∞ 控制器能給出最壞情況（對抗性）保證。抽象好壞的唯一標準是「有沒有用」——他舉 fuzzy logic 為失敗的抽象（無法對 fuzzy logic 做 inference，而 Bayesian 可以對 Bayesian model 做 inference）。</li>
+      <li><b>演算法與硬體共演化</b>：他同意「神經網路贏是因為它是唯一算力受限的範式」，且它們乘在 BLAS 上，而 BLAS 被 GPU 優化——「我不確定大腦是用矩陣乘法運作的」，但演算法與硬體共演化才讓我們走到今天。</li>
+      <li><b>參考文獻（節目官方列出）</b>：GFlowNets (Bengio 2021)、LeJEPA (Balestriero & LeCun 2025)、Branch-and-Bound 的 RL 節點選擇、Flow Matching、〈Disentangling feature and lazy training〉、〈Reward is enough〉(Silver)、〈Learning ReLU networks to high uniform accuracy is intractable〉(Berner)、OpenAI Five Dota 2、〈Constrained Update Projection〉、SafeMPO (ICLR 2026)、〈Why Creativity Cannot Be Interpolated〉、Invalid Action Masking、Jaynes《Probability Theory: The Logic of Science》、〈Training Agents Inside of Scalable World Models〉(Hafner 2025)、World Models (Ha & Schmidhuber 2018)。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">重點引用</span></h4>
+    <blockquote>「我可以給你一個完美的西洋棋世界模型，你還是無法解決它——你也不會變成 Magnus Carlsen。因為『能預測未來』與『能推論出該採取什麼行動』之間是有差別的。」<span class="who">— 全集的標題論證</span></blockquote>
+    <blockquote>「我認為 world model，還有 JEPA，最終都只是 branding。」<span class="who">— 被問 Cosmos 3 等「世界模型」是否真有新意時的回答</span></blockquote>
+    <blockquote>「我認為 energy-based models 不是真的有用，或者至少現在不再有用了。」<span class="who">— 對 EBM 的直率結論</span></blockquote>
+    <blockquote>「資訊可以非常昂貴，事實上我會說大部分資訊都非常昂貴。」<span class="who">— 反駁「不需要先驗、什麼都從頭學」</span></blockquote>
+    <blockquote>「你可以有一個在期望上真的很好的控制器，但它有一個極大的失敗案例。平均來說追蹤得很完美、只出了一次大錯，跟一直小幅漂移，是完全一樣的。」<span class="who">— 為何需要 L∞ 式的保證</span></blockquote>
+    <blockquote>「如果你去 BMW，說『我這機器人 90% 的時間做對的事，另外 10% 會做別的事』——他們會說：不，我不會付這筆錢。」<span class="who">— 生產環境所需的可靠性水平</span></blockquote>
+    <blockquote>「你會看到這些中國、美國、德國的人形機器人總是在做後空翻和衝刺，卻從來不做這個任務：站起來、走進隔壁房間、打開冰箱、往裡看、拿出一盒牛奶、拿給我。」<span class="who">— 解釋為何 demo 挑的是好表演的任務</span></blockquote>
+    <blockquote>「這就是為什麼在大學裡，上完非線性 MPC 之後的課程全部都是 NMPC——因為他們說『我只需要我的巨大非線性模型，丟個 MPPI 上去它就工作了』。然後他們發現⋯⋯熱情逐漸消退。」<span class="who">— 他預測 world model 會重演的路徑</span></blockquote>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">技術詳情</span></h4>
+    <div class="tech">
+      <p><b>Diffusion 的官方解釋（節目自帶 mini-explainer）：</b>訓練時對樣本反覆加高斯噪聲直到只剩噪聲；目標函數只是「還原單一步噪聲」（例如從 t=5 回到 t=4），對應學習一個向量場 <code>v_t(x)</code> 告訴你如何讓樣本更像目標樣本；生成時從高斯抽樣、把學習到的過程反向跑。反演（inversion）之所以成立，是因為背後對應一個<b>隨機微分方程</b>的可逆耦合。</p>
+      <p><b>為何 latent 讓模型更便宜：</b>把問題切成條件獨立的子問題，<b>latent 愈多、子問題愈簡單</b>；極限情況（無限多層 latent）就是 diffusion，代價是要多建模一個「時間」維度。</p>
+      <p><b>World model 的三種常見定義（他都認為模糊）：</b>①感測器／馬達預測模型；②純影像或影片生成模型；③JEPA 式含內部狀態的模型（問題是「內部狀態是否真有用」難以驗證，很多只是看起來漂亮、一致、但不可 benchmark）。另有 Dreamer 系列以大規模影片擴散去玩 Minecraft——他認為這些都被叫 world model，「已經沒有合理的區分了」。</p>
+      <p><b>Constraints 為何在階層中必要：</b>抽象階層要能成立，必須下層對上層<b>保證某個不變量</b>（「我不在乎下層做什麼，它必須維持某件事」）。他認為這也是 why universal approximation theorem 常被濫用的原因：人們把它當成「模型夠大就會做對的事」的不變量，但那不是定理實際上說的。</p>
+      <p><b>無法在架構內硬編碼的約束：</b>動作約束相對簡單（投影到集合即可），困難的是<b>狀態約束</b>——因為它需要模型與環境狀態互動；且有些約束的強制本身是 NP-hard（CSP 類），「從複雜度角度看就已經崩了」。因此他認為最終仍需把部分約束外置到生成過程（如擴散式或蒙地卡羅式）。</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">行業 insight</span></h4>
+    <ul class="points">
+      <li><b>對「世界模型競賽」的一盆冷水。</b>2026 年最熱的敘事之一是 world model 作為通用智能路線（Cosmos 3、JEPA 系、Dreamer 系），Mattick 直接把它歸為<b>重新命名的動態模型 + 品牌工程</b>，並指出其成敗取決於「接觸密集任務的可靠性」而不是 demo 表演力。這是本週最重要的反面觀點。</li>
+      <li><b>「可組合性」是約束建模的真正賣點。</b>他的 OpenAI Five 分析給了很工程化的理由：把約束顯式化後，新增一項目標不再需要重新調整整組權重——<b>這對 agent 系統的 reward 設計與評測設計直接可用</b>。</li>
+      <li><b>與 Platt 同日互相印證的「可靠性鴻溝」。</b>Platt：科學上要防「騙自己」（多假設檢定、隱藏 hold-out）；Mattick：工程上要防「期望上很好但偶爾大錯」（L∞ 保證）。兩者都指出<b>平均值指標正在系統性高估能力</b>。</li>
+      <li><b>理論現狀的最誠實表述。</b>「我們其實已經有很多深度學習理論，問題不是沒有理論，而是沒有一個能像物理標準模型那樣讓大家從同一起點出發、並能做出可被證偽的預測。」——這與學界「benchmark 爆炸、論文增量」的體感一致。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">前後脈絡</span></h4>
+    <ul class="points">
+      <li>本集延續 MLST 近期的主線：9/11〈How Replication Could Teach Machines What Good Science Looks Like〉（Edward Hughes）與 9/15〈How Physical AI Learns Across Language, Video and Action〉（Ming-Yu Liu）都在談「世界模型／物理 AI」，本集則<b>從控制理論與複雜度的角度給出系統性反駁</b>。</li>
+      <li>與 9/8〈AI 2040: Plan A〉（Kokotajlo & Larsen）形成尺度對照：一邊是宏觀治理路線圖，一邊是「你的控制器能不能給出最壞情況保證」。</li>
+      <li>Mattick 上次上節目是 2022 年（LeCun / interpolation 特輯的研究支援），本集是他四年後的獨立專訪——從「協助研究」到「提出反共識主張」的角色轉變值得注意。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">爭議點</span></h4>
+    <ul class="points">
+      <li><b>「World model 只是 branding」會直接冒犯一大批人。</b>他同時承認「可以做得很遠」（world model 內做 RL、無限 rollout、GRPO 式的模擬採樣確實是範式轉移），立場其實是「有用但被高估」，而標題式的話容易被讀成「無用」。</li>
+      <li><b>「預測不能創造智能」標題過強。</b>他實際論證的是「預測不等於控制」——這是關於<b>決策</b>的命題，而非關於「智能」的完整命題。標題的強度大於內文主張的強度，屬可預期的傳播失眞風險。</li>
+      <li><b>他坦承 constrained vs unconstrained RL 無法公平比較</b>（連設計實驗都會偏袒一方），因此「約束更好」在他那裡仍屬工程直覺＋局部證據，而非定論。</li>
+      <li><b>GBM/LLM 類比有爭議。</b>他把 GRPO「不學價值函數、即時做優勢估計」類比為「便宜模擬器裡的蒙地卡羅 rollout」，暗示真實世界的瓶頸仍是模擬成本——這個類比在部分 RL 研究者看來過度簡化。</li>
+      <li><b>對可解釋性（mechanistic interpretability）的整體否定</b>（「不穩健、假設不成立、對複雜行為無法解釋」）是當前最受歡迎研究方向之一的當面挑戰。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">逐字稿取得</span></h4>
+    <p class="note"><b>逐字稿完整取得。</b>MLST 官方音頻 feed 使用的是 Anchor（<code>anchor.fm/s/1e4a0eac/podcast/rss</code>），本日首次成功取得（過去多日依靠 YouTube channel RSS 失敗）；另以 <code>yt-dlp</code> 抓取該集 YouTube 版自動字幕（video id <code>1S1B4XkFCD8</code>）取得 <b>1.31 MB VTT → 14.18 萬字元</b>逐字稿作為主文本，並以官方 shownotes（含 2 小時 14 分完整章節軸與 20 條參考文獻連結）交叉校對。自動字幕的人名／術語誤聽（如 JEPA、LeJEPA、Fraunhofer、Gyro 等）已按上下文修正。</p>
+  </div>
+</div>
+
+<div class="show">
+  <div class="host">Latent Space · AINews 欄目（swyx 維護）</div>
+  <h3 class="ep">[AINews] Xiaomi MiMo-V2.6-Pro 1T-A42B: the new top Open Weights model, trained for $3M</h3>
+  <div class="ep-meta">
+    發布：2026-09-22 06:30 UTC（09-22 14:30 CST）<span class="badge">newsletter / 非訪談</span><span class="badge">涵蓋 9/19–9/21</span>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">主題</span></h4>
+    <p>AINews 是 Latent Space 的每日聚合欄目（自稱掃描 12 個 subreddit、544 個 Twitter 帳號）。本期的頭條是<b>小米 MiMo-V2.6 系列開源模型</b>，附帶當日開源／推論／系統優化的多條動態。之所以值得進報告，是因為它給出了本週最重要的<b>「開源權重已進入前沿級別」的一手數據</b>，以及對「RL 環境將成為新護城河」的共識判斷。</p>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">核心論點 / 關鍵數據</span></h4>
+    <ul class="points">
+      <li><b>小米 MiMo-V2.6-Pro／Flash 為原生全模態（natively omnimodal）開源權重模型。</b>小米官方措辭：Pro 是「至今最有能力的模型」，Flash 追求智能／效率／成本的最佳平衡，另有 <b>MiMo-V2.6-Pro-UltraSpeed</b> 提供「同品質下最高 20 倍輸出速度」。</li>
+      <li><b>規格與定價</b>：1.02T 總參數 / 42B 活躍參數；<b>MIT 授權</b>；$0.435 / M input、$0.87 / M output tokens。Artificial Analysis 稱其為<b>其 Intelligence Index 上排名第一的開放權重模型（46 分）</b>，並落在「Intelligence vs. Cost per Task」的 Pareto 前沿上（每題 <b>$0.13</b>）。</li>
+      <li><b>RL 才是主角。</b>小米沿三軸擴展 RL 算力：<b>①更大 batch 與更高吞吐</b>（完全異步架構，每次更新 1,568 個樣本，訓練上下文最長 1M，每步 3.5–3.7B tokens）；<b>②更多任務與更豐富環境</b>（coding、general agents、視覺、cyber 的多任務訓練套件，混用多種 harness 讓能力互相加強）；<b>③更多 grader 算力</b>（群組內相對比較，讓長時程任務獲得更高精度與多樣性的獎勵訊號，形成自我改進迴路，並引導模型走更短路徑、更少 token）。</li>
+      <li><b>透明度異常高。</b>前 DeepSeek 明星工程師、現任職小米的 <b>Fuli Luo</b> 在最終 RL 訓練期間<b>直播發布內部指標</b>；且模型與技術報告在最終 RL run 完成後<b>不到一週</b>就出爐。小米宣佈將開源全部工具鏈（含環境與訓練配方），並計劃釋出<b>約 7,000 個 RL 環境任務</b>（完整 7k+ 任務資料集尚未釋出）。涵蓋：程式碼／軟體工程、Cyber 漏洞復現（ARVO 環境）、通用知識工作、視覺／網頁開發、音樂生成、可組合的 mini-harness、共享環境適配器（mimoagent）。</li>
+      <li><b>成本壓縮的時間表震撼</b>：社群引述的 RL run 為 <b>130 小時、75B tokens、$2.6M</b>；小米團隊在 <b>JAX + TPU</b> 上擴展 RL，形容為「mostly a config change, not a code rewrite」。</li>
+      <li><b>共識解讀：開源 RL 環境＝新一輪的預訓練語料。</b>多位評論者（@bertgodel、@Thom_Wolf、@eliebakouch）指出，高品質開源 RL 環境可能具有與上一循環的預訓練語料同等的戰略意義；若這些數字成立，<b>後訓練／RL 是遠比多數人假設更便宜的前沿鄰近能力路徑</b>。</li>
+      <li><b>同期開源與系統動態（節選）</b>：Hugging Face tokenizers v1 RC 宣稱最多 <b>30×</b> 更快的分詞、更好多執行緒擴展、更少記憶體占用；Halo 後訓練框架宣稱較原生 TRL 最高 <b>2.8×</b> 吞吐且保持原生 HF 格式；QwenImage 2.1 引入 KV caching（固定 context 與變動影像位置分離），A100 上 DiT 時間 <b>50.57s → 19.86s（2.55×）</b>；vLLM 為 GB300 NVL72 上的 Qwen3.8-2.4T 發布調優服務配置（5K tok/s/GPU 高吞吐 ↔ 180 output tok/s/user 低延遲的 Pareto）；騰訊混元 Hy4 Preview（770B）以平均約 <b>2.38 bits/weight</b> 的混合精度量化塞進 <b>214 GiB</b>。</li>
+      <li><b>Jev 生態延燒</b>（延續本頻道 9/21–9/22 的追蹤）：Karpathy 稱 Jev 是 Pareto 前沿上「no thinking、單 token、可接受智力、低延遲」的那一點；LangChain 將 Jev-as-a-judge 接入 LangSmith；有人用 Jev 在 <b>83 秒</b>內重新標註約 <b>2,300 篇論文</b>、花 <b>$0.14</b>，得到 579 個高信心變更。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">重點引用</span></h4>
+    <blockquote>「MiMo-V2.6 series includes two natively omnimodal models… MiMo-V2.6-Pro-UltraSpeed, delivering up to 20x faster output speed at the same quality.」<span class="who">— 小米官方發布措辭（經 AINews 引述）</span></blockquote>
+    <blockquote>「MiMo-V2.6-Pro debuts as the top open weights model on the Artificial Analysis Intelligence Index (46). At $0.13 per Intelligence Index task, it lands on the Intelligence vs. Cost per Task Pareto frontier.」<span class="who">— Artificial Analysis</span></blockquote>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">行業 insight</span></h4>
+    <ul class="points">
+      <li><b>中國實驗室的釋出節奏已無法被忽視。</b>AINews 引 @Thom_Wolf 整理：約 10 週內密集發布 Kimi K3、Qwen3.8-Max、DeepSeek V4-Pro、GLM-5.3、Hy4 Preview、Atria Dawn 等——且「開放權重能力不再局限於中型模型，多個團隊已在交付<b>前沿規模的 MoE</b>，並附帶可信的成本效益故事」。</li>
+      <li><b>「護城河轉移」的敘事正在形成</b>：從預訓練語料 → 高品質 RL 環境。這與本日 John Platt 一集形成有趣映照：一邊說「任務 + 資料 > 算力」，一邊把「環境」變成公有資產。</li>
+      <li><b>反面觀點也一併收錄</b>：@teortaxesTex 認為前沿其實已分化出更高的層級，內部模型與頂尖閉源模型仍明顯領先；@Yuchenj_UW 稱前沿編碼能力自 Opus 4.8 以來已趨平，而開源以 10–50× 更低的成本在追。</li>
+      <li><b>推論側工程仍是主要槓桿</b>：KV cache 分離、量化到 ~2.38 bits/weight、分詞器 30× 加速——本期幾乎每一條都在講「同樣的硬體擠出更多吞吐」。</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h4><span class="tag">需留意</span></h4>
+    <p class="note">本條為 newsletter 聚合，非一手訪談：小米的訓練細節、7,000 個環境、130 小時／75B tokens／$2.6M 等數字<b>來自公司公告與社群引述，未經第三方復現</b>；Artificial Analysis 的 Index 排名為單一分數體系。</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<h2 class="sec">本日掃描結果 · 無新集已逐檔核實</h2>
+
+<div class="block">
+  <table class="dt">
+    <tr><th>播客</th><th>最新一集</th><th>發布時間</th><th>狀態</th></tr>
+    <tr><td>張小珺商業訪談錄</td><td>153. 和曾鳴聊產業史觀</td><td>2026-09-03</td><td>無新</td></tr>
+    <tr><td>十字路口 Crossing</td><td>「我看到了 Scaling Law 的信號」｜徐夢迪</td><td>2026-09-20 23:30 UTC</td><td>無新（已於 9/21 報告深度萃取）</td></tr>
+    <tr><td>硅谷 101</td><td>外灘大會線下圓桌｜Agent 交易信任基建</td><td>2026-09-17</td><td>無新（已於 9/21 報告深度萃取）</td></tr>
+    <tr><td>42章經</td><td>一個人、兩週、數百美元，如何訓出登頂 Hugging Face 的模型</td><td>2026-08-29</td><td>無新</td></tr>
+    <tr><td>屠龍之術</td><td><b>AI进入生产阶段之后…</b></td><td><b>2026-09-22 17:24 UTC</b></td><td><b>🆕 本報告</b></td></tr>
+    <tr><td>Dwarkesh Podcast</td><td>Noam Brown – Agent swarms, alignment, &amp; RSI</td><td>2026-09-17 15:38 UTC</td><td>無新（YouTube 9/18–9/22 新增 5 條均為該集短片／Shorts）</td></tr>
+    <tr><td>Latent Space</td><td><b>John Platt on AI for Science</b></td><td><b>2026-09-22 21:07 UTC</b></td><td><b>🆕 本報告</b></td></tr>
+    <tr><td>The Cognitive Revolution</td><td>AI:AM Highlights: Zvi on Pacing &amp; Trump-Xi</td><td>2026-09-19 18:28 UTC</td><td>無新（feed lastBuildDate 9/22 10:20 UTC，僅重建索引）</td></tr>
+    <tr><td>No Priors</td><td>Why Diffusion Will Win AI Inference（Ermon）</td><td>2026-09-18 10:00 UTC</td><td>無新（9/20、9/22 新增均為 Shorts：Betting on Diffusion、AI Is Forcing Us to Evolve）</td></tr>
+    <tr><td>ML Street Talk</td><td><b>Why Scaling Prediction Cannot Create Intelligence — Alexander Mattick</b></td><td><b>2026-09-21 15:02 UTC</b></td><td><b>🆕 本報告（前次掃描因 feed 失效而遺漏，本次補上）</b></td></tr>
+  </table>
+</div>
+
+<div class="block">
+  <h4><span class="tag">掃描方法與障礙記錄</span></h4>
+  <ul class="points">
+    <li><b>中文 5 檔</b>：小宇宙（xyzfm）RSS ×4（張小珺 <code>feed.xyzfm.space/dk4yh3pkpjp3</code>、十字路口 <code>68fyjknth9hj</code>、屠龍之術 <code>834hyx3v9k74</code>、42章經 <code>evgg6xle9rdc</code>）＋ 硅谷 101 Fireside feed（<code>feeds.fireside.fm/sv101/rss</code>），全部 HTTP 200，逐檔比對 pubDate。</li>
+    <li><b>MLST 官方 feed 首次成功</b>：<code>anchor.fm/s/1e4a0eac/podcast/rss</code>（HTTP 200，266 items），取代過去多日對 YouTube channel RSS 的 404 探測。</li>
+    <li><b>No Priors YouTube RSS</b>：<code>channel_id=UCSI7h9hydQ40K5MJHnCrQvw</code> 本次 HTTP 200；<b>Dwarkesh YouTube</b> <code>UCXl4i9dYBrFOabk0xGmbkRA</code> 亦 200。兩者新增項皆為 Shorts／剪輯，未構成新集。</li>
+    <li><b>逐字稿路徑</b>：本日兩集長訪皆以 <code>yt-dlp</code>（自帶字幕抓取）取得自動字幕並去重成逐字稿，合計約 27.3 萬字元；Latent Space 官方 Substack 轉寫檔的 CloudFront 簽名 URL 回 403（帶 Referer 亦同），已記錄為已知障礙。</li>
+    <li><b>屠龍之術</b>：僅 shownotes（小宇宙未提供文稿），已以一手媒體報導補足 IDC 數字。</li>
+  </ul>
+</div>
+
+<div class="block">
+  <h4><span class="tag">Jev 前置過濾</span></h4>
+  <p class="note">按 fleet-canonical 流程，寫報告前對 6 條候選跑 <code>jev.py triage --profile news</code>。<b>本次 Jev 端不可用</b>：工具回報 <code>available: false, failed: 6/6</code>（無 verdict），依 fail-open 原則按原路徑繼續，未中斷流程。所有條目均保留原始來源連結。</p>
+</div>
+
+<footer>
+  <span>AI 播客深度萃取日報 · 生成於 2026-09-23 02:05 UTC（10:05 CST）· 4 檔新集 · 全部中文檔已逐檔核實</span>
+  <span>Apache License 2.0</span>
+</footer>
+
+</div>
+</body>
+</html>

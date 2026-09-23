@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-09-22T02:04:00.000Z",
- "lastScanDate": "2026-09-22",
+ "lastScan": "2026-09-23T02:05:00.000Z",
+ "lastScanDate": "2026-09-23",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-09-17T15:38:13.000Z",
@@ -8,16 +8,24 @@
    "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-09-21T22:13:49.000Z",
-   "lastEpisodeTitle": "Jev: System One models for Prod, not God — with Diogo Almeida, CEO, TypeSafe AI",
+   "lastEpisodePubDate": "2026-09-22T21:07:39.000Z",
+   "lastEpisodeTitle": "🔬 An Oscar, Two Asteroids, and the Algorithm in Your sklearn: John Platt on AI for Science",
    "newEpisodes": [
     {
-     "title": "Jev: System One models for Prod, not God — with Diogo Almeida, CEO, TypeSafe AI",
-     "pubDate": "2026-09-21T22:13:49.000Z",
-     "duration_sec": 8460,
+     "title": "🔬 An Oscar, Two Asteroids, and the Algorithm in Your sklearn: John Platt on AI for Science",
+     "pubDate": "2026-09-22T21:07:39.000Z",
+     "duration_sec": 7285.76,
      "type": "interview",
-     "url": "https://www.latent.space/p/jev",
-     "note": "已深度萃取（逐字稿＝Substack RSS content:encoded 官方全文，18.8 万字元，timestamps 至 02:20:51）：TypeSafe AI CEO Diogo Almeida（InstructGPT 共同作者）首次系统拆解 Jev。核心：①System One / machine-native / large programmable 新类别，目标 consumer 是 code，命名取自 Jevons Paradox，指标 intelligence per dollar；②RLHF 的 mode dropping(=collapse) 使字符串不适合决策（引 Yann LeCun doomed slide），產物=sycophancy/过度自信/幻觉/LM Arena 排版；③RLCD（Reinforcement Learning for Calibrated Decisions）＝第三北极星，對 System 1 任務給 epistemic honest probabilities，異於 RLHF（討好人）與 RLVR（其實是 optimize benchmarks→fractal jagged）；④the bitterest lesson：task+data > compute，TypeSafe 自稱 data lab、全合成資料、拒用用戶資料（LLM=UDP/我們=TCP）；⑤反公開 benchmark（靠 vibes&trust）、反 determinism 主張 robustness、反 safety alignment/refusal（type error，fracturing intelligence，「intelligence 更像 database 而非 coworker」）、反 frontier pacing（稱 RLVR 假設是 sleight of hand，暗示 2028 選舉政治）；⑥不 pre-train（十億也不做），mid-training 只是省成本，多數 neo-lab destroy value；⑦coding agents：Claude Code/Codex 領先但鎖死單一模型世界，KV cache 暴政解釋 routing/sub-agent/compaction 之難，新文《KV cache Rules Everything Around Me》；⑧API 原語 choice/score/noulli（皆新概念，刻意不映射 int/float），輸入輸出全可結構化 JSON，反對巨型 system message，建議拆成大量平行小問題＋每 message 掛 ID 省 state 成本。數據（受訪者口徑，未經第三方復現）：上線一週每日 tokens 破 1 兆、發布影片 ~40M 觀看、Discord 10 萬人、版本 Jev 1.13.0、TFP>3%/5年、經濟價值工作自動化 <1%、InstructGPT 上線即拿當時 50% LLM 市佔（自述）。"
+     "url": "https://www.latent.space/p/john-platt",
+     "videoUrl": "https://www.youtube.com/watch?v=2xBSGluFkG0",
+     "note": "已深度萃取（逐字稿＝yt-dlp 抓 YouTube 自動字幕 1.17MB VTT→13.08 萬字元去重全文；官方 Substack 轉寫檔 CloudFront 簽名 URL 回 403，已記錄）：嘉賓 John Platt＝Google Fellow／Google Research 應用科學負責人、14 歲上大學 18 歲 Caltech 讀博（師從 John Hopfield）、Platt scaling 與 SMO 兩個 sklearn 級算法作者、2006 奧斯卡技術成就獎（1986 Schlumberger 實習的彈性體模擬器，20 年後獲獎、後代進入 Pixar 物理模擬）、兩顆以他命名的小行星（其中以母親命名那顆有衛星，主體約 4km／衛星約 1km）、Erdős–Bacon number=6、『convolutional net』一詞提出者、1982 修過 Feynman 量子計算課（Carver Mead 實驗室 VAX 11/750 sysadmin）。核心：①scoreable task 框架（把科學問題化為最大化某分數的程式碼；ML 只是子集；示範把漸近展開轉成經驗任務）②ERA＝Gemini + 樹狀候選池 + UCB 樂觀選擇（估表現+2σ，常選第五好）+ 每輪 10 葉 + 共享 context + 候選重組，官方形容『不睡覺的過度熱心研究生』；成功關鍵是內圈為有世界知識的 AI（隨機變異自 1970s 起無用）③起源是 auto-Kaggle（Kaggle 屬 Google）④Gemini 2.0 完全不可行、2.5 step change『新世界』、之後愈來愈好（呼籲別因早期失敗放棄）⑤至少十篇論文；contrails 反事實模型（反射陽光那一半）卡關兩年由 ERA 以含少量 confounder 的簡單模型解開⑥最大風險是騙自己（預測模型 vs 描述模型；多假設檢定 false discovery rate；隱藏 hold-out；『電動工具可以切掉手指』）⑦reward hacking 案例：contrail Kaggle 競賽有人靠半像素標註誤差贏 15,000 美元（Goodhart's law）⑧科學家不會被取代、jagged frontier（寫程式／蒐集知識強，嚴謹與哲學弱），人類錨點＝創造力與嚴謹（可為不同人）⑨建議：永遠先跑線性回歸；20% time 保護學習；過度最佳化＝overfit to productivity；『可以開車上山也可以走上去，偶爾走上去也許有趣』；Feynman『你絕對不可以欺騙自己，而你是最容易被自己欺騙的人』⑩魔法願望：做出什麼都能做的實驗室（丟 JSON 進去就做任何實驗）。關鍵數據：contrails 佔人為暖化約 1%、歐洲局部 ~1 W/m² vs 全球人為平均 ~3 W/m²、1g 排氣→~10kg 冰晶（10,000:1）、下降約 2 個飛行高度層即可規避；2100 年 CO2 不確定性 300 ppm vs 當前 440–450 ppm；FireSat 約 50–80 顆 LEO 中波紅外（需製冷）星座、原生 50m 像素靠多光譜+AI 超解析到 5m、15–20 分鐘全球響應、原型星已發射（Muon Space／Earth Fire Alliance）、WHO 估野火煙霧年 30 萬超額死亡；Vera Rubin 天文台 6 週發現 11,000 顆小行星；融合『3 年不是 30 年』、Lawson criterion 每路線都有阿基里斯腱；量子 NISQ、非 30 年也非明天；1982 年算力 1 MIPS、80MB 硬碟；NeurIPS 源自 Snowbird 被闖的私人工作坊、『Hopfield networks are all you need』是回應該歷史（transformers 本質是關聯記憶）。"
+    },
+    {
+     "title": "[AINews] Xiaomi MiMo-V2.6-Pro 1T-A42B: the new top Open Weights model, trained for $3M",
+     "pubDate": "2026-09-22T06:30:56.000Z",
+     "type": "newsletter",
+     "url": "https://www.latent.space/p/ainews-xiaomi-mimo-v26-pro-1t-a42b",
+     "note": "已萃取（newsletter，涵蓋 9/19–9/21）：小米 MiMo-V2.6-Pro/Flash 原生全模態開源權重、MIT 授權、1.02T 總參／42B 活躍、$0.435/M in、$0.87/M out，Artificial Analysis Intelligence Index 46＝開放權重第一、每題 $0.13 落在 Intelligence vs Cost 前沿；另有 MiMo-V2.6-Pro-UltraSpeed（同品質最高 20× 輸出速度）。RL 三軸擴展：完全異步大 batch（每更新 1,568 樣本、最長 1M 上下文、每步 3.5–3.7B tokens）／多任務多 harness 環境／群組內相對比較的 grader 算力（形成自我改進迴路、引導更短路徑更少 token）。前 DeepSeek 工程師 Fuli Luo 直播最終 RL 訓練指標（異常透明）；模型+技術報告在最終 RL run 後不到一週發布；將開源環境與訓練配方、計劃釋出約 7,000 個 RL 環境（完整 7k+ 任務資料集未釋出）。社群數字：RL run 130 小時／75B tokens／$2.6M；JAX+TPU『mostly a config change, not a code rewrite』。共識：高品質開源 RL 環境可能如上一輪預訓練語料般具戰略價值。同期：HF tokenizers v1 RC 最高 30× 分詞加速；Halo 後訓練框架較 TRL 最高 2.8×；QwenImage 2.1 KV cache 分離 50.57s→19.86s（2.55×）；vLLM 為 GB300 NVL72 上 Qwen3.8-2.4T 發布調優配置；騰訊混元 Hy4 Preview 770B→214GiB（~2.38 bits/weight）。Jev 生態：Karpathy 稱其為 Pareto 前沿『no thinking、單 token、低延遲』那點；LangChain 接入 Jev-as-a-judge；有人用 Jev 83 秒重標 ~2,300 篇論文花 $0.14（579 高信心變更）。"
     }
    ]
   },
@@ -32,9 +40,19 @@
    "newEpisodes": []
   },
   "ml_street_talk": {
-   "lastEpisodePubDate": "2026-09-15T16:09:49.000Z",
-   "lastEpisodeTitle": "The Missing Step Between Seeing the World and Changing It — Ming-Yu Liu",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-21T15:02:27.000Z",
+   "lastEpisodeTitle": "Why Scaling Prediction Cannot Create Intelligence - Alexander Mattick",
+   "newEpisodes": [
+    {
+     "title": "Why Scaling Prediction Cannot Create Intelligence - Alexander Mattick",
+     "pubDate": "2026-09-21T15:02:27.000Z",
+     "duration_sec": 8060,
+     "type": "interview",
+     "url": "https://podcasters.spotify.com/pod/show/machinelearningstreettalk/episodes/Why-Scaling-Prediction-Cannot-Create-Intelligence---Alexander-Mattick-e3p69rq",
+     "videoUrl": "https://www.youtube.com/watch?v=1S1B4XkFCD8",
+     "note": "已深度萃取（逐字稿＝yt-dlp 抓 YouTube 自動字幕 1.31MB VTT→14.18 萬字元去重全文，另本日首次成功取得 MLST 官方 Anchor feed anchor.fm/s/1e4a0eac/podcast/rss，含官方 2h14m 章節軸與 20 條參考文獻）：嘉賓 Alexander Mattick（Yannic Kilcher Discord handle『Zigzag』）＝Fraunhofer IIS 研究員、紐倫堡理工大學（UTN）博士生、FAU 計算機本科+AI 碩士；2022 年曾上 MLST 協助 LeCun/Randestriero 插值特輯研究。核心論點：①推論史＝把採樣成本搬來搬去（正規化密度→拒絕採樣→MCMC→EBM→Diffusion（無限 latent，引入時間維，擺脫 accept/reject 與局部極小）→Flow Matching/CNF（梯度流／最優傳輸，代價只剩可逆性））②EBM 現在不值得（訓練便宜但採樣搬到推論期且無樣本機率；GFlowNets 未解同一問題、回到變分假設）③world model 與 JEPA『最終都只是 branding』；他唯一可用的切分＝資料收集在迴路內叫 model-based RL、在迴路外叫 world model ④標題主張：預測 ≠ 控制——『給你完美棋類世界模型你也不會變成 Magnus』⑤constraints 是現金：『大部分資訊都非常昂貴』、OpenAI Five 獎勵附錄滿是隨機權重（『待在錯誤車道過久=負獎勵』本是約束；『殺敵方英雄給負獎勵』為避免與金錢獎勵相關而刷分），顯式約束同時解決相關性與重新調參⑥constrained RL 演化：CPO→投影（密度空間凸，但有幻覺約束且求解器愈好愈糟）→拉格朗日（震盪）→局部近似 CBCPO/FOCOPS；理論硬事實＝不存在平穩確定性策略，故 Q-learning 失效；並自承 constrained vs unconstrained 難以公平比較⑦RL 給不出 L∞ 保證（期望完美但一次大錯＝一直小幅漂移；ReLU 一致精度 NP-hard 需指數數據）→ 需要 robust/constrained RL + 先驗與模仿資料；『不想讓開心手術機器人從零探索』⑧機械人 demo 可靠性陷阱：『BMW 聽到 90% 正確率不會付錢』；人形機器人只表演後空翻衝刺卻不做『開冰箱拿牛奶』（接觸密集、難建模難收數據）；tactile sensing 未解；軟體可回滾、實體世界『刪掉電腦』等於『壓死人』；要的不是峰值精度而是每個狀態的最低正確機率。關鍵事實：理論兩流派（參數派 spline/path-dependent vs 函數空間派 NTK/mean field/diffusion 非參數解釋，後者長期更通用但預測力不足）；無物理學標準模型式的統一理論，且四場年會節奏造成論文增量化；實作 bug 曾浪費 2–3 個月＝理論不到位的證據；流形假設既不真也不假但『不有用』、可解釋性技術不穩健（transformer circuits 假設路由在權重置換下不變；模型算術的 cos/sin 抽得漂亮但無法解釋它如何建模一隻鴨子）；Barron 定理 dimension-free bound 解釋打敗維度詛咒；hierarchical RL 沒起來＝下層給不出上層可依賴的保證（對比控制理論 H∞ 的最壞情況保證）；fuzzy logic＝失敗的抽象（無法對 fuzzy logic 做 inference）；演算法與硬體（BLAS/GPU）共演化。"
+    }
+   ]
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-09-03T00:00:00.000Z",
@@ -52,33 +70,32 @@
    "newEpisodes": []
   },
   "slaying_dragon": {
-   "lastEpisodePubDate": "2026-09-15T16:00:00.000Z",
-   "lastEpisodeTitle": "智能的下一幕，让人兴奋---73页PPT solo",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-22T17:24:22.000Z",
+   "lastEpisodeTitle": "AI进入生产阶段之后， 智能、算力、芯片 会走向哪里？",
+   "newEpisodes": [
+    {
+     "title": "AI进入生产阶段之后， 智能、算力、芯片 会走向哪里？",
+     "pubDate": "2026-09-22T17:24:22.000Z",
+     "duration_sec": 2460,
+     "type": "solo",
+     "url": "https://www.xiaoyuzhoufm.com/episode/6ab0504f0916f6f8b4466ece",
+     "note": "已深度萃取（逐字稿未取得：小宇宙僅 shownotes 含官方 41 段章節軸至 40:53 + ima PPT 連結；IDC 數字以一手媒體報導補足並交叉比對）：莊明浩 9/21 北京 AICC2026 人工智能計算大會現場復盤（單口，約 41 分鐘），三章：①從 Chat 到 Agent（Agent=Model+Harness；IDC-浪潮信息《2026 中國人工智能計算力發展評估報告》；Agent 發展階段；當前共識 work+coding；Token 增長的三個係數；算力缺口持續存在）②智能重新定義：從概率擬合到可信生產（同濟大學鄭慶華院士演講：當前大模型局限→從人腦結構找解法→機器記憶智能；可靠評測體系＝全鏈路覆蓋、定義何謂可靠、發布評測體系、一體兩面）③算力與芯片：系統、器件、生態的突圍（浪潮信息『智算系統雙唯進化』、能力型智算極端要求、雙軌實施、新產品、芯算一體、讓計算走進存儲、已有實施效果、場景拓展；FlagOS 生態、軟件生態也是壁壘、『萬能插座』、國產模型與國產芯片 Day 0 適配、生態壯大中）；收尾『金字塔的比喻』。IDC 數據（一手報導）：全球活躍智能體 7,940 萬(2026)→22.16 億(2030) CAGR 129.8%；同期全球 Token 消耗 CAGR 4,822.6%（約為智能體增速 37 倍）；中國智能算力 2026 年 2,576.5 EFLOPS(+87.9%)→2030 年 10,524.3 EFLOPS，2025–2030 CAGR 由 46.2% 上調至 50.3%；中國 AI 算力市場 2026 年 515 億美元(+37%)→2030 年 1,501 億美元(CAGR 31.8%)；全球 AI 算力需求滿足率 79%(2024)→71%(2027 谷底)→77%(2030)，缺口 389 億→3,809 億美元；最大瓶頸 HBM（三星/海力士/美光壟斷、擴產慢；分級存儲外溢到內存與閃存漲價）；結構性錯配＝舊訓練集群不適配推理/智能體（『投了很多但用不上』）；報告措辭稱算力躍升為與水利、電網、鐵路同等級的國家戰略基礎設施。"
+    }
+   ]
   },
   "crossing": {
    "lastEpisodePubDate": "2026-09-20T23:30:01.000Z",
    "lastEpisodeTitle": "“我看到了 Scaling Law 的信号” | 对谈清华叉院助理教授徐梦迪：具身智能、世界模型、真正的泛化",
-   "newEpisodes": [
-    {
-     "title": "“我看到了 Scaling Law 的信号” | 对谈清华叉院助理教授徐梦迪：具身智能、世界模型、真正的泛化",
-     "pubDate": "2026-09-20T23:30:01.000Z",
-     "duration_sec": 4843,
-     "type": "interview",
-     "url": "https://www.xiaoyuzhoufm.com/episode/6ab0504f0916f6f8b4466ece",
-     "videoUrl": "https://www.youtube.com/watch?v=av2-xfRc2_E",
-     "note": "（小宇宙 RSS 全文 shownotes 5961 字＋官方 34 段章節時間軸；逐字稿未取得，全部內容按 shownotes＋章節軸＋一手研究材料重建，報告內逐條標註來源）：已深度萃取：嘉賓徐夢迪＝清華叉院（IIIS）tenure-track 助理教授（2025/09 入職，shownotes 誤寫 2024 年初回國，已按本人主頁更正）、清華車輛本科→JHU 機器人碩士（Chirikjian）→CMU 機器學習博士（最佳博士論文，導師 Ding Zhao，論文主題 building adaptable generalist robots）→Stanford SVL 博士後（吳佳俊、李飛飛）→ Google DeepMind Robotics / MIT-IBM Watson / TRI 實習。核心命題＝機器人 in-context learning：到新環境一兩次交互當場學會新任務且越學越快。七條核心論點：①預訓練有天花板、出路在 adaptation 且適應成本正在塌陷；②真正的泛化＝越學越快；③機器人仍在 GPT-1 階段（章節 50:47）；④數據閉環雞生蛋＋難在定義需求（58:19 / 01:03:21）；⑤低 Loss≠高成功率（49:07）＋數據與世界模型風向反覆（46:39）；⑥進步與泡沫共存（44:44）＋「疊衣服 demo 的誤導」＝對同行演示慣例的公開批評；⑦只有樂觀才可能成功／跟年輕 AP 讀博像創業。即時註腳：Generalist GEN-1.5（2026-08）3–12 秒 physical prompt、零梯度步 10 任務平均 59%±10%、10 步梯度＋5 分鐘數據→83%±9%、30 秒上下文、100 Hz 動作、預訓練>8 個月；香蕉當刷子／簸箕當鏟的新接觸序列；梯度步越少即興越強；ICL 比微調更脆。平行一手證據：CoVer-VLA（ECCV 2026；CVPR2026 Scalable Robot Learning Workshop 最佳論文入圍）test-time scaling 幂律 log(e)≈log(a)+b·log(k)，SIMPLER 同數據下 ID +22%／OOD +13%、真機 +45%，PolaRiS 任務進度 +14%／成功率 +9%；MoMaGen（ICLR 2026）雙臂移動操作數據生成。爭議：59% 且短時序任務，「信號」合理但當定律即過度外推；ICL 脆 vs 即興強的定價兩難；點名疊衣服 demo 會引發討論。"
-    }
-   ]
+   "newEpisodes": []
   }
  },
  "notes": {
-  "scan_status": "2026-09-22 掃描（02:04 UTC）：新集 1 條（英文，Latent Space × Diogo Almeida/TypeSafe AI，9/21 22:13Z，約 2h21m 一手長訪）。中文 5 檔逐檔核實無新：張小珺 #153（9/3）、十字路口最新仍 9/20 徐夢迪、硅谷101 最新仍 9/17 外灘大會、42章經（8/29）、屠龍之術（9/15）。英文其餘無新：Dwarkesh 最新仍 9/17 Noam Brown（其 YT 9/18-9/21 新增為該集剪輯片段，非新集）、Cognitive Revolution 最新仍 9/19 AI:AM、No Priors 最新仍 9/18 Stefano Ermon（YT feed 首次 500，重試後取得，9/20「Betting on Diffusion」為剪輯）、MLST 官方音頻 feed 最新 9/11、YouTube channel RSS 對多個 candidate channel_id 均 404（沿用 9/15 Ming-Yu Liu 為最新集）。",
-  "report_date": "2026-09-22",
-  "deep_content_fetched": "《Latent Space × Diogo Almeida》：Substack RSS content:encoded 內含官方完整逐字稿（188,106 字元 / 3,100 行，含官方 timestamps 至 02:20:51）＋ 完整 shownotes（patterns、cookbooks、Jev use cases、coding-agent guide、KV cache 文、Jev vs GLiNER 討論等連結）。無需 ASR。",
-  "transcript_attempts_failed": "本集逐字稿無需破解：官方全文已在 RSS。僅記 feed 層障礙：No Priors YouTube RSS 首次回 500（重試後成功）；MLST YouTube channel RSS 對 UCMLtBahI5DMrt0Nj7RyvXWQ 等 candidate id 均回 404；YouTube channel HTML 為 bot/consent 頁，無法解析 videoRenderer。",
-  "jev_prefilter": "2026-09-22 對 8 條候選跑 Jev triage --profile news：最高「十億也不 pre-train／neo-lab 批評」0.67，其次「反公開 benchmark」0.52、「coding agents/KV cache」0.43、「RLCD 技術對比」0.34、「不上用戶數據 data lab」0.34；最低「safety alignment/refusal」0.02、「frontier pacing」0.13。按 profile 提示不以單一閾值硬砍：低分兩條屬該集主題與必要背景，保留並標註。primary_source 全部 <0.4，已在報告內明確：所有數字與論斷均為 Diogo Almeida 一手自述（company claims），未經第三方復現。",
-  "notable_for_james": "①本集即 fleet 正在使用的 Jev 作者的系統性自白，兩條可執行含義：把 AI 拆成「小的、可量測的決策」＋用結構化 state 取代巨型 system message；以及「輕量適配的模型更願即興、更會糾錯」→ 對 fleet harness 即減少硬編碼特化、保留通用先驗。②Diogo 明確拒絕做 generic JevBench、稱模仿者是「第 55 個低努力度 clone」→ 若 fleet 想評測 Jev，應自建 workflow 級 eval，而非等公開榜。③KV cache 暴政一文（cache rules everything around me）值得直接找來讀，關乎 coding agent 的 state/memory 設計。",
+  "scan_status": "2026-09-23 掃描（02:05 UTC）：新集 4 條——①英文 Latent Space × John Platt（9/22 21:07Z，2h01m，逐字稿完整取得）；②英文 Latent Space AINews 小米 MiMo-V2.6-Pro（9/22 06:30Z，newsletter，上期掃描時尚未發布故為新）；③中文 屠龍之術〈AI进入生产阶段之后…〉（9/22 17:24Z，單口 AICC2026 復盤）；④英文 MLST × Alexander Mattick（9/21 15:02Z，2h14m，前次掃描因 MLST feed 失效而遺漏，本次以官方 Anchor feed 補上）。其餘 6 檔逐檔核實無新：Dwarkesh 最新仍 9/17 Noam Brown（YouTube 9/18–9/22 五條均為該集 Shorts）、Cognitive Revolution 最新仍 9/19 AI:AM（feed lastBuildDate 9/22 僅重建索引）、No Priors 最新全集成品仍 9/18 Stefano Ermon（9/20 Betting on Diffusion、9/22 AI Is Forcing Us to Evolve 皆為 Shorts）、十字路口 9/20 徐夢迪、硅谷101 9/17 外灘圓桌、張小珺 9/3、42章經 8/29。",
+  "report_date": "2026-09-23",
+  "deep_content_fetched": "《Latent Space × John Platt》：yt-dlp 抓 YouTube 自動字幕（video id 2xBSGluFkG0）→ 1.17MB VTT 去重 → 13.08 萬字元全文；官方 Substack shownotes（RSS content:encoded 1.5 萬字元）含章節與全部連結（ERA paper/GitHub/blog、contrail 競賽、FireSat 等）。《MLST × Alexander Mattick》：yt-dlp 抓 YouTube 自動字幕（1S1B4XkFCD8）→ 1.31MB VTT 去重 → 14.18 萬字元全文；官方 shownotes 含 2h14m 章節軸 + 20 條參考文獻連結；MLST 官方 Anchor feed 本日首次成功取得（266 items）。《屠龍之術》：無逐字稿，shownotes（含 41 段章節軸）+ ima PPT 連結 + 一手媒體報導（每日經濟新聞現場訪談、光明網、中華網、同花順、虎嗅）補足 IDC 數字。《AINews 小米》：RSS content:encoded 3.5 萬字元全文。",
+  "transcript_attempts_failed": "①Latent Space 官方 Substack 轉寫檔（transcription.json）CloudFront 簽名 URL 直接抓取回 403 AccessDenied，帶 Referer/Origin/UA 亦同 → 改走 YouTube 自動字幕成功。②MLST YouTube channel RSS 於過去多日對多個 candidate channel_id 均 404；本次改用官方 Anchor feed 成功。③屠龍之術（小宇宙）不提供官方文稿，未取得逐字稿（已如實標註，內容按章節軸與一手報導重建）。④No Priors YouTube RSS 本次 HTTP 200（此前曾 500）。",
+  "jev_prefilter": "2026-09-23 對 6 條候選跑 jev.py triage --profile news：本次 Jev 端不可用，回報 available=false、failed=6/6、所有 verdict 為 null（無分數）。依 fail-open 原則未阻斷流程，報告按原路徑完成；所有條目保留原始來源連結。建議下次執行前檢查 TYPESAFE_API_KEY / ~/.config/typesafe/api_key 與網路。",
+  "notable_for_james": "①本日形成一組罕見的『同日對照』：Platt（科學側）與 Mattick（控制側）各自指出同一件事——平均值指標系統性高估能力。Platt 講多假設檢定與隱藏 hold-out（統計自欺），Mattick 講 L∞ 最壞情況保證（工程自欺）。若要為 fleet 設計評測，兩者共同指向：加入『最壞案例』與『可證偽』維度，而非再加一個平均分。②Mattick 對 world model/JEPA 的『branding』判斷與『預測 ≠ 控制』，可直接用於評估任何『世界模型取代 RL』的提案。③Platt 的『模型版本躍遷大於架構創新』（同一 harness 在 2.0 無用、2.5 好用）支持：agentic 工具不要因早期失敗而放棄，先驗證 harness、等模型。④屠龍之術的 IDC 數字給出中國算力供給側的量化錨點（HBM 瓶頸、2027 谷底、錯配），可作為採購/投資時序判斷的輸入，但 CAGR 4,822.6% 屬低基期外推，不宜當規劃輸入。⑤小米 MiMo 的『7,000 個 RL 環境將開源』是比模型權重更值得追蹤的資產。",
   "index_html": "未更新 index.html：該落地頁手工維護且自 2026-07-19 起已停更（近期每日報告 commit 亦未動它），為避免引入不一致，維持既有慣例。"
  }
 }
