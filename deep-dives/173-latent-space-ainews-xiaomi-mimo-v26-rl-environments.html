@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「一週之後就開源」——Latent Space AINews × 小米 MiMo-V2.6-Pro：1T MoE 用 $2.6M RL 登頂開源榜</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em; background: #f4f1ec; padding: 0.05rem 0.3rem; border-radius: 3px; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · AINews 欄目（swyx 維護）· 2026-09-22 06:30 UTC 發布 · newsletter（涵蓋 9/19–9/21）</div>
+  <h1>「一週之後就開源」——Latent Space AINews × 小米 MiMo-V2.6-Pro：1T MoE 用 $2.6M RL 登頂開源榜，同「高質量 RL 環境可能係上一輪預訓練語料嘅戰略地位」</h1>
+  <div class="meta">
+    <span>📅 2026-09-22 06:30 UTC（09-22 14:30 CST）</span><span>·</span><span>🎙 Latent Space AINews（swyx 維護，非訪談）</span><span>·</span><span>👤 頭條：小米 MiMo-V2.6 Pro / Flash</span><span>·</span><span>🏷 開源權重 / RL 環境 / 後訓練成本 / 中國開源節奏</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢條唔係訪談，係每日聚合欄目（AINews 自稱掃描 12 個 subreddit、544 個 Twitter 帳號）。之不過本期值得單獨寫，因為佢記錄咗一件<strong>結構性嘅事</strong>：一個「唔在六小虎名單上」嘅手機廠，用一億級參數嘅開源權重模型，一次過登頂開源榜首，而<strong>真正嘅主角唔係模型，係它後面嘅 RL 基礎設施同成本結構</strong>。
+</p>
+
+<div class="highlight-box">
+  <strong>一句話抓住本期：</strong>小米 MiMo-V2.6-Pro 以 <strong>1.02T 總參 / 42B 活躍</strong>、MIT 授權、Artificial Analysis 智能指數 <strong>46</strong>（開源最高）登場，而 RL run 據報只係 <strong>130 小時 / 75B tokens / $2.6M</strong>，並且會把<strong>約 7,000 個 RL 環境 + 訓練 recipe</strong> 一齊開源。社群嘅共識解讀係一句好重嘅話：<strong>「高質量開源 RL 環境，可能複製上一輪『預訓練語料』嘅戰略地位」</strong>。
+</div>
+
+<div class="section-title">一、點解小米入場係一件「意外」</div>
+
+<p>AINews 嘅措辭好直白：小米「傳統上唔被視為中國 AI 六小虎之一」，所以呢次發布「對你熟悉嘅名字秩序嚟講非常意外」。而更意外嘅係——它是<strong>原生全模態（natively omnimodal）</strong>嘅。小米官方原文：</p>
+
+<blockquote class="strong">
+「The MiMo-V2.6 series includes two natively omnimodal models: MiMo-V2.6-Pro is our most capable model to date, while MiMo-V2.6-Flash strikes the best balance between intelligence, efficiency, and cost. We are also rolling-out MiMo-V2.6-Pro-UltraSpeed, delivering up to 20x faster output speed at the same quality, for users who require extreme generation speed.」
+<span class="attribution">—— 小米 MiMo 官方發布措辭（經 AINews 引述）。注意三條產品線嘅分工：Pro 打能力、Flash 打性價比、UltraSpeed 打速度。</span>
+</blockquote>
+
+<p>呢個「三線切分」本身係一個產品訊號：當模型能力開始收斂，廠商就唔再只賣一個「最強模型」，而係賣<strong>同一家族在不同成本／延遲約束下嘅多個點</strong>。同週 Grok 4.7、Qwen 系列嘅做法一致——<strong>前沿競賽正在變成「Pareto 前沿上嘅選點競賽」</strong>。</p>
+
+<div class="section-title">二、模型規格同定價：一個「開源即前沿級」嘅一手數據點</div>
+
+<table>
+  <tr><th>項目</th><th>數值</th></tr>
+  <tr><td>參數</td><td><strong>1.02T 總參數 / 42B 活躍參數</strong>（MoE）</td></tr>
+  <tr><td>授權</td><td><strong>MIT</strong>（寬鬆、可商用）</td></tr>
+  <tr><td>Artificial Analysis Intelligence Index</td><td><strong>46 分——開源權重模型排名第一</strong></td></tr>
+  <tr><td>成本效率</td><td><strong>每題 $0.13</strong>，落在「Intelligence vs. Cost per Task」<strong>Pareto 前沿</strong>上</td></tr>
+  <tr><td>定價（API）</td><td><strong>$0.435 / M input tokens、$0.87 / M output tokens</strong></td></tr>
+  <tr><td>同期對標</td><td>Artificial Analysis 指出多數 Agent 基準對標 <strong>Claude Opus 5 / GPT-5.6 Sol</strong> 級別</td></tr>
+</table>
+
+<div class="data-point">
+  <span>點解「$0.13／題」比「46 分」更重要</span>
+  分數係單點，Pareto 前沿係一條<strong>可持續嘅位置</strong>。當同一分數區間可以有多個價格點，採購決策就會由「邊個最強」轉向「我嘅任務值幾錢」。呢個係開源權重模型對閉源 API 最實際嘅壓力形式——唔係超越，而係<strong>重新定價</strong>。
+</div>
+
+<div class="section-title">三、真正嘅主角：RL 沿三軸擴展</div>
+
+<p>AINews 明確講：<strong>最突出嘅唔係模型，而係 RL stack</strong>。小米技術報告（<code>MiMo_V2_6_technical_report.pdf</code>）講嘅三條擴展軸：</p>
+
+<ol>
+  <li><strong>更大嘅 batch 同更高吞吐</strong>——全非同步（fully asynchronous）架構上跑大 batch，<strong>每次更新 1,568 條樣本</strong>，訓練支援<strong>最高 1M context length</strong>，<strong>每步 3.5–3.7B tokens</strong>。</li>
+  <li><strong>更多任務、更豐富嘅環境</strong>——一套多任務訓練組合，橫跨 <strong>coding、general agents、visual、cyber</strong>，並且混用多個 harness，令「一種能力嘅增益可以強化其他能力」。</li>
+  <li><strong>更多 grader compute</strong>——小組內相對比較（relative comparison within each group），令長時域 RL 任務獲得<strong>更精確、更多樣嘅獎勵信號</strong>，<strong>閉合一個自我改進迴圈</strong>，並把模型<strong>推向更短路徑、每任務更少 token</strong>。</li>
+</ol>
+
+<p>第 3 點係最容易被忽略但最關鍵嘅：<strong>「更少 token per task」係被優化目標</strong>。即係話 RL 唔止在學「答得對」，而係同時在學「用更少步數、更少 token 答對」。呢個直接影響推理成本曲線——亦係為何「$0.13／題」可以同時存在於高分模型上。</p>
+
+<div class="section-title">四、透明到反常：直播 final RL runs、一週內出技術報告</div>
+
+<p>AINews 記錄咗一條時間線，值得逐格睇：</p>
+
+<ul>
+  <li>幾日前，<strong>羅福莉（Fuli Luo，前 DeepSeek 明星工程師，現於小米）</strong>開始<strong>直播發布他們最後階段嘅 RL 訓練 run</strong>——被形容為「內部指標異常透明」。</li>
+  <li>Artificial Analysis 於 9/21 給出指數與 Pareto 定位。</li>
+  <li>團隊在<strong>最後一次 RL run 之後唔夠一週</strong>，就已同時出模型 + 技術報告（AINews 特別點出呢個速度）。</li>
+</ul>
+
+<blockquote class="strong">
+「高質量嘅開源 RL 環境，可能同上一輪週期嘅預訓練語料一樣，具有戰略重要性。」
+<span class="attribution">—— AINews 綜合多位社群人士（@bertgodel、@Thom_Wolf 等）得出嘅反覆出現嘅解讀</span>
+</blockquote>
+
+<p>而「開源」嘅具體範圍亦講得好清楚：<strong>環境代碼同訓練 recipe</strong> 會開源，但<strong>完整 7,000+ 任務數據集暫時未發布</strong>。公開嘅部分包括（全部掛在小米 MiMo 嘅 <code>verl</code> / <code>mimoagent</code> repo 下）：</p>
+
+<ul>
+  <li>Coding / software engineering：<code>recipes/code</code>（Code recipes、dataset loader 同 rewards）</li>
+  <li>Cyber / 漏洞復現：<code>recipes/arvo</code>（ARVO environment 同訓練 recipe）</li>
+  <li>General / knowledge work：<code>recipes/general</code>（通用環境、工具同訓練 recipe）</li>
+  <li>Visual / web development：<code>recipes/design/webdev</code>（Web 開發環境同評分）</li>
+  <li>Music generation：<code>recipes/design/music</code>（數據準備同 music scorer）</li>
+  <li>可組合 mini-harness：<code>config/agent</code>（Agent configurations）</li>
+  <li>共用環境適配層：<code>mimoagent/environments</code>（shared environment adapters）</li>
+</ul>
+
+<div class="highlight-box">
+  <strong>為何「開源環境但唔開源數據集」係一個精心嘅切分：</strong>環境代碼係<strong>可被複製嘅方法論</strong>，而任務數據集係<strong>稀缺嘅資產</strong>。前者開源可以換取生態、標準同人才；後者留住，就保住咗差異化。呢個切法同過往「開源權重、閉源資料」嘅策略一脈相承——只係今次被開源嘅「方法論」由模型架構，換成了 <strong>RL 環境工程</strong>。
+</div>
+
+<div class="section-title">五、$2.6M / 130 小時 / 75B tokens：後訓練成本嘅一個錨</div>
+
+<div class="data-point">
+  <span>數字</span>
+  <strong>130 小時、75B tokens、$2.6M</strong>（社群引述，見 @zephyr_z9）完成支撐此次結果嘅 RL run。<strong>注意：屬公司公告與社群引述，未經第三方復現。</strong>
+</div>
+
+<p>AINews 指出呢組數字之所以引人關注，係因為它<strong>壓縮了時間線（compress timelines）</strong>。「如果呢啲數字站得住，含義就係：<strong>後訓練／RL 正變成一條比很多人想像中便宜得多、通往「前沿附近」嘅路徑</strong>。」</p>
+
+<p>另一條值得記嘅技術細節：<strong>MiMo 家族在 JAX + TPU 上擴展 RL</strong>，而據 @tianjun_zhang 講，在那裡「scaling 大多只係改 config，而唔係重寫代碼」。呢句其實係一個關於<strong>基礎設施選擇如何影響迭代速度</strong>嘅論斷——當擴展嘅邊際成本係「改一個配置」，試錯頻率就會完全唔同。</p>
+
+<div class="section-title">六、同期其他訊號（快速掃描）</div>
+
+<p>本期值得記低嘅幾條並行動態：</p>
+
+<table>
+  <tr><th>項目</th><th>要點</th></tr>
+  <tr><td><strong>開源 vs 閉源之爭</strong></td><td>Nathan Lambert 分享國會簡報（開源模型表現、採用率、中美競爭）；@Yuchenj_UW 主張前沿編碼能力自 Opus 4.8 起已平台化，而開源以 <strong>10–50× 更低成本</strong>持續收窄差距；反方 @teortaxesTex 認為前沿其實分裂出新嘅更高層級（內部模型與頂級閉源仍明顯領先）</td></tr>
+  <tr><td><strong>中國開源節奏</strong></td><td>@Thom_Wolf 整理出約 10 週嘅密集開源序列：Kimi K3、Qwen3.8-Max、DeepSeek V4-Pro、GLM-5.3、Hy4 Preview、Atria Dawn 等</td></tr>
+  <tr><td><strong>企業自建</strong></td><td>彭博消息（經 @Polymarket）指初創越來越多在開源權重上建自訂模型，以減成本同減低對 OpenAI / Anthropic 嘅依賴</td></tr>
+  <tr><td><strong>Jev / 決策模型</strong></td><td>Karpathy 稱它係「無思考、單 token、低延遲可接受智能」嘅 Pareto 前沿一點；LangChain 把它加入 LangSmith 做 judge；有人用它 <strong>83 秒重標約 2.3K 篇論文、成本 $0.14</strong>。架構性結論：最適合做 routing、審批閘、trace 評分、工具選擇，而唔係獨立「聰明 agent」</td></tr>
+  <tr><td><strong>Grok 4.7</strong></td><td>同價同速下較 4.6 有明顯提升；AA Coding Agent Index <strong>56</strong>，但 Vals Index 排 #24（較 4.6 跌 5 分）——評測分裂又一例</td></tr>
+  <tr><td><strong>OpenAI 自動化訓練</strong></td><td>廣泛流傳嘅摘要指 OpenAI 已大致自動化部分實驗模型訓練（含 GPU kernel 撰寫與代碼優化），內部 agent 協作，把部分實驗由「數年壓縮到約一週」</td></tr>
+  <tr><td><strong>推論工程</strong></td><td>HF <code>tokenizers</code> v1 RC 聲稱最高 <strong>30× 更快</strong>分詞；QwenImage 2.1 的 KV caching 帶來 <strong>2.55× 加速</strong>（50.57s → 19.86s）；騰訊混元 Hy4 Preview 混合精度量化到平均約 <strong>2.38 bits/weight</strong>；vLLM 為 GB300 NVL72 出調優服務配置</td></tr>
+</table>
+
+<p>呢堆條目嘅共同主題只有一個：<strong>同樣嘅硬體，擠出更多吞吐</strong>。配合小米嘅「更少 token per task」，可以睇到 2026 下半年嘅競爭重心已經由「模型多大」，移動到「每單位智能嘅成本同延遲」。</p>
+
+<div class="section-title">七、我嘅萃取（Insight）</div>
+
+<ol>
+  <li><strong>「RL 環境」正在被當成資產，而唔係訓練副產品。</strong>小米開源環境代碼但留住 7,000+ 任務數據集，係一次教科書式嘅分層開源。呢個意味住：<strong>未來評估一個 lab，唔止睇它嘅模型分數，更要睇它嘅環境工程能力</strong>——因為環境決定咗 RL 訊號嘅質量，而訊號質量決定後訓練能走多遠。</li>
+  <li><strong>後訓練成本已低到足以改寫競爭結構。</strong>$2.6M 呢個量級，意味著「用 RL 把一個開源基座推到前沿附近」已經係一個中型團隊可以承擔嘅動作。呢個係對閉源前沿最實在嘅壓力——唔需要復現預訓練，只需要復現<strong>後訓練</strong>。</li>
+  <li><strong>「更少 token per task」被寫成優化目標，係一個分水嶺。</strong>當 RL 同時優化正確率同路徑長度，成本曲線就會自己向下走。呢個比任何定價公告都更能解釋「為何開源模型嘅性價比突然變得難以拒絕」。</li>
+  <li><strong>異常透明係一種競爭策略，唔止係姿態。</strong>直播 final RL runs、一週內出技術報告——呢種透明度會拉高整個生態嘅期待基準，令其他 lab 嘅「三個月後才發報告」顯得落後。呢個係用「速度 + 透明」搶敘事主導權。</li>
+  <li><strong>對「六小虎」框架嘅一次證偽。</strong>一個手機廠跨界做到開源第一，說明<strong>人才流動（羅福莉由 DeepSeek 到小米）比機構標籤更能預測結果</strong>。呢個對追蹤中國 AI 格局嘅人有直接含義：名單會過時，人唔會。</li>
+</ol>
+
+<div class="section-title">八、前後脈絡</div>
+
+<ul>
+  <li><strong>同本頻道 #01〈羅福莉：AI 範式已然巨變〉嘅閉環。</strong>01 篇係羅福莉在張小珺節目講嘅範式判斷；本篇係她到小米之後交嘅第一份「可驗收成績單」。由「講範式」到「直播 RL run」，呢個係一個從觀點到執行嘅完整軌跡。</li>
+  <li><strong>同 #165〈兩日內六個克隆——Jev〉嘅延續。</strong>該期講判別式模型成為新系統原語；本期 Jev 已經有 Chrome extension、LangSmith judge、開源決策模型（SemIf）接入 Gateway——<strong>一個原語變成生態，只需要一週</strong>。</li>
+  <li><strong>同 #150〈DeepSeek V41 Flash〉、#94〈Qwen 3.8 Max〉、#39〈Kimi K3〉嘅線。</strong>本期 @Thom_Wolf 整理嘅 10 週開源序列，正好把呢幾篇連成一條線：中國開源已由「單點驚喜」變成<strong>持續節奏</strong>。而小米加入，係呢條節奏上嘅新一棒。</li>
+</ul>
+
+<div class="sub-title">爭議點 / 需留意之處</div>
+
+<ul>
+  <li><strong>本條係 newsletter 聚合，唔係一手訪談。</strong>小米嘅訓練細節、7,000 個環境、130 小時 / 75B tokens / $2.6M 等數字，<strong>來自公司公告與社群引述，未經第三方復現</strong>。</li>
+  <li><strong>Artificial Analysis 嘅排名係單一分數體系。</strong>「46 分開源第一」係一個 index 嘅結果；同週 Grok 4.7 在 AA 與 Vals 兩個體系上給出相反方向嘅結論，正好說明<strong>分數體系之間唔可互換</strong>。</li>
+  <li><strong>「$2.6M 完成 RL」需要定義邊界。</strong>呢個數字大概率只覆蓋<strong>最終階段嘅 RL run</strong>，唔包括預訓練、消融實驗、失敗嘅 run 同人力成本。當成「由零到前沿只要 $2.6M」係誤讀。</li>
+  <li><strong>「環境 = 新語料」仍係類比，唔係結論。</strong>預訓練語料嘅關鍵性質係「不可再生嘅獨佔」，而環境代碼係可複製嘅。真正嘅稀缺性在於<strong>可驗證、抗作弊、多樣嘅任務生成流程</strong>，而唔係環境本身。</li>
+  <li><strong>透明度係選擇性嘅。</strong>開源環境代碼但唔開源 7,000+ 任務數據集，意味著外界仍然無法完整復現。呢點值得在「異常透明」嘅敘事下保持清醒。</li>
+</ul>
+
+<hr>
+
+<div class="highlight-box">
+  <strong>如果只記一句：</strong>呢一期真正嘅頭條唔係「小米做了個 1T 模型」，而係<strong>「一個新玩家用 $2.6M 嘅 RL，加上一堆願意公開嘅環境代碼，就買到了一張前沿牌桌嘅座位」</strong>。當後訓練嘅成本門檻跌到呢個水平，值得重新問一次：<strong>呢一輪嘅護城河，究竟在模型、在數據，還係在「能不能造出好環境」？</strong>
+</div>
+
+<footer>
+  <p>深度復述 · 來源：Latent Space · AINews 欄目（swyx 維護，2026-09-22 06:30 UTC 發布，〈[AINews] Xiaomi MiMo-V2.6-Pro 1T-A42B: the new top Open Weights model, trained for $3M〉，涵蓋 9/19–9/21）</p>
+  <p style="margin-top:0.3rem;">主要依據：AINews 原文（Substack）＋其中引述嘅小米官方發布措辭、技術報告（<code>MiMo_V2_6_technical_report.pdf</code>）、Artificial Analysis 公開發布、以及小米 MiMo 開源 repo（<code>verl</code> / <code>mimoagent</code>）路徑清單。<strong>本條為聚合通訊，非一手訪談</strong>；當中小米訓練細節與成本數字屬公司公告與社群引述，未經第三方復現，文中已逐處標明。</p>
+  <p style="margin-top:0.3rem;">生成：2026-09-24 · ai-podcast-collection deep dive #173</p>
+</footer>
+</div>
+</body>
+</html>

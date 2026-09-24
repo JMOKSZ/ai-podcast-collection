@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「Agent = Model + Harness」——屠龍之術 × AICC2026：智能體把 Token 消耗推成 37 倍增速，同「算力缺口係持續性嘅」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">屠龍之術 · 2026-09-22 17:24 UTC 發布 · 莊明浩（單口）· 41 分 08 秒</div>
+  <h1>「Agent = Model + Harness」——屠龍之術 × AICC2026：智能體把 Token 消耗推成「智能體數量增速嘅 37 倍」，同「算力缺口係持續性嘅」</h1>
+  <div class="meta">
+    <span>📅 2026-09-22 17:24 UTC（09-23 01:24 CST）</span><span>·</span><span>🎙 屠龍之術（莊明浩，單口）</span><span>·</span><span>👤 無嘉賓｜內容為他對 AICC2026 主論壇发言嘅二次整理</span><span>·</span><span>🏷 算力 / 智能體 / IDC 報告 / 國產芯片生態</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集唔係訪談，係一份「現場財報」。莊明浩 9 月 21 日去北京聽完 <strong>AICC2026 人工智能計算大會</strong>（已辦 7 年、國內最頂級、最聚焦「計算」本身嘅行業大會），返嚟做嘅單口復盤。佢一開場就點出自己覺得最關鍵嘅差異：<strong>AICC 唔講模型能力，講底層基礎設施</strong>——算力系統、芯片、軟硬適配、Token 生產。當一個國家最頂級嘅「計算」大會把主論壇時間畀 IDC 報告、院士嘅可靠性評測、同服務器廠商嘅系統方案，而唔係模型跑分，呢個安排本身就係一個訊號。
+</p>
+
+<div class="highlight-box">
+  <strong>一句話抓住全集：</strong>需求側由 Chat 轉向 Agent，令 Token 消耗唔再係線性外推，而係被「智能體數量 × 單體行為」<strong>乘數放大</strong>；供給側受上游芯片供應鏈（尤其 <strong>HBM</strong>）制約，所以算力缺口唔係短期波動，而係<strong>持續性</strong>嘅結構問題。國產替代嘅真正戰場唔係單卡峰值，而係<strong>軟件生態</strong>——FlagOS 嘅價值就係「國產模型 × 國產芯片嘅 Day 0 適配」。
+</div>
+
+<div class="section-title">一、先講清楚一件事：本集嘅來源性質</div>
+
+<p>呢點對閱讀判斷好重要，必須前置講明。小宇宙 RSS 提供咗<strong>完整官方 shownotes</strong>（41 段章節時間軸至 40:53），但<strong>冇官方逐字稿</strong>。所以本復述中「講者原話」只保留 shownotes 上嘅章節標題用語；其餘論述係按章節軸 + 一手大會報導重建。<strong>所有 IDC 數字均屬二手轉述</strong>（大會現場發布後嘅媒體報導，未見報告原文 PDF 逐頁核對），引用時我會盡量註明出處層級。</p>
+
+<div class="section-title">二、第一章：從 Chat 到 Agent——需求側嘅結構性躍遷</div>
+
+<p>第一章嘅骨架係「從 Chat 到 Agent」，而切入點係一條等式：</p>
+
+<blockquote class="strong">
+「Agent = Model + Harness」
+<span class="attribution">—— 第一章小節標題（02:40）。全集最凝練嘅一句框架。</span>
+</blockquote>
+
+<p>呢條等式嘅意思係：Agent 唔係一個新模型，而係<strong>模型本體 + 外殼／工具／執行環境</strong>嘅組合體。而佢真正想講嘅係——需求側嘅變化唔止係「用量增加」，而係<strong>工作形態</strong>嘅改變。同一個任務，由「一問一答」變成「多輪推理 + 工具調用 + 跨系統協作」，Token 消耗嘅量級完全唔同。</p>
+
+<p>佢引 IDC 觀察指出，當前業界共識收斂到<strong>兩類場景</strong>：<strong>work + coding</strong>（章節 08:52）。呢個同 IDC 報告嘅行業成熟度評估一致（見第五節），亦係本集最實用嘅一句：<strong>唔好問「Agent 可以食邊個行業」，要問「邊個行業嘅任務邊界夠清晰、結果夠可驗證」</strong>。</p>
+
+<div class="sub-title">Token 增長嘅三個係數（09:47）</div>
+
+<p>呢個係全集最有分析價值嘅一段。佢用「Token 增長嘅三個係數」作為中間變數，去解釋為何 IDC 要<strong>大幅上調</strong>中國智能算力嘅增長斜率——注意係上調，唔係小幅修正。邏輯結構係：把 Token 消耗拆成幾個可分別觀測嘅乘積項（智能體數量 × 單任務步數 × 單步上下文長度這一類結構），而<strong>每一項都在變大</strong>。</p>
+
+<p>呢個拆法嘅重要性在於：它解釋咗「為何算力預測會被反覆打臉」。單看模型數量或單看用戶數，都會嚴重低估；因為 Agent 令「單位任務嘅 Token 成本」本身就係一個上升嘅乘數項。</p>
+
+<div class="section-title">三、IDC × 浪潮信息《2026 中國人工智能計算力發展評估報告》</div>
+
+<p>報告於 9 月 21 日 AICC 現場發布，官方定性為<strong>業內首份聚焦智能體基礎設施嘅研究報告</strong>，措辭相當高規格：</p>
+
+<blockquote class="strong">
+「算力躍升為與水利、電網、鐵路同等級嘅國家戰略基礎設施。」
+<span class="attribution">—— IDC 報告措辭（經《中華網》《每日經濟新聞》《虎嗅》等一手報導引述）。呢句係整份報告嘅定調句。</span>
+</blockquote>
+
+<table>
+  <tr><th>項目</th><th>數字</th><th>備註</th></tr>
+  <tr><td>全球活躍智能體數量</td><td><strong>7,940 萬（2026）→ 22.16 億（2030）</strong>，CAGR <strong>129.8%</strong></td><td>中國同期 CAGR 更高，達 <strong>151.2%</strong></td></tr>
+  <tr><td>同期全球 Token 消耗量 CAGR</td><td><strong>4,822.6%</strong>，約為智能體數量增速嘅 <strong>37 倍</strong></td><td>中國 Token 消耗 CAGR 為 <strong>3,499.3%</strong></td></tr>
+  <tr><td>中國智能算力規模</td><td>2026 年 <strong>2,576.5 EFLOPS</strong>（同比 <strong>+87.9%</strong>）→ 2030 年 <strong>10,524.3 EFLOPS</strong></td><td>2025–2030 CAGR 由前版 <strong>46.2% 上調至 50.3%</strong></td></tr>
+  <tr><td>中國 AI 算力市場規模</td><td>2026 年 <strong>515 億美元</strong>（+37%）→ 2030 年 <strong>1,501 億美元</strong>（CAGR 31.8%）</td><td>—</td></tr>
+  <tr><td>全球 AI 算力需求滿足率</td><td><strong>79%（2024）→ 71%（2027 谷底）→ 77%（2030）</strong></td><td>即 2030 年仍有 <strong>約 23% 需求等唔到供應</strong></td></tr>
+  <tr><td>算力缺口絕對值</td><td><strong>389 億美元（2024）→ 3,809 億美元（2030）</strong></td><td>缺口擴大近 10 倍</td></tr>
+  <tr><td>最大瓶頸</td><td><strong>HBM（高帶寬內存）</strong></td><td>三星／海力士／美光壟斷，擴產慢、門檻高</td></tr>
+</table>
+
+<div class="data-point">
+  <span>一句話</span>
+  <strong>智能體數量 4 年增約 28 倍，而 Token 消耗嘅複合增長率係它嘅 37 倍</strong>——即係話，就算智能體數量增長停咗，Token 需求都仍會因為「單體行為變複雜」而繼續爆炸。呢個就係「乘數效應」嘅數學含義。
+</div>
+
+<div class="sub-title">「錯配」比「不足」更刺眼</div>
+
+<p>IDC 副總裁周震剛喺現場訪談中指出一條完整因果鏈：需求（智能體 × Token）指數增長 → 供給受上游芯片供應鏈制約 → <strong>HBM 係最大瓶頸</strong>（壟斷、擴產慢）→ 廠商做分級存儲（把上下文放傳統內存或閃存）→ 壓力外溢到內存與閃存 → <strong>連內存同閃存都開始短缺漲價</strong>。</p>
+
+<p>而佢講得最刺眼嘅一句係「<strong>錯配</strong>」：過去嘅集群係面向<strong>訓練</strong>（要求算力峰值極高），但智能體普及之後需要嘅係<strong>保存上下文、大吞吐、低時延</strong>——舊集群「投了很多但用不上」。呢句對任何要採購算力嘅公司都係最實用嘅判斷：<strong>你唔係唔夠算力，你係買錯咗算力</strong>。</p>
+
+<p>報告對「智能體時代基礎設施」嘅結論亦相應地由「規模擴張」轉向「系統效率競爭」：競爭核心由「擁有幾多算力」轉向「<strong>能夠多高效地持續產出智能</strong>」。配套兩個概念——<strong>能力型智算（Capability）</strong>（以超節點為代表嘅 Scale-up 架構，擴大高速互聯域與統一內存尋址，支撐突破智能上限）與<strong>容量型智算（Capacity）</strong>（多元算力協同、推理解耦、緩存與調度優化，提高 Token 產出效率）。以及一個新嘅運營尺度：<strong>Token 運營</strong>——唔追求單一指標最優，而在業務場景與服務等級約束下，搵「交互性 vs 吞吐量」嘅最優平衡。</p>
+
+<div class="section-title">四、第二章：智能本身嘅重新定義——從「概率擬合」到「可信生產」</div>
+
+<p>第二章以<strong>同濟大學鄭慶華院士</strong>嘅演講為主軸（15:08）。路線係三段式：先指出當前大模型嘅局限（16:29）→ 再從「人腦」結構搵解法（17:29）→ 落到<strong>機器記憶智能</strong>（18:23）。</p>
+
+<p>但本集真正嘅題眼唔係「記憶」呢個詞，而係莊明浩反覆強調嘅一組張力：<strong>「可靠性」與「評測體系」係一體兩面</strong>（21:21 / 25:13）。要走進生產，就需要：</p>
+
+<ul>
+  <li><strong>全鏈路覆蓋嘅評測</strong>（22:27）——唔係單點 benchmark；</li>
+  <li>明確<strong>什麼叫「可靠」</strong>（23:34）——定義先於工程；</li>
+  <li>發布相應嘅<strong>評測體系</strong>（24:01）。</li>
+</ul>
+
+<p>呢個立場同國際上同一週嘅討論高度共振（見第八節）：當所有人都承認模型能力曲線在上升，<strong>「可靠性」就成為下一個瓶頸嘅名字</strong>。而中國學術側對呢件事嘅表述方式，就係「可靠評測體系 + 全鏈路覆蓋」。</p>
+
+<div class="section-title">五、第三章：算力與芯片——系統、器件、生態三線並進</div>
+
+<p>第三章（25:46 起）係供給側嘅「廠商主張」段，主體係浪潮信息嘅方案，另有「芯算一體」等更上游嘅主張。時間軸非常清晰：</p>
+
+<ul>
+  <li><strong>浪潮信息嘅主張：智算系統嘅雙唯進化</strong>（26:41）→ <strong>能力型智算嘅極端要求</strong>（27:48）→ <strong>雙軌實施</strong>（28:59）→ <strong>新產品發布</strong>（30:17）；</li>
+  <li>再往上到 <strong>芯算一體</strong>（31:13）與 <strong>讓計算走進存儲</strong>（32:02）——把計算下沉到存儲側，正對上面講嘅 HBM／搬運瓶頸；</li>
+  <li><strong>已有嘅實施效果</strong>（33:12）與<strong>場景拓展</strong>（33:42）作為證據段；</li>
+  <li>最後係<strong>生態層</strong>：<strong>FlagOS 生態</strong>（35:09）→ <strong>軟件生態也是壁壘</strong>（35:52）→ <strong>萬能插座</strong>（37:01）→ <strong>國產模型與國產芯片嘅 Day 0 適配</strong>（37:25）→ <strong>生態壯大中</strong>（39:01）。</li>
+</ul>
+
+<blockquote class="strong">
+「軟件生態也是壁壘」
+<span class="attribution">—— 第三章小節標題（35:52）。全集最尖銳嘅一個立場。</span>
+</blockquote>
+
+<p>呢個立場嘅推論係：<strong>制程嘅落後可以用系統同生態去補</strong>。而「Day 0 適配」係一條非常高規格嘅目標線——唔係「可以用」，而係<strong>芯片一發布就能跑主流模型</strong>，把過去幾個月嘅移植工程壓縮到發布當日。FlagOS 被比喻成「萬能插座」，價值就在呢度。</p>
+
+<div class="highlight-box">
+  <strong>點解「Day 0」係一個可以驗收嘅指標：</strong>模型／芯片嘅熱度窗口只有幾週。如果適配要三個月，國產芯片就永遠只能食「已經唔係前沿」嘅模型；如果可以做到發布當日就跑，它才有資格被放進前沿團隊嘅選項清單。所以「Day 0 適配」唔係宣傳口號，而係國產算力能否進入主流供應鏈嘅門檻線。
+</div>
+
+<div class="section-title">六、行業成熟度：Coding 同 Work 率先規模化，傳統行業核心閉環仍係 0%</div>
+
+<p>報告首次從「當前應用成熟度」與「長期生產力影響」兩個維度評估行業智能體，而兩個維度<strong>並唔同步</strong>。落地層面嘅事實相當硬：</p>
+
+<table>
+  <tr><th>行業 / 場景</th><th>狀態</th></tr>
+  <tr><td>代碼開發（Coding）、辦公任務（Work）</td><td>數字化程度高、任務邊界清晰、結果可驗證 → <strong>已率先進入規模化應用</strong></td></tr>
+  <tr><td>製造、醫療健康、能源／電力</td><td>真正進入核心業務並形成「執行—反饋—優化」閉環嘅比例<strong>仍為 0%</strong></td></tr>
+  <tr><td>運營商</td><td>已有 <strong>70.0%</strong> 接入部分業務流程，但進入核心業務閉環嘅比例<strong>只有 3.3%</strong></td></tr>
+  <tr><td>教育、科研與研發、醫療健康</td><td>當前成熟度有限，但專業知識密度高、可被 AI 重構嘅環節多 → <strong>長期生產力影響更突出</strong></td></tr>
+</table>
+
+<p>呢張表其實回答咗一個好現實嘅問題：<strong>「Agent 落地」嘅真實進度，唔係睇 demo，而係睇「有冇形成閉環」</strong>。70% 接入 vs 3.3% 閉環嘅落差，說明絕大多數部署仍停留在輔助層，未進入業務嘅責任鏈。</p>
+
+<p>報告亦首次把<strong>智能體應用落地、具身智能產業布局、大模型開發、推理算力基礎設施</strong>納入城市 AI 算力評價指標。2026 年城市榜前三為<strong>北京、杭州、深圳</strong>（深圳由第四升至前三，理由係 AI 服務器與算力芯片製造基地嘅供給側地位）；上海、廣州、成都、南京、武漢、濟南、蘇州進入前十。</p>
+
+<div class="section-title">七、我嘅萃取（Insight）</div>
+
+<ol>
+  <li><strong>敘事重心由「模型能力」轉向「基礎設施與可靠性」。</strong>當中國最頂級嘅「計算」大會把主論壇時間畀 IDC 報告、院士嘅可靠性評測與服務器廠商嘅系統方案，而唔係模型跑分，說明行業共識已默認<strong>瓶頸在供給側</strong>。呢個係一個可以攞嚟做前瞻嘅訊號。</li>
+  <li><strong>供需剪刀差嘅因果鏈被明確講出，可以直接當採購時序用。</strong>需求（智能體 × Token）→ 上游芯片供應鏈 → HBM 瓶頸 → 分級存儲 → 內存／閃存漲價 → 2027 滿足率谷底。呢條鏈每一環都有時間點，比「算力唔夠」呢類空話有用得多。</li>
+  <li><strong>「錯配」比「不足」更值得寫入決策備忘。</strong>過去面向訓練嘅集群不適配推理與智能體負載。對雲廠商同自建算力嘅公司，呢句係採購決策層面最實用嘅一句判斷。</li>
+  <li><strong>國產替代嘅戰場在軟件生態，唔在單卡峰值。</strong>「生態也是壁壘」「萬能插座」「Day 0 適配」構成一個清晰立場：可用性嘅門檻線係「發布當日就能跑」，而唔係峰值跑分。</li>
+  <li><strong>Token 正由「成本項」變成「運營尺度」。</strong>報告提出 Token 運營要在交互性與吞吐量之間搵平衡——呢個係一個會傳導到產品設計嘅概念：同樣嘅算力，點樣配置模型、調度與緩存，會直接決定用戶體驗同毛利。</li>
+</ol>
+
+<div class="section-title">八、前後脈絡</div>
+
+<ul>
+  <li><strong>同本頻道 9/15〈智能的下一幕，讓人興奮——73 頁 PPT solo〉嘅對照。</strong>上一集係<strong>自上而下嘅技術敘事</strong>（73 頁 PPT，講智能演進），本集係<strong>自下而上嘅供給側財報</strong>（大會現場 + IDC 數字）。兩集合起來才係佢完整嘅判斷：智能在往上走，但地板（算力／生態）才係決定速度嘅變量。</li>
+  <li><strong>同 8/31〈模型到底吃不吃應用？〉嘅對照。</strong>那一集討論應用層嘅存活，本集討論支撐應用層嘅 Token 生產成本——同一條價值鏈嘅兩端。</li>
+  <li><strong>同 9/4〈中國一級半市場的水下江湖〉呼應。</strong>算力與芯片都在「水下」重構籌碼與利益格局。</li>
+  <li><strong>跨頻道共振（同週兩檔國際播客）。</strong>本集講「可靠性評測 / 全鏈路覆蓋」，同一週 Latent Space × John Platt（ERA）講「multiplicity、隱藏 hold-out、唔好騙自己」，MLST × Alexander Mattick 講「期望上很好但偶爾大錯 ≠ 可部署，需要 L∞ 保證」。三檔節目、三種語言，指向同一件事：<strong>平均值指標正在系統性高估能力</strong>，而「可靠性」係下一個大家一齊撞到嘅牆。</li>
+</ul>
+
+<div class="sub-title">爭議點 / 需留意之處</div>
+
+<ul>
+  <li><strong>報告數字係預測而非事實。</strong>「Token 消耗 CAGR 4,822.6%」「2030 年 22.16 億智能體」都係 IDC 嘅建模外推，且係首份聚焦智能體基礎設施嘅報告——基期選擇與預測期長度會極大影響複合增長率。<strong>應視為方向性指標，而非可校驗嘅物理量。</strong></li>
+  <li><strong>CAGR 4,822.6% 極易被誤讀。</strong>複合增長率超過 4,800% 意味著約 <strong>48 倍／年</strong>級別嘅乘數描述，通常係低基期 + 長預測期疊加嘅產物。播客把它當「乘數效應」嘅證據係合理嘅，但當規劃輸入就過於激進。</li>
+  <li><strong>「滿足率 2027 年見底」係一個可被證偽嘅預言。</strong>它同時押注 HBM 擴產節奏與需求曲線，任一端偏差都會改寫。</li>
+  <li><strong>廠商立場問題。</strong>系統層與生態層嘅主張（雙唯進化、芯算一體、FlagOS）來自浪潮信息自身，屬 company claims，需要與第三方方案對照。</li>
+  <li><strong>來源層級。</strong>本集只有 shownotes、冇逐字稿；IDC 數字經媒體轉述（《每日經濟新聞》《光明網》《中華網》《虎嗅》等），未見報告原文逐頁核對。本復述已標明引用為 shownotes 章節標題用語或媒體措辭，非講者逐字發言。</li>
+</ul>
+
+<hr>
+
+<div class="highlight-box">
+  <strong>如果只記一句：</strong>呢集唔係叫你買芯片，係叫你改一個習慣——<strong>唔好再用「用量增長」去估算力需求，要用「智能體數量 × 單體行為複雜度」去估</strong>。前者係線性，後者係乘數；而錯配（買咗訓練算力去跑推理）往往比不足更致命。
+</div>
+
+<footer>
+  <p>深度復述 · 來源：屠龍之術（莊明浩，單口，2026-09-22 17:24 UTC 發布，41:08，〈AI进入生产阶段之后，智能、算力、芯片 会走向哪里？〉）</p>
+  <p style="margin-top:0.3rem;">主要依據：小宇宙 RSS 官方 shownotes（含 41 段章節時間軸至 40:53 及 PPT／ima 報告庫連結）＋ AICC2026 現場發布後嘅一手媒體報導（IDC × 浪潮信息《2026 年中國人工智能計算力發展評估報告》數字，經《中華網》《每日經濟新聞》《虎嗅》《InfoQ》《新浪財經》等交叉比對一致）。<strong>本集無官方逐字稿</strong>，引語按 shownotes 標題用語與媒體措辭引用，非逐字發言。</p>
+  <p style="margin-top:0.3rem;">生成：2026-09-24 · ai-podcast-collection deep dive #172</p>
+</footer>
+</div>
+</body>
+</html>
