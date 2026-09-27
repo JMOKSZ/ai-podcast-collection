@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「一間被叫做 wrapper 嘅公司」——Latent Space × OpenRouter：$7B 賣給 Stripe，同「agentic fraud 會像海嘯一樣打過嚟」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em; background: #f4f1ec; padding: 0.05rem 0.3rem; border-radius: 3px; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space（swyx + Alessio）· 2026-09-25 23:14 UTC 發布</div>
+  <h1>「一間被叫做 wrapper 嘅公司」——Latent Space × OpenRouter：被 Stripe 以約 $7B 買下，同「agentic fraud 將會像海嘯一樣打過嚟」</h1>
+  <div class="meta">
+    <span>📅 2026-09-25 23:14 UTC（可對應 09-26 07:14 CST）</span><span>·</span><span>🎙 Latent Space</span><span>·</span><span>👤 Alex Atallah（OpenRouter 聯合創始人 &amp; CEO）、Anjney Midha（AMP）</span><span>·</span><span>🏷 分發層 / 中立路由 / 收購 / agentic fraud</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集表面上係一單收購新聞嘅訪談，實際上係一條<strong>產業史</strong>：由 2023 年「得 OpenAI 一間」講到今日「幾十間前沿實驗室」，由 Llama 講到 Mistral 嘅磁力鏈 checkpoint，由 Discord 嘅內容審核拒答講到 Stripe 嘅反欺詐基建。而貫穿全場嘅只有一個判斷：<strong>模型層會分化，所以中間要有中立嘅路由／發現／計費／版本管理層；而當 agent 開始搬動價值，呢層就會變成攻擊目標。</strong>
+</p>
+
+<div class="highlight-box">
+  <strong>一句話抓住本集：</strong>OpenRouter 由「開源權重第一波」長成 AI 生態嘅中立路由層——<strong>&gt;1,000 萬開發者、每日 &gt;10 兆 tokens</strong>；佢被貼過「只係 wrapper／marketplace」嘅標籤，結果一個月後 Menlo 就把估值 mark up 約 10×。收購方 Stripe 嘅戰略理由，被嘉賓講成一句好重嘅話：<strong>「token 經濟」會成為下一個系統性風險面，而下一代欺詐唔止嚟自人，係嚟自自主 agent 攻擊日益值錢嘅 token 流。</strong>
+</div>
+
+<div class="section-title">一、起點：一個 $600 嘅 Alpaca 時刻</div>
+
+<p>Anjney Midha 從頭講佢嘅「頓悟時刻」。2022 年底，OpenAI 幾乎係唯一選擇，加一堆早期開源權重嘅嘗試。2023 年 1 月 Llama 出嚟，「令人興奮，但沒辦法同它聊天」——它的 benchmark 贏 3，但唔係一個 engaging 嘅模型。似乎只差幾步 RLHF。</p>
+
+<p>然後 Alpaca 出現：一支史丹福團隊用合成數據微調 Llama，<strong>只花 $600</strong>。Midha 嘅形容好具體——他當時在飛機上用它，<strong>「好多情況下根本分唔清 ChatGPT 同 Alpaca 嘅輸出」</strong>。</p>
+
+<blockquote class="strong">
+「如果做一個模型係咁容易，咁第一，我們有一種全新嘅『把數據變現』嘅方式——你可以拿好有價值嘅數據，用 $600 變成一個服務，而呢個成本大概會隨時間下降。」
+<span class="attribution">—— Anjney Midha。佢嘅延伸推論係：只要有「爆款應用 ＋ 一套可以用自己 flavor 複製它嘅框架」，一個即時生態就會冒起——因為單一公司嘅決策同更廣生態可以做出嘅變化之間，有巨大落差。</span>
+</blockquote>
+
+<p>Midha 講得好清楚，當時最接近嘅係 Hugging Face——但 HF <strong>冇閉源模型、當時亦唔可以真正用那些模型，仲冇「邊個在用、用嚟做乜」嘅數據</strong>。而單一開發者想要嘅，係一個可以睇到「LLM 被用幾多、邊個用、點解用」嘅 home base。呢個缺口，就係 OpenRouter 嘅位置。</p>
+
+<div class="section-title">二、Discord 嘅遺產：為何「拒答」催生了硬需求</div>
+
+<p>Alex Atallah 嘅背景被一筆帶過但好關鍵：他創辦過 OpenSea，之後做過 Discord 平台負責人（管 crypto/NFT 安全、250M MAU 嘅部署同內容審核）。而導入 OpenRouter 嘅手shake，係 13 年前在史丹福《Stanford Review》——Peter Thiel 創辦嗰份自由派報紙——嘅一次編輯會上，兩個二年級生第一次見面。</p>
+
+<p>真正嘅技術動機則好實際：Discord 用當時嘅模型做內容審核時發現<strong>模型會拒答</strong>。每個伺服器有自己嘅社群規範（好多其實違反 OpenAI 嘅規則），但模型用「哈利波特／商標內容一律拒答」呢種粗糙規則去擋，結果就係硬需求——<strong>可切換嘅模型、開放權重嘅選項</strong>。另一個被點名嘅能力遷移係：Discord 上曾跑過「數十億美元 GMV 嘅 NFT 交易」，團隊因此學會在規模化社群裡面防釣魚、防社交工程、防 DDoS，呢批經驗直接變成後來 OpenRouter 嘅計費同反欺詐能力。</p>
+
+<p>而 Midjourney 提供咗另一個模板：<strong>由發布到 $100M 收入 run rate，唔夠八個月</strong>，而它係寄生在 Discord 上嘅應用體驗。之後 Stable Diffusion 出現，事情就變質：<strong>「一個開發者可以整自己嘅 Midjourney」</strong>——但前提係要有一個唔使自己搞 hosting 嘅 API。呢個就係「模型 API 層」嘅誕生條件。</p>
+
+<div class="section-title">三、核心判斷：前沿實驗室「識訓練，唔識分發」</div>
+
+<p>呢段係整集最有商業洞察嘅部分。Midha 講當年 VC 反對投資 OpenRouter 嘅最大理由，係「會有一個 Google 式壟斷贏晒」。他反過來認為，scaling law 恰恰係 OpenRouter 嘅順風——因為 scaling law 意味住<strong>至少會有多個團隊做出前沿模型</strong>，所以需要一層中立嘅路由／發現／計費／版本管理基建。</p>
+
+<blockquote class="strong">
+「你會震驚——早期 OpenAI… 唔好意思，Anthropic、BFL、Mistral 嘅訓練團隊，在『把研究拿出實驗室、放大影響』嘅默認做法上，係幾咁相似：<strong>checkpoint 做完，丟個 API，搞定，然後——一片死寂（there'd be crickets）。</strong>」
+<span class="attribution">—— Anjney Midha。具體到咁樣：Anthropic 嘅第一個 Claude checkpoint，做完之後<strong>在內部放咗成年</strong>先對外發布；發布時得三個開發者示例，其中一個係 Discord bot、一個係 Midha 妻子 Vivian 嘅創業公司、另一個係 Notion——「因為朋友就係咁樣湊出嚟嘅」。</span>
+</blockquote>
+
+<blockquote class="strong">
+「得一個 checkpoint 係做唔到任何嘢嘅。你需要<strong>一大堆 plumbing 圍住它</strong>，先可以令一個開發者用得着。」
+<span class="attribution">—— Alex Atallah。呢句係對「just a wrapper」嘅正面反駁。</span>
+</blockquote>
+
+<p>對照數字好有說服力：Atallah 提到，一家前沿實驗室<strong>花了超過 12 個月才做到首個 1,000 萬美元收入</strong>；而 Black Forest Labs 選喺 OpenRouter 上線時，OpenRouter 可以「<strong>你發布嗰日，我們可以送你 100 萬個開發者</strong>」——Midha 形容呢個係「<strong>一個鐘之內嘅 step function change</strong>」。Atallah 補一句好誠實嘅校正：「我覺得今日大約係 400 萬。」（指當時平台規模；全站開發者後來超過 1,000 萬）</p>
+
+<p>而 Mistral 係「競爭性推理市場」嘅第一次真正證明：他們發布嘅<strong>第一個 checkpoint 係 torrent 磁力鏈，完全冇 API</strong>。大約 2023 年 12 月嘅 Mistral 8x7B「價格戰」，令價格<strong>跌咗約 80%</strong>——呢個在嘉賓眼中係正面訊號：第一次有真正嘅競爭出現。</p>
+
+<div class="section-title">四、為何「just a wrapper」係最蠢嘅還原論（兼一次 10× mark up）</div>
+
+<p>Midha 直接開火，明確點名好多 VC「在呢個領域冇任何運營經驗」：</p>
+
+<blockquote class="strong">
+「當時對幾個投資者嚟講，OpenRouter 唔止係一個圍住 API 嘅 wrapper 呢件事，並唔明顯。而呢點令我<strong>好嬲</strong>。我當時想：『乜嘢？我冇時間同你辯論。我們要投。』然後我記得，大約一個月之後，Matt Murphy 就把估值 mark up 咗 <strong>10 倍</strong>。」
+<span class="attribution">—— Anjney Midha。OpenRouter 官方訪談摘要亦保留咗一句：「如果一個 app 只係模型嘅 wrapper，咁 OpenRouter 就係 API 嘅 wrapper——投資人不也是 LP 嘅 wrapper 嗎？」</span>
+</blockquote>
+
+<p>佢嘅正面論證係：<strong>API 編排 ＋ 按金鑰／Provisioning／版本控制 ＋ 社群 flywheel，本身就係護城河</strong>。而呢個護城河嘅本質，係一個「資訊不對稱」問題——見下面呢段本集最好嘅比喻：</p>
+
+<blockquote class="strong">
+「我們係一個<strong>中立層</strong>，望住呢個市場，好似望住一間巨大嘅黑房——所有角落對用戶嚟講完全模糊，用戶行入去、四圍摸，試圖搞清楚枱上有乜嘢物件可以拿走、砌入自己嘅公司。而呢種做法係瘋狂嘅。模型唔係那種可以將所有功能列在網站上嘅產品。」
+<span class="attribution">—— Anjney Midha（00:21:57 前後）。佢嘅補充係：「打燈嘅必須係中立第三方」——因為模型實驗室自己做嘅 marketing 同中立層對同一個模型嘅呈現係兩回事。</span>
+</blockquote>
+
+<div class="section-title">五、OpenRouter vs LM Arena：為何係兩間公司</div>
+
+<p>swyx 問得好直接：你又係 LM Arena 嘅投資人，你又識個 flywheel，為何你唔做 Arena？為何 Arena 唔做 OpenRouter？</p>
+
+<p>Midha 嘅答案好清楚，而且係一個結構性理由，唔係策略性理由：</p>
+
+<blockquote class="strong">
+「一間公司同時做兩件事係好難嘅，因為<strong>一間係拿數據去賣，而另一間按默認係唔可以嘅</strong>。所以我覺得呢度有個 branding 上嘅理由，令呢度會係兩間公司。」
+<span class="attribution">—— Anjney Midha。LM Arena 係偏好評測（拿數據賣）；OpenRouter 係路由層——「在 OpenRouter，冇訓練、冇 property」。兩者使命根本唔同。</span>
+</blockquote>
+
+<p>呢個分別對理解「排行榜」有直接含義：Arena 嘅 leaderboard 係偏好信號；OpenRouter 嘅 leaderboard 係<strong>即時產業地圖</strong>——它反映真實嘅使用結構，而唔係抽樣評分。</p>
+
+<div class="section-title">六、Focus 作為戰略：刪咗嘅嘢同返嚟咗嘅嘢</div>
+
+<p>OpenRouter 做過幾個「原型但從來冇發布」嘅產品。最重要嘅係 <strong>MOM（Mixture of Models）</strong>：讓你揀幾個模型（或平台幫你揀），最後<strong>用另一個模型（集合中最聰明嗰個）把結果融合</strong>，中間過程用一個 Kanban 式界面展示晒出嚟。</p>
+
+<p>他們後來<strong>把成個代碼庫刪咗</strong>——因為「2024 年初嗰時技術仲係太原始、形態亦唔啱，要再迭代幾次」。但幾年之後，fusión 又返嚟，而且「好得多」。Midha 給出嘅技術理由值得記：</p>
+
+<blockquote>
+「RL 擴展咗每個實驗室內部 ML 研究者嘅創造力面積，所以佢哋可以更有效地令唔同模型嘅推理能力分化。」——他稱之為佢對「fusión 為何今日 better」嘅理論。
+</blockquote>
+
+<p>而復活嘅觸發點係一個好樸素嘅實驗：「問所有模型，融合結果係否比各自嘅結果更好。佢哋全部話係。呢個發生咗幾次，我就想——好，抽查唔錯，我哋應該 benchmark 佢。fusión 就係咁樣 build 出嚟。」Focus 嘅價值在於：當你唔做 fine-tuning、唔做 memory、唔做一堆相鄰產品，你就可以等到一個技術真正成熟嘅時刻，再一次做對。</p>
+
+<div class="section-title">七、增長拐點：Sonnet、OpenClaw 同每日 10 兆 tokens</div>
+
+<p>swyx 用「state of AI」嘅方式數里程碑：由 Mistral 價格戰，到 leaderboard，到「一百兆 tokens—啊唔係，你而家一星期十兆」。Midha 校正：「<strong>我們而家係一日十兆</strong>。」再由 Sonnet、OpenClaw、auto-routing 帶來嘅使用結構變化，一路推到收購。</p>
+
+<div class="data-point">
+  <span>規模</span>
+  <strong>&gt;1,000 萬開發者</strong>（訪談中一度講「發布日可送 100 萬開發者」，Atallah 事後校正「今日大約 400 萬」——即係全站規模與單次活動口徑唔同）·<strong>每日 &gt;10 兆 tokens</strong> · 收購方為 <strong>Stripe</strong>，訪談摘要與節目描述提到交易規模約 <strong>$7B</strong>。<strong>全部數字來自公司自報或節目描述，無第三方核實。</strong>
+</div>
+
+<p>唔應該忽略嘅係 leaderboard 嘅角色。當你係「中立路由層」，你就會有全網最完整嘅「邊個模型被邊種任務用幾多」嘅即時資料。呢個係一個<strong>資訊資產</strong>，而且係 Arena 式偏好評測拿唔到嗰種——因為它係真實付費流量，而唔係抽樣投票。</p>
+
+<div class="section-title">八、最重要嘅前瞻判斷：agentic fraud 會像海嘯</div>
+
+<p>最後一段係整集最有前瞻價值嘅部分，亦係 Stripe 收購嘅戰略理由。swyx 提到「十萬億美元 GMV 同全球 GDP 增長」嘅框架，Midha 接落去：</p>
+
+<blockquote class="strong">
+「我覺得其中有<strong>好大一部分會係欺詐、濫用</strong>。而如果人們唔信任 token，我們可能永遠到唔到嗰個規模。呢種基建並唔存在……我覺得人們<strong>未意識到，由 AI agent 造成嘅惡意行為（agentic fraud）將會像海嘯一樣打過嚟</strong>。」
+<span class="attribution">—— Anjney Midha（約 01:17–01:18）。呢個就係 Stripe 收購 OpenRouter 嘅戰略邏輯：Stripe 嘅反欺詐基建 ＋ OpenRouter 嘅 token 流，組成「token 經濟」嘅信任層。</span>
+</blockquote>
+
+<p>要明白呢句嘅重量：OpenRouter 係每日 10 兆 tokens 流經嘅閘門。如果 agent 開始自主搬動價值（買嘢、開帳戶、跑自動化），咁「token 流」就會由一種運算資源，變成一種<strong>可以直接被套現、被攻擊、被洗錢嘅高價值資產</strong>。而攻擊者亦會由人類升級成 agent——呢個係「推理閘道正在變成欺詐目標」嘅具體含義。</p>
+
+<p>收購後嘅預期（Midha 訪談最後一句）：「我覺得呢個係一個好方法，令我們可以加速市場、更快走上 upmarket。」即係由「開發者自助市場」推向「企業級／支付級基建」。</p>
+
+<div class="section-title">九、我嘅萃取（Insight）</div>
+
+<ol>
+  <li><strong>價值正由「模型層」遷移到「harness／路由／評測／後訓練」。</strong>OpenRouter 係呢條線最成熟嘅商業化證明：底層模型唔係它嘅，但它掌握分發、發現、計費、版本控制同 anti-fraud。同週 AINews 亦反覆講「同模型同 prompt，harness 唔同就能顯著改變 benchmark 結果」——兩條線講嘅係同一件事。</li>
+  <li><strong>「Google 式壟斷」在 LLM 時代更難成立。</strong>理由唔止係技術樂觀——而係「造好競爭者嘅經濟性被大幅去中心化」，加上 LLM 唔止係一個介面，而係「起新公司嘅原料」。呢個係 OpenRouter 嘅存續前提，亦係它願意押注多模型未來嘅理由。</li>
+  <li><strong>「識訓練，唔識分發」係前沿實驗室嘅系統性缺口。</strong>「checkpoint 做完 → 丟個 API → 一片死寂」呢個畫面，配上「內部擱置成年」同「三個示例靠朋友湊」嘅細節，說明分發唔止係 marketing 問題，係<strong>工程同產品嘅一個獨立學科</strong>。呢個缺口撐起咗一整層基建公司。</li>
+  <li><strong>社群運營 ＋ 系統思維係被 ML 圈長期低估嘅能力。</strong>由《Stanford Review》→ Discord/OpenSea 嘅反欺詐 → OpenRouter，呢條人脈線同能力線，同「純 ML 研究」係兩種完全唔同嘅訓練。而喺基建層，後者往往更決定成敗。</li>
+  <li><strong>「agentic fraud」係目前最被低估嘅 AI 經濟風險。</strong>呢個唔係一個模型安全問題，而係一個<strong>金融基建問題</strong>。把 token 流當成高價值資產、把 agent 當成潛在攻擊者——呢個框架值得任何做 agent 支付／自動化嘅團隊直接抄。</li>
+</ol>
+
+<div class="section-title">十、前後脈絡</div>
+
+<ul>
+  <li><strong>同本週 Latent Space 嘅 Runway／WorldPrompt、Bio-security 兩集連成一個「基建／能力／安全」三角。</strong>Runway 講生成能力、生物安全講防守落後、OpenRouter 講分發同信任——三集合起來，正好係「2026 下半年嘅 AI 產業地理」。</li>
+  <li><strong>同 #168〈Diogo Almeida：Jev / System One〉、#165〈六個 Jev 克隆〉相接。</strong>如果決策／路由係新原語，OpenRouter 就係「路由」在商業層嘅對應物。Jev 在 OpenRouter 上係 1K–10K context 嘅第一名模型——兩條線本來就交叉。</li>
+  <li><strong>同 9/25 AINews 提到嘅 TypeSafe（Jev）$10B+ 估值一併睇。</strong>「決策／路由／系統一模型」呢一層正在被資本重估，而 OpenRouter 被 Stripe 買下係同一趨勢嘅另一個數據點。</li>
+  <li><strong>同 #167〈Bund：agentic commerce 信任基建〉、#146〈Brian Armstrong：agentic finance〉同一條線。</strong>「agent 開始搬錢」之後，信任層（KYC、承保、反欺詐）就係下一個必爭之地。</li>
+</ul>
+
+<div class="sub-title">爭議點 / 需留意之處</div>
+
+<ul>
+  <li><strong>嘉賓有明確立場。</strong>Midha 係 OpenRouter 嘅投資人，他對「wrapper 論」嘅攻擊帶有明顯的利益相關；「Menlo mark up 10×」係佢嘅敘事，細節（金額、時間）他自己都講得唔精確。</li>
+  <li><strong>「1,000 萬開發者」口徑唔嚴。</strong>Atallah 在訪談中先講「發布日送 100 萬開發者」，被追問後更正「我覺得今日大約 400 萬」，而官方描述係「&gt;1,000 萬開發者」。要留意「註冊帳號」同「活躍開發者」之間通常有大量重複註冊（account duping），需要去重。</li>
+  <li><strong>每日 10 兆 tokens 係公司自報。</strong>無第三方核實；亦要留意「tokens」嘅統計口徑（是否含快取讀取、是否含內部測試流量）。</li>
+  <li><strong>Stripe 收購價約 $7B 來自節目描述。</strong>唔係官方財報數字，唔應當成已核實嘅事實。</li>
+  <li><strong>「agentic fraud 海嘯」目前係預言，唔係數據。</strong>Midha 冇給出任何量化證據（例如現時 fraud rate、增長曲線）。佢嘅框架合理，但作為預測，讀者應保持「方向可能對、量級未知」嘅態度。</li>
+  <li><strong>LM Arena vs OpenRouter 嘅「兩間公司」講法，係事後合理化嘅一種。</strong>它也確實對應一個真實嘅結構差異（一間賣數據、一間按默認唔可以），但唔排除同時係一個 positioning 選擇。</li>
+</ul>
+
+<hr>
+
+<div class="highlight-box">
+  <strong>如果只記一句：</strong>呢集真正嘅主題唔係「OpenRouter 賣咗幾錢」，而係<strong>「當模型變成一種可以互換嘅原料，價值就會沉澱在嗰層負責發現、路由、計費、同信任嘅中立基建上」</strong>。而 Midha 最後嘅警告提醒我哋：呢層基建越值錢，就越會成為攻擊目標——因為<strong>下一個要防守嘅邊界，唔係模型嘅拒答，而係 agent 手上嗰條 token 流。</strong>
+</div>
+
+<footer>
+  <p>深度復述 · 來源：Latent Space，〈OpenRouter: from Seed to Stripe — with OpenRouter's Alex Atallah &amp; AMP's Anjney Midha〉，2026-09-25 23:14 UTC 發布（Substack 文章＋完整逐字稿；節目描述提到 Stripe 以約 $7B 收購）。</p>
+  <p style="margin-top:0.3rem;">主要依據：本集完整逐字稿（引言、Alpaca/Llama 多模型押注、Discord 與 OpenRouter 起源、為何「一個模型贏晒」係錯押注、為何模型實驗室卡在分發、「just a wrapper」爭議、透過社群 bootstrap、crypto/Midjourney/早期生態、Mistral 與推理市場誕生、OpenRouter vs LM Arena、focus 與 Anthropic、MOM 與 model fusion、Sonnet/OpenClaw 增長、Stripe 為何收購、fraud 與新興 token 經濟、agentic fraud 浪潮、加入 Stripe 之後）。<strong>文中規模數字與收購價均為公司自報或節目描述，未經第三方核實，已逐處標明。</strong></p>
+  <p style="margin-top:0.3rem;">生成：2026-09-27 · ai-podcast-collection deep dive #175</p>
+</footer>
+</div>
+</body>
+</html>

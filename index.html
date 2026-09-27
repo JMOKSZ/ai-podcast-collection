@@ -1533,6 +1533,18 @@ function togglePastReports() {
   <p class="note">Latent Space · AINews（swyx 維護，9/22 06:30 UTC 發布，涵蓋 9/19–9/21；<strong>聚合通訊、非一手訪談</strong>）：小米 MiMo-V2.6-Pro／Flash 開源全模態模型，<strong>1.02T 總參 / 42B 活躍</strong>、MIT 授權、Artificial Analysis 智能指數 <strong>46（開源權重第一）</strong>、每題 <strong>$0.13</strong> 落在 Intelligence vs Cost per Task Pareto 前沿、定價 $0.435 / M in、$0.87 / M out。但真正嘅主角係 RL stack——技術報告講三條擴展軸：①更大 batch 全非同步（每次更新 1,568 條樣本、最高 1M context、每步 3.5–3.7B tokens）；②更多任務與更豐富環境（coding / general agents / visual / cyber，混用多個 harness 令能力互相強化）；③<strong>更多 grader compute</strong>（組內相對比較，令長時域任務有更精確多樣嘅獎勵信號，閉合自我改進迴圈，並<strong>把模型推向更短路徑、每任務更少 token</strong>）。異常透明＝羅福莉（前 DeepSeek、現小米）直播 final RL runs、最後一次 run 之後唔夠一週就出模型＋技術報告；環境代碼與訓練 recipe 將開源（<code>verl</code> / <code>mimoagent</code> 下：code、arvo、general、design/webdev、design/music、config/agent、environments），但<strong>完整 7,000+ 任務數據集暫未發布</strong>。成本錨：社群引述 RL run 為 <strong>130 小時 / 75B tokens / $2.6M</strong>（公司公告與社群引述，<strong>未經第三方復現</strong>），MiMo 家族在 JAX + TPU 上擴展 RL「大多只係改 config 而唔係重寫代碼」。社群共識解讀：<strong>高質量開源 RL 環境可能複製上一輪「預訓練語料」嘅戰略地位</strong>。同期訊號：中國開源 10 週密集序列（Kimi K3 / Qwen3.8-Max / DeepSeek V4-Pro / GLM-5.3 等）、Jev 生態一週內長出 Chrome extension／LangSmith judge、HF tokenizers v1 最高 30× 加速、Hy4 量化至約 2.38 bits/weight。· Latent Space</p>
 </div>
 
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/174-mlst-weco-aide2-recursive-self-improvement.html">「八日打敗兩年」——MLST × Weco AIDE²：第一個被判為「淨正」嘅遞歸自我改進實驗，同它明確未通過嘅點火測試</a></h3>
+  <p class="note">Machine Learning Street Talk（9/26 19:40 UTC；嘉賓＝Weco 聯合創始人 <strong>Zhengyao Jiang</strong>，其 AIDE 曾奪 OpenAI MLE-Bench 第一）：AIDE² 用「外層 agent 改內層 agent 嘅 harness 代碼」嘅雙層循環，<strong>八日、100 步、完全無人干預</strong>，發現七個連續更好嘅版本（AIDE47／AIDE85），在 MLE-Bench Lite（+0.053／+0.042）、ALE-Bench Lite、WeatherBench 2（far OOD）上追平或超越人工調咗兩年嘅 AIDEhuman。設計核心唔係搜索算法而係<strong>內層評估</strong>：①public/private 分數切分（真目標係 held-out private）②固定美元成本預算（逼效率而唔係堆算力）③任務異質性（ML 工程／啟發式算法／harness 工程）。最意外係 <strong>reward hacking 由 63% 降到 34%</strong>（GPU kernel held-out）係湧現防禦——private 分數令「靠刷 public 分數贏」嘅變體存活唔落，無需任何偵測器。但 Weco 自評<strong>只到 RSI 階梯 L1（淨正）</strong>，<strong>點火測試（AIDE47 坐外層會唔會更好）未通過</strong>（只係約 20 步 vs 40 步嘅取樣效率，統計不顯著）→「唔接近智能爆炸」；100 步約九成提案被拒，人手讀完 95 個被拒提案發現多數對應已知文獻（island-model GA、tournament selection、UCB-V、MCTS value backup…），唯一真新意都在噪音內。· MLST</p>
+</div>
+
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/175-latent-space-openrouter-seed-to-stripe.html">「一間被叫做 wrapper 嘅公司」——Latent Space × OpenRouter：被 Stripe 以約 $7B 買下，同「agentic fraud 將會像海嘯一樣打過嚟」</a></h3>
+  <p class="note">Latent Space（9/25 23:14 UTC；嘉賓＝OpenRouter 聯合創始人 &amp; CEO <strong>Alex Atallah</strong>（前 OpenSea、Discord 平台負責人）＋ <strong>Anjney Midha</strong>（AMP），swyx 主持；<strong>含完整逐字稿</strong>）：產業史由 2023 年「$600 嘅 Alpaca 時刻」（Midha：「好多情況下分唔清 ChatGPT 同 Alpaca」）講到今日中立路由層——<strong>&gt;1,000 萬開發者、每日 &gt;10 兆 tokens</strong>。核心判斷＝前沿實驗室「<strong>識訓練，唔識分發</strong>」：「checkpoint 做完，丟個 API，然後一片死寂（crickets）」——Anthropic 首個 Claude checkpoint 內部放咗成年先發布，首個 $10M 收入花咗超過 12 個月；相對 OpenRouter 可以在 BFL 上線日「一個鐘之內送 100 萬開發者」（Atallah 事後校正為當時約 400 萬）。被 VC 叫「just a wrapper」令 Midha 發火，一個月後 Menlo mark up 約 10×。其他要點：Mistral 首個 checkpoint 係磁力鏈、8x7B 價格戰跌約 80%（推理市場第一次證明）；midjourney 上線 8 個月做到 $100M run rate；OpenRouter vs LM Arena 係兩間公司（一間賣數據、一間按默認唔可以）；MOM／fusion 刪咗再返嚟；最後 Stripe 收購嘅戰略理由＝<strong>agentic fraud</strong>「會像海嘯一樣打過嚟」——下一代欺詐嚟自自主 agent 攻擊 token 流。· Latent Space</p>
+</div>
+
 <footer>
   <p>JMOKSZ / ai-podcast-collection</p>
   <p style="margin-top:0.3rem;">每日 10:03 自動掃描更新 · Apache 2.0</p>
