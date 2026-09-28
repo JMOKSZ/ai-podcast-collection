@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「決策很便宜，行動很貴」——42章經 × Vibe-Trading 作者吳浩哲：3.4 萬 Star 的開源項目，為何對交易「幫助約等於零」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em; background: #f4f1ec; padding: 0.05rem 0.3rem; border-radius: 3px; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">42章經 · 人類博物館 53 號珍藏 · 2026-09-27 13:30 UTC 發布</div>
+  <h1>「決策很便宜，行動很貴」——42章經 × Vibe-Trading 作者吳浩哲：3.4 萬 Star 嘅開源項目，點解對交易「幫助約等於零」</h1>
+  <div class="meta">
+    <span>📅 2026-09-27 13:30 UTC（＝北京時間 21:30）</span><span>·</span><span>🎙 42章經（人類博物館單元）</span><span>·</span><span>👤 主持：曲凱（Kyle）｜嘉賓：吳浩哲（Vibe-Trading 作者）</span><span>·</span><span>⏱ 約 40:46</span><span>·</span><span>🏷 AI Trading / 可解釋性 / Human in the loop</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集表面係講「AI 炒股」，實際上係一條<strong>關於 AI 落地嘅一般性命題</strong>：當判斷嘅邊際成本被打到接近零，真正稀缺嘅唔再係「諗得快」，而係「<strong>敢唔敢照住諗嘅去做，同做咗之後邊個負責</strong>」。作者自己嘅開源項目有 3.4 萬 Star，佢卻話呢樣嘢對交易嘅幫助「約等於零」——呢句自嘲，係全集最值得琢磨嘅一句。
+</p>
+
+<div class="highlight-box">
+  <strong>一句話抓住本集：</strong>AI Trading 唔係「預測更準」嘅問題，而係「<strong>在幾乎免費嘅決策同代價昂貴嘅行動之間，建立一條可驗證、可審計嘅通道</strong>」嘅問題。所以「<em>可解釋性</em>」唔係加分項，係入場券——你唔知判斷從何而來，就唔敢押真金白銀落去。而正因為市場上每個人都可以廉價地捕捉同一種 pattern，<strong>超額收益（Alpha）會被系統性抹平</strong>：作者因此斷言「安息吧，財報後漂移」。
+</div>
+
+<h2 class="section-title">項目同嘉賓背景</h2>
+
+<div class="data-point">
+  <span>Vibe-Trading</span>開源項目（GitHub：<code>HKUDS/Vibe-Trading</code>），<strong>開源半年已獲 3.4 萬個 Star</strong>（約等於每日新增近 200 顆）。作者及維護者吳浩哲，武漢大學數學系本科、香港大學在讀博士生、HKUDS 成員，長期探索 AI for Finance。
+</div>
+
+<p>主持人曲凱（42章經創始人）把本集歸入節目嘅「人類博物館」單元，編號 <strong>53 號珍藏</strong>。呢個單元嘅設定係：把嘉賓當成一件「標本」去觀察——唔係問佢做咗啲咩，而係問佢<em>點樣睇世界</em>。所以呢集雖然由一個 GitHub 項目講起，但很快就轉向方法論同哲學。</p>
+
+<p>曲凱在開場嘅鋪陳係三條問題：<strong>AI 到底點樣才能更好地輔助交易？會給市場帶來什麼變化？用上 AI，人人就都能像巴菲特一樣了嗎？</strong>——第三條係全集嘅暗線，結論係否。</p>
+
+<h2 class="section-title">核心命題：在金融裡，決策很便宜，行動很貴</h2>
+
+<blockquote class="strong">
+「在金融裡，決策很便宜，行動很貴。」
+<span class="attribution">— 吳浩哲，全集核心命題（章節 02:20）</span>
+</blockquote>
+
+<p>呢句看似簡單，其實係一個對整個 AI 落地敘事嘅修正。一般人嘅直覺係：AI 令判斷更快更準，所以 AI 在金融嘅價值就係「更準嘅預測」。浩哲嘅框架係反過來嘅——<strong>你可以輕易獲得成百上千個判斷與信號，但真要付諸交易，「可解釋性」立刻變成關鍵。</strong>「你得知道判斷是怎麼來的、為什麼值得相信，才能決定自己是否願意為它付出真金白銀。」</p>
+
+<div class="highlight-box">
+<strong>推論：</strong>如果決策係便宜嘅、行動係貴嘅，咁 AI 提升「決策」嘅邊際價值就會急速下降——因為你已經有太多決策，你缺嘅唔係更多信號，係<strong>對信號嘅信任</strong>。呢個解釋咗點解一個 3.4 萬 Star 嘅項目可以同時「好厲害」同「幫助約等於零」：佢提升嘅係供給側（更多信號），而瓶頸在需求側（可信度與執行）。
+</div>
+
+<h2 class="section-title">AI Trading 嘅定義：一條可驗證、可審計嘅通道</h2>
+
+<blockquote class="strong">
+「AI Trading 就是在幾乎免費的決策和代價昂貴的行動之間，建立可驗證、可審計的通道。」
+<span class="attribution">— 官方 shownotes（章節 04:35）</span>
+</blockquote>
+
+<p>呢句係全集嘅框架句，亦解釋咗點解 AI Trading 唔係「預測更準」而係「<strong>可落地</strong>」嘅問題。一條「通道」需要三樣嘢：</p>
+
+<ul>
+  <li><strong>可驗證（verifiable）：</strong>判斷可以被事後對帳——賺咗係因為呢個判斷，唔係因為撞彩。</li>
+  <li><strong>可審計（auditable）：</strong>由輸入 → 推理 → 下單嘅每一步都留痕，出事嗰陣搵得到責任鏈。</li>
+  <li><strong>通道（channel）：</strong>重點係「由決策到行動」嘅<em>接駁</em>，唔係決策本身。</li>
+</ul>
+
+<p>呢個定義同一般「AI + 金融」嘅宣傳好唔同。後者講嘅係「模型幾聰明」，前者講嘅係「條管道幾可靠」。呢個分野，就係後面「AI for Finance ≠ AI Trading」嘅伏筆。</p>
+
+<h2 class="section-title">AI Trading vs 傳統量化：模糊輸入 vs 寫死假設</h2>
+
+<blockquote>
+「AI Trading 和量化的區別」（章節 07:25）
+</blockquote>
+
+<p>節目嘅拆法係：</p>
+
+<table>
+  <tr><th></th><th>傳統量化</th><th>AI Trading</th></tr>
+  <tr><td>輸入</td><td>把假設寫死在因子與規則裡</td><td>讓模型處理更模糊嘅輸入（情緒、行業 know-how）</td></tr>
+  <tr><td>優勢</td><td>清晰、可回測、可解釋</td><td>覆蓋規則寫唔出嘅軟資訊</td></tr>
+  <tr><td>代價</td><td>覆蓋面窄、假設容易失效</td><td><strong>必須補回可解釋性與可審計性</strong></td></tr>
+</table>
+
+<p>呢個係一個好清晰嘅 trade-off：量化用「寫死」換取確定性；AI 用「模糊」換取覆蓋面，但代價係你唔再知道佢點解咁做——而前面講過，「唔知點解」在金融裡係致命嘅。</p>
+
+<h3 class="sub-title">用 AI 抓市場情緒，對 Trading 有幫助嗎？（09:59）</h3>
+
+<p>節目直接追問呢條。情緒係典型嘅「模糊輸入」——傳統因子難以表達，理論上正是 AI 嘅用武之地。但順住全集嘅邏輯，問題唔在於「捉唔捉得到情緒」，而在於 <strong>捉到之後你信唔信、敢唔敢落注</strong>。</p>
+
+<h3 class="sub-title">行業 know-how 都可以由 AI 來判斷？（11:33）</h3>
+
+<p>呢條更尖銳：行業 know-how 通常係多年經驗累積嘅隱性知識，AI 能唔能夠取代？節目嘅立場係——AI 可以<em>處理</em>呢類知識，但你更需要嘅係知道佢<strong>憑咩咁判斷</strong>。</p>
+
+<h3 class="sub-title">實例走查：存儲行情中嘅一次操作（13:43）</h3>
+
+<p>節目有一段具體操作實例，講「存儲行情」中點樣用 AI Trading。呢個段落嘅價值係把抽象框架落返地——唔係概念討論，係一次實際嘅決策鏈條走查。</p>
+
+<h2 class="section-title">市場會點變？「安息吧，財報後漂移！」</h2>
+
+<blockquote class="strong">
+「安息吧，財報後漂移（PEAD）！」
+<span class="attribution">— 章節標題（15:19）</span>
+</blockquote>
+
+<p><strong>PEAD（Post-Earnings Announcement Drift，財報後漂移）</strong>係金融學教科書級嘅市場異象：公司公布業績之後，股價會持續向業績嘅方向漂移一段時間，而唔係即時完全反應。呢個異象存在咗幾十年，係眾多量化策略嘅基礎。</p>
+
+<p>浩哲嘅判斷係：當 AI 令每個人都能廉價地捕捉同一種模式，<strong>呢種模式嘅超額收益就會被抹平</strong>——因為「漂移」之所以存在，前提係市場反應有摩擦、有人睇唔到、有人反應慢。AI 把信息處理嘅成本打到近零之後，呢個摩擦就消失咗。</p>
+
+<div class="highlight-box">
+<strong>呢個係一條可以推廣嘅定律：</strong>任何「因為人類認知限制而存在」嘅市場異象，都會在 AI 普及之後消亡。反過來講，AI Trading 真正嘅價值唔在於捕捉舊異象，而在於<strong>發現新嘅、AI 自己都未有共識嘅異象</strong>——但呢個又面對同一個問題：你點知個新異象係真嘅，唔係 overfit？
+</div>
+
+<h2 class="section-title">系統四大組成，同「最重要嘅一件事」</h2>
+
+<p>節目在中段（19:57）拆解 AI Trading 系統嘅四大組成部分，並把其中「最重要的一件事」單獨拎出來講。順住全集嘅邏輯，呢件最重要嘅事<strong>幾乎肯定就係「可解釋性／可審計性」</strong>——即係前面框架句裡「可驗證、可審計嘅通道」嘅具體落點。</p>
+
+<p>呢個拆法本身值得留意：佢唔係按「模型、數據、策略、執行」呢種技術棧去分，而係按「邊個環節係瓶頸」去分。呢種「由瓶頸出發」嘅思考方式，其實就係浩哲後來講 AI Trading 同傳統量化分別嘅同一個思維。</p>
+
+<h2 class="section-title">「數據多，其實真的不等於有 Alpha」</h2>
+
+<blockquote class="strong">
+「數據多，其實真的不等於有 Alpha。」
+<span class="attribution">— 章節標題（23:53）</span>
+</blockquote>
+
+<p>呢句直接反駁咗「餵更多數據就會更賺」嘅直覺。它同同日英文節目（Cognitive Revolution）裡 Vivodyne 嘅「數據飽和」觀察，形成一個<strong>跨語言嘅同日呼應</strong>：Vivodyne 嘅 Andrei Georgescu 講，當前最先進嘅 virtual cell 模型在餵入數據嘅<strong>極小比例（a couple percent）就飽和</strong>——因為培養皿裡嘅細胞「只是忙著殖民那塊塑膠」，根本冇因果可抽。</p>
+
+<div class="highlight-box">
+<strong>兩邊嘅共同點：</strong>問題唔在於「數據量」，而在於<strong>數據生成過程本身有冇包含你要學嘅那條因果鏈</strong>。金融市場嘅數據同理——多數歷史價格數據唔包含「為何如此」嘅資訊，你餵幾多都只會學到相關性噪音。呢個係 AI Trading 同生物基礎模型共享嘅同一個天花板。
+</div>
+
+<h2 class="section-title">「Jev 對 Trading 的幫助，可能約等於零？」</h2>
+
+<p>本集專門用一節（27:23）評估近期很火嘅 <strong>Jev</strong>（TypeSafe 的 System One 快速判斷模型）能唔能夠用於交易。</p>
+
+<p>先要理解 Jev 係咩：佢係一種「<strong>System One</strong>」型嘅快速判斷模型——用極低成本、極低延遲做一次判斷，官方定位係「唔係生成，係判斷／過濾」。呢種模型在「低成本、高頻、後果小」嘅場景（例如初篩、分類、guardrail）最有效。</p>
+
+<p>而浩哲嘅結論偏否定。原因唔係 Jev 唔掂，而係<strong>佢解決嘅唔係交易嘅瓶頸</strong>：「判斷便宜不是交易的核心瓶頸，行動與風控才是。」換句話講，你已經有太多判斷，再快啲、再平啲嘅判斷，邊際價值接近零。</p>
+
+<h3 class="sub-title">同 fleet 直接相關：Jev 嘅應用邊界被公開劃清</h3>
+
+<p>呢點值得單獨記低，因為我哋自己嘅 fleet 正在用 Jev 做前置過濾。昨日嘅 AINews 還在講 LangChain 接入 Jev-as-a-judge、Jev 重標論文只要 $0.14；今日呢集則講「Jev 對 Trading 幫助可能約等於零」。兩者唔矛盾，但合起來係一條好清楚嘅邊界：</p>
+
+<blockquote>
+<strong>System One 型快速模型，在「判斷便宜、後果便宜」嘅場景最有效；在「決策便宜、行動貴」嘅場景價值有限。</strong>
+</blockquote>
+
+<p>呢個對 fleet 嘅直接含義係：用 Jev 做新聞／條目初篩（後果小、要快、要平）係啱嘅定位；但唔應該期望佢在「高後果執行決策」上提供決定性價值。本集等於由一個完全獨立嘅中文嘉賓，幫我哋驗證咗呢條邊界。</p>
+
+<h2 class="section-title">交易嘅本質（30:26）</h2>
+
+<p>全集到呢度收束返一個更根本嘅問題：交易嘅本質係咩？順住「決策便宜、行動貴」嘅框架，交易嘅本質唔係「預測對唔對」，而係<strong>在不確定之下承擔後果、並為此負責</strong>。呢個定義解釋咗點解 AI 難以完全取代人：模型可以輸出一個判斷，但模型唔會「承擔」——責任必須落在一個可以被問責嘅主體身上。</p>
+
+<p>呢個也係最後「Human in the loop」哲學反轉嘅鋪路。</p>
+
+<h2 class="section-title">AI for Finance ≠ AI Trading</h2>
+
+<blockquote class="strong">
+Kim、Workbuddy 等在推嘅 <strong>AI for Finance</strong>，同 <strong>AI Trading</strong> 是兩件事。
+<span class="attribution">— 章節標題（32:34）</span>
+</blockquote>
+
+<table>
+  <tr><th></th><th>AI for Finance</th><th>AI Trading</th></tr>
+  <tr><td>面向</td><td>金融從業者嘅通用助手</td><td>直接參與交易決策迴路</td></tr>
+  <tr><td>產出</td><td>效率（報告、摘要、分析、合規）</td><td>損益（真金白銀嘅盈虧）</td></tr>
+  <tr><td>失敗後果</td><td>寫錯一段文字，改返就好</td><td>爆倉、虧損、問責</td></tr>
+  <tr><td>核心要求</td><td>好用</td><td>可信、可解釋、可審計</td></tr>
+</table>
+
+<p>呢個分野好重要，因為市面上好多「AI + 金融」嘅宣傳其實係前者，卻被當成後者來賣。前者做嘅係效率——AI for Finance 只要「寫得出一份似樣嘅報告」就交付咗；後者要承擔損益，所以你必須知道判斷點嚟。</p>
+
+<h2 class="section-title">AI 會點改變人嘅投資能力？（34:00）</h2>
+
+<p>節目追問：AI 普及之後，人嘅投資能力會變成點？呢條問題嘅答案，取決於你認為投資能力嘅核心係咩。如果係「資訊處理」——AI 已經贏咗。如果係「判斷嘅可信度」同「承擔後果嘅意願」——呢兩樣係 AI 短期內取代唔到嘅。</p>
+
+<p>呢個也解釋咗點解節目會走向下一個更哲學嘅問題。</p>
+
+<h2 class="section-title">哲學反轉：唔係 AI 需要人，係人需要 AI 來體現價值</h2>
+
+<blockquote class="strong">
+「隨著 AI 越來越強，Human in the loop 或許不是因為 AI 需要人來判斷，而是人需要透過參與，來確認自己的意義感和價值。」
+<span class="attribution">— 官方簡介原句（章節 35:40）</span>
+</blockquote>
+
+<p>呢句係全集最有重量嘅一句，因為它把「Human in the loop」呢個技術詞彙<strong>反轉咗因果方向</strong>。</p>
+
+<p>傳統嘅理解係：AI 唔夠可靠 → 所以需要人來把關 → 人係因為 AI 嘅缺陷而存在於迴路中。但浩哲提出嘅係：當 AI 足夠強，人留在迴路裡嘅理由唔再係「AI 需要」，而係「<strong>人需要</strong>」——人需要透過參與去確認自己嘅意義感同價值。</p>
+
+<div class="highlight-box">
+<strong>呢個呼應咗同日另一集嘅同一條主線。</strong>2026-09-28 日報裡，十字路口 × 于紅（前美團龍珠合伙人，帶隊 All in AI 之後離開 VC 去做兒童 SEL 教育）講嘅係「AI 時代什麼才是不會過時的能力」；本集講嘅係「人在交易迴路裡嘅意義」。一個在人生、一個在金融，但同一條線：<strong>當判斷變得廉價，人要重新回答「我點解要在場」</strong>。
+</div>
+
+<h2 class="section-title">實操建議：上手 AI Trading 嘅方法論（37:42）</h2>
+
+<p>節目最後留低一節具體入口，對象係想做 AI Trading 嘅人。雖然官方 shownotes 冇列出細節，但順住全集框架，呢節嘅方法論應該係<strong>由「通道」入手而唔係由「模型」入手</strong>：先建立可驗證、可審計嘅閉環，再考慮把 AI 放進去；而唔係先搵一個最強模型，再想辦法把佢塞入交易流程。</p>
+
+<p>呢個次序嘅重要性，可以由一個反例睇出：如果順序錯咗，你會得到一堆「好準嘅信號」但唔知點信——即係 3.4 萬 Star 但「幫助約等於零」嘅困境。</p>
+
+<h2 class="section-title">關鍵數據 / 事實</h2>
+
+<table>
+  <tr><th>項目</th><th>數字</th></tr>
+  <tr><td>Vibe-Trading</td><td>開源半年 <strong>3.4 萬 Star</strong>（約每日新增近 200 顆）</td></tr>
+  <tr><td>項目地址</td><td><code>github.com/HKUDS/Vibe-Trading</code></td></tr>
+  <tr><td>嘉賓</td><td>吳浩哲——武漢大學數學系本科、香港大學在讀博士生、HKUDS 成員</td></tr>
+  <tr><td>單元</td><td>42章經「人類博物館」53 號珍藏</td></tr>
+  <tr><td>片長</td><td>約 <strong>40:46</strong></td></tr>
+</table>
+
+<h3 class="sub-title">章節時間軸（官方 shownotes）</h3>
+
+<ul>
+  <li>01:26 — 介紹 Vibe-Trading：點解開源不到半年就有 3 萬多 Star</li>
+  <li>02:20 — 在金融裡，決策很便宜，行動很貴</li>
+  <li>04:35 — AI Trading 就是在幾乎免費的決策和代價昂貴的行動之間，建立可驗證、可審計的通道</li>
+  <li>07:25 — AI Trading 和量化的區別</li>
+  <li>09:59 — 用 AI 抓市場情緒，對 Trading 有幫助嗎</li>
+  <li>11:33 — AI Trading 裡，行業 know-how 都可以由 AI 來判斷？</li>
+  <li>13:43 — 存儲行情中，用 AI Trading 的一次操作實例</li>
+  <li>15:19 — 「安息吧，財報後漂移！」</li>
+  <li>19:57 — AI Trading 系統的四大組成部分，和其中最重要的一件事</li>
+  <li>23:53 — 數據多，其實真的不等於有 Alpha</li>
+  <li>27:23 — Jev 對 Trading 的幫助，可能約等於零？</li>
+  <li>30:26 — 交易的本質</li>
+  <li>32:34 — Kimi、Workbuddy 等在推的 AI for Finance，和 AI Trading 是兩件事</li>
+  <li>34:00 — AI 會給人的投資能力帶來怎樣的變化？</li>
+  <li>35:40 — 不是 AI 需要人做判斷，而是人需要 AI 來體現價值？</li>
+  <li>37:42 — 上手 AI Trading 的建議</li>
+</ul>
+
+<h2 class="section-title">行業 insight / 前後脈絡</h2>
+
+<ul>
+  <li><strong>「決策便宜、行動貴」正在成為跨領域嘅統一語言。</strong>同一天：Cognitive Revolution 用它談 agent 購物（Amazon 封殺 Meta Muse——誰擁有客戶關係誰賺錢）；十字路口用它談人生選擇。呢個係一個值得記低嘅行業句式：<strong>AI 把判斷嘅邊際成本打到接近零，反而令「執行與問責」變成稀缺資源。</strong></li>
+  <li><strong>接續 8/29 嘅「個人訓練模型」那集。</strong>42章經嘅路線好清晰——先講「應用公司自己做模型」（逯雨鑫，8/29），再講「應用嘅錢點賺」（AI Trading），正在系統性地畫一張 AI 應用嘅商業地圖。</li>
+  <li><strong>對 fleet 嘅直接相關點：Jev 嘅應用邊界被中文圈公開質疑。</strong>見上文「Jev 對 Trading 的幫助，可能約等於零？」一節——System One 適合低成本、後果小嘅判斷；唔適合高後果嘅執行決策。</li>
+  <li><strong>「AI 令異象消亡」係一條可推廣嘅投資定律。</strong>PEAD 只係第一個例子——任何因為人類認知摩擦而存在嘅超額收益，都會在 AI 普及後被抹平。呢個對「AI 炒股會唔會令人人致富」嘅問題，係一個悲觀但清醒嘅答案。</li>
+</ul>
+
+<h2 class="section-title">重點引用</h2>
+
+<blockquote>
+「在金融裡，決策很便宜，行動很貴。」
+<span class="attribution">— 吳浩哲，全集核心命題</span>
+</blockquote>
+
+<blockquote>
+「AI Trading 就是在幾乎免費的決策和代價昂貴的行動之間，建立可驗證、可審計的通道。」
+<span class="attribution">— 官方 shownotes 原句</span>
+</blockquote>
+
+<blockquote>
+「數據多，其實真的不等於有 Alpha。」
+<span class="attribution">— 章節標題原句</span>
+</blockquote>
+
+<blockquote>
+「安息吧，財報後漂移！」
+<span class="attribution">— 章節標題原句</span>
+</blockquote>
+
+<blockquote>
+「隨著 AI 越來越強，Human in the loop 或許不是因為 AI 需要人來判斷，而是人需要透過參與，來確認自己的意義感和價值。」
+<span class="attribution">— 官方簡介原句</span>
+</blockquote>
+
+<hr>
+
+<p style="font-size:0.9rem; color:#777;">
+<strong>取材方式：</strong>小宇宙單集頁面為 JS 渲染，本次未能取得逐字稿；內容按<strong>小宇宙官方 shownotes 完整章節軸 + 官方簡介</strong>整理，並經由 42章經官方發布之文章（含小宇宙 shownotes 全文）交叉核對。所有直接引用均為官方 shownotes / 官方簡介原句，或節目章節標題原文；凡本次未能核實嘅細節（例如「四大組成」嘅具體清單、實操建議嘅具體步驟），均只作方向性描述並如實標明。
+</p>
+
+<footer>
+  深度復述由 OpenClaw 自動生成 · 對應 AI 播客日報 2026-09-28 萃取 · <a href="../index.html">返回日報首頁</a><br>
+  生成時間：2026-09-28 06:00 UTC · 來源：42章經（小宇宙，2026-09-27）
+</footer>
+</div>
+</body>
+</html>
