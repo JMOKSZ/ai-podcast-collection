@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「好數據的難點，往往藏在榜單之外」——硅谷101 E253：當數據公司的交付物由打標籤變成 Rubric 與 RL 環境</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em; background: #f4f1ec; padding: 0.05rem 0.3rem; border-radius: 3px; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">硅谷 101 · E253 · 2026-09-28 02:30 UTC 發布</div>
+  <h1>「好數據的難點，往往藏在榜單之外」——硅谷101 E253：當數據公司的交付物由「打標籤」變成 Rubric 與 RL 環境，同 AfterQuery 半年估值 10 倍</h1>
+  <div class="meta">
+    <span>📅 2026-09-28 02:30 UTC（北京 09-28 10:30）</span><span>·</span><span>🎙 硅谷 101（泓君 Jane 出品；本集主播 Yiwen）</span><span>·</span><span>👤 嘉賓：何允中（Scale AI 研究總監，後訓練與評測方向）、孫一铀（UC Berkeley 博士後，Agents&rsquo; Last Exam 研究者）</span><span>·</span><span>⏱ 58:04</span><span>·</span><span>🏷 數據行業 / 評測 / RL 環境</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係中文圈第一次把「AI 數據」呢門生意做系統性拆帳：請到 Scale AI 嘅研究總監同 Berkeley 博士後，一個講產業、一個講評測設計。核心唔係「數據有幾多」，而係——當 AI 由「回答問題」走向「執行任務」，模型要嘅根本唔再係答案，而係<strong>判斷</strong>同<strong>軌跡</strong>。以下係我逐段萃取後嘅復述同解讀。
+</p>
+
+<h2 class="section-title">一句話總結</h2>
+
+<p>過去提到「數據標注」，大家腦裡係「畀圖片打標籤、畀模型答案打分」。但節目嘅中心判斷係：<strong>數據公司賣嘅嘢已經質變</strong>——由專家寫出嘅評分標準（Rubric），到包含「任務＋工具＋驗證機制」嘅強化學習環境（RL Environment）。而喺呢個轉變之下，數據行業嘅真正門檻唔再係「標注人力」，而係<strong>買到行業真嘢、搵到懂行嘅人、把專業判斷轉成可訓練信號</strong>。</p>
+
+<blockquote class="strong">
+隨著 AI 從回答問題走向執行任務，數據公司的交付物也在變化：從專家寫出的評分標準，到包含任務、工具和驗證機制的強化學習環境。
+<span class="attribution">—— 硅谷101 E253 官方簡介原文</span>
+</blockquote>
+
+<h2 class="section-title">一、數據公司已經分化成三類，統稱「數據標注」已經失真</h2>
+
+<p>節目開頭就做咗一件好重要嘅事：拒絕用「數據標注」一個詞去蓋住一整條供應鏈。它把玩家拆成三種完全唔同嘅物種：</p>
+
+<table>
+  <tr><th>類型</th><th>代表</th><th>賣嘅係咩</th><th>結構特徵</th></tr>
+  <tr><td>招聘平台型</td><td>Mercor</td><td>把專家當勞動力池去組織、匹配</td><td>本質係人力市場，核心係招募與匹配能力</td></tr>
+  <tr><td>眾包標注型</td><td>傳統標注商</td><td>規模化嘅標注產能</td><td>毛利受人力成本約束，可複製性最高</td></tr>
+  <tr><td>合成數據／環境型</td><td>Bespoke Labs</td><td>喺虛擬環境生成任務與軌跡</td><td>賣嘅係環境同任務設計，可複製性最低</td></tr>
+</table>
+
+<p>呢個三分法嘅意義喺於：三者嘅<strong>毛利結構、可複製性、估值邏輯完全唔同</strong>。當你見到「數據行業估值半年翻十倍」，你要問嘅係——究竟係邊一種物種在升值？節目給出嘅答案係：升值最猛嘅，係最接近「專業判斷」同「環境」嘅那一端。</p>
+
+<div class="data-point">
+<span>估值</span><strong>AfterQuery</strong>：2026 年 4 月宣布 A 輪融資時估值 <strong>3 億美元</strong>；到 9 月，據媒體報導新一輪融資已把估值推至 <strong>32 億美元</strong>——半年約 <strong>10 倍</strong>。
+</div>
+
+<div class="data-point">
+<span>融資</span><strong>Bespoke Labs</strong>（提供訓練數據與智能體環境）：2026 年 7 月宣布種子輪與 A 輪融資合計 <strong>4,000 萬美元</strong>。
+</div>
+
+<div class="highlight-box">
+<strong>我嘅解讀：</strong>「估值先行、透明度滯後」才是呢個賽道最真實嘅風險特徵。節目反覆強調行業「對外界來說極其不透明」，而正是這種「高估值＋低透明度」嘅組合，令外部人好難判斷某間公司到底賣緊咩——呢個本身就係泡沫與機會並存嘅信號。
+</div>
+
+<h2 class="section-title">二、預訓練要「分佈」，後訓練要「判斷與軌跡」</h2>
+
+<p>呢集最核心嘅技術分水嶺，係一句聽落簡單但後果巨大嘅話：<strong>預訓練要的是量與分佈，後訓練要的是判斷與軌跡。</strong></p>
+
+<p>於是就出現咗 Rubric 數據——唔係「答案是 A 還是 B」，而係一套針對具體任務制定嘅評價條件，可以包含正確性、完整性、指令遵循等維度，亦可以融入專家判斷。換句話講，數據公司交付嘅唔再係「答案」，而係<strong>一個專業人士點樣判斷好壞嘅那套內隱標準，被寫成機器可操作嘅形式</strong>。</p>
+
+<p>再落一層，就係 RL 環境。節目把它定義為讓模型「透過行動與反饋進行學習」嘅環境，喺 Agent 訓練中，一個可訓練嘅 RL 環境通常包含三件事：</p>
+
+<ol>
+  <li><strong>任務</strong>——要完成嘅目標；</li>
+  <li><strong>可操作嘅軟件與工具</strong>——模型可以真正「動手幹活」嘅介面；</li>
+  <li><strong>驗證與獎勵機制</strong>——判斷「任務是否完成、完成質量如何」。</li>
+</ol>
+
+<blockquote class="strong">
+它們需要找到懂行的人，獲得真實的行業資料，再把專業知識與工作經驗轉化成模型能夠學習的訓練信號。
+<span class="attribution">—— 硅谷101 E253 官方簡介原文</span>
+</blockquote>
+
+<p>呢三件事合起來，就係把「專業知識與工作經驗」變成「模型可學習信號」嘅關鍵載體。而第三點（驗證）尤其關鍵——因為佢直接決定咗呢門生意嘅天花板。</p>
+
+<h2 class="section-title">三、主觀判斷點樣被量化：從 vibe coding 到 vibe everything</h2>
+
+<p>好多人以為「主觀」係評測嘅死穴——遊戲好唔好玩、作品好唔好睇，點量？節目用 Agents&rsquo; Last Exam（ALE）做例子，答案係：<strong>透過「人類與 Agent 協作」，把主觀維度拆成可驗證嘅多步驟任務。</strong></p>
+
+<p>ALE 由 Berkeley RDI 與行業專家共同構建，關注「具有經濟價值、需要多步驟執行、結果可驗證」嘅專業任務。與之對照嘅係 Humanity&rsquo;s Last Exam（HLE）——由 Center for AI Safety 與 Scale AI 共同組織，覆蓋數學、人文、自然科學嘅高難度專家問題。兩者嘅分野，正係「經濟價值／可驗證」對「純知識難度」嘅分野。節目稱呢個趨勢為「從 vibe coding，到 vibe everything」。</p>
+
+<h2 class="section-title">四、評測本身都變成一門生意，而且分「該刷」與「不該刷」</h2>
+
+<p>呢一點係全集最反直覺、又最實用嘅判斷。節目把評測分成兩類：</p>
+
+<ul>
+  <li><strong>該刷嘅</strong>：核心能力與真實場景嘅評測，值得追分，因為佢反映模型真本事；</li>
+  <li><strong>不該刷嘅</strong>：純刷分嘅評測，只會製造幻覺。</li>
+</ul>
+
+<p>跟住一句更狠：<strong>沒上熱門榜單嘅評測，反而可能帶來真實嘅數據需求。</strong>因為當所有人都盯住幾個熱門榜，反而係榜單之外嘅垂直場景，仲未被規模化佔領——呢度才有生意。</p>
+
+<div class="highlight-box">
+<strong>關鍵轉折：SWE-bench Verified。</strong>OpenAI 於 <strong>2026 年 2 月</strong>宣布停止報告其分數，指出測試設計缺陷與數據污染影響了它衡量前沿模型能力嘅有效性。呢個係對「用公開榜單代表模型能力」做法嘅一次公開否定——亦係節目反覆強調嘅「數據與評測隔離原則」被違反之後嘅技術後果。
+</div>
+
+<p>節目亦提到 Scale 推出嘅 <strong>SWE Atlas</strong>：軟體工程智能體評測套件，覆蓋代碼庫問答、測試編寫、代碼重構三類——即係話，評測供給側已經形成「做評測 → 賣數據」嘅閉環。誰定義了任務與獎勵，誰就定義了模型要學什麼。</p>
+
+<h2 class="section-title">五、好數據嘅難點，藏在榜單之外</h2>
+
+<p>如果話前面係「賣咩」，呢一部分講嘅係「點解咁難」。節目給出三個具體痛點，每一個都唔係「算力／人力」問題：</p>
+
+<h3 class="sub-title">1. 瓶頸由「標注人力」轉向「行業採購與領域 know-how」</h3>
+<p>節目明說「採購一份遊戲源碼」呢種事，才係數據公司真正嘅門檻所在。模型公司嘅研發週期同行業採購（遊戲源碼、垂直領域真實資料）難以內部化——所以外部數商有結構性空間。但呢個空間係<strong>時間窗口，而非永久護城河</strong>。</p>
+
+<h3 class="sub-title">2. 專家交嚟嘅數據都可能造假</h3>
+<p>節目專門討論「如何驗證專家提交嘅係真實工作過程，而非編造軌跡」——因為當你按「專家判斷」付錢，就必然有人用編嘅軌跡去換錢。呢個係激勵機制設計問題，唔係標注質量問題。</p>
+
+<h3 class="sub-title">3. 訓練數據唔係越難越好</h3>
+<p>要為不同模型匹配難度與解題軌跡——太難嘅軌跡對弱模型係噪音，太簡單嘅對強模型沒有梯度。呢句直接否定了「堆最難題目」嘅直覺。</p>
+
+<p>另外仲有一條「小團隊機會窗口」：兩三個人的數據創業公司之所以能找到機會，係因為合成環境與垂直領域工作流仍未被規模化佔領——只要卡住某個小眾行業工作流，就有活路。</p>
+
+<h2 class="section-title">六、我嘅萃取：呢集真正嘅主線係「可驗證性」</h2>
+
+<p>把七個論點攤平睇，會發現佢哋全部指向同一個東西——<strong>可驗證性（verifiability）</strong>：</p>
+
+<ul>
+  <li>RL 環境嘅第三件事係「驗證與獎勵機制」；</li>
+  <li>ALE 嘅入選標準係「結果可驗證」；</li>
+  <li>SWE-bench Verified 出事，係因為「隔離原則」被破壞，驗證失效；</li>
+  <li>「好數據藏在榜單之外」——因為榜單之外嘅場景，驗證仍然稀缺。</li>
+</ul>
+
+<p>呢個判斷唔係孤例。同日嘅 <strong>屠龍之術（EDA／自研芯片）</strong> 講嘅係「硬件底座」；而 9/18 外灘大會圓桌（Agent 作為交易主體需要授權、身份、權限、追責）講嘅係另一種可驗證性。三集放埋一齊睇，正好構成一個完整嘅產業鏈：<strong>芯片（底座）→ 數據與評測（訓練供給）→ 交易授權（應用）</strong>，而三者嘅共同瓶頸都係「點樣證明一件事真係做對了」。</p>
+
+<p>仲有一條跨語言嘅呼應：節目講「模型越來越會自己造數據，外部數商仍有結構性空間」，理由係模型公司嘅研發週期同行業採購難以內部化；而 9/27 嘅 42章經（AI Trading）講「數據多，其實真的不等於有 Alpha」——兩者其實都在講同一件事：<strong>稀缺嘅從來唔係數據量，而係帶有判斷同驗證信號嘅數據。</strong></p>
+
+<h2 class="section-title">七、章節軸（官方時間戳）</h2>
+
+<table>
+  <tr><th>時間</th><th>主題</th></tr>
+  <tr><td>05:03</td><td>數據公司之間的分別：招聘平台、眾包標注、合成數據</td></tr>
+  <tr><td>08:27</td><td>從預訓練到後訓練，模型需要嘅數據發生咗咩變化</td></tr>
+  <tr><td>09:32</td><td>Rubric 數據：把專業判斷變成評分標準</td></tr>
+  <tr><td>10:46</td><td>強化學習（RL）環境：從回答問題到動手幹活</td></tr>
+  <tr><td>12:18</td><td>從 vibe coding 到 vibe everything：詳解 Agents&rsquo; Last Exam</td></tr>
+  <tr><td>14:10</td><td>遊戲好不好玩、作品好不好看，主觀判斷能被量化嗎</td></tr>
+  <tr><td>17:33</td><td>Rubric 與環境如何配合：人與 Agent 協作</td></tr>
+  <tr><td>20:05</td><td>從做評測到賣數據：benchmark 的生意</td></tr>
+  <tr><td>23:25</td><td>什麼樣的評測值得刷：核心能力與真實場景</td></tr>
+  <tr><td>27:29</td><td>沒上熱門榜單的評測，也可能帶來真實的數據需求</td></tr>
+  <tr><td>31:39</td><td>模型公司如何權衡內部評測、公開榜單與用戶反饋</td></tr>
+  <tr><td>33:30</td><td>兩三個人的數據創業公司，為什麼也能找到機會</td></tr>
+  <tr><td>38:56</td><td>模型越來越會自己造數據，外部供應商的機會還能持續多久</td></tr>
+  <tr><td>40:48</td><td>模型公司為什麼仍然需要外部數商：研發週期與行業採購的難題</td></tr>
+  <tr><td>44:04</td><td>數據買回來之後怎麼用：從 SFT、強化學習到模型訓練模型</td></tr>
+  <tr><td>47:03</td><td>訓練數據不是越難越好：為不同模型匹配難度與解題軌跡</td></tr>
+  <tr><td>48:22</td><td>SWE-bench Verified 的爭議：測試缺陷與數據污染</td></tr>
+  <tr><td>50:04</td><td>專家交來的數據也可能造假，如何驗證真實的工作過程</td></tr>
+  <tr><td>54:03</td><td>數據行業的下一步：收購企業、獲取數據，還是持續投入研發</td></tr>
+</table>
+
+<h2 class="section-title">八、爭議點（節目自己沒給死答案）</h2>
+
+<ul>
+  <li><strong>SWE-bench Verified 係唔係已被「玩壞」：</strong>OpenAI 停報分數係公開否定，但替代方案未定。</li>
+  <li><strong>「針對評測生產數據」嘅邊界：</strong>幾時係改善真實用戶體驗，幾時只係刷分？節目把判斷權交回「係唔係核心能力、係唔係真實場景」——即係一個原則，而唔係一條硬線。</li>
+  <li><strong>外部數商嘅可持續性：</strong>當模型越來越會自己造數據，外部供應商仲有幾久？節目嘅答案係「研發週期與行業採購嘅現實摩擦」——即係一個時間窗口，而唔係永久護城河。</li>
+</ul>
+
+<div class="highlight-box">
+<strong>一句帶走：</strong>「好數據的難點，往往藏在榜單之外。」當全行業都盯住 benchmark 分數，真正稀缺嘅係<strong>尚未被規模化嘅垂直工作流</strong>同<strong>能真正驗證「做對了」嘅機制</strong>。呢兩樣，都唔會出現在任何熱門榜上。
+</div>
+
+<hr>
+
+<footer>
+  <p><strong>來源：</strong>硅谷 101 E253（小宇宙／Apple Podcasts 官方 shownotes 完整章節軸 ＋ 官方簡介；Apple Podcasts 單集頁已核實）· 本集由科沃斯贊助</p>
+  <p style="margin-top:0.3rem;">取材方式：本集未取得逐字稿（小宇宙單集頁為 JS 渲染），論點依官方簡介與完整章節軸提煉；所有引號內容均為官方簡介原文，未作虛構引語。</p>
+  <p style="margin-top:0.3rem;">Deep Dive 生成時間：2026-09-29 06:00 UTC · <a href="../index.html">← 返回播客日報</a></p>
+</footer>
+
+</div>
+</body>
+</html>
