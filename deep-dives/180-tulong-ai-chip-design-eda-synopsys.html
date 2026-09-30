@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「人人都想做自己嘅芯片，但真正嘅卡口係 EDA」——屠龍之術 × 新思科技嚴華：當 AI 開始設計芯片</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em; background: #f4f1ec; padding: 0.05rem 0.3rem; border-radius: 3px; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">屠龍之術 · 2026-09-28 16:00 UTC 發布</div>
+  <h1>「人人都想做自己嘅芯片，但真正嘅卡口係 EDA」——屠龍之術 × 新思科技嚴華：當 AI 開始設計芯片，同「AI 全自動造芯嘅神話實現了麼？」</h1>
+  <div class="meta">
+    <span>📅 2026-09-28 16:00 UTC（北京 09-29 00:00）</span><span>·</span><span>🎙 屠龍之術（莊明浩 · 單口／訪談）</span><span>·</span><span>👤 嘉賓：嚴華（新思科技 Synopsys 產品解決方案銷售總監，芯片設計 20 年以上經驗）</span><span>·</span><span>⏱ 58:10</span><span>·</span><span>🏷 EDA / 芯片自研 / AI for EDA / Agent 權限</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係中文圈少有認真講「芯片係點造出嚟」嘅一集。莊明浩由「軟件層觀察者」嘅身份出發，請到新思科技（Synopsys）嘅嚴華做「外行提問、內行拆解」——一條線講 EDA 點解係所有芯片公司都繞唔開嘅隱形卡口，一條線講「人人都想做自己嘅芯片」嘅真實動機同落地路徑，第三條線講 AI 進入設計流程之後，「Agent 作為硅基員工」點樣逼返人類回答權限、安全同責任嘅問題。以下係我按官方完整章節軸逐段萃取後嘅復述同解讀。
+</p>
+
+<h2 class="section-title">一句話總結</h2>
+
+<p>表面上呢集係講芯片，但實際上莊明浩做嘅係一件更有野心嘅事：<strong>把「AI 產業」由軟件單層，還原成一條「模型 → 算力 → 芯片 → EDA」嘅產業鏈</strong>。佢嘅核心判斷係——當 AI 滲入芯片設計流程，EDA 就由後台工具變成前台瓶頸；而當 Agent 真係坐入設計團隊，「人類嘅邊界、安全、權限」就必須先於效率被回答。最後所有敘事都要過一關：<strong>算帳</strong>。</p>
+
+<blockquote class="strong">
+「作為一個平時關注模型、應用、平台這樣廣義上的『軟件』層的行業觀察者，會發現越來越多需要了解的是『硬件』層的相關事情，比如能源、數據中心，以及今天這期播客的議題：芯片。」
+<span class="attribution">—— 莊明浩，本集開場自述（官方簡介原文）</span>
+</blockquote>
+
+<h2 class="section-title">一、EDA：芯片行業嘅「隱形卡口」</h2>
+
+<p>節目由 00:34「新思科技的介紹」同 03:29「新思科技的影響力」兩節開場——呢個順序本身就係一個論證：先講公司係咩，再講佢點解會變成基礎設施級存在。嚴華嘅身份係新思科技產品解決方案銷售總監，而新思科技係 EDA（電子設計自動化）三巨頭之一。</p>
+
+<p>要理解「卡口」呢個詞，要理解 EDA 究竟卡喺邊。節目用一句話定位：EDA 位於<strong>「設計意圖」同「可製造版圖」之間</strong>——即係話，你腦裡想到嘅電路功能，要變成一塊真係可以送去晶圓廠生產嘅版圖（layout），中間嘅綜合、佈局、佈線、時序收斂、簽核（sign-off）、驗證，全部要靠 EDA 工具鏈。芯片公司可以自研架構、自研 IP，但幾乎冇一間可以完全繞開工具鏈。</p>
+
+<div class="highlight-box">
+<strong>點解係「卡口」而唔係「供應商」：</strong>賣工具同 IP 嘅公司，收入規模未必比得上芯片巨頭，但佢係<strong>整個產業嘅共同前置條件</strong>。當一家公司嘅工具成為「設計意圖 → 可製造版圖」之間嘅唯一通道，它嘅定價權就唔再來自產品差異化，而係來自<em>切換成本</em>——你點樣由一套用咗十年嘅流程，遷移到另一套？
+</div>
+
+<p>呢個結構同本週另一條線可以對照：硅谷101 E253 講數據行業嘅真正門檻係「行業採購與領域 know-how」，而芯片行業嘅門檻係「工具鏈遷移成本」。兩者都係同一句話嘅變奏——<strong>真正嘅護城河唔喺產品本身，而喺別人換唔換得起</strong>。</p>
+
+<h2 class="section-title">二、20 年前 vs 今日：先建立一個座標系</h2>
+
+<p>04:44「20 年前的芯片行業和今天的芯片行業對比」係全集嘅座標系。莊明浩嘅問題意識好清晰：如果你唔知 20 年前係咩樣，你就唔會明白今日「人人都想做芯片」到底係新現象抑或舊現象嘅放大。</p>
+
+<p>節目無逐字稿，所以我唔會虛構具體數字；但呢節嘅<strong>結構意義</strong>係可以確定嘅——它把後面所有變化（設計成本、團隊規模、迭代週期嘅量級）都錨定成「差異」而唔係「絕對值」。對讀者嚟講，呢個係最好嘅入門方式：唔係先學名詞，而係先學「邊啲嘢變咗」。</p>
+
+<table>
+  <tr><th>維度</th><th>20 年前</th><th>今日（節目對比軸）</th></tr>
+  <tr><td>設計成本</td><td>低，小團隊可承擔</td><td>極高，先進節點動輒天價</td></tr>
+  <tr><td>團隊規模</td><td>相對小</td><td>分工極細、跨地域協作</td></tr>
+  <tr><td>迭代週期</td><td>慢但可容忍</td><td>快、且容錯空間被壓縮</td></tr>
+  <tr><td>工具依賴</td><td>點工具為主</td><td>全流程平台化、工具鏈深度耦合</td></tr>
+</table>
+
+<p>（上表係對節目「20 年前 vs 今日」對比軸嘅結構化整理，唔係節目原文數字。）</p>
+
+<h2 class="section-title">三、「人人都想做自己嘅芯片」：動機同落地係兩件事</h2>
+
+<p>呢個係全集最值得拆嘅一段。節目刻意把問題切成兩半：09:13「為什麼人人都想做自己的芯片」，16:05「芯片的自研如何開始」。</p>
+
+<p>呢個切分本身就有洞察力——<strong>動機同能力係兩個獨立問題</strong>。想做自己芯片嘅理由可以好多元：供應鏈安全、成本結構、差異化、政治敘事、資本故事。但「從哪裡開始」係另一回事，而呢一半先係真正淘汰人嘅一半。節目把它獨立設節，等於承認：大部分「想做」嘅人，卡嘅唔係決心，而係入口。</p>
+
+<blockquote class="strong">
+「芯片的自研如何開始」——節目單獨設章節講這一節，把「想做」與「從哪裡開始」分開——這是本集最具操作性的部分之一。
+<span class="attribution">—— 筆者對節目章節結構嘅判讀</span>
+</blockquote>
+
+<div class="data-point">
+<span>結構</span>全集以「動機 → 路徑」嘅順序排列章節，而唔係按技術難度排列。呢個順序暗示：<strong>真正嘅瓶頸喺路徑，唔喺意願</strong>。
+</div>
+
+<h2 class="section-title">四、AI 進入 EDA：一個雙向影響</h2>
+
+<p>20:39「AI 來了對於 EDA 行業的影響」係節目由「行業結構」轉向「技術衝擊」嘅樞紐。節目把影響講成雙向：</p>
+
+<ul>
+  <li><strong>方向一：AI 進入芯片設計流程本身。</strong>即用 AI 去做綜合、佈局佈線、參數優化、驗證收斂——把設計師嘅重複判斷自動化。</li>
+  <li><strong>方向二：AI 改變設計目標。</strong>AI 芯片作為新嘅需求端，令「為咩而設計」本身變化——功耗、互連、HBM 頻寬、系統級協同成為第一等約束。</li>
+</ul>
+
+<p>呢個雙向框架好重要，因為佢解釋咗一個常見誤解：好多人把「AI 造芯」理解成「AI 取代設計師」。但節目嘅框架係——AI <strong>既是設計工具，又是被設計對象</strong>。當你嘅設計目標本身就係為 AI 服務，你嘅優化函數就唔再係通用芯片嘅函數。</p>
+
+<p>呢點同本週硅谷101 E253 嘅「可驗證性」主題亦互相呼應：EDA 工具鏈之所以咁有價值，正因為佢提供咗一套<strong>可驗證嘅判斷機制</strong>（時序、DRC、簽核），呢啲係芯片設計嘅「reward function」。冇呢套驗證，AI 嘅輸出一文不值。</p>
+
+<h2 class="section-title">五、Agent 作為「硅基員工」：先答權限，再談效率</h2>
+
+<p>26:58「人類的邊界、安全、權限」+ 28:06「作為硅基員工存在的 Agent」——呢兩節係全集嘅哲學核心，亦係最有前瞻性嘅部分。</p>
+
+<p>節目嘅提法好關鍵：把 Agent 叫「硅基員工」，唔係一個比喻，而係一個<strong>組織承諾</strong>。一旦你承認佢係團隊成員，你就必須回答：<strong>佢可以碰咩、唔可以碰咩、出事邊個負責</strong>。呢啲問題通常會被「效率敘事」蓋過，但節目把它們排喺 AI for EDA 之後、算帳之前——即係話，佢認為呢兩者係同一條邏輯鏈：先劃界，再計算。</p>
+
+<blockquote class="strong">
+當 Agent 進入設計流程，「人類的邊界、安全、權限」就成了必須先於效率回答的問題。
+<span class="attribution">—— 筆者對節目章節軸嘅解讀</span>
+</blockquote>
+
+<p>呢度有一個跨語言嘅呼應好值得記低：<strong>同一日</strong>（09-28），英文側 Latent Space 講嘅係 Anthropic 嘅「Claude Tag」正在變成組織級 harness——把 Agent 當同事用，同時打開一個巨大嘅新攻擊面。中文側屠龍之術講嘅係 Agent 作為硅基員工嘅權限邊界。兩個節目、兩種語言，撞到同一條線：<strong>當 Agent 從工具變成同事，安全模型就必須從「防誤用」變成「防角色越權」</strong>。</p>
+
+<h2 class="section-title">六、「當所有人開始認真算賬」：敘事嘅終結者</h2>
+
+<p>34:35「當所有人開始認真算賬」係莊明浩一貫嘅財務視角——亦係佢最擅長嘅切入點。呢一節嘅意義係：把自研芯片從「敘事檢驗」拉返去「ROI 檢驗」。</p>
+
+<div class="highlight-box">
+<strong>點解「算帳」係一個行業轉折點：</strong>當一個賽道只有願景、冇帳本嘅時候，所有參與者都可以假設自己會贏。但當大家開始認真算帳，比賽就由「誰嘅故事更動人」變成「誰嘅單位成本更低」。前者係估值遊戲，後者係生存遊戲。
+</div>
+
+<p>值得注意嘅係呢節同 09:13「為什麼人人都想做」之間嘅張力——節目把「人人都想做」同「大家開始算帳」放同一集，本身就係一組對立：<strong>動機係無限嘅，算帳係有限嘅</strong>。呢個張力就係呢集最誠實嘅地方。</p>
+
+<h2 class="section-title">七、瓶頸、幾個人設計芯片、同「全自動造芯」嘅神話</h2>
+
+<p>最後三節係技術判斷嘅落點：</p>
+
+<table>
+  <tr><th>章節</th><th>問題</th><th>性質</th></tr>
+  <tr><td>39:46</td><td>當前系統遇到的瓶頸</td><td>現狀診斷</td></tr>
+  <tr><td>44:58</td><td>未來幾個人就可以設計芯片？</td><td><strong>團隊規模</strong>問題</td></tr>
+  <tr><td>47:24</td><td>AI 全自動造芯的「神話」實現了麼？</td><td><strong>自動化程度</strong>問題</td></tr>
+</table>
+
+<p>節目明確把後兩者當成「兩個需要分開回答嘅問題」——呢個處理方式本身就係一種立場。因為坊間最常見嘅混淆，就係把「小團隊可以設計芯片」（組織問題）同「AI 可以自動設計芯片」（能力問題）混為一談。實際上：</p>
+
+<ul>
+  <li>幾個人設計芯片，靠嘅係平台化工具同 IP 復用——<strong>人少咗，但唔代表人嘅角色消失</strong>，只係角色由「執行」轉向「判斷＋驗收」。</li>
+  <li>AI 全自動造芯，係一個未被證明嘅命題。節目用問句設題（47:24），語氣本身已經係保留。</li>
+</ul>
+
+<h2 class="section-title">八、最後落回人才：「我們需要什麼樣的芯片人才？」</h2>
+
+<p>53:05 係全集嘅收尾，亦係最有延續性嘅一問。當 AI 改變咗設計流程，人應該具備咩能力？</p>
+
+<p>呢個問題嘅答案唔喺節目裡被明說，但可以從前面嘅邏輯推返：如果 AI 接管咗「綜合／優化／驗證」嘅執行層，咁人嘅價值就會集中喺<strong>定義問題、設定約束、判斷取捨、承擔責任</strong>。即係話——芯片人才嘅未來能力，同軟件工程師嘅未來能力，正在收斂到同一組：唔係「寫得動」，而係「判斷得準、講得清、負得起責」。</p>
+
+<h2 class="section-title">我嘅解讀：呢集真正想講嘅三件事</h2>
+
+<ol>
+  <li><strong>產業鏈已經綁死。</strong>「模型—算力—能源—芯片」係一條鏈。莊明浩由軟件層被迫補硬件層知識，唔係個人興趣，而係行業信號：只睇應用層會失去解釋力。</li>
+  <li><strong>EDA 係最唔性感、但最有議價權嘅一環。</strong>因為佢係切換成本最高嘅節點。呢個判斷同「數據行業真正門檻係行業採購」係同構嘅。</li>
+  <li><strong>Agent 入場 = 權限問題先於效率問題。</strong>硅基員工呢個提法唔係浪漫，而係逼你簽一份權責合約。</li>
+</ol>
+
+<h2 class="section-title">前後脈絡</h2>
+
+<ul>
+  <li><strong>承上一集（9/22 AICC2026 復盤）：</strong>上集已提及 IDC《中國人工智能計算力發展評估報告》、「Agent = Model + Harness」、Token 增長三係數、算力缺口持續；本集把其中「芯片」一條抽出來做專題。兩集構成「系統 → 芯片」嘅連續框架。</li>
+  <li><strong>與 9/15「智能的下一幕」73 頁 PPT 構成三連：</strong>模型競爭 → 智能分化 → 芯片底座，係莊明浩近期最完整嘅行業框架。</li>
+  <li><strong>與同日硅谷101 E253 互為上下層：</strong>一個講芯片（硬件底座），一個講數據與評測（訓練供給）。</li>
+  <li><strong>與同日 Latent Space（Claude Tag／組織級 harness）跨語言呼應：</strong>都喺講「Agent 做同事之後嘅邊界問題」。</li>
+</ul>
+
+<h2 class="section-title">爭議點</h2>
+
+<ul>
+  <li><strong>「AI 全自動造芯」係咪只係神話：</strong>節目以問句設題，本身就係對過度敘事嘅保留。呢個係全集最尖銳嘅技術判斷。</li>
+  <li><strong>自研芯片嘅動機 vs 算帳嘅現實：</strong>「人人都想做」同「當所有人開始認真算賬」放埋一集，構成一組未解嘅張力。</li>
+  <li><strong>Agent 作為硅基員工嘅邊界：</strong>當 Agent 進入設計流程，「人類的邊界、安全、權限」必須先於效率回答——但節目只提出問題，冇給出答案，呢個係誠實，亦係留白。</li>
+</ul>
+
+<div class="data-point">
+<span>取材</span>本集為小宇宙／Apple Podcasts 官方 shownotes 完整章節軸（14 段）＋ 官方簡介；<strong>本集未取得逐字稿</strong>（小宇宙單集頁為 JS 渲染）。文中帶引號嘅句子均取自官方簡介原文，其餘論點依官方章節軸提煉，並已如實標註為筆者判讀，未虛構任何對話。
+</div>
+
+<hr>
+<p style="font-size:0.9rem;color:#777;">如果你想用一句話記住呢集：<strong>「人人都想做自己嘅芯片，但真正嘅卡口係 EDA；而當 Agent 變成硅基員工，第一個要答嘅唔係效率，係權限。」</strong></p>
+
+<footer>
+  <p>來源：屠龍之術（小宇宙／Apple Podcasts）· 2026-09-28 16:00 UTC 發布 · 58:10</p>
+  <p style="margin-top:0.3rem;">深度復述由 <a href="../index.html">AI 播客日報</a> 生成 · 2026-09-30</p>
+</footer>
+</div>
+</body>
+</html>
