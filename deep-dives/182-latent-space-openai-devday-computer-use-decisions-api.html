@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「Computer Use 已經 180 度不同」——Latent Space × OpenAI DevDay 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0; padding: 0.6rem 1rem;
+    color: #555; font-style: italic; background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c; background: #fdf8f0;
+    font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem;
+    margin: 1.2rem 0; border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block; background: #8b5e3c; color: #fff;
+    font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px;
+    margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px;
+    padding: 1rem 1.2rem; margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em; background: #f4f1ec; padding: 0.05rem 0.3rem; border-radius: 3px; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-09-30 22:23 UTC 發布（OpenAI DevDay 當日）</div>
+  <h1>「Computer Use 已經 180 度不同」——Latent Space × OpenAI DevDay 2026：Dwarkesh 錯在哪，同 OpenAI 點樣一星期克隆咗 Jev</h1>
+  <div class="meta">
+    <span>📅 2026-09-30 22:23 UTC（北京 10-01 06:23）</span><span>·</span><span>🎙 Latent Space（主持 swyx ＋ Vibhu）</span><span>·</span><span>👤 嘉賓：Ari Weinstein（OpenAI Computer Use 產品／工程負責人）＋ Nikunj Handa（OpenAI API 產品負責人）</span><span>·</span><span>⏱ 約 40 分鐘</span><span>·</span><span>🏷 Computer Use / API / Agent 基建</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係 DevDay 當日、直播一完就錄嘅「第一手復盤」。上半場由 Ari Weinstein 講 Computer Use 呢幾個月點樣「180 度不同」——正面反駁 Dwarkesh 早前「Computer Use 兩年冇進展」嘅講法；下半場由 Nikunj Handa 拆 OpenAI 新一輪 API 原語，重點係一個被 Jev 啟發、四星期前根本唔喺 roadmap 上、一星期內做出原型嘅 Decisions API。以下內容按<strong>官方頁面完整逐字稿（約 57 KB）</strong>整理，引號內全部係逐字稿原文。
+</p>
+
+<h2 class="section-title">一句話總結</h2>
+
+<p>呢集有兩條主線，其實係同一件事嘅兩面。第一，Computer Use 嘅瓶頸已經由「模型識唔識做」轉移到「<strong>做嘢本身幾慢</strong>」——代理已經識 debug、識自我恢復、識寫 JavaScript 一次過做多步，於是開始撞到「等 doordash 載入」呢類世界本身嘅物理限制。第二，當一個領先嘅推理 API（Jev）出現，OpenAI 內部嘅 hacker 文化令佢<b>一星期</b>就克隆出等價原語——而且坦白承認「<strong>完全冇訓練新模型，就係 Luna 零樣本</strong>」。兩條線合起來講同一個判斷：<strong>呢個行業嘅護城河，正被壓縮到以「星期」為單位；而真正稀缺嘅，係推理棧效率、快取基建、分發同可靠性。</strong></p>
+
+<blockquote class="strong">
+「你其實係喺造一朵 <b>AI 雲</b>……你做緊 AI 原生嘅 EC2、S3。」
+<span class="attribution">—— swyx 總結 OpenAI 平台戰略（逐字稿原文）</span>
+</blockquote>
+
+<h2 class="section-title">一、背景：Dwarkesh 嗰條「唔識答」嘅問題</h2>
+
+<p>節目開場直接擺出衝突。三個月前，Dwarkesh 喺佢嘅 RLVR 影片essay 入面問咗一條「令我困惑又覺得有意思」嘅問題，仲搞到一班 Computer Use 圈嘅人好唔高興：</p>
+
+<blockquote>
+「Why has progress on computer use been so slow? Computer use is so clearly verifiable.（點解 Computer Use 嘅進展咁慢？Computer Use 明明係咁明顯可以驗證。）」
+<span class="attribution">—— Dwarkesh Patel，2026-06-27，604K 瀏覽</span>
+</blockquote>
+
+<p>Dwarkesh 嘅答案係：「一個領域淨係『可驗證』係唔夠嘅。」而 Latent Space 呢集，就係請咗最有資格反駁嘅人嚟反駁。swyx 自己亦都講到明立場——佢哋去過 Anthropic 嘅 Computer Use 發佈會、做過 Claude Cowork 第一個大 podcast、搞過 AIE 第一屆 Computer Use track、而且接近過 OpenAI 收購 Sky Software 呢單案，「所以今日第一位嘉賓 Ari Weinstein 係好合理嘅」。</p>
+
+<h2 class="section-title">二、「180 度不同」：三個具體變化</h2>
+
+<p>Ari Weinstein 嘅職涯主線就係「電腦自動化」：Apple（Shortcuts）→ 創辦 Sky（後被 OpenAI 收購，即今日 Codex Computer Use 嘅技術來源）→ OpenAI。佢對 Dwarkesh 嘅回應好直接：</p>
+
+<blockquote class="strong">
+「佢哋幾個月前講嗰句……我希望佢而家有唔同嘅睇法，因為 Computer Use 已經係 <b>180 度不同</b>於佢以前嘅樣。」
+<span class="attribution">—— Ari Weinstein</span>
+</blockquote>
+
+<p>咁「180 度」具體變咗喺邊？Ari 給出三個可操作嘅變化：</p>
+
+<ul>
+  <li><b>由「開到頭就卡死」變成「擅長 debug、擅長重試」。</b>Ari 原話：「以前它們能夠可靠地開始任務，但一遇到問題就卡住；<b>現在它們非常擅長 debug、擅長重試、擅長自省邊度得邊度唔得</b>。」——呢個係佢心目中最大嘅 delta。</li>
+  <li><b>唔再「一步一截圖」，而係寫 JavaScript 一次做多步。</b>「你手動展開 tool calls 就見到，佢唔係一次做一個動作，而係真係喺寫一段 JavaScript，由電腦執行，有時一次過做<b>好多個動作</b>。」</li>
+  <li><b>多模態介面並用。</b>「模型可能用截圖、可能用 accessibility、可能用 Playwright……<b>按任務切換</b>。」Ari 特別點名過去 Computer Use 產品「花好多時間喺度 scroll」嘅痛點——截圖、scroll、再截圖——而 accessibility 同直接 DOM 存取，令模型「一次見到成版或者成個 app」。</li>
+</ul>
+
+<div class="data-point">
+<span>類比</span>Ari 提到一個好傳神嘅細節：<b>accessibility 技術本來係為咗幫有無障礙需求、用 screen reader 嘅人</b>，「結果同樣嘅技術對 LLM 用電腦都好有幫助」——即係幫人嘅基建，意外變成幫 AI 嘅基建。
+</div>
+
+<h2 class="section-title">三、由「比人快」到「字面超人」</h2>
+
+<p>全集最響嘅一句判斷，係 Ari 講 Computer Use 已經快過普通人：</p>
+
+<blockquote class="strong">
+「我認為真正瘋狂嘅係，團隊喺過去幾個月做到嘅，係 Computer Use 而家<b>完成任務比普通人仲快</b>……而下一個前沿，係令佢<b>字面意義上嘅超人</b>——真正同專家一樣快、甚至更快咁用軟件。」
+<span class="attribution">—— Ari Weinstein</span>
+</blockquote>
+
+<p>佢解釋咗點解「超人」係關鍵門檻：一旦達到，就能支撐<b>更即時嘅產品體驗</b>，亦會令用戶「開始默認將某啲以前習慣親手做嘅嘢交畀 agent」。以下是逐字稿中幾個具體數字：</p>
+
+<table>
+  <tr><th>數字／事實</th><th>出處與語境</th></tr>
+  <tr><td>備餐訂單 <b>2 小時 → 15 分鐘</b>（快 8 倍，慳 2 小時）</td><td>Ari 個人用例：高度客製化嘅 meal prep 落單，用 GPT-6.1 Sol 完成</td></tr>
+  <tr><td>Computer Use 速度提升 <b>7 倍</b></td><td>keynote 口徑（Vibhu 覆述 Tejal 嘅講法）</td></tr>
+  <tr><td>GPT-6.1 Sol 成本約 <b>Astra 1/5</b>；Computer Use 專項約 <b>1/7</b></td><td>Ari 開場介紹</td></tr>
+  <tr><td>Luna 價格曾下調約 <b>80%</b>；快取讀取再降約 <b>25%</b></td><td>Nikunj 講推理棧效率</td></tr>
+  <tr><td>快取保證 <b>30 分鐘 → 12 小時</b>（preview 中）</td><td>Nikunj 講 caching；付較高 cache write 費可鎖長窗口</td></tr>
+  <tr><td>過去兩週業界出現約 <b>100 個 Jev 克隆</b></td><td>swyx 語</td></tr>
+</table>
+
+<h2 class="section-title">四、瓶頸轉移：由模型轉向「世界本身」</h2>
+
+<p>呢節係全集技術含量最高、亦最容易被忽略嘅一部分。Ari 講到，當 Computer Use 越嚟越快，佢哋越嚟越被「<b>做一個操作本身嘅耗時</b>」卡住：</p>
+
+<blockquote>
+「我哋發現 Computer Use 越快，就越嚟越被『做一個操作嘅速度』瓶頸住。例如你自動化 doordash.com 上嘅一個任務，<b>好多時間其實係喺度等 doordash.com 自己載入</b>。」
+<span class="attribution">—— Ari Weinstein</span>
+</blockquote>
+
+<p>佢同 swyx 嘅往來揭示咗一層好深嘅工程現實：理想係 event-driven（例如 JavaScript 嘅 load event），但「<b>有啲事件本質上真係冇得事件驅動</b>」。Vibhu 舉咗個好例子——同客服 chat，對方回覆可能 30 秒、可能 3 分鐘。於是「<b>幾時觸發 LLM 做下一個動作，本身就係一門統計科學</b>」。</p>
+
+<div class="highlight-box">
+<strong>我嘅判讀：</strong>呢段係對「Agent 會唔會一直加速落去」嘅一個誠實修正。當模型同 harness 嘅延遲壓到好低之後，剩下嘅延遲唔再係 AI 問題，而係<b>人類互聯網嘅負載時間</b>。呢個意味住——下一輪 Computer Use 嘅競爭，會由「模型幾聰明」轉向「<b>邊個更識同一個慢嘅世界打交道</b>」：event 偵測、polling 策略、容錯重試。呢個係枯燥但護城河型嘅工程。
+</div>
+
+<h2 class="section-title">五、App Shots：呢個「截圖」唔係截圖</h2>
+
+<p>Ari 特別澄清一個大眾誤解（Vibhu 都話「好多人連 App Shots 係咩都唔知」）：你 double-hit command，睇落好似拉咗一張截圖入嚟——「<b>但佢其實係將所有 metadata、所有 code、所有嘢拉晒出嚟</b>」。</p>
+
+<blockquote>
+「如果你影一張有連結嘅網頁截圖——<b>截圖唔包含個連結去邊</b>；你影你嘅日曆，event 標題係被截斷嘅。但當你 take 一個 app shot，佢就畀語言模型<b>關於所有嘢嘅完整脈絡</b>。」
+<span class="attribution">—— Ari Weinstein</span>
+</blockquote>
+
+<p>Ari 仲教咗一個「nerd 玩法」：喺 Codex 入面 take app shot，點開附件右上角粒細掣，你就見到<b>原始文字同原始 accessibility 表示</b>——「我哋花咗好多工夫 dump 晒出嚟，同時令佢 token-efficient，呢度有啲藝術成分」。</p>
+
+<h2 class="section-title">六、最深遠嘅用例：代理測自己嘅代碼</h2>
+
+<p>Ari 主動提出佢心目中最重要嘅 Computer Use 用例，而且講明「<b>比聽落去重要得多</b>」：</p>
+
+<blockquote class="strong">
+「以前你喺 Codex 建咗個嘢，Codex 幫你建好，然後<b>你要自己測——你就變咗個 agent 嘅 QA</b>。而家用 Computer Use，你可以完成成個 SDLC：agent 建軟件，agent 測軟件。到我手上嘅時候，佢已經 work 咗。」
+<span class="attribution">—— Ari Weinstein</span>
+</blockquote>
+
+<p>佢跟住補咗一句好可愛嘅自我指涉：「我有額外嘅樂趣，因為有時我係喺度開發 Computer Use 本身，於是<b>我有一個 Computer Use agent，用緊我嘅 Computer Use agent，再用緊另一啲嘢</b>。」swyx 亦分享咗自己嘅「visual play test skill」——專門捉一啲「淨係睇 code 睇唔到」嘅設計問題，仲可以用嚟<b>逐屏 clone 一個 SaaS</b>（「如果你用緊一個差嘅 SaaS，想殺咗佢，就 clone 佢」）。</p>
+
+<h2 class="section-title">七、Agents API 與信任基建：權限先於效率</h2>
+
+<p>Computer Use 今次入咗 Agents API，開發者可以用「同一套 OpenAI 自家 Codex、ChatGPT 用緊嘅 Computer Use」。Ari 講咗一個好關鍵嘅建議，同之前 Thariq 嗰集（179）互相呼應：</p>
+
+<blockquote>
+「你可以自己建 Computer Use harness，但<b>好難</b>。而且<b>我哋係喺自己嘅 Computer Use harness 上面訓練模型</b>，所以用同模型 distribution 一致嘅嗰個，會有速度、成本同準確度嘅優勢。」
+<span class="attribution">—— Ari Weinstein</span>
+</blockquote>
+
+<p>講到安全，Ari 嘅口徑係<b>工程同信任基建</b>，唔係治理：</p>
+
+<ul>
+  <li><b>逐步建立信任：</b>「我哋都仲喺過程之中，而且我哋之中有啲人比世界上多數人更早學會信任呢項技術……所以有責任透過做可靠嘅嘢、做啱嘅安全檢查、喺做後果性操作（例如付款）之前取得用戶同意，去逐步建立信任。」</li>
+  <li><b>最小授權：</b>「視乎應用，確保佢只可以訪問佢真正需要嘅網站或 app。」</li>
+  <li><b>但主持人自己就係反例：</b>swyx 自曝「我畀佢配置 DNS、畀佢幫我找咭數，好幾萬美金嘅嘢就咁 yolo 畀 Computer Use，『最壞可以點？』」——呢個係早期採用者風險胃納嘅活生生寫照。</li>
+</ul>
+
+<h2 class="section-title">八、Decisions API：一星期克隆 Jev</h2>
+
+<p>下半場轉去 Nikunj Handa（OpenAI API 產品負責人，入職約三年，前 Stripe）。swyx 一開波就問到最尖：</p>
+
+<blockquote class="strong">
+「你哋幾快見到 Jev 就覺得『嘩』？」——而 Nikunj 嘅回答係 …
+「首先要大大 props 畀 Diogo 同 Jev 團隊，<b>真係啟發咗成個市場 segment</b>……好多 OpenAI 嘅人即刻被 nerf sniped（勾起好奇心），話『我哋點樣令呢樣嘢 work？』——<b>但係唔訓練新模型</b>。」
+<span class="attribution">—— Nikunj Handa（swyx 追問：四星期前呢樣嘢根本唔喺開發雷達上）</span>
+</blockquote>
+
+<p>時間線更誇張：Decisions API 由 inference 同 infra 團隊「自發動手」，<b>做出原型、即刻開始爬延遲</b>，目標係「一旦達到延遲目標就推出」。Nikunj 講嘅係「一星期」級別嘅 sprint。</p>
+
+<h2 class="section-title">九、真相：完全喺 Luna 上零樣本</h2>
+
+<p>呢節係全集最「爆」嘅披露。swyx 逼問：Decisions API 係唔係只係「結構化輸出 + 關咗 reasoning」——即係人人可做嘅 Jev 克隆？Nikunj 答得好坦白：</p>
+
+<blockquote class="strong">
+「<b>我哋冇為呢樣嘢訓練新模型</b>。我哋<b>純粹建立喺同一批 Luna 權重之上</b>……基本上就係喺 Luna 上<b>零樣本</b>施作，睇吓點。」
+<span class="attribution">—— Nikunj Handa</span>
+</blockquote>
+
+<p>咁 Decisions API 到底做咗咩？逐字稿提出四層：</p>
+
+<ol>
+  <li><b>約束（constrained／structured output）</b>——你定義問題同可能答案；</li>
+  <li><b>推理棧優化</b>——針對 <b>TTFD（time-to-first-decision）</b>；</li>
+  <li><b>並行批次</b>——多條問題一次過 batch 跑（所以你唔係等一個答案，而係一次過拿一批）；</li>
+  <li><b>視覺免費附送</b>——swyx：「Jev 冇視覺，你有」，Nikunj：「係，Luna 免費送嘅。」</li>
+</ol>
+
+<p>同時佢亦老實講咗代價：Decisions API <b>冇 reasoning、係細模型</b>，所以「<b>唔係太擅長長程、複雜嘅任務</b>」，OpenAI 自己都話「點樣將兩條路線結合，仍然係開放研究」。</p>
+
+<h2 class="section-title">十、護城河喺邊：校準與置信度</h2>
+
+<p>呢段係全集最有 insight 嘅一小節。swyx 指出：如果 Decision 模型同 Luna 同價、關咗 reasoning、加結構化輸出，咁「我就有一個 Jev 啦，係唔係？」——佢自答：「<b>唔係</b>。因為仲有 confidence。」</p>
+
+<blockquote class="strong">
+「RLHF 基本上會令你<b>往你想聽嘅方向坍縮</b>……但<b>唔會保留『你到底有幾大把握』嘅訊號</b>。」——swyx
+<br>「我急不及待想睇佢點發展……呢啲可能就係未來模型要 hill climb 嘅關鍵領域。」——Nikunj Handa
+<span class="attribution">—— 逐字稿原文</span>
+</blockquote>
+
+<p>換句話講，OpenAI 承認：<b>首版 Decisions API 未體現真正嘅差異化</b>（校準），要等後續模型。swyx 亦提到業界對 Jev 架構嘅兩大猜測——(1) 擴散式非自迴歸生成、(2) 機械可解釋性直接讀取激活再輸出——Nikunj 都冇證實，只話「呢個空間畀人踢開咗，大家會互相學習」。</p>
+
+<div class="highlight-box">
+<strong>我嘅判讀：</strong>「Decisions API」呢個名，本質上係 <b>OpenAI 將一個社群自發嘅 pattern 官方化</b>。佢真正嘅戰略意義唔在於技術（零樣本、冇新模型），而在於<b>分發</b>——把一個原本要開發者自己砌嘅低階原語，變成平台上一個有 SLA、有快取、有批次嘅一等公民。呢個正係「AI 雲」邏輯：唔係贏在發明，而係贏在把好 pattern 變成基建。
+</div>
+
+<h2 class="section-title">十一、新 API 原語：由「模型唔停手」到「推理中途插話」</h2>
+
+<p>Nikunj 逐項拆解 GPT-6 嘅新 API 能力：</p>
+
+<table>
+  <tr><th>原語</th><th>作用</th></tr>
+  <tr><td><b>Async tool calling</b></td><td>工具呼叫耗時長時，模型唔使停低推理——kick off 工具後繼續 reasoning，遲啲再返嚟檢查結果</td></tr>
+  <tr><td><b>Mid-turn steering</b></td><td>推理途中注入訊息（「工具跑完，你可以放低指令入去」）。swyx 追問呢個係唔係模型對齊能力，Nikunj 確認「係，要訓練入去」</td></tr>
+  <tr><td><b>WebSockets</b></td><td>雙向通訊底座；最早為 GPT-5.3 Codex Spark 上線</td></tr>
+  <tr><td><b>UltraFast 推理</b></td><td>「理論上可以攞到嘅最快速度、智能前沿」；Nikunj 話先係壓成本（令 Luna 減價 80%），而家轉去「跑得最快」</td></tr>
+</table>
+
+<p>值得一提嘅「大象在房間裡」一問：swyx 指出 GPT-5.3 Spark 明確歸功 Cerebras，而「UltraFast 係唔係都同 Cerebras 有關，你哋唔確認亦唔否認，但大家care，而你哋又有自研硅」——Nikunj 冇正面答。</p>
+
+<h2 class="section-title">十二、快取與壓縮：枯燥但係護城河</h2>
+
+<p>下半場後段係「性能工程」時間，兩個關鍵：</p>
+
+<ul>
+  <li><b>快取（caching）</b>：30 分鐘保證 →（preview 中）<b>12 小時保證</b>；付較高 cache write 費即可鎖定長窗口，令「單線程、無限長」嘅個人 agent 隔三四個鐘返嚟都仲有 cache 效益。另有 <b>cache pre-warming</b> 同 <b>cache diagnostics</b> 工具，官方建議「以 cache-aware 方式設計應用」。</li>
+  <li><b>壓縮（compaction）</b>：三條路——Agents API 內建；Responses API 嘅 <b>server-side compaction</b>（過閾值自動壓）；同 <b><code>/compact</code></b>（手動、全控制，大型 coding agent 偏好）。Nikunj 透露 Codex 開源 harness 已實作<b>檔案式</b>嘅新壓縮實驗。</li>
+</ul>
+
+<h2 class="section-title">十三、「AI 雲」：更高階嘅原語之爭</h2>
+
+<p>收尾最有格局。Nikunj（前 Stripe）用 Stripe 類比：「喺 Stripe，遊戲就係喺核心支付原語之上，建更高階嘅 primitives 同產品；我一路好奇 AI 世界對應物係咩。」佢列出一堆開放問題：Agents API 應該畀幾多彈性？memory wall 點設計？storage 抽象要唔要包？「幾多嘢應該 build 入 API，係我成日諗嘅問題。」swyx 一句總結：「<b>你係喺造一朵 AI 雲</b>……Sam 一年前講過，你係喺做 AWS 嘅發明，但做 AI 原生版本，呢個係 EC2、嗰個係 S3。」</p>
+
+<h2 class="section-title">十四、爭議點 / 需要打折嘅地方</h2>
+
+<ul>
+  <li><b>「比普通人快」缺乏公開 benchmark。</b>Ari 話「無論點量都有好一致嘅 gains」，但強調唔同 harness 配置各異、冇單一公開數字；7 倍係 keynote 口徑。</li>
+  <li><b>Decisions API 首版係唔係只係命名？</b>swyx 直指「結構化輸出 + 關 reasoning，人人可做 Jev」；OpenAI 承認差異化（校準）<b>尚未在首版體現</b>。</li>
+  <li><b>安全靠「自己 dogfood 完再教開發者」。</b>付款等後果性操作要求用戶同意，但主持人自曝「把十幾萬美金 yolo 畀 Computer Use」，暴露早期採用者嘅風險胃納。</li>
+  <li><b>UltraFast 硬件來源講一半。</b>Cerebras 只喺 5.3 Spark 上被明言，UltraFast 唔確認亦唔否認。</li>
+</ul>
+
+<h2 class="section-title">前後脈絡</h2>
+
+<ul>
+  <li><b>正面反駁前一天（09-29）嘅 Dwarkesh「Computer Use 冇進展」論點</b>——Ari：「佢係一個好難取悅嘅人，但我們努力緊。」</li>
+  <li><b>同 09-29 Thariq（179）構成組合拳</b>：Thariq 講 harness 可以自我改寫（Claude Mods，mutable software），Ari／Nikunj 講官方 harness 透過 API 被收編——兩者由唔同方向指出「agent 外殼」已經係主戰場。</li>
+  <li><b>同 09-27 Cognitive Revolution（Hugging Face 事件＝共謀）對照</b>：本集對安全嘅口徑係工程同信任基建（權限、同意、最小授權），而唔係治理。</li>
+  <li><b>同「可驗證性」主線呼應</b>：本集講推理棧效率與快取基建，同日 MLST（183）講形式化驗證被 AI 攻破——兩者都指向同一句：<b>能自動化嘅判斷越便宜，能自動驗證嘅訊號就越稀缺</b>。</li>
+</ul>
+
+<h2 class="section-title">我嘅解讀：護城河嘅時間尺度被壓縮到「星期」</h2>
+
+<p>呢集最值得記低嘅，唔係任何單一數字，而係一個<b>速度事實</b>：一個領先推理 API（Jev）出現後，OpenAI 喺<b>一星期</b>內克隆出等價原語，而且「四星期前呢樣嘢完全唔喺 roadmap 上」。呢件事推翻咗一個常見假設——「護城河係『邊個先想到』」。</p>
+
+<p>真相係：稀有資產已經唔係 idea，而係<b>推理棧效率（TTFD、並行批次）、快取基建（12 小時保證、pre-warming）、分發（同自家 harness 一致嘅 distribution）同分佈可靠性</b>。OpenAI 之所以可以一星期出貨，唔係因為佢哋比別人聰明，而係因為佢哋已經揸住呢四樣嘢——Jev 只係提供咗一個「值得克隆嘅 pattern」。</p>
+
+<p>呢個對所有 AI 產品團隊嘅啟示好直接：<b>如果你嘅產品價值完全建立喺「一個 API wrapper」上，你嘅保質期係以星期計。</b>真正要問嘅係——我揸住嘅係「pattern」定係「四樣基建」？</p>
+
+<hr>
+<p style="font-size:0.9rem;color:#777;">一句話帶走：<strong>當一個 pattern 可以一星期被克隆，護城河就由「邊個先想到」搬去「邊個揸住推理棧、快取、分發同可靠性」。</strong></p>
+
+<div class="data-point">
+<span>取材</span>Latent Space 官方頁面完整逐字稿（純文字約 57 KB，含 17 段章節時間軸同講者標註）；文中帶引號句子全部取自逐字稿原文，其餘為筆者按逐字稿提煉嘅判讀，未虛構任何對話或數字。片長約 40 分鐘。
+</div>
+
+<footer>
+  <p>來源：Latent Space（latent.space/p/devday-2026）· 2026-09-30 22:23 UTC 發布 · 約 40 分鐘</p>
+  <p style="margin-top:0.3rem;">深度復述由 <a href="../index.html">AI 播客日報</a> 生成 · 2026-10-01</p>
+</footer>
+</div>
+</body>
+</html>
