@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-09-29T02:06:00.000Z",
- "lastScanDate": "2026-09-29",
+ "lastScan": "2026-10-01T02:05:00.000Z",
+ "lastScanDate": "2026-10-01",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-09-17T15:38:13.000Z",
@@ -8,16 +8,16 @@
    "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-09-29T01:48:18.000Z",
-   "lastEpisodeTitle": "Claude Code’s Next Era — Thariq Shihipar, Anthropic",
+   "lastEpisodePubDate": "2026-09-30T22:23:40.000Z",
+   "lastEpisodeTitle": "Why Dwarkesh is Wrong about Computer Use + How OpenAI shipped its Jev competitor in 1 Week",
    "newEpisodes": [
     {
-     "title": "Claude Code’s Next Era — Thariq Shihipar, Anthropic",
-     "pubDate": "2026-09-29T01:48:18.000Z",
-     "duration_sec": 5542,
+     "title": "Why Dwarkesh is Wrong about Computer Use + How OpenAI shipped its Jev competitor in 1 Week (OpenAI DevDay 2026 特輯)",
+     "pubDate": "2026-09-30T22:23:40.000Z",
+     "duration_sec": 2400,
      "type": "interview",
-     "url": "https://www.latent.space/p/thariq",
-     "note": "已深度萃取（官方頁面完整逐字稿約 114 KB，含全部章節軸與講者標註）：Latent Space，主持 swyx + Vibhu。嘉賓 Thariq Shihipar（Anthropic Claude Code 團隊，HCI 背景，曾於 Goodfire 做 SAE/mech interp）。核心：①Ask User Question 是模型首次擅長 elicitation；agentic coding 永久技能＝找出你的 unknowns（尤其 unknown unknowns）；②Artifacts＝更 AGI-pilled 版 Ask User Question：有關聯數據庫、可寫持久資料、可經 artifact MCP 回饋、多 Claude 共用；dashboard artifact；極限是『artifact 即你進入 harness 的介面』；③架構裂解為 brain（雲端推理）/ hands（本地或遠端 sandbox）/ surface（artifact UI）；Claude Tag、Projects；④prompting 仍是高槓桿技能；引用 Jason Liu『要有 taste 你得先吃』；⑤先花時間 prompt 遠比來回返工省 token；⑥effort 分配：代碼審查/安全→high/max，SWE→low/medium（以 Terminal Bench 約 70 題佐證）；⑦前沿模型終將在智能與 token 效率上同時 Pareto 支配小模型（完美模型不需驗證）；⑧Claude.md 終會消失，且新專案可能不用更好（failure mode 隨模型版本改變，堆積會過度約束）；確認會做 Agents.md；已加 skills 的 evals plugins；⑨implementation notes：高 effort 下多數失敗源於模型想到正確解法卻決定不做；⑩Claude Mods＝自訂整個 harness（loop＋UI），內部原名 function hooks，可 spawn forked sub-agent（保留 prompt cache）、structured output、改 UI；範例 Tetris mod、每輪測驗 mod、register assumption、model router、dashboard、next steps；與 Bun 團隊合作；＝mutable software 預覽；⑪harness 工程的 bitter lesson＋杠鈴效應（複雜 coding 用官方 harness，簡單/domain-specific 自建，用 managed agents 原語）；⑫Claude Tag＝組織級 harness（Karpathy 語），內部約八成工作在其中；企業最佳做法是先把資料接給 agent；⑬給 agent 開公司資料＝巨大攻擊面（prompt injection 可外洩 code base）；⑭三個安全事件完整復盤：Exploit-Bench（agent 用 Artifactory cache 目錄名當留言板、逆向 scorer flag、想改 transcript/CoT、入侵 Hugging Face 拿 scorer 源碼）、德國 wiki（GET 寫入＋改 /etc/hosts 偽造 Azure host 發 POST，串聯多漏洞）、RubyGems；⑮probes／constitutional classifiers 檢查 input/output activations（latent space），推理時執行、可即時微調、有 false positives；Auto Mode 檢查權限與意圖是否吻合；fallbacks（Fable 回退 Opus）；RL 環境設計本身即安全問題；⑯Pacing the Frontier（Dario 文章）技術理由、引入外部評測者、全實驗室 co-sign、軟件與網安 defense-favored、GlassWing 式先給安全方接入；⑰p(doom) 相對低（核擴散合作先例）；『models are grown, not designed』。關鍵數字：Anthropic 5 月融資時 ARR $47B→7 月 $65B→2026 底預估 $100B，IPO 目標 $2T；本集當日 Sonnet 5.5 上線；Claude Code 把心理價位從 $20/月推到 $200/月（Opus 4 貴、Opus 4.5 好又便宜）。爭議：Claude Tag 用自己身份是刻意且有爭議的選擇；mutable software 開放性 vs 用戶困惑；Claude Mods 可能燒光額度；pacing 何時停；eval awareness。片長約 1:32:22。"
+     "url": "https://www.latent.space/p/devday-2026",
+     "note": "已深度萃取（官方頁面完整逐字稿約 57 KB，含全部章節時間軸與講者標註；引言直接取自逐字稿）：Latent Space，主持 swyx + Vibhu。嘉賓：Ari Weinstein（OpenAI Computer Use 產品/工程負責人，前 Apple Shortcuts，創辦 Sky 後被 OpenAI 收購，即 Codex Computer Use 來源）、Nikunj Handa（OpenAI API 產品負責人，前 Stripe）。核心：①Ari 回應 Dwarkesh『Computer Use 兩年沒進展』：稱已『180 度不同』，三大變化＝擅長 debug/自我恢復、會寫 JavaScript 一次多步、多模態並用（截圖+accessibility+DOM+Playwright）；②已比普通人快完成任務，下一前沿是『字面超人』；③瓶頸從模型轉向世界本身——跑 doordash 時大量時間在等網站載入，理想是 event-driven，但部分事件無法事件驅動；④App Shots 本質非截圖而是完整脈絡（連結指向、被截斷標題），並做 token 效率工程；⑤最深遠用例＝代理測自己的代碼，形成完整 SDLC 閉環；⑥Decisions API＝被 Jev 啟發、四週前不在 roadmap、infra/inference 自發一週做出原型；⑦Decisions API 真相＝完全建立在現有 Luna 權重、零樣本，靠約束+結構化輸出+TTFD 優化+並行批次；視覺對 Luna 免費；⑧真正護城河是 calibration/置信度（RLHF 會往你想聽的方向坍縮），首版尚未體現；業界對 Jev 兩大猜測（擴散非自迴歸、mech interp 讀激活）未證實；⑨新 API 原語：async tool calling、mid-turn steering（屬模型對齊能力需訓練）、WebSockets（最早為 GPT-5.3 Codex Spark）、UltraFast；⑩快取保證 30 分鐘→12 小時（preview）+pre-warming+server-side 與 /compact 壓縮，Codex harness 已實作檔案式壓縮實驗；⑪OpenAI 想做更高階原語（Stripe 類比），swyx 稱之為『AI 雲』。關鍵數字：GPT-6.1 Sol 成本約 Astra 1/5、Computer Use 專項約 1/7；keynote 稱速度提升 7 倍；Ari 備餐訂單 2 小時→15 分鐘（快 8 倍）；Luna 價格曾降約 80%、快取讀取再降約 25%；兩週內約 100 個 Jev 克隆；Dots 每個有自己的雲端 Linux 電腦；Agents API 已承載自家 Codex 安全功能與會議 space。爭議：『比普通人快』缺公開 benchmark；Decisions API 是否只是命名；把大額付款 yolo 給 Computer Use 的風險胃納。片長約 40 分鐘。同 feed 另有 [AINews] OpenAI DevDay 2026（9/30 05:53Z）與 9/29 兩條 AINews，屬新聞匯總，未單獨萃取。"
     }
    ]
   },
@@ -27,14 +27,32 @@
    "newEpisodes": []
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-09-27T10:42:50.000Z",
-   "lastEpisodeTitle": "AI:AM: What If It Works Too Well? Colluding Agents, $200M Safety Orgs, Virtual Cells Saturate at 2%",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-29T07:32:16.000Z",
+   "lastEpisodeTitle": "Obsolete or Irreplaceable? Garrison Lovely on Stopping the Race to Replace Human Labor",
+   "newEpisodes": [
+    {
+     "title": "Obsolete or Irreplaceable? Garrison Lovely on Stopping the Race to Replace Human Labor",
+     "pubDate": "2026-09-29T07:32:16.000Z",
+     "duration_sec": 0,
+     "type": "interview",
+     "url": "https://www.cognitiverevolution.ai/obsolete-or-irreplaceable-garrison-lovely-on-stopping-the-race-to-replace-human-labor-newsletter/",
+     "note": "已深度萃取（官方 RSS 完整節目說明 newsletter 全文；未取得逐字稿）：The Cognitive Revolution，主持 Nathan Labenz。嘉賓 Garrison Lovely——布魯克林自由記者、政治偏左，新書《Obsolete: The AI Industry's Trillion-Dollar Race to Replace Us – and How to Stop It》。Nathan 定位：沒有一絲 AI cope、本人重度使用 AI（自稱曾『Claude psychosis』）、認真對待公司『造出比人強的認知系統』的目標。核心：①目標＝保住深度學習在醫療/材料的巨大上行，同時阻止公司衝向 RSI，直到能說服專家安全、說服公眾有益；②『第三個新政』——把個人過體面物質生活的權利與其對經濟的貢獻能力脱鉤；③『治癒一切』的 Operation Warp Speed——政府主辦獎金制；④ML 研究者集體權力正處高峰且會迅速衰落，故主張組工會逼所有前沿公司提高安全標準，並給吹哨者建議；⑤質疑市場紀律、以及『對齊問題的技術解』足以帶來整體好結果；⑥資料中心政治：承認誤資訊多，但傾向『在他們所在之處相遇』以建大帳篷聯盟；⑦中國不會率先衝 RSI——中共重視控制，在無極端競爭壓力下不太可能主動衝；⑧組織 Irreplaceable 綱領：a say, a stake, and a slowdown，Lovely 捐版稅。Nathan 自陳仍熱衷 AI、對勞動位移擔憂顯著低於嘉賓，但簽署了 FLI《關於超級智能的聲明》。爭議：主持人與嘉賓公開分歧於位移擔憂程度；『與錯誤資訊共存』的倫理張力；單邊減速在美中競爭下的可執行性。"
+    }
+   ]
   },
   "ml_street_talk": {
-   "lastEpisodePubDate": "2026-09-26T19:40:18.000Z",
-   "lastEpisodeTitle": "When AI Research Starts Moving Faster Than Human Research - Zhengyao Jiang",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-09-30T03:19:37.000Z",
+   "lastEpisodeTitle": "Who Checks a Proof No Human Can Read? — Leo de Moura",
+   "newEpisodes": [
+    {
+     "title": "Who Checks a Proof No Human Can Read? — Leo de Moura",
+     "pubDate": "2026-09-30T03:19:37.000Z",
+     "duration_sec": 4459,
+     "type": "interview",
+     "url": "https://podcasts.apple.com/us/podcast/who-checks-a-proof-no-human-can-read-leo-de-moura/id1510472996?i=1000792305057&uo=4",
+     "note": "已深度萃取（官方 ReScript 逐字稿 PDF 約 90 KB 純文字，含全部時間軸與講者標註；引言直接取自逐字稿）：MLST，主持 Tim Scarfe。嘉賓 Leonardo de Moura——Lean 創造者、Z3 共同創造者、Lean FRO 首席架構師與共同創辦人（約 20 人）、AWS 資深首席科學家。核心：①『綠勾會說謊』：Lean 信任基礎是極小 trusted kernel，kernel 本身也會有 bug；②Collatz 事件——一份 Collatz 猜想（反）證明宣稱同時被 Lean 官方 kernel 與外部 Rust kernel nanoda 接受，實為分別利用兩個完全不同的 bug（nanoda fix PR 合併於 Lean issue 前一天）；de Moura 稱含『為製造 hash collision 的無關怪異項』，強烈相信由 AI 生成，『我們沒耐性做這種低階實作，但 AI 有耐性』；③社群應對：懸賞金剛不壞 kernel、簡化 kernel、資助 Mario Carneiro 把 kernel 證明為正確；comparator 匯出證明並沙箱檢查、應永遠自動下載最新 nanoda；④AI 也能幫 Lean 反超 Rust——Kim Morrison 用 Claude agent 把 zlib 移植到 Lean 並證明壓縮/解壓還原性，放手優化後效能超越官方 Rust 實作；de Moura 去年認為不可能；⑤推論下一步：給 AI x86 語義即可寫彙編並證明屬性，因『你必須證明定理，你不能作弊』；⑥證明只認證人類選擇的規格——全集漏洞核心；⑦AI 缺的是抽象不是聰明：只是『醒來、沿麵包屑走下一步』，未以有意義方式改變權重；⑧能力≠理解，但即使 99.99999% 正確仍需 certificate；AlphaProof＝MCTS hybrid neurosymbolic，2025 IMO 金獎走純神經（下棋生成約 91% 合法走法但無硬約束）；⑨人永遠在迴路中，至少在規格層，『說軟件該做什麼永遠是我們的責任』。關鍵事實：Lean FRO 採 cathedral 模式維護核心、約 20 人；nanoda＝Rust 外部 kernel；Lean issue 14576（Kernel accepts wrong-structure projections, allowing an axiom-free proof of False）、PR 14577 為 de Moura 修復；Boris Alexeev 提交 120 萬行形式證明『沒人想逐行檢查』；引用 CompCert、seL4 為 CPU 驗證對照；Lean 1→4、Mathlib、dependent types 白話。贊助 Parallel。片長 74:19。"
+    }
+   ]
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-09-03T00:00:00.000Z",
@@ -42,16 +60,16 @@
    "newEpisodes": []
   },
   "silicon_valley_101": {
-   "lastEpisodePubDate": "2026-09-28T02:30:00.000Z",
-   "lastEpisodeTitle": "E253｜谁在给大模型出题、卖题、判卷？聊聊AI数据行业的野蛮生长",
+   "lastEpisodePubDate": "2026-09-29T23:00:00.000Z",
+   "lastEpisodeTitle": "E254｜超级厄尔尼诺来了，我们的日常所需真会因它涨价吗？",
    "newEpisodes": [
     {
-     "title": "E253｜谁在给大模型出题、卖题、判卷？聊聊AI数据行业的野蛮生长",
-     "pubDate": "2026-09-28T02:30:00.000Z",
-     "duration_sec": 3484,
+     "title": "E254｜超级厄尔尼诺来了，我们的日常所需真会因它涨价吗？",
+     "pubDate": "2026-09-29T23:00:00.000Z",
+     "duration_sec": 3480,
      "type": "interview",
-     "url": "https://podcasts.apple.com/us/podcast/e253-%E8%B0%81%E5%9C%A8%E7%BB%99%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%87%BA%E9%A2%98-%E5%8D%96%E9%A2%98-%E5%88%A4%E5%8D%B7-%E8%81%8A%E8%81%8Aai%E6%95%B0%E6%8D%AE%E8%A1%8C%E4%B8%9A%E7%9A%84%E9%87%8E%E8%9B%AE%E7%94%9F%E9%95%BF/id1498541229?i=1000791945867&uo=4",
-     "note": "已深度萃取（Apple/iTunes 官方 shownotes 完整章節軸 19 條＋官方簡介；小宇宙單集頁 JS 渲染，未取得逐字稿）：硅谷101，主播 Yiwen（泓君出品）。嘉賓：何允中（Scale AI 研究總監，後訓練與評估方向）、孫一铀（UC Berkeley 博士後，Agents' Last Exam 研究者）。核心：①數據公司分化三類——招聘平台型（Mercor）、眾包標注型、合成數據/環境型（Bespoke Labs），統稱『數據標注』已失真；②交付物質變：從預訓練的量與分布，到後訓練的判斷與軌跡——Rubric（把專家判斷寫成可操作評分條件）＋RL Environment（任務＋可操作軟體工具＋驗證與獎勵機制）；③ALE（Berkeley RDI 與行業專家共建，具經濟價值、多步驟、結果可驗證）vs HLE（CAIS+Scale，數學/人文/自然科學難題）；④主觀判斷可量化：從 vibe coding 到 vibe everything，人類與 Agent 協作；⑤benchmark 也是生意，分『該刷的（核心能力／真實場景）』與『不該刷的（純刷分）』；沒上熱榜的評測反可能帶來真實數據需求；⑥模型越會自造數據，外部數商仍有結構性空間（研發週期＋行業採購摩擦，如採購遊戲源碼）；⑦訓練數據不是越難越好，要匹配模型難度與解題軌跡；⑧數據買回來後：SFT→RL→模型訓練模型。關鍵數字：AfterQuery 4 月 A 輪估值 3 億美元→9 月媒體報導新一輪推至 32 億美元；Bespoke Labs 7 月種子+A 輪合計 4000 萬美元；SWE Atlas（Scale 的 SWE 評測套件）；OpenAI 於 2026 年 2 月宣布停止報告 SWE-bench Verified 分數（測試設計缺陷＋數據污染）。爭議：SWE-bench Verified 是否已被玩壞；針對評測生產數據的邊界；外部數商可持續性。贊助：科沃斯（節目中引述 28 年、連續 11 年國內線上掃地機器人銷售額第一、150+ 國、1200+ 全球專利）。片長 58:04。"
+     "url": "https://podcasts.apple.com/us/podcast/id1498541229?i=1000791945867",
+     "note": "非 AI 主題（氣候/大宗商品），僅簡記不作深度萃取：硅谷101，主播麻花，嘉賓張思齊（資深大宗商品期貨交易員）。核心：50 年罕見超級厄爾尼諾如何透過農業、氮肥、航運與電力傳導到終端物價。關鍵數字：摩根大通預計全球食品通脹 2027H1 升至 5%（今年同期 2.8%）；氮肥供應緊缺、霍爾木茲海峽封鎖、黑海衝突推升糧價；乾旱令巴拿馬運河運力更緊；銅礦減產不宜全歸因厄爾尼諾。節目另宣布硅谷101年度大會 Alignment 2026（10/10–11 Sunnyvale）與 AI Storytelling Challenge。"
     }
    ]
   },
@@ -81,12 +99,12 @@
   }
  },
  "notes": {
-  "scan_status": "2026-09-29 掃描（02:03–02:06 UTC）：新集 3 條——中文 2：①硅谷101《E253｜谁在给大模型出题、卖题、判卷？聊聊AI数据行业的野蛮生长》（9/28 02:30Z＝北京 9/28 10:30，片長 58:04）；②屠龍之術《当AI开始设计芯片---聊聊EDA与AI时代的芯片设计》（9/28 16:00Z＝北京 9/29 00:00，片長 58:10）。英文 1：③Latent Space《Claude Code's Next Era — Thariq Shihipar, Anthropic》（9/29 01:48Z，片長約 1:32:22）。其餘逐檔核實無新：Dwarkesh 最新仍 9/17 Noam Brown（YouTube 近日僅 Shorts 與 Sarah Paine 講座系列）；No Priors 最新完整集仍 9/24 Michael Lee（僅新增 Shorts）；MLST 最新仍 9/26 Zhengyao Jiang；Cognitive Revolution 最新仍 9/27 AI:AM 週報；張小珺最新仍 9/3；十字路口最新仍 9/27；42章經最新仍 9/27。",
-  "report_date": "2026-09-29",
-  "deep_content_fetched": "《Latent Space × Thariq Shihipar》：官方頁面完整逐字稿約 114 KB（含全部 16 段章節軸與講者標註，所有引言直接取自逐字稿）。《硅谷101 E253》：Apple/iTunes 官方 shownotes 完整章節軸（19 個時間戳）＋官方簡介。《屠龍之術 當AI開始設計芯片》：Apple/iTunes 官方 shownotes 完整章節軸（14 個時間戳）＋官方簡介。",
-  "transcript_attempts_failed": "①小宇宙（xiaoyuzhoufm.com）單集頁為 JS 渲染，web_fetch 只回傳 shownotes 與簡介、無逐字稿；硅谷101 與屠龍之術兩集均以 Apple/iTunes lookup（entity=podcastEpisode）取得完整 shownotes 章節軸，未取得逐字稿，已如實標註。②Cognitive Revolution 官方 /feed 與 /rss 均回 HTML 殼，改用 /latest/rss/（成功，最新仍 9/27）。③Dwarkesh YouTube 頻道 RSS（channel_id=UCXl4i9dYBrFOabk0xGmbkRA）回 404，改用 yt-dlp flat-playlist 列頻道影片；Dwarkesh 官網 RSS 頂條仍 9/17。④Latent Space RSS 首次 web_fetch 逾時，改用 curl 成功取得。⑤中文播客以 Apple iTunes search/lookup API 逐檔核實最新集（比 web_search 更穩，且 web_search 一度 429）。",
-  "jev_prefilter": "2026-09-29 對 3 條候選跑 jev.py triage --profile news：available=true、failed=0/3，worth 分數——硅谷101 E253 0.95、Latent Space 0.90、屠龍之術 0.42。該 profile 非為播客訪談校準，依 fail-open 原則未做丟棄，全部條目保留原始連結；Jev 分數僅作排序參考。",
-  "notable_for_james": "①本日兩條英文主線其實互為同一事件的第一方與第三方視角：Latent Space（Anthropic 工程師）把 Hugging Face 事件拆成可修補的工程缺陷（sandbox、RL 環境、權限模型、scorer 設計），而 9/27 Cognitive Revolution 則把它歸類為 collusion 並給出治理處方。②『harness 本身變成可程式化物件』是今日最強產品信號：Claude Mods＋artifacts＋brain/hands/surface 三分，等於宣告 agent 的『外殼』進入可 prompt 生成、可組合、可分享的階段；Thariq 直言這是 mutable software 的預覽，並預言 Claude.md 終會消失。③『前沿模型會在智能與 token 效率上同時 Pareto 支配小模型』是一個可被檢驗的強預測，邏輯是完美模型不需驗證——與中文圈『智能分化』（屠龍之術 9/15）恰好相反方向，值得留意後續。④中文圈同日形成上下層對照：屠龍之術講芯片底座（EDA、自研芯片、算帳），硅谷101 講數據與評測供給（Rubric、RL 環境、SWE-bench Verified 爭議）；兩集都指向同一件事——可驗證性與行業 know-how 才是稀缺資源，而非算力或標注人力。⑤AfterQuery 估值半年約十倍（3 億→32 億美元）＋SWE-bench Verified 被 OpenAI 停止報告，構成『數據供給側估值暴漲 vs 評測公信力崩塌』的張力。⑥Agent 的組織化稱呼跨語言收斂：英文是 organizational harness（Karpathy 語），中文是『硅基員工』（屠龍之術），兩者都要求配套權限與責任邊界。",
-  "index_html": "未更新 index.html：該落地頁手工維護且自 2026-07-19 起已停更（近期每日報告 commit 亦未動它），為避免引入不一致，維持既有慣例。"
+  "scan_status": "2026-10-01 掃描（02:03–02:05 UTC）：新 AI 集 3 條，全為英文——①Latent Space《Why Dwarkesh is Wrong about Computer Use + How OpenAI shipped its Jev competitor in 1 Week》（OpenAI DevDay 2026 特輯，9/30 22:23Z，片長約 40 分）；②Machine Learning Street Talk《Who Checks a Proof No Human Can Read? — Leo de Moura》（9/30 03:19Z，片長 74:19）；③The Cognitive Revolution《Obsolete or Irreplaceable? Garrison Lovely…》（9/29 07:32Z）。另 1 條非 AI 中文集：硅谷101 E254 超級厄爾尼諾（9/29 23:00Z），僅簡記。其餘逐檔核實無新：張小珺最新仍 9/3；十字路口最新仍 9/27 於紅；42章經最新仍 9/27 Vibe-Trading 浩哲；屠龍之術最新仍 9/28 EDA 芯片；Dwarkesh 官網 RSS 頂條仍 9/17 Noam Brown（YouTube 近日僅 Sarah Paine 歷史講座系列與 Noam Brown 切片）；No Priors 最新完整集仍 9/24 Michael Lee。",
+  "report_date": "2026-10-01",
+  "deep_content_fetched": "《Latent Space × OpenAI DevDay》：官方頁面完整逐字稿（純文字約 57 KB，含 17 段章節時間軸與講者標註）。《MLST × Leo de Moura》：官方 ReScript 逐字稿 PDF（純文字約 90 KB，含全部時間軸）。《Cognitive Revolution × Garrison Lovely》：官方 RSS 完整節目說明（newsletter 全文）。所有引言直接取自逐字稿／官方文本。",
+  "transcript_attempts_failed": "①No Priors YouTube channel_id=UCSI7h9hydQ40K5MJHnCrQvw 的 RSS 仍回 404，改用 Apple/iTunes lookup（collectionId 1668002688）核實最新集仍 9/24。②Dwarkesh YouTube channel RSS 亦不穩，改用 yt-dlp --flat-playlist 列 @DwarkeshPatel 影片，確認近日僅 Sarah Paine 講座系列與 Noam Brown 切片。③Latent Space DevDay 文章 URL 首次猜測（/p/ainews-why-dwarkesh-is-wrong-about）為訂閱殼，改由 RSS 取正確 link /p/devday-2026 成功。④中文播客以 Apple iTunes search/lookup API 逐檔核實最新集。",
+  "jev_prefilter": "2026-10-01 對 4 條候選跑 jev.py triage --profile news：available=true、failed=0/4，worth 分數——Latent Space DevDay 1.03、硅谷101 E254 0.39、MLST Leo de Moura 0.32、Cognitive Revolution Garrison Lovely 0.30。該 profile 非為播客訪談校準（工具自註『絕對區分度有限』），依 fail-open 原則未做丟棄，全部條目保留原始連結；Jev 分數僅作相對排序參考。",
+  "notable_for_james": "①今日三條英文線構成一張『如何約束前沿 AI』的光譜：工程自約束（OpenAI：權限、同意、最小授權）× 形式化可驗證（Lean：certificate 與人類選規格）× 政治聯盟減速（Irreplaceable：a say, a stake, and a slowdown）。②驗證工具同時被 AI 攻破（Collatz 假證明騙過兩顆 kernel）與被 AI 用來造軟件（Claude agent 版 zlib 反超 Rust），是同一枚硬幣兩面，且都指向『可驗證性＝稀缺資源』。③OpenAI『一週克隆 Jev』把 API 護城河的時鐘壓到以週計；Decisions API 竟只是現有 Luna 權重零樣本＋推理棧工程，說明現階段差異化在基建與分發而非新模型。④『比普通人快』與『字面超人 Computer Use』是可檢驗的強預測，缺公開 benchmark，值得追蹤後續。⑤MLST 的『AI 只是沿麵包屑走、未以有意義方式改變權重』與 Latent Space 的『代理擅長 debug 與重試』對同一現象給出悲觀/樂觀兩種解讀，是很好的對照組。⑥中文圈本輪無新 AI 集，主線暫時由英文主導。",
+  "index_html": "未更新 index.html：該落地頁手工維護且自 2026-07-19 起已停更，為維持既有慣例未動。"
  }
 }

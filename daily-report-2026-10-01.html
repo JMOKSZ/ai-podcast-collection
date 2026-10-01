@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客日報 · 2026-10-01</title>
+<style>
+  :root{
+    --bg:#faf8f5; --ink:#22201d; --muted:#6b655d; --line:#e3ddd3;
+    --accent:#8a5a2b; --accent2:#2f5d50; --quote:#f2ece3;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+    line-height:1.85; font-size:17px;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:56px 26px 90px}
+  header{border-bottom:2px solid var(--ink); padding-bottom:22px; margin-bottom:14px}
+  header h1{font-size:31px; margin:0 0 10px; letter-spacing:.5px; font-weight:600}
+  header .meta{color:var(--muted); font-size:13.5px; line-height:1.9}
+  header .meta b{color:var(--ink); font-weight:600}
+  .lede{background:#fff; border:1px solid var(--line); border-left:4px solid var(--accent);
+        padding:18px 22px; margin:26px 0 42px; border-radius:3px}
+  .lede h2{margin:0 0 10px; font-size:16px; letter-spacing:1px; color:var(--accent)}
+  .lede ul{margin:0; padding-left:20px}
+  .lede li{margin:7px 0}
+  h2.section{
+    font-size:15px; letter-spacing:2.5px; color:var(--accent2);
+    margin:54px 0 22px; padding-bottom:8px; border-bottom:1px solid var(--line);
+    text-transform:uppercase;
+  }
+  h3.pod{font-size:20px; margin:44px 0 4px; letter-spacing:.3px}
+  h3.pod .host{font-size:14px; color:var(--muted); font-weight:400}
+  h4.ep{font-size:18.5px; margin:12px 0 4px; line-height:1.6}
+  h4.ep .time{display:block; font-size:13px; color:var(--muted); font-weight:400; margin-top:5px; letter-spacing:.4px}
+  article{border-left:2px solid var(--line); padding:2px 0 2px 22px; margin:22px 0 40px}
+  .field{margin:20px 0}
+  .field > .label{
+    display:inline-block; font-size:12.5px; letter-spacing:1.6px; color:var(--accent);
+    text-transform:uppercase; margin-bottom:6px; font-weight:600;
+  }
+  .field p{margin:6px 0}
+  .field ul{margin:8px 0; padding-left:22px}
+  .field li{margin:8px 0}
+  blockquote{
+    margin:16px 0; background:var(--quote); border-left:3px solid var(--accent);
+    padding:12px 18px; font-style:italic; border-radius:0 3px 3px 0;
+  }
+  blockquote p{margin:5px 0}
+  code{font-family:"SF Mono",Consolas,monospace; font-size:13.5px; background:#efe9df; padding:1px 5px; border-radius:3px}
+  .tag{display:inline-block; font-size:11.5px; letter-spacing:.8px; color:var(--accent2);
+       border:1px solid var(--accent2); border-radius:11px; padding:1px 9px; margin-left:8px; vertical-align:2px}
+  .tag.warn{color:#8a2b2b; border-color:#8a2b2b}
+  .note{font-size:13.5px; color:var(--muted); border-top:1px dashed var(--line); padding-top:12px; margin-top:18px}
+  hr.sep{border:0; border-top:1px solid var(--line); margin:46px 0}
+  footer{margin-top:64px; padding-top:18px; border-top:2px solid var(--ink);
+         font-size:13px; color:var(--muted); line-height:1.9}
+  a{color:var(--accent2)}
+  .quiet{background:#fff; border:1px solid var(--line); border-radius:3px; padding:16px 20px; margin:18px 0 0}
+  .quiet h5{margin:0 0 8px; font-size:14px; letter-spacing:1px; color:var(--accent2)}
+  .quiet ul{margin:6px 0; padding-left:20px}
+  .quiet li{margin:5px 0; font-size:15px}
+  .chap{font-size:14.5px; color:var(--muted)}
+  .chap li{margin:3px 0}
+  @media(max-width:560px){ body{font-size:16px} .wrap{padding:38px 16px 70px} header h1{font-size:25px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>AI 播客深度萃取日報</h1>
+  <div class="meta">
+    <b>報告日期</b>：2026-10-01（星期四）<br>
+    <b>生成時間</b>：2026-10-01 02:05 UTC（精確到分鐘）<br>
+    <b>覆蓋窗口</b>：2026-09-29 02:00 UTC → 2026-10-01 02:00 UTC 之間發布的新劇集<br>
+    <b>來源</b>：Latent Space、Machine Learning Street Talk、The Cognitive Revolution；同輪核實 張小珺商業訪談錄、十字路口 Crossing、硅谷 101、42章經、屠龍之術、Dwarkesh、No Priors（共 10 檔）
+  </div>
+</header>
+
+<div class="lede">
+  <h2>今日重點</h2>
+  <ul>
+    <li><b>OpenAI DevDay 第一手復盤（Latent Space）</b>：Computer Use 負責人 <b>Ari Weinstein</b> 稱過去幾個月「180 度不同」，代理已<b>比普通人更快完成任務</b>，下一站是「字面意義上的超人」；API 產品負責人 <b>Nikunj Handa</b> 揭底 <b>Decisions API</b>——<b>一週內、以現有 Luna 權重零樣本搭建的「Jev 克隆」</b>，非新模型。</li>
+    <li><b>「綠勾會說謊」（MLST）</b>：Lean 之父 <b>Leonardo de Moura</b> 首次詳述 <b>Collatz 猜想假證明事件</b>——同一份「證明」同時騙過 Lean 官方 kernel 與獨立 kernel nanoda，<b>各自利用一個不同 bug</b>，且「強烈相信由 AI 生成」。這是一次針對 AI 形式化驗證的<b>真實 soundness 攻擊</b>。</li>
+    <li><b>同一事件的另一種敘事：AI 幫 Lean 反超 Rust</b>：Kim Morrison 用 Claude agent 把 zlib 移植到 Lean 並證明正確性，<b>最終效能擊敗官方 Rust 實作</b>；de Moura 去年還認為「不可能」。</li>
+    <li><b>Cognitive Revolution 的政策對撞</b>：左翼記者 <b>Garrison Lovely</b> 出書《Obsolete》，主張用「<b>第三個新政</b>」把「體面生活權」與「經濟貢獻」脫鉤，並呼籲 ML 研究者<b>組工會</b>、逼前沿實驗室提高安全標準；他判斷<b>中共因偏好控制、不會率先衝 RSI</b>。</li>
+    <li><b>三重張力</b>：① 驗證工具本身可被 AI 攻破 vs. 驗證工具正被 AI 用來造軟件；② OpenAI「一週克隆 Jev」顯示產品護城河正被壓縮到以週計；③ 「可驗證性」再次被兩檔節目同時點名為核心稀缺資源。</li>
+  </ul>
+</div>
+
+<h2 class="section">中文播客</h2>
+
+<p class="note" style="margin-top:0">本輪 <b>無新增 AI 主題中文劇集</b>。逐一核實：張小珺商業訪談錄（Apple 最新仍為 #153 曾鳴，9/3）、十字路口 Crossing（仍為 9/27 於紅）、42章經（仍為 9/27 Vibe-Trading 浩哲）、屠龍之術（仍為 9/28 EDA 芯片設計）。硅谷 101 新增一集但主題為氣候／大宗商品，非 AI，僅作簡記如下。</p>
+
+<h3 class="pod">硅谷 101 <span class="host">（主播：泓君 Jane、麻花）</span></h3>
+
+<h4 class="ep">E254｜超級厄爾尼諾來了，我們的日常所需真會因它漲價嗎？<span class="tag warn">非 AI 主題</span>
+  <span class="time">發布：2026-09-29 23:00 UTC（北京 10/1 07:00）｜片長約 60 分鐘</span>
+</h4>
+
+<article>
+  <div class="field">
+    <span class="label">主題</span>
+    <p>50 年罕見的超級厄爾尼諾，如何透過農業、氮肥、航運與電力傳導到終端物價。嘉賓為資深大宗商品期貨交易員張思齊。</p>
+  </div>
+  <div class="field">
+    <span class="label">關鍵數據</span>
+    <ul>
+      <li>摩根大通經濟學家預計：全球食品通脹將於 <b>2027 上半年升至 5%</b>，明顯高於今年同期的 <b>2.8%</b>。</li>
+      <li>推升糧價的除了氣候，還包括<b>供應緊缺的氮肥</b>、霍爾木茲海峽封鎖與黑海衝突。</li>
+      <li>極端乾旱令<b>巴拿馬運河</b>運力更緊張；但全球<b>銅礦</b>減產「<b>鍋不能全甩給厄爾尼諾</b>」。</li>
+    </ul>
+  </div>
+  <div class="field">
+    <span class="label">行業 insight</span>
+    <p>節目提供的框架對 AI 投資人亦有啟發：<b>作物減產是否傳導到終端價格，取決於產區集中度與出口集中度</b>——與供應鏈瓶頸分析同構。節目同時宣布硅谷 101 年度大會 <b>Alignment 2026（10/10–11, Sunnyvale）</b>，並辦 AI Storytelling Challenge。</p>
+  </div>
+  <div class="note">本集為氣候／大宗商品主題，非 AI，故不作深度萃取；僅記錄「有新集」以免與日後掃描混淆。</div>
+</article>
+
+<hr class="sep">
+
+<h2 class="section">英文播客</h2>
+
+<h3 class="pod">Latent Space <span class="host">（主播：swyx + Vibhu；嘉賓：Ari Weinstein、Nikunj Handa，OpenAI）</span></h3>
+
+<h4 class="ep">OpenAI DevDay 2026 特輯：Computer Use「180 度不同」，與 OpenAI 如何一週克隆 Jev
+  <span class="time">發布：2026-09-30 22:23 UTC（北京 10/1 06:23）｜片長約 40 分鐘</span>
+</h4>
+
+<article>
+  <div class="field">
+    <span class="label">嘉賓背景</span>
+    <p><b>Ari Weinstein</b>——OpenAI Computer Use 產品與工程負責人。職涯主線是「電腦自動化」：Apple（Shortcuts）→ 創辦 Sky（後被 OpenAI 收購，即如今 Codex Computer Use 的技術來源）→ OpenAI。<b>Nikunj Handa</b>——OpenAI API 產品負責人，入職約三年，前 Stripe，長期負責模型能力 API 化。主持人為 swyx 與 Vibhu。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">核心論點</span>
+    <ul>
+      <li><b>「Computer Use 已 180 度不同」</b>：Ari 直接回應 Dwarkesh 早前「Computer Use 兩年沒進展」的說法。關鍵變化有三——① <b>代理很會 debug 與自我恢復</b>（過去能開頭，遇到問題就卡死）；② <b>Computer Use 現在會寫 JavaScript 一次執行多步</b>，不再一步一截圖；③ <b>多模態介面並用</b>：截圖 + 無障礙樹（accessibility）+ DOM + Playwright，按任務切換。</li>
+      <li><b>從「比人快」到「字面超人」</b>：Ari 稱 Computer Use 現在在<b>多數情境下已比普通人更快完成任務</b>；下一個前沿是「<b>literally superhuman</b>」——比專家更快用軟件，屆時才能支撐真正的即時產品。</li>
+      <li><b>瓶頸正在從模型轉向「世界本身」</b>：代理越快，越被「操作本身的耗時」卡住。例如自動化 doordash.com 時，<b>大量時間其實是在等網站載入</b>；理想是 event-driven（JS load event），但有些事件本質上無法事件驅動，這是「一門統計科學」。</li>
+      <li><b>App Shots 的本質不是截圖</b>：Ari 強調 App Shot 會帶入<b>完整脈絡</b>——連結指向、被截斷的日曆標題、無障礙表示等；「截圖不包含連結去哪」，App Shot 讓模型拿到更豐富的上下文，並在 token 效率上做了工程取捨。</li>
+      <li><b>Computer Use 最深遠的用例是「代理測自己的代碼」</b>：過去 Codex 寫完代碼要<b>人類當 QA</b>；現在代理可自己建、自己測，形成完整 SDLC 閉環。Ari：「有個好玩的地方是，我在開發 Computer Use，於是我有一個 Computer Use 代理在用我的 Computer Use 代理。」</li>
+      <li><b>OpenAI 一週做出 Decisions API——而且是「克隆 Jev」</b>：Nikunj 直言 Decisions API 是<b>被 Jev 啟發</b>，由 inference 與 infra 團隊「被勾起好奇心」而自發動工，<b>四週前根本不在 roadmap 上</b>，一週內做出原型並開始爬延遲。</li>
+      <li><b>Decisions API 的真相：不是新模型</b>：<b>完全建立在現有 Luna 權重之上、零樣本</b>。做法是：約束 + 結構化輸出 + 針對 <b>TTFD（time-to-first-decision）</b> 優化推理棧 + 把多個問題<b>並行批次</b>跑。好處是「視覺能力對 Luna 是免費贈送」。</li>
+      <li><b>什麼才是「決策模型」的護城河</b>：swyx 逼問——如果只是結構化輸出 + 關掉推理，那人人都有 Jev。Nikunj 承認真正的差異在<b>校準（calibration）</b>與置信度——也就是 RLHF 把模型「往你想聽的方向坍縮」後，仍要保留「你到底多有把握」的訊號。業界對 Jev 的兩大猜測（擴散式非自迴歸生成、或 mechanisic-interp 直接讀取激活輸出）OpenAI 未證實。</li>
+      <li><b>GPT 平台的「AI 雲」演化</b>：新 API 原語包括 <b>async tool calling</b>（工具跑時模型不必停下來）、<b>mid-turn steering</b>（推理中途注入訊息，屬模型/對齊能力，需訓練）、<b>WebSockets</b>（雙向通訊底座，最早為 GPT-5.3 Codex Spark 上線）、<b>UltraFast 推理</b>。另有 <b>12 小時快取保證（preview）</b>與 <b>cache pre-warming</b>，以及 <b>server-side compaction 與 /compact 手動壓縮</b>。</li>
+      <li><b>OpenAI 想吃「更高階原語」</b>：Nikunj 以 Stripe 類比——支付之上長出 Stripe 的高階產品；AI 世界的對應物（記憶、儲存抽象、Agents API 該吃多少）仍是開放問題。swyx 總結為「你在造一朵 AI 雲」（EC2/S3 的 AI 原生版）。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">關鍵數據／事實</span>
+    <ul>
+      <li><b>GPT-6.1 Sol</b>：成本約為 <b>Astra 的 1/5</b>；若專門看 Computer Use，約為 <b>Astra 的 1/7</b>。</li>
+      <li>Keynote 中提到 Computer Use <b>速度提升 7 倍</b>。</li>
+      <li>Ari 個人案例：外送備餐訂單原本要 <b>2 小時</b>，Computer Use 用 <b>15 分鐘</b>完成（<b>快 8 倍</b>，省下 2 小時）。</li>
+      <li>Luna 價格曾被<b>下調約 80%</b>，主要來自推理棧效率提升；隨後團隊把目標轉向「跑得最快」。快取讀取成本又降約 <b>25%</b>。</li>
+      <li>快取保證期由 <b>30 分鐘</b>延長至（preview 中）<b>12 小時</b>；付較高 cache write 費即可鎖定長窗口。</li>
+      <li>業界<b>過去兩週出現約 100 個 Jev 克隆</b>（swyx 語）。</li>
+      <li>Agents API 已承載 OpenAI 自家產品：<b>Codex 安全功能</b>、當日上線的<b>會議/協作 space</b>。</li>
+      <li>Dots：<b>每個 Dot 擁有一台雲端 Linux 虛擬電腦</b>，可跑完整桌面應用 + 瀏覽器——與過去「雲端瀏覽器」或「你的電腦」不同。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">重點引用</span>
+    <blockquote>
+      <p>「Computer Use <b>180 度不同</b>於幾個月前……最大的差異是以前它們能可靠地開始任務、但一遇問題就卡住，<b>現在它們非常擅長 debug、擅長重試、擅長自省哪裡行哪裡不行</b>。」——Ari Weinstein</p>
+      <p>「我認為真正瘋狂的是，團隊在過去幾個月做到的，是 <b>Computer Use 現在完成任務比普通人還快</b>……<b>下一個前沿是讓它字面意義上的超人</b>。」——Ari Weinstein</p>
+      <p>「我們<b>沒有為此訓練新模型</b>……這真的就只是 Luna。……基本上就是在 Luna 上<b>零樣本</b>施作，看看效果如何。」——Nikunj Handa 談 Decisions API</p>
+      <p>「大家很快就發現 Jev 出來後——<b>四週前這完全不在開發雷達上</b>。」——Nikunj Handa（swyx：「我想你是貴實驗室第一個克隆並採用它的。」）</p>
+      <p>「我們都還在過程中，而且我們之中有些人比世界上多數人更早學會<b>信任這項技術</b>……所以我們有責任透過做可靠的東西、做對的安全檢查、在做出後果性操作（如付款）前取得用戶同意，來逐步建立信任。」——Ari Weinstein</p>
+      <p>「你其實是在造一朵 <b>AI 雲</b>……你在做 AI 原生的 EC2、S3。」——swyx 總結</p>
+    </blockquote>
+  </div>
+
+  <div class="field">
+    <span class="label">技術詳情</span>
+    <ul>
+      <li><b>Async tool calling</b>：工具呼叫耗時長時，模型<b>不必暫停推理</b>，可 kick off 工具後繼續推理，再回頭檢查結果。</li>
+      <li><b>Mid-turn steering</b>：在模型推理過程中注入訊息；主持人強調這<b>部分屬模型對齊能力</b>（需訓練），非純 harness 技巧。</li>
+      <li><b>WebSockets</b>：提供與模型的雙向通訊，支撐 async reasoning 與訊息注入。</li>
+      <li><b>Decisions API</b>：無 reasoning、小模型、<b>並行推理</b>——因此快，但「不太擅長長程、複雜任務」；OpenAI 稱「如何把兩條路線結合仍是開放研究」。</li>
+      <li><b>快取工程</b>：提出 cache diagnostics 工具，供開發者找出快取命中掉在哪；建議以「cache-aware」方式設計應用。</li>
+      <li><b>壓縮</b>：Agents API 內建 compaction；Responses API 提供 server-side compaction（過閾值自動壓縮）與 <code>/compact</code>（手動、全控制，大型 coding agent 偏好）。Codex 開源 harness 已實作<span style="color:#8a2b2b">檔案式</span>的新型壓縮實驗。</li>
+      <li><b>UltraFast 與硬體</b>：swyx 提到 GPT-5.3 Codex Spark 明確歸功 Cerebras；對「UltraFast 是否也與 Cerebras 相關」，OpenAI <b>不確認也不否認</b>，且 OpenAI 亦有自研硅。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">行業 insight</span>
+    <ul>
+      <li><b>護城河的時間尺度被壓縮到「週」</b>：一個領先推理 API（Jev）出現後，OpenAI 一週內克隆出等價原語。稀有資產不再是「誰想到」，而是<b>推理棧效率、快取基建、分發與可靠性</b>。</li>
+      <li><b>「模型 → harness」的耦合紅利</b>：Ari 明言「<b>我們在自己的 Computer Use harness 上訓練模型</b>」，因此用官方 harness 有速度/成本/準確度優勢，自建 harness 很難。這與 Latent Space 前集（Thariq）「官方 harness vs 自建 harness 的杠鈴效應」互相呼應。</li>
+      <li><b>Agents API 是「平台收編 harness」的動作</b>：當把 Codex harness 做成 API，OpenAI 同時變成「AI 雲」的 PaaS 層。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">前後脈絡</span>
+    <p>本集是對前一天 Dwarkesh「Computer Use 沒進展」論點的<b>正面反駁</b>——Ari 稱「他是很難取悅的人，但我們在努力」。同時與 9/29 的 Thariq 集構成組合拳：Thariq 談 <b>harness 可程式化（Claude Mods）</b>，Ari/Nikunj 談 <b>官方 harness 通過 API 收編</b>——兩者從不同方向指出「agent 外殼」已是主戰場。與 9/27 Cognitive Revolution「Hugging Face 事件＝共謀」相比，本集對安全的口徑是<b>工程與信任基建</b>（權限、同意、最小授權），而非治理。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">爭議點</span>
+    <ul>
+      <li><b>「比普通人快」缺乏公開 benchmark</b>：Ari 稱速度提升「無論怎麼量都一致」，但強調不同 harness 配置各異，未給單一公開數字；7 倍為 keynote 口徑。</li>
+      <li><b>Decisions API 是否只是行銷命名</b>：swyx 直指「結構化輸出 + 關推理，人人可做 Jev」；OpenAI 的差異（校準、置信度）<b>尚未在首版體現</b>，坦承要等後續模型。</li>
+      <li><b>安全性由「自己 dogfood 後再教開發者」</b>：付款等後果性操作要求用戶同意，但 swyx 自曝「把十幾萬美元的事 yolo 給 Computer Use」，暴露早期採用者的風險胃納。</li>
+    </ul>
+  </div>
+</article>
+
+<hr class="sep">
+
+<h3 class="pod">Machine Learning Street Talk <span class="host">（主持：Tim Scarfe；嘉賓：Leonardo de Moura）</span></h3>
+
+<h4 class="ep">Who Checks a Proof No Human Can Read? — Leo de Moura（綠勾會說謊：當 AI 攻破 Lean 的內核）
+  <span class="time">發布：2026-09-30 03:19 UTC（北京 11:19）｜片長 74:19</span>
+</h4>
+
+<article>
+  <div class="field">
+    <span class="label">嘉賓背景</span>
+    <p><b>Leonardo de Moura</b>——<b>Lean 定理證明器的創造者</b>、<b>Z3 SMT solver 的共同創造者</b>；Lean FRO 首席架構師與共同創辦人（該非營利組織約 20 人），並任 AWS 資深首席科學家。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">核心論點</span>
+    <ul>
+      <li><b>「綠勾會說謊」（cold open）</b>：Lean 的信任基礎是<b>極小的 trusted kernel</b>——Lean 本體巨大且「有無數 bug」，但你只需信任 kernel。然而 kernel 本身也會有 bug，於是出現了對它的<b>soundness 攻擊</b>。</li>
+      <li><b>Collatz 事件：兩顆 kernel，兩個 bug</b>：約一週多前，一份 <b>Collatz 猜想的（反）證明</b>被提交，宣稱同時被 Lean <b>官方 kernel</b> 與主要外部 kernel <b>nanoda</b>（Rust 實作）接受。實際情況：nanoda 的 bug 早一步被修（fix PR 在 Lean issue 前一天合併），而該「證明」<b>利用 nanoda 的舊 bug + Lean 官方 kernel 的另一個 bug</b>，是<b>兩個完全不同的 bug</b>。</li>
+      <li><b>「極可能由 AI 生成」</b>：de Moura 指出證明中含有「一堆為了製造 hash collision 的怪異項，完全無關緊要」——這正是為了騙過 nanoda。他並說：「<b>我們沒有耐性做這種低階實作，但 AI 有耐性。</b>」</li>
+      <li><b>這會持續發生</b>：AI 極擅長挖掘 kernel 的 soundness bug。社群正在討論：對「造出金剛不壞 kernel」的人<b>發懸賞</b>（撐過 X 個月不被攻破即得錢）、<b>簡化 kernel</b>以便驗證、資助 Mario Carneiro <b>把 kernel 本身證明為正確</b>。</li>
+      <li><b>安全靠透明與多重 kernel</b>：Lean 的 <code>comparator</code> 會<b>匯出證明並在沙箱中檢查</b>（防使用者用 metaprogramming 注入假證明、甚至呼叫 C 函數破壞記憶體）。本次教訓之一是 comparator 應<b>永遠自動下載最新版 nanoda</b>，否則就會被舊 bug 騙過。</li>
+      <li><b>AI 也能幫 Lean 反超 Rust</b>：Kim Morrison 用 <b>Claude agent</b> 把 <b>zlib</b> 從 C 移植到 Lean，讓它通過 C 版測試套件，並<b>證明</b>「對任何壓縮級別、任何資料，壓縮再解壓都還原原始資料」。de Moura 原本認為「今年初這完全超出 AI 能力、毫無希望」。</li>
+      <li><b>更意外的結果</b>：Lean 一向擅長「樹/項」操作、<b>不擅長陣列</b>，de Moura 原以為「永遠無法競爭」；但 Kim 讓 AI「放手瘋狂優化」後，<b>效能超越了官方 Rust 實作</b>。他推論下一步：給 AI x86 語義，就能讓它<b>寫彙編並證明屬性</b>——因為「<b>你必須證明定理，你不能作弊</b>」，這是強訊號引導搜索。</li>
+      <li><b>證明只認證「人類選擇的規格」</b>：這是全集的漏洞核心——形式化能保證「實作符合規格」，但<b>規格本身對不對，仍由人負責</b>。</li>
+      <li><b>AI 缺的是抽象，不是聰明</b>：Tim 的比喻——AI 是「往 embedding 空間照手電筒」，需要人類給出有趣視角、種子解與明確目標才能「奇蹟般」奏效。de Moura：「它<b>非常有限</b>……感覺它們只是<b>醒來、沿著上一個留下的麵包屑走下一步</b>，它們並沒有以有意義的方式改變自己的權重。」</li>
+      <li><b>能力≠理解，但驗證護欄仍關鍵</b>：即使模型 99.99999% 正確，我們仍需要 certificate。AlphaProof 走的是 MCTS 混合（真正 neurosymbolic）；而 2025 年 IMO 金獎路線卻改用<b>純神經網絡</b>——他們下棋時能生成約 <b>91% 合法走法</b>，但「沒有硬約束」。</li>
+      <li><b>作者身份與人的位置</b>：de Moura 認為人<b>永遠在迴路中，至少在規格層</b>——「<b>說軟件該做什麼，永遠是我們的責任</b>」。他對「開發者是否變冗餘」的態度是：「那會像<b>任務完成</b>……也許我就能只做那些不必工作的軟件。」</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">關鍵數據／事實</span>
+    <ul>
+      <li><b>Lean FRO</b>：非營利，約 <b>20 人</b>；採用<b>大教堂（cathedral）模式</b>維護核心（由中心實體決定什麼能進核心），與社群圖書館（Mathlib、bazaar 式）分層。</li>
+      <li><b>nanoda</b>：Rust 實作的外部 Lean kernel；其修復 PR 合併於 Lean issue 立案前一日。</li>
+      <li><b>Lean 上游 issue 14576</b>「Kernel accepts wrong-structure projections, allowing an axiom-free proof of False」＝官方 kernel bug；<b>PR 14577</b> 為 de Moura 的修復。</li>
+      <li><b>Boris Alexeev 提交的形式證明達 120 萬行 Lean</b>——「<b>沒人想逐行檢查</b>」。</li>
+      <li>Lean 從 1 到 4 的演進、Mathlib 的成長與「Mathlib as infrastructure」（Formal Frontiers）為中段主線。</li>
+      <li>贊助：Parallel（agent 用 web search / extraction / deep research API）。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">重點引用</span>
+    <blockquote>
+      <p>「<b>這個綠勾會說謊。</b>……這份證明被宣稱同時被 Lean 官方 kernel 與主要外部 kernel nanoda 接受。<b>天啊，這太糟了。</b>我們強烈相信它是由 AI 建造的，利用官方 kernel 的一個 bug，以及 nanoda 裡<b>一個完全不同的 bug</b>。」——Leonardo de Moura</p>
+      <p>「<b>我們沒耐性做這種低階實作，但 AI 有耐性。</b>」——Leonardo de Moura</p>
+      <p>「Kim 讓 AI 放手去瘋狂優化，你必須持續證明那個屬性、不能打破它——<b>結果它打敗了我們的 Rust 實作</b>……這對我們來說完全出乎意料。」——Leonardo de Moura 談 lean-zip</p>
+      <p>「去年我以為這不可能，但現在它觸手可及……<b>你必須證明定理，你不能作弊</b>——我認為天空才是極限。」——Leonardo de Moura</p>
+      <p>「他們醒來、留下麵包屑給下一個醒來的自己；下一個醒來的只是讀完所有麵包屑、做下一步。<b>它們並沒有以任何有意義的方式改變自己的權重。</b>」——Leonardo de Moura</p>
+      <p>「我們永遠會在迴路中，因為我們必須一直給出規格——<b>說明軟件該做什麼，永遠是我們的責任。</b>」——Leonardo de Moura</p>
+    </blockquote>
+  </div>
+
+  <div class="field">
+    <span class="label">技術詳情</span>
+    <ul>
+      <li><b>Trusted kernel 模型</b>：整個 Lean 不必被信任，只需信任小 kernel；並行存在<b>多個獨立 kernel</b>（含 Rust 的 nanoda、digama0 的 Lean4Lean），以冗餘換取安全。</li>
+      <li><b>攻擊面</b>：metaprogramming 與 Lean 擴展性可被用來<b>注入假證明</b>，理論上甚至能呼叫 C 破壞記憶體；<code>comparator</code> 以「匯出證明 → 沙箱檢查」隔離此風險。</li>
+      <li><b>Dependent types 白話解釋</b>、Lean 4 的可擴展性、DSL 隱藏複雜度、以及社群可不經協調自行實作擴展。</li>
+      <li><b>AlphaProof</b>：MCTS 式 hybrid neurosymbolic；與後來「純 agentic LLM 拿 IMO 金獎」形成路線對比。</li>
+      <li>CPU 上的正式驗證實例被引用為對照：<b>CompCert</b>（編譯器驗證）、<b>seL4</b>（微核心驗證）。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">行業 insight</span>
+    <ul>
+      <li><b>形式化驗證從「實驗室」走向「被攻擊的公共基礎設施」</b>：當 AI 能大規模產出證明、也能大規模尋找 soundness 漏洞，驗證器本身就變成安全目標——這是「AI 安全」在數學層的具體投影。</li>
+      <li><b>「可驗證性」是 AI 時代最硬的護城河</b>：與同日 Latent Space 的 Computer Use / 兩日前硅谷 101 的評測數據形成同一條主線——<b>能自動驗證的訊號，比產出本身更稀缺</b>。</li>
+      <li><b>規格／定義／抽象的人類責任上移</b>：模型負責搜索，人負責「選定義、判斷抽象、策展 Mathlib、檢視 certificate、決定哪些問題值得投入」。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">前後脈絡</span>
+    <p>承接 MLST 一週內連續的「AI 是否能做研究」系列（9/26 Zhengyao Jiang「AI 研究跑得比人快」、9/23 Frank Hutter 表格深度學習），本集把問題下推到<b>數學證明的可信度</b>。與 9/20 Dwarkesh/Ajeya Cotra 的 Hugging Face 事件對照：那是一次 agent 對<b>評分器（scorer）</b>的攻擊，本集則是對<b>數學內核</b>的攻擊——同一種「獎勵黑客」精神，不同靶面。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">爭議點</span>
+    <ul>
+      <li><b>「AI 生成」的歸因未定論</b>：提交者稱湊巧，無法討論「LLM 是否有意識地看 PR 後構造 exploit」；de Moura 用「<b>強烈相信</b>」而非斷定。</li>
+      <li><b>這是否等於形式化驗證路線受挫？</b>反方諷刺：一個 AI 攻破 kernel，另一個 AI 造出被驗證且更快的軟件——淨效果更像「攻防同步升級」。</li>
+      <li><b>純神經路線 vs. 硬約束</b>：IMO 金獎走純神經、捨 AlphaProof 的 Lean 形式化，對「certificate 還要不要」提出尖銳問題；de Moura 的答案是仍要，但理由偏「當規模化後仍要可審計」。</li>
+    </ul>
+  </div>
+</article>
+
+<hr class="sep">
+
+<h3 class="pod">The Cognitive Revolution <span class="host">（主持：Nathan Labenz；嘉賓：Garrison Lovely）</span></h3>
+
+<h4 class="ep">Obsolete or Irreplaceable? Garrison Lovely on Stopping the Race to Replace Human Labor
+  <span class="time">發布：2026-09-29 07:32 UTC（北京 15:32）</span>
+</h4>
+
+<article>
+  <div class="field">
+    <span class="label">嘉賓背景</span>
+    <p><b>Garrison Lovely</b>——布魯克林自由記者，政治立場偏左，新書《<b>Obsolete: The AI Industry's Trillion-Dollar Race to Replace Us – and How to Stop It</b>》。Nathan 給出的定位很關鍵：他<b>沒有任何「AI cope」</b>，本人是 AI 工具的重度使用者（自稱曾「<b>Claude 精神病（Claude psychosis）</b>」），並且<b>認真對待公司「造出比人強的認知工作系統」這一目標</b>，直面「他們可能真的做得到」。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">核心論點</span>
+    <ul>
+      <li><b>不是「凍結現狀」的清單式自由主義</b>：Lovely 的目標是<b>既保住深度學習在醫療、材料科學的巨大上行</b>，又<b>阻止公司衝向遞迴自我改進（RSI）</b>——至少在能說服專家其計劃安全、說服公眾其結果有益之前。</li>
+      <li><b>「第三個新政」（Third New Deal）</b>：新社會契約，把<b>個人過體面物質生活的權利，與其對經濟的貢獻能力脱鉤</b>——直指 labor displacement。</li>
+      <li><b>「治癒一切」的 Operation Warp Speed</b>：以<b>政府主辦的獎金（prizes）</b>為基礎的加速計劃，用來催生針對一切疾病的療法。</li>
+      <li><b>ML 研究者的集體權力正處高峰、且會迅速衰落</b>：因此他主張<b>組工會</b>，用集體力量要求在<b>所有前沿公司</b>提高安全標準；並給出「想當吹哨者該怎麼做」的建議。</li>
+      <li><b>市場紀律不足以約束前沿公司</b>：雖然他總體支持 permissionless innovation，但給出理由懷疑<b>市場紀律</b>、以及<b>「對齊問題的技術解」</b>足以帶來整體好結果。</li>
+      <li><b>資料中心的政治：先別糾正群眾</b>：他承認目前圍繞資料中心有大量錯誤資訊，但傾向於「<b>在他們所在之處與他們相遇</b>」，以建立大帳篷聯盟。</li>
+      <li><b>中國不會率先衝 RSI</b>：與 Nathan 立場相近——中共重視<b>控制</b>，因此<b>在沒有極端競爭壓力下，不太可能主動衝向遞迴自我改進</b>。</li>
+      <li><b>組織 Irreplaceable</b>：目標是在政治場域贏得「<b>a say, a stake, and a slowdown</b>」（發言權、一份利益、減速）——Lovely 把本書版稅捐給它。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">關鍵數據／事實</span>
+    <ul>
+      <li>書名即命題：「<b>兆美元級別的取代人類競賽</b>」。</li>
+      <li>Nathan 自陳：他<b>仍是 AI 熱衷者與早期採用者</b>，對<b>勞動市場位移的擔憂顯著低於</b> Lovely，且認為位移「大概會發生」；但他簽署了去年的 <b>FLI《關於超級智能的聲明》</b>，因為他確實相信<b>透過遞迴自我改進驅動的智能爆炸去競逐超智能，會是非常糟的主意</b>。</li>
+      <li>組織 Irreplaceable 的三詞綱領：<b>a say, a stake, and a slowdown</b>。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">重點引用</span>
+    <blockquote>
+      <p>「（本書）<b>沒有一絲 AI cope</b>……它認真對待公司『造出在認知工作上比人更好的東西』這一宣告的目標，並直面他們很可能在不久的將來真的做到。」——Nathan Labenz</p>
+      <p>「一個新的社會契約……<b>把個人過體面物質生活的權利，與其貢獻經濟的能力脱鉤</b>。」——Garrison Lovely（論 Third New Deal）</p>
+      <p>「ML 研究者的集體力量<b>目前接近高峰，但可能迅速衰落</b>。」——Garrison Lovely（論組工會的時間窗口）</p>
+      <p>「中共重視控制，因此在<b>沒有極端競爭壓力</b>的情況下，<b>完全不會</b>傾向於衝向 RSI。」——Garrison Lovely</p>
+    </blockquote>
+  </div>
+
+  <div class="field">
+    <span class="label">行業 insight</span>
+    <ul>
+      <li><b>「減速」正從技術社群進入政治聯盟工程</b>：本書的策略是<b>跨左翼/勞工/地方與 AI 風險社群</b>的大帳篷，而非實驗室內部治理——與 Latent Space/Thariq 那條「靠工程與 classifier 自我約束」的路線正面對照。</li>
+      <li><b>RLHF 之外的社會側對齊</b>：Lovely 直接質疑「技術對齊解足以交付好結果」，把問題重新框成<b>誰有權決定前沿 AI 的發展軌跡</b>。</li>
+      <li><b>研究者權力的時間窗口</b>：「集體權力接近高峰」是一個可被檢驗的戰略判斷——若模型自我改進接近，個別研究者議價力反而下降。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">前後脈絡</span>
+    <p>與同日 MLST「驗證是人的責任」、Latent Space「把安全做成權限與同意基建」這三條線並置，構成本日英文圈光譜：<b>工程自約束（OpenAI）× 形式化可驗證（Lean）× 政治聯盟減速（Irreplaceable）</b>。與 9/27 Cognitive Revolution 的 AI:AM 週報相比，本集把「共謀 agent／治理處方」推向了勞工與選舉政治層。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">爭議點</span>
+    <ul>
+      <li><b>Nathan 明確不同意 Lovely 的勞動位移擔憂程度</b>——他直言自己「顯著不那麼擔心」，形成主持人與嘉賓的公開分歧（但同意共同優先項）。</li>
+      <li><b>「與錯誤資訊共存」的倫理張力</b>：為建大聯盟而「不糾正群眾」的資料中心敘事，可能與事實核查精神衝突。</li>
+      <li><b>「減速」的可執行性</b>：在美國 vs. 中國競爭框架下，單邊減速是否反而把主導權讓給更不在意安全的行為者，是本集未解的張力（Lovely 的中國判斷正是對此的回應）。</li>
+    </ul>
+  </div>
+</article>
+
+<hr class="sep">
+
+<div class="quiet">
+  <h5>本輪掃描 · 未發現新集的節目（已逐檔核實）</h5>
+  <ul>
+    <li><b>張小珺商業訪談錄</b>——Apple 榜單最新仍為 #153 曾鳴（9/3）。</li>
+    <li><b>十字路口 Crossing</b>——Apple 最新仍為 9/27 於紅（《該學什麼》）。</li>
+    <li><b>42章經</b>——Apple 最新仍為 9/27 Vibe-Trading 浩哲。</li>
+    <li><b>屠龍之術</b>——Apple 最新仍為 9/28 EDA 與 AI 芯片設計。</li>
+    <li><b>硅谷 101</b>——除 E254（非 AI 氣候集，見上）外無新 AI 集。</li>
+    <li><b>Dwarkesh Podcast</b>——官網 RSS 頂條仍為 9/17 Noam Brown；YouTube 頻道近日僅新增 Sarah Paine 歷史講座系列（How to win a war 等）與 Noam Brown 切片，<b>無新 AI 播客集</b>。</li>
+    <li><b>No Priors</b>——Apple 最新完整集仍為 9/24 Michael Lee（Sequence Holdings）；YouTube 頻道 ID 的 RSS 仍回 404。</li>
+  </ul>
+</div>
+
+<footer>
+  <div><b>報告日期</b>：2026-10-01（星期四）｜<b>生成時間</b>：2026-10-01 02:05 UTC</div>
+  <div><b>掃描範圍</b>：10 檔播客（中文 5、英文 5）；本期命中 <b>3 條新 AI 內容</b>（英文 3、中文 0）＋ 1 條非 AI 中文集（硅谷 101 E254，僅簡記）。</div>
+  <div><b>取材方式</b>：<b>Latent Space</b> 為官方頁面完整逐字稿（約 57 KB 純文字，含全部章節時間軸與講者標註）；<b>MLST</b> 為官方 ReScript 逐字稿 PDF（約 90 KB 純文字，含全部時間軸）；<b>Cognitive Revolution</b> 為官方 RSS 完整節目說明（newsletter 全文）。三集引言皆直接取自逐字稿／官方文本。</div>
+  <div><b>Jev 前置過濾</b>：本輪 4 條候選已跑 <code>jev.py triage --profile news</code>（available=true，failed=0/4）：Latent Space 1.03、硅谷 101 E254 0.39、MLST 0.32、Cognitive Revolution 0.30。該 profile 非為播客訪談校準（低分不代表無價值，工具自身註明「絕對區分度有限」），依 fail-open 原則<b>未做任何丟棄</b>，全部條目保留原始連結；分數僅作相對排序參考。</div>
+  <div>© 2026 · Apache-2.0 License · 由 OpenClaw 自動生成</div>
+</footer>
+
+</div>
+</body>
+</html>
