@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客日報 · 2026-10-02</title>
+<style>
+  :root{
+    --bg:#faf8f5; --ink:#22201d; --muted:#6b655d; --line:#e3ddd3;
+    --accent:#8a5a2b; --accent2:#2f5d50; --quote:#f2ece3;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+    line-height:1.85; font-size:17px;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:56px 26px 90px}
+  header{border-bottom:2px solid var(--ink); padding-bottom:22px; margin-bottom:14px}
+  header h1{font-size:31px; margin:0 0 10px; letter-spacing:.5px; font-weight:600}
+  header .meta{color:var(--muted); font-size:13.5px; line-height:1.9}
+  header .meta b{color:var(--ink); font-weight:600}
+  .lede{background:#fff; border:1px solid var(--line); border-left:4px solid var(--accent);
+        padding:18px 22px; margin:26px 0 42px; border-radius:3px}
+  .lede h2{margin:0 0 10px; font-size:16px; letter-spacing:1px; color:var(--accent)}
+  .lede ul{margin:0; padding-left:20px}
+  .lede li{margin:7px 0}
+  h2.section{
+    font-size:15px; letter-spacing:2.5px; color:var(--accent2);
+    margin:54px 0 22px; padding-bottom:8px; border-bottom:1px solid var(--line);
+    text-transform:uppercase;
+  }
+  h3.pod{font-size:20px; margin:44px 0 4px; letter-spacing:.3px}
+  h3.pod .host{font-size:14px; color:var(--muted); font-weight:400}
+  h4.ep{font-size:18.5px; margin:12px 0 4px; line-height:1.6}
+  h4.ep .time{display:block; font-size:13px; color:var(--muted); font-weight:400; margin-top:5px; letter-spacing:.4px}
+  article{border-left:2px solid var(--line); padding:2px 0 2px 22px; margin:22px 0 40px}
+  .field{margin:20px 0}
+  .field > .label{
+    display:inline-block; font-size:12.5px; letter-spacing:1.6px; color:var(--accent);
+    text-transform:uppercase; margin-bottom:6px; font-weight:600;
+  }
+  .field p{margin:6px 0}
+  .field ul{margin:8px 0; padding-left:22px}
+  .field li{margin:8px 0}
+  blockquote{
+    margin:16px 0; background:var(--quote); border-left:3px solid var(--accent);
+    padding:12px 18px; font-style:italic; border-radius:0 3px 3px 0;
+  }
+  blockquote p{margin:5px 0}
+  code{font-family:"SF Mono",Consolas,monospace; font-size:13.5px; background:#efe9df; padding:1px 5px; border-radius:3px}
+  .tag{display:inline-block; font-size:11.5px; letter-spacing:.8px; color:var(--accent2);
+       border:1px solid var(--accent2); border-radius:11px; padding:1px 9px; margin-left:8px; vertical-align:2px}
+  .tag.warn{color:#8a2b2b; border-color:#8a2b2b}
+  .note{font-size:13.5px; color:var(--muted); border-top:1px dashed var(--line); padding-top:12px; margin-top:18px}
+  hr.sep{border:0; border-top:1px solid var(--line); margin:46px 0}
+  footer{margin-top:64px; padding-top:18px; border-top:2px solid var(--ink);
+         font-size:13px; color:var(--muted); line-height:1.9}
+  a{color:var(--accent2)}
+  .quiet{background:#fff; border:1px solid var(--line); border-radius:3px; padding:16px 20px; margin:18px 0 0}
+  .quiet h5{margin:0 0 8px; font-size:14px; letter-spacing:1px; color:var(--accent2)}
+  .quiet ul{margin:6px 0; padding-left:20px}
+  .quiet li{margin:5px 0; font-size:15px}
+  .chap{font-size:14.5px; color:var(--muted)}
+  .chap li{margin:3px 0}
+  @media(max-width:560px){ body{font-size:16px} .wrap{padding:38px 16px 70px} header h1{font-size:25px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>AI 播客深度萃取日報</h1>
+  <div class="meta">
+    <b>報告日期</b>：2026-10-02（星期五）<br>
+    <b>生成時間</b>：2026-10-02 02:05 UTC（精確到分鐘）<br>
+    <b>覆蓋窗口</b>：2026-10-01 02:00 UTC → 2026-10-02 02:00 UTC 之間發布的新劇集<br>
+    <b>來源</b>：Dwarkesh Podcast、Latent Space、Machine Learning Street Talk、The Cognitive Revolution；同輪核實 張小珺商業訪談錄、十字路口 Crossing、硅谷 101、42章經、屠龍之術、No Priors（共 10 檔）
+  </div>
+</header>
+
+<div class="lede">
+  <h2>今日重點</h2>
+  <ul>
+    <li><b>RLM 作者親自拆解 harness（Latent Space × Alex Zhang，MIT）</b>：斷言 Claude Code、Codex、Pi 等主流 harness「結構上根本一樣」，真正該問的是<b>harness 能否當「組合泛化器」</b>；並揭 OpenAI 解 Navier–Stokes 的代價＝<b>10,000 個 agent、88 小時、1,300 億 output tokens、約 4,000 萬美元</b>，其中「<b>95% 的 swarm 都是浪費</b>」。</li>
+    <li><b>Capability overhang 是 skill issue</b>：Alex 認為前沿模型連「連續一個月穩定做好一份簡單工作」都做不到「很蠢」，這其實是 <b>continual learning + harness</b> 問題，而非模型能力問題；並預言未來你調用的「語言模型」本體將是<b>一整群看不見的 agent swarm</b>。</li>
+    <li><b>Dwarkesh 的歷史隱喻（× 軍事史學家 Si Sheppard）</b>：幾百名西班牙征服者數年內滅掉千萬級帝國——靠的不是槍炮，而是<b>鋼與馬 + 外交分化（99% 兵力是被征服民族）</b>；這是「外來力量利用既有秩序內部裂痕完成接管」的教科書案例，被直接框成 AI 接管的類比。</li>
+    <li><b>語音 agent 的硬骨頭（MLST × PolyAI CTO Shawn Wen）</b>：語音多了「<b>時間</b>」維度，智能的本質是<b>適應而非推理</b>；端到端 turn-taking 是工程最痛處，且<b>過度清洗的音訊反而令新模型更差</b>；企業要的是「<b>像人一樣強、像機器人一樣可控</b>」的矛盾組合。</li>
+    <li><b>共同主線：驗證與審計成為新瓶頸</b>。三檔節目在不同領域指向同一件事——內容生產已過剩，<b>「驗證／校準／審計」是稀缺資源</b>；Cognitive Revolution 亦以「減速的代價」作結。</li>
+  </ul>
+</div>
+
+<h2 class="section">中文播客</h2>
+
+<p class="note" style="margin-top:0">本輪 <b>無新增中文劇集</b>。逐一核實最新一集：張小珺商業訪談錄（#153 曾鳴，9/3）、十字路口 Crossing（9/27 于紅）、硅谷 101（E254 厄爾尼諾，9/29）、42章經（9/27 Vibe-Trading 浩哲）、屠龍之術（9/28 EDA 芯片設計）—— 均與上輪相同，24 小時內無新集。故今日深度內容集中於英文播客。</p>
+
+<hr class="sep">
+
+<h2 class="section">英文播客</h2>
+
+<h3 class="pod">Dwarkesh Podcast <span class="host">（主播：Dwarkesh Patel；嘉賓：Si Sheppard）</span></h3>
+
+<h4 class="ep">Si Sheppard – How did a few hundred Spanish soldiers topple two empires?
+  <span class="tag">歷史 × AI 接管隱喻</span>
+  <span class="time">發布：2026-10-01 15:28 UTC（北京 10/1 23:28）｜片長約 1 小時 48 分（時間軸至 01:33:42+）</span>
+</h4>
+
+<article>
+  <div class="field">
+    <span class="label">主題</span>
+    <p>阿茲特克與印加帝國，如何在短短數年內被數百名西班牙征服者顛覆；以及為什麼這可能是人類史上最令人震驚的軍事／外交事件——並被主持人直接框成「AI 接管」的思想實驗。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">嘉賓背景</span>
+    <p><b>Si Sheppard</b>——軍事史學家、長島大學布魯克林分校（LIU Brooklyn）教授，專攻早期現代軍事史與殖民主義，著有大量戰役史與殖民擴張研究。Dwarkesh 在開場即說明：本集主要談歷史，但「不要聚焦 AI」的同時，整條敘事線就是為了回答——<b>一個動機難以理解的外來力量，如何用技術與外交狡詐，接管一個更大、更成熟的既有秩序</b>。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">核心論點</span>
+    <ul>
+      <li><b>① 帝國的脆弱性來自「階層化」——斬首即可控制全局。</b>阿茲特克的 <i>huey tlatoani</i>（大演說者）與印加的 <i>Sapa Inca</i> 被擒後，整個體系幾乎即刻瓦解。這套邏輯的關鍵不是消滅百萬人，而是<b>抓住社會金字塔頂端的那一個人</b>，然後「透過傀儡繼續治理」——取代的只是頂端，底層結構儘量保留。</li>
+      <li><b>② 技術差距其實沒有想像中大。</b>槍炮在當時裝填極慢，「原住民一旦克服震撼，就發現它戰場價值有限」；真正決定性的是<b>鋼（托萊多鋼長劍作突刺、鋼盔）與馬</b>。到征服後期，金屬甲在高溫下反而累贅，征服者<b>大量換回原住民的棉甲</b>——連「盔甲優勢」都不是絕對的。</li>
+      <li><b>③ 外交與技術同等重要——99% 的戰鬥力是被征服民族。</b>科爾特斯與皮薩羅都把自己的力量「插入」一個多民族帝國的離心結構中：<b>特拉斯卡拉人（Tlaxcala）</b>本是阿茲特克的最後死敵，主動結盟並開出條件（割地、在特諾奇提特蘭建自己的堡壘）；進攻首都的最終部隊中，<b>純西班牙人可能只佔 0.5%</b>。</li>
+      <li><b>④ 「大輪子 vs 小輪子」：決定論與偶然性的整合。</b>地理與氣候是「碾得很慢的大輪子」，個人（科爾特斯、皮薩羅、蒙提祖馬、阿塔瓦爾帕）是「前景的小輪子」。即使原住民在若干戰役取勝，<b>歐亞大陸馴化動物所孕育的傳染病</b>與<b>附庸民族的離心</b>，仍會在長期把他們拖垮——「一個或另一個方式，西班牙人（或後來的歐洲殖民者）都會在海岸紮根，再慢慢往內陸推」。</li>
+      <li><b>⑤ 原住民為何無法反向利用西班牙人的內部分裂？</b>因為西班牙人的內鬥（Velázquez 派 Narváez 來抓科爾特斯、Almagro 與皮薩羅翻臉）是<b>同一文明內的私人恩怨</b>；一旦面對共同的存亡威脅，他們會團結。反之，特拉斯卡拉與阿茲特克是<b>世代結構性死敵</b>，即便 Cuitláhuac 派使者提議組成新的「三方同盟」共同抗外，特拉斯卡拉的老一代仍斷然拒絕——「這是你的問題，也許你會被滅，對我們沒損失。」</li>
+      <li><b>⑥ 組織／治理的優勢被低估。</b>作者以印度為類比：莫臥兒與滿清都揹著「外族統治」的原罪，一旦勢頭逆轉，地方權力掮客就轉向；而<b>東印度公司是「公司」</b>——有董事會，能汰換 CEO 與將領，沒有血統繼承的「壞國王」風險。呼應英法百年戰爭：法王查理六世發瘋（以為自己是玻璃做的）→ 英格蘭贏；英王亨利六世發瘋 → 英格蘭輸。「這些（征服）都是商業行為……是<code>compañeros</code>（同夥），不是<code>soldados</code>（士兵）。」</li>
+      <li><b>⑦ 「快錢詛咒」。</b>西班牙因白銀而坐享其成，反而<b>沒有發展出功能性的資本主義</b>（資本市場、獨立銀行體系）；英格蘭與荷蘭（尤其荷蘭「什麼天然資源都沒有」）被迫創新，最終領先。同一邏輯延伸到美國南北：南方靠奴隸與現金作物取得「快解」，北方被迫發展貿易、金融與工業——內戰時所有優勢都在北方。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">關鍵數據／事實</span>
+    <ul>
+      <li>科爾特斯 <b>1519–1521、約 2 年半</b>征服人口約 <b>600 萬</b>的阿茲特克帝國；皮薩羅十年後以相似劇本，約 <b>5 年</b>征服人口約 <b>1,000 萬</b>的印加帝國。</li>
+      <li><b>卡哈馬卡戰役（1532）</b>：皮薩羅約 <b>168 人</b>（一說 160–190）對上剛贏得內戰、規模達數萬至 10 萬的印加軍隊；<b>殺敵近萬、己方零陣亡</b>——唯一的傷者是皮薩羅本人，被過度熱心的同僚在擒拿阿塔瓦爾帕時割傷手。</li>
+      <li>皮薩羅設伏前的心理戰：派中尉<b>策馬直衝 Sapa Inca 與其全朝</b>，在阿塔瓦爾帕面前數吋處急停；阿塔瓦爾帕面不改色，事後將<b>當場退縮的將領全部處死</b>以立威。</li>
+      <li>帝國內部的語言壟斷：<b>只有少數人說納瓦特爾語（阿茲特克）／克丘亞語（印加）</b>；帝國是「多民族拼裝」——這正是離心力的來源。</li>
+      <li>波托西（Potosí，今玻利維亞）銀礦為西班牙帝國補上「真正全球化」的最後一塊拼圖；白銀經馬尼拉流向中國，換取瓷器、絲綢、香料。<b>明末 1640s 銀根斷裂</b>，加上滿洲壓境，明朝無法發餉養軍而亡。</li>
+      <li>西班牙本土通脹：白銀大量湧入→物價上升、<b>實際工資下降</b>→未發展資本市場，19 世紀未能工業化，20 世紀仍相對落後。</li>
+      <li>1876 年<b>小巨角河戰役（Custer’s Last Stand）</b>：美國第七騎兵團全軍覆沒——分散式、騎馬持槍、可聚可散的原住民武裝，極難被「釘住」，最終靠「總體戰」（鐵絲網、屠殺野牛）才被壓制。</li>
+      <li>阿茲特克 vs 塔拉斯坎（Tarascans，今米卻肯 Purépecha）：塔拉斯坎人<b>會冶銅</b>，用銅頭箭「大量屠殺入侵的阿茲特克人」；阿茲特克有金有銀（招來貪婪），卻<b>不會冶鐵</b>——「最壞的兩端都佔了」。若南北美洲有更廣泛交流（例如阿茲特克取得駱馬），將是決定性的平衡力量。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">重點引用</span>
+    <blockquote>
+      <p>「我和我的人患的是一種<b>心病，只有黃金能治</b>。」——科爾特斯對蒙提祖馬的使者（西班牙人撿拾黃金時「像猴子一樣嘰嘰喳喳」）</p>
+      <p>「在秘魯有句話說，阿塔瓦爾帕本打算把皮薩羅當<b>午餐</b>，結果皮薩羅把他當了<b>早餐</b>。」——Si Sheppard</p>
+      <p>「他們不理解歐洲人會以<b>多大的數量</b>到來……他們封閉的世界，讓他們無法想像來自如此遙遠的人能以如此龐大的數量到來。最終，就像澳洲和紐西蘭發生的那樣——<b>『我們會在自己的國家變成少數。』</b>」——Si Sheppard</p>
+      <p>「當心你許的願，因為你可能真的會如願。」——談西班牙拿到白銀後的長期反效果</p>
+      <p>「這<b>不是</b>一群愛好和平、不懂戰爭的嬉皮士……阿茲特克與印加社會本就是圍繞戰爭組織起來的，是『新世界的斯巴達』。」——Dwarkesh，追問為何軍事化社會缺乏戰略應變</p>
+      <p>「最後真正決定性的，是那些<b>背景力量、那些碾過歷史的大輪子</b>。」——Si Sheppard</p>
+    </blockquote>
+  </div>
+
+  <div class="field">
+    <span class="label">技術詳情（當時的軍事科技）</span>
+    <ul>
+      <li><b>火器</b>：火繩槍與火炮裝填極慢，實質殺傷有限，但「能控制雷霆」的爆炸聲具極大心理震懾（印加帝國創始者 Pachacuti 意為「雷霆持有者」）。</li>
+      <li><b>金屬</b>：托萊多鋼長劍為突刺武器，專破原住民「掄砍」（開邊）式攻擊；鋼盔連黑曜石刀（火山玻璃，鋒利但脆）也難破。</li>
+      <li><b>馬 + 騎兵衝擊</b>：真正的「決定性資產」。原住民從無馬（馬起源於北美後絕種），也無馱獸（阿茲特克只有火雞與吉娃娃；印加有駱馬但駱馬不能騎乘衝鋒）。鬆散的戰陣是騎兵最理想的突破口；反騎兵需要長矛密集陣＋紀律（瑞士方陣、佛蘭德），而這套制度知識原住民沒有。</li>
+      <li><b>戰爭犬</b>：披甲、受過撲倒訓練的大型獒犬。</li>
+      <li><b>工程</b>：為控制湖面，遠征隊<b>下到 Popocatépetl 火山口用繩索垂吊取硫磺</b>造火藥；並<b>預製 brigantines</b> 拆解，由無數人力搬運翻山，在湖上組裝下水。</li>
+      <li><b>原住民的反制（他們確實在學）</b>：以<b>狹窄空間</b>剝奪騎兵優勢（堤道、屋頂作戰、鑿牆洞穿行）；<b>水攻</b>（破壞堤壩淹城，金屬甲反而拖人下沉）；把擄獲的劍綁上長桿當長矛；用<b>bolas</b> 纏馬腿；拿俘虜的西班牙人當老師學弩與火器；曼科·印加（Manco Inca）親自學騎馬以示範「我們也能」。Cuzco 圍城戰中，若持續<b>夜襲</b>而非只白天進攻，守軍早就崩潰——但學習曲線太陡、時間太短。</li>
+      <li><b>制度工程</b>：歐洲堡壘的「星形棱堡」＋海權壟斷＝難以拔除的據點；阿茲特克與印加<b>連攻城武器都沒有</b>（無撞城槌、無投石機）。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">行業 insight（AI 接管的隱喻）</span>
+    <ul>
+      <li>接管往往<b>不是「更強文明碾壓」，而是「較小的外來力量 × 既有秩序的內部裂痕 × 少量技術優勢 × 外交狡詐」</b>。技術差距可以很窄（鋼與馬，而非槍炮），勝負卻極端。</li>
+      <li><b>單點脆弱性</b>：高度階層化的系統，只要頂端被「擒獲」，整個系統就可用「傀儡」延續運轉——這是權力結構而非力量的脆弱。</li>
+      <li><b>「數量」是被接管者最容易誤判的變量</b>：原住民以為能利用外來者（「他們人少」），卻無法想像追隨而來的移民潮；AI 場景的對應物是：今天看似可控/可用的系統，其「未來規模」才是長期決定因素。</li>
+      <li><b>組織優於血統</b>：能汰換領導層、不被繼承危機綁死的組織（公司型）比王朝/個人魅力型更耐用。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">前後脈絡</span>
+    <p>本集是 Dwarkesh 本月「歷史／戰略視角」線的一環：9/17 <b>Noam Brown</b>（agent swarms、對齊、遞迴自我改進）、9/11 <b>Sarah Paine</b>（戰爭為何難終結）。主持人反覆以「history rhymes」的姿態把戰略史與 AI 對齊並置；與同一週 <b>Latent Space</b> 的「agent swarm 需要被訓練、且難以收斂」形成隱喻共振——接管既非奇蹟，也非單一技術事件的結果。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">爭議點</span>
+    <ul>
+      <li>Dwarkesh 直言西班牙人的暴行是「<b>字面意義的種族滅絕</b>——不只是疾病，是蓄意的」，並追問其「人道動機」的敘事站不站得住腳；Sheppard 承認「就是最好的情況，也只是殖民過程的裝飾」。兩人對殖民的道德評價坦率而沉重。</li>
+      <li><b>對蒙提祖馬的逆向評價</b>：一般史學譴責他把科爾特斯迎入首都；Sheppard 認為那其實是<b>他最好的選項</b>——把不可控的「隨機變量」留在自己屋簷下，好過讓他在帝國腹地煽動附庸。真正錯誤是<b>他自己留在首都成了目標</b>（本可藉口朝聖／遠征、透過下屬治理）。</li>
+      <li><b>歷史必然性的分歧</b>：Dwarkesh 追問「重跑模擬，西班牙在多少比例的平行宇宙中仍會在數年內得手？」Sheppard 給出「取決於大輪子」但承認個人（科爾特斯若早死、阿塔瓦爾帕若不親入陷阱）確實可能改寫短期結局——兩人游移於決定論與偶然性之間。</li>
+    </ul>
+  </div>
+</article>
+
+<hr class="sep">
+
+<h3 class="pod">Latent Space <span class="host">（主播：swyx + Vibhu；嘉賓：Alex Zhang，MIT）</span></h3>
+
+<h4 class="ep">Academia is for Ambition — Alex Zhang, MIT（RLM、harness 作為組合泛化器、agent swarm 的真相）
+  <span class="tag">RLM</span><span class="tag">Harness</span>
+  <span class="time">發布：2026-10-02 00:28 UTC（北京 10/2 08:28）｜片長約 1 小時 41 分</span>
+</h4>
+
+<article>
+  <div class="field">
+    <span class="label">主題</span>
+    <p>從 GPU kernel（KernelBench／GPU Mode）一路談到 <b>RLM（Recursive Language Models）</b>：為什麼 harness 不只是「工具集合」而是「組合泛化器」、為什麼所有主流 harness 結構上其實一樣、以及未來你調用的「語言模型」為何可能是一整群看不見的 agent swarm。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">嘉賓背景</span>
+    <p><b>Alex Zhang（@a1zhang）</b>——MIT 博士生（第二年），<b>RLM 論文第一作者</b>；GPU Mode／前身 CUDA Mode 社群核心成員（由 Mark Saroufim 引介），<b>KernelBench</b> 相關工作、GPU Mode leaderboard 推手；曾在 Princeton 與 SWE-bench 團隊（John Yang、Carlos Jimenez、Ofir Press 等）共事；曾在 Sakana AI 暑期研究。主持為 swyx 與 Vibhu。swyx 把本集定位在 Latent Space 每年「發掘一位新星 PhD」的傳統——2024 是 Shunyu Yao（姚順雨，現騰訊首席 AI 科學家），2025 是 Jack Morris（Engram 共同創辦人），2026 是 Alex Zhang。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">核心論點</span>
+    <ul>
+      <li><b>① Harness 是「組合泛化器」（compositional generalizer）。</b>核心概念是 <b>locally in-distribution</b>：把一個 out-of-distribution 的整體任務，拆解成一連串<b>每個都由 in-distribution 的 LLM call 完成</b>的局部子任務。若每個局部 call 都落在分布內，「你大概就能拿到正確答案」。</li>
+      <li><b>② 主流 harness 結構上根本一樣。</b>「我愛 Claude Code、Codex、Pi、Oh My Pi、Prime Agent……但老實說，它們全都一樣。」多數設計決策相同（都是「trajectory as a prompt」的迴圈），差異主要在成本；他點名 <b>Grok Bot 較不同</b>。真正該被重新想像的，是 harness 能為模型做的事。</li>
+      <li><b>③ RLM 的定義（極簡）。</b>一個 RLM 就是：<b>唯一工具是「程式碼」</b>，模型可<b>以程式化方式呼叫子代理（甚至呼叫自己）</b>，而它處理的 context<b>永遠存在程式環境的某個記憶裡</b>（檔案系統／REPL）。「這個抽象很原始——但它的設計與我們目前的做法非常不同，因此可能隨資料與環境大幅擴展。」</li>
+      <li><b>④ 訓練 RLM 會自然跨任務泛化。</b>用 RLM 訓練後發現：在一個任務（如檢索／彙總）學到的<b>高層策略</b>是相同的，於是<b>短任務訓練能遷移到 8–30 倍長的任務</b>；不同領域（數學 vs 寫作）只要 meta 策略相同也能遷移。而且<b>這個論證可歸納遞迴</b>——子代理解的子任務，可能又是同一種形式。</li>
+      <li><b>⑤ Agent swarm 的真相：95% 是浪費，難的是「收斂」。</b>「我相當確定，<b>95% 的 swarm 完全沒用</b>——你在燒 token。」OpenAI 的 swarm 之所以能解 Navier–Stokes，是因為<b>它明顯被訓練成一個 swarm</b>，不是「模型夠聰明就自然湧現」。「沒有一件難事是免費的。」</li>
+      <li><b>⑥ Capability overhang：這是 skill／harness 問題，不是能力問題。</b>Alex 認為，連「讓模型<b>連續一個月穩定做好一份簡單工作</b>」都做不到「這件事本身很蠢」——「我真的覺得我們能解決。這其實是 <b>continual learning</b> 問題。」他甚至主張：即使不用 RLM、不碰那些抽象，<b>單靠設計一個 harness 就能做到</b>。</li>
+      <li><b>⑦ 未來你 query 的「語言模型」可能是整個 swarm。</b>用戶只看到前端（像 Claude Code / Codex 那種可讀的串流），底下其實是「很怪、很複雜、但擴展性很好的 swarm / scaffold」——「這是相對安全的賭注。」</li>
+      <li><b>⑧ Jev 的意義：打開「輸出空間」這個新設計維度。</b>「語言模型只是在建模語言，它<b>不必</b>是一個自迴歸解碼器。」Jev 的價值不在「又一個分類器」，而在它逼問：<b>你願意為輸出空間付出多少推理延遲／成本？</b>如果只需要二元分類，為何要付 400 倍代價？他認為 Jev 對 RLM 特別有用，因為 RLM/swarm 最大的瓶頸就是<b>慢</b>。</li>
+      <li><b>⑨ 學術的唯一護城河是「敢下大注」。</b>「作為 PhD 學生，你能對幾乎任何事情為所欲為……如果你只想做業界會做的熱門 benchmark／harness，那你乾脆去業界實驗室。」最成功的研究「往往來自<b>業界多數人不會看的問題</b>」。好研究常以「這也太蠢了吧？」開場（RLM、Quiet-STaR、ReAct、SWE-bench 最初都被冷落）。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">關鍵數據／事實</span>
+    <ul>
+      <li><b>OpenAI 的「解難題」成本（近公開）</b>：解 Navier–Stokes／ARC-AGI-3 用了 <b>10,000 個 agent、88 小時、1,300 億 output tokens</b>，以公開定價估計約 <b>4,000 萬美元</b>（Alex：「比我想的少」；Vibhu 補充總 agent 訊息量是這數字的兩倍以上）。</li>
+      <li><b>GPU Mode leaderboard</b>：近期題目「幾乎所有解法都是 AI 生成」，但 top 10 中<b>只有一個</b>（由人類專家 Gauners 引導 AI 完成）在真實端到端系統中<b>穩定</b>——kernel 存在嚴重的 <b>verification／reward hacking</b> 問題。</li>
+      <li>GPT-5.6 寫出更高效 kernel，令 <b>Terra 與 Luna 可能便宜 80%</b>。</li>
+      <li>RLM harness 是<b>首個近似解 ARC-AGI-3</b> 的系統，早於 OpenAI Astrav；Prime Intellect 的 Prime Agent（8/5 發布）被引用為「自我改進的 RLM harness」。</li>
+      <li>第三方 RLM 應用：<b>Harvey</b>（法律 AI）× <b>Base 10</b> post-train RLM 於法律文件；<b>Headlong</b>（Andy Konwinski，前身 Terminus）做「持續思考、always-on 但昂貴可控」的 harness；<b>DSPy</b> 內建 RLM；ARC-AGI-3 Kaggle 上多個 harness 引用類 RLM 抽象（如 TUFA）。</li>
+      <li><b>Prime Agent 的設計</b>：建於 <b>Pi（極簡 harness）</b>之上；<b>唯一工具是 IPython</b>，其餘工具以 Python module／Bash script 載入；含 <b>continual harness</b>（可自我修改技能、子代理、system prompt）與 <b>persistent subagents</b>（子代理可存活於原 agent 之外，可再互動）。</li>
+      <li>Dots：每個 Dot 擁有<b>自己的雲端 Linux 電腦</b>（與「雲端瀏覽器」或「你的電腦」不同）。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">重點引用</span>
+    <blockquote>
+      <p>「我相當確定，<b>整個 swarm 的 95% 都完全沒用</b>——你只是在燒 token。」——Alex Zhang</p>
+      <p>「一個 harness 是一個<b>非常有意見的程式</b>，關於你希望如何把一個語言模型『形塑』到某個問題上。」——Alex Zhang</p>
+      <p>「我一直覺得，前沿模型連<b>『連續一個月穩定把一份簡單工作做好』</b>都做不到，這件事很蠢。我真的認為我們能解決它——某種程度上，這是<b>技能的失敗（skill issue）</b>。」——Alex Zhang</p>
+      <p>「未來我們所說的『語言模型』——你 query 的那個東西——<b>可能其實是一個 swarm，或某種 scaffold，或某種很怪、但擴展性很好的 harness 設計</b>，只是用戶看不到。用戶只看到某個前端版本。」——Alex Zhang</p>
+      <p>「語言模型只是在<b>建模語言</b>，它不必是這個 transformer decoder。」——Alex Zhang 談 Jev</p>
+      <p>「如果一個 neo lab 的策略只是複製 OpenAI 或 Anthropic，那是<b>一個糟糕透頂的策略</b>——你等於在『資料與算力』上跟他們競爭，而你必然輸。」——Alex Zhang</p>
+      <p>「<b>我們把『一個 swarm 要收斂到一個答案』這件事太當作理所當然了。</b>」——Alex Zhang 談為何 OpenAI 的 swarm 值得敬畏</p>
+    </blockquote>
+  </div>
+
+  <div class="field">
+    <span class="label">技術詳情</span>
+    <ul>
+      <li><b>RLM 機制</b>：context offloading（把 context 卸載到檔案/REPL）＋以程式碼執行＋遞迴子代理＋共享記憶。凡是「唯一工具是 code、context 存於 code 環境」者，皆屬此抽象。</li>
+      <li><b>為何 harness 設計能改變泛化</b>：傳統 harness 把整條 trajectory 當 prompt 不斷附加（「trajectory as a prompt」），多數情境最終都變成 out-of-distribution；RLM 則把計算拆成「meta-harness 或程式」，使每一步局部 call 都 in-distribution。</li>
+      <li><b>Loop transformers 與 harness 的同構</b>：某種意義上 looped transformer 就是「在模型內部做 harness 迴圈」；由此可問——能否把 harness 的行為<b>內化進 forward pass</b>？能否只 loop 模型的一部分？能否 route 到不同子模組？「harness 選擇」與「模型架構選擇」之間的橋樑是開放問題。</li>
+      <li><b>Speculative programmatic tool calling（PTC）</b>：模型寫程式碼時，很多工具是序列／阻塞的，應該<b>提前並行啟動</b>——類似 JIT + 靜態分析推斷變數。他認為在函數式語言（Lisp、OCaml、Effect-TS）更容易做 pipeline；「這其實是 no-brainer，尤其對 coding 與 RLM 類系統」。</li>
+      <li><b>Calibration</b>：模型被問「你多有信心」時，只會吐出「最可能的下一個答案」（例如 43%），而非真實校準後的機率；Jev 的價值在於「grounded classification」——這是「反覆問它、以為你在用機率」與「真的拿到校準訊號」之間的巨大差異。</li>
+      <li><b>GEV／Neuralese</b>：GEV 探討「語言模型不必是自迴歸 text-to-text 解碼器」；Neuralese 一節談模型「母語」——Alex 押注<b>英文 + Python 的混合</b>（能力反映訓練資料），不買「binary」的說法；swyx 引 Sapir–Whorf 假說與《Arrival》的「擴散式（一次顯現整句）vs 自迴歸」對比。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">行業 insight</span>
+    <ul>
+      <li><b>Neo lab 的生存之道＝差異化。</b>若用與前沿實驗室相同的 setup，只能拼資料與算力——必輸。Jev 式（更便宜、更低延遲、不同輸出空間）正是「先下新注」的價值；「我很高興 scale 仍然有效，因為它讓新玩家有機會在別處挖到有趣的東西」。</li>
+      <li><b>前沿實驗室為何不做新賭注</b>：「你為什麼要冒險把大量算力投給新賭注，當舊賭注已經有效？」——這正是大量 neo lab 的誕生機制（你的 side bet 拿不到算力，於是你出去自己做）。</li>
+      <li><b>GDM 的組織問題</b>：受訪者普遍認為 Google DeepMind「太官僚」，有才華與資源卻交不出產品（「我認識的人沒一個用 anti-gravity」）。</li>
+      <li><b>Kimi vs OpenAI 的 swarm</b>：Kimi 的 swarm「讀起來有趣，但我不確定它能否解出任何新問題」；相對地 OpenAI 的 swarm「明顯被訓練過、能朝目標收斂」，因此才敢「壓 4,000 萬美元去解一個未解難題」——「我們太把『收斂』視為理所當然」。</li>
+      <li><b>Sakana AI＝像一間 PhD lab</b>：做「怪」研究、日本市場差異化（甚至有一個 Kimi fine-tune 的日語專用模型）；open-endedness 的核心難題是「當你有一大堆 slop，如何挑出隱藏的寶石」。</li>
+      <li><b>學術 vs 業界</b>：PhD 的獨特優勢是「不受官僚、能下大注」；「如果你只想做會讓業界實驗室覺得好看的題目，那就去業界」。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">前後脈絡</span>
+    <p>直接承接 <b>9/30 Latent Space DevDay 特輯</b>（OpenAI 一週做出 Decisions API＝被 Jev 啟發的克隆）；與 <b>Dwarkesh 9/17 Noam Brown</b>（agent swarms 需被訓練、收斂是難點）互相印證——兩邊獨立得出「swarm 不會白撿、必須訓練」。RLM 論文年初引爆 timeline，與 Rulin Shao 9/30 發布的 <b>Context Language Models（CLM）</b>同屬一條「把 context 管理內化」的脈絡。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">爭議點</span>
+    <ul>
+      <li><b>「所有 harness 都一樣」</b>本身具爭議；他以「harness tax paper」為背書，但承認 Grok Bot、Prime Agent 是例外。</li>
+      <li><b>稱 OpenAI 的 dynamic workflows 發布「算是一次失敗」</b>——「太貴、少人用、實際行為不如預期」；這與 OpenAI 對外敘事直接衝突。</li>
+      <li><b>對 Gemini／AlphaProof 的保留</b>：「有點被誇大」——GDM 當年靠優秀的 harness 設計（模型還不強時）拿下 IMO 級成果，但組織問題拖累產品化。</li>
+      <li><b>數學家反 AI 的立場</b>：Alex 認為「如果他們之中很多人沒先跟 OpenAI 合作過，論點會更站得住」；swyx 立刻指出這是 ad hominem，但承認「很多人合理地不同意他們」。</li>
+    </ul>
+  </div>
+</article>
+
+<hr class="sep">
+
+<h3 class="pod">Machine Learning Street Talk <span class="host">（主持：Tim Scarfe；嘉賓：Shawn Wen，PolyAI CTO）</span></h3>
+
+<h4 class="ep">How a Voice Agent Learns the Rhythm of Conversation — Shawn Wen
+  <span class="tag">語音 agent</span>
+  <span class="time">發布：2026-10-01 20:00 UTC（北京 10/2 04:00）｜片長 70:10（4210 秒）</span>
+</h4>
+
+<article>
+  <div class="field">
+    <span class="label">主題</span>
+    <p>語音 agent 為何比文本 agent 難——多出來的「時間」維度、端到端 turn-taking、真實噪聲資料，與企業部署的現實政治。本集與 <b>PolyAI</b> 合作製作。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">嘉賓背景</span>
+    <p><b>Tsung-Hsien（Shawn）Wen</b>——<b>PolyAI 首席技術官（CTO）</b>。PolyAI 專攻企業級語音 agent（客服中心、銀行、公用事業、物流、餐飲、酒店、零售外呼），自建語音辨識、LLM 與端到端語音模型。主持人 Tim Scarfe 本人有語音／音訊研究背景（本集大量使用頻譜圖、mel scale、Victor Zue、雞尾酒會效應等技術錨點）。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">核心論點</span>
+    <ul>
+      <li><b>① 語音比文本難，因為多了「時間」。</b>「語音是通往真實世界的一步。」文本世界已有海量文件與線上論文，連博士級物理題都不算難；但語音場景多了一個關鍵維度——<b>時間</b>。「我們還沒訓練模型去真正理解這個概念。」</li>
+      <li><b>② 智能的本質是「適應」，不是「推理」。</b>人類對話中的智能「不在於推理，而在於適應」——同一句話，對老人要放慢、給思考時間；對本地人要帶地方口音。傳統 cascade（ASR + LLM + turn-taking 三段）天生不協調，只能靠「多加一個偵測器、再 tweak 一個參數」硬湊，「非常 cranky，而現實根本不是那樣運作」，因此<b>必須塌縮成端到端</b>。</li>
+      <li><b>③ 企業要的是矛盾組合。</b>「他們想要 agent <b>像人一樣強大，卻又想要它像機器人一樣可控</b>。」具體是：品牌化聲音（能正確念出品牌名）、可控、可審計；期待值錨定在「<b>我團隊裡最好的人類</b>」。採用曲線的關鍵是找到「效率」的切入點。</li>
+      <li><b>④ 為何自建模型：大型通用語音模型「demo 很神、部署即崩」。</b>最新 speech-to-speech 模型在 demo 中自然到「像奇點已至」，但一進客服中心就在各種地方崩掉——<b>打斷太激進</b>（老人第一次對 bot 說話、一直被打斷，極度挫折）。「前沿實驗室不是在為我們在意的東西（B2B 的真實對話輪替）優化。」</li>
+      <li><b>⑤ 資料：過度清洗反而更差。</b>真實 call 已含大量噪聲；團隊再<b>刻意用生成模型疊加噪聲</b>（例如「機器人念我的名字 ＋ 背景嬰兒哭聲」）。諷刺的是，傳統管線的「去噪／清洗」組件<b>反而令新的對話推理模型變差</b>——因為它從沒見過「被過度清洗」的環境。這直接呼應 Rich Sutton 的 <b>The Bitter Lesson</b>：失敗模式組合呈指數增長，端到端訓練能覆蓋大量失敗模式。</li>
+      <li><b>⑥ 瓶頸已從「生產內容」轉向「驗證與審計內容」。</b>組織內部已是 AI slop 滿天飛（Slack 大段 AI 文字）；「工程師從年初就一直在說：我們有太多 call 要 review，而我不信任 agent 做 code review。」他主張必須教育員工：<b>自己讀過、同意，才轉發</b>，不要轉發你沒讀過的 AI 文字。</li>
+      <li><b>⑦ Harness vs weights：多數企業該先做 harness。</b>企業想「擁有智能」，但唯一能 in-house 的是 <b>harness</b>（模型太貴、要大量 GPU）。Shawn 建議多數客戶<b>先從 harness 著手</b>，真的繞不過才微調權重；並提出一個新定位——<b>語音 agent 當「前台」，品牌與「主腦」留在後台</b>，企業不必擁有全部。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">關鍵數據／技術</span>
+    <ul>
+      <li><b>模型：Dialog-RSN-1（audio-native）</b>。底層仍是一個<b>輸出文本</b>的 LLM（因為企業需在 text 上施 guardrail，比在語音上容易），但<b>原生接收串流音訊 chunks</b>——輸入是 <b>mel 頻譜圖</b>，對模型而言更像「逐段影像辨識」任務。</li>
+      <li><b>推理順序被反轉</b>：① 音訊串流入時，模型先預測<b>第一個 token＝turn-taking 訊號</b>（對方是剛開始說／還在說／已說完；極便宜）；② 判定句尾後，因為音訊已在嵌入空間預處理好，<b>不必從頭再編碼整句</b>，直接預測回應（text 或 tool call，像典型 chat API 串流）；③ 回應後才生成 <b>citations</b>（企業可查到引用來源）；④ <b>最後</b>才輸出 transcript（供審計／除錯）——「我們把舊的順序反過來了」。</li>
+      <li><b>檢索也改寫</b>：沒有 transcript 可 embed，無法用傳統 RAG；改為<b>讓 LLM 生成「search 工具 + 查詢」</b>（agentic search，本質是 tool call）。</li>
+      <li><b>延遲工程</b>：模型大小選對，模型處理本身延遲不大；cascade 時代真正的痛點是「<b>何時判定句尾</b>」的粗參數（太短會打斷老人、太長令人不耐）。端到端後由模型基於<b>音框（含語速 + 語義）</b>自行判斷——「如果我話講到一半暫停，語義未完成，agent 知道要繼續等」。加上自託管模型，避免網路<b>長尾延遲（P99.5）</b>。團隊正加入 <b>latency-budgeted auto reasoning</b>：模型自問「現在停在這能不能給好答案？能不能壓在 1 秒內？」——「像比賽答題倒數」。</li>
+      <li><b>信任工程（人類心理）</b>：思考時可播電梯音樂、打字聲、filler sentence；「AI 在電話上沉默 3–5 秒，用戶會恐慌」；contact center 有現成做法（等真人去問同事時會播音樂）。</li>
+      <li><b>聲音選擇的外交學</b>：最好表現的聲音通常帶<b>地方口音</b>（英國 Newcastle 口音因客服多來自當地而受歡迎；南美賭場客戶想聽「howdy」開場，最終仍覺「太過了」沒上線）。最自然的英文聲音，早期竟是<b>「帶法國口音的法國聲音去講英文」</b>——不完美令其真實。通用聲音（聯想到傳統 IVR）表現最差。</li>
+      <li><b>Benchmark 困境</b>：公開語音 agent benchmark 不足且偏合成；語音資料隱私性高、難以公開。PolyAI 用<b>真實 call 數據</b>自建 benchmark（含延遲、ASR、指令遵循、引用、tool call 等維度），計劃在數月內公開。</li>
+      <li>production agent 每輪 output token 約 <b>50 tokens</b>（故語音的「認知負擔」遠小於長篇文字 agent）。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">重點引用</span>
+    <blockquote>
+      <p>「他們想要 agent <b>像人一樣強大，卻又想要它像機器人一樣可控</b>。」——Shawn Wen 談企業客戶</p>
+      <p>「<b>人類的智能不在於推理，而在於適應。</b>」——Shawn Wen</p>
+      <p>「<b>瓶頸已經從生產內容，轉移到驗證與審計內容。</b>」——Shawn Wen</p>
+      <p>「<b>Slop 是沒有能力的生成（generation without competence）</b>。」——Tim Scarfe（並指出：作者精心 context-engineer 的輸出，對收件人仍可能像 slop）</p>
+      <p>「現在 Gmail、Slack 都在用 Claude……人們開始互相發大段 AI 文字；久而久之更多人會說——<b>『你乾脆讓 Claude 讀完，再總結給我。』</b>」——Shawn Wen</p>
+      <p>「<b>語音是通往真實世界的一步</b>……而我們還沒訓練模型去理解『時間』這個概念。」——Shawn Wen</p>
+      <p>「如果 AI 在電話上<b>沉默 3 到 5 秒</b>，用戶會慌——『它到底有沒有在跑？』」——Shawn Wen</p>
+    </blockquote>
+  </div>
+
+  <div class="field">
+    <span class="label">技術詳情（補充）</span>
+    <ul>
+      <li><b>雞尾酒會效應與 speaker diarisation</b>：傳統 diarisation 假設「speaker1/2/3」標籤，是為 ASR 而生、並不自然；端到端後模型可原生感知 crosstalk，且可透過 prompt 控制（「不要回應背景插話」或「背景插話時也主動加入」）。關鍵差異在於<b>「你如何訓練它、收集什麼資料、下什麼指令」</b>。</li>
+      <li><b>歷史錨點</b>：Victor Zue（MIT）在 1990 年代即主張「光看頻譜圖就能辨識語音」；mel scale；傳統 RAG 論文。</li>
+      <li><b>語音資料工程</b>：以生成模型疊加真實場景噪聲（背景哭聲等）製造多樣性；對 PII 做 redaction，並大量生成「假 PII」讓模型學會辨識姓名地址——「資料其實是讓模型學會對話的<b>力學（mechanics）</b>，而非用戶個資」。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">行業 insight</span>
+    <ul>
+      <li><b>語音將分兩支</b>：consumer（娛樂／日常，Alexa、Google Assistant 系）與 enterprise（客服／專業，須可審計、合規）。硬體上，語音是 IoT 的天然模態，他預期<b>新一波 IoT／機械人</b>（他自購一台開源機械人，雖仍笨拙）。</li>
+      <li><b>企業對 agent 的「控制焦慮」</b>：有大型公用事業客戶明言——未來所有 PR 進 repo 都要經兩週 review、可審計、可靠，<b>不接受 coding agent 直接 auto-merge</b>；因此平台提供流程可視化＋工具白名單＋引用審計，「傳統 no-code flow 不再是主要介面，<b>而是審計介面</b>」。</li>
+      <li><b>語音的社交／隱私層</b>：在辦公室對 agent 說話會被同事側目（Meta 眼鏡同理）——即使是重度用戶也感受到採用障礙；consumer 行為未必已就緒。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">前後脈絡</span>
+    <p>緊接 <b>9/30 MLST × Leonardo de Moura</b>（Lean 內核被攻破，驗證/信任是核心），兩集在「<b>驗證與審計成為瓶頸</b>」上直接呼應；並與同一週 <b>Latent Space</b> 的 harness vs weights、cognitive debt 主題共振。MLST 一貫的「agent 可控性」關懷，在語音這個「通往真實世界的介面」上被具體化。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">爭議點</span>
+    <ul>
+      <li><b>consumer 語音採用曲線的懷疑</b>：技術就緒 ≠ 行為改變；「我們是稀有的一群（agent-pilled），但多數人還沒到」。</li>
+      <li><b>語音 benchmark 的主觀性</b>：地方口音偏好是文化特定的，客觀分數難以捕捉「用戶是否想繼續互動」；最終只能靠 production 指標（用戶有沒有完成任務）補足，但那已牽涉整個 agent + harness，更難測。</li>
+      <li><b>「slop」是主觀的</b>：作者自認精心 context-engineer 的輸出，對收件人可能是 slop——他反問一個開放問題：「人類到底該不該親自讀？」</li>
+    </ul>
+  </div>
+</article>
+
+<hr class="sep">
+
+<h3 class="pod">The Cognitive Revolution <span class="host">（主播：Nathan Labenz + Prakash Narayanan）</span></h3>
+
+<h4 class="ep">AI:AM: Was Trump-Xi Anything? What Counts as Utopia? + AWS GPUs Cost 3X & AI Diagnoses Rare Diseases
+  <span class="tag warn">週報形式</span>
+  <span class="time">發布：2026-10-01（確切時分未由公開頁面提供）｜片長約 87 分鐘</span>
+</h4>
+
+<article>
+  <div class="field">
+    <span class="label">主題</span>
+    <p>AI in the AM 週報：回顧 9/28 與 9/30 錄製的對談剪輯——美中 AI 外交、算力經濟、AI 共寫小說、以及用 agentic AI 診斷罕見基因病。本集 intro 與 transition 由 Nathan 的<b>克隆聲音</b>朗讀（節目中有披露）。</p>
+  </div>
+
+  <div class="field">
+    <span class="label">核心論點與內容</span>
+    <ul>
+      <li><b>美中 AI 外交（Gladstone AI 的 Jeremie 與 Edouard “Ed” Harris）</b>：討論建立美中<b>AI 事故通報渠道</b>的可能性。Nathan 一向冷硬，但本週「聽到一絲解凍」。Ed 的核心洞見：「<b>某類透明度是穩定的</b>——你給對方足夠視野，讓他們看見『我們沒在做你最害怕的那件事』」，而且這可能<b>成本不高</b>，因為「中國本來就已經滲透在我們的系統裡」。但樂觀有限：演講或會面 ≠ 可執行的協議；本集<b>未宣布任何運作中的熱線或既定的 AI 發展上限</b>。</li>
+      <li><b>GPU 租金指數（Silicon Data 研究主管 Steve Hou）</b>：一個 GPU 租價指數能與不能告訴你什麼。可執行報價（executable quotes）比單純「廣告價」帶更多資訊；合約長度、可得性、地點、捆綁服務令比較複雜化；<b>「觀察某人為機器付了多少錢」與「測試那台機器多能跑」是兩回事</b>。</li>
+      <li><b>超大規模雲的溢價</b>：Steve 指確實如此——超大規模雲「穩定地」收 <b>2 到 3 倍、有時更多</b> 於一般新雲；原因是長年遺留的軟體分析、安全、合規等加值，以及企業客戶的黏性（「被當作差異化產品來賣」）。</li>
+      <li><b>model-token 支出</b>：轉向更強、更貴的模型，會令<b>觀察到的支出上升</b>，即使「完成單一任務的成本」下降——解讀「智能的價格」時必須分清這一點。</li>
+      <li><b>OpenAI DevDay 觀感（Nathan × Prakash）</b>：Dots（「別人替你維護的個人 agent」的吸引力）、GPT-6.1 Sol 與更快的 Astra 存取；Prakash 強調 <b>「同智能下，延遲可能變得極重要」</b>——「它能做遊戲，但它能<b>和你一起、在你保持心流的當下</b>做遊戲嗎？」亦有 Sign in with ChatGPT 的成本考量。</li>
+      <li><b>AI 共寫小說（Joel Borgen，《The Receipt Horizon》）</b>：他自供架構與章節結構，模型負責批評與草稿。Nathan 評價成品「<b>即使留有可辨識的 AI 習慣，仍是貨真價實的好</b>」。Joel 估計自己的編輯<b>刪掉約 14% 文字</b>（為其自述，非獨立測量的生產力結果）。</li>
+      <li><b>AI 診斷罕見病（Gamow Labs 創辦人 Daniel McKinnon）</b>：用 agentic AI 解讀基因組、重查未解病例。他的兒子 Owen 去世後，一位<b>人類專家</b>找出原分析漏掉的 <b>91 kb enhancer 區域</b>；他的 AI 原型之後<b>重新發現</b>了它——<b>順序很重要：這不是「AI 早於所有人類專家找到答案」的例子</b>。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">關鍵數據</span>
+    <ul>
+      <li>超大規模雲 GPU 定價溢價：<b>2–3 倍甚至更多</b>（vs 典型新雲）。</li>
+      <li>Joel Borgen 自述編輯刪幅：約 <b>14%</b>。</li>
+      <li>Gamow Labs 7 月案例研究：在<b>26 名患病嬰兒 + 20 名健康親屬</b>的選定隊列中，<b>複現 19 個專家分子診斷、新增 2 個解，5 個患病個案仍未解</b>（公司自報的回溯性發現，<b>不等於</b>證明治療有效或救回孩子）。RareBench 為其自有 benchmark，「benchmark 的百分比，不是系統能診斷所有病人的比例」。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">重點引用</span>
+    <blockquote>
+      <p>「<b>某類透明度是穩定的。</b>……那種『嘿，我們給你足夠視野，讓你看見我們沒在做你最害怕的那件事』的透明度，可能有用；而且視實作方式，<b>對我們可能根本不算貴</b>，因為中國人本來就已經在我們的系統裡了。」——Ed Harris（Gladstone AI）</p>
+      <p>「<b>在同等智能下，延遲可能變得非常重要</b>……這東西能造遊戲，但它能<b>和你一起、在你保持心流時</b>造遊戲嗎？」——Prakash Narayanan</p>
+    </blockquote>
+  </div>
+
+  <div class="field">
+    <span class="label">行業 insight</span>
+    <ul>
+      <li><b>算力「價格」的訊號 vs 噪音</b>：租金指數、token 支出、單任務成本三者會被不同力量推動，不能互為替代；這對判斷「AI 成本曲線」至關重要。</li>
+      <li><b>AI for science 的敘事紀律</b>：罕見病診斷是少數「上行巨大、且可被具體量化」的領域；但節目反覆提醒<b>公司自報案例 ≠ 臨床證據</b>，並區分「症狀病人的重分析」與「健康人篩查」。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">前後脈絡／爭議</span>
+    <p>承接 CR 9/29 <b>Garrison Lovely</b>（「第三個新政」、減速的政治）——本集結尾，Nathan 把問題拋回自身：「<b>如果 AI 能幫到仍在等待診斷的家庭，我們該如何計算『減速』的代價？</b>」他仍支持某種 pacing，但把這個選擇視為<b>有代價的妥協</b>。這與 Lovely 的單邊減速主張形成節目內部的張力延續。</p>
+  </div>
+</article>
+
+<hr class="sep">
+
+<div class="quiet">
+  <h5>本輪掃描方法與未收錄項</h5>
+  <ul>
+    <li>英文：<b>Dwarkesh</b>（feed 完整逐字稿）、<b>Latent Space</b>（feed 完整逐字稿）、<b>MLST</b>（YouTube 官方字幕；頻道 ID <code>UCMLtBahI5DMrt0NPvDSoIRQ</code>，RSS 端點本輪回 404/500 故改用 yt-dlp）、<b>Cognitive Revolution</b>（官方 show notes 全文）。</li>
+    <li><b>No Priors</b>：最新仍為 9/24 Michael Lee（已於早前輪次覆蓋），無新集。</li>
+    <li><b>中文五檔</b>：全部核實，24 小時內無新集（見上）。</li>
+    <li>feed 內另有 <b>Latent Space [AINews] Gemini 4 Argon</b>（10/1 06:45 UTC）屬新聞匯總，未單獨萃取。</li>
+    <li>本輪以 Jev 前置過濾原則檢視新集，四則均為高訊號長訪談／週報，無一達「drop」門檻，全數保留。</li>
+  </ul>
+</div>
+
+<footer>
+  <p><b>AI 播客深度萃取日報</b> · 2026-10-02 · 為 James 而做的「耳朵」——每集精華完整萃取，非同質化摘要。</p>
+  <p style="margin-top:0.3rem;">JMOKSZ / ai-podcast-collection · Apache 2.0 · 每日自動掃描</p>
+</footer>
+
+</div>
+</body>
+</html>

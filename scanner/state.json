@@ -1,23 +1,30 @@
 {
- "lastScan": "2026-10-01T02:05:00.000Z",
- "lastScanDate": "2026-10-01",
+ "lastScan": "2026-10-02T02:05:00.000Z",
+ "lastScanDate": "2026-10-02",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-09-17T15:38:13.000Z",
-   "lastEpisodeTitle": "Noam Brown – Agent swarms, alignment, & recursive self-improvement",
-   "newEpisodes": []
-  },
-  "latent_space": {
-   "lastEpisodePubDate": "2026-09-30T22:23:40.000Z",
-   "lastEpisodeTitle": "Why Dwarkesh is Wrong about Computer Use + How OpenAI shipped its Jev competitor in 1 Week",
+   "lastEpisodePubDate": "2026-10-01T15:28:28.000Z",
+   "lastEpisodeTitle": "Si Sheppard – How did a few hundred Spanish soldiers topple two empires?",
    "newEpisodes": [
     {
-     "title": "Why Dwarkesh is Wrong about Computer Use + How OpenAI shipped its Jev competitor in 1 Week (OpenAI DevDay 2026 特輯)",
-     "pubDate": "2026-09-30T22:23:40.000Z",
-     "duration_sec": 2400,
+     "title": "Si Sheppard – How did a few hundred Spanish soldiers topple two empires?",
+     "pubDate": "2026-10-01T15:28:28.000Z",
      "type": "interview",
-     "url": "https://www.latent.space/p/devday-2026",
-     "note": "已深度萃取（官方頁面完整逐字稿約 57 KB，含全部章節時間軸與講者標註；引言直接取自逐字稿）：Latent Space，主持 swyx + Vibhu。嘉賓：Ari Weinstein（OpenAI Computer Use 產品/工程負責人，前 Apple Shortcuts，創辦 Sky 後被 OpenAI 收購，即 Codex Computer Use 來源）、Nikunj Handa（OpenAI API 產品負責人，前 Stripe）。核心：①Ari 回應 Dwarkesh『Computer Use 兩年沒進展』：稱已『180 度不同』，三大變化＝擅長 debug/自我恢復、會寫 JavaScript 一次多步、多模態並用（截圖+accessibility+DOM+Playwright）；②已比普通人快完成任務，下一前沿是『字面超人』；③瓶頸從模型轉向世界本身——跑 doordash 時大量時間在等網站載入，理想是 event-driven，但部分事件無法事件驅動；④App Shots 本質非截圖而是完整脈絡（連結指向、被截斷標題），並做 token 效率工程；⑤最深遠用例＝代理測自己的代碼，形成完整 SDLC 閉環；⑥Decisions API＝被 Jev 啟發、四週前不在 roadmap、infra/inference 自發一週做出原型；⑦Decisions API 真相＝完全建立在現有 Luna 權重、零樣本，靠約束+結構化輸出+TTFD 優化+並行批次；視覺對 Luna 免費；⑧真正護城河是 calibration/置信度（RLHF 會往你想聽的方向坍縮），首版尚未體現；業界對 Jev 兩大猜測（擴散非自迴歸、mech interp 讀激活）未證實；⑨新 API 原語：async tool calling、mid-turn steering（屬模型對齊能力需訓練）、WebSockets（最早為 GPT-5.3 Codex Spark）、UltraFast；⑩快取保證 30 分鐘→12 小時（preview）+pre-warming+server-side 與 /compact 壓縮，Codex harness 已實作檔案式壓縮實驗；⑪OpenAI 想做更高階原語（Stripe 類比），swyx 稱之為『AI 雲』。關鍵數字：GPT-6.1 Sol 成本約 Astra 1/5、Computer Use 專項約 1/7；keynote 稱速度提升 7 倍；Ari 備餐訂單 2 小時→15 分鐘（快 8 倍）；Luna 價格曾降約 80%、快取讀取再降約 25%；兩週內約 100 個 Jev 克隆；Dots 每個有自己的雲端 Linux 電腦；Agents API 已承載自家 Codex 安全功能與會議 space。爭議：『比普通人快』缺公開 benchmark；Decisions API 是否只是命名；把大額付款 yolo 給 Computer Use 的風險胃納。片長約 40 分鐘。同 feed 另有 [AINews] OpenAI DevDay 2026（9/30 05:53Z）與 9/29 兩條 AINews，屬新聞匯總，未單獨萃取。"
+     "url": "https://www.dwarkesh.com/p/si-sheppard",
+     "note": "已深度萃取（官方 feed 完整逐字稿約 100 KB，含全部時間軸與講者標註；引言直接取自逐字稿）：Dwarkesh，主持 Dwarkesh Patel。嘉賓 Si Sheppard——軍事史學家、LIU Brooklyn 教授，專攻早期現代軍事史與殖民主義。核心：①阿茲特克（600 萬人）2 年半、印加（1,000 萬人）約 5 年被數百西班牙人顛覆；②技術差距其實窄——槍炮影響有限，決定性係鋼（托萊多鋼劍/鋼盔）與馬；後期征服者甚至換回原住民棉甲；③外交與技術同等重要——99% 兵力係被征服民族，特拉斯卡拉主動結盟並開條件；④「大輪子（地理氣候疾病）vs 小輪子（個人）」——長期由背景力量決定，短期有偶然性；⑤原住民無法反向利用西班牙內部分裂（同一文明私人恩怨 vs 世代死敵）；⑥組織勝血統——東印度公司可汰換領導層，王朝死於繼承危機；⑦快錢詛咒——西班牙靠白銀反未發展資本主義，明末 1640s 銀根斷裂而亡。關鍵數據：卡哈馬卡 1532 約 168 人對數萬至 10 萬，殺敵近萬、己方零陣亡（唯一傷者為皮薩羅被同僚割手）；最終攻特諾奇提特蘭部隊西班牙人僅約 0.5%。嘉賓對蒙提祖馬逆向評價：讓科爾特斯入城其實係最佳選項，錯在留守成目標。爭議：Dwarkesh 直斥「字面意義種族滅絕」；歷史必然性之辯。片長約 1:48。"
+    }
+   ]
+  },
+  "latent_space": {
+   "lastEpisodePubDate": "2026-10-02T00:28:04.000Z",
+   "lastEpisodeTitle": "Academia is for Ambition — Alex Zhang, MIT",
+   "newEpisodes": [
+    {
+     "title": "Academia is for Ambition — Alex Zhang, MIT",
+     "pubDate": "2026-10-02T00:28:04.000Z",
+     "type": "interview",
+     "url": "https://www.latent.space/p/rlm",
+     "note": "已深度萃取（官方 feed 完整逐字稿約 127 KB，含全部時間軸與講者標註；引言直接取自逐字稿）：Latent Space，主持 swyx + Vibhu。嘉賓 Alex Zhang（@a1zhang）——MIT 博士生（第二年）、RLM 第一作者、KernelBench/GPU Mode 社群核心，曾任 Princeton SWE-bench 團隊。核心：①harness 係 compositional generalizer，用 locally in-distribution 把 OOD 任務拆成逐個 ID 的局部 LLM call；②Claude Code/Codex/Pi「結構上根本一樣」，差異主要成本，Grok Bot 較不同；③RLM 定義＝唯一工具係 code、context 存檔案/REPL、可程式化呼叫自己；④短任務訓練泛化到 8–30x 長任務，論證可歸納遞迴；⑤OpenAI 解 Navier–Stokes/ARC-AGI-3＝10,000 agents、88 小時、1,300 億 output tokens、約 4,000 萬美元；「95% swarm 係浪費，難嘅係收斂」，OpenAI 明顯訓練過 swarm；⑥capability overhang 係 skill issue——「連連續一個月穩定做好簡單工作都做唔到很蠢」，其實係 continual learning + harness 問題；⑦未來 query 的「語言模型」本體係看不見的 swarm；⑧Jev 打開「輸出空間 vs 延遲/成本」新維度（400x 差異），neo lab 必須差異化，複製 OpenAI/Anthropic 係糟糕策略；GDM 太官僚。KernelBench verifier gap：GPU Mode leaderboard 幾乎全 AI 生成，但 top 10 只有一個（人類專家引導）端到端穩定。技術：context offloading、Prime Agent（only tool=IPython、continual harness、persistent subagents）、speculative PTC（Lisp/OCaml/Effect-TS）、calibration、GEV、Neuralese（英文+Python）、loop transformers。第三方：Harvey×Base 10（法律）、Headlong（Andy Konwinski）、DSPy、ARC-AGI-3 Kaggle（TUFA）。爭議：稱 OpenAI dynamic workflows「算係一次失敗」；Gemini/AlphaProof「被誇大」；數學家反 AI 立場。片長約 1:41。同 feed 另有 [AINews] Gemini 4 Argon（10/1 06:45Z，新聞匯總，未單獨萃取）。"
     }
    ]
   },
@@ -27,30 +34,28 @@
    "newEpisodes": []
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-09-29T07:32:16.000Z",
-   "lastEpisodeTitle": "Obsolete or Irreplaceable? Garrison Lovely on Stopping the Race to Replace Human Labor",
+   "lastEpisodePubDate": "2026-10-01T00:00:00.000Z",
+   "lastEpisodeTitle": "AI:AM: Was Trump-Xi Anything? What Counts as Utopia? + AWS GPUs Cost 3X & AI Diagnoses Rare Diseases",
    "newEpisodes": [
     {
-     "title": "Obsolete or Irreplaceable? Garrison Lovely on Stopping the Race to Replace Human Labor",
-     "pubDate": "2026-09-29T07:32:16.000Z",
-     "duration_sec": 0,
+     "title": "AI:AM: Was Trump-Xi Anything? What Counts as Utopia? + AWS GPUs Cost 3X & AI Diagnoses Rare Diseases",
+     "pubDate": "2026-10-01T00:00:00.000Z",
      "type": "interview",
-     "url": "https://www.cognitiverevolution.ai/obsolete-or-irreplaceable-garrison-lovely-on-stopping-the-race-to-replace-human-labor-newsletter/",
-     "note": "已深度萃取（官方 RSS 完整節目說明 newsletter 全文；未取得逐字稿）：The Cognitive Revolution，主持 Nathan Labenz。嘉賓 Garrison Lovely——布魯克林自由記者、政治偏左，新書《Obsolete: The AI Industry's Trillion-Dollar Race to Replace Us – and How to Stop It》。Nathan 定位：沒有一絲 AI cope、本人重度使用 AI（自稱曾『Claude psychosis』）、認真對待公司『造出比人強的認知系統』的目標。核心：①目標＝保住深度學習在醫療/材料的巨大上行，同時阻止公司衝向 RSI，直到能說服專家安全、說服公眾有益；②『第三個新政』——把個人過體面物質生活的權利與其對經濟的貢獻能力脱鉤；③『治癒一切』的 Operation Warp Speed——政府主辦獎金制；④ML 研究者集體權力正處高峰且會迅速衰落，故主張組工會逼所有前沿公司提高安全標準，並給吹哨者建議；⑤質疑市場紀律、以及『對齊問題的技術解』足以帶來整體好結果；⑥資料中心政治：承認誤資訊多，但傾向『在他們所在之處相遇』以建大帳篷聯盟；⑦中國不會率先衝 RSI——中共重視控制，在無極端競爭壓力下不太可能主動衝；⑧組織 Irreplaceable 綱領：a say, a stake, and a slowdown，Lovely 捐版稅。Nathan 自陳仍熱衷 AI、對勞動位移擔憂顯著低於嘉賓，但簽署了 FLI《關於超級智能的聲明》。爭議：主持人與嘉賓公開分歧於位移擔憂程度；『與錯誤資訊共存』的倫理張力；單邊減速在美中競爭下的可執行性。"
+     "url": "https://www.cognitiverevolution.ai/ai-am-was-trump-xi-anything-what-counts-as-utopia-aws-gpus-cost-3x-ai-diagnoses-rare-diseases/",
+     "note": "已萃取（官方 show notes 全文；AI:AM 週報形式，約 87 分鐘；disclosed intro 用 Nathan 克隆聲音）：The Cognitive Revolution · AI in the AM，Nathan Labenz + Prakash Narayanan。四線：①美中 AI 外交微解凍（Gladstone AI Harris 兄弟）——或可建 AI 事故通報渠道；Ed Harris：「某類透明度係穩定嘅，讓對方睇見我哋冇做佢最怕嗰件事，成本可能唔高，因為中國本來就滲透我哋系統」；但演講/會面≠可執行協議，未宣布熱線或發展上限。②GPU 租金指數（Silicon Data Steve Hou）——超大規模雲穩定收 2–3 倍甚至更多溢價（軟體分析/安全/合規加值＋企業黏性）；「付幾多錢」≠「機器多能跑」；轉向更貴模型會令觀察支出上升，即使單任務成本下降。③OpenAI DevDay 觀感——Dots、GPT-6.1 Sol、Astra Ultrafast；Prakash：「同等智能下延遲可能變得非常重要……能同你一起、喺你保持心流時造遊戲嗎？」④AI 共寫小說——Joel Borgen《The Receipt Horizon》，自供章節架構，自述編輯刪約 14%。⑤AI 診斷罕見病——Gamow Labs Daniel McKinnon：敘事紀律＝兒子 Owen 個案係人類專家先搵到 91 kb enhancer 區域，AI 原型之後才重新發現，「唔係 AI 早於專家」；Gamow 7 月案例在 26 患病嬰兒+20 健康親屬中複現 19 個專家分子診斷、新增 2 解、5 個患病個案未解（公司自報回溯發現，非臨床證據）；RareBench 為其自有 benchmark。收尾：Nathan 問「若 AI 能幫到等待診斷嘅家庭，減速嘅代價點計」，仍支持某種 pacing 但視為有代價嘅妥協。"
     }
    ]
   },
   "ml_street_talk": {
-   "lastEpisodePubDate": "2026-09-30T03:19:37.000Z",
-   "lastEpisodeTitle": "Who Checks a Proof No Human Can Read? — Leo de Moura",
+   "lastEpisodePubDate": "2026-10-01T20:00:18.000Z",
+   "lastEpisodeTitle": "How a Voice Agent Learns the Rhythm of Conversation — Shawn Wen",
    "newEpisodes": [
     {
-     "title": "Who Checks a Proof No Human Can Read? — Leo de Moura",
-     "pubDate": "2026-09-30T03:19:37.000Z",
-     "duration_sec": 4459,
+     "title": "How a Voice Agent Learns the Rhythm of Conversation — Shawn Wen",
+     "pubDate": "2026-10-01T20:00:18.000Z",
      "type": "interview",
-     "url": "https://podcasts.apple.com/us/podcast/who-checks-a-proof-no-human-can-read-leo-de-moura/id1510472996?i=1000792305057&uo=4",
-     "note": "已深度萃取（官方 ReScript 逐字稿 PDF 約 90 KB 純文字，含全部時間軸與講者標註；引言直接取自逐字稿）：MLST，主持 Tim Scarfe。嘉賓 Leonardo de Moura——Lean 創造者、Z3 共同創造者、Lean FRO 首席架構師與共同創辦人（約 20 人）、AWS 資深首席科學家。核心：①『綠勾會說謊』：Lean 信任基礎是極小 trusted kernel，kernel 本身也會有 bug；②Collatz 事件——一份 Collatz 猜想（反）證明宣稱同時被 Lean 官方 kernel 與外部 Rust kernel nanoda 接受，實為分別利用兩個完全不同的 bug（nanoda fix PR 合併於 Lean issue 前一天）；de Moura 稱含『為製造 hash collision 的無關怪異項』，強烈相信由 AI 生成，『我們沒耐性做這種低階實作，但 AI 有耐性』；③社群應對：懸賞金剛不壞 kernel、簡化 kernel、資助 Mario Carneiro 把 kernel 證明為正確；comparator 匯出證明並沙箱檢查、應永遠自動下載最新 nanoda；④AI 也能幫 Lean 反超 Rust——Kim Morrison 用 Claude agent 把 zlib 移植到 Lean 並證明壓縮/解壓還原性，放手優化後效能超越官方 Rust 實作；de Moura 去年認為不可能；⑤推論下一步：給 AI x86 語義即可寫彙編並證明屬性，因『你必須證明定理，你不能作弊』；⑥證明只認證人類選擇的規格——全集漏洞核心；⑦AI 缺的是抽象不是聰明：只是『醒來、沿麵包屑走下一步』，未以有意義方式改變權重；⑧能力≠理解，但即使 99.99999% 正確仍需 certificate；AlphaProof＝MCTS hybrid neurosymbolic，2025 IMO 金獎走純神經（下棋生成約 91% 合法走法但無硬約束）；⑨人永遠在迴路中，至少在規格層，『說軟件該做什麼永遠是我們的責任』。關鍵事實：Lean FRO 採 cathedral 模式維護核心、約 20 人；nanoda＝Rust 外部 kernel；Lean issue 14576（Kernel accepts wrong-structure projections, allowing an axiom-free proof of False）、PR 14577 為 de Moura 修復；Boris Alexeev 提交 120 萬行形式證明『沒人想逐行檢查』；引用 CompCert、seL4 為 CPU 驗證對照；Lean 1→4、Mathlib、dependent types 白話。贊助 Parallel。片長 74:19。"
+     "url": "https://www.youtube.com/watch?v=VoAPg8Fj6-c",
+     "note": "已深度萃取（YouTube 官方字幕約 69K 字元；引言直接取自字幕，口語含少量轉錄誤差）：MLST，主持 Tim Scarfe。嘉賓 Tsung-Hsien（Shawn）Wen——PolyAI CTO；本集與 PolyAI 合作製作。核心：①語音比文本難，因為多咗「時間」維度，智能本質係「適應」而非「推理」；②企業要矛盾組合「像人一樣強、像機械人一樣可控」，期待錨定團隊最好的人類；③cascade（ASR+LLM+turn-taking）天生唔協調、要 tweak 參數，必須塌縮端到端；④資料：真實 call 已含大量噪聲，再刻意用生成模型疊加噪聲；過度清洗反而令新模型更差（呼應 Bitter Lesson）；⑤瓶頸由「生產內容」轉向「驗證與審計內容」，slop＝沒有能力的生成，cognitive debt 係組織問題；⑥harness vs weights：企業想擁有 intelligence 但只能 in-house harness，建議先做 harness，語音 agent 當前台、品牌/主腦留後台。技術：Dialog-RSN-1 audio-native 模型（底層仍輸出 text 施 guardrail，原生收 mel 頻譜圖串流）；推理順序反轉＝先預測 turn-taking 訊號（極便宜）→回應（text/tool call）→citations→最後才 transcript（供審計）；檢索改為 LLM 生成 search 工具＋查詢（無 transcript 可 embed）；latency-budgeted auto reasoning（1 秒內決定是否多想）；自託管避網路 P99.5 長尾；信任工程（電梯音樂/打字聲/filler sentence，沉默 3–5 秒用戶恐慌）；聲音帶地方口音最好（英國 Newcastle、帶法國腔講英文最自然），通用聲音最差；production agent 每輪 output 約 50 tokens。benchmark：公開語音 benchmark 不足且偏合成，PolyAI 用真實 call 自建、計劃數月內公開。爭議：consumer 語音採用曲線、benchmark 主觀性、slop 係主觀（「人類到底應唔應該親自讀？」）。片長 70:10。"
     }
    ]
   },

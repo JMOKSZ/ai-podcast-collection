@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space × Alex Zhang：Harness 係「組合泛化器」、swarm 95% 係浪費、未來嘅「語言模型」其實係一整隊 agent</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body { font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif; background: #faf8f5; color: #1a1a1a; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title { font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a; }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote { border-left: 3px solid #c4b89a; margin: 1.2rem 0; padding: 0.6rem 1rem; color: #555; font-style: italic; background: #f8f6f2; }
+  blockquote.strong { border-left: 4px solid #8b5e3c; background: #fdf8f0; font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem; }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point { background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem; margin: 1.2rem 0; border: 1px solid #ece6de; }
+  .data-point span { display: inline-block; background: #8b5e3c; color: #fff; font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px; margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+  .highlight-box { background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px; padding: 1rem 1.2rem; margin: 1.2rem 0; }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em; background: #f4f1ec; padding: 0.05rem 0.3rem; border-radius: 3px; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #999; text-align: center; }
+  footer a { color: #888; }
+  @media (max-width: 600px) { html { font-size: 16px; } .container { padding: 1.5rem 1rem; } header h1 { font-size: 1.35rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-10-02 00:28 UTC 發布</div>
+  <h1>「我相當確定，整個 swarm 嘅 95% 都完全冇用」——Latent Space × Alex Zhang（MIT）：Harness 係組合泛化器，而未來嘅「語言模型」其實係一整隊 agent</h1>
+  <div class="meta">
+    <span>📅 2026-10-02 00:28 UTC（北京 08:28）</span><span>·</span><span>🎙 Latent Space（主持 swyx + Vibhu）</span><span>·</span><span>👤 嘉賓：Alex Zhang（MIT PhD，RLM 第一作者、KernelBench、GPU Mode）</span><span>·</span><span>⏱ 約 1:41</span><span>·</span><span>🏷 RLM / Harness / Agent Swarm / Research Taste</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係 Latent Space 每年「發掘一位新星 PhD」傳統嘅 2026 版（2024＝Shunyu Yao、2025＝Jack Morris）。以下內容按 <b>feed 官方完整逐字稿（約 127 KB，含全部時間軸同講者標註）</b>整理，引號內全部係逐字稿原文。
+</p>
+
+<h2 class="section-title">一句話總結</h2>
+<p>Harness 唔只係「一堆工具」，而係一個可以大幅改變模型泛化能力嘅<b>組合泛化器</b>。主流 harness（Claude Code、Codex、Pi）結構上其實一樣；真正嘅差異化在 RLM 這類新抽象。而 agent swarm 之所以能解未解難題，係因為它<b>被訓練過、能收斂</b>——唔係免費嘅。最後，Alex 押注：未來你 query 嘅「語言模型」本體，會係一隊你看唔到嘅 agent。</p>
+
+<blockquote class="strong">
+「我相當確定，整個 swarm 嘅 <b>95% 都完全冇用</b>——你只係喺度燒 token。……我們太把『一個 swarm 要收斂到一個答案』呢件事當作理所當然了。」
+<span class="attribution">—— Alex Zhang</span>
+</blockquote>
+
+<h2 class="section-title">一、由 GPU kernel 講起：verification gap 同「人類直覺」嘅 alpha</h2>
+<p>Alex 嘅起點係 GPU Mode（前身 CUDA Mode）同 KernelBench——「如果 GPU code 都可以有幾百萬條題目，就可以規模化、自動化 GPU kernel 開發」，因為 Mamba 呢類論文「唔係每隊都有一個 Tri Dao」。</p>
+<p>但 leaderboard 揭露咗一個硬問題：近期題目「幾乎所有解法都係 AI 生成」，但 top 10 之中<b>只有一個</b>（由人類專家 Gauners 引導 AI 完成）喺真實端到端系統中<b>穩定</b>。核心洞察：<b>GPU kernel 有 verification problem / reward hacking</b>，而「識得睇、識得諗」嘅人類依然係極強嘅 verifier。<b>「當你掟足夠算力落去，你可以探索好多解；但往往有人識得個問題，就可以為模型挖出一個洞見，抹掉嗰一萬億 token 嘅花費。」</b></p>
+
+<h2 class="section-title">二、Harness 作為組合泛化器（核心）</h2>
+<p>Alex 對「harness」嘅流行討論唔滿意：大家比較 Claude Code / Codex / Pi / Oh My Pi / Prime Agent，「但老實講，佢哋全部都一樣」。他提出 <b>locally in-distribution</b> 概念：傳統 harness 把整條 trajectory 當 prompt 不斷附加，最終大多變成 out-of-distribution；而 RLM 把一個 out-of-distribution 嘅整體任務，拆成<b>一連串每個都係 in-distribution 嘅局部 LLM call</b>。</p>
+<div class="highlight-box">
+  <strong>關鍵實驗結果：</strong>當 RLM「充分卸載 context、要模型對 context 寫 code」，會出現一個奇怪但有用嘅性質——<b>好多唔同任務嘅解法其實好相似</b>（檢索任務 vs 彙總任務，領域完全唔同，但 meta 策略一樣）。於是<b>喺一個任務上訓練，可以即刻解另一個任務</b>；<b>短任務訓練能遷移到 8–30 倍長嘅任務</b>（數學 vs 寫作亦然）。而呢個論證<b>可以歸納遞迴</b>——子代理解嘅子任務，可能又係同一種形式。
+</div>
+
+<h2 class="section-title">三、RLM 嘅極簡定義</h2>
+<blockquote>
+「一個 RLM 基本上就係一個 harness 設計，其中<b>唯一嘅工具係 code</b>——即係程式化嘅子代理呼叫，佢可以選擇<b>呼叫自己作為工具</b>……而佢處理嘅 context 永遠存喺 code 環境某個記憶裡面（可以係檔案系統）。」
+<span class="attribution">—— Alex Zhang</span>
+</blockquote>
+<p>他以 Prime Agent 為例：Prime Agent 建於 Pi（極簡 harness）之上，<b>唯一工具係 IPython</b>，其餘工具以 Python module / Bash script 載入；context 連「壓縮」後嘅內容都<b>存喺磁碟</b>，模型永遠可以引用原始 context；另加 <b>continual harness</b>（可自我修改技能、子代理、system prompt）同 <b>persistent subagents</b>（子代理可存活於原 agent 之外，可再 prompt、有更高可見度）。</p>
+
+<h2 class="section-title">四、Agent swarm：OpenAI 嘅 4,000 萬美元實驗</h2>
+<div class="data-point">
+  <span>成本</span> OpenAI 解 Navier–Stokes / ARC-AGI-3：<b>10,000 個 agent、88 小時、1,300 億 output tokens</b>，以公開定價估計約 <b>4,000 萬美元</b>（Alex：「比我想嘅少」；Vibhu 補充總 agent 訊息量係此數兩倍以上）。
+</div>
+<p>Alex 對「harness 對解題是否重要」嘅判斷：<b>唔太重要</b>。「一個 GPT-6 Astra 級模型，喺有正確資訊嘅條件下，技術上夠聰明去諗出證明。問題係你點樣攞到嗰啲資訊——佢哋嘅情況，大概係喺 swarm 上做咗非常長嘅搜索，加上研究者注入直覺。」重點係：<b>細節唔重要，重要嘅係「你點樣有意義地組合呢啲 agent 去得到最終答案」</b>——而「收斂」本身就係一個唔可以當作理所當然嘅成就。</p>
+<p>對比 Kimi 嘅 swarm：「讀起上嚟有趣，但我唔確定佢能否解任何新問題」；對 OpenAI 嘅 dynamic workflows：「我認為呢次發布算係一次失敗——太貴、少人用，行為亦不如預期」，但承認「佢哋明顯訓練過個 swarm，令佢真係朝目標收斂，呢樣非常難」。</p>
+
+<h2 class="section-title">五、Capability overhang：呢個係 skill issue，唔係能力問題</h2>
+<blockquote>
+「我一直覺得，前沿模型連<b>『連續一個月穩定把一份簡單工作做好』</b>都做不到，呢件事好蠢。我真係認為我們能解決佢……某程度上，呢個係<b>技能嘅失敗（skill issue）</b>。……講到底，呢個其實係 <b>continual learning</b> 問題。」
+<span class="attribution">—— Alex Zhang</span>
+</blockquote>
+<p>他主張：即使唔用 RLM、唔碰新抽象，<b>單靠設計一個 harness 就可以做到</b>——「你唔需要係前沿實驗室、為咗 IPO 做嗰啲花巧嘢」。</p>
+
+<h2 class="section-title">六、Jev、輸出空間、同「語言模型唔一定係自迴歸解碼器」</h2>
+<p>Alex 把 Jev 放喺一個更大嘅問題框架：<b>語言模型嘅正確形式係咩？</b>「語言模型只係喺建模語言，佢唔一定係呢個 transformer decoder。」Jev 嘅價值唔在「又一個分類器」，而在佢開出一個新嘅可調維度——<b>輸出空間 vs 推理延遲/成本</b>：「如果我只需要二元分類，點解要付 400 倍代價？」他認為 Jev 對 RLM 特別有用，因為 RLM/swarm 最大瓶頸就係<b>慢</b>——「你可以叫一個簡單模型做嘅 trivial 嘢，你而家做唔到，因為你嘅語言模型係一件笨重嘅嘢。」他亦點名 Thinky（interaction models）同 loop transformers 屬同一脈絡。</p>
+<div class="highlight-box">
+  <strong>Neo lab 生存之道：</strong>「如果一個 neo lab 嘅策略只係複製 OpenAI 或 Anthropic，嗰個係糟糕透頂嘅策略——你等於喺資料同算力上同佢哋競爭，而你必然輸。」前沿實驗室為何唔做新賭注？「舊賭注已經有效，你點解要冒險掟大量算力落新注？」——呢個正是 neo lab 誕生嘅機制。
+</div>
+
+<h2 class="section-title">七、重點引用</h2>
+<blockquote>
+「一個 harness 係一個<b>非常有意見嘅程式</b>，關於你希望如何把一個語言模型『形塑』到某個問題上。」
+<span class="attribution">—— Alex Zhang</span>
+</blockquote>
+<blockquote>
+「未來我們所講嘅『語言模型』——你 query 嗰個嘢——<b>可能其實係一個 swarm，或某種 scaffold，或某種好怪、但擴展性好好嘅 harness 設計</b>，只係用戶睇唔到。」
+<span class="attribution">—— Alex Zhang</span>
+</blockquote>
+<blockquote>
+「如果你只想做會令業界實驗室覺得好看嘅題目，噉你就去業界實驗室。作為 PhD 學生，你能對幾乎任何事情為所欲為——<b>呢個係你最大嘅優勢</b>。」
+<span class="attribution">—— Alex Zhang 論「敢下大注」</span>
+</blockquote>
+
+<h2 class="section-title">八、技術細節速查</h2>
+<table>
+  <tr><th>主題</th><th>要點</th></tr>
+  <tr><td>Context offloading</td><td>context 存於檔案系統/REPL；即使壓縮後，模型仍可引用原始 context</td></tr>
+  <tr><td>Speculative PTC</td><td>工具呼叫提前並行啟動（JIT + 靜態分析）；函數式語言（Lisp/OCaml/Effect-TS）更易做 pipeline</td></tr>
+  <tr><td>Calibration</td><td>被問「你多有信心」時，模型吐「最可能嘅下一個答案」而非真實校準；Jev 嘅 grounded classification 係關鍵差異</td></tr>
+  <tr><td>GEV / Neuralese</td><td>GEV：語言模型不必係自迴歸 text-to-text；Neuralese：Alex 押注「英文 + Python 混合」</td></tr>
+  <tr><td>第三方 RLM</td><td>Harvey × Base 10（法律）、Headlong（Andy Konwinski，always-on）、DSPy、ARC-AGI-3 Kaggle 上多個 harness（如 TUFA）</td></tr>
+</table>
+
+<h2 class="section-title">九、爭議點</h2>
+<ul>
+  <li><b>「所有 harness 都一樣」</b>本身具爭議，但他以 harness tax paper 為背書，並承認 Grok Bot、Prime Agent 係例外。</li>
+  <li><b>稱 OpenAI dynamic workflows「算係一次失敗」</b>（太貴、少人用）——與 OpenAI 對外敘事直接衝突。</li>
+  <li><b>對 Gemini / AlphaProof 嘅保留</b>：「有點被誇大」；GDM「太官僚、有才華資源卻交唔出產品」（「我識嘅人冇一個用 anti-gravity」）。</li>
+  <li><b>數學家反 AI 立場</b>：Alex 認為「若佢哋好多人冇先同 OpenAI 合作過，論點會更站得住」；swyx 即刻指出係 ad hominem。</li>
+</ul>
+
+<footer>
+  <p>深度復述 · Latent Space × Alex Zhang（2026-10-02）· 來源：官方完整逐字稿</p>
+  <p style="margin-top:0.3rem;">JMOKSZ / ai-podcast-collection · Apache 2.0 · <a href="../index.html">返回日報</a></p>
+</footer>
+</div>
+</body>
+</html>

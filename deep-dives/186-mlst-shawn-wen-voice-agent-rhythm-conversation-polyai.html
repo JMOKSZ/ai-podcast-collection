@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · MLST × Shawn Wen（PolyAI CTO）：語音 agent 嘅節奏——點解語音比文本難</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body { font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif; background: #faf8f5; color: #1a1a1a; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title { font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a; }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote { border-left: 3px solid #c4b89a; margin: 1.2rem 0; padding: 0.6rem 1rem; color: #555; font-style: italic; background: #f8f6f2; }
+  blockquote.strong { border-left: 4px solid #8b5e3c; background: #fdf8f0; font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem; }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point { background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem; margin: 1.2rem 0; border: 1px solid #ece6de; }
+  .data-point span { display: inline-block; background: #8b5e3c; color: #fff; font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px; margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+  .highlight-box { background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px; padding: 1rem 1.2rem; margin: 1.2rem 0; }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em; background: #f4f1ec; padding: 0.05rem 0.3rem; border-radius: 3px; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #999; text-align: center; }
+  footer a { color: #888; }
+  @media (max-width: 600px) { html { font-size: 16px; } .container { padding: 1.5rem 1rem; } header h1 { font-size: 1.35rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Machine Learning Street Talk · 2026-10-01 20:00 UTC 發布</div>
+  <h1>「佢哋想要 agent 像人一樣強大，卻又想要佢像機械人一樣可控」——MLST × Shawn Wen：語音 agent 嘅節奏、噪聲、同認知債</h1>
+  <div class="meta">
+    <span>📅 2026-10-01 20:00 UTC（北京 10/2 04:00）</span><span>·</span><span>🎙 Machine Learning Street Talk（主持 Tim Scarfe）</span><span>·</span><span>👤 嘉賓：Tsung-Hsien（Shawn）Wen，PolyAI CTO</span><span>·</span><span>⏱ 70:10</span><span>·</span><span>🏷 語音 agent / 端到端模型 / 企業部署</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+本集與 PolyAI 合作製作。以下內容按 <b>YouTube 官方字幕（約 69 K 字元）</b>整理，引號內係字幕原文（口語、含少量轉錄誤差）。
+</p>
+
+<h2 class="section-title">一句話總結</h2>
+<p>語音比文本難，因為多了「<b>時間</b>」——你必須喺對嘅時刻回應，並且<b>適應</b>對方（老人放慢、地方口音）。企業要一個矛盾體：<b>像人一樣強、像機械人一樣可控</b>。而 AI 世界嘅瓶頸，已由「生產內容」轉向「<b>驗證與審計內容</b>」。</p>
+
+<blockquote class="strong">
+「他們想要 agent <b>像人一樣強大</b>，卻又想要 agent <b>像機械人一樣可控</b>。呢個係一個非常矛盾嘅組合——而我認為，呢個正是將 AI agent 部署到企業嘅困難所在。」
+<span class="attribution">—— Shawn Wen</span>
+</blockquote>
+
+<h2 class="section-title">一、為何語音比文本難？</h2>
+<p>ChatGPT 之後，大家一度以為「語音好快就解決」，於是出現大量「把 ASR + TTS 串埋一齊」嘅公司。但現實更難：</p>
+<ul>
+  <li><b>語音多了一個維度——時間。</b>文本世界有海量文件、線上論文，連博士級物理題都唔算難；但語音係「通往真實世界嘅一步」，「我哋仲未訓練模型去真正理解『時間』呢個概念」。</li>
+  <li><b>智能嘅本質係「適應」，唔係「推理」。</b>人類對話中嘅智能「唔在於推理，而在於適應」。</li>
+  <li><b>Cascade 天生唔協調。</b>傳統 ASR + LLM + turn-taking 三段「唔係好配合」，要靠「加多個偵測器、再 tweak 一個參數」硬湊，「非常 cranky，而現實根本唔係噉運作」——因此<b>必須塌縮成端到端</b>。</li>
+  <li><b>同機械人同理。</b>物理世界嘅數據極少（「我想要機械人斟啤酒」呢個測試就極難）；語音同理，只係「人類之間有咁多對話，但機器從來觀察唔到」。</li>
+</ul>
+
+<h2 class="section-title">二、企業到底想要咩？</h2>
+<ul>
+  <li><b>品牌化聲音</b>：能準確念出品牌名、能揀身份。</li>
+  <li><b>矛盾組合</b>：像人一樣強 × 像機械人一樣可控。</li>
+  <li><b>錨定最好嘅人類</b>：「佢哋嘅期望係——只要同我團隊<b>最好嘅人</b>一樣好就得。」採用曲線嘅關鍵係先搵到「效率」切入點。</li>
+</ul>
+
+<h2 class="section-title">三、點解自建模型：demo 神、部署即崩</h2>
+<blockquote>
+「所有最新嘅 speech-to-speech 模型，喺 demo 都好神——我可以畀你睇一段好自然嘅對話，你會話『哇，奇點到了』。但一部署到 contact center，佢喺好多地方崩掉。<b>打斷太激進</b>——如果你喺同一個老人家講電話，佢第一次同 bot 講嘢、一直困惑、停低，而 agent 一路搶住講，嗰種挫折……」
+<span class="attribution">—— Shawn Wen</span>
+</blockquote>
+<p>「我認為前沿實驗室唔係為咗我們在意嘅嘢（B2B 嘅真實對話輪替）優化。」</p>
+
+<h2 class="section-title">四、Dialog-RSN-1：audio-native 模型嘅推理順序</h2>
+<div class="data-point">
+  <span>架構</span> 底層仍係一個<b>輸出文本</b>嘅 LLM（因為企業需在 text 上施 guardrail），但<b>原生接收串流音訊 chunks</b>——輸入係 <b>mel 頻譜圖</b>，對模型而言似「逐段影像辨識」。
+</div>
+<ol>
+  <li><b>第一個 token ＝ turn-taking 訊號</b>（對方剛開始說／仍在說／已說完）；極便宜，每秒音框都生成，直到判定句尾。</li>
+  <li>音訊已在嵌入空間預處理好，<b>不必從頭再編碼整句</b>，直接預測回應（text 或 tool call，像典型 chat API 串流）。</li>
+  <li>生成 <b>citations</b>（引用知識庫哪一條事實）。</li>
+  <li><b>最後</b>才輸出 transcript（供審計/除錯）——「我哋把舊嘅順序反轉」。檢索亦改寫：無 transcript 可 embed，改為讓 LLM 生成「search 工具＋查詢」。</li>
+</ol>
+
+<h2 class="section-title">五、噪聲、頻譜圖、雞尾酒會效應</h2>
+<ul>
+  <li><b>刻意加噪</b>：真實 call 已含大量噪聲，再用生成模型疊加（如「機械人念我名字 ＋ 背景嬰兒哭聲」）。</li>
+  <li><b>過度清洗反而更差</b>：傳統「去噪/清洗」組件令新模型更差——「佢從未見過被過度清洗嘅環境」。呼應 <b>The Bitter Lesson</b>：失敗模式組合呈指數增長，端到端訓練能覆蓋大量失敗模式。</li>
+  <li><b>雞尾酒會效應</b>：傳統 speaker diarisation 假設「speaker1/2/3」，係為 ASR 而生、唔自然；端到端後模型原生感知 crosstalk，且可 prompt 控制（「唔好回應背景插話」或「背景插話時也主動加入」）。差異在於「你點訓練佢、收集咩資料、下咩指令」。</li>
+  <li>歷史錨點：Victor Zue（1990s 主張光看頻譜圖即可辨識語音）、mel scale。</li>
+</ul>
+
+<h2 class="section-title">六、延遲、信任同「思考時做咩」</h2>
+<ul>
+  <li>模型大小選對，模型處理本身延遲唔大；難嘅係「<b>何時判定句尾</b>」嘅粗參數（太短打斷老人、太長令人不耐）。端到端後由模型基於<b>音框（語速 + 語義）</b>自行判斷。</li>
+  <li>自託管模型，避免網路<b>長尾延遲（P99.5）</b>。</li>
+  <li><b>latency-budgeted auto reasoning</b>：模型自問「停喺呢度能唔能畀好答案？能唔能壓喺 1 秒內？」——「好似比賽答題倒數」。</li>
+  <li><b>信任工程</b>：思考時播電梯音樂、打字聲、filler sentence；「AI 喺電話沉默 3–5 秒，用戶會恐慌」。contact center 有現成做法（等真人問同事時播音樂）。</li>
+</ul>
+
+<h2 class="section-title">七、聲音嘅外交學</h2>
+<ul>
+  <li>最好表現嘅聲音通常帶<b>地方口音</b>：英國 Newcastle 口音受歡迎（因客服多來自當地）；南美賭場客戶想聽「howdy」開場，最終仍覺「太過了」沒上線。</li>
+  <li>最自然嘅英文聲音，早期竟係<b>「帶法國口音嘅法國聲音去講英文」</b>——不完美令其真實。</li>
+  <li>通用聲音（聯想到傳統 IVR）表現最差——用戶一聽到就掛線。</li>
+</ul>
+
+<h2 class="section-title">八、重點引用</h2>
+<blockquote>
+「<b>瓶頸已經從生產內容，轉移到驗證與審計內容。</b>」
+<span class="attribution">—— Shawn Wen</span>
+</blockquote>
+<blockquote>
+「<b>Slop 係冇能力嘅生成（generation without competence）。</b>」
+<span class="attribution">—— Tim Scarfe</span>
+</blockquote>
+<blockquote>
+「現在 Gmail、Slack 都在用 Claude……人們開始互相發大段 AI 文字；久而久之更多人會講——<b>『你乾脆讓 Claude 讀完，再總結畀我。』</b>」
+<span class="attribution">—— Shawn Wen 談 cognitive debt</span>
+</blockquote>
+
+<h2 class="section-title">九、行業 insight</h2>
+<ul>
+  <li><b>語音會分兩支</b>：consumer（娛樂/日常，Alexa、Google Assistant 系）vs enterprise（客服/專業，須可審計、合規）。硬件上語音係 IoT 天然模態，預期<b>新一波 IoT/機械人</b>。</li>
+  <li><b>企業嘅控制焦慮</b>：大型公用事業客戶明言，未來所有 PR 都要兩週 review、可審計、可靠，<b>不接受 coding agent 直接 auto-merge</b>；平台提供流程可視化 + 工具白名單 + 引用審計——「傳統 no-code flow 唔再係主要介面，<b>而係審計介面</b>」。</li>
+  <li><b>Harness vs weights</b>：企業想「擁有智能」，但唯一能 in-house 嘅係 harness；Shawn 建議多數客戶<b>先由 harness 著手</b>，真係繞不過才微調權重；新定位＝<b>語音 agent 當前台，品牌/主腦留後台</b>。</li>
+  <li><b>語音 benchmark 困境</b>：公開 benchmark 不足且偏合成；PolyAI 用真實 call 數據自建（含延遲、ASR、指令遵循、引用、tool call），計劃數月內公開。production agent 每輪 output 約 <b>50 tokens</b>。</li>
+</ul>
+
+<h2 class="section-title">十、爭議點</h2>
+<ul>
+  <li><b>consumer 語音採用曲線嘅懷疑</b>：技術就緒 ≠ 行為改變；「我們係稀有的一群（agent-pilled），但多數人未到」。</li>
+  <li><b>語音 benchmark 嘅主觀性</b>：地方口音偏好係文化特定；最終要靠 production 指標（用戶有無完成任務）補足，但那牽涉整個 agent + harness。</li>
+  <li><b>「slop」係主觀嘅</b>：作者自認精心 context-engineer 嘅輸出，對收件人可能仍係 slop——他反問一個開放問題：「人類到底應唔應該親自讀？」</li>
+</ul>
+
+<footer>
+  <p>深度復述 · MLST × Shawn Wen（PolyAI）（2026-10-01）· 來源：YouTube 官方字幕</p>
+  <p style="margin-top:0.3rem;">JMOKSZ / ai-podcast-collection · Apache 2.0 · <a href="../index.html">返回日報</a></p>
+</footer>
+</div>
+</body>
+</html>
