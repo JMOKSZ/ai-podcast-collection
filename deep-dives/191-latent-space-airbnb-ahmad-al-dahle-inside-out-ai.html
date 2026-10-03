@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space × Ahmad Al-Dahle：Airbnb 嘅「由內而外 AI」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5; color: #1a1a1a; line-height: 1.85; -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title { font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a; }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote { border-left: 3px solid #c4b89a; margin: 1.2rem 0; padding: 0.6rem 1rem; color: #555; font-style: italic; background: #f8f6f2; }
+  blockquote.strong { border-left: 4px solid #8b5e3c; background: #fdf8f0; font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem; }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point { background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem; margin: 1.2rem 0; border: 1px solid #ece6de; }
+  .data-point span { display: inline-block; background: #8b5e3c; color: #fff; font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px; margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+  .highlight-box { background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px; padding: 1rem 1.2rem; margin: 1.2rem 0; }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em; background: #f4f1ec; padding: 0.05rem 0.3rem; border-radius: 3px; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #999; text-align: center; }
+  footer a { color: #888; }
+  @media (max-width: 600px) { html { font-size: 16px; } .container { padding: 1.5rem 1rem; } header h1 { font-size: 1.35rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-10-02 發布</div>
+  <h1>「由內而外」——Latent Space × Airbnb CTO Ahmad Al-Dahle：60% 代碼由 AI 寫、通才做專才嘅活，同為何「按功能組織嘅公司會掙扎」</h1>
+  <div class="meta">
+    <span>📅 2026-10-02 14:04 UTC</span><span>·</span><span>🎙 Latent Space（本文由 Richard MacManus 執筆）</span><span>·</span><span>👤 受訪：Ahmad Al-Dahle（Airbnb CTO，前 Meta 生成式 AI 負責人）</span><span>·</span><span>📄 官方長文訪談（非播客單集，含完整引文）</span><span>·</span><span>🏷 企業 AI 轉型 × AI-native 組織</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+Airbnb 市值約 <strong>930 億美元</strong>，2008 年創立、2020 年上市——要令一間咁大嘅公司「AI-native」，唔係買個模型咁簡單。佢哋嘅打法叫「<strong>由內而外（inside-out AI）</strong>」：<strong>先用 AI 加速內部開發，再用同一批能力去改造面向用戶嘅體驗</strong>。CTO Ahmad Al-Dahle（2026 年 1 月由 Meta 過檔，此前主管生成式 AI、主導 Llama 開源系列）講嘅唔係模型，而係組織：拆交接、把 code 變成推理嘅產物、用一張叫 <strong>Everest</strong> 嘅組織上下文圖令「通才做專才嘅活」、再到<strong>容器化、事件觸發嘅非同步 agent</strong>。以下內容按 <strong>Latent Space 官方長文完整內容</strong>整理，引號內容直接取自原文。
+</p>
+
+<h2 class="section-title">一、一句話總結</h2>
+<p>
+Al-Dahle 嘅核心命題係：<strong>「AI-native」嘅關鍵唔係模型，而係組織</strong>。Airbnb 唔係先揀一個最強模型再全公司部署，而係先改流程——<strong>把產品、設計、工程之間嘅層層交接拿掉，直接一齊做原型</strong>。技術（Everest 上下文圖、AirChat agent、非同步 agent）係流程改造嘅放大器，而唔係起點。佢最 reusable 嘅一句係關於組成方式嘅：
+</p>
+<blockquote class="strong">
+「If you're a company that organizes by feature development, you're going to struggle in the age of AI. If you're a company that organizes by objectives and missions and results that you're trying to achieve, you're going to be fine.」
+<span class="attribution">—— Ahmad Al-Dahle（Latent Space 官方長文）</span>
+</blockquote>
+
+<h2 class="section-title">二、場景：由 Meta 到 Airbnb</h2>
+<p>
+Al-Dahle 喺 Meta 主管生成式 AI，2023–2025 年主導 Llama 開源系列發布。佢自述轉跑道嘅原因係一種對「難嘅前沿」嘅追逐：
+</p>
+<blockquote class="strong">
+「Fundamentally, I like to chase where I believe the hard frontiers live.」
+<span class="attribution">—— Ahmad Al-Dahle，談由 Meta 轉戰 Airbnb（雙關語）</span>
+</blockquote>
+<p>
+佢解釋：喺 Meta，「我哋大概知道飛輪長咩樣、亦知道如何一代代提升模型能力」。而下一個挑戰係<strong>把模型大規模部署到生產</strong>。佢喺 Airbnb 嘅兩個目標：①「<strong>推動人們用唔同嘅方式工作</strong>，因為呢啲工具正在改變你工作嘅方式」；②「<strong>把呢啲系統以有創意、真正能為核心用戶體驗增值嘅方式，部署到生產</strong>」。
+</p>
+
+<h2 class="section-title">三、組織流程改造：把「交接」拿掉，讓 code 成為產物</h2>
+<p>
+Airbnb 嘅第一步唔係技術，而係流程。傳統流程係：<strong>產品需求 → Figma 設計 → 工程實現 → 生產測試</strong>，每個階段都要團隊之間層層交接。Airbnb 現在讓<strong>產品、設計、工程三個團隊直接一齊做原型</strong>。
+</p>
+<blockquote class="strong">
+「Breaking that time down is actually one of the biggest savings that a lot of traditional software companies have to make the leap to do. And so we made that leap and it actually ended up adding a ton of tailwind to our product development process.」
+<span class="attribution">—— Ahmad Al-Dahle</span>
+</blockquote>
+<p>
+一個副產品係：團隊直接同 code 打交道，而唔係同「artifact（產物）」打交道。
+</p>
+<blockquote class="strong">
+「We moved away from excessive artifact generation to the code being the artifact that we reason upon, and prototypes.」
+<span class="attribution">—— Ahmad Al-Dahle，談不再產出厚重 PRD</span>
+</blockquote>
+<div class="data-point">
+  <span>數字</span><strong>60%</strong> 代碼由 AI 撰寫｜按年出貨嘅功能與改進多近 <strong>80%</strong>｜平均工程師 PR 吞吐約 <strong>+1.6x</strong>｜客服約 <strong>50%</strong> 工單純由 AI 解決（Q2 財報口徑近 <strong>45%</strong>）。
+</div>
+
+<h2 class="section-title">四、客服：最難嘅著陸點，但係第一個上線嘅面對用戶場景</h2>
+<p>
+Al-Dahle 形容客服係「<strong>最難部署嘅問題</strong>」，因為「<strong>犯錯嘅代價與後果非常高（the stakes and the consequences of a mistake are really high）</strong>」。關鍵做法係<strong>先用合成數據把系統測透再上生產</strong>：
+</p>
+<blockquote class="strong">
+「We start with: build a model, build the agent, and begin to generate a battery of synthetic data before you ever go into production.」
+<span class="attribution">—— Ahmad Al-Dahle，談客服上線方法</span>
+</blockquote>
+<p>
+但團隊對「邊啲先唔用 agent 解」係有意識嘅選擇——例如安全類問題：
+</p>
+<blockquote class="strong">
+「So while we solve 50% of the tickets, we're actually deliberate about the tickets we don't choose to solve yet.」
+<span class="attribution">—— Ahmad Al-Dahle</span>
+</blockquote>
+
+<h2 class="section-title">五、Everest：把整個代碼庫嘅組織上下文做成可查詢嘅圖</h2>
+<p>
+呢個係「由內而外」嘅樞紐。<strong>Everest</strong> 係 Airbnb 嘅內部組織上下文圖，用 <strong>LLM、embeddings 同 AI-based retrieval</strong> 嚟建構同查詢。佢帶嚟兩個直接成果：①兩項新服務（雜貨配送、機場接送）——兩者都係「<strong>同外部合作夥伴做 API 整合</strong>」型服務；②令通才可以做專才嘅活。
+</p>
+<blockquote class="strong">
+「Because of this context graph that exists across the codebase, we're able to have generalists work across very specialist parts of the code.」
+<span class="attribution">—— Ahmad Al-Dahle</span>
+</blockquote>
+<p>
+開發週期嘅對比最有說服力：<strong>雜貨配送用咗 8–9 個月</strong>，而之後嘅<strong>機場接送因為復用 Everest 內嘅經驗，只用咗約 6 個星期</strong>（數字出自 Airbnb Q2 2026 財報電話會議逐字稿）。兩項服務都喺 Airbnb 2026 夏季發布會由 CEO Brian Chesky 點名。雜貨服務近期亦已透過同 Instacart 合作擴展到美加更多城市。
+</p>
+<div class="highlight-box">
+<strong>Everest 嘅經濟意義：</strong>新服務唔係每次由零開始——<strong>經驗回灌上下文圖 → 下一個項目提速一個數量級</strong>（8–9 個月 → 6 週）。同時「通才做專才嘅活」直接降低了組織對稀缺專才嘅依賴。
+</div>
+
+<h2 class="section-title">六、多模型 + Pareto 前沿 + 逐用例評測</h2>
+<p>
+Al-Dahle 自稱 Airbnb 係一間「<strong>multi-model company</strong>」，喺生產系統部署「好多唔同嘅模型」，混合前沿同開源模型，而且「<strong>大部分自有後訓練同強化學習都喺開源模型上做</strong>」，生產用例至少部署 <strong>10 個客製模型</strong>。選型唔係崇拜「最強模型」，而係沿<strong>成本／性能／延遲嘅 Pareto 前沿</strong>逐個應用揀唔同取捨：
+</p>
+<blockquote class="strong">
+「We run evals specifically for each use case. If we're using a model for search, we have a set of search queries sampled from production. If we're doing customer support, we sample all the production queries that we care most about — including edge cases.」
+<span class="attribution">—— Ahmad Al-Dahle</span>
+</blockquote>
+<ul>
+  <li><strong>Coding</strong>：「可以容忍更多延遲，但錯誤很貴」→「<strong>用絕對最前沿嘅編碼模型好合理，因為模型產生嘅每一個缺陷，都可能令我哋付出多好多代價</strong>」。</li>
+  <li><strong>Search</strong>：「被用戶大規模使用、對延遲極敏感」→ 用更小、更專門嘅模型。</li>
+  <li><strong>窄用例</strong>：「<strong>我們能夠把極小、極快、極便宜嘅模型，後訓練到超越前沿（post-train them beyond the frontier）</strong>」。</li>
+</ul>
+<p>
+呢個選型哲學嘅一句總結：「<strong>We try to use the right tool for the right job.</strong>」
+</p>
+
+<h2 class="section-title">七、下一代 agent：容器化、事件觸發、非同步</h2>
+<p>
+Airbnb 有自己嘅內部 agent <strong>AirChat</strong>（「包含基本上所有必要嘅 MCP 組織上下文」）。但 Al-Dahle 認為更前瞻嘅係下一形態：<strong>跑喺容器裡、由事件觸發嘅非同步 agent</strong>。
+</p>
+<blockquote class="strong">
+「A lot of our teams are starting to automate their on-calls. So if something trips — a Grafana limit or whatever monitoring system you use trips — agents spin up to then triage and run your initial on-call.」
+<span class="attribution">—— Ahmad Al-Dahle</span>
+</blockquote>
+<p>
+流程係：agent 被觸發 → 做初級 triage 同 on-call → 提出 PR；<strong>人類工程師覆核 PR，而 agent 若判定警報係 flaky，可以自行關閉事故</strong>。Latent Space 把呢種做法類比為 Vercel AI SDK、Astro、Flue、tldraw 等開源專案用嘅「<strong>software factories（agent 團隊）</strong>」。Al-Dahle 嘅願景延伸至整個市場平台：
+</p>
+<blockquote class="strong">
+「My vision is large amounts of asynchronous agents that are helping automate and manage the marketplace.」
+<span class="attribution">—— Ahmad Al-Dahle，指向欺詐、信任違規、市場質量、軟件缺陷等持續運營場景</span>
+</blockquote>
+
+<h2 class="section-title">八、組織要「按成果」而唔係「按功能」編隊</h2>
+<p>
+呢個係 Al-Dahle 對整個企業界嘅硬斷言。佢把兩種組織方式對立起來：按功能開發組織（feature development）vs 按目標／使命／要達成嘅結果組織（objectives, missions, results）。前者「會喺 AI 時代掙扎」，後者「會沒事」。呢個判斷之所以重要，係因為佢解釋咗為何 Airbnb 可以「先改流程，技術自然跟上」——<strong>組織形態決定咗你有冇能力吸收新能力</strong>。
+</p>
+
+<h2 class="section-title">九、對初階工程師手藝流失嘅擔憂與對策</h2>
+<p>
+全集最有溫度嘅一段。Al-Dahle 指出，資深工程師嘅判斷力係「多年出貨、喺生產中運營軟件、以及沿途犯嘅錯」換嚟嘅；AI 代勞太多，會危及初階工程師嘅手藝養成。佢嘅解法係一條制度性要求：
+</p>
+<blockquote class="strong">
+「One of the things I'm pushing very strongly is that every engineer must be able to explain, even if an AI generated the PR, must be able to explain what they built.」
+<span class="attribution">—— Ahmad Al-Dahle</span>
+</blockquote>
+<p>
+佢認為只要呢個前提成立，初階工程師仍然會學到<strong>接口設計、架構、同測試（單元測試與集成測試）</strong>嘅重要性——「我們喺度努力把工藝水準保持喺高位（keep our craft really high）」。
+</p>
+
+<h2 class="section-title">十、關鍵數據速覽</h2>
+<table>
+  <tr><th>指標</th><th>數字</th><th>備註</th></tr>
+  <tr><td>代碼由 AI 撰寫</td><td><strong>60%</strong></td><td>公司自報口徑</td></tr>
+  <tr><td>按年出貨功能／改進</td><td>多近 <strong>80%</strong></td><td>公司自報口徑</td></tr>
+  <tr><td>人均 PR 吞吐</td><td>約 <strong>+1.6x</strong></td><td>公司自報口徑</td></tr>
+  <tr><td>客服純 AI 解決率</td><td>約 <strong>50%</strong></td><td>Q2 財報口徑近 45%</td></tr>
+  <tr><td>雜貨配送開發週期</td><td><strong>8–9 個月</strong></td><td>Q2 財報電話會議逐字稿</td></tr>
+  <tr><td>機場接送開發週期</td><td>約 <strong>6 星期</strong></td><td>復用 Everest 之後</td></tr>
+  <tr><td>生產客製模型</td><td>至少 <strong>10 個</strong></td><td>混合前沿＋開源</td></tr>
+  <tr><td>市值</td><td>約 <strong>930 億美元</strong></td><td>本文寫作時</td></tr>
+</table>
+
+<h2 class="section-title">十一、未解嘅張力與風險（筆者判讀）</h2>
+<ol>
+  <li><strong>數字全部係自報口徑</strong>：「60% 代碼由 AI 撰寫」、「PR 吞吐 +1.6x」、「小模型後訓練後超越前沿」都冇外部 benchmark。尤其「超越前沿」係極強斷言，未給具體模型同評測細節。</li>
+  <li><strong>「按成果而非按功能組織」落地極難</strong>：呢句話講出嚟好型，但對多數傳統企業而言係一次傷筋動骨嘅組織改造，遠比聽落去難。</li>
+  <li><strong>「客服解 50%」與「刻意唔解安全類工單」之間嘅邊界</strong>：原文未給出可複製嘅準則——邊啲「該解」、邊啲「唔該解」，係一個靠判斷而唔係靠規則嘅灰色地帶。</li>
+  <li><strong>非同步 agent 嘅問責結構</strong>：agent 可以自行關閉「flaky」事故——呢個授權嘅邊界同審計方式，文中未細講，但係生產環境嘅關鍵風險點。</li>
+</ol>
+
+<h2 class="section-title">十二、帶走：三條可重用嘅框架</h2>
+<ol>
+  <li><strong>Inside-out 順序</strong>：先用 AI 改造內部生產力（開發流程），再把同一批能力外推到用戶體驗。內部係低風險練兵場，外部係價值兌現點——呢個順序比「直接向用戶推 agent」穩陣得多。</li>
+  <li><strong>上下文即護城河</strong>：把「整個代碼庫／組織嘅上下文」做成可查詢嘅圖，換嚟「通才做專才嘅活」同新服務提速（8–9 個月 → 6 週）。呢個係「模型外」嘅競爭優勢，唔會隨模型換代而消失。</li>
+  <li><strong>對的工具做對的事</strong>：唔追求單一最強模型，而係沿成本／性能／延遲 Pareto 前沿逐用例選型；編碼求準（錯誤貴）、搜索求快（延遲敏感）。呢個同本週 No Priors 嘅「組合與取捨＞單一最優」互相印證。</li>
+</ol>
+
+<h2 class="section-title">十三、同其他線並讀</h2>
+<p>
+本篇同 Latent Space 近期企業 AI 線一脈相承：先前嘅 Lovable「SaaS 的未來」、以及同期嘅 Alex Zhang（RLM／harness）都在討論「agent 如何改寫軟件生產」。差別在於 Alex 談<strong>前沿研究方法</strong>，Al-Dahle 談<strong>一間 930 億美元上市公司如何在生產環境落地</strong>——兩者共同勾勒出「代理化生產」嘅研究端與工程端。而與 No Priors（Fractile）並讀，則見同一週嘅兩極：<strong>一極係硅與記憶體頻寬，一極係組織與流程</strong>，而兩者都在為「大規模、長時間運行嘅 agent」做準備。
+</p>
+
+<footer>
+  <p>深度復述 · Latent Space × Ahmad Al-Dahle（Airbnb）（2026-10-02）· 來源：Latent Space 官方長文完整內容（含全部直接引文與數據）、Airbnb Q2 2026 財報電話會議逐字稿、Airbnb 2026 夏季發布會。</p>
+  <p style="margin-top:0.3rem;">「60% 代碼」、「PR +1.6x」、「小模型超越前沿」等均為 Airbnb 自報口徑，非第三方實測。· JMOKSZ / ai-podcast-collection · Apache 2.0 · <a href="../index.html">返回日報</a></p>
+</footer>
+</div>
+</body>
+</html>
