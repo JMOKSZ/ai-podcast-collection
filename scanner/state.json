@@ -1,63 +1,48 @@
 {
- "lastScan": "2026-10-02T02:05:00.000Z",
- "lastScanDate": "2026-10-02",
+ "lastScan": "2026-10-03T02:04:00.000Z",
+ "lastScanDate": "2026-10-03",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-01T15:28:28.000Z",
    "lastEpisodeTitle": "Si Sheppard – How did a few hundred Spanish soldiers topple two empires?",
-   "newEpisodes": [
-    {
-     "title": "Si Sheppard – How did a few hundred Spanish soldiers topple two empires?",
-     "pubDate": "2026-10-01T15:28:28.000Z",
-     "type": "interview",
-     "url": "https://www.dwarkesh.com/p/si-sheppard",
-     "note": "已深度萃取（官方 feed 完整逐字稿約 100 KB，含全部時間軸與講者標註；引言直接取自逐字稿）：Dwarkesh，主持 Dwarkesh Patel。嘉賓 Si Sheppard——軍事史學家、LIU Brooklyn 教授，專攻早期現代軍事史與殖民主義。核心：①阿茲特克（600 萬人）2 年半、印加（1,000 萬人）約 5 年被數百西班牙人顛覆；②技術差距其實窄——槍炮影響有限，決定性係鋼（托萊多鋼劍/鋼盔）與馬；後期征服者甚至換回原住民棉甲；③外交與技術同等重要——99% 兵力係被征服民族，特拉斯卡拉主動結盟並開條件；④「大輪子（地理氣候疾病）vs 小輪子（個人）」——長期由背景力量決定，短期有偶然性；⑤原住民無法反向利用西班牙內部分裂（同一文明私人恩怨 vs 世代死敵）；⑥組織勝血統——東印度公司可汰換領導層，王朝死於繼承危機；⑦快錢詛咒——西班牙靠白銀反未發展資本主義，明末 1640s 銀根斷裂而亡。關鍵數據：卡哈馬卡 1532 約 168 人對數萬至 10 萬，殺敵近萬、己方零陣亡（唯一傷者為皮薩羅被同僚割手）；最終攻特諾奇提特蘭部隊西班牙人僅約 0.5%。嘉賓對蒙提祖馬逆向評價：讓科爾特斯入城其實係最佳選項，錯在留守成目標。爭議：Dwarkesh 直斥「字面意義種族滅絕」；歷史必然性之辯。片長約 1:48。"
-    }
-   ]
+   "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-10-02T00:28:04.000Z",
-   "lastEpisodeTitle": "Academia is for Ambition — Alex Zhang, MIT",
+   "lastEpisodePubDate": "2026-10-02T14:04:49.000Z",
+   "lastEpisodeTitle": "Inside-Out AI: Rebuilding Airbnb Behind the Scenes and Across the Guest Experience",
    "newEpisodes": [
     {
-     "title": "Academia is for Ambition — Alex Zhang, MIT",
-     "pubDate": "2026-10-02T00:28:04.000Z",
+     "title": "Inside-Out AI: Rebuilding Airbnb Behind the Scenes and Across the Guest Experience",
+     "pubDate": "2026-10-02T14:04:49.000Z",
      "type": "interview",
-     "url": "https://www.latent.space/p/rlm",
-     "note": "已深度萃取（官方 feed 完整逐字稿約 127 KB，含全部時間軸與講者標註；引言直接取自逐字稿）：Latent Space，主持 swyx + Vibhu。嘉賓 Alex Zhang（@a1zhang）——MIT 博士生（第二年）、RLM 第一作者、KernelBench/GPU Mode 社群核心，曾任 Princeton SWE-bench 團隊。核心：①harness 係 compositional generalizer，用 locally in-distribution 把 OOD 任務拆成逐個 ID 的局部 LLM call；②Claude Code/Codex/Pi「結構上根本一樣」，差異主要成本，Grok Bot 較不同；③RLM 定義＝唯一工具係 code、context 存檔案/REPL、可程式化呼叫自己；④短任務訓練泛化到 8–30x 長任務，論證可歸納遞迴；⑤OpenAI 解 Navier–Stokes/ARC-AGI-3＝10,000 agents、88 小時、1,300 億 output tokens、約 4,000 萬美元；「95% swarm 係浪費，難嘅係收斂」，OpenAI 明顯訓練過 swarm；⑥capability overhang 係 skill issue——「連連續一個月穩定做好簡單工作都做唔到很蠢」，其實係 continual learning + harness 問題；⑦未來 query 的「語言模型」本體係看不見的 swarm；⑧Jev 打開「輸出空間 vs 延遲/成本」新維度（400x 差異），neo lab 必須差異化，複製 OpenAI/Anthropic 係糟糕策略；GDM 太官僚。KernelBench verifier gap：GPU Mode leaderboard 幾乎全 AI 生成，但 top 10 只有一個（人類專家引導）端到端穩定。技術：context offloading、Prime Agent（only tool=IPython、continual harness、persistent subagents）、speculative PTC（Lisp/OCaml/Effect-TS）、calibration、GEV、Neuralese（英文+Python）、loop transformers。第三方：Harvey×Base 10（法律）、Headlong（Andy Konwinski）、DSPy、ARC-AGI-3 Kaggle（TUFA）。爭議：稱 OpenAI dynamic workflows「算係一次失敗」；Gemini/AlphaProof「被誇大」；數學家反 AI 立場。片長約 1:41。同 feed 另有 [AINews] Gemini 4 Argon（10/1 06:45Z，新聞匯總，未單獨萃取）。"
+     "url": "https://www.latent.space/p/airbnb",
+     "note": "已深度萃取（官方長文完整內容約 12 KB，含全部直接引文與數據；本期由 Richard MacManus 執筆，非 swyx）：Latent Space。受訪 Ahmad Al-Dahle——Airbnb CTO（2026 年 1 月上任），前 Meta 生成式 AI 負責人、2023–2025 主導 Llama 開源系列發布。主題＝「由內而外（inside-out AI）」：先內部提速開發，再用同一批能力改造用戶體驗。核心數據：①60% 代碼由 AI 撰寫；②按年出貨功能多近 80%；③人均 PR 吞吐約 +1.6x；④約 50% 客服工單純 AI 解決（Q2 財報口徑近 45%）；⑤雜貨配送 8–9 個月、復用 Everest 後機場接送僅約 6 週；⑥生產至少 10 個客製模型。核心論點：（a）組織流程改造優先於模型——把產品/設計/工程的層層交接拿掉，直接一起做原型，「code 成為推理所依據的產物」（不再產出厚重 PRD）；（b）客服是第一個面對用戶場景但最難（犯錯代價高），關鍵是先用合成數據測透再上生產，並刻意保留安全類工單給人；（c）Everest＝內部組織上下文圖（LLM+embeddings+AI retrieval），讓通才在極專門代碼區工作，並催生兩項新服務；（d）多模型公司：混合前沿與開源，大部分後訓練/RL 在開源模型上做，沿成本/性能/延遲 Pareto 前沿逐用例選型——coding 用最強前沿（錯誤貴）、搜索用小而快（延遲敏感），並稱窄用例小模型後訓練後可超越前沿；（e）下一代 agent＝容器化、事件觸發的非同步 agent（Grafana 告警→自動 triage/on-call，人覆核 PR），願景是自動化管理整個市場（欺詐、信任違規、質量、缺陷）；（f）「按功能開發組織的公司會掙扎，按目標/使命/結果組織的會沒事」；（g）擔憂初階工程師手藝流失，對策＝每個工程師都必須能解釋（即使 PR 是 AI 生成的）他建了什麼。市值約 930 億美元。爭議：60% 代碼/1.6x/小模型超越前沿均為公司自報口徑，無外部 benchmark。"
     }
    ]
   },
   "no_priors": {
-   "lastEpisodePubDate": "2026-09-24T10:00:00.000Z",
-   "lastEpisodeTitle": "Re-Founding Incumbents for the AI Era with Sequence Holdings Co-Founder and CEO Michael Lee",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-10-02T10:00:00.000Z",
+   "lastEpisodeTitle": "Frontier Chips for Frontier AI Labs, with Walter Goodwin, Founder/CEO of Fractile",
+   "newEpisodes": [
+    {
+     "title": "Frontier Chips for Frontier AI Labs, with Walter Goodwin, Founder/CEO of Fractile",
+     "pubDate": "2026-10-02T10:00:00.000Z",
+     "duration_sec": 2138,
+     "type": "interview",
+     "url": "https://www.youtube.com/watch?v=OpeCP4wCxkA",
+     "note": "已深度萃取（YouTube 官方字幕逐字稿約 37 KB，含全部時間軸；引言直接取自逐字稿）：No Priors，主播 Sarah Guo。嘉賓 Walter Goodwin——Fractile 創辦人兼 CEO（2022 夏成立的全棧 AI 芯片公司，約 150 人，自建前端設計/physical design/backend/先進封裝），做「為世界最大模型打造極高速推理芯片」。核心：①架構從 SRAM 轉向高頻寬 DRAM——前兩年做類 Groq/Cerebras 的 SRAM-based 芯片（每秒數千 token），但 2023 底–2024 擔心可擴展性：AI 有兩樣在長（參數＋更致命的 context length），故轉向與記憶體廠/代工廠做 skunk works，追求高容量低成本 DRAM 的超高頻寬，平台 2027 H2 ramp，目標「GPU/TPU 的可擴展性 + Groq/Cerebras 的速度」。②快推理的真價值不是更順的聊天機器人（「快推理界的更快的馬」），而是把長時運行 agent 快一個數量級；今天快推理芯片「頻寬超高但容量極低，連長上下文 attention 都跑不了，得翻回 GPU」。③芯片設計壓縮＝更多射出機會：同時相信「壓縮週期極有價值」與「架構下注仍須深思」（芯片 3 年壽命、3–5 年攤銷、量產爬坡 12–18 個月、代工往返 3–5 個月），故非每幾週發新芯片，而是滾動前沿賭注，爭取 3–6 個月領先＝「芯片界的前沿模型」。④GDS2：某 top-3 半導體 CEO 私下稱「架構師 intent → 可用 GDS2 要 10 年」，Walter「除以四再減一點」→ 未來幾年出現端到端原型；中段 place&route/有限元/熱估計仍是 wall-clock 瓶頸（與 RSI 同構）；Cadence/Synopsys 的 DRC/LVS sign-off 長期不可取代。⑤記憶體頻寬 scaling law：Fractile 芯片頻寬約 HBM 系 25 倍；MoE 稀疏化（1/6→1/128、1/256）省 FLOPs 但被 HBM 頻寬卡死、MFU 極低。「過去 20 年 FLOPs ×約百萬，記憶體頻寬只 ×約 40」。⑥市場結構：超大規模自研 ASIC（TPU/MTIA/Maia/OpenAI Jalapeno，經 Broadcom 等交付；Broadcom 市值約 2 兆美元，架構高度相似、都用 HBM+tensor core+TSMC 先進封裝）「首要目的是壓 Nvidia 價格」；具新能力芯片才是真變數；前沿 lab 不宜 all-in 自研硅（不對稱博弈：對手若找到只在自己芯片生效的突破，你 9 個月內恐死），故第三方芯片玩家長期存在。關鍵數字：Nvidia 系統內含 6–9 顆自製芯片。片長 35:38。"
+    }
+   ]
   },
   "cognitive_revolution": {
    "lastEpisodePubDate": "2026-10-01T00:00:00.000Z",
    "lastEpisodeTitle": "AI:AM: Was Trump-Xi Anything? What Counts as Utopia? + AWS GPUs Cost 3X & AI Diagnoses Rare Diseases",
-   "newEpisodes": [
-    {
-     "title": "AI:AM: Was Trump-Xi Anything? What Counts as Utopia? + AWS GPUs Cost 3X & AI Diagnoses Rare Diseases",
-     "pubDate": "2026-10-01T00:00:00.000Z",
-     "type": "interview",
-     "url": "https://www.cognitiverevolution.ai/ai-am-was-trump-xi-anything-what-counts-as-utopia-aws-gpus-cost-3x-ai-diagnoses-rare-diseases/",
-     "note": "已萃取（官方 show notes 全文；AI:AM 週報形式，約 87 分鐘；disclosed intro 用 Nathan 克隆聲音）：The Cognitive Revolution · AI in the AM，Nathan Labenz + Prakash Narayanan。四線：①美中 AI 外交微解凍（Gladstone AI Harris 兄弟）——或可建 AI 事故通報渠道；Ed Harris：「某類透明度係穩定嘅，讓對方睇見我哋冇做佢最怕嗰件事，成本可能唔高，因為中國本來就滲透我哋系統」；但演講/會面≠可執行協議，未宣布熱線或發展上限。②GPU 租金指數（Silicon Data Steve Hou）——超大規模雲穩定收 2–3 倍甚至更多溢價（軟體分析/安全/合規加值＋企業黏性）；「付幾多錢」≠「機器多能跑」；轉向更貴模型會令觀察支出上升，即使單任務成本下降。③OpenAI DevDay 觀感——Dots、GPT-6.1 Sol、Astra Ultrafast；Prakash：「同等智能下延遲可能變得非常重要……能同你一起、喺你保持心流時造遊戲嗎？」④AI 共寫小說——Joel Borgen《The Receipt Horizon》，自供章節架構，自述編輯刪約 14%。⑤AI 診斷罕見病——Gamow Labs Daniel McKinnon：敘事紀律＝兒子 Owen 個案係人類專家先搵到 91 kb enhancer 區域，AI 原型之後才重新發現，「唔係 AI 早於專家」；Gamow 7 月案例在 26 患病嬰兒+20 健康親屬中複現 19 個專家分子診斷、新增 2 解、5 個患病個案未解（公司自報回溯發現，非臨床證據）；RareBench 為其自有 benchmark。收尾：Nathan 問「若 AI 能幫到等待診斷嘅家庭，減速嘅代價點計」，仍支持某種 pacing 但視為有代價嘅妥協。"
-    }
-   ]
+   "newEpisodes": []
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-10-01T20:00:18.000Z",
    "lastEpisodeTitle": "How a Voice Agent Learns the Rhythm of Conversation — Shawn Wen",
-   "newEpisodes": [
-    {
-     "title": "How a Voice Agent Learns the Rhythm of Conversation — Shawn Wen",
-     "pubDate": "2026-10-01T20:00:18.000Z",
-     "type": "interview",
-     "url": "https://www.youtube.com/watch?v=VoAPg8Fj6-c",
-     "note": "已深度萃取（YouTube 官方字幕約 69K 字元；引言直接取自字幕，口語含少量轉錄誤差）：MLST，主持 Tim Scarfe。嘉賓 Tsung-Hsien（Shawn）Wen——PolyAI CTO；本集與 PolyAI 合作製作。核心：①語音比文本難，因為多咗「時間」維度，智能本質係「適應」而非「推理」；②企業要矛盾組合「像人一樣強、像機械人一樣可控」，期待錨定團隊最好的人類；③cascade（ASR+LLM+turn-taking）天生唔協調、要 tweak 參數，必須塌縮端到端；④資料：真實 call 已含大量噪聲，再刻意用生成模型疊加噪聲；過度清洗反而令新模型更差（呼應 Bitter Lesson）；⑤瓶頸由「生產內容」轉向「驗證與審計內容」，slop＝沒有能力的生成，cognitive debt 係組織問題；⑥harness vs weights：企業想擁有 intelligence 但只能 in-house harness，建議先做 harness，語音 agent 當前台、品牌/主腦留後台。技術：Dialog-RSN-1 audio-native 模型（底層仍輸出 text 施 guardrail，原生收 mel 頻譜圖串流）；推理順序反轉＝先預測 turn-taking 訊號（極便宜）→回應（text/tool call）→citations→最後才 transcript（供審計）；檢索改為 LLM 生成 search 工具＋查詢（無 transcript 可 embed）；latency-budgeted auto reasoning（1 秒內決定是否多想）；自託管避網路 P99.5 長尾；信任工程（電梯音樂/打字聲/filler sentence，沉默 3–5 秒用戶恐慌）；聲音帶地方口音最好（英國 Newcastle、帶法國腔講英文最自然），通用聲音最差；production agent 每輪 output 約 50 tokens。benchmark：公開語音 benchmark 不足且偏合成，PolyAI 用真實 call 自建、計劃數月內公開。爭議：consumer 語音採用曲線、benchmark 主觀性、slop 係主觀（「人類到底應唔應該親自讀？」）。片長 70:10。"
-    }
-   ]
+   "newEpisodes": []
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-09-03T00:00:00.000Z",
@@ -67,16 +52,7 @@
   "silicon_valley_101": {
    "lastEpisodePubDate": "2026-09-29T23:00:00.000Z",
    "lastEpisodeTitle": "E254｜超级厄尔尼诺来了，我们的日常所需真会因它涨价吗？",
-   "newEpisodes": [
-    {
-     "title": "E254｜超级厄尔尼诺来了，我们的日常所需真会因它涨价吗？",
-     "pubDate": "2026-09-29T23:00:00.000Z",
-     "duration_sec": 3480,
-     "type": "interview",
-     "url": "https://podcasts.apple.com/us/podcast/id1498541229?i=1000791945867",
-     "note": "非 AI 主題（氣候/大宗商品），僅簡記不作深度萃取：硅谷101，主播麻花，嘉賓張思齊（資深大宗商品期貨交易員）。核心：50 年罕見超級厄爾尼諾如何透過農業、氮肥、航運與電力傳導到終端物價。關鍵數字：摩根大通預計全球食品通脹 2027H1 升至 5%（今年同期 2.8%）；氮肥供應緊缺、霍爾木茲海峽封鎖、黑海衝突推升糧價；乾旱令巴拿馬運河運力更緊；銅礦減產不宜全歸因厄爾尼諾。節目另宣布硅谷101年度大會 Alignment 2026（10/10–11 Sunnyvale）與 AI Storytelling Challenge。"
-    }
-   ]
+   "newEpisodes": []
   },
   "42zhangjing": {
    "lastEpisodePubDate": "2026-09-27T13:30:00.000Z",
@@ -86,16 +62,7 @@
   "slaying_dragon": {
    "lastEpisodePubDate": "2026-09-28T16:00:00.000Z",
    "lastEpisodeTitle": "当AI开始设计芯片---聊聊EDA与AI时代的芯片设计",
-   "newEpisodes": [
-    {
-     "title": "当AI开始设计芯片---聊聊EDA与AI时代的芯片设计",
-     "pubDate": "2026-09-28T16:00:00.000Z",
-     "duration_sec": 3490,
-     "type": "interview",
-     "url": "https://podcasts.apple.com/us/podcast/%E5%BD%93ai%E5%BC%80%E5%A7%8B%E8%AE%BE%E8%AE%A1%E8%8A%AF%E7%89%87-%E8%81%8A%E8%81%8Aeda%E4%B8%8Eai%E6%97%B6%E4%BB%A3%E7%9A%84%E8%8A%AF%E7%89%87%E8%AE%BE%E8%AE%A1/id1709213889?i=1000792050690&uo=4",
-     "note": "已萃取（Apple/iTunes 官方 shownotes 完整章節軸 14 條＋官方簡介；小宇宙單集頁 JS 渲染，未取得逐字稿）：屠龍之術（莊明浩）。嘉賓：嚴華——芯片設計行業 20+ 年經驗，新思科技（Synopsys）產品解決方案銷售總監。承接 9/22 AICC2026 復盤（上集），把鏡頭從軟件層轉向硬件層。主張：作為平時關注模型/應用/平台（廣義軟件層）的觀察者，越來越需要了解硬件層（能源、數據中心、芯片）。章節軸：新思科技介紹(00:34)／行業影響力(03:29)／20 年前 vs 今天芯片行業對比(04:44)／為什麼人人都想做自己的芯片(09:13)／芯片自研如何開始(16:05)／AI 對 EDA 行業的影響(20:39)／人類的邊界、安全、權限(26:58)／作為硅基員工存在的 Agent(28:06)／當所有人開始認真算賬(34:35)／當前系統遇到的瓶頸(39:46)／未來幾個人就可以設計芯片？(44:58)／AI 全自動造芯的『神話』實現了麼？(47:24)／我們需要什麼樣的芯片人才？(53:05)／寫在最後(57:15)。看點：EDA 護城河、系統廠商自研芯片的動機與落地、Agent 進入設計流程的權限/安全邊界、以財務視角檢驗自研芯片合理性、以及對『全自動造芯』敘事的保留態度。主播另用 AI 生成配套 PPT（存於其 ima 數據庫）。片長 58:10。"
-    }
-   ]
+   "newEpisodes": []
   },
   "crossing": {
    "lastEpisodePubDate": "2026-09-27T16:00:00.000Z",
@@ -104,12 +71,12 @@
   }
  },
  "notes": {
-  "scan_status": "2026-10-01 掃描（02:03–02:05 UTC）：新 AI 集 3 條，全為英文——①Latent Space《Why Dwarkesh is Wrong about Computer Use + How OpenAI shipped its Jev competitor in 1 Week》（OpenAI DevDay 2026 特輯，9/30 22:23Z，片長約 40 分）；②Machine Learning Street Talk《Who Checks a Proof No Human Can Read? — Leo de Moura》（9/30 03:19Z，片長 74:19）；③The Cognitive Revolution《Obsolete or Irreplaceable? Garrison Lovely…》（9/29 07:32Z）。另 1 條非 AI 中文集：硅谷101 E254 超級厄爾尼諾（9/29 23:00Z），僅簡記。其餘逐檔核實無新：張小珺最新仍 9/3；十字路口最新仍 9/27 於紅；42章經最新仍 9/27 Vibe-Trading 浩哲；屠龍之術最新仍 9/28 EDA 芯片；Dwarkesh 官網 RSS 頂條仍 9/17 Noam Brown（YouTube 近日僅 Sarah Paine 歷史講座系列與 Noam Brown 切片）；No Priors 最新完整集仍 9/24 Michael Lee。",
-  "report_date": "2026-10-01",
-  "deep_content_fetched": "《Latent Space × OpenAI DevDay》：官方頁面完整逐字稿（純文字約 57 KB，含 17 段章節時間軸與講者標註）。《MLST × Leo de Moura》：官方 ReScript 逐字稿 PDF（純文字約 90 KB，含全部時間軸）。《Cognitive Revolution × Garrison Lovely》：官方 RSS 完整節目說明（newsletter 全文）。所有引言直接取自逐字稿／官方文本。",
-  "transcript_attempts_failed": "①No Priors YouTube channel_id=UCSI7h9hydQ40K5MJHnCrQvw 的 RSS 仍回 404，改用 Apple/iTunes lookup（collectionId 1668002688）核實最新集仍 9/24。②Dwarkesh YouTube channel RSS 亦不穩，改用 yt-dlp --flat-playlist 列 @DwarkeshPatel 影片，確認近日僅 Sarah Paine 講座系列與 Noam Brown 切片。③Latent Space DevDay 文章 URL 首次猜測（/p/ainews-why-dwarkesh-is-wrong-about）為訂閱殼，改由 RSS 取正確 link /p/devday-2026 成功。④中文播客以 Apple iTunes search/lookup API 逐檔核實最新集。",
-  "jev_prefilter": "2026-10-01 對 4 條候選跑 jev.py triage --profile news：available=true、failed=0/4，worth 分數——Latent Space DevDay 1.03、硅谷101 E254 0.39、MLST Leo de Moura 0.32、Cognitive Revolution Garrison Lovely 0.30。該 profile 非為播客訪談校準（工具自註『絕對區分度有限』），依 fail-open 原則未做丟棄，全部條目保留原始連結；Jev 分數僅作相對排序參考。",
-  "notable_for_james": "①今日三條英文線構成一張『如何約束前沿 AI』的光譜：工程自約束（OpenAI：權限、同意、最小授權）× 形式化可驗證（Lean：certificate 與人類選規格）× 政治聯盟減速（Irreplaceable：a say, a stake, and a slowdown）。②驗證工具同時被 AI 攻破（Collatz 假證明騙過兩顆 kernel）與被 AI 用來造軟件（Claude agent 版 zlib 反超 Rust），是同一枚硬幣兩面，且都指向『可驗證性＝稀缺資源』。③OpenAI『一週克隆 Jev』把 API 護城河的時鐘壓到以週計；Decisions API 竟只是現有 Luna 權重零樣本＋推理棧工程，說明現階段差異化在基建與分發而非新模型。④『比普通人快』與『字面超人 Computer Use』是可檢驗的強預測，缺公開 benchmark，值得追蹤後續。⑤MLST 的『AI 只是沿麵包屑走、未以有意義方式改變權重』與 Latent Space 的『代理擅長 debug 與重試』對同一現象給出悲觀/樂觀兩種解讀，是很好的對照組。⑥中文圈本輪無新 AI 集，主線暫時由英文主導。",
+  "scan_status": "2026-10-03 掃描（02:03–02:05 UTC）：新 AI 集 2 條，均為英文——①No Priors《Frontier Chips for Frontier AI Labs, with Walter Goodwin, Fractile》（10/2 10:00Z，片長 35:38）；②Latent Space《Inside-Out AI: Rebuilding Airbnb》（10/2 14:04Z，長文訪談）。逐一核實無新：Dwarkesh 官網 RSS 頂條仍 10/1 Si Sheppard；MLST 最新仍 10/1 Shawn Wen；Cognitive Revolution 最新仍 10/1 AI:AM；張小珺最新仍 9/3；十字路口最新仍 9/27 于紅；硅谷101 最新仍 9/29 E254；42章經最新仍 9/27 Vibe-Trading；屠龍之術最新仍 9/28 EDA。中文圈本輪無新 AI 集。",
+  "report_date": "2026-10-03",
+  "deep_content_fetched": "《No Priors × Fractile》：YouTube 官方字幕逐字稿（純文字約 37 KB，含全部時間軸）。《Latent Space × Airbnb》：官方長文完整內容（readability 抽取約 12 KB，含全部直接引文與數據）。所有引言直接取自逐字稿／官方文本。",
+  "transcript_attempts_failed": "①No Priors YouTube channel_id=UCSI7h9hydQ40K5MJHnCrQvw 的 RSS 仍回 404，改用 Megaphone feed（feeds.megaphone.fm/nopriors）＋Apple iTunes lookup（collectionId 1668002688）核實最新集。②同集 yt-dlp --write-auto-subs 兩次皆回 HTTP 429，改以 youtube_transcript_api 成功取得官方字幕（37 KB）。③中文播客以 xyzfm/fireside RSS feed ＋ Apple iTunes search 逐一核實最新集（未依賴 web_search 猜測）。",
+  "jev_prefilter": "2026-10-03 對 2 條候選跑 jev.py triage --profile news：available=true、failed=0/2，worth 分數——Latent Space（Airbnb）1.19、No Priors（Fractile）0.16。該 profile 非為播客訪談校準（工具自註『絕對區分度有限』），依 fail-open 原則未做丟棄，兩條均保留原始連結；Jev 分數僅作相對排序參考。",
+  "notable_for_james": "①本輪兩集構成同一週的兩極：一極在硅與頻寬（Fractile：記憶體頻寬剪刀差、全棧敏捷、前沿 lab 不宜 all-in 自研芯片），一極在組織與流程（Airbnb：拆交接、code 為產物、Everest 上下文圖、Pareto 選型）。②兩集罕見地同時指向「能力已過剩、稀缺的是結構」：Walter 的滾動前沿賭注 vs Al-Dahle 的逐用例評測與通才化，本質都是「用取捨與制度去對沖不確定」。③「記憶體頻寬 20 年只漲 40 倍 vs FLOPs 漲百萬倍」是可長期追蹤的硬指標；若 Fractile 2027 H2 平台兌現，將直接驗證或證偽其 25× 頻寬主張。④Airbnb 的「60% 代碼 AI 撰寫 / 人均 PR +1.6x / 客服 50%」是最具體的企業級落地數字，值得與其他 AI-native 公司口徑交叉比對。⑤兩集都提到「初階人才／驗證審計」：Al-Dahle 要工程師能解釋 AI 產出，Walter 指驗證與模擬仍是瓶頸——延續本月「可驗證性＝稀缺資源」的主線。⑥中文圈本輪無新 AI 集，主線續由英文主導。",
   "index_html": "未更新 index.html：該落地頁手工維護且自 2026-07-19 起已停更，為維持既有慣例未動。"
  }
 }
