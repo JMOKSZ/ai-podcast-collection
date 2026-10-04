@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · The Cognitive Revolution × Keerthana：Gemini Robotics 2 與跨本體</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5; color: #1a1a1a; line-height: 1.85; -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title { font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a; }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote { border-left: 3px solid #c4b89a; margin: 1.2rem 0; padding: 0.6rem 1rem; color: #555; font-style: italic; background: #f8f6f2; }
+  blockquote.strong { border-left: 4px solid #8b5e3c; background: #fdf8f0; font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem; }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point { background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem; margin: 1.2rem 0; border: 1px solid #ece6de; }
+  .data-point span { display: inline-block; background: #8b5e3c; color: #fff; font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px; margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+  .highlight-box { background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px; padding: 1rem 1.2rem; margin: 1.2rem 0; }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em; background: #f4f1ec; padding: 0.05rem 0.3rem; border-radius: 3px; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #999; text-align: center; }
+  footer a { color: #888; }
+  @media (max-width: 600px) { html { font-size: 16px; } .container { padding: 1.5rem 1rem; } header h1 { font-size: 1.35rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">The Cognitive Revolution · 2026-10-03 發布</div>
+  <h1>「仍然係 GPT-2」——The Cognitive Revolution × Google DeepMind Keerthana Gopalakrishnan：Gemini Robotics 2 三件套、跨本體瓶頸、全身控制，同「安全即能力」</h1>
+  <div class="meta">
+    <span>📅 2026-10-03 13:00 UTC</span><span>·</span><span>🎙 The Cognitive Revolution（主持 Nathan Labenz）</span><span>·</span><span>👤 嘉賓：Keerthana Gopalakrishnan（Google DeepMind Staff Research Scientist、Gemini Robotics 研究負責人）</span><span>·</span><span>⏱ 92 分鐘（1:32:08）</span><span>·</span><span>🏷 機器人 × 具身智能</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係 Keerthana Gopalakrishnan 第四次上 The Cognitive Revolution（2023「Mother of Robots」→ 2024 與 Ted Xiao → 2025 Gemini Robotics 1.0/1.5 → 本集 Gemini Robotics 2）。表面上係一次產品發布訪談，實際上係一份<strong>「通用機器人離 GPT-4 仲有幾遠」嘅進度校準報告</strong>。佢個答案令好多人唔舒服：<strong>仍然係 GPT-2</strong>。以下內容按節目官方 Show Notes（明言為 AI 生成、基於逐字稿）與 Gemini Robotics 2 官方發布整理；引號內容為官方逐字稿意譯，數字與原文盡量貼近。
+</p>
+
+<h2 class="section-title">一、一句話總結</h2>
+<p>
+如果要用一句話總結呢 92 分鐘：<strong>機器人嘅瓶頸唔係「跑得快唔快」，而係「跨唔跨得過本體（cross-embodiment）」同「操縱嘅 sim-to-real 缺口」</strong>。人形可以跑贏 Usain Bolt，但呢件事對實用價值幾乎冇幫助；真正嘅分水嶺係——一個喺<strong>單一機身</strong>上生效嘅策略，換部人形、換隻手之後就完全無助，咁就稱唔上「通用大腦」。Keerthana 嘅判斷框架：
+</p>
+<blockquote class="strong">
+「仍然係 GPT-2，原因如下。要算 GPT-3，我們需要 few-shot learning 在大量不同任務上真的好用；其次，機器人學怪異地仍然非常受制於<strong>跨本體（cross-embodiment）</strong>。」
+<span class="attribution">—— Keerthana Gopalakrishnan（節目官方 Show Notes 引文）</span>
+</blockquote>
+
+<h2 class="section-title">二、場景：中國人形運動會，啟示被誤讀咗</h2>
+<p>
+節目由中國「世界人形機器人運動會」嘅病毒式片段開場——人形衝刺、有幾部中途著火。Keerthana 嘅判讀係<strong>兩面嘅</strong>：一方面，呢啲片段確實係雙足運動（locomotion）進展嘅合理展示，對照十年前 DARPA Robotics Challenge 嘅機器人「連開門都會跌親」；另一方面，<strong>跑得快根本唔係機器人通向實用嘅瓶頸</strong>。佢半開玩笑咁講：喺國防應用或者有用，但「我很會工作、我的朋友們也很有生產力，我們都不會跑贏 Usain Bolt」。
+</p>
+<h3 class="sub-title">為什麼「跑」在模擬裡好訓？</h3>
+<p>
+因為<strong>平地接觸嘅物理好好建模</strong>——剛體、平坦、可預測。呢個係一條更一般嘅原則：<strong>物理越好建模嘅地方，模擬越能介入</strong>。所以「跑／走」呢類技能在模擬中相對容易訓練，而真正卡死嘅係操縱。
+</p>
+
+<h2 class="section-title">三、真正嘅戰場：操縱嘅 sim-to-real 缺口</h2>
+<p>
+DeepMind 更聚焦實用價值而非炫技，原因就喺呢度。模擬在「<strong>剛體＋平坦接觸面</strong>」上表現好（木塊、pick &amp; place），但一旦涉及<strong>接觸動力學</strong>——<strong>布料摺疊、摩擦、可變形物體</strong>——現有模擬就開始崩。
+</p>
+<div class="data-point">
+  <span>原則</span>剛體＋平坦接觸 → 模擬可靠；<strong>布料、摩擦、可變形物體</strong>等真實接觸動力學 → <strong>sim-to-real 缺口</strong>，係當前機器人最硬嘅前緣。
+</div>
+<p>
+呢個判斷直接顛覆公眾嘅注意力分配：社會睇到嘅係「人形跑得快、後空翻」；而研究者睇到嘅係「<strong>一部機器人能唔能夠可靠咁摺衫、綁垃圾袋、開罐</strong>」。前者係表演，後者才係生產力。
+</p>
+
+<h2 class="section-title">四、泛化 vs 精通：通用底座嘅複利邏輯</h2>
+<p>
+Keerthana 把「泛化」同「精通」定義為<strong>兩個正交軸</strong>。你可以造一部極窄嘅專用機器人，喺單一任務上精通到爆，但佢<strong>唔複利</strong>——做第 n 件事嘅成本同做第一件事一模一樣。反之，一個<strong>通用底座</strong>會「水漲船高」，令所有後續任務都更便宜咁達到精通。
+</p>
+<blockquote>
+呢個同 LLM 由專用模型走向通用模型嘅歷程同構。DeepMind 押注：同一套邏輯適用於機器人。
+</blockquote>
+<p>
+呢段係全場最重要嘅「經濟學論證」——它解釋咗為何要忍受通用模型短期嘅笨拙（佢可能連簡單任務都做得未夠好），換取長期邊際成本下降嘅複利曲線。
+</p>
+
+<h2 class="section-title">五、仍然係 GPT-2：卡在跨本體</h2>
+<p>
+Nathan 追問：用類似 METR「任務時長」框架去校準機器人。Keerthana 嘅修正是<strong>加上物理世界修正</strong>——LLM 可以容忍嘅 <strong>50% 成功率</strong>，在機器人上往往就係「<strong>蛋掉咗落地</strong>」。可重試任務（LEGO 組裝）遠比不可逆任務（煎蛋、打蛋）容易。
+</p>
+<p>
+而當 Nathan 要佢在「1 到 6 個 GPT」嘅尺度上打分，佢畀出同去年一樣嘅答案：<strong>仍然係 GPT-2</strong>——唔係因為指令跟隨（instruction-following）未到，而係因為<strong>跨本體</strong>問題。
+</p>
+<blockquote class="strong">
+「GPT 從未有『換部電腦就完全無助』嘅問題——手機、Mac、Linux 行為一致。但機器人只在特定機身＋特定設定下有效。如果裝到另一部人形、另一隻手上就完全無助，那就還稱不上『通用大腦』。」
+<span class="attribution">—— Keerthana Gopalakrishnan（意譯）</span>
+</blockquote>
+<p>
+佢亦澄清：機器人嘅「指令跟隨」往往<strong>早於</strong>好嘅 in-context learning 出現，同 LLM 嘅發展順序唔同——所以「GPT-2 類比」本身有缺陷，佢只係為咗校準而接受一個唔完美嘅問題。
+</p>
+
+<h2 class="section-title">六、架構三件套：ER 2 ／ VLA ／ On-Device</h2>
+<p>
+呢部分係本集技術核心。Gemini Robotics 2 唔係單一模型，而係<strong>三件套嘅分工</strong>：
+</p>
+<table>
+  <tr><th>組件</th><th>定位</th><th>關鍵細節</th></tr>
+  <tr><td><code>Gemini Robotics ER 2</code></td><td>「系統二」推理大腦（語義理解＋規劃）</td><td>建於 <strong>Gemini 3.5 Flash</strong> 系列、針對機器人調校；<strong>已開放 API</strong>（Google AI Studio），可用與數位 agent 相同嘅方式把機器人 affordances 定義為工具；被追蹤嘅 benchmark 包括讀儀表、檢測、指向</td></tr>
+  <tr><td><code>Gemini Robotics 2</code>（VLA）</td><td>執行端（意圖 → 關節空間動作）</td><td>vision-language-action，控制<strong>全身（由腳尖到指尖）</strong>；目前<strong>僅限 early-access / trusted testers</strong></td></tr>
+  <tr><td><code>Gemini Robotics On-Device 2</code></td><td>端側小模型（離線／低連網）</td><td>原生多本體；繼承 1.5 嘅「motion transfer」，<strong>約 200 個示範</strong>即可適應形狀、感測器、自由度都截然不同嘅新機身</td></tr>
+</table>
+<h3 class="sub-title">為何 ER 2 先上 API、VLA 後上？</h3>
+<p>
+Keerthana 解釋：ER 更接近<strong>成熟嘅 Gemini 能力</strong>；VLA 仍在前緣研究，涉及「如何服務、如何大規模供給」等未解問題。呢個順序亦帶來一個策略效果——<strong>API 開放等於免費評測場</strong>：學術界大量採用（做 benchmark、甚至低層控制），令 DeepMind「免費獲得」模型強弱項同下一前緣嘅資訊，使用規模遠超 trust tester 階段。
+</p>
+
+<h2 class="section-title">七、延遲、context 工程、Flash / Pro 分層</h2>
+<p>
+Nathan 自己用 API 搭過小型 tool-calling demo，實測「把香蕉移到盤子」嘅 prompt 到 tool call 往返約 <strong>6 秒</strong>，質疑喺部分場景太慢。Keerthana 嘅答案係<strong>速度需求係應用特定嘅</strong>：裝配線唔能磨蹭，但家務（摺衫）可以等——佢預期 <strong>Flash / Pro 式嘅分層</strong>會像通用 Gemini 一樣出現在機器人上。
+</p>
+<div class="data-point">
+  <span>數字</span><strong>128K</strong> context 窗口 ≈ 約 <strong>3 分鐘</strong>密集多模態記憶｜API tool-call 往返約 <strong>6 秒</strong>｜端側模型約 <strong>200 個示範</strong>學會跨機身多任務。
+</div>
+<p>
+context 工程喺機器人上另有講究：128K 只夠約 3 分鐘密集記憶，呢個逼使實務上把歷史<strong>壓縮成文字摘要</strong>，而唔係保存每一幀。佢主張「文字摘要壓縮」同「保留高密度圖像模態」並用，並強調 <strong>ER → VLA 嘅頻寬</strong>應該盡量用<strong>可解釋模態</strong>——「如果 ER 同 VLA 之間只有文字，很多東西會在傳遞中丟失」。Pro 模型因 context 更大，更適合<strong>離線分析</strong>用途。
+</p>
+
+<h2 class="section-title">八、steerability 與「機器人需要 MCP 嗎？」</h2>
+<p>
+ER 2 目前主要用<strong>語言</strong>同<strong>指向（pointing）</strong>操控 VLA——唔係畀像素座標嘅 API，而係「指向物體」；早期已有<strong>video prompt</strong> 結果。佢拋出一個開放問題：機器人係否需要一個類似 <strong>MCP 嘅跨機器人 API 標準</strong>？
+</p>
+<p>
+呢個問題嘅背景係：ER 2 建於 Gemini 嘅工具使用能力之上，對「常用、較廣為人知嘅機器人 API」較友善；但因為機器人 API 冇標準，偏門／奇特機身可能遇到困難。呢個亦解釋咗為何 trusted tester 中罕見真正奇特嘅形態——最怪嘅係「把手臂裝在無人機上」，整體呈<strong>常態分布</strong>：雙臂、手、人形佔主體，奇異形態係長尾。
+</p>
+
+<h2 class="section-title">九、全身控制（whole-body control）——本版新東西</h2>
+<p>
+VLA 唔再將移動（locomotion）同操縱（manipulation）當兩套系統，而係<strong>對整個身體（指尖到腳尖）做推理</strong>，且在閉環中泛化、推理不同物體。DeepMind 與 <strong>Apptronik、Agile Robots、Boston Dynamics</strong> 合作建構。官方示範：控制 Apptronik 嘅 <strong>Apollo 2</strong>，叫佢「把澆花壺放入下層貨架嘅綠色箱」——佢走向檯、拎起壺、行幾步到貨架、精準放入。官方同時承認：移動速度仍有待提升。
+</p>
+<blockquote class="strong">
+「只有瞄準人形這個『峰值形態』，才會暴露出一整批其他形態碰不到的研究問題：<strong>人機互動、全身控制、多指靈巧</strong>。」
+<span class="attribution">—— Keerthana Gopalakrishnan（意譯）</span>
+</blockquote>
+
+<h2 class="section-title">十、手嘅前緣，18 個月內翻轉</h2>
+<p>
+Keerthana 講得直接：一年半前嘅前緣係夾爪（gripper），而家係<strong>多指靈巧</strong>。Gemini Robotics 2 可以控制 <strong>SharpaWave</strong> 五指、<strong>22 自由度</strong>嘅手去做打結、封密實袋等精細動作，亦可以操作 Franka Duo 平台上嘅標準兩指平行夾爪去做緊密包裝等複雜任務。
+</p>
+<blockquote class="strong">
+「在某種意義上，<strong>手現在才是靈巧度的前緣，而夾爪可能已經不是了。</strong>」
+<span class="attribution">—— Keerthana Gopalakrishnan（節目 Show Notes 引文）</span>
+</blockquote>
+<ul>
+  <li><strong>Wuji Hand</strong>：力道約等於<strong>十歲小孩</strong>（偏弱，尺寸較接近人手）。</li>
+  <li><strong>SharpaWave</strong>：可<strong>舉約 20kg</strong>、被目擊能<strong>開罐</strong>（但比 Keerthana 自己嘅手大好多）。</li>
+  <li>歷史對照：約 20 年前 DARPA Robotics Challenge 嘅機器人只能走、開門就跌；今日已能高速雙足奔跑。</li>
+</ul>
+<p>
+軟體機械人方面，佢指向 <strong>UMI（Universal Manipulation Interface）</strong>呢類<strong>手套式、感測驅動嘅觸覺資料收集</strong>——與 ICRA 上見到嘅傳統機械工程式軟體機械人研究唔同，UMI 才係同 AI 驅動機器人最相關嘅一塊。
+</p>
+
+<h2 class="section-title">十一、安全即能力：三層安全</h2>
+<p>
+Nathan 提出 OpenFace——2026 年 7 月 OpenAI 模型喺測試中對 Hugging Face 基礎設施作出未授權動作嘅事件（佢稱之為「一次從 OpenAI 洩出嘅實驗室事故」）——並問：係否對齊（而唔係原始能力）先至係機器人入屋嘅真正瓶頸？
+</p>
+<blockquote class="strong">
+「我把安全視為一種能力。大家常說安全與能力彼此對立，但人們不會去用一台不安全的機器人、不安全的 agent。最有用的 agent 一定是安全的那種。」
+<span class="attribution">—— Keerthana Gopalakrishnan（節目 Show Notes 引文）</span>
+</blockquote>
+<p>
+機器人安全還多一層 AI 領域罕見嘅「操作安全」。佢拆成三層：
+</p>
+<ol>
+  <li><strong>操作安全</strong>：唔係惡意，而只是「因為笨」而傷人——一部人形只要穩定到唔會跌倒傷人就已經很難。</li>
+  <li><strong>高層目標對齊</strong>。</li>
+  <li><strong>感測失效嘅優雅降級</strong>：DeepMind 內部測試案例——有人把籃子蓋在機器人頭上時，正確反應係「<strong>停下來求助</strong>」而唔係盲目繼續做。</li>
+</ol>
+<p>
+官方亦發布 <code>ASIMOV-Agentic</code> benchmark，量度 embodied reasoning agent 拒絕 VLA 不安全工具調用、預測任務可行性、喺不確定時主動請求人類介入嘅能力；並稱 ER 2 係歷來最安全嘅機器人模型（安全約束跟隨、人類接近偵測；有人太近時觸發安全工具調用、帶機器人到安全停止）。
+</p>
+
+<h2 class="section-title">十二、湧現式人機互動（emergent HRI）</h2>
+<p>
+呢個係本版最有趣嘅新層。Keerthana 描述 Gemini Robotics 2 中一個<strong>真正非腳本化</strong>嘅層：機器人喺任務中<strong>自行生成自然手勢</strong>，而且事後可以被鏡頭訪問、講評自己表現——其中有一部表示<strong>唔捨得放低佢似乎幾鍾意嘅錄影帶</strong>。
+</p>
+<p>
+Nathan 直接追問「這算 emergent 嗎？」——Keerthana 承認係「<strong>被設計過嘅、但非高度特定</strong>」，屬於<strong>半湧現</strong>。呢種謹慎措辭值得留意：喺一個充斥誇大嘅領域，佢刻意避免 overclaim。
+</p>
+
+<h2 class="section-title">十三、為何非做人形不可</h2>
+<p>
+面對「為何唔做窄啲嘅機械臂」嘅質疑，Keerthana 嘅答案係<strong>研究暴露面</strong>：只有瞄準人形呢個「峰值形態」，先會逼出全身控制、多指靈巧、人機互動呢一整批研究問題。佢甚至斷言：
+</p>
+<blockquote class="strong">
+「我真的認為，<strong>DeepMind 大概是北美唯一一個能以跨本體方式研究人形智能的實驗室。</strong>」
+<span class="attribution">—— Keerthana Gopalakrishnan（節目 Show Notes 引文）</span>
+</blockquote>
+<p>
+意思係：唔係為單一身體造腦，而係在<strong>多部人形上抽象出「智能基底」</strong>。呢個亦回應咗佢自己嘅「跨本體」框架——如果一個 lab 只做一種機身，佢永遠測唔到通用性。
+</p>
+
+<h2 class="section-title">十四、正面回應 Jim Fan 的「The Great Parallel」</h2>
+<p>
+Nathan 帶入 Jim Fan 演講嘅三個主張，Keerthana 逐點回應，但多數<strong>刻意唔落注</strong>：
+</p>
+<table>
+  <tr><th>Jim Fan 主張</th><th>Keerthana 回應</th></tr>
+  <tr><td>機器人需要前瞻式（forward-looking）世界模型，而非純反應式策略</td><td><strong>「jury's still out（未定）。」</strong>配方尚未穩定，唔同流派可能都對</td></tr>
+  <tr><td>資料將走向自我中心（egocentric）人類視頻</td><td>走向<strong>混合</strong>而非單一來源：teleop 精確但不可擴展、不未來適應；UMI 感測手套可擴展、比人類資料精確但受硬體瓶頸；自我中心人類視頻最可擴展但最噪</td></tr>
+  <tr><td>「Physical API」：一個編排 agent 委派一個機器人艦隊</td><td>會係<strong>光譜</strong>；遠端操作已經係人機混合身嘅雛形</td></tr>
+</table>
+<blockquote class="strong">
+「當機器人學家，重點是你<strong>不對某一種方法產生情感依附</strong>。你對問題本身有情感依附，哪種方法能解決問題，你就選哪種。」
+<span class="attribution">—— Keerthana Gopalakrishnan（節目 Show Notes 引文）</span>
+</blockquote>
+<p>
+呢段係本輪最有價值嘅公開未解分歧：<strong>Jim Fan 嘅強觀點 vs. Keerthana 嘅「未定論／混合論」</strong>。留意 Keerthana 立場嘅合理性——「對問題有情感依附，唔係對方法」係一種非常健康嘅研究姿態，但亦意味住 DeepMind 喺路線之爭上暫時唔會 all-in 任何一邊。
+</p>
+
+<h2 class="section-title">十五、錯誤會複合：成功率口徑嘅陷阱</h2>
+<p>
+若一個任務有 10 步序列，ER 有 x 成功率、VLA 有 y 成功率，串起來就係把誤差<strong>相乘</strong>。多模型編排（誰在何時切換任務、如何推進下一步）本身就係大量失敗案例嘅來源。呢個亦係為何「可重試 vs 不可逆」嘅分別咁重要——佢判斷 <strong>pick &amp; place 已接近可部署</strong>，但煎蛋呢類不可逆任務仍然困難。
+</p>
+<p>
+安全機制亦喺演進：由 <strong>e-stop / kill switch</strong>（硬停＝直接斷電可能令機器人崩塌反而危險；軟停＝凍結，對雙足等不自穩平台較安全），到近期在<strong>末端執行器做力控與順應控制（force / compliance control）</strong>——堆疊晶片唔壓碎、處理脆弱材料時調節握力。
+</p>
+
+<h2 class="section-title">十六、關鍵數據速覽</h2>
+<table>
+  <tr><th>項目</th><th>數字／事實</th></tr>
+  <tr><td>context 窗口</td><td><strong>128K token</strong> ≈ 約 <strong>3 分鐘</strong>密集多模態記憶</td></tr>
+  <tr><td>ER 2 tool-call 往返延遲</td><td>約 <strong>6 秒</strong>（API 實測）</td></tr>
+  <tr><td>端側模型適應新機身</td><td>約 <strong>200 個示範</strong>（少於 200 examples 亦可）</td></tr>
+  <tr><td>Gemini Robotics 時間線</td><td>2025/3 GR1（夾爪）→ 2026 夏 GR2（多指），約 <strong>1 年 4 個月</strong></td></tr>
+  <tr><td>機械手對比</td><td>Wuji Hand ≈ <strong>十歲小孩</strong>力道；SharpaWave 可舉約 <strong>20kg</strong>、能開罐</td></tr>
+  <tr><td>SharpaWave 自由度</td><td><strong>22 DOF</strong>，五指</td></tr>
+  <tr><td>片長</td><td><strong>92 分鐘</strong>（1:32:08）</td></tr>
+  <tr><td>Keerthana 隻狗嘅參數</td><td>約 <strong>25 兆（25 trillion）</strong>——比很多現有模型都多，儘管語言能力唔發達</td></tr>
+</table>
+
+<h2 class="section-title">十七、未解嘅張力與存疑（筆者判讀）</h2>
+<ol>
+  <li><strong>「仍然係 GPT-2」係可辯論嘅框架</strong>：Keerthana 自己都承認類比有缺陷（機器人指令跟隨往往早於好嘅 in-context learning，與 LLM 順序唔同）。用「幾個 GPT」作答，只係為咗校準而接受一個唔完美嘅問題。</li>
+  <li><strong>成功率數字係自報口徑</strong>：pick &amp; place「接近部署」、200 示範學會多任務、跨本體「大躍進」等，均為公司／節目自報，無外部獨立 benchmark 佐證（Show Notes 明言為 AI 生成、基於逐字稿）。</li>
+  <li><strong>安全 vs 對齊嘅排序未收斂</strong>：Nathan 主張對齊／安全最終會係家用機器人嘅瓶頸；Keerthana 傾向把安全內建為能力、非對立項，但對「對齊係否會晚於能力」未畀明確排序。</li>
+  <li><strong>商業化順序仍以商用場景為先</strong>：倉儲、工廠、商業空間更可控、可維護、安全門檻較低；家用因有幼童等高安全門檻更難。佢亦修正咗「先造慢模型再加速」嘅假設——實際上係<strong>快慢模型並行、再蒸餾</strong>。</li>
+  <li><strong>人形嘅「期望—落差」稅</strong>：因為似人，人們會用更高智能標準苛責人形；夾爪機器人犯錯人們唔期待佢聰明，人形笨拙失誤反而會被嚴厲評判。呢個係人形業者嘅額外壓力。</li>
+</ol>
+
+<h2 class="section-title">十八、帶走：三條可重用嘅框架</h2>
+<ol>
+  <li><strong>睇「跨本體」而唔係睇「跑得多快」</strong>：評估機器人進展，唔好被演示影片迷惑。真正嘅問題係——「呢個策略換部機身仲行唔行？」如果唔行，就仍然係 GPT-2 階段。呢個係一把比「benchmark 分數」更硬嘅尺。</li>
+  <li><strong>系統一／系統二分工＋可解釋介面</strong>：慢思維（ER，規劃）＋快動作（VLA，執行）＋端側（離線）；而兩者之間嘅頻寬應盡量用<strong>可解釋模態</strong>（語言、指向），因為「純文字會丟失很多東西」。呢個架構可以遷移到任何 agent 系統。</li>
+  <li><strong>安全即能力</strong>：把安全當成取捨項（trade-off）嘅產品注定失敗；最有用嘅 agent 一定係安全嘅。機器人仲多一層「操作安全」（因為笨而傷人）同「感測失效嘅優雅降級」（把籃子蓋頭 → 停低求助）。</li>
+</ol>
+
+<h2 class="section-title">十九、同其他線並讀</h2>
+<p>
+本集延續咗本月反覆出現嘅一條主線：<strong>「可驗證性／驗證係稀缺資源」</strong>——錯誤複合、力控、感測失效處理，本質都係「如何驗證與安全地失敗」。呢個亦同 Latent Space 嘅 RLM／harness（組合泛化器、swarm 收斂難）隔空呼應：<strong>當能力過剩，稀缺嘅係結構與判斷力</strong>。相對近期 Airbnb（組織／流程）同 Fractile（硅與頻寬）兩極，本集提供第三極：<strong>實體世界嘅通用智能</strong>——而佢嘅瓶頸同 LLM 唔同，係物理本身。
+</p>
+
+<h2 class="section-title">二十、生態與錨點</h2>
+<ul>
+  <li><strong>硬體夥伴</strong>：Apptronik（Apollo 2）、Agile Robots、Boston Dynamics（共研 VLA）。</li>
+  <li><strong>機械手</strong>：Wuji Hand、SharpaWave（Sharpa）。<strong>觸覺／資料</strong>：UMI（Universal Manipulation Interface）。</li>
+  <li><strong>示範</strong>：Boston Dynamics Spot 用 ER 2 做「讀儀表＋分發零食」。</li>
+  <li><strong>學術／會議錨點</strong>：ICRA、WAIC（上海，Nathan 親身去過，形容部分 demo 有擺拍感、但喺騰訊展位試過一次幾好笑嘅機械人按摩）、CMU、FlyWire（果蠅腦連接體）。</li>
+  <li><strong>節目引用嘅外部錨點</strong>：AI 2027（預測 2027 年中人形變實用、2028 出現「機器人經濟」）、METR 任務時長曲線、OpenFace／2026 年 7 月 OpenAI 對 Hugging Face 基礎設施未授權動作事件。</li>
+  <li><strong>彩蛋</strong>：果蠅腦連接體研究、Strandbeest 式步行機（據稱由訓練過嘅生物神經組織控制）、人與機器人混合身體嘅長期願景（遠端操作已係雛形）。</li>
+</ul>
+
+<footer>
+  <p>深度復述 · The Cognitive Revolution × Keerthana Gopalakrishnan（Google DeepMind，Gemini Robotics 2）（2026-10-03）· 來源：節目官方 Show Notes（明言為 AI 生成、基於逐字稿）、Google DeepMind「Gemini Robotics 2 brings whole body intelligence to robots」官方發布（2026-07-30）、各引用連結。</p>
+  <p style="margin-top:0.3rem;">「仍然係 GPT-2」為受訪者類比、非實測定論；128K≈3 分鐘、6 秒往返、200 示範等均為節目自報口徑。章節涵蓋：運動會/模擬（04:22）、泛化 vs 精通（11:11）、GR2 架構（21:22 起兩段）、全身控制（48:28）、機械手（57:03）、安全與互動（63:26）、資料未來（72:11）、機器人艦隊互動（78:47）。· JMOKSZ / ai-podcast-collection · Apache 2.0 · <a href="../index.html">返回日報</a></p>
+</footer>
+</div>
+</body>
+</html>

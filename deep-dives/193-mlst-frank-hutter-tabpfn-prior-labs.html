@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · MLST × Frank Hutter：TabPFN 與被攻破的表格資料</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5; color: #1a1a1a; line-height: 1.85; -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title { font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a; }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote { border-left: 3px solid #c4b89a; margin: 1.2rem 0; padding: 0.6rem 1rem; color: #555; font-style: italic; background: #f8f6f2; }
+  blockquote.strong { border-left: 4px solid #8b5e3c; background: #fdf8f0; font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem; }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point { background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem; margin: 1.2rem 0; border: 1px solid #ece6de; }
+  .data-point span { display: inline-block; background: #8b5e3c; color: #fff; font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px; margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+  .highlight-box { background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px; padding: 1rem 1.2rem; margin: 1.2rem 0; }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em; background: #f4f1ec; padding: 0.05rem 0.3rem; border-radius: 3px; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #999; text-align: center; }
+  footer a { color: #888; }
+  @media (max-width: 600px) { html { font-size: 16px; } .container { padding: 1.5rem 1rem; } header h1 { font-size: 1.35rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Machine Learning Street Talk · 2026-09-23 發布</div>
+  <h1>「一次前向傳播，唔需要特徵工程」——MLST × Frank Hutter：TabPFN 點樣用合成先驗攻破最唔 glamorous 嘅表格資料，同 AdamW 作者嘅工具鏈史</h1>
+  <div class="meta">
+    <span>📅 2026-09-23 17:56 UTC</span><span>·</span><span>🎙 Machine Learning Street Talk（主持 Tim Scarfe）</span><span>·</span><span>👤 嘉賓：Frank Hutter（Prior Labs 共同創辦人，前弗萊堡大學機器學習教授）</span><span>·</span><span>⏱ 長訪談（含 TabPFN-3.5 補錄）</span><span>·</span><span>🏷 表格基礎模型 × AutoML</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+金融、醫療、公衛、科學——世界上大部分「預測」其實都發生在<strong>表格</strong>上，而呢個領域深度學習攻咗十幾年都攻唔下，一直由 XGBoost / CatBoost 呢類梯度提升樹（GBDT）統治。Frank Hutter 呢集講嘅係：<strong>TabPFN 用「合成先驗」預訓練，喺一次前向傳播內完成預測，唔需要逐資料集訓練、唔需要超參數搜索，並且打敗傳統 ML。</strong>而佢本人嘅履歷——AdamW 共同作者——令呢集多咗一層「深度學習工具鏈史」嘅意義。以下內容按 MLST 官方 RSS Show Notes、Prior Labs 官方 TabPFN-3.5 頁與訪談逐字稿要點整理；引號為中文意譯。
+</p>
+
+<h2 class="section-title">一、一句話總結</h2>
+<p>
+核心命題只有一句：<strong>表格資料一直輸，唔係因為深度學習唔夠強，而係因為缺乏一個「表格嘅 ImageNet」</strong>。TabPFN 嘅解法相當聰明——既然真實表格資料稀缺、又散落各處（兼涉隱私），就<strong>唔用真實資料，改用從結構因果模型（Structural Causal Model, SCM）先驗生成嘅合成資料集</strong>去 meta-train 一個 transformer。推論時，<strong>把整張訓練表當 context 一次餵入，直接輸出貝氏後驗預測分布嘅近似</strong>——一句講晒：<strong>「一次前向，唔需要特徵工程」</strong>。
+</p>
+<blockquote class="strong">
+「TabPFN 係一個表格基礎模型，喺一次前向傳播內完成預測……佢喺『結構因果模型先驗』上生成嘅合成資料集上預訓練，而唔係喺真實資料上。預測時佢把整張訓練表當 context，輸出一逼近貝氏後驗預測分布嘅結果——<strong>冇逐資料集訓練、冇超參數搜索。</strong>」
+<span class="attribution">—— MLST 官方 RSS 節目簡介（原文英譯）</span>
+</blockquote>
+
+<h2 class="section-title">二、Frank Hutter 係邊個：一部深度學習工具鏈史</h2>
+<p>
+理解本集嘅份量，先要理解講者。Frank Hutter 係 Prior Labs 共同創辦人，此前任德國弗萊堡大學機器學習教授約 <strong>12 年</strong>。佢嘅履歷幾乎就係現代 ML 工具鏈嘅一條主軸：
+</p>
+<ul>
+  <li><strong>AdamW</strong> 同 <strong>Cosine Annealing</strong> 嘅共同作者——「世界上每個 transformer 嘅訓練都在用」。呢點令本集多咗一種「造工具嘅人回頭用工具」嘅況味。</li>
+  <li><strong>AutoML</strong> 領域奠基者之一：創辦 AutoML 研討會系列、寫咗首本 AutoML 專書、首個 AutoML MOOC。</li>
+  <li><strong>Neural Architecture Search（NAS）</strong> 早期論文作者之一（Auto-WEKA 等）；經典綜述「Neural Architecture Search: A Survey」。博士論文由 Holger Hoos、Kevin Leyton-Brown、Kevin Murphy 共同指導。</li>
+  <li>歷史起點：AutoML 源自一個十分具體嘅痛點——<strong>SAT solver 要接受數百種解法，逐一手動決定參數</strong>；Kaggle Otto Group 產品分類競賽（2015）係重要節點。</li>
+</ul>
+<div class="highlight-box">
+<strong>個人史即一條方法論弧線：</strong>由「用手調 SAT solver 參數」→「用 ML 搵自己演算法嘅最佳參數」→「用 ML 搵 ML 演算法嘅最佳超參數（AutoML）」→「<strong>直接學一個學習演算法本身（learned algorithm）</strong>」。TabPFN 就係呢條弧線嘅最新一站。
+</div>
+
+<h2 class="section-title">三、為什麼表格咁難：冇 ImageNet</h2>
+<p>
+Hutter 嘅診斷好直白——<strong>表格「很髒」</strong>：缺失值、類別特徵、特徵工程、語意轉換，全都需要人工判斷。佢形容每次做完都「覺得有點髒」：
+</p>
+<blockquote class="strong">
+「表格資料非常髒……你做完之後總覺得有點髒，因為你感覺自己對它做了各種降維、不知怎麼就把它弄壞了。」
+<span class="attribution">—— Frank Hutter（中文意譯；節目內容）</span>
+</blockquote>
+<p>
+更深層嘅問題係<strong>資料</strong>。互聯網上嘅表格大約有數萬到數百萬張，但多數係維基百科球員表（「背號」）嗰種<strong>表格（table）</strong>，而唔係能學統計規律嘅<strong>資料集（dataset）</strong>；真正可用嘅大約只有 <strong>5 萬個</strong>，而且人們唔會主動把表格放上網——因為「唔 glamorous」。呢個就係對照：圖像有 ImageNet、文本有 Common Crawl，<strong>表格冇一個夠大、夠乾淨嘅公開語料</strong>。
+</p>
+<div class="data-point">
+  <span>對比</span>圖像有 <strong>ImageNet</strong>、文本有海量語料；表格領域只有約 <strong>5 萬個</strong>真正可用資料集，且大家唔會把表格放上網。→ 剛需：<strong>自己造資料</strong>。
+</div>
+
+<h2 class="section-title">四、解方：合成先驗與結構因果模型（SCM）</h2>
+<p>
+既然真實表格資料稀缺、又涉隱私，TabPFN 選擇<strong>完全用合成資料訓練</strong>——從<strong>結構因果模型（SCM）嘅先驗</strong>生成大量合成資料集，令模型學習逼近<strong>任意先驗下嘅貝氏後驗預測分布</strong>。呢個做法有兩個立竿見影嘅好處：
+</p>
+<blockquote class="strong">
+「我們是第一個（表格）基礎模型，完全在合成資料上訓練——這很好，因為我們<strong>沒有洩漏、沒有記憶化問題，可以直接控制資料裡到底有什麼</strong>。」
+<span class="attribution">—— Frank Hutter（中文意譯；節目內容）</span>
+</blockquote>
+<ul>
+  <li><strong>冇測試集洩漏</strong>：資料係自己造嘅，同 benchmark 嘅真實資料集完全隔離。</li>
+  <li><strong>冇記憶化</strong>：模型唔可能「背」咗某個真實資料集嘅答案。</li>
+  <li><strong>可控性</strong>：可以精確設計先驗裡有咩因果結構、噪聲、缺失模式。</li>
+</ul>
+<p>
+而「合成資料先驗」亦係一個繞過<strong>資料稀缺同隱私</strong>嘅通用手法——同近期各界「用生成資料訓練」嘅大趨勢同源。
+</p>
+
+<h2 class="section-title">五、learned algorithm：合成資料上嘅「學習演算法」</h2>
+<p>
+Hutter 用「learned algorithm（學到嘅演算法）」描述 TabPFN 嘅本質：<strong>你唔再為每個新資料集寫／搜一個 pipeline，而係事先 meta-learn 一個能泛化到新資料集嘅學習演算法</strong>。佢喺數億個合成資料集上 meta-training。呢個係 NAS 嘅自然終點——由「搜架構」走到「<strong>搜／學整個學習演算法</strong>」。
+</p>
+<blockquote>
+用 ML 歷史嘅語言講：AutoML 自動化咗「選模型與調參」，TabPFN 想自動化埋「<strong>由資料到預測嘅整段推理</strong>」。
+</blockquote>
+
+<h2 class="section-title">六、一次前向嘅貝氏預測：為何「重」但「快」</h2>
+<p>
+呢個係理解 TabPFN 性能嘅關鍵直覺。訓練表可能好大——Hutter 舉嘅尺度係<strong>一百萬列 × 一千行</strong>，即約<strong>十億個元素</strong>；若強行 tokenize 成 LLM 上下文，會係約 <strong>30 億 token</strong>。TabPFN 唔係咁做——佢<strong>以表格為原生輸入</strong>，喺一次前向傳播內出結果。所以佢係一部「<strong>很重、但很快</strong>」嘅模型：重喺預訓練與 context 承載，快喺推論階段唔需要任何 per-dataset 訓練／調參。
+</p>
+<div class="data-point">
+  <span>機制</span>整張訓練表 → context → <strong>一次前向</strong> → 貝氏後驗預測分布嘅近似。<strong>零特徵工程、零超參數搜索、零逐資料集微調。</strong>
+</div>
+<p>
+對實務嘅意義好直接：企業 ML 嘅默認工作流係「清洗 → 特徵工程 → 選模型 → 調參 → 交叉驗證」；TabPFN 把中間一長串<strong>壓縮成一次 predict call</strong>。「Predictions in seconds, not months」——呢個係產品頁嘅原話精神。
+</p>
+
+<h2 class="section-title">七、TabArena：表格界嘅「LM Arena」</h2>
+<p>
+要證明「打敗 XGBoost / CatBoost」呢個 claim，就要有可信嘅評測基建。呢個就係 <strong>TabArena</strong>（Erickson 等）——被形容為表格界嘅「LM Arena」：
+</p>
+<ul>
+  <li>用 <strong>Elo 分數</strong>排名；<strong>完全開放</strong>（公開所有預測與可複現代碼）；</li>
+  <li>跑一次 GPGPU 對比約<strong>2 美元</strong>，人人可做——極低邊際成本令「第三方驗證」變成常態；</li>
+  <li>第一作者 <strong>Nick Erickson</strong>（原 AWS、<strong>AutoGluon</strong> 作者）與數位作者已加入 Prior Labs。</li>
+</ul>
+<p>
+呢個係「競技場化（Arena）作為評測基建」嘅範例——把 LM Arena 模式橫向複製到新模態，用開放＋低成本去對抗廠商自報口徑。
+</p>
+
+<h2 class="section-title">八、架構 v1 → v3：output head 與更大嘅表</h2>
+<p>
+訪談涵蓋 TabPFN 嘅架構演進（v1 2022 → v2 登上 Nature 2025 → v3 / v3.5），包括 <strong>output head 嘅設計</strong>。重點唔在每個細節，而在方向：<strong>由細表走向大表</strong>（官方稱 TabPFN-3.5 已能原生處理<strong>多達 1,000,000 行</strong>），以及<strong>更快嘅推論</strong>（kv-cache 令部分場景加速約 <strong>840×</strong>；官方稱比之前版本快約 20×、大規模下可達約 1000×）。
+</p>
+<p>
+值得一提嘅係 v2 登上 <strong>Nature</strong>（Hollmann et al., 2025）——「Transformers Can Do Bayesian Inference」（Müller et al.）係其理論前身。呢個令 TabPFN 唔只係產品，亦係有同行評審背書嘅科學成果。
+</p>
+
+<h2 class="section-title">九、擴展到大表、coding agents、test-time compute</h2>
+<p>
+訪談中段幾個實務主題：
+</p>
+<ul>
+  <li><strong>擴展到大表</strong>：如何令架構喺更大、更寬嘅表格上仍然有效。</li>
+  <li><strong>用 coding agents 操作 TabPFN</strong>：把 TabPFN 當工具交畀 agent 調用嘅工作流。</li>
+  <li><strong>test-time compute 與適應</strong>：推論時加算力（「Thinking」模式）可以再提升表現——官方 TabPFN-3.5 頁即標榜「<strong>with Thinking 對傳統 ML 有 99% 勝率</strong>」。</li>
+</ul>
+<p>
+呢幾點指向一個更闊嘅圖景：表格基礎模型唔係「一個靜態模型」，而係一個可以<strong>被 agent 調用、可以喺推論時加算力</strong>嘅組件——同 LLM 生態嘅演進路徑趨同。
+</p>
+
+<h2 class="section-title">十、Google TabFM 與競爭</h2>
+<p>
+訪談直接討論咗 Google 嘅 <strong>TabFM</strong>（表格 zero-shot 基礎模型）作為競爭對手。呢個係一個健康嘅訊號：<strong>表格基礎模型賽道已經唔止一家</strong>。官方產品頁亦列出多個競品／相關工作：TabICL / TabICLv2、TALENT benchmark、Do-PFN、CausalPFN、Causal Foundation Models with Partial Graphs 等。對用家而言，競爭意味住「打敗 GBDT」呢個 claim 會被多方交叉檢驗。
+</p>
+
+<h2 class="section-title">十一、先驗點設計、因果與干預（interventions）</h2>
+<p>
+呢段係本集最有研究深度嘅部分——<strong>先驗係點設計同修訂嘅</strong>。合成資料嘅質素完全取決於先驗；先驗太窄，模型泛化唔到；先驗太闊，模型學唔到結構。Hutter 亦延伸到：
+</p>
+<ul>
+  <li><strong>相關性 vs 因果</strong>：SCM 框架天然連接因果推論——<strong>Do-PFN</strong>（因果效應估計）、<strong>CausalPFN</strong>（帶部分圖嘅因果基礎模型）；</li>
+  <li><strong>干預（interventions）</strong>：唔止預測「見到咩」，仲要回答「如果我咁做，會點」。</li>
+</ul>
+<p>
+呢個把 TabPFN 由「更強嘅預測器」推向「<strong>可干預嘅決策工具</strong>」——對金融風控、醫療決策、政策評估呢類唔可以亂做 A/B test 嘅場景，意義重大。
+</p>
+
+<h2 class="section-title">十二、關聯與多模態資料、組織落地、開放研究分支</h2>
+<ul>
+  <li><strong>關聯資料（relational）</strong>：真實世界嘅表格往往跨多張表（外鍵關聯）。相關工作：<strong>RelBench</strong>、RelArena-α、TabPFN-Rel、RPI。</li>
+  <li><strong>多模態</strong>：表格唔再係純數字——官方產品頁展示「<strong>自由文本當特徵讀</strong>」（例如維修單據嘅自由描述：「cracked bracket, water ingress at the seal…」）、「<strong>數千個 distinct ID 無需編碼</strong>」（SKU 編號直接餵入）、「每行數百個測量值」。</li>
+  <li><strong>組織使用</strong>：官方列舉 Affirm（風控與決策模型）、Hitachi Rail（鐵路預測性維護，官方稱偵測軌道異常準確度提升 <strong>40%</strong>）、liquid biopsy／蛋白組學肺癌檢測（Simon Meier）、Databricks（Dael Williamson 形容「單次前向嘅生產級預測，通常以秒計」）。</li>
+  <li><strong>開放研究分支（open research arm）</strong>：Prior Labs 有專門嘅開放研究部門——呢個係商業公司維持學術連結嘅常見設計。</li>
+</ul>
+
+<h2 class="section-title">十三、TabPFN-3.5：官方數字</h2>
+<p>
+訪談結束後，Hutter 補錄咗一段 <strong>TabPFN-3.5 發布</strong>嘅更新。官方產品頁列出嘅賣點：
+</p>
+<table>
+  <tr><th>官方主張</th><th>細節</th></tr>
+  <tr><td>對傳統 ML 嘅勝率</td><td>在 <strong>TabArena</strong> 上，帶 <strong>Thinking</strong> 模式對經典 ML 有 <strong>99% 勝率</strong></td></tr>
+  <tr><td>真實世界任務排名</td><td>在 <strong>BeyondArena</strong>（真實世界 data science 問題 benchmark）排 <strong>#1</strong></td></tr>
+  <tr><td>推論加速</td><td>kv-cache 令預測快約 <strong>840×</strong>；官方另稱比前版快約 20×、大規模下可達 <strong>1000×</strong></td></tr>
+  <tr><td>延遲（每 1k 行、無 cache）</td><td>TabPFN-3.5-Fast <strong>0.17s</strong>｜TabPFN-3.5 <strong>0.5s</strong>｜其他 TFM 約 <strong>7.0s</strong></td></tr>
+  <tr><td>原生行數規模</td><td>最多 <strong>1,000,000 行</strong></td></tr>
+  <tr><td>資料處理</td><td>缺失值、離群值、類別、多表資料原樣餵入，<strong>跳過特徵工程</strong></td></tr>
+</table>
+<p>
+值得留意：官方口徑將「勝率」定義為「<strong>with Thinking</strong>」——即用 test-time compute 換表現。呢個係一個重要嘅附帶條件，唔可以簡化成「TabPFN 一律打贏 XGBoost」。
+</p>
+
+<h2 class="section-title">十四、關鍵數據速覽</h2>
+<table>
+  <tr><th>項目</th><th>數字／事實</th></tr>
+  <tr><td>可用真實表格資料集</td><td>約 <strong>5 萬個</strong>（其餘多為「偽表格」）</td></tr>
+  <tr><td>策展規則</td><td>剔除少於 <strong>100 樣本</strong>、去重、剔除 MNIST 類「偽表格」</td></tr>
+  <tr><td>預訓練資料</td><td><strong>數億個</strong>合成資料集，來自 SCM 先驗</td></tr>
+  <tr><td>大表尺度直覺</td><td>100 萬列 × 1000 行 ≈ <strong>10 億元素</strong> ≈（若 tokenize）約 30 億 token</td></tr>
+  <tr><td>TabArena 對比成本</td><td>跑一次約 <strong>2 美元</strong></td></tr>
+  <tr><td>Habitat</td><td>v1（2022）→ v2 登 <strong>Nature</strong>（2025）→ v3 / v3.5</td></tr>
+  <tr><td>Hutter 教席</td><td>弗萊堡大學 ML 教授約 <strong>12 年</strong></td></tr>
+  <tr><td>Hitachi Rail 案例</td><td>官方稱軌道異常偵測準確度提升 <strong>40%</strong></td></tr>
+</table>
+
+<h2 class="section-title">十五、爭議與存疑（筆者判讀）</h2>
+<ol>
+  <li><strong>「打敗 XGBoost / CatBoost」係廠商基準</strong>：主要來自 Prior Labs 自家參與嘅 TabArena。雖然 TabArena 主打開放可複現，但「自家模型自家榜」嘅結構性利益衝突仍需第三方獨立檢驗。</li>
+  <li><strong>「合成資料真無洩漏」值得持續檢驗</strong>：先驗設計嘅自由度極大，外界會問——benchmark 上嘅優異表現，係否部分反映咗先驗恰好覆蓋咗這些任務嘅結構？Hutter 嘅回應係 benchmark 用真實社群資料集而非合成資料，且每步策展都有精確文件記錄。</li>
+  <li><strong>「99% 勝率」附帶「with Thinking」條件</strong>：呢個係 test-time compute 換嚟嘅表現，同「一次前向就贏」嘅直覺有落差——成本模型唔同。</li>
+  <li><strong>Google TabFM 嘅競爭</strong>：一個巨頭嘅 zero-shot 表格基礎模型，會直接壓力測試 Prior Labs 嘅護城河——尤其當「表格基礎模型」開始商品化。</li>
+  <li><strong>由預測到決策嘅跳躍</strong>：因果／干預（Do-PFN、CausalPFN）係更高風險嘅 claim，因為「干預效應」嘅 ground truth 往往冇得驗。</li>
+</ol>
+
+<h2 class="section-title">十六、帶走：三條可重用嘅框架</h2>
+<ol>
+  <li><strong>「冇 ImageNet」係一種通用診斷</strong>：當一個模態深度學習打唔贏傳統方法，先問一句——「係模型唔夠強，定係我哋冇一個夠大夠乾淨嘅資料集？」若係後者，出路唔一定係等資料，而係<strong>用一個好嘅生成先驗自己造</strong>（合成先驗 ≈ 可控制、無洩漏、無隱私問題嘅資料引擎）。</li>
+  <li><strong>learned algorithm ＞ 逐任務 pipeline</strong>：AutoML（調參）→ NAS（搜架構）→ TabPFN（學整個學習演算法），係一條清晰嘅遞進。可遷移嘅問題係：「我而家呢個流程，邊一段係可以『一次學好、終身受用』？」</li>
+  <li><strong>Arena + 開放 + 極低邊際成本 ＝ 可信評測基建</strong>：TabArena 用 Elo＋全開放＋2 美元成本，把「廠商自報」變成「人人可驗」。呢個模式值得複製到任何新模態——包括你自己行業嘅內部評測。</li>
+</ol>
+
+<h2 class="section-title">十七、同其他線並讀</h2>
+<p>
+呢集有幾個交匯點：其一，<strong>合成先驗</strong>與近期小米 MiMo 嘅 RL 環境、SmolDataEnvs 嘅 5K RL 環境同屬「用生成資料訓練」大趨勢；其二，Hutter 係 <strong>AdamW 共同作者</strong>——今天所有 transformer 訓練嘅預設優化器都出自佢；呢條「優化器 → AutoML → NAS → 表格基礎模型」嘅個人史本身就係一部深度學習工具鏈史；其三，與同週 Latent Space 嘅 AI-for-Science（John Platt 嘅 ERA、scoreable task）同屬「資深研究者用 ML 改寫科學／工程流程」。若 TabPFN 真如所述打敗 GBDT，等於<strong>重寫企業 ML 嘅默認工具鏈</strong>——呢個係一個「唔 glamorous 但極賺錢」嘅領域被基礎模型撬動嘅典型案例。
+</p>
+
+<footer>
+  <p>深度復述 · Machine Learning Street Talk × Frank Hutter（Prior Labs / TabPFN）（2026-09-23）· 來源：MLST 官方 RSS 節目簡介與章節軸、Prior Labs 官方「Meet TabPFN-3.5」產品頁、訪談逐字稿要點（中文意譯）、相關論文（TabPFN v2 Nature 2025、TabArena 等）。</p>
+  <p style="margin-top:0.3rem;">「打敗 XGBoost/CatBoost」「99% 勝率」等為廠商／官方基準口徑（部分附「with Thinking」條件），非第三方獨立實測。引號內容為中文意譯，非逐字原文。· JMOKSZ / ai-podcast-collection · Apache 2.0 · <a href="../index.html">返回日報</a></p>
+</footer>
+</div>
+</body>
+</html>
