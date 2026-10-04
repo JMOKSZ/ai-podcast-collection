@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-10-03T02:04:00.000Z",
- "lastScanDate": "2026-10-03",
+ "lastScan": "2026-10-04T02:04:00.000Z",
+ "lastScanDate": "2026-10-04",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-01T15:28:28.000Z",
@@ -35,9 +35,18 @@
    ]
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-10-01T00:00:00.000Z",
-   "lastEpisodeTitle": "AI:AM: Was Trump-Xi Anything? What Counts as Utopia? + AWS GPUs Cost 3X & AI Diagnoses Rare Diseases",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-10-03T13:00:00.000Z",
+   "lastEpisodeTitle": "One Brain, Any Body: Google DeepMind's Keerthana on Gemini Robotics 2, Cross-Embodiment & Humanoids",
+   "newEpisodes": [
+    {
+     "title": "One Brain, Any Body: Google DeepMind's Keerthana on Gemini Robotics 2, Cross-Embodiment & Humanoids",
+     "pubDate": "2026-10-03T13:00:00.000Z",
+     "duration_sec": 5528,
+     "type": "interview",
+     "url": "https://www.cognitiverevolution.ai/one-brain-any-body-google-deepmind-s-keerthana-on-gemini-robotics-2-cross-embodiment-humanoids/",
+     "note": "已深度萃取（官方 Show Notes＋完整逐字稿，逐字稿純文字約 60 KB，含全部時間軸）：The Cognitive Revolution，主播 Nathan Labenz。嘉賓 Keerthana Gopalakrishnan——Google DeepMind Staff Research Scientist、Gemini Robotics 研究負責人，第四次上節目（2023 Mother of Robots／2024 與 Ted Xiao／2025 Gemini Robotics 1.0-1.5）。主題＝Gemini Robotics 2 套件與通用機器人進度校準。核心論點：①人形運動會炫技非瓶頸——腳速非實用價值限制，奔跑在平地模擬好訓；②真瓶頸＝操縱的 sim-to-real 缺口（布料/摩擦/可變形物體，接觸動力學難建模）；③泛化與精通為正交軸，通用底座有複利、窄模型無；④機器人仍『GPT-2』，卡在跨本體（單一機身策略≠通用大腦，GPT 從無此問題）；⑤ICL/視頻 prompt 是光譜，關鍵在記憶 vs 泛化與任務難度；⑥架構三件套：ER 2『系統二』推理（建於 Gemini 3.5 Flash，已開放 API，可把機器人 affordances 定義為工具）＋ Gemini Robotics 2（VLA 執行，控制指尖到腳尖全身）＋ On-Device 2（離線小模型），VLA 僅限 trusted testers；⑦延遲是應用特定權衡，預期 Flash/Pro 分層出現於機器人；⑧128K context≈3 分鐘密集多模態記憶，促使用文字摘要壓縮歷史，ER→VLA 介面盼盡量豐富；⑨全身控制為本版新增（與 Apptronik/Agile Robots/Boston Dynamics 合作），錯誤在序列任務中複合；⑩安全是能力非取捨，分操作安全/目標對齊/感測失效優雅降級（籃子蓋頭應停下求助）；⑪做人形才暴露 HRI/全身控制/多指靈巧三前緣，稱 DeepMind 或為北美唯一可跨本體研究人形智能者；⑫對世界模型『jury's still out』，資料策略走混合（teleop 精確不可擴展/UMI 感測可擴展受硬體瓶頸/自我中心視頻最可擴展最噪）。關鍵數字：128K≈3 分鐘、API 往返約 6 秒、端側約 200 示範跨多機身、GR1→GR2 約 1 年 4 個月由夾爪翻轉到多指、Wuji Hand≈十歲小孩力道、SharpaWave 可舉約 20kg 且能開罐、狗腦約 25 兆參數。片長 92 分鐘。爭議：成功率/跨本體躍進為公司自報口徑；Nathan 主張對齊最終是家用瓶頸，Keerthana 未明確排序；『GPT-2』類比承認有缺陷。"
+    }
+   ]
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-10-01T20:00:18.000Z",
@@ -71,12 +80,12 @@
   }
  },
  "notes": {
-  "scan_status": "2026-10-03 掃描（02:03–02:05 UTC）：新 AI 集 2 條，均為英文——①No Priors《Frontier Chips for Frontier AI Labs, with Walter Goodwin, Fractile》（10/2 10:00Z，片長 35:38）；②Latent Space《Inside-Out AI: Rebuilding Airbnb》（10/2 14:04Z，長文訪談）。逐一核實無新：Dwarkesh 官網 RSS 頂條仍 10/1 Si Sheppard；MLST 最新仍 10/1 Shawn Wen；Cognitive Revolution 最新仍 10/1 AI:AM；張小珺最新仍 9/3；十字路口最新仍 9/27 于紅；硅谷101 最新仍 9/29 E254；42章經最新仍 9/27 Vibe-Trading；屠龍之術最新仍 9/28 EDA。中文圈本輪無新 AI 集。",
-  "report_date": "2026-10-03",
-  "deep_content_fetched": "《No Priors × Fractile》：YouTube 官方字幕逐字稿（純文字約 37 KB，含全部時間軸）。《Latent Space × Airbnb》：官方長文完整內容（readability 抽取約 12 KB，含全部直接引文與數據）。所有引言直接取自逐字稿／官方文本。",
-  "transcript_attempts_failed": "①No Priors YouTube channel_id=UCSI7h9hydQ40K5MJHnCrQvw 的 RSS 仍回 404，改用 Megaphone feed（feeds.megaphone.fm/nopriors）＋Apple iTunes lookup（collectionId 1668002688）核實最新集。②同集 yt-dlp --write-auto-subs 兩次皆回 HTTP 429，改以 youtube_transcript_api 成功取得官方字幕（37 KB）。③中文播客以 xyzfm/fireside RSS feed ＋ Apple iTunes search 逐一核實最新集（未依賴 web_search 猜測）。",
-  "jev_prefilter": "2026-10-03 對 2 條候選跑 jev.py triage --profile news：available=true、failed=0/2，worth 分數——Latent Space（Airbnb）1.19、No Priors（Fractile）0.16。該 profile 非為播客訪談校準（工具自註『絕對區分度有限』），依 fail-open 原則未做丟棄，兩條均保留原始連結；Jev 分數僅作相對排序參考。",
-  "notable_for_james": "①本輪兩集構成同一週的兩極：一極在硅與頻寬（Fractile：記憶體頻寬剪刀差、全棧敏捷、前沿 lab 不宜 all-in 自研芯片），一極在組織與流程（Airbnb：拆交接、code 為產物、Everest 上下文圖、Pareto 選型）。②兩集罕見地同時指向「能力已過剩、稀缺的是結構」：Walter 的滾動前沿賭注 vs Al-Dahle 的逐用例評測與通才化，本質都是「用取捨與制度去對沖不確定」。③「記憶體頻寬 20 年只漲 40 倍 vs FLOPs 漲百萬倍」是可長期追蹤的硬指標；若 Fractile 2027 H2 平台兌現，將直接驗證或證偽其 25× 頻寬主張。④Airbnb 的「60% 代碼 AI 撰寫 / 人均 PR +1.6x / 客服 50%」是最具體的企業級落地數字，值得與其他 AI-native 公司口徑交叉比對。⑤兩集都提到「初階人才／驗證審計」：Al-Dahle 要工程師能解釋 AI 產出，Walter 指驗證與模擬仍是瓶頸——延續本月「可驗證性＝稀缺資源」的主線。⑥中文圈本輪無新 AI 集，主線續由英文主導。",
+  "scan_status": "2026-10-04 掃描（02:03–02:04 UTC）：新 AI 集 1 條，英文——The Cognitive Revolution《One Brain, Any Body: Google DeepMind's Keerthana on Gemini Robotics 2, Cross-Embodiment & Humanoids》（10/3 13:00Z，片長 92 分鐘）。逐一核實無新：Dwarkesh 官網 RSS 頂條仍 10/1 Si Sheppard；Latent Space 無新訪談（最新訪談仍 10/2 Airbnb，其後僅 AINews）；No Priors 最新仍 10/2 Fractile；MLST 最新仍 10/1 Shawn Wen；張小珺最新仍 9/3；十字路口最新仍 9/27 于紅；硅谷101 最新仍 9/29 E254；42章經最新仍 9/27 Vibe-Trading；屠龍之術最新仍 9/28 EDA。中文圈本輪無新 AI 集。",
+  "report_date": "2026-10-04",
+  "deep_content_fetched": "《The Cognitive Revolution × Keerthana》：官方 Show Notes（AI 生成、基於逐字稿）＋完整逐字稿（純文字約 60 KB，含全部時間軸與完整章節）。所有引文直接取自逐字稿／官方文本。",
+  "transcript_attempts_failed": "①YouTube videos.xml 對 Dwarkesh/No Priors/MLST 等頻道多回 404，改以原生 RSS／Megaphone feed 逐一核實。②The Cognitive Revolution Substack feed 已停更於 2024-02，改以 feeds.megaphone.fm/RINTP3108857801（經 iTunes lookup）為準，頂條即新集。③No Priors 以 feeds.megaphone.fm/nopriors 核實。④中文播客以 xyzfm/fireside RSS feed 頂條 ＋ Apple iTunes lookup 逐一核實，未依賴 web_search 猜測。",
+  "jev_prefilter": "2026-10-04 對 1 條候選跑 jev.py triage --profile news：available=true、failed=0/1，worth=0.57（未達 expand_min 1.5，亦未低於 drop_max 0.6）。該 profile 非為播客訪談校準（工具自註『絕對區分度有限』），依 fail-open 原則未丟棄，保留原始連結；Jev 分數僅作相對排序參考。",
+  "notable_for_james": "①本輪單條但極高信息量：Keerthana 是 Google DeepMind Gemini Robotics 研究負責人，本集＝Gemini Robotics 2 最完整的公開架構拆解（ER 2/VLA/On-Device 三件套、steerability、128K≈3 分鐘、200 示範跨本體）。②『機器人仍處 GPT-2』是可長期追蹤的錨點判斷——其瓶頸定義為跨本體而非指令跟隨，與她本人 2025 年答案一致，可作年度對照。③最有價值的公開未解分歧：Keerthana vs. Jim Fan（世界模型、自我中心數據、Physical API）——『jury's still out』vs 強觀點。④口徑需標註：pick&place 接近部署、200 示範、跨本體躍進均為公司/Cognitive Revolution 自報，show notes 為 AI 生成。⑤延續本月『可驗證性＝稀缺資源』主線（錯誤複合、力控、感測失效降級）。⑥中文圈連續多輪無新 AI 集，主線續由英文主導。",
   "index_html": "未更新 index.html：該落地頁手工維護且自 2026-07-19 起已停更，為維持既有慣例未動。"
  }
 }

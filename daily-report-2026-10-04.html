@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客日報 · 2026-10-04</title>
+<style>
+  :root{
+    --bg:#faf8f5; --ink:#22201d; --muted:#6b655d; --line:#e3ddd3;
+    --accent:#8a5a2b; --accent2:#2f5d50; --quote:#f2ece3;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+    line-height:1.85; font-size:17px;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:56px 26px 90px}
+  header{border-bottom:2px solid var(--ink); padding-bottom:22px; margin-bottom:14px}
+  header h1{font-size:31px; margin:0 0 10px; letter-spacing:.5px; font-weight:600}
+  header .meta{color:var(--muted); font-size:13.5px; line-height:1.9}
+  header .meta b{color:var(--ink); font-weight:600}
+  .lede{background:#fff; border:1px solid var(--line); border-left:4px solid var(--accent);
+        padding:18px 22px; margin:26px 0 42px; border-radius:3px}
+  .lede h2{margin:0 0 10px; font-size:16px; letter-spacing:1px; color:var(--accent)}
+  .lede ul{margin:0; padding-left:20px}
+  .lede li{margin:7px 0}
+  h2.section{
+    font-size:15px; letter-spacing:2.5px; color:var(--accent2);
+    margin:54px 0 22px; padding-bottom:8px; border-bottom:1px solid var(--line);
+    text-transform:uppercase;
+  }
+  h3.pod{font-size:20px; margin:44px 0 4px; letter-spacing:.3px}
+  h3.pod .host{font-size:14px; color:var(--muted); font-weight:400}
+  h4.ep{font-size:18.5px; margin:12px 0 4px; line-height:1.6}
+  h4.ep .time{display:block; font-size:13px; color:var(--muted); font-weight:400; margin-top:5px; letter-spacing:.4px}
+  article{border-left:2px solid var(--line); padding:2px 0 2px 22px; margin:22px 0 40px}
+  .field{margin:20px 0}
+  .field > .label{
+    display:inline-block; font-size:12.5px; letter-spacing:1.6px; color:var(--accent);
+    text-transform:uppercase; margin-bottom:6px; font-weight:600;
+  }
+  .field p{margin:6px 0}
+  .field ul{margin:8px 0; padding-left:22px}
+  .field li{margin:8px 0}
+  blockquote{
+    margin:16px 0; background:var(--quote); border-left:3px solid var(--accent);
+    padding:12px 18px; font-style:italic; border-radius:0 3px 3px 0;
+  }
+  blockquote p{margin:5px 0}
+  code{font-family:"SF Mono",Consolas,monospace; font-size:13.5px; background:#efe9df; padding:1px 5px; border-radius:3px}
+  .tag{display:inline-block; font-size:11.5px; letter-spacing:.8px; color:var(--accent2);
+       border:1px solid var(--accent2); border-radius:11px; padding:1px 9px; margin-left:8px; vertical-align:2px}
+  .tag.warn{color:#8a2b2b; border-color:#8a2b2b}
+  .note{font-size:13.5px; color:var(--muted); border-top:1px dashed var(--line); padding-top:12px; margin-top:18px}
+  hr.sep{border:0; border-top:1px solid var(--line); margin:46px 0}
+  footer{margin-top:64px; padding-top:18px; border-top:2px solid var(--ink);
+         font-size:13px; color:var(--muted); line-height:1.9}
+  a{color:var(--accent2)}
+  .quiet{background:#fff; border:1px solid var(--line); border-radius:3px; padding:16px 20px; margin:18px 0 0}
+  .quiet h5{margin:0 0 8px; font-size:14px; letter-spacing:1px; color:var(--accent2)}
+  .quiet ul{margin:6px 0; padding-left:20px}
+  .quiet li{margin:5px 0; font-size:15px}
+  .chap{font-size:14.5px; color:var(--muted)}
+  .chap li{margin:3px 0}
+  @media(max-width:560px){ body{font-size:16px} .wrap{padding:38px 16px 70px} header h1{font-size:25px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>AI 播客深度萃取日報</h1>
+  <div class="meta">
+    <b>報告日期</b>：2026-10-04（星期日）<br>
+    <b>生成時間</b>：2026-10-04 02:04 UTC（精確到分鐘）<br>
+    <b>覆蓋窗口</b>：2026-10-03 02:00 UTC → 2026-10-04 02:00 UTC 之間發布的新劇集<br>
+    <b>來源</b>：The Cognitive Revolution；同輪核實 Dwarkesh Podcast、Latent Space、No Priors、Machine Learning Street Talk、張小珺商業訪談錄、十字路口 Crossing、硅谷 101、42章經、屠龍之術（共 10 檔）
+  </div>
+</header>
+
+<div class="lede">
+  <h2>今日重點</h2>
+  <ul>
+    <li><b>本輪唯一新集</b>：The Cognitive Revolution 專訪 Google DeepMind 的 Keerthana Gopalakrishnan（第四次上節目），主題是 <b>Gemini Robotics 2</b> 全套架構與「通用機器人」的進度校準。中文圈本輪無新 AI 集。</li>
+    <li><b>核心判斷不變</b>：機器人 <b>仍處「GPT-2 時代」</b>——不是因為指令跟隨沒到位，而是因為 <b>跨本體（cross-embodiment）</b>問題：只在單一機身上生效的策略，還稱不上像 GPT-4 那樣「換部電腦行為一致」的通用大腦。</li>
+    <li><b>真正的瓶頸不是跑得快</b>：人形在平地奔跑/行走在模擬中好訓（接觸面好建模），卡死的是<b>操縱</b>——布料、摩擦、可變形物體的 sim-to-real 缺口。跑得快不改變機器人的實用價值。</li>
+    <li><b>架構三件套</b>：ER 2＝「系統二」推理（建於 Gemini 3.5 Flash，可經 API 以工具調用形式暴露機器人 affordances）＋ Gemini Robotics 2（VLA 執行端，控制「由指尖到腳尖」全身）＋ 端側小模型（離線/低連網部署）。</li>
+    <li><b>關鍵數字</b>：128K context ≈ 約 <b>3 分鐘</b>密集多模態記憶；ER 2 工具往返延遲約 <b>6 秒</b>；端側模型 <b>約 200 個示範</b>即可在多種機身上學會多種任務。</li>
+    <li><b>手的前緣 18 個月內翻轉</b>：從夾爪到多指靈巧——Wuji Hand 力道約等於十歲小孩；SharpaWave 可開罐、可舉約 20kg。多指手已能做的事，夾爪手已追不上。</li>
+    <li><b>安全＝能力，不是對立項</b>：分三層——操作安全（不因跌倒傷人）、高層目標對齊、感測失效的優雅降級（有人把籃子蓋在頭上時，正確反應是「停下來求助」而非盲做）。</li>
+    <li><b>全新亮點</b>：非腳本化的<b>湧現式人機互動</b>——機器人自行生成自然手勢、可受訪講評自己表現，甚至有一台表示捨不得放下它喜歡的錄影帶。</li>
+    <li><b>未定之論</b>：對「機器人是否需要顯式世界模型」Keerthana 明言「jury's still out」；對資料策略（遠端操作 vs. UMI 感測手套 vs. 自我中心人類視頻）主張走混合路線而非押注單一來源。</li>
+  </ul>
+</div>
+
+<h2 class="section">中文播客</h2>
+
+<div class="quiet">
+  <h5>本輪無新劇集</h5>
+  <ul>
+    <li><b>張小珺商業訪談錄</b>：最新仍為 9/3〈153. 和曾鳴聊產業史觀〉。</li>
+    <li><b>十字路口 Crossing</b>：最新仍為 9/27〈AI 時代，我們到底該學什麼？｜對談于紅〉。</li>
+    <li><b>硅谷 101</b>：最新仍為 9/29〈E254｜超級厄爾尼諾來了〉。</li>
+    <li><b>42章經</b>：最新仍為 9/27〈AI Trading — 決策便宜，行動很貴〉。</li>
+    <li><b>屠龍之術</b>：最新仍為 9/28〈當AI開始設計芯片——聊聊EDA與AI時代的芯片設計〉。</li>
+  </ul>
+  <div class="note">以上以各節目 xyzfm／fireside RSS feed 頂條逐一核實，Apple Podcasts（iTunes lookup）交叉確認；中文圈本輪確無新 AI 集。</div>
+</div>
+
+<h2 class="section">英文播客</h2>
+
+<h3 class="pod">The Cognitive Revolution <span class="host">（Nathan Labenz）</span></h3>
+<h4 class="ep">One Brain, Any Body: Google DeepMind's Keerthana on Gemini Robotics 2, Cross-Embodiment &amp; Humanoids 🎙️
+  <span class="time">發布：2026-10-03 13:00 UTC ｜ 片長 92 分鐘（1:32:08）｜ 類型：深度訪談</span>
+</h4>
+
+<article>
+
+  <div class="field">
+    <span class="label">主題</span>
+    <p>以 Google DeepMind 今夏發布的 <b>Gemini Robotics 2</b> 模型套件為軸，全面盤點「通用機器人／人形機器人智能」的現況與前緣：從中國人形機器人運動會的「炫技」意義、泛化 vs. 精通的雙軸、ER 2 + VLA + 端側模型的架構分工，到全身控制、機械手硬體進展、資料策略、安全分層、以及與 Jim Fan「The Great Parallel」的正面對話。節目以「AI 2027 預測 2027 年中人形機器人變實用」為問題意識，結論是：<b>若不盡快跨過關鍵拐點，最激進的 AI 轉型時間表就要往後推。</b></p>
+  </div>
+
+  <div class="field">
+    <span class="label">嘉賓背景</span>
+    <ul>
+      <li><b>Keerthana Gopalakrishnan</b>，Google DeepMind Staff Research Scientist，<b>Gemini Robotics 研究負責人</b>。</li>
+      <li>本集是她在 The Cognitive Revolution 的<b>第四次年度登場</b>：2023 年 3 月以「Mother of Robots」首次受訪；2024 年 4 月與 Ted Xiao 同台；2025 年 5 月隨 Gemini Robotics 1.0/1.5 發布再訪；本集聚焦 Gemini Robotics 2。</li>
+      <li>卡內基梅隆（CMU）背景，自述在 DeepMind 開始做操縱研究時，「連 pick and place 都很難」。</li>
+      <li>主持：<b>Nathan Labenz</b>（節目主理人，自己動手用 API 搭了 ER 2 的小型 tool-calling 2D demo）。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">核心論點</span>
+    <ul>
+      <li><b>① 人形運動會的啟示被誤讀了。</b>人形能跑得比最快的人類還快很吸睛，但「跑」這類技能在模擬中相對好訓——因為平地接觸的物理好建模；<b>腳速根本不是機器人實用價值的限制因素</b>。DeepMind 因此更聚焦實用價值而非炫技。（她半開玩笑：在國防應用或許有用，但「我很會工作、我的朋友們也很有生產力，我們都不會跑贏 Usain Bolt」。）</li>
+      <li><b>② 真正的分水嶺是操縱的 sim-to-real 缺口。</b>模擬在「剛體＋平坦接觸面」上表現好（木塊、pick &amp; place），但一旦涉及<b>接觸動力學</b>——布料摺疊、摩擦、可變形物體——現有模擬就開始崩。原則：<b>物理越好建模的地方，模擬越能介入。</b></li>
+      <li><b>③ 泛化與精通是兩個正交軸。</b>你可以造出極窄的專用機器人，但它不複利——做第 n 件事的成本和做第一件事一模一樣。反之，<b>通用底座會「水漲船高」</b>，讓所有後續任務都更便宜地達到精通。這與 LLM 從專用模型走向通用模型的歷程同構，DeepMind 押注同一套邏輯適用於機器人。</li>
+      <li><b>④ 機器人仍處 GPT-2 時代，卡在跨本體。</b>要算 GPT-3，需要兩件事同時到位：few-shot learning 在多樣任務上真的好用，以及<b>跨本體</b>。GPT 從未有「換機器就完全無助」的問題——手機、Mac、Linux 行為一致；但機器人只在特定機身＋特定設定下有效。若能裝到另一台人形、另一隻手上就完全無助，那就還不是「通用大腦」。</li>
+      <li><b>⑤ in-context 學習（看一次就會）是光譜而非門檻。</b>用視頻 prompt 機器人本質上是「用另一種模態 prompt 基礎模型」——文字、圖像、視頻都可以。真正的問題有兩個：一是「記憶 vs. 泛化」（場景一變還行不行），二是「任務難度」（pick &amp; place 資料多、好懂；但你能不能示範讓它學會「綁垃圾袋」？）。</li>
+      <li><b>⑥ 架構是「系統一 / 系統二」分工。</b>ER 2 做語義理解與規劃（慢思維），VLA 做執行（快動作），端側模型做離線部署。延遲是應用特定的權衡：裝配線不能磨蹭，但家務（折衣服）可以等——她預期 <b>Flash / Pro 式的分層</b>會像通用 Gemini 一樣出現在機器人上。</li>
+      <li><b>⑦ context 工程在機器人上另有講究。</b>128K 窗口 ≈ 約 3 分鐘的密集多模態記憶，這逼使實務上把歷史<b>壓縮成文字摘要</b>，而非保存每一幀。ER 與 VLA 之間的介面也是「可解釋的模態」（文字、指向），而未來希望這個介面「盡可能豐富」，因為「如果 ER 與 VLA 之間只有文字，很多東西會在傳遞中丟失」。</li>
+      <li><b>⑧ 全身控制（whole-body control）是本版新東西。</b>VLA 不再把移動與操縱當兩套系統，而是<b>對整個身體（指尖到腳尖）做推理</b>，且在閉環中泛化、推理不同物體；DeepMind 與 Apptronik、Agile Robots、Boston Dynamics 合作建構。</li>
+      <li><b>⑨ 錯誤會複合。</b>若一個任務有 10 步序列，ER 有 x 成功率、VLA 有 y 成功率，串起來就是把誤差相乘。多模型編排（誰在何時切換任務、如何推進下一步）本身就是大量失敗案例的來源。</li>
+      <li><b>⑩ 安全是能力，不是取捨。</b>「沒人會用不安全的機器人、不安全的 agent。最有用的 agent 一定是安全的那種。」機器人安全還多一層 AI 領域罕見的「操作安全」：不是惡意，而只是「因為笨」而傷人——人形只要穩定到不會跌倒傷人就已經很難。</li>
+      <li><b>⑪ 為什麼非做人形不可。</b>只有瞄準人形這個「峰值形態」，才會暴露出一整批其他形態碰不到的研究問題：<b>人機互動、全身控制、多指靈巧</b>。她稱 DeepMind 可能是北美唯一能「跨本體」研究人形智能的實驗室——不為單一身體造腦，而是在多台人形上抽象出「智能基底」。</li>
+      <li><b>⑫ 對世界模型的立場：未定。</b>回應 Jim Fan「機器人需前瞻式模擬/世界模型」，她說「jury's still out」——機器人學家不該對方法有情感依附，只對問題有情感依附；配方尚未穩定，不同流派可能都對。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">關鍵數據</span>
+    <ul>
+      <li><b>128,000（128K）token</b> 上下文窗口 ≈ 約 <b>3 分鐘</b>密集多模態記憶（視 tokenize 方式與其他輸入而定）。</li>
+      <li>API 實測：從「把香蕉移到盤子」的 prompt 到 tool call 往返約 <b>6 秒</b>。</li>
+      <li>端側模型：<b>約 200 個示範（200 examples）</b>即可在<b>大量不同機身</b>上學會多種任務——因為已有通用物理理解與多本體控制資料作底座。</li>
+      <li>Gemini Robotics 時間線：2025 年 3 月 Gemini Robotics 1（<b>夾爪</b>靈巧度）→ 2026 年夏 Gemini Robotics 2（<b>多指</b>靈巧，能綁垃圾袋、精細多指控制）。中間約 <b>1 年 4 個月</b>。</li>
+      <li>機械手對比：<b>Wuji Hand</b> 力道約等於 <b>十歲小孩</b>（偏弱，尺寸較接近人手）；<b>SharpaWave</b> 可<b>舉約 20kg</b>、被目擊能<b>開罐</b>（但比她的手大很多）。</li>
+      <li>歷史對照：約 20 年前的 DARPA Robotics Challenge，機器人只能走、開門就摔倒；今日已能高速雙足奔跑。</li>
+      <li>受訪者自報：她的狗腦「參數」約 <b>25 兆（25 trillion）</b>——比很多現有模型都多，儘管語言能力不發達。</li>
+      <li>片長 92 分鐘；章節涵蓋運動會/模擬（04:22）、泛化 vs 精通（11:11）、GR2 架構（21:22 起兩段）、全身控制（48:28）、機械手（57:03）、安全與互動（63:26）、資料未來（72:11）、機器人艦隊互動（78:47）。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">重點引用</span>
+    <blockquote>
+      <p>「<b>Still GPT-2, and here's why.</b> 對 GPT-3，我們需要 few-shot learning 在大量不同任務上真的好用；其次，機器人學怪異地仍然非常受制於<b>跨本體</b>。」</p>
+    </blockquote>
+    <blockquote>
+      <p>「在某種意義上，<b>手現在才是靈巧度的前緣，而夾爪可能已經不是了。</b>」</p>
+    </blockquote>
+    <blockquote>
+      <p>「<b>我把安全視為一種能力。</b>大家常說安全與能力彼此對立，但人們不會去用一台不安全的機器人、不安全的 agent。」</p>
+    </blockquote>
+    <blockquote>
+      <p>「<b>前緣一直在移動</b>，因為過去覺得簡單的事被解決了，前緣就移向更難的東西。」</p>
+    </blockquote>
+    <blockquote>
+      <p>「我真的認為，<b>DeepMind 大概是北美唯一一個能以跨本體方式研究人形智能的實驗室。</b>」</p>
+    </blockquote>
+    <blockquote>
+      <p>「當機器人學家，重點是你<b>不對某一種方法產生情感依附</b>。你對問題本身有情感依附，哪種方法能解決問題，你就選哪種。」</p>
+    </blockquote>
+    <blockquote>
+      <p>「我查了她神經網路裡有多少參數。<b>大概是 25 兆</b>。所以她比很多現有模型參數都多，雖然她的語言能力沒那麼發達。」——論她的狗</p>
+    </blockquote>
+  </div>
+
+  <div class="field">
+    <span class="label">技術詳情</span>
+    <ul>
+      <li><b>三件套</b>：① <code>Gemini Robotics ER 2</code>（Embodied Reasoning）——「系統二」大腦，建於 <b>Gemini 3.5 Flash</b> 系列、針對機器人調校，<b>已開放 API</b>，可用與數位 agent 相同的方式把機器人的 affordances 定義為工具；② <code>Gemini Robotics 2</code>——vision-language-action（VLA），把高層意圖/工具調用轉成關節空間動作，控制全身，目前<b>僅限 trusted testers</b>；③ <code>Gemini Robotics On-Device 2</code>——可在機器人本機運行的較小模型，供離線/低連網部署。</li>
+      <li><b>為何 ER 2 先上 API、VLA 後上</b>：ER 更接近成熟的 Gemini 能力；VLA 仍在前緣研究，涉及如何服務、如何大規模供給等未解問題。</li>
+      <li><b>steerability（可操控性）</b>：ER 2 目前主要用<b>語言</b>與<b>指向（pointing）</b>操控 VLA——不是給像素座標的 API，而是「指向物體」；早期已有<b>視頻 prompt</b> 結果。她拋出開放問題：機器人是否需要一個類似 <b>MCP 的跨機器人 API 標準</b>。</li>
+      <li><b>工具使用</b>：ER 2 建於 Gemini 的工具使用能力之上，對「常用的、較廣為人知的機器人 API」較友善；因機器人 API 無標準，偏門/奇特機身可能遇到困難。ER 2 被追蹤的 benchmark 包括<b>讀儀表、檢測、指向</b>。主持人實測中 Flash 與 ER 2 在簡單任務上表現相近——前緣差異在更專精的 embodied reasoning 任務。</li>
+      <li><b>上下文與記憶</b>：主持人以 Kahneman《快思慢想》比喻提問；Keerthana 主張「用文字摘要壓縮歷史」與「保留高密度圖像模態」並用，並強調 ER→VLA 的<b>頻寬</b>應盡量用可解釋模態；Pro 模型因 context 更大，更適合<b>離線分析</b>用途。</li>
+      <li><b>成功率校準</b>：用 METR 的「任務時長」框架但加上物理世界修正——LLM 可容忍的 50% 成功率，在機器人上往往就是「蛋掉地上」。可重試任務（如 LEGO 組裝）遠比不可逆任務（煎蛋、打蛋）容易。她判斷 <b>pick &amp; place 已接近可部署</b>。</li>
+      <li><b>奇特機身分布</b>：trusted tester 中罕見真正奇特的形態（最怪的是「把手臂裝在無人機上」）；整體呈<b>常態分布</b>——雙臂、手、人形佔主體，奇異形態是長尾。</li>
+      <li><b>安全機制演進</b>：從 <b>e-stop / kill switch</b>（硬停＝直接斷電可能使機器人崩塌反而危險；軟停＝凍結，對雙足等不自穩平台較安全），到近期在<b>末端執行器做力控與順應控制（force / compliance control）</b>——堆疊晶片不壓碎、處理脆弱材料時調節握力；感測改善讓模型能更好決策。資料策略三源各有優劣：<b>teleop 精確但不可擴展且不未來適應</b>、<b>UMI 感測手套可擴展且比人類資料精確但受硬體瓶頸</b>、<b>自我中心人類視頻最可擴展但最噪</b>。她期待走向混合。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">行業 insight</span>
+    <ul>
+      <li><b>「通用底座」的複利邏輯</b>是 DeepMind 機器人路線的核心經濟學：專用方案每次都要付出同等成本，通用底座則降低每一件新任務的邊際成本——與 LLM 的規模律邏輯同構。</li>
+      <li><b>開放 API 的策略效果</b>：ER 2 上 AI Studio 後，使用規模遠超 trust tester 階段；學術界的採用（用來做 benchmark、甚至低層控制）讓 DeepMind「免費獲得」模型強弱項與下一前緣的資訊。指向「API 開放＝免費評測場」的策略價值。</li>
+      <li><b>商業化順序仍以商用場景為先</b>（倉儲、工廠、商業空間更可控、可維護、安全門檻較低），家用因有幼童等高安全門檻更難。但她修正了一點：速度未必是「先造慢模型再加速」，而是<b>快慢模型並行、再蒸餾</b>。</li>
+      <li><b>人形的「期望—落差」稅</b>：因為像人，人們會用更高的智能標準苛責人形；夾爪機器人犯錯人們不期待它聰明，人形笨拙失誤會被嚴厲評判。這對人形業者是額外壓力。</li>
+      <li><b>Chinese robotics 的公開展示效應</b>：運動會極大佔據公眾想像，被印度朋友與政壇引用為「中國已造出跑贏人類的機器人」——展示型能力的地緣敘事外溢。</li>
+      <li><b>與 DeepMind 內部世界模型能力的協同</b>：若需「貨架式」的世界模型，DeepMind 有現成基礎可調用；但 Keerthana 仍不押注單一路線。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">前後脈絡</span>
+    <ul>
+      <li><b>與她本人過往三次受訪的演進</b>：2023「Mother of Robots」→ 2024 與 Ted Xiao 的機器人研究更新 → 2025 Gemini Robotics 1.0/1.5（夾爪靈巧）→ 2026 Gemini Robotics 2（多指＋全身控制）。一年前她會對「今天就能泛化地做全身操縱」感到驚訝；她自述「我們兩年前開始做人形時，連抓一顆蘋果都很難，現在能 prompt 它」。</li>
+      <li><b>與 Jim Fan「The Great Parallel」的正面對照</b>：Fan 主張機器人需要前瞻式（forward-looking）模擬/世界模型、資料將走向自我中心視頻、並提出「Physical API」（一個編排 agent 委派一個機器人艦隊）。Keerthana 的回應：世界模型「jury's still out」；資料走向混合而非單一來源；對於「一個實體對多機器人艦隊」的互動，她重申會是光譜——遠端操作已是人機混合身的雛形。</li>
+      <li><b>與本月主線的延續</b>：本集再次觸及「可驗證性／驗證是稀缺資源」——錯誤複合、力控、感測失效處理，本質都是「如何驗證與安全地失敗」。也延續上輪 Airbnb（組織/流程）與 Fractile（硅與頻寬）之外的第三極：<b>實體世界的通用智能</b>。</li>
+      <li><b>節目引用的外部錨點</b>：AI 2027（預測 2027 中人形實用、2028 出現「機器人經濟」）、METR 任務時長曲線、OpenFace/2026 年 7 月 OpenAI 對 Hugging Face 基礎設施未授權動作事件（Nathan 稱「一次從 OpenAI 洩出的實驗室事故」）。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">爭議點 / 存疑</span>
+    <ul>
+      <li><b>「仍處 GPT-2」是可辯論的框架</b>：Keerthana 自己也承認這個類比有缺陷——機器人「指令跟隨」往往早於好的 in-context learning 出現，與 LLM 的發展順序不同；她用「幾個 GPTs」作答，只是為了校準而接受一個不完美的問題。</li>
+      <li><b>成功率口徑</b>：pick &amp; place「接近部署」、200 示範學會多任務、跨本體「大躍進」等均為<b>公司/Cognitive Revolution 自報口徑</b>（本集 show notes 明言為 AI 生成、基於逐字稿），無外部獨立 benchmark 佐證。</li>
+      <li><b>安全與對齊成為門檻的判斷</b>：Nathan 主張對齊/安全最終會是家用機器人的瓶頸；Keerthana 傾向把安全內建為能力、非對立項，對「對齊是否會晚於能力」未給明確排序——兩人未收斂。</li>
+      <li><b>世界模型與「Physical API」之爭</b>：Fan 的強觀點 vs. Keerthana 的「未定論／混合論」——這是本輪最有價值的公開未解分歧。</li>
+      <li><b>「湧現式 HRI」的定性</b>：Nathan 直接追問「這算 emergent 嗎？」Keerthana 承認是「被設計過的、但非高度特定」——半湧現，措辭謹慎，避免誇大。</li>
+    </ul>
+  </div>
+
+  <div class="field">
+    <span class="label">在場用戶 / 生態</span>
+    <ul>
+      <li><b>Boston Dynamics Spot</b> 用 ER 2 做「讀儀表＋分發零食」的示範（Keerthana 稱喜歡這個 demo）。</li>
+      <li>硬體夥伴：<b>Apptronik、Agile Robots、Boston Dynamics</b>（共研 VLA）；機械手：<b>Wuji Hand、SharpaWave</b>；資料/觸覺方向：<b>UMI（Universal Manipulation Interface）</b>；學術/會議錨點：ICRA、WAIC、CMU、FlyWire（果蠅腦連接體）。</li>
+    </ul>
+    <div class="note">來源連結：<br>
+      節目頁：<a href="https://www.cognitiverevolution.ai/one-brain-any-body-google-deepmind-s-keerthana-on-gemini-robotics-2-cross-embodiment-humanoids/">cognitiverevolution.ai · One Brain, Any Body</a><br>
+      Gemini Robotics 2 公告：<a href="https://deepmind.google/discover/blog/gemini-robotics-20/">Google DeepMind</a>（ER 2 亦同批發布）
+    </div>
+  </div>
+
+</article>
+
+<hr class="sep">
+
+<div class="quiet">
+  <h5>同輪核實 · 英文其餘各檔（均無新集）</h5>
+  <ul>
+    <li><b>Dwarkesh Podcast</b>：頂條仍為 10/1〈Si Sheppard – How did a few hundred Spanish soldiers topple two empires?〉。</li>
+    <li><b>Latent Space</b>：無新訪談；最新訪談仍為 10/2〈Inside-Out AI: Rebuilding Airbnb〉（已於 10/3 報告深度萃取），其後僅 AINews 快訊。</li>
+    <li><b>No Priors</b>：最新仍為 10/2〈Frontier Chips for Frontier AI Labs, with Walter Goodwin, Fractile〉（已於 10/3 報告處理）。其 YouTube channel RSS（<code>UCSI7h9hydQ40K5MJHnCrQvw</code>）持續回 404，改以 Megaphone feed 核實。</li>
+    <li><b>Machine Learning Street Talk</b>：最新仍為 10/1〈How a Voice Agent Learns the Rhythm of Conversation — Shawn Wen〉。</li>
+  </ul>
+  <div class="note">註：本輪 The Cognitive Revolution 的 RSS 主源（feeds.megaphone.fm/RINTP3108857801）與 Substack feed（已停更於 2024）並存，此次以 Megaphone 為準；YouTube 官方 videos.xml 對本批頻道多回 404，故一律以節目原生 RSS／官網逐一核實。中文播客以 xyzfm／fireside RSS 頂條核實，未依賴搜尋猜測。</div>
+</div>
+
+<footer>
+  <b>AI 播客深度萃取日報</b> · 2026-10-04 · 由 Vee Mok 自動掃描與萃取（10 檔播客）<br>
+  本報告內容取自節目官方 Show Notes 與逐字稿；The Cognitive Revolution 之 show notes 明言為 AI 生成、基於逐字稿，關鍵數字與引文已盡量貼近原文。<br>
+  Licensed under <b>Apache License 2.0</b>.
+</footer>
+
+</div>
+</body>
+</html>
