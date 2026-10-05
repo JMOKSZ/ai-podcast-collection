@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 張小珺商業訪談錄 × 譚捷：「機器人係喺真實世界做圖形學」——Gemini Robotics 1.5 嘅雙腦、跨本體 Motion Transfer，同「Robotics 最大問題係數據」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">張小珺商業訪談錄 Ep.121 · 2025-11-28 發布</div>
+  <h1>「機器人係喺真實世界做圖形學」——張小珺 × DeepMind 譚捷：Gemini Robotics 1.5 嘅雙腦、跨本體 Motion Transfer、世界模型嘅定義，同「Robotics 最大嘅問題係數據」</h1>
+  <div class="meta">
+    <span>📅 2025-11-28</span><span>·</span><span>🎙️ 張小珺商業訪談錄</span><span>·</span><span>👤 張小珺 × 譚捷（Google DeepMind 機器人團隊高級研究科學家兼技術負責人）</span><span>·</span><span>⏱️ 2h06m15s</span><span>·</span><span>📝 小宇宙 / 語言即世界工作室</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係「美國大腦 × 中國硬件」呢個主流敘事嘅一次內部拆解。嘉賓譚捷係 Google DeepMind 機器人團隊嘅高級研究科學家兼技術負責人，佢由計算機圖形學轉行做機器人，第一篇 Google 論文就係四足機器人嘅 sim-to-real 敏捷運動（《Sim-to-Real: Learning Agile Locomotion For Quadruped Robots》），可以話係「強化學習上足式機器人」呢條線嘅開創者之一。節目發布喺 2025 年 11 月，正正係 DeepMind 推出 <strong>Gemini Robotics 1.5 / ER 1.5</strong> 之後兩個月——所以呢集係後來 Gemini Robotics 2 那套「三件套」架構之前嘅<strong>前傳一手視角</strong>。兩個鐘入面，譚捷講得好直白：機器人基座大模型「so far, not yet」係一門獨立學科；robotics 最大嘅問題係數據；而「由 demo 到真正落地，隔十年並不是一個非常誇張的事」。
+</p>
+
+<div class="section-title">一、開場坐標：中美兩種敘事，同一個「硅谷內部視角」</div>
+
+<p>主持人張小珺開場就點出中美機器人領域嘅兩種主流敘事：<strong>市場普遍認為中國喺硬件上發展更快，美國喺「機器人大腦」設計上更領先</strong>。呢集嘅價值，就係由一個真正喺 DeepMind 做 robot brain 嘅人，去講「大腦」嗰邊到底發生緊咩事——唔係 PR 稿，而係研究負責人嘅第一手判斷。</p>
+
+<p>要留意時間點：呢集 2025 年 11 月播出，比 2026 年夏天嘅 Gemini Robotics 2（我哋喺 Deep Dive #192 已深度寫過）早咗大約半年。換句話講，譚捷喺呢度描述嘅，係 GR2「三件套 + 全身控制」之前嘅世界：<strong>快慢模型分工、cross-embodiment transfer、世界模型未定論——全部都係「上一代」問題</strong>。將呢集同 #192 對讀，你會清楚睇到 DeepMind 呢條線喺半年內推前咗幾多，而同時間「數據」呢個核心瓶頸，其實一路冇變過。</p>
+
+<div class="section-title">二、由圖形學到機器人：一句 slogan 同十年兩次範式轉移</div>
+
+<p>譚捷嘅背景好有趣：細個鍾意打機，博士讀嘅係計算機圖形學，之後先變軌去機器人。佢用一句極精準嘅 slogan 概括呢兩個領域嘅對偶關係：</p>
+
+<blockquote class="strong">
+  「機器人是在真實世界里做圖形學，圖形學是在 simulation 里做機器人。」
+  <span class="attribution">——譚捷：圖形學同機器人嘅對偶（節目 02:00 章節）</span>
+</blockquote>
+
+<p>呢句話唔止係修辭。圖形學嘅核心係「畀定場景同物理，渲染出畫面」；機器人嘅核心係「畀定目標，喺真實物理裡揀動作」。兩邊共用同一套物理引擎、同一套渲染/仿真管線——所以一個做 graphics 出身嘅人，睇 robotics 嘅時候，會天然將世界睇成「可微分、可採樣嘅分佈」，而唔係「一堆要 hand-craft 嘅控制律」。呢個視角，正好解釋咗佢之後對「仿真數據 + 生成式模型」嘅強烈偏好。</p>
+
+<p>佢亦回顧咗過去十年機器人領域嘅兩次範式轉移：</p>
+<ul>
+  <li><strong>第一次：強化學習（RL）</strong>——譚捷喺 Google 嘅第一篇論文就係用 RL + sim-to-real 教四足機器人敏捷運動，開創咗呢條線。</li>
+  <li><strong>第二次：大語言模型（LLM）</strong>——大模型為機器人帶嚟「大腦」層面嘅語義理解能力。</li>
+</ul>
+
+<p>佢用一個好好嘅比喻去分層：<strong>大語言模型類似「大腦」，強化學習類似「小腦」</strong>——一個負責理解意圖同規劃，一個負責底層動作嘅閉環控制。呢個分層，兩年後會演化成 Gemini Robotics 2 嘅「ER（系統二）＋ VLA（系統一）」架構。</p>
+
+<div class="section-title">三、「機器人基座大模型」係唔係一門獨立學科？So far, not yet</div>
+
+<p>整集最有份量嘅一句判斷，係譚捷對「robot foundation model 係唔係一個獨立學科」嘅回答。主持人問到呢個問題，佢嘅答案好直接：</p>
+
+<blockquote class="strong">
+  「機器人基座大模型到底是不是一個非常獨立的學科？So far, not yet。」
+  <span class="attribution">——譚捷（節目 13:06 章節）</span>
+</blockquote>
+
+<p>呢句「so far, not yet」值得反覆咀嚼。佢唔係否認機器人基座大模型嘅價值，而係指出：<strong>截至當下，佢並冇發展出一套真正獨立於 LLM/VLM 嘅方法論</strong>——大部分進展係「借用」多模態大模型，而唔係由機器人領域自生。</p>
+
+<p>佢跟住落嚟嘅診斷層層遞進：</p>
+<ul>
+  <li><strong>由 demo 到真正落地，隔十年並不誇張</strong>：佢用歷史縱深去校準公眾預期——DARPA 挑戰賽嗰批機器人「識行、識開門」，但實際部署係另一回事。呢個「十年」對 AI 狂熱年代嘅聽眾，係一劑清醒劑。</li>
+  <li><strong>最近幾年嘅機器人智能，主要依賴多模態大模型</strong>：佢坦承「我不得不承認，最近幾年的機器人智能發展主要還是依賴於多模態大模型」。</li>
+  <li><strong>但多模態模型缺咗一樣嘢：robot action 嘅輸出</strong>：「多模態模型缺什麼呢？缺少 robot action 的輸出。」——即係講，GPT/Gemini 識睇圖、識講嘢，但佢哋嘅原生輸出係 token，唔係關節空間嘅動作。要接通物理世界，就必須補上 VLA（vision-language-action）呢一環。</li>
+  <li><strong>通用模型會碾壓專用模型</strong>：「當你真正有一個 generalist model 的時候，specialized model 就完全不能與之競爭。」——呢個係 DeepMind 路線嘅核心信念：同 LLM 由專用走向通用嘅歷程同構，通用底座一旦成立，專用方案就冇得打。</li>
+</ul>
+
+<div class="data-point">
+  <span>核心判斷</span>
+  機器人基座大模型「so far, not yet」係獨立學科；現階段智能主要借力多模態大模型；瓶頸唔係「唔識諗」，而係「多模態模型缺 robot action 輸出」。通用底座一旦成立，專用模型（specialized）會即刻失去競爭力——呢個係 DeepMind 押注「generalist」嘅根本經濟學。
+</div>
+
+<div class="section-title">四、Robotics 最大嘅問題係數據：非結構化環境 + 數據金字塔 + 數據工廠</div>
+
+<p>如果話成集有一條主線，就係「數據」。譚捷講得毫不含糊：</p>
+
+<blockquote class="strong">
+  「Robotics 最大問題是數據，它在一個非常複雜的 unstructured environment 里，可以發生任何事情。它需要極大量的、非常 diverse 的數據，但這些數據現在是不存在的。」
+  <span class="attribution">——譚捷（節目 23:44 章節）</span>
+</blockquote>
+
+<p>呢個診斷嘅關鍵詞係 <strong>「unstructured environment」</strong>。LLM 處理嘅係人類已經結構化咗嘅文本/圖像（網頁、書、圖片庫）；機器人面對嘅係真實世界——枱面嘅擺位、光線、材質、突發干擾，全部係長尾、全部可以「發生任何事情」。所以機器人唔係缺「多啲數據」，而係缺「極大量、極多元」嘅數據，而呢種數據<strong>根本未存在於世上</strong>。</p>
+
+<p>佢提到一個新興嘅產業現象：而家冒出好多 startup 叫做 <strong>data factory（數據工廠）</strong>——專門去生產機器人訓練數據。呢個係一個好好嘅行業信號：當「數據」本身變成一個可以創業嘅賽道，就說明樽頸真係喺數據度，而唔係喺模型架構度。</p>
+
+<p>節目入面亦拆解咗「數據金字塔」嘅概念（雖然 shownotes 冇畀出完整分層，但譚捷喺數據策略段落講得好清楚，見下節）：唔同來源嘅數據，喺「可擴展性」同「真實性」上各有優劣，而佢嘅取態唔係「邊種數據最好」，而係「邊種數據可以 scale」。</p>
+
+<div class="section-title">五、Gemini Robotics 1.5：兩個突破，同「It's very secret」嘅 Motion Transfer</div>
+
+<p>呢集嘅技術核心，係 DeepMind 喺 2025 年 9 月 25 日發布嘅 Gemini Robotics 1.5 系列。譚捷親自拆解咗佢認為最重要嘅兩個發現：</p>
+
+<blockquote class="strong">
+  「第一個是我們把『thinking』加入了 VLA 模型；第二個非常重要的突破是 cross-embodiment transfer（跨具身遷移）。」
+  <span class="attribution">——譚捷（節目 27:52 章節）</span>
+</blockquote>
+
+<p>要理解呢兩點，最好配埋 DeepMind 官方 blog 睇——官方講法同譚捷嘅口述完全對得上：</p>
+
+<ul>
+  <li><strong>雙模型 agentic 架構</strong>：<code>Gemini Robotics-ER 1.5</code>（一個專為 embodied reasoning 優化嘅 VLM，負責高層規劃、空間理解、用自然語言落指令、原生呼叫工具如 Google Search、估算成功同進度）＋ <code>Gemini Robotics 1.5</code>（VLA，負責將每一步嘅自然語言指令，用視覺 + 語言理解直接化成具體動作）。ER 好似「高層大腦」咁 orchestrates 機器人嘅活動，再將逐步指令交畀 VLA 執行。</li>
+  <li><strong>「thinking」入 VLA</strong>：傳統 VLA 係「指令/計劃 → 直接動作」，GR 1.5 會<strong>先諗再郁</strong>——生成一段自然語言嘅內部推理，將長任務拆成可執行嘅短段，並且<strong>可以用自然語言解釋自己嘅思考過程</strong>（令決策更透明）。官方例子：「按顏色分 laundry」時，模型會先理解「分顏色＝白色入白籃、其他色入黑籃」，再諗「拎紅色毛衣放入黑籃」，最後先到「點樣埋手去拎件衫」嘅細緻動作。</li>
+  <li><strong>跨本體遷移（motion transfer）</strong>：呢個係譚捷口中嘅「獨門秘訣」，佢甚至講「Motion Transfer？It's very secret」。官方描述係：模型<strong>唔需要為每個新機身做專門化（specialize）</strong>，就可以將喺一部機器人身上學到嘅動作，遷移到另一部。實測係：只喺 <strong>ALOHA 2</strong>（雙臂）訓練過嘅任務，直接喺 <strong>Apptronik 嘅人形機器人 Apollo</strong> 同 <strong>Franka 雙臂</strong>上「just work」，而且雙向成立。呢個先係「GPT 換部電腦都一樣」嘅機器人版本。</li>
+</ul>
+
+<p>譚捷亦提到一個架構取態：<strong>Gemini Robotics 1.5 做咗「快慢模型」嘅劃分</strong>，但佢強調呢個「應該是個過渡方式」，因為受制於算力同模型大小——「當你要一個 unify model（統一模型）的時候，它必須非常大」。呢個判斷好關鍵：快慢分工係當前算力約束下嘅權宜之計，而唔係終局。</p>
+
+<div class="highlight-box">
+  <strong>值得記低嘅對照：</strong>呢度講嘅「ER 1.5 已開放 API、VLA 1.5 只限合作夥伴」，同半年後 Gemini Robotics 2 嘅發布節奏一模一樣（ER 2 上 API、VLA 2 限 trusted testers）。可見 DeepMind 一路将「可解釋、可工具調用嘅推理層」先開放畀開發者，将「仲喺前緣嘅動作層」留喺夥伴圈——呢個係一條一致嘅商業化策略，唔係隨機。
+</div>
+
+<div class="section-title">六、數據策略：我相信 scalable data，而生成式仿真會取代物理仿真</div>
+
+<p>譚捷對數據嘅取態，係成集最「唔政治正確」但最有信息量嘅部分。佢將數據來源攤開嚟講：</p>
+
+<blockquote class="strong">
+  「我們會花更多的精力，比如利用 simulation 數據，利用 human video（人類視頻），利用 YouTube 上的一些數據，甚至利用模型生成嘅數據，比如 VEO 生成的一些數據。……我信仰嘅係 scalable data。」
+  <span class="attribution">——譚捷（節目 47:32 章節）</span>
+</blockquote>
+
+<p>佢將各類數據嘅優劣講得好清楚，而呢度有一個反直覺嘅判斷：</p>
+
+<ul>
+  <li><strong>遙操作（teleop）數據極難獲取</strong>——精確，但唔 scalable，而且冇辦法適應未來嘅新任務。</li>
+  <li><strong>真實數據冇 sim-to-real gap</strong>——聽落好似「真數據一定好」，但譚捷即刻補一刀：<strong>泛化性係由數據嘅 coverage（覆蓋）決定嘅，唔係因為佢係真定係假</strong>。呢句係整集最鋒利嘅一句。</li>
+  <li><strong>生成式仿真</strong>：佢預言「不遠嘅將來，傳統物理模擬仿真會慢慢地被生成式模型嘅仿真所取代」——即係話，與其用物理引擎慢慢砌仿真，不如用 VEO 之類嘅生成模型直接「生成」訓練場景同軌跡。</li>
+</ul>
+
+<p>呢個取態嘅深層邏輯係：機器人問題本質係一個<strong>覆蓋率問題</strong>，唔係一個<strong>保真度問題</strong>。與其追一萬個完美嘅真實樣本，不如用可規模化嘅生成式數據，去覆蓋盡量廣嘅場景分佈。呢個同 LLM 嘅「data scaling」邏輯完全同構——亦係佢講「我信仰 scalable data」嘅底層原因。</p>
+
+<div class="section-title">七、世界模型：Vision-Language-Vision，同 Genie vs Veo 嘅分野</div>
+
+<p>「世界模型」係當日最熱嘅詞之一。譚捷畀出一個異常清晰、可以即刻驗證嘅定義：</p>
+
+<blockquote class="strong">
+  「世界模型嘅定義是：如果你給上前一幀，再給上機器人的動作，你可以預測下一幀。……世界模型其實就是 Vision-Language-Vision，vision 和 language in，它可以生成下一幀的圖像。」
+  <span class="attribution">——譚捷（節目 01:03:48 章節）</span>
+</blockquote>
+
+<p>佢用呢把尺去區分兩個同樣係「生成視頻」嘅模型，得出一個好有用嘅判準：</p>
+
+<blockquote>
+  「VEO 它是一個視頻生成模型，但是 Genie 它更像一個世界模型：當你在每一幀的時候，可以有一個輸入來改變你的下一幀，那個感覺就是世界模型；但是如果它是一個已經生成好的、幾秒鐘的靜態視頻，那就不是。」
+</blockquote>
+
+<p>拆開嚟講，判準係<strong>「可否被動作干預（interactive / action-conditioned）」</strong>：</p>
+<ul>
+  <li><strong>Veo 式</strong>：畀定 prompt，輸出整段視頻——你可以睇，但唔可以喺中途改寫佢嘅走向。呢個係「內容生成」。</li>
+  <li><strong>Genie 式</strong>：每一幀都可以輸入一個動作，去改變下一幀——呢個係「可交互嘅環境」，所以先算世界模型。</li>
+</ul>
+
+<p>呢個定義，其實同半年後 Keerthana（Deep Dive #192）講嘅「world model jury's still out」互相呼應：DeepMind 內部對世界模型嘅定位係「一個可被 action-conditioned 嘅預測器」，而佢係唔係機器人智能嘅必需品，仍然未有共識。</p>
+
+<div class="section-title">八、觸覺同靈巧手：而家仲係夾爪時代，視覺解決 95%</div>
+
+<p>講到手同觸覺，譚捷嘅判斷非常務實，而且明確講出咗自己立場嘅轉變：</p>
+
+<blockquote class="strong">
+  「如果你有靈巧手，觸覺就非常重要。之所以我前面覺得觸覺不重要，是因為它其實受限於當時的硬件。」
+  <span class="attribution">——譚捷（節目 01:08:29 章節）</span>
+</blockquote>
+
+<p>呢句「受限於當時嘅硬件」係一個好好嘅科學態度示範：唔係觸覺唔重要，而係喺夾爪時代，觸覺嘅邊際價值低到唔值得投資。佢跟住落嘅量化判斷係：</p>
+<ul>
+  <li><strong>而家仲係夾爪時代</strong>——「在所有夾爪能完成的任務里，我還是覺得視覺可能可以解決 95% 的問題」。</li>
+  <li><strong>人形唔會係唯一形態，但一定係主流</strong>：「在未來，人形機器人不會成為唯一的形態，但一定是個主流的形態。」</li>
+  <li><strong>目標函數決定形態選擇</strong>：如果目標係「solve AGI in the physical world」，咁就要極度聚焦「最終形態係點」，其他形態可能都係 distraction。</li>
+</ul>
+
+<p>呢個「聚焦最終形態」嘅立場，半年後會由 Keerthana 用一句更狠嘅版本講出嚟：<strong>「手現在才是靈巧度的前緣，而夾爪可能已經不是了」</strong>（見 #192）。兩集對讀，會見到 DeepMind 內部對「手」嘅態度喺半年內由「視覺解決 95%」急速轉向「多指靈巧＝前緣」。</p>
+
+<div class="data-point">
+  <span>數據點</span>
+  Gemini Robotics 1.5（2025-09-25 發布，Carolina Parada 撰文）：①雙模型——ER 1.5（VLM／thinking／原生工具調用）＋ GR 1.5（VLA）；②ER 1.5 喺 15 個學術 benchmark（ERQA、Point-Bench、BLINK、CV-Bench、Where2Place 等）取得最高綜合表現；③GR 1.5 將喺 ALOHA 2 學到嘅技能，zero-shot 遷移到 Apptronik Apollo 人形同 Franka 雙臂；④ER 1.5 經 Gemini API／AI Studio 開放，GR 1.5 只限精選合作夥伴；⑤同步升級 ASIMOV 安全 benchmark（v2，新增安全問題類型同視頻模態）；⑥官方定位——「a milestone towards solving AGI in the physical world」。
+</div>
+
+<div class="section-title">九、Google 研究文化、使命感，同「一週七十到八十個鐘」</div>
+
+<p>節目尾段有一段好好嘅組織文化側寫。譚捷講到呢幾年 Google AI／robotics 嘅研究文化變化：</p>
+
+<blockquote>
+  「不管是从 promotion、performance review、incentive，還是各種各樣的 structure 上，Google 想創造一個環境，使得更多的人可以一起解決更大的事情。像 Gemini Robotics，它更多是自上而下。」
+</blockquote>
+
+<p>而佢自己嘅工作強度，係一個好直接嘅時代註腳：</p>
+
+<blockquote class="strong">
+  「我發覺好像國內不一定比我卷，我一周可能工作 70 到 80 個小時。真的，這個時代真的是等不起，不然別人都做出來了。」
+  <span class="attribution">——譚捷（節目 01:17:35 章節）</span>
+</blockquote>
+
+<p>佢亦提到一個帶有使命感嘅表達：「一個有使命感的人，他不會容忍說『I'm on a wrong ship』」——呢句其實係對「為何要留喺呢條線、點解要咁搏」嘅自我解釋。最後佢講到「AI 有很多是數學，華人數學比較好」，係一個關於人才結構嘅觀察（當然亦係一個容易引起爭議嘅講法，值得讀者自行判斷）。</p>
+
+<div class="section-title">十、Vee 嘅萃取：呢集點樣幫我哋讀懂「GR1.5 → GR2」呢半年</div>
+
+<p>呢集最大嘅價值，唔係任何單一結論，而係佢提供咗一個「前傳視角」，令 #192（Gemini Robotics 2）嗰集嘅判斷變得立體：</p>
+
+<ul>
+  <li><strong>「so far, not yet」係一條會移動嘅線</strong>：2025 年 11 月譚捷話 robot foundation model 仲未係獨立學科；到 2026 年夏天，GR2 已經敢講「跨本體躍進」同「全身控制」。呢半年嘅變化，正正就係由「借用多模態模型」走向「為機器人度身訂造」嘅過渡期。</li>
+  <li><strong>「數據」係唯一貫穿兩集嘅恆定項</strong>：譚捷講「最大問題係數據」，Keerthana 講「資料策略走混合路線、jury's still out」。半年過去，模型架構由快慢分工走到全身 VLA，但「數據從邊度嚟」呢個問題——同一日都未解決。</li>
+  <li><strong>泛化係 coverage 問題，唔係真/假問題</strong>：譚捷嗰句「泛化性是由數據的 coverage 導致的，並不是因為它本身是真實數據還是虛擬數據」，係對所有「唯有真機數據先有用」嘅執念嘅正面反駁。呢個判準，對於今日任何評估「數據策略」嘅人，都係一個好硬嘅思考錨點。</li>
+  <li><strong>「It's very secret」暴露咗競爭維度</strong>：當一個研究負責人肯公開講技術，卻對 motion transfer 講「it's very secret」，你幾乎可以肯定：呢個先係 DeepMind 認為自己領先嘅護城河所在。fact-check 之後亦成立——zero-shot 跨機身 skill reuse，確實係 GR1.5 最難被複製嘅能力。</li>
+</ul>
+
+<div class="highlight-box">
+  <strong>行業 insight：</strong>呢集最反直覺、亦最有前瞻性嘅一句，係譚捷對數據來源嘅分層——<strong>「泛化性由 coverage 決定，唔係由真假決定」</strong>。呢句話將機器人數據之爭，由一個「保真度競賽」改寫成一個「覆蓋率競賽」。如果佢啱，咁真正嘅贏家唔會係擁有最多真機示範嘅公司，而係<strong>最識用仿真 + 人類視頻 + 生成式模型去砌出最廣覆蓋分佈</strong>嘅公司——呢個正正係 DeepMind 之後走嘅路。而「由上而下」嘅 Google 模式、70–80 小時嘅工作強度，就係呢條路上嘅組織代價。
+</div>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述出自 2025-11-28 張小珺商業訪談錄 Ep.121 官方 show notes（小宇宙平台，含主持親撰章節標題及嘉賓原話摘錄）；Gemini Robotics 1.5 之產品細節、benchmark、跨本體 zero-shot 示例出自 Google DeepMind 官方 blog〈Gemini Robotics 1.5 brings AI agents into the physical world〉（2025-09-25，Carolina Parada）及配套 tech report；時長 2h06m15s、發布時間由小宇宙 episode metadata 核實。中文保留嘉賓原話，分析及撮寫為本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #194 · 張小珺商業訪談錄 × 譚捷（Google DeepMind）（2025-11-28，2h06m）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-05 06:00 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>

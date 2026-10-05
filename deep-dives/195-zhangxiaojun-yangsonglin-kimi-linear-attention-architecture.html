@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 張小珺商業訪談錄 × 楊松琳：「雕完 FFN 出咗 MoE，而家輪到雕 Attention」——Kimi Linear 嘅 KDA、三比一混合注意力共識，同中國算法創新點樣跑贏「冇卡」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .tag { display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.6rem; background: #8b5e3c; color: #fff; border-radius: 2px; font-weight: 500; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  code { font-family: "SF Mono", Consolas, monospace; font-size: 0.85em; background: #efe9df; padding: 0.05rem 0.3rem; border-radius: 3px; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">張小珺商業訪談錄 Ep.119 · 2025-11-03 發布</div>
+  <h1>「雕完 FFN 出咗 MoE，而家輪到雕 Attention」——張小珺 × 楊松琳：Kimi Linear 嘅 KDA、三比一混合注意力共識，同中國算法創新點樣跑贏「冇卡」</h1>
+  <div class="meta">
+    <span>📅 2025-11-03</span><span>·</span><span>🎙️ 張小珺商業訪談錄</span><span>·</span><span>👤 張小珺 × 楊松琳（MIT 博士生，flash-linear-attention 作者，Kimi Linear 論文作者之一）</span><span>·</span><span>⏱️ 1h43m25s</span><span>·</span><span>📝 小宇宙 / 語言即世界工作室</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係一個好好嘅「反潮流」樣本：當全世界嘅注意力都喺 scaling law、數據、算力嘅時候，呢集講嘅係一條被忽略嘅第三駕馬車——<strong>算法同架構</strong>。嘉賓楊松琳係 MIT 在讀博士，研究方向就係線性注意力，佢做過一個好硬核嘅開源庫 <code>flash-linear-attention</code>（FLA），亦是 Kimi Linear 論文嘅作者之一、Qwen3-Next 嘅參與者。節目以 2025 年秋幾篇架構論文（Kimi Linear、MiniMax M2、Qwen3-Next）做切入點，帶大家「考古」由 Transformer 到 MoE、再到線性/稀疏注意力嘅變種史。一句話總結呢集嘅世界觀：<strong>Transformer 得兩個模塊，FFN 已經雕成咗 MoE，下一個被雕嘅就係 Attention</strong>；而因為中國冇咁多卡，中國公司反而被迫喺「雕架構」呢條路上行得更前。
+</p>
+
+<div class="section-title">一、點解「雕架構」喺 2025 年突然變得重要</div>
+
+<p>主持人開場就畀出一個清晰嘅因果鏈：數據、算力、算法係驅動人工智能嘅三駕馬車；<strong>喺「數據撞牆」呢個無奈前提下，各家模型公司不得不重新返去「雕模型架構」</strong>，期望 scaling law 嘅魔法可以繼續。而更微妙嘅一層係：</p>
+
+<blockquote class="strong">
+  「由於中國的算力相對美國有限，這反而讓中國的 AI 算法創新走在了世界前沿。」
+  <span class="attribution">——節目背景設定（中段亦有嘉賓親口認同：「中國 AI 的算法創新相比海外肯定是更強的——因為沒有那麼多卡」）</span>
+</blockquote>
+
+<p>呢個命題係成集嘅底色，亦係一個好好嘅經濟學觀察：<strong>約束反而塑造優勢</strong>。當你冇本錢用「加卡」去買性能，你唯一可以做嘅嘢就係令每一張卡跑得更有效率——於是架構、kernel、硬件親和度呢啲「辛苦工」，反而變咗中國團隊嘅核心競爭力。</p>
+
+<div class="section-title">二、主持人同嘉賓：由一個開源庫講起</div>
+
+<p>楊松琳嘅背景有幾個關鍵坐標：</p>
+<ul>
+  <li><strong>MIT 在讀博士</strong>，研究方向係線性注意力機制（linear attention）。</li>
+  <li><strong>flash-linear-attention（FLA）</strong>開源庫作者——呢個庫係線性注意力相關 kernel 實現嘅重要基礎設施，後來亦成為 Kimi Linear 開源 kernel 生態嘅一部分。</li>
+  <li><strong>Kimi Linear 論文作者之一</strong>（論文標題《Kimi Linear: An Expressive, Efficient Attention Architecture》），同時參與咗 Qwen3-Next 嘅部分工作。</li>
+</ul>
+
+<p>呢個身份組合好重要：佢唔係隔籬講架構嘅評論者，而係<strong>親手寫 kernel、親手參與論文</strong>嘅人。所以佢講「3:1 混合比例」、「DPLR 分塊算法」呢啲細節，係有一手經驗嘅（詳見第五、七節）。</p>
+
+<div class="section-title">三、點通俗理解 Linear Attention 嘅「Linear」</div>
+
+<p>節目有一節專門「用最通俗嘅方式理解 Linear Attention 嘅 Linear」（chapter 07:04）。要點係：</p>
+
+<ul>
+  <li><strong>Full Attention 嘅代價隨上下文線性增長（二次方）</strong>：傳統全局注意力要對每個 token 同所有歷史 token 做相似度計算，長文本解碼（decoding）時 KV cache 會爆炸式膨脹。</li>
+  <li><strong>Linear Attention 把注意力嘅計算壓縮成一個固定大小嘅狀態</strong>：本質上係將 attention 重新表述成一個 RNN-like 嘅遞歸——「每個 token 更新一個狀態」，所以推理階段嘅計算同顯存成本大幅降低。</li>
+  <li><strong>代價係表達能力</strong>：把無限長嘅歷史壓入固定大小嘅有限狀態（finite-state），必然會丟失信息——呢個就係成集反覆圍繞嘅「表達能力 vs 效率」權衡（expressivity vs efficiency）。</li>
+</ul>
+
+<p>節目中有一句總結得極好嘅話，直接點出大家點解每隔幾年就會重新關心線性注意力：</p>
+
+<blockquote class="strong">
+  「每一次大家關心 Linear Attention 都是因為大家撞到了 Context Wall（上下文之牆）。」
+  <span class="attribution">——楊松琳（節目 28:05 章節）</span>
+</blockquote>
+
+<p>換句講法：linear attention 唔係新技術（2020 年就有），佢係一個「周期性復活」嘅選項——每當長上下文解碼嘅成本變成痛點，佢就會被重新翻出嚟審視一次。2025 年之所以係佢嘅「復活之年」，正正因為「最近長文本的 decoding 卷土重來」。</p>
+
+<div class="section-title">四、Kimi Linear 論文：KDA、Scaling Ladder，同「三比一」</div>
+
+<p>呢集嘅技術核心，係楊松琳親手參與嘅 <strong>Kimi Linear</strong>。論文（arXiv 2510.26692，2025-10-30 首發）嘅核心貢獻係一個叫 <strong>KDA（Kimi Delta Attention）</strong>嘅模塊：</p>
+
+<ul>
+  <li><strong>KDA 擴展自 Gated DeltaNet</strong>，加入更細緻嘅門控（finer-grained gating），令有限狀態 RNN 嘅記憶用得更有效率。</li>
+  <li>配合一套特製嘅分塊（chunkwise）算法，透過 <strong>Diagonal-Plus-Low-Rank（DPLR）</strong>轉移矩陣嘅特殊變體，大幅降低計算量，同時更貼近經典嘅 delta rule。</li>
+  <li>模型係 <strong>KDA 同 MLA（Multi-Head Latent Attention）嘅逐層混合</strong>，規模為 <strong>3B 激活參數 / 48B 總參數</strong>。</li>
+</ul>
+
+<p>節目提到，Kimi 內部有一個 <strong>「Scaling Ladder（規模階梯）」</strong>嘅工作方式——「在一個規模下面表現好，就在下一個規模下面去 scale，就像通關」。呢個係一個好務實嘅研發紀律：唔係一次過掟去最大規模，而係逐級驗證架構嘅可擴展性。</p>
+
+<p>而論文最硬嘅結果，係「公平比較下，混合線性注意力首次超越全注意力」：</p>
+
+<div class="data-point">
+  <span>Kimi Linear 官方數據</span>
+  ①<strong>3B 激活 / 48B 總參數</strong>，KDA + MLA 逐層混合；②在 short-context、long-context、RL scaling 三種場景嘅公平比較下，<strong>首次超越 full attention（full MLA）</strong>；③KV cache 使用量降低<strong>最多 75%</strong>；④1M 上下文下解碼吞吐提升<strong>最多 6 倍</strong>；⑤可作為 full attention 架構嘅<strong>drop-in replacement（即插即用替換）</strong>；⑥開源 KDA kernel、vLLM 實現，同預訓練／指令微調 checkpoint。
+</div>
+
+<div class="section-title">五、兩條路線：Kimi 線性 vs DeepSeek 稀疏</div>
+
+<p>節目將中國公司應對「長上下文解碼效率」嘅策略，清晰咁分成兩條路線：</p>
+
+<blockquote>
+  「Kimi 走線性注意力路線，DeepSeek 走稀疏注意力路線，都想解決長文本 decoding（長上下文生成）的效率問題。」
+</blockquote>
+
+<ul>
+  <li><strong>DeepSeek → Sparse Attention（稀疏注意力）</strong>：唔改變「全局」嘅目標，但只揀一部分 token 去計算，靠「揀得準」嚟慳成本。</li>
+  <li><strong>Kimi → Linear Attention（線性注意力）</strong>：改變狀態嘅表示方式，用固定大小狀態去遞歸，靠「壓縮」嚟慳成本。</li>
+  <li><strong>MiniMax</strong>：年初 M1 版本試 Linear Attention，但到剛發布嘅 M2 又<strong>退回 Full Attention</strong>——呢個「退回」係整集最值得思考嘅信號之一（見下節）。</li>
+</ul>
+
+<p>楊松琳亦提到矽谷嘅方案「不方便說」，但可以淺聊 OpenAI 有 paper 嘅方案——暗示呢條戰線唔止中國公司在打，只係公開程度唔同。</p>
+
+<div class="section-title">六、MiniMax 由 M1 到 M2 點解「退返」Full Attention</div>
+
+<p>呢個係成集最有信息量嘅「反高潮」。當大家都以為線性注意力係大勢嘅時候，MiniMax 由 M1 嘅線性方案回退到 M2 嘅全注意力。楊松琳嘅解釋指向一個具體嘅能力缺陷：</p>
+
+<blockquote>
+  「MiniMax 曾經也提到，混合線性注意力 / 混合滑窗注意力在『多跳推理』上會有缺陷。」
+</blockquote>
+
+<p>換句話講：<strong>線性/滑窗注意力喺「要串連多個分散信息點」嘅推理任務上會漏水</strong>。呢個係「有限狀態」嘅宿命——當你需要記住嘅係一堆相隔好遠、又互相依賴嘅線索時，固定大小嘅狀態會唔夠用。MiniMax 寧願食返全注意力嘅成本，都要保住呢個能力。</p>
+
+<p>但楊松琳亦畀咗一條出路：</p>
+
+<blockquote>
+  「對於『多跳推理』，如果我們開發一些硬件高效但表達能力更好的 RNN（循環神經網絡），這個 GAP 有可能縮小。」
+</blockquote>
+
+<p>——即係唔係放棄壓縮，而係要設計<strong>表達力更強嘅遞歸單元</strong>。KDA 對 Gated DeltaNet 嘅改良，本身就係呢個方向嘅一步。</p>
+
+<div class="section-title">七、混合注意力：三比一成為「不共識中的共識」</div>
+
+<p>既然純線性唔夠力，現實嘅做法就係「混合」——而節目畀出咗一個極清楚嘅業界收斂信號：</p>
+
+<blockquote class="strong">
+  「純 Linear Attention 是無效的，混合注意力機制還是有很多全局注意力層，這樣下限有保證。Kimi Linear 每 3 層 KDA 插入 1 層全注意力層，三比一的比例快變成共識了。Minimax 之前用的是七比一，但現在大家逐漸回到三比一——這成為不共識的混合注意力機制中的共識了。」
+  <span class="attribution">——楊松琳（節目 38:16–40:30 章節）</span>
+</blockquote>
+
+<p>呢段要用經濟學嘅角度去讀：</p>
+<ul>
+  <li><strong>純線性「無效」</strong>——因為冇全局層兜底，表達能力下限太低，任務一難就穿底。</li>
+  <li><strong>全局層係「保險」</strong>——保留少量 full attention 層，保證模型唔會喺關鍵推理上徹底失手。</li>
+  <li><strong>比例由 7:1 收斂到 3:1</strong>——反映業界喺實測之後發現，全局層唔可以太少；3:1 係「效率」同「安全下限」之間嘅經驗平衡點。</li>
+</ul>
+
+<p>而呢個平衡點之所以叫「不共識中的共識」，係因為大家對「點解係 3:1」其實冇統一理論——更多係不同團隊獨立試出嚟嘅經驗值碰巧一致。呢種「實證先於理論」嘅狀態，好典型咁反映咗當前架構研究嘅階段。</p>
+
+<div class="section-title">八、Linear 嘅真正對手：唔係 Sparse，係 Sliding-Window</div>
+
+<p>呢集一個好反直覺、但對理解競爭格局極有用嘅判斷，係澄清咗「邊個打邊個」：</p>
+
+<blockquote class="strong">
+  「Linear Attention 和 Sparse Attention 沒什麼競爭關係，Linear Attention 的競爭對手可能是 Sliding-Window Attention（滑窗注意力）。」
+  <span class="attribution">——楊松琳（節目 49:36、55:36 章節）</span>
+</blockquote>
+
+<p>點解呢？因為 Linear 同 Sparse 解決嘅係唔同層面嘅問題——Linear 係「點樣表示狀態」，Sparse 係「點樣揀邊啲 token 去算」。反而 Sliding-Window（只睇最近一段固定窗口）同 Linear 係直接競爭：兩者都係「用有限範圍去近似全局」，只係一個用窗口、一個用狀態。</p>
+
+<p>而佢想像中嘅<strong>未來理想方案</strong>，係一個好具體嘅組合：</p>
+
+<blockquote class="strong">
+  「我想像中的理想方案是：把混合注意力的全局注意力（Full Attention）換成稀疏注意力（Sparse Attention）。只要 Sparse Attention 選得準，完全可以取代 Full Attention，但現在的問題是它選不準。」
+  <span class="attribution">——楊松琳（節目 49:36 章節）</span>
+</blockquote>
+
+<p>呢個設想嘅關鍵詞係「選得準」。稀疏注意力嘅天花板，唔係算法複雜度，而係<strong>「邊啲 token 重要」呢個判斷本身嘅準確率</strong>——呢個本質上係一個學習問題，亦係佢口中「工業界 Linear + Sparse 結合嘅探索似乎還未開始」嘅原因。</p>
+
+<div class="section-title">九、算法變種史：Transformer → MoE → Attention，動因係「同一 FLOPs 更低 loss」</div>
+
+<p>節目中段有一段「考古」（chapter 57:05、01:23:12），將近年架構演變整理成一條主線：</p>
+
+<blockquote class="strong">
+  「近幾年架構方面突破最大的是 MoE，下一個突破可能是 Attention；Transformer 就兩個模塊，一個是 FFN，一個是 Attention；現在 FFN 已經雕成 MoE，現在 Attention 大家也可以雕一下。」
+  <span class="attribution">——楊松琳（節目 58:26 章節）</span>
+</blockquote>
+
+<p>呢個「兩個模塊」嘅框架好清爽：</p>
+<ul>
+  <li><strong>FFN 模塊</strong>：已經被雕成 MoE（混合專家）——「MoE 是更高效的 FFN 嘅替代品」，用稀疏激活換取更大參數量下嘅效率。</li>
+  <li><strong>Attention 模塊</strong>：正被雕成 Linear / Sparse / Sliding-Window 等變種。</li>
+</ul>
+
+<p>而所有變種背後嘅<strong>統一目標函數</strong>，楊松琳講得好樸素：<strong>「給定你相同的 FLOPs，利用這些 FLOPs，取得更低的損失函數」</strong>。呢句係成集最重要嘅一把尺——任何架構創新，最後都要用呢條尺去量：同樣算力下，loss 有冇更低？冇嘅，就係花巧。</p>
+
+<div class="section-title">十、架構嘅未來：干掉全局注意力 + Continual Learning</div>
+
+<p>被問到架構嘅未來，楊松琳畀出兩條具體嘅問題清單：</p>
+
+<blockquote class="strong">
+  「架構的未來：1、能不能干掉全局注意力？它是阻止 context window 繼續 scale up 的主要瓶頸；2、Continual Learning，讓 AI 自己學習。」
+  <span class="attribution">——楊松琳（節目 01:02:48 章節）</span>
+</blockquote>
+
+<p>第一條，正正回應咗成集嘅主線：只要 context window 想繼續 scale up，全局注意力就會係最大嘅成本瓶頸，所以「干掉全局注意力」係一個有明確經濟動機嘅研究方向（而 Sparse「選得準」就係通往呢個目標嘅一條路）。</p>
+
+<p>第二條則跳出「推論效率」，指向「持續學習」——一個同 continual learning 直接相關、亦係好多前沿討論嘅核心議題。</p>
+
+<div class="section-title">十一、其他訓練細節同「中國算法創新」</div>
+
+<p>節目尾段有幾個值得記低嘅細節：</p>
+<ul>
+  <li><strong>優化器投入差異</strong>：楊松琳觀察到「美國公司更多投入優化器一點，國內在逐步重視」——即係話，架構之外，訓練優化器係另一條被低估嘅戰線。</li>
+  <li><strong>NoPE vs RoPE</strong>：位置編碼嘅取捨亦係架構討論嘅一部分。</li>
+  <li><strong>DeepSeek-OCR</strong>：被提及為硬件親和探索嘅例子；而 DeepSeek「非常追求硬件和算法的匹配」。</li>
+  <li><strong>Delta Rule + 硬件親和</strong>：主線指向「算法要配硬件」呢個實務約束。</li>
+</ul>
+
+<p>關於心態，楊松琳有一句好值得記低嘅話（chapter 01:15:16）：</p>
+
+<blockquote class="strong">
+  「當你很清楚地要做什麼的時候，你是不會遇到什麼挫折的。」
+  <span class="attribution">——楊松琳（節目 01:15:16 章節）</span>
+</blockquote>
+
+<p>佢補充話自己 PhD「還挺順利」，得益於「入學之前嘅半年考古」——即係話，佢喺正式開始研究之前，先用半年時間系統咁讀通咗成條算法變種史。<strong>呢個「先考古、後研究」嘅方法論，本身就係呢集最有價值嘅 meta-lesson</strong>：喺一個變化極快嘅領域，最穩嘅護城河唔係追最新論文，而係先掌握整條歷史脈絡，先知道「下一個突破點大概率喺邊」。</p>
+
+<div class="section-title">十二、Vee 嘅萃取：呢集點樣重塑「架構之爭」嘅理解</div>
+
+<p>呢集播出喺 2025 年 11 月，距 Kimi Linear 論文首發（10 月 30 日）只有幾日，所以佢係一個近乎實時嘅技術拆解。讀完之後，我覺得有四點值得長期記住：</p>
+
+<ul>
+  <li><strong>「三比一」係一個可驗證嘅行業共識信號</strong>：由 MiniMax 嘅 7:1 回落到 3:1，係一個具體、可追蹤嘅工程收斂。日後再見到任何新架構宣稱「純線性可行」，最直接嘅反問就係——「你嘅全局層放喺邊？」</li>
+  <li><strong>「泛化瓶頸」嘅精確定位係 multi-hop reasoning</strong>：線性注意力嘅弱點唔係「唔識長文本」，而係「唔識串連分散線索」。呢個區分對評估任何「壓縮式」方案都好關鍵——你要問：佢丟失嘅係邊類信息？</li>
+  <li><strong>競爭關係比表面更複雜</strong>：Linear 嘅對手係 Sliding-Window，唔係 Sparse；而理想方案係將混合架構嘅全局層換成「選得準」嘅稀疏層。呢個「問題分層」嘅能力，係楊松琳呢集最硬嘅貢獻——佢幫你避開「所有效率技術都係同一條線」嘅粗暴歸類。</li>
+  <li><strong>「同一 FLOPs 下更低 loss」係唯一嘅尺</strong>：呢句話可以過濾掉市場上絕大部分「架構創新」嘅噪音。</li>
+</ul>
+
+<div class="highlight-box">
+  <strong>行業 insight：</strong>呢集真正講嘅唔止係「邊個架構贏」，而係一個更深層嘅判斷——<strong>當 scaling 嘅兩條傳統槓桿（數據、算力）都受限時，「算法」就由配角變成主角；而算法創新嘅分布，係跟住「約束」走嘅</strong>。中國因為冇咁多卡，被迫將工程師嘅創造力集中喺「點樣用同樣算力榨出更多性能」；於是出現咗 Kimi Linear、DeepSeek Sparse、Qwen3-Next 呢批「雕架構」成果。呢個唔係民族主義敘事，而係一個好標準嘅資源經濟學結論：<strong>約束塑造比較優勢</strong>。而對於任何一個開發者嚟講，最務實嘅 takeaway 係楊松琳嘅方法論——先花時間「考古」整條變種史，因為下一個突破點，通常藏喺歷史規律嘅延長線上。
+</div>
+
+<div class="data-point">
+  <span>一句話記低</span>
+  FFN 雕成 MoE → Attention 雕成 Linear / Sparse / Sliding-Window；純線性無效，3 層線性 + 1 層全局係當下共識；Linear 嘅真對手係 Sliding-Window，終局想像係用「選得準」嘅 Sparse 取代全局層。衡量任何架構創新嘅唯一尺：<strong>同一 FLOPs 下，loss 有冇更低。</strong>
+</div>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上引述出自 2025-11-03 張小珺商業訪談錄 Ep.119 官方 show notes（小宇宙平台，含主持親撰章節標題及嘉賓原話摘錄）；Kimi Linear 之技術細節、規模、效率數據出自論文〈Kimi Linear: An Expressive, Efficient Attention Architecture〉（Kimi Team，arXiv:2510.26692，2025-10-30 首發、11-01 修訂）。MiniMax M1/M2、Qwen3-Next、DeepSeek Sparse Attention 之描述按節目內容及公開論文整理；時長 1h43m25s、發布時間由小宇宙 episode metadata 核實。中文保留嘉賓原話，分析及撮寫為本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #195 · 張小珺商業訪談錄 × 楊松琳（MIT）（2025-11-03，1h43m）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-05 06:00 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
