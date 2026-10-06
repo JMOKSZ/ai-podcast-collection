@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space × Runway：WorldPrompt 與實時世界模型嘅工程學</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5; color: #1a1a1a; line-height: 1.85; -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title { font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a; }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote { border-left: 3px solid #c4b89a; margin: 1.2rem 0; padding: 0.6rem 1rem; color: #555; font-style: italic; background: #f8f6f2; }
+  blockquote.strong { border-left: 4px solid #8b5e3c; background: #fdf8f0; font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem; }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point { background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem; margin: 1.2rem 0; border: 1px solid #ece6de; }
+  .data-point span { display: inline-block; background: #8b5e3c; color: #fff; font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px; margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+  .highlight-box { background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px; padding: 1rem 1.2rem; margin: 1.2rem 0; }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em; background: #f4f1ec; padding: 0.05rem 0.3rem; border-radius: 3px; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #999; text-align: center; }
+  footer a { color: #888; }
+  @media (max-width: 600px) { html { font-size: 16px; } .container { padding: 1.5rem 1rem; } header h1 { font-size: 1.35rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-09-25 發布</div>
+  <h1>「視頻模型同世界模型嘅真正鴻溝係『反事實生成』」——Latent Space × Runway：WorldPrompt、實時蒸餾、清醒夢測試，同「冇代碼嘅界面世界模型」</h1>
+  <div class="meta">
+    <span>📅 2026-09-25 01:30 UTC</span><span>·</span><span>🎙 Latent Space（swyx + Alessio Fanelli）</span><span>·</span><span>👤 受訪：Kamil Sindi（CTO）、Robin Kahlow（Principal Research Scientist）、Anastasis Germanidis（聯合創辦人 & 聯合 CEO）</span><span>·</span><span>📄 官方長文 ＋ 逐字稿</span><span>·</span><span>🏷 世界模型 × 生成式視頻 × Agent 仿真</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+Runway 估值約 <strong>53 億美元</strong>（2026 年 2 月融資 3.15 億）。佢哋最新嘅 <strong>GWM Worlds 2</strong> 係一個 research preview，官方講法係「把高保真視頻同音頻生成變成實時可交互模擬」——用嘅係所謂 <strong>autoregressive diffusion（自回歸擴散）</strong>。其中最受注目嘅新功能叫 <strong>WorldPrompt</strong>：一個描述生成世界同其中動作嘅輸入格式。呢集唔係 product tour，而係一次<strong>把「世界模型」呢個詞拆開嚟驗收</strong>嘅工程對話——由 720p/24fps/48kHz 嘅實時串流，到蒸餾、誤差累積、context 點揀，再到「點先算真係世界模型」嘅清醒夢測試。以下內容按 <strong>Latent Space 官方長文＋逐字稿</strong>整理，引號內容直接取自原文。
+</p>
+
+<h2 class="section-title">一、一句話總結</h2>
+<p>
+Runway 嘅核心命題係：<strong>「世界模型」同「視頻模型」唔係畫質之爭，而係「反事實生成」之爭</strong>。視頻模型只需生成「睇落合理」嘅畫面；世界模型要對「呢個動作 vs 嗰個動作」畀出<strong>同等真實</strong>嘅結果。圍繞呢個標準，佢哋用 WorldPrompt 做控制層、用<strong>自回歸化＋步驟蒸餾</strong>做到實時、用「冇結構化 state」換取通用性。聯合 CEO Germanidis 把兩者嘅分別講到最白：
+</p>
+<blockquote class="strong">
+「If I take this action versus this action, you want it to generate equally realistic outcomes. That's, I think, the big gap between video models and world models: that idea of <strong>counterfactual generation</strong>.」
+<span class="attribution">—— Anastasis Germanidis（Runway 聯合創辦人 & 聯合 CEO）</span>
+</blockquote>
+
+<h2 class="section-title">二、WorldPrompt：世界嘅「控制層」，而唔係程式語言</h2>
+<p>
+<strong>WorldPrompt</strong> 嘅定位係「角色、鏡頭、環境嘅控制層」。佢可以<strong>固定世界嘅某些面向（包括第一幀）</strong>，再落一連串<strong>帶時間戳嘅事件（timestamped events）</strong>——動作甚至可以喺<strong>實時</strong>被提示。Robin Kahlow 用遊戲 NPC 嚟類比：
+</p>
+<blockquote class="strong">
+「Like, if there's an NPC somewhere, the NPC might walk up to you and say something. So you could achieve the same thing with this kind of model, where you can have very detailed control over everything in the scene.」
+<span class="attribution">—— Robin Kahlow，談 WorldPrompt 嘅控制粒度</span>
+</blockquote>
+<p>
+但要留意一個關鍵限制：<strong>WorldPrompt 係提示機制，唔係程式語言</strong>。同 Minecraft、Roblox 呢類有腳本、有結構化狀態嘅虛擬世界唔同，GWM Worlds 2 <strong>冇腳本能力、冇 state 可以控制</strong>，你只能 prompting。Kamil Sindi 反而認為呢個係優勢——「你可以 on-demand 創造可提示嘅世界，視頻同音頻同步，跨各種唔同領域同環境。呢樣唔係遙遠未來嘅假設，而係已經發生嘅事」。不過佢亦老實承認可靠性取決於動作難度：
+</p>
+<blockquote class="strong">
+「Yeah, so it's a research preview. So it's not perfect, of course, and there are still flaws. It really depends on how difficult the action is. I would say movement works quite reliably.」
+<span class="attribution">—— Robin Kahlow，回應「能否可靠地指令重力法則或角色能力」</span>
+</blockquote>
+
+<h2 class="section-title">三、點樣做到「實時」：三步工程鏈</h2>
+<p>
+Kahlow 一針見血咁點出兩個難題：「一係令模型<strong>唔好一次過生成成條片</strong>，而係你眼定定望住嗰陣<strong>逐帧生成</strong>；二係令生成<strong>足夠快</strong>，快到可以實時播放。」Runway 嘅解法係一條清晰嘅工程鏈：
+</p>
+<ol>
+  <li><strong>微調</strong>：攞佢哋嘅基礎 audio-video 生成模型，fine-tune 到 WorldPrompt 格式，令佢識跟。</li>
+  <li><strong>自回歸化（autoregressive post-training）</strong>：Germanidis 講得更具體——由「<strong>bidirectional diffusion</strong>（一次過生成成條片）」改成自回歸，令模型「<strong>一次生成一帧或幾帧</strong>」。</li>
+  <li><strong>蒸餾做到實時</strong>：Germanidis 指出兩條蒸餾軸——①把大模型蒸餾到細模型；②<strong>步驟蒸餾（step distillation）</strong>，例如由約 <strong>50 步去噪降到 4 步</strong>，會有少少品質損失但結果往往可比。</li>
+</ol>
+<div class="data-point">
+  <span>規格</span>連續 <strong>720p</strong> 視頻 · <strong>24 fps</strong> · 音頻 <strong>48,000 Hz</strong>，全部實時串流。對位產品：Google DeepMind <strong>Genie 3</strong>（同樣 720p/24fps，官方稱僅支援「幾分鐘」連續交互）、<strong>Odyssey-2 Pro</strong>、World Labs <strong>RTFM</strong>。
+</div>
+<p>
+呢條鏈亦解釋咗為何 Runway 早年要「自學 model parallelism」：Sora 喺 2024 年 2 月發布時，市場恐慌令佢哋嘅 existential crisis「持續咗幾個鐘」，團隊喺三個月內把模型規模同算力<strong>擴咗 10×</strong>，同年夏天交出 Gen-3，之後再推 Turbo——自稱係「首個 production 嘅 step-distilled 模型」。
+</p>
+
+<h2 class="section-title">四、自回歸嘅原罪：誤差累積、無限生成、唔完美記憶</h2>
+<p>
+Germanidis 直接點名自回歸模型嘅最大敵人：
+</p>
+<blockquote class="strong">
+「The biggest challenge with autoregressive models is <strong>error accumulation</strong>. You're feeding generated frames back into the model to generate the next frames, and if there are any small errors, they accumulate over time.」
+<span class="attribution">—— Anastasis Germanidis</span>
+</blockquote>
+<p>
+Sindi 補充「<strong>無限生成（infinite generations）</strong>」帶嚟嘅資源管理難題：「要諗<strong>邊啲 context 要保留、邊啲唔重要要丟</strong>，有好多優化要做，先至唔會炸爆 GPU 記憶體。」Kahlow 則承認長期記憶仍未解決——「<strong>模型冇完美記憶，呢個仍然係 open research problem</strong>」。
+</p>
+<div class="highlight-box">
+<strong>呢三點其實係同一件事嘅三面：</strong>自回歸＝把生成結果餵返模型，於是①誤差會複合（同 LLM 生成越長越飄同源）、②context 無限增長（要有壓縮／丟棄策略）、③冇「世界狀態」可記（唔似遊戲引擎有 state，只有生成出來嘅像素同音頻）。呢個就係「世界模型」目前同「遊戲引擎」嘅結構性差距。
+</div>
+
+<h2 class="section-title">五、反事實生成：世界模型嘅真正分水嶺</h2>
+<p>
+Germanidis 用足球做例子：網上視頻訓練數據裡面「成功入球」遠多於「失敗射門」，所以視頻模型會把入球渲染得更可信。世界模型必須對<strong>「呢個動作 vs 嗰個動作」畀出同等真實嘅結果</strong>——呢個就係佢所講 video model 同 world model 之間嘅「大 gap」。
+</p>
+<blockquote class="strong">
+「世界模型要能對失敗做極好嘅模擬——因為無論係做評測定做 online RL，<strong>失敗案例才是關鍵</strong>。」
+<span class="attribution">—— 節目論點（原文語意）</span>
+</blockquote>
+<p>
+連帶嘅係<strong>評測變得極難</strong>。Sindi：「如果你有一個 multi-prompt、multi-character、multi-scene 嘅環境，你點樣真正理解邊啲係因果、邊啲唔係？」Runway 有自動化可驗證測試，但因為係 research preview，Kahlow 建議自己落手測——「試出你個模型邊度唔 work，係非常重要嘅」。
+</p>
+
+<h2 class="section-title">六、唔止遊戲：機械人、Agent 仿真、合成數據</h2>
+<p>
+遊戲係最明顯嘅用例，但 Kahlow 特別提到兩條更有意思嘅線：①<strong>機械人</strong>——用模擬環境測機械人；②<strong>大規模測 Agent</strong>——「如果你有一個好似 GWM Worlds 咁嘅模型，<strong>開幾千個模擬環境</strong>就冇咁困難。」
+</p>
+<p>
+但呢度有個關鍵提問：Agent 點知世界變咗咩？有冇結構化 state 可以讀？Kahlow 嘅回答係<strong>冇</strong>：
+</p>
+<blockquote class="strong">
+「So there's no structured state here. It's just observing the same thing you might observe in real life, just [in this case] from cameras.」
+<span class="attribution">—— Robin Kahlow，談 Agent 如何「理解」生成世界</span>
+</blockquote>
+<p>
+Sindi 補充佢亦可用於「<strong>為 Agent 生成合成數據</strong>」。Germanidis 則提出同推理模型協作嘅方向：「你可能用某啲 reasoning 嚟<strong>規劃場景</strong>，然後 pass 入去 diffusion head 真正生成像素。」
+</p>
+
+<h2 class="section-title">七、界面世界模型：用像素取代前端代碼</h2>
+<p>
+全集最反直覺嘅一段：<strong>interface world model（界面世界模型）</strong>。冇 HTML、冇 CSS、冇 React——<strong>界面像素直接由實時視頻生成模型輸出</strong>，click、drag、scroll 直接作為輸入被預測。你可以用 prompt 描述「按下呢個掣應該發生咩事」，用於原型設計同測試。配合 Germanidis 講嘅「fully neural operating system（全神經操作系統）」願景，呢條路線等於<strong>把整個前端抽象層蒸發掉</strong>。
+</p>
+<div class="highlight-box">
+<strong>為何重要：</strong>過去十年前端係「聲明式代碼 → 像素」嘅編譯問題，而家變成「提示 → 像素」嘅預測問題。呢個係「軟件即生成」最極端嘅版本——唔係 agent 幫你寫代碼，而係<strong>連代碼都唔需要</strong>。
+</div>
+
+<h2 class="section-title">八、清醒夢測試（The Lucid Dream Test）</h2>
+<p>
+Runway 自己提出嘅一把尺：戴住 VR 頭顯喺房間自由走動、同物體互動，最後<strong>你分唔清自己睇到嘅係 pass-through 實景定係生成畫面</strong>——過到呢關，世界模型才算夠格。Kahlow 明講「我哋仲差得遠」。呢個標準之所以有價值，係因為佢<strong>唔係由 benchmark 定義，而係由感知不可區分性定義</strong>——一種「圖靈測試式」嘅驗收。
+</p>
+<p>
+另外佢哋提到 <strong>world action model（世界動作模型）</strong>：從視頻模型加一個 action head 預測動作，就變成 policy；機械人若想睇人類示範，亦應能生成對應嘅 3D 姿態。
+</p>
+
+<h2 class="section-title">九、正面硬撼 LeCun：唔需要新架構</h2>
+<p>
+Germanidis 直接回應 LeCun「理解世界動態 ≠ 生成可愛視頻」嘅論點：
+</p>
+<blockquote class="strong">
+「LeCun 說理解世界動態和生成可愛視頻很不一樣。我的回答是：<strong>不，它們是同一件事</strong>。」
+<span class="attribution">—— Anastasis Germanidis</span>
+</blockquote>
+<p>
+佢主張「冇證據顯示 video prediction 本身唔能夠 scale」，把時間花喺架構創新不如改進<strong>數據同規模</strong>——呢個係典型嘅 bitter lesson 立場（Runway 官方亦用 Physics-IQ 呢類固體力學／流體／光學基準聲稱見到可預測嘅 scaling）。呢個立場同 LeCun/JEPA 一派、以及 MLST 上週 Mattick「預測 ≠ 控制」嘅立場正面衝突，係本輪最有價值嘅公開分歧之一。
+</p>
+
+<h2 class="section-title">十、公司史：由週末 hack 到 1000 張 A100</h2>
+<p>
+Germanidis 自述嘅幾個節點值得記低：
+</p>
+<ul>
+  <li><strong>2018 起</strong>Runway 最初係「令開源模型俾藝術家易用」——第一個爆紅工具係 <strong>Green Screen（rotoscoping 自動分割）</strong>，用過喺《Everything Everywhere All at Once》等片，長期係 Runway 嘅主力。</li>
+  <li><strong>2022 年中</strong>latent diffusion／DALL·E 2 出現 step function change；Runway 喺 <strong>Series B 階段就簽咗 1000 張 A100 嘅 cluster</strong>——自稱「略不理性」。當時最佳 video model 係 <strong>CogVideo（256×256，好原始）</strong>。</li>
+  <li><strong>2023 年 1 月</strong>Gen-1 先上，但係 <strong>video-to-video</strong>（因為 conditioning 更強，比由零生成易）。</li>
+  <li><strong>Gen-2 源自週末 hack</strong>：Gen-1 係 depth-to-video，唔可以直接做 text-to-video；Germanidis 用「text→depth map 模型 + Gen-1」兩階段拼出 Gen-2，兩週後就宣布。</li>
+  <li><strong>2024 年 2 月</strong>Sora 發布 →「Runway 完了」恐慌，existential crisis「持續幾個鐘」；三個月內規模／算力 10×，自學 model parallelism，夏天交 Gen-3；隨後 Turbo（首個 production 嘅 step-distilled 模型）。</li>
+</ul>
+<div class="data-point">
+  <span>對照</span>Runway 用<strong>兩年走完 LLM 世界嘅三年路</strong>：由擴散（一次性生成）→ 自回歸（逐帧）→ 步驟蒸餾（實時）。Sora 之前嘅業界品質標竿係 256×256 嘅 CogVideo。
+</div>
+
+<h2 class="section-title">十一、關鍵數據速覽</h2>
+<table>
+  <tr><th>項目</th><th>數字</th><th>備註</th></tr>
+  <tr><td>Runway 估值</td><td>約 <strong>53 億美元</strong></td><td>2026 年 2 月融資 3.15 億</td></tr>
+  <tr><td>實時輸出規格</td><td><strong>720p / 24fps / 48kHz</strong></td><td>連續實時串流</td></tr>
+  <tr><td>蒸餾步驟</td><td>約 <strong>50 → 4 步</strong></td><td>步驟蒸餾，品質略降但可比</td></tr>
+  <tr><td>早期算力賭注</td><td><strong>1,000 張 A100</strong></td><td>Series B 階段簽下</td></tr>
+  <tr><td>Sora 後擴容</td><td>規模／算力 <strong>10×</strong></td><td>三個月內</td></tr>
+  <tr><td>Gen-1 → Gen-2</td><td>由 <strong>video-to-video</strong> 起步</td><td>Gen-2 係週末 hack 拼出</td></tr>
+  <tr><td>對位模型</td><td>Genie 3 / Odyssey-2 Pro / RTFM</td><td>Genie 3 稱僅支援「幾分鐘」</td></tr>
+</table>
+
+<h2 class="section-title">十二、未解嘅張力與風險（筆者判讀）</h2>
+<ol>
+  <li><strong>「世界模型」嘅定義仍未收斂</strong>：Runway 自己嘅驗收尺（清醒夢測試）承認「仲差得遠」，而 WorldPrompt 冇結構化 state、冇腳本——同遊戲引擎式世界模型係兩種物種，硬要比較會失真。</li>
+  <li><strong>反 LeCun 係立場而唔係證據</strong>：Germanidis 嘅「冇證據顯示 video prediction 唔能夠 scale」係舉證責任嘅轉移（argument from absence），Physics-IQ 嘅 scaling 亦係自家口徑。</li>
+  <li><strong>Agent 用例有一大缺口</strong>：LLM agent 習慣讀結構化 JSON state，而呢度 agent 只可以「似真人咁」睇像素／聽音頻。呢個係 feature（通用）亦係 bug（訊號稀疏、評測難）。</li>
+  <li><strong>誤差累積 × 無限生成 × 記憶</strong>三者疊加，決定咗「幾個鐘 vs 幾分鐘」嘅可用邊界；Genie 3 官方只敢講「幾分鐘」，Runway 亦未給出連續運行時長。</li>
+</ol>
+
+<h2 class="section-title">十三、帶走：三條可重用嘅框架</h2>
+<ol>
+  <li><strong>反事實係世界模型嘅定義性測試</strong>：唔係「畫得好唔好睇」，而係「對成功／失敗動作係否同等真實」。呢把尺可直接搬去評任何「可交互生成」系統。</li>
+  <li><strong>實時＝架構轉換 ＋ 步驟蒸餾</strong>：先由雙向擴散改成 causal autoregressive，再步驟蒸餾；呢條路徑同 LLM 嘅「蒸餾到細模型／蒸餾到少步」同構，係「實時生成」嘅通用配方。</li>
+  <li><strong>「冇 state」係一種取捨而唔係缺陷</strong>：用生成像素取代結構化 state，換嚟跨域通用性，但代價係可評測性同 Agent 可用性。任何想「用生成世界訓練 Agent」嘅人，都要先答：agent 點樣知道世界變咗咩？</li>
+</ol>
+
+<h2 class="section-title">十四、同其他線並讀</h2>
+<p>
+本篇同 Latent Space 同期嘅兩條線互相緊扣：①<strong>John Platt（ERA／AI-for-Science）</strong>講「邊啲科學問題可以被自動化」，Runway 講「邊啲物理世界可以被生成」——兩者都在擴張「可計算嘅世界」邊界；②<strong>Alex Zhang（RLM／harness）</strong>講「用環境訓練 Agent」，而 Runway 正正係喺提供環境嗰一端。同期 AINews 反覆強調嘅「用 sim 測 agent、合成的資料生成」，喺呢集有咗具體嘅工程實作。放喺更闊嘅 2026 年敘事裡，呢集係「生成式媒體公司」向「<strong>物理智能基建</strong>」轉型嘅一個樣本——同 Dwarkesh 上 Si Sheppard 嘅「歷史類比」一集形成有趣對照：一邊講人類帝國如何被少數人推翻，一邊講點樣用像素憑空造一個新世界。
+</p>
+
+<footer>
+  <p>深度復述 · Latent Space × Runway（Kamil Sindi / Robin Kahlow / Anastasis Germanidis）（2026-09-25）· 來源：Latent Space 官方長文《Runway's WorldPrompt and the Engineering of Real-Time Worlds》（含全部直接引文）、同集官方逐字稿、Runway 官方 GWM Worlds 2 公告。</p>
+  <p style="margin-top:0.3rem;">估值、「10× 擴容」、Genie 3「幾分鐘」等均為公開／官方口徑；反事實生成同清醒夢測試屬研究願景而非實測結論。· JMOKSZ / ai-podcast-collection · Apache 2.0 · <a href="../index.html">返回日報</a></p>
+</footer>
+</div>
+</body>
+</html>

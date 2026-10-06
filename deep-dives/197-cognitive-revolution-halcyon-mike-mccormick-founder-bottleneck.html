@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Cognitive Revolution × Halcyon Mike McCormick：AI 安全嘅「由零到一」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5; color: #1a1a1a; line-height: 1.85; -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.7rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.4; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title { font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a; }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote { border-left: 3px solid #c4b89a; margin: 1.2rem 0; padding: 0.6rem 1rem; color: #555; font-style: italic; background: #f8f6f2; }
+  blockquote.strong { border-left: 4px solid #8b5e3c; background: #fdf8f0; font-style: normal; color: #3a3a3a; font-size: 1.05rem; padding: 0.8rem 1.2rem; }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point { background: #f9f5ee; border-radius: 6px; padding: 1rem 1.2rem; margin: 1.2rem 0; border: 1px solid #ece6de; }
+  .data-point span { display: inline-block; background: #8b5e3c; color: #fff; font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 2px; margin-right: 0.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+  .highlight-box { background: #fff9f0; border: 1px solid #efe5d5; border-radius: 6px; padding: 1rem 1.2rem; margin: 1.2rem 0; }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid #e6e0d8; padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+  th { background: #f6f2ec; font-weight: 600; color: #3a3a3a; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em; background: #f4f1ec; padding: 0.05rem 0.3rem; border-radius: 3px; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #999; text-align: center; }
+  footer a { color: #888; }
+  @media (max-width: 600px) { html { font-size: 16px; } .container { padding: 1.5rem 1rem; } header h1 { font-size: 1.35rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">The Cognitive Revolution · 2026-09-25 發布</div>
+  <h1>「AI 安全缺嘅唔係錢，係識開組織嘅創始人」——Cognitive Revolution × Halcyon 創辦人 Mike McCormick：三年孵化約 30 間組織、募資約 5 億美元，同「創始人瓶頸」</h1>
+  <div class="meta">
+    <span>📅 2026-09-25 18:13 UTC</span><span>·</span><span>🎙 The Cognitive Revolution（Nathan Labenz）</span><span>·</span><span>👤 受訪：Mike McCormick（Halcyon 創辦人兼 CEO）</span><span>·</span><span>📄 官方 Show Notes ＋ 逐字稿</span><span>·</span><span>🏷 AI 安全產業化 × 組織建設 × 驗證基建</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集問一個好少人正面問嘅問題：<strong>AI 安全領域到底缺咩？</strong>更多錢、更多想法，定係更多「識得建立組織」嘅人？Halcyon 由非營利 <strong>Halcyon Futures</strong> 同創投基金 <strong>Halcyon Ventures</strong> 組成，做法係支持轉入 AI 安全、網絡安全、生物安全嘅人——<strong>往往喺佢哋仲未諗好要做咩之前就開始支持</strong>。約三年內，Halcyon 協助創辦咗約 <strong>30 間組織、合計募資約 5 億美元</strong>。以下內容按 <strong>官方 Show Notes（AI 生成、基於逐字稿）＋ 官方引文</strong>整理。
+</p>
+
+<h2 class="section-title">一、一句話總結</h2>
+<p>
+McCormick 嘅中心命題係：<strong>AI 安全嘅綁定約束唔係資本，而係有經驗、有使命感嘅創始人</strong>。佢最擔心嘅唔係「冇錢」，而係未來資金嚟得太快、而個領域<strong>造唔出足夠多值得資助嘅好組織</strong>。佢最 reusable 嘅一句係：
+</p>
+<blockquote class="strong">
+「The field is hurting for world-class founders who can take those big squishy ideas and turn them into organizations that actually make the world safer.」
+<span class="attribution">—— Mike McCormick（官方引文）</span>
+</blockquote>
+<p>
+而佢對問題本質嘅判斷，比技術圈一般想像更偏社會科學：
+</p>
+<blockquote class="strong">
+「And I find that so many of society's stickiest problems are not technical problems, they're <strong>coordination problems</strong>.」
+<span class="attribution">—— Mike McCormick</span>
+</blockquote>
+
+<h2 class="section-title">二、Halcyon 嘅模式：先支持人，遲啲先支持項目</h2>
+<p>
+Halcyon 最反直覺嘅做法係——<strong>喺受助者仲未想好做咩之前就資助佢</strong>。佢哋最初兩筆 grant 就係咁用嘅。論證係：好創始人本身就善於募資，錢會自己出現；真正稀缺嘅係「願意並且有能力由零建一間組織」嘅人。呢個模式同傳統「睇 pitch deck 投資」相反——<strong>先投人，後投題目</strong>。
+</p>
+<div class="data-point">
+  <span>規模</span>約 <strong>3 年</strong>協助創辦約 <strong>30 間組織</strong>，合計募資約 <strong>5 億美元</strong>。官方 <a href="https://halcyonfutures.org/founders">Halcyon Request for Founders</a> 列出待創辦嘅題目清單。
+</div>
+
+<h2 class="section-title">三、Goodfire 嘅起源故事：由「生活費 grant」到可解釋性公司</h2>
+<p>
+呢個係全集最能說明 Halcyon 方法論嘅案例。McCormick 講述佢哋<strong>最早兩筆 grant 分別畀咗 Eric Ho 同 Dan Balsam</strong>，用途只係<strong>支付生活開支，等佢哋決定喺 AI 安全做咩</strong>。之後經過一次 retreat、若干引薦、以及「決定聚焦可解釋性」，嗰次探索先變成公司，創投投資隨後跟到。Nathan Labenz 亦披露自己有喺 Goodfire 早期嘅小額投資。
+</p>
+<div class="highlight-box">
+<strong>為何呢個順序重要：</strong>先有「人 + 探索期」，先至收斂到「題目」，最後先有「公司」。主流 VC 係倒轉嘅：先要題目、要 traction，先肯落注。Halcyon 押注嘅係<strong>探索期本身</strong>——而 Goodfire（可解釋性）、AIUC（標準＋保險）正正係呢條路徑長出來嘅樣本。
+</div>
+
+<h2 class="section-title">四、AIUC：用「標準 + 保險」製造減風險嘅商業理由</h2>
+<p>
+<strong>AIUC（AI Underwriting Company）</strong> 結合 <strong>AIUC-1 標準</strong>同<strong>保險</strong>，目標係畀企業一個<strong>商業理由</strong>去降低 AI 風險。McCormick 用 <strong>ElevenLabs</strong> 做例子：一間 AI 供應商只要把安全保證同承保綑綁，產品就更容易被企業客採用。呢個思路同 SOC 2 之類嘅合規基建同構——<strong>把「安全」變成採購清單上一項可勾選嘅嘢</strong>，令好行為有市場回報。
+</p>
+
+<h2 class="section-title">五、工作範圍嘅廣度：由可解釋性到室內空氣</h2>
+<p>
+Halcyon 支持嘅題目光譜極闊，本身就係一種論證——AI 安全唔係單一技術問題：
+</p>
+<ul>
+  <li><strong>Transluce</strong>：研究 scalable oversight，造工具（<strong>Docent</strong>）幫研究者理解越嚟越強嘅模型。</li>
+  <li><strong>Hadrian Biodefense</strong>：防疫準備，包括災難時必要工作者嘅防護裝備。</li>
+  <li><strong>未具名嘅室內空氣品質工作</strong>：連到一個好具體嘅落地問題——Nathan 想喺學校課室裝 UVC 燈，但<strong>就算係一個有心嘅家長，都搵唔到有授權嘅人批准</strong>。McCormick 認為學校係好好嘅早期客戶，因為更清潔嘅空氣可以減少日常疾病同缺席，同時喺未來疫情有用。</li>
+</ul>
+<div class="highlight-box">
+<strong>呢個 UVC 故事係全集最好嘅「落地隱喻」：</strong>技術早已存在，卡住嘅係<strong>採用路徑</strong>——邊個有權批、邊個負責、點樣規模化。呢個正正係 McCormick 口中嘅「coordination problem」。
+</div>
+
+<h2 class="section-title">六、時間線：優先做「一至四年內有意義」嘅項目</h2>
+<p>
+面對「AI 2027」式情景，McCormick 對時間線<strong>唔確定</strong>，但佢用一個實用篩選器：<strong>優先支持可能喺未來 1–4 年內就有意義嘅項目</strong>。佢想要嘅係喺<strong>可解釋性、控制、評測、網絡安全、驗證</strong>五條線上多啲獨立產能，並以 <strong>METR</strong> 做例子——「有價值，但只佔一個大好多嘅問題嘅一小部分」。
+</p>
+
+<h2 class="section-title">七、驗證（Verification）：令「協議」變成可執行</h2>
+<p>
+呢度係全集最有政策含量嘅一段。McCormick 講到 pacing／協議如果要 enforceable，必須有技術實質——<strong>能夠確認邊個模型正喺度服務某個請求</strong>，或者<strong>確認一個數據中心係用嚟訓練而唔係推理</strong>。軟件、密碼學、硬件、協調機制<strong>必須一齊發展</strong>：
+</p>
+<blockquote class="strong">
+「一個冇協議去用嘅技術系統，或者一個冇方法核查合規嘅協議，都會留下一大個缺口。」
+<span class="attribution">—— Mike McCormick（原文語意）</span>
+</blockquote>
+<p>
+換句話講，<strong>「驗證」係 pacing 的物理學</strong>：冇驗證能力，任何減速／配額承諾都只係口頭；有驗證能力，承諾先有牙。呢個判斷同本輪 CR／AI:AM 週報反覆出現嘅「compute index、可審計算力」主題一脈相承。
+</p>
+
+<h2 class="section-title">八、治理：冇銀彈，創始人嘅 sensibility 才係關鍵</h2>
+<p>
+Nathan 追問使命同財務誘因嘅關係。McCormick 指向佢哋寫嘅《<a href="https://halcyonfutures.org/governance">Mission Preservation Governance Mechanisms for Startups</a>》，主張 <strong>PBC（公益公司）同特殊董事會結構</strong>（例如 Anthropic 式）可以幫手，但<strong>冇一個結構可以保證領導人喺壓力下點行</strong>。因此佢回到最根本嘅判斷標準：<strong>創始人動機同執行紀錄</strong>。佢嘅四條投資準則：
+</p>
+<ol>
+  <li><strong>核心產品／服務必須係 AI 安全棧嘅重要一環</strong>（唔可以只係副作用）。</li>
+  <li><strong>必須有成為成功企業嘅潛力</strong>（因為佢哋有一隻創投基金）。</li>
+  <li><strong>創始人動機</strong>——missionary（傳教士）而唔係睇到 WSJ 頭條先嚟嘅傭兵。</li>
+  <li><strong>偉大嘅創始人</strong>——「就算唔談影響力，你都會押佢」。</li>
+</ol>
+<blockquote class="strong">
+「沒有什麼結構是銀彈……但創始人的 sensibility 極其重要。」
+<span class="attribution">—— Mike McCormick（節目原文語意）</span>
+</blockquote>
+
+<h2 class="section-title">九、資金地景：未來慈善家需要「值得投嘅好嘢」</h2>
+<p>
+McCormick 最傳神嘅比喻係：<strong>「今天嘅慈善家同創始人，為明天嘅慈善家寫菜單。」</strong> Halcyon 嘅工作就係<strong>先造出組織</strong>，令未來嘅資金有東西可投。佢點名嘅資金地景包括 <strong>Coefficient Giving 同 Project Tailwind</strong>、<strong>Survival and Flourishing Fund</strong>、以及 <strong>OpenAI Foundation</strong>。而佢最擔心嘅場景係：
+</p>
+<blockquote class="strong">
+「我擔心那個不遠的時刻：有堆積如山的數十億美元，卻沒有那麼多偉大的事可資助。」
+<span class="attribution">—— Mike McCormick（節目原文）</span>
+</blockquote>
+<p>
+佢嘅側寫係：Halcyon 專注做<strong>組織誕生期</strong>嘅工作——幫人揀問題、搵共同創辦人、招團隊、砌出第一個 offering。
+</p>
+
+<h2 class="section-title">十、開放權重安全、意識與福利：留下不確定性</h2>
+<p>
+論到同 AI 安全相鄰嘅硬技術題，節目觸及兩條研究線（Nathan 主動提出）：
+</p>
+<ul>
+  <li><strong>Self-Other Overlap</strong>（AE Studio）：<a href="https://arxiv.org/abs/2412.16325">arXiv:2412.16325</a>，用神經網絡層面嘅 self-other overlap 訓練，令 agent 更安全、更誠實。</li>
+  <li><strong>GRAM（Gradient-Routed Auxiliary Modules）</strong>：<a href="https://arxiv.org/abs/2607.08077">arXiv:2607.08077</a>，模組化預訓練以實現<strong>訪問控制</strong>，即喺開放權重中限制危險能力。</li>
+</ul>
+<p>
+McCormick 對呢類方法<strong>有興趣但謹慎</strong>——尤其係安全措施喺開放模型被惡意使用時仲剩幾多。論到意識（consciousness），佢做咗一個好清晰嘅切分：<strong>把「模型有冇體驗」嘅不確定性，同「唔需要意識都成立嘅風險」分開</strong>。佢直白講：
+</p>
+<blockquote class="strong">
+「And I think basically none of the risks that I care about require consciousness.」
+<span class="attribution">—— Mike McCormick</span>
+</blockquote>
+<p>
+佢哋亦以 <strong>Eleos AI Research</strong>、<strong>Apollo Research</strong>、<strong>Softmax</strong>、<strong>Reciprocal Research</strong> 等作參照點，討論福利、能動性同人類應該點樣同越嚟越強嘅系統相處——雙方都<strong>刻意留白，唔當呢啲問題已有定論</strong>。
+</p>
+
+<h2 class="section-title">十一、制度地景：由倡議到有實權嘅機構</h2>
+<p>
+最後一段回到溝通同協調。McCormick 提到 <strong>Seismic Foundation</strong>（關於 AI 前沿嘅公眾溝通）、<strong>AI Evaluator Forum</strong>、<strong>Frontier Model Forum</strong>、以及 <strong>Fathom</strong> 提出嘅<strong>獨立驗證組織（IVO）</strong>——係新興地景嘅唔同組件。Nathan 就借台灣 <strong>Polis</strong>／<strong>Audrey Tang</strong> 嘅經驗問：一個想法點樣變成<strong>有真正權威嘅機構</strong>？McCormick 對新嘅民主同協調工具有興趣，但強調<strong>一個動人嘅技術設計，仍然需要一條可行嘅採用路徑</strong>。Nathan 嘅一句提問好有份量：
+</p>
+<blockquote class="strong">
+「What is as important as the contents of the Constitution is, how are we gonna go from this thing being some stuff we wrote down on a piece of paper to an actual basis for government?」
+<span class="attribution">—— Nathan Labenz</span>
+</blockquote>
+
+<h2 class="section-title">十二、關鍵數據速覽</h2>
+<table>
+  <tr><th>項目</th><th>數字／事實</th><th>備註</th></tr>
+  <tr><td>孵化組織</td><td>約 <strong>30 間</strong> / 約 3 年</td><td>Halcyon Futures + Ventures</td></tr>
+  <tr><td>合計募資</td><td>約 <strong>5 億美元</strong></td><td>被孵化組織合計</td></tr>
+  <tr><td>首批 grant</td><td><strong>2 筆</strong>（Eric Ho、Dan Balsam）</td><td>只係生活費，未定題目</td></tr>
+  <tr><td>優先時間窗</td><td><strong>1–4 年</strong>內有意義</td><td>對 AI 2027 時間線不確定</td></tr>
+  <tr><td>五條獨立產能</td><td>可解釋性／控制／評測／網安／驗證</td><td>以 METR 為例</td></tr>
+  <tr><td>治理工具</td><td>PBC、特殊董事會</td><td>「冇銀彈」</td></tr>
+</table>
+
+<h2 class="section-title">十三、未解嘅張力與風險（筆者判讀）</h2>
+<ol>
+  <li><strong>「創始人瓶頸」難以證偽</strong>：McCormick 主張好創始人自己會募資、錢會自己出現——但呢個講法同時把「資金充足」變成無法反駁嘅前提。若某日資金真係收縮，呢個模型會否仍然成立？節目未答。</li>
+  <li><strong>「傭兵 profile」問題被他自己承認</strong>：AI 安全已「產業化」到有人讀完你網站、知道你重視 impact 就照住你嘅動機 pitch。佢認為多數唔係騙子，只係善於對資助者動機做 pitch——但呢個判準（動機純唔純）本質上不可查證。</li>
+  <li><strong>治理機制被作者本人否定為非銀彈</strong>：PBC、董事會全被降格為「nudges」，而佢舉 Anthropic 董事會為例說「你可以爭論佢到底有冇發揮作用」。呢個等於承認：使命保存最終取決於人，而制度只能提高概率。</li>
+  <li><strong>驗證基建仍屬倡議階段</strong>：確認「邊個模型服務請求」、「數據中心係訓練定推理」目前係 <strong>Fathom IVO 嘅提案</strong>，官方 Show Notes 明言係「一個可能嘅制度模型，而唔係佢已經係法律」。任何基於驗證嘅 pacing 協議，短期內仍係紙上談兵。</li>
+</ol>
+
+<h2 class="section-title">十四、帶走：三條可重用嘅框架</h2>
+<ol>
+  <li><strong>先投人、後投題目</strong>：Halcyon 嘅 Goodfire 案例證明，探索期本身值得被資助——「揀問題、搵 cofounder、砌第一個 offering」係一種可以刻意投資嘅能力，而唔係投資嘅前置條件。</li>
+  <li><strong>驗證＝承諾嘅物理學</strong>：任何「減速／配額／協議」嘅承諾，若冇「確認模型身份、確認算力用途」嘅技術手段，都只係口頭。要把安全變成可執行嘅合約，先要造驗證基建。</li>
+  <li><strong>把「協調問題」當第一類問題</strong>：UVC 燈、學校空氣、AI 安全組織——卡點往往唔喺技術，而在「邊個有權批、邊個負責、點樣規模化」。對任何想落地 AI 安全嘅人，呢個視角比技術路線圖更實用。</li>
+</ol>
+
+<h2 class="section-title">十五、同其他線並讀</h2>
+<p>
+呢集同 The Cognitive Revolution 呢條線嘅近期主題高度連貫：由 <strong>Zapier CEO（headless／確定性代碼）</strong>、<strong>Nathan 中國行</strong>，到 <strong>AI:AM 週報（pacing、算力指數）</strong>，本節目一直維持「政策—組織—工具」嘅三角。而放喺同期並讀更有意思：<strong>Weco 嘅 AIDE²</strong> 講「AI 自己改進自己」嘅效率，而 Halcyon 講「人類組織仍然係稀缺資源」——兩者係同一枚硬幣嘅兩面；<strong>OpenRouter</strong> 一集提到「agentic fraud」係下一個系統性風險，Harrison／Fathom 式嘅<strong>獨立驗證組織</strong>正好係同一問題嘅治理答案。當能力曲線同安全事件同步升溫（2026 年 9 月嘅主旋律），真正稀缺嘅可能唔係模型，而係<strong>識得把「大而模糊嘅想法」變成「真係令世界安全啲嘅組織」嘅人</strong>。
+</p>
+
+<footer>
+  <p>深度復述 · The Cognitive Revolution × Halcyon（Mike McCormick）（2026-09-25）· 來源：Cognitive Revolution 官方 Show Notes（AI 生成、基於逐字稿）＋官方「Quotes worth pulling」＋所引論文與機構頁面。</p>
+  <p style="margin-top:0.3rem;">「30 間組織／5 億美元」為受訪者口徑；Fathom IVO 屬提案而非現行法律。· JMOKSZ / ai-podcast-collection · Apache 2.0 · <a href="../index.html">返回日報</a></p>
+</footer>
+</div>
+</body>
+</html>
