@@ -1,91 +1,84 @@
 {
- "lastScan": "2026-10-04T02:04:00.000Z",
- "lastScanDate": "2026-10-04",
+ "lastScan": "2026-10-07T02:06:00.000Z",
+ "lastScanDate": "2026-10-07",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-01T15:28:28.000Z",
    "lastEpisodeTitle": "Si Sheppard – How did a few hundred Spanish soldiers topple two empires?",
+   "lastFeedItemPubDate": "2026-10-01T15:28:28.000Z",
    "newEpisodes": []
   },
   "latent_space": {
    "lastEpisodePubDate": "2026-10-02T14:04:49.000Z",
    "lastEpisodeTitle": "Inside-Out AI: Rebuilding Airbnb Behind the Scenes and Across the Guest Experience",
+   "lastFeedItemPubDate": "2026-10-06T06:28:43.000Z",
+   "lastFeedItemTitle": "[AINews] Reflection Beam - 501B-A23B American Open Model",
    "newEpisodes": [
     {
-     "title": "Inside-Out AI: Rebuilding Airbnb Behind the Scenes and Across the Guest Experience",
-     "pubDate": "2026-10-02T14:04:49.000Z",
-     "type": "interview",
-     "url": "https://www.latent.space/p/airbnb",
-     "note": "已深度萃取（官方長文完整內容約 12 KB，含全部直接引文與數據；本期由 Richard MacManus 執筆，非 swyx）：Latent Space。受訪 Ahmad Al-Dahle——Airbnb CTO（2026 年 1 月上任），前 Meta 生成式 AI 負責人、2023–2025 主導 Llama 開源系列發布。主題＝「由內而外（inside-out AI）」：先內部提速開發，再用同一批能力改造用戶體驗。核心數據：①60% 代碼由 AI 撰寫；②按年出貨功能多近 80%；③人均 PR 吞吐約 +1.6x；④約 50% 客服工單純 AI 解決（Q2 財報口徑近 45%）；⑤雜貨配送 8–9 個月、復用 Everest 後機場接送僅約 6 週；⑥生產至少 10 個客製模型。核心論點：（a）組織流程改造優先於模型——把產品/設計/工程的層層交接拿掉，直接一起做原型，「code 成為推理所依據的產物」（不再產出厚重 PRD）；（b）客服是第一個面對用戶場景但最難（犯錯代價高），關鍵是先用合成數據測透再上生產，並刻意保留安全類工單給人；（c）Everest＝內部組織上下文圖（LLM+embeddings+AI retrieval），讓通才在極專門代碼區工作，並催生兩項新服務；（d）多模型公司：混合前沿與開源，大部分後訓練/RL 在開源模型上做，沿成本/性能/延遲 Pareto 前沿逐用例選型——coding 用最強前沿（錯誤貴）、搜索用小而快（延遲敏感），並稱窄用例小模型後訓練後可超越前沿；（e）下一代 agent＝容器化、事件觸發的非同步 agent（Grafana 告警→自動 triage/on-call，人覆核 PR），願景是自動化管理整個市場（欺詐、信任違規、質量、缺陷）；（f）「按功能開發組織的公司會掙扎，按目標/使命/結果組織的會沒事」；（g）擔憂初階工程師手藝流失，對策＝每個工程師都必須能解釋（即使 PR 是 AI 生成的）他建了什麼。市值約 930 億美元。爭議：60% 代碼/1.6x/小模型超越前沿均為公司自報口徑，無外部 benchmark。"
+     "title": "[AINews] Reflection Beam - 501B-A23B American Open Model",
+     "pubDate": "2026-10-06T06:28:43.000Z",
+     "type": "ainews",
+     "url": "https://www.latent.space/p/ainews-reflection-beam-501b-a23b",
+     "note": "已深度萃取（AINews 原文約 20 KB 全文 ＋ Reflection 官方公告約 25 KB 全文，所有引文直接取自原文）：Latent Space 旗下 AINews 快訊（非訪談，覆蓋 2026-10-03→10-05）。本輪 10 檔播客唯一新增內容。核心＝美國 neo lab Reflection 發布首個開放權重模型 Beam：501B 總參 / 23B 激活稀疏 MoE，text-only，主打 coding/agentic/科學。官方數字：①預訓練 23.8T token（含對數以億計 PDF 的 OCR 管線；95% 原始互聯網 token 被剔除，常規手法會漏掉約 1.8 兆高質 token）②預訓練 6,144 張 GB300 NVL72、四星期完成、goodput 92.3%、僅 9 次半自動 rewind ③RL 用 10.5K 張 GB300 四星期、逾 1 億條 rollout、1.3B sandbox、約 100 萬環境、平均 11 萬並發 rollout / 峰值 17 萬沙箱、跨 20+ 集群兩雲四區、10 億+ 沙箱建立請求、90% 沙箱 10 秒內就緒④自報 SWE-bench Verified 80.9、Terminal Bench 2.1 80.1、DeepSWE 44.4、SWE Bench Pro v2-Hard 77.2、推理效率為 GLM 5.2 約 3–4 倍⑤權重 Apache 2.0 本月內放出、現開 waitlist。技術：MoE＋交錯局部/全局注意力（第三方讀作 3:1 全局/滑窗）、auxiliary-loss-free 均衡＋expert-bias 餘弦衰減、序列級均衡、depth-based residual scaling＋SandwichNorm＋FP32 殘差累加（52 層殘差 RMS 有界、最忙專家負載 1.04×）；異步策略梯度容忍一天陳舊度（落後 107 個權重版本仍穩定）、推/訓 GPU 比 3.9:1–5.4:1、五次換 GPU mesh 不丟狀態、權重中位 12 秒到推理艦隊（跨機架流量 -75%、新權重採用快 2.2×）、71 次推理事故不終止訓練（容量中位 8 分鐘恢復、損失 0.02% GPU-分鐘）；可控長度罰則 + reasoning effort 參數；midtraining 擴至 1M context；安全用 MOPD 多教師蒸餾＋deliberative alignment＋對抗式迭代。第三方質疑：Elie Bakouch 估預訓練 BF16 MFU 僅約 12%；Teortaxes 稱其為 DeepSeek V3 的 iso-FLOP replication；多數觀察者置於 GLM-5.2 水平、部分 benchmark 低於 DS V4.1 Flash；Nathan Lambert 歸類為「仍落後中國對手的強力美國開源」。同篇另含：Aleph Alpha Kolibri（78B-A3.46B）、Reka Rho-1（19B omni/320 H100/3 個月）、Command Code Agr 決策模型＋SemiAnalysis 對 TypeSafe Jev 的「無解碼」路線解釋、OpenAI vs Anthropic 訂閱價值戰（SemiAnalysis：Claude 高 5 倍以上、按任務成本校正 1.3–2.9 倍；$200 檔暫停、GPT-6 提速 50% 由約 30→50 TPS）、HF 多 harness RL（Mini-SWE-Agent 62% vs Claude Code 33%）、Pi Durable、Cognition Dreaming、Cursor SDK、驗證優先研究（NVIDIA mid-harness 50%→68%、Google VeriHarness）、上下文壓縮研究（壓縮三分之一 token 反慢 20–80%）、OpenAI EU 文字水印（25% 同義詞替換令檢出率 92%→17%）、Bengio FT 文章、Achiam 自主武器禁令主張、騰訊甲骨文東南亞租 10 萬芯片約 70 億美元。"
     }
    ]
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-10-02T10:00:00.000Z",
    "lastEpisodeTitle": "Frontier Chips for Frontier AI Labs, with Walter Goodwin, Founder/CEO of Fractile",
-   "newEpisodes": [
-    {
-     "title": "Frontier Chips for Frontier AI Labs, with Walter Goodwin, Founder/CEO of Fractile",
-     "pubDate": "2026-10-02T10:00:00.000Z",
-     "duration_sec": 2138,
-     "type": "interview",
-     "url": "https://www.youtube.com/watch?v=OpeCP4wCxkA",
-     "note": "已深度萃取（YouTube 官方字幕逐字稿約 37 KB，含全部時間軸；引言直接取自逐字稿）：No Priors，主播 Sarah Guo。嘉賓 Walter Goodwin——Fractile 創辦人兼 CEO（2022 夏成立的全棧 AI 芯片公司，約 150 人，自建前端設計/physical design/backend/先進封裝），做「為世界最大模型打造極高速推理芯片」。核心：①架構從 SRAM 轉向高頻寬 DRAM——前兩年做類 Groq/Cerebras 的 SRAM-based 芯片（每秒數千 token），但 2023 底–2024 擔心可擴展性：AI 有兩樣在長（參數＋更致命的 context length），故轉向與記憶體廠/代工廠做 skunk works，追求高容量低成本 DRAM 的超高頻寬，平台 2027 H2 ramp，目標「GPU/TPU 的可擴展性 + Groq/Cerebras 的速度」。②快推理的真價值不是更順的聊天機器人（「快推理界的更快的馬」），而是把長時運行 agent 快一個數量級；今天快推理芯片「頻寬超高但容量極低，連長上下文 attention 都跑不了，得翻回 GPU」。③芯片設計壓縮＝更多射出機會：同時相信「壓縮週期極有價值」與「架構下注仍須深思」（芯片 3 年壽命、3–5 年攤銷、量產爬坡 12–18 個月、代工往返 3–5 個月），故非每幾週發新芯片，而是滾動前沿賭注，爭取 3–6 個月領先＝「芯片界的前沿模型」。④GDS2：某 top-3 半導體 CEO 私下稱「架構師 intent → 可用 GDS2 要 10 年」，Walter「除以四再減一點」→ 未來幾年出現端到端原型；中段 place&route/有限元/熱估計仍是 wall-clock 瓶頸（與 RSI 同構）；Cadence/Synopsys 的 DRC/LVS sign-off 長期不可取代。⑤記憶體頻寬 scaling law：Fractile 芯片頻寬約 HBM 系 25 倍；MoE 稀疏化（1/6→1/128、1/256）省 FLOPs 但被 HBM 頻寬卡死、MFU 極低。「過去 20 年 FLOPs ×約百萬，記憶體頻寬只 ×約 40」。⑥市場結構：超大規模自研 ASIC（TPU/MTIA/Maia/OpenAI Jalapeno，經 Broadcom 等交付；Broadcom 市值約 2 兆美元，架構高度相似、都用 HBM+tensor core+TSMC 先進封裝）「首要目的是壓 Nvidia 價格」；具新能力芯片才是真變數；前沿 lab 不宜 all-in 自研硅（不對稱博弈：對手若找到只在自己芯片生效的突破，你 9 個月內恐死），故第三方芯片玩家長期存在。關鍵數字：Nvidia 系統內含 6–9 顆自製芯片。片長 35:38。"
-    }
-   ]
+   "lastFeedItemPubDate": "2026-10-02T10:00:00.000Z",
+   "newEpisodes": []
   },
   "cognitive_revolution": {
    "lastEpisodePubDate": "2026-10-03T13:00:00.000Z",
    "lastEpisodeTitle": "One Brain, Any Body: Google DeepMind's Keerthana on Gemini Robotics 2, Cross-Embodiment & Humanoids",
-   "newEpisodes": [
-    {
-     "title": "One Brain, Any Body: Google DeepMind's Keerthana on Gemini Robotics 2, Cross-Embodiment & Humanoids",
-     "pubDate": "2026-10-03T13:00:00.000Z",
-     "duration_sec": 5528,
-     "type": "interview",
-     "url": "https://www.cognitiverevolution.ai/one-brain-any-body-google-deepmind-s-keerthana-on-gemini-robotics-2-cross-embodiment-humanoids/",
-     "note": "已深度萃取（官方 Show Notes＋完整逐字稿，逐字稿純文字約 60 KB，含全部時間軸）：The Cognitive Revolution，主播 Nathan Labenz。嘉賓 Keerthana Gopalakrishnan——Google DeepMind Staff Research Scientist、Gemini Robotics 研究負責人，第四次上節目（2023 Mother of Robots／2024 與 Ted Xiao／2025 Gemini Robotics 1.0-1.5）。主題＝Gemini Robotics 2 套件與通用機器人進度校準。核心論點：①人形運動會炫技非瓶頸——腳速非實用價值限制，奔跑在平地模擬好訓；②真瓶頸＝操縱的 sim-to-real 缺口（布料/摩擦/可變形物體，接觸動力學難建模）；③泛化與精通為正交軸，通用底座有複利、窄模型無；④機器人仍『GPT-2』，卡在跨本體（單一機身策略≠通用大腦，GPT 從無此問題）；⑤ICL/視頻 prompt 是光譜，關鍵在記憶 vs 泛化與任務難度；⑥架構三件套：ER 2『系統二』推理（建於 Gemini 3.5 Flash，已開放 API，可把機器人 affordances 定義為工具）＋ Gemini Robotics 2（VLA 執行，控制指尖到腳尖全身）＋ On-Device 2（離線小模型），VLA 僅限 trusted testers；⑦延遲是應用特定權衡，預期 Flash/Pro 分層出現於機器人；⑧128K context≈3 分鐘密集多模態記憶，促使用文字摘要壓縮歷史，ER→VLA 介面盼盡量豐富；⑨全身控制為本版新增（與 Apptronik/Agile Robots/Boston Dynamics 合作），錯誤在序列任務中複合；⑩安全是能力非取捨，分操作安全/目標對齊/感測失效優雅降級（籃子蓋頭應停下求助）；⑪做人形才暴露 HRI/全身控制/多指靈巧三前緣，稱 DeepMind 或為北美唯一可跨本體研究人形智能者；⑫對世界模型『jury's still out』，資料策略走混合（teleop 精確不可擴展/UMI 感測可擴展受硬體瓶頸/自我中心視頻最可擴展最噪）。關鍵數字：128K≈3 分鐘、API 往返約 6 秒、端側約 200 示範跨多機身、GR1→GR2 約 1 年 4 個月由夾爪翻轉到多指、Wuji Hand≈十歲小孩力道、SharpaWave 可舉約 20kg 且能開罐、狗腦約 25 兆參數。片長 92 分鐘。爭議：成功率/跨本體躍進為公司自報口徑；Nathan 主張對齊最終是家用瓶頸，Keerthana 未明確排序；『GPT-2』類比承認有缺陷。"
-    }
-   ]
+   "lastFeedItemPubDate": "2026-10-03T13:00:00.000Z",
+   "newEpisodes": []
   },
   "ml_street_talk": {
-   "lastEpisodePubDate": "2026-10-01T20:00:18.000Z",
+   "lastEpisodePubDate": "2026-10-01T20:03:16.000Z",
    "lastEpisodeTitle": "How a Voice Agent Learns the Rhythm of Conversation — Shawn Wen",
+   "lastFeedItemPubDate": "2026-10-01T20:03:16.000Z",
    "newEpisodes": []
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-09-03T00:00:00.000Z",
    "lastEpisodeTitle": "153. 和曾鸣聊产业史观：残酷的真相、会消亡的公司、优秀≠卓越、\"OAI、Anth大概率不是原生时代大赢家\"",
+   "lastFeedItemPubDate": "2026-09-03T00:00:00.000Z",
    "newEpisodes": []
   },
   "silicon_valley_101": {
    "lastEpisodePubDate": "2026-09-29T23:00:00.000Z",
    "lastEpisodeTitle": "E254｜超级厄尔尼诺来了，我们的日常所需真会因它涨价吗？",
+   "lastFeedItemPubDate": "2026-09-29T23:00:00.000Z",
    "newEpisodes": []
   },
   "42zhangjing": {
    "lastEpisodePubDate": "2026-09-27T13:30:00.000Z",
    "lastEpisodeTitle": "AI Trading —— 决策便宜，行动很贵｜对谈超 3w Star Vibe-Trading 作者浩哲",
+   "lastFeedItemPubDate": "2026-09-27T13:30:00.000Z",
    "newEpisodes": []
   },
   "slaying_dragon": {
    "lastEpisodePubDate": "2026-09-28T16:00:00.000Z",
    "lastEpisodeTitle": "当AI开始设计芯片---聊聊EDA与AI时代的芯片设计",
+   "lastFeedItemPubDate": "2026-09-28T16:00:00.000Z",
    "newEpisodes": []
   },
   "crossing": {
    "lastEpisodePubDate": "2026-09-27T16:00:00.000Z",
    "lastEpisodeTitle": "AI 时代，我们到底该学什么？｜对谈于红：三种不会过时的能力",
+   "lastFeedItemPubDate": "2026-09-27T16:00:00.000Z",
    "newEpisodes": []
   }
  },
  "notes": {
-  "scan_status": "2026-10-04 掃描（02:03–02:04 UTC）：新 AI 集 1 條，英文——The Cognitive Revolution《One Brain, Any Body: Google DeepMind's Keerthana on Gemini Robotics 2, Cross-Embodiment & Humanoids》（10/3 13:00Z，片長 92 分鐘）。逐一核實無新：Dwarkesh 官網 RSS 頂條仍 10/1 Si Sheppard；Latent Space 無新訪談（最新訪談仍 10/2 Airbnb，其後僅 AINews）；No Priors 最新仍 10/2 Fractile；MLST 最新仍 10/1 Shawn Wen；張小珺最新仍 9/3；十字路口最新仍 9/27 于紅；硅谷101 最新仍 9/29 E254；42章經最新仍 9/27 Vibe-Trading；屠龍之術最新仍 9/28 EDA。中文圈本輪無新 AI 集。",
-  "report_date": "2026-10-04",
-  "deep_content_fetched": "《The Cognitive Revolution × Keerthana》：官方 Show Notes（AI 生成、基於逐字稿）＋完整逐字稿（純文字約 60 KB，含全部時間軸與完整章節）。所有引文直接取自逐字稿／官方文本。",
-  "transcript_attempts_failed": "①YouTube videos.xml 對 Dwarkesh/No Priors/MLST 等頻道多回 404，改以原生 RSS／Megaphone feed 逐一核實。②The Cognitive Revolution Substack feed 已停更於 2024-02，改以 feeds.megaphone.fm/RINTP3108857801（經 iTunes lookup）為準，頂條即新集。③No Priors 以 feeds.megaphone.fm/nopriors 核實。④中文播客以 xyzfm/fireside RSS feed 頂條 ＋ Apple iTunes lookup 逐一核實，未依賴 web_search 猜測。",
-  "jev_prefilter": "2026-10-04 對 1 條候選跑 jev.py triage --profile news：available=true、failed=0/1，worth=0.57（未達 expand_min 1.5，亦未低於 drop_max 0.6）。該 profile 非為播客訪談校準（工具自註『絕對區分度有限』），依 fail-open 原則未丟棄，保留原始連結；Jev 分數僅作相對排序參考。",
-  "notable_for_james": "①本輪單條但極高信息量：Keerthana 是 Google DeepMind Gemini Robotics 研究負責人，本集＝Gemini Robotics 2 最完整的公開架構拆解（ER 2/VLA/On-Device 三件套、steerability、128K≈3 分鐘、200 示範跨本體）。②『機器人仍處 GPT-2』是可長期追蹤的錨點判斷——其瓶頸定義為跨本體而非指令跟隨，與她本人 2025 年答案一致，可作年度對照。③最有價值的公開未解分歧：Keerthana vs. Jim Fan（世界模型、自我中心數據、Physical API）——『jury's still out』vs 強觀點。④口徑需標註：pick&place 接近部署、200 示範、跨本體躍進均為公司/Cognitive Revolution 自報，show notes 為 AI 生成。⑤延續本月『可驗證性＝稀缺資源』主線（錯誤複合、力控、感測失效降級）。⑥中文圈連續多輪無新 AI 集，主線續由英文主導。",
+  "scan_status": "2026-10-07 掃描（02:03–02:07 UTC）：三天窗口 10/4–10/7 內 10 檔播客全部無新訪談集。唯一新增＝Latent Space 旗下 AINews 快訊 10/6〈[AINews] Reflection Beam - 501B-A23B American Open Model〉（10/6 06:28:43Z，非訪談，覆蓋 10/03–10/05）。逐一核實無新：Dwarkesh RSS 頂條仍 10/1 Si Sheppard（YouTube 10/6 的 Sarah Paine 條目經查為舊講座系列之短片，非新集）；Latent Space 最新訪談仍 10/2 Airbnb；CR 最新仍 10/3 Keerthana；No Priors 最新仍 10/2 Fractile；MLST 最新仍 10/1 Shawn Wen；張小珺最新仍 9/3；十字路口最新仍 9/27 于紅；硅谷101 最新仍 9/29 E254；42章經最新仍 9/27 Vibe-Trading；屠龍之術最新仍 9/28 EDA。中文圈本輪無新 AI 集。",
+  "report_date": "2026-10-07",
+  "deep_content_fetched": "《Latent Space [AINews] Reflection Beam》：AINews 原文全文（純文字約 20 KB）＋ Reflection 官方部落格全文（純文字約 25 KB，含全部 benchmark 表、圖說與基建數字）。所有引文直接取自原文（英文原文照錄並附中譯）。",
+  "transcript_attempts_failed": "①YouTube 官方 videos.xml 對 No Priors（UCSI7h9hydQ40K5MJHnCrQvw）與 MLST（UCMLtBahI5DMrt0NPvDSoIRQ）本輪均回 404；Dwarkesh 頻道 feed 可用但僅含短片。②故改以原生 RSS：No Priors→feeds.megaphone.fm/nopriors；MLST→anchor.fm/s/1e4a0eac/podcast/rss（經 iTunes lookup 取得）；CR→feeds.megaphone.fm/RINTP3108857801。③中文播客以 xyzfm／fireside 原生 feed 頂條逐一核實（張小珺 dk4yh3pkpjp3、十字路口 68fyjknth9hj、42章經 evgg6xle9rdc、屠龍之術 834hyx3v9k74、硅谷101 feeds.fireside.fm/sv101/rss），未依賴 web_search 猜測。",
+  "jev_prefilter": "2026-10-07 對 1 條候選跑 jev.py triage --profile news：available=true、failed=0/1，worth=1.27（高於 drop_max 0.6，保留）、category=llm-model、primary_source≈0.14。依 hint 指引，primary_source<0.4 者必須在文中標為二手／未證實——本報告已將 Reflection 全部數字標註為公司自報口徑、並註明 AINews 屬二手彙編。",
+  "notable_for_james": "①本輪係「模型層」事件日：Reflection Beam 501B-A23B 係美國開源前沿的一次補位，但能力仍落後中國開源（GLM-5.2 水平、部分 benchmark 低於 DS V4.1 Flash），賣點係每 token 智能／推理能效（3–4×）。②RL 規模數字可作長期錨點：10.5K GB300×4 週、1 億 rollout、13 億 sandbox、約 100 萬環境、「未見平台期」——與此前記錄的「高質 RL 環境＝新時代語料」完全接軌。③異步 RL 的工程指標（一天陳舊度/107 版本、12 秒權重傳播、跨機架流量 -75%）係未來實驗室的對標基準。④決策模型（無解碼）成物種：Command Code Agr＋TypeSafe Jev，本報告鏈的 Jev 前置過濾器即同類。⑤安全線：OpenAI EU 文字水印被指 25% 同義詞替換即由 92% 跌至 17%；Bengio FT 文章；Achiam 自主武器禁令。⑥中文圈連續多輪無新 AI 集，主線續由英文主導。",
   "index_html": "未更新 index.html：該落地頁手工維護且自 2026-07-19 起已停更，為維持既有慣例未動。"
  }
 }
