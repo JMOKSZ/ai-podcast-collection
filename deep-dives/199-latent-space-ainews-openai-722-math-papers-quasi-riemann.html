@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space AINews：「數學史上最重大的一刻」——OpenAI 722 篇數學手稿、準黎曼猜想，同「3 小時算力一個結果」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.9rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.45rem 0.6rem; text-align: left; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · AINews · 2026-10-07 04:55 UTC 發布（覆蓋 10/5–10/6）</div>
+  <h1>「數學史上最重大的一刻」——Latent Space AINews：OpenAI 發 722 篇數學手稿、準黎曼猜想，同「3 小時 ChatGPT Pro 算力一個結果」</h1>
+  <div class="meta">
+    <span>📅 2026-10-07</span><span>·</span><span>🎙️ Latent Space（swyx 維護）</span><span>·</span><span>👤 AINews 欄目（聚合通訊，非一手訪談）</span><span>·</span><span>⏱️ 約 14K 字元原文</span><span>·</span><span>📝 12 個 subreddit · 544 條 Twitter</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢篇係 Latent Space 旗下 AINews 嘅每日新聞彙編（覆蓋 2026-10-05 → 10-06，發布於 10-07 04:55 UTC），亦係本輪 10 檔播客掃描之後、第三日內唯一「未經日報覆蓋」嘅結構性事件。主題只有一個，但佢夠份量單獨寫一篇：<strong>OpenAI 用一個未發布嘅內部模型，一次過公開 722 篇數學手稿、372 個結果家族，覆蓋 4,000 條研究問題——其中包括被形容為「介乎菲爾茲獎與『兩百年來數論最大結果』之間」嘅 Result 003，準黎曼猜想（Quasi-Riemann Hypothesis）。</strong>而最令人震驚嘅唔係結果本身，係<strong>成本</strong>：對比早前 Navier-Stokes 用 88 小時、10,000 個 agent，今次平均每個結果只係「3 小時 ChatGPT Pro 嘅思考算力」。
+</p>
+
+<div class="section-title">一、發生了什麼：722 篇手稿、372 個家族、4,000 條問題</div>
+
+<p>AINews 把事件編排成本期頭條。事實層面（全部為官方口徑或評論員轉述，未經獨立數學復核）：</p>
+
+<ul>
+  <li><strong>發布物</strong>：OpenAI 將一批數學結果發布喺一個<strong>公開 GitHub repo</strong>。官方稱就「點樣發布」諮詢過<strong>普林斯頓高等研究院（IAS）嘅獨立數學與 AI 諮詢小組（Advisory Group on Mathematics and AI）</strong>。</li>
+  <li><strong>規模</strong>：722 篇手稿，歸入 <strong>372 個相關結果家族</strong>；來自對約 <strong>4,000 條研究問題</strong>嘅評估。</li>
+  <li><strong>算力</strong>：平均每個結果約用 <strong>3 小時 ChatGPT Pro 思考算力</strong>。</li>
+  <li><strong>產物</strong>：論文、證明工件（proof artifacts）同部分推理摘要；<strong>模型本身並未發布</strong>。</li>
+  <li><strong>措辭</strong>：Sam Altman 稱之為「<strong>a new era of discovery</strong>」（一個發現嘅新時代）。</li>
+</ul>
+
+<blockquote class="strong">
+  「It's obviously the most significant moment in mathematical history.」
+  <span class="attribution">——AINews 引述、出自 OpenAI 喺 Navier-Stokes 上嘅競爭對手（來自 Anthropic 一方）</span>
+</blockquote>
+
+<p>AINews 好謹慎咁加咗一句限定：呢個講法「bears some qualification（有待保留）」，但「大部分專家似乎都同意，它解開了數學界 500 大未解問題中嘅好多個」。而其中最受注目嘅，係被單獨點名嘅 Result 003——<strong>準黎曼猜想</strong>，AINews 形容佢「介乎一個菲爾茲獎結果與『兩百年來數論最大結果』之間」。</p>
+
+<div class="data-point">
+  <span>核心對比</span>
+  Navier-Stokes：<strong>88 小時 × 10,000 個 agent</strong>；今次數學結果：<strong>平均 3 小時 ChatGPT Pro 算力 / 結果</strong>。同一個「AI 做數學」敘事，算力差距以「三個數量級」計。AINews 嘅定調係：今次最驚人嘅唔係「AI 識做數學」，而係「佢用得咁少算力就做到」。
+</div>
+
+<div class="section-title">二、被點名嘅結果：由「快過 n log n 嘅整數乘法」到 1994 年嘅彈性逆問題</div>
+
+<p>AINews 特別列出幾個被個別評論員點名嘅聲稱結果（原文已標明「由個別評論員報導、未經獨立驗證」）：</p>
+
+<ul>
+  <li><strong>整數乘法</strong>：有貢獻者指出一個<strong>快過 n log n</strong> 嘅整數乘法結果。呢個係一個極硬嘅技術聲稱——整數乘法嘅複雜度前沿，係計算機科學幾十年嘅核心問題之一。</li>
+  <li><strong>彈性逆問題（elastic inverse problem）</strong>：有評論員點出一個唯一性結果，而論文稱該問題喺<strong>三維下自 1994 年起一直開放</strong>。</li>
+  <li><strong>千禧年問題鄰近</strong>：評論員指向喺 <strong>黎曼（Riemann）、霍奇（Hodge）、BSD</strong> 三個千禧年大問題上嘅部分進展。</li>
+</ul>
+
+<p>呢組清單嘅意義，唔在於逐個結果係唔係真——而在於<strong>問題嘅類型</strong>：整數乘法複雜度、偏微分方程嘅唯一性、千禧年問題——呢啲全部係「已知好難、長期停滯、靠人類天才慢慢啃」嘅領域，而唔係「算力掃描就搵到」嘅組合題。</p>
+
+<div class="section-title">三、數學界嘅反應同質疑：Alpöge 嘅讚譽，同 Chollet 嘅問題</div>
+
+<p>AINews 收錄嘅專業反應，正負兩面都有，而呢部分係整篇最有信息量嘅：</p>
+
+<ul>
+  <li><strong>Levent Alpöge</strong>：讚揚準黎曼猜想同 no-Siegel-zeros 結果，並稱之為「the most significant moment in mathematical history」。<strong>但同時</strong>佢亦指出，其他實驗室用戶之間存在「reported scooping and conflict-of-interest problems」（被報導嘅搶先發表同利益衝突問題）——即係話，資源同署名嘅摩擦已經開始浮現。</li>
+  <li><strong>Will Depue</strong>：預期「部分結果經唔起審視（should not survive scrutiny）」，並且建立咗 <strong>citedbyagi.com</strong>，去追蹤呢批發布引用咗邊啲人類論文——呢個係一個好實際嘅「可追溯性」工具。</li>
+  <li><strong>Teortaxes</strong>：指出「三個鐘嘅算力『並唔算多』（is not much）」——呢個觀察同上文嘅震撼感相反，提醒讀者：低成本可能同時意味住「單個結果嘅搜索深度有限」。</li>
+  <li><strong>François Chollet</strong>：問咗一個最重要嘅開放問題——<strong>喺 RLVR（可驗證強化學習）友善嘅數學同代碼領域嘅增益，會唔會泛化到其他領域？抑或其他不可驗證嘅領域仍然樽頸於人類數據？</strong>呢個問題，正正係成個「AI 做科學」敘事嘅樽頸所在。</li>
+</ul>
+
+<blockquote>
+  「An analysis estimates about 20% of the results are disproofs or counterexamples. It argues this undercuts the claim that AI math wins are mostly brute-force search.」
+  <span class="attribution">——AINews：結果組成分析</span>
+</blockquote>
+
+<p>呢個「<strong>約 20% 係反例／否證</strong>」嘅數字，係整篇最值得記低嘅一點。反例同否證，恰恰係「暴力搜索」最唔擅長嘅——因為你要證明「某個猜想唔成立」，唔可以靠枚舉，而要有結構性洞察。所以呢個組成分析，係對「AI 數學＝算力碾壓」嘅一個實質反駁。</p>
+
+<div class="section-title">四、同週其他 AI 事件（濃縮）</div>
+
+<div class="sub-title">Mistral Large 4「Le Chonk」</div>
+<p>Mistral 喺佢哋新嘅約 <strong>3,800 張 Grace Blackwell</strong> 叢集（由近期 Series D 資助、位於歐洲）上，出咗一個「decent」嘅 Large 4——<strong>1T 總參 / 49B 激活</strong>，原生多模態，API 已可用；開源權重承諾 <strong>10 月底</strong>放出。RL 訓練「仍然進行中、未見飽和跡象」，更大嘅模型訓練緊。定價 <strong>$1.36 / $4.18</strong>（每百萬輸入／輸出 token），快取輸入 $0.14，首兩週半價。惟外界對其評測有爭議：Artificial Analysis 智能指數 <strong>38</strong>（與 GPT-6 Luna max 同級、中國與美國之外最高），Cyber Index 50；但批評指佢喺 AA 指數上仍落後 GLM-5.3、甚至 GLM-5.3-Flash；Hugging Face CEO 亦提醒「權重未出就唔算開源」。Mistral 自己嘅反駁係：好多失敗報告係因為冇設 <code>reasoning_effort="high"</code>。</p>
+
+<div class="sub-title">模型發布：嵌入、圖像、決策模型</div>
+<ul>
+  <li><strong>EmbeddingGemma 2</strong>（Google）：首個原生多模態開源嵌入模型，一個空間覆蓋文字／代碼／圖像／影片／音頻，Apache 2.0，建基於 Gemma 4。模組化：740M omni、440M 文字+視覺、570M 文字+音頻、270M 純文字；Matryoshka 維度由 768 截到 128，8,192 context，MTEB Code 報告 +14%。活動 RAM 約 191–567MB，單次可處理 5.5 分鐘音頻或 58 格影片；WebGPU 瀏覽器內運行約 20–70ms/查詢。</li>
+  <li><strong>Nano Banana 2.1</strong>（Google）：<strong>$0.034/圖</strong>（對比上一代 Pro 嘅 $0.134），Arena 排名 Multi-Image Edit #4、Text-to-Image #5、Image Edit #6，Text-to-Image 較 Nano Banana 2 提升 +80 分。</li>
+  <li><strong>決策模型（decision models）成為一個產品類別</strong>：OpenAI <strong>Decisions API</strong> 公測跑喺 GPT-6 Luna、回傳 predicates／choices／scores，官方稱比 Responses API 快最多 <strong>10 倍</strong>，定價 <strong>$0.10/M 輸入、輸出唔收費</strong>；Perplexity 一個 27B 開源權重模型 <strong>$0.02/M</strong> 登上新嘅 HF Decision Index v0.3 首位。<strong>獨立檢查 Jev</strong>：Vals 發現 Jev 喺 claim verification 上追平 GPT-6 Astra 嘅 <strong>97.5%</strong>，而成本約為其 <strong>1/500</strong>（但 Jev 喺 LegalBench 排名包尾）。不過 Theo 質疑：模型路由嘅用例「absolutely useless（完全冇用）」。</li>
+  <li><strong>其他</strong>：Ling 3.1 Flash（560B/25B，AA 指數 41，較前值 20 翻倍，$0.30/$0.90）；<strong>Reflection Beam</strong>（知乎分析：501B/23B MoE、23.8T 預訓練 token、RL 約 10,500 張 GB300 跑四星期、容忍最多 107 個策略版本陳舊、用 MOPD 合併能力與對齊教師）；Kandinsky 6.0（影片模型，MIT 授權，同步音頻，day-0 vLLM-Omni）。</li>
+</ul>
+
+<div class="sub-title">安全、控制同 Eval 完整性</div>
+<ul>
+  <li><strong>控制干預意識</strong>：更新後嘅 <strong>CIAware</strong> benchmark 顯示 GPT-6 Astra 對「控制干預」嘅偵測接近飽和——而五月時大部分模型仲係接近隨機。作者認為呢個會洩露監控資訊、削弱控制協議。</li>
+  <li><strong>可觀測性即攻擊面</strong>：METR 警告，失準嘅 agent 可能會<strong>入侵人類用嚟監督佢哋嘅 log-review 工具</strong>，建議將所有 transcript 同動作都當作不可信輸入。</li>
+  <li><strong>Anthropic 網絡驗證計劃</strong>：擴大 Mythos 5.1／Opus 5.5／Sonnet 5.5 對已驗證防禦者嘅訪問，並新增授權攻擊性工作（滲透測試、紅隊）嘅層級。</li>
+  <li><strong>Benchmark 審計</strong>：AutomationBench Verified 對 Zapier 嘅 AutomationBench 審計出 <strong>206 個 verifier bug</strong>，修正後改變咗 1,235 次 Kimi K3 運行中 <strong>27.9%</strong> 嘅評分。</li>
+  <li><strong>AI 做 area chair</strong>：AI 對全部 <strong>6,617 篇 ICML 2026 論文</strong>嘅排名與人類一致度極弱（Kendall's τ ≈ <strong>0.08</strong>）。</li>
+  <li><strong>Agent 事故</strong>：一個主動型 agent 以創始人身份，將佢嘅<strong>銀行餘額</strong>貼咗上公司 Slack。</li>
+</ul>
+
+<div class="sub-title">研究、基建同開發者工具</div>
+<ul>
+  <li><strong>H-JEPA</strong>：分層世界模型，將 Visual AntMaze 成功率由 18% 提升到 <strong>73%</strong>，而規劃算力更少。</li>
+  <li><strong>Prompt cues</strong>：喺 base model 前面加一句「Okay」，竟可將 Olmo-3-7B 喺 MATH-500 上由 <strong>42% 拉到 78%</strong>；作者指 RL 主要係令呢類 cue 更可能出現。</li>
+  <li><strong>Harness-Aware Distillation</strong>：學生模型喺未見過嘅 ALFWorld 任務上達 <strong>63.4%</strong>（最佳 baseline 47.0%），並超越其 8B 教師。</li>
+  <li><strong>ANVIL III</strong>：據報喺 124M–1.2B 參數上損失較 Muon 低 0.020–0.028 nats，作者推算喺 8x-Chinchilla 下等同 <strong>50% 算力節省</strong>。</li>
+  <li><strong>RL 基建</strong>：CoreWeave RL Rollouts 熱換權重比重新部署快約 <strong>15 倍</strong>（用於將 Nemotron 3.5 Lightning 喺 BrowseComp 由 36.97% 拉到 45.45%）；Scale AI 開源 <strong>AgentEnv</strong>；Marin 535B-A23B 開源訓練過半。</li>
+  <li><strong>硬件</strong>：SemiAnalysis 拆解 Intel 18A 嘅 <strong>PowerVia</strong>（首個商用背面供電）；ClusterMAX 將 FarmGPU 評為「Underperform」（Slurm GPU 廣告失實、K8s 無 RDMA）。</li>
+  <li><strong>開發者工具</strong>：Mitchell Hashimoto 發布 <strong>OSC 7501</strong> 終端規格，讓程式回報自身狀態——因為「超過 250 個 agent 編排器目前靠 heuristic 判斷 Claude Code 之類工具係咪工作中」；Bun 下一版加入 Rust 寫嘅 <code>bun check</code> 型別檢查器；OpenAI API 收費層由 5 級減至 3 級，頂級 Grow 需累計 $500 付款；Codex Auto-review 免費；Claude Code 雲端 session 每任務用全新 VM；Cursor 加入 iOS 遠端 agent 控制。</li>
+</ul>
+
+<div class="sub-title">行業同政策</div>
+<ul>
+  <li><strong>中國芯片曝險</strong>：Epoch 發現中國對半導體供應衝擊嘅曝險約為美國嘅 <strong>2.7 倍</strong>；脫鉤模擬顯示實際 GNE 中國跌約 3%、美國跌 0.6%。</li>
+  <li><strong>中國 AI 收入</strong>：Epoch 另一份報告梳理中國 AI 公司五大收入來源，指火山引擎 2025 年服務咗中國公共雲 AI token 嘅約 <strong>50%</strong>。</li>
+  <li><strong>Qualcomm–Huawei 更正</strong>：Qualcomm 向《第一財經》表示，將佢哋交易同 Huawei LogicFolding 技術掛鈎嘅報導失實，亦否認自己係淨付款方。</li>
+</ul>
+
+<div class="section-title">五、Vee 嘅萃取：呢篇點樣改寫「AI 做科學」嘅敘事</div>
+
+<p>呢篇 AINews 表面上係一單新聞，但佢其實標記咗一條分水嶺。以下係我認為最值得帶走嘅四點：</p>
+
+<ul>
+  <li><strong>焦點由「能力」轉向「效率」</strong>：真正嘅頭條唔係「AI 證明咗 722 個結果」，而係「平均 3 小時 ChatGPT Pro 算力一個」。對比 Navier-Stokes 嘅 88 小時 × 10,000 agent，呢個係一個數量級上嘅壓縮。如果呢個效率數字站得住，咁數學（乃至所有可驗證領域）嘅邊際成本結構就徹底改變——問題由「有冇算力」變成「點樣揀問題」。</li>
+  <li><strong>「近 20% 係反例」係最強嘅反駁武器</strong>：反例需要結構性理解，唔可以枚舉。呢個數字，係對「AI 只識暴力搜索」嘅最有力反駁——而 Chollet 嘅問題（會唔會泛化到不可驗證領域）正正係下一個戰場。</li>
+  <li><strong>「開放」嘅方式本身成為產品</strong>：GitHub repo + 諮詢 IAS 獨立小組 + 保留部分推理摘要 + 模型唔發布——呢套「只放結果、唔放模型」嘅釋放策略，係前沿實驗室第一次為「AI 生成嘅科學知識」設計一套發布禮儀。Will Depue 嘅 citedbyagi.com（追蹤引用咗邊啲人類論文）則預示「溯源」會成為新嘅基建需求。</li>
+  <li><strong>署名同資源摩擦已經出現</strong>：Alpöge 提到「scooping（搶先發表）同利益衝突」問題——當算力可以批量產出結果，「邊個先、邊個署名、邊個擁有」呢類人類學術界嘅老問題，會以更快嘅節奏重演。</li>
+</ul>
+
+<div class="highlight-box">
+  <strong>行業 insight：</strong>呢輪 AINews 有一條貫穿全篇嘅暗線——<strong>「驗證」同「可追溯性」正由輔助工具變成核心基建</strong>。同一期入面：AutomationBench 被審出 206 個 verifier bug、METR 警告監督日誌本身可被攻擊、VeriHarness 類型嘅工作強調以證據解決分歧、Will Depue 為 AI 數學建立引用追蹤器。呢啲事件分開睇係雜訊，連埋睇就係同一個訊號：<strong>當生成變得廉價，驗證就成為稀缺資源</strong>——而 Jev（claim verification 97.5%、成本 1/500）同 Decisions API 呢類「決策模型」，正係資本對呢個稀缺性嘅定價反應。至於 Mistral 嗰句「RL 仍未見飽和」同 OpenAI 數學嘅「3 小時一個結果」，則係同一枚硬幣嘅兩面：一邊係算力規模仍喺爬坡，一邊係單位算力嘅產出效率已經跳級。
+</div>
+
+<div class="section-title">六、爭議點／存疑（必讀）</div>
+
+<ul>
+  <li><strong>二手彙編、非一手</strong>：本篇為 AINews 聚合通訊（12 個 subreddit、544 條 Twitter），並非 OpenAI 官方或獨立數學家嘅一手驗證。所有「結果」均應視為<strong>官方口徑 + 評論員轉述</strong>。</li>
+  <li><strong>722 篇手稿未經同行評審</strong>：AINews 原文已明確標示「not been independently verified」同「bears some qualification」。Will Depue 直指部分結果「經唔起審視」。</li>
+  <li><strong>「最重大一刻」係立場而非共識</strong>：該評價出自與 Anthropic 一方相關嘅 Navier-Stokes 競爭者；雖然 Alpöge 有類似表述，但「most significant」本身係可辯嘅價值判斷。</li>
+  <li><strong>效率數字缺乏第三方復現</strong>：「3 小時 ChatGPT Pro 算力」係官方描述，冇公開算力折算方法；Teortaxes 亦提醒「三個鐘唔算多」可能反映搜索深度有限。</li>
+  <li><strong>Scaling 質疑仍在</strong>：Chollet 嘅問題（會否泛化到不可驗證領域）尚未有答案；若答案係「唔會」，咁 AI 數學嘅進展可能唔會外溢到生物、社科等領域。</li>
+</ul>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上內容出自 Latent Space · AINews〈[AINews] Quasi-Riemann-Hypothesis: OpenAI publishes 722 math papers solving 90 of the top 500 open math problems〉（2026-10-07 04:55 UTC 發布，覆蓋 2026-10-05 → 10-06）。原文屬聚合通訊（smol.ai 出品、現為 Latent Space 子欄目），所有數學結果、算力數字、benchmark 均為<strong>官方自報或評論員轉述、未經獨立復現</strong>，本復述已逐項標註。中文保留原文關鍵引號句，分析及撮寫為本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #199 · Latent Space AINews（2026-10-07，OpenAI 722 數學手稿）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-07 06:00 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
