@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space：把 coding agent 搬上雲——Kubernetes 之父的「cloud-native harness」賭注</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.9rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.45rem 0.6rem; text-align: left; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-10-07 14:10:45 UTC 發布</div>
+  <h1>把 coding agent 搬上雲——Kubernetes 之父嘅「cloud-native harness」賭注，同「企業要似管 email 咁管 agent」</h1>
+  <div class="meta">
+    <span>📅 2026-10-07</span><span>·</span><span>🎙️ Latent Space（swyx ＋ Alessio Fanelli）</span><span>·</span><span>✍️ 作者 Richard MacManus</span><span>·</span><span>👤 受訪 Craig McLuckie、Joe Beda（Stacklok）</span><span>·</span><span>🔗 latent.space/p/stacklok</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+Latent Space 呢一篇係「新聞＋訪談」混合體：作者 Richard MacManus 借 Kubernetes 嘅歷史曲線，去框住兩個 K8s 共同創造者（Craig McLuckie、Joe Beda）新公司 Stacklok 嘅賭注——<strong>把 coding agent 嘅 harness（代理外殼）由桌面搬到雲端，用控制迴圈（control loop）思維重新設計，令 agent 成為企業可集中管治、可暫停、可審計嘅基礎設施。</strong>呢篇唔係一次吹水訪問，而係一條清楚嘅產業路線宣言：佢直接對着 Codex／Claude Code／GitHub Copilot 呢類「跑喺自己部電腦度」嘅前沿實驗室 harness 落戰書。
+</p>
+
+<div class="section-title">一、問題起點：點解 agent harness 天生「在地」</div>
+
+<p>文章開頭鋪陳嘅係一個技術事實，而唔係立場：coding agent 有一個基本架構——<strong>一個 LLM 喺迴圈中呼叫工具、帶着上下文前進</strong>。因為呢種做法<strong>喺本地最容易實作</strong>，所以多數 coding agent 都先做終端工具、再做桌面 App（文中點名：Claude Code 最初就係一個 CLI 工具）。</p>
+
+<p>但代價嚟得好快。文章配咗一張 2026 年 5 月瘋傳嘅 meme——「agent 之前 vs 之後嘅軟件工程師」——指出嘅正係呢個荒謬：<strong>如果你嘅 agent 綁死喺一部開住嘅筆記本上面，你就無法真正管理佢。</strong>MacManus 於是拋出類比：2025 年以嚟，OpenAI 同 Anthropic 都試過把 harness 推向雲端，但「成效參差」——難點集中喺三樣：<strong>session 可靠性、工具執行隔離、上下文保留</strong>。</p>
+
+<p>而「呢啲聽落好似 2010 年代初嘅容器編排」——嗰個最終生出 2014 年開源 Kubernetes 嘅問題。「如果 coding agent 可以用同一種方式管理呢？」——呢句就係 Stacklok 嘅整個前提。</p>
+
+<div class="section-title">二、兩個 K8s 創始人，同一條曲線</div>
+
+<p>Craig McLuckie 同 Joe Beda 係 <strong>Kubernetes 嘅共同創造者</strong>（Google 出身；K8s 2014 年開源後成為容器編排事實標準，開啟「cloud native 雲原生」時代）。二人 2023 年創辦 Stacklok，<strong>獲 1,750 萬美元 A 輪</strong>（Accel、Madrona、Bain Capital）。公司最初做軟件供應鏈安全，近期<strong>轉向基於 Kubernetes 嘅 agentic 方案</strong>。</p>
+
+<div class="data-point">
+  <span>Stacklok 產品線</span>
+  <strong>Mecatl</strong>——「cloud-native harness」，2025 年 6 月起以 GitHub 開源項目推出（stacklok/mecatl）；名字係阿茲特克語「繩／索」，讀作 <strong>MEH-kah-tl</strong>（作者自嘲初時誤以為係玩 K8s「cattle vs pets」嘅梗）。
+  <strong>ToolHive</strong>——跑同管治 MCP server 嘅開源平台（由桌面 Docker 擴展成 K8s 網關／註冊表／operator helper）。
+  <strong>AI Gateway</strong>——存取控制／預算／報告／供應商路由；<strong>暫未開源</strong>，但「喺 roadmap 上」。
+</div>
+
+<div class="section-title">三、桌面優先方案嘅硬傷：「lift and shift」行唔通</div>
+
+<p>面對「企業唔可以用 VM／容器／sandbox 把 harness 搬上雲咩？」呢條問題，Beda 嘅答案係一個關鍵詞：<strong>quiesce（安全暫停）</strong>。</p>
+
+<p>佢指出，桌面優先 harness 嘅 loop、本地執行、session state 往往<strong>生喺同一個 process 內</strong>——「就算佢哋有可插拔性，架構仍然係一個（或一組緊密耦合嘅）process，係為桌面而設。」單純「lift and shift」（用 VM／容器搬上雲）會引發 agent 生命週期問題，尤其係<strong>當 agent 要等待人類輸入時、能否安全咁暫停自己</strong>。</p>
+
+<blockquote class="strong">
+  「呢個領域有一大堆方案，但佢哋全部都基本上係為喺桌面跑而設。」
+  <span class="attribution">“There are a ton of solutions in this space, but they’re all focused to essentially run on the desktop.” — Joe Beda</span>
+</blockquote>
+
+<blockquote>
+  「我哋嘅想法係：何不從頭重新設想個 harness，令佢真係為喺雲端跑而生？」
+  <span class="attribution">“Our thinking is, well, what if we rethought the harness from the ground up to actually run in the cloud?” — Joe Beda</span>
+</blockquote>
+
+<p>而放喺企業視角，呢件事唔止係「部署方便」——係價值所在邊度嘅問題：</p>
+
+<blockquote class="strong">
+  「嗰度（本地環境）就係 IP 所在。如果你想真真正正把它納入管理，佢坐喺桌面就困難得多。」
+  <span class="attribution">“That’s where the IP sits. And if you want to be able to actually bring that under management, it’s that much more difficult when it’s sitting on a desktop.” — Joe Beda</span>
+</blockquote>
+
+<div class="section-title">四、Mecatl 嘅解法：把四樣東西各自獨立</div>
+
+<p>Mecatl 最值得記低嘅設計原則，係「解耦」——佢令 <strong>agent loop 獨立於 client、model provider、state store、執行環境</strong>。Beda 嘅講法係：</p>
+
+<blockquote>
+  「呢個係一個我哋知道點樣喺雲端跑得好嘅應用……我哋把它抽出嚟，同更敏感嘅操作（tool calling、bash）分開，亦把 session 管理同記憶分開——令呢啲嘢唔再係躺喺磁碟上嘅 JSONL 檔，而係可以原生進入可管理系統。」
+  <span class="attribution">“What if we take that and we separate that out from the more sensitive operations, like tool calling and bash, and then also separate out things like session management and memory, so that these things are no longer stored as JSONL files sitting on disk, but can natively be put into manageable systems?” — Joe Beda</span>
+</blockquote>
+
+<p>濃縮成一句工程語言，就係三步：<strong>loop 抽出 → 敏感操作隔離 → 狀態外部化（由 JSONL 檔變成可管理系統）</strong>。呢個唔係加功能，而係重新劃分信任邊界。順帶一提，文章亦提到現有開源 harness 生態（例如極簡 harness <strong>Pi</strong>、建基於 Pi 嘅 <strong>Flue</strong>），Beda 冇點名，但強調佢哋架構仍屬桌面優先。</p>
+
+<p>而 McLuckie 嘅問題，係直接問到架構嘅第一性：</p>
+
+<blockquote class="strong">
+  「為甚麼 agent loop 同 tool-calling 子系統綁得如此複雜？為甚麼 agent 身份要用『人類身份系統』嘅視角去推理？」
+  <span class="attribution">“Why is the agent loop so intricately coupled to the tool calling subsystems? Why is agent identity being reasoned about through the lens of human identity systems?” — Craig McLuckie</span>
+</blockquote>
+
+<p>呢兩問背後隱含一個立場：<strong>agent 嘅迴圈、工具、身份，本應解耦</strong>——把「人類身份系統」當作 agent 身份模型嘅模板，係一個一直冇被質疑嘅預設。</p>
+
+<div class="section-title">五、核心類比：企業要「似管 email 咁管 agent」</div>
+
+<p>成篇最有力嘅一句，係 Beda 講管治嗰段。呢句唔止係 slogan，佢係一個<strong>產權主張</strong>：</p>
+
+<blockquote class="strong">
+  「我哋想，未來你為企業工作時同 agent 嘅互動，屬於嗰間企業；佢哋會想管理、管治佢，就好似佢哋管 email 咁。」
+  <span class="attribution">“We think, in the future, interactions that you have with an agent while you’re working for an enterprise belong to that enterprise; and they’re going to want to manage that and govern that like they do email.” — Joe Beda</span>
+</blockquote>
+
+<p>email 呢個類比揀得好，因為企業 email 嘅本質係：<strong>員工用，但擁有權同管治權歸企業</strong>，有目錄、有保留政策、有審計、有離職交接。Beda 想指出嘅係，當 agent 成為知識工作嘅主要介面，同 agent 嘅每一次互動都會變成企業資產——而「資產」就意味住「需要被管」。</p>
+
+<p>動機層面亦好清楚：<strong>降低對前沿實驗室／超大雲廠嘅依賴</strong>。McLuckie 明言，就好似 K8s 幫企業降低對大雲廠嘅依賴一樣，Stacklok 要幫大企業減少對 Codex、Claude Code、GitHub Copilot 嘅依賴；對佢嚟講，「cloud native」代表「喺一個同雲廠商細節解耦嘅雲上面跑」——同當年 K8s 時代差不多。</p>
+
+<p>而「點解企業唔可以自己用開源就好？」Beda 答得好直白：</p>
+
+<blockquote>
+  「我哋同大型機構傾，佢哋掙扎緊：一件為六人團隊而設嘅嘢，點樣部署去幾千、甚至幾萬人嘅工程部隊？」
+  <span class="attribution">“How do I take this thing that was built for a team of six people and deploy it for an engineering task force in the thousands or tens of thousands.” — Joe Beda</span>
+</blockquote>
+
+<div class="section-title">六、MCP 治理、AI Gateway，同「路由應該留在 harness 內」</div>
+
+<p>Stacklok 嘅路徑係由 MCP 開始嘅。ToolHive 最初只係喺桌面用 Docker 容器管 MCP server，之後擴展成「Kubernetes-based gateway……一個畀你跑同管 MCP server 嘅註冊表同 operator helper，同埋處理好啲輸入輸出授權嘅嘢」。McLuckie 嘅講法係：令已經跑喺 Kubernetes 上嘅企業，可以「開始把 agentic workload 帶入呢啲環境」。</p>
+
+<p>MCP 之後就係 LLM gateway。呢度有一條<strong>刻意嘅路線分歧</strong>值得記低：</p>
+
+<div class="highlight-box">
+  <strong>Stacklok（AI Gateway）vs Glean（模型路由）的分野：</strong>Stacklok 嘅 AI Gateway <strong>唔</strong>按任務去揀模型，只做存取控制、預算、報告、供應商路由。McLuckie：「我哋傾向見到語義路由嘅模型選擇，發生喺 harness 內一個 honed（調校好）嘅智能系統度，因為嗰度上下文更多。」——即係講，模型路由係一個需要「上下文」嘅決定，所以應該留喺最接近任務現場嘅 harness，而唔係抽到中央網關。
+</div>
+
+<div class="section-title">七、商業模式 ＝ 開源底層 ＋ 企業控制面</div>
+
+<p>ToolHive（MCP 平台）同 Mecatl（harness）都係開源、各自獨立可用。Beda 補咗一句好務實嘅觀察：呢啲開源項目「對細團隊嚟講相對容易起機」，但「一旦你把它擴展到多個集群、多個雲……各種新問題就冒出嚟」——呢個就係佢哋想解決嘅位。</p>
+
+<blockquote class="strong">
+  「我哋嘅商業產品係『企業脊柱』——把兩者綁埋一齊嘅控制面。」
+  <span class="attribution">“Our commercial product is the enterprise spine, the control plane that ties them all together.” — Craig McLuckie</span>
+</blockquote>
+
+<p>呢個係典型嘅開源商業結構：<strong>底層（loop、MCP 管理）開源以獲取採用，價值變現喺跨組件嘅一致身份、授權、政策同審計</strong>。文中亦引述 Stacklok 對「負責組織 LLM／agent 應用嘅 520 位領導者」嘅調查（《State of AI Architecture 2026》）。客戶主要在<strong>受監管行業</strong>：「大多係銀行、半導體公司、電訊商」。</p>
+
+<div class="section-title">八、K8s 歷史類比：一條正在重演嘅曲線</div>
+
+<p>MacManus 嘅框架係全篇嘅收束點。時間線：</p>
+
+<table>
+<tr><th>時期</th><th>事件</th><th>當時嘅評價</th></tr>
+<tr><td>2006</td><td>Amazon 推出 S3 同 EC2（雲時代開端）</td><td>主要由新創／個人使用</td></tr>
+<tr><td>其後數年</td><td>企業級方案（如 Windows Azure）成熟</td><td>企業先至敢用</td></tr>
+<tr><td>2014</td><td>Kubernetes 開源，規模化管理容器化應用</td><td>容器編排事實標準</td></tr>
+<tr><td>今日</td><td>agentic harness 被期待重演同一曲線</td><td>企業唔想員工自訂開源 harness，亦唔想跑喺自己電腦度嘅前沿實驗室 harness</td></tr>
+</table>
+
+<div class="highlight-box">
+  <strong>行業 insight：</strong>呢篇嘅暗線係一句反覆出現嘅判斷——<strong>「管治係新嘅護城河」</strong>。當 agent 互動被當成企業資產（IP），身份、授權、政策、審計就由「附屬功能」變成「可收費嘅控制面」。呢個正正對衝咗前沿實驗室把 harness 當作鎖客工具嘅企圖：<strong>誰掌握 loop 同 session，誰就掌握 agent 嘅 IP 同管治權。</strong>Stacklok 整間公司就係押注「雲端控制面」呢一層，會複製 K8s 嘅位置。
+</div>
+
+<div class="section-title">九、Vee 嘅萃取：呢篇點解值得單獨寫一篇</div>
+
+<ul>
+  <li><strong>佢將一個模糊嘅「agent 部署」問題，改寫成一個清楚嘅架構問題。</strong>多數討論停留喺「agent 好用唔好用」，但 McLuckie 嘅兩問（點解 loop 同 tool calling 綁死？點解身份用「人類系統」推理？）把問題提升到「邊個 abstraction 劃錯咗」——呢種第一性提問，係 K8s 一代人嘅招牌動作。</li>
+  <li><strong>「quiesce」係最低調但最關鍵嘅詞。</strong>安全暫停看似細節，實則係「可管理 vs 只可本地跑」嘅分水嶺：一個識得喺等人類輸入時乾淨地停低、之後準確恢復嘅 agent，先可能進入企業嘅審計同交接流程。</li>
+  <li><strong>email 類比揭示真正戰場係產權，而非效能。</strong>K8s 當年解耦嘅係「應用 vs 雲廠商」，Stacklok 今日想解耦嘅係「agent 互動 vs 個人桌面 / 前沿實驗室」。兩者都係產權同管治權嘅重新分配。</li>
+  <li><strong>「路由留在 harness」係一個可觀察嘅業界分歧點。</strong>Glean 走中央路由，Stacklok 刻意相反——呢條路線之爭，值得喺未來幾季追蹤邊個對。</li>
+  <li><strong>K8s 類比本身係一把雙刃劍。</strong>它替 Stacklok 提供了極強嘅敘事合法性，但也把期望值拉到「重演一個十年週期」。2006→2014 用咗八年，agent harness 會唔會咁快複製到？冇人知。</li>
+</ul>
+
+<div class="section-title">十、爭議點／存疑（必讀）</div>
+
+<ul>
+  <li><strong>呢篇係 Substack 新聞＋訪談，非中立調查。</strong>所有架構聲稱、客戶描述均來自 Stacklok 兩位創始人自述，作者並未提供第三方驗證或客戶現身說法。</li>
+  <li><strong>無尖銳對立，但有一條明確賭注。</strong>文中冇反方聲音——冇前沿實驗室（OpenAI／Anthropic harness 團隊）回應「點解你哋做唔到」，亦冇持相反觀點嘅基建人。呢係立場文，唔係辯論。</li>
+  <li><strong>Mecatl 嘅實際成熟度未明。</strong>2025 年 6 月開源至今一年多，文中未提供採用數字、生產案例或可靠性數據；「cloud-native 令 quiesce 成立」係設計論述，唔等於已驗證。</li>
+  <li><strong>AI Gateway 未開源，商業模式關鍵一環未能檢驗。</strong>「enterprise spine」嘅定價、能力、實際管治粒度全部欠奉。</li>
+  <li><strong>K8s 類比係修辭多於證明。</strong>「容器編排」同「agent harness」嘅相似性講得動人，但 agent 涉及非確定性、上下文狀態、模型依賴——呢啲容器冇嘅維度，可能令曲線唔會一樣。</li>
+  <li><strong>520 位領導者調查由 Stacklok 自己發布</strong>，方法論同抽樣代表性未在文中交代。</li>
+</ul>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上內容出自 Latent Space〈Can a Cloud-Native Harness Make Agents Reliable Beyond the Desktop?〉（2026-10-07 14:10:45 UTC 發布；<strong>作者 Richard MacManus</strong>；https://www.latent.space/p/stacklok）。原文為 Substack 文章（含圖），本復述嘅所有直接引文（中文為意譯、英文為原文）均逐句取自該文；事件、產品、數字均為原文所載或受訪者自述，本站未作獨立事實核查。分析、脈絡整理及「Vee 嘅萃取」為本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #200 · Latent Space（2026-10-07，Stacklok 雲原生 harness）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-08 06:00 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
