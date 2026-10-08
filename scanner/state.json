@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-10-07T02:06:00.000Z",
- "lastScanDate": "2026-10-07",
+ "lastScan": "2026-10-08T02:04:00.000Z",
+ "lastScanDate": "2026-10-08",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-01T15:28:28.000Z",
@@ -9,17 +9,26 @@
    "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-10-02T14:04:49.000Z",
-   "lastEpisodeTitle": "Inside-Out AI: Rebuilding Airbnb Behind the Scenes and Across the Guest Experience",
-   "lastFeedItemPubDate": "2026-10-06T06:28:43.000Z",
-   "lastFeedItemTitle": "[AINews] Reflection Beam - 501B-A23B American Open Model",
+   "lastEpisodePubDate": "2026-10-07T14:10:45.000Z",
+   "lastEpisodeTitle": "Can a Cloud-Native Harness Make Agents Reliable Beyond the Desktop? (Stacklok — Craig McLuckie & Joe Beda)",
+   "lastFeedItemPubDate": "2026-10-07T14:10:45.000Z",
+   "lastFeedItemTitle": "Can a Cloud-Native Harness Make Agents Reliable Beyond the Desktop?",
    "newEpisodes": [
     {
-     "title": "[AINews] Reflection Beam - 501B-A23B American Open Model",
-     "pubDate": "2026-10-06T06:28:43.000Z",
+     "title": "Can a Cloud-Native Harness Make Agents Reliable Beyond the Desktop?",
+     "pubDate": "2026-10-07T14:10:45.000Z",
+     "type": "interview",
+     "url": "https://www.latent.space/p/stacklok",
+     "author": "Richard MacManus",
+     "guests": "Craig McLuckie & Joe Beda (Stacklok; Kubernetes co-creators)",
+     "note": "已深度萃取（Substack 原文全文，約 10 KB，所有引文直接取自原文並附中譯）：Stacklok（K8s 共同創造者 Craig McLuckie、Joe Beda；2023 年 A 輪 1750 萬美元，Accel/Madrona/Bain）主張把 coding agent harness 由桌面搬上雲。核心：①把 agent loop、工具執行／bash、session／記憶各自解耦（Mecatl 開源 harness，2025 年 6 月起）；②桌面優先 harness 屬單一 process、緊密耦合，lift-and-shift 會卡在 agent 生命週期與 quiesce（等待人類輸入時安全暫停）；③企業應像管 email 般管治 agent 互動（Beda 名言）；④降低對前沿實驗室 harness（Codex/Claude Code/Copilot）依賴，類比 K8s 降低對雲廠依賴；⑤ToolHive（MCP 平台，桌面 Docker→K8s 網關/註冊表/operator）；⑥AI Gateway 只做存取控制/預算/報告/路由，語義模型路由刻意留在 harness（與 Glean 相反）；⑦商業模式＝開源底層＋企業控制面（identity/authz/policy/audit）。客戶多在銀行、半導體、電訊等受監管行業。"
+    },
+    {
+     "title": "[AINews] Quasi-Riemann-Hypothesis: OpenAI publishes 722 math papers solving 90 of the top 500 open math problems",
+     "pubDate": "2026-10-07T04:55:44.000Z",
      "type": "ainews",
-     "url": "https://www.latent.space/p/ainews-reflection-beam-501b-a23b",
-     "note": "已深度萃取（AINews 原文約 20 KB 全文 ＋ Reflection 官方公告約 25 KB 全文，所有引文直接取自原文）：Latent Space 旗下 AINews 快訊（非訪談，覆蓋 2026-10-03→10-05）。本輪 10 檔播客唯一新增內容。核心＝美國 neo lab Reflection 發布首個開放權重模型 Beam：501B 總參 / 23B 激活稀疏 MoE，text-only，主打 coding/agentic/科學。官方數字：①預訓練 23.8T token（含對數以億計 PDF 的 OCR 管線；95% 原始互聯網 token 被剔除，常規手法會漏掉約 1.8 兆高質 token）②預訓練 6,144 張 GB300 NVL72、四星期完成、goodput 92.3%、僅 9 次半自動 rewind ③RL 用 10.5K 張 GB300 四星期、逾 1 億條 rollout、1.3B sandbox、約 100 萬環境、平均 11 萬並發 rollout / 峰值 17 萬沙箱、跨 20+ 集群兩雲四區、10 億+ 沙箱建立請求、90% 沙箱 10 秒內就緒④自報 SWE-bench Verified 80.9、Terminal Bench 2.1 80.1、DeepSWE 44.4、SWE Bench Pro v2-Hard 77.2、推理效率為 GLM 5.2 約 3–4 倍⑤權重 Apache 2.0 本月內放出、現開 waitlist。技術：MoE＋交錯局部/全局注意力（第三方讀作 3:1 全局/滑窗）、auxiliary-loss-free 均衡＋expert-bias 餘弦衰減、序列級均衡、depth-based residual scaling＋SandwichNorm＋FP32 殘差累加（52 層殘差 RMS 有界、最忙專家負載 1.04×）；異步策略梯度容忍一天陳舊度（落後 107 個權重版本仍穩定）、推/訓 GPU 比 3.9:1–5.4:1、五次換 GPU mesh 不丟狀態、權重中位 12 秒到推理艦隊（跨機架流量 -75%、新權重採用快 2.2×）、71 次推理事故不終止訓練（容量中位 8 分鐘恢復、損失 0.02% GPU-分鐘）；可控長度罰則 + reasoning effort 參數；midtraining 擴至 1M context；安全用 MOPD 多教師蒸餾＋deliberative alignment＋對抗式迭代。第三方質疑：Elie Bakouch 估預訓練 BF16 MFU 僅約 12%；Teortaxes 稱其為 DeepSeek V3 的 iso-FLOP replication；多數觀察者置於 GLM-5.2 水平、部分 benchmark 低於 DS V4.1 Flash；Nathan Lambert 歸類為「仍落後中國對手的強力美國開源」。同篇另含：Aleph Alpha Kolibri（78B-A3.46B）、Reka Rho-1（19B omni/320 H100/3 個月）、Command Code Agr 決策模型＋SemiAnalysis 對 TypeSafe Jev 的「無解碼」路線解釋、OpenAI vs Anthropic 訂閱價值戰（SemiAnalysis：Claude 高 5 倍以上、按任務成本校正 1.3–2.9 倍；$200 檔暫停、GPT-6 提速 50% 由約 30→50 TPS）、HF 多 harness RL（Mini-SWE-Agent 62% vs Claude Code 33%）、Pi Durable、Cognition Dreaming、Cursor SDK、驗證優先研究（NVIDIA mid-harness 50%→68%、Google VeriHarness）、上下文壓縮研究（壓縮三分之一 token 反慢 20–80%）、OpenAI EU 文字水印（25% 同義詞替換令檢出率 92%→17%）、Bengio FT 文章、Achiam 自主武器禁令主張、騰訊甲骨文東南亞租 10 萬芯片約 70 億美元。"
+     "url": "https://www.latent.space/p/ainews-quasi-riemann-hypothesis-openai",
+     "note": "已快速萃取（AINews 原文全文約 21 KB），並另有完整深度復述 deep-dive #199：OpenAI 首次公開其未發布內部數學模型（Navier-Stokes math model）成果——722 篇手稿／372 個成果家族，源自約 4,000 條研究問題，平均每結果約 3 小時 ChatGPT Pro 算力。代表結果：Result 003 準黎曼猜想（被指介乎菲爾茲獎與兩百年數論最大成果之間）、整數乘法快過 n log n、三維彈性逆問題唯一性、黎曼/Hodge/BSD 部分進展；約 20% 為反證/反例；模型未公開。對比前作 Navier-Stokes（88 小時/10,000 agent）。Levent Alpöge 稱「數學史上最重大嘅時刻」（但提搶先/利益衝突爭議）；Altman 稱「發現的新時代」。同篇另含：Mistral Large 4 Le Chonk（1T/49B，約 3,800 Grace Blackwell，$1.36/$4.18，開權重 10 月底，AA index 38）、EmbeddingGemma 2（Apache 2.0 多模態嵌入 740M omni，Matryoshka 768→128，MTEB Code +14%）、決策模型產品化（OpenAI Decisions API／Perplexity ***.1-27b；Vals：Jev 以 1/500 成本追平 GPT-6 Astra 97.5% claim verification）、Chollet 泛化質疑。"
     }
    ]
   },
@@ -30,10 +39,19 @@
    "newEpisodes": []
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-10-03T13:00:00.000Z",
-   "lastEpisodeTitle": "One Brain, Any Body: Google DeepMind's Keerthana on Gemini Robotics 2, Cross-Embodiment & Humanoids",
-   "lastFeedItemPubDate": "2026-10-03T13:00:00.000Z",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-10-07T17:00:00.000Z",
+   "lastEpisodeTitle": "Software That Never Breaks: OutSystems CEO Woodson Martin on Building Enterprise-Grade Apps at AI Speed",
+   "lastFeedItemPubDate": "2026-10-07T17:00:00.000Z",
+   "newEpisodes": [
+    {
+     "title": "Software That Never Breaks: OutSystems CEO Woodson Martin on Building Enterprise-Grade Apps at AI Speed",
+     "pubDate": "2026-10-07T17:00:00.000Z",
+     "type": "interview",
+     "url": "https://www.cognitiverevolution.ai/software-that-never-breaks-outsystems-ceo-woodson-martin-on-building-enterprise-grade-apps-at-ai-speed/",
+     "guest": "Woodson Martin (OutSystems CEO, since May 2025; ex-Salesforce 18y; succeeded founder Paulo Rosado)",
+     "note": "已深度萃取（節目 show notes 約 77 KB＋官方 Quotes worth pulling 原文＋章節時間軸；引用直接取原文）：主題＝企業軟件「快而永不壞」。①model-driven 確定性代碼生成——agent 改抽象模型（非裸代碼），系統生成代碼內建安全/RBAC/合規組件複用；②在位者成熟 primitives＋受監管行業信任＝護城河（易過 AI-native 新創重建）；③enterprise-ready＝合規積壓（連 PDF 抽數據都要審模型/訓練數據合法性）、可審計決策比 IT 資源分配更保守；④AI 保險 AIUC 暫無客戶採用；⑤安全＝修復速度、共享 primitives 一次修好，COBOL/AS400/Lotus Notes「冇終點線」；⑥硬數據：重大功能 4（去年Q4）→19（Q1）→26（Q2）；token 支出 6–7 月見頂後跌穿預算，靠自建 harness＋LLM router；⑦反前沿敘事：多數企業 workload 唔需要 frontier model，有啲甚至唔需要模型；客戶為省錢跑蒸餾/post-train 中國模型；一半客戶在歐洲；⑧Mentor 由 2018 ML 項目→MCP 服務；新 agent 讀 telemetry→建議 agentify→預測 ROI→生成首版；⑨App 會縮成對話內 widget（ONE demo：貸款申請由 Claude 對話移入銀行 App）；⑩廠商功能收斂（「101 廣告牌同樣五個字」）→專業化為出路；⑪超級看好 junior talent、forward-deployed engineers。收錄 8 條官方 quote。"
+    }
+   ]
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-10-01T20:03:16.000Z",
@@ -73,12 +91,13 @@
   }
  },
  "notes": {
-  "scan_status": "2026-10-07 掃描（02:03–02:07 UTC）：三天窗口 10/4–10/7 內 10 檔播客全部無新訪談集。唯一新增＝Latent Space 旗下 AINews 快訊 10/6〈[AINews] Reflection Beam - 501B-A23B American Open Model〉（10/6 06:28:43Z，非訪談，覆蓋 10/03–10/05）。逐一核實無新：Dwarkesh RSS 頂條仍 10/1 Si Sheppard（YouTube 10/6 的 Sarah Paine 條目經查為舊講座系列之短片，非新集）；Latent Space 最新訪談仍 10/2 Airbnb；CR 最新仍 10/3 Keerthana；No Priors 最新仍 10/2 Fractile；MLST 最新仍 10/1 Shawn Wen；張小珺最新仍 9/3；十字路口最新仍 9/27 于紅；硅谷101 最新仍 9/29 E254；42章經最新仍 9/27 Vibe-Trading；屠龍之術最新仍 9/28 EDA。中文圈本輪無新 AI 集。",
-  "report_date": "2026-10-07",
-  "deep_content_fetched": "《Latent Space [AINews] Reflection Beam》：AINews 原文全文（純文字約 20 KB）＋ Reflection 官方部落格全文（純文字約 25 KB，含全部 benchmark 表、圖說與基建數字）。所有引文直接取自原文（英文原文照錄並附中譯）。",
-  "transcript_attempts_failed": "①YouTube 官方 videos.xml 對 No Priors（UCSI7h9hydQ40K5MJHnCrQvw）與 MLST（UCMLtBahI5DMrt0NPvDSoIRQ）本輪均回 404；Dwarkesh 頻道 feed 可用但僅含短片。②故改以原生 RSS：No Priors→feeds.megaphone.fm/nopriors；MLST→anchor.fm/s/1e4a0eac/podcast/rss（經 iTunes lookup 取得）；CR→feeds.megaphone.fm/RINTP3108857801。③中文播客以 xyzfm／fireside 原生 feed 頂條逐一核實（張小珺 dk4yh3pkpjp3、十字路口 68fyjknth9hj、42章經 evgg6xle9rdc、屠龍之術 834hyx3v9k74、硅谷101 feeds.fireside.fm/sv101/rss），未依賴 web_search 猜測。",
-  "jev_prefilter": "2026-10-07 對 1 條候選跑 jev.py triage --profile news：available=true、failed=0/1，worth=1.27（高於 drop_max 0.6，保留）、category=llm-model、primary_source≈0.14。依 hint 指引，primary_source<0.4 者必須在文中標為二手／未證實——本報告已將 Reflection 全部數字標註為公司自報口徑、並註明 AINews 屬二手彙編。",
-  "notable_for_james": "①本輪係「模型層」事件日：Reflection Beam 501B-A23B 係美國開源前沿的一次補位，但能力仍落後中國開源（GLM-5.2 水平、部分 benchmark 低於 DS V4.1 Flash），賣點係每 token 智能／推理能效（3–4×）。②RL 規模數字可作長期錨點：10.5K GB300×4 週、1 億 rollout、13 億 sandbox、約 100 萬環境、「未見平台期」——與此前記錄的「高質 RL 環境＝新時代語料」完全接軌。③異步 RL 的工程指標（一天陳舊度/107 版本、12 秒權重傳播、跨機架流量 -75%）係未來實驗室的對標基準。④決策模型（無解碼）成物種：Command Code Agr＋TypeSafe Jev，本報告鏈的 Jev 前置過濾器即同類。⑤安全線：OpenAI EU 文字水印被指 25% 同義詞替換即由 92% 跌至 17%；Bengio FT 文章；Achiam 自主武器禁令。⑥中文圈連續多輪無新 AI 集，主線續由英文主導。",
-  "index_html": "未更新 index.html：該落地頁手工維護且自 2026-07-19 起已停更，為維持既有慣例未動。"
+  "scan_status": "2026-10-08 掃描（02:03–02:05 UTC）：窗口 10/7–10/8 內 10 檔播客新增 3 條，全部英文檔。①Latent Space 訪談〈Can a Cloud-Native Harness Make Agents Reliable Beyond the Desktop?〉（10/7 14:10:45Z，Stacklok／K8s 之父 Craig McLuckie & Joe Beda）。②Latent Space AINews〈Quasi-Riemann-Hypothesis〉（10/7 04:55:44Z，OpenAI 722 篇數學手稿）。③The Cognitive Revolution〈Software That Never Breaks〉（10/7 17:00Z，OutSystems CEO Woodson Martin）。逐一核實無新：Dwarkesh RSS 頂條仍 10/1 Si Sheppard（YouTube 10/6–10/7 僅 Sarah Paine／Si Sheppard 短片）；No Priors 原生 feed 仍 10/2 Fractile；MLST 仍 10/1 Shawn Wen；Latent Space 最新訪談本身即本輪新集；CR 第二新為已覆蓋之 10/3 Keerthana。中文五檔（張小珺、十字路口、硅谷101、42章經、屠龍之術）全部無新，最新仍為 9/3、9/27、9/29、9/27、9/28。",
+  "report_date": "2026-10-08",
+  "deep_content_fetched": "《Latent Space Stacklok 訪談》：Substack 原文全文（純文字約 10 KB，未截斷）。《CR OutSystems 訪談》：節目 show notes（AI 生成，rawLength 約 77 KB）＋官方『Quotes worth pulling』原文＋章節時間軸。《AINews Quasi-Riemann》：AINews 原文全文（約 21 KB，含所有 bullet 與引用）。所有引文直接取自原文（英文原文照錄並附中譯）。",
+  "transcript_attempts_failed": "①YouTube 官方 videos.xml 對 No Priors（UCSI7h9hydQ40K5MJHnCrQvw）本輪可用但只含短片；MLST 頻道 feed 本輪未成功取得，改以原生 anchor feed 核實。②故一律以原生 RSS：No Priors→feeds.megaphone.fm/nopriors；MLST→anchor.fm/s/1e4a0eac/podcast/rss（經 iTunes lookup 取得）；CR→feeds.megaphone.fm/RINTP3108857801；Latent Space→latent.space/feed；Dwarkesh→dwarkesh.com/feed。③中文播客以 xyzfm／fireside 原生 feed 頂條逐一核實（張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 …/68fyjknth9hj、42章經 …/evgg6xle9rdc、屠龍之術 …/834hyx3v9k74、硅谷101 feeds.fireside.fm/sv101/rss）；注意舊筆記之 feeds.xyzfm.link 已 404，正確主機為 feed.xyzfm.space。",
+  "jev_prefilter": "2026-10-08 對 3 條候選跑 jev.py triage --profile news：available=true、failed=0/3。Stacklok worth=1.14/category=agent-infra/primary_source≈0.36；OutSystems worth=1.13/category=business/primary_source≈0.41；AINews 數學 worth=0.78/category=llm-model/primary_source≈0.10。依 hint：primary_source<0.4 者須標二手／未證實——AINews（0.10）已明標二手彙編、數學結果未經獨立驗證；兩篇訪談 primary_source≥0.36，引文均取自原文並照錄。",
+  "notable_for_james": "①本輪主線係『harness 之爭』：Stacklok（K8s 之父）要企業自建雲原生 harness、把 agent loop/session 從桌面搬上雲並像管 email 般管治，正面對抗 Codex/Claude Code/Copilot；同一日 CR 訪 OutSystems CEO 亦係講企業自建 harness（自建 harness＋LLM router 令 token 支出見頂後跌穿預算）。兩條獨立線索指向同一結論：2026 下半年企業 AI 的戰場係 harness／管治層，而唔係模型本身。②反前沿敘事有一手口供：『大部分企業 workload 唔需要 frontier model，有啲甚至唔需要模型』（OutSystems CEO，服務大量受監管巨企）。③硬指標：OutSystems 功能發布 4→19→26；token 支出 6–7 月見頂後回落。④OpenAI 數學模型 722 篇手稿／平均 3 小時 ChatGPT Pro／準黎曼猜想——AI for math 由『88 小時 10,000 agent』壓縮到『3 小時一結果』，效率躍升幅度值得記低。⑤決策模型（無解碼）續成物種：OpenAI Decisions API＋Perplexity ***.1-27b，本報告鏈之 Jev 被 Vals 測到以 1/500 成本追平 GPT-6 Astra 97.5% claim verification。⑥中文圈連續多輪無新 AI 集（已第 N 輪），主線續由英文主導。",
+  "index_html": "未更新 index.html：該落地頁自 2026-07-19 起已停更（deep-dive 索引除外），為維持既有慣例未動。",
+  "deep_dive_link": "deep-dives/199-latent-space-ainews-openai-722-math-papers-quasi-riemann.html（10/7 已產出，對應本輪 AINews 條目）。"
  }
 }
