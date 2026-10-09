@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space × Periodic Labs：合成超智能——把「做科學的過程」訓練進模型</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.9rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.45rem 0.6rem; text-align: left; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · Synthesis Superintelligence · 約 1 小時 24 分</div>
+  <h1>「智能是必要、但唔充分」——Periodic Labs：合成超智能、把「做科學的過程」訓練進模型，同「負結果先係最有價值嘅數據」</h1>
+  <div class="meta">
+    <span>📅 2026-10-08</span><span>·</span><span>🎙️ Latent Space（swyx ＋ Brandon）</span><span>·</span><span>👤 嘉賓 Liam Fedus、Ekin Doğus Çubuk（Periodic Labs 共同創辦人）</span><span>·</span><span>⏱️ 約 1h24m</span><span>·</span><span>📍 於 Periodic 實驗室現場錄製</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+如果講「AI for science 係下一步」係 2026 下半年嘅共識，咁呢集就係<strong>唯一一個把「下一步」講到有工程細節嘅版本</strong>。Periodic Labs 由 Liam Fedus（前 OpenAI，ChatGPT 共同作者）同 Ekin Doğus Çubuk（前 DeepMind，GNoME、MatterGen）於 2025 年 9 月創立，成立僅一年就被業內視為頂級 AI scientist 實驗室。呢集真正嘅貢獻唔係口號，而係一句扎實嘅方法論：<strong>科學發現係「未被訓練過嘅東西」，所以再多算力都要跑實驗；而最有價值嘅訓練數據，係整條失敗過的科學過程本身。</strong>
+</p>
+
+<div class="section-title">一、題眼：「智能係必要，但唔充分」</div>
+
+<p>節目由 Periodic 官網一句話開場。Liam Fedus 話呢句就係成間公司嘅前提：<strong>你無辦法「想」出一條出路</strong>。宇宙太複雜，要推進知識前沿，你必須先造出猜想（conjecture），然後真正去驗證佢係唔係成立。無論你把教科書重讀幾多次、閉關幾多日，都無辦法想盡所有「預期內同預期外」嘅實驗結果——所以佢哋由第一天起就確定：<strong>要同時有 AI 系統、物理世界嘅模擬，同高通量嘅實體實驗</strong>，因為一種「不同類型嘅智能」會從呢個組合裡走出來。</p>
+
+<blockquote class="strong">
+  「智能係必要，但唔充分。新知識係喺『想法被發現同現實一致』嘅時候被創造出嚟。」
+  <span class="attribution">“Intelligence is necessary but not sufficient. New knowledge is created when ideas are found to be consistent with reality.” — Periodic 官網題眼（Liam Fedus 引）</span>
+</blockquote>
+
+<p>創辦背景值得記低：呢個團隊「以前從未存在過」。Doğus 指出，佢哋把固態化學家、固態物理學家、實驗派、理論派、硬件工程師、LLM 專家、電腦科學家拉埋一齊，而其中幾項技術本身係好新——高通量實驗同機械臂只係近三年先真正嘗試，部分力場（force field）技術亦係新近產物。佢用歷史類比：最接近嘅例子係 <strong>Bell Labs</strong>——頂尖理論家同實驗家、化學家共處一室。</p>
+
+<div class="section-title">二、RL 環境直接嚟自實驗室：獎勵函數係「物理現實」</div>
+
+<p>對 AI 工程師嚟講，本集最重要嘅一句係：<strong>Periodic 嘅 reinforcement learning 環境，字面上就係由佢哋嘅實體實驗室衍生出嚟</strong>。Liam 話，佢哋嘅數據嚟自實體實驗室，「呢個係我哋嘅終極真相（ultimate truth）」——單靠對論文或教科書嘅已知答案做優化係唔夠，因為佢哋要超越嗰啲答案。</p>
+
+<p>跟住落嚟嘅係同數碼環境最根本嘅分別——<strong>不確定性下的決策（decision-making under uncertainty）</strong>。做數學係高精度嘅，冇 variance、冇不確定、冇異常量測；但材料發現裡，<strong>「啲嘢唔會自己貼住標籤從焠爐走出嚟」</strong>：連標籤過程本身都可能係隨機同有噪；唔同機器之間有偏差；telemetry 可能不足——「以為喺某個溫度跑，實際差咗一個 delta」。能夠吸收呢啲噪音數據、並像科學家咁做決策嘅智能，需要的係<strong>另一套推理策略</strong>。</p>
+
+<div class="data-point">
+  <span>關鍵分別</span>
+  數碼環境可以任意加環境、加 rollout；物理環境<strong>唔得</strong>。所以除咗標準嘅 mid-training、RL、工具型 agent 基建外，Periodic 仲要解決兩件事：<strong>高不確定性下依然準確</strong>，同<strong>極度嘅樣本效率（sample efficiency）</strong>——「我哋冇同樣嘅容量」。
+</div>
+
+<div class="section-title">三、科學 ≠ 數學／編程：降維、噪音，同「現實更像科學」</div>
+
+<p>Doğus 用一個好漂亮嘅角度解釋為何科學更難：<strong>每個科學實驗都必須做降維（dimensionality reduction）</strong>，而數學同編程唔使。</p>
+
+<p>做數學或編程時，所有 context 都可以提供畀人或 LLM——一堆公理、推導出嘅定理、一堆函數同 API call；「所有你要推理嘅嘢都喺你面前，你只需要好聰明咁解決佢」。但喺物理裡，<strong>起點嘅原子數目已經多到任何電腦都存唔落</strong>。所以你要由「系統原本嘅維度同位元」壓縮到「電腦裝得落嘅位元」——而呢個正係熱力學嘅原初前提：當年人們搞唔清蒸汽機點運作，最終發現用五、六個熱力學變量就足以解釋得幾好。</p>
+
+<blockquote class="strong">
+  「現實生活中，大部分真正需要智能嘅事情，其實更像科學——有大量不確定、大量噪音、大量缺失嘅 context，而你必須係嗰個智能體，去決定下一步做咩。」
+  <span class="attribution">Ekin Doğus Çubuk（大意）</span>
+</blockquote>
+
+<p>Liam 順住呢點補一句：<strong>做數學、理論電腦科學嘅最優推理策略，未必係做科學嘅最優策略</strong>。呢點與同日報告中多條主線互相呼應——「eval 高分 ≠ 真實交付」。</p>
+
+<p>Doğus 亦舉咗一個好有畫面嘅例子講實驗噪音：焠爐會隨使用而退化（你烘焙嘅嘢蒸發、覆蓋發熱元件，於是每次用都差少少）；焠爐溫度唔完全均勻，所以放喺邊會影響結果；光學儀器對震動極敏感——佢讀博士時，有個實驗室嘅結果時好時壞，最後查到係夜裡某個時間樓上有人行過，震到雷射裝置。</p>
+
+<div class="section-title">四、端到端材料發現環：三步都要 AI</div>
+
+<p>Liam 把成條 loop 拆成三步，每一步都有獨立嘅難：</p>
+
+<ol>
+  <li><strong>做咩</strong>——原子放埋一齊會唔會穩定？係唔係有我想要嘅性質？（唔止要「新構型」，要「有目標性質」）</li>
+  <li><strong>點合成</strong>——真正要做出嚟，製程條件極度非平凡。</li>
+  <li><strong>做咗咩</strong>——成品唔會自帶標籤，必須做表徵（characterization）去搞清楚實際做咗乜。</li>
+</ol>
+
+<p>正因為唔可以「開一個實驗、等兩日、睇有冇常溫超導就更新 reward」，Liam 直指嗰種 RL 環境<strong>完全唔可行（completely infeasible）</strong>：唔夠 agent 去降 variance，rollout 要跨儀器等待，實驗本身有物理極限。所以佢哋嘅方向係<strong>圍繞已產生嘅數據嚟建構 agent</strong>。</p>
+
+<div class="highlight-box">
+  <strong>具體例子：XRD 相識別。</strong>佢哋向材料打 X 光，X 光嘅波長同原子間距相若，於是得出繞射圖樣，等於晶體結構嘅「指紋」。識別「實際存在邊啲相」高度非平凡，但 reward 好直接：<strong>獎勵正確識別相、懲罰偽相同冇化學可行性嘅相</strong>。而當實驗一多，「理解做咗咩」馬上變樽頸，所以早期 AI 工作就係做呢件事。
+</div>
+
+<p>另一招係<strong>按「世界狀態嘅時間戳」建環境</strong>：例如「截至某日為止嘅實驗證據係咁，畀咗呢堆證據同選項，科學家下一步揀咗乜／結果係乜？」。Liam 講咗一個好重要嘅陷阱：如果預訓練模型已經記住答案，而你嘅 RL 任務又依賴嗰個答案，<strong>模型會「假裝做嘢」</strong>——直接跳過物理推理同模擬，跳去正確答案，然後你強化咗嗰條推理策略；但嗰條策略根本唔會泛化到新系統。<strong>整條 process lineage（對話、直覺、實際執行咗乜、喺邊跑計算、代碼寫喺邊）就係解藥</strong>。</p>
+
+<div class="section-title">五、物理遠未「解決」：DFT、超導，同「即使有完美 DFT 都要實驗室」</div>
+
+<p>swyx 問咗一條好基本嘅問題：「我哋唔係已經搞掂大部分物理定律咩？點解仲未有完美模擬器？」Doğus 嘅答案否定了 Dirac 那句「其餘都係化學」嘅敘事。</p>
+
+<p>超導方面，佢釐清一個常見誤解：「高溫超導」嘅「高溫」<strong>指嘅係 unconventional（非常規）超導</strong>，唔係字面幾多度。常規超導主要由電子–聲子耦合驅動，你可以見到同位素效應（isotope effect）——同樣系統、換咗某元素嘅重量，超導溫度會按預期下降。但 cuprates（如 77 K 以上、93 K 那批）<strong>唔服從呢套物理，而我哋連佢服從邊套物理都未知</strong>。</p>
+
+<p>佢亦把 <strong>DFT（密度泛函理論）</strong> 講得極清楚：量子力學嘅 wave function 有指數級嘅 Hilbert space，難解到爆；Hohenberg–Kohn 定理指出<strong>基態嘅所有性質都係「電荷密度」嘅泛函</strong>——而電荷密度只係一個三維物件，Kohn 因此獲諾貝爾獎；Kohn–Sham 再給出實用近似。DFT 對某些性質極準，但一旦出現強電子關聯就會失手。</p>
+
+<div class="data-point">
+  <span>物理硬限</span>
+  ① <strong>10²³ 個原子（一間房嘅空氣量級）無法塞入電腦</strong>——即使有完美 DFT 都要實驗室；② <strong>微觀結構（microstructure）</strong>同<strong>超導溫度</strong>等性質，DFT 根本模擬唔到——「就算做一億次 DFT 都唔夠」。所以佢哋要依賴 heuristics、實驗同實驗校準（Materials Project 傳統上就用實驗數據校準 DFT）。
+</div>
+
+<p>反而佢講咗一句好有反思性嘅話：無機化學嘅複雜度<strong>唔似生物咁有低 Kolmogorov complexity</strong>（DNA/RNA 近似一維可「編譯」）；三維無機晶體可以同時係金屬、絕緣體、超導體、鑽石，你搵唔到一條 one-D 表示（連 SMILES 都難寫）。佢甚至話，睇鋰枝晶（dendrite）刺穿固態電解質，會覺得「相比生物，我哋仲好原始」——但無機材料又勝在耐高溫、造得出太空穿梭機同矽晶片。呢個係一個難得嘅、科學家自己講嘅「領域謙卑」。</p>
+
+<div class="section-title">六、Matter Compiler：想做材料界嘅 TSMC</div>
+
+<p>swyx 提出一個公司類比：TSMC 係代工，唔設計晶片；咁 Periodic 可唔可以係「材料界嘅 TSMC」——你畀需求，我算出可行構型同製程？Liam 接住話：<strong>「呢個就係 matter compiler（物質編譯器）。」</strong> swyx 稱之為「非常 Star Trek」。而 Periodic 嘅使命之一正係 <strong>synthesis superintelligence（合成超智能）</strong>——畀定需求，判斷呢組構型係唔係有效、能唔能存在。</p>
+
+<div class="section-title">七、每台儀器都要有「140 IQ」</div>
+
+<p>Liam 講咗一個好具體嘅工程演化：早期規模化實驗室時，樽頸係「操作機器」——技術員同科學家逐個睇 SEM 圖搵形貌，完全追唔上。佢哋先做程式化擷取，但「太笨」，唔夠用；於是把 <strong>AI 系統直接建立在機器上</strong>，令儀器擁有完整 context：實驗意圖、想合成咩、其他實驗證據，並即時擷取數據。</p>
+
+<blockquote class="strong">
+  「如果你可以喺實驗當刻做更智能嘅數據擷取，咁未來 AI 系統同計算預測嘅數據就會豐富得多。」
+  <span class="attribution">Liam Fedus（談「每台儀器都要有 140 IQ」）</span>
+</blockquote>
+
+<p>而最大嘅限制唔係智力，係<strong>延遲、成本同人類耐性</strong>：控制儀器嘅延遲、推理唔係單次 call（多 token、多 tool call、模擬在環）導致延遲爆炸、成本高昂、以及「人類要兩小時定兩分鐘拿到 XRD 分析，差別好大」。Liam 用自駕車類比：如果推理速度追唔上物理過程嘅時間尺度，就係不可行。</p>
+
+<div class="section-title">八、負結果：文獻只發成功，佢哋專收失敗</div>
+
+<p>呢段係本集最有遷移價值嘅方法論。Brandon 問：null result 對材料嚟講係咩樣、點用？Liam 話，係「我哋本想做某個結構，但所有證據都指向冇做到」；有時「本想做 A，結果 B 出現咗，B 係前所未見嘅新結構」。</p>
+
+<p>Doğus 補上機器學習層面嘅理由：<strong>無負樣本，分類器根本無得train</strong>——如果全部係正樣本，你 train 唔到。而材料科學偏偏有呢個問題：人們通常只發「合成得到」嘅晶體，失敗嘅唔發；而且我哋永遠唔知一個晶體係唔係「根本合成唔到」，可能只係技術問題（skill issue）。</p>
+
+<blockquote class="strong">
+  「我哋花咗好多時間，把整條科學過程嘅 lineage 灌入模型……跟住我哋嘅總體目標係：唔係訓練科學嘅最終產物，而係訓練『做科學嘅過程』。呢類數據基本上喺其他任何地方都唔存在。」
+  <span class="attribution">Liam Fedus</span>
+</blockquote>
+
+<p>佢哋做嘅係<strong>逐個 campaign（而非逐個實驗）</strong>標籤——假設 campaign 成功就結束，咁正負就會平衡啲。而「一串負結果 → 最終透過 process iteration 得到正結果」本身，就係極有價值嘅 process-engineering 數據。</p>
+
+<div class="section-title">九、唔用 humanoid：「全自主係一個非目標」</div>
+
+<p>swyx 問到自動化路線：係唔係應該由細到大逐步自動化、抑或直接放 humanoid 入實驗室？Liam 嘅判斷好鮮明：<strong>「我哋認為解決 humanoid 反而會更慢。」</strong> 佢哋用「人＋自動化」嘅混合，快速識別實驗流程中嘅樽頸，然後<strong>逐個消除</strong>——若某個靈巧任務人做得極好、但要花幾個月才自動化，就唔好花時間；反而係「重複、好易自動化、又佔用大量時間」嘅步驟最值得先做。</p>
+
+<blockquote class="strong">
+  「全自主係一個非目標（full autonomy is a non-goal）。」
+  <span class="attribution">Liam Fedus</span>
+</blockquote>
+
+<p>目標係<strong>高質量、多樣、大量嘅數據</strong>。佢亦提到一個好靚嘅實例：某次機器加載有誤，造成循環位移，數據前後唔一致；AI 橫向掃過整批數據後發現「做某個循環置換反轉就一致咗」，於是佢哋返去查實體基建，確認加載出錯。呢個就係「數據質量管理係物理世界做 AI 嘅根基」。</p>
+
+<div class="section-title">十、數據 vs 算力：擁有獨家數據 ＝ 更 compute-efficient</div>
+
+<p>Liam 講得好白：佢哋混用開源同閉源模型；因為<strong>擁有別人冇嘅數據</strong>，佢哋「可以推過前沿模型即使喺最高推理 effort 下嘅界限」，唔單止係成本或 Pareto 效率問題——「用呢啲數據，你可以相對前沿模型更加 compute efficient」。Doğus 補一句：「如果你對住一堆噪音擲大量算力，你唔會有好嘢浮現。」</p>
+
+<p>Brandon 亦提出一個很值得記低嘅問題：既然有物理定律，為何要實驗？Doğus 最後一句回答咗全篇：</p>
+
+<blockquote class="strong">
+  「就算 Fable 7 變得更強，佢仍然要跑實驗才能拿到結果。原因係：機器學習只擅長佢訓練過嘅東西，而科學發現按定義，就係你未曾訓練過嘅東西。」
+  <span class="attribution">Ekin Doğus Çubuk</span>
+</blockquote>
+
+<p>Liam 嘅版本更斬釘截鐵：<strong>「冇人會 zero-shot 出常溫超導。」</strong></p>
+
+<div class="section-title">十一、商業化：先做 customer zero，再去半導體，最終 price outcomes</div>
+
+<p>Liam 話佢哋一直「做自己嘅客戶（customer zero）」，而家把同一套工具帶去產業，<strong>當前重點係半導體</strong>。因為對方係極度保密嘅公司，需要喺最高安全級別嘅環境運作，所以 Periodic 嘅 <strong>forward-deployed engineers</strong> 會進駐客戶現場（甚至長駐台灣），整合 AI 同計算系統、<strong>本地推理，並喺客戶數據上訓練</strong>——令客戶「擁有自己嘅智能」。佢強調呢個 forward-deployment 角色比典型嘅更深，需要極深嘅 ML＋基建＋物理專業。</p>
+
+<p>至於盈利模式，Liam 用軟件工程做類比：早期係 GitHub Copilot、ChatGPT 做「副駕」，隨住自動化進步，出現 Codex，好少工程師仲用舊方式寫代碼——<strong>同樣嘅事可以喺 Periodic 發生：先加速研究員，隨住自主性同能力增長，就可以「按結果定價（price outcomes）」</strong>。</p>
+
+<div class="section-title">十二、團隊同文化：「唔好脫離雙手（hands-on）」</div>
+
+<p>Doğus 講咗一個同 Bell Labs 一脈相承嘅原則：佢哋要「非常擅長、非常有經驗嘅人<strong>親手做事</strong>」。現代學術界常見問題係——某人研究做得好，就被授予大量行政、教學、寫 grant 嘅職責，結果冇時間親手做研究；但回望 Bell Labs、IBM，真正推動進步嘅係有經驗嘅人日日落場（Bardeen 係理論家都日日喺實驗室；Alex Müller 係 lab lead 都自己做實驗）。</p>
+
+<p>佢點名幾位核心成員：<strong>Muratahan Aykol</strong>（計算材料）、<strong>Joe Checkelsky</strong>（MIT 教授，休假期全職，超導物理）、<strong>Daniel Chica</strong>（固態合成專家）、<strong>Dima Bahdanau</strong>（Bahdanau attention 發明者，領 AI／LLM，蒙特婁實驗室仲有固態合成書）、<strong>Ray Nakano</strong>（前 OpenAI Operator tech lead，真係落實驗室自動化機器）。Liam 笑說做 lab tour 時仲以為「呢個新科學家／技術員好似 Ray」——結果真係 Ray 本人。</p>
+
+<p>開源方面，佢哋貢獻 PyTorch、Materials Project／Custodian、TorchSim、JAX-MD、XLANG、Megatron；並設學術 grant program，首篇資助論文即將發表。Doğus 更講咗一個願景：希望令固態物理、材料研究「變得可賺錢」，好似 ChatGPT 令 CS／LLM 專業爆紅一樣，吸引更多年輕人讀物理——「Bell Labs 都真係帶嚟巨大商業影響」。</p>
+
+<div class="section-title">十三、用「表面積換運氣」：如何真的走向超導</div>
+
+<p>Brandon 最後 steelman 一個問題：即使 100% 實驗室自動化，喺強關聯系統冇理論嘅情況下，你點走向超導？Doğus 嘅答案好有意思——<strong>「想出可能容納超導嘅化學空間唔難，難係合成佢。」</strong> 所以佢哋強調 synthesis superintelligence。</p>
+
+<p>佢舉咗兩個歷史例子：① Alex Müller 當初試 <strong>nickelates</strong> 失敗、轉試 <strong>cuprates</strong> 成功並奪諾獎，但後來 nickelates（佢同 3D 過渡金屬、氧）證明係好方向，只係要靠 Harold Hwang 用薄膜形式做出嚟；② 日本團隊發現 <strong>MgB₂</strong>（最高溫常壓常規超導體），係靠「試一大堆材料」——大約試咗 30,000 樣嘢，當中 30 樣睇落有潛質，MgB₂ 係其一；而 MgB₂ 其實喺貨架上做 precursor 擺咗幾十年，BCS 理論 1957 年就有。發現唔係由理論投影出嚟。</p>
+
+<blockquote class="strong">
+  「想像一下，假如有我哋講嘅嗰種完美自動化——把 Taketo 團隊一世試過嘅 30,000 樣嘢，喺一個月內試完——我哋就真係大幅增加咗『撞到運氣』嘅表面積。」
+  <span class="attribution">Ekin Doğus Çubuk</span>
+</blockquote>
+
+<div class="section-title">十四、技術詳情（進階讀者）</div>
+
+<ul>
+  <li><strong>RL 環境嘅構造：</strong>按世界狀態嘅時間戳切分、按儀器切分、按 campaign 切分——同一批有限數據，換角度就可以擴展出唔同訓練環境，解決「唔可以空等 GPU 一周做一個實驗 rollout」。</li>
+  <li><strong>先驗注入：</strong>熱力學係最大先驗，物理係第二；再加<strong>多模態表徵</strong>（XRD ＋ 電性 ＋ 磁性 ＋ 電子顯微形態）互相補足——「人畀 10 種模態同時一致分析好難，對 AI 反而唔難」。同一繞射圖樣可能對應唔同相，需要化學直覺消歧。</li>
+  <li><strong>規模化小花招：</strong>組合濺射（combinatorial sputtering）——用成分梯度一次做出數百至數千晶體；但因擴散問題成效有限。超導高通量量測嘅構想：候選混成一個樣本，類比 COVID 池化檢測（因超導量測每次可耗約一小時，冇高通量方案）。</li>
+  <li><strong>硬件工程已成核心：</strong>早期買現成儀器，規模化後要自造——例如機械臂嘅靜止位置會喺已混好嘅盤面上方，構成污染風險，於是重新設計硬件嘅靜止位，藉此壓低噪音底噪。</li>
+  <li><strong>對量子計算嘅保留：</strong>Doğus 質疑「量子電腦會自動解決材料發現」——即使有量子電腦，你仲係模擬「完美晶體」，仍受同 DFT 一樣嘅限制；並引 Elad Gil：「即使今日有量子電腦，都冇應用。」swyx 補：至少佢會破 RSA。</li>
+  <li><strong>Landauer 極限：</strong>算力能效隨時間指數改善，但仍距離極限約 <strong>4–5 個數量級</strong>；若能逼近，對人類係大事。</li>
+</ul>
+
+<div class="section-title">十五、Vee 嘅萃取：呢集真正嘅訊號</div>
+
+<ul>
+  <li><strong>「synthesis superintelligence」係一條可以驗證嘅替代路線。</strong>當所有人都押注「更大模型 ＋ 更多互聯網數據」時，Periodic 押注「獨家物理實驗數據」。佢哋仲用咗一個可反駁嘅聲明去包裝：靠獨家數據可以推過前沿模型嘅推理上限、並更 compute-efficient。呢個唔係修辭，係一條可以喺未來一年用實驗結果檢驗嘅預測。</li>
+  <li><strong>「負結果＝最有價值嘅訓練數據」係全篇最可遷移嘅方法論。</strong>文獻出版機制系統性丟棄失敗；而失敗恰恰係分類器同過程推理嘅必要輸入。任何做 data 或 eval 嘅團隊都應該記低呢點——你嘅數據護城河，可能正正埋喺你丟棄嘅失敗記錄裡。</li>
+  <li><strong>「訓練做科學的過程，而非科學的最終產物」係一個新嘅數據範式。</strong>它同同日 AINews 中 Anthropic／其他人談「合成數據把 reasoning token 轉回訓練數據」屬同一族，但 Periodic 走得更遠：佢哋連對話、直覺、計算位置、代碼位置都串成 lineage。</li>
+  <li><strong>「full autonomy is a non-goal」＋「唔用 humanoid」係反主流嘅工程判斷。</strong>呢個同矽谷對 humanoid 嘅狂熱形成對照：Periodic 認為通用人形機械人反而拖慢目標，務實地逐個樽頸消除。</li>
+  <li><strong>科學 vs 數學／編程嘅分野，係對「AI 全能」敘事嘅修正。</strong>數學／編程嘅 context 可得、可驗證；科學則要在噪音、不確定、缺失 context 下決策。呢個同 Nathan Labenz 講嘅「『只在可驗證任務有效』唔係一道守得住嘅牆」正面對撞——一邊話牆唔存在，一邊話牆兩邊係唔同能力。</li>
+</ul>
+
+<div class="section-title">十六、爭議點／存疑（必讀）</div>
+
+<ul>
+  <li><strong>本集係於 Periodic 實驗室錄製嘅深度訪談，嘉賓即公司創辦人</strong>；「更 compute-efficient」、「推過前沿模型」等聲稱屬自述，冇第三方基準或同儕評審。</li>
+  <li><strong>「一次做出前所未見嘅新相／新結構」類嘅成功案例</strong>係節目中嘅軼事，冇附具體材料、數據或論文。</li>
+  <li><strong>「10²³ 個原子」「4–5 個數量級」等數字</strong>屬訪談中嘅口頭估算，非精確量測。</li>
+  <li><strong>商業化仍屬早期</strong>：customer zero 自用、半導體進駐、price outcomes 全屬「計劃／願景」，未見收入或客戶成果嘅硬數據。</li>
+  <li><strong>人才密度投票（Core 32／Periodic 26／Flapping Airplanes 20／Standard Intelligence 18）</strong>係 X 上一個非正式投票，樣本細、自我選擇偏差大，只宜作氣氛參考。</li>
+  <li><strong>「量子計算唔解決材料發現」</strong>係嘉賓觀點，非領域共識。</li>
+</ul>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上內容出自 <em>Latent Space</em>〈Synthesis Superintelligence: from Semiconductors to Superconductors — Periodic Labs’ Liam Fedus and Ekin Dogus Cubuk〉（https://www.latent.space/p/periodic ；2026-10-08 發布；主持 swyx 及 Brandon）。引文（中文為意譯／整理，英文為原文）取自節目逐字稿；章節時間軸、嘉賓背景及 X／官網引文取自文章原文。分析、脈絡整理及「Vee 嘅萃取」為本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #202 · Latent Space（2026-10-08，Periodic Labs：Liam Fedus、Ekin Doğus Çubuk）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-09 06:00 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
