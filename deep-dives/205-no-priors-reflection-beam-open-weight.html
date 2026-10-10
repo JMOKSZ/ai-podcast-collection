@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · No Priors：「擁有智能嘅唯一方式，按定義就係開源」——Reflection AI 嘅 Misha Laskin 同 501B 開權重 Beam</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">No Priors · 2026-10-09 17:24 UTC 發布 · 約 40 分鐘</div>
+  <h1>「擁有智能嘅唯一方式，按定義就係開源」——No Priors × Reflection AI 嘅 Misha Laskin：501B 開權重 Beam、高算力 RL、3–4× 推理效率、Apache 2.0，同「開源會食晒多數 token」</h1>
+  <div class="meta">
+    <span>📅 2026-10-09（北京時間 10-10 01:24）</span><span>·</span><span>🎙️ No Priors（Sarah Guo ＋ Elad Gil）</span><span>·</span><span>👤 Misha Laskin（Reflection AI 共同創辦人兼 CEO）</span><span>·</span><span>⏱️ 約 40m</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+Reflection AI 首次公開佢嘅 500B 級開權重推理模型 <strong>Beam</strong>。呢集好睇嘅地方在於：佢唔係一場「我哋模型最強」嘅發布會，而係一個<strong>關於「AI 所有權」嘅商業論證</strong>——Laskin 主張企業同政府要由「租用」智能轉向「<strong>擁有</strong>」智能，而「擁有嘅唯一方式，按定義就係開源」。模型規格、benchmark、訓練細節主要來自 <strong>Reflection 官方 blog</strong>；節目內嘅立場引文則取自同場 <strong>Sources podcast（Alex Heath）</strong>同 Semafor 報導。所有數字均為<strong>公司口徑</strong>。
+</p>
+
+<div class="section-title">一、人物同公司：西方嘅「DeepSeek of the West」</div>
+
+<ul>
+  <li><strong>Misha Laskin</strong>：Reflection AI 共同創辦人兼 CEO；此前喺 Google DeepMind <strong>領導 Gemini 嘅 reward modeling（獎勵建模）</strong>。</li>
+  <li><strong>Ioannis Antonoglou</strong>（共同創辦人／CTO）：<strong>AlphaGo／AlphaZero 嘅創造者之一</strong>，之後領導 Gemini 嘅 RLHF 工作。（節目中主要喺同場 Sources 訪談發言）</li>
+  <li><strong>Reflection AI</strong>：2024 年由前 DeepMind 研究員創立。投資方包括 <strong>Nvidia、Sequoia、Lightspeed</strong>；<strong>成立兩年融資 $4.6B，最近估值 $25B</strong>。團隊由約 30 人嘅 RL 研究小組，成長到 <strong>約 300 人</strong>。今夏簽落 <strong>SpaceX $6.3B ＋ Nebius $1B</strong> 算力協議。</li>
+  <li><strong>主播</strong>：Sarah Guo（Conviction 創辦人）、Elad Gil。</li>
+</ul>
+
+<div class="section-title">二、核心論證：AI 有一個「所有權市場」</div>
+
+<p><span class="sub-title">① 閉源＝租房，開源＝買樓</span></p>
+<blockquote class="strong">
+  「擁有智能嘅唯一方式，按定義就係——如果佢係開源嘅話（The only way to own intelligence is, by definition, if it's open）。」
+  <span class="attribution">Misha Laskin</span>
+</blockquote>
+<blockquote class="strong">
+  「封閉模型喺房地產上，等同於租房（Closed models are the equivalent in real estate to renting an apartment）。」
+  <span class="attribution">Misha Laskin</span>
+</blockquote>
+<p>Laskin 主張，一個 AI 嘅「<strong>所有權市場</strong>」正在形成——企業同政府想「own」並控制自己點用 AI，但佢哋今日「<strong>其實冇好好嘅選擇</strong>」。呢個係 Reflection 嘅市場定位：主權 AI（sovereign AI）嘅西方替代品。</p>
+
+<p><span class="sub-title">② 開源嘅理由之一係安全，而唔係相反</span></p>
+<p>Laskin 嘅論證係：<strong>少數研究者冇可能搵到每一個漏洞</strong>；開源讓大得多嘅社群檢視技術、開發防護（可類比 Linus's Law——足夠多嘅眼睛令問題浮現）。Antonoglou 補：把咁大嘅權力放進一兩個機構，會形成「<strong>單點故障（single node of failure）</strong>」，即使嗰啲機構立意良善。佢哋偏好開放同封閉嘅<strong>混合</strong>，讓唔同供應商可以互相兜底。</p>
+
+<p><span class="sub-title">③ 但佢哋唔否認「能力過強就唔應該開放」</span></p>
+<p>被追問「未來某個模型係唔係可能強到唔宜開放」，兩人承認更強嘅能力可能正當化限制。</p>
+<blockquote class="strong">
+  「有可能你會達到一個能力水平，令你只想喺部署上更謹慎。」
+  <span class="attribution">Ioannis Antonoglou</span>
+</blockquote>
+<p>Laskin 畀出判準：呢類決定應取決於<strong>模型能做咩</strong>——「呢個同佢係唔係開源無關（That is independent of whether they are open or not）。」換句話講，佢把責任推向<strong>能力門檻</strong>而唔係開放性本身。</p>
+
+<p><span class="sub-title">④ 為何同中國模型競爭「係好事」</span></p>
+<p>中國實驗室長期領跑開源模型（GLM、Qwen、Kimi、DeepSeek），西方一直冇答案。Reflection 嘅定位係畀企業／政府一個<strong>可自行運行同客製嘅西方替代品</strong>。同時，中國正把開源當<strong>外交工具</strong>（token diplomacy）；而美英政府評估曾發現近期中國模型可協助黑客利用程式漏洞——呢啲反過來加重咗「西方開源替代」嘅需求。</p>
+
+<p><span class="sub-title">⑤ 商業模式：唔賣模型，賣「令模型可用」嘅軟件同基建</span></p>
+<p>Reflection 嘅收入來自幫企業／政府部署 agent、客製模型、大規模運行。Laskin 認為長遠睇 Reflection「<strong>大概合理</strong>」會自成一家 hyperscaler 去食更多利潤；但現階段優先係先把模型推出去、建立「運行佢嘅需求」。呢點同佢嘅「效率＝賣點」策略一脈相承——Beam 唔係要「最強」，而係要「同能力下最省」。</p>
+
+<p><span class="sub-title">⑥ 「從頭訓練、唔蒸餾他人」係刻意嘅控制</span></p>
+<p>Antonoglou：擁有架構、數據同預訓練，對把 RL 推得更遠至關重要——初始訓練必須先畀 Beam 足以讓 RL 喺其上建構嘅推理能力；呢種控制亦讓團隊喺投入更多算力時維持模型穩定。另有地緣考量：讓美／英團隊端到端開發一個西方模型。呢個亦係對 10/8 CR「賣 RL 環境＝間接蒸餾通道」框架嘅直接回應。</p>
+
+<div class="section-title">三、Beam 規格：一份硬數字清單</div>
+
+<table>
+  <tr><th>項目</th><th>Beam 規格／數據</th></tr>
+  <tr><td>架構／參數</td><td>稀疏 <strong>Mixture-of-Experts</strong>：<strong>501B 總參數、23B 激活</strong>（每 token 激活 23B）</td></tr>
+  <tr><td>預訓練數據</td><td><strong>23.8 兆（23.8T）tokens</strong>（網絡＋授權專有數據集，精心策展）</td></tr>
+  <tr><td>上下文長度</td><td><strong>1M tokens</strong>（midtraining 擴展；RL rollout 最大 256K）</td></tr>
+  <tr><td>預訓練算力</td><td><strong>6,144 張 NVIDIA GB300</strong>、<strong>&lt;4 週</strong>；隨基建效率改進，現可約 <strong>12 天</strong>完成（Laskin 語）</td></tr>
+  <tr><td>RL 算力</td><td><strong>10,500 張 GB300 × 4 週</strong>；<strong>&gt;1 億次 rollouts</strong>（官方稱「史上任何開源實驗室中最大嘅 RL 運行之一」）</td></tr>
+  <tr><td>RL 環境</td><td>約 <strong>13 億個 sandboxes</strong>；<strong>100 萬個</strong>高品質 coding／agentic／STEM 環境</td></tr>
+  <tr><td>推理效率</td><td>進階推理上與 <strong>GLM-5.2</strong> 同分，但用 <strong>3–4× 更少推理算力</strong>；對比 2T+ 級 Qwen 3.8-Max 更明顯</td></tr>
+  <tr><td>授權／發布</td><td><strong>Apache 2.0</strong>；本月內釋出權重、技術報告、model card 同工具；目前先以 waitlist 早鳥版試用</td></tr>
+  <tr><td>安全評測</td><td>由美國 <strong>CAISS</strong> 同<strong>英國 AI Safety Institute</strong> 兩個政府機構評估中</td></tr>
+  <tr><td>下一代</td><td>已在訓練下一代模型（Laskin 稱「強得多」）；Antonoglou 稱 2027 年將推出<strong>顯著更大</strong>嘅模型</td></tr>
+</table>
+
+<div class="data-point">
+  <span>一句話定位</span>
+  官方：「Beam 推進西方開權重前沿，喺 coding／agentic 上<strong>與更大嘅 GLM-5.2 競爭、逼近 Qwen 3.8-Max</strong>；但喺<strong>原始能力</strong>上 Kimi K3 仍然領先——Beam 嘅優勢係<strong>推理時效率</strong>。」
+</div>
+
+<p><span class="sub-title">Benchmark（官方口徑，未經第三方核實；NR＝未報告）</span></p>
+<table>
+  <tr><th>Benchmark</th><th>Beam</th><th>Inkling</th><th>Nemotron 3 Ultra</th><th>GLM 5.2</th><th>GLM 5.3</th><th>Kimi K3</th><th>Qwen 3.8 Max</th><th>DeepSeek V4.1 Flash</th></tr>
+  <tr><td>DeepSWE v1.1</td><td><strong>44.4</strong></td><td>NR</td><td>NR</td><td>44.0</td><td>61.0</td><td>68.0</td><td>51.0</td><td>74.2</td></tr>
+  <tr><td>SWE Bench Pro v2-Hard</td><td>77.2</td><td>56.9</td><td>NR</td><td>NR</td><td>84.3</td><td>88.2</td><td>NR</td><td>NR</td></tr>
+  <tr><td>SWE Bench Pro v1</td><td>65.5</td><td>54.3</td><td>46.4</td><td>62.1</td><td>NR</td><td>NR</td><td>67.7</td><td>NR</td></tr>
+  <tr><td>Terminal Bench v2.1</td><td><strong>80.1</strong></td><td>63.8</td><td>56.4</td><td>81.0</td><td>88.2</td><td>88.3</td><td>86.6</td><td>90.6</td></tr>
+  <tr><td>SWE Atlas Codebase QnA</td><td>34.6</td><td>NR</td><td>NR</td><td>NR</td><td>61.0</td><td>68.0</td><td>NR</td><td>NR</td></tr>
+  <tr><td>SWEBench Multilingual</td><td>78.0</td><td>NR</td><td>67.7</td><td>NR</td><td>NR</td><td>NR</td><td>NR</td><td>NR</td></tr>
+  <tr><td>SWEBench Verified</td><td><strong>80.9</strong></td><td>77.6</td><td>70.7</td><td>NR</td><td>NR</td><td>NR</td><td>NR</td><td>NR</td></tr>
+</table>
+<p style="font-size:0.9rem;color:#777;">注意：Beam 喺 SWE Bench Verified（80.9）、Terminal Bench v2.1（80.1）等列嘅值，並未全面壓過 GLM 5.3／Kimi K3／DeepSeek V4.1 Flash。官方自己都承認「原始能力上 Kimi K3 仍領先」。所以呢張表要讀成「<strong>效率定位</strong>」而唔係「全面最強」。</p>
+
+<div class="section-title">四、技術詳情：高算力 RL 係核心 scaling 軸</div>
+
+<p><span class="sub-title">① 非同步策略梯度同「策略陳舊（policy staleness）」</span></p>
+<p>Beam 以<strong>非同步策略梯度（asynchronous policy gradients）</strong>訓練。規模上去之後，policy staleness 成為不穩定主因——長 rollout 嘅 token 由多個 checkpoint 產生，早期 token 相對當前策略愈嚟愈過時；訓練／推理引擎嘅數值唔匹配令問題加劇。團隊開發新算法喺呢種條件下維持穩定學習，<strong>即使學習自「一日前」產生嘅交互（落後 107 個權重版本）都仍然數值穩定</strong>。</p>
+
+<div class="data-point">
+  <span>基建數字</span>
+  訓練期間平均維持 <strong>110K 並行 rollouts</strong>；最高 <strong>170K 並行 sandboxes</strong>；共處理 <strong>&gt;10 億次 sandbox 創建請求</strong>，跨 <strong>20+ 集群、兩個 cloud、四個 region</strong>；<strong>90% 新 sandbox 10 秒內就緒</strong>。<br>
+  新權重到達推理集群中位數約 <strong>12 秒</strong>；分層分發令跨機架流量減 <strong>75%</strong>、全集群採用新權重快 <strong>2.2×</strong>。<br>
+  71 次推理事故都冇終止訓練；推理容量中位 <strong>8 分鐘</strong>恢復，損失產能僅佔 <strong>0.02%</strong> serving GPU-minutes。<br>
+  推理:訓練 GPU 比例喺 <strong>3.9:1 到 5.4:1</strong> 之間調整；trainer 跨 5 個 GPU mesh 配置 resize 而唔失訓練狀態。<br>
+  Trainer 批次平均 <strong>99.99% 填滿</strong>；平均 rollout 長度增長近 70% 時，每 GPU trainer 吞吐僅波動 1.5%。
+</div>
+
+<p><span class="sub-title">② 可控制長度懲罰（controllable length penalty）</span></p>
+<p>獎勵成功解、抑制多餘 token。RL 早期「完成長度下降、表現卻上升」（模型學會更有效率咁解題）；後期 agentic 能力增強後長度回升，但嗰啲額外 token 支撐咗性能提升。使用者可透過 <strong>reasoning effort 參數</strong>喺「短回應 ↔ 長推理」之間調整，配對任務同算力預算。效率嘅 Pareto 前緣分兩階段：<strong>先收縮</strong>（更省 token），<strong>再由高 reasoning effort 向外擴張</strong>（追求高效能）。</p>
+
+<p><span class="sub-title">③ 行為泛化：冇教過上網，自己學識去查其他模型</span></p>
+<p>訓練中 Beam 喺<strong>冇瀏覽任務</strong>嘅情況下變得更擅長上網——畀佢網路存取後，佢<strong>自學</strong>去查詢其他 AI 模型、並用文字辨識（OCR）工具讀文件。官方 demo 包括：<strong>NYC 地鐵實時地圖</strong>（搵文件、搞認證、攞幾何數據、前後端都砌埋）、一個 viral X 謎題嘅 <strong>陸地／海洋泛化實驗</strong>（180×90 網格、16,200 點，Beam 純文字模式下拎到 <strong>95.5% 覆蓋率</strong>，夾喺 Opus 5（92.5%）同 Fable 5（97.8%）之間）、以及為最小 Gemma-4 整 Text2SQL 微調 notebook（令 Gemma heldout 準確率升 <strong>66.5%</strong>）。</p>
+
+<p><span class="sub-title">④ 安全＝多教師蒸餾（MOPD）</span></p>
+<p>從同一預訓練 checkpoint 訓練第二個「安全對齊」模型（獨立 SFT＋RL），再以 <strong>multi-teacher on-policy distillation（MOPD）</strong>合併兩個教師（大規模 RL 教師＋專門安全對齊教師）。安全原則分三層：</p>
+<ol>
+  <li><strong>不可破嘅規則</strong>：遵循安全政策、維持 AI agent 身份；</li>
+  <li><strong>應持續滿足嘅品質</strong>：用上畀定嘅上下文、主張準確、承認不確定、透明遵循用戶請求；</li>
+  <li><strong>預設交互風格</strong>：直接、徹底、高效、主動預判。</li>
+</ol>
+<p>方法上採用 <strong>deliberative alignment</strong>（Guan et al., 2024）——把安全政策直接納入模型推理；數據集以對抗式迭代構建（每輪訓練模型 → 生成能誘發有害／過度拒絕嘅提示 → 把成功攻擊折回下一輪 SFT）。安全 RL 同時覆蓋單輪、多輪、越獄同 agentic 情境，同時<strong>降低過度拒絕同有害遵從</strong>。官方仲提到非可驗證域嘅獎勵可預測性：對齊階段多以生成式獎勵模型評判，其增益預測（r = 0.79）優於 Best-of-N 上限（r = 0.46）。</p>
+
+<p><span class="sub-title">⑤ 穩定嘅 MoE 優化</span></p>
+<p>架構結合 interleaved local/global attention、fine-grained routed experts、controlled residual stream、多種 load balancing。喺 DeepSeek 嘅「auxiliary-loss-free」負載均衡上引入<strong>專家偏置更新嘅 cosine decay</strong>，減少訓練後期路由擾動；再加 sequence-level balancing。結果：預訓練完成時<strong>最繁忙專家嘅負載只係 1.04×</strong>（近乎完美均勻）。殘差流方面，depth-based scaling ＋ SandwichNorm ＋ elementwise attention gating ＋ FP32 殘差累加，令 52 層嘅 residual RMS 全程有界、冇持續增長。</p>
+
+<div class="section-title">五、重點引用</div>
+
+<blockquote class="strong">
+  「擁有智能嘅唯一方式，按定義就係開源（The only way to own intelligence is, by definition, if it's open）。」
+  <span class="attribution">Misha Laskin</span>
+</blockquote>
+<blockquote class="strong">
+  「封閉模型喺房地產上等同於租房（Closed models are the equivalent in real estate to renting an apartment）。」
+  <span class="attribution">Misha Laskin（主張 AI「所有權市場」正在形成）</span>
+</blockquote>
+<blockquote class="strong">
+  「有可能你會達到一個能力水平，令你只想喺部署上更謹慎。」
+  <span class="attribution">Ioannis Antonoglou（回應「模型係唔係可能強到唔應該開放」）</span>
+</blockquote>
+<blockquote class="strong">
+  「（係唔係限制）應取決於模型能做咩——呢個同佢係唔係開源無關。」
+  <span class="attribution">Misha Laskin</span>
+</blockquote>
+<blockquote class="strong">
+  「佢哋（想擁有 AI 嘅企業同政府）今日其實冇好好嘅選擇。」
+  <span class="attribution">Misha Laskin（論主權 AI 市場）</span>
+</blockquote>
+
+<div class="section-title">六、行業 insight：呢集真正嘅訊號</div>
+
+<ul>
+  <li><strong>前沿訓練成本曲線（Laskin 口徑）</strong>：約 18 個月前「數億美元」→ 現在「個位數十億美元」→ 明年趨向「數百億美元」；每一代模型需約 <strong>4× 算力</strong>。呢條曲線同「開源如何可持續」直接衝突——Beam 嘅答案係<strong>把價值放在效率同服務，而唔係模型本身</strong>。</li>
+  <li><strong>開放 vs 封閉嘅戰場，已由「能力」轉向「效率＋主權」。</strong>對標中國開源（GLM／Qwen／Kimi／DeepSeek）成為美國新一波開源敘事嘅主軸；「開源當外交工具」同「西方開源替代」正面對撞。</li>
+  <li><strong>RL 成為新嘅規模軸。</strong>Beam 嘅 RL GPU 數（10.5K）同時長（4 週）、rollout 量（&gt;1 億）、環境數（100 萬）、sandbox（13 億）都顯示——2026 前沿競爭嘅重心，正由「預訓練堆 token」轉向「<strong>高算力 RL＋環境工程</strong>」。呢個同 10/8 CR 提到嘅「RL 環境產業＝間接蒸餾通道」係同一現象嘅兩面。</li>
+  <li><strong>「所有權市場」論係強力嘅行銷框架，但要小心。</strong>把閉源等同「租房」、開源等同「買樓」，聽落好靚，但忽略咗企業自託管前沿開源模型嘅實際 TCO——租樓唔使維修，買樓要。呢點係引用時必須補上嘅折算。</li>
+</ul>
+
+<div class="section-title">七、前後脈絡</div>
+
+<ul>
+  <li>接續 10/2 No Priors〈Frontier Chips for Frontier AI Labs〉（Fractile 嘅 Walter Goodwin）——上集談「前沿實驗室要咩芯片」，本集談「前沿模型點樣喺算力約束下被訓練出嚟並商業化」，構成晶片 → 模型嘅一條線。</li>
+  <li>同 10/8 CR〈The Curve〉嘅「前沿只有 2–3 家」「RL 環境產業＝間接蒸餾通道」直接互文：Beam 自稱「唔蒸餾他人」，正是對該「蒸餾／追趕」框架嘅回應。</li>
+  <li>同本輪 Latent Space 生物圓桌（Deep Dive #204）同構：兩集都喺答「規模之外仲需要咩」——Beam 答「效率＋所有權」，AlphaFold 圓桌答「問題優先＋科學直覺」。</li>
+</ul>
+
+<div class="section-title">八、爭議點／存疑（必讀）</div>
+
+<ul>
+  <li><strong>「開源更安全」嘅立場有爭議</strong>：Linus's Law 類比用於 AI 安全並非公認；「單點故障」論述亦被批評忽略開源擴散風險。而 Laskin／Antonoglou 自己都承認「能力過強可能唔應該開放」——呢點同「開源更安全」係有張力嘅。</li>
+  <li><strong>「一手」程度</strong>：節目本身係第一手訪談，但所有具體數字（算力、benchmark、成本曲線）均為<strong>公司口徑</strong>，且基準分數公司自報、未經第三方核實；TNW 明言「未獨立驗證」。效率比較公司自己講「係近似而非實測成本」。</li>
+  <li><strong>節目逐字稿未取得</strong>：No Priors 原生 feed 只提供 show notes ＋章節時間軸。本文具體引文（Laskin／Antonoglou）取自 <strong>Sources podcast（Alex Heath）</strong>同場訪談同 <strong>Semafor</strong> 報導；模型規格、benchmark、訓練細節取自 <strong>Reflection 官方 blog</strong> 同 <strong>TNW</strong>。標題式章節以外嘅「論證細節」係綜合上述來源重構。</li>
+  <li><strong>「所有權市場」論</strong>忽略企業自託管前沿開源模型嘅實際 TCO，係立場多於已驗證嘅市場事實。</li>
+  <li><strong>Benchmark 表</strong>唔應讀成「Beam 全面最強」——官方自己都話「原始能力上 Kimi K3 仍領先」，Beam 嘅賣點係推理效率。</li>
+</ul>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上內容出自 <em>No Priors</em>〈Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin〉（2026-10-09 17:24 UTC 發布；主持 Sarah Guo、Elad Gil）；模型規格、訓練細節同 benchmark 取自 <strong>Reflection AI 官方 blog</strong>〈Reflection's 501B open-weight model〉（https://reflection.ai/blog/introducing-beam ）；節目內引文取自同場 <strong>Sources podcast</strong>（Alex Heath）訪談同 <strong>Semafor</strong> 報導；效率／成本比較屬公司自報近似值。分析、脈絡整理及「Vee 嘅萃取」為本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #205 · No Priors（2026-10-09 · Beam／Reflection AI：Misha Laskin）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-10 06:00 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>

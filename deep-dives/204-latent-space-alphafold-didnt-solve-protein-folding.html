@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space：「AlphaFold 其實冇解決蛋白折疊」——Pushmeet Kohli × Sal Candido 嘅生物學苦澀教訓</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.9rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.45rem 0.6rem; text-align: left; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  .ts { color: #b08a5e; font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · AI for Biology 圓桌 · 2026-10-10 00:31 UTC 發布 · 約 32 分鐘（現場錄音）</div>
+  <h1>「AlphaFold 其實冇解決蛋白折疊」——Latent Space × DeepMind 嘅 Pushmeet Kohli ＋ Biohub 嘅 Sal Candido：苦澀教訓嘅生物學版、可解釋性取決於由誰解釋、cryo-EM 同 10× 思維</h1>
+  <div class="meta">
+    <span>📅 2026-10-10（北京時間 10-10 08:31）</span><span>·</span><span>🎙️ Latent Space（主持 Brandon Anderson）</span><span>·</span><span>👤 Pushmeet Kohli（Google DeepMind 研究副總裁）、Sal Candido（Chan Zuckerberg Biohub）</span><span>·</span><span>⏱️ 約 32m</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係一場「<strong>苦澀教訓（Bitter Lesson）套落生物學</strong>」嘅專場圓桌，喺一個大型生物學計劃發布現場錄製。佢最有價值嘅地方，唔係任何一個新數據，而係<strong>來自模型作者本人嘅一手祛魅</strong>：AlphaFold 團隊核心成員 Pushmeet Kohli 親自講「<strong>AlphaFold 其實冇解決蛋白折疊</strong>」，並提出一個锋利嘅框架——「<strong>可解釋性取決於由誰來解釋</strong>」。全篇約 32 分鐘，逐字稿完整（含時間碼），以下引文均為直接引用。
+</p>
+
+<div class="section-title">一、出場人物：一個「唔神聖」嘅嘉賓組合</div>
+
+<ul>
+  <li><strong>Pushmeet Kohli</strong>（Google DeepMind 研究副總裁）：AlphaFold 團隊核心成員之一，長期與 <strong>John Jumper</strong> 一起思考「我們到底喺解咩問題」。自述背景極跨域——「我最初係做<strong>安全研究</strong>，跟住轉電腦視覺、貝氏理論、判別式機器學習、深度學習、AI for coding，最後做科學。」呢個背景解釋咗佢點解成日由「電腦視覺研究員」嘅視角去諗生物數據。</li>
+  <li><strong>Sal Candido</strong>（Chan Zuckerberg Biohub）：蛋白質語言模型／生物基礎模型方向，前 Google。風格自嘲、務實，一開場就話「我懶，所以我用現成有嘅數據」。</li>
+  <li><strong>Brandon Anderson</strong>（主持）：帶住一個好框架入場——「苦澀教訓嘅數據版」。</li>
+</ul>
+
+<div class="section-title">二、苦澀教訓嘅生物學版：要先「搵到」scaling law</div>
+
+<p>主持人以 Sutton 嘅苦澀教訓（「能 scale 嘅方法最終會贏」）开场，問 Sal：數據有冇苦澀教訓？</p>
+
+<p><span class="sub-title">① 一個常見誤解：scaling law 唔係到處都有</span></p>
+<p>Sal 嘅答案係本集其中一個最實用嘅概念澄清：</p>
+
+<blockquote class="strong">
+  「scaling law 有一個誤解，就係以為 scaling law 到處都有、永遠存在。<strong>好多工作其實係喺度『搵』嗰條 scaling law。</strong>」
+  <span class="attribution">Sal Candido <span class="ts">[00:01:00]</span></span>
+</blockquote>
+
+<p>佢解釋：一旦你搵到一個情境——「投入更多算力／更多數據 → 得到更好結果」——你就「<strong>可以轉動曲柄（turn the crank）</strong>」，問題由科學變成工程。而呢件事<strong>既關乎架構，也非常關乎數據</strong>：</p>
+
+<blockquote>
+  「如果你冇帶住解答問題所需嘅資訊同統計結構嘅數據，你就唔會得到一個有你要嘅能力同理解嘅模型。你只能夠由你手上有嘅數據抽取資訊，再用佢去泛化。」
+  <span class="attribution">Sal Candido <span class="ts">[00:01:00]</span></span>
+</blockquote>
+
+<p><span class="sub-title">② 低品質嘅宏基因組數據，反而令模型更好</span></p>
+<p>Sal 自認「懶」，所以傾向用「現成有嘅數據」。佢畀咗一個反直覺嘅例子：</p>
+
+<div class="highlight-box">
+  <strong>Metagenomic（宏基因組）序列。</strong>Candido 話呢啲「唔係最高品質嘅數據，我保證當中好多根本唔係一個完整真實嘅蛋白」——但用佢哋訓練蛋白語言模型，<strong>反而提升</strong>咗「設計真係 work 嘅蛋白」同「理解已知蛋白」嘅表現。呢個係「低品質、廣覆蓋」數據價值嘅一手佐證。
+</div>
+
+<p>但佢即刻補一刀，劃清界線：呢種發現好容易被人誤讀成「總之無腦放大易生成嘅數據就得」。Sal 明言唔同意，並指出真正嘅出路係——<strong>由社區一齊問「為解決問題，我哋需要咩數據」</strong>，而唔係各自遷就手上現成嘅嘢。呢個亦係佢口中當日發布嘅 BBI 計劃嘅意義。</p>
+
+<p><span class="sub-title">③ 問題優先，解法靈活——呢個先係真正嘅苦澀教訓</span></p>
+<p>Pushmeet 嘅回應係全篇嘅思想主軸。佢回憶 Rich Sutton 當年喺 DeepMind 嘅講座，強調佢拎走嘅唔係「數據有冇用」嘅技術判斷，而係一個更<strong>概念性</strong>嘅嘢：</p>
+
+<blockquote class="strong">
+  「有時我哋會用一種非常宗教式嘅方式睇問題：『我係做模型嘅』或者『我係做數據生成嘅』。我認為嗰個先係苦澀教訓。帶住嗰種心態，你可能唔會成功。<strong>問題先嚟，你應該喺解法空間裡保持靈活。</strong>」
+  <span class="attribution">Pushmeet Kohli <span class="ts">[00:04:54]</span></span>
+</blockquote>
+
+<p>佢補上第三個維度：進到過程裡嘅唔止數據同建模，仲有<strong>領域專業（expertise）</strong>。AlphaFold 就係一個「因為冇數據槓桿、所以唯有押注建模」嘅例子；而虛擬細胞（cell-by-gene 數據）就係一個「數據未到位、所以大佬都要收手」嘅例子。</p>
+
+<div class="data-point">
+  <span>兩個反例</span>
+  <strong>AlphaFold</strong>：因為「我哋冇核心專業、甚至冇資源去講『將 PDB 擴充一個數量級』」，所以唯有<strong>押注建模</strong>取得最大槓桿。<br>
+  <strong>虛擬細胞</strong>：用 cell-by-gene 數據做咗大量工作後，「<strong>好清楚數據仲未到位</strong>」，撐唔起建造虛擬細胞嘅宏大目標。<br>
+  → 結論：唔好宗教式咁跟住「數據生成」或「建模」某一邊走。
+</div>
+
+<div class="section-title">三、手工架構 vs. 規模：「畀模型一個不公平嘅優勢」</div>
+
+<p>主持問：AlphaFold 2 係一件「藝術品」，每個部件都有刻意設計；但行業共識似乎走向「先 scale、再算」。仲需唔需要手工藝？</p>
+
+<p>Pushmeet 嘅答案係本集第二個核心概念：<strong>科學直覺係刻意的，唔係偶然</strong>。</p>
+
+<blockquote class="strong">
+  「建構一個更好模型嘅藝術同工藝唔係偶然。<strong>來自生物物理、生物化學嘅科學直覺話畀我哋：胺基酸殘基唔係各自為政，佢哋受其他殘基影響。咁就將佢烤進去（bake that in）。</strong>如果你喺科學社群學到嘢，就用嗰啲資訊——畀模型嗰個不公平嘅優勢。」
+  <span class="attribution">Pushmeet Kohli <span class="ts">[00:10:48]</span></span>
+</blockquote>
+
+<p>佢指出呢個做法令模型<strong>更省數據</strong>——唔使由零重學一切。同時佢提醒：數據策展本身都係一門藝術，「唔係話『塞更多數據』就得；你複製同一批數據，唔會前進。重點唔止係大數據，而係<strong>好數據＋理解數據嘅覆蓋範圍</strong>。」</p>
+
+<p><span class="sub-title">誘導偏置 vs. 規模嘅「臨界點」</span></p>
+<p>Sal 接住補充一個好重要嘅張力：</p>
+
+<blockquote>
+  「數據少嘅時候，模型裡多啲歸納偏置（inductive bias）幫你拎到結果……隨住數據愈嚟愈多，有時模型會發現你原本唔知道嘅嘢，而有時嗰個偏置若唔完全正確，反而會拖你後腿。<strong>存在一個 tipping point。</strong>」
+  <span class="attribution">Sal Candido <span class="ts">[00:12:24]</span></span>
+</blockquote>
+
+<p>佢亦反對主持將「工藝」限定喺手工架構：「scale 本身都有好多工藝——把模型變大、餵更多數據、更多算力，當中有大量算法工作。」並給出一個清醒嘅架構判斷：</p>
+
+<blockquote class="strong">
+  「我們見到由標準 transformer 走向更<strong>定制化嘅架構</strong>……<strong>我完全唔認為我哋身處 post-transformer 世界</strong>，但我哋喺度改造呢啲架構，令佢哋更 fit for purpose、就算喺 internet-scale 數據下都表現更好。」
+  <span class="attribution">Sal Candido <span class="ts">[00:12:24]</span></span>
+</blockquote>
+
+<div class="section-title">四、標題命題：AlphaFold 其實冇「解決」蛋白折疊</div>
+
+<p>主持嘅前設係：「新聞會話畀你聽，蛋白結構預測已經解決咗；但同我啲朋友傾，佢哋會話『仲有好多嘢未做』——功能、動力學、設計仍然係完全開放嘅問題。AlphaFold 2 發布以嚟約五年。」Pushmeet 嘅回答係全篇最鋒利嘅一段。</p>
+
+<blockquote class="strong">
+  「蛋白質唔係積木，佢哋嘅行為都唔似積木。<strong>我成日話蛋白質係積木，但我其實唔相信呢句話。</strong>蛋白極其複雜、無序（disordered），形狀會隨情境改變。John Jumper 同我成日討論：我哋到底喺解咩？<strong>我哋唔知道蛋白真正取嘅基態（ground state），都唔知道蛋白實際構象嘅分佈。</strong>我哋所做嘅，係<strong>複製某人取得並存入 PDB 嘅嗰一個結構</strong>。而佢只係咁啱有用。」
+  <span class="attribution">Pushmeet Kohli <span class="ts">[00:15:28]</span></span>
+</blockquote>
+
+<p>佢補充：頂層敘事上「我哋有進展」較好傳達，但「呢個領域嘅科學家知道仲剩幾多嘢要做」；所以——</p>
+
+<blockquote class="strong">
+  「好多值得慶祝，但<strong>唔好停止資助蛋白結構同蛋白動力學，因為我哋先啱啱開始</strong>。」
+  <span class="attribution">Pushmeet Kohli <span class="ts">[00:15:28]</span></span>
+</blockquote>
+
+<p><span class="sub-title">魔法棒要變出咩？答案：cryo-EM 顯微圖</span></p>
+<p>被問「如果畀你一支魔法棒，你會想變出咩嚟加速功能／動力學／設計」，Pushmeet 用「電腦視覺研究員」嘅身份答：</p>
+
+<blockquote>
+  「PDB 係咩數據？我應該喺<strong>源頭</strong>工作。我應該睇 cryo-EM 顯微圖。我唔想要嗰啲結構，佢哋一定漏咗好多數據。我應該<strong>直接喺 cryo-EM 顯微圖上面運算</strong>。」
+  <span class="attribution">Pushmeet Kohli <span class="ts">[00:17:54]</span></span>
+</blockquote>
+
+<p>佢承認自己試過，但「需要更多工作」——並謙虛話「或者某日會有比我更好嘅人去嘗試，然後我哋會有進展」。呢度揭示咗一個關鍵取捨：<strong>PDB 只係「二手結構」，而直接操作原始顯微圖，理論上可以抽到被丟失嘅動力學同分佈資訊。</strong></p>
+
+<div class="section-title">五、由「輻條」到「整輛自行車」：Sal 嘅著名比喻</div>
+
+<blockquote class="strong">
+  「我而家建嘅模型，好似一個想搞懂自行車點運作、但只係喺度建模一根<strong>輻條（spoke）</strong>嘅人。模型會愈嚟愈好，但你真正要做嘅，係由輻條 → 輪子 → <strong>整輛自行車</strong>，因為嗰個先係人們想理解嘅嘢。」
+  <span class="attribution">Sal Candido <span class="ts">[00:19:09]</span></span>
+</blockquote>
+
+<p>佢仲補多一刀，暗諷行業方向：</p>
+
+<blockquote>
+  「伸延個比喻，似乎人們想用一個<strong>自行車嘅模型</strong>，去設計一台<strong>皮卡車</strong>嘅零件。」
+  <span class="attribution">Sal Candido <span class="ts">[00:19:09]</span></span>
+</blockquote>
+
+<p>出路係「把模型放進佢真實運作嘅生物情境，學到更廣尺度嘅交互」。但佢亦同意要繼續做折疊模型——因為佢哋會繼續變好。</p>
+
+<div class="section-title">六、Feynman 命題同「模型內部藏住嘅知識」</div>
+
+<p>主持引 Feynman：「我不能創造嘅，我就唔理解（That which I cannot create, I do not understand）。」然後指出：我哋而家正身處一個「好容易喺完全唔理解嘅情況下創造**」嘅世界。Sal 嘅回應分兩半：</p>
+
+<blockquote>
+  「遠在 AI 出現之前，我哋就一直用神奇黑箱設計嘢……喺某種意義上，嗰啲仍然有用。但<strong>理解非常重要</strong>，而呢個係我諗 AI 嘅大事之一。」
+  <span class="attribution">Sal Candido <span class="ts">[00:21:18]</span></span>
+</blockquote>
+
+<blockquote class="strong">
+  「呢啲模型裡面<strong>藏住嘅資訊，比我們所知嘅多得多</strong>。我哋做咗好多可解釋性工作……人們知道蛋白語言模型學到咗一啲結構嘅概念，但我哋仲搵到<strong>功能（functions）同運動（motions）</strong>嘅資訊。就算係我哋現有嘅模型，都仲有好多未被解鎖。<br>講到底，你會預期一個世界模型由壓縮呢啲資訊而浮現。佢點樣做嘢？佢點樣設計一個蛋白？<strong>佢將演化積累嘅資訊壓縮咗入模型</strong>。除咗產生對我們有用嘅嘢，單單睇模型裡面有咩，就已經有嘢可以學。」
+  <span class="attribution">Sal Candido <span class="ts">[00:22:18]</span></span>
+</blockquote>
+
+<div class="section-title">七、本集最鋒利：可解釋性取決於「由誰來解釋」</div>
+
+<p>Pushmeet 對呢個問題畀出一個分層答案，係全篇最有新聞價值嘅一段。佢先講<strong>校準（calibration）</strong>：</p>
+
+<blockquote>
+  「AlphaFold 唔完美。AlphaFold 2 當時喺嗰個集合上 GDT 約 <strong>90</strong>。但即使佢 GDT 95，如果佢嘅 pLDDT（置信度）完全未校準，邊個會信佢？想像佢神奇咁畀出好答案、仲話自己好有自信，然後你埋頭做咗一年，先發現佢完全錯——<strong>不確定度嘅校準極其重要</strong>。」
+  <span class="attribution">Pushmeet Kohli <span class="ts">[00:23:53]</span></span>
+</blockquote>
+
+<p>跟住係核心嘅認識論轉向：</p>
+
+<blockquote class="strong">
+  「可解釋性都係 in the eye of the beholder——<strong>是誰在解釋？</strong>」<br>
+  「如果你講嘅係『由一個人腦理性系統、帶住人腦嘅認知同算力限制』去解釋，咁唔——AlphaFold 2 唔可解釋。<strong>但如果你問嘅係：佢對一個更大、更精密嘅模型而言係唔係可解釋——<em>或者</em>係。只係我哋唔 get 佢啫。」<br>
+  「未來嘅前沿模型，或者能夠預測 AlphaFold 會做咩，並提出一套關於佢點樣生成結果嘅理論。」
+  <span class="attribution">Pushmeet Kohli <span class="ts">[00:25:56]</span></span>
+</blockquote>
+
+<p>佢嘅結論：真正必要嘅唔係「完全可解釋」，而係「<strong>可信（trustworthy）到人可以據以做可行動嘅決策</strong>」。佢仲補咗一個行為層證據：AlphaFold 2 開源權重後，人們發現佢<strong>係一個好好嘅「無序蛋白預測器」</strong>——證明佢泛化。</p>
+
+<div class="highlight-box">
+  <strong>分層可解釋性框架（本集最大貢獻）：</strong>
+  <ol style="margin:0.8rem 0 0;">
+    <li><strong>行為／泛化層面</strong>：理解模型識做咩、唔識做咩、強項同限制——「極其重要，唔可以冇呢個刻畫就用佢」。AlphaFold 2 喺呢層係可解釋嘅。</li>
+    <li><strong>內部機制層面</strong>：點解佢 work、點解畀呢個答案——呢層連作者都未完全掌握。</li>
+    <li><strong>「由誰解釋」</strong>：對人腦唔可解釋 ≠ 對一個更大嘅模型唔可解釋。<strong>未來模型可能成為其他模型嘅解釋者。</strong></li>
+  </ol>
+</div>
+
+<div class="section-title">八、收尾：10× 而非 10% 嘅思維</div>
+
+<p>被問「幾時先會見到 AI 成果入到診所」，Pushmeet 直接話呢條問題<strong>問得唔好</strong>——AI 今日已經用喺藥物發現嘅每一環。佢把問題重構成：<strong>你想加速嘅係咩？</strong>lead optimization？靶點發現？臨床前？毒理？</p>
+
+<blockquote>
+  「未來幾年——呢個亦係今日宣布嘅計劃點解極其重要——我哋需要攻克生物學嘅一啲難題。<strong>只有噉樣，先會解鎖真正能夠戲劇性改變藥物發現嘅加速。</strong>更大嘅加速，只會喺更好理解呢個計劃想建造嘅生物模型之後才解鎖。」
+  <span class="attribution">Pushmeet Kohli <span class="ts">[00:28:08]</span></span>
+</blockquote>
+
+<p>Sal 接住端出佢自 Google 學到嘅一條方法論：</p>
+
+<blockquote class="strong">
+  「有時更容易嘅做法係問『要做到 <strong>10×</strong> 改進需要咩』，而唔係 10%。唔係因為 10× 嗰條路本身更簡單，而係<strong>佢讓你採取更寬嘅視野、睇見你原本冇喺走嘅解法</strong>，返到第一原理。<br>10% 同 10× 兩條路都珍貴，兩樣都應該做。我哋 Biohub 有一句好靚、好高嘅使命：<strong>治癒所有疾病</strong>。如果你真係要做到，你就必須搵出嗰條 10× 嘅路。」
+  <span class="attribution">Sal Candido <span class="ts">[00:29:47]</span></span>
+</blockquote>
+
+<div class="section-title">九、本集關鍵數據一覽</div>
+
+<table>
+  <tr><th>項目</th><th>數值／事實</th></tr>
+  <tr><td>AlphaFold 2 GDT</td><td>當時評測集約 <strong>90</strong>（但關鍵指標係 pLDDT 校準）</td></tr>
+  <tr><td>AlphaFold 2 發布至今</td><td>約 <strong>五年</strong>；功能、動力學、設計仍完全開放</td></tr>
+  <tr><td>PDB</td><td>全球科學家數十年積累嘅「二手結構」；DeepMind 冇資源擴充一個數量級</td></tr>
+  <tr><td>虛擬細胞</td><td>cell-by-gene 數據嘗試後，<strong>數據仍未到位</strong></td></tr>
+  <tr><td>Metagenomic 序列</td><td>品質低、甚至多數非完整真實蛋白，<strong>卻提升</strong>蛋白語言模型表現</td></tr>
+  <tr><td>Dream modality</td><td><strong>cryo-EM 顯微圖</strong>——直接喺源頭抽動力學同分佈資訊</td></tr>
+  <tr><td>架構觀</td><td>唔係 post-transformer，但 transformer 正被改造得更 fit for purpose</td></tr>
+</table>
+
+<div class="section-title">十、Vee 嘅萃取：呢集真正嘅訊號</div>
+
+<ul>
+  <li><strong>「AlphaFold 冇解決蛋白折疊」係來自作者本人嘅一手祛魅。</strong>要準確理解：Kohli 唔係講 AlphaFold 冇用，而係講「我哋複製嘅係 PDB 裡被人解出嘅嗰一個結構，唔係蛋白真實嘅構象分佈」。呢個區分（靜態結構 ≠ 動力學／構象分佈）係對「AI for Science 已勝利」敘事嘅一次降溫——而講呢句嘅人，正係 AlphaFold 團隊核心。</li>
+  <li><strong>「可解釋性取決於由誰解釋」係一個正在浮出嘅新框架。</strong>Kohli 把標準由「人類可解釋」鬆綁到「可信、可校準、可據以決策」，並預言<strong>未來模型可能成為其他模型嘅解釋者</strong>。呢個喺 AI 安全／可解釋性辯論裡係頗有爭議嘅立場，但佢畀咗一個具體嘅落地判準：pLDDT 校準比 GDT 分數更能決定「你敢唔敢用」。</li>
+  <li><strong>「問題優先，解法靈活」係可以帶走嘅方法論。</strong>Sutton 嘅苦澀教訓被重讀成「唔好宗教式咁忠於某一種解法」——呢個比「數據必勝」嘅口號有用得多，因為佢允許「有時確實要手工架構、有時確實要攞原始數據」。</li>
+  <li><strong>低品質數據反而有用 vs. 唔好無腦放大，兩句並存先係成熟判斷。</strong>Sal 一邊舉 metagenomic 例子證明「垃圾數據有價值」，一邊親自駁斥「總之 scale 易攞嘅數據」。呢種「兩邊都講」正是行業此刻需要嘅精度。</li>
+  <li><strong>同同日 No Priors × Beam 嘅隱性對話。</strong>兩集都在答同一條問題——「規模之外仲需要咩」。Beam 答「效率＋所有權」，呢場生物圓桌答「問題優先＋科學直覺＋好數據」。2026 年嘅核心問題，已經由「scale 幾大」變成「scale 之外仲欠咩」。</li>
+</ul>
+
+<div class="section-title">十一、爭議點／存疑（必讀）</div>
+
+<ul>
+  <li><strong>「AlphaFold 冇解決蛋白折疊」</strong>與大眾／媒體敘事直接牴觸，係本輪最具衝擊性嘅一手表述；Kohli 甚至自認日常講法（「蛋白係積木」）同其信念相反。</li>
+  <li><strong>「可解釋性取決於由誰解釋」</strong>暗示「畀更大模型去解釋小模型」可能取代「人類可解釋性」，喺安全社群係有爭議嘅立場，需與其他可解釋性路線分開評估。</li>
+  <li><strong>低品質數據反而有用</strong>可能被誤讀成「無腦放大易得數據就好」；Sal 自己已駁斥，引用時必須連同呢個限制一齊講。</li>
+  <li><strong>本集對應嘅 Biohub 計劃（BBI）</strong>喺逐字稿中只以「today's effort／announced today／in the open」帶過，未展開命名同具體內容。</li>
+  <li><strong>嘉賓身份、GDT≈90、pLDDT、cryo-EM 取捨</strong>皆為 Kohli 節目上嘅自述，非第三方審計；「我試過但需要更多工作」属未發表工作。</li>
+</ul>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上內容出自 <em>Latent Space</em>〈Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli, Google DeepMind &amp; Sal Candido, Biohub〉（https://www.latent.space/p/biohub-deepmind ；2026-10-10 00:31 UTC 發布；主持 Brandon Anderson；現場圓桌錄音）。本文引文取自該集<b>完整逐字稿</b>（含時間碼），為直接引用；中文版為本站意譯／整理。分析、脈絡整理及「Vee 嘅萃取」為本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #204 · Latent Space（2026-10-10 · AI for Biology 圓桌：Pushmeet Kohli × Sal Candido）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-10 06:00 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
