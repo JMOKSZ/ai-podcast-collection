@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度萃取報告 · 2026-10-10</title>
+<style>
+  :root { --bg:#faf8f5; --ink:#1f1c18; --muted:#6b6259; --line:#e3ddd4; --accent:#8a6d3b; --quote:#3b342c; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--ink);
+         font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+         line-height:1.78; margin:0; padding:0 20px; }
+  .wrap { max-width:860px; margin:0 auto; padding:48px 0 80px; }
+  header { border-bottom:2px solid var(--ink); padding-bottom:22px; margin-bottom:34px; }
+  h1 { font-size:1.9rem; margin:0 0 10px; letter-spacing:.01em; }
+  .meta { color:var(--muted); font-size:.92rem; }
+  .meta span { display:inline-block; margin-right:18px; }
+  h2 { font-size:1.35rem; margin:52px 0 14px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+  h3 { font-size:1.12rem; margin:34px 0 6px; }
+  h4 { font-size:1.02rem; margin:26px 0 8px; color:#3a332a; border-left:3px solid var(--accent); padding-left:10px; }
+  .ep { margin:26px 0 8px; }
+  .ep .tag { font-size:.82rem; color:var(--muted); font-weight:normal; }
+  ul { padding-left:22px; }
+  li { margin:6px 0; }
+  blockquote { margin:14px 0; padding:10px 18px; border-left:3px solid var(--accent);
+               background:#f3efe8; color:var(--quote); font-style:italic; }
+  blockquote .who { display:block; font-style:normal; font-size:.82rem; color:var(--muted); margin-top:6px; }
+  table { border-collapse:collapse; width:100%; margin:14px 0; font-size:.92rem; }
+  th,td { border:1px solid var(--line); padding:7px 10px; text-align:left; }
+  th { background:#f1ece4; }
+  .kv { color:var(--muted); font-size:.9rem; }
+  .sec-label { font-weight:bold; color:#4a4136; }
+  .note { background:#f6f2ea; border:1px solid var(--line); padding:12px 16px; font-size:.9rem; color:var(--muted); margin:16px 0; }
+  .no-new li { color:#4a4136; }
+  hr { border:0; border-top:1px solid var(--line); margin:44px 0; }
+  a { color:var(--accent); }
+  footer { margin-top:60px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; }
+  .badge { display:inline-block; font-size:.72rem; padding:1px 8px; border:1px solid var(--line); border-radius:10px; color:var(--muted); margin-left:8px; vertical-align:middle; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>AI 播客深度萃取報告</h1>
+  <div class="meta">
+    <span><strong>報告日期</strong>：2026-10-10（六）</span>
+    <span><strong>生成時間</strong>：2026-10-10 02:05 UTC ／ 10:05 北京時間</span>
+    <span><strong>掃描窗口</strong>：2026-10-09 → 2026-10-10</span>
+  </div>
+  <div class="meta" style="margin-top:6px;">
+    來源：10 檔播客 RSS／YouTube（Dwarkesh、Latent Space、Cognitive Revolution、No Priors、ML Street Talk＋張小珺、十字路口、硅谷 101、42 章經、屠龍之術）
+  </div>
+</header>
+
+<div class="note">
+<strong>本輪重點（一句話）</strong>：今日新增 2 條，<b>全在英文檔</b>（中文 5 檔全無新集），但兩條都是主線級硬內容。①<b>Latent Space 一場 AI-for-Biology 圓桌</b>——DeepMind 的 Pushmeet Kohli（AlphaFold 團隊）親自拆解「<b>AlphaFold 其實沒有解決蛋白折疊</b>」：它複製的是 PDB 裡被人解出的那一個結構，而非蛋白真實的構象分佈；並拋出「<b>可解釋性取決於由誰來解釋（人 vs 更大的模型）</b>」。②<b>No Priors 專訪 Reflection AI 的 Misha Laskin</b>——西方首個「前沿級」開權重推理模型 <b>Beam（501B 總參／23B 激活 MoE）</b>上線：RL 用了<b>比預訓練更多的 GPU</b>（10.5K GB300 × 4 週、>1 億 rollouts），比同級模型省<b>3–4× 推理算力</b>，Apache 2.0 開源。兩集共同點：<b>「擁有 vs 租用」的智能所有權、以及「規模之外還需要什麼」</b>。
+</div>
+
+<!-- ============================ 中文播客 ============================ -->
+<h2>中文播客</h2>
+
+<p class="kv">本輪 5 檔中文播客（張小珺商業訪談錄、十字路口 Crossing、硅谷 101、42 章經、屠龍之術）<b>均無新集</b>——逐一以原生 xyzfm／fireside feed 頂條核實（見文末「本輪無新集」）。以下直接進入英文檔。</p>
+
+<!-- ============================ 英文播客 ============================ -->
+<h2>英文播客</h2>
+
+<h3>Latent Space（主播 swyx + Alessio Fanelli）</h3>
+
+<div class="ep">
+<h4>Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli, Google DeepMind &amp; Sal Candido, Biohub <span class="tag">🎙️ 發布：2026-10-10 00:31 UTC（北京時間 10-10 08:31）</span></h4>
+</div>
+
+<p class="kv">來源：Latent Space / Substack 原文全文＋逐字稿（約 26 KB，含全部章節時間軸與逐字引文，未截斷）。<span class="badge">一手</span>（現場圓桌錄音逐字稿）</p>
+
+<p><span class="sec-label">主題</span>：這是一場<b>「Bitter Lesson（苦澀教訓）套用到生物學」</b>的專場圓桌——由 <b>Brandon Anderson</b> 主持，Google DeepMind 的 <b>Pushmeet Kohli</b> 與 Chan Zuckerberg Biohub 的 <b>Sal Candido</b> 對談。核心命題：<b>光靠堆算力與數據解決不了生物學</b>；AlphaFold 的突破只是開始；要建造真正「理解生物」的 AI，得先問「我們需要什麼數據」，而不是「我們手上有什麼數據」。節目同場呼應當日 Biohub 的一項大型計劃發布（BBI）。
+
+<p><span class="sec-label">嘉賓背景</span></p>
+<ul>
+<li><b>Pushmeet Kohli</b>（Google DeepMind）：AlphaFold 團隊核心成員之一，研究副總裁。自述背景非常跨域——「我一開始是<b>安全研究員</b>，之後轉電腦視覺、貝氏理論、判別式機器學習、深度學習、AI for coding，最後做科學（science）。」與 John Jumper 長期共同思考「我們到底在解什麼問題」。</li>
+<li><b>Sal Candido</b>（Chan Zuckerberg Biohub）：蛋白質語言模型／生物基礎模型方向，曾任職 Google。風格自嘲、務實（「I'm lazy」）。</li>
+<li><b>Brandon Anderson</b>（主持人）。</li>
+</ul>
+
+<p><span class="sec-label">核心論點</span></p>
+<ul>
+<li><b>① 生物學也有「苦澀教訓」，但它不是「無腦放大」——而是「先找對 scaling law」。</b>Sal 指出一個常見誤解：<i>「scaling law 並非到處都有、永遠存在。很多工作其實是在<b>找出</b>那條 scaling law。」</i>——要找到「投入更多算力／數據 → 得到更好結果」的情境，一旦成立，才變成可「轉動曲柄（turn the crank）」的工程問題。而這既關乎架構，也非常關乎數據：「如果數據裡沒有解決問題所需的資訊與統計結構，你就不會得到想要能力的模型。」</li>
+<li><b>②「問題優先，解法靈活」才是真正的苦澀教訓。</b>Pushmeet 回憶 Rich Sutton 當年在 DeepMind 的原始講座，他強調那不是「數據有沒有用」的技術判斷，而更<b>概念性</b>：<i>「有時候我們用一種宗教式的方式看待問題——『我是做模型的』或『我是做數據生成的』。我認為那才是苦澀教訓。帶著那種心態，你可能不會成功。<b>問題先來，你應該在解法空間裡保持靈活。</b>」</i>解法不只數據或建模，還有<b>領域專業（expertise）</b>。</li>
+<li><b>③ AlphaFold 的「手工架構」不是偶然，是科學直覺的刻意注入。</b>Pushmeet：<i>「建構更好模型的藝術與工藝不是偶然的。科學直覺（生物物理／生物化學）告訴我們：胺基酸殘基不是各自為政，它們彼此影響——那就把它<b>烤進去（bake that in）</b>。若你從科學社群學到了東西，就用上它，<b>給模型那個不公平的優勢</b>。」</i>這讓模型更省數據，不用從頭重學一切。但數據策展本身也是藝術：「不是說『塞更多數據』就好；複製同樣的數據你不會前進。這不只是大數據，而是<b>好數據</b>＋理解數據的覆蓋範圍。」</li>
+<li><b>④ 誘導偏置 vs. 規模的「臨界點」。</b>Sal：數據少時，模型裡的歸納偏置（inductive bias）幫你拿到結果；數據愈多，模型會發現你原本不知道的東西，而有時「若那個偏置不精確，反而會拖累你」——存在一個 tipping point。他同時反對主持人把「工藝」限定在手工架構：<i>「scaling 這件事本身也有很多工藝——把模型變大、餵更多數據、更多算力，其中有大量算法工作。我們看到從標準 transformer 走向更<b>定制化架構</b>……我完全不認為我們身處 post-transformer 世界，但我們在改造這些架構，使其更 fit for purpose。」</i></li>
+<li><b>⑤ 標題命題：AlphaFold 其實沒有「解決」蛋白折疊。</b>Pushmeet 的關鍵澄清：<i>「蛋白質不是積木，它們的行為也不像積木。<b>我常說蛋白質是積木，但我其實不相信這句話。</b>蛋白極其複雜、無序（disordered），形狀會隨情境改變。我和 John Jumper 常討論：我們到底在解什麼？<b>我們並不知道蛋白真正取的那個基態（ground state），也不知道蛋白實際構象的分佈。</b>我們所做的，是<b>複製某人取得並存入 PDB 的那一個結構</b>。只是剛好，這很有用。」</i>他強調：頂層敘事上「有進展」較好傳達，但「這個領域的科學家知道還剩多少事要做……<b>別停止資助蛋白結構與動力學預測，因為我們才剛開始</b>。」</li>
+<li><b>⑥ 最大的瓶頸＝你希望魔法棒變出什麼？答案：cryo-EM 顯微圖。</b>Pushmeet 以「電腦視覺研究員」的身份興奮地說，PDB 只是<b>二手結構</b>，他想直接<b>操作來源（cryo-EM micrographs）</b>：「我不想只拿那些結構，它們一定漏掉了很多資料；我應該直接在 cryo-EM 顯微圖上運算。」能在那個層級 scale、抽取其中的<b>動力學與分佈資訊</b>會非常了不起——他試過，但「需要更多工作」。</li>
+<li><b>⑦ 從「輻條」到「整輛自行車」。</b>Sal 的著名比喻：<i>「我現在建的模型，像一個想搞懂自行車怎麼運作、卻只在建模一根<b>輻條</b>的人。模型會愈來愈好，但你真正要做的是從輻條 → 輪子 → 整輛自行車，因為那才是人們想理解的東西。」</i>他補一刀：<i>「看起來人們想用『自行車的模型』去設計一台<b>皮卡車</b>的零件。」</i>方向是把模型放進其<b>真實生物情境</b>，學到更廣尺度的交互。</li>
+<li><b>⑧ Feynman 命題：「我不能創造的，我就不理解」——但我們現在正大量「不理解地創造」。</b>Sal：<i>「遠在 AI 出現之前，我們就一直在用神奇黑箱設計東西……但理解非常重要。」</i>他的核心驚嘆是：<b>這些模型內部藏著比我們已知多得多的資訊</b>——做了很多可解釋性工作後發現，蛋白語言模型不只學到結構的概念，<b>還學到了功能與運動（functions and motions）的資訊</b>。「還有很多尚未被解鎖，即便只是現有的模型。」壓縮進模型的是<b>演化積累的資訊</b>，那本身就是一個世界模型。</li>
+<li><b>⑨ 「可解釋性取決於由誰來解釋」（本集最鋒利的一段）。</b>Pushmeet 給出一個分層答案：
+  <ul>
+    <li>「AlphaFold 並不完美。AlphaFold 2 當時在那個集合上 GDT 約 <b>90</b>。但即使它 GDT 95，<b>若它的 pLDDT（置信度）完全未校準，誰會信它？</b>想像它神奇地給出好答案、還說自己很自信，你埋頭做了一年，才發現它完全錯了——<b>不確定度的校準極其重要。</b>」——所以我們「理解」它<b>的行為</b>，與理解它<b>內部如何運作</b>是兩回事。</li>
+    <li><i>「可解釋性也是 in the eye of the beholder——是誰在解釋？」</i> 若對象是「有人腦認知／算力限制的人類理性系統」，那 AlphaFold 2 不可解釋；<i>「但若你問的是：它對一個<b>更大、更精密的模型</b>而言是否可解釋——也許是。我們只是不懂而已。」</i></li>
+    <li>他的結論：<b>真正必要的不是「完全可解釋」，而是「可信（trustworthy）到人能據以做可行動的決策」</b>。未來的前沿模型「或許能預測 AlphaFold 會做什麼，並提出一套關於它如何產生結果的理論」。</li>
+    <li>補一則行為層證據：AlphaFold 2 開源權重後，人們發現它<b>是一個很好的「無序蛋白預測器」</b>，能判出蛋白哪些片段是無序的——證明它泛化。</li>
+  </ul></li>
+<li><b>⑩ 10× 而非 10% 的思維（收尾）。</b>被問「AI 何時改變醫療」，Pushmeet 稱「AI 成果進臨床」是<b>問得不好的問題</b>——AI 早已用在藥物發現每一環。真正的問題是：<b>你要加速的是什麼？</b>lead optimization？靶點發現？臨床前？毒理？——「更大的加速，只有在更好地理解這個努力想建造的生物模型之後才會解鎖。」Sal 則端出他從 Google 學到的：<i>「有時更容易的做法是問『要做到 10× 改進需要什麼』，而不是 10%。不是因為 10× 那條路更簡單，而是它讓你採取更寬的視野、看見你原本沒在走的解法，回到第一原理。10% 與 10× 兩條路都珍貴。<b>Biohub 的使命是『治癒所有疾病』——若真要做到，你就必須找出那條 10× 的路。</b>」</i></li>
+</ul>
+
+<p><span class="sec-label">關鍵數據／事實</span></p>
+<ul>
+<li><b>AlphaFold 2 GDT ≈ 90</b>（當時評測集）；但關鍵指標其實是 <b>pLDDT 置信度的校準</b>（未校準則無人可信）。</li>
+<li><b>PDB（蛋白質資料庫）</b>：全球科學家數十年積累、價值極高；Pushmeet 明確表示「我們沒有核心專業、甚至沒有資源，去說『讓我們把 PDB 擴充一個數量級』」——所以在該題目上必須靠<b>建模</b>取得最大槓桿。</li>
+<li><b>「虛擬細胞（virtual cell）」卡在數據</b>：以「cell-by-gene」數據嘗試後，「<b>很清楚數據還沒到位</b>」，無法支撐建造虛擬細胞的宏大目標。</li>
+<li><b>Metagenomic sequences（宏基因組序列）</b>：品質不高、甚至「我保證其中很多根本不是完整真實的蛋白」，卻能<b>提升</b>蛋白語言模型在「設計可用蛋白」與「理解已知蛋白」上的表現——即<b>低品質廣覆蓋數據的價值</b>。</li>
+<li>自 AlphaFold 2 發布起算<b>約五年</b>；功能（function）、動力學（dynamics）、設計（design）仍是完全開放的問題。</li>
+</ul>
+
+<p><span class="sec-label">重點引用</span></p>
+<blockquote>「蛋白質不是積木，它們的行為也不像積木。我常說蛋白質是積木，但我其實不相信這句話。……我們並不知道蛋白真正取的基態，也不知道蛋白實際構象的分佈。我們所做的，是複製某人取得並存入 PDB 的那一個結構。只是剛好，這很有用。」
+<span class="who">——Pushmeet Kohli（說明「AlphaFold 沒解決蛋白折疊」）</span></blockquote>
+<blockquote>「可解釋性也是 in the eye of the beholder——是誰在解釋？……若你問的是：它對一個更大、更精密的模型而言是否可解釋——也許是。我們只是不懂而已。」
+<span class="who">——Pushmeet Kohli（論 interpretability vs. trustworthiness）</span></blockquote>
+<blockquote>「我現在建的模型，像一個想搞懂自行車怎麼運作、卻只在建模一根輻條的人。……真正要做的是從輻條 → 輪子 → 整輛自行車，因為那才是人們想理解的東西。」
+<span class="who">——Sal Candido</span></blockquote>
+<blockquote>「有時更容易的做法是問『要做到 10× 改進需要什麼』，而不是 10%。不是因為 10× 那條路更簡單，而是它讓你採取更寬的視野……回到第一原理。」
+<span class="who">——Sal Candido</span></blockquote>
+<blockquote>「這個領域的科學家知道還剩多少事要做。有很多值得慶祝，但別停止資助蛋白結構與蛋白動力學，因為我們才剛開始。」
+<span class="who">——Pushmeet Kohli</span></blockquote>
+
+<p><span class="sec-label">技術詳情</span></p>
+<ul>
+<li><b>資料模態取捨</b>：高品質 vs. 低品質高覆蓋（metagenomic）之爭；「好數據 &gt; 更多數據」；數據策展／覆蓋範圍（coverage）本身是核心難題。</li>
+<li><b>架構觀</b>：AlphaFold 2 的手工特徵與歸納偏置「有願景、非偶然」；但隨著數據變多，<b>定制化架構（bespoke architectures）持續演化</b>——「不是 post-transformer，但 transformer 在被改造以更 fit for purpose，即使在 internet-scale 數據下」。</li>
+<li><b>可解釋性的分層</b>：行為／泛化層面的可解釋 vs. 內部機制層面的可解釋；pLDDT 校準＝可信度的關鍵。</li>
+<li><b>未來路線</b>：cryo-EM 顯微圖的端到端建模、抽取動力學與構象分佈；從單一蛋白走向<b>整個生物系統</b>；讓更大的前沿模型「解釋」較小的模型。</li>
+</ul>
+
+<p><span class="sec-label">行業 insight</span></p>
+<ul>
+<li><b>對「AlphaFold 已解決蛋白折疊」的公開祛魅</b>：這是來自模型作者本人的一手澄清，對「AI for Science 已勝利」的敘事是一次降溫——結構預測 ≠ 理解生物。</li>
+<li><b>「可解釋性」的話語遷移</b>：Kohli 把標準從「人類可解釋」鬆綁到「可信、可校準、可據以決策」，並預言<b>未來模型可能成為其他模型的解釋者</b>——這是 AI 安全／可解釋性辯論裡一個正在浮出的新框架。</li>
+<li><b>與同日 No Priors／Beam 的隱性對話</b>：兩集都在說同一件事——<b>規模不是全部</b>，「規模之外還需要什麼」才是 2026 的核心問題（Beam 答「高算力 RL＋效率」，此集答「問題優先＋科學直覺＋好數據」）。</li>
+</ul>
+
+<p><span class="sec-label">前後脈絡</span></p>
+<ul>
+<li>接續本報告鏈的 AI-for-Science 主線：10/8 Latent Space×Periodic Labs（Liam Fedus／Ekin Doğus Çubuk，談「訓練做科學的過程而非產物」、matter compiler）——今日這場生物圓桌是同一條線的<b>生物學版本</b>：同樣強調「物理／生物現實才是目標函數」、「負面結果最有價值」、「全自主非目標」。</li>
+<li>與 CR 10/8〈The Curve〉的「AI for science 是下一步（≤1 年）」互相呼應；Kohli 則給出更保守的時間尺度（10× 加速的前提是「先理解生物模型」）。</li>
+<li>Kohli 對「可解釋性 vs. 可信度」的區分，與 10/8 AINews 中「eval 誠信／校準」的討論（Harvey LAB 表面通過含重大幻覺）同頻——<b>校準與可信度正成為 2026 的通用語言</b>。</li>
+</ul>
+
+<p><span class="sec-label">爭議點</span></p>
+<ul>
+<li><b>「AlphaFold 沒有解決蛋白折疊」</b>——與大眾／媒體敘事直接牴觸，是本輪最具衝擊性的一手錶述。Kohli 甚至自認日常說法（「蛋白是積木」）與其信念相反。</li>
+<li><b>「可解釋性取決於由誰解釋」</b>——暗示「讓更大的模型解釋小模型」可能取代「人類可解釋性」，這在安全社群是頗有爭議的立場。</li>
+<li><b>低品質數據反而有用</b>——挑戰「數據潔癖」，但也可能被誤讀為「無腦放大易得數據就好」；Sal 親自駁斥了後者。</li>
+</ul>
+
+<div class="note"><b>數據缺口聲明</b>：本集為現場圓桌，<b>已取得逐字稿全文</b>（含時間碼與完整逐字引文，約 26 KB），故上述引文均為直接引用；節目對應的 Biohub 計劃細節（BBI）在逐字稿中僅以「today's effort／announced today」帶過，未展開命名。</div>
+
+<hr>
+
+<h3>No Priors（主播 Sarah Guo + Elad Gil）</h3>
+
+<div class="ep">
+<h4>Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin <span class="tag">🎙️ 發布：2026-10-09 17:24 UTC（北京時間 10-10 01:24）</span></h4>
+</div>
+
+<p class="kv">來源：No Priors 原生 feed show notes＋章節時間軸＋Reflection 官方 blog（<code>reflection.ai/blog/introducing-beam</code>）＋Sources podcast 訪談（Alex Heath）＋Semafor／TNW 報導。<span class="badge">訪談一手</span><span class="badge">數字多為公司口徑</span></p>
+
+<p><span class="sec-label">主題</span>：前沿 AI 到底是<b>開放</b>還是<b>封閉</b>？Reflection AI 共同創辦人兼 CEO <b>Misha Laskin</b> 首次公開其 500B 級開權重推理模型 <b>Beam</b>——主張「<b>開源將吃下全球多數 token 需求</b>」，企業算力正從「租用」轉向「<b>擁有</b>智能」；並談中國開源生態、為何與中國模型競爭是好事、開源安全，以及前沿開源模型如何加速科學發現。
+
+<p><span class="sec-label">嘉賓背景</span></p>
+<ul>
+<li><b>Misha Laskin</b>：Reflection AI 共同創辦人兼 CEO；此前在 Google DeepMind <b>領導 Gemini 的 reward modeling（獎勵建模）</b>。</li>
+<li><b>Ioannis Antonoglou</b>（共同創辦人／CTO，節目中未直接露面，但在 Sources 訪談中發言）：<b>AlphaGo／AlphaZero 的創造者之一</b>，之後領導 Gemini 的 RLHF 工作。</li>
+<li><b>Reflection AI</b>：2024 年由前 DeepMind 研究員創立，主打「西方版的開源前沿實驗室（DeepSeek of the West）」。投資方包括 <b>Nvidia、Sequoia、Lightspeed</b>；<b>成立兩年融資 $4.6B，最近估值 $25B</b>。團隊由約 30 人的 RL 研究小組成長至 <b>約 300 人</b>。</li>
+<li><b>主播</b>：Sarah Guo（Conviction 創辦人）、Elad Gil。</li>
+</ul>
+
+<p><span class="sec-label">核心論點</span></p>
+<ul>
+<li><b>①「擁有智能的唯一方式，按定義就是開源。」</b>Laskin 的房產比喻：<i>「封閉模型在房地產上等同於<b>租房</b>。」</i>他主張一個 AI 的「<b>所有權市場（ownership market）</b>」正在形成——企業與政府想「own」並控制自己如何使用 AI，而他們今天「其實沒有很好的選擇」。</li>
+<li><b>②開源模型的理由之一是安全，而非相反。</b>Laskin：<b>少數研究者不可能找出每一個漏洞</b>；開源讓大得多的社群檢視技術、開發防護（可類比 Linus's Law——足夠多的眼睛讓問題浮現）。Antonoglou 補：把如此大的權力放進一兩個機構，會形成「<b>單點故障（single node of failure）</b>」，即使那些機構立意良善。他們偏好<b>開放與封閉的混合</b>，讓不同供應商能互相兜底。</li>
+<li><b>③但他們不否認「能力過強就不該開放」。</b>被追問「未來某個模型是否強到不宜開放」，兩人承認更強的能力可能正當化限制。Antonoglou：<i>「有可能你會達到一個能力水平，讓你只想在部署上更謹慎。」</i>Laskin 給出判準：這類決定應取決於<b>模型能做什麼</b>——<i>「這與它是否開源無關（That is independent of whether they are open or not）。」</i></li>
+<li><b>④為何與中國模型競爭「是好事」。</b>中國實驗室長期領跑開源模型（GLM、Qwen、Kimi、DeepSeek）；西方缺乏答案。Reflection 的定位是給企業／政府一個可自行運行與客製的<b>西方替代品</b>，服務「主權 AI（sovereign AI）」市場。同時，中國正把開源當<b>外交工具</b>（token diplomacy）；但美英政府評估曾發現近期中國模型可協助駭客利用程式漏洞——這也加重了「西方開源替代」的需求。</li>
+<li><b>⑤商業模式：不賣模型，賣「讓模型可用」的軟體與基建。</b>Reflection 的收入來自幫助企業／政府部署 agent、客製模型、大規模運行。長期看，Laskin 認為 Reflection「<b>大概合理</b>」會自成一家 hyperscaler 以吃下更多利潤；但現階段優先是把模型推出去、建立「運行它的需求」。</li>
+<li><b>⑥「從頭訓練、不蒸餾他人」是刻意的控制。</b>Antonoglou：擁有架構、數據與預訓練對把 RL 推得更遠至關重要——初始訓練必須先給 Beam 足以讓 RL 在其上建構的推理能力；這種控制也讓團隊在投入更多算力時維持模型穩定。另有地緣考量：讓美／英團隊端到端開發一個西方模型。</li>
+<li><b>⑦效率＝本輪開源競爭的關鍵軸。</b>Beam 的賣點不是「最強」，而是「同能力下最省」——「每 token 更多智能（more intelligence per token）」，成為企業 coding／agentic 工作負載的「<b>workhorse（主力幹活模型）</b>」。</li>
+</ul>
+
+<p><span class="sec-label">關鍵數據／事實</span></p>
+<table>
+<tr><th>項目</th><th>Beam 規格／數據</th></tr>
+<tr><td>架構／參數</td><td>稀疏 <b>Mixture-of-Experts</b>：<b>501B 總參數、23B 激活</b>（每 token 激活 23B）</td></tr>
+<tr><td>預訓練數據</td><td><b>23.8 兆（23.8T）tokens</b>（網路＋授權專有數據集，精心策展）</td></tr>
+<tr><td>上下文長度</td><td><b>1M tokens</b>（midtraining 擴展；RL rollout 最大 256K）</td></tr>
+<tr><td>預訓練算力</td><td><b>6,144 張 NVIDIA GB300</b>、<b>&lt;4 週</b>；隨基建效率改進，現可約 <b>12 天</b>完成（Laskin 語）</td></tr>
+<tr><td>RL 算力</td><td><b>10,500 張 GB300 × 4 週</b>；產生 <b>&gt;1 億次 rollouts</b>（官方稱「史上任何開源實驗室中最大的 RL 運行之一」）</td></tr>
+<tr><td>RL 環境</td><td>約 <b>13 億個 sandboxes</b>；<b>100 萬個</b>高品質 coding／agentic／STEM 環境</td></tr>
+<tr><td>推理效率</td><td>進階推理上與 <b>GLM-5.2</b> 同分但用 <b>3–4× 更少推理算力</b>；對比 2T+ 級 Qwen 3.8-Max 更明顯；Sources 報導稱約為 <b>GLM-5.3 推理算力的 1/4</b>（公司稱屬近似比較，非實測成本）</td></tr>
+<tr><td>授權／發布</td><td><b>Apache 2.0</b>；本月內釋出權重、技術報告、model card 與運行／微調工具；目前先以 waitlist 早鳥版試用</td></tr>
+<tr><td>安全評測</td><td>由 <b>美國 CAISS（Center for Advancing Innovation and Standards for Super Intelligence）</b>與<b>英國 AI Safety Institute</b> 兩個政府機構評估中</td></tr>
+<tr><td>算力合約</td><td>今夏簽下 <b>SpaceX $6.3B</b>＋<b>Nebius $1B</b> 算力協議</td></tr>
+<tr><td>下一代</td><td>已在訓練下一代模型（Laskin 稱「強得多」）；Antonoglou 稱 2027 年將推出<b>顯著更大</b>的模型</td></tr>
+</table>
+
+<p><span class="sec-label">Benchmark（官方口徑，TNW 未獨立核實；NR＝未報告）</span></p>
+<table>
+<tr><th>Benchmark</th><th>Beam</th><th>Inkling</th><th>Nemotron 3 Ultra</th><th>GLM 5.2</th><th>GLM 5.3</th><th>Kimi K3</th><th>Qwen 3.8 Max</th><th>DeepSeek V4.1 Flash</th></tr>
+<tr><td>DeepSWE v1.1</td><td><b>44.4</b></td><td>NR</td><td>NR</td><td>44.0</td><td>61.0</td><td>68.0</td><td>51.0</td><td>74.2</td></tr>
+<tr><td>SWE Bench Pro v2-Hard</td><td>77.2</td><td>56.9</td><td>NR</td><td>NR</td><td>84.3</td><td>88.2</td><td>NR</td><td>NR</td></tr>
+<tr><td>SWE Bench Pro v1</td><td>65.5</td><td>54.3</td><td>46.4</td><td>62.1</td><td>NR</td><td>NR</td><td>67.7</td><td>NR</td></tr>
+<tr><td>Terminal Bench v2.1</td><td><b>80.1</b></td><td>63.8</td><td>56.4</td><td>81.0</td><td>88.2</td><td>88.3</td><td>86.6</td><td>90.6</td></tr>
+<tr><td>SWE Atlas Codebase QnA</td><td>34.6</td><td>NR</td><td>NR</td><td>NR</td><td>61.0</td><td>68.0</td><td>NR</td><td>NR</td></tr>
+<tr><td>SWEBench Multilingual</td><td>78.0</td><td>NR</td><td>67.7</td><td>NR</td><td>NR</td><td>NR</td><td>NR</td><td>NR</td></tr>
+<tr><td>SWEBench Verified</td><td><b>80.9</b></td><td>77.6</td><td>70.7</td><td>NR</td><td>NR</td><td>NR</td><td>NR</td><td>NR</td></tr>
+</table>
+<p class="kv">官方定位：Beam「推進西方開權重前沿」，在 coding／agentic 上<b>與更大的 GLM-5.2 競爭、逼近 Qwen 3.8-Max</b>；但在<b>原始能力</b>上 Kimi K3 仍領先——Beam 的優勢是<b>推理時效率</b>。</p>
+
+<p><span class="sec-label">技術詳情</span></p>
+<ul>
+<li><b>高算力 RL 為核心 scaling 軸</b>：以<b>非同步策略梯度（asynchronous policy gradients）</b>訓練；規模上去後「<b>策略陳舊（policy staleness）</b>」成為不穩定主因——長 rollout 的 token 由多個 checkpoint 產生，早期 token 相對當前策略愈來愈過時；訓練／推理引擎的數值不匹配令問題加劇。團隊開發新算法在這種條件下維持穩定學習，<b>即使學習自「一天前」產生的交互（落後 107 個權重版本）仍數值穩定</b>。</li>
+<li><b>可控制長度懲罰（controllable length penalty）</b>：獎勵成功解、抑制多餘 token。RL 早期「完成長度下降、表現卻上升」（學會更有效率地解題）；後期 agentic 能力增強後長度回升，但那些額外 token 支撐了性能提升。使用者可透過 <b>reasoning effort 參數</b>在「短回應 ↔ 長推理」之間調整，配對任務與算力預算。</li>
+<li><b>效率的 Pareto 前緣兩階段</b>：先收縮（更省 token），再由高 reasoning effort 向外擴張（追求高效能）——官方以 DeepSWE 分數隨 rollouts 的軌跡佐證。</li>
+<li><b>安全＝多教師蒸餾</b>：從同一預訓練 checkpoint 訓練第二個「安全對齊」模型（獨立 SFT＋RL），再以 <b>multi-teacher on-policy distillation（MOPD）</b>合併兩個教師（大規模 RL 教師＋專門安全對齊教師）。安全原則分三層：(1) 不可破的規則（遵循安全政策、維持 AI agent 身份）；(2) 應持續滿足的品質（用上給定上下文、主張準確、承認不確定、透明遵循用戶請求）；(3) 預設交互風格（直接、徹底、高效、主動預判）。</li>
+<li><b>deliberative alignment</b>（Guan et al., 2024）：把安全政策直接納入模型推理；數據集以對抗式迭代構建（每輪訓練模型→生成能誘發有害／過度拒絕的提示→把成功攻擊折回下一輪 SFT）。安全 RL 同時覆蓋單輪、多輪、越獄與 agentic 情境（模擬對手施壓工具使用模型做不安全動作），同時<b>降低過度拒絕與有害遵從</b>。</li>
+<li><b>非可驗證域的獎勵可預測</b>：對齊階段多以生成式獎勵模型評判非可驗證獎勵，卻能「可預測地塑造行為」——對不同行為的獎勵影響做預測後再跑 RL，其增益預測（r = 0.79）優於 Best-of-N 上限（r = 0.46）。</li>
+<li><b>預訓練基建自研</b>：拓撲感知的 Kubernetes 調度器、節點生命週期系統（持續健康監控與告警）、靜默數據損壞（SDC）偵測（可半自主 rewind／restart）。整段預訓練<b>軌跡極平滑</b>，執行 9 次半自動 rewind（非確定性梯度範數尖峰或疑似 SDC）；<b>goodput 後期達 92.3%</b>。</li>
+<li><b>Midtraining 為 RL 打底</b>：多階段數據策展，把真實世界任務轉化／組合／擴展為訓練數據（含長推理文檔），並把有效上下文<b>擴展到 1M tokens</b>（結構化代碼庫＋長時程任務＋高品質長文）。</li>
+<li><b>行為泛化（意外湧現）</b>：訓練中 Beam 在<b>沒有瀏覽任務</b>的情況下變得更擅長上網——給它網路存取後，它<b>自學</b>去查詢其他 AI 模型、並用文字辨識工具讀文件。</li>
+</ul>
+
+<p><span class="sec-label">重點引用</span></p>
+<blockquote>「擁有智能的唯一方式，按定義就是開源（The only way to own intelligence is, by definition, if it's open）。」
+<span class="who">——Misha Laskin</span></blockquote>
+<blockquote>「封閉模型在房地產上等同於租房（Closed models are the equivalent in real estate to renting an apartment）。」
+<span class="who">——Misha Laskin（主張 AI「所有權市場」正在形成）</span></blockquote>
+<blockquote>「有可能你會達到一個能力水平，讓你只想在部署上更謹慎。」
+<span class="who">——Ioannis Antonoglou（回應「模型是否可能強到不該開放」）</span></blockquote>
+<blockquote>「（是否限制）應取決於模型能做什麼——這與它是否開源無關。」
+<span class="who">——Misha Laskin</span></blockquote>
+<blockquote>「他們（想擁有 AI 的企業與政府）今天其實沒有很好的選擇。」
+<span class="who">——Misha Laskin（論主權 AI 市場）</span></blockquote>
+
+<p><span class="sec-label">行業 insight</span></p>
+<ul>
+<li><b>前沿訓練成本曲線</b>（Laskin 口徑）：<b>約 18 個月前「數億美元」→ 現在「個位數十億美元」→ 明年趨向「數百億美元」</b>；每一代模型需約 <b>4× 算力</b>（10 萬張 Blackwell、及未來 Vera Rubin 集群）。這與「開源如何可持續」直接衝突——Beam 的答案：把價值放在<b>效率與服務</b>，而非模型本身。</li>
+<li><b>開放 vs 封閉的戰場已從「能力」轉向「效率＋主權」</b>：對標中國開源（GLM／Qwen／Kimi／DeepSeek）成為美國新一波開源敘事的主軸；「開源當外交工具」與「西方開源替代」正面對撞。</li>
+<li><b>安全敘事的一體兩面</b>：一方面「開放＝更多眼睛＝更安全（Linus's Law 類比）」；另一方面「能力過強則需限制」——Laskin 的折衷是「看能力、不看開源與否」，本質上把責任推向<b>能力門檻</b>而非開放性。</li>
+<li><b>RL 成為新的規模軸</b>：Beam 的 RL GPU 數（10.5K）與時長（4 週）、rollout 量（&gt;1 億）都顯示——2026 前沿競爭的重心正從「預訓練堆 token」轉向「<b>高算力 RL＋環境工程</b>」（100 萬環境、13 億 sandbox）。這與 10/8 CR 提到的「RL 環境產業＝間接蒸餾通道」是同一現象的兩面。</li>
+</ul>
+
+<p><span class="sec-label">前後脈絡</span></p>
+<ul>
+<li>接續 10/2 No Priors〈Frontier Chips for Frontier AI Labs〉（Fractile 的 Walter Goodwin）——上集談「前沿實驗室要什麼芯片」，本集談「前沿模型如何在算力約束下被訓練出來並商業化」，構成晶片→模型的一條線。</li>
+<li>與 10/8 CR〈The Curve〉的「前沿僅 2–3 家」「RL 環境產業＝間接蒸餾通道」直接互文：Beam 自稱「不蒸餾他人」，正是對該「蒸餾／追趕」框架的回應。</li>
+<li>與本輪 Latent Space 生物圓桌同構：兩集都在回答「規模之外還需要什麼」——Beam 答「效率＋所有權」，AlphaFold 圓桌答「問題優先＋科學直覺」。</li>
+</ul>
+
+<p><span class="sec-label">爭議點</span></p>
+<ul>
+<li><b>「開源更安全」的立場爭議</b>：Linus's Law 類比用於 AI 安全並非公認；「單點故障」論述亦被批評忽略開源擴散風險。</li>
+<li><b>「一手」程度</b>：節目本身是第一手訪談，但所有具體數字（算力、benchmark、成本曲線）均為<b>公司口徑</b>，且基準分數公司自報、未經第三方核實；TNW 明言「未獨立驗證」。效率比較公司自稱「近似而非實測成本」。</li>
+<li><b>「所有權市場」論</b>：把閉源等同「租房」、開源等同「買房」，是強力的行銷框架，忽略了企業自託管前沿開源模型的實際 TCO。</li>
+</ul>
+
+<div class="note"><b>數據缺口聲明</b>：No Priors 原生 feed 僅提供 show notes＋章節時間軸（無逐字稿）。節目內具體引文（Laskin／Antonoglou）取自 <b>Sources podcast（Alex Heath）</b>之同場訪談與 <b>Semafor</b> 報導；模型規格、benchmark、訓練細節取自 <b>Reflection 官方 blog</b> 與 <b>TNW</b>。節目逐字稿未取得，標題式章節以外的「論證細節」係綜合上述來源重構。</div>
+
+<hr>
+
+<!-- ============================ 無新集 ============================ -->
+<h2>本輪無新集（已核實 RSS／YouTube 頂條）</h2>
+<ul class="no-new">
+<li><b>Dwarkesh Podcast</b>：原生 feed 頂條仍 10/01〈Si Sheppard – How did a few hundred Spanish soldiers topple two empires?〉（feed lastBuild 10/10 01:41，但無新 item）。</li>
+<li><b>Cognitive Revolution</b>：頂條仍 10/08〈AI:AM: A Level We Shouldn't Pass?〉。</li>
+<li><b>Machine Learning Street Talk</b>：原生 feed 頂條仍 10/01〈How a Voice Agent Learns the Rhythm of Conversation — Shawn Wen〉（lastBuild 10/09 18:58）。</li>
+<li><b>張小珺商業訪談錄</b>：最新仍 153 期（09-03，和曾鳴聊產業史觀）。</li>
+<li><b>十字路口 Crossing</b>：最新仍〈AI 無限，人生有限〉（10-08）。</li>
+<li><b>硅谷 101</b>：最新仍 E255 再訪張闊（10-08）。</li>
+<li><b>42 章經</b>：最新仍〈AI Trading——決策便宜，行動很貴〉（09-27）。</li>
+<li><b>屠龍之術</b>：最新仍〈当AI开始设计芯片——EDA 与 AI 时代的芯片设计〉（09-28）。</li>
+<li><b>YouTube 頻道 feed</b>（Dwarkesh <code>UCXl4i9dYBrFOabk0xGmbkRA</code>、No Priors <code>UCSI7h9hydQ40K5MJHnCrQvw</code>）：本輪 YouTube RSS 端點回 404，未能取得；兩檔以原生 Substack／megaphone feed 頂條為準（Dwarkesh 無新集、No Priors 新集已收錄）。</li>
+</ul>
+
+<footer>
+  <p>報告由自動化掃描流程生成：讀取 10 檔播客 RSS／YouTube feed → 過濾已掃劇集 → <code>web_fetch</code> 抓取完整內容（Substack 原文／節目 show notes／官方 quotes／章節時間軸）；英文訪談逐字稿直接引用，中文檔以小宇宙／fireside 原生 show notes 為據 → 深度萃取 → 生成本報告。</p>
+  <p>前置過濾：TypeSafe Jev（<code>jev.py triage --profile news</code>）對 2 條候選執行，available=true、failed=0/2。分值：Latent Space 生物圓桌 worth=0.15／primary_source 0.42；No Priors×Beam worth=1.03／primary_source 0.42。前者 worth 偏低係因條目摘要「無可核實數字」，惟其為<b>現場圓桌一手逐字稿</b>、且 primary_source≥0.4，故保留；Beam 之具體數字為公司口徑，已於文中標明。</p>
+  <p>掃描窗口：2026-10-09 → 2026-10-10 · 新增 2 條（中文 0、英文 2）· 生成時間 2026-10-10 02:05 UTC。</p>
+  <p>License: Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>

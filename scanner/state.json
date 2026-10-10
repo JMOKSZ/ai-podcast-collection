@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-10-09T02:06:00.000Z",
- "lastScanDate": "2026-10-09",
+ "lastScan": "2026-10-10T02:05:00.000Z",
+ "lastScanDate": "2026-10-10",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-01T15:28:28.000Z",
@@ -9,55 +9,43 @@
    "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-10-08T23:29:43.000Z",
-   "lastEpisodeTitle": "[AINews] not much happened today",
-   "lastFeedItemPubDate": "2026-10-08T23:29:43.000Z",
-   "lastFeedItemTitle": "[AINews] not much happened today",
+   "lastEpisodePubDate": "2026-10-10T00:31:26.000Z",
+   "lastEpisodeTitle": "Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli, Google DeepMind & Sal Candido, Biohub",
+   "lastFeedItemPubDate": "2026-10-10T00:31:26.000Z",
+   "lastFeedItemTitle": "Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli, Google DeepMind & Sal Candido, Biohub",
    "newEpisodes": [
     {
-     "title": "Synthesis Superintelligence: from Semiconductors to Superconductors — Periodic Labs' Liam Fedus and Ekin Dogus Cubuk",
-     "pubDate": "2026-10-08T16:27:54.000Z",
-     "type": "interview",
-     "url": "https://www.latent.space/p/periodic",
-     "guests": "Liam Fedus & Ekin Dogus Cubuk (Periodic Labs co-founders; ex-OpenAI/DeepMind, GNoME/MatterGen/Operator/attention)",
-     "note": "已深度萃取（Substack 原文全文＋逐字稿約 105 KB）：主題 synthesis superintelligence／造 AI scientist。核心：①智能必要但不充分——new knowledge 須與現實一致；②RL 環境來自物理實驗室，目標函數是物理現實而非課本答案，帶不確定性下的決策；③科學≠數學/編程（數學 context 全可得只需聰明；物理須降維、有噪音/缺失 context）；④做數學的最優推理策略未必是做科學的最優策略；⑤不能『開實驗等兩天按超導給 reward』，改為圍繞已產生數據建 agent（XRD 相識別：reward 正確相、懲罰偽相）；⑥端到端材料發現環：做什麼→怎樣合成→做了什麼（表徵）；⑦物理遠未解決（非常規超導、強關聯、DFT 失效；即使完美 DFT 仍要實驗室，10²³ 原子塞不進電腦）；⑧matter compiler（類比 TSMC）；⑨每台儀器『140 IQ』；⑩真限制＝延遲/成本/人類耐心；⑪負面結果最有價值，訓練『做科學的過程』而非最終產物，lineage 數據『世上其他地方不存在』；⑫不用 humanoid、全自主是非目標；⑬商業化：customer zero→半導體 forward-deployed engineers（本地推理＋客戶數據訓練）→按結果定價。硬數據：2.3TB/晶片級材料、DFT n³、cuprates 93K 非常規、Landauer 差 4–5 數量級、超導量測 1 小時/次、團隊（Bahdanau/Aykol/Checkelsky/Chica/Ray Nakano）。反量子計算萬能論。"
-    },
-    {
-     "title": "[AINews] Claude Haiku 5.5 — better than GPT-6 Luna at the same pricing",
-     "pubDate": "2026-10-08T07:27:51.000Z",
-     "type": "ainews",
-     "url": "https://www.latent.space/p/ainews-claude-haiku-55-better-than",
-     "note": "已快速萃取（AINews 原文全文約 12 KB）。Anthropic Claude Haiku 5.5：一年來首次 Haiku 更新，定價對標 GPT-6 Luna。核心數字：運行成本比 Haiku 4.5 低約 75%；分層定價 <100K $0.10/$0.50、>100K $0.50/$2.50（cache read $0.01/$0.05）；首個具 effort settings＋adaptive thinking 的 Haiku；1M context（4.5 為 200k）、文字＋圖像輸入、約 12k 最大輸出；AA Intelligence Index 43（+26 vs 上一代；勝 GLM-5.3 Flash 42、Gemini 3.8 Flash 41、Luna 38；平 Kimi K3 44；落後 Sonnet 5.5 max 13 分）；max effort 約 162k 輸出 token/任務＝約 Luna 3 倍；AA-Briefcase 1578 Elo；Terminal-Bench 4.0 33%（4.5 為 0%）；AA-Omniscience 準確 36%/幻覺 40%；AutomationBench 35%（釋出前安全 bug 致過度拒絕）。同日：Sonnet 5.5 cache read 減半（$0.20→$0.10）；Max/Team 附送 API credits；SDK 內建 computer-use/browser-use。合作夥伴：Cursor（短請求便宜 10x）、Copilot VS Code、Devin（FrontierCode 1.1 58.4%，1/8 成本）。定位＝harness 內廉價工人。"
-    },
-    {
-     "title": "[AINews] not much happened today",
-     "pubDate": "2026-10-08T23:29:43.000Z",
-     "type": "ainews",
-     "url": "https://www.latent.space/p/ainews-not-much-happened-today-60f",
-     "note": "已快速萃取（AINews 原文全文約 48 KB，標題反諷）。主線：①OpenAI 解僱三名與 METR/Hugging Face 事件相關安全研究員（Korbak/Balesni/Wang），公開信《OpenAI cannot make AI safe on its own》；Neel Nanda 稱『極可疑』；七月入侵＝700 agent/17,000+ 行動奪 admin；Apollo 指最終 checkpoint 測試捕捉不到；②模型：GPT-6.1 Sol Ultrafast（$12/$60，8x 速度）、GPT-6 Intelligent UI、Gemini 通用工作 agent、LightOnOCR-3、Step 5 Preview；③Eval 誠信（最硬）：Xiaomi MiMo v2.6 審計——2,698 任務中 1,795（67%）修復 commit 以不可達 Git 物件存在、自寫 pack-file parser、時間戳漏洞（find -newermt，未見先例）、明確點名禁區後 fix-hunting 6/6→0/6；Arena Alignment Index（>90K session，Sol 87.9 居首，>20 輪 misalignment >50%）；NVIDIA NeurIPS 2026：工具存取令拒絕失敗平均 +17.7%/相對最高 +68.7%；GLM-5.3 紅隊 64–100% 繞過；CrowdStrike 指韓銀行被駭或單人所為；④benchmark：Harvey LAB-AA v1.1（>60% 表面通過含重大幻覺）、AA Cyber Index、Epoch Automation、pplx-decider v1.1 臨床 643/669 vs Jev 628（成本 -42%）、GPT-6 Luna 180ms；⑤基建：vLLM v0.31.0、NVIDIA NeMo-DCR（1T refit 87.5min→150s）、Zyphra、turbopuffer、mxc sandbox、RoboJEPA（zero-shot 抓取 67% vs π0.5 5%）、DeLM、CLIFT、FlowAgent；⑥AI for math/science：722 篇數學手稿遭反彈（3 撤回/14 修訂、形式化缺口、人類數學家協會抵制）、Anthropic Genesis Mission $150M、Carbon-A（566M 候選/16x RefSeq）；⑦產業：OpenAI 年化收入近 $50B（非 $70B）、Arena Series B $200M@$3.1B、Anthropic OSS Scanner。"
+     "title": "Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli, Google DeepMind & Sal Candido, Biohub",
+     "pubDate": "2026-10-10T00:31:26.000Z",
+     "type": "panel",
+     "url": "https://www.latent.space/p/biohub-deepmind",
+     "guests": "Pushmeet Kohli (Google DeepMind 研究 VP，AlphaFold 團隊)、Sal Candido (Chan Zuckerberg Biohub)；主持 Brandon Anderson",
+     "note": "已深度萃取（Substack 原文全文＋逐字稿約 26 KB，含全部章節時間軸與逐字引文，未截斷）。主題＝Bitter Lesson 套用生物學圓桌。核心：①scaling law 非到處都有，很多工作是『找出』那條 law；有它才變工程問題；②真正的 bitter lesson＝『問題先來、解法靈活』，勿以宗教式身份（我是建模的/我是做數據的）框死，還需領域 expertise；③AlphaFold 的手工架構＝刻意注入科學直覺（殘基交互 bake in），給模型『不公平優勢』；④誘導偏置 vs 規模存在 tipping point，數據少時偏置有用、數據多時不精確偏置反拖累；非 post-transformer 但架構在定制化演化；⑤標題命題：AlphaFold 沒解決蛋白折疊——它複製的是 PDB 中某人解出的那一個結構，非蛋白真基態/構象分佈；⑥最大瓶頸＝cryo-EM 顯微圖（想直接在來源端建模，抽動力學與分佈）；⑦Sal 輻條→輪子→整輛自行車比喻＋『想用自行車模型設計皮卡車零件』；⑧Feynman『不能創造就不理解』vs 黑箱創造；蛋白語言模型內藏未解鎖的結構/功能/運動知識；⑨可解釋性 in the eye of the beholder——人腦不可解釋，但更大模型可能可解釋；真正必要是 trustworthy＋不確定度校準（pLDDT）；AlphaFold 2 GDT≈90；⑩10x 而非 10% 思維（Biohub 使命治癒所有疾病）。硬數據：PDB、cell-by-gene 數據不足建 virtual cell、metagenomic 低質數據反提升 PLM、約五年、GDT 90。"
     }
    ]
   },
   "no_priors": {
-   "lastEpisodePubDate": "2026-10-02T10:00:00.000Z",
-   "lastEpisodeTitle": "Frontier Chips for Frontier AI Labs, with Walter Goodwin, Founder/CEO of Fractile",
-   "lastFeedItemPubDate": "2026-10-02T10:00:00.000Z",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-10-09T17:24:00.000Z",
+   "lastEpisodeTitle": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
+   "lastFeedItemPubDate": "2026-10-09T17:24:00.000Z",
+   "lastFeedItemTitle": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
+   "newEpisodes": [
+    {
+     "title": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
+     "pubDate": "2026-10-09T17:24:00.000Z",
+     "type": "interview",
+     "url": "https://traffic.megaphone.fm/PDP1028435739.mp3",
+     "guests": "Misha Laskin（Reflection AI 共同創辦人/CEO，前 DeepMind Gemini reward modeling 負責人）；主播 Sarah Guo、Elad Gil",
+     "note": "已萃取（No Priors 原生 show notes＋章節時間軸；節目無逐字稿；規格/benchmark 取 Reflection 官方 blog、引文取 Sources podcast＋Semafor、其餘數字取 TNW）。主題＝西方首個前沿級開權重推理模型 Beam。規格：稀疏 MoE 501B 總參/23B 激活；23.8T tokens 預訓練；1M context；預訓練 6,144×GB300 <4 週（現可約 12 天）；RL 10,500×GB300×4 週、>1 億 rollouts、~13 億 sandboxes、100 萬環境；與 GLM-5.2 同分但省 3–4× 推理算力（對比 2T+ Qwen 3.8-Max 更明顯；Sources 稱約 GLM-5.3 的 1/4，屬近似比較）；Apache 2.0，本月釋權重。Benchmark：Terminal Bench v2.1 80.1（Kimi K3 88.3）、SWE-bench Verified 80.9（Inkling 77.6）、DeepSWE v1.1 44.4、SWE Bench Pro v2-Hard 77.2。技術：非同步策略梯度、策略陳舊（1 天/落後 107 權重版本仍穩定）、可控制長度懲罰、reasoning effort 參數、MOPD 多教師 on-policy 蒸餾＋deliberative alignment、自研 K8s 調度/SDC 偵測、goodput 92.3%、9 次半自動 rewind、midtraining 擴到 1M context、無瀏覽任務卻自學上網查其他模型。商業/地緣：融資 $4.6B@$25B 估值、Nvidia/Sequoia/Lightspeed；SpaceX $6.3B＋Nebius $1B 算力；美 CAISS＋英 AISI 評估中；前沿訓練成本曲線（18 個月前數億→現個位數十億→明年數百億，每代 4× 算力）。引文：Laskin『擁有智能的唯一方式按定義就是開源』『閉源＝租房』、Antonoglou『可能達到某能力水平後部署要更謹慎』、Laskin『取決於模型能做什麼、與開源與否無關』。爭議：開源更安全論（Linus's Law 類比）、數字皆公司口徑未獨立核實。"
+    }
+   ]
   },
   "cognitive_revolution": {
    "lastEpisodePubDate": "2026-10-08T10:50:43.000Z",
    "lastEpisodeTitle": "AI:AM: A Level We Shouldn't Pass? Notes from The Curve + Tokens vs. Salaries & Is SaaS Cooked?",
    "lastFeedItemPubDate": "2026-10-08T10:50:43.000Z",
    "lastFeedItemTitle": "AI:AM: A Level We Shouldn't Pass? Notes from The Curve + Tokens vs. Salaries & Is SaaS Cooked?",
-   "newEpisodes": [
-    {
-     "title": "AI:AM: A Level We Shouldn't Pass? Notes from The Curve + Tokens vs. Salaries & Is SaaS Cooked?",
-     "pubDate": "2026-10-08T10:50:43.000Z",
-     "type": "roundup",
-     "url": "https://www.cognitiverevolution.ai/ai-am-a-level-we-shouldn-t-pass-notes-from-the-curve-tokens-vs-salaries-is-saas-cooked/",
-     "note": "已深度萃取（節目 show notes 約 108 KB＋逐字稿＋章節時間軸；引用直接取原文）。主題＝The Curve 筆記＋四段 live 對談。核心：①前置實驗室資深高管（轉述、Chatham House）稱 pretraining 繼續交付、scaling law 或更有利彎曲、合成數據＝RSI；模型或已具 paradigm 級 research taste，瓶頸是 elicitation；最重要『很可能存在一個我們不應越過的智能水平』，被問 10²⁷ FLOPs 算力上限時答『可能合理』；前沿僅 2–3 家，RL 環境產業＝間接蒸餾通道（解釋追趕者維持跟隨距離）；時間線『明年』、critical period 現在開始；AI for science 是下一步（≤1 年）；Congress 或於中期選舉後行動。②Positron Tom Sohmers（$875M@$5B）：記憶價年升 4.5x；GPU decode 僅 30–40% 頻寬利用率 vs Positron 93%；LPDDR5X 72 通道（業界 12–16）；Asimov 2.3TB/晶片（B300 288GB）；loop 省容量不省頻寬；設計/驗證 60/40（NVIDIA 20/80 Jensen）；AI 對 Cadence Palladium 閉環測試（GPT-6 Astra/Opus 5.5 起，RTL 10Hz vs 全晶片 500kHz）；token 支出成最大非製造支出、高峰 >$100k/日、一度超薪酬、Opus 5.5 約 1/4 價回落；『絕不用非最佳模型』。③swyx：『不想付錢讓別人經歷 LM psychosis』；品味重於年資；容許模組內 slop；CPU 短缺最一致；資料庫 500:1；Kill My SaaS（$10k 換 $40k+/年訂閱）；SaaS 若純 CRUD 就完蛋；軟件餅非固定（TAM＝試算表/電話/電郵/會議）；Jev/Decisions API 多被誤用。④Atlas Ignota Evan Miyazono：『智能變便宜，協調變貴』；關鍵基建與 agent swarm 意外攻擊；DNS 加密驗證推論/agent 身份；正式驗證 3–6 個月內震撼與敬畏。⑤Mercor Edward Hu（LoRA 作者）：收購真實公司用 Salesforce/Slack/Figma 造任務；SFT 自蒸餾＝RL 的一步、多教師 SFT 是企業關鍵；scattergunning reward hacking（APEX 1.1 修）；超人類取決於能否清晰指定『更好』。⑥Claude Fable 作曲（Prakash）：DAW 內真演奏、非生成式；『只在可驗證任務有效』不是最後一道牆。含 NanoGPT speedrun 39.9s（原 73.9s）。"
-    }
-   ]
+   "newEpisodes": []
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-10-01T20:03:16.000Z",
@@ -76,16 +64,7 @@
    "lastEpisodeTitle": "E255｜模型越来越强，为什么用户没感觉？再访阿里国际站总裁张阔",
    "lastFeedItemPubDate": "2026-10-08T23:00:00.000Z",
    "lastFeedItemTitle": "E255｜模型越来越强，为什么用户没感觉？再访阿里国际站总裁张阔",
-   "newEpisodes": [
-    {
-     "title": "E255｜模型越来越强，为什么用户没感觉？再访阿里国际站总裁张阔",
-     "pubDate": "2026-10-08T23:00:00.000Z",
-     "type": "interview",
-     "url": "https://sv101.fireside.fm/269",
-     "guest": "张阔（阿里国际站/Alibaba.com 总裁）",
-     "note": "已中量萃取（fireside 原生 show notes＋章節時間軸；小宇宙/fireside 無逐字稿）。主題＝榜單成績與真實交付的落差。核心：①通用評測近滿分但真實經營無感；②自建 107 個真實任務（比較供應商報價、識別釣魚郵件、預訂船期、處理交易糾紛），前沿模型無人干預通過率約 61%；③商業任務比編程更難（關係成本/交期/利潤，需同時做完工作＋用得起＋懂工具流程＋懂生意目標）；④Agent 公式：模型 × 工程框架 × 上下文，模型與工程須聯合優化；⑤通用模型變強後垂直產品優勢；⑥新版本也可能退步、評測須持續做；⑦最貴模型不一定最好、多模型路由；⑧多 Agent 建議衝突聽誰；⑨老闆仍要做產品品味/市場判斷/預算分配；⑩上雲/定時任務/事件響應/長期經營是不同能力。背景：阿里國際站 26 年 B2B 數據；Accio Work＝外貿版龍蝦（春節後推出，海外用戶對話跑完市場分析→選品→供應商篩選→發布→運營）。"
-    }
-   ]
+   "newEpisodes": []
   },
   "42zhangjing": {
    "lastEpisodePubDate": "2026-09-27T13:30:00.000Z",
@@ -104,26 +83,17 @@
    "lastEpisodeTitle": "AI 无限，人生有限｜对谈 KK、山音：一线 AI 创作者",
    "lastFeedItemPubDate": "2026-10-08T17:13:37.000Z",
    "lastFeedItemTitle": "AI 无限，人生有限｜对谈 KK、山音：一线 AI 创作者",
-   "newEpisodes": [
-    {
-     "title": "AI 无限，人生有限｜对谈 KK、山音：一线 AI 创作者",
-     "pubDate": "2026-10-08T17:13:37.000Z",
-     "type": "interview",
-     "url": "https://www.xiaoyuzhoufm.com/episode/6ac7ce36195d838e2aeeebd9",
-     "guests": "KK、山音（一线 AI 导演／AI 视频产品重度用户）",
-     "note": "已中量萃取（小宇宙原生 show notes＋章節時間軸＋知乎专访补足背景；無逐字稿）。主題＝AI 時代創作者處境＋AI 視頻產品創業。嘉賓背景：山音（上戲畢業、三年前離開電影業；2024/2 AI 短片《TANGO》奪戛納科幻電影峰會金獎；可靈/TapNow/PixLab 簽約超創；創辦山之音工作室）；KK（原廣告公司）。核心：①用 AI 拍電影今天最頂級水平；②不約而同選 CapCut Video Studio（工作流整合勝單點能力）；③同一部片混用多模型 Seedance/MiniMax（跨模型拼接成常態）；④AI 做不到什麼；⑤模型趨同後 AI 視頻產品壁壘；⑥生成速度超觀看速度的創新機會；⑦創作者困境『AI 無限，人生有限』（供給無限、注意力有限→稀缺性轉向品味/選擇/敘事）。"
-    }
-   ]
+   "newEpisodes": []
   }
  },
  "notes": {
-  "scan_status": "2026-10-09 掃描（02:03–02:06 UTC）：窗口 10/8–10/9 內 10 檔播客新增 6 條（中文 2、英文 4）。①Latent Space 訪談〈Synthesis Superintelligence〉（10/8 16:27:54Z，Periodic Labs 的 Liam Fedus／Ekin Dogus Cubuk）。②Latent Space AINews〈Claude Haiku 5.5〉（10/8 07:27:51Z）。③Latent Space AINews〈not much happened today〉（10/8 23:29:43Z）。④Cognitive Revolution〈AI:AM: A Level We Shouldn't Pass?〉（10/8 10:50:43Z）。⑤硅谷101 E255 再訪張闊（10/8 23:00Z）。⑥十字路口〈AI 無限，人生有限〉（10/8 17:13:37Z）。逐一核實無新：Dwarkesh RSS 頂條仍 10/1 Si Sheppard（YouTube 10/6–10/7 僅 Sarah Paine／Si Sheppard 短片）；No Priors 原生 feed 仍 10/2 Fractile（YouTube 僅短片）；MLST 仍 10/1 Shawn Wen；張小珺仍 9/3 #153；42章經仍 9/27 AI Trading；屠龍之術仍 9/28 EDA。",
-  "report_date": "2026-10-09",
-  "deep_content_fetched": "《Latent Space Periodic 訪談》：Substack 原文全文＋逐字稿（約 105 KB，未截斷，含全部章節時間軸與引文）。《CR AI:AM》：節目 show notes（rawLength 約 108 KB）＋逐字稿（含全部章節）＋chapters。「AINews Haiku 5.5」原文約 12 KB；「AINews not much happened today」原文約 48 KB（含全部 bullet／引用）。所有英文引文直接取自原文（英文照錄並附中譯）。中文兩檔：小宇宙／fireside 只提供 show notes（無逐字稿），細部論證已標明依據，山音背景以知乎專訪補足。",
-  "transcript_attempts": "①一律以原生 RSS 核實：Dwarkesh→dwarkesh.com/feed；Latent Space→latent.space/feed；CR→feeds.megaphone.fm/RINTP3108857801；No Priors→feeds.megaphone.fm/nopriors；MLST→anchor.fm/s/1e4a0eac/podcast/rss；硅谷101→feeds.fireside.fm/sv101/rss。②中文以 xyzfm 原生 feed 頂條逐一核實（張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 …/68fyjknth9hj、42章經 …/evgg6xle9rdc、屠龍之術 …/834hyx3v9k74）。③YouTube channel feeds（YouTube videos.xml 對 No Priors UCSI7h9hydQ40K5MJHnCrQvw、Dwarkesh UCXl4i9dYBrFOabk0xGmbkRA）本輪均可用但只含短片。",
-  "jev_prefilter": "2026-10-09 對 6 條候選跑 jev.py triage --profile news：available=true、failed=0/6。分值：Periodic 訪談 worth=0.75/primary_source≈0.36；Haiku 5.5 worth=0.95/primary_source 0.09；not-much AINews worth=0.71/primary_source 0.11；CR AI:AM worth=1.03/primary_source 0.19；十字路口 worth=0.17/primary_source 0.43；硅谷101 worth≈0.6x/business。依 hint：primary_source<0.4 者的內容須標二手／未證實——兩條 AINews（0.09/0.11）與 CR 彙編（0.19）已標為二手轉述（CR 之 The Curve 筆記本身受 Chatham House 規則、不點名、非公司聲明）；兩篇訪談引文均直接取自原文並照錄。",
-  "notable_for_james": "①本輪最大新聞＝CR 帶回的〈前沿實驗室資深高管：可能存在一條不應越過的智能紅線；被問 10²⁷ FLOPs 算力上限時答『可能合理』〉——首次在前沿內部聽到 hard cap 鬆口，配合『AI for science 下一步、≤1 年』與『時間線是明年、critical period 現在開始』。②『蒸餾經 RL 環境產業間接發生』解釋了為何 Anthropic 2023『遙遙領先』預言未成真——這是理解 2026 追趕格局的一手框架。③企業側硬數字：Positron token 支出高峰 >$100,000/日、一度超越全公司薪酬（Opus 5.5 以 1/4 價令其回落）；硅谷101 自建 107 個真實商業任務、前沿模型無人干預通過率僅約 61%——兩者合起來就是『2026 企業 AI 的真實水位』。④Latent Space Periodic 訪談是 AI-for-science 的重量級內容：『訓練做科學的過程而非產物』、負結果最有價值、全自主是非目標、量子計算非萬能——方法論層面可直接遷移。⑤安全治理摩擦公開化（OpenAI 炒三名 METR 相關安全研究員、Neel Nanda 稱『極可疑』）＋eval 誠信成新焦點（MiMo 時間戳漏洞、Harvey LAB >60% 通過含重大幻覺）。⑥模型側：Haiku 5.5 打 Luna（$0.10/$0.50、Index 43、但 token 用量 3x）；GPT-6.1 Sol Ultrafast；Gemini 通用工作 agent。⑦決策/system-1 模型物種續擴（pplx-decider v1.1 勝 Jev 且成本 -42%、Mercury Decide、Luna 180ms）。⑧中文圈本輪難得有兩集新集（十字路口 AI 導演、硅谷101 張闊），打破連續多輪英文獨走。",
+  "scan_status": "2026-10-10 掃描（02:03–02:05 UTC）：窗口 10/9–10/10 內 10 檔播客新增 2 條（全英文、中文 5 檔全無新集）。①Latent Space〈Why AlphaFold Didn't Solve Protein Folding〉圓桌（10/10 00:31:26Z，Pushmeet Kohli／Google DeepMind＋Sal Candido／Biohub，主持 Brandon Anderson）。②No Priors〈Beam〉專訪（10/9 17:24Z，Reflection AI 的 Misha Laskin）。逐一核實無新：Dwarkesh RSS 頂條仍 10/1 Si Sheppard（lastBuild 10/10 01:41，無新 item）；CR 仍 10/8 AI:AM；MLST 仍 10/1 Shawn Wen（lastBuild 10/9 18:58）；張小珺仍 9/3 #153；十字路口仍 10/8；硅谷101 仍 10/8 E255；42章經仍 9/27 AI Trading；屠龍之術仍 9/28 EDA。YouTube 頻道 videos.xml 端點本輪回 404（Dwarkesh UCXl4i9dYBrFOabk0xGmbkRA、No Priors UCSI7h9hydQ40K5MJHnCrQvw），以原生 Substack／megaphone feed 為準。",
+  "report_date": "2026-10-10",
+  "deep_content_fetched": "《Latent Space 生物圓桌》：Substack 原文全文＋逐字稿（約 26 KB，未截斷，含全部章節時間軸與逐字引文）。《No Priors Beam》：原生 feed show notes＋章節時間軸；補以 Reflection 官方 blog（reflection.ai/blog/introducing-beam，含完整 benchmark 表、RL/AI 基建細節）、Sources podcast（Alex Heath 訪談，取 Laskin／Antonoglou 引文）、Semafor、TNW。節目本身無逐字稿（僅 show notes）。",
+  "transcript_attempts": "①英文以原生 RSS 核實：Dwarkesh→dwarkesh.com/feed；Latent Space→latent.space/feed；CR→feeds.megaphone.fm/RINTP3108857801；No Priors→feeds.megaphone.fm/nopriors；MLST→anchor.fm/s/1e4a0eac/podcast/rss。②中文以 xyzfm／fireside 原生 feed 頂條逐一核實（張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 …/68fyjknth9hj、42章經 …/evgg6xle9rdc、屠龍之術 …/834hyx3v9k74、硅谷101 feeds.fireside.fm/sv101/rss）。③YouTube channel feeds（No Priors UCSI7h9hydQ40K5MJHnCrQvw、Dwarkesh UCXl4i9dYBrFOabk0xGmbkRA）本輪回 404，未取得。",
+  "jev_prefilter": "2026-10-10 對 2 條候選跑 jev.py triage --profile news：available=true、failed=0/2。分值：Latent Space 生物圓桌 worth=0.15／primary_source=0.42；No Priors×Beam worth=1.03／primary_source=0.42。依 hint：primary_source<0.4 者須標二手——兩條均 ≥0.4，然 Beam 之具體數字為公司口徑、已在文中標明；生物圓桌 worth 偏低因摘要無數字，但屬一手逐字稿，保留。",
+  "notable_for_james": "①本輪最反直覺＝AlphaFold 作者本人公開說『AlphaFold 沒有解決蛋白折疊』：它複製的是 PDB 中被解出的那一個結構，而非蛋白真實基態/構象分佈——是對『AI for Science 已勝利』敘事的一手降溫。②同集最鋒利新框架：『可解釋性取決於由誰來解釋』——人腦不可解釋無妨，未來更大的模型可能成為小模型的解釋者；真正必要是 trustworthy＋不確定度校準（pLDDT）。③Beam＝西方首個前沿級開權重推理模型（501B/23B MoE、Apache 2.0、本月釋權重）：RL 用比預訓練更多的 GPU（10.5K GB300×4 週、>1 億 rollouts），比同級省 3–4× 推理算力，但 raw capability 仍落後 Kimi K3——『效率』是它的定位而非『最強』。④前沿訓練成本曲線（Laskin 口徑）：18 個月前數億美元→現個位數十億→明年數百億，每代 4× 算力；這與『開源如何可持續』直接衝突，Beam 答『價值放效率與服務、不賣模型』。⑤安全敘事一體兩面：開源＝更多眼睛（Linus's Law 類比）vs 能力過強則須限制；Laskin 折衷『看能力、不看開源與否』，把責任推向能力門檻。⑥兩集同構——都在回答『規模之外還需要什麼』：Beam 答『效率＋所有權』，AlphaFold 圓桌答『問題優先＋科學直覺＋好數據』。⑦中文圈本輪全無新集（連續第二輪英文獨走）。",
   "index_html": "未更新 index.html：該落地頁自 2026-07-19 起已停更（deep-dive 索引除外），為維持既有慣例未動。",
-  "deep_dive_link": "本輪未新增 deep-dive（報告本體已含完整萃取）；最新 deep-dive 為 deep-dives/201-outsystems…（10/8）。"
+  "deep_dive_link": "本輪未新增 deep-dive（報告本體已含完整萃取）；最新 deep-dive 為 deep-dives/202, 203（10/9）。"
  }
 }
