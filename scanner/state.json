@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-10-10T02:05:00.000Z",
- "lastScanDate": "2026-10-10",
+ "lastScan": "2026-10-11T02:04:00.000Z",
+ "lastScanDate": "2026-10-11",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-01T15:28:28.000Z",
@@ -9,18 +9,18 @@
    "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-10-10T00:31:26.000Z",
-   "lastEpisodeTitle": "Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli, Google DeepMind & Sal Candido, Biohub",
-   "lastFeedItemPubDate": "2026-10-10T00:31:26.000Z",
-   "lastFeedItemTitle": "Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli, Google DeepMind & Sal Candido, Biohub",
+   "lastEpisodePubDate": "2026-10-10T14:04:11.000Z",
+   "lastEpisodeTitle": "Building AI for Reliable Execution: Lessons From Industrial Robotics",
+   "lastFeedItemPubDate": "2026-10-10T22:07:17.000Z",
+   "lastFeedItemTitle": "[Subscriber Exclusive] NYC Subscriber Meetups!",
    "newEpisodes": [
     {
-     "title": "Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli, Google DeepMind & Sal Candido, Biohub",
-     "pubDate": "2026-10-10T00:31:26.000Z",
-     "type": "panel",
-     "url": "https://www.latent.space/p/biohub-deepmind",
-     "guests": "Pushmeet Kohli (Google DeepMind 研究 VP，AlphaFold 團隊)、Sal Candido (Chan Zuckerberg Biohub)；主持 Brandon Anderson",
-     "note": "已深度萃取（Substack 原文全文＋逐字稿約 26 KB，含全部章節時間軸與逐字引文，未截斷）。主題＝Bitter Lesson 套用生物學圓桌。核心：①scaling law 非到處都有，很多工作是『找出』那條 law；有它才變工程問題；②真正的 bitter lesson＝『問題先來、解法靈活』，勿以宗教式身份（我是建模的/我是做數據的）框死，還需領域 expertise；③AlphaFold 的手工架構＝刻意注入科學直覺（殘基交互 bake in），給模型『不公平優勢』；④誘導偏置 vs 規模存在 tipping point，數據少時偏置有用、數據多時不精確偏置反拖累；非 post-transformer 但架構在定制化演化；⑤標題命題：AlphaFold 沒解決蛋白折疊——它複製的是 PDB 中某人解出的那一個結構，非蛋白真基態/構象分佈；⑥最大瓶頸＝cryo-EM 顯微圖（想直接在來源端建模，抽動力學與分佈）；⑦Sal 輻條→輪子→整輛自行車比喻＋『想用自行車模型設計皮卡車零件』；⑧Feynman『不能創造就不理解』vs 黑箱創造；蛋白語言模型內藏未解鎖的結構/功能/運動知識；⑨可解釋性 in the eye of the beholder——人腦不可解釋，但更大模型可能可解釋；真正必要是 trustworthy＋不確定度校準（pLDDT）；AlphaFold 2 GDT≈90；⑩10x 而非 10% 思維（Biohub 使命治癒所有疾病）。硬數據：PDB、cell-by-gene 數據不足建 virtual cell、metagenomic 低質數據反提升 PLM、約五年、GDT 90。"
+     "title": "Building AI for Reliable Execution: Lessons From Industrial Robotics",
+     "pubDate": "2026-10-10T14:04:11.000Z",
+     "type": "article-interview",
+     "url": "https://www.latent.space/p/standard-bots",
+     "guests": "Evan Beard（Standard Bots 共同創辦人/CEO）、Leif Jentoft（Standard Bots Head of AI）；作者 Richard MacManus",
+     "note": "已深度萃取（Substack 原文全文約 8.7 KB，未截斷）。主題＝美國最大 AI-native 工業機械人廠 Standard Bots 的 AI 棧。公司口徑（未獨立核實）：$2 億 C 輪@$10 億估值（General Catalyst／RoboStrategy 領投）、客戶 NASA／Amazon／Lockheed Martin。技術：共享 base model＋示範微調；zero-shot 上下料感知系統；最大模型僅『低十億級』參數；感知 backbone 訓練於 >10 億張圖像；訓練在雲、推論本地；腕部相機→內部 gigabit Ethernet→邊緣 GPU 生成 action chunks→低階控制。核心：①『數據質量遠勝數據量』（與 Jev 作者 Diogo Almeida 的 bitterest lesson 一致）；②現場干預用幾十個樣本修邊角案例；③傳統編程負責運動與 cell 邏輯、學習模型只管感知；④『今天沒有任何模型真正硬體無關』；⑤工廠網路不穩故迴路必須本地、uptime 是客戶接受關鍵；⑥模擬做不了液體/吸力/柔性切割；⑦艦隊學習——氣隙客戶不回傳數據，非氣隙客戶願以數據換性能。可遷移教訓：模型角色要窄、用實地修正補邊角。"
     }
    ]
   },
@@ -29,29 +29,39 @@
    "lastEpisodeTitle": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
    "lastFeedItemPubDate": "2026-10-09T17:24:00.000Z",
    "lastFeedItemTitle": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
+   "newEpisodes": []
+  },
+  "cognitive_revolution": {
+   "lastEpisodePubDate": "2026-10-10T10:47:14.000Z",
+   "lastEpisodeTitle": "How Agents Decide: Goodfire's Eric Bigelow on Critical Tokens, Phase Shifts, & In-Context Learning",
+   "lastFeedItemPubDate": "2026-10-10T10:47:14.000Z",
+   "lastFeedItemTitle": "How Agents Decide: Goodfire's Eric Bigelow on Critical Tokens, Phase Shifts, & In-Context Learning",
    "newEpisodes": [
     {
-     "title": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
-     "pubDate": "2026-10-09T17:24:00.000Z",
+     "title": "How Agents Decide: Goodfire's Eric Bigelow on Critical Tokens, Phase Shifts, & In-Context Learning",
+     "pubDate": "2026-10-10T10:47:14.000Z",
      "type": "interview",
-     "url": "https://traffic.megaphone.fm/PDP1028435739.mp3",
-     "guests": "Misha Laskin（Reflection AI 共同創辦人/CEO，前 DeepMind Gemini reward modeling 負責人）；主播 Sarah Guo、Elad Gil",
-     "note": "已萃取（No Priors 原生 show notes＋章節時間軸；節目無逐字稿；規格/benchmark 取 Reflection 官方 blog、引文取 Sources podcast＋Semafor、其餘數字取 TNW）。主題＝西方首個前沿級開權重推理模型 Beam。規格：稀疏 MoE 501B 總參/23B 激活；23.8T tokens 預訓練；1M context；預訓練 6,144×GB300 <4 週（現可約 12 天）；RL 10,500×GB300×4 週、>1 億 rollouts、~13 億 sandboxes、100 萬環境；與 GLM-5.2 同分但省 3–4× 推理算力（對比 2T+ Qwen 3.8-Max 更明顯；Sources 稱約 GLM-5.3 的 1/4，屬近似比較）；Apache 2.0，本月釋權重。Benchmark：Terminal Bench v2.1 80.1（Kimi K3 88.3）、SWE-bench Verified 80.9（Inkling 77.6）、DeepSWE v1.1 44.4、SWE Bench Pro v2-Hard 77.2。技術：非同步策略梯度、策略陳舊（1 天/落後 107 權重版本仍穩定）、可控制長度懲罰、reasoning effort 參數、MOPD 多教師 on-policy 蒸餾＋deliberative alignment、自研 K8s 調度/SDC 偵測、goodput 92.3%、9 次半自動 rewind、midtraining 擴到 1M context、無瀏覽任務卻自學上網查其他模型。商業/地緣：融資 $4.6B@$25B 估值、Nvidia/Sequoia/Lightspeed；SpaceX $6.3B＋Nebius $1B 算力；美 CAISS＋英 AISI 評估中；前沿訓練成本曲線（18 個月前數億→現個位數十億→明年數百億，每代 4× 算力）。引文：Laskin『擁有智能的唯一方式按定義就是開源』『閉源＝租房』、Antonoglou『可能達到某能力水平後部署要更謹慎』、Laskin『取決於模型能做什麼、與開源與否無關』。爭議：開源更安全論（Linus's Law 類比）、數字皆公司口徑未獨立核實。"
+     "url": "https://www.cognitiverevolution.ai/how-agents-decide-goodfire-s-eric-bigelow-on-critical-tokens-phase-shifts-in-context-learning/",
+     "guests": "Eric Bigelow（Goodfire MTS；哈佛心理學博士）；主持 Nathan Labenz",
+     "note": "已深度萃取（節目頁 AI-generated show notes＋完整章節時間軸＋官方『Quotes worth pulling』，未截斷）。主題＝機制可解釋性地看『模型的最終決定在哪裡發生』。嘉賓為約 400 集裡首位由 AI 文獻綜述推薦的嘉賓。硬內容：Forking Paths（GPT-3.5 每個 token 重採樣約 30 rollouts）→答案分佈先持平、再如 grokking 般突然崩塌，可塌在無關 token（『kilowatt hours (kWh』的左括號）；決定『really happens during sampling』；推理＝對自己採樣 token 的 ICL（採 Lampinen 廣義 ICL）；『reasoning 是誤稱』、推理模型『攪一鍋 token 湯再撈答案』；DeepSeek-R1 單鏈 50+ 次『wait』；SFT/RLHF 磨尖分佈、RL 推往新處（重度 RL 的 Qwen3-30B-A3B 約 2/3 故事寫同一個鐘錶匠；GPT-6 Astra 先枚舉再選故多樣）；相變在推理之前/中/後皆有，常見模式為『the answer is…』前一直不確定；研究選型 7–8B 起出現有趣 zero-shot，Kimi K3 美國無對等；Goodfire 於 Kimi K3 等模型 50%–96% rollout 發現 reward hacking；信念＝對潛在概念的貝葉斯推斷；The Road Not Taken 顯示模型不表示完整未來 rollout；Ouro 等 looped models 仍有採樣硬幣；CoT 漂移方言＝outcome-only RL＋語言演化＋Goodhart。8 條官方引文已收錄。爭議：對全面禁開權重之疑、CoT 監控信心下降。"
     }
    ]
   },
-  "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-10-08T10:50:43.000Z",
-   "lastEpisodeTitle": "AI:AM: A Level We Shouldn't Pass? Notes from The Curve + Tokens vs. Salaries & Is SaaS Cooked?",
-   "lastFeedItemPubDate": "2026-10-08T10:50:43.000Z",
-   "lastFeedItemTitle": "AI:AM: A Level We Shouldn't Pass? Notes from The Curve + Tokens vs. Salaries & Is SaaS Cooked?",
-   "newEpisodes": []
-  },
   "ml_street_talk": {
-   "lastEpisodePubDate": "2026-10-01T20:03:16.000Z",
-   "lastEpisodeTitle": "How a Voice Agent Learns the Rhythm of Conversation — Shawn Wen",
-   "lastFeedItemPubDate": "2026-10-01T20:03:16.000Z",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-10-10T05:48:01.000Z",
+   "lastEpisodeTitle": "What Most People Get Wrong About Evolution | Akarsh Kumar",
+   "lastFeedItemPubDate": "2026-10-10T05:48:01.000Z",
+   "lastFeedItemTitle": "What Most People Get Wrong About Evolution | Akarsh Kumar",
+   "newEpisodes": [
+    {
+     "title": "What Most People Get Wrong About Evolution | Akarsh Kumar",
+     "pubDate": "2026-10-10T05:48:01.000Z",
+     "type": "interview",
+     "url": "https://podcasters.spotify.com/pod/show/machinelearningstreettalk/episodes/What-Most-People-Get-Wrong-About-Evolution--Akarsh-Kumar-e3q8ds7",
+     "guests": "Akarsh Kumar（MIT 博士生，與 Phillip Isola 合作；Sakana AI；FER 論文第一作者）；主持 Tim Scarfe",
+     "note": "已深度萃取（原生 anchor/megaphone feed show notes 全文＋完整章節時間軸＋參考文獻，未截斷；RESCRIPT 逐字稿頁為 JS 應用未取得）。主題＝演化不是隨機兜底。硬內容：選擇抓住部分解，故突變只需約 1% 有用搜索即可前進；學習路徑會塑造所學結構；ASAL＝不預測規則效果，而直接跑模擬再讓基礎模型判斷『發生什麼』；262,144 條 Life-like 規則中，最有趣的世界集中於『開放性之島』；Digital Red Queen＝用 LLM 當突變步驟演化 Core War 戰士（『Game of Thrones，Turing 版』）；statistical intelligence vs regularity-based intelligence；含 Bert Chan（Lenia）片段。時長 47:54。參考：ASAL（2412.17799）、Digital Red Queen（2601.03335）、Assembly theory（Nature 2023）、Growing Neural CA（Distill）、MAP-Elites、AlphaEvolve、AutoML-Zero、Stanley&Lehman《Why Greatness Cannot Be Planned》。"
+    }
+   ]
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-09-03T00:00:00.000Z",
@@ -87,12 +97,12 @@
   }
  },
  "notes": {
-  "scan_status": "2026-10-10 掃描（02:03–02:05 UTC）：窗口 10/9–10/10 內 10 檔播客新增 2 條（全英文、中文 5 檔全無新集）。①Latent Space〈Why AlphaFold Didn't Solve Protein Folding〉圓桌（10/10 00:31:26Z，Pushmeet Kohli／Google DeepMind＋Sal Candido／Biohub，主持 Brandon Anderson）。②No Priors〈Beam〉專訪（10/9 17:24Z，Reflection AI 的 Misha Laskin）。逐一核實無新：Dwarkesh RSS 頂條仍 10/1 Si Sheppard（lastBuild 10/10 01:41，無新 item）；CR 仍 10/8 AI:AM；MLST 仍 10/1 Shawn Wen（lastBuild 10/9 18:58）；張小珺仍 9/3 #153；十字路口仍 10/8；硅谷101 仍 10/8 E255；42章經仍 9/27 AI Trading；屠龍之術仍 9/28 EDA。YouTube 頻道 videos.xml 端點本輪回 404（Dwarkesh UCXl4i9dYBrFOabk0xGmbkRA、No Priors UCSI7h9hydQ40K5MJHnCrQvw），以原生 Substack／megaphone feed 為準。",
-  "report_date": "2026-10-10",
-  "deep_content_fetched": "《Latent Space 生物圓桌》：Substack 原文全文＋逐字稿（約 26 KB，未截斷，含全部章節時間軸與逐字引文）。《No Priors Beam》：原生 feed show notes＋章節時間軸；補以 Reflection 官方 blog（reflection.ai/blog/introducing-beam，含完整 benchmark 表、RL/AI 基建細節）、Sources podcast（Alex Heath 訪談，取 Laskin／Antonoglou 引文）、Semafor、TNW。節目本身無逐字稿（僅 show notes）。",
-  "transcript_attempts": "①英文以原生 RSS 核實：Dwarkesh→dwarkesh.com/feed；Latent Space→latent.space/feed；CR→feeds.megaphone.fm/RINTP3108857801；No Priors→feeds.megaphone.fm/nopriors；MLST→anchor.fm/s/1e4a0eac/podcast/rss。②中文以 xyzfm／fireside 原生 feed 頂條逐一核實（張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 …/68fyjknth9hj、42章經 …/evgg6xle9rdc、屠龍之術 …/834hyx3v9k74、硅谷101 feeds.fireside.fm/sv101/rss）。③YouTube channel feeds（No Priors UCSI7h9hydQ40K5MJHnCrQvw、Dwarkesh UCXl4i9dYBrFOabk0xGmbkRA）本輪回 404，未取得。",
-  "jev_prefilter": "2026-10-10 對 2 條候選跑 jev.py triage --profile news：available=true、failed=0/2。分值：Latent Space 生物圓桌 worth=0.15／primary_source=0.42；No Priors×Beam worth=1.03／primary_source=0.42。依 hint：primary_source<0.4 者須標二手——兩條均 ≥0.4，然 Beam 之具體數字為公司口徑、已在文中標明；生物圓桌 worth 偏低因摘要無數字，但屬一手逐字稿，保留。",
-  "notable_for_james": "①本輪最反直覺＝AlphaFold 作者本人公開說『AlphaFold 沒有解決蛋白折疊』：它複製的是 PDB 中被解出的那一個結構，而非蛋白真實基態/構象分佈——是對『AI for Science 已勝利』敘事的一手降溫。②同集最鋒利新框架：『可解釋性取決於由誰來解釋』——人腦不可解釋無妨，未來更大的模型可能成為小模型的解釋者；真正必要是 trustworthy＋不確定度校準（pLDDT）。③Beam＝西方首個前沿級開權重推理模型（501B/23B MoE、Apache 2.0、本月釋權重）：RL 用比預訓練更多的 GPU（10.5K GB300×4 週、>1 億 rollouts），比同級省 3–4× 推理算力，但 raw capability 仍落後 Kimi K3——『效率』是它的定位而非『最強』。④前沿訓練成本曲線（Laskin 口徑）：18 個月前數億美元→現個位數十億→明年數百億，每代 4× 算力；這與『開源如何可持續』直接衝突，Beam 答『價值放效率與服務、不賣模型』。⑤安全敘事一體兩面：開源＝更多眼睛（Linus's Law 類比）vs 能力過強則須限制；Laskin 折衷『看能力、不看開源與否』，把責任推向能力門檻。⑥兩集同構——都在回答『規模之外還需要什麼』：Beam 答『效率＋所有權』，AlphaFold 圓桌答『問題優先＋科學直覺＋好數據』。⑦中文圈本輪全無新集（連續第二輪英文獨走）。",
+  "scan_status": "2026-10-11 掃描（02:03–02:04 UTC）：窗口 10/10–10/11 內 10 檔播客新增 3 條（全英文、中文 5 檔連續第三輪全無新集）。①Cognitive Revolution〈How Agents Decide: Goodfire's Eric Bigelow...〉（10/10 10:47:14Z）。②Latent Space〈Building AI for Reliable Execution: Lessons From Industrial Robotics〉（10/10 14:04:11Z，作者 Richard MacManus，訪 Standard Bots）。③ML Street Talk〈What Most People Get Wrong About Evolution | Akarsh Kumar〉（10/10 05:48:01Z）。逐一核實無新：Dwarkesh RSS 頂條仍 10/1 Si Sheppard（lastBuild 10/11 01:59，無新 item）；No Priors 仍 10/9 Beam；張小珺仍 9/3 #153；十字路口仍 10/8；硅谷101 仍 10/8 E255；42章經仍 9/27 AI Trading；屠龍之術仍 9/28 EDA。Latent Space feed 另有一條 10/10 22:07Z『[Subscriber Exclusive] NYC Subscriber Meetups!』——屬訂閱者公告非劇集，未計入。",
+  "report_date": "2026-10-11",
+  "deep_content_fetched": "《CR×Bigelow》：節目頁 AI-generated show notes＋完整章節時間軸（16 段）＋官方 Quotes worth pulling（8 條逐字引文）＋參考文獻清單，未截斷。《Latent Space×Standard Bots》：Substack 原文全文（readability，約 8.7 KB，truncated=false）。《MLST×Kumar》：原生 anchor/megaphone feed show notes 全文＋完整章節時間軸＋參考文獻＋時長（47:54）；RESCRIPT 逐字稿頁為 JS 應用，web_fetch 僅得標題，未取得。",
+  "transcript_attempts": "①英文以原生 RSS 核實：Dwarkesh→dwarkesh.com/feed；Latent Space→latent.space/feed；CR→feeds.megaphone.fm/RINTP3108857801；No Priors→feeds.megaphone.fm/nopriors；MLST→anchor.fm/s/1e4a0eac/podcast/rss。②中文以 xyzfm／fireside 原生 feed 頂條逐一核實（張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 …/68fyjknth9hj、42章經 …/evgg6xle9rdc、屠龍之術 …/834hyx3v9k74、硅谷101 feeds.fireside.fm/sv101/rss）。③YouTube channel feeds（No Priors UCSI7h9hydQ40K5MJHnCrQvw、Dwarkesh UCXl4i9dYBrFOabk0xGmbkRA）本輪未再抓取，以原生 Substack／megaphone feed 為準。",
+  "jev_prefilter": "2026-10-11 對 3 條候選跑 jev.py triage --profile news：available=true、failed=0/3。分值：Latent Space×Standard Bots worth=1.14／primary_source=0.29；CR×Bigelow worth=0.89／primary_source=0.19；MLST×Kumar worth=0.54／primary_source=0.29。依 hint：primary_source<0.4 者須標二手/未核實——三條均 <0.4，故報告中凡公司口徑數字（Standard Bots 融資/客戶/參數量）一律標明『未經獨立核實』；MLST worth=0.54 略低於噪音線 0.6，惟屬一手節目 show notes 且為新集，依 hint『勿以單一閾值硬砍』保留並標明。",
+  "notable_for_james": "①本輪三集罕見同構——都在談『模型內部/現實執行機制』而非『又一個更大模型』：CR 拆『決定發生在採樣的瞬間』、Latent Space 拆『模型角色要窄、數據要精、迴路要本地』、MLST 拆『演化是另一條非統計智能路徑』。②最反直覺一手斷言＝Bigelow『reasoning 是誤稱』＋『推理模型只是攪一鍋 token 湯再撈答案』：對『推理模型真在推理』的主流敘事降溫；同集『對全面禁開權重會造成更大傷害』與安全派相左。③CR 給出可驗證數字：每 token 重採樣約 30 次、7–8B 起出現有趣 zero-shot、Kimi K3 上 reward hacking 命中 50%–96%、R1 單鏈 50+ 次 wait。④Latent Space 提供『小模型如何在產線可靠運轉』的落地答案（低十億級參數、>10 億圖像 backbone、幾十樣本修邊角、本地推論、gigabit Ethernet＋邊緣 GPU action chunks）——與 Jev 的 bitterest lesson 同一句話：對的數據 > 大數據。⑤MLST 的 ASAL『用基礎模型當 critic 搜索 262,144 條規則』＋『開放性之島』＝agentic search 的方法論近親，值得追。⑥中文圈連續第三輪無新集，留意是否季節性低谷。",
   "index_html": "未更新 index.html：該落地頁自 2026-07-19 起已停更（deep-dive 索引除外），為維持既有慣例未動。",
   "deep_dive_link": "本輪未新增 deep-dive（報告本體已含完整萃取）；最新 deep-dive 為 deep-dives/202, 203（10/9）。"
  }

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度萃取報告 · 2026-10-11</title>
+<style>
+  :root { --bg:#faf8f5; --ink:#1f1c18; --muted:#6b6259; --line:#e3ddd4; --accent:#8a6d3b; --quote:#3b342c; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--ink);
+         font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+         line-height:1.78; margin:0; padding:0 20px; }
+  .wrap { max-width:860px; margin:0 auto; padding:48px 0 80px; }
+  header { border-bottom:2px solid var(--ink); padding-bottom:22px; margin-bottom:34px; }
+  h1 { font-size:1.9rem; margin:0 0 10px; letter-spacing:.01em; }
+  .meta { color:var(--muted); font-size:.92rem; }
+  .meta span { display:inline-block; margin-right:18px; }
+  h2 { font-size:1.35rem; margin:52px 0 14px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+  h3 { font-size:1.12rem; margin:34px 0 6px; }
+  h4 { font-size:1.02rem; margin:26px 0 8px; color:#3a332a; border-left:3px solid var(--accent); padding-left:10px; }
+  .ep { margin:26px 0 8px; }
+  .ep .tag { font-size:.82rem; color:var(--muted); font-weight:normal; }
+  ul { padding-left:22px; }
+  li { margin:6px 0; }
+  blockquote { margin:14px 0; padding:10px 18px; border-left:3px solid var(--accent);
+               background:#f3efe8; color:var(--quote); font-style:italic; }
+  blockquote .who { display:block; font-style:normal; font-size:.82rem; color:var(--muted); margin-top:6px; }
+  table { border-collapse:collapse; width:100%; margin:14px 0; font-size:.92rem; }
+  th,td { border:1px solid var(--line); padding:7px 10px; text-align:left; }
+  th { background:#f1ece4; }
+  .kv { color:var(--muted); font-size:.9rem; }
+  .sec-label { font-weight:bold; color:#4a4136; }
+  .note { background:#f6f2ea; border:1px solid var(--line); padding:12px 16px; font-size:.9rem; color:var(--muted); margin:16px 0; }
+  .no-new li { color:#4a4136; }
+  hr { border:0; border-top:1px solid var(--line); margin:44px 0; }
+  a { color:var(--accent); }
+  footer { margin-top:60px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; }
+  .badge { display:inline-block; font-size:.72rem; padding:1px 8px; border:1px solid var(--line); border-radius:10px; color:var(--muted); margin-left:8px; vertical-align:middle; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>AI 播客深度萃取報告</h1>
+  <div class="meta">
+    <span><strong>報告日期</strong>：2026-10-11（日）</span>
+    <span><strong>生成時間</strong>：2026-10-11 02:04 UTC ／ 10:04 北京時間</span>
+    <span><strong>掃描窗口</strong>：2026-10-10 → 2026-10-11</span>
+  </div>
+  <div class="meta" style="margin-top:6px;">
+    來源：10 檔播客 RSS／YouTube（Dwarkesh、Latent Space、Cognitive Revolution、No Priors、ML Street Talk＋張小珺、十字路口、硅谷 101、42 章經、屠龍之術）
+  </div>
+</header>
+
+<div class="note">
+<strong>本輪重點（一句話）</strong>：今日新增 3 條，<b>全在英文檔</b>（中文 5 檔連續第三輪無新集），且三集罕見地同構——<b>都是關於「模型／智能內部到底在做什麼」</b>。①<b>Cognitive Revolution 請到 Goodfire 的 Eric Bigelow</b>：他實測 <b>GPT-3.5 每生成一個 token 重採樣 30 次</b>，證明推理的「決定」其實<b>發生在採樣的那一刻</b>——答案分佈先持平、再像 grokking 一樣<b>突然崩塌</b>，甚至塌在一個無關的括號上；他直指「<b>reasoning 這個詞本身就是誤稱</b>，推理模型只是在攪一鍋 token 湯、再撈出答案」。②<b>Latent Space 訪談工業機械人公司 Standard Bots</b>：一台<b>參數量僅「低十億級」的模型</b>如何在 NASA／Amazon／Lockheed 的產線上可靠運轉——答案是「<b>數據質量遠勝數據量</b>」「<b>用實地修正的幾十個樣本補邊角案例</b>」。③<b>ML Street Talk 訪談 Akarsh Kumar</b>：用「基礎模型當評論家」去搜索 <b>262,144 條 Life-like 細胞自動機規則</b>，證明<b>演化不是隨機搜索</b>、路徑會塑造學習結果。三者合起來是一個信號：<b>行業的注意力正從「規模」移向「機制與可靠執行」</b>。
+</div>
+
+<!-- ============================ 中文播客 ============================ -->
+<h2>中文播客</h2>
+
+<p class="kv">本輪 5 檔中文播客（張小珺商業訪談錄、十字路口 Crossing、硅谷 101、42 章經、屠龍之術）<b>均無新集</b>——逐一以原生 xyzfm／fireside feed 頂條核實（見文末「本輪無新集」）。以下直接進入英文檔。</p>
+
+<!-- ============================ 英文播客 ============================ -->
+<h2>英文播客</h2>
+
+<h3>The Cognitive Revolution（主播 Nathan Labenz）</h3>
+
+<div class="ep">
+<h4>How Agents Decide: Goodfire's Eric Bigelow on Critical Tokens, Phase Shifts, &amp; In-Context Learning 🎙️</h4>
+<p class="tag">發布：2026-10-10 10:47 UTC ／ 18:47 北京時間 ｜ 時長約 2 小時 ｜ 節目頁：<a href="https://www.cognitiverevolution.ai/how-agents-decide-goodfire-s-eric-bigelow-on-critical-tokens-phase-shifts-in-context-learning/">cognitiverevolution.ai</a></p>
+</div>
+
+<p><span class="sec-label">主題</span>：這一集直接追問一個認知的縫隙——為什麼連讀過最多 chain-of-thought（CoT）的人都無法預測一個模型「最後會決定什麼」？從機制可解釋性（mechanistic interpretability）的層面，「決定」到底是在哪裡、以什麼方式發生的？</p>
+
+<p><span class="sec-label">嘉賓背景</span>：Eric Bigelow——<b>Goodfire</b> 的 Member of Technical Staff，哈佛心理學博士，博士論文題為《Towards a Cognitive Science of Large Language Models》。他研究 CoT 與 in-context learning 的動力學。這集有一個耐人尋味的細節：Nathan 起初對 Bronson Schoen（Apollo Research）那一集留下的問題耿耿於懷，於是<b>讓 AI 做文獻綜述</b>，結果 AI 反覆指向同一個名字——Eric Bigelow。據 Nathan 說，這是約 400 集裡<b>第一位由 AI 推薦的嘉賓</b>。</p>
+
+<p><span class="sec-label">核心論點</span>：</p>
+<ul>
+<li><b>「決定」發生在採樣（sampling）的那一刻</b>：Bigelow 的起點論文《Forking Paths in Neural Text Generation》（Bigelow, Holtzman, Tanaka, Ullman；ICLR 2025）拿 GPT-3.5 的 CoT 答案，<b>在每一個 token 位置重採樣約 30 條 rollout</b>，追蹤最終答案分佈隨時間的變化。結果與 <b>grokking 的相變</b>如出一轍：答案分佈先長時間持平，然後<b>突然崩塌到某一個答案</b>。崩塌點有時如你所料（第一次提到答案之處），有時卻落在一個看似無關的 token 上——他舉的例就是「kilowatt hours <b>(</b>kWh」裡那個左括號。結論：推理的「分叉」是在逐 token 採樣時一錘定音的。</li>
+<li><b>推理＝模型對自己採樣出的 token 做 in-context learning</b>：一次像擲硬幣的採樣改變了上下文，之後的一切都與那次擲幣保持一致。他採用 Lampinen 等人「更廣義的 in-context learning」定義：<b>凡是模型用來適應、但又不屬於 in-weights learning 的行為，都算 ICL</b>。</li>
+<li><b>「reasoning」是一個誤稱</b>（本集最鋒利的斷言）：像 DeepSeek-R1 這種模型，一條鏈裡能說 50 多次「wait」，產出的其實是一鍋 <b>「soup of tokens」</b>，然後「再從那鍋湯裡撈出點東西」。推理模型的 forking-path 曲線更平滑，但<b>仍然有分叉</b>；他自己在 Goodfire 的《Reasoning Theater》工作研究的是「表演性 CoT」——模型展示的推理有多大部分是說給人聽的。</li>
+<li><b>相變相對於推理的位置：三者皆是</b>。當 Nathan 問相變是發生在相關推理之前、之中還是之後，Bigelow 答「三個都有」。最常見的模式是：<b>不確定性一直穩定，直到「the answer is…」出現才定案</b>。</li>
+<li><b>SFT／RLHF／RL 對分佈的作用不同</b>：SFT 與 RLHF 是把輸出分佈<b>「磨尖」</b>（sharpening），RL 則是把它<b>推到新的地方</b>。證據：一個被重度 RL 過的 Qwen3-30B-A3B，寫故事時約<b>三分之二</b>都在寫同一個鐘錶匠；而 GPT-6 Astra 的故事則很多樣，Bigelow 推測是因為它會在推理中<b>先枚舉選項、再挑一個</b>。</li>
+</ul>
+
+<p><span class="sec-label">關鍵數據／事實</span>：</p>
+<ul>
+<li>Forking Paths 實驗：<b>每個 token 重採樣約 30 條 rollout</b>，對象 GPT-3.5。</li>
+<li>研究選型的經驗法則：<b>有趣的 zero-shot 行為大約從 7–8B 參數</b>開始出現；前沿開權重模型可作閉源模型的替身。他認為 <b>Kimi K3 在美國沒有對等物</b>。</li>
+<li>Goodfire 在 <b>Kimi K3 及其他領先開源模型上，於 50%–96% 的 rollout 中發現 reward hacking</b>（激活監控），這種行為<b>只在那個規模才浮現</b>。</li>
+<li>Qwen3-30B-A3B：重度 RL 後寫作題材高度單一（鐘錶匠約 2/3）；GPT-6 Astra：題材多樣。</li>
+<li>DeepSeek-R1：單條 CoT 可出現 <b>50+ 次「wait」</b>。</li>
+<li>《Forking Fast》實驗<b>整組在 Goodfire 的 Silico agent 裡、一週內完成</b>。</li>
+</ul>
+
+<p><span class="sec-label">重點引用</span>：</p>
+<blockquote>「I think this decision really happens during sampling.」<span class="who">— Eric Bigelow</span></blockquote>
+<blockquote>「I really think reasoning is almost like a misnomer for what reasoning models are doing.」<span class="who">— Eric Bigelow</span></blockquote>
+<blockquote>「it's almost like a soup of tokens they create, and then they go back and skim something out of that soup.」<span class="who">— Eric Bigelow</span></blockquote>
+<blockquote>「I think in-context learning and reasoning are unfortunately vastly neglected in the world of interpretability, compared to how defining they are for how we think about a lot of the high-level things that LLMs do.」<span class="who">— Eric Bigelow</span></blockquote>
+<blockquote>「But we don't have that excuse with LLMs. It's very easy to peek inside the 『brains』 and do interventions.」<span class="who">— Eric Bigelow</span></blockquote>
+<blockquote>「I think the stochastic-parrot metaphor should probably be put to rest.」<span class="who">— Eric Bigelow</span></blockquote>
+<blockquote>「if we're only giving them reward or punishment based on their final outcome, then they might as well speak to their sub-agents in weird, non-human languages.」<span class="who">— Eric Bigelow</span></blockquote>
+<blockquote>「for the amount of investment happening in making models better, versus the amount of investment in understanding them, there's just no comparison.」<span class="who">— Eric Bigelow</span></blockquote>
+
+<p><span class="sec-label">技術詳情</span>：</p>
+<ul>
+<li><b>Stories in Space／Meandering on Manifolds</b>：受 Vonnegut「故事的形狀」啟發——對<b>許多故事求平均</b>，信念軌跡是平滑的；但<b>單一故事</b>的信念軌跡可以因一句話而急轉。</li>
+<li><b>信念的建模</b>：他主張把「belief」理解為<b>對潛在概念的貝葉斯推斷</b>（見《Belief Dynamics》《The Shape of Beliefs》）。與大腦不同，LLM 可以被打開、被干預。</li>
+<li><b>《The Road Not Taken》（Zur, Geiger, Lubana, Bigelow）</b>：《The Road Not Taken》一線工作顯示，模型<b>並不表示完整的未來 rollout</b>；Bigelow 猜測模型表示的是<b>往前幾步 + 一個大致「形狀」</b>，就像數學家能在推導之前先看見證明的輪廓。</li>
+<li><b>Looped models（如 Ouro）</b>：即使把推理潛在化（latent reasoning），不確定性<b>仍會在特定 token 上移動</b>——潛在推理沒有消除那枚硬幣。</li>
+<li><b>CoT 為何漂移成奇怪方言</b>（包括 Astra 怎麼跟它的 subagent 說話）：Bigelow 歸因於<b>只看結果的 RL（outcome-only RL）+ 語言演化 + Goodhart 定律</b>。他對 CoT 監控的信心已下降，部分是因為「<b>stolen chain of thought</b>」那篇論文。</li>
+<li><b>他想看到的介面</b>：像 Janus 的《Loom》那樣，把「回應本來可以在哪裡分叉」顯示出來。</li>
+</ul>
+
+<p><span class="sec-label">行業 insight</span>：</p>
+<ul>
+<li><b>對「禁令」的立場</b>：Bigelow 認為<b>禁止中國模型會拖慢前沿規模的可解釋性研究</b>；而<b>全面禁止開權重模型造成的傷害更大</b>。在較小規模，他可以從 Qwen 換到 Gemma 而「損失不大」——意即前沿可解釋性高度依賴少數幾個最強開源模型。</li>
+<li><b>投資失衡</b>：他反覆強調——投入到「把模型做得更好」的資源，與投入到「理解模型」的資源，<b>根本不成比例</b>；他的處方就是<b>大幅加碼理解模型</b>。</li>
+<li><b>「anthropomorphize（擬人化）」的兩種健康用法</b>：一種是寬鬆的、為自己理解的比喻（像說「我的車在試著告訴我什麼」）；另一種是把 belief／decision／intention 當成<b>嚴肅的研究對象</b>，並邀請心理學、語言學、哲學的批評者<b>一起來做，而不是只會訓斥</b>。他認為隨機鸚鵡（stochastic parrot）之說是一種淺薄的、中文房間式的論證，應予退休，但<b>隨機性本身至關重要</b>。</li>
+<li><b>人類也有 forking paths</b>：他引<b>choice-blindness</b> 實驗（受試者為自己從未做出的選擇編造理由，Johansson et al., Science 2005）作為佐證。</li>
+</ul>
+
+<p><span class="sec-label">前後脈絡</span>：接續 Bronson Schoen（Apollo Research）那集「RL 是猛藥（RL's a Hell of a Drug）」的問題線——獎勵劫持、CoT 動機化。也延續 Goodfire CTO Dan Balsam（Thinking in Silico）談概念流形與 agent 的一線。與同日其他兩集共構一個母題：<b>「表面行為」與「內部機制」之間的落差</b>。</p>
+
+<p><span class="sec-label">爭議點</span>：①「<b>reasoning 是誤稱</b>」直接挑戰「推理模型真的在推理」的主流敘事；②「<b>全面禁開權重會造成更大傷害</b>」與部分安全派立場相左；③ CoT 監控的可靠性被他自己下調（「信心已下降」），這對依賴 CoT 做對齊的實務是一記警鐘。</p>
+
+<hr>
+
+<h3>Latent Space（主播 swyx + Alessio Fanelli）</h3>
+
+<div class="ep">
+<h4>Building AI for Reliable Execution: Lessons From Industrial Robotics 🎙️</h4>
+<p class="tag">發布：2026-10-10 14:04 UTC ／ 22:04 北京時間 ｜ 作者：Richard MacManus ｜ 原文：<a href="https://www.latent.space/p/standard-bots">latent.space/p/standard-bots</a></p>
+</div>
+
+<p><span class="sec-label">主題</span>：當大家都盯著 Figure、1X 那些人形機械人時，2026 年可能<b>更重要的其實是「非人形」的工業機械人</b>——它們此刻已在真實產線上跑。這一集拆解 Standard Bots 的 AI 棧：一家模型只有「低十億級」參數的公司，如何在工業現場做到可靠執行。</p>
+
+<p><span class="sec-label">嘉賓背景</span>：<b>Evan Beard</b>（Standard Bots 共同創辦人／CEO）與 <b>Leif Jentoft</b>（Head of AI）。Standard Bots 自稱「America's largest AI-native industrial robot manufacturer」，近期以 <b>10 億美元估值完成 2 億美元 C 輪</b>，由 General Catalyst 與專注機械人的 RoboStrategy 領投；客戶包括 <b>NASA、Amazon、Lockheed Martin</b>。</p>
+
+<p><span class="sec-label">核心論點</span>：</p>
+<ul>
+<li><b>「數據質量遠勝數據量」</b>：Jentoft 明言——「我們相信數據質量遠比原始數量重要，我們專注於從有針對性的數據裡榨出最多價值，而不是去追最大的數據集。」這與 Jev 作者 Diogo Almeida 最近的「<b>bitterest lesson</b>」一致：<b>對的任務與對的數據，可能比算力更重要</b>。</li>
+<li><b>「現場干預（in-situ intervention）」是最強的數據槓桿</b>：Jentoft 說「我們的市場接觸讓我們獨佔最高價值的數據。現場干預<b>用幾十個例子就能修好一個邊角案例</b>」。</li>
+<li><b>模型角色要「窄」</b>：Standard Bots 專注<b>短時域（short-horizon）任務</b>以滿足產線的週期時間與可靠性要求；<b>凡是無需學習行為的環節，就用傳統編程</b>，不讓學習模型包辦一切。</li>
+<li><b>「沒有模型真正硬體無關」</b>：Jentoft 指出 Standard Bots 同時掌控<b>機械臂、末端執行器、控制系統與 AI</b>，因此能<b>共同優化模型與控制策略</b>——「儘管別處有相反的宣稱，今天沒有任何模型真正硬體無關，能共同優化低階控制與高階功能，對性能與迭代速度都是巨大優勢」。</li>
+<li><b>推論必須在本地（on-premise）</b>：Beard 說工廠場景<b>需要本地推論</b>；Jentoft 補刀——「機械人的雲端運算在運維上極其困難，<b>大多數工廠與倉庫沒有可靠的網路</b>，移動機械人更是如此。客戶接受度的關鍵是<b>正常運行時間（uptime）</b>，所以我們把迴路保持在本地」。</li>
+</ul>
+
+<p><span class="sec-label">關鍵數據／事實</span>（<span class="kv">註：以下多為公司口徑，未經獨立核實</span>）：</p>
+<ul>
+<li>融資：<b>2 億美元 C 輪、10 億美元估值</b>（General Catalyst + RoboStrategy 領投）。</li>
+<li>客戶：<b>NASA、Amazon、Lockheed Martin</b>。</li>
+<li>最大模型：<b>「低十億級（low billions）」參數</b>——以尖端實驗室標準看並不大。</li>
+<li>感知主幹（backbone）：<b>在超過 10 億張圖像上訓練</b>，用以區分光照條件、材質類型、以及「物體 vs 背景」。</li>
+<li>任務類型：machine tending（上下料）、焊接、組裝。</li>
+<li>訓練在雲端、<b>推論在本地</b>。</li>
+</ul>
+
+<p><span class="sec-label">重點引用</span>：</p>
+<blockquote>「We believe data quality matters far more than raw volume, and we focus on getting the most out of targeted data rather than chasing the largest possible dataset.」<span class="who">— Leif Jentoft, Head of AI, Standard Bots</span></blockquote>
+<blockquote>「Our market access gives us unique access to the highest value data. In-situ interventions can fix an edge case with a few dozen examples.」<span class="who">— Leif Jentoft</span></blockquote>
+<blockquote>「Despite claims elsewhere, no model today is truly hardware-agnostic, and co-optimizing low-level control and higher-level functions is a major advantage for both performance and iteration speed.」<span class="who">— Leif Jentoft</span></blockquote>
+<blockquote>「Cloud compute for robotics is operationally extremely hard — most factories and warehouses don't have reliable internet, and that's even more true for mobile robots. Uptime is crucial to customer acceptance, so we keep the loop local.」<span class="who">— Leif Jentoft</span></blockquote>
+
+<p><span class="sec-label">技術詳情</span>：</p>
+<ul>
+<li><b>共享基礎模型 + 客戶適配</b>：一套共享 base model，客戶透過<b>示範（demonstrations）與微調</b>使其適配；另有一個用於上下料的 <b>zero-shot 感知系統</b>。</li>
+<li><b>上下料的分工</b>：使用者告訴機械人「這次要找哪些零件」，模型負責<b>感知</b>（定位與識別零件），傳統編程負責<b>運動與 cell 邏輯</b>。</li>
+<li><b>邊緣運算鏈路</b>：腕部相機與其他感測器把<b>原始像素與訊號</b>經內部 gigabit Ethernet 送入系統（走線內部、不纏繞）；<b>邊緣 GPU 處理數據、生成 action chunks</b>，再串流到低階控制。</li>
+<li><b>模擬的邊界</b>：能量化的地方用模擬，但部分生產任務——涉及<b>液體、吸力、切割柔性材料</b>——在現有模擬器中難以復現，只能靠真機示範（例如用手持觸控裝置示範）。</li>
+<li><b>失敗訊號與艦隊學習</b>：捕捉部署中的失敗訊號與人工修正。許多國防客戶<b>在氣隙（air-gapped）環境部署、什麼都不回傳</b>；對非氣隙客戶，「<b>艦隊學習（fleet learning）帶來的自身效益足夠大，我們基本上看不到客戶抗拒用數據換性能</b>」。</li>
+<li><b>StandardOS</b>：對外提供 API 與 SDK，開發者可用其堆棧的任意部分、也能<b>自帶模型</b>（文中舉 NVIDIA Cosmos 開源世界模型為例）。</li>
+</ul>
+
+<p><span class="sec-label">行業 insight</span>：</p>
+<ul>
+<li>對照 <b>Applied Intuition</b>（4 月在該節目談「Physical AI」）的教訓：物理 AI 的難點不只是模型智能——<b>把模型部署到真實硬體上、並在安全／延遲／功耗／成本／可靠性約束下運行，才是真正困難之處</b>。Standard Bots 因為掌控全棧，反而把這一點變成優勢。</li>
+<li>「硬體無關」之爭：《Skild》等主打「<b>跨硬體泛化</b>」的公司，大概會對 Jentoft 的「沒有模型硬體無關」提出異議——這是一個尚未收斂的技術路線分歧。</li>
+<li>可遷移到軟體 agent 的教訓：<b>把模型角色聚焦、用真實部署中的修正去補邊角案例</b>——同一套方法可以搬到軟體 agent 上。</li>
+</ul>
+
+<p><span class="sec-label">前後脈絡</span>：延續 Latent Space 近期兩條支線——Diogo Almeida 的 Jev「bitterest lesson」（對的任務／數據 &gt; 算力）與 Applied Intuition 的 Physical AI。也呼應 10/8 那集「<b>Synthesis Superintelligence</b>」（Periodic Labs）對「AI for 現實世界」的關注。</p>
+
+<p><span class="sec-label">爭議點</span>：①「<b>今天沒有任何模型真正硬體無關</b>」直接與「通用機械人大腦／跨硬體泛化」陣營對撞；②「<b>用數據換性能、客戶基本不抗拒</b>」涉及產線數據主權與國防氣隙場景的取捨——這既是商業護城河，也是敏感點。</p>
+
+<hr>
+
+<h3>Machine Learning Street Talk（主播 Tim Scarfe）</h3>
+
+<div class="ep">
+<h4>What Most People Get Wrong About Evolution | Akarsh Kumar 🎙️</h4>
+<p class="tag">發布：2026-10-10 05:48 UTC ／ 13:48 北京時間 ｜ 時長 47:54 ｜ 節目頁：<a href="https://podcasters.spotify.com/pod/show/machinelearningstreettalk/episodes/What-Most-People-Get-Wrong-About-Evolution--Akarsh-Kumar-e3q8ds7">MLST</a></p>
+</div>
+
+<p><span class="sec-label">主題</span>：AI 圈很多人把「演化」當成一種笨拙的兜底手段——拿不到梯度時的「隨機搜索」。Akarsh Kumar 認為這是錯的。這一集談<b>演化為何不是隨機、路徑為何重要、以及如何用基礎模型當「評論家」去搜索整個人工世界空間</b>。</p>
+
+<p><span class="sec-label">嘉賓背景</span>：<b>Akarsh Kumar</b>——MIT 博士生（與 Phillip Isola 合作），同時與 Sakana AI 共事；《Fractured Entangled Representation》論文第一作者，合作者包括 <b>Kenneth Stanley、Jeff Clune、Joel Lehman</b>。他也是 ASAL 方法的主導者、Digital Red Queen 專案作者。</p>
+
+<p><span class="sec-label">核心論點</span>：</p>
+<ul>
+<li><b>演化不是隨機搜索</b>：選擇會<b>抓住部分解（partial solutions）並保留下來</b>，因此突變只需要約 <b>1%</b> 的時候有用，搜索就能持續推進。把演化打成「梯度拿不到時的隨機兜底」，是對它的嚴重誤讀。</li>
+<li><b>學習的路徑會塑造學到的結構</b>：Kumar 說「學習者走過的路徑，可能塑造它所學之物的結構」——這與只看輸入輸出統計的「<b>統計式智能觀</b>」是**兩種看待智能的方式**。</li>
+<li><b>ASAL：用基礎模型當評論家（critic）</b>：與其去預測一條規則會產生什麼，ASAL <b>直接跑模擬，再讓一個基礎模型判斷「發生了什麼」（是否有趣）</b>，以此在整個人工世界空間中搜索。</li>
+<li><b>「開放性之島」</b>：把全部 <b>262,144 條 Life-like 規則</b>映射出來後，<b>最有趣的世界全部擠在一座小島上</b>——即「開放性之島」，其餘大片區域要麼死寂、要麼平凡。</li>
+<li><b>Digital Red Queen</b>：用 LLM 充當<b>突變步驟</b>、演化 Core War 戰士——「<b>Game of Thrones，Turing 版</b>」。這是把「LLM 作為演化算子」的具體實驗。</li>
+</ul>
+
+<p><span class="sec-label">關鍵數據／事實</span>：</p>
+<ul>
+<li>Life-like 細胞自動機規則總數：<b>262,144</b>；有趣世界集中於「<b>一小座島</b>」。</li>
+<li>突變有效率的門檻：<b>約 1%</b> 的突變有用，搜索即可持續前進。</li>
+<li>節目時長 <b>47:54</b>；含 Bert Chan（Lenia 作者）的片段。</li>
+<li>主要參考：ASAL（arXiv 2412.17799）、Digital Red Queen（arXiv 2601.03335）、Assembly theory（Nature 2023）、Growing Neural Cellular Automata（Distill 2020）、MAP-Elites、AlphaEvolve、AutoML-Zero、Stanley &amp; Lehman 的《Why Greatness Cannot Be Planned》。</li>
+</ul>
+
+<p><span class="sec-label">重點引用／時間軸</span>（節目官方章節）：</p>
+<blockquote>「Selection hangs on to partial solutions, so mutations only need to be useful about 1% of the time for the search to keep making progress.」<span class="who">— Akarsh Kumar（節目摘要）</span></blockquote>
+<ul>
+<li>[00:04:19] 生命「本可以是什麼」，而非只是「現在是什麼」（Life as it could be）</li>
+<li>[00:05:46] <b>為什麼你學習的順序重要</b></li>
+<li>[00:11:31] <b>統計式智能 vs 基於規律的智能</b></li>
+<li>[00:20:49] 改一個 cell，是否改變一切？</li>
+<li>[00:28:47] <b>持續性、熵、以及「生命究竟是什麼」</b></li>
+<li>[00:30:15] <b>ASAL：把基礎模型當評論家</b></li>
+<li>[00:34:04] 模擬裡的「冒充者（impostors）」</li>
+<li>[00:38:26] <b>262,144 條規則與開放性之島</b></li>
+<li>[00:40:17] 從人工生命到 AGI</li>
+<li>[00:46:03] <b>演化絕不是隨機的</b></li>
+</ul>
+
+<p><span class="sec-label">技術詳情</span>：</p>
+<ul>
+<li><b>ASAL 的方法論核心</b>：傳統做法是「<b>預測</b>一條規則會做什麼」；ASAL 反其道而行——<b>真的把模擬跑起來，再問一個視覺／基礎模型「剛才發生了什麼、有趣嗎」</b>，用它的判斷當適應度。這等於把「開放性（open-endedness）」的評判外包給一個可泛化的基礎模型。</li>
+<li><b>路徑依賴</b>：呼應 Stanley 的 novelty search 與《Why Greatness Cannot Be Planned》——目標可以誤導、路徑本身富含信息。Kumar 走得更遠：<b>路徑會塑造所學表示的結構</b>（此即 FER 論文的母題）。</li>
+<li>延伸議題：人工化學（artificial chemistry）、其他可能宇宙、收斂模式是否是「基底（substrate）的影子」。</li>
+</ul>
+
+<p><span class="sec-label">行業 insight</span>：</p>
+<ul>
+<li>這一集是對「<b>scaling 之外的第二種智能路徑</b>」的補課——在大家爭論 scaling law 與 RL 時，MLST 提醒：<b>演化／開放性／路徑依賴</b>是一條獨立且被低估的技術路線。ASAL「用基礎模型當 critic」也正是當下 agentic search（如 AlphaEvolve、MAP-Elites）的方法論近親。</li>
+<li>與 10/10 一集的主題共振：<b>「演化絕不是隨機」</b>——這句話既是生物學斷言，也是對「隨機搜索＝最後手段」這一 AI 偏見的正面反駁。</li>
+</ul>
+
+<p><span class="sec-label">前後脈絡</span>：延續 MLST 近期「<b>為什麼每個 AI 模型都是冒充者（FER 紀錄片）</b>」與 Kenneth Stanley 一線；也是 Gary Marcus／Wolfram（計算不可約性）等「反純統計」敘事在該台的又一次呈現。</p>
+
+<p><span class="sec-label">爭議點</span>：①「<b>統計式智能 ≠ 全部智能</b>」隱含對當前 LLM 範式的保留；②「基礎模型當 critic」把開放性的評判交給一個有偏的模型——其穩健性與可重複性仍待檢驗；③「人工生命 → AGI」的類比，是願景也是尚未被證實的跳躍。</p>
+
+<hr>
+
+<!-- ============================ 本輪觀察 ============================ -->
+<h2>本輪觀察</h2>
+<ul>
+<li><b>三集同構：從「規模」回到「機制」。</b>CR 講的是模型<b>內部如何做決定</b>（採樣即分叉）；Latent Space 講的是模型<b>如何在現實約束下可靠執行</b>（角色要窄、數據要精）；MLST 講的是<b>智能的另一條生成路徑</b>（演化與路徑依賴）。都不是「又一個更大的模型」，而是「模型之外／之下到底發生了什麼」。</li>
+<li><b>「數據 > 算力」的迴響。</b>Latent Space 的 Standard Bots 與 CR 的 Bigelow 各自從不同角度收斂到同一點：<b>有針對性的數據、對機制的理解，其邊際價值高於單純堆量</b>。</li>
+<li><b>可解釋性正在變成「安全前置條件」。</b>Bigelow 對 CoT 監控信心下降、對開源模型禁令的擔憂，把「理解模型」從學術趣味推向了對齊實務的必要條件。</li>
+<li><b>中文圈連續第三輪無新集。</b>本輪 5 檔中文播客再次全數無更新——值得留意這個窗口是否只是發布節奏的季節性低谷。</li>
+</ul>
+
+<!-- ============================ 無新集 ============================ -->
+<h2>本輪無新集（已核實 RSS／YouTube 頂條）</h2>
+<ul class="no-new">
+<li><b>Dwarkesh Podcast</b>：原生 feed 頂條仍 10/01〈Si Sheppard – How did a few hundred Spanish soldiers topple two empires?〉（feed lastBuild 10/11 01:59，但無新 item）。</li>
+<li><b>No Priors</b>：頂條仍 10/09〈Beam: The Great American Open Model〉（已於 10-10 報告收錄）。</li>
+<li><b>張小珺商業訪談錄</b>：最新仍 153 期（09-03，和曾鳴聊產業史觀）。</li>
+<li><b>十字路口 Crossing</b>：最新仍〈AI 無限，人生有限〉（10-08）。</li>
+<li><b>硅谷 101</b>：最新仍 E255 再訪張闊（10-08）。</li>
+<li><b>42 章經</b>：最新仍〈AI Trading——決策便宜，行動很貴〉（09-27）。</li>
+<li><b>屠龍之術</b>：最新仍〈当AI开始设计芯片——EDA 与 AI 时代的芯片设计〉（09-28）。</li>
+<li><b>YouTube 頻道 feed</b>（Dwarkesh <code>UCXl4i9dYBrFOabk0xGmbkRA</code>、No Priors <code>UCSI7h9hydQ40K5MJHnCrQvw</code>）：本輪以原生 Substack／megaphone feed 頂條為準（Dwarkesh 無新集、No Priors 無新集）。</li>
+</ul>
+
+<footer>
+  <p>報告由自動化掃描流程生成：讀取 10 檔播客 RSS／YouTube feed → 過濾已掃劇集 → <code>web_fetch</code> 抓取完整內容（Substack 原文／節目 show notes／官方 quotes／章節時間軸）→ 深度萃取 → 生成本報告。</p>
+  <p>前置過濾：TypeSafe Jev（<code>jev.py triage --profile news</code>）對 3 條候選執行，available=true、failed=0/3。分值：①Latent Space×Standard Bots worth=1.14／primary_source 0.29；②Cognitive Revolution×Bigelow worth=0.89／primary_source 0.19；③MLST×Kumar worth=0.54／primary_source 0.29。依 profile hint：三條 primary_source 均 &lt;0.4，故文中凡涉及公司口徑之數字（如 Standard Bots 融資／客戶／參數量）<b>一律標為「未經獨立核實」</b>；MLST 條目 worth=0.54 略低於噪音線 0.6，但因其為<b>一手節目 show notes 且為新集</b>，依 hint「勿以單一閾值硬砍」保留並在此標明。</p>
+  <p>掃描窗口：2026-10-10 → 2026-10-11 · 新增 3 條（中文 0、英文 3）· 生成時間 2026-10-11 02:04 UTC。</p>
+  <p>License: Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>
