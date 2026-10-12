@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 硅谷 101 E255：榜單接近滿分，真實工作為何仍會失敗？——張闊論 107 個任務與 Agent 交付</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">硅谷 101 · 2026-10-08 23:00 UTC 發布 · 約 46 分鐘</div>
+  <h1>榜單接近滿分，真實工作為何仍會失敗？——硅谷 101 × 阿里國際站總裁張闊：107 個真實任務、61% 通過率，同「模型 × 工程框架 × 上下文」</h1>
+  <div class="meta">
+    <span>📅 2026-10-08（北京時間 10-09 07:00）</span><span>·</span><span>🎙️ 硅谷 101（主播 Yiwen）</span><span>·</span><span>👤 張闊（阿里國際站／Alibaba.com 總裁）</span><span>·</span><span>⏱️ 約 46 分鐘</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集嘅問題意識極簡單、但極硬：<strong>「模型在榜單上越來越強，為什麼真正把工作交給 AI，還是需要人反覆解釋、檢查和兜底？」</strong>半年前硅谷 101 同阿里國際站總裁張闊聊過 Accio Work；半年後回訪，用商家真實案例檢驗同一個問題——<strong>模型能力嘅提升，究竟有幾多變成咗商家工作裡嘅進步？</strong>佢畀出一個近乎冷水嘅答案：通用評測都接近滿分，但團隊喺真實經營中「並沒有感受到同樣幅度的提升」；而佢哋自建嘅 107 個真實任務裡，最前沿模型喺無人干預下通過率約 <strong>61%</strong>。以下綜合自節目官方 show notes 同章節時間軸；分析為本站萃取。
+</p>
+
+<div class="section-title">一、人物同問題</div>
+
+<ul>
+  <li><strong>張闊</strong>：<strong>阿里國際站（Alibaba.com）總裁</strong>。阿里國際站有 <strong>26 年 B2B 數據同經驗</strong>積累。</li>
+  <li><strong>主播</strong>：Yiwen（硅谷 101 主持人）；節目監製泓君。</li>
+  <li><strong>半年前嘅前作</strong>：E231〈從 B2B 到 A2A：Agent 新基建，如何讓「一人企業」做全球生意？〉——已談 Agent 新基建同 A2A 交易，同「AI 會唔會替代 SaaS」。</li>
+  <li><strong>背景產品</strong>：<strong>Accio Work</strong>（「外貿版龍蝦」）——喺年初 OpenClaw／Cowork 工作範式被驗證後、春節後推出；海外用戶只須同 Agent 對話，即可跑完市場分析 → 選品設計 → 供應商篩選 → 商品發布 → 日常運營全流程。</li>
+</ul>
+
+<blockquote class="strong">
+  「模型在榜单上越来越强，为什么真正把工作交给 AI，还是需要人反复解释、检查和兜底？」
+  <span class="attribution">節目開場設問（官方 show notes）</span>
+</blockquote>
+
+<div class="section-title">二、核心命題：榜單成績同真實交付之間嘅落差</div>
+
+<p><span class="sub-title">① 通用評測接近滿分，真實經營卻無感</span></p>
+<p>張闊指出：好多模型嘅通用評測成績已<strong>接近滿分</strong>，但團隊喺真實經營中「並沒有感受到同樣幅度嘅提升」。呢個落差就係全集嘅主問題——榜單分數同真實交付之間，存在一條被忽略嘅鴻溝。</p>
+
+<p><span class="sub-title">② 商業任務為何比編程更難</span></p>
+<p>節目反覆強調：呢啲任務冇數學競賽咁耀眼，卻<strong>直接關係到商家嘅成本、交期同利潤</strong>。一個好用嘅 Agent 要同時做到四件事：<strong>「把工作做完」＋「讓人用得起」＋「理解工具同流程」＋「理解呢盤生意究竟想追求什麼」</strong>。呢個四重要求，正係編程任務（有沙盒、可自動驗證對錯）同商業任務（開放、模糊、目標多維）嘅根本分野。</p>
+
+<blockquote class="strong">
+  「这 107 个任务没有数学竞赛那么耀眼，却直接关系到商家的成本、交期和利润。」
+  <span class="attribution">節目對「真實任務」嘅定位（官方 show notes）</span>
+</blockquote>
+
+<div class="section-title">三、107 個真實任務：61% 係咩意思</div>
+
+<p>為咗量度「模型能力究竟有幾多變成生意進步」，阿里國際站團隊<strong>由實際業務整理出 107 個任務</strong>，例如：<strong>比較供應商報價、識別釣魚郵件、預訂船期、處理交易糾紛</strong>。據張闊介紹，喺呢套特定評測中，<strong>最前沿模型喺「無人干預」條件下嘅任務通過率約 61%</strong>。</p>
+
+<div class="data-point">
+  <span>本集最硬嘅一手數字</span>
+  自建真實任務集：<strong>107 個</strong>（比較報價、識別釣魚郵件、訂船期、交易糾紛等）· 前沿模型無人干預通過率：<strong>約 61%</strong> · 阿里國際站沉澱：<strong>26 年</strong> B2B 數據同經驗。
+</div>
+
+<p><span class="sub-title">「怎樣才算真正完成任務？」</span></p>
+<p>節目專設一段（章節 24:32「報價、釣魚郵件、訂船同糾紛」）追問任務嘅驗收標準——因為喺開放式商業任務裡，<strong>「做完」同「做對」係兩件事</strong>：一封釣魚郵件要唔要攔、一個報價要唔要信、一場糾紛要點樣判，背後係一整套領域判斷，而唔係一個可自動對答案嘅題目。</p>
+
+<p><span class="sub-title">新版本也可能退步，評測必須持續做</span></p>
+<p>張闊提醒一個反直覺嘅點：<strong>「新版本也可能退步」</strong>——所以評測必須持續做，唔可以假設版本號越大越好。（章節 26:33）呢點同本報告鏈早前 OpenAI 停止報告 SWE-bench Verified 分數、指出測試缺陷同數據污染嘅事件同頻：<strong>評測本身係一個要持續維護嘅工程，而唔係一次性嘅排行榜。</strong></p>
+
+<div class="section-title">四、通用模型越來越強，垂直產品仲有咩優勢？</div>
+
+<ul>
+  <li><strong>中美 Agent 生態嘅差異</strong>：垂直 SaaS vs 平台工具（章節 10:13）——美國偏垂直 SaaS 各自為戰，中國偏平台工具一體化。</li>
+  <li><strong>AI 會替代 SaaS 嗎？</strong>（11:30）——呢個係整條產業線嘅核心追問。</li>
+  <li><strong>獨立站 vs 平台電商</strong>：唔同市場如何影響產品設計（14:11）。</li>
+  <li><strong>Agent 公式：模型 × 工程框架 × 上下文</strong>（15:16）——模型同工程必須<strong>聯合優化</strong>，唔可以只等模型升級（17:46）。</li>
+</ul>
+<p>呢個「模型 × 工程框架 × 上下文」公式，係全集最可遷移嘅一句：<strong>垂直整合（平台工具 ＋ 業務 know-how ＋ 持續自建評測）成為對抗通用模型收斂嘅護城河</strong>——因為模型係公共品，而業務 know-how 同評測數據唔係。</p>
+
+<div class="section-title">五、最貴嘅模型，唔一定係最好嘅選擇</div>
+
+<ul>
+  <li><strong>多模型路由</strong>（33:44）：如何為唔同任務匹配能力同成本——最貴唔等於最啱。</li>
+  <li><strong>多個 Agent 建議衝突時，商家該聽邊個？</strong>（38:05）——當多個 agent 各自畀建議甚至互相矛盾，決策權點樣收束回人。</li>
+  <li><strong>能力嘅層次</strong>（40:35）：<strong>上雲、定時任務、事件響應同長期經營，係不同層次嘅能力</strong>——唔可以當成同一件事。</li>
+  <li><strong>有流水，唔代表有利潤</strong>（28:55）：多平台經營裡嘅常見錯覺。</li>
+</ul>
+
+<p><span class="sub-title">老闆仍要做嘅選擇</span></p>
+<p>章節 32:39 列出三樣仍然係人嘅工作：<strong>產品品味、市場判斷、預算分配</strong>。呢個呼應全集結尾（44:43「小企業如何借助 AI 把生意做得更大」）——AI 接手越多執行，人就越要保留「邊啲判斷唔可以外判」。</p>
+
+<div class="section-title">六、章節時間軸（官方 show notes，精確到分鐘）</div>
+
+<table>
+  <tr><th>時點</th><th>主題</th></tr>
+  <tr><td>01:18</td><td>AI 同事市場：編程之外，專業工作走到咗邊一步？</td></tr>
+  <tr><td>02:38</td><td>商業任務為什麼比編程更難？</td></tr>
+  <tr><td>03:48</td><td>由採購搜索到日常經營，Accio Work 嘅任務邊界如何擴展</td></tr>
+  <tr><td>06:12</td><td>商家案例：植物監測產品，由創意走到設計、供應鏈同銷售</td></tr>
+  <tr><td>07:47</td><td>找工廠、比報價、拿樣品：採購流程裡人同 AI 如何協作</td></tr>
+  <tr><td>10:13</td><td>中美 Agent 生態差異：垂直 SaaS 與平台工具</td></tr>
+  <tr><td>11:30</td><td>AI 會替代 SaaS 嗎？</td></tr>
+  <tr><td>14:11</td><td>獨立站與平台電商：不同市場如何影響產品設計</td></tr>
+  <tr><td>15:16</td><td>Agent 公式：模型 × 工程框架 × 上下文</td></tr>
+  <tr><td>17:46</td><td>模型與工程聯合優化，不能只等模型升級</td></tr>
+  <tr><td>20:29</td><td>107 個真實任務：無人干預下最先進模型通過率約 61%</td></tr>
+  <tr><td>24:32</td><td>報價、釣魚郵件、訂船同糾紛：怎樣才算真正完成任務？</td></tr>
+  <tr><td>26:33</td><td>新版本也可能退步，評測必須持續做</td></tr>
+  <tr><td>28:55</td><td>多平台經營：有流水，不代表有利潤</td></tr>
+  <tr><td>32:39</td><td>產品品味、市場判斷與預算分配：老闆仍要做的選擇</td></tr>
+  <tr><td>33:44</td><td>多模型路由：如何為不同任務匹配能力與成本？</td></tr>
+  <tr><td>38:05</td><td>多個 Agent 建議衝突，商家該聽誰的？</td></tr>
+  <tr><td>40:35</td><td>上雲、定時任務、事件響應與長期經營，是不同的能力</td></tr>
+  <tr><td>43:05</td><td>CoCreate 現場：商家對 Agent 有哪些期待？</td></tr>
+  <tr><td>44:43</td><td>小企業如何借助 AI，把生意做得更大</td></tr>
+</table>
+
+<div class="section-title">七、行業 insight：呢集真正嘅訊號</div>
+
+<ul>
+  <li><strong>61% 係本輪最硬嘅「eval ≠ 真實交付」一手數字。</strong>通用評測近滿分 vs 真實商業任務六成出頭，直接量化咗評測同落地之間嘅鴻溝。呢個唔係「模型唔夠強」，而係<strong>評測測嘅能力同工作真正需要嘅能力，係兩件事</strong>。</li>
+  <li><strong>「模型 × 工程框架 × 上下文」＝企業 AI 嘅主戰場。</strong>呢個公式同本報告鏈早前嘅 Stacklok／OutSystems「企業自建 harness」主線一致——2026 下半年企業 AI 嘅重心係 harness／管治層，而唔係模型本身。</li>
+  <li><strong>垂直整合係對抗通用模型收斂嘅護城河。</strong>平台工具 ＋ 業務 know-how ＋ <strong>持續自建評測</strong>——三者缺一不可。因為模型係公共品，而「呢盤生意究竟想追求什麼」唔係。</li>
+  <li><strong>「有人反覆檢查同兜底」被重新定價。</strong>當無人干預通過率只有 61%，剩下嘅 39% 就係<strong>人類兜底嘅市場</strong>——呢個係好多「AI 取代論」敘事裡被跳過嘅一段：交付唔止要做到，仲要做到「用得起、信得過」。</li>
+  <li><strong>老闆仍要保留判斷。</strong>執行成本坍塌，但產品品味、市場判斷、預算分配仍然係人嘅工作——同本週另一集（十字路口 × 鴨哥）「AI 變強，管理原則沒變」互相印證。</li>
+</ul>
+
+<div class="section-title">八、前後脈絡</div>
+
+<ul>
+  <li><strong>本集係半年前訪談嘅續集。</strong>早前 E231〈從 B2B 到 A2A：Agent 新基建，如何讓「一人企業」做全球生意？〉已談 Agent 新基建同 A2A 交易；本集主題由「基建」轉向「真實案例驗收」。</li>
+  <li><strong>同 10-09 報告嘅 42 章經（9-27）同頻</strong>：兩者都指向「決策便宜、行動很貴」嘅成本結構——企業唔缺「生成能力」，缺嘅係能可靠交付、成本可控嘅 agent 執行層。</li>
+  <li><strong>同 Latent Space × Standard Bots 母題共振</strong>：一台「參數量僅低十億級」嘅模型可以喺產線可靠運轉，靠嘅係「數據質量遠勝數據量」同「用實地修正嘅幾十個樣本補邊角案例」——正係「模型唔係全部、工程同數據先係」嘅另一個現場。</li>
+  <li><strong>同 OpenAI 停報 SWE-bench Verified 同頻</strong>：唔可信嘅 benchmark ＋ 「新版本也可能退步」，合起來係 2026 下半年行業對評測嘅一次集體反思。</li>
+</ul>
+
+<div class="section-title">九、爭議點／存疑（必讀）</div>
+
+<ul>
+  <li><strong>61% 係單一公司自建評測嘅口徑。</strong>任務集由阿里國際站自己整理，題目、評分標準、通過判定都由該團隊定義，第三方無法覆核——「61%」要理解為<strong>「喺呢套特定評測中」</strong>嘅數字，唔能直接外推到所有商業任務。<strong>二手 · 未經獨立核實</strong>。</li>
+  <li><strong>「通用評測接近滿分」同「真實經營無感」之間，可能存在評測選擇偏差。</strong>團隊有動機自建一套「更能反映自家痛點」嘅評測，令數字睇落更保守——呢個既是誠實，也可能係品牌敘事嘅一部分。</li>
+  <li><strong>「AI 會唔會替代 SaaS」未有定論。</strong>節目把呢個問題擺上檯，但答案仍然開放；垂直 SaaS 同平台工具嘅勝負，取決於市場結構而非單一技術。</li>
+  <li><strong>商業化動機</strong>：受訪者係阿里國際站總裁，節目帶有產品（Accio Work）推廣色彩；所有商家案例同數字均為公司口徑，未有獨立第三方驗證。</li>
+</ul>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上內容出自 <em>硅谷 101</em>〈E255｜模型越来越强，为什么用户没感觉？再访阿里国际站总裁张阔〉（2026-10-08 23:00 UTC 發布；主播 Yiwen；嘉賓張闊，阿里國際站總裁）。核心事實同引文取自<strong>節目官方 show notes 同章節時間軸</strong>；節目單集頁未提供完整逐字稿。分析、脈絡整理及「Vee 嘅萃取」為本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #209 · 硅谷 101（2026-10-08 · E255 張闊：107 個真實任務／61% 通過率／模型 × 工程框架 × 上下文）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-12 06:00 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>

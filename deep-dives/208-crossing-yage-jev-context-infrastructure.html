@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 十字路口：「有了AI，我感觉自己强得可怕！」——鴨哥論 Jev 與 Context 基礎設施</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">十字路口 Crossing · 2026-10-11 16:00 UTC 發布 · 公路播客 · 72 分 32 秒</div>
+  <h1>「有了 AI，我感覺自己強得可怕！」——十字路口 × 鴨哥：Jev 為何喺呢一刻爆發，同埋「Context 才係真正嘅基礎設施」</h1>
+  <div class="meta">
+    <span>📅 2026-10-11（北京時間 10-12 00:00）</span><span>·</span><span>🎙️ 十字路口 Crossing（Koji 楊遠騁）</span><span>·</span><span>👤 鴨哥（Yan Wang／grapeot，Superlinear Academy 聯合創辦人）</span><span>·</span><span>⏱️ 72m32s</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係一期「公路播客」——由烏鎮開車返上海嗰程，Koji 同佢口中「我認識嘅人裡面把 AI 用得最狠嘅一位」鴨哥邊開邊傾。表面係一個重度用戶嘅自述（代碼交畀 AI 寫、自媒體交畀 AI 運營，甚至細路受傷後嘅就醫判斷、保險理賠、幾千張幼兒園相都交畀 AI），但真正嘅骨幹係兩條線：一條講「<strong>Jev 為何喺呢一刻爆發</strong>」，另一條講「<strong>Context 才係真正嘅基礎設施</strong>」。佢嘅核心斷言係一句反直覺嘅話：<strong>當模型智能跨過一道坎之後，決定產出品質嘅係 context，而唔係模型嘅智能</strong>。以下綜合自節目官方 show notes、嘉賓長文〈為什麼 AI 只會說正確的廢話〉（yage.ai）同其開源 repo；所有引文均逐處標明來源。
+</p>
+
+<div class="section-title">一、人物同問題：一個「動手型極客」嘅一年實驗</div>
+
+<ul>
+  <li><strong>鴨哥（Yan Wang，GitHub／X：grapeot）</strong>：<strong>Superlinear Academy 聯合創辦人</strong>（一個 AI Builder 教育生態，社區規模 <strong>2 萬+ 成員、700+ 真實 AI 項目</strong>）；哥倫比亞大學 PhD；先後任職於<strong>微軟、Pinterest、Samsara</strong>。自我定位係「AI builder」，關注 agent 基礎設施、AI-native 開發、模型能力邊界。</li>
+  <li><strong>側寫（節目頁透露）</strong>：機械操縱——擁有飛機／機動船舶／挖掘機駕照，自購一架螺旋槳飛機花咗 1900 美元；攝影器材黨；天文攝影——喺四川租遠程天文台、自寫自訓全套控制軟體神經網路，拍攝為期數年嘅 <strong>600 億像素</strong>全天照片。一個典型嘅「動手型極客」，而呢種氣質，正係佢 context 系統嘅底色。</li>
+  <li><strong>主播</strong>：Koji（楊遠騁），十字路口創辦人、AI Hacker House 發起人、真格基金 Venture Partner。</li>
+  <li><strong>集數形式</strong>：公路播客，錄製於烏鎮→上海嘅車程中，全長 <strong>72 分 32 秒</strong>。</li>
+</ul>
+
+<blockquote class="strong">
+  「有了 AI，我感覺自己強得可怕。」
+  <span class="attribution">鴨哥（本集標題句，官方 show notes 原話）</span>
+</blockquote>
+
+<div class="section-title">二、Jev 為何在「此刻」爆發</div>
+
+<p><span class="sub-title">① 本質：GPT + JSON Mode 嘅極致化</span></p>
+<p>節目把 Jev 定性為「<strong>GPT + JSON Mode</strong>」嘅極致化，而唔係又一個聊天模型。佢唔係生成文本，而係<strong>輸入一個 state（狀態數據）＋ 一組類型化問題，直接輸出帶校準概率嘅結構化決策</strong>；軟件拿到就用。呢個呼應 Kahneman 嘅 System 1／System 2 隱喻——TypeSafe 賣嘅，係<strong>快、類型化、可直接行動嘅「系統一」決策層</strong>。</p>
+
+<p><span class="sub-title">② 爆火嘅三個條件</span></p>
+<p>節目把 Jev 嘅走紅歸因於「<strong>agent 成本結構 ＋ 開發者痛點 ＋ 時機</strong>」三者疊加——當 agent 需要對<strong>海量微小步驟</strong>逐一分類／路由／打分時，用前沿 LLM 為每一步寫一段文字，帳單會爆炸；而 Jev 正好卡喺「<strong>決策便宜、行動很貴</strong>」嗰一層。（同一句亦見於 42 章經 9-27 嗰期標題，屬跨節目共振。）</p>
+
+<p><span class="sub-title">③ Agent 裡嘅「分類器」其實無所不在</span></p>
+<p>鴨哥觀察：真正運轉起來嘅 agent，內部充滿各種判斷節點——工單分流、工具調用係咪越權、輸出應唔應該放行、檢索結果夠唔夠。呢啲過去被埋在 prompt 裡、靠大模型逐字「想」出嚟嘅判斷，本質上係<strong>分類問題</strong>，正是 Jev 這類模型要接管嘅。</p>
+
+<div class="data-point">
+  <span>二手 · 未經獨立核實</span>
+  TypeSafe AI 於 <strong>2026-09-15</strong> 推出 Jev，<strong>36 小時內約 14 萬名候補使用者</strong>取得資格，初期需求一度令 API 無法正常服務；Cloudflare、LangChain、Langfuse 等工具迅速加入支援。有中文財經媒體（虎嗅，10-06）稱 TypeSafe AI 因 Jev 而「<strong>十天估值飆漲約 50 倍</strong>」；Latent Space 嘅 AINews（10-10）更給出 <strong>&gt;$100M ARR、$7.5B 估值</strong>（上線約三週）嘅口徑。競品方面：Jev 爆火後，OpenAI 發布 <strong>Decisions API</strong> 正面回應，社交平台上出現「<strong>Jev Is Dead</strong>」嘅爭論。
+</div>
+
+<div class="section-title">三、Context 才是真正嘅基礎設施（全集理論核心）</div>
+
+<p><span class="sub-title">① 「給 AI 裝上耳朵同眼睛」嘅一年期實驗</span></p>
+<p>鴨哥持續一年採集自己嘅客觀行為數據：<strong>錄音轉寫、會議記錄、微信對話導出、同 AI 嘅每一次對話同糾正、甚至發嬲</strong>——佢嘅講法係「這些是我們在真實決策場景下展現出來的判斷邏輯」。關鍵觀察：<strong>人太接近自己嘅數據，很難自己提取模式</strong>，所以需要一個旁觀者（AI）去讀。所有數據放喺同一個資料夾，令 AI 開箱即可對任何專案做 cross-reference——呢個就係 <strong>context density</strong> 嘅基礎。</p>
+
+<p><span class="sub-title">② 控制變量實驗：checklist vs insight</span></p>
+<p>鴨哥同一位朋友「老王」各自叫自己嘅 agent 就同一篇 OpenAI Harness Engineering 博文做深度調研，條件刻意對齊：<strong>同檔次嘅 LLM（Claude Opus 4.6 vs GPT-5.4）、同一個調研 skill、同一個搜索工具 Tavily、同一個 agentic 後端 OpenCode、甚至同樣嘅 prompt</strong>。唯一嘅唔同，係兩個 agent 背後嘅 context：鴨哥嘅接入了過去一年積累嘅判斷框架，老王嘅無。</p>
+<ul>
+  <li><strong>老王嘅報告（行動建議部分）</strong>：「先做知識底座，再做更強 agent。給倉庫建立清晰的 AGENTS.md 目錄索引；把產品規則、架構規則、執行計畫、質量標準寫進 repo；用 CI 檢查文檔 freshness 同 cross-link completeness。」——正確、安全，換邊個嚟問都得到差不多嘅嘢。</li>
+  <li><strong>鴨哥嘅報告（同一話題）</strong>：「完美主義是吞吐量的敵人。OpenAI 採用最小阻塞合併、後續修復的策略。Cursor 發現要求 100% 正確性會導致系統停滯，接受小而穩定的錯誤率反而更高效。兩者都接受了『<strong>糾錯比等待便宜</strong>』的權衡。」——跨兩個獨立來源提煉出有立場嘅判斷，並歸納出底層權衡。</li>
+</ul>
+<p>鴨哥嘅總結好狠：<strong>一個係搬運工，一個係分析師</strong>。而佢由此推出全集最重要嘅一句——變量只有一個，所以結論好顯然。</p>
+
+<blockquote class="strong">
+  「（在模型智能跨过一道坎以后）决定产出性质的是 context，而不是模型的智能。」
+  <span class="attribution">鴨哥，〈為什麼 AI 只會說正確的廢話〉（yage.ai）——本集 Part 3 嘅方法論底稿</span>
+</blockquote>
+
+<p><span class="sub-title">③ LLM 嘅 Consensus 天花板</span></p>
+<p>鴨哥把「AI 講正確嘅廢話」歸因於訓練機制：LLM 訓練本質係 next token prediction，每一步輸出<strong>概率最高</strong>嘅 token，而概率最高意味最多人認同，即 <strong>consensus（共識）</strong>；RLHF 再加一層——安全對齊專門懲罰有爭議、帶強烈立場嘅輸出，鼓勵平衡、全面、冇明顯偏向嘅答案。兩層機制疊加，默認行為就係<strong>回歸均值</strong>。</p>
+<blockquote class="strong">
+  「Deep Research 是一個非常有誤導性的名字……它做的事是自動化的高頻搜索、多文檔綜合、擴大信息覆蓋面。充其量是 Wide Research。」
+  <span class="attribution">鴨哥，〈為什麼 AI 只會說正確的廢話〉</span>
+</blockquote>
+<p>佢區分兩種唔對稱：Deep Research 解決嘅係<strong>信息不對稱</strong>（你以前唔知，而家知），但真正嘅深度來自另一條軸——<strong>認知不對稱</strong>。面對同一份行業報告，一個二十年老兵同一個新手看到嘅嘢完全唔同：老兵有一套經多年試錯沉澱嘅認知系統，知道邊啲數據係噪音、邊啲異常值預示趨勢；新手冇呢個濾鏡，就算拿到十倍厚嘅報告都做唔到同等質量嘅決策。</p>
+<blockquote class="strong">
+  「AI 可以把一個小白提升到大眾平均水平，因為它的訓練數據就是大眾平均水平的壓縮。但對於已經在平均水平之上的人，AI 的 consensus 輸出對他的判斷幾乎沒有增量。」
+  <span class="attribution">鴨哥，〈為什麼 AI 只會說正確的廢話〉</span>
+</blockquote>
+
+<p><span class="sub-title">④ AI 由 CPU Bound 走向 Memory Bound</span></p>
+<p>面對「正確嘅廢話」，大家嘅直覺係去優化模型：換更好更貴嘅模型、改更複雜嘅 prompt、加更完備嘅工具，Multi-Agent、Harness 全上——但呢啲都係喺同一個維度（模型智能）上加碼。開頭嘅實驗已經給出答案：<strong>兩邊模型智能幾乎一樣，工具一樣，prompt 一樣，唯一唔同嘅係 context</strong>。</p>
+<p>呢個轉變喺計算機史上出現過：<strong>CPU 快到一定程度之後，繼續升級 CPU 就冇意義，主要提升都來自內存架構</strong>；LLM 而家到咗同樣嘅拐點。而呢個判斷係反直覺嘅——每次模型升級，智能就更便宜一點，你用嘅模型別人也能用；但<strong>你嘅 context 只屬於你，模型升級唔會令它貶值</strong>。所以：</p>
+<div class="highlight-box">
+  <strong>持續投入喺一個不斷貶值嘅維度（模型智能）上，收益遞減；投入喺一個唔貶值嘅維度（個人 context）上，收益累積。</strong>
+</div>
+
+<p><span class="sub-title">⑤ 為何刻意「本地優先」，唔搬上雲端</span></p>
+<p>節目明言：系統刻意<strong>本地優先</strong>——呢啲數據係私人判斷嘅載體，本地保存既係隱私考量，亦令 AI 能喺同一資料夾內對任何專案做 cross-reference（context density 嘅前提）。至於微信聊天記錄：佢提供咗模型訓練資料裡唔存在、卻最能代表「你係邊個」嘅判斷痕跡——你如何權衡、如何取捨、咩嘢會令你發嬲。</p>
+
+<div class="section-title">四、鴨哥嘅「0 人公司」：半年做到 5700 粉絲</div>
+
+<ul>
+  <li><strong>0 人運營一個 AI 自媒體</strong>：整條流水線——選題、寫作、排版、發布——由 AI agent 自動完成，人只保留「<strong>設定標準同驗收</strong>」。</li>
+  <li><strong>半年戰績</strong>：<strong>1600+ 郵件訂閱、5700+ X（Twitter）粉絲</strong>（節目章節標題即此數字）。</li>
+  <li><strong>由自動發布到自我改進</strong>：系統唔只知道「發」，仲會基於回饋調整下一次嘅行為，形成閉環。</li>
+  <li><strong>「0 人公司」真係賺到錢咩？</strong>節目直面商業化嘅追問（章節 00:47:03 專設此問）。</li>
+</ul>
+<p>呢個係本輪最直接可驗證嘅「個體產能放大」樣本：<strong>內容生產係被 agent 化得最徹底嘅場景之一</strong>。</p>
+
+<div class="section-title">五、AI 時代最獎勵什麼樣嘅人？</div>
+
+<ul>
+  <li><strong>「領域經驗 × 管理 AI」</strong>：真正嘅槓桿唔係「識寫 prompt」，而係「喺你已有一線領域經驗嘅基礎上，把 AI 當團隊嚟管理」。</li>
+  <li><strong>鴨哥嘅「老鴨湯」</strong>（00:52:28）：佢個人沉澱嘅判斷原則同思維方式，即系統中蒸餾出嘅「axiom」。</li>
+  <li><strong>咩軟件唔會被 Vibe Coding 摧毀？</strong>（01:07:11）：對「人人都能一句話生成應用」之後、軟件護城河何在嘅追問。</li>
+  <li><strong>下一代 AI Native 公司</strong>（01:08:11）同<strong>「人類最後嘅堡壘：哪些事仍不能交給 AI？」</strong>（01:10:52）——收喺 AI 能力嘅邊界。</li>
+</ul>
+<p>Paired with Part 2 嘅一句「<strong>AI 變強，管理原則沒變</strong>」：模型再強，你要交付咩、點驗收、如何授權同劃界，仍然係<strong>管理問題</strong>——AI 改變嘅係執行成本，唔係判斷標準。</p>
+
+<div class="section-title">六、技術詳情：Context Infrastructure 嘅實作拆解</div>
+
+<p>鴨哥嘅系統開源為 <strong>github.com/grapeot/context-infrastructure</strong>（參考實現，內含實際使用嘅 44 條 axiom、核心 skill 檔、三層記憶系統代碼）。三要素如下：</p>
+
+<p><span class="sub-title">① 大量積累（採集客觀行為，而非只寫 prompt）</span></p>
+<p>起點係數據採集：錄音轉寫（Intake Skill）、會議記錄、微信對話導出（<strong>wechat_db_parser</strong>）、以及同 AI 嘅每次對話／糾正，全部落成本地檔案、放喺同一資料夾。相關公開 repo：<strong>Intake Skill</strong>（Apple Voice Memos → data/YYYYMMDD/ → MLX Qwen3 ASR 轉寫 → Codex 後處理，刻意做得「窄」：唔錄音、唔做說話人分離）、<strong>Semantic Search Skill</strong>（面向 agent 嘅本地語義搜索 CLI；單一 SQLite 元資料庫 + 追加式 float32 NumPy 段檔；支援任意 OpenAI 相容 embedding 端點，預設 text-embedding-3-small）、<strong>Health Quantification</strong>（iPhone HealthKit → Tailscale 網內 POST → Mac FastAPI:7996 → SQLite → CLI → AI agent）、<strong>Apple Photos Skill</strong>（本地優先 CLI，憑證只存本地 .env，明言「不要貼進 AI 會話、issue、log 或 commit」）。</p>
+
+<p><span class="sub-title">② 分層提煉（三層蒸餾，以「穩定性」為篩選標準）</span></p>
+<p>單一事件可能只係情境反應（冇睡好、資訊唔全、隨機選擇），不可靠；<strong>跨場景、跨時間反覆一致嘅，才係「你」</strong>。流程分三層：</p>
+<table>
+  <tr><th>層級</th><th>角色</th><th>做咩</th></tr>
+  <tr><td><strong>L1 Observer</strong></td><td>每日</td><td>掃描檔案變動，提取有意義嘅觀察，寫流水帳</td></tr>
+  <tr><td><strong>L2 Reflector</strong></td><td>每週</td><td>合併重複、清理過期、識別跨專案模式，分離信號同噪聲</td></tr>
+  <tr><td><strong>L3 Axiom</strong></td><td>蒸餾</td><td>從穩定模式蒸餾決策原則，只保留真正代表你嘅嘢（→ <strong>44 條 axiom</strong>）</td></tr>
+</table>
+<p>與 <strong>Mem0</strong> 等流行記憶系統嘅關鍵區別：後者蒸餾到「<strong>事實層</strong>」就停（「你偏好 TypeScript」「你住在上海」）；本系統繼續蒸到「<strong>判斷原則層</strong>」（「評估技術方案時你如何權衡可維護性同性能」）。<strong>事實告訴 AI 你係邊個，判斷原則告訴 AI 你點諗。</strong></p>
+
+<p><span class="sub-title">③ 按需加載（用 skill 當記憶層級）</span></p>
+<p>全部塞入 context window 唔可行（有限，且無關資訊會稀釋信號）。解法係 skill 系統，類比 CPU 記憶體層級：<strong>L1 cache = AGENTS.md</strong>（根路由表）；<strong>L2 = skill 庫索引</strong>（告訴 AI 需要咩就往哪找）；<strong>L3 = 具體 skill 檔</strong>。按需加載、漸進披露。</p>
+
+<p><span class="sub-title">④ 循環</span></p>
+<p>三要素運行起來之後，知識產品開始湧現，而每個產品喺消費 context 嘅同時亦產生新 context：<strong>鴨哥 AI 手記</strong>（每日 AI 行業簡報）同<strong>領域調研報告</strong>（Superlinear Academy）都係喺呢個循環上運轉。</p>
+
+<div class="data-point">
+  <span>關鍵數字（節目／嘉賓公開口徑）</span>
+  系統運行約一年，蒸餾出 <strong>44 條 axiom</strong>；repo 內含 <strong>43 條決策公理</strong>（展示層）＋ <strong>39 份 skill Markdown</strong>；Superlinear Academy 社區 <strong>2 萬+ 成員、700+ 真實 AI 項目</strong>；Skill 目錄對外公佈為 <strong>81 個 Skills、62 個工具 Repo、19 份 Doc 與工作流</strong>（會員解鎖）。控制變量實驗：<strong>Claude Opus 4.6 vs GPT-5.4</strong>／同一 skill／<strong>Tavily</strong>／<strong>OpenCode</strong>／同一 prompt。
+</div>
+
+<div class="section-title">七、行業 insight：呢集真正嘅訊號</div>
+
+<ul>
+  <li><strong>「決策層」正變成一個獨立嘅產品品類。</strong>Jev 嘅爆發唔係因為它更會寫，而係因為它把 agent 裡大量<strong>微小、高頻、可類型化</strong>嘅判斷，從「用大模型逐字想」剝離出嚟，做成便宜、快、可直接消費嘅結構化輸出。當 agent 走到「每步都要判斷」嘅規模，成本結構必然催生呢一層——呢個就係 Jev 喺「此刻」而非一年前走紅嘅結構性原因。</li>
+  <li><strong>雲端電腦持久化係 agent 由「工具」變「員工」嘅分水嶺。</strong>Manus／Grok Bot／Muse 嘅同一動作，本質係把<strong>狀態</strong>還畀 AI：有檔案系統、有背景任務、有跨會話記憶。冇持久化，就永遠係「每次重新開機嘅實習生」。</li>
+  <li><strong>Context 係唯一唔貶值嘅資產。</strong>模型每次升級都把「智能」變成公共品，而你嘅判斷框架、審美、由失敗提煉嘅教訓只屬於你。呢個係全集最可遷移嘅判斷。</li>
+  <li><strong>「AI 變強，管理原則沒變」係畀從業者嘅定心丸。</strong>執行成本坍塌，但交付標準、驗收、授權邊界仍然係人嘅工作——呢個亦解釋咗為何「領域經驗 × 管理 AI」被列為 AI 時代最被獎勵嘅組合。</li>
+  <li><strong>自媒體／內容生產係被 agent 化最徹底嘅場景之一。</strong>「0 人公司」半年嘅訂閱／粉絲數據，係本輪最直接可驗證嘅「個體產能放大」樣本。</li>
+</ul>
+
+<div class="section-title">八、前後脈絡</div>
+
+<ul>
+  <li><strong>與本報告流水線自身嘅奇妙閉環。</strong>本系列報告嘅「前置過濾」用嘅正是 TypeSafe Jev（jev.py triage，見 jev-decision-layer skill）——即呢期節目 Part 1 討論嘅嗰個產品。節目嘅「決策便宜、行動很貴」，同報告流程「先讓 Jev 廉價篩噪音、再由大模型深寫」係同一套成本哲學。</li>
+  <li><strong>與 10-10 報告嘅英文三集形成互文。</strong>Cognitive Revolution 嘅 Eric Bigelow 講「推理模型只係喺度攪一鍋 token 湯再撈答案」——若推理模型本質近似採樣／分類，咁 Jev 把「決策」直接做成類型化概率輸出，正是把 Bigelow 嘅觀察產品化。Latent Space 嘅「數據質量遠勝數據量」同本篇「決定產出嘅係 context 而非智能」幾乎係同一句話嘅兩種講法。</li>
+  <li><strong>與 42 章經（9-27）「AI Trading——決策便宜，行動很貴」跨節目共振</strong>：兩期都喺把「決策」同「行動」放喺 AI 經濟學嘅成本結構上拆開。</li>
+  <li><strong>Jev 敘事嘅時間線</strong>：9-15 上線 → 9 月中下旬候補 14 萬／API 過載 → 10-06 中文財經媒體報導估值十天約 50 倍 → 10-10 Latent Space AINews 提及 &gt;$100M ARR／$7.5B 估值 → 10-11 本集把呢條線編成「為何此刻爆發」嘅敘事。</li>
+</ul>
+
+<div class="section-title">九、爭議點／存疑（必讀）</div>
+
+<ul>
+  <li><strong>「Jev 只係包裝精緻嘅 JSON 分類器」。</strong>技術圈最常見嘅吐槽：由數學輸出來睇，Jev 確實係「面對幾個選項返回概率分布」嘅分類器；其「快」亦非全然神秘——社區已有人用共享計算、並行解碼等老辦法復刻類似推理形狀。質疑者嘅核心係：<strong>缺乏真正護城河，先發優勢可能迅速被抹平</strong>。</li>
+  <li><strong>「Jev Is Dead」嘅爭論同巨頭入場。</strong>爆火後 OpenAI 即發布 Decisions API 正面回應——當決策層被證明係真需求，它就由「創新」變成「大模型廠商嘅一個功能」。支持方反駁：傳統分類器圍繞固定任務／固定標籤訓練，而 Jev 允許開發者喺運行時用自然語言定義問題同候選項，<strong>無須為每套標籤重新訓練</strong>。（研究者 Sebastian Raschka 亦認為呢種「面向動態標籤嘅零樣本泛化」係關鍵區別。）</li>
+  <li><strong>方法論上嘅潛在爭議</strong>：鴨哥嘅 context 系統把 AI 產出由 consensus 推向 non-consensus，靠嘅係<strong>刻意注入個人 bias</strong>——佢自己亦承認「有品味嘅 bias 係深度來源，但 bias 亦可能係低品質偏見」。同一機制既能提純判斷力，也能固化偏見。</li>
+  <li><strong>一手程度</strong>：本集小宇宙單集頁未提供完整逐字稿（僅 show notes），故 Part 3–5 嘅方法論細節以嘉賓公開發表嘅長文同其開源 repo 為補充佐證。凡涉公司口徑嘅數字（Jev 候補規模、ARR／估值、競品動作）一律標為「<strong>二手 · 未經獨立核實</strong>」。</li>
+</ul>
+
+<blockquote class="strong">
+  「矽基大腦的絕對客觀最終只能抵達聰明的平庸，能將其重塑的，唯有你積累數十年、充滿偏見與品味的人類靈魂。」
+  <span class="attribution">鴨哥，〈為什麼 AI 只會說正確的廢話〉結語</span>
+</blockquote>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上內容出自 <em>十字路口 Crossing</em>〈「有了 AI，我感覺自己強得可怕！」｜對談鴨哥〉（2026-10-11 16:00 UTC 發布；主播 Koji 楊遠騁；嘉賓鴨哥／grapeot）。核心事實同引文取自<strong>節目官方 show notes</strong>（含章節時間軸）、嘉賓長文〈為什麼 AI 只會說正確的廢話，以及怎麼把它逼出舒適區〉（yage.ai）同其開源 repo <strong>github.com/grapeot/context-infrastructure</strong>。分析、脈絡整理及「Vee 嘅萃取」為本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #208 · 十字路口 Crossing（2026-10-11 · 鴨哥：Jev 為何此刻爆發 ／ Context 才係真正基礎設施）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-12 06:00 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
