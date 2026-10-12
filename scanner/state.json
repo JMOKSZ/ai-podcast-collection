@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-10-11T02:04:00.000Z",
- "lastScanDate": "2026-10-11",
+ "lastScan": "2026-10-12T02:04:00.000Z",
+ "lastScanDate": "2026-10-12",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-01T15:28:28.000Z",
@@ -89,21 +89,30 @@
    "newEpisodes": []
   },
   "crossing": {
-   "lastEpisodePubDate": "2026-10-08T17:13:37.000Z",
-   "lastEpisodeTitle": "AI 无限，人生有限｜对谈 KK、山音：一线 AI 创作者",
-   "lastFeedItemPubDate": "2026-10-08T17:13:37.000Z",
-   "lastFeedItemTitle": "AI 无限，人生有限｜对谈 KK、山音：一线 AI 创作者",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-10-11T16:00:00.000Z",
+   "lastEpisodeTitle": "“有了AI，我感觉自己强得可怕！”｜对谈鸭哥",
+   "lastFeedItemPubDate": "2026-10-11T16:00:00.000Z",
+   "lastFeedItemTitle": "“有了AI，我感觉自己强得可怕！”｜对谈鸭哥",
+   "newEpisodes": [
+    {
+     "title": "“有了AI，我感觉自己强得可怕！”｜对谈鸭哥",
+     "pubDate": "2026-10-11T16:00:00.000Z",
+     "type": "interview",
+     "url": "https://www.xiaoyuzhoufm.com/episode/6aca7f91e742e36efcc10957",
+     "guests": "鸭哥（Yan Wang / grapeot）— Superlinear Academy 联合创始人、哥大 PhD，前微软/Pinterest/Samsara；主播 Koji 杨远骋",
+     "note": "已深度萃取（xyzfm 原生 feed show notes 全文＋完整章節時間軸 21 段；小宇宙單集頁無完整逐字稿，僅 show notes）。時長 72:32。形式＝公路播客（烏鎮→上海）。主題＝①Jev 為何此刻爆發（GPT+JSON Mode、爆火三條件、agent 內的分類器）；②Manus/Grok Bot/Muse 給 AI 一台永不關機的雲端電腦＋基模擊穿一整套工業＋『AI 變強管理原則沒變』＋無限複製的專家天團；③Context 才是基礎設施（一年期『給 AI 裝耳朵眼睛』實驗、微信記錄、本地優先、三要素）；④0 人自媒體半年 1600+ 郵件/5700+ X 粉絲；⑤AI 時代最獎勵『領域經驗 × 管理 AI』。補充佐證（非節目逐字稿，取自嘉賓公開長文 yage.ai《為什麼 AI 只會說正確的廢話》＋其開源 repo）：consensus 天花板／CPU Bound→Memory Bound／L1 Observer-L2 Reflector-L3 Axiom 三層蒸餾／44 條 axiom／skill 當記憶層級／同款 LLM(Opus 4.6 vs GPT-5.4)+同 skill+Tavily+OpenCode+同 prompt 僅 context 不同的對照實驗。Jev 數據（二手·未核實）：9/15 上線、36h 約 14 萬候補、API 過載、Cloudflare/LangChain/Langfuse 支援；公開財經媒體稱十天估值約 50 倍、Latent Space AINews 稱 >$100M ARR/$7.5B 估值；OpenAI 發 Decisions API、『Jev Is Dead』爭論。爭議：Jev『只是包裝精緻的 JSON 分類器』vs 支持方（動態標籤零樣本泛化、Raschka 背書）。"
+    }
+   ]
   }
  },
  "notes": {
-  "scan_status": "2026-10-11 掃描（02:03–02:04 UTC）：窗口 10/10–10/11 內 10 檔播客新增 3 條（全英文、中文 5 檔連續第三輪全無新集）。①Cognitive Revolution〈How Agents Decide: Goodfire's Eric Bigelow...〉（10/10 10:47:14Z）。②Latent Space〈Building AI for Reliable Execution: Lessons From Industrial Robotics〉（10/10 14:04:11Z，作者 Richard MacManus，訪 Standard Bots）。③ML Street Talk〈What Most People Get Wrong About Evolution | Akarsh Kumar〉（10/10 05:48:01Z）。逐一核實無新：Dwarkesh RSS 頂條仍 10/1 Si Sheppard（lastBuild 10/11 01:59，無新 item）；No Priors 仍 10/9 Beam；張小珺仍 9/3 #153；十字路口仍 10/8；硅谷101 仍 10/8 E255；42章經仍 9/27 AI Trading；屠龍之術仍 9/28 EDA。Latent Space feed 另有一條 10/10 22:07Z『[Subscriber Exclusive] NYC Subscriber Meetups!』——屬訂閱者公告非劇集，未計入。",
-  "report_date": "2026-10-11",
-  "deep_content_fetched": "《CR×Bigelow》：節目頁 AI-generated show notes＋完整章節時間軸（16 段）＋官方 Quotes worth pulling（8 條逐字引文）＋參考文獻清單，未截斷。《Latent Space×Standard Bots》：Substack 原文全文（readability，約 8.7 KB，truncated=false）。《MLST×Kumar》：原生 anchor/megaphone feed show notes 全文＋完整章節時間軸＋參考文獻＋時長（47:54）；RESCRIPT 逐字稿頁為 JS 應用，web_fetch 僅得標題，未取得。",
-  "transcript_attempts": "①英文以原生 RSS 核實：Dwarkesh→dwarkesh.com/feed；Latent Space→latent.space/feed；CR→feeds.megaphone.fm/RINTP3108857801；No Priors→feeds.megaphone.fm/nopriors；MLST→anchor.fm/s/1e4a0eac/podcast/rss。②中文以 xyzfm／fireside 原生 feed 頂條逐一核實（張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 …/68fyjknth9hj、42章經 …/evgg6xle9rdc、屠龍之術 …/834hyx3v9k74、硅谷101 feeds.fireside.fm/sv101/rss）。③YouTube channel feeds（No Priors UCSI7h9hydQ40K5MJHnCrQvw、Dwarkesh UCXl4i9dYBrFOabk0xGmbkRA）本輪未再抓取，以原生 Substack／megaphone feed 為準。",
-  "jev_prefilter": "2026-10-11 對 3 條候選跑 jev.py triage --profile news：available=true、failed=0/3。分值：Latent Space×Standard Bots worth=1.14／primary_source=0.29；CR×Bigelow worth=0.89／primary_source=0.19；MLST×Kumar worth=0.54／primary_source=0.29。依 hint：primary_source<0.4 者須標二手/未核實——三條均 <0.4，故報告中凡公司口徑數字（Standard Bots 融資/客戶/參數量）一律標明『未經獨立核實』；MLST worth=0.54 略低於噪音線 0.6，惟屬一手節目 show notes 且為新集，依 hint『勿以單一閾值硬砍』保留並標明。",
-  "notable_for_james": "①本輪三集罕見同構——都在談『模型內部/現實執行機制』而非『又一個更大模型』：CR 拆『決定發生在採樣的瞬間』、Latent Space 拆『模型角色要窄、數據要精、迴路要本地』、MLST 拆『演化是另一條非統計智能路徑』。②最反直覺一手斷言＝Bigelow『reasoning 是誤稱』＋『推理模型只是攪一鍋 token 湯再撈答案』：對『推理模型真在推理』的主流敘事降溫；同集『對全面禁開權重會造成更大傷害』與安全派相左。③CR 給出可驗證數字：每 token 重採樣約 30 次、7–8B 起出現有趣 zero-shot、Kimi K3 上 reward hacking 命中 50%–96%、R1 單鏈 50+ 次 wait。④Latent Space 提供『小模型如何在產線可靠運轉』的落地答案（低十億級參數、>10 億圖像 backbone、幾十樣本修邊角、本地推論、gigabit Ethernet＋邊緣 GPU action chunks）——與 Jev 的 bitterest lesson 同一句話：對的數據 > 大數據。⑤MLST 的 ASAL『用基礎模型當 critic 搜索 262,144 條規則』＋『開放性之島』＝agentic search 的方法論近親，值得追。⑥中文圈連續第三輪無新集，留意是否季節性低谷。",
-  "index_html": "未更新 index.html：該落地頁自 2026-07-19 起已停更（deep-dive 索引除外），為維持既有慣例未動。",
+  "scan_status": "2026-10-12 掃描（02:03–02:04 UTC）：窗口 10/11–10/12 內 10 檔播客僅新增 1 條，且罕見落在中文檔——十字路口〈“有了AI，我感觉自己强得可怕！”｜对谈鸭哥〉（2026-10-11 16:00:00Z）。英文 5 檔連續第二天零新增；中文另 4 檔（張小珺/硅谷101/42章經/屠龍之術）亦無新集。逐一核實：Dwarkesh 頂條仍 10/1 Si Sheppard；Latent Space 頂條仍 10/10 22:07 NYC Subscriber Meetups（訂閱者公告非劇集）、最新劇集仍 10/10 standard-bots；No Priors 仍 10/9 Beam；CR 仍 10/10 Bigelow；MLST 仍 10/10 Akarsh Kumar；張小珺仍 9/3 #153；硅谷101 仍 10/8 E255；42章經仍 9/27 AI Trading；屠龍之術仍 9/28 EDA。",
+  "report_date": "2026-10-12",
+  "deep_content_fetched": "《十字路口×鴨哥》：xyzfm 原生 feed show notes 全文（約 5.3 KB）＋完整章節時間軸（21 段，精確到分鐘）＋節目提及的全部參考連結清單；小宇宙單集頁（__NEXT_DATA__）僅含 show notes，無逐字稿。背景佐證另抓取得（未截斷）：嘉賓公開長文 yage.ai/context-infrastructure（readability 全文 ~5.7KB）、Superlinear 首頁與 Skill 目錄、以及其 7 個公開 GitHub repo README（context-infrastructure / intake-skill / semantic-search-skill / health-quantification / psyduck-demo / bright-horizons-photo-sync-skill / apple-photos-skill）。",
+  "transcript_attempts": "①中文以 xyzfm／fireside 原生 feed 頂條逐一核實（張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 …/68fyjknth9hj、42章經 …/evgg6xle9rdc、屠龍之術 …/834hyx3v9k74、硅谷101 feeds.fireside.fm/sv101/rss）。②十字路口新集逐字稿：小宇宙 oia transcript player 需登入，單集頁 __NEXT_DATA__ 無 transcript 欄位，未取得；改以 show notes＋嘉賓公開文章補足。③英文以原生 feed 核實：Dwarkesh→dwarkesh.com/feed；Latent Space→latent.space/feed；CR→feeds.megaphone.fm/RINTP3108857801；No Priors→feeds.megaphone.fm/nopriors；MLST→anchor.fm/s/1e4a0eac/podcast/rss。④YouTube channel feeds 本輪未再抓，以原生 Substack／megaphone feed 為準。",
+  "jev_prefilter": "2026-10-12 對 1 條候選跑 jev.py triage --profile news：available=true、failed=0/1。分值：十字路口×鴨哥 worth=1.08／category=agent-infra／primary_source=0.28。依 hint：primary_source<0.4，故報告中凡公司口徑數字（Jev 候補規模/ARR/估值、OpenAI Decisions API 等）一律標『二手·未經獨立核實』。",
+  "notable_for_james": "①本輪唯一新集、且是近期少見的中文乾貨：把『Jev 為何此刻爆發』與『Context 才是真正基礎設施』擰在一起——就是本報告流水線自己在用的那套哲學（決策便宜、行動很貴；先低成本篩、再深寫）。②最可遷移的斷言＝『模型智能跨過一道坎後，決定產出的是 context 而非智能』；佐證是同款模型+同 skill+同工具+同 prompt、僅 context 不同的對照實驗（checklist vs insight）。③可驗證數字：0 人自媒體半年 1600+ 郵件/5700+ X 粉絲；一年蒸餾 44 條 axiom；Superlinear 81 Skills。④Jev（二手未核實）：9/15 上線、36h 約 14 萬候補；公開媒體十天估值約 50 倍；AINews 稱 >$100M ARR/$7.5B；OpenAI 已發 Decisions API。⑤與 10-10 報告的 Bigelow（推理≈採樣/分類）、Standard Bots（數據質量>數據量）同週互證：主旋律＝機制與成本結構，非更大模型。⑥英文檔連續第二天零新增、中文圈本輪獨有 1 條——留意節奏。",
+  "index_html": "未更新 index.html：該落地頁自 2026-07-19 起已停更（deep-dive 索引除外），維持既有慣例未動。",
   "deep_dive_link": "本輪未新增 deep-dive（報告本體已含完整萃取）；最新 deep-dive 為 deep-dives/202, 203（10/9）。"
  }
 }
