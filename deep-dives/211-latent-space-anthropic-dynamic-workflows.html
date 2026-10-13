@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space × Anthropic：Dynamic Workflows——讓 Claude 自己寫編排程式、自己決定 multi-agent 拓撲</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-10-12 18:18 UTC 發布 · AI Engineer New York 2026 現場</div>
+  <h1>「讓 Claude 完全編排自己嘅 multi-agent 拓撲」——Latent Space × Anthropic：Dynamic Workflows、70 個 bug 捕獲 66 個，同「模型唔知自己有幾多預算」</h1>
+  <div class="meta">
+    <span>📅 2026-10-12（北京時間 10-13 02:18）</span><span>·</span><span>🎙️ Latent Space（作者 Richard MacManus）</span><span>·</span><span>👤 CJ Avilla ＋ Harrison Stall（Anthropic MTS）</span><span>·</span><span>📍 AI Engineer NYC 2026 開幕日 workshop</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+AI Engineer New York 2026 開幕日，Anthropic 兩位技術人員介紹咗一個上周五（10 月 9 日前後）啱啱喺 X 宣布、代號 <strong>dynamic workflows</strong>（會上反覆簡稱「<strong>flows</strong>」）嘅新特性——定義係「<strong>一種全新嘅 multi-agent 編排，為你最有野心嘅 workload 而生</strong>」。佢嘅核心一句話講得晒：<strong>由 Claude 自己決定整個 multi-agent 拓撲</strong>。開發者唔再配置 coordinator 同 roster，而係由 Claude 寫一段<strong>編排程式（orchestration program）</strong>——由佢啟動 agents、收集結果、管理資訊流。呢篇係當前對 flows 最完整嘅公開現場解說，同時亦係一次「貴但值」嘅誠實定位。
+</p>
+
+<blockquote class="strong">
+  「Flows are essentially the next version of multi-agent orchestration, where you can let Claude fully orchestrate the entirety of its own multi-agent topology.」
+  <span class="attribution">Harrison Stall, Anthropic MTS（原文引語）</span>
+</blockquote>
+
+<div class="section-title">一、人物同場合</div>
+
+<ul>
+  <li><strong>嘉賓</strong>：<strong>CJ Avilla</strong> 同 <strong>Harrison Stall</strong>，皆為 Anthropic Members of Technical Staff（MTS）。</li>
+  <li><strong>場合</strong>：<strong>AI Engineer New York 2026</strong> 開幕日 workshop；本集為 Latent Space 編輯 <strong>Richard MacManus</strong> 撰寫嘅現場報導型 article-interview（latent.space）。</li>
+  <li><strong>特性狀態</strong>：dynamic workflows 於 2026-10-09 前後喺 X（@ClaudeDevs）宣布，屬 <strong>public beta</strong>，需以特定 beta header 啟用（第三方報導指 <code>managed-agents-2026-04-01</code>；另說 agent type 選 <code>multiagent_20261001</code>）。本集係其公開後首場深度現場解說。</li>
+  <li><strong>所屬平台</strong>：Claude Managed Agents，全部功能都在 <strong>Claude Console</strong> 中提供（開發者經 API 存取 Claude 嘅界面）。</li>
+</ul>
+
+<div class="section-title">二、核心機制：由 Claude 自己寫編排程式</div>
+
+<p><span class="sub-title">① 「下一代 multi-agent 編排」</span></p>
+<p>Stall 嘅定義（見上引）——讓 Claude「<strong>完全編排自己整個 multi-agent 拓撲</strong>」。運作方式分兩步：<strong>lead agent 先為任務制訂計劃，Claude 接着自己寫一段 orchestration program</strong>——呢段程式負責啟動 agents、收集結果、管理資訊流。</p>
+
+<p><span class="sub-title">② 同舊機制嘅關鍵差異</span></p>
+<p>此前嘅 Claude Managed Agents 需要<strong>開發者自行配置一個 coordinator 加一組 roster 子代理</strong>；有咗 dynamic workflows，由 <strong>Claude 自己決定點樣切分同編排工作</strong>。Stall 原話：跨越多個編排階段，「<strong>它能在你完全不需管理任何互連關係的情況下，完成一個個離散、可驗證的工作單元</strong>」。呢個係一次責任轉移——<strong>「管理互連關係」由人手上轉移到模型手上</strong>。</p>
+
+<p><span class="sub-title">③ 組織學類比：由 Ken Thompson 到 Linus</span></p>
+<p>開場以<strong>作業系統史</strong>作喻：由 <strong>Ken Thompson</strong> 寫出初版 Unix，到 <strong>Linux</strong> 由「一個人（Linus Torvalds）」演化為層層 trusted maintainers。教訓係——<strong>agents 需要同等嘅組織度，才能承擔 Anthropic 設想嘅嗰種大型任務</strong>。問題意識亦講得好直白（Avilla）：</p>
+
+<blockquote class="strong">
+  「I think a lot of us who are orchestrating and managing lots of agents now might start to feel this feeling of being the bottleneck and being the breaking point as we have lots of agents contributing tons and tons of PRs… And we're sitting there in our GitHub trying to approve PRs.」
+  <span class="attribution">CJ Avilla（原文引語）</span>
+</blockquote>
+
+<p>呢句點出咗整場 workshop 嘅真正痛點——當大量 agent 貢獻大量 PR，<strong>負責編排同管理 agent 嘅人，會開始覺得自己係瓶頸、係斷點</strong>。flows 想解決嘅，正係「人肉審 PR」呢個新嘅樽頸。</p>
+
+<p><span class="sub-title">④ 仍然可以注入專家子代理</span></p>
+<p>Avilla 補充：喺 agent config 中可以<strong>傳入預先配置好嘅 sub-agents</strong>。即係話，模型自編排同「人類指定專家」可以並存——你唔係完全放棄控制權，而係由「逐個配置」變成「按需注入」。</p>
+
+<div class="section-title">三、示例：股票 watchlist scanner</div>
+
+<p>現場示範一個<strong>故意簡單</strong>嘅 workflow（遠不及 Anthropic 所鼓吹嘅大型項目），用嚟講清基本模式：</p>
+
+<ul>
+  <li><strong>scan 階段</strong>：把個別 ticker 分發畀帶 <strong>isolated context</strong> 嘅 agents；</li>
+  <li><strong>review 階段</strong>：檢查呢啲發現，然後產出一份報告。</li>
+</ul>
+
+<p>呢個兩階段結構（scan → review）就係 flows 嘅最小骨架——把任務切成離散單元、由帶隔離上下文嘅子代理並行處理、再由後續階段匯總。示範裏面亦見到「<strong>以 brain/hands 概念理解 Managed Agents</strong>」嘅圖示：模型負責思考，工具／agent 負責動手。</p>
+
+<div class="section-title">四、Q&amp;A 環節：五個尖銳問題</div>
+
+<p><span class="sub-title">① Claude 點決定要用幾多個 agent？</span></p>
+<p>觀眾問：一次簡單嘅 ticker 掃描會唔會失控觸發數百個子代理？Stall 答：</p>
+
+<blockquote class="strong">
+  「The answer really is evals and lower defaults.」
+  <span class="attribution">Harrison Stall，答「Claude 如何決定需要多少個 agent」</span>
+</blockquote>
+
+<p>並補充，<strong>有野心嘅任務通常需要顯式地鼓勵更高嘅並行度</strong>。呢個答案嘅深層含義值得留意——<strong>「該開幾個 agent」呢個決定，已由開發者嘅靜態配置，變成由 evals 同默認值（lower defaults）調校嘅經驗參數</strong>。即係話，編排嘅「油門」仍然需要人去踩，但踩嘅方式由寫配置變成調評估。</p>
+
+<p><span class="sub-title">② Token 預算：模型唔知道自己有幾多錢</span></p>
+<p>有人問 lead agent 係唔係知道可用預算。Stall 答：<strong>模型喺運行時並不知道自己的預算</strong>，但開發者可設定 <strong>session budget</strong>。佢補咗一句引來全場輕笑嘅話——把預算告訴模型，可能會讓呢啲 agent「<strong>有點焦慮</strong>」（a little bit anxious）。</p>
+
+<blockquote class="strong">
+  「把預算告訴模型，可能會讓這些 agent『有點焦慮』。」
+  <span class="attribution">Harrison Stall（原文：a little bit anxious）——全場輕笑</span>
+</blockquote>
+
+<p>呢句幽默但尖銳。它點出咗一個結構性事實：<strong>agent 嘅經濟理性仍然係外部強加嘅</strong>——模型並唔「內生」预算約束，錢係由外面嘅 session budget 卡住。所謂「自主 agent」，喺成本維度上仍然係被人牽住嘅。</p>
+
+<p><span class="sub-title">③ 如何讓重複嘅 flow 越來越便宜：dreaming</span></p>
+<p>除咗叫 Claude 檢視自身成本，Avilla 建議用另一個較新特性 <strong>dreaming</strong>（目前為 <strong>research preview</strong>）。按官方文檔，一個 dream「<strong>讀取既有嘅 memory store 同過往 session transcripts，然後產出一個新嘅、重組過嘅 memory store</strong>」——其中重複條目被合併、「<strong>陳舊或互相矛盾嘅條目</strong>」被替換、「<strong>新洞見被浮現出來</strong>」。Avilla 用 flow 語境講，它能「<strong>crystallize 並基本上改進同那些 sessions 相關嘅 memory store</strong>」。</p>
+
+<p><span class="sub-title">④ flow 能否自我改進？</span></p>
+<p>有人問 watchlist flow 能否察覺「自己嘅掃描模型唔夠好、並改掉下一次排程」。Stall 話呢個<strong>唔係內建功能</strong>，但佢同 Avilla 建議可用 <strong>hill-climbing ＋ dreaming</strong> 嚟改進呢個迴路。呢個係一個關鍵誠實位——<strong>自我改進迴路未內建，目前要靠外部機制拼裝</strong>。</p>
+
+<p><span class="sub-title">⑤ 子代理之間能否互相通訊？</span></p>
+<p>Stall：agents <strong>共享一個 filesystem</strong>，可藉此交換資訊；但<strong>開發者唔可以透過 API 直接指示某個 workflow 子代理去畀另一個發消息</strong>。即係話，子代理之間嘅「通訊」係透過共享文件間接發生，而唔係一條可編程嘅消息通道。</p>
+
+<p><span class="sub-title">＋ 可觀測性同成本權衡</span></p>
+<ul>
+  <li><strong>可觀測性</strong>：開發者隨時可透過 Claude Console 內嘅 <strong>graphing</strong> 功能檢視。Avilla：「<strong>你可以看出 lead agent 究竟把什麼傳給了 sub-agent——在這裡檢視那個 payload，去深入理解整張圖中每一次轉移到底發生了什麼。</strong>」</li>
+  <li><strong>成本</strong>：喺 watchlist-scanner 嘅對比中，Avilla 話 flows 比單 agent 方案「<strong>貴得多</strong>」（much more），但也「<strong>在找出所有細節上有效得多</strong>」（much more effective at finding all of the details）。</li>
+</ul>
+
+<div class="section-title">五、野心有幾大？——由 Navier–Stokes 講到「平民化科學發現」</div>
+
+<p>有觀眾問 dynamic workflows 能否驅動大型科研項目，並援引 <strong>OpenAI 近日宣布嘅 Navier–Stokes 千禧年大獎難題證明</strong>。Stall 唔願就 Anthropic 如何處理大型科學問題嘅細節多談，但表示目標係<strong>讓一般用戶也能處理這類問題</strong>：</p>
+
+<blockquote class="strong">
+  「Flows are basically a way to throw test-time compute at hard problems and get more capability faster out of the models… unlocking the power of this is the first step for us making these types of discoveries, or scientific progress, broadly doable by the general public.」
+  <span class="attribution">Harrison Stall（原文引語）</span>
+</blockquote>
+
+<p>呢句係全場嘅定位宣言：<strong>flows ＝ 把 test-time compute 砸到難題上嘅一種手段</strong>；算力換能力，且目標係<strong>平民化科學發現</strong>。呢個同 10-10 Cognitive Revolution × Bigelow 嗰集互證——「推理≈對自己採樣 token 做 ICL、決定發生喺採樣處」；本集正係把「採樣／決策」由單模型層面<strong>抬升到多 agent 拓撲層面</strong>去自動化。</p>
+
+<div class="section-title">六、關鍵數據／事實</div>
+
+<div class="data-point">
+  <span>規模</span>第三方報導指：單次執行<strong>最多可並行 1,000 個 agent</strong>。Anthropic 提醒 flows 會燃燒「<strong>大量 token</strong>」，建議由小規模開始。
+</div>
+
+<div class="data-point">
+  <span>基準測試</span>Anthropic 自測：喺一個 <strong>116,000 行</strong>嘅代碼庫中藏 <strong>70 個 bug</strong>——<strong>單一 agent 每次捕獲 14–27 個</strong>，而 <strong>dynamic workflow 穩定達 66 個</strong>。<em>公司口徑、未經獨立核實。</em>
+</div>
+
+<div class="data-point">
+  <span>啟用方式</span>選用 agent type <code>multiagent_20261001</code>，或喺 Claude Code 執行 <code>/claude-api managed-agents-onboard</code>。官方強調「值得用自己的 workload 測試」。
+</div>
+
+<div class="data-point">
+  <span>示例</span>單一股票 watchlist scanner（scan → review 兩階段）；dreaming 屬 research preview；flow 嘅預算控制點為 <strong>session budget</strong>。
+</div>
+
+<table>
+  <tr><th>維度</th><th>舊：Claude Managed Agents</th><th>新：dynamic workflows</th></tr>
+  <tr><td>編排由誰決定</td><td>開發者配置 coordinator ＋ roster</td><td><strong>Claude 自己寫編排程式</strong></td></tr>
+  <tr><td>開幾多 agent</td><td>人手配置</td><td>evals ＋ lower defaults</td></tr>
+  <tr><td>互連管理</td><td>開發者負責</td><td>模型負責，人退到審查</td></tr>
+  <tr><td>預算</td><td>session budget</td><td>session budget（模型運行時唔知）</td></tr>
+  <tr><td>成本</td><td>低</td><td>「貴得多」但「有效得多」</td></tr>
+</table>
+
+<div class="section-title">七、Vee 嘅萃取</div>
+
+<ul>
+  <li><strong>編排嘅瓶頸由「人」轉移到「預算同評估」。</strong>當 agent 拓撲由模型自生成，「該開幾個 agent」不再由開發者配置，而由 <strong>evals 同 lower defaults</strong> 決定；人退到「設預算、看圖、審查」嘅位置。呢個係一次職能重定義——<strong>開發者由「編排者」變成「評估者 ＋ 審計者」</strong>。</li>
+  <li><strong>test-time compute 成為能力擴展嘅主軸。</strong>Stall 直接把 flows 定義為「把 test-time compute 砸到難題上」嘅手段——算力換能力，且目標係 democratize 科學發現。呢個係 2026 下半年一條清晰嘅主線：能力嘅增長唔再單靠 pretrain，而係靠推理時嘅算力調度。</li>
+  <li><strong>Anthropic 把 multi-agent 由「開發者配置」推向「模型自編排」。</strong>呢個係繼「a harness for every task」（Claude Code 起源）之後嘅下一步——flow 可運行得比單 agent 或 roster 更久，且承擔「離散、可驗證嘅工作單元」。</li>
+  <li><strong>成本結構嘅誠實披露值得記低。</strong>Anthropic 自己承認 flows「貴得多」，但「找出所有細節嘅能力強得多」——一次明確嘅「貴但值」定位。對比同期 OpenAI 有工程師公開稱 agent swarms 係「<strong>巨大嘅 token 浪費、零質量提升</strong>」，兩家喺 multi-agent 上嘅路線分歧已經擺上檯面：<strong>Anthropic 用 70-bug 自測撐「質量提升」，OpenAI 質疑成本效益</strong>。</li>
+  <li><strong>模型「唔知自己有幾多錢」係一個幽默但尖銳嘅註腳。</strong>agent 嘅經濟理性仍然係外部強加嘅——「自主 agent」喺成本維度上仍然被人牽住。呢點同 42 章經 × Ambi 嗰集嘅「涉及名和利的需求才做，因為算得清 ROI」恰好互為鏡像：一個講預算嘅自動化，一個講 ROI 與人性嘅產品選擇。</li>
+</ul>
+
+<div class="section-title">八、前後脈絡</div>
+
+<ul>
+  <li><strong>承接 Latent Space 10-10〈Building AI for Reliable Execution: Lessons From Industrial Robotics〉：</strong>同一主旋律——決定產出品質嘅係<strong>系統嘅組織方式同上下文</strong>，而唔係單純更大嘅模型（該集核心係「數據質量遠勝數據量」）。</li>
+  <li><strong>同 10-10 Cognitive Revolution × Bigelow 互證：</strong>「推理≈對自己採樣 token 做 ICL、決定發生喺採樣處」——本集把「採樣／決策」由單模型層面抬升到多 agent 拓撲層面去自動化。</li>
+  <li><strong>同本日中文檔 42 章經 × Ambi 構成母題兩端：</strong>一端係模型自編排（Claude 自己決定拓撲、用 test-time compute 砸難題），另一端係產品自編排之外嘅人（Personal Agent 為何此刻爆發、為何天然不帶網絡效應）。</li>
+  <li><strong>同近年「model eats scaffolding」母題同向：</strong>當 harness／編排逐漸由模型自己生成，外層 scaffolding 嘅價值就被 reprice（可對照 21〈Model Eats Scaffolding〉、151〈Forward Deployed Engineer〉）。</li>
+</ul>
+
+<div class="section-title">九、爭議點／存疑（必讀）</div>
+
+<ul>
+  <li><strong>flows 明顯更貴，Anthropic 自認。</strong>watchlist-scanner 對比中「貴得多」，官方亦建議由小規模開始——「貴但值」係官方口徑，性價比仍取決於你嘅任務類型。</li>
+  <li><strong>模型唔知預算、且「知情會焦慮」</strong>——agent 成本控制仍靠外部 session budget；所謂「自主」喺經濟維度上有限。</li>
+  <li><strong>自我改進迴路未內建</strong>，目前要靠 dreaming／hill-climbing 拼裝；dreaming 仍屬 research preview。</li>
+  <li><strong>「evals 與 lower defaults」係經驗性而非保證性答案</strong>——觀眾對「野心型任務會否失控觸發數百子代理」嘅擔憂，官方並無硬性上限承諾。</li>
+  <li><strong>70 個 bug／66 vs 14–27 係 Anthropic 自測數字</strong>，第三方無法覆核；同期 OpenAI 有工程師公開質疑 agent swarms 嘅 token 效益——呢個係路線之爭，唔係中立事實。<strong>公司口徑 · 未經獨立核實。</strong></li>
+  <li><strong>Jev 前置過濾：</strong>本輪對本條候選跑 <code>jev.py triage --profile news</code>，worth=<strong>1.16</strong>（遠高於 0.6 噪音線）、category=agent-infra、primary_source=<strong>0.32</strong>（&lt;0.4，故公司／官方口徑數字一律標「官方現場口徑、未經獨立核實」）。</li>
+</ul>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上內容出自 <em>Latent Space</em>〈How Anthropic's Dynamic Workflows Coordinate Claude Agents〉（2026-10-12 18:18 UTC 發布；作者 Richard MacManus；現場為 AI Engineer New York 2026 開幕日 workshop；講者 CJ Avilla、Harrison Stall，Anthropic MTS）。核心事實同引文取自 <strong>latent.space 原文全文（含 6 條現場直接引語）</strong>；規模（1,000 agents）、70-bug 自測、啟用方式等補充自 the-decoder 等第三方報導。分析、脈絡整理及「Vee 嘅萃取」為本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #211 · Latent Space（2026-10-12 · Anthropic Dynamic Workflows：Claude 自編排 multi-agent 拓撲／70 bug 捕獲 66／模型唔知預算）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-13 06:00 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
