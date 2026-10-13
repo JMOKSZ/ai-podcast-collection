@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度萃取報告 · 2026-10-13</title>
+<style>
+  :root { --bg:#faf8f5; --ink:#1f1c18; --muted:#6b6259; --line:#e3ddd4; --accent:#8a6d3b; --quote:#3b342c; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--ink);
+         font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+         line-height:1.78; margin:0; padding:0 20px; }
+  .wrap { max-width:860px; margin:0 auto; padding:48px 0 80px; }
+  header { border-bottom:2px solid var(--ink); padding-bottom:22px; margin-bottom:34px; }
+  h1 { font-size:1.9rem; margin:0 0 10px; letter-spacing:.01em; }
+  .meta { color:var(--muted); font-size:.92rem; }
+  .meta span { display:inline-block; margin-right:18px; }
+  h2 { font-size:1.35rem; margin:52px 0 14px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+  h3 { font-size:1.12rem; margin:34px 0 6px; }
+  h4 { font-size:1.02rem; margin:26px 0 8px; color:#3a332a; border-left:3px solid var(--accent); padding-left:10px; }
+  .ep { margin:26px 0 8px; }
+  .ep .tag { font-size:.82rem; color:var(--muted); font-weight:normal; }
+  ul { padding-left:22px; }
+  li { margin:6px 0; }
+  blockquote { margin:14px 0; padding:10px 18px; border-left:3px solid var(--accent);
+               background:#f3efe8; color:var(--quote); font-style:italic; }
+  blockquote .who { display:block; font-style:normal; font-size:.82rem; color:var(--muted); margin-top:6px; }
+  table { border-collapse:collapse; width:100%; margin:14px 0; font-size:.92rem; }
+  th,td { border:1px solid var(--line); padding:7px 10px; text-align:left; }
+  th { background:#f1ece4; }
+  .kv { color:var(--muted); font-size:.9rem; }
+  .sec-label { font-weight:bold; color:#4a4136; }
+  .note { background:#f6f2ea; border:1px solid var(--line); padding:12px 16px; font-size:.9rem; color:var(--muted); margin:16px 0; }
+  .no-new li { color:#4a4136; }
+  hr { border:0; border-top:1px solid var(--line); margin:44px 0; }
+  a { color:var(--accent); }
+  footer { margin-top:60px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; }
+  .badge { display:inline-block; font-size:.72rem; padding:1px 8px; border:1px solid var(--line); border-radius:10px; color:var(--muted); margin-left:8px; vertical-align:middle; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>AI 播客深度萃取報告</h1>
+  <div class="meta">
+    <span><strong>報告日期</strong>：2026-10-13（二）</span>
+    <span><strong>生成時間</strong>：2026-10-13 02:06 UTC ／ 10:06 北京時間</span>
+    <span><strong>掃描窗口</strong>：2026-10-12 → 2026-10-13</span>
+  </div>
+  <div class="meta" style="margin-top:6px;">
+    來源：10 檔播客 RSS／YouTube（Dwarkesh、Latent Space、Cognitive Revolution、No Priors、ML Street Talk＋張小珺、十字路口、硅谷 101、42 章經、屠龍之術）
+  </div>
+</header>
+
+<div class="note">
+<strong>本輪重點（一句話）</strong>：今日新增 <b>2 條（一中一英）</b>——英文檔 Latent Space 談 <b>Anthropic 的動態工作流（flows）</b>，中文檔 42 章經談 <b>Personal Agent 創業與「總能賺到錢」的方法論</b>。其餘 8 檔全數無新集。<br>
+兩條新集罕見地指向<strong>同一個母題的兩端</strong>：一端是<b>模型自編排</b>（Claude 自己決定 multi-agent 拓撲、用 test-time compute 砸難題），另一端是<b>產品自編排之外的人</b>（Personal Agent 為何此刻爆發、為何它「天然不帶網絡效應」、國內為何跑不出爆款）。Latent Space 那場問答最有意思的一句是：<b>模型在跑的時候並不知道自己的 token 預算是多少</b>——告訴它預算會讓 agent 有點「焦慮」。這與 42 章經那期「涉及名和利、算得清 ROI 的需求才做」恰成對照：<b>一個在談算力與預算的自動化，一個在談 ROI 與人性的產品選擇</b>。
+</div>
+
+<!-- ============================ 中文播客 ============================ -->
+<h2>中文播客</h2>
+
+<h3>42 章經（主播 曲凱 KaiQu）</h3>
+
+<div class="ep">
+<h4>一个 Personal Agent 创业者的思考｜对谈 Ambi 创始人子皓 🎙️</h4>
+<p class="tag">發布：2026-10-12 22:00 UTC ／ 2026-10-13 06:00 北京時間 ｜ 時長 86 分 18 秒（5178s）｜ 節目頁：<a href="https://www.xiaoyuzhoufm.com/episode/6accc5de195d838e2af0bd9a">小宇宙</a></p>
+</div>
+
+<p><span class="sec-label">主題</span>：分兩部分。<b>Part 1</b> 是對 Personal Agent 賽道的系統思考——為什麼此刻爆發、成本與需求、產品路線、與大廠的競爭關係；<b>Part 2</b> 是嘉賓個人的經營與認知經驗——「商業的本質」、招人、硬件的優勢、Proactive 該怎麼做。節目最後留了一個「沒有答案的問題」：<b>為什麼這幾年國內跑出來的 AI 產品這麼少？</b>主播曲凱的判斷是「我們或許已經等到了能跑出億萬級用戶體量產品的 timing」。</p>
+
+<p><span class="sec-label">嘉賓背景</span>：<b>莫子皓（節目中稱「子皓」）</b>，<b>Ambi 創始人</b>——一個軟硬件結合的 Personal Agent 消費級產品（近日剛開放正式下載）。公開資料顯示其履歷為連續創業者／AI 硬件操盤手：曾任 <b>Plaud（AI 錄音硬件）合夥人兼中國區 CEO</b>（2026 年 3 月離職創業，被行業媒體稱為「AI 硬件賽道再現重量級連續創業者」）；更早創辦「<b>米公益</b>」（公司後被輕鬆籌收購）；此後任暖哇科技合夥人兼首席產品官、<b>百川智能醫療方向產品及運營負責人</b>。主播曲凱對他的定位很直白：一位「很擅長 deliver 結果、或者說<b>總能賺到錢</b>」的 founder。</p>
+
+<p class="kv"><em>資料說明</em>：小宇宙單集頁無逐字稿（僅 show notes + 完整章節時間軸）；以下為<b>節目組自撰的章節提綱</b>所還原的內容結構，輔以公開背景補充。凡非逐字稿原文者，一律不冠以引號。</p>
+
+<p><span class="sec-label">核心論點</span>：</p>
+
+<p><b>Part 1｜對 Personal Agent 的思考（01:49–42:49）</b></p>
+<ul>
+<li><b>為什麼最近 Personal Agent 這麼火（01:49）</b>：節目認為這波火「有跡可循」——主線是「<b>如何讓智能被更多人更好地用起來</b>」。產品譜系被明確點名：從 <b>Openclaw、Hermes</b> 到 <b>Muse、Instinct</b>。也就是說，競爭焦點已從「模型有多聰明」轉向「智能的使用界面」。<span class="badge">與 10-11 十字路口同一波</span></li>
+<li><b>「去年本以為智能已經足夠了」，但現在看來可能想錯了（05:58）</b>：子皓自陳曾誤判——以為模型智能已過門檻、瓶頸在別處；如今回看，這個判斷（或對「智能用法」的判斷）可能是錯的。這與 10-08 硅谷 101〈模型越來越強，為什麼用戶沒感覺？〉形成互文：<b>模型側的提升與用戶體感之間存在時滯。</b></li>
+<li><b>Personal Agent 的成本不是什麼大問題（10:07）</b>：明確給出判斷——單位成本不構成這條賽道的核心壁壘。</li>
+<li><b>需求多大（11:39）＋ 涉及名和利的需求就可做，因為算得清 ROI（14:45）</b>：這是全期最鋒利的一條篩選法則——<b>只做能算清 ROI 的需求，而「名」與「利」正是 ROI 可被計算的兩類</b>。把「值不值得做」還原成一道可算術的題。</li>
+<li><b>為什麼 AI Coworker 沒大家想像中那麼快（17:06）＋「大家做 To B 可能是看硅谷看多了，有點魔怔了」（18:34）</b>：對國內 To B 敘事直接潑冷水——認為一部分 To B 熱情是矽谷範式輸入造成的錯位。</li>
+<li><b>Personal Agent 會不會還是大廠的機會（19:18）＋「天然不帶網絡效應」（21:10）</b>：嘉賓的核心結構性判斷——<b>Personal Agent 不具備網絡效應</b>，因此大廠並非天然贏家。這是全期最反共識的論點之一，直接對抗「大廠通吃論」。</li>
+<li><b>簡評 Town、Grok Bot、Muse、Instinct（24:16）</b>：對同期幾款代表性產品逐一點評（屬賽道競品地圖的一手觀察）。</li>
+<li><b>「唏噓之，國內大廠好像失去了成為世界第一的雄心」（28:23）</b>：行業批評，語氣罕見地重。</li>
+<li><b>Ambi 要怎麼和 Muse 這樣的對手 PK（32:31）＋ 很多 AI 產品的交互都特別難受（35:16）</b>：競爭策略落點在<b>交互體驗</b>——直言當前大量 AI 產品交互糟糕。</li>
+<li><b>怎麼看應用公司自己訓模型（40:25）</b>：觸及「主權 AI／自訓模型」議題（可對照 42 章經 8-29 那期〈一個人、兩週、數百美元，如何訓出登頂 Hugging Face 的模型〉）。</li>
+</ul>
+
+<p><b>Part 2｜個人經驗與認知（42:49–1:26:18）</b></p>
+<ul>
+<li><b>從大營收業務 → 模型廠 → 消費硬件，這一路收穫的核心認知（42:49）</b>：一條罕見的完整職業光譜（Plaud／米公益／暖哇／百川），嘉賓藉此談「不同類型公司真正鍛鍊的能力差異」。</li>
+<li><b>為什麼做再「垃圾」的業務都能賺到錢（47:28）＋ 高三暑假就成了「資本家」——溜冰場獨家代理（48:11）</b>：經營天賦的早期證據；節目將其歸納為「可被習得的經驗」而非純天賦。</li>
+<li><b>商業的本質（50:31）</b>：全期最核心的一節。</li>
+<li><b>招人能力強，靠的是什麼（57:01）</b>：組織與人才方法論。</li>
+<li><b>最近在思考的問題（1:00:34）</b>；<b>最擔心的還是速度，但好不容易等到一個能「有意義地卷」的時代（1:03:04）</b>——「有意義地卷」是全期情緒落點。</li>
+<li><b>硬件的優勢來自哪裡（1:04:56）</b>：為何在軟件之外仍押注「軟硬結合」。</li>
+<li><b>這波 Personal Agent 最大的機會可能來自什麼（1:08:57）</b>；<b>很多產品的 Proactive 都做錯了（1:11:51）</b>——對「主動性」這一產品機制的批評。</li>
+<li><b>Personal Agent 有必要區分工作和生活場景嗎（1:14:26）</b>：產品邊界的哲學題。</li>
+<li><b>已經到了能跑出億萬級用戶體量產品的 timing？（1:18:36）</b>；<b>一個沒有答案的問題：為什麼國內跑出來的 AI 產品這麼少？（1:21:08）</b>——全期收束於一個公開承認「無解」的提問。</li>
+</ul>
+
+<p><span class="sec-label">關鍵數據／事實</span>：</p>
+<ul>
+<li>單集時長 <b>86 分 18 秒</b>；全程 34 個章節節點（精確到分鐘）。</li>
+<li>節目提及的賽道產品譜系：<b>Openclaw、Hermes、Muse、Instinct</b>（Personal Agent 主線）；<b>Town、Grok Bot、Muse、Instinct</b>（競品簡評）。</li>
+<li>競品對標：Ambi vs <b>Muse</b> 被設為專題（32:31）。</li>
+<li>Ambi 已開放正式下載；42 章經節目組取得 <b>5 個邀請碼</b>（需填表申請）。</li>
+<li>嘉賓職業時間線：米公益（被輕鬆籌收購）→ 暖哇科技（合夥人／CPO）→ 百川智能（醫療方向產品及運營負責人）→ Plaud（合夥人兼中國區 CEO，2026-03 離職）→ Ambi（創始人）。</li>
+</ul>
+
+<p><span class="sec-label">重點引用（節目自撰章節題／show notes，非逐字稿）</span>：</p>
+<blockquote>
+「從 Openclaw、Hermes，到 Muse、Instinct，背後的主線都是「如何讓智能被更多人更好地用起來」。」
+<span class="who">— 節目 show notes</span>
+</blockquote>
+<blockquote>
+「涉及名和利的需求就可做，因為算得清 ROI。」
+<span class="who">— 章節題（14:45）</span>
+</blockquote>
+<blockquote>
+「Personal Agent 天然不帶網絡效應？」「唏噓之，國內大廠好像失去了成為世界第一的雄心。」
+<span class="who">— 章節題（21:10／28:23）</span>
+</blockquote>
+<blockquote>
+「最擔心的還是速度，但好不容易等到一個能「有意義地卷」的時代。」
+<span class="who">— 章節題（1:03:04）</span>
+</blockquote>
+
+<p><span class="sec-label">技術／產品詳情</span>：Ambi 的形態是<b>軟硬件結合的 Personal Agent</b>（非純 App）。節目對技術的著墨集中在產品機制而非模型架構：交互設計、Proactive（主動性）機制、以及「是否區分工作／生活場景」的產品邊界；未披露模型、參數量或訓練細節。由於小宇宙未提供逐字稿，模型／工程層面的具體數字本輪無法萃取。</p>
+
+<p><span class="sec-label">行業 insight</span>：</p>
+<ul>
+<li><b>反「大廠通吃」</b>：以「Personal Agent 無網絡效應」為支點，主張結構上給創業公司留了門。</li>
+<li><b>需求篩選的財務化</b>：把「要不要做」化約為 ROI 可算性——「名／利」兩類需求優先，因為可被度量。</li>
+<li><b>對 To B 敘事的批判</b>：認為國內一部分 To B 熱潮是矽谷範式的錯位輸入（「看矽谷看多了，有點魔怔」）。</li>
+<li><b>國內產品缺席之惑</b>：公開承認無法解釋「為什麼國內跑出來的 AI 產品這麼少」，但同時判斷「億萬級用戶產品的 timing」可能已到。</li>
+<li><b>焦點位移</b>：與本周主旋律一致——決定勝負的從「模型智能」轉向「智能的可用界面與主動性機制」。</li>
+</ul>
+
+<p><span class="sec-label">前後脈絡</span>：</p>
+<ul>
+<li><b>與 10-11 十字路口×鴨哥同屬一波</b>：兩期都把「Personal Agent／給 AI 一台雲端電腦」當主語，區別是十字路口從<b>重度用戶視角</b>談「context 才是基礎設施」，42 章經從<b>創業者視角</b>談「產品路線與 ROI」。</li>
+<li><b>與 42 章經 9-27〈AI Trading〉呼應</b>：那句「決策便宜，行動很貴」在此有了產品版對照——真正稀缺的是「能算清 ROI 的行動」。</li>
+<li><b>與 10-08 硅谷 101 E255 同題</b>：「模型越來越強，為什麼用戶沒感覺」——本集第 05:58 節點幾乎是同一困惑的創業者自白。</li>
+</ul>
+
+<p><span class="sec-label">爭議點</span>：三個易引戰的非共識判斷——①「Personal Agent 天然不帶網絡效應」（若成立則大廠優勢被大幅削弱）；②「國內大廠失去了成為世界第一的雄心」（行業批評，語氣罕見）；③「做 To B 是看硅谷看多了、魔怔了」（對當下 To B 熱潮的否定）。</p>
+
+<hr>
+
+<!-- ============================ 英文播客 ============================ -->
+<h2>英文播客</h2>
+
+<h3>Latent Space（swyx + Alessio Fanelli；本集作者 Richard MacManus）</h3>
+
+<div class="ep">
+<h4>How Anthropic's Dynamic Workflows Coordinate Claude Agents 🎙️</h4>
+<p class="tag">發布：2026-10-12 18:18 UTC ／ 2026-10-13 02:18 北京時間 ｜ 現場：AI Engineer New York 2026（開幕日 workshop）｜ 原文：<a href="https://www.latent.space/p/claude-dynamic-workflows">latent.space</a></p>
+</div>
+
+<p><span class="sec-label">主題</span>：Anthropic 在 AI Engineer NYC 2026 開幕日 workshop 上介紹其 Claude Managed Agents 的編排方式，並首度公開一個<b>上周五剛在 X 宣布的新特性：dynamic workflows（會上反覆簡稱「flows」）</b>——定義為「一種全新的 multi-agent 編排，為你最有野心的 workload 而生」。核心是：<b>由 Claude 自己決定整個 multi-agent 拓撲</b>。</p>
+
+<p><span class="sec-label">嘉賓背景</span>：<b>CJ Avilla</b> 與 <b>Harrison Stall</b>，皆為 <b>Anthropic Members of Technical Staff</b>。本集為 Latent Space 編輯 <b>Richard MacManus</b> 撰寫的現場報導型 article-interview。</p>
+
+<p><span class="sec-label">核心論點</span>：</p>
+<ul>
+<li><b>flows 是「下一代 multi-agent 編排」。</b>Stall 原話：讓 Claude「<b>fully orchestrate the entirety of its own multi-agent topology</b>」。運作方式：lead agent 先為任務制訂計劃，<b>Claude 接著自己寫一段 orchestration program</b>——由它啟動 agents、收集結果、管理資訊流。</li>
+<li><b>與舊機制的關鍵差異。</b>此前的 Claude Managed Agents 需要<b>開發者自行配置一個 coordinator 加一組 roster 子代理</b>；有了 dynamic workflows，<b>由 Claude 自己決定如何切分與編排工作</b>。Stall：跨越多個編排階段，「它能在你完全不需管理任何互連關係的情況下，完成一個個離散、可驗證的工作單元」。</li>
+<li><b>組織學類比。</b>開場以作業系統史作喻：從 Ken Thompson 寫出初版 Unix，到 Linux 由「一個人（Linus Torvalds）」演化為層層 trusted maintainers。教訓是——<b>agents 需要同等的組織度，才能承擔 Anthropic 設想的那種大型任務</b>。問題意識也很直白（Avilla）：當大量 agent 貢獻大量 PR，「我們這些編排與管理 agent 的人，會開始覺得自己是瓶頸、是斷點」。</li>
+<li><b>仍然可注入專家子代理。</b>Avilla：在 agent config 中可以<b>傳入預先配置好的 sub-agents</b>。全部功能都在 <b>Claude Console</b>（開發者經 API 存取 Claude 的界面，即 Managed Agents 的所在）中提供。</li>
+<li><b>示例工作流——股票 watchlist scanner。</b>故意選了一個「遠不及 Anthropic 所鼓吹的大型項目」的簡單例子來講清基本模式：<b>scan 階段把個別 ticker 分發給帶 isolated context 的 agents</b>，之後的 <b>review 階段</b>檢查這些發現、再產出一份報告。</li>
+<li><b>「Claude 怎麼決定要用多少個 agent？」</b>觀眾問：一次簡單的 ticker 掃描會不會觸發數百個子代理？Stall 答：<b>「答案其實就是 evals 和 lower defaults」</b>——並補充，有野心的任務通常需要<b>顯式地鼓勵更高的並行度</b>。</li>
+<li><b>token 預算：模型不知道自己有多少錢。</b>有人問 lead agent 是否知道可用預算。Stall 答：<b>模型在運行時並不知道自己的預算</b>，但開發者可設定 <b>session budget</b>。他補了一句引來全場輕笑的話——<b>把預算告訴模型，可能會讓這些 agent「有點焦慮」（a little bit anxious）</b>。</li>
+<li><b>如何讓重複的 flow 越來越便宜——「dreaming」。</b>除了讓 Claude 檢視自身成本，Avilla 建議用另一個較新特性 <b>dreaming</b>（目前為 research preview）：一個 dream「<b>讀取既有的 memory store 與過往 session transcripts，然後產出一個新的、重組過的 memory store</b>」，其中<b>重複條目被合併、「陳舊或互相矛盾的條目」被替換、「新洞見被浮現出來」</b>。Avilla 用 flow 語境說，它能「crystallize 並基本改進與那些 sessions 相關的 memory store」。</li>
+<li><b>flow 能否自我改進？</b>有人問 watchlist flow 能否察覺「自己的掃描模型不夠好、並改掉下一次排程」。Stall 說這不是內建功能，但他與 Avilla 建議可用 <b>hill-climbing 與 dreaming</b> 來改進這個迴路。</li>
+<li><b>可觀測性。</b>開發者隨時可透過 Claude Console 內的 <b>graphing 功能</b>檢視：Avilla：「你可以看出 lead agent 究竟把什麼傳給了 sub-agent——在這裡檢視那個 payload，去深入理解整張圖中每一次轉移到底發生了什麼。」</li>
+<li><b>子代理之間能否互相通訊？</b>Stall：agents <b>共享一個 filesystem</b>，可藉此交換資訊；但<b>開發者不能透過 API 直接指示某個 workflow 子代理去給另一個發消息</b>。</li>
+<li><b>成本權衡。</b>在 watchlist-scanner 的對比中，Avilla 說 flows 比單 agent 方案<b>「貴得多」（much more）</b>，但也<b>「在找出所有細節上有效得多」（much more effective at finding all of the details）</b>。</li>
+<li><b>野心能有多大？</b>有觀眾問 dynamic workflows 能否驅動大型科研項目，並援引 <b>OpenAI 近日宣布的 Navier–Stokes 千禧年大獎難題證明</b>。Stall 不願就 Anthropic 如何處理大型科學問題的細節多談，但表示目標是讓一般用戶也能處理這類問題。</li>
+</ul>
+
+<p><span class="sec-label">關鍵數據／事實</span>：</p>
+<ul>
+<li>dynamic workflows 於<b>上周五（2026-10-09 前後）在 X（@ClaudeDevs）宣布</b>；本集為其公開後的首場深度現場解說。</li>
+<li>發布時間 2026-10-12 18:18 UTC；場合為 AI Engineer New York 2026 開幕日 workshop。</li>
+<li>示例：單一股票 watchlist scanner（scan → review 兩階段）。</li>
+<li>dreaming 屬 <b>research preview</b>；flow 的預算控制點為 <b>session budget</b>。</li>
+<li>觀眾引用的前沿參照：OpenAI 的 Navier–Stokes 千禧年難題進展。</li>
+</ul>
+
+<p><span class="sec-label">重點引用</span>：</p>
+<blockquote>
+「Flows are essentially the next version of multi-agent orchestration… where you can let Claude fully orchestrate the entirety of its own multi-agent topology.」
+<span class="who">— Harrison Stall（Anthropic MTS）</span>
+</blockquote>
+<blockquote>
+「I think a lot of us who are orchestrating and managing lots of agents now might start to feel this feeling of being the bottleneck and being the breaking point as we have lots of agents contributing tons and tons of PRs… And we're sitting there in our GitHub trying to approve PRs.」
+<span class="who">— CJ Avilla（Anthropic MTS）</span>
+</blockquote>
+<blockquote>
+「The answer really is evals and lower defaults.」
+<span class="who">— Harrison Stall，答「Claude 如何決定需要多少個 agent」</span>
+</blockquote>
+<blockquote>
+「Flows are basically a way to throw test-time compute at hard problems and get more capability faster out of the models… unlocking the power of this is the first step for us making these types of discoveries, or scientific progress, broadly doable by the general public.」
+<span class="who">— Harrison Stall，談 flows 的野心</span>
+</blockquote>
+
+<p><span class="sec-label">技術詳情</span>：orchestration program（由 Claude 生成）、隔離上下文（isolated context）的子代理、跨 agent 的共享 filesystem、session budget、dreaming（memory store 重組：去重／替換矛盾條目／浮現新洞見）、Console 內 graphing 可視化每次 transition 的 payload、以及 hill-climbing＋dreaming 構成自我改進迴路的可能性。</p>
+
+<p><span class="sec-label">行業 insight</span>：</p>
+<ul>
+<li><b>編排的瓶頸正在從「人」轉移到「預算與評估」</b>：當 agent 拓撲由模型自生成，「該開幾個 agent」不再由開發者配置，而由 evals 與 lower defaults 決定；人退到「設預算、看圖、審查」的位置。</li>
+<li><b>test-time compute 成為能力擴展的主軸</b>：Stall 把 flows 直接定義為「把 test-time compute 砸到難題上」的手段——算力換能力，且目標是 democratize 科學發現。</li>
+<li><b>Anthropic 把 multi-agent 從「開發者配置」推向「模型自編排」</b>：這是繼「a harness for every task」（Claude Code 起源）之後的下一步——flow 可運行得比單 agent 或 roster 更久。</li>
+<li><b>成本結構的誠實披露</b>：Anthropic 自己承認 flows「貴得多」，但「找出所有細節的能力強得多」——這是一次明確的「貴但值」定位。</li>
+<li><b>對模型「自我認知」的幽默但尖銳的註腳</b>：模型跑時不知預算、且知之可能「焦慮」——點出 agent 的經濟理性仍是外部強加的。</li>
+</ul>
+
+<p><span class="sec-label">前後脈絡</span>：承接 Latent Space 10-10〈Building AI for Reliable Execution: Lessons From Industrial Robotics〉的同一主旋律——<b>決定產出品質的是系統的組織方式與數據／上下文，而非單純更大的模型</b>（該集核心是「數據質量遠勝數據量」）。同時與 10-10 Cognitive Revolution×Bigelow（推理≈對自己採樣 token 的 ICL、決定發生在採樣處）互證：本集正是把「採樣／決策」從單模型層面抬升到「多 agent 拓撲」層面去自動化。</p>
+
+<p><span class="sec-label">爭議點</span>：① <b>flows 明顯更貴</b>，Anthropic 自認；② <b>模型不知預算、且「知情會焦慮」</b>——agent 成本控制仍靠外部 session budget；③ <b>自我改進迴路未內建</b>，目前要靠 dreaming／hill-climbing 拼裝；④ 觀眾對「野心型任務會不會失控地觸發數百子代理」的擔憂，官方以「evals 與 lower defaults」回應，屬經驗性而非保證性答案。</p>
+
+<hr>
+
+<h2>無新增（已核實）</h2>
+<div class="note no-new">
+<ul>
+<li><b>Dwarkesh Podcast</b>：頂條仍為 2026-10-01〈Si Sheppard – How did a few hundred Spanish soldiers topple two empires?〉。</li>
+<li><b>No Priors</b>：頂條仍為 2026-10-09〈Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin〉。</li>
+<li><b>The Cognitive Revolution</b>：頂條仍為 2026-10-10〈How Agents Decide: Goodfire's Eric Bigelow…〉。</li>
+<li><b>ML Street Talk</b>：頂條仍為 2026-10-10〈What Most People Get Wrong About Evolution | Akarsh Kumar〉。</li>
+<li><b>張小珺商業訪談錄</b>：頂條仍為 2026-09-03〈153. 和曾鳴聊產業史觀…〉。</li>
+<li><b>十字路口 Crossing</b>：頂條仍為 2026-10-11〈「有了AI，我感觉自己强得可怕！」｜对谈鸭哥〉（已在 10-12 報告深度萃取）。</li>
+<li><b>硅谷 101</b>：頂條仍為 2026-10-08〈E255｜模型越来越强，为什么用户没感觉？再访阿里国际站总裁张阔〉。</li>
+<li><b>屠龍之術</b>：頂條仍為 2026-09-28〈当AI开始设计芯片---聊聊EDA与AI时代的芯片设计〉。</li>
+</ul>
+<p class="kv">註：No Priors 的 YouTube channel RSS（channel_id UCSI7h9hydQ40K5MJHnCrQvw）本輪回傳 404；已改以其原生 megaphone feed（feeds.megaphone.fm/nopriors）為準，結果一致（10-09 Beam）。</p>
+</div>
+
+<footer>
+<span class="badge">Jev 前置過濾</span> 本輪對 2 條候選跑 <code>jev.py triage --profile news</code>：available=true、failed=0/2。分值——① 42 章經×Ambi <b>worth=0.45</b>／category=business／primary_source=0.29（低於 worth 0.6，本可視為噪音；然其為本輪罕見中文一手賽道訪談，且為 10-11 十字路口主線的直接延續，故保留並全文標注「無逐字稿、章節題非原話」）；② Latent Space×Anthropic flows <b>worth=1.16</b>／category=agent-infra／primary_source=0.32。依 hint：兩條 primary_source 均 &lt;0.4，故報告中凡公司／嘉賓口徑的數字與說法（Ambi 產品狀態、Anthropic flows 成本等）一律以「節目／官方現場口徑」標示，未經獨立核實。
+<br><br>
+報告生成：2026-10-13 02:06 UTC ｜ 掃描窗口 2026-10-12 → 2026-10-13 ｜ 新增 2 條（中 1／英 1）｜ 深度萃取來源：小宇宙 xyzfm 原生 feed show notes＋完整章節時間軸（86:18，34 節點）；Latent Space Substack 原文全文（readability 未截斷，8.9 KB）＋現場引語。
+<br><br>
+Apache 2.0 ｜ <a href="https://jmoksz.github.io/ai-podcast-collection/">ai-podcast-collection</a>
+</footer>
+
+</div>
+</body>
+</html>
