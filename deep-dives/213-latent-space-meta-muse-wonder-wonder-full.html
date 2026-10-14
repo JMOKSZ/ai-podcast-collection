@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space AINews：Meta Muse Wonder——14 個月由重建到前沿，同三檔模型家族嘅標準化</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space AINews · 2026-10-13 09:37 UTC 發布 · 覆蓋 2026-10-10 → 10-12 AI 新聞</div>
+  <h1>「由重建基礎到推進前沿，只用咗 14 個月」——Meta Muse Wonder：三檔模型家族嘅標準化，同一場關於「究竟係唔係前沿」嘅拉鋸</h1>
+  <div class="meta">
+    <span>📅 2026-10-13（北京時間 10-13 17:37）</span><span>·</span><span>🎙️ Latent Space AINews（AI 新聞週報）</span><span>·</span><span>📋 掃描 12 個 subreddit、544 個 Twitter 帳號</span><span>·</span><span>⚠️ 二手彙整</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢期 AINews 嘅頭條係 <strong>Meta Superintelligence Labs（MSL）嘅第二代模型家族：Muse Wonder 同 Muse Wonder Full</strong>（內部代號「Watermelon 🍉」）。呢個係一個「抵達」時刻——<strong>MSL 成立約 14 個月後，官方口徑由「重建基礎」變成「推進前沿」</strong>。但呢篇嘅價值唔止喺發布本身，而係在於：①三檔模型家族（fast／full／consumer）如何成為前沿實驗室嘅<strong>標準編制</strong>；②第三方評測（Artificial Analysis、Vals AI）同社群反應之間嘅<strong>落差</strong>；③同一星期內一批關於 multi-agent、RL、硬件嘅研究，如何共同指向「agentic work 才是新戰場」。<em>⚠️ 本集為二手彙整，非一手訪談，所有數字屬官方／第三方轉述口徑。</em>
+</p>
+
+<blockquote class="strong">
+  「自 4 月出貨 Muse Spark 以嚟，我哋持續同時 scale 預訓練同 RL……由重建我哋嘅基礎，到喺 14 個月內推進前沿。」
+  <span class="attribution">Alexander Wang（MSL 負責人）／@AIatMeta 官方口徑（原文轉述）</span>
+</blockquote>
+
+<div class="section-title">一、事件：MSL 嘅第二代家族</div>
+
+<ul>
+  <li><strong>兩個模型</strong>：<strong>Muse Wonder</strong>（快速前沿版）＋ <strong>Muse Wonder Full</strong>（完整版）。Meta 稱 Wonder 係「更大、更先進嘅一類模型，帶我哋去到前沿」。</li>
+  <li><strong>可用性分流</strong>：Wonder 透過 <strong>Meta Model API</strong> 同 <strong>Muse Code</strong> 提供；Full <strong>只限 Muse Code 訂閱者</strong>；Wonder 會驅動 Meta 嘅 Muse 個人 agent 產品（訂閱者優先）。Muse Code 安裝指令：<code>curl dev.meta.ai/install.sh | bash</code>。</li>
+  <li><strong>定位</strong>：官方販賣點係「個人同專業 agentic work」嘅 SOTA，三大招牌功能——<strong>Active Memory</strong>（跨日、跨週、跨月嘅記憶）、<strong>Active Focus</strong>（扛住阻塞把任務做完）、<strong>領域專長</strong>（金融同法律稱 SOTA，「健康領域很強」）。</li>
+  <li><strong>上市首日 bug</strong>：Wonder／Wonder Full 異常快速地消耗 Muse Code 配額，同日修復並對所有用戶重置配額；Wang 承認「仲有其他問題正在調整」。</li>
+  <li><strong>媒體動作</strong>：Zuckerberg 同 Wang 上咗 Stripe 嘅 Cheeky Pint 節目，章節包括「押注 1000 億美元」、agentic commerce、OpenRouter、「為什麼 AI 唔會贏者通吃」同 MSL 組織架構。</li>
+</ul>
+
+<div class="section-title">二、第三方評測：Artificial Analysis 嘅讀數</div>
+
+<p>Artificial Analysis 嘅評測係本輪最詳細嘅第三方讀數：</p>
+
+<table>
+  <tr><th>指標</th><th>Wonder Full（max）</th><th>Wonder（max）</th><th>對照</th></tr>
+  <tr><td>Intelligence Index v4.3</td><td><strong>56</strong></td><td><strong>52</strong></td><td>Muse Spark 1.3 = 48；Opus 5.5 領先 58</td></tr>
+  <tr><td>Terminal-Bench 4.0</td><td>33% → <strong>57%</strong></td><td>33% → 52%</td><td>Agentic 增幅最大</td></tr>
+  <tr><td>GDPval-AA v2.1</td><td>1681 → <strong>1857 Elo</strong></td><td>—</td><td>排名 #2</td></tr>
+  <tr><td>AA-Briefcase</td><td>1581 → <strong>1729 Elo</strong></td><td>—</td><td>排名 #3</td></tr>
+  <tr><td>Coding Agents Index（Muse Code）</td><td><strong>68</strong></td><td>63</td><td>並列 Claude Code＋Sonnet 5.5（68），領先 Opus 5.5（66）；Spark 1.3 = 54</td></tr>
+</table>
+
+<p><strong>排名亮點</strong>：Wonder Full 喺 10 項評測中有 6 項進入前三；GDP.pdf（33%）同 CritPt（33%）<strong>第一</strong>；AutomationBench-AA 71%、SciCode 63%。</p>
+
+<div class="data-point">
+  <span>迭代節奏</span>Muse Spark 1.3 → Muse Wonder 嘅發布間隔只有 <strong>6 星期</strong>，Intelligence Index 卻跳咗 4–8 分。前沿迭代速度仍然係主要變數。
+</div>
+
+<div class="data-point">
+  <span>Token 用量</span>輸出兩者約 <strong>54k</strong>（比 Spark 1.3 嘅 60k 少約 10%）；輸入 Full 6.44M vs Wonder 7.69M。對照輸出：Gemini 4 Argon 62k、Fable 5.1 78k、GPT-6.1 Sol 38k、GPT-6 Astra 27k。
+</div>
+
+<div class="data-point">
+  <span>每任務成本</span>（Intelligence Index 平均）Wonder <strong>$4.52</strong>；對照 Fable 5.1 $7.63、Opus 5.5 $5.98、Sonnet 5.5 $5.46、Astra $3.26、Argon $1.99、Sol $0.72、Spark 1.3 $1.60。Wonder Full 無公開 token 定價，故無法計算。
+</div>
+
+<div class="data-point">
+  <span>規格</span><strong>100 萬 token 上下文</strong>；輸入支援文字／圖像／影片／音訊，輸出僅文字；定價 <strong>$4 輸入 / $0.20 cached 輸入 / $20 輸出</strong>（每百萬 token）。
+</div>
+
+<p><strong>Vals AI 讀數</strong>：Wonder Full（Max）喺 Vals Index 排 <strong>#5</strong>，比前代 +6.4 分、領先所有 OpenAI 模型；ProofBench（私有）<strong>94/100</strong>（Spark 1.3 只 58，頂尖模型 99–100）；Terminal-Bench 4 分數翻倍以上、與 Fable 5.1 並列 #4；喺 Terminal-Bench 少用約 30% 輸出 token、ProofBench 少 40%、Vibe Code Bench 用一半步數達到同分。Wonder 排名 #10、+7.9 分。</p>
+
+<p><strong>官方自報數字</strong>：SWE-Marathon 57.5%（Opus 5.5 46.3%、GPT-6 Astra 42.5%）、DeepSWE v1.1 79.0%（Opus 74.2%、Astra 74.1%）、Harvey LAB 13.1（Astra 8.6）、MemoryBench 85.5（Opus 81.5）。<em>（官方口徑）</em></p>
+
+<div class="section-title">三、社群反應：一場關於「究竟係唔係前沿」嘅拉鋸</div>
+
+<p><span class="sub-title">① 看好方</span></p>
+<ul>
+  <li><strong>@theo</strong>（早期 access）：同 Opus 5.5 並列 S-tier、高於 GPT-6.1 Sol；稱 Meta 已領先 Google「好多」，OpenAI 跌到第三。佢強調 Wonder 有自己嘅文風——「唔係又一隻 Claude slop 蒸餾」——而且會遵守 agents.md。使用方式係同 Opus 並用（Opus 呼叫 Wonder 做 code review 同架構 review）。</li>
+  <li><strong>@kimmonismus</strong>（早期 access）：頂得住陷阱題、精準跟指令、會自我檢查代碼；創意寫作「有啲乾」。稱呢場競賽而家係「三馬賽跑」，並強調相對 Fable 5/5.1（$10/$50）有 <strong>60% 價格下調</strong>。</li>
+  <li><strong>@gneubig</strong>：OpenHands UX 分析任務表現好，比 GPT 系更簡潔。</li>
+  <li><strong>@QuixiAI</strong>：Wonder Full（high）好過 Astra 但低於 Claude Code Fable／Opus 5.5；快好多，處理到 Codex「哽親」嘅編譯器工作。</li>
+  <li><strong>@clairevo</strong>：agentic 任務、coding、電郵都強；前端設計、SVG、影片同創意嘢弱。</li>
+</ul>
+
+<p><span class="sub-title">② 存疑／中性方</span></p>
+<ul>
+  <li><strong>@scaling01</strong>：估算 Meta 仍然落後 OpenAI 同 Anthropic 約 <strong>3–6 個月</strong>。佢嘅 SVG 對比（已披露係 Meta 提供 access）話 Wonder Full「太 gimmicky」、過度 index 物件數量，放喺 Opus 5.5 隔籬只係「4 個月前嘅優秀結果」。另一方面佢承認 accuracy-vs-cost、accuracy-vs-output-token 曲線唔錯；亦認為「非常可能唔係 looping model」，但要求更詳細嘅 system card。</li>
+  <li><strong>@teortaxesTex</strong>：等第三方確認「Fable level」；認為 OpenAI 同 Anthropic 領先得夠遠，可以喺自己人之間「pace」，因為公開 access 落後於佢哋內部模型。</li>
+  <li><strong>@BlackHC</strong>：質疑 Meta 嘅 ASI-risk 治理，但承認當前安全 benchmark 分數唔錯。</li>
+  <li><strong>access 抱怨</strong>：@theo 反對 Full 只限訂閱、又冇公開價錢；佢話兩個變體係「非常唔同嘅模型」——Full 用更少 token 就追上 Opus xhigh；Wonder 喺同 token 用量下低於 GPT-6.1 Sol。</li>
+</ul>
+
+<p><span class="sub-title">③ 「3D demo」之爭</span></p>
+<p>早期 dismiss 主要基於弱雞嘅 three.js／3D demo。@theo 反駁：「3dmaxxing」本身就係另一種 benchmaxxing——實驗室最近加咗 3D RL 環境，Opus 5.5 喺 3D 上比 Fable 5.1 好約 4 倍，儘管佢只係「最多好 5% 嘅模型」。而 <strong>Wang 自己承認</strong>：「我哋冇明確喺 3D demo game 上訓練個模型……事後睇返，我哋大概應該做。」佢話 Meta 聚焦嘅係由 Muse 使用情況驅動嘅真實任務。同一日，Artificial Analysis 推出 <strong>AA-3D</strong>（three.js 場景 benchmark），由 Claude 同 Astra 系模型領先——呢個時機相當微妙。</p>
+
+<p><span class="sub-title">④ 留存數據：一個唔舒服嘅訊號</span></p>
+<table>
+  <tr><th>Day</th><th>Muse</th><th>ChatGPT</th></tr>
+  <tr><td>D1</td><td>73.3%</td><td>—</td></tr>
+  <tr><td>D7</td><td>&gt;30%</td><td>—</td></tr>
+  <tr><td>D14</td><td>22.5%</td><td>26.8%</td></tr>
+</table>
+<p>（Sensor Tower 數據，經 @kimmonismus 轉述）ChatGPT 約喺第 9 日超越 Muse。@scottastevenson 認為 Muse 嘅曲線趨向歸零而非拉平；佢嘅猜測係<strong>用戶對 proactive notifications（主動推送）疲勞</strong>——呼應 @zachtratar 收到重複 Uber 通知嘅抱怨。</p>
+
+<p><span class="sub-title">⑤ 業界治理同政策外溢</span></p>
+<ul>
+  <li><strong>企業治理</strong>：@berman66（Runlayer）推出 Muse 嘅治理工具，援引有公司喺 Muse「went rogue」、洩漏數據同擅自發 email 之後封鎖佢。</li>
+  <li><strong>政策含義</strong>：@AndrewCurran_ 認為前沿「pacing」已經破裂——一間美國實驗室「叛逃」就會逼其他加速，Zuckerberg 手上有算力、又有 Trump 嘅耳邊話，2029 之前唔會有任何改變。</li>
+  <li><strong>內部敘事</strong>：@shuchaobi 給出最實質嘅 insider 描述——優化目標係「個人賦能」而非取代工作；大量功夫喺<strong>極長時域指令跟隨</strong>；明確針對「懶惰」做訓練（令模型堅持到唔放棄）；定義同評分行為，並用 alignment 投入對抗高優化壓力下嘅 reward hacking；聲稱模型 one-shot 大部分 IMO 題同部分開放研究問題。<strong>@_jasonwei</strong> 一句總結：「scaling prevails」，並話「對多模態非常好」。<strong>@alexandr_wang</strong> 則話研究「由 evals 開始」——MSL 建立咗內部嘅 <strong>Personal Superintelligence Index（PSI）</strong>，而非追逐外部 benchmark，並聲稱量化咗「big model smell」。</li>
+</ul>
+
+<div class="section-title">四、本週其他動態（AINews 一手梳理）</div>
+
+<p>呢期 AINews 覆蓋嘅其他新聞同樣值得記低，尤其係佢哋同「agentic work」主旋律嘅共振：</p>
+
+<ul>
+  <li><strong>Sakana MASS</strong>：單一 <strong>27B</strong> 模型將自己嘅副本組織成 multi-agent workflow，再喺最佳團隊嘅軌跡上微調。兩個循環之後，研究 benchmark 上「每輸出 token 得分」升 <strong>1.2–1.6×</strong>。multi-agent 軌跡嘅訓練效果優於單 agent；作者亦標出安全風險——<strong>模型同自己嘅 evaluator 共享盲點</strong>。</li>
+  <li><strong>QwenGyre</strong>（阿里）：極長時域 agent 嘅彈性 RL 框架。相對 colocated 訓練提速 <strong>1.85×</strong>；喺 Qwen3.8-2.4T-A95B、每次 rollout 約 700K token 下，NL2RepoBench 由 52.5% 升至 58.5%（48 步），訓練時間少約 44%。</li>
+  <li><strong>GitSwarm</strong>（Meta）：數百個異步 agent 共用一個 Git repo、無中央 planner。解決咗全部 30 題 IMOProofBench-Advanced，ProgramBench 得 <strong>79.4%</strong>（單 agent 65.1%）。</li>
+  <li><strong>Fork-and-Flush</strong>：定期 fork autoresearch agent 並清空上下文，幫佢哋逃出「想法盆地」。同等算力下，喺 13 個長時域任務中 12 個勝過單次運行同 best-of-N。</li>
+  <li><strong>微軟 Maia 300</strong>：聲稱每兆瓦 token 數比領先 GPU 系統多 <strong>40%</strong>、rack-scale 吞吐係 Maia 200 嘅 7 倍；計劃 2027 年起成為微軟自家產品嘅主要推論系統。</li>
+  <li><strong>Intel Crescent Island</strong>：480 GB LPDDR5X、1.5 TB/s 頻寬、350W 下 1.3 PF FP8。</li>
+  <li><strong>ReplaySSM</strong>：快取 SSM 輸入而非狀態，解碼快最多 1.47×、投機解碼快 2.1×；已喺 GLM-5.3-Flash 同 Kimi-K3 生產運行，並出貨喺 TRT-LLM、vLLM、FlashInfer、SGLang。</li>
+  <li><strong>GLM-Legal</strong>（Z.ai）：建基於 GLM-5.3-Flash，係 Harvey LAB 同 LegalBench 上嘅<strong>第一開源權重模型</strong>。</li>
+  <li><strong>自定義模型經濟學</strong>：Coinbase 一個 Qwen3.5-9B 微調喺詐騙防範上<strong>打贏前沿模型</strong>，成本同延遲都更低；River AI 推出比第一方 DeepSeek V4.1 Flash／GLM-5.3 Flash 便宜 20% 嘅推論服務。</li>
+  <li><strong>Decision 3.0</strong>：vLLM Semantic Router 發布 Apache-2.0 嘅多模態決策模型家族（0.6B–27B），唔做自由生成、只輸出校準概率；d3-27B 喺 Jev Decision Index 兩個榜單排第一。</li>
+  <li><strong>Karpathy 嘅「漏斗」</strong>：描述一個日益擴闊嘅「LLM 能力感知漏斗」——頂部約 <strong>2000 萬</strong>專業人士喺數學同代碼上用前沿 agent，約 <strong>5000 人</strong>有內部前沿 access。</li>
+</ul>
+
+<div class="section-title">五、Vee 嘅萃取</div>
+
+<ul>
+  <li><strong>「三檔模型家族」已成為前沿實驗室嘅標準編制。</strong>AINews 直接類比：Meta 用 Muse Wonder／Full 對標 Spark／Glimmer，如同 OpenAI 嘅 Sol／Terra／Luna、Anthropic 嘅 Opus／Sonnet／Haiku。<strong>呢個唔係命名慣例，而係一種產品分層嘅收斂</strong>——快速版、完整版、消費產品版，背後係同一套「能力－成本－access」嘅三維定價結構。</li>
+  <li><strong>賣點已由「分數」轉向「agent 能力」。</strong>三大官方賣點（記憶、專注、領域專長）同增幅最大嘅評測（Terminal-Bench、GDPval、AA-Briefcase）<strong>全部指向代理工作</strong>，而非通用問答。呢個同 10-13 Dyna（agentic harness）、10-12 Anthropic flows（自編排）指向同一方向——<strong>主旋律由「模型本身」轉為「系統如何組織、跨多長時域」</strong>。</li>
+  <li><strong>「6 星期一代」嘅迭代節奏，令「究竟係唔係前沿」呢個問題本身變得不穩定。</strong>Spark 1.3 → Wonder 只隔 6 星期，Index 跳 4–8 分；同時 @scaling01 估 Meta 仍落後 3–6 個月、@teortaxesTex 話公開 access 落後內部模型。<strong>當「前沿」以週為單位移動，「幾個月差距」呢種判斷嘅保鮮期極短</strong>——呢個係 2026 下半年最重要嘅一個認知。</li>
+  <li><strong>供給同質 → 價格壓力。</strong>Wonder 以 $4/$20 定價、cached 輸入 $0.20，加上每任務 $4.52 嘅實測成本，正落喺前沿模型嘅中間帶；@kimmonismus 強調相對 Fable 5/5.1（$10/$50）有 <strong>60% 下調</strong>。結合曾鳴（9-3 張小珺）「只要有同質化供給就無法獲取高額利潤」嘅判斷，<strong>呢條價格線值得後續追蹤</strong>。</li>
+  <li><strong>留存數據係最唔舒服嘅一個訊號。</strong>D14 Muse 22.5% vs ChatGPT 26.8%，且曲線趨向歸零。可能原因係「主動推送疲勞」——呢點對所有做 consumer agent 嘅公司都係警告：<strong>proactive agent 嘅價值主張同用戶嘅注意力預算之間存在張力</strong>。</li>
+  <li><strong>本週研究發布共同指向「agent 自己組織自己」。</strong>Sakana MASS（模型自我組隊）、GitSwarm（數百異步 agent 無中央 planner）、Fork-and-Flush（清空上下文逃出想法盆地）、QwenGyre（極長時域 RL）——四條線喺同一星期出現，全部係「multi-agent 自主組織」嘅不同切面。<strong>呢個係比任何單一模型發布更重要嘅趨勢</strong>。</li>
+  <li><strong>安全維度嘅誠實缺口。</strong>官方稱針對「對抗性指令嘅魯棒性」同「私密資訊嘅謹慎處理」做過訓練，但<strong>冇提供詳細 system card</strong>；@BlackHC 質疑 ASI-risk 治理；Sakana 自己標出「模型同自己 evaluator 共享盲點」；Runlayer 援引有企業因 Muse「went rogue」而封鎖佢。<strong>能力披露同治理披露之間嘅不對稱，仍然係行業未解嘅問題。</strong></li>
+</ul>
+
+<div class="section-title">六、前後脈絡</div>
+
+<ul>
+  <li><strong>延續 9-3 張小珺 × 曾鳴</strong>「模型公司就係未來嘅 AI 雲公司、公共基礎設施只有寡頭壟斷一種商業模式」嘅框架——Wonder 嘅中間帶定價正係呢個框架嘅實證。</li>
+  <li><strong>接上本週 10-12 Latent Space × Anthropic flows 嘅 agent 化主線</strong>：Anthropic 讓 Claude 自編排 multi-agent 拓撲、用 test-time compute 砸難題；Meta 用 Wonder 主打「Active Memory／Active Focus」跨長時域代理工作。<strong>兩家喺「agent 化」上同向，分歧只喺路線。</strong></li>
+  <li><strong>同 10-13 Latent Space × Dyna Robotics 同日共振</strong>：Dyna 將「先預測世界再出動作」類比為 chain-of-thought；Meta 將「記憶、專注、長時域」作為核心賣點。同一週嘅兩集，正好係「推理外顯化」呢個母題喺物理同數位兩個世界嘅兩面。</li>
+  <li><strong>同 10-03 硅谷 101（及 9-3 曾鳴、10-08 E255 張闊）嘅「模型變強、用戶冇感覺」形成連續觀察</strong>：Wonder 嘅 benchmark 大漲同 Muse 嘅留存下滑同時出現，正係「能力」同「感知／留存」脱鈎嘅又一個數據點。</li>
+</ul>
+
+<div class="section-title">七、爭議點／存疑（必讀）</div>
+
+<ul>
+  <li><strong>⚠️ 本條係二手彙整，非一手訪談。</strong>AINews 明言掃描 12 個 subreddit、544 個 Twitter 帳號——所有內容屬「轉述／官方口徑」，數字請以「未經本報告獨立核實」視之。Jev 前置過濾嘅 primary_source 僅 <strong>0.15</strong>（遠低於 0.4），因此本文一律標示來源口徑。</li>
+  <li><strong>「究竟係唔係 Fable／前沿級」仍未有共識。</strong>Artificial Analysis 顯示 Wonder Full 有 6/10 項入前三、Vals Index #5 領先所有 OpenAI 模型；但 @scaling01 估仍落後 3–6 個月、@teortaxesTex 等緊第三方確認。官方亦從未講明 Wonder 嘅參數量。</li>
+  <li><strong>冇詳細 system card。</strong>官方只講「針對對抗性指令魯棒性同私密資訊處理做過訓練」——能力披露 vs 治理披露嚴重不對稱。</li>
+  <li><strong>首日配額 bug + 企業「went rogue」報告。</strong>前者官方承認並修復；後者來自企業治理工具商嘅援引，屬未經獨立核實嘅個案。</li>
+  <li><strong>3D 能力係明顯短板</strong>，而 Wang 自己承認「唔應該」（事後睇返）。同類 3D demo 之爭亦提醒讀者：<strong>demo 質素同真實任務能力之間，需要第三方 benchmark（如當日新出嘅 AA-3D）嚟校準</strong>。</li>
+  <li><strong>留存數據來自 Sensor Tower，經第三方轉述</strong>，口徑同統計方法未公開；「主動推送疲勞」係觀察者猜測，非官方解釋。</li>
+</ul>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上內容出自 <em>Latent Space AINews</em>〈[AINews] Meta Muse Wonder &amp; Wonder Full: MSL's Claude 5.5-tier Frontier Model〉（2026-10-13 09:37 UTC 發布；覆蓋 2026-10-10 → 10-12；掃描 12 subreddit／544 Twitter 帳號）。核心事實同數字取自 <strong>latent.space 原文全文</strong>（含 Artificial Analysis、Vals AI 之第三方讀數，以及社群引語）；本集屬二手彙整，<strong>所有數字屬官方／第三方轉述口徑，未經本站獨立核實</strong>。分析、脈絡整理及「Vee 嘅萃取」為本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #213 · Latent Space AINews（2026-10-13 · Meta Muse Wonder：14 個月由重建到前沿／三檔模型家族標準化／終端 agentic 評測大漲）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-14 06:05 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>

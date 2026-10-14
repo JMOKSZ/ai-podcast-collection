@@ -1761,6 +1761,18 @@ function togglePastReports() {
   <p class="note">Latent Space（2026-10-12 18:18 UTC 發布；作者＝<strong>Richard MacManus</strong>；講者＝<strong>CJ Avilla ＋ Harrison Stall（Anthropic MTS）</strong>；場合＝<strong>AI Engineer New York 2026 開幕日 workshop</strong>；來源＝<strong>latent.space 原文全文（含 6 條現場直接引語）＋ the-decoder 等第三方補充</strong>）：Anthropic 上周五（10-09 前後）剛喺 X 宣布、代號 dynamic workflows（「flows」）嘅公開後首場深度解說。核心：①「下一代 multi-agent 編排」——<strong>lead agent 制訂計劃，Claude 自己寫 orchestration program</strong>，啟動 agents、收集結果、管理資訊流；②由「開發者配置 coordinator＋roster」→「<strong>模型自編排</strong>」，「唔需管理任何互連關係」就完成離散、可驗證嘅工作單元；③開場用 Unix→Linux（Ken Thompson→Linus）喻「agents 需要同等組織度」，痛點係「<strong>管理 agent 嘅人會覺得自己係瓶頸、係斷點</strong>」；④可注入預先配置嘅專家 sub-agents；⑤示例＝股票 watchlist scanner（scan→review，isolated context）；⑥Q&amp;A：「開幾多 agent」＝<strong>evals 同 lower defaults</strong>；<strong>模型運行時唔知自己預算</strong>，開發者設 session budget，而「<strong>告訴模型預算會令 agent 有點焦慮</strong>」（全場輕笑）；⑦dreaming（research preview）重組 memory store 令重複 flow 變便宜；自我改進未內建，靠 hill-climbing＋dreaming 拼裝；⑧子代理共享 filesystem 交換資訊、但唔可經 API 直接互發消息；⑨Console graphing 可檢視每次 transition 嘅 payload；⑩成本「<strong>貴得多但有效得多</strong>」；⑪野心＝「<strong>把 test-time compute 砸到難題上</strong>」、平民化科學發現（觀眾援引 OpenAI 嘅 Navier–Stokes 證明）。數據：單次最多 <strong>1,000 個 agent 並行</strong>；Anthropic 自測喺 116,000 行代碼藏 70 個 bug，單 agent 捕 14–27、flow 穩定達 <strong>66</strong>；agent type <code>multiagent_20261001</code>。爭議：全屬公司口徑未經獨立核實；同期 OpenAI 有工程師公開稱 agent swarms 係「巨大 token 浪費、零質量提升」——路線之爭。· Latent Space</p>
 </div>
 
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/212-latent-space-dyna2-jason-ma-world-action-model.html">「先預測世界會變成點，再出動作」——Latent Space × Dyna Robotics：100 萬小時人類影片、世界動作模型，同機器人版 chain-of-thought</a></h3>
+  <p class="note">Latent Space 開播以來第一期機器人專訪（2026-10-13；主持 swyx＋Vibhu；嘉賓 Jason Ma＝Dyna Robotics 聯合創辦人兼首席科學家；現場錄於 Dyna 辦公室）。世界動作模型＝先預測未來影片、再翻譯成機器人動作，「呢個有啲似 chain-of-thought，只不過推理發生喺視覺同物理空間」；diffusion transformer＋flow matching（40–100 步降到約 4 步）；機器人冇互聯網、資料係最大樽頸；egocentric 人類資料＋少量機器人資料喺同一模型；靈巧手會過熱（「要放袋冰降溫」）；半人形（輪式＋腰四自由度）；agentic harness 支撐數小時工作流；鼎泰豐每日折數千張餐巾紙（99.4%／24 小時）、Best Western。數據：100 萬小時、45 分鐘上手、約 100 維動作空間、10–20 Hz、數十台→數百台、硬件 30–40% 人力。反共識：VLA 係「將人嘅偏見編碼進去」、只做模型會撞系統天花板、機器人產業有座公司墓園。· Latent Space</p>
+</div>
+
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/213-latent-space-meta-muse-wonder-wonder-full.html">「由重建基礎到推進前沿，只用咗 14 個月」——Meta Muse Wonder：三檔模型家族嘅標準化，同一場關於「究竟係唔係前沿」嘅拉鋸</a></h3>
+  <p class="note">Latent Space AINews（2026-10-13；覆蓋 10-10 → 10-12；掃描 12 subreddit／544 個 Twitter 帳號；⚠️ 二手彙整）。MSL 第二代家族 Muse Wonder／Wonder Full（代號 Watermelon 🍉）：Active Memory（跨日／週／月）、Active Focus、金融法律 SOTA；Intelligence Index 56／52（Spark 1.3＝48、Opus 5.5＝58）、Terminal-Bench 4.0 33%→57%、GDPval 1857 Elo、Coding Agents Index 68（並列 Claude Code＋Sonnet 5.5）；1M context、$4/$20；每任務 $4.52。三檔模型家族（fast／full／consumer）已成前沿實驗室標準編制，賣點由分數轉向 agent 能力。爭議：@scaling01 估仍落後 3–6 個月、冇詳細 system card、D14 留存 22.5% vs ChatGPT 26.8%。同週研究：Sakana MASS、GitSwarm、Fork-and-Flush、QwenGyre、Microsoft Maia 300、Karpathy「感知漏斗」。· Latent Space AINews</p>
+</div>
+
 <footer>
   <p>JMOKSZ / ai-podcast-collection</p>
   <p style="margin-top:0.3rem;">每日 10:03 自動掃描更新 · Apache 2.0</p>

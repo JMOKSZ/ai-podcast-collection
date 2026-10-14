@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space × Dyna Robotics：世界動作模型、100 萬小時人類影片，同「機器人版 chain-of-thought」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-10-13 22:25 UTC 發布 · 現場錄製於 Dyna Robotics 辦公室（AI Engineer NYC 2026）</div>
+  <h1>「先預測世界會變成點，再出動作」——Latent Space × Dyna Robotics：100 萬小時人類影片、世界動作模型，同機器人版 chain-of-thought</h1>
+  <div class="meta">
+    <span>📅 2026-10-13（北京時間 10-14 06:25）</span><span>·</span><span>🎙️ Latent Space（swyx ＋ Vibhu）</span><span>·</span><span>👤 Jason Ma（馬），Dyna Robotics 聯合創辦人兼首席科學家</span><span>·</span><span>⏱️ 約 1 小時 12 分</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係 Latent Space 開播以嚟<strong>第一期機器人專訪</strong>，錄音地點就喺 Dyna Robotics 辦公室——節目入面有大量 B-roll：機器人由雪櫃抽出飲品、疊毛巾、第一次拎住刀切嘢。核心問題得一個：<strong>為什麼「預測世界嘅未來」會係通用機器人嘅關鍵？</strong>而 Das 嘅答案係一個架構名——<strong>世界動作模型（World-Action Model）</strong>：唔止預測動作，而係先預測「世界接下來會變成咩樣」，再將預測翻譯成機器人喺物理世界可以執行嘅動作。用 Jason 自己嘅比喻：<strong>呢個就係 chain-of-thought，只不過推理發生喺視覺同物理空間</strong>。
+</p>
+
+<blockquote class="strong">
+  「世界動作模型係一個能夠預測未來影片、預測世界未來狀態嘅模型……除此之外，你還可以用嗰個『未來生成』去產生機器人喺物理世界可以執行嘅動作。」
+  <span class="attribution">Jason Ma，開場定義（原文：a model that's able to predict the future video, the future state of the world）</span>
+</blockquote>
+
+<div class="section-title">一、人物同場合</div>
+
+<ul>
+  <li><strong>嘉賓</strong>：<strong>Jason Ma（馬）</strong>，Dyna Robotics 聯合創辦人兼首席科學家。高中時喺日本同中國長大、由細玩圍棋，AlphaGo 問世時大受震撼（「搜索空間比全宇宙嘅原子仲多，RL 竟然破解咗」），立志做能自我改進嘅模型／agent。賓大（UPenn）GRASP Lab 博士，主攻 RL for robotics 結合人類資料。</li>
+  <li><strong>職涯路徑</strong>：Penn → NVIDIA（GPT-4 剛發布時主導 <strong>Eureka</strong> 專案，號稱「第一個用 LLM 自我生成模擬環境同 reward function 嘅系統」）→ Google DeepMind（研究將 Gemini 用於機器人）→ 2024 年底同 <strong>Lindon Gao、York Yang</strong> 共同創辦 Dyna。</li>
+  <li><strong>主持人</strong>：<strong>swyx</strong>（AI Engineer 大會創辦人）＋ <strong>Vibhu</strong>。</li>
+  <li><strong>時點</strong>：緊接 Dyna 上月發布 <strong>Dyna-2</strong>（號稱首個以 <strong>100 萬小時</strong>資料訓練嘅世界動作模型）同 <strong>Dyna-2.1</strong>（官方稱「首個實現可靠超長時域全身自主嘅物理 Agent」）之後。</li>
+</ul>
+
+<div class="section-title">二、核心架構：先預測世界，再出動作</div>
+
+<p><span class="sub-title">① 點解要預測「世界」而唔止「動作」？</span></p>
+<p>Jason 嘅第一性原理推導係：機器人只係世界嘅一部分——「<strong>機器人影響世界，但世界亦影響機器人應該點樣喺嗰個環境入面行動</strong>」。所以最貼近第一原理嘅做法，就係盡可能預測成個世界。佢再補一層人類類比：人喺腦入面其實隱性地預演「我嘅行動會令世界變成點」，所以當模型顯式做呢件事，機器人就會「更靈巧、更魯棒、更能泛化到冇見過嘅場景」。</p>
+
+<blockquote class="strong">
+  「呢個有啲似 chain-of-thought。基本上，模型係喺視覺、物理空間裡面推理，然後先輸出動作。」
+  <span class="attribution">Jason Ma，談世界動作模型嘅輸出機制</span>
+</blockquote>
+
+<p><span class="sub-title">② 輸入輸出嘅完整清單</span></p>
+<ul>
+  <li><strong>輸入</strong>：過去數秒嘅影片／影像（機器人相機）、機器人關節角度（joint encoders／致動器讀數）＋語言指令。</li>
+  <li><strong>輸出</strong>：機器人可執行嘅動作，<em>加上</em>未來影片（或佢嘅表徵）。——「你先輸出未來影片（或其表徵），再用佢去引導機器人動作。」</li>
+</ul>
+
+<p><span class="sub-title">③ 架構選擇：diffusion transformer ＋ encoder-only</span></p>
+<p>底層係 <strong>diffusion transformer</strong>，採 <strong>encoder-only transformer</strong>。點解揀 diffusion？因為生成需要「精確、平滑、高頻」嘅動作——呢點同生成圖像（要銳利邊緣、色彩對比）同構。點解揀 transformer？「因為 transformer 就係可以食落最多資料、最能學嘢嘅嘢。」</p>
+
+<p><span class="sub-title">④ Flow matching：由 40–100 步降到約 4 步</span></p>
+<p>Jason 稱 flow matching 係 diffusion 嘅一個特例，好處係轉換更簡單、唔使像傳統 diffusion 咁大調 scheduler，效果一樣咁好。swyx 補充：原本需要 40–100 步 diffusion 去噪，flow matching 可降到<strong>約 4 步</strong>；而且喺機器人動作上特別適合，因為可以<strong>即時重新評估</strong>——圖像生成基本上係一次性嘅，但機器人動作可以邊做邊改。</p>
+
+<p><span class="sub-title">⑤ 動作空間：約 100 維、連續、高頻輸出</span></p>
+<p>模型以每秒 <strong>10–20 次</strong>嘅頻率輸出<strong>至少 50 維</strong>嘅連續向量，並可能同時預測未來 <strong>1–2 秒</strong>（約上百幀）。Jason 特別點出「自由度越大越難擬合」——而 Dyna 能令呢個高維動作空間擬合得非常好，正係機器人動作「異常平滑」嘅原因（Vibhu 現場講：「每一個你見過嘅人形機器人都係卡卡頓頓，甚至人自己行路都冇呢部嘢咁平滑」）。</p>
+
+<div class="section-title">三、資料：機器人冇「互聯網」</div>
+
+<p>呢個係整集嘅重心。Jason 反覆強調：<strong>資料係機器人領域今日最核心嘅問題，因為「唔似語言模型，機器人冇互聯網」</strong>。</p>
+
+<blockquote class="strong">
+  「同語言模型唔同，機器人冇互聯網……你等於係想只靠 Reddit、或者只靠 Facebook 就造出一個互聯網。佢哋係好正嘅網站、用戶好多，但都係唔夠。」
+  <span class="attribution">Jason Ma，談資料取得嘅不可能單靠一家公司</span>
+</blockquote>
+
+<p><span class="sub-title">① 資料質量係「非平穩（non-stationary）」問題</span></p>
+<p>Jason 提出一個關鍵概念：<strong>咩叫高品質資料，會隨模型變強而改變</strong>。模型一無所知時，「任何資料都有用」；到模型變強，標準就唔同。呢個係機器人資料問題同其他領域最唔同嘅一點。</p>
+
+<p><span class="sub-title">② 最佳配方：大量人類 egocentric 資料 ＋ 少量機器人資料</span></p>
+<p>egocentric（第一人稱）人類影片係最好嘅預訓練來源，因為人類活動極其多樣，能畀模型關於「世界如何喺一個具身行動者周圍演化」嘅強先驗。但人類資料同機器人動作之間永遠有 gap（除非機器人長得同人一模一樣），所以必須再用少量機器人自身資料補上低階反射／靈巧度。</p>
+
+<blockquote class="strong">
+  「你得想嘅係：人類資料覆蓋嘅係機器人認知中我需要嘅呢一塊；機器人資料覆蓋嘅係機器人都需要嘅低階反射同靈巧度——將佢哋放進同一個模型。」
+  <span class="attribution">Jason Ma，談資料配方（放進同一個模型）</span>
+</blockquote>
+
+<p>工程師真實做法：Dyna 辦公室度「周圍都係機器人」自己蒐集資料；同時喺 Dyna-2 blog 尾部公開一個 email，向全世界徵集高質量 egocentric／robot／video 資料。Vibhu 一句總結：「酒店？喺員工頭度綁個 GoPro 咪得囉。」</p>
+
+<div class="section-title">四、硬體：被嚴重低估嘅瓶頸</div>
+
+<p>Jason 多次強調「要做出更通用嘅嘢，最大瓶頸仍然係硬體同資料」。三個具體例子：</p>
+
+<ul>
+  <li><strong>靈巧手會過熱</strong>：「今日世界上最好嘅靈巧手耐用度仍然唔夠，好快就過熱……你幾乎要畀佢放一袋冰（降溫）。」呢個直接卡住「手」嘅資料蒐集同 eval。</li>
+  <li><strong>缺失嘅感知模態</strong>：人類用觸覺、聽覺、嗅覺潛意識完成操作任務，而當前資料幾乎只有視覺。若唔同時擷取呢啲維度，「就算你 scale 到幾百萬小時，你都可能永遠補唔齊解任務所缺嘅關鍵維度」。</li>
+  <li><strong>供應鏈現實</strong>：swyx 問到磁鐵／稀土樽頸，Jason 答「美國冇公司真係由零全部自製」，即使講「組裝喺美國」，原材料仍然來自全球。佢直言硬件「被嚴重低估（under-emphasized）」。</li>
+</ul>
+
+<p>對應策略：<strong>「買」vs「自建」嘅清晰分界</strong>——LiDAR、部分相機呢類成熟零組件直接買；但<strong>致動器（actuator）同機器人比例必須自研</strong>，因為「致動器嘅品質同設計直接決定你能唔能夠將機器人建模得好」，而機器人比例係<strong>對照真人量測</strong>嘅——因為要預訓練人類資料、追求最佳遷移。</p>
+
+<div class="section-title">五、為什麼做「輪式半人形」而非雙足</div>
+
+<p>Dyna 嘅平台係<strong>半人形（semi-humanoid）</strong>：上半身人形（肩、雙臂）＋腰<strong>四個自由度</strong>＋下半身用<strong>輪子</strong>而非腿。</p>
+
+<ul>
+  <li><strong>取捨理由</strong>：腿能耗更高、更唔穩定、安全性極難保證——「目前腿式機器人冇任何保證可以全程保持直立平衡」。佢語帶調侃咁講：「你哋一定見過好多機械人跳舞片……佢哋好易跌低。」</li>
+  <li><strong>新增「前傾」自由度</strong>：為咗洗衣（要俯身探入機器）等場景。Jason 用自己拉傷肌肉嘅經驗解釋：好多日常動作都用到腰背，而人類係潛意識咁用——如果 form factor 唔允許，遷移就會變差，機器人就會「更笨拙」。</li>
+  <li><strong>迭代式逼近最終人形</strong>：硬件迭代慢又貴，一次性造「最終型態」大概率要報廢重來。佢引 <strong>Optimus 已多次改版報廢</strong> 為例，主張先用半人形上真實客戶、拿回饋迴路——「迭代式嘅做法，實際上會更快帶我哋去到最終嘅機器人。」</li>
+</ul>
+
+<div class="section-title">六、Bitter Lesson of Robotics（機器人版苦澀教訓）</div>
+
+<blockquote class="strong">
+  「保持演算法越簡單越好，然後 scale 正確嘅資料，泛化同更好嘅行為就會自己湧現。」
+  <span class="attribution">Jason Ma，機器人版 Bitter Lesson</span>
+</blockquote>
+
+<p>具體反面例子：有人搞「手工畫 box 幫機器人睇物件」呢類非常特定嘅先驗——Jason 認為呢啲終究會被 scale 打敗。但他同時指出機器人版嘅獨特難點：<strong>「你揀嘅感測器就決定咗你擁有嘅資料」</strong>——所以「咩係正確嘅資料」遠比其他領域難判。</p>
+
+<div class="section-title">七、世界動作模型 vs VLA（Vision-Language-Action）</div>
+
+<p>呢個係全場最容易引戰嘅一段。Jason：VLA 只預測「抽象嘅世界表徵」或直接動作，等於<strong>把你嘅偏見編碼進去</strong>；最符合第一原理嘅做法係拎最原始嘅相機輸入，盡可能預測成個世界。</p>
+
+<p>但佢主動講出「自己可能錯喺邊」，呢點非常難得：</p>
+
+<blockquote class="strong">
+  「如果我講嘅錯咗……可能係：你有最好嘅視覺世界模型，但聽日有人整咗個 vision ＋ tactile 嘅世界模型，數據效率高一百倍。因為視覺係高度冗餘嘅輸入——每兩個像素之間變化唔大……但觸覺可能信息密度高好多。」
+  <span class="attribution">Jason Ma，主動指出自己論點嘅軟肋</span>
+</blockquote>
+
+<p>而佢嘅防守係：<strong>如果最終解法係「視覺＋觸覺世界模型」，Dyna 會做得比只識做影片生成、想轉型機器人嘅公司好——因為「理解感測器非常複雜」，而 Dyna 由創業第一日就在做呢件事。</strong></p>
+
+<div class="section-title">八、Agentic Harness：價值喺「冇人看管幾小時」嘅工作流</div>
+
+<p>Jason 批評產業界「仍然喺任務級別思考自主性——一分鐘、三十秒嘅任務」，但真正有價值嘅係<strong>數小時無人干預嘅工作流</strong>。所以需要<strong>分層架構</strong>：喺世界動作模型外面再套一層 agentic harness（高階決策層），好似 Claude Code 包住模型咁，令機器人能組合唔同技能。</p>
+
+<p>他舉洗衣流程為例——機器人要推理：「洗衣機喺轉，我應該先去別嘅地方做嘢；洗衣機一停，我要即刻將毛巾由洗衣機拎出放進烘乾機，否則會拖累成個流程。」呢個高階推理「理論上可以用低階模型學，但會極之冇效率」，所以需要 harness。</p>
+
+<blockquote class="strong">
+  「今天我哋仍然喺『任務級別』思考自主性——一分鐘、三十秒嘅任務。但真正嘅價值在於嗰啲無人看管、持續數小時嘅任務或工作流。」
+  <span class="attribution">Jason Ma，談為何需要 agentic harness</span>
+</blockquote>
+
+<p>佢亦提到語言模型 coding 工具對機器人公司嘅加速：Dyna 係「極度 AI-native」嘅公司，<strong>GPT-6 出咗嘅同一星期就辦咗一場公司內部黑客松</strong>，工程師做出嚟嘅嘢「難以置信」，好多功能已經入咗 production。GPT-6 最令佢驚訝嘅能力係「建構虛擬環境／3D 重建」。</p>
+
+<div class="section-title">九、商業化：pilot 同量產係兩回事</div>
+
+<p>Jason 花咗一段講「部署」——呢個係整集最務實嘅部分。佢特別強調：難嘅唔係「將機器人放入某一個地點做一次試點」，而係<strong>讓客戶相信／驗證你嘅機器人能創造足夠價值，願意喺旗下眾多場址大規模部署</strong>。</p>
+
+<ul>
+  <li><strong>鼎泰豐（Din Tai Fung）——最大規模客戶</strong>：多家美國分店每日折疊<strong>數千張餐巾紙</strong>，品質標準極高（第二道摺痕／接縫只喺筷子袋口下方幾厘米）。已簽下更大合約，客戶開始要求<strong>切蔬菜</strong>。Jason：「據我所知，做類似通用機器人嘅其他公司仲未做到。」</li>
+  <li><strong>Best Western</strong>：酒店／健身中心嘅毛巾折疊。</li>
+  <li><strong>一致性係模型相對於人嘅護城河</strong>：鼎泰豐 LA／紐約／西雅圖各店折餐巾嘅細節略有不同，但客戶要嘅係跨店一致——而「模型就係一組權重」，可以 OTA 一次更新所有機器人。Jason：「一旦 work，真係不可思議。」</li>
+  <li><strong>連鎖餐飲嘅終極比喻</strong>：Vibhu 補一句——「最終 boss 係 Cheesecake Factory，所有嘢由零做起、精確到克，全世界每一間都一模一樣。」</li>
+</ul>
+
+<div class="data-point">
+  <span>部署規模</span>目前已部署 <strong>數十台</strong>機器人；明年目標 <strong>數百台</strong>。遠期願景係「數百萬台」。最大規模客戶為鼎泰豐，多家美國分店每日折疊數千張餐巾紙；Best Western 為酒店客戶。
+</div>
+
+<div class="section-title">十、訓練／評估迴路：「機器人版 RLHF」</div>
+
+<p>學一個新任務嘅流程：<strong>少量機器人資料蒐集（數十分鐘至數小時）→ 訓練 → 喺同蒐集資料相同嘅真實設置上線跑 → 觀察表現（有時開箱即用，有時 70–80% 到位）→ 針對弱點再蒐集資料 → 迭代</strong>。</p>
+
+<blockquote class="strong">
+  「我將呢個視為機器人版嘅 RLHF：機器人 rollout，你畀佢好／壞／尚可嘅評分，然後用機器人自身嘅經驗去訓練模型。」
+  <span class="attribution">Jason Ma，談評估迴路</span>
+</blockquote>
+
+<p>終極目標係令機器人成為平台——「任何人應該都能喺上面訓練任務」。一個有趣嘅細節：新機器人（半人形）啱啱整好冇耐，資料量遠少過舊嘅固定臂，但模型仍然能好快學識新任務——Jason 歸功於「硬件未 ready 之前，我哋已經開始用真人資料預訓練」。</p>
+
+<div class="section-title">十一、關鍵數據／事實</div>
+
+<div class="data-point">
+  <span>規模</span><strong>100 萬小時</strong>人類影片預訓練（Dyna-2），號稱喺人類資料上呈現跨<strong>四個數量級</strong>嘅 scaling law。<em>公司口徑，未經獨立核實。</em>
+</div>
+
+<div class="data-point">
+  <span>可靠性</span><strong>99.4% 成功率</strong>：折疊餐廳餐巾紙、連續運轉 <strong>24 小時</strong>不間斷，且能喺「拉倒整疊餐巾紙」後自行恢復。用可變形物件（deformable object，組態無窮多）作為「通用模型勝過專用機器」嘅示範。
+</div>
+
+<div class="data-point">
+  <span>上手速度</span><strong>45 分鐘</strong>人類示範即可學識一個全新任務（切菜 demo 為 45 分鐘；部分任務只需數十分鐘）。
+</div>
+
+<div class="data-point">
+  <span>推論</span>動作空間約 <strong>100 維、連續</strong>；輸出頻率 <strong>10–20 Hz</strong>、每步 <strong>≥50 維</strong>向量，可能同時預測未來 1–2 秒。因延遲關鍵，最終部署模型須夠細、能喺本地（on-prem）服務——先訓練最大模型、再蒸餾出細模型。Dyna 自建推論堆疊。
+</div>
+
+<div class="data-point">
+  <span>公司構成</span>硬件約佔 <strong>30–40%</strong> 人力；模型團隊約 <strong>10 人</strong>；另有軟件／機器人工程師同商務團隊。公司定位係「研究＋產品公司」，似 OpenAI 咁讓前沿研究最終流入產品。
+</div>
+
+<div class="data-point">
+  <span>命名</span>Dyna 一名既取自 RL 先驅 <strong>Richard Sutton</strong> 多年前嘅論文《Dyna》（談帶世界模型、自我改進嘅 agent），亦取自 Jason 出生嗰年播出嘅《超人力霸王 Dyna》。「當年創業時我哋仲未做世界模型，但我覺得機器人一定會咁樣被解——而家技術方向正喺收斂到當初嘅直覺。」
+</div>
+
+<div class="section-title">十二、Vee 嘅萃取</div>
+
+<ul>
+  <li><strong>「把推理外顯成中間表示」係 2026 下半年嘅統一主線，跨越數位同物理兩個世界。</strong>Jason 將「先預測未來影片再出動作」比作 chain-of-thought；10-10 Cognitive Revolution × Bigelow 講「推理≈對自己採樣 token 做 in-context learning」；10-12 Anthropic flows 講「用 test-time compute 砸難題」。三者係同一件事嘅三個化身——<strong>能力增長唔再單靠 pretrain，而係靠推理時嘅中間表示調度</strong>。</li>
+  <li><strong>「感測器決定資料」係機器人版 Bitter Lesson 嘅真正難點。</strong>語言領域「正確嘅資料＝全網文本」，機器人領域「你揀嘅感測器就決定咗你擁有嘅資料」——所以 Bitter Lesson 喺機器人度變咗一個<strong>硬件＋資料嘅聯合設計問題</strong>，而唔係單純 scale。呢個係本集最反直覺嘅洞察。</li>
+  <li><strong>全棧 vs 平台無關，係一次系統天花板嘅宣示。</strong>Jason 明言喺 DeepMind、NVIDIA「只做模型」時，親眼見到「當你唔掌控硬件、無法最佳化時，整個系統嘅天花板喺邊」。呢個對「只做模型、部署喺任何平台」嘅路線構成直接挑戰——同 10-05 張小珺 × 楊松林（Kimi 線性注意力架構）嗰種「架構即產品」嘅思路互為鏡像，但 Dyna 走得更極端：連致動器同比例都要自研。</li>
+  <li><strong>「pilot vs 量產」係機器人產業嘅死亡線。</strong>「整個機器人公司嘅墓園裡面，佢哋全部都有非常閃亮、非常酷嘅機械人；但真正難嘅係搞清楚人們到底要咩。」呢句同 9/28 屠龍之術、10/8 硅谷 101（模型變強、用戶冇感覺）嘅主旋律完全同頻——<strong>demo 同部署之間隔住嘅唔係模型能力，而係價值驗證</strong>。</li>
+  <li><strong>「一致性」係一個被低估嘅護城河。</strong>人類跨店折餐巾會有差異，但「模型就係一組權重」可以 OTA 一次同步所有機器人。呢個係軟件式規模經濟第一次真正降落到物理勞動上——值得記低嘅一個新論點。</li>
+  <li><strong>主動指出自己論點嘅軟肋，係高水平研究者嘅標誌。</strong>Jason 唔止推銷世界動作模型，仲主動講「如果我錯咗，最可能係 vision 唔夠、要 vision＋tactile」——同時用「理解感測器好複雜，我哋由第一日起就在做」嚟防守。呢種「先講對手最強版本」嘅論述方式，比單純 demo 更有說服力。</li>
+</ul>
+
+<div class="section-title">十三、前後脈絡</div>
+
+<ul>
+  <li><strong>同 10-08 硅谷 101 E255（模型評測近滿分、真實工作仍要人兜底）互證：</strong>Dyna 嘅「45 分鐘示範即可上手」同「99.4%／24 小時」正係把「評測分數」翻譯成「現場可驗證嘅可靠性」嘅嘗試。</li>
+  <li><strong>同 10-12 Latent Space × Anthropic dynamic workflows 直接接棒：</strong>Anthropic 讓模型自編排 multi-agent 拓撲；Dyna 讓世界動作模型＋agentic harness 自編排「數小時物理工作流」。同一個母題——由單步能力走向系統組織跨長時域嘅自主——喺數位同物理兩個世界同步上演。</li>
+  <li><strong>同 09-14 十字路口具身圓桌、09-21 許夢迪（Embodied ICL）一脈相承：</strong>中文圈同英文圈喺「資料配方、跨具身遷移、長時域自主」呢幾個點上，正朝同一個答案收斂。</li>
+  <li><strong>方法論上同 Richard Sutton《Dyna》＋ Bitter Lesson 一脈相承：</strong>Dyna 呢個名本身就係致敬，而訪談反覆出現嘅「保持演算法簡單、scale 正確嘅資料、讓泛化湧現」正係 Bitter Lesson 嘅機器人版。</li>
+</ul>
+
+<div class="section-title">十四、爭議點／存疑（必讀）</div>
+
+<ul>
+  <li><strong>「100 萬小時／四個數量級 scaling law」係公司口徑，未經獨立核實。</strong>同類數字（99.4%／24 小時、45 分鐘上手）同樣出自 Dyna 自己嘅 blog 同 demo——請當「節目／官方口徑」視之。</li>
+  <li><strong>反共識／易引戰點有三個</strong>：①「VLA 係將人嘅偏見編碼進去，不如直接預測原始世界」；②「只做模型、平台無關嘅路線會撞到系統天花板」；③「機器人產業過度 demo 導向，已經有一座公司墓園」。</li>
+  <li><strong>硬件樽頸嘅誠實披露值得記低</strong>：靈巧手會過熱（「要放袋冰降溫」）、缺失觸覺／嗅覺模態。呢個意味住「手」相關任務嘅時間線仍然受硬件卡住，唔係純模型問題。</li>
+  <li><strong>Jason 自己承認可能錯喺邊</strong>：如果最終解法係 vision＋tactile／audio 世界模型，純視覺路線會被數據效率打敗。呢個係本集最有價值嘅自我批判，亦係後續觀察嘅關鍵指標。</li>
+  <li><strong>Jev 前置過濾：</strong>本輪對本條候選跑 <code>jev.py triage --profile news</code>，worth=<strong>1.4</strong>（遠高於 0.6 噪音線）、category=agent-infra、primary_source=<strong>0.44</strong>。因 primary_source 略高但仍屬「節目口徑」，文中公司數字一律標為「公司口徑、未經獨立核實」。</li>
+</ul>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上內容出自 <em>Latent Space</em>〈Dyna-2: General Purpose Physical Agents with Hour-Long Autonomy — Jason Ma, Dyna Robotics〉（2026-10-13 22:25 UTC 發布；主持 swyx＋Vibhu；現場錄製於 Dyna Robotics 辦公室，AI Engineer NYC 2026）。所有直接引語均取自 <strong>latent.space 原文逐字稿</strong>（經英文原文轉錄、由本站譯為中文）；公司數字（100 萬小時、99.4%、45 分鐘、100 維動作空間等）為 Dyna 官方口徑。<strong>未經獨立核實。</strong>分析、脈絡整理及「Vee 嘅萃取」為本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #212 · Latent Space（2026-10-13 · Dyna-2：世界動作模型／100 萬小時人類影片／機器人版 chain-of-thought）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-14 06:05 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
