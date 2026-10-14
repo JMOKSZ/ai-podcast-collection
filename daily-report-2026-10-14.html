@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 播客深度萃取報告 · 2026-10-14</title>
+<style>
+  :root { --bg:#faf8f5; --ink:#1f1c18; --muted:#6b6259; --line:#e3ddd4; --accent:#8a6d3b; --quote:#3b342c; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--ink);
+         font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+         line-height:1.78; margin:0; padding:0 20px; }
+  .wrap { max-width:860px; margin:0 auto; padding:48px 0 80px; }
+  header { border-bottom:2px solid var(--ink); padding-bottom:22px; margin-bottom:34px; }
+  h1 { font-size:1.9rem; margin:0 0 10px; letter-spacing:.01em; }
+  .meta { color:var(--muted); font-size:.92rem; }
+  .meta span { display:inline-block; margin-right:18px; }
+  h2 { font-size:1.35rem; margin:52px 0 14px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+  h3 { font-size:1.12rem; margin:34px 0 6px; }
+  h4 { font-size:1.02rem; margin:26px 0 8px; color:#3a332a; border-left:3px solid var(--accent); padding-left:10px; }
+  .ep { margin:26px 0 8px; }
+  .ep .tag { font-size:.82rem; color:var(--muted); font-weight:normal; }
+  ul { padding-left:22px; }
+  li { margin:6px 0; }
+  blockquote { margin:14px 0; padding:10px 18px; border-left:3px solid var(--accent);
+               background:#f3efe8; color:var(--quote); font-style:italic; }
+  blockquote .who { display:block; font-style:normal; font-size:.82rem; color:var(--muted); margin-top:6px; }
+  table { border-collapse:collapse; width:100%; margin:14px 0; font-size:.92rem; }
+  th,td { border:1px solid var(--line); padding:7px 10px; text-align:left; }
+  th { background:#f1ece4; }
+  .kv { color:var(--muted); font-size:.9rem; }
+  .sec-label { font-weight:bold; color:#4a4136; }
+  .note { background:#f6f2ea; border:1px solid var(--line); padding:12px 16px; font-size:.9rem; color:var(--muted); margin:16px 0; }
+  .no-new li { color:#4a4136; }
+  hr { border:0; border-top:1px solid var(--line); margin:44px 0; }
+  a { color:var(--accent); }
+  footer { margin-top:60px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; }
+  .badge { display:inline-block; font-size:.72rem; padding:1px 8px; border:1px solid var(--line); border-radius:10px; color:var(--muted); margin-left:8px; vertical-align:middle; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>AI 播客深度萃取報告</h1>
+  <div class="meta">
+    <span><strong>報告日期</strong>：2026-10-14（三）</span>
+    <span><strong>生成時間</strong>：2026-10-14 02:05 UTC ／ 10:05 北京時間</span>
+    <span><strong>掃描窗口</strong>：2026-10-13 → 2026-10-14</span>
+  </div>
+  <div class="meta" style="margin-top:6px;">
+    來源：10 檔播客 RSS／YouTube（Dwarkesh、Latent Space、Cognitive Revolution、No Priors、ML Street Talk＋張小珺、十字路口、硅谷 101、42 章經、屠龍之術）
+  </div>
+</header>
+
+<div class="note">
+<strong>本輪重點（一句話）</strong>：今日新增 <b>1 條深度集（英文）＋1 條快訊（英文）</b>，<b>中文檔全數零新增</b>。深度集是 Latent Space 在 Dyna Robotics 辦公室現場專訪首席科學家 Jason Ma，談 <b>Dyna-2 世界動作模型（world-action model）</b>與 <b>首個可連續自主一小時的物理 Agent（Dyna-2.1）</b>；快訊是 Latent Space AINews 整理的 <b>Meta「Muse Wonder / Wonder Full」</b>發佈（MSL 成立 14 個月即逼近前沿）。<br>
+兩條放在一起看，恰好是同一個問題的兩面：<b>當「更大模型」開始邊際遞減，價值往哪裡走？</b>Dyna 的答案是<b>往世界（物理）走</b>——不預測動作、而是先預測「世界接下來會變成什麼樣」，再把預測翻譯成動作（他把這類比作機器人的 chain-of-thought）；Meta 的答案是<b>往 Agent 走</b>——同一代模型的重點已經從「通用評測分數」轉向 Terminal-Bench、GDPval、AA-Briefcase 這類<b>代理工作</b>基準，並且官方賣點直接就是「跨日／跨週／跨月的記憶」與「扛著阻塞把任務做完」。這與 9/28 屠龍之術、10/8 硅谷 101（模型變強、用戶沒感覺）形成同一週的共振：<b>主旋律已從「模型本身」轉為「系統如何組織、成本如何算、價值落在哪一層」。</b>
+</div>
+
+<h2>中文播客</h2>
+
+<div class="note no-new">
+本輪窗口（2026-10-13 → 2026-10-14）內，5 檔中文播客（張小珺、十字路口、硅谷 101、42 章經、屠龍之術）<b>全部零新增</b>，逐一以原生 RSS 頂條核實：
+<ul>
+  <li><b>42 章經</b>：頂條仍為 10-12《一个 Personal Agent 创业者的思考｜对谈 Ambi 创始人子皓》（已於 10-13 報告萃取）</li>
+  <li><b>十字路口 Crossing</b>：頂條仍為 10-11《“有了AI，我感觉自己强得可怕！”｜对谈鸭哥》</li>
+  <li><b>硅谷 101</b>：頂條仍為 10-08 E255《模型越来越强，为什么用户没感觉？再访阿里国际站总裁张阔》</li>
+  <li><b>張小珺商業訪談錄</b>：頂條仍為 09-03 #153《和曾鸣聊产业史观》</li>
+  <li><b>屠龍之術</b>：頂條仍為 09-28《当AI开始设计芯片——聊聊EDA与AI时代的芯片设计》</li>
+</ul>
+</div>
+
+<hr>
+
+<h2>英文播客</h2>
+
+<h3>Latent Space（swyx ＋ Vibhu）</h3>
+
+<h4 class="ep">Dyna-2: General Purpose Physical Agents with Hour-Long Autonomy — Jason Ma, Dyna Robotics <span class="badge">深度訪談</span><br><span class="tag">🎙️ 發布時間：2026-10-13 22:25:55 UTC（＝10-14 06:25 北京時間）· 時長約 1 小時 12 分 · 現場錄製於 Dyna Robotics 辦公室（AI Engineer NYC 2026）</span></h4>
+
+<p><strong>主題</strong>：這是 Latent Space 開播以來<b>第一期機器人專訪</b>。核心是 Dyna 上個月發布的 <b>Dyna-2 世界動作模型</b>（以超過 <b>100 萬小時人類影片</b>預訓練，號稱在人類資料上得到跨越<b>四個數量級</b>的 scaling law），以及隨後推出的 <b>Dyna-2.1</b>——官方稱之為「首個實現可靠超長時域全身自主的物理 Agent（Physical Agent）」。節目在 Dysa 辦公室現場錄製，包含 Taku 機器人的 live demo（現場看機器人從冰箱抽飲料、疊毛巾、切食物）。要回答的問題很具體：<b>為什麼「預測世界的未來」會是通用機器人的關鍵？</b>以及<b>從炫技 demo 到真實客戶量產部署之間，究竟缺什麼？</b></p>
+
+<p><strong>嘉賓背景</strong>：Jason Ma（馬），Dyna Robotics 聯合創辦人兼首席科學家。高中時玩圍棋，AlphaGo 問世時大受震撼（「搜索空間比全世界的原子數還多，RL 竟然破解了」），立志做能自我改進的模型／agent。賓大（UPenn）GRASP Lab 博士，主攻 RL for robotics 與人類資料結合。畢業後先入 NVIDIA——當時 GPT-4 剛發布，他主導的 <b>Eureka 專案</b>是「第一個用大語言模型自我生成模擬環境與 reward function 的系統」，他自稱那是「我認為我們做出了第一個在模擬中遞迴自我改進的機器人 agent」；隨後加入 Google DeepMind 研究把 Gemini 用於機器人。意識到「實驗室裡是自己給自己出題、自己批改作業」，2024 年底與 Lindon Gao、York Yang 共同創辦 Dyna。</p>
+
+<p><strong>核心論點</strong>：</p>
+<ul>
+  <li><b>世界動作模型（World-Action Model）是關鍵架構</b>：它不只輸出動作，還預測「未來的影片／世界的未來狀態」。Jason 的說法是——人類在腦中其實隱性地預演「我的行動會讓世界變成什麼樣」，所以讓模型顯式做這件事，機器人就會「更靈巧、更魯棒、更能泛化到沒見過的場景」。他把這套機制直接類比為 <b>chain-of-thought</b>：<b>模型先在視覺／物理空間裡「推理」，然後才輸出動作。</b></li>
+  <li><b>資料是機器人領域最核心的問題，因為「沒有網際網路」</b>：語言模型可以直接吃全網文本，機器人不行。他用一個比喻：靠一家公司自己蒐集資料，就像「只靠 Reddit 或只靠 Facebook 就想造出一個網際網路」——單一來源再大也不夠。</li>
+  <li><b>資料質量是「非平穩（non-stationary）」問題</b>：什麼叫高品質資料，會隨模型變強而改變。模型一無所知時「任何資料都有用」；egocentric（第一人稱）人類影片是最好的預訓練來源，因為人類活動極其多樣、能給模型關於「世界如何在一個具身行動者周圍演化」的強先驗。但人類資料與機器人動作之間永遠有 gap（除非機器人長得跟人一模一樣），所以必須再用<b>少量機器人自身資料</b>補上低階反射／靈巧度。他主張的最佳配方＝<b>最大量的人類 egocentric 資料給強先驗 ＋ 少量機器人資料做任務精通</b>，把兩者放進<b>同一個模型</b>。</li>
+  <li><b>瓶頸是硬體，不是只有模型</b>：他多次強調「要做出更通用的東西，最大瓶頸仍是硬體與資料」。具體例子是<b>靈巧手會過熱</b>——「世界上最好的靈巧手耐用度仍不夠、很快就過熱……你幾乎得給它放一袋冰來降溫」。另一個瓶頸是<b>缺失的感知模態</b>：人類用觸覺、聽覺、嗅覺潛意識地完成操作任務，而當前資料幾乎只有視覺；若不同時擷取這些維度，就算把資料擴到幾百萬小時，也可能永遠補不齊解任務所缺的關鍵維度。</li>
+  <li><b>Bitter Lesson of Robotics（機器人版苦澀教訓）</b>：做法就是「把演算法保持得越簡單越好，然後 scale 正確的資料，泛化與更好的行為會自己湧現」——反對手工加先驗（例如手工畫 box 幫機器人看物件）。但機器人的難點在於「什麼是正確的資料」遠比其他領域難判，因為<b>你選的感測器就決定了你擁有的資料</b>。</li>
+  <li><b>世界動作模型 vs VLA（Vision-Language-Action）</b>：他認為 VLA 只預測「抽象的世界表徵」或直接動作，等於<b>把你的偏見編碼進去</b>；最符合第一性原理的做法是拿最原始的相機輸入，盡可能預測整個世界。他也主動給出「自己可能錯在哪」：如果感測器本身不含該有的資訊（缺觸覺），那麼視覺世界模型再強也不夠——<b>若最終解法是「視覺＋觸覺世界模型」，能做得比只會做影片生成、想轉型機器人的公司更好，因為「理解感測器非常複雜」，而 Dyna 從創業第一天就在做這件事。</b></li>
+  <li><b>價值在「無人看管數小時的工作流」，不是 30 秒任務</b>：他批評產業界「還在用任務級別思考自主性——一分鐘、三十秒的任務」，但真正有價值的是<b>數小時無人干預的工作流</b>。因此需要<b>分層架構</b>：在世界動作模型外再套一層 agentic harness（高階決策層），像 Claude Code 包住模型那樣，讓機器人能組合不同技能。舉例：洗衣流程裡機器人要推理「洗衣機在轉，我應該先去別的地方做事；洗衣機一停，我要馬上把毛巾從洗衣機拿出放進烘乾機，否則會拖累整個流程」。</li>
+</ul>
+
+<p><strong>關鍵數據／事實</strong>：</p>
+<ul>
+  <li><b>100 萬小時</b>人類影片預訓練（Dyna-2），號稱在人類資料上呈現跨<b>四個數量級</b>的 scaling law。<span class="kv">（公司口徑，未經獨立核實）</span></li>
+  <li><b>99.4% 成功率</b>：折疊餐廳餐巾紙、連續運轉 <b>24 小時</b>不間斷，且能在「把整疊餐巾紙拉倒」後自行恢復。用餐巾紙折疊（deformable object，組態無窮多）作為「通用模型勝過專用機器」的示範案例。</li>
+  <li><b>45 分鐘</b>：學習一個全新任務所需的人類示範量（切菜 demo 為 45 分鐘；部分任務只需數十分鐘）。「極少的 fine-tune ＋ 極少示範」即可讓模型上手。</li>
+  <li><b>一整個工作 loop 已達 1 小時</b>：洗衣 demo 的完整循環約需一小時；這是目前最長時域。<b>但「任意任務都能做到」的瓶頸仍是資料與硬體。</b></li>
+  <li><b>動作空間約 100 維、連續</b>：模型以每秒 10–20 次的頻率輸出〈至少 50 維〉連續向量，並可能同時預測未來 1–2 秒（約上百幀）。他特別點出「自由度越大越難擬合」，而 Dyna 能讓這個高維動作空間擬合得很好，正是機器人動作「異常平滑」（現場主持人稱「比人走路還平滑」）的原因。</li>
+  <li><b>部署規模</b>：目前已有<b>數十台</b>機器人部署；明年的目標是<b>數百台</b>。最大規模客戶是<b>鼎泰豐（Din Tai Fung）</b>，多家美國分店每天折疊<b>數千張</b>餐巾紙；已簽下更大合約，客戶開始要求<b>切蔬菜</b>。另一客戶是 <b>Best Western</b> 酒店（折疊毛巾）。遠期願景是<b>數百萬台</b>。</li>
+  <li><b>公司構成</b>：硬體約占 30–40% 人力，模型團隊約 10 人，另有軟體／機器人工程師與商務團隊。Jason 明言公司定位是「研究＋產品公司」，像 OpenAI 那樣讓前沿研究最終流入產品（Codex 進 ChatGPT）。</li>
+  <li><b>命名由來</b>：Dyna 一名既取自 RL 先驅 <b>Richard Sutton</b> 多年前的論文《Dyna》（談自我改進、帶世界模型的 agent），也取自他出生那年播出的《超人力霸王 Dyna》。他坦言「當年創業時我們還沒做世界模型，但我覺得機器人一定會這樣被解」，如今技術方向正在收斂到當初的直覺。</li>
+</ul>
+
+<p><strong>重點引用</strong>：</p>
+<blockquote>「世界動作模型是一個能預測未來影片、預測世界未來狀態的模型……除此之外，你還可以用那個『未來生成』來產生機器人能在物理世界執行的動作。」<span class="who">— Jason Ma，開場定義</span></blockquote>
+<blockquote>「這有點像 chain-of-thought。基本上，模型是在視覺、物理空間裡推理，然後再輸出動作。」<span class="who">— Jason Ma，談世界動作模型的輸出機制</span></blockquote>
+<blockquote>「跟語言模型不同，機器人沒有網際網路……你等於是想只靠 Reddit、或只靠 Facebook 就造出一個網際網路。它們是很棒的網站、用戶很多，但還是不夠。」<span class="who">— Jason Ma，談資料取得</span></blockquote>
+<blockquote>「你得想的是：人類資料覆蓋的是機器人認知中我需要的這一塊；機器人資料覆蓋的是機器人也需要的低階反射與靈巧度——把它們放進同一個模型。」<span class="who">— Jason Ma，談資料配方</span></blockquote>
+<blockquote>「機器人必須行動。它不能握著一把刀然後三秒鐘什麼都不做——那會嚇死人……物理、重力不會等你。」<span class="who">— Jason Ma，談推論延遲為何必須極短、為何要在裝置端／本地服務</span></blockquote>
+<blockquote>「今天最好的靈巧手耐用度還是不夠，很快就過熱……你幾乎得給它放一袋冰（降溫）。」<span class="who">— Jason Ma，談硬體瓶頸</span></blockquote>
+<blockquote>「今天在機器人領域，大家還是在『任務級別』思考自主性——一分鐘、三十秒的任務。但真正的價值在於那些無人看管、持續數小時的任務或工作流。」<span class="who">— Jason Ma，談為何需要 agentic harness</span></blockquote>
+<blockquote>「整個機器人公司的墓園裡，它們全都有非常閃亮、非常酷的機器人；但真正難的是搞清楚人們到底要什麼——每個人都說『做人們想要的東西』，但把一家機器人公司執行出來，其實極其困難。」<span class="who">— Jason Ma，談 demo 與量產部署之差</span></blockquote>
+<blockquote>「GPT-6 出來的時候，我們同一週就辦了一場公司內部黑客松，工程師做出來的東西令人難以置信。」<span class="who">— Jason Ma，談 AI-native 工作方式（他認為 GPT-6 最令人驚訝的能力是「建構虛擬環境／3D 重建」）</span></blockquote>
+
+<p><strong>技術詳情</strong>：</p>
+<ul>
+  <li><b>架構</b>：底層是 <b>diffusion transformer</b>，採 <b>encoder-only transformer</b>。選 diffusion 的理由是「生成需要精確、平滑、高頻的動作」，與生成圖像的訴求（銳利邊緣、色彩對比）同構；選 transformer 的理由是「能吃下最多資料」。</li>
+  <li><b>Flow matching</b>：Jason 稱它是 diffusion 的一個特例，好處是轉換更簡單、不用像傳統 diffusion 那樣大調 scheduler，效果一樣好。主持人 swyx 補充：原本需要 40–100 步 diffusion 去噪，flow matching 可降到約 <b>4 步</b>；且在機器人動作上特別適合，因為可以「即時重新評估」，不像圖像生成基本是一次性的。</li>
+  <li><b>輸入</b>：過去數秒的影片／影像、機器人關節角度（joint encoders）、語言指令。<b>輸出</b>：機器人可執行的動作＋未來影片（或其表徵）。</li>
+  <li><b>即時推論與蒸餾</b>：因為延遲關鍵，最終部署的模型必須夠小、能在本地（on-prem）服務；但「初始訓練的大模型不必小」——做法是先訓練最大的模型，再蒸餾出小模型（與語言模型同一套路）。Dyna 自建推論堆疊（inference stack），因為要為自己的模型最佳化延遲。</li>
+  <li><b>資料飛輪</b>：除了外部人類資料，Dyna 也用<b>自己的世界模型生成自己的訓練資料</b>（因為模型不只出動作、也能出影片），形成自給自足的飛輪。同時用前沿模型（如 GPT-6）生成合成環境、real-to-sim、CAD、3D 重建。Jason 說他博士時期就做模擬訓練，但「當時模擬還沒準備好」；現在是「臨界點」，值得深挖。</li>
+  <li><b>硬體自研策略</b>：很清楚地區分「買」與「自建」——LiDAR、部分相機等成熟零組件直接買；但<b>致動器（actuator）與機器人比例必須自研</b>，理由是「致動器的品質與設計直接決定你能不能把機器人建模得很好」，而<b>機器人比例是對照真人量測的</b>，因為要預訓練人類資料、追求最佳遷移。他也點出供應鏈現實：美國沒有公司真的「從零全部自製」，稀土磁鐵是關鍵材料之一，全球供應鏈很長、地緣政治與運輸延遲都是變數。</li>
+  <li><b>為什麼做輪式半人形（semi-humanoid）</b>：上半身人形（肩、雙臂）＋腰<b>四個自由度</b>＋下半身用<b>輪子</b>而非腿。理由是「實用性 vs 性能」的取捨：腿能耗更高、更不穩、安全性極難保證（「目前腿式機器人無法保證全程保持直立平衡」）。另外新增了一個「前傾」自由度，專門為洗衣（要俯身探入機器）等場景。他主張<b>迭代式</b>逼近最終人形：硬體迭代慢又貴，一次性造「最終型態」大概率要報廢重來（他引 Optimus 已多次改版報廢為例），所以先用半人形上真實客戶、拿回饋迴路。</li>
+  <li><b>訓練／評估迴路</b>：學新任務流程＝少量機器人資料蒐集（數十分鐘至數小時）→ 訓練 → 在<b>與蒐集資料相同的真實設置</b>上上線跑 → 觀察表現（有時「開箱即用」，有時 70–80% 到位）→ 針對弱點再蒐集資料 → 迭代。他把這稱為<b>「機器人版的 RLHF」</b>：機器人 rollout，人給好／壞／尚可的評分，再用機器人自身經驗訓練模型。終極目標是讓機器人成為平台，「任何人都能在上面訓練任務」。</li>
+</ul>
+
+<p><strong>行業 insight</strong>：</p>
+<ul>
+  <li><b>「pilot」與「量產」是兩回事</b>：Jason 特別強調，難的不是「把機器人放進某一個地點、做一次試點」，而是<b>讓客戶相信／驗證你的機器人能創造足夠價值，願意在旗下眾多場址大規模部署</b>。他聲稱這在鼎泰豐身上發生了，而「據我所知，做類似通用機器人的其他公司還沒做到」。</li>
+  <li><b>一致性是模型相對於人的護城河</b>：鼎泰豐 LA／紐約／西雅圖各店折餐巾的細節略有不同，但客戶要的是跨店一致——而「模型就是一組權重」，可以 OTA 一次更新所有機器人。他認為這點「真的不可思議」。</li>
+  <li><b>機器人產業仍在「demo 導向」</b>：他在結尾的行動呼籲是——產業需要更多真正以部署為使命的人，把機器人基礎模型與硬體真正整合、放到真實客戶現場；「我們在這件事上是先驅，我希望這個領域有更多這樣的人」。</li>
+  <li><b>對「只做模型／平台無關」路線的質疑</b>：他明言在 DeepMind、NVIDIA 時「只做模型」，親眼看到「當你不掌控硬體、無法最佳化時，整個系統的天花板在哪」。要解決物理任務、要最佳化一切，就必須全棧。</li>
+</ul>
+
+<p><strong>前後脈絡</strong>：</p>
+<ul>
+  <li>與 <b>10-10 Cognitive Revolution × Goodfire Eric Bigelow</b>（推理≈從取樣 token 做 in-context learning、關鍵 token 處分佈會相變）呼應：Jason 把「先預測未來影片再出動作」比作 <b>chain-of-thought</b>，本質都是「把推理外顯成中間表示」；Bigelow 提醒 CoT 的可監控性在下降，Jason 的世界動作模型則把「推理」放到視覺／物理空間——中間表示的<b>可審計性</b>是同一條線上的開放問題。</li>
+  <li>與 <b>10-12 Latent Space × Anthropic dynamic workflows</b> 直接接棒：Anthropic 讓模型自編排 multi-agent 拓撲、用 test-time compute 砸難題；Dyna 讓世界動作模型＋agentic harness 自編排「數小時物理工作流」。<b>同一個母題——從「單步能力」走向「系統組織跨長時域的自主」——在數位與物理兩個世界同步上演。</b></li>
+  <li>與 <b>10-08 硅谷 101 E255</b>（模型評測近滿分、真實工作仍要人反覆解釋檢查兜底）互證：Dyna 的「45 分鐘示範即可上手」與「99.4%／24 小時」正是把「評測分數」翻譯成「現場可驗證的可靠性」的嘗試。</li>
+  <li>方法論上與 <b>Richard Sutton 的《Dyna》論文＋Bitter Lesson</b> 一脈相承：Dyna 這個名字本身就是致敬，而訪談裡反覆出現的「保持演算法簡單、scale 正確的資料、讓泛化湧現」正是 Bitter Lesson 的機器人版本。</li>
+  <li>反共識／易引戰點：①「VLA 是把人的偏見編碼進去，不如直接預測原始世界」；②「只做模型、平台無關的路線會撞到系統天花板」；③「機器人產業過度 demo 導向、已經有一座公司墓園」。</li>
+</ul>
+
+<hr>
+
+<h3>Latent Space ／ AINews（AI 新聞週報）</h3>
+
+<h4 class="ep">[AINews] Meta Muse Wonder &amp; Wonder Full: MSL 逼近 Claude 5.5 級的前沿模型 <span class="badge">快訊／二手彙整</span><br><span class="tag">🎙️ 發布時間：2026-10-13 09:37:04 UTC（＝10-13 17:37 北京時間）· 覆蓋 2026-10-10 → 10-12 的 AI 新聞</span></h4>
+
+<p><strong>主題</strong>：這是 Latent Space 旗下的每日／每週 AI 新聞彙整欄目 AINews（本期掃描 12 個 subreddit、544 個 Twitter 帳號）。本期頭條是 <b>Meta Superintelligence Labs（MSL）發布第二代模型家族「Muse Wonder」與「Muse Wonder Full」</b>（內部代號「Watermelon 🍉」）。這是二手彙整，非一手訪談，數字請以「轉述／官方口徑」視之。</p>
+
+<p><strong>核心事實</strong>：</p>
+<ul>
+  <li><b>定位</b>：MSL 成立約 <b>14 個月</b>後發布，官方稱「從重建基礎走向推進前沿」。Muse Wonder 是「快速前沿版」，Wonder Full 是「完整版」。Alexander Wang 稱 Wonder 是「更大、更先進的一類模型，把我們帶到前沿」。官方主打「個人與專業代理工作（personal and professional agentic work）」的 SOTA。</li>
+  <li><b>三大賣點</b>：<b>Active Memory</b>（跨日、跨週、跨月的記憶）、<b>Active Focus</b>（扛著阻塞把任務做完）、<b>領域專長</b>（金融與法律稱 SOTA，「健康領域很強」）。</li>
+  <li><b>訓練敘事</b>：Wang 表示自 4 月 Muse Spark 出貨以來，持續同時 scale 預訓練與 RL。</li>
+  <li><b>可用性</b>：Wonder 透過 Meta Model API 與 Muse Code 提供；Wonder Full <b>僅限 Muse Code 訂閱者</b>；Wonder 將驅動 Meta 的 Muse 個人 agent 產品（訂閱者優先）。Muse Code 安裝指令 <code>curl dev.meta.ai/install.sh | bash</code>。</li>
+  <li><b>上市首日 bug</b>：Wonder／Wonder Full 異常快速地消耗 Muse Code 配額，同日修復並對所有用戶重置配額；Wang 承認「還有一些問題正在調整」。</li>
+  <li><b>媒體動作</b>：Zuckerberg 與 Wang 上了 Stripe 的 Cheeky Pint 節目，章節包含「押注 1000 億美元」、agentic commerce、OpenRouter、「為什麼 AI 不會贏者通吃」與 MSL 組織架構。</li>
+</ul>
+
+<p><strong>關鍵數據（第三方 Artificial Analysis 為主，官方口徑）</strong>：</p>
+<table>
+  <tr><th>指標</th><th>Wonder Full（max）</th><th>Wonder（max）</th><th>對照</th></tr>
+  <tr><td>Intelligence Index v4.3</td><td>56</td><td>52</td><td>Muse Spark 1.3 = 48；Opus 5.5 領先 58</td></tr>
+  <tr><td>Terminal-Bench 4.0</td><td>33% → 57%</td><td>33% → 52%</td><td>Agentic 增幅最大</td></tr>
+  <tr><td>GDPval-AA v2.1</td><td>1681 → 1857 Elo</td><td>—</td><td>排名 #2</td></tr>
+  <tr><td>AA-Briefcase</td><td>1581 → 1729 Elo</td><td>—</td><td>排名 #3</td></tr>
+  <tr><td>Coding Agents Index（在 Muse Code 中）</td><td>68</td><td>63</td><td>並列 Claude Code＋Sonnet 5.5（68），領先 Opus 5.5（66）；Spark 1.3 = 54</td></tr>
+</table>
+<ul>
+  <li><b>排名亮點</b>：Wonder Full 在 10 項評測中有 6 項進入前三；GDP.pdf（33%）與 CritPt（33%）<b>第一</b>；AutomationBench-AA 71%、SciCode 63%。<b>與 Spark 1.3 的發布間隔僅 6 週。</b></li>
+  <li><b>Token 用量</b>：輸出兩者約 <b>54k</b>（比 Spark 1.3 的 60k 少約 10%）；輸入 Full 6.44M vs Wonder 7.69M。對照輸出：Gemini 4 Argon 62k、Fable 5.1 78k、GPT-6.1 Sol 38k、GPT-6 Astra 27k。</li>
+  <li><b>每任務成本</b>（Intelligence Index 平均）：Wonder <b>$4.52</b>；對照 Fable 5.1 $7.63、Opus 5.5 $5.98、Sonnet 5.5 $5.46、Astra $3.26、Argon $1.99、Sol $0.72、Spark 1.3 $1.60。Wonder Full 無公開 token 定價，故無法計算。</li>
+  <li><b>規格</b>：<b>100 萬 token 上下文</b>；輸入支援文字／圖像／影片／音訊，輸出僅文字；定價 <b>$4 輸入 / $0.20 cached 輸入 / $20 輸出（每百萬 token）</b>。</li>
+  <li><b>Vals AI 讀數</b>：Wonder Full（Max）在 Vals Index 排 <b>#5</b>，比前代 +6.4 分、領先所有 OpenAI 模型；<b>ProofBench（私有）94/100</b>（Spark 1.3 僅 58，頂尖模型 99–100）；Terminal-Bench 4 分數翻倍以上、與 Fable 5.1 並列 #4；在 Terminal-Bench 少用約 30% 輸出 token、ProofBench 少 40%、Vibe Code Bench 用一半步數達到同分。Wonder 排名 #10、+7.9 分。</li>
+</ul>
+
+<p><strong>技術／安全細節</strong>：官方稱該家族針對「對抗性指令的魯棒性」與「私密資訊的謹慎處理」進行訓練，但<b>未提供詳細的系統卡（system card）</b>——這是一手資訊的明顯缺口。</p>
+
+<p><strong>行業 insight</strong>：</p>
+<ul>
+  <li><b>實驗室陣形愈來愈像</b>：AINews 直接類比——Meta 用 Muse Wonder/Full 對標 Spark/Glimmer，如同 OpenAI 的 Sol/Terra/Luna、Anthropic 的 Opus/Sonnet/Haiku。<b>「三檔模型家族」已成前沿實驗室的標準編制。</b></li>
+  <li><b>6 週一代的迭代節奏</b>：Spark 1.3 到 Wonder 僅 6 週，Intelligence Index 卻跳了 4–8 分——前沿迭代速度仍是主要變數。</li>
+  <li><b>賣點從分數轉向 agent 能力</b>：官方三大賣點（記憶、專注、領域專長）與增幅最大的評測（Terminal-Bench、GDPval、AA-Briefcase）全部指向<b>代理工作</b>，而非通用問答。這與同一週的 Dyna（agentic harness）、Anthropic flows（自編排）在同一個方向上。</li>
+  <li><b>供給同質 → 價格壓力</b>：Wonder 以 $4/$20 定價、cached 輸入 $0.20，加上每任務 $4.52 的實測成本，正落在前沿模型的中間帶。結合曾鳴（9-3 張小珺）「只要有同質化供給就無法獲取高額利潤」的判斷，這條價格線值得後續追蹤。</li>
+</ul>
+
+<p><strong>前後脈絡</strong>：延續 <b>9-3 張小珺 × 曾鳴</b>「模型公司就是未來的 AI 雲公司、公共基礎設施只有寡頭壟斷一種商業模式」的框架；也接上本週 <b>10-12 Latent Space × Anthropic flows</b> 的 agent 化主線。<span class="badge">⚠️ 二手彙整，primary_source 低（Jev 0.12），所有數字屬官方／第三方轉述口徑，未經本報告獨立核實。</span></p>
+
+<hr>
+
+<footer>
+  <p><strong>報告說明</strong>：本報告由自動化排程生成，逐檔以原生 RSS／YouTube feed 核實新集，並以 web_fetch 抓取全文（訪談逐字稿、show notes）後深度萃取。英文檔核實來源：Dwarkesh（dwarkesh.com/feed，頂條 10-01 Si Sheppard，無新集）、Latent Space（latent.space/feed，新增 2 條）、Cognitive Revolution（feeds.megaphone.fm/RINTP3108857801，頂條 10-10 Bigelow，無新集）、No Priors（feeds.megaphone.fm/nopriors，頂條 10-09 Beam，無新集）、ML Street Talk（anchor.fm/s/1e4a0eac，頂條 10-10 Akarsh Kumar，無新集）。中文檔核實來源：xyzfm 原生 feed（張小珺 dk4yh3pkpjp3、十字路口 68fyjknth9hj、42 章經 evgg6xle9rdc、屠龍之術 834hyx3v9k74）與硅谷 101（feeds.fireside.fm/sv101/rss），全數零新增。Dwarkesh／No Priors 的 YouTube 頻道 feed 本輪回傳 404，已以原生 feed 為準。</p>
+  <p><strong>Jev 前置過濾</strong>：對 2 條候選跑 <code>jev.py triage --profile news</code>，available=true、failed=0/2。①Dyna-2：worth=1.66／category=llm-model／primary_source=0.27；②Meta Muse Wonder：worth=1.04／category=llm-model／primary_source=0.12。兩者均高於 0.6 噪音線故保留；因 primary_source 均 &lt;0.4，公司／官方口徑數字一律標為「節目／官方／二手口徑、未經獨立核實」。</p>
+  <p>Licensed under the Apache License, Version 2.0 · 生成於 2026-10-14 02:05 UTC</p>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-10-13T02:06:00.000Z",
- "lastScanDate": "2026-10-13",
+ "lastScan": "2026-10-14T02:05:00.000Z",
+ "lastScanDate": "2026-10-14",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-01T15:28:28.000Z",
@@ -9,18 +9,26 @@
    "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-10-12T18:18:17.000Z",
-   "lastEpisodeTitle": "How Anthropic’s Dynamic Workflows Coordinate Claude Agents",
-   "lastFeedItemPubDate": "2026-10-12T18:18:17.000Z",
-   "lastFeedItemTitle": "How Anthropic’s Dynamic Workflows Coordinate Claude Agents",
+   "lastEpisodePubDate": "2026-10-13T22:25:55.000Z",
+   "lastEpisodeTitle": "Dyna-2: General Purpose Physical Agents with Hour-Long Autonomy — Jason Ma, Dyna Robotics",
+   "lastFeedItemPubDate": "2026-10-13T22:25:55.000Z",
+   "lastFeedItemTitle": "Dyna-2: General Purpose Physical Agents with Hour-Long Autonomy — Jason Ma, Dyna Robotics",
    "newEpisodes": [
     {
-     "title": "How Anthropic’s Dynamic Workflows Coordinate Claude Agents",
-     "pubDate": "2026-10-12T18:18:17.000Z",
-     "type": "article-interview",
-     "url": "https://www.latent.space/p/claude-dynamic-workflows",
-     "guests": "CJ Avilla、Harrison Stall（均為 Anthropic Members of Technical Staff）；作者 Richard MacManus；場合 AI Engineer New York 2026 開幕日 workshop",
-     "note": "已深度萃取（Substack 原文全文，readability 未截斷，約 8.9 KB）。主題＝Anthropic 新特性 dynamic workflows（flows）＝讓 Claude 自己編排整個 multi-agent 拓撲。硬內容：lead agent 制訂計劃→Claude 自寫 orchestration program→啟動 agents/收集結果/管理資訊流；源起 Claude Code 的『a harness for every task』；舊機制需開發者配置 coordinator+roster，新機制 Claude 自己切分編排；Unix/Linux 組織學類比（Ken Thompson→Linus→信任 maintainer 層）；仍可注入 pre-configured sub-agents；Claude Console；示例 stock watchlist scanner（scan 階段分發 ticker 至 isolated context agents→review 階段出報告）；Q&A：多少 agent＝『evals and lower defaults』、ambitious 任務需顯式鼓勵並行；模型運行時不知預算、可設 session budget、知情會令 agent『a little bit anxious』；dreaming（research preview）讀 memory store+session transcripts 產出重組 store（去重／換矛盾條目／浮現新洞見）；自我改進未內建，可用 hill-climbing+dreaming；graphing 可看每次 transition 的 payload；subagents 共享 filesystem 但不能經 API 直接互發消息；flows 比單 agent『much more』貴但『much more effective at finding all of the details』；野心＝把 test-time compute 砸難題、讓 general public 做科研（觀眾引 OpenAI Navier–Stokes 千禧年證明）。"
+     "title": "Dyna-2: General Purpose Physical Agents with Hour-Long Autonomy — Jason Ma, Dyna Robotics",
+     "pubDate": "2026-10-13T22:25:55.000Z",
+     "type": "interview",
+     "url": "https://www.latent.space/p/dyna",
+     "guests": "Jason Ma（馬）— Dyna Robotics 聯合創辦人兼首席科學家；主持 swyx（Shawn Wang）＋Vibhu；現場錄於 Dyna Robotics 辦公室（AI Engineer NYC 2026）",
+     "note": "已深度萃取（Substack 原文全文含完整逐字稿，readability，約 82 KB，未截斷）。時長約 1 小時 12 分。主題＝Dyna-2 世界動作模型（world-action model）＋Dyna-2.1 首個連續自主一小時的物理 Agent。硬內容：世界動作模型同時預測未來影片與輸出動作，Jason 類比為機器人版 chain-of-thought（先在視覺／物理空間推理再出動作）；架構＝diffusion transformer／encoder-only transformer，flow matching 為 diffusion 特例（40–100 步→約 4 步）；輸入＝過去數秒影片＋關節角度＋語言指令；輸出＝動作＋未來影片。資料：機器人無網際網路，egocentric 人類影片給強先驗＋少量機器人資料補低階反射；資料質量為非平穩問題；100 萬小時人類影片預訓練、號稱跨四個數量級 scaling law；45 分鐘示範即可學新任務；eval 迴路＝機器人版 RLHF（rollout→人評分→用自身經驗訓練）。技術：推論延遲關鍵→裝置端服務＋蒸餾（大模型訓練、小模型部署）＋自建推論堆疊；動作空間約 100 維連續、每秒 10–20 次輸出；硬體瓶頸＝靈巧手過熱需放冰、缺觸覺／聽覺／嗅覺感測；做輪式半人形（上身人形＋腰 4 DOF＋輪子，非腿）並新增前傾自由度；致動器與機器人比例自研（比例對照真人量測以利人類資料遷移），LiDAR／部分相機外購；供應鏈長、稀土磁鐵、無美企全自製。部署：Best Western（疊毛巾）、鼎泰豐（多家美國分店每日折疊數千張餐巾紙、最大規模客戶、已簽更大合約並要求切菜）；99.4% 成功率連續 24 小時折餐巾、拉扯倒整疊後能恢復；區分 pilot 與多場址量產；機器人版 Bitter Lesson（保持演算法簡單、scale 正確資料、反對手工先驗）；世界動作模型 vs VLA（VLA 把人的偏見編碼進去；若最終需視覺＋觸覺，影片生成公司轉機器人會缺感測 know-how）；agentic harness 分層處理數小時工作流（像 Claude Code 包模型）；GPT-6 內部黑客松；合成環境／real-to-sim 為下一代 scaling 維度、自有世界模型生成自身訓練資料（飛輪）；現有數十台、明年目標數百台、願景數百萬台；公司硬體占 30–40%、模型團隊約 10 人、研究＋產品公司；命名取自 Richard Sutton《Dyna》論文＋超人力霸王 Dyna。"
+    },
+    {
+     "title": "[AINews] Meta Muse Wonder & Wonder Full: MSL's Claude 5.5-tier Frontier Model",
+     "pubDate": "2026-10-13T09:37:04.000Z",
+     "type": "news-roundup",
+     "url": "https://www.latent.space/p/ainews-meta-muse-wonder-and-wonder",
+     "guests": "作者 swyx／Latent Space AINews 團隊；覆蓋 10/10–10/12；二手彙整（12 subreddits、544 twitters）",
+     "note": "快訊（非一手訪談）。Meta Superintelligence Labs（MSL）發布二代模型家族 Muse Wonder／Wonder Full（代號 Watermelon），成立 14 個月逼近前沿。AI Intelligence Index v4.3：Wonder Full 56、Wonder 52、Spark 1.3 48、Opus 5.5 58；發布間隔僅 6 週。10 項評測 6 項進前三；Terminal-Bench 4.0 33%→57%；GDPval-AA v2.1 1681→1857 Elo；AA-Briefcase 1581→1729 Elo；Coding Agents Index（Muse Code）68＝並列 Claude Code＋Sonnet 5.5、領先 Opus 5.5（66）。規格：1M context、輸入文字／圖像／影片／音訊、輸出文字；$4/$20 per M（cached 輸入 $0.20）。賣點：Active Memory（跨日／週／月）、Active Focus、金融法律 SOTA。可用性：Wonder 走 Meta Model API＋Muse Code，Full 僅 Muse Code 訂閱者。Vals AI：Wonder Full #5 Vals Index、ProofBench 94/100（Spark 1.3 58）。上市首日配額 bug 同日修復。官方稱有對抗性指令魯棒性訓練但無系統卡。"
     }
    ]
   },
@@ -28,21 +36,18 @@
    "lastEpisodePubDate": "2026-10-09T17:24:00.000Z",
    "lastEpisodeTitle": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
    "lastFeedItemPubDate": "2026-10-09T17:24:00.000Z",
-   "lastFeedItemTitle": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
    "newEpisodes": []
   },
   "cognitive_revolution": {
    "lastEpisodePubDate": "2026-10-10T10:47:14.000Z",
    "lastEpisodeTitle": "How Agents Decide: Goodfire's Eric Bigelow on Critical Tokens, Phase Shifts, & In-Context Learning",
    "lastFeedItemPubDate": "2026-10-10T10:47:14.000Z",
-   "lastFeedItemTitle": "How Agents Decide: Goodfire's Eric Bigelow on Critical Tokens, Phase Shifts, & In-Context Learning",
    "newEpisodes": []
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-10-10T05:48:01.000Z",
    "lastEpisodeTitle": "What Most People Get Wrong About Evolution | Akarsh Kumar",
    "lastFeedItemPubDate": "2026-10-10T05:48:01.000Z",
-   "lastFeedItemTitle": "What Most People Get Wrong About Evolution | Akarsh Kumar",
    "newEpisodes": []
   },
   "xiaozhangjun": {
@@ -55,24 +60,13 @@
    "lastEpisodePubDate": "2026-10-08T23:00:00.000Z",
    "lastEpisodeTitle": "E255｜模型越来越强，为什么用户没感觉？再访阿里国际站总裁张阔",
    "lastFeedItemPubDate": "2026-10-08T23:00:00.000Z",
-   "lastFeedItemTitle": "E255｜模型越来越强，为什么用户没感觉？再访阿里国际站总裁张阔",
    "newEpisodes": []
   },
   "42zhangjing": {
    "lastEpisodePubDate": "2026-10-12T22:00:00.000Z",
    "lastEpisodeTitle": "一个 Personal Agent 创业者的思考｜对谈 Ambi 创始人子皓",
    "lastFeedItemPubDate": "2026-10-12T22:00:00.000Z",
-   "lastFeedItemTitle": "一个 Personal Agent 创业者的思考｜对谈 Ambi 创始人子皓",
-   "newEpisodes": [
-    {
-     "title": "一个 Personal Agent 创业者的思考｜对谈 Ambi 创始人子皓",
-     "pubDate": "2026-10-12T22:00:00.000Z",
-     "type": "interview",
-     "url": "https://www.xiaoyuzhoufm.com/episode/6accc5de195d838e2af0bd9a",
-     "guests": "莫子皓（子皓）— Ambi 创始人，曾任 Plaud 合伙人兼中国区 CEO；主播曲凯（42章经创始人）",
-     "note": "已深度萃取（xyzfm 原生 feed show notes 全文＋完整章節時間軸 34 節點；小宇宙單集頁無逐字稿，僅 show notes）。時長 86:18（5178s）。主題＝Personal Agent 賽道思考＋創業者方法論。Part 1：為何此刻爆發（Openclaw/Hermes/Muse/Instinct）、去年誤判『智能已足夠』、成本非大問題、需求多大、『涉及名和利的需求就可做，因為算得清 ROI』、AI Coworker 發展慢、『To B 是看矽谷看多了有點魔怔』、是否大廠機會、『Personal Agent 天然不帶網絡效應』、簡評 Town/Grok Bot/Muse/Instinct、『國內大廠失去成為世界第一的雄心』、如何與 Muse PK、交互難受、應用公司自訓模型。Part 2：職業光譜核心認知、做『垃圾』業務都賺錢、高三暑假溜冰場獨家代理、商業的本質、招人、『有意義地卷』、硬件優勢、Personal Agent 最大機會、Proactive 做錯、是否區分工作生活、億萬級用戶 timing、『為何國內跑出來的 AI 產品這麼少』（無解）。嘉賓履歷：米公益（被輕鬆籌收購）→暖哇科技合夥人/CPO→百川智能醫療方向產品及運營負責人→Plaud 合夥人兼中國區 CEO（2026-03 離職）→Ambi。Ambi 已開放下載，節目提供 5 個邀請碼。⚠️ 章節題為節目組自撰、非逐字稿原話，報告中已標注。"
-    }
-   ]
+   "newEpisodes": []
   },
   "slaying_dragon": {
    "lastEpisodePubDate": "2026-09-28T16:00:00.000Z",
@@ -84,17 +78,16 @@
    "lastEpisodePubDate": "2026-10-11T16:00:00.000Z",
    "lastEpisodeTitle": "“有了AI，我感觉自己强得可怕！”｜对谈鸭哥",
    "lastFeedItemPubDate": "2026-10-11T16:00:00.000Z",
-   "lastFeedItemTitle": "“有了AI，我感觉自己强得可怕！”｜对谈鸭哥",
    "newEpisodes": []
   }
  },
  "notes": {
-  "scan_status": "2026-10-13 掃描（02:03–02:06 UTC）：窗口 10/12–10/13 內 10 檔播客新增 2 條，一中一英。英文＝Latent Space〈How Anthropic's Dynamic Workflows Coordinate Claude Agents〉（2026-10-12 18:18:17Z，作者 Richard MacManus，AI Engineer NYC 2026 現場）；中文＝42章經〈一个 Personal Agent 创业者的思考｜对谈 Ambi 创始人子皓〉（2026-10-12 22:00:00Z）。其餘 8 檔逐一核實零新增：Dwarkesh 頂條仍 10/1 Si Sheppard；No Priors 仍 10/9 Beam；CR 仍 10/10 Bigelow；MLST 仍 10/10 Akarsh Kumar；張小珺仍 9/3 #153；十字路口仍 10/11 鴨哥；硅谷101 仍 10/8 E255；屠龍之術仍 9/28 EDA。",
-  "report_date": "2026-10-13",
-  "deep_content_fetched": "①Latent Space：Substack 原文 https://www.latent.space/p/claude-dynamic-workflows 全文（readability，未截斷，8,873 bytes），含 6 條現場直接引語、Anthropic flows 全部特性與 Q&A。②42章經：xyzfm 原生 feed show notes 全文＋完整章節時間軸（34 節點，精確到分鐘）＋節目提及參考連結；小宇宙單集頁（readability）僅含 show notes，無逐字稿（QMReader 鏡像為 JS 應用，抓取為空）。",
-  "transcript_attempts": "①中文以 xyzfm 原生 feed 頂條逐一核實（張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 …/68fyjknth9hj、42章經 …/evgg6xle9rdc、屠龍之術 …/834hyx3v9k74、硅谷101 feeds.fireside.fm/sv101/rss）。②42章經新集：小宇宙單集頁無 transcript 欄位、QMReader 為 JS 應用，故無逐字稿；報告以 show notes＋章節題＋嘉賓公開履歷補足，並明標『非原話』。③英文以原生 feed 核實：Dwarkesh→dwarkesh.com/feed；Latent Space→latent.space/feed；CR→feeds.megaphone.fm/RINTP3108857801；No Priors→feeds.megaphone.fm/nopriors；MLST→anchor.fm/s/1e4a0eac/podcast/rss。④No Priors 的 YouTube channel feed（UCSI7h9hydQ40K5MJHnCrQvw）本輪回傳 404，改以原生 megaphone feed 為準。",
-  "jev_prefilter": "2026-10-13 對 2 條候選跑 jev.py triage --profile news：available=true、failed=0/2。(1) 42章經×Ambi：worth=0.45／category=business／primary_source=0.29——低於 worth 0.6 噪音線，但為本輪罕見中文一手賽道訪談且直接延續 10-11 十字路口主線，故保留並全文標注『無逐字稿、章節題非原話』。(2) Latent Space×Anthropic flows：worth=1.16／category=agent-infra／primary_source=0.32。依 hint：兩條 primary_source 均 <0.4，故公司／嘉賓口徑數字（Ambi 狀態、flows 成本等）一律標『節目／官方現場口徑、未經獨立核實』。",
-  "notable_for_james": "①兩條新集罕見地構成同一母題兩端：Anthropic 讓『模型自編排 multi-agent 拓撲、用 test-time compute 砸難題』（Latent Space），對照 42章經談『Personal Agent 為何爆發、為何天然不帶網絡效應、國內為何跑不出爆款』。②最尖銳的一句出自 Anthropic Q&A：模型運行時不知道自己的 token 預算，且知情會讓 agent『有點焦慮』——agent 的經濟理性仍是外部（session budget）強加的。③可遷移斷言：42章經的『涉及名和利的需求就可做，因為算得清 ROI』＝把產品取捨還原成可算術的題；對照 10-11 鴨哥『context 才是基礎設施』。④反共識/易引戰：『Personal Agent 天然不帶網絡效應』、『國內大廠失去成為世界第一的雄心』、『做 To B 是看矽谷看多了有點魔怔』。⑤跨集共振：與 10-08 硅谷101 E255『模型越來越強，為什麼用戶沒感覺』、10-10 Latent Space standard-bots『數據質量>數據量』、10-10 CR×Bigelow（推理≈採樣）同週互證——主旋律＝系統組織與成本結構，非更大模型。",
+  "scan_status": "2026-10-14 掃描（02:03–02:05 UTC）：窗口 10/13–10/14 內 10 檔播客新增 2 條，全部來自 Latent Space（皆英文）：深度訪談 Dyna-2（2026-10-13 22:25:55Z）＋ AINews 快訊 Meta Muse Wonder（2026-10-13 09:37:04Z）。中文 5 檔全數零新增：42章經頂條仍 10-12 Ambi、十字路口仍 10-11 鴨哥、硅谷101 仍 10-08 E255、張小珺仍 9-03 #153、屠龍之術仍 9-28 EDA。英文其餘 4 檔零新增：Dwarkesh 頂條仍 10-01 Si Sheppard；No Priors 仍 10-09 Beam；CR 仍 10-10 Bigelow；MLST 仍 10-10 Akarsh Kumar。",
+  "report_date": "2026-10-14",
+  "deep_content_fetched": "①Dyna-2：Substack 原文 https://www.latent.space/p/dyna 全文（readability，82,101 bytes，未截斷），含完整逐字稿與 12 段時間軸章節（00:00–01:11:48）、Dyna-2.1 發布推文、部署客戶資訊、官方數據（100 萬小時、99.4%、45 分鐘、100 維動作空間等）。②AINews：https://www.latent.space/p/ainews-meta-muse-wonder-and-wonder 全文（readability，60,114 bytes）含 Artificial Analysis／Vals AI 全部數字與規格表。",
+  "transcript_attempts": "①中文以 xyzfm 原生 feed 頂條逐一核實（張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 …/68fyjknth9hj、42章經 …/evgg6xle9rdc、屠龍之術 …/834hyx3v9k74、硅谷101 feeds.fireside.fm/sv101/rss）——全數頂條未變。②英文原生 feed：Dwarkesh→dwarkesh.com/feed；Latent Space→latent.space/feed（含完整逐字稿於 Substack 原文）；CR→feeds.megaphone.fm/RINTP3108857801；No Priors→feeds.megaphone.fm/nopriors；MLST→anchor.fm/s/1e4a0eac/podcast/rss。③Dwarkesh／No Priors 的 YouTube 頻道 feed（UCXl4i9dYBrFOabk0xGmbkRA、UCSI7h9hydQ40K5MJHnCrQvw）本輪回傳 404，改以原生 feed 為準。④Dyna-2 為現場錄音轉錄之逐字稿，故引用為原話；AINews 為二手彙整，全篇標為官方／第三方轉述口徑。",
+  "jev_prefilter": "2026-10-14 對 2 條候選跑 jev.py triage --profile news：available=true、failed=0/2。(1) Latent Space×Dyna-2：worth=1.66／category=llm-model／primary_source=0.27。(2) Latent Space×Meta Muse Wonder：worth=1.04／category=llm-model／primary_source=0.12。兩者均高於 worth 0.6 噪音線，保留。依 hint：兩條 primary_source 均 <0.4，故公司／官方口徑數字一律標『節目／官方／二手口徑、未經獨立核實』。Muse Wonder 快訊另標 ⚠️ 二手彙整。",
+  "notable_for_james": "①本輪唯一深度集＝Latent Space 首期機器人專訪（Dyna-2），把主軸從數位 agent 拉到物理 agent：世界動作模型＋agentic harness＋長時域自主，與 10-12 Anthropic flows 是同一母題的物理版。②最尖銳可遷移斷言：Jason Ma『VLA 是把人的偏見編碼進去，不如直接預測原始世界』、『只做模型、平台無關的路線會撞到系統天花板』、『機器人產業過度 demo 導向、已有一座公司墓園』。③硬瓶頸一句：『今天最好的靈巧手耐用度還是不夠、很快就過熱……你幾乎得給它放一袋冰』——提示人形機器人的限制在硬體而非只有模型。④反共識：他主動給出自己可能錯在哪（若最終解法是視覺＋觸覺世界模型，影片生成公司轉型反而缺感測 know-how）——這種自我標註 falsifier 的訪談很罕見。⑤快訊：Meta Muse Wonder 6 週一代、逼近前沿；賣點（記憶／專注／領域專長）與增幅最大評測全指向 agentic——與本週主線一致。⑥跨集共振：與 10-08 硅谷101 E255『模型變強、用戶沒感覺』、09-03 張小珺×曾鳴『同質化供給就無法獲取高額利潤』同框，主旋律仍是系統組織、成本結構與價值層。",
   "index_html": "未更新 index.html：該落地頁自 2026-07-19 起已停更（deep-dive 索引除外），維持既有慣例未動。",
   "deep_dive_link": "本輪未新增 deep-dive（報告本體已含完整萃取）；最新 deep-dive 為 deep-dives/202, 203（10/9）。"
  }
