@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · ML Street Talk × Akarsh Kumar：演化唔係隨機搜索、26 萬條人工生命規則，同「統計智能 vs 規律智能」</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Machine Learning Street Talk · 2026-10-10 發布 · 約一小時</div>
+  <h1>「演化係 anything but random」——ML Street Talk × Akarsh Kumar：用基礎模型做評論家搜索 26 萬條人工生命規則、用 LLM 演化 Core War 戰士，同「統計智能 vs 規律智能」</h1>
+  <div class="meta">
+    <span>📅 2026-10-10（北京時間 10-10）</span><span>·</span><span>🎙️ Machine Learning Street Talk（主持 Tim Scarfe 等）</span><span>·</span><span>🎓 嘉賓：Akarsh Kumar（人工生命研究者，《ASAL》論文作者）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係一條<strong>被主流 AI 敘事長期忽略嘅支線</strong>嘅一次漂亮答辯：人工生命（artificial life）。嘉賓 Akarsh Kumar 唔係嚟賣模型，而係嚟拆一個 AI 圈嘅成見——<strong>「演化」唔係「唔可以做梯度下降時嘅隨機搜索後備方案」</strong>。佢用兩組實驗把它講實：①<strong>ASAL</strong>（Automating the Search for Artificial Life with Foundation Models）——唔再硬寫單一個模擬，而係<strong>參數化一整個模擬空間</strong>，用視覺語言模型當「評論家」去搜索，喺 26 萬條規則裡搵到「開放式複雜性只落喺一座細島」；②<strong>Core War</strong>——用 LLM 當突變算子、配 MAP-Elites 演化 Redcode 戰士，<strong>第一輪就打贏 96% 嘅人類戰士</strong>，而 LLM 零樣本寫 Redcode 根本一塌糊塗。全集最深嘅一句係：<strong>演化真正嘅力量，係「揀啱一部分就可以留住、再繼續搵其餘部分」，將指數級搜索變成線性搜索</strong>。
+</p>
+
+<blockquote class="strong">
+  「I would just wanna clarify that evolution is anything but random.」
+  <span class="attribution">Akarsh Kumar，開場第一句</span>
+</blockquote>
+
+<div class="section-title">一、嘉賓與場合</div>
+<p><strong>Akarsh Kumar</strong>——人工生命（artificial life）方向研究者，本集圍繞佢主導嘅論文《<strong>ASAL: Automating the Search for Artificial Life with Foundation Models</strong>》展開（佢自述「ASAL 係我起嘅名、亦係我想直接答嗰條問題」）。研究血脈上，佢反覆引用 <strong>Jeff Clune</strong> 同 <strong>Kenneth Stanley</strong>——即「品質多樣性（quality-diversity）／新奇搜索（novelty search）／Picbreeder」呢條傳統；佢亦引咗 Wolfram 嘅 computational irreducibility、Blaise Agüera y Arcas 關於「生命＝持續」嘅講法。主持係 ML Street Talk 嘅 Tim Scarfe 團隊（節目自稱嘅「Fractured Entangled Representations」紀錄片、對 Ken Stanley 嘅長期追蹤，都喺對話中被點名）。</p>
+<p>值得留意：呢一集出現嘅時間點，正值同期另外幾集（10-11 CR × Eric Bigelow、10-11 Latent Space × Standard Bots）都喺度講同一件事——<strong>「表面行為」同「內部機制」之間嘅落差</strong>。Akarsh 嗰邊嘅版本係：一個模型 <em>做到</em> 同一個現象，唔代表佢 <em>學到</em> 咗嗰個現象背後嘅結構。</p>
+
+<div class="section-title">二、「生命可以係點」：人工生命點解唔係玩具</div>
+<p>Akarsh 借用咗 Jeff Clune 嘅一句佢「好鍾意」嘅話，作為整條研究路線嘅正當性來源：</p>
+<blockquote>
+  「如果我哋要聲稱自己理解智能、理解生命，就唔可以淨係講呢一種生命。我哋要理解<strong>所有可能嘅智能、所有可能嘅生命形式嘅空間</strong>，先可以講普遍原則。」
+  <span class="attribution">Akarsh Kumar 轉述 Jeff Clune</span>
+</blockquote>
+<p>佢自己嘅類比更直接：<strong>「你唔可以睇一架車就話所有車都係咁；同樣，你唔可以睇 GPT-5 就話所有智能都係咁，你唔可以睇人腦就話所有智能都係咁。呢個係一個空間，我哋要研究成個空間。」</strong> 換句話講，人工生命唔係「想複製地球生命」，而係研究 <strong>life as it could be</strong>（生命可以係點），而唔係 <em>life as it is</em>（生命實際係點）。</p>
+<p>佢舉出嘅模擬譜系係極好嘅入門地圖：</p>
+<ul>
+  <li><strong>Conway's Game of Life（生命遊戲）</strong>——2D 格、每格生／死、幾條極簡規則；跑落去就爆出無人預期嘅複雜性。整個社群仲會用「光速 c＝一格／時間步」去講 glider 速度（「呢個 glider 係 c/16」），儼如一個人工宇宙。</li>
+  <li><strong>Lenia</strong>（Bert Chan）——生命遊戲嘅<strong>連續化推廣</strong>，推廣到 3 個通道（可映射 RGB），用連續微分方程嘅更新規則。</li>
+  <li><strong>Neural Cellular Automata</strong>（Mordvintsev）——2020 年〈Growing Neural Cellular Automata〉嗰隻<strong>壁虎</strong>：用一個細神經網絡取代「3×3 patch → 一格」嘅規則，訓練局部規則令佢自組裝成一隻壁虎；剷走一部分，佢會自己長返。Akarsh 話呢個正正係重點：<strong>「我哋唔想要『impostor』，唔係想學隻壁虎，而係想學『由積木重建壁虎』嘅能力。</strong>」</li>
+  <li><strong>Boids</strong>——鳥群／魚群嘅群集算法。佢用大阪水族館嘅觀察做例子：一條鯨鯊出現，只有最近嗰條魚知，佢一拉，其他就跟住轉左——集體智能由局部規則湧現。</li>
+  <li><strong>Particle Life</strong>——喺歐氏空間掉粒子，但物理規則唔係牛頓力學，而係任意自訂（例如 6 種粒子、6×6 交互矩陣：紅對紅互斥、紅對橙相吸）；改一改個矩陣，就係改一個宇宙嘅「物理」。有啲參數下，會出現<strong>有「細胞膜」嘅持續物體</strong>——一個識得「利用物理去令自己持續存在」嘅物件。</li>
+</ul>
+
+<div class="highlight-box">
+  <strong>關鍵概念——「impostor（冒牌貨）」：</strong>Akarsh 用「未來任務上嘅表現同適應能力」去定義一個表徵係咪冒牌，而唔係用「模組性」之類嘅硬指標。Boids 嘅螺旋：細改參數就崩成隨機 → 冒牌；但同一批 Boids 若被要求「持續存在」，佢哋又異常穩健，可以跑幾百萬個時間步。即係話——<strong>同一個表徵，喺一類任務上係真貨，喺另一類任務上係冒牌</strong>。
+</div>
+
+<div class="section-title">三、ASAL：唔硬寫一個模擬，而係搜索一整個模擬空間</div>
+<p>Akarsh 對人工生命領域嘅批評係：<strong>「好多人淨係模擬單一個模擬，然後由佢抽結論。」</strong> 佢認為要研究嘅係<strong>模擬嘅空間</strong>。ASAL 嘅做法：</p>
+<ul>
+  <li><strong>參數化，而唔係硬編碼</strong>：「同你寫成個週期表、逐個元素寫佢點同另一個元素作用相比，你淨係話『呢度有 100 種元素，佢哋點作用你（算法）自己搵』——後者嘅問題簡單好多。」</li>
+  <li><strong>用基礎模型當評論家（critic）</strong>：唔預測「邊條規則最好」，而係<strong>真係跑佢、畀佢展開、再丟入基礎模型問「你覺得發生咗咩事」</strong>，然後回頭。佢話呢個就係 computational reproducibility 嘅體現：唔要預測混沌，而係擁抱混沌。</li>
+  <li><strong>三種用法</strong>：論文中基礎模型被用於三種方式（含「有監督目標」——例如要求去搵「多細胞生物／神經元網絡／病毒／真菌菌落」形狀嘅模擬）。</li>
+</ul>
+<p>點解唔索性人手寫一個「複雜度」指標？Akarsh 嘅答案直指 Goodhart's Law：<strong>「複雜、湧現、有冇趣——呢啲好難數學化。你一旦數學化佢、然後為佢最佳化，你就會搵到你 <em>要</em> 嘅嘢，而唔係你 <em>想</em> 嘅嘢。」</strong> 佢真正想要嘅係「人類主觀、含糊咁覺得有趣」；但無可能把人放入 loop（太貴），所以退而求其次——<strong>搵一個（統計上）同人類表徵空間對齊嘅模型</strong>來當裁判。呢度亦係全集最微妙嘅一步：佢明知基礎模型嘅表徵係「fractured entangled（破碎糾纏）」，但佢<strong>只需要佢做冒牌評論家</strong>——用一個統計智能去 bootstrap 出一個真正嘅、有規律結構嘅物件。</p>
+
+<div class="data-point">
+  <span>數據</span><strong>260,000 條規則</strong>全部被跑過、被繪圖：佢哋將每條規則嘅輸出圖丟入 <strong>CLIP</strong>，把 CLIP 空間投影成 2D，再按「開放式程度」上色。結果係——<strong>一座大島（唔開放式）＋一座細島（最酷嘅模擬全部喺度）＋一個只有單一極端樣本嘅微細島</strong>。
+</div>
+
+<div class="section-title">四、開放式複雜性只落喺一座小島——「Goldilocks 區」</div>
+<p>ASAL 交出嘅最重要的科學圖景，就係上面嗰張「26 萬條規則嘅地圖」：<strong>開放式（open-ended）複雜性唔係普遍現象，而係集中喺參數空間嘅一小片</strong>。Akarsh 由此延伸出一個哲學問題：我哋嘅宇宙係咪剛好落喺咁一個「Goldilocks 區」，所以先會有生命同開放式演化？佢哋亦真係搵到<strong>比生命遊戲更開放式嘅模擬</strong>，證明呢個唔係生命遊戲嘅專利。</p>
+<p>與此同時，佢觀測到一個耐人尋味嘅現象：<strong>唔同宇宙會出現「收斂」嘅模式</strong>——喺一個世界，glider 就似生命遊戲嘅 glider；喺另一個世界，最細嘅 glider 似「一架沿住軌道開嘅火車」，仲拖住一條長長嘅軌跡。呢啲模式甚至令人聯想到：「會唔會呢啲唔同世界嘅共通模式，係某種『底層基質』嘅影子（shadows）？」——佢即刻自我降溫：<strong>「呢個純屬假設」</strong>，亦可能只係搜尋方法本身嘅設計偏誤。</p>
+
+<div class="section-title">五、生命＝持續性（persistence）</div>
+<p>Particle Life 裡嗰種識得「利用物理令自己持續」嘅細胞狀物件，引出 Akarsh 一個佢最珍視嘅框架：<strong>生命、演化、熱力學第二定律，其實係同一件事嘅幾面。</strong></p>
+<blockquote>
+  「熱力學第二定律講：你更有可能走向更高熵嘅狀態……但由演化嘅角度睇，邊樣嘢更可能喺未來存在？係自我複製者，因為佢哋自然會喺未來存在得更頻繁。」
+  <span class="attribution">Akarsh Kumar</span>
+</blockquote>
+<p>所以「生命對抗熵」呢種講法係唔準確嘅——兩者都係「乜嘢更可能喺未來存在」嘅兩種講法。呢個「persistence」嘅收斂現象，佢話唔係所有模擬都有，只喺部分模擬出現。</p>
+
+<div class="section-title">六、課綱與路徑依賴：唔止去到邊，仲要「點樣去」</div>
+<p>呢段係全集對<strong>當下大模型訓練範式</strong>最尖銳嘅叩問。Akarsh 觀察：人類同動物學習有「自然課綱」——一定要先學呢樣、再學嗰樣；但大模型「你餵咩都食，仲會 just work」。好多人覺得呢個係優勢（甚至比人更好），佢承認「有可能真係更好」，但同時話：</p>
+<blockquote>
+  「有理由相信有啲嘢係根本錯嘅——<strong>宇宙唔係咁運作嘅</strong>。宇宙唔係話你任何時間都可以學任何嘢。」
+  <span class="attribution">Akarsh Kumar</span>
+</blockquote>
+<p>佢提出，人同演化嗰種「順序、路徑依賴」嘅學習，正正係佢能够產生「靚嘅規律結構、魯棒、可適應、可泛化」嘅原因。而課綱嘅關鍵唔係「預先規劃好嘅課綱」（佢自己喺 RL 裡痴迷過 curriculum learning），而係——<strong>serendipitous curriculum（機遇式課綱）</strong>：唔係「我要做 A 然後 B 然後 C」，而係去<strong>擁抱混沌</strong>，接受「任何可能嘅課綱都可以帶我去有趣嘅地方」。</p>
+<p>佢同主持把它接到 Wolfram：呢個係一種<strong>建構主義式（constructivist）嘅表徵觀</strong>——因為 computational irreducibility，你唔可以「跳步」，必須一步步合成積木、必須行嗰條路。佢用 Ken Stanley 嘅 novelty search 作類比：<strong>「新奇搜索好似『黑暗中亂搵』，但佢其實 anything but random——因為你知你做過乜、你想避開佢。」</strong> 尊重你走過嘅路，就等於畀自己加上約束，而呢啲約束大機會「把你帶去正確嘅路」。</p>
+
+<div class="highlight-box">
+  <strong>「一切皆是正則化」：</strong>Akarsh 用一個統一視角收束——data 係一種正則化、L2／weight decay 係一種正則化、而「尊重對稱性嘅課綱」係一種<strong>極強嘅正則化</strong>，而且可能正正係我哋最需要嗰種。佢由此導出一個漂亮嘅講法：呢種路徑依賴嘅學習，本質上係一個<strong>「自動對稱性學習算法（automatic symmetry learning）」</strong>——因為好似「光照不變性（lighting invariance）」呢類對稱，你根本無辦法寫成一條數學 inductive bias；你只能靠 data-driven 學出一個天然帶住嗰個不變性嘅神經迴路。
+</div>
+
+<div class="section-title">七、統計智能 vs 規律智能（Picbreeder 與 FER）</div>
+<p>Akarsh 將佢研究嘅嘢命名為「<strong>以規律為本嘅智能（regularity-based intelligence）</strong>」，同今日主流嘅「<strong>統計智能（statistical intelligence）</strong>」對舉——後者「幾乎係統計上完美」。兩者其實都係「範式」，佢唔主張放棄統計智能，而係：<strong>「唔好把所有雞蛋放喺一個籃。」</strong> 佢指出，所有對深度學習嘅批評（需要符號處理、需要幾何深度學習、需要更多 inductive bias……）本質上都係同一件事：<strong>為系統加上規律同對稱</strong>。而Picbreeder 嗰批「骷髏」圖好有啟發：<strong>規律唔係喺「搜索嘅假設空間」裡，而係被燒進（baked into）「搵到嘅解」——即係神經迴路本身</strong>。</p>
+<blockquote>
+  「It matters not just where you get, but how you got there.（重要嘅唔止你到達咗邊，仲有你有冇按對嘅路到達。）」
+  <span class="attribution">Akarsh Kumar</span>
+</blockquote>
+<p>佢用呢句直接打今日嘅 benchmark 文化：<strong>「我哋淨係睇 benchmark 分數，佢啱啱通過咗數學奧賽——但如果『你點去到嗰度』係重要嘅呢？」</strong></p>
+
+<div class="section-title">八、Core War：LLM 當突變算子，第一輪打贏 96% 人類戰士</div>
+<p>第二組實驗係全集的「硬數字」所在。背景：<strong>Core War</strong> 係 1980 年代嘅編程遊戲——用一門叫 <strong>Redcode</strong> 嘅彙編式語言（Turing-complete），多個程序被丟入同一部虛擬機器嘅隨機記憶體位址，一齊跑；目標係<strong>活到最後</strong>，方法係喺對手嘅執行線前面<strong>注入一個無效操作</strong>，令佢 crash。人類為咗呢個遊戲寫咗幾十年「warriors」。</p>
+<p>Akarsh 團隊嘅做法極簡：<strong>用 LLM 當突變算子（mutation operator）</strong>放入演化迴圈，去演化 Redcode 程式，再要佢哋互相對打；因為優化空間「非常 deceptive、非常非局部」，普通貪婪式遺傳算法唔 work，所以改用 <strong>MAP-Elites</strong>。結果：</p>
+<div class="data-point">
+  <span>96%</span>第一輪訓練，LLM 演化出嘅 warrior <strong>已經可以打贏一個約 300 條人類 warrior 資料集裡嘅 96%</strong>。
+</div>
+<div class="data-point">
+  <span>0% → 大量</span>LLM <strong>零樣本寫 Redcode 極差</strong>、best-of-n 採樣亦極差；但「<strong>演化 ＋ verifier 在環</strong>」就變得極強。Akarsh 直接類比 <strong>AlphaEvolve</strong>：模型唔擅長零樣本做某類證明／任務，但畀佢帶住 verifier 去演化，威力就出嚟。
+</div>
+<div class="data-point">
+  <span>泛化 ↑</span>越跑多輪對抗演化，warrior <strong>越通用</strong>——越能打贏<strong>未見過</strong>嘅人類 warrior；而且佢哋用一個「行為特徵向量」量度，<strong>行為方差隨輪數下降</strong>，即係佢哋趨勢上<strong>收斂成「一個通用戰士」</strong>。
+</div>
+<p>由此回到全集論點：<strong>演化解離散組合問題，可能係我哋所知最強嘅算法。</strong> 只要你能「揀住謎題嘅一部分、留住佢、再搵其餘」——指數搜索就變線性搜索。而演化<strong>唯一需要嘅條件，就係你嘅突變「大約 1% 成功」</strong>：LLM 未至於 100% 成功，但遠超 1%；相對之下，pre-LLM 年代嘅 AutoML-Zero 用「隨機突變」做程式搜索，成功機率「literally 大約 0%」，所以好難 work。</p>
+<blockquote class="strong">
+  「Whenever you are successful, you can hang on to that achievement and build on top of it. That's what gives this combination of evolution plus LLMs … a significant more amount of power than if you just do LLMs by themselves. It's not even close.」
+  <span class="attribution">Akarsh Kumar</span>
+</blockquote>
+
+<div class="section-title">九、由人工生命到 AGI：抽一個「演化嘅抽象」</div>
+<p>主持人問：呢啲 toy 模擬點樣通去通用智能？Akarsh 坦承「呢個係大哉問」，但畀咗兩點：</p>
+<ul>
+  <li>即使永遠造唔出智能，人工生命本身仍然有科學價值（對宇宙、對湧現嘅理解）。</li>
+  <li>唔需要真係模擬每一個粒子。要嘅係<strong>抽一個「自然演化嘅抽象」</strong>，並且滿足兩個條件：<strong>①超高效（十年後都跑得郁）②抽得啱（會帶你去通用智能）</strong>——而「點抽」係一個開放問題，正係佢嘅研究議程。</li>
+</ul>
+<p>佢描繪咗一個長遠想像：如果有一個「quadrillion（千萬億）粒子」嘅大粒子模擬、又有一個啱嘅基礎模型，去搜索一連串事件（自我複製分子 → 捕食者–獵物動力學 → 外星動物），<strong>「會唔會你最終搵到一條物理規則，真係畀到你成個序列——就好似我哋宇宙發生過嘅事？」</strong> 佢亦展示過一個 toy 版：一個 cellular automaton 真係「背熟」咗成段影片序列（並自嘲：呢個只係 toy，唔係真嘢）。</p>
+
+<div class="section-title">十、重點引用</div>
+<blockquote class="strong">
+  「Evolution is anything but random … It's probably the most powerful algorithm that we know to solve discrete combinatorial problems.」
+  <span class="attribution">Akarsh Kumar</span>
+</blockquote>
+<blockquote class="strong">
+  「You can't just look at one car and be like, this is how all cars are … you can't just look at GPT-5 and be like, all intelligences are like this.」
+  <span class="attribution">Akarsh Kumar，談為何要研究「可能嘅生命／智能空間」</span>
+</blockquote>
+<blockquote>
+  「If you mathematize it and optimize for it, you'll find Goodhart's Law — you'll find something that you asked for, but not something that you wanted.」
+  <span class="attribution">Akarsh Kumar，談為何用基礎模型而唔係人手指標做裁判</span>
+</blockquote>
+<blockquote>
+  「We don't really wanna learn the lizard. We wanna learn the ability to reconstruct the lizard from the building blocks.」
+  <span class="attribution">Akarsh Kumar，談 neural cellular automata 與「impostor」</span>
+</blockquote>
+
+<div class="section-title">十一、爭議點／存疑（必讀）</div>
+<ul>
+  <li><strong>「收斂模式／影子」屬假設而非結論。</strong>Akarsh 自己講得好白——「this is only a hypothesis」，亦提醒聽眾「懷疑論者大可以話呢啲只係你方法嘅設計偏誤」。任何把它當「宇宙本質」嘅引用都係過度延伸。</li>
+  <li><strong>「演化 ＋ LLM 打贏 96% 人類戰士」呢個數字，係特定語境。</strong>對照集係「約 300 條人類 warrior 資料集」、Core War 一個 1980 年代嘅遊戲；「96%」唔等於「全面超越人類」，而係「喺呢個資料集上勝率」。第二個更強嘅結論（多輪後更通用）亦係以「行為特徵向量方差下降」為代理指標。</li>
+  <li><strong>「生命遊戲／模擬嘅複雜度」用 CLIP 空間量度</strong>——即係話「開放式程度」呢件事本身係用一個統計模型（基礎模型）嘅表徵去定義嘅。呢個係方法上嘅循環風險：你用統計智能去判斷「規律智能」值唔值得，而 Akarsh 自己承認基礎模型嘅表徵係「破碎糾纏」嘅。</li>
+  <li><strong>「統計智能 vs 規律智能」係二元框架</strong>，Akarsh 亦明言唔主張放棄統計路線；但「規律智能」目前尚無可規模化嘅成果，仍屬長期賭注（佢自己叫佢做「a very long term bet on intelligence」）。</li>
+  <li><strong>無逐字稿公開存疑點</strong>：本文引文取自 YouTube 官方字幕檔（en-GB，自動／人工混合），個別字詞（例如專有名詞、地名）可能有轉寫誤差；關鍵結論已盡量對照上下文明確語句。</li>
+</ul>
+
+<div class="section-title">十二、前後脈絡</div>
+<ul>
+  <li><strong>同 10-11 The Cognitive Revolution × Eric Bigelow（Goodfire）同週共振</strong>：Bigelow 講「推理係誤稱、答案分佈會像 grokking 崩塌」；Akarsh 講「重要嘅唔止結果、仲有路徑」。兩者都係在質問——<strong>模型「做到」同「學到」之間嘅鴻溝</strong>。</li>
+  <li><strong>同 10-11 Latent Space × Standard Bots 呼應</strong>：「impostor」對「in-situ 幾十個樣本補邊角案例」——一個係講表徵係否真貨，一個係講用極少數據修正。</li>
+  <li><strong>接續 MLST 自己嘅路線</strong>：10-01〈Lean 之父 de Moura 拆 Collatz 假證明〉、10-02〈PolyAI Shawn Wen 談語音 agent 嘅時間維度〉——MLST 一直係「機制／偏離主流敘事」嗰條線；本集係佢哋最接近「第一原理」嘅一集。</li>
+  <li><strong>對 AI 圈 benchmark 文化嘅當頭一棒</strong>：如果「你點去到嗰度」真係重要，咁「淨係睇分數」嘅評測範式可能系統性漏咗最重要嘅訊號——呢點同 10-09 硅谷 101 × 張闊「榜單接近滿分、真實交付仍失敗」跨境共振。</li>
+</ul>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上內容出自 <em>Machine Learning Street Talk</em>〈What Most People Get Wrong About Evolution | Akarsh Kumar〉（2026-10-10 04:31 UTC 發布，約一小時；主持＝ML Street Talk 團隊）。核心事實、數字同直接引文，取自<strong>該集 YouTube 官方字幕全文（en-GB，約 54,000 字元，未截斷）</strong>；背景補充取自 <em>daily.dev</em> 對同一集嘅摘要（ASAL 論文、Core War 實驗口徑）。本集對應論文為《ASAL: Automating the Search for Artificial Life with Foundation Models》（Akarsh Kumar 等）。文中分析、脈絡整理及「核心萃取」為本站視角；所有研究數字屬嘉賓／論文自述口徑，未經本站獨立復現。
+</p>
+
+<footer>
+  <p>Deep Dive #214 · Machine Learning Street Talk（2026-10-10 · 演化唔係隨機搜索／ASAL 搜索 26 萬條人工生命規則／LLM 演化 Core War 戰士／統計智能 vs 規律智能）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-15 06:06 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
