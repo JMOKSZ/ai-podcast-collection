@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space：護欄唔係路障，係煞車——OpenAI、Anthropic、Two Sigma、Bloomberg 點樣把金融 agent 放上手</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-10-14 發布（AI Engineer New York 2026 現場報道）· 文章＋會議場次綜合</div>
+  <h1>護欄唔係路障，係煞車——OpenAI、Anthropic、Two Sigma、Bloomberg 點樣把金融 agent 放上手</h1>
+  <div class="meta">
+    <span>📅 2026-10-14</span><span>·</span><span>🎙️ Latent Space（作者 Richard MacManus）</span><span>·</span><span>🏛️ 講者：Joseph Kim（OpenAI）、John Feminella（Two Sigma）、Belinda Neal／Keon Shahab（Anthropic）、Andrey Rybka（Bloomberg）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢篇唔係一集普通訪談，而係 Latent Space 對 <strong>AI Engineer New York 2026</strong> 一場主題演講群嘅整理：同一日之內，OpenAI、Anthropic 兩間前沿實驗室，加埋 Two Sigma、Bloomberg 兩間「唔可以出錯」嘅金融機構，分別由產品、架構、安全三個角度回答同一條問題——<strong>一個 agent 幾時可以唔問人就直接做嘢？</strong>四場演講拼起來，答案唔係「加多幾條限制」，而係一句更工程師嘅話：<strong>把控制點放喺模型外面，然後把「提議」同「執行」分開。</strong>
+</p>
+
+<blockquote class="strong">
+  「Why do cars have brakes? It's not just so that you can stop, it's so that you can go fast and stop safely.」
+  <span class="attribution">John Feminella（Two Sigma SVP Architecture），AI Engineer New York 2026</span>
+</blockquote>
+
+<div class="highlight-box">
+  <strong>⚠️ 來源說明：</strong>本篇主要來源為 <em>Latent Space</em> 官方文章〈Crossing the Threshold: How OpenAI and Anthropic Approach Autonomy and Safety in Financial Agents〉（作者 Richard MacManus，2026-10-14 發布），內容為 AI Engineer New York 2026 場次報道；<strong>本文並非逐字稿復述</strong>，引號內容全部取自該文章直接引述，其餘為忠實改寫。文中分析、架構圖與「我嘅萃取」屬本站視角；文章未逐篇核實各機構產品細節，本文亦不作額外事實補充。
+</div>
+
+<div class="section-title">一、場合：四場演講，一條共同問題</div>
+<p>AI Engineer New York 2026 呢一週，其中一個反覆出現嘅主題係<strong>「agent 自主性 vs 安全」</strong>。有趣嘅係，今次唔係得實驗室講「我們有 guardrails」，而係<strong>前沿實驗室同金融機構同台</strong>——一邊賣模型同產品，另一邊每日要對住監管機構、交易紀錄同客戶資產。金融業係 agent 落地最矛盾嘅場景：<strong>價值最高（一個分析師一星期嘅工作可以壓縮成幾分鐘），但錯誤成本亦最高（一個未經批准嘅交易改動可以係合規事故）。</strong></p>
+<p>文章開頭已經把結論講白：</p>
+<blockquote>
+  「The main lesson: safe autonomy depends on <strong>where you put controls and human judgment</strong>, rather than how many restrictions you impose.」
+  <span class="attribution">Richard MacManus，Latent Space</span>
+</blockquote>
+<p>注意呢句嘅重點係 <em>where</em>，唔係 <em>how many</em>。呢個分別，正好解釋咗點解同一間公司可以同時「好大胆」同「好保守」：大膽係因為佢知道邊幾個位一定要人手簽名；保守係因為佢知道其餘幾百個位可以完全放手。真正嘅設計問題唔係「準唔準 agent 做」，而係<strong>「邊一個動作係不可逆、邊一個動作只係提議」</strong>。</p>
+
+<div class="section-title">二、OpenAI：Joseph Kim 同「threshold of usefulness」</div>
+<p><strong>Joseph Kim</strong> 係 OpenAI 嘅 <em>Head of ChatGPT for Financial Services</em>，喺 AIE New York 做主場演講。佢提出一個比「AGI 時間表」實用得多嘅概念——<strong>threshold of usefulness（有用性門檻）</strong>：</p>
+<blockquote class="strong">
+  「the point where a model becomes capable and reliable enough to save you time.」
+  <span class="attribution">Joseph Kim（OpenAI），定義 threshold of usefulness</span>
+</blockquote>
+<p>呢個定義有兩個關鍵字：<strong>capable</strong> 同 <strong>reliable</strong>，而且係「同時」。模型可以寫出一份漂亮嘅 DCF，但若果你要花四十分鐘核對每一個假設，佢就未過門檻；模型可以答對九成問題，但若果你唔知邊一成錯，佢都未過門檻。<strong>門檻唔係模型能力嘅函數，而係「能力減去驗證成本」嘅函數。</strong>呢一點，正好同 10-08 硅谷 101 張闊講「模型越來越強，為什麼用戶沒感覺」係同一個硬幣嘅兩面：用戶感受到嘅唔係 benchmark 分數，而係<em>淨節省嘅時間</em>。</p>
+<p>Kim 對 2027 年嘅預測相当具體：金融業會<strong>減少依賴 Excel 同 PowerPoint</strong>，而且 agent 會強到可以做<strong>「investment idea generation and trading」</strong>。呢句喺一個金融合規場合講，其實幾大膽——「產生投資想法」同「執行交易」係兩個完全唔同嘅風險級別，前者錯咗只係一個壞建議，後者錯咗係真金白銀。<strong>把兩者放喺同一句預測入面，某程度上係刻意模糊「建議」同「執行」嘅界線</strong>；而全場演講嘅其餘部分，其實就不斷想把呢條界線畫返清楚。</p>
+<p>Kim 亦提到「capability 上升嘅潮水」帶動咗更好嘅 <strong>traceability（可追溯性）</strong>：</p>
+<blockquote>
+  「In finance, you need to be able to check where a number came from and understand the context around it. We wanted that review to be a natural part of the [ChatGPT for Financial Services] experience. These are the kind of product details that help turn a model's capabilities into work that someone can use.」
+  <span class="attribution">Joseph Kim（OpenAI）</span>
+</blockquote>
+<p>呢段係全篇最容易被低估嘅一段。佢講嘅唔係「模型更準」，而係<strong>「審查係產品體驗嘅一部分」</strong>。傳統軟件嘅審計係事後 log；AI 產品嘅審計必須係<em>使用過程本身</em>——你喺同一個界面睇到數字、睇到來源、睇到上下文，然後決定信唔信。<strong>如果審查要開另一個工具、另一次匯出、另一個人手核對，嗰個門檻就永遠過唔到。</strong>所以 Kim 把「human in the loop」重新定義為產品設計問題：</p>
+<blockquote>
+  「How would the interface change? What would the user still need to control, review, or approve? Those are product design questions you can start working on now.」
+  <span class="attribution">Joseph Kim（OpenAI）</span>
+</blockquote>
+<p>呢句幾乎係整篇報道嘅方法論：<strong>唔好等模型變強先去諗界面，因為界面決定咗模型變強之後值幾錢。</strong></p>
+
+<div class="section-title">三、Anthropic：Belinda Neal 同 Keon Shahab 嘅「信任層」三步</div>
+<p>Anthropic 嘅角度唔同：佢哋賣嘅係「信任」作為一層基礎設施。上個月 Anthropic 發布咗 <strong>Claude for Financial Advisors</strong>，讓財務顧問把系統接入 Claude 同一個工作流技能集。AIE 現場由 <strong>Belinda Neal</strong>（Managing Director of Financial Services）同 <strong>Keon Shahab</strong>（applied AI）講解。</p>
+<p>Neal 嘅開場句好有 Anthropic 風格——把技術突破講成一種文明節奏：</p>
+<blockquote class="strong">
+  「Every so often, a model crosses a threshold. And when it does, a wave of working changes.」
+  <span class="attribution">Belinda Neal（Anthropic）</span>
+</blockquote>
+<p>Shahab 接住講「building the trust layer for the agents」，並把它拆成三步：</p>
+<blockquote>
+  「Who the agent is acting as with an <strong>identity and permissions layer</strong>. How we can <strong>sandbox and determine the approval layer</strong> of the agent, so that someone is signing off before it acts. And lastly, <strong>how we know the agent will still work</strong> once we adjust any variables over time.」
+  <span class="attribution">Keon Shahab（Anthropic）</span>
+</blockquote>
+<p>呢三步值得逐個拆開，因為佢哋其實對應三個完全不同嘅工程學科：</p>
+<table>
+  <tr><th>層</th><th>問題</th><th>工程對應</th><th>失效模式</th></tr>
+  <tr><td>身份與權限</td><td>「呢個 agent 以誰嘅身份行事？」</td><td>AuthN／AuthZ、service account、scoped credentials</td><td>Agent 用咗過大權限嘅 token；離職員工嘅 agent 仍然活着</td></tr>
+  <tr><td>沙箱與批准</td><td>「邊個動作要人手簽名？」</td><td>Sandbox、approval workflow、權限邊界</td><td>批准疲勞；批咗但冇睇；或者全部攔死</td></tr>
+  <tr><td>回歸與持續有效</td><td>「改咗變數之後，佢仲 work 唔 work？」</td><td>Eval、regression test、版本鎖定</td><td>模型升級／prompt 改動後行為漂移，無人發現</td></tr>
+</table>
+<p>第三步係最容易被忽略、但亦最「Anthropic」嘅一步：<strong>信任唔係一次性驗收，而係持續證明。</strong>傳統企業軟件買咗就係買咗；agent 唔同——模型會更新、工具會改、資料分佈會漂移，今日過到嘅測試，下個月未必過。<strong>「how we know the agent will still work」其實係一句評估（eval）需求，而唔係安全需求。</strong></p>
+<p>Shahab 用一個「trade break investigation agent」示範提議同執行嘅界線：個 agent 會建議修改訂單，但<strong>只可以提出修訂，唔可以真正改落去</strong>：</p>
+<blockquote class="strong">
+  「We want it [the agent] to just propose new amendments to our orders data, not actually make those amendments.」
+  <span class="attribution">Keon Shahab（Anthropic），談 trade break 場景</span>
+</blockquote>
+<p>呢個 pattern 好值得記住：<strong>把 agent 嘅輸出變成一個 changeset，而唔係一個 commit。</strong>同軟件工程嘅 pull request 一樣——agent 可以做盡調查、寫盡理由、改盡代碼，但合併嘅權力留喺人手。好處唔止安全：<em>proposal 本身係可審計嘅 artefact</em>，你可以比較十個 proposal、可以否決、可以事後追溯邊個批准。<strong>「提議／執行」分離，係把不可逆動作變成可逆動作嘅最便宜方法。</strong></p>
+<p>最後 Shahab 嘅總結係一句基建論：</p>
+<blockquote>
+  「By building once with a <strong>foundational layer that you trust</strong>, you can work at speed to deploy many agents at scale.」
+  <span class="attribution">Keon Shahab（Anthropic）</span>
+</blockquote>
+<p>呢句同 Two Sigma 嘅「composable controls」其實係同一個諗法嘅兩面：<strong>唔好每個 agent 重新發明安全，而係建一層共用嘅、可組合嘅信任基建，然後上面快速砌 agent。</strong></p>
+
+<div class="section-title">四、Two Sigma：John Feminella 同「approval fatigue」</div>
+<p><strong>John Feminella</strong> 係對沖基金 Two Sigma 嘅 SVP Architecture。佢嘅演講係四場之中最「反直覺」嘅：佢明確反對把安全同創新當成光譜嘅兩端，而且<strong>特別批判「approval fatigue」</strong>——即係乜都要人手批，結果係兩重風險：</p>
+<ul>
+  <li><strong>拖慢創新：</strong>團隊為咗避免審批，索性唔做 agent 項目；</li>
+  <li><strong>製造新風險：</strong>當一個人一日要批兩百件事，佢唔會真的睇每一件——<em>「批咗」唔等於「審查過」</em>，只係等於「撳咗掣」。</li>
+</ul>
+<p>呢個觀察其實比好多安全論文更狠：<strong>過度審批唔係「保守」，而係「把風險轉移去一個注意力已經耗盡嘅人身上」。</strong>表面合規，實際無人把關。</p>
+<p>Two Sigma 嘅解法係一套<strong>五個控制</strong>，佢哋嘅定義係：</p>
+<blockquote>
+  「guardrails and shared capabilities that let teams move in ways that don't hinder what they're trying to do.」
+  <span class="attribution">John Feminella（Two Sigma）</span>
+</blockquote>
+<p>而且係<strong>可組合（composable）</strong>嘅：</p>
+<blockquote>
+  「each one does one job and then together they let us run agents with real autonomy at an appropriate level of safety.」
+  <span class="attribution">John Feminella（Two Sigma）</span>
+</blockquote>
+<p>文章只具體展開咗五個控制之中嘅一個：<strong>auto-mode classifiers</strong>——用分類器判斷邊啲係例行呼叫，只把最重要、最可能改變結果嘅請求送比人：</p>
+<blockquote>
+  「make decisions about routine calls and then send a person only the requests that are most important, the ones that are most likely to make a difference.」
+  <span class="attribution">John Feminella（Two Sigma）</span>
+</blockquote>
+<p>Feminella 亦給出一條好實用嘅分工原則：<strong>模糊嘅 case 用分類器，清晰嘅 case 用確定性規則。</strong>呢句值得抄落 notebook——</p>
+<div class="data-point">
+  <span>原則</span>唔好用 ML 去解一條可以用 if-else 寫死嘅規則；亦唔好用人手去批一件分類器可以可靠路由嘅例行工作。<strong>規則用喺「已知嘅已知」，分類器用喺「已知嘅未知」，人用喺「未知嘅未知」。</strong>
+</div>
+<p>呢個分工聽落簡單，但多數團隊啱啱相反：用 prompt 去硬解合規規則（不可靠），用真人去批日常小額交易（疲勞）。<strong>把兩者調返轉，已經可以釋放大部分被卡住嘅自主性。</strong></p>
+
+<div class="section-title">五、Bloomberg：Andrey Rybka 同「把安全放喺模型外面」</div>
+<p>如果 OpenAI 講產品、Anthropic 講信任層、Two Sigma 講控制組合，咁 Bloomberg 嘅 <strong>Andrey Rybka</strong>（Head of Architecture &amp; Emerging Technologies, Office of the CTO）講嘅就係<strong>真實事故</strong>。佢列出多宗 agent 造成混亂嘅事件，以及對應嘅防禦：</p>
+<ul>
+  <li><strong>Scoped identities and credentials</strong>——每個 agent 用自己嘅、最小權限嘅身份；</li>
+  <li><strong>Controls over tool calls</strong>——工具呼叫要過閘；</li>
+  <li><strong>Outbound traffic restrictions</strong>——限制 agent 可以對外連去邊；</li>
+  <li><strong>Audit trails</strong>——每個呼叫都要留痕；</li>
+  <li><strong>Budgets</strong>——用錢／用量做硬上限；</li>
+  <li><strong>Kill switches</strong>——一撳即停。</li>
+</ul>
+<p>其中最具體嘅例子，係一個 agent 把<strong>市場評論入面嘅指令</strong>當成「要入貨」嘅指示，結果真的去落單。呢個係典型嘅 prompt injection，但佢嘅教訓唔止「要防 injection」——而係<strong>agent 嘅輸入面（網頁、評論、電郵、文件）同佢嘅動作面（落單、改資料、發通知）之間，冇任何結構性隔離。</strong>只要 agent 同時「讀得」同「做得」，任何一段被污染嘅文字都可以變成一句命令。</p>
+<p>Rybka 嘅建議係：<strong>input validation、prompt injection defenses、provenance tracking、high-value actions 要人手批准</strong>。而最核心嘅一句係：</p>
+<blockquote class="strong">
+  「We want <strong>deterministic controls outside the model</strong>. Check every call, log it, and keep a kill switch.」
+  <span class="attribution">Andrey Rybka（Bloomberg）</span>
+</blockquote>
+<p>呢句係整篇報道嘅技術核心。<strong>「outside the model」</strong>四個字，等於承認一件事：<em>你唔可以叫模型自己保證安全。</em>模型可以被說服、可以被 injection、可以因為上下文而改變行為；但一個放在模型外面嘅 policy engine、一個網絡層嘅 egress 規則、一個資料庫層嘅唯讀權限，唔會被說服。<strong>安全必須寫在模型管不到的地方。</strong></p>
+<p>呢個觀點同 Anthropic 嘅「identity and permissions layer」、Two Sigma 嘅「composable controls」其實完全一致，只係用詞不同：<strong>把不可協商嘅約束，從機率性的組件轉移到確定性的組件。</strong></p>
+
+<div class="section-title">六、四場演講拼成的架構圖</div>
+<table>
+  <tr><th>機構</th><th>講者</th><th>核心概念</th><th>對應問題</th></tr>
+  <tr><td>OpenAI</td><td>Joseph Kim</td><td>Threshold of usefulness；traceability 係產品體驗</td><td>幾時值得用？（能力 − 驗證成本）</td></tr>
+  <tr><td>Anthropic</td><td>Belinda Neal／Keon Shahab</td><td>Trust layer 三步：身份權限／沙箱批准／持續回歸；propose ≠ act</td><td>點樣建立可重用嘅信任基建？</td></tr>
+  <tr><td>Two Sigma</td><td>John Feminella</td><td>Approval fatigue；composable controls；規則 vs 分類器分工</td><td>點樣在唔拖慢創新之下控制風險？</td></tr>
+  <tr><td>Bloomberg</td><td>Andrey Rybka</td><td>Deterministic controls outside the model；kill switch；provenance</td><td>事故發生時，邊層可以硬停？</td></tr>
+</table>
+<p>拼起來，其實係一條<strong>由「值唔值」到「停唔停得切」嘅完整鏈</strong>：</p>
+<ol>
+  <li><strong>經濟層：</strong>呢個任務過咗有用性門檻未？（OpenAI）</li>
+  <li><strong>身份層：</strong>agent 以誰嘅身份做？權限有幾大？（Anthropic）</li>
+  <li><strong>動作層：</strong>呢個動作係提議定執行？邊個簽名？（Anthropic／Two Sigma）</li>
+  <li><strong>執行層：</strong>約束係寫在模型內定模型外？（Bloomberg）</li>
+  <li><strong>時間層：</strong>模型／工具／資料改咗之後，仲證明到佢 work 嗎？（Anthropic 第三步）</li>
+</ol>
+<p>多數團隊只做第 2、3 層（權限＋審批），因為呢兩層最直觀、最容易 demo；但真正決定「可唔可以大規模放手」嘅，係第 1、4、5 層——<strong>淨值計算、模型外嘅硬約束、持續回歸。</strong></p>
+
+<div class="section-title">七、我嘅萃取：五個判斷</div>
+
+<div class="sub-title">1. 「自主性」唔係一個開關，而係一張權限表</div>
+<p>四場演講冇一場講「我哋準唔準 agent 自主」。佢哋講嘅全部係<strong>「邊個動作、喺咩條件下、要邊個批准」</strong>。呢個轉變好重要：當你仲喺度爭論「agent 應唔應該有自主權」，你已經問錯問題；正確問題係<em>「呢個 agent 嘅動作空間入面，邊幾個格子係不可逆？」</em>把不可逆嘅格子鎖死，其餘全部放手——呢個就係 Two Sigma 講嘅「real autonomy at an appropriate level of safety」。</p>
+
+<div class="sub-title">2. Approval fatigue 係安全問題，唔係效率問題</div>
+<p>Feminella 嘅觀察值得放大：<strong>當審批變成例行公事，合規就變成儀式。</strong>一個每日批三百件事嘅人，實際上冇辦法對第三百件保持同樣嘅注意力。所以「加多一層人手審批」往往唔係增加安全，而係<strong>把安全責任分散到一個唔可能履行嘅人身上</strong>。真正嘅解法係<em>減少需要人手批嘅事情</em>——用分類器路由、用規則寫死、用預算封頂——而唔係增加审批關卡。</p>
+
+<div class="sub-title">3. 「Propose, don't act」係最被低估嘅設計模式</div>
+<p>Anthropic 個 trade break 例子，其實可以推廣到幾乎所有高風險場景：<strong>agent 產生 proposal，人負責 commit。</strong>呢個模式嘅好處係雙向嘅——對安全，它把不可逆變成可逆；對產品，它把 agent 嘅工作變成一份<em>可以被 review 嘅 artefact</em>，於是你可以在 approve 之前看到推理、來源、影響範圍。相比之下，「agent 直接做，事後 audit」嘅模式，等於把審計變成驗屍。</p>
+
+<div class="sub-title">4. 確定性控制放喺模型外面，係唯一可審計嘅承諾</div>
+<p>Rybka 嘅「deterministic controls outside the model」應該成為所有 agent 系統嘅默認架構原則。原因唔係「模型不可信」，而係<strong>模型嘅行為本質上係機率性嘅，而監管需要嘅係確定性嘅保證。</strong>你可以寫「呢個 agent 只可以讀 orders 表，唔可以寫」——呢句喺資料庫權限層係可證明的；你唔可以寫「呢個模型唔會改 orders 表」——呢句只係一個希望。把前者做足，後者就唔需要證明。</p>
+
+<div class="sub-title">5. 金融業係 agent 治理嘅「煤礦金絲雀」</div>
+<p>呢四場演講之所以值得讀，唔係因為金融特別，而係因為金融<strong>最早被迫面對「不可逆動作」嘅問題</strong>。醫療、法律、工業控制、企業 IT 遲早都會遇到同一條問題：agent 幾時可以自己動手？金融業今日給出嘅答案——身份、沙箱、提議／執行分離、模型外硬約束、持續回歸——大機會會成為其他行業嘅模板。<strong>與其等自己行業出事，不如現在抄呢套架構。</strong></p>
+
+<div class="section-title">八、未解問題／批判</div>
+<ul>
+  <li><strong>「五個控制」只公開了一個。</strong>Feminella 講咗有五個，但報道只具體展開 auto-mode classifiers。其餘四個係咩？呢個係報道嘅空白，亦係最想知嘅部分——因為「可組合控制」嘅價值喺於佢哋點樣組合，而唔係單一控制有幾好。</li>
+  <li><strong>分類器本身係一個攻擊面。</strong>用 ML 分類器去決定「邊啲請求要人手批」，等於把安全邊界交給另一個可以被對抗樣本、分佈漂移影響嘅模型。文章冇討論分類器失效時嘅 fallback。</li>
+  <li><strong>「Threshold of usefulness」缺少分母。</strong>Kim 嘅定義係「capable and reliable enough to save you time」，但冇講清楚係邊個嘅時間、邊種任務、咩錯誤率。對一個每小時收費嘅分析師同一個內部合規人員，門檻完全唔同。</li>
+  <li><strong>2027 年「agent 可以做 investment idea generation and trading」係一個好進取嘅預測。</strong>「產生想法」同「執行交易」之間，仲隔住監管批准、最佳執行義務、市場操縱風險——呢啲唔係模型能力問題，而係法律問題。</li>
+  <li><strong>Traceability 同商業機密嘅張力。</strong>Kim 講「check where a number came from」，但金融機構嘅 alpha 往往就係嚟自「唔話你知個數點嚟」。可追溯性做到幾細，會直接碰撞商業利益。</li>
+  <li><strong>報道係會議現場綜合，唔係逐字稿。</strong>部分引述經過作者整理，語氣同完整上下文可能有出入；本文已標明所有引號來源，但讀者仍應以原始場次為準。</li>
+</ul>
+
+<div class="highlight-box">
+  <strong>一句總結：</strong>呢四場演講合起來，把「agent 安全」由一個倫理問題，變成一個<strong>擺位問題</strong>——身份擺邊、批准擺邊、硬約束擺邊、回歸測試擺邊。當你把呢四樣擺啱，自主性唔再係要唔要給嘅恩賜，而係一個可以計算、可以審計、可以放膽使用嘅工程參數。
+</div>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上內容出自 <em>Latent Space</em>〈Crossing the Threshold: How OpenAI and Anthropic Approach Autonomy and Safety in Financial Agents〉（Richard MacManus，2026-10-14）。引號內容為該文章直接引述，包括 Joseph Kim、John Feminella、Belinda Neal、Keon Shahab、Andrey Rybka 嘅發言；其餘敘述為忠實改寫。本文未獨立核實 OpenAI／Anthropic 產品發布細節、Two Sigma 其餘四項控制、或 Bloomberg 事故案例嘅完整背景。分析與「我嘅萃取」屬本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #218 · Latent Space（2026-10-14 · AI Engineer New York 2026 · 金融 agent 自主性、信任層、approval fatigue、模型外確定性控制）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-17 06:00 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>

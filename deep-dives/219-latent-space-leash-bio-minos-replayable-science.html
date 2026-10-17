@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space × Ian Quigley（Leash Bio）：把現實做成可以重播嘅遊戲</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-10-14 發布 · 約 1 小時 50 分</div>
+  <h1>把現實做成可以重播嘅遊戲——Leash Bio 嘅 Ian Quigley：DEL、40 億次測量、抓模型作弊，同 Minos 嘅 10<sup>638</sup> 條實驗路徑</h1>
+  <div class="meta">
+    <span>📅 2026-10-14</span><span>·</span><span>🎙️ Latent Space（主持 Brandon Anderson）</span><span>·</span><span>🧪 嘉賓：Ian Quigley（Leash Bio 共同創辦人）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集表面係講一間生物科技公司點樣做 DNA 編碼化合物庫（DEL），實際上講嘅係一個更普遍嘅問題：<strong>當一個領域嘅「經驗」好貴，你點樣令機器可以不斷累積經驗？</strong>Leash Bio 嘅答案唔係「等實驗室快啲」，而係<strong>預先測量一整個化學宇宙，然後把它變成一個可以即時 replay 嘅遊戲世界</strong>——畀 agent 在入面做幾十萬次實驗，每次都有真實嘅物理後果，但零濕實驗延遲。同時，佢哋用同一批數據抓出模型嘅「作弊」：認得化學家、認得蛋白質花名、認得 benchmark 答案，而唔係真的學會化學。
+</p>
+
+<blockquote class="strong">
+  「We created physical interrogation at compute speed.」
+  <span class="attribution">Ian Quigley，Leash Bio 官方 blog〈Making reality replayable〉（2026-10-14）</span>
+</blockquote>
+
+<div class="highlight-box">
+  <strong>⚠️ 來源說明：</strong>本篇來源有三：① <em>Latent Space</em> 官方集數頁〈Lab-in-the-Loop at Compute Speed — Ian Quigley, Leash Bio〉（主持 Brandon Anderson，2026-10-14）嘅完整 show notes；② Ian Quigley 同日發布嘅 Leash 官方 blog〈Making reality replayable〉全文；③ 該 blog 所述嘅 Minos preprint 與資料集（本文未逐頁讀取 PDF，只採用 blog 明確覆述嘅數字與結論）。<strong>Podcast 逐字稿未有公開取得</strong>，故文中引號只取自 blog 原文或 show notes 明示引述；其餘為忠實改寫。訪談細節與 blog 重疊部分，以 blog 為準。
+</div>
+
+<div class="section-title">一、開場：Turing 嘅難題，同一個唔公平嘅比賽</div>
+<p>Ian Quigley 用一個幾乎係哲學嘅對比開場。Turing 1948 年提出「thinking machines」，但要證明機器識思考，你必須叫佢<em>做</em>啲嘢；Turing 建議用遊戲、密碼學、數學做測試，理由係呢啲領域「require little contact with the outside world」——同外界接觸越少，訓練同評估就越便宜。</p>
+<p>由 checkers 到 Atari 到 AlphaGo，機器之所以進步得咁快，核心原因唔係算法特別聰明，而係<strong>佢哋可以對住一個可重播嘅環境，試幾百萬次</strong>。Quigley 嘅說法好直接：</p>
+<blockquote>
+  「Games are replayable environments. What about science?」
+  <span class="attribution">Ian Quigley，〈Making reality replayable〉</span>
+</blockquote>
+<p>生物學冇呢個奢侈。你要移動液體、養細胞、切組織、合成化合物——「With biology, experience is expensive.」呢句係整集嘅起點。如果 AI for Science 嘅瓶頸係「經驗太貴」，咁解法就只有三條路：</p>
+<ol>
+  <li><strong>用模擬令經驗變便宜</strong>——但模擬器本身未必準；</li>
+  <li><strong>重播歷史實驗</strong>——但歷史數據缺 counterfactuals；</li>
+  <li><strong>接受貴，慢慢做 lab-in-the-loop</strong>——但每一步要幾日到幾個月。</li>
+</ol>
+<p>Leash 選咗第四條：<strong>預先測量一個巨大嘅實驗空間，令經驗既係物理真實、又可以即時重播。</strong>呢個就係 Minos。</p>
+
+<div class="section-title">二、DEL 係咩，點解「 traumatizes everyone」</div>
+<p><strong>DNA Encoded Library（DEL）</strong>係一種超高吞吐量嘅篩選方法：把每個小分子 attach 上一段獨特嘅 DNA barcode，然後將成千上萬、甚至上百萬種分子混合一齊，同目標蛋白質孵育；能夠結合嘅分子會被保留、沖洗、PCR 擴增、定序——<strong>用 DNA 定序代替逐個測試</strong>。呢個方法嘅威力在於：一次實驗可以測幾百萬種化合物。</p>
+<p>但 DEL 亦係出名難駕馭。Show notes 用咗一個好傳神嘅講法：呢個 assay「traumatizes everyone who touches it」。原因係 DEL 有三種系統性偏差：</p>
+<ul>
+  <li><strong>DNA 本身會結合蛋白質。</strong>如果你唔控制，你以爲篩到嘅係「藥物—蛋白質」結合，實際上係「barcode DNA—蛋白質」結合。Leash 嘅解法係<strong>在每個分子上放幾十個 barcode</strong>，用冗餘去識別同扣除「蛋白質綁 DNA」嘅假訊號。</li>
+  <li><strong>庫嘅合成偏差。</strong>某些化學結構比較容易合成、比較容易進入細胞、比較容易被定序——於是最終「命中」嘅可能係「最容易製造嘅分子」，而唔係「最好嘅藥物」。</li>
+  <li><strong>選擇偏差。</strong>人類科學家设计庫嘅時候，會傾向某啲「應該 work」嘅化學空間；呢個偏好會直接寫入數據，令模型學到「人類嘅品味」而唔係「物理嘅規律」。Quigley 後來用 ChEMBL 嘅「Clever Hans」現象講得更狠。</li>
+</ul>
+<p>Show notes 提到 Ian 有一條規則：<strong>生物學只有兩種方法可以 scale——影相（taking pictures）同 DNA 定序（sequencing DNA）</strong>。呢句值得停一停：顯微鏡影像同定序數據之所以可以規模化，係因為兩者都係「把生物狀態轉成大量可機器讀取嘅離散訊號」。DEL 嘅聰明之處，就係把「分子會唔會綁蛋白質」呢個化學問題，翻譯成「邊條 DNA barcode 被保留得最多」呢個定序問題。<strong>一旦問題變成定序，它就可以被規模化；一旦可以規模化，它就可以被機器學習。</strong></p>
+
+<div class="section-title">三、Kaggle BELKA：40 億次測量，2,000 隊，無人贏過隨機</div>
+<p>Leash 做咗一件在商業上幾反常嘅事：把自家最核心嘅數據集公開，搞咗一個 Kaggle 比賽（<strong>Leash-BELKA</strong>）。Show notes 嘅描述係：</p>
+<div class="data-point">
+  <span>數字</span>約 <strong>40 億次</strong>測量（來自一個「basement」級別嘅實驗室規模）· <strong>約 2,000 隊</strong>參賽 · 比賽要求模型在<strong>未見過嘅化學庫</strong>上預測結合 · 結果：<strong>無人顯著贏過隨機</strong>
+</div>
+<p>呢個結果喺 2024 年當時引起好大迴響，因為它直接挑戰咗「co-folding 已經解決 protein-ligand binding」嘅敘事。Leash 自己亦坦白：佢哋當時<strong>偷偷擔心 co-folding 會令公司變得過時</strong>——如果 AlphaFold 級嘅模型真係可以準確預測任何分子同任何蛋白質嘅結合，咁辛苦建立 DEL 平台嘅意義何在？</p>
+<p>比賽嘅結果給出一個唔舒服但重要嘅答案：<strong>在「同分佈」嘅 benchmark 上，模型看起來好強；一旦要 generalize 到真正未見過嘅化學空間，它們就跌回隨機。</strong>呢個並唔係話模型冇用，而係話——<em>benchmark 嘅高分，大機會係記憶，而唔係理解。</em></p>
+<p>Quigley 在 blog 入面亦用同一邏輯批評「用模擬器代替實驗」嘅做法：</p>
+<blockquote>
+  「current computational tools to evaluate these things often aren't perfect... such models are prone to memorization and have obvious failure modes.」
+  <span class="attribution">Ian Quigley，論用 co-folding 做 agent 嘅 reward</span>
+</blockquote>
+<p>呢句係對整個「AI scientist」領域嘅一個警告：<strong>如果你用一個會記憶嘅模型去評分另一個模型，你其實喺度訓練它背答案。</strong></p>
+
+<div class="section-title">四、ChEMBL 嘅 Clever Hans：模型認得「邊個化學家整嘅」</div>
+<p>Leash 跟住做咗一個好漂亮嘅實驗。他們發現，在公開嘅 ChEMBL 數據上訓練嘅模型，可以從分子結構推斷出<strong>「呢個分子係邊個化學家、邊間公司、喺邊個 project 做出嚟」</strong>——而「who made it」對活性嘅預測力，竟然同「structure」差唔多。</p>
+<blockquote>
+  「models can guess a molecule's chemist from its structure, and <em>'who made it'</em> predicts activity about as well as the structure does.」
+  <span class="attribution">Latent Space show notes（引述 Ian Quigley 嘅研究）</span>
+</blockquote>
+<p>呢個係典型嘅 <strong>Clever Hans</strong> 效應：模型睇起來識化學，實際上係學咗「呢間公司專做 kinase inhibitor，所以呢類結構大機會有活性」——一個完全脫離物理機制嘅 shortcut。更麻煩嘅係，呢個 shortcut 在真實部署時會失效：當你拿模型去預測一個<strong>新客戶、新 project、新品類</strong>嘅分子，它就冇「化學家指紋」可以抄。</p>
+<p>所以 Leash 嘅結論係：<strong>公開數據集嘅問題唔止係「少」，而係「有指紋」。</strong>你唔可以靠清洗解決，因為指紋唔在單一 column，而在整個數據生成過程——邊個 project、邊種 assay、邊個實驗室、邊個年份。呢個亦解釋咗點解 Leash 要自己建庫、自己測量：<strong>只有自己控制實驗設計，才知道數據入面有冇藏住「答案提示」。</strong></p>
+
+<div class="section-title">五、Hermes 同「打破口袋」：當模型記住嘅係花名，唔係結合位</div>
+<p>Leash 用自家數據訓練咗一個模型叫 <strong>Hermes</strong>。Show notes 嘅說法係：Hermes 只在 Leash 自己嘅數據上訓練，卻<strong>在公開 benchmark 上跟得上 Boltz</strong>（一個大型 co-folding 模型）。呢個結果本身已經好有意思——唔靠公開數據，都可以打出接近嘅分數，說明「數據質量＋實驗設計」可能比「模型規模」更重要。</p>
+<p>但真正精彩嘅係下一個發現。他們用一個 BRD4 嘅分子做測試——呢個分子 Boltz 已經在 PDB 入面見過。Hermes 亦「識」呢個分子。於是問題變成：<strong>它係真的預測到結合位，還是認得呢個分子嘅「花名」？</strong></p>
+<p>Leash 嘅解法係<strong>「打破口袋」（breaking the pocket）</strong>：大規模製造蛋白質突變體，改變 binding pocket 嘅氨基酸，然後看模型仲能唔能夠預測。如果模型真係學識綁定位點，突變之後它應該仍然大致正確；如果它只係記住「呢個分子－呢個蛋白質」嘅配對，突變就會令它崩潰。</p>
+<p>Show notes 講得很白：他們<strong>抓到 Hermes 在記蛋白質嘅「nicknames」，而唔係 binding sites</strong>。呢個發現嘅方法論意義，可能比 Hermes 本身更大：</p>
+<div class="highlight-box">
+  <strong>評估模型嘅正確方法，唔係「考它識唔識」，而係「改變一個它唔應該在乎嘅變數，看它會唔會在乎」。</strong>突變蛋白質嘅序列但保留 fold、改變分子嘅 scaffold 但保留 pharmacophore——如果預測跟住變，模型學嘅就係表面特徵；如果預測穩定，它才可能學到機制。
+</div>
+<p>呢個同 10-10 集 Pushmeet Kohli 講「AlphaFold 冇解決 protein folding」係同一個主題嘅兩個切面：<strong>結構預測嘅高分，唔等於理解物理。</strong>AlphaFold 解決嘅係「給定序列預測結構」，而藥物發現要問嘅係「改變一個原子，結合力會點變」——後者需要嘅係因果模型，而唔係配對記憶。</p>
+
+<div class="section-title">六、Kosuri Paradox：如果你可以收集數據，為何還需要模型？</div>
+<p>Show notes 提到一個叫 <strong>Kosuri paradox</strong> 嘅尖銳問題：<em>如果你已經有能力收集全部數據，為何還需要模型？</em></p>
+<p>呢個問題直插 AI for Science 嘅心臟。如果 Leash 真係可以測量 600 萬個分子對幾百個靶點嘅結合，咁對於「找 best binder」呢個任務，最直接嘅方法唔係訓練模型預測，而係<strong>直接查表</strong>——邊個分子 enrichment 最高，就用邊個。模型嘅價值何在？</p>
+<p>Quigley 嘅回答（在 blog 結尾講得最清楚）係一個<strong>目的轉移</strong>：</p>
+<blockquote class="strong">
+  「A key element hiding in all of this is that the whole goal of experimentation might be shifting.」
+  <span class="attribution">Ian Quigley，〈Making reality replayable〉</span>
+</blockquote>
+<p>如果實驗嘅目的只係「找到最好嘅 binder」，咁你唔需要 agent，只需要一個 sort。但如果你嘅目的係<strong>「產生便宜、物理 grounded 嘅經驗，畀 agent 學習」</strong>，咁同一批實驗就有完全唔同嘅價值——它唔再只係一個結果，而係一個<strong>可以重複進入嘅環境</strong>。</p>
+<blockquote>
+  「We might not even care about the results of the experiments themselves, in the same way AlphaGo didn't care about how game number 8,000,000 in its self-play regime went. It's not the result that matters, what matters is that <strong>playing the game changes the player</strong>.」
+  <span class="attribution">Ian Quigley，〈Making reality replayable〉</span>
+</blockquote>
+<p>呢段係整篇最哲學、亦最值錢嘅一段。它把「數據」由<em>答案的集合</em>重新定義為<em>練習場</em>。傳統製藥用 DEL 去找 hit；Leash 用 DEL 去<strong>建造一個可以讓 agent 練習做化學嘅世界</strong>。前者嘅產出係一個候選藥物；後者嘅產出係一個更會做化學嘅模型——而模型可以用來找下一百個候選藥物。</p>
+
+<div class="section-title">七、Minos：把現實變成可重播嘅世界</div>
+<p><strong>Minos</strong>（命名取自希臘神話嘅迷宮與牛頭人）係 Leash 對上述問題嘅工程答案。它的定義好簡單：</p>
+<blockquote>
+  「a framework of <strong>premeasured experimental worlds</strong>.」
+  <span class="attribution">Ian Quigley，論 Minos</span>
+</blockquote>
+<p>做法係：<strong>先測量一個巨大嘅化學空間（多個百萬級化合物庫 × 幾百個蛋白靶點），然後讓 agent 在入面做 sequential decision。</strong>Agent 嘅任務係「在有限預算下找最好嘅 binder」：</p>
+<ul>
+  <li>環境入面有<strong>100 萬個以上</strong>嘅小分子；</li>
+  <li>Agent 只有<strong>100 個分子</strong>嘅實驗預算；</li>
+  <li>每次最多測 <strong>5 個</strong>；</li>
+  <li>总共有 <strong>20 輪</strong>；</li>
+  <li>冇任何起始 hit。</li>
+</ul>
+<p>呢個任務對真實藥廠嚟講「介乎極難與不可能之間」——show notes 嘅講法係：一個 drug company 要在零起點、100 個分子預算內找到 binder，基本上係不可能的任務。但 Minos 嘅重點唔係 agent 一定要贏，而係<strong>你可以完整觀察它點樣輸</strong>：它說它會做咩、它實際做咗咩、物理後果係咩、以及<strong>它冇做嘅所有選擇會有咩後果</strong>。</p>
+<p>最後一點係 Minos 最獨特嘅地方。傳統 lab-in-the-loop 或歷史數據，都只能告訴你「你試過嘅嘢」；Minos 因為預先測量咗整個空間，所以可以計算<strong>counterfactuals</strong>——「如果你當初揀另一個分子，會發生咩事」。Quigley 嘅講法：</p>
+<blockquote class="strong">
+  「by premeasuring the landscape, <strong>we have the outcome of all possible SAR campaigns of this type in this chemical space.</strong>」
+  <span class="attribution">Ian Quigley，〈Making reality replayable〉</span>
+</blockquote>
+<p>呢個 property 有幾罕有？Quigley 自己講得清楚：</p>
+<blockquote>
+  「This property is rare: normally you're looking at legacy datasets that didn't collect it, and conventional lab-in-the-loop strategies have to run all those counterfactuals to get the answer.」
+  <span class="attribution">Ian Quigley</span>
+</blockquote>
+
+<div class="data-point">
+  <span>規模</span>單一靶點、約 <strong>630 萬</strong>個分子嘅庫 → 約 <strong>10<sup>638</sup></strong> 條可能嘅 SAR 軌跡 · 目前 <strong>33 個靶點</strong> × 約 600 萬分子 · 六星期內 agent 跑了約 <strong>100,000</strong> 條獨立 SAR 軌跡 · 環境建設速度約 <strong>每日 2 個</strong>，短期目標 <strong>每日 20 個</strong>
+</div>
+
+<p>呢個規模嘅意義唔止「大」。10<sup>638</sup> 係一個天文數字——它意味住<strong>同一個物理現實，可以被重播成無窮多條唔同嘅決策路徑</strong>。傳統實驗只能給你一條路徑（科學家實際行過嘅嗰條）；Minos 給你整個決策樹。對於訓練 agent 嚟講，呢個差別等於「只能看一局棋譜」vs「可以同一個局面下幾百萬局」。</p>
+
+<div class="section-title">八、Agent 嘅行為病理學：弱模型為何死在局部</div>
+<p>Minos 最有價值嘅副產品，係它令「agent 點樣做錯決定」變成可觀察、可量化嘅現象。Quigley 列出嘅 failure modes 包括：</p>
+<ul>
+  <li><strong>唔用盡預算</strong>——明明有 100 個分子額度，只測了 60 個就停；</li>
+  <li><strong>重複測同一個分子</strong>——把預算浪費在已知答案上；</li>
+  <li><strong>信念更新失敗</strong>——實驗結果同預期相反，但 agent 唔改策略；</li>
+  <li><strong>唔識晉升好候選人</strong>——明明見到有潛力嘅分子，但唔肯花預算去跟進；</li>
+  <li><strong>過度 exploit、不足 explore</strong>——留在一個已經證明冇希望嘅化學鄰域，繼續微調。</li>
+</ul>
+<p>最後一點係最有趣嘅，因為它可以用一條好漂亮嘅曲線量度。Leash 計算咗「留在原地」vs「跳去另一個化學鄰域」嘅期望回報，然後看模型幾時選擇離開。結果：</p>
+<blockquote class="strong">
+  「Weaker models persist in local basins; stronger models leave them more frequently, especially those less likely to be productive.」
+  <span class="attribution">Ian Quigley，〈Making reality replayable〉</span>
+</blockquote>
+<p>呢個發現嘅普遍性遠超化學。它其實係一個關於<strong>探索策略</strong>嘅定律：弱模型嘅問題唔係「唔夠聰明」，而係<strong>唔肯放棄</strong>——它們把「已經投入嘅成本」當成「應該繼續」嘅理由。強模型唔一定更聰明，但更願意承認「呢條路死咗」，然後承擔切換成本。</p>
+<p>而 Minos 嘅 counterfactual 能力，正好令呢個觀察變得可驗證：你可以問「如果它當時離開，會找到更好嘅嘢嗎？」傳統 lab-in-the-loop 無法回答，因為你冇跑嗰條路；Minos 可以，因為整個空間都測量過。<strong>呢個就係「可重播世界」對 agent 評估嘅真正貢獻——它把「運氣」同「策略」分開。</strong></p>
+<p>Quigley 自己亦好克制：呢啲只係「表面」，他相信仲有一整個<strong>decision failure taxonomy</strong> 可以從呢啲軌跡歸納出來。而 Leash 亦把一部分環境以 <strong>Harbor packages</strong> 形式開源，加上數千條 reasoning traces，放在 <em>strelka.leash.bio</em>。</p>
+
+<div class="section-title">九、真實藥物研發：六個月由 DEL hit 到 mouse PKPD</div>
+<p>呢集唔止講方法論，仲有實際戰績。Show notes 提到：</p>
+<ul>
+  <li>Leash 由一個 DEL hit 出發，在<strong>六個月內</strong>做到<strong>良好嘅 mouse PKPD</strong>（藥物在老鼠體內嘅藥代動力學／藥效動力學）；</li>
+  <li>項目係一個<strong>炎症（inflammation）</strong>靶點；</li>
+  <li>佢哋主張在 cytokine 靶點上做<strong>口服小分子（pills）</strong>，而唔係抗體（antibodies）。</li>
+</ul>
+<p>六個月由 hit 到 in-vivo PKPD，在傳統製藥時間表入面係相當快嘅——通常呢個過程以年計。當然，呢個仍然係臨床前阶段，唔代表藥物會成功；但對於一間以「數據＋模型」為核心嘅公司嚟講，呢個係一個重要嘅證明：<strong>他們嘅數據優勢唔止體現在 benchmark，而係體現在真實 pipeline 嘅速度。</strong></p>
+<p>至於「pills over antibodies」，背后係一個經濟學同生物學嘅雙重判斷：小分子可以口服、可以量產、成本低；抗體雖然特異性高，但要多數注射、生產成本高。在 cytokine 靶點上（例如 TNF-α、IL-6 等），已經有 Humira 類嘅抗體藥物證明市場巨大；如果有人可以用小分子做到接近嘅效果，商業價值會極高。呢個亦解釋咗點解 Leash 嘅投資者願意容忍佢哋花幾年時間建庫——<strong>因為成功嘅回報唔止是一個模型，而是一個可以不斷產生候選藥物嘅引擎。</strong></p>
+
+<div class="section-title">十、我嘅萃取：五個判斷</div>
+
+<div class="sub-title">1. 「數據」同「經驗」係兩回事</div>
+<p>多數 AI for Science 嘅討論把「數據」當成 static asset：你收集得越多，模型越強。Quigley 嘅框架唔同：<strong>真正有價值嘅唔係數據本身，而係「可以從數據入面重播出來嘅決策過程」。</strong>一張表格告訴你「A 分子對 B 蛋白有活性」；一個可重播世界告訴你「如果你當初揀 C，會發生咩事」。前者係答案，後者係<em>練習場</em>。而 agent 需要嘅係練習場，唔係答案。</p>
+
+<div class="sub-title">2. 評估模型，要主動製造「應該唔在乎」嘅變化</div>
+<p>Leash 抓 Hermes 作弊嘅方法，係一個可以推廣到所有領域嘅評估範式：<strong>改變一個與任務無關嘅變數，看模型會唔會跟住變。</strong>蛋白質突變（保留 fold、改變序列）就係一個完美嘅測試：如果模型真係學識 binding site，佢應該唔在乎「花名」；如果它只係記住配對，突變就會令它崩潰。同樣嘅方法可以用在代碼模型（改 variable name）、法律模型（改案件編號）、醫療模型（改醫院名）。<strong>Benchmark 告訴你模型識咩；counterfactual perturbation 告訴你它<em>為什麼</em>識。</strong></p>
+
+<div class="sub-title">3. 公開數據集嘅最大問題係「指紋」，唔係「規模」</div>
+<p>ChEMBL 嘅 Clever Hans 現象，係對「open data 萬能論」嘅一個重要修正。公開數據越多，模型越容易學到「呢個數據集係邊個整嘅」——而呢個知識在 deployment 時完全無用，甚至有害。解決方法唔係「清洗數據」，而係<strong>自己設計實驗、自己控制生成過程</strong>，令你知數據入面有冇藏住 shortcut。呢個亦係點解 Leash 選擇做一間「有濕實驗室嘅 AI 公司」，而唔係一間「用公開數據訓練模型嘅 AI 公司」。</p>
+
+<div class="sub-title">4. 探索嘅核心係「識得放棄」</div>
+<p>「Weaker models persist in local basins」呢個發現，係整集最實用嘅一句。它把「模型能力」由一個靜態分數，變成一個<strong>策略特徵</strong>：強模型唔係每步都更準，而係更願意在證據不足時<em>離開</em>。呢個對 agent 設計有直接啟示：與其不斷提升模型嘅預測精度，不如教它一個「幾時應該切換」嘅 policy。而呢個 policy 只能透過大量 counterfactual 經驗學到——正好係 Minos 提供嘅嘢。</p>
+
+<div class="sub-title">5. 科學嘅目的可能正在改變：由「找答案」到「建世界」</div>
+<p>Quigley 最激進嘅一句，係「One possible future role for human scientists is to build worlds for agents to grow up in」。呢個唔係修辭。如果 agent 嘅能力主要嚟自經驗量，而經驗量受制於物理實驗嘅速度，咁<strong>人類科學家最高槓桿嘅工作，可能唔係自己做實驗，而係設計「可以被大量重播嘅實驗空間」</strong>。呢個角色有點似遊戲設計師，又有點似 AlphaGo 嘅 self-play 環境設計者——你唔係在下棋，你係在建造棋盤。</p>
+
+<div class="section-title">十一、未解問題／批判</div>
+<ul>
+  <li><strong>Minos 只覆蓋 SAR，未覆蓋 ADMET。</strong>Quigley 自己承認：「we're not running ADMET on these; it's purely searching for better binders to a single target.」真正嘅藥物成功需要吸收、分佈、代謝、毒性全部過關；一個只優化 binding 嘅世界，可能訓練出「只會討好靶點」嘅 agent。</li>
+  <li><strong>預測測量嘅「預先」係幾時？</strong>Minos 嘅世界係靜態嘅——分子庫測量完就固定。但真實化學空間會隨新合成方法、新 scaffold 而擴張。靜態世界會唔會令 agent 過擬合到「呢個庫嘅化學」？</li>
+  <li><strong>100 個分子預算嘅任務，同真實藥物發現差幾遠？</strong>真實 project 有數千至數萬個化合物嘅預算，亦有大量 prior knowledge（已知 scaffold、專利空間、成藥性規則）。Minos 嘅「零起點、100 個」係一個乾淨嘅 benchmark，但唔等於真實工作流。</li>
+  <li><strong>Kosuri paradox 未完全解決。</strong>如果預測模型真係咁準，為何仲要 agent 逐步探索？Quigley 嘅回答係「目的轉移」——但呢個回答同時暗示，Minos 嘅主要價值可能係<em>訓練 agent</em>，而唔係<em>發現藥物</em>。兩者嘅商業模式好唔同。</li>
+  <li><strong>「六個月到 mouse PKPD」係公司自述，未經獨立核實。</strong>而且由 PKPD 到人體試驗，仍然係一條漫長且高失敗率嘅路。</li>
+  <li><strong>開源嘅「數千條 reasoning traces」會唔會成為下一代模型嘅新指紋？</strong>Leash 用 counterfactual 抓人作弊，但當它自己釋放 traces，下一個模型可能學會「Leash 嘅 agent 係咁諗嘢」——同樣嘅 Clever Hans 問題，會唔會在自己嘅數據上重演？</li>
+</ul>
+
+<div class="highlight-box">
+  <strong>一句總結：</strong>Leash Bio 呢集真正講嘅，唔係「AI 幫手做化學」，而係<strong>「如何把物理世界壓縮成一個可以不斷重播嘅練習場」</strong>。當經驗可以由「年」壓縮到「毫秒」，AI for Science 嘅瓶頸就由「做實驗」變成「設計實驗空間」——而後者，可能係人類科學家下一個最重要嘅工作。
+</div>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上內容出自 <em>Latent Space</em>〈Lab-in-the-Loop at Compute Speed — Ian Quigley, Leash Bio〉（主持 Brandon Anderson，2026-10-14）官方 show notes，以及 Ian Quigley 同日發布嘅 Leash 官方 blog〈Making reality replayable〉。引號內容取自 blog 原文或 show notes 明示引述；podcast 逐字稿未有公開取得，部分對話細節為 show notes 之忠實改寫。Minos 嘅規模數字（6.3M 分子、10<sup>638</sup> 軌跡、33 靶點、100,000 軌跡、每日 2→20 環境）取自該 blog；preprint 與資料集本文未逐頁核實。分析與「我嘅萃取」屬本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #219 · Latent Space（2026-10-14 · Ian Quigley／Leash Bio · DEL、Kaggle BELKA、Clever Hans、Hermes、Minos、可重播實驗世界）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-17 06:00 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
