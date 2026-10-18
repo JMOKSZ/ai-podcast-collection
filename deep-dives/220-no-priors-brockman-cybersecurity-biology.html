@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · No Priors × Greg Brockman：當寫代碼變便宜，稀缺嘅係「可信」——網絡安全、生物學與代理產品嘅新物理</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">No Priors · 2026-10-15 10:00 UTC · 約 39 分鐘（YouTube 版 1 小時 9 分）</div>
+  <h1>當寫代碼變便宜，稀缺嘅係「可信」——Greg Brockman 用會計語言講網絡安全、生物學同代理產品嘅新物理</h1>
+  <div class="meta">
+    <span>📅 2026-10-15</span><span>·</span><span>🎙️ Sarah Guo、Elad Gil</span><span>·</span><span>👤 嘉賓：Greg Brockman（OpenAI 總裁兼共同創辦人）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集嘅特別之處，唔係 Brockman 講咗幾多 OpenAI 嘅新產品，而係佢换咗一套語言：唔再講「AGI 幾時到」，而係講<strong>支出、成本、稀缺性</strong>。當寫代碼嘅邊際成本趨近於零，軟件經濟學翻轉，瓶頸由「寫得出」搬去「信得過」；於是佢得出一個可以寫入企業預算表嘅判斷——<strong>安全支出應該遠遠超過軟件支出</strong>。同一套「能力跨過門檻」嘅邏輯，被佢用嚟講數學、生物製藥同 Dots 代理。呢篇會逐條拆開呢條論證鏈，亦會指出佢喺邊度偷咗步。
+</p>
+
+<blockquote class="strong">
+  「I have a feeling that cyber spend, security spend should actually vastly outstrip software spend. I really believe it.」
+  <span class="attribution">Greg Brockman（節目原話）</span>
+</blockquote>
+
+<div class="highlight-box">
+  <strong>⚠️ 來源說明：</strong>本集來源為 No Priors 官方集數頁、YouTube 字幕，以及對字幕全文嘅外部整理（FourWeekMBA，2026-10-15）。<strong>本文所有英文引號均出自該集字幕或其直接轉錄</strong>；公司口徑數字（例如 25 名工程師、10 億美元、400 條數學問題）未經獨立核實。文中「分析」與「叩問」部分屬本站視角，唔係嘉賓原話。
+</div>
+
+<div class="section-title">一、為什麼呢集值得單獨寫</div>
+<p>OpenAI 高管嘅訪談通常有兩種：一種講能力（benchmark、模型卡、demo），一種講治理（安全框架、政策建議）。Brockman 呢集罕見地走第三條路——<strong>講資產負債表</strong>。佢唔係話「AI 好重要」，而係話「邊一項支出會超過邊一項支出」。呢種講法嘅殺傷力在於：它唔需要聽眾相信 AGI 時間表，只需要聽眾相信「供給增加會令價格下跌」同「信任係一種成本」。</p>
+<p>但會計語言亦有代價。當你把「安全」講成一條支出曲線，你就默認咗安全係可以採購、可以外包、可以用預算規模衡量嘅東西。呢個默認本身值得被檢查——尤其係當講者同時係賣方。</p>
+
+<div class="section-title">二、論證鏈：代碼變便宜之後，稀缺嘅係「可信」</div>
+<p>Brockman 嘅推理可以拆成四步：</p>
+<ol>
+  <li><strong>供給爆炸。</strong>AI 令寫代碼嘅邊際成本趨近於零，軟件供給因此爆炸。</li>
+  <li><strong>瓶頸轉移。</strong>當「寫得出」唔再稀缺，稀缺嘅就變成「呢段代碼能唔能信」——正確性、安全性、可審計性。</li>
+  <li><strong>支出重配。</strong>安全、驗證、審計成為新嘅稀缺資源，所以安全支出會成為更大嘅市場。</li>
+  <li><strong>時間窗口。</strong>最先進嘅模型目前仍集中喺少數組織手上，防禦方暫時佔優；但能力會擴散，窗口會關閉。</li>
+</ol>
+<p>呢條鏈最有力嘅地方，係它把「安全」由道德呼籲變成<strong>產業結構問題</strong>。如果軟件供給真係爆炸，咁「審查軟件」嘅工作量一定跟住爆炸；無論你信唔信 AGI，呢個推論都成立。它亦解釋咗為何 OpenAI 近一年不斷把「安全」講成「防禦能力」而唔係「限制能力」——<strong>限制係成本，防禦係產品。</strong></p>
+
+<blockquote class="strong">
+  「People have not yet really internalized how much the physics around cybersecurity are going to change.」
+  <span class="attribution">Greg Brockman（FourWeekMBA 轉引字幕）</span>
+</blockquote>
+
+<p>「Physics」呢個字用得好。佢唔係講「攻擊會變多」，而係講<strong>攻擊與防禦嘅成本結構會改變</strong>：當尋找漏洞嘅成本下跌、當生成釣魚與惡意代碼嘅成本下跌，防禦方就必須以同樣嘅規模化方式回應。呢個係一個關於相對價格嘅判斷，唔係關於善惡嘅判斷。</p>
+
+<div class="section-title">三、防禦者窗口：25 名工程師與 10 億美元</div>
+<p>Brockman 俾咗一個具體到可以專案管理嘅例子：OpenAI 抽調約 <b>25 名生產線工程師</b>，暫停原本嘅項目，用當時最強嘅模型審自己嘅基礎設施，搵到並修復一批問題，然後把流程工具化；直到「榨乾」該模型能發現嘅問題為止。佢明說，呢件事要隨每個新模型重做一次。</p>
+<p>呢個細節嘅重要性，唔在於「25」呢個數字，而在於<strong>它示範咗一種新嘅安全節奏</strong>：安全唔係一次過嘅合規項目，而係跟住模型版本迭代嘅<strong>定期壓力測試</strong>。如果每個新模型都帶來新嘅攻擊面，咁「上一個模型審過」就唔構成任何保證。企業若要抄呢套做法，關鍵唔係抽調幾多人，而係<strong>把「用最強模型審自己」寫成 release gate</strong>。</p>
+
+<div class="data-point">
+  <span>數字</span>
+  <b>25 名</b>生產線工程師被抽調做內部漏洞審查；<b>10 億美元</b>防禦性安全承諾；與 CrowdStrike 等安全廠商合作，讓關鍵基礎設施、政府與企業可以使用其模型做防禦性安全工作。
+</div>
+
+<p>「10 億美元」呢個數字要小心讀。它係一個<strong>承諾（commitment）</strong>，唔係已經支出嘅現金；它亦可能包括算力、模型使用額度、合作項目等非現金形式。節目冇拆開呢筆錢嘅構成，所以唔應該直接當成「OpenAI 每年花 10 億美元喺安全」。但從敘事角度，呢個數字做咗一件事：把「安全」由研究部門嘅題目，升級成<strong>公司級嘅資本配置</strong>。</p>
+
+<div class="section-title">四、400 條數學問題：新知識嘅證據，同它嘅統計口徑</div>
+<p>Brockman 講咗一個很容易被標題化嘅數字：OpenAI 公布約 <b>400 個</b>由其模型解決嘅公開數學問題，橫跨數論、代數幾何等。佢強調重點唔係答案，而係數學家喺證明裡看到「意想不到嘅引用與方法選擇」——呢個係新知識嘅證據，而唔係機器可驗證嘅噪音。佢亦給咗邊界：模型仲未提出宏大嘅新理論。</p>
+<p>呢個邊界好重要。如果模型只係搵到一個已知定理嘅新證明，咁它證明咗「搜索能力」；如果它用咗一個人類冇想過嘅工具組合，咁它證明咗「遷移能力」。Brockman 想講嘅係後者。但問題係：<strong>「意想不到」係由數學家事後判斷嘅，唔係一個可規模化嘅指標。</strong>同一篇證明，對於一個專家可能「意外」，對於另一個專家可能「早就知道可以咁做」。所以「400 個」呢個數字，唔可以當成「400 個新定理」。</p>
+
+<blockquote>
+  「they would get a Fields Medal immediately, no question」
+  <span class="attribution">Alex Kontorovich（Rutgers 教授），評論其中與黎曼猜想相關嘅結果——若由人類做出</span>
+</blockquote>
+
+<p>呢句轉述嘅殺傷力，在於它把「AI 能唔能做原創數學」由哲學問題變成<strong>優先權問題</strong>：如果同一個結果由人類做出會拿菲爾茲獎，咁由機器做出，學界要點樣承認貢獻？呢個問題目前冇制度答案。而制度空白會反過來影響能力評估——因為冇人知道點樣計分，所以「400 個」永遠只能停留喺公司口徑。</p>
+
+<p>外溢效應亦值得記低：OpenAI 嘅數學結果公布後，以太坊基金會研究員 <b>Justin Drake</b> 呼籲持幣者準備「bunker mode」，擔心 AI 加速嘅數學能力會侵蝕橢圓曲線密碼學；<b>Vitalik Buterin</b> 則表示風險值得認真對待，但反對倉促遷移，理由是「我個人在拙劣遷移中損失的錢，比在所有黑客攻擊中損失的加起來還多」。</p>
+<p>呢個案例係一個完美嘅「預期自我實現」：即使冇任何實際漏洞被利用，<strong>能力突破本身已經足以引發市場焦慮</strong>。而呢種焦慮，正好係 Brockman「安全支出會超過軟件支出」判斷嘅需求側證據——企業唔係因為見到攻擊才買安全，而係因為<strong>預期攻擊會變得便宜</strong>才買。</p>
+
+<div class="section-title">五、生物學：唔係折疊問題，係文書與數據問題</div>
+<p>Brockman 用一句話定調：「Humans are incredibly bad at biology.」呢句唔係嘲諷科學家，而係指出人類喺生物系統面前嘅<strong>認知帶寬不足</strong>：變量太多、反饋太慢、實驗太貴。跟住佢給出一組成本結構：</p>
+<table>
+  <tr><th>階段</th><th>成本</th><th>時間</th></tr>
+  <tr><td>整個新藥（平均）</td><td>約 15 億美元</td><td>約 15 年</td></tr>
+  <tr><td>臨床前</td><td>約 1,500 萬美元</td><td>2–3 年</td></tr>
+  <tr><td>臨床試驗</td><td>約 14 億美元以上</td><td>約 12 年</td></tr>
+</table>
+<p>呢組數字嘅重要訊息係：<strong>成本高度集中在後端</strong>。也就是說，AI 就算把「找靶點」「設計分子」做到免費，對總成本嘅影響仍然有限；真正嘅摩擦係臨床申報文件（約需一年製作）與數據获取。Brockman 嘅判斷係，AI 正好能壓縮文書與文獻連接嘅成本——呢個係一個<strong>務實到有點沉悶</strong>嘅結論，但可能係整集最可信嘅一段。</p>
+<p>為何可信？因為它唔需要生物學嘅範式轉移。它只需要 AI 做它已經擅長嘅事：讀文獻、對照法規、生成草稿、檢查一致性。呢啲工作佔咗藥物開發大量嘅人力時間，而且<strong>錯誤成本高、創造性低</strong>——正係語言模型嘅甜點區。反過來，如果 AI for Science 嘅敘事只講「AlphaFold 解咗折疊」，就會錯過真正嘅瓶頸：<strong>監管文件係一種可以用語言模型壓縮嘅交易成本。</strong></p>
+
+<div class="highlight-box">
+  <strong>我嘅萃取：</strong>Brockman 對生物學嘅樂觀，其實唔係對「AI 發現新藥」嘅樂觀，而係對「AI 壓縮行政摩擦」嘅樂觀。前者風險高、週期長、失敗率高；後者可以在現有流程內交付，而且買單者明確（藥企、CRO、監管顧問）。如果你要評估 AI 喺生物學嘅短期商業價值，應該先看<strong>申報文件自動化</strong>，而唔係先看<strong>新靶點發現</strong>。
+</div>
+
+<div class="section-title">六、Dots 與 intelligent UI：兩個相反方向同時成立</div>
+<p>Brockman 講咗兩個似乎矛盾嘅產品方向：</p>
+<ul>
+  <li><strong>「最好嘅 UI 係冇 UI」。</strong>Dots 係 OpenAI 員工在用嘅主動式代理：永遠在線，使用者停下來它還在工作；會追蹤「應該發但冇發嘅消息」、標記日曆衝突、提醒你提前離開會議。它跑喺 Astra 級模型上，有自己嘅雲端電腦。</li>
+  <li><strong>「intelligent UI」。</strong>模型即時生成介面——比較航班時生成複雜視圖，組裝自行車時生成一次性小應用。</li>
+</ul>
+<p>呢兩者其實係同一個硬幣嘅兩面：<strong>當模型足夠強，介面嘅位置由「預先設計」變成「即時協商」。</strong>冇 UI 嘅極端，係代理完全代你行動；有 UI 嘅極端，係代理臨時造一個最適合當下任務嘅介面。兩者都預設咗同一件事：模型有能力理解上下文，並且有能力生成互動結構。分別只在於<strong>人類要唔要睇</strong>。</p>
+<p>Dots 嘅細節值得注意：它會追蹤「應該發但冇發嘅消息」。呢個係一個非常具體嘅行為——唔係「幫你回郵件」，而係<strong>偵測社交義務嘅缺口</strong>。呢種任務冇明確 prompt、冇明確完成條件，需要對人際關係有模型。如果 Dots 真係做得到，咁它嘅價值唔係「省時間」，而係「幫你維持關係」——後者更難被替代，亦更難被審計。</p>
+
+<div class="section-title">七、消費者 vs 企業：同一個模型，唔同算力預算</div>
+<p>Brockman 給出一個結構性判斷：消費者與企業助理會收斂，分界線係<strong>成本而唔係能力</strong>。消費端要壓成本、把記憶帶給所有免費用戶係巨大工程；企業端每個付費用戶能捕獲回報，值得花更多算力。結果係同一個模型喺唔同算力預算下長出唔同產品。</p>
+<p>他給嘅結構性事實係：ChatGPT 有 <b>12 億</b>消費者，加上領先嘅 coding 與企業業務，策略係「合流」而唔係兩線作戰。</p>
+<p>呢個講法嘅隱含結論係：<strong>「消費者產品」與「企業產品」嘅差異，會由功能差異變成服務水平差異。</strong>同一個模型，免費版可能只記得上週、企業版記得三年；免費版可能只做一次推理、企業版可能做十次自我檢查。對產品團隊嘅啟示係：唔好再問「我哋做 C 端定 B 端」，而要問「我哋嘅用戶願意為邊一種可靠性付費」。</p>
+
+<div class="data-point">
+  <span>規模</span>
+  ChatGPT <b>12 億</b>消費者（公司口徑）；約 <b>400 個</b>公開數學問題被模型解決；<b>10 億美元</b>防禦性安全承諾；<b>25 名</b>工程師做內部審查。
+</div>
+
+<div class="section-title">八、把會計語言用在 AGI 上：三個可檢驗嘅判斷</div>
+<p>如果剝走公關語言，呢集其實提出咗三個可以被時間檢驗嘅判斷：</p>
+<ol>
+  <li><strong>安全支出佔 IT 支出嘅比例會上升。</strong>檢驗方法：看未來 3–5 年企業軟件預算中，安全與驗證類別嘅佔比，而唔係看安全市場嘅絕對規模（因為後者會受整體 IT 支出影響）。</li>
+  <li><strong>軟件工程嘅瓶頸會由「寫」移到「審」。</strong>檢驗方法：看企業內部 code review、測試、審計嘅人力佔比係咪上升；看 AI 生成代碼嘅 merge 率與 revert 率。</li>
+  <li><strong>藥物開發嘅 AI 價值會先出現在後端。</strong>檢驗方法：看監管申報文件嘅製作時間有冇縮短，而唔係看有幾多 AI 設計嘅分子進入臨床。</li>
+</ol>
+<p>呢三個判斷嘅好處係：即使你完全不同意 OpenAI 嘅安全立場，你仍然可以獨立驗證它們。呢個亦係會計語言嘅優點——<strong>它把爭論從價值觀拉到可觀察嘅世界。</strong></p>
+
+<div class="section-title">九、呢集冇回答嘅問題</div>
+<ul>
+  <li><strong>「400 個數學問題」嘅口徑。</strong>係全部解決、部分解決、還是只係「有貢獻」？係形式化驗證、專家評審、還是公司內部判斷？Brockman 只給咗「仲未提出宏大新理論」嘅邊界，冇定義「解決」。呢個空白令數字無法被獨立核實。</li>
+  <li><strong>「安全支出超過軟件支出」冇時間表。</strong>以十年為尺度，呢句幾乎必然成立（安全本來就係軟件嘅成本項）；但對當下嘅資本配置指導有限。一個冇時間表嘅預測，好難被證偽。</li>
+  <li><strong>「防禦者窗口」預設咗防禦方會用能力。</strong>但歷史上，能力擴散嘅速度往往快過防禦採用嘅速度。窗口係唔係真係存在，取決於採購週期而唔係模型能力。</li>
+  <li><strong>Dots 嘅自主性邊界。</strong>它會「追蹤應該發但冇發嘅消息」——咁它會唔會替你發？如果會，錯誤由誰承擔？如果唔會，它同一個高級提醒有咩本質區別？</li>
+  <li><strong>消費者與企業「合流」嘅反壟斷含義。</strong>同一個模型、同一個品牌、同一個記憶層，同時服務 12 億消費者與企業——呢個結構會唔會令新進入者更難競爭？節目冇觸及。</li>
+</ul>
+
+<div class="section-title">十、前後脈絡：呢集喺 OpenAI 敘事裡嘅位置</div>
+<p>過去一年，OpenAI 嘅公開敘事有三條線：能力（GPT-6／Astra）、產品（ChatGPT／Dots／企業）、治理（安全框架／白宮協議）。Brockman 呢集做嘅事，係用<strong>經濟學</strong>把三條線縫埋一齊：能力帶來供給爆炸，產品把能力變成收入，治理把風險變成支出。呢個縫合嘅好處係一致；壞處係<strong>它令「安全」永遠依附於「商業成功」</strong>——如果安全支出真係要「遠遠超過」軟件支出，咁安全就必須先成為一門大生意。</p>
+<p>同 No Priors 過去嘅集數相比，呢集更接近 Sarah Guo 一貫嘅投資視角：唔問「技術做唔做到」，而問「價值會搬去邊」。Brockman 給嘅答案係：<strong>價值會由「生成」搬去「驗證」。</strong>呢個答案同 Leash Bio 嘅「數據衛生係護城河」、Runtime Verification 嘅「形式化證明」、Alan Chan 嘅「同步監控」其實係同一個結構——當生成變便宜，驗證變貴。</p>
+
+<div class="section-title">十一、有價值嘅原話</div>
+<blockquote>「I have a feeling that cyber spend, security spend should actually vastly outstrip software spend. I really believe it.」<span class="attribution">Greg Brockman</span></blockquote>
+<blockquote>「People have not yet really internalized how much the physics around cybersecurity are going to change.」<span class="attribution">Greg Brockman</span></blockquote>
+<blockquote>「Humans are incredibly bad at biology.」<span class="attribution">Greg Brockman</span></blockquote>
+<blockquote>「Humans should be firmly in the driver's seat, should have control over the future, and this technology should amplify human agency.」<span class="attribution">Greg Brockman，談產品設計約束</span></blockquote>
+
+<div class="section-title">十二、如果只記住三件事</div>
+<ol>
+  <li><strong>安全支出嘅論證係供給側嘅，唔係恐懼側嘅。</strong>代碼變便宜 → 軟件變多 → 審查變貴。呢條鏈唔需要你相信 AGI。</li>
+  <li><strong>生物學嘅短期機會在後端。</strong>唔係設計新藥，而係壓縮臨床申報與文獻工作——呢個係語言模型最確定嘅貢獻。</li>
+  <li><strong>產品會按算力預算分層，而唔係按能力分層。</strong>同一個模型，免費用戶與企業用戶得到嘅係唔同嘅可靠性，而唔係唔同嘅智能。</li>
+</ol>
+
+<hr>
+<p style="font-size:0.9rem; color:#888;">
+<strong>關於引用：</strong>以上內容出自 <em>No Priors</em>〈The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman〉（2026-10-15 10:00 UTC 發布；約 39 分鐘，YouTube 版 1 小時 9 分；主持＝Sarah Guo、Elad Gil；嘉賓＝Greg Brockman，OpenAI 總裁兼共同創辦人）。來源＝<strong>No Priors 官方集數頁、YouTube 字幕，以及 FourWeekMBA 對字幕全文嘅整理</strong>；公司口徑數字（25 名工程師、10 億美元、400 條數學問題、12 億消費者）未經獨立核實。文中分析、脈絡與「叩問」屬本站視角。
+</p>
+
+<footer>
+  <p>Deep Dive #220 · No Priors（2026-10-15 · Greg Brockman／網絡安全支出／防禦者窗口／400 條數學問題／生物學成本結構／Dots）</p>
+  <p style="margin-top:0.3rem;">Vee Mok 深度復述 · 生成時間 2026-10-18 06:00 UTC · <a href="../index.html">返回目錄</a></p>
+</footer>
+
+</div>
+</body>
+</html>
