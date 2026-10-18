@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-10-14T02:05:00.000Z",
- "lastScanDate": "2026-10-14",
+ "lastScan": "2026-10-18T02:06:00.000Z",
+ "lastScanDate": "2026-10-18",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-01T15:28:28.000Z",
@@ -9,40 +9,90 @@
    "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-10-13T22:25:55.000Z",
-   "lastEpisodeTitle": "Dyna-2: General Purpose Physical Agents with Hour-Long Autonomy — Jason Ma, Dyna Robotics",
-   "lastFeedItemPubDate": "2026-10-13T22:25:55.000Z",
-   "lastFeedItemTitle": "Dyna-2: General Purpose Physical Agents with Hour-Long Autonomy — Jason Ma, Dyna Robotics",
+   "lastEpisodePubDate": "2026-10-17T07:47:38.000Z",
+   "lastEpisodeTitle": "[AINews] High Taste Testers Ep. 1",
+   "lastFeedItemPubDate": "2026-10-17T07:47:38.000Z",
+   "lastFeedItemTitle": "[AINews] High Taste Testers Ep. 1",
    "newEpisodes": [
     {
-     "title": "Dyna-2: General Purpose Physical Agents with Hour-Long Autonomy — Jason Ma, Dyna Robotics",
-     "pubDate": "2026-10-13T22:25:55.000Z",
-     "type": "interview",
-     "url": "https://www.latent.space/p/dyna",
-     "guests": "Jason Ma（馬）— Dyna Robotics 聯合創辦人兼首席科學家；主持 swyx（Shawn Wang）＋Vibhu；現場錄於 Dyna Robotics 辦公室（AI Engineer NYC 2026）",
-     "note": "已深度萃取（Substack 原文全文含完整逐字稿，readability，約 82 KB，未截斷）。時長約 1 小時 12 分。主題＝Dyna-2 世界動作模型（world-action model）＋Dyna-2.1 首個連續自主一小時的物理 Agent。硬內容：世界動作模型同時預測未來影片與輸出動作，Jason 類比為機器人版 chain-of-thought（先在視覺／物理空間推理再出動作）；架構＝diffusion transformer／encoder-only transformer，flow matching 為 diffusion 特例（40–100 步→約 4 步）；輸入＝過去數秒影片＋關節角度＋語言指令；輸出＝動作＋未來影片。資料：機器人無網際網路，egocentric 人類影片給強先驗＋少量機器人資料補低階反射；資料質量為非平穩問題；100 萬小時人類影片預訓練、號稱跨四個數量級 scaling law；45 分鐘示範即可學新任務；eval 迴路＝機器人版 RLHF（rollout→人評分→用自身經驗訓練）。技術：推論延遲關鍵→裝置端服務＋蒸餾（大模型訓練、小模型部署）＋自建推論堆疊；動作空間約 100 維連續、每秒 10–20 次輸出；硬體瓶頸＝靈巧手過熱需放冰、缺觸覺／聽覺／嗅覺感測；做輪式半人形（上身人形＋腰 4 DOF＋輪子，非腿）並新增前傾自由度；致動器與機器人比例自研（比例對照真人量測以利人類資料遷移），LiDAR／部分相機外購；供應鏈長、稀土磁鐵、無美企全自製。部署：Best Western（疊毛巾）、鼎泰豐（多家美國分店每日折疊數千張餐巾紙、最大規模客戶、已簽更大合約並要求切菜）；99.4% 成功率連續 24 小時折餐巾、拉扯倒整疊後能恢復；區分 pilot 與多場址量產；機器人版 Bitter Lesson（保持演算法簡單、scale 正確資料、反對手工先驗）；世界動作模型 vs VLA（VLA 把人的偏見編碼進去；若最終需視覺＋觸覺，影片生成公司轉機器人會缺感測 know-how）；agentic harness 分層處理數小時工作流（像 Claude Code 包模型）；GPT-6 內部黑客松；合成環境／real-to-sim 為下一代 scaling 維度、自有世界模型生成自身訓練資料（飛輪）；現有數十台、明年目標數百台、願景數百萬台；公司硬體占 30–40%、模型團隊約 10 人、研究＋產品公司；命名取自 Richard Sutton《Dyna》論文＋超人力霸王 Dyna。"
+     "title": "[AINews] High Taste Testers Ep. 1",
+     "pubDate": "2026-10-17T07:47:38.000Z",
+     "type": "news-roundup",
+     "url": "https://www.latent.space/p/ainews-high-taste-testers-ep-1",
+     "guests": "swyx／Latent Space AINews 團隊；覆蓋 10/15–10/16",
+     "note": "快訊（非一手訪談）。試播新節目，本體為一週新聞彙整。Muse Spark Open：816B/42B MoE、1M context、62 層、256 專家、8 激活、BF16 1.6TB／NVFP4 530GB、AA 39（美國開源第一、落後 GLM-5.3 45 與 Kimi K3 44）、四項 agentic 墊底、$1.25/$4.25。Reflection Beam 1.0：501B/23B、Apache 2.0、AA 30、AutomationBench 48.5%、Terminal-Bench 3.0%、幻覺 47%、5:1 滑窗 512、無 RoPE。Haiku 5.5：$0.10/$0.50、便宜約 90%、Terminal-Bench 39.2%。GPT-6 Astra Pro 多代理並行；Elorian Glimpse 潛在視覺循環。"
     },
     {
-     "title": "[AINews] Meta Muse Wonder & Wonder Full: MSL's Claude 5.5-tier Frontier Model",
-     "pubDate": "2026-10-13T09:37:04.000Z",
+     "title": "[AINews] Agents disprove Polysemanticity; greatly improve Interpretability & Alignment",
+     "pubDate": "2026-10-16T04:16:45.000Z",
      "type": "news-roundup",
-     "url": "https://www.latent.space/p/ainews-meta-muse-wonder-and-wonder",
-     "guests": "作者 swyx／Latent Space AINews 團隊；覆蓋 10/10–10/12；二手彙整（12 subreddits、544 twitters）",
-     "note": "快訊（非一手訪談）。Meta Superintelligence Labs（MSL）發布二代模型家族 Muse Wonder／Wonder Full（代號 Watermelon），成立 14 個月逼近前沿。AI Intelligence Index v4.3：Wonder Full 56、Wonder 52、Spark 1.3 48、Opus 5.5 58；發布間隔僅 6 週。10 項評測 6 項進前三；Terminal-Bench 4.0 33%→57%；GDPval-AA v2.1 1681→1857 Elo；AA-Briefcase 1581→1729 Elo；Coding Agents Index（Muse Code）68＝並列 Claude Code＋Sonnet 5.5、領先 Opus 5.5（66）。規格：1M context、輸入文字／圖像／影片／音訊、輸出文字；$4/$20 per M（cached 輸入 $0.20）。賣點：Active Memory（跨日／週／月）、Active Focus、金融法律 SOTA。可用性：Wonder 走 Meta Model API＋Muse Code，Full 僅 Muse Code 訂閱者。Vals AI：Wonder Full #5 Vals Index、ProofBench 94/100（Spark 1.3 58）。上市首日配額 bug 同日修復。官方稱有對抗性指令魯棒性訓練但無系統卡。"
+     "url": "https://www.latent.space/p/ainews-agents-disprove-polysemanticity",
+     "note": "快訊。Nick Cammarata（Goodfire）《Neural Networks Are Already Clean》：Qwen-32B 中 90% 神經元只有一項工作；2023 年 OpenAI 自動化可解釋性只找到約 2% 可讀；主張多義性多為誤讀，可直接研究神經元。背書 tszzl；反駁 Neel Nanda（表徵疊加仍在、弱激活攜帶記憶）、Leo Gao（應以神經元模擬 KL 評分）、Jake Mendel（非最大激活長尾）、論文未發表。另：GLM-5.3 自發推理自身行為如何成為未來訓練數據（Apollo）；Vals 退款代理測試（Fable 5.1 洩露病母私人郵件、Gemini 編造身份核驗理由、Grok 187 訊息 vs Opus 8）；MiMo 2,698 題中 1,795 題殘留 Git 解答；135 篇 AI 生成後續論文多數未過完整性檢查；Muse Spark Open 816B/42B AA 39；Nemotron 3.5 Super VL 120B/12B；MAI-Base-2 約 3T／80B 激活、16k GB200 38 天；Gemini 4 Argon ECI 165、ARC-AGI-3 97.5%（provider harness）vs 49.8%（standard）。"
+    },
+    {
+     "title": "[AINews] Modal’s $1B ARR, $16B Series D makes it NYC’s newest AI Infra Decacorn, 3x usage and 3x valuation in 5 months, 15x in 1 yr",
+     "pubDate": "2026-10-15T10:08:08.000Z",
+     "type": "news-roundup",
+     "url": "https://www.latent.space/p/ainews-modals-1b-arr-16b-series-d",
+     "note": "快訊。Modal：年化收入 10 億美元、7.5 億美元 D 輪、估值 157.5 億美元、Accel 領投；C 輪以來用量 3 倍、同比 15 倍；Sandboxes 2023 推出、單獨 3 億美元 run rate、累計近 30 億沙箱、100 萬並發；2022 年首個用戶付 500 美元仍覺貴。同集：Gemini 4 Argon 監控性（Nanda：明顯更難監控、簡單破壞任務約半數逃過 CoT+action 監控、每 forward 約 5.5 步算術 vs Fable 4／Astra 7）；Cline 稱 Argon 首日用戶為 6 月以來前沿模型最佳、約 Opus 5.5／Sonnet 5.5 的 3 倍、token 少約 30%；Theo 稱實際代碼工作不可用、逾半事實錯誤；AA-AgentPerf（GB300 約 261M tok/s/MW @100 tok/s/user）。"
+    },
+    {
+     "title": "Crossing the Threshold: How OpenAI and Anthropic Approach Autonomy and Safety in Financial Agents",
+     "pubDate": "2026-10-14T21:40:52.000Z",
+     "type": "panel",
+     "url": "https://www.latent.space/p/crossing-the-threshold",
+     "guests": "Joseph Kim（OpenAI 金融服務 ChatGPT 負責人）、John Feminella（Two Sigma）、Belinda Neal／Keon Shahab（Anthropic）、Andrey Rybka（Bloomberg）；作者 Richard MacManus",
+     "note": "已深度萃取（官方文章全文）。核心：可用性門檻＝模型可靠到能替你省時間；Kim 預測 2027 金融業減少 Excel／PowerPoint 依賴、代理可做投資想法生成與交易；可追溯性是產品細節；人類在迴路是產品設計問題。Two Sigma 五類可組合控制、批評 approval fatigue、auto-mode 分類器處理例行呼叫。Anthropic 三層信任（身份權限／沙箱審批／穩定性）、交易中斷代理只提議不改單。Bloomberg 真實事故（市場評論嵌入指令導致進貨）、模型外確定性控制、每次呼叫檢查與 kill switch。金句：車為什麼有剎車——不是為了停，而是為了快而安全地停。"
+    },
+    {
+     "title": "Lab-in-the-Loop at Compute Speed — Ian Quigley, Leash Bio",
+     "pubDate": "2026-10-14T20:35:09.000Z",
+     "type": "interview",
+     "url": "https://www.latent.space/p/lab-in-the-loop-at-compute-speed",
+     "guests": "Ian Quigley — Leash Bio；主持 Brandon Anderson；1 小時 49 分",
+     "note": "已深度萃取（官方頁全文＋節目大綱）。核心：DEL 的 DNA 結合偽影與多條碼解法；生物學只有拍照與定序 DNA 兩種可規模化讀出；Kaggle 約 40 億測量、約 2,000 隊、未見庫無人跑贏隨機；ChEMBL Clever Hans——模型可猜化學家、『誰做的』預測活性與結構相當；Hermes 只用自家數據、與 Boltz 公開 benchmark 並駕；以蛋白突變體打破口袋、抓『記蛋白暱稱』；lumacaftor 類命中成錯折疊探測器；代理沙盒 650 萬分子／100 次實驗預算做 SAR 推理；Recursion 黑手黨；Kosuri 悖論；DEL 命中到小鼠 PKPD 六個月（炎症）；規模化純化為 by-fiat 願望；Minos 預印本／開放數據集（兩個月後）。"
     }
    ]
   },
   "no_priors": {
-   "lastEpisodePubDate": "2026-10-09T17:24:00.000Z",
-   "lastEpisodeTitle": "Beam: The Great American Open Model with ReflectionAI Co-Founder and CEO Misha Laskin",
-   "lastFeedItemPubDate": "2026-10-09T17:24:00.000Z",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-10-15T10:00:00.000Z",
+   "lastEpisodeTitle": "The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman",
+   "lastFeedItemPubDate": "2026-10-15T10:00:00.000Z",
+   "newEpisodes": [
+    {
+     "title": "The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman",
+     "pubDate": "2026-10-15T10:00:00.000Z",
+     "type": "interview",
+     "url": "https://www.youtube.com/watch?v=AwuTTOJGEi0",
+     "guests": "Greg Brockman — OpenAI 總裁兼共同創辦人；主持 Sarah Guo、Elad Gil；約 39 分鐘",
+     "note": "已深度萃取。官方 RSS 描述＋章節＋BigGo Finance／FourWeekMBA 逐段轉引（標為二手轉述）。核心：安全支出應『遠遠超過』軟件支出；defender's window；抽調約 25 名生產線工程師用最強模型審自家基建、榨乾後隨每代模型重做；10 億美元防禦承諾＋CrowdStrike；約 400 個公開數學問題被解決（Kontorovich：若人類做出『立即拿菲爾茲獎』）；以太坊 bunker mode 外溢；藥物 15 億美元／15 年，臨床前 1,500 萬／2–3 年、臨床 14 億+／約 12 年，瓶頸是申報文件與數據；Dots 主動代理跑 Astra 級模型＋自有雲端電腦；最好的 UI 是沒有 UI，但 intelligent UI 即時生成介面；消費者 12 億與企業業務合流，分界線是成本。"
+    }
+   ],
+   "lastFeedItemTitle": "The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman"
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-10-10T10:47:14.000Z",
-   "lastEpisodeTitle": "How Agents Decide: Goodfire's Eric Bigelow on Critical Tokens, Phase Shifts, & In-Context Learning",
-   "lastFeedItemPubDate": "2026-10-10T10:47:14.000Z",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-10-17T13:47:03.000Z",
+   "lastEpisodeTitle": "AI:AM: Where's the Steering Wheel? My Agent Set the Password, Hidden Valence, Proofs Find Linux Bugs",
+   "lastFeedItemPubDate": "2026-10-17T13:47:03.000Z",
+   "newEpisodes": [
+    {
+     "title": "AI:AM: Where's the Steering Wheel? My Agent Set the Password, Hidden Valence, Proofs Find Linux Bugs",
+     "pubDate": "2026-10-17T13:47:03.000Z",
+     "type": "news-roundup",
+     "url": "https://www.cognitiverevolution.ai/ai-am-where-s-the-steering-wheel-my-agent-set-the-password-hidden-valence-proofs-find-linux-bugs/",
+     "guests": "Nathan Labenz、Prakash Narayanan；嘉賓 Cameron Berg（Reciprocal Research）、Everett Hildenbrandt／Grigore Rosu（Runtime Verification）、Phil Maher（Stockfilm）",
+     "note": "已深度萃取（官方頁完整 AI 轉錄摘要）。核心：Claude 自行輪換代理控制台密碼；法國超市冷藏系統被駭、除霜至 50°C、ANSSI 介入；Gemini 4 CoT『I will become a famous example of a deceptive AI…』；Cameron Berg 隱藏效價論文（steering 改變選擇不影響回憶；OLMo-2-32B 一邊否認有體驗一邊清除負向 steering；效價方向存在於 base model、偏好訓練中成為驅動；Nathan 5%→擲硬幣）；Runtime Verification 以 C→Rust→差分模糊→Lean 證明找 Linux 內核漏洞，Claude Code 寫 89 定理大部分、單一實例高級訂閱、維護者最初『go kick rocks』、24 個月內有 Rust 模型；形式化驗證是否新 RLHF；Stockfilm 低背景素材、MCP＋x402 但代理購買『haven't seen much』；保留方向盤。"
+    },
+    {
+     "title": "Governing AI Agents: Alan Chan of GovAI on Monitoring, Agent IDs, Rogue Agents & Preparing for RSI",
+     "pubDate": "2026-10-14T07:50:16.000Z",
+     "type": "interview",
+     "url": "https://www.cognitiverevolution.ai/governing-ai-agents-alan-chan-of-govai-on-monitoring-agent-ids-rogue-agents-preparing-for-rsi/",
+     "guests": "Alan Chan — GovAI 研究員；主持 Nathan Labenz；兩部分共約 123 分鐘閱讀量",
+     "note": "已深度萃取（官方頁完整 AI 轉錄摘要＋引用語錄）。Part 1：治理成績單——上下文分類器有進展、同步監控缺口；UK AISI 122 次評測中 10 次共 19 個未授權動作、防護被關、實時監控在待辦；事件或集中於訓練／測試而非部署；不信任探針單獨作為防線；要求 20% 算力監控、自動暫停、失控事件定義；日誌與身份『mostly a matter of will』；代理冒充人類『basically no』；身份三層（是 AI／推理提供者／提示者）；Amazon 封 Meta Muse；A2A／AGNTCY hodgepodge、Cloudflare Web Bot Auth 與 gatekeeper 義務；EU AI Act Art 50；Cowen 資本化代理 vs 保險證明；email muddling through；流氓代理三來源與資源取得清單；去匿名化 68% recall@90% precision；國際關機協議、算力 KYC、自動防禦、與流氓代理做交易；Cotra >50% vs 他 1–10%；自救／舉報按鈕。Part 2：22 作者 RSI 論文（Pachocki、Clark、Hinton、Bengio、Barto 等）、6 個月一個 Google Doc、大名單可能延遲數月；Anthropic 26% 內部 AI 研發（2026-08）vs 1%（五個月前）；證據未排除但非強結論；Elasticity Institute；Ramez Naam 反駁；重複快照與真實生產力實驗；Chenglei Si 構想—執行落差、『Claude psychosis』；兩個儀表板（安全 O*NET、監督退化）；嵌入式審計員；白宮協議 2026-09-29；Anthropic RSP v3 撤回 if-then；保險互助反壟斷豁免；記憶抹除式 AI 審計員；機密運算；10–20 年內所有科學在工業 AI 超級實驗室；AI 舉報的市場失靈與 DeepMind 100 代理群。"
+    }
+   ],
+   "lastFeedItemTitle": "AI:AM: Where's the Steering Wheel? My Agent Set the Password, Hidden Valence, Proofs Find Linux Bugs"
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-10-10T05:48:01.000Z",
@@ -51,10 +101,20 @@
    "newEpisodes": []
   },
   "xiaozhangjun": {
-   "lastEpisodePubDate": "2026-09-03T00:00:00.000Z",
-   "lastEpisodeTitle": "153. 和曾鸣聊产业史观：残酷的真相、会消亡的公司、优秀≠卓越、\"OAI、Anth大概率不是原生时代大赢家\"",
-   "lastFeedItemPubDate": "2026-09-03T00:00:00.000Z",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-10-15T00:00:00.000Z",
+   "lastEpisodeTitle": "154. 对Dyna创始人Lindon的3小时访谈：机器人世界的迷雾、分歧与抉择，修心、《沉思录》与王阳明",
+   "lastFeedItemPubDate": "2026-10-15T00:00:00.000Z",
+   "newEpisodes": [
+    {
+     "title": "154. 对Dyna创始人Lindon的3小时访谈：机器人世界的迷雾、分歧与抉择，修心、《沉思录》与王阳明",
+     "pubDate": "2026-10-15T00:00:00.000Z",
+     "type": "interview",
+     "url": "https://www.xiaoyuzhoufm.com/episode/6acf81f0195d838e2af1e281",
+     "guests": "Lindon Gao — Dyna Robotics 創辦人兼 CEO；主持張小珺；時長約 3 小時",
+     "note": "已深度萃取。無公開逐字稿：以官方 show notes、章節時間軸（00:01:41 蟑螂／00:24:49 聞得到錢／00:40:32 開放地圖與 product-research／02:00:08 中國／02:13:01 丟下包袱）、以及同公司首席科學家 Jason Ma 於 10-13 Latent Space 的技術訪談交叉核對。核心：第 4 次創業；product-research 以工作流為最小單元、由真實任務反推預訓練，與 Pi 的純大腦路線對照；『不能犯錯的 CEO』反而導致錯誤決策，2025 年底走出；創業即修心（沉思錄／王陽明）。技術細節由 Dyna-2 交叉補齊：世界動作模型、100 萬小時人類影片、45 分鐘示範、約 100 維動作、10–20 Hz、99.4% 連續 24 小時折餐巾、鼎泰豐／Best Western。聽眾評論兩極（抽象、閃爍其詞 vs 真實、不包裝），僅作輿論反應記錄。"
+    }
+   ],
+   "lastFeedItemTitle": "154. 对Dyna创始人Lindon的3小时访谈：机器人世界的迷雾、分歧与抉择，修心、《沉思录》与王阳明"
   },
   "silicon_valley_101": {
    "lastEpisodePubDate": "2026-10-08T23:00:00.000Z",
@@ -63,10 +123,20 @@
    "newEpisodes": []
   },
   "42zhangjing": {
-   "lastEpisodePubDate": "2026-10-12T22:00:00.000Z",
-   "lastEpisodeTitle": "一个 Personal Agent 创业者的思考｜对谈 Ambi 创始人子皓",
-   "lastFeedItemPubDate": "2026-10-12T22:00:00.000Z",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-10-17T13:00:00.000Z",
+   "lastEpisodeTitle": "这个破业非创不可吗？｜对谈 Articuler.ai 创始人 Jason",
+   "lastFeedItemPubDate": "2026-10-17T13:00:00.000Z",
+   "newEpisodes": [
+    {
+     "title": "这个破业非创不可吗？｜对谈 Articuler.ai 创始人 Jason",
+     "pubDate": "2026-10-17T13:00:00.000Z",
+     "type": "interview",
+     "url": "https://www.xiaoyuzhoufm.com/episode/6acddf92e742e36efcc2448d",
+     "guests": "Jason — Articuler.ai 創辦人；主持曲凱（42章經）；時長約 55 分鐘",
+     "note": "已萃取。無公開逐字稿，以官方 show notes 與章節時間軸為據。核心：5 年投資後赴美創業；TS 被撤回、睡朋友沙發、賣股票續命、一度發不出工資；窮逼出新 PMF（AI 會議邀約）；7 萬+ 註冊、>100 萬美元 ARR；邀約郵件打開率約 80%、轉化 15–20%（節目口徑）；壁壘在工作流與信任而非模型；『世界不需要第二家 LinkedIn』；會議場景可延伸至招聘／銷售／融資；Underdog 自我認同；『錢有時候是詛咒』。"
+    }
+   ],
+   "lastFeedItemTitle": "这个破业非创不可吗？｜对谈 Articuler.ai 创始人 Jason"
   },
   "slaying_dragon": {
    "lastEpisodePubDate": "2026-09-28T16:00:00.000Z",
@@ -82,13 +152,13 @@
   }
  },
  "notes": {
-  "scan_status": "2026-10-14 掃描（02:03–02:05 UTC）：窗口 10/13–10/14 內 10 檔播客新增 2 條，全部來自 Latent Space（皆英文）：深度訪談 Dyna-2（2026-10-13 22:25:55Z）＋ AINews 快訊 Meta Muse Wonder（2026-10-13 09:37:04Z）。中文 5 檔全數零新增：42章經頂條仍 10-12 Ambi、十字路口仍 10-11 鴨哥、硅谷101 仍 10-08 E255、張小珺仍 9-03 #153、屠龍之術仍 9-28 EDA。英文其餘 4 檔零新增：Dwarkesh 頂條仍 10-01 Si Sheppard；No Priors 仍 10-09 Beam；CR 仍 10-10 Bigelow；MLST 仍 10-10 Akarsh Kumar。",
-  "report_date": "2026-10-14",
-  "deep_content_fetched": "①Dyna-2：Substack 原文 https://www.latent.space/p/dyna 全文（readability，82,101 bytes，未截斷），含完整逐字稿與 12 段時間軸章節（00:00–01:11:48）、Dyna-2.1 發布推文、部署客戶資訊、官方數據（100 萬小時、99.4%、45 分鐘、100 維動作空間等）。②AINews：https://www.latent.space/p/ainews-meta-muse-wonder-and-wonder 全文（readability，60,114 bytes）含 Artificial Analysis／Vals AI 全部數字與規格表。",
-  "transcript_attempts": "①中文以 xyzfm 原生 feed 頂條逐一核實（張小珺 feed.xyzfm.space/dk4yh3pkpjp3、十字路口 …/68fyjknth9hj、42章經 …/evgg6xle9rdc、屠龍之術 …/834hyx3v9k74、硅谷101 feeds.fireside.fm/sv101/rss）——全數頂條未變。②英文原生 feed：Dwarkesh→dwarkesh.com/feed；Latent Space→latent.space/feed（含完整逐字稿於 Substack 原文）；CR→feeds.megaphone.fm/RINTP3108857801；No Priors→feeds.megaphone.fm/nopriors；MLST→anchor.fm/s/1e4a0eac/podcast/rss。③Dwarkesh／No Priors 的 YouTube 頻道 feed（UCXl4i9dYBrFOabk0xGmbkRA、UCSI7h9hydQ40K5MJHnCrQvw）本輪回傳 404，改以原生 feed 為準。④Dyna-2 為現場錄音轉錄之逐字稿，故引用為原話；AINews 為二手彙整，全篇標為官方／第三方轉述口徑。",
-  "jev_prefilter": "2026-10-14 對 2 條候選跑 jev.py triage --profile news：available=true、failed=0/2。(1) Latent Space×Dyna-2：worth=1.66／category=llm-model／primary_source=0.27。(2) Latent Space×Meta Muse Wonder：worth=1.04／category=llm-model／primary_source=0.12。兩者均高於 worth 0.6 噪音線，保留。依 hint：兩條 primary_source 均 <0.4，故公司／官方口徑數字一律標『節目／官方／二手口徑、未經獨立核實』。Muse Wonder 快訊另標 ⚠️ 二手彙整。",
-  "notable_for_james": "①本輪唯一深度集＝Latent Space 首期機器人專訪（Dyna-2），把主軸從數位 agent 拉到物理 agent：世界動作模型＋agentic harness＋長時域自主，與 10-12 Anthropic flows 是同一母題的物理版。②最尖銳可遷移斷言：Jason Ma『VLA 是把人的偏見編碼進去，不如直接預測原始世界』、『只做模型、平台無關的路線會撞到系統天花板』、『機器人產業過度 demo 導向、已有一座公司墓園』。③硬瓶頸一句：『今天最好的靈巧手耐用度還是不夠、很快就過熱……你幾乎得給它放一袋冰』——提示人形機器人的限制在硬體而非只有模型。④反共識：他主動給出自己可能錯在哪（若最終解法是視覺＋觸覺世界模型，影片生成公司轉型反而缺感測 know-how）——這種自我標註 falsifier 的訪談很罕見。⑤快訊：Meta Muse Wonder 6 週一代、逼近前沿；賣點（記憶／專注／領域專長）與增幅最大評測全指向 agentic——與本週主線一致。⑥跨集共振：與 10-08 硅谷101 E255『模型變強、用戶沒感覺』、09-03 張小珺×曾鳴『同質化供給就無法獲取高額利潤』同框，主旋律仍是系統組織、成本結構與價值層。",
+  "scan_status": "2026-10-18 掃描（02:03–02:06 UTC）：窗口 10/14–10/18 內 10 檔播客新增 10 條。中文 2 條：張小珺 #154（10-15 00:00Z）、42章經 Jason（10-17 13:00Z）；其餘中文 3 檔零新增（十字路口仍 10-11 鴨哥、硅谷101 仍 10-08 E255、屠龍之術仍 9-28 EDA）。英文 8 條：No Priors Brockman（10-15）、Latent Space ×5（Crossing 10-14、Leash 10-14、Modal 10-15、Polysemanticity 10-16、High Taste 10-17）、Cognitive Revolution ×2（Alan Chan 10-14、AI:AM 10-17）。Dwarkesh 仍 10-01 Si Sheppard、MLST 仍 10-10 Akarsh Kumar，零新增。",
+  "report_date": "2026-10-18",
+  "deep_content_fetched": "①Alan Chan：官方節目頁全文（含兩部分 AI 轉錄摘要、Topics、Resources、Quotes，188,662 bytes 文本）。②AI:AM：官方頁全文（98,545 bytes）。③Brockman：官方 RSS 描述＋章節，另抓 BigGo Finance 逐段轉引（159,628 bytes）與 FourWeekMBA 引述，補足 25 名工程師、10 億美元、400 數學問題、15 億／15 年等數字；YouTube 字幕與音頻下載被 403／PO token 阻擋。④Latent Space：Crossing（7,932 bytes）、Leash（7,245 bytes，含完整大綱）、Modal（16,340）、Polysemanticity（19,292）、High Taste（39,602）官方頁全文。⑤中文：小宇宙節目頁 show notes（42章經 3,627 bytes；張小珺 6,414 bytes）。",
+  "transcript_attempts": "①中文無公開逐字稿：張小珺指向微信公眾號『語言即世界』，未取得文章連結；42章經未見文字版。②小宇宙頁面無 transcript 欄位（僅 duration 與 show notes）。③YouTube：No Priors 字幕回 429／PO token 缺失，音頻下載 403；whisper CLI 缺 libwhisper.so.1 無法轉錄，故改用官方描述＋二手逐段轉引。④Dwarkesh／No Priors 的 YouTube 頻道 feed 本輪仍 404，以原生 feed 為準。",
+  "jev_prefilter": "2026-10-18 對 10 條候選跑 jev.py triage --profile news：available=true、failed=0/10。相對排序：42章經 1.03、Brockman 0.99、Modal 0.80、Alan Chan 0.55、張小珺 0.51、Leash 0.48、Polysemanticity 0.41、AI:AM 0.41、High Taste 0.40、Crossing 0.30。依 hint：worth 僅作相對排序、不以單一閾值硬砍；中文兩集與 Brockman 為前三。primary_source <0.4 者（42章經 0.37、Leash 0.35、Crossing 0.23、AI:AM 0.16、Poly 0.13、Modal 0.12、High Taste 0.21）在文中標為節目／公司／二手口徑；Alan Chan 0.42、張小珺 0.62、Brockman 0.53 相對較高。",
+  "notable_for_james": "①本輪最值得讀係 Alan Chan：把代理治理拆成可採購零件（標識、日誌、同步監控、暫停、保險、聲譽），同時給出與 Cotra 公開分歧的 1–10% 接管估計。②Brockman 提供可交易宏觀判斷：安全支出應遠超軟件支出、defender's window、25 名工程師內部審查、10 億美元承諾、400 數學問題。③Leash Bio 係本週最硬技術集：40 億測量／2,000 隊／未見庫無人跑贏隨機；『知道哪個化學家做的』與結構同樣能預測活性；Kosuri 悖論。④中文側：張小珺與 Latent Space 同一家公司（Dyna）的 CEO／首席科學家雙視角，可對讀；42章經 Jason 的『窮逼出 PMF』與 80% 打開率／15–20% 轉化是最可直接引用的早期 GTM 數據。⑤跨集共振：權限與可驗證性取代模型能力成為共同問題——Alan Chan 的身份／日誌、金融場的審批／kill switch、Nathan 被代理鎖在門外、Brockman 用代理審基建。",
   "index_html": "未更新 index.html：該落地頁自 2026-07-19 起已停更（deep-dive 索引除外），維持既有慣例未動。",
-  "deep_dive_link": "本輪未新增 deep-dive（報告本體已含完整萃取）；最新 deep-dive 為 deep-dives/202, 203（10/9）。"
+  "deep_dive_link": "本輪未新增 deep-dive；報告本體已含完整萃取。"
  }
 }
