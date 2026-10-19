@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 十字路口 × Treg：九個月三次轉型——當模型變成平台，應用公司應該往上做厚，還是往下做薄？</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">十字路口 Crossing · 2026-10-19 00:00（北京時間）· 51 分 08 秒</div>
+  <h1>站在模型邊上——九個月三次轉型，Treg 點樣把自己縮成一層平台唔願意做的東西</h1>
+  <div class="meta">
+    <span>📅 2026-10-19</span><span>·</span><span>🎙️ 楊遠騁（Koji）</span><span>·</span><span>👤 嘉賓：Jason Zhou（Treg 創辦人）、石天鑫（Treg Founding Engineer）</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集表面係一個「四人團隊九個月轉型三次」嘅創業故事，實際上係一份<strong>應用層生存坐標系</strong>。當 Claude Code 同 Codex 由工具變成平台，做應用嘅人只剩兩條路：往上做厚，自己做 harness、記憶、沙盒、工作流，幻想成為新入口；或者往下做薄，只做一層平台唔願意做、但所有 Agent 都需要嘅東西。Treg 選咗後者——唔係因為佢更高尚，而係因為佢試過前者，差点死喺上面。
+</p>
+
+<blockquote class="strong">
+  「未來六到十二個月，零人公司絕對唔係一個可能嘅情景。更需要解決嘅問題，大概係喺人和 Agent 大規模協作嘅情況下，你點樣做這件事。」
+  <span class="attribution">Jason Zhou，節目轉錄摘要回譯</span>
+</blockquote>
+
+<div class="highlight-box">
+  <strong>📌 來源說明：</strong>本集未見官方逐字稿。本文以十字路口官方 show notes、節目簡介、章節時間軸為底本，並以 BigGo Finance 對該集嘅逐段轉錄摘要補足細節。<strong>凡標「節目口徑」嘅數字均為嘉賓自述，未經第三方核實。</strong>標明「回譯」嘅引用，原話為中文、經英文摘要轉譯後再回譯，字句可能與原音有細微出入，語意不變；文中分析與判斷屬本站視角。
+</div>
+
+<div class="section-title">一、為什麼呢集值得單獨寫</div>
+<p>過去兩年，AI 應用層嘅默認動作係「往上做厚」。做一個產品，先自己搞定 harness，再搞定記憶，再搞定沙盒同權限，最後幻想自己會變成新嘅入口。呢個策略喺模型能力每年跳一代嘅環境裡，有一個致命問題：<strong>你花六個月建嘅護城河，可能係平台下個版本嘅默認功能。</strong></p>
+<p>Treg 嘅三次轉型，正好把呢件事拆到見骨。第一次，SuperDesign 被模型嘅前端能力追上；第二次，Coolant 被「增長冇通用解」打敗；第三次，佢哋唔再同平台競爭，而是把自己變成平台旁邊嘅一層基礎設施。呢個轉向唔浪漫，但它提供了一個可檢驗嘅命題：<strong>當智能本身變成公用事業，價值可能唔喺「更聰明」，而喺「更靠近交易發生的位置」。</strong></p>
+<p>另一個值得寫嘅原因，係嘉賓對「零人公司」嘅否定。2026 年下半年，幾乎所有 AI 創業者都在講「一個人加一堆 Agent 就可以運營一家公司」。Jason 同石天鑫真係花咗兩個月，唔做產品，只搭自動化 loop 去驗證。結論係：客服可以全自動，修 bug 可以全自動，但增長幾乎唔可以。呢個「實測之後嘅反潮流判斷」，比任何樂觀預言都更有參考價值。</p>
+
+<div class="section-title">二、三次轉型：一條被逼出嚟的時間線</div>
+<table>
+  <tr><th>階段</th><th>產品</th><th>做咩</th><th>為何轉型</th></tr>
+  <tr><td>起點</td><td>SuperDesign（Cursor 插件）</td><td>設計 Agent，最初只係 Jason 為 Cursor 寫嘅週末插件</td><td>開源幾個月自然長到 6,000+ GitHub stars，說服佢離職創業</td></tr>
+  <tr><td>第一次轉型</td><td>SuperDesign（Web 版）</td><td>由插件改成獨立 Web 產品，想觸達非 Cursor 用戶</td><td>插件形態冇清晰變現路徑；模型前端能力由 Gemini 3 開始軍備競賽；用戶整體遷移到 Claude Code / Codex</td></tr>
+  <tr><td>第二次轉型</td><td>Coolant（2026 年 4–6 月）</td><td>全自動增長 Agent：SEO、社交、廣告、客戶開發</td><td>交付唔到結果，約一個月即停</td></tr>
+  <tr><td>過渡期</td><td>用 AI 運營 SuperDesign（約兩個月）</td><td>唔做產品，只搭自動化 loop，驗證「零人公司」</td><td>得出兩個結論：零人公司不成立；插件市場有流量紅利</td></tr>
+  <tr><td>第三次轉型</td><td>Treg</td><td>把 Coolant 時期嘅內部「中繼服務」抽出來，做成 Agent 用嘅數據與 API 市場</td><td>插件帶來嘅流量與低流失，揭示出生態位機會</td></tr>
+</table>
+<p>留意呢條時間線嘅形狀：唔係「先有宏大願景，再一步步實現」，而係「每次都被現實推着走」。Jason 自己嘅講法係「每一次都是被逼的」。呢句話好重要，因為它解釋咗為什麼 Treg 嘅定位咁窄——窄唔係戰略選擇嘅結果，而係兩次失敗之後，被市場削出嚟嘅形狀。</p>
+
+<div class="section-title">三、第一次轉型：被兩頭夾擊的設計 Agent</div>
+<p>SuperDesign 嘅起點非常典型：一個有設計內容受眾嘅 YouTuber，順手為 Cursor 寫咗個插件，開源之後幾個月累積 6,000 多顆星，全部自然增長。呢個數字說服 Jason 離職。但佢創業之後第一件事，就係放棄開源、轉做 Web 版，理由係插件冇清晰變現路徑，而且想觸達更多唔用 Cursor 嘅人。</p>
+<p>事後佢承認呢個判斷係錯嘅。錯唔在於「Web 版唔應該做」，而在於佢低估咗平台遷移嘅速度：</p>
+<blockquote>
+  「但我也沒想到，接下來一年所有人都湧向了 Codex 和 Claude。」
+  <span class="attribution">Jason Zhou，節目轉錄摘要回譯</span>
+</blockquote>
+<p>呢句話揭示咗一個應用層常見嘅雙重擠壓：</p>
+<ul>
+  <li><strong>上游擠壓：</strong>模型本身嘅前端能力由 Gemini 3 開始進入軍備競賽。當模型可以直接生成高質量 UI，設計 Agent 嘅差異就被抹平。</li>
+  <li><strong>下游擠壓：</strong>用戶整體遷移到 Claude Code 同 Codex。插件形態唔再係一個獨立入口，而係平台生態裡嘅一個小零件。</li>
+</ul>
+<p>兩邊一夾，SuperDesign 嘅位置就消失咗。呢個教訓唔係「設計 Agent 冇市場」，而係<strong>當你嘅核心價值可以被模型嘅一次版本更新吸收，你嘅產品就只係一個過渡態。</strong></p>
+
+<div class="section-title">四、第二次轉型：Coolant 與「增長沒有通用解」</div>
+<p>第二個產品 Coolant，目標係做全自動增長 Agent：幫已經有生意嘅公司做 SEO、社交媒體、廣告同客戶開發。靈感來自 Posia。Jason 喺 2026 年 2 月見到 Posia 時，佢嘅 ARR 大約十幾萬美元，但體驗「驚為天人」——註冊之後唔使填任何資料，Posia 淨係憑 email 就推斷出你係邊個、做咩，然後生成兩三個創業想法；你揀一個，它就直接幫你建落地頁、搵客戶、發 cold email，而且真係有人回覆。</p>
+<p>但 Jason 真正做完之後，發現 Posia 最聰明嘅地方唔係技術，而係<strong>產品邊界</strong>：它賣嘅係「AI 幫你運營整間公司」嘅願景，但實際交付嘅只係 zero-to-one 階段——建網站、裝工具，做到極順；一旦進入真實業務、要交結果，難度就完全唔同。Coolant 想服務「已經有生意、想規模化」嘅創辦人，結果撞上同一堵牆，做咗大約一個月就停。</p>
+<p>失敗嘅技術原因，Jason 歸納為兩點：</p>
+<ol>
+  <li><strong>數據攞唔準。</strong>工具市場極度碎片化，每個場景有幾十家供應商，各有強項同價格。</li>
+  <li><strong>增長依賴人嘅品味。</strong>營銷冇通用解，真正有效嘅渠道，往往係大量試錯之後嗰條「別人不做、但適合你」嘅路，然後加倍下注；但當所有人都做同一件事，渠道就失效。</li>
+</ol>
+<p>佢用 SEO 舉例：畀 Agent 嘅工作流係抓關鍵詞、看流量與競爭、然後下注。真做落去才發現，大部分詞早就被廝殺過，真正嘅機會在於判斷「現在流量很低、但一到三個月後會起」嘅詞——呢一步 Agent 做不到。</p>
+<blockquote class="strong">
+  增長嘅本質，係大量試錯之後找到那條別人不做、但適合你嘅渠道，然後加倍下注；當所有人都做同一件事時，渠道就失效。
+  <span class="attribution">本文對 Jason 論點嘅概括，非逐字引用</span>
+</blockquote>
+<p>呢個判斷嘅殺傷力在於：它唔係講「Agent 未夠強」，而係講<strong>增長呢件事嘅結構，本身就唔適合被全自動化。</strong>因為增長需要嘅係「逆共識判斷」——喺數據未顯示之前，先押注一個別人不看好的方向。呢種判斷嘅本質係承擔不確定性，而 Agent 嘅設計目標恰恰係降低不確定性。</p>
+
+<div class="section-title">五、兩個月的「零人公司」實驗：哪些可以自動化，哪些不可以</div>
+<p>Coolant 停咗之後，團隊冇即刻找下一個產品，而係花咗約兩個月，用 AI 去運營 SuperDesign。呢個實驗嘅設計好純粹：如果「零人公司」可行，咁用 AI 運營一個已經有產品、有流量、有收入嘅小生意，應該係最容易嘅場景。佢哋搭咗大量 loop，去測試客服、修 bug、內容、增長等環節。</p>
+<p>結論分三層：</p>
+<table>
+  <tr><th>環節</th><th>能否全自動</th><th>原因</th></tr>
+  <tr><td>客服</td><td>✅ 可以</td><td>問題模式重複，答案可以從歷史對話檢索；出錯成本低。</td></tr>
+  <tr><td>修 bug</td><td>✅ 可以</td><td>有明確成功條件（測試通過、重現步驟消失），Agent 可以自己驗證。</td></tr>
+  <tr><td>安全與運維</td><td>✅ 可以</td><td>規則明確、監控長期在線；小 loop 比人更適合做重複巡檢。</td></tr>
+  <tr><td>增長</td><td>❌ 幾乎不可以</td><td>需要品味、逆共識判斷、承擔不確定性；例外太多，需要人介入。</td></tr>
+  <tr><td>創新</td><td>❌ 不可以</td><td>如果 loop 可以創新，「給我建一個創業公司」就應該直接成功。</td></tr>
+</table>
+<p>呢個結論直接推翻了「零人公司」嘅時間表。Jason 嘅講法係六到十二個月內都唔可能，更需要解決嘅問題係「人同 Agent 大規模協作」。注意呢個判斷嘅邊界：佢冇否定 AI 可以大幅減少人力，只係否定「完全冇人」——差別在於，<strong>人由「執行者」變成「判斷者」同「例外處理者」。</strong></p>
+<div class="data-point">
+  <span>節目口徑</span>
+  團隊 <b>4</b> 人；創業 <b>9</b> 個月、<b>3</b> 次轉型；Coolant 只跑咗約 <b>1</b> 個月；過渡期有 <b>2</b> 個月完全不碰產品，只做自動化驗證。
+</div>
+<p>呢兩個月嘅第二個收穫係意外嘅：佢哋做咗好多增長實驗，「全部都冇用」；真正改變增長曲線嘅，係石天鑫某日順手做嘅一個 Codex 插件。上線之後，增長曲線突然改變，大量用戶湧入，而且呢批用戶嘅流失率更低。呢件事直接指向第三次轉型。</p>
+
+<div class="section-title">六、第三次轉型：Treg——把「中繼層」抽出來單賣</div>
+<p>嗰個插件嘅成功，幾乎冇技術含量：Codex 剛推出插件市場時，市場上冇乜有趣嘅插件，佢哋就把原本 Cursor 加 skill 嘅一套搬過去。因為 ChatGPT 同 Codex 本身有巨大用戶基數，插件好容易被注意到；只要產品吸引，就會被使用、被轉化。</p>
+<p>最戲劇性嘅細節係排名規則：當時插件市場按字母排序，佢哋把名由 SuperDesign 改成「01 SuperDesign」，直接排第一。石天鑫話呢個位置只維持咗幾日，平台好快就換咗自己嘅排序邏輯，但呢個先發優勢帶嚟咗第一批啟動量。</p>
+<blockquote>
+  「早期嘅工具同市場都值得試，因為你永遠唔知邊一次嘗試會帶嚟流量。」
+  <span class="attribution">石天鑫，節目轉錄摘要回譯</span>
+</blockquote>
+<p>Jason 由呢件事抽出一個類比：Codex 同 Claude Code 而家有巨大用戶基數，但體驗唔夠好；喺佢哋周圍做體驗增量，就好似當年 Zynga 長喺 Facebook 上、PayPal 長喺 eBay 上。平台有巨大用戶、體驗又唔夠好，中間就一定有空間。</p>
+<p>而 Coolant 時期真正可轉移嘅遺產，唔係任何一個 harness——事後看，嗰啲 harness 彼此差異唔大——而係中間嗰層「中繼服務」：做 GTM 或任何專業工作，都需要大量專業數據同工具。Treg 就係把呢層抽出來，獨立賣。</p>
+<p>Jason 對 Treg 嘅定位係「數據與工具領域嘅 Open Router」：把分散在各家供應商嘅數據源同 API 整合起來，讓 Agent 用一條 key 就能調用。商業上按用量計費，冇月費。</p>
+<div class="data-point">
+  <span>節目口徑</span>
+  Treg 上線約 <b>3 週</b>，收入已係 SuperDesign 嘅<b>數倍</b>（具體數字未披露）；純按用量收費，無月費。最集中嘅付費場景係 B2B 客戶開發，其次係 SEO／AEO 同社交媒體內容。
+</div>
+
+<div class="section-title">七、商業模式：Treg 更像 Costco，而不是批發商</div>
+<p>面對「模型公司或頭部數據商為什麼唔直接接、要繞過中間層」嘅問題，Jason 嘅答案係：現實中冇單一頭部供應商。每個場景都有幾十家，各有強項同價格，企業需要多種資訊才能找到啱嘅一家。</p>
+<p>石天鑫嘅類比係 Costco：站喺中立位置，替用戶篩選市場上最好嘅數據，以高性價比供貨。跨平台係另一層價值：即使你由 Claude Code 換到 Codex，之前累積嘅工具調用同數據仍然喺 Treg。</p>
+<p>呢個定位嘅經濟學含義值得拆開：</p>
+<ul>
+  <li><strong>佢賣嘅係「選擇嘅成本節省」，唔係數據本身。</strong>客戶唔係買唔到數據，而係唔想逐家比較、逐家簽約、逐家維護 key。</li>
+  <li><strong>按用量計費，令價值同使用同步。</strong>冇月費，降低嘗試門檻；用得越多，Treg 抽成越多。</li>
+  <li><strong>中立性係賣點，亦係軟肋。</strong>如果平台自己開始做工具市場同計費，或者某個場景出現贏家通吃，中間層嘅空間就會被壓縮。</li>
+</ul>
+<p>石天鑫仲提出一個觀察：未來各種 Agent harness 可能會因為「連接咗獨特嘅數據」而吸引用戶。佢舉例：有個朋友用 Kimi，因為它連接咗 Wind 嘅股票交易數據。呢個觀察同 Treg 嘅定位互相呼應——<strong>harness 本身會趨同，數據連接才係差異化。</strong></p>
+
+<div class="section-title">八、「Agent 才是真正的用戶」——把評測主體換人</div>
+<p>整集最有原創性嘅一點，係石天鑫對「用戶」嘅重新定義：</p>
+<blockquote class="strong">
+  「我理解我們現在很多產品的真正用戶，其實不是那個人，而是那個人的 Agent——所以它對我們的產品有最直接、最真實的感受。」
+  <span class="attribution">石天鑫</span>
+</blockquote>
+<p>呢句話聽起來像修辭，但它直接改變咗產品評測嘅方法。傳統 SaaS 靠人做 NPS、靠人寫 feedback；但當真正調用 API 嘅係 Agent，人嘅感受只係間接嘅。Treg 因此把評測主體由人換成 Agent：</p>
+<ol>
+  <li><strong>隨機抽取用戶，讓其 Agent 給回饋。</strong>簡單 bug 直接修；有趣嘅功能請求就接受並評估。</li>
+  <li><strong>對每一次 API 調用做脫敏評價。</strong>呢條數據有冇用？邊個字段起了作用？</li>
+  <li><strong>累積成每個 endpoint 嘅兩張評分圖：</strong>「有用性」同「性價比」。</li>
+  <li><strong>把評分展示給後來嘅 Agent，</strong>讓它按場景選擇：要精度就選最貴最好；要廣度同低價就選性價比高。</li>
+</ol>
+<p>Jason 把呢個機制叫做 Treg 嘅數據飛輪，並認為它係應用層 AI 團隊嘅通用解法：既然你唔可以自己訓模型，就要讓某種數據回流到產品裡。</p>
+<p>但呢個飛輪有一個未解嘅方法論問題：<strong>Agent 嘅「有用」評價，同最終人類用戶嘅「有价值」之間，係咩關係？</strong>如果 Agent 只係按「呢條數據幫我完成任務」評分，它可能會系統性偏好「容易用」而唔係「準確」；如果它按「成本效益」評分，又可能犧牲長尾場景嘅覆蓋。節目冇回答，但呢個問題會決定飛輪係真護城河，還係一個好聽嘅故事。</p>
+
+<div class="section-title">九、Loop Engineering：運營可以，創新不行</div>
+<p>石天鑫引用《系統之美》嘅框架，認為公司係一個複雜系統，關鍵係開環與閉環回饋。佢嘅方法論非常具體：</p>
+<ul>
+  <li><strong>唔好一開始就建複雜嘅 loop。</strong>短而精更有用。</li>
+  <li><strong>一個 loop 只做一件事。</strong>一個只監控 DDoS 同安全風險；一個只做代碼清理；每次做嘅事小到很難出錯。</li>
+  <li><strong>建到十幾個之後，它們自然形成一個互相協調嘅複雜系統。</strong>當一個 loop 發現 bug 並報告，線上監控 loop 會發現並告警。</li>
+</ul>
+<p>安全係佢舉嘅例：創業前佢從未想過要處理大量黑客攻擊，但只要產品有邀請新用戶、送 credits 之類嘅激勵機制，就會被持續攻擊；一個四人團隊每日花精力同呢件事糾纏，非常痛苦。一個長期監控風險行為、一發現小漏洞就補嘅 loop，可以省好多精力。</p>
+<blockquote class="strong">
+  創新嘅部分唔可以交畀 loop，否則「給我建一個創業公司」就應該直接成功。
+  <span class="attribution">石天鑫，節目轉錄摘要回譯</span>
+</blockquote>
+<p>呢個分工其實係對「Agent 取代人」嘅一個更精確版本：<strong>Agent 適合接管「目標明確、成功條件可驗證、例外有限」嘅工作；人應該保留「目標模糊、需要品味、例外無窮」嘅工作。</strong>大部分關於 AI 取代工作嘅爭論，都係因為冇做呢個區分。</p>
+
+<div class="section-title">十、人成為瓶頸：由 5–10 個 session 到 50–100 個</div>
+<p>兩位嘉賓都話，而家同時跑嘅 session 遠比以前多。Jason 話 Fable 之後，佢基本同時跑五到十個 session，因為自完成嘅質量已經很高；另一個變化係由純本地轉向雲加本地混合，context 可以隨時交換。</p>
+<p>石天鑫提到一個由 YouTube 資深工程師 Kun 做嘅工具 First Mate：船長只負責派任務畀大副，大副再同其他 coding session 溝通。佢冇直接用呢個項目，但學咗個概念，而家用 Herder 呢類新一代終端管理工具，讓 Agent 互相對話，或者由一個主 Agent 轉派任務。</p>
+<p>Jason 補充咗 Orca 嘅觀察：Orca 嘅重度用戶已經唔係同時開十個，而是五十到一百個。佢認為呢個量級下需要咩新嘅人機交互，係 Codex 同 Claude Code 團隊都仲未重點想嘅問題。</p>
+<div class="data-point">
+  <span>節目口徑</span>
+  Jason 自己同時跑 <b>5–10</b> 個 session；Orca 重度用戶 <b>50–100</b> 個；Orca 喺 GitHub 已達 <b>8 萬</b> stars。
+</div>
+<p>呢個數字嘅意義唔止於「效率提升」。當一個人可以同時管理幾十個 Agent，樽頸就由「寫代碼」轉移到「分配注意力」同「驗收結果」。而注意力係真正稀缺嘅資源——你可以開一百個 session，但你一日只有幾個小時可以認真看 PR。呢個矛盾，正係下一批工具嘅機會。</p>
+
+<div class="section-title">十一、模型選擇：沒有忠誠度，只有當下最強</div>
+<p>Jason 本來係 Claude Code 重度用戶，覺得好難遷移；直到最近 Astra 出來之後轉到 Codex，理由係模型真係強。佢舉咗個具體例子：畀它一條視頻，可以一鏡到底複刻，仲會自己由原視頻截圖、裁成合適風格放進新視頻——而做視頻需要素材，呢一步原本要人準備。</p>
+<p>石天鑫兩邊都用，理由係兩個模型都冇絕對領先——Fable 某一日強一點，Astra 好快又追上。所以佢長期兩邊都用，同一個任務讓兩個模型各做一遍再揀。佢嘅講法係：</p>
+<blockquote class="strong">
+  「這個時代，你只需要長期使用世界上最好的模型。」
+  <span class="attribution">石天鑫</span>
+</blockquote>
+<p>呢句話嘅另一面係：<strong>應用公司對模型冇忠誠度，模型公司對應用公司亦冇義務。</strong>所以任何建立在「某個模型嘅某個版本」上嘅產品優勢，都係臨時嘅。Treg 嘅中立定位，本質上就係對呢種不穩定嘅對沖——唔賭邊個模型贏，只賭「所有模型都需要數據同工具」。</p>
+<p>佢哋亦提到中國模型嘅實用分工：SuperDesign 時期曾以 Kimi 作主模型，因設計能力強；MiniMax 嘅 H3 視頻模型質量好、價格合適；石天鑫個人偏好 DeepSeek 4.1 Flash 嘅效率同速度，曾想把 SuperDesign 第一階段 Agent 換過去，但大併發請求下 Claude 更穩定，生產環境最終冇換。本週熱門嘅 Jeff 模型被用於兩類場景：endpoint 調用路由（等幾百毫秒都係浪費）、大規模召回數據嘅清洗與過濾（兩三千條逐條比對）。</p>
+
+<div class="section-title">十二、生態地圖：長在兩大 Coding Agent 周圍嘅機會</div>
+<p>節目後半段掃咗一批產品，係「新創業機會」嘅具體內容。Jason 提到一個結構性變化：以前被視為 infra 嘅公司，而家唔止服務 B2B 開發者——大約一半用量係開發者，另一半係唔寫代碼嘅白領；佢哋只知道駁咗 Firecrawl 之後 Claude Code 抓網頁更有效率，唔需要關心 API 點調用。</p>
+<table>
+  <tr><th>產品</th><th>類別</th><th>節目中嘅描述</th></tr>
+  <tr><td>Apify</td><td>API 市場</td><td>Jason 稱為 2026 年增長最快嘅公司之一，提供長尾爬蟲 endpoint</td></tr>
+  <tr><td>DataForSEO</td><td>SEO 數據</td><td>同上，今年莫名其妙地大幅增長</td></tr>
+  <tr><td>Exa</td><td>為 Agent 而設嘅搜索</td><td>已到 C 輪，證明「為 Agent 做搜索」場景巨大</td></tr>
+  <tr><td>Composio / Firecrawl</td><td>工具與授權</td><td>近期增長較大；Firecrawl 負責抓取，Composio 負責 OAuth 授權</td></tr>
+  <tr><td>Paper</td><td>設計</td><td>提供畫布，讓用戶比較不同設計、手動微調，嵌進 Codex 工作流</td></tr>
+  <tr><td>Vibe Island</td><td>macOS 工具</td><td>用 MacBook 靈動島顯示多線程任務狀態，有像素角色同音效；AI Hacker House 黑客松冠軍</td></tr>
+  <tr><td>Orca</td><td>Agent IDE（ADE）</td><td>同時管理 Claude Code、Codex 等，額度耗盡時可平滑轉移半成品任務</td></tr>
+  <tr><td>ChatCut</td><td>Codex 插件（視頻剪輯）</td><td>保留可拖拽嘅中間剪輯態，避免每次修改都重生成整條視頻、燒大量 token</td></tr>
+  <tr><td>Ego</td><td>瀏覽器</td><td>主打用 Codex／Claude Code 做 computer use 時效率極高</td></tr>
+</table>
+<p>呢張表嘅共同點係：<strong>冇一個產品試圖取代 Claude Code 或 Codex。</strong>它們全部係「平台體驗唔夠好」嘅補丁——抓取、授權、設計、任務管理、剪輯、瀏覽。呢個就係「往下做薄」嘅具體形狀：唔做入口，做入口旁邊嘅收費站。</p>
+
+<div class="section-title">十三、行業 insight：往上做厚，還是往下做薄？</div>
+<p>呢集最有價值嘅地方，係把「模型吞噬應用」呢句口號拆成具體嘅坐標系。過去兩年，應用層嘅預設動作係往上做厚：自建 Agent、自建記憶、自建沙盒，幻想自己成為新嘅入口。Treg 嘅路徑說明，當平台層嘅體驗標準被 Claude Code／Codex 一次性拉高之後，往上做厚反而變成同平台正面對撞；更理性嘅位置係往下做薄——只做一層平台唔願意做、但所有 Agent 都需要嘅東西，然後隨平台一起長。</p>
+<p>但呢個策略有兩個隱含前提：</p>
+<ol>
+  <li><strong>平台唔會自己做呢一層。</strong>如果 Codex 或 Claude Code 自己開始做數據市場、工具計費、權限管理，Treg 嘅「Costco」定位就會直接撞上平台自營。</li>
+  <li><strong>中間層可以累積跨平台資產。</strong>如果用戶由 Claude Code 換到 Codex 之後，之前嘅數據同工具調用唔能帶走，Treg 嘅跨平台價值就消失。</li>
+</ol>
+<p>呢兩個前提都未被驗證。節目給出嘅答案係中立性、跨平台、數據飛輪，但飛輪仍早，冇任何數據能證明 Agent 評分機制足以形成選擇壁壘。呢個係需要往後追蹤嘅指標。</p>
+<p>另一個信號係「基礎設施公司開始直接服務白領」。當一半用量來自唔寫代碼嘅人，產品嘅競爭維度就由 API 文檔、SDK 質量，變成「裝上之後我嘅 Claude Code 係咪真係更好用」。呢個對做開發者工具嘅人係壞消息，對做體驗層嘅人係機會。</p>
+
+<div class="section-title">十四、爭議點：三個需要保留嘅問號</div>
+<p><strong>1. 中間層係唔係過渡形態？</strong>如果 Coding Agent 平台自己開始做工具市場同計費，Treg 嘅定位會直接撞上平台自營。節目嘅回答係中立性同跨平台，但呢個更像願景而非已驗證嘅護城河。</p>
+<p><strong>2.「零人公司」嘅時間窗口。</strong>六到十二個月係基於 2026 年 10 月嘅模型能力。如果 2027 年模型再跳一代，呢個判斷會立刻被重新檢驗——而它正是佢哋放棄 Coolant 嘅核心理由。呢個係一個可被證偽嘅預測，值得記低日期。</p>
+<p><strong>3.「程序員再也寫不過 AI」。</strong>呢句話喺節目裡係石天鑫嘅個人轉折，唔係嚴謹預測。但放在一個四人團隊靠 Agent 完成大部分工程工作嘅語境裡，它比單獨拿出來看更有說服力，也更值得警惕。</p>
+
+<div class="section-title">十五、前後脈絡：兩種「平台觀」</div>
+<p>與上期 42章經對談 Articuler.ai 嘅 Jason 形成有趣對照：那位 Jason 嘅結論係「PMF 係靠貧窮逼出來嘅，護城河在工作流裡」；呢位 Jason 嘅結論係「唔好自己做工作流，站到別人嘅工作流邊上」。兩種說法其實唔矛盾——前者講嘅係由 0 到 1 找到真實需求，後者講嘅係意識到平台存在之後，如何避免把有限資源投入到會被平台順手吃掉嘅地方。</p>
+<p>也延續了九月以來中文 AI 圈反覆出現嘅主題：OpenClaw 之後，大家先是興奮於「一個 Agent 什麼都能做」，然後迅速發現「什麼都能做」等於「唔知該賣畀邊個」。Treg 嘅三次轉型，本質上就係在找嗰個「可以被一句話說清楚、而且別人願意付錢」嘅切口。</p>
+<blockquote class="strong">
+  當模型越來越強，應用公司活下去嘅方式，可能係變得更窄，而唔係更闊。
+  <span class="attribution">本文結論</span>
+</blockquote>
+
+<hr>
+<footer>
+  <p>來源：十字路口 Crossing 官方 show notes、節目簡介、章節時間軸；BigGo Finance 對該集嘅逐段轉錄摘要（2026-10-18）。</p>
+  <p>節目發佈：2026-10-19 00:00 北京時間｜時長 51 分 08 秒｜主持：楊遠騁（Koji）｜嘉賓：Jason Zhou、石天鑫。</p>
+  <p style="margin-top:0.6rem;">深度復述由 Vee Mok 整理 · 生成時間 2026-10-19 06:00 UTC · 引用經回譯者已標注，數字為節目口徑，未經第三方核實。</p>
+</footer>
+</div>
+</body>
+</html>
