@@ -1,0 +1,125 @@
+Greg Brockman: Security Spend Should Vastly Outstrip Software Spend — BigGo Finance
+
+Greg Brockman: Security Spend Should Vastly Outstrip Software Spend
+
+Add preferred source
+
+1
+
+OpenAI President Greg Brockman says the economics of software are about to flip. In a conversation on the No Priors podcast, he argued that as AI makes writing code nearly free, the value will migrate to making that code trustworthy. His conclusion: cybersecurity spending should "vastly outstrip" software spending. Brockman frames the current moment as a "defender's window," a limited period where frontier AI models give good actors an edge before offensive capabilities diffuse widely. He backs the claim with internal data from OpenAI, where 25 production engineers were reassigned to hunt vulnerabilities using the company's most powerful model, and a $1 billion commitment to give frontline defenders access to its systems. Beyond security, Brockman made a sweeping case that AI has crossed a threshold into generating genuinely new knowledge, citing roughly 400 open math problems OpenAI says its models resolved. That claim has already triggered alarms in the cryptocurrency world, where Ethereum researchers have called for "bunker mode" preparations against AI-accelerated cryptographic attacks. Brockman contends the same capability will soon crack biology and drug discovery, though he says the real bottleneck there is data and regulation, not binding prediction. He also predicted consumer and enterprise AI assistants will converge, with cost rather than capability as the main dividing line.
+Key Elements
+
+Greg BrockmanOpenAICrowdStrikeDOTSGPT-6ChatGPTEthereum FoundationVitalik ButerinJustin DrakeAlex KontorovichAlphaFoldSteve JobsiMacBill GatesAnthropic
+ [img:Greg Brockman: Security Spend Should Vastly Outstrip Softwar] 
+
+The most striking market call from the frontiers of AI this week comes wrapped not in a financial report but in a single sentence: security spending should "vastly outstrip" software spending. That is the view of Greg Brockman, co-founder and president of OpenAI, delivered during a wide-ranging conversation on the No Priors podcast. His argument is simple. When software becomes cheap and abundant, it stops being the scarce asset. Trust becomes the scarce asset. "I have a feeling that cyber spend, security spend should actually vastly outstrip software spend," Brockman said. "I really believe it."
+
+The timing matters. Brockman framed the current moment as what he calls the "defender's window" — a finite period when the most advanced AI models still sit mostly in the hands of organizations trying to build and secure systems, before those same capabilities diffuse to attackers at scale. The underlying problem, he argued, is not new. The internet, he noted, "has really been built for resilience, not necessarily for security." That technical debt is now coming due, and AI is the force pushing it to the surface.
+
+The defender's window
+
+OpenAI's internal response to that threat is concrete, and Brockman shared numbers to back it up. The company took roughly 25 production engineers, put their existing projects on hold, and pointed its most capable model at its own infrastructure to hunt for vulnerabilities. The team found and fixed a number of issues, then built tooling to repeat the process. Eventually, they saturated what that model could find — and Brockman said the exercise will have to be repeated with each new model release.
+
+That cycle sits at the heart of his cybersecurity argument. Each generation of frontier AI makes both defenders and attackers more capable, but the sequence matters. Right now, the most powerful systems are accessible to a small number of organizations. That asymmetry is the defender's window. Once capabilities diffuse broadly, the window closes. "I do think the physics of cybersecurity are changing," Brockman said.
+
+OpenAI has paired the internal work with an external program. Brockman cited a $1 billion commitment to helping frontline defenders access its models for defensive security work, plus partnerships with security vendors such as CrowdStrike. The framing is explicitly coordinated: no single lab or company can hold the line alone. Critical infrastructure, government, and private industry all have to move before the window shuts.
+
+The $1.5 billion bottleneck
+
+Brockman's security argument is part of a broader thesis about which sectors AI will transform first. His answer: biology. The logic is not that biology is easy, but that humans are already terrible at it. "Humans are incredibly bad at biology," he observed, and there is no reason a neural network should be better at natural language than at the language of proteins and cells.
+
+The numbers behind the opportunity are stark. Developing a single drug costs roughly $1.5 billion and takes about 15 years. But the distribution of that cost is heavily skewed toward the back end.
+
+StageApproximate costApproximate duration
+Preclinical (molecule, mouse studies)~$15M2–3 years
+Clinical trials~$1.4B+~12 years
+Total~$1.5B~15 years
+
+Brockman's key claim is that the binding constraint is not deep biological theory. It is paperwork and data. Regulatory filings for clinical trials take about a year to produce, he said, and AI can now generate those documents far more easily. On data, some areas will fall quickly because the information already exists; others will require new innovation in wet labs and simulation. A near-term win, he suggested, is finding cures that already sit in the literature, invisible only because no human has connected the one relevant paper to the patient who needs it.
+
+He drew an analogy to self-driving cars: once a system is unambiguously safer than the human alternative, the surrounding rules should be revisited. Clinical-trial regulation already varies by country, and companies are already moving trials to friendlier jurisdictions. Brockman predicted that about 80% of what is possible will come to fruition quickly, while long-term outcome prediction may still require at least one long time horizon to validate.
+
+AI is now generating new knowledge
+
+All of this rests on a claim that would have been controversial a year ago and that Brockman now frames as settled. AI, he said, has moved from checking answers to producing new mathematics. OpenAI released roughly 400 important open problems that its models resolved, spanning number theory, algebraic geometry, and other fields. The scale was enough to stun the mathematics community. Rutgers professor Alex Kontorovich commented that if a human had produced the Riemann hypothesis-related results, "they would get a Fields Medal immediately, no question."
+
+Brockman's emphasis is not on the answers but on the insights domain experts are finding inside the proofs. Mathematicians reviewing the work flagged surprising applications of ideas and unexpected choices of which prior result to use — evidence, he argued, that the output is genuinely new knowledge, not machine-checked noise. He is careful to bound the claim: the models are not yet producing grand new theories. But they are resolving century-old problems, and the same underlying capability should transfer to any domain with similar properties.
+
+The mechanism is a data argument. Deep learning runs on compute plus data plus algorithms, and mathematics is rich in data. Proofs in natural language are hard to check, unlike arithmetic, but the volume of available data made math tractable. The open question for other fields is whether comparable data exists or can be generated. "There's always been this question of, is AI actually able to come up with new knowledge?" Brockman said. "And at this point, it's just impossible to deny."
+
+That claim has already rippled through the cryptocurrency industry. After OpenAI's math release, Ethereum Foundation researcher Justin Drake called on blockchain holders to prepare for "bunker mode," citing concern that AI-accelerated math could undermine the elliptic curve cryptography securing digital wallets. Ethereum co-founder Vitalik Buterin acknowledged the risk deserves serious attention while cautioning against rushed migrations. "I personally have lost more money in botched migrations than I have lost in all hacks combined," Buterin wrote. The episode illustrates how quickly advances in AI capability can trigger market anxiety, even when no exploit has been demonstrated.
+
+The assistant with a handle
+
+Beyond the domains of math, biology, and security, Brockman offered a glimpse of how AI products are changing shape. He described DOTS, a proactive agent that OpenAI staff use, as always on and keeping working when the user stops. It tracks messages that should have been sent, flags calendar conflicts, and alerts him when he needs to leave a meeting early to reach the next one. It runs on an Astra-level model with its own cloud computer. The change, Brockman said, is in form factor rather than raw capability.
+
+His design philosophy is that the best interface is no interface — a single thing you can talk to verbally, over Slack, over iMessage, or by calling. ChatGPT started as a text box, and he said the direction of travel is toward there not even being a text box. But he also described "intelligent UI," where the model generates interfaces on the fly: a complex flight-booking view when comparing options, or a one-off app to help assemble a bicycle that no one would ever hire a developer to build.
+
+The governing constraint, he argued, must be human agency. He used the image of Steve Jobs putting a handle on the iMac so users would feel they could pick the machine up and throw it out the window. "Humans should be firmly in the driver's seat, should have control over the future, and this technology should amplify human agency," Brockman said. As models surpass humans in raw knowledge — GPT-4 already knows far more than any person — the question becomes how to keep people able to judge outcomes they cannot directly verify. Brockman pointed to debate and iterative amplification, techniques OpenAI has discussed since 2017, as ways to keep humans in the loop. A book summary is hard to evaluate unless you have read the book, but a second AI arguing that the summary is bad can surface a specific missed plot point, which a human can judge without reading the whole book.
+
+The convergence of consumer and enterprise
+
+Brockman predicted that consumer and workplace AI assistants will converge, with cost rather than capability as the main dividing line. In a mass-market consumer product, scaling a free tier and keeping costs low is essential. He called bringing memory to all free ChatGPT users an enormous engineering effort. In the workplace, where a paying user captures returns, it is worth spending far more compute per user. Different compute budgets can make the products look different, with more functionality embedded in the higher-cost tier.
+
+OpenAI's structural position, he argued, is a dual front: 1.2 billion consumers on ChatGPT plus a leading coding and enterprise business. The strategy is to unify those fronts rather than compete on two. On the enterprise side, the real difference is stakeholders: an admin, a company security team, and questions of who owns the AI and its outcomes. That produces product differences — admin controls and feature toggles that let enterprises control when new functionality arrives — which in turn creates a design problem. A product with no UI has no obvious place to surface that something is missing. Brockman said that complexity should be leaned into rather than wished away.
+
+Brockman's cybersecurity thesis is a market call as much as a technical one. If security spending is to vastly outstrip software spending, that implies a large reallocation of enterprise budgets over the coming years — a structural shift away from productivity software and toward defensive infrastructure, formal verification, and AI-assisted vulnerability discovery. He offered no timeline, but the direction is unambiguous. The same applies to drug discovery, where the $1.4 billion clinical-trial cost is the wedge for AI to enter, not the $15 million preclinical stage. For investors, the question is whether the defender's window is wide enough for these tools to be built and deployed before the next model release raises the stakes for everyone — attackers included.
+
+Full content available at:The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman
+
+References:
+
+OpenAI Fires Three Safety Researchers; Trio Demands Board Explain in Open Letter
+
+Gates Warns AI Is the Most Dangerous Invention Ever; Cyberattacks Could Erupt in the Coming Year
+
+Rising U.S. Long-Term Yields Driven by Growth and AI Investment, Inflation Expectations Stable: Fed Governor
+
+Crypto Executives Say AI Won't Shatter Bitcoin Security Anytime Soon
+
+Add preferred source
+
+1FavoriteShare
+
+‌
+‌
+‌
+‌
+‌
+
+‌
+
+More Related News
+
+‌
+‌
+
+‌
+‌
+
+‌
+‌
+
+‌
+‌
+
+‌
+‌
+
+‌
+‌
+
+‌
+‌
+‌
+‌
+
+‌
+
+‌
+‌
+‌
+‌
+‌
+
+

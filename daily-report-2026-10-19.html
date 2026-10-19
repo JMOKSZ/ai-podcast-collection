@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客深度萃取 · 2026-10-19</title>
+<style>
+  :root{
+    --paper:#faf8f5;
+    --ink:#24211d;
+    --muted:#6f675c;
+    --rule:#ddd5c8;
+    --accent:#8a5a2b;
+    --soft:#f2ede4;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--paper)}
+  body{
+    margin:0 auto;
+    max-width:820px;
+    padding:64px 26px 110px;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+    font-size:17px;
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px;margin-bottom:14px}
+  .kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  h1{font-size:34px;line-height:1.3;margin:0 0 14px;font-weight:600;letter-spacing:.01em}
+  .deck{font-size:16px;color:var(--muted);margin:0 0 22px;line-height:1.8}
+  .meta{font-size:13px;color:var(--muted);line-height:1.9}
+  .meta span{white-space:nowrap}
+  .meta b{font-weight:600;color:var(--ink)}
+  h2{
+    font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+    margin:64px 0 8px;padding-top:18px;border-top:1px solid var(--rule);
+    color:var(--accent);font-weight:600;
+  }
+  h3{font-size:26px;margin:44px 0 4px;font-weight:600;line-height:1.4}
+  .host{font-size:14px;color:var(--muted);margin:0 0 26px}
+  h4{font-size:20px;margin:34px 0 6px;font-weight:600;line-height:1.55}
+  .pub{font-size:13px;color:var(--muted);margin:0 0 22px;letter-spacing:.02em}
+  p{margin:0 0 18px;text-align:justify}
+  .label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:30px 0 8px}
+  ul{margin:0 0 18px;padding-left:1.3em}
+  li{margin:0 0 12px}
+  li b{font-weight:600}
+  blockquote{
+    margin:24px 0;padding:2px 0 2px 20px;border-left:2px solid var(--accent);
+    font-style:italic;color:#3b352d;font-size:17px;
+  }
+  blockquote .who{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:6px}
+  .note{
+    background:var(--soft);border:1px solid var(--rule);padding:14px 18px;
+    font-size:14px;line-height:1.8;color:#4a443b;margin:22px 0;
+  }
+  .note b{color:var(--ink)}
+  .num{font-variant-numeric:tabular-nums}
+  hr{border:0;border-top:1px solid var(--rule);margin:46px 0}
+  footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted);line-height:1.9}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(138,90,43,.35)}
+  .toc{font-size:14px;line-height:2;color:var(--muted);margin:24px 0 0}
+  .toc a{color:var(--muted);border-bottom:0}
+  .toc a:hover{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;margin:22px 0;font-size:15px;line-height:1.7}
+  th,td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--rule)}
+  th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  @media(max-width:600px){
+    body{padding:40px 18px 80px;font-size:16px}
+    h1{font-size:27px}
+    h3{font-size:22px}
+    h4{font-size:18px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">AI Podcast Deep Extract · Daily Report</div>
+  <h1>站在模型的肩膀上，還是替模型造一個身體？</h1>
+  <p class="deck">今日只有兩集新內容，但剛好構成同一道題的兩份答案。十字路口的 Treg 團隊認為，模型越強，應用公司越應該放棄全棧自建，退到 Claude Code 與 Codex 的生態邊上做單點；42章經的莫子皓則往相反方向走——把 AI 從聊天窗口裡拿出來，做成一個始終在場、軟硬結合的「環境智能」。一個做減法，一個做加法，背後是同一件事：當智能本身變成公用事業，價值到底沉澱在哪一層。</p>
+  <div class="meta">
+    <span><b>報告日期</b>　2026-10-19（星期一）</span><br>
+    <span><b>生成時間</b>　2026-10-19 02:07 UTC（北京時間 10:07）</span><br>
+    <span><b>掃描範圍</b>　10 個播客 · 5 個中文 RSS · 5 個英文 RSS／YouTube</span><br>
+    <span><b>本期新集</b>　2 集（中文 2／英文 0），另補回 10-12 漏掃一集</span>
+  </div>
+  <div class="toc">
+    <a href="#cross">① 十字路口｜Treg：新的創業機會，正在 Claude Code 和 Codex 周圍長出來</a><br>
+    <a href="#ambi">② 42章經｜一個 Personal Agent 創業者的思考：對談 Ambi 創始人子皓</a><br>
+    <a href="#en">③ 英文播客：本期無新集（各 feed 最後更新一覽）</a>
+  </div>
+</header>
+
+<h2 id="cross">中文播客 · 01</h2>
+<h3>十字路口 Crossing（楊遠騁 Koji）</h3>
+<p class="host">嘉賓：Jason Zhou（Treg 創辦人）、石天鑫（Treg Founding Engineer）｜時長 51 分 08 秒</p>
+
+<h4>新的創業機會，正在 Claude Code 和 Codex 周圍長出來｜對談 Treg 🎙️</h4>
+<p class="pub">發布時間：2026-10-19 00:00（北京時間）｜2026-10-18 16:00 UTC</p>
+
+<div class="label">主題</div>
+<p>一個四人團隊，九個月三次轉型：從設計 Agent「SuperDesign」，到全自動增長 Agent「Coolant」，再到為 Agent 提供數據與工具的市場「Treg」。這集表面講轉型，實際在回答一個更硬的問題——當 Claude Code 和 Codex 自己變成平台，應用層創業者還能站在哪裡？他們的答案不是「做得比模型更好」，而是「站到模型邊上，做它做不了、也不屑做的那一層」。</p>
+
+<div class="label">嘉賓背景</div>
+<p>Jason Zhou 是 Treg 創辦人。在此之前，他經營一個有一定規模的 YouTube UI／設計頻道，SuperDesign 最初只是他為 Cursor 寫的週末插件，開源幾個月自然長到六千多顆 GitHub star，這個數字說服他離職創業。石天鑫是 Treg 的 founding engineer，原先是 React 前端工程師，負責把產品從「能用」做到「能賣」。團隊規模四人。</p>
+<p>Treg 的定位，Jason 自己的說法是「數據與工具領域的 Open Router」：把分散在各家供應商的數據源與 API 整合起來，讓 Agent 用一條 key 就能調用。商業上按用量計費，沒有月費。</p>
+
+<div class="label">核心論點</div>
+<ul>
+  <li><b>垂直 Agent 面對的是「絕境」，不是競爭。</b>SuperDesign 被兩頭夾擊：上游，模型本身的前端能力從 Gemini 3 開始進入軍備競賽，設計 Agent 的差異被抹平；下游，用戶整體遷移到 Claude Code 與 Codex，插件形態又沒有清晰變現路徑。Jason 的復盤很直白——他當初放棄開源、轉做 Web 版是判斷錯誤，「但我也沒想到，接下來一年所有人都湧向了 Codex 和 Claude」。</li>
+  <li><b>應用公司不應該再自建 Agent 全棧。</b>過去兩年，做一個 AI 產品意味著自己搞定 harness、記憶、沙盒、權限。現在這些正在被 Coding Agent 平台商品化。Jason 的類比是 Zynga 長在 Facebook 上、PayPal 長在 eBay 上：平台有巨大用戶、體驗又不夠好，中間就一定有體驗增量的空間。與其自己做一個更差的閉環，不如把一層做到極致，嵌進大生態。</li>
+  <li><b>「零人公司」在未來六到十二個月不成立。</b>這是整集最反潮流的判斷。他們真的花了兩個月不做產品，只搭建自動化 loop，用 AI 運營 SuperDesign 來驗證。結論是：客服可以全自動，修 bug 可以全自動，但增長相關的場景幾乎不能——需要人介入的地方太多。</li>
+  <li><b>增長沒有通用解，所以 Agent 交付不了結果。</b>以 SEO 為例：給 Agent 的工作流是抓關鍵詞、看流量與競爭、然後下注。真做下去才發現，大部分詞早就被廝殺過，真正的機會在於判斷「現在流量很低、但一到三個月後會起」的詞——這一步 Agent 做不到。增長的本质是大量試錯後找到那條別人不做、但適合你的渠道，然後加倍下注；所有人都做同一件事時，渠道就失效了。</li>
+  <li><b>「Agent 才是真正的用戶」。</b>石天鑫的觀察是，很多產品的真實使用者已經不是人，而是那個人的 Agent——所以 Agent 對產品的好壞有最直接、最真實的感受。Treg 因此把評測主體從人換成 Agent：隨機抽取用戶，讓其 Agent 給回饋；更進一步，對每一次 API 調用做脫敏評價——這條數據有沒有用、哪個字段起了作用——沉澱成每個 endpoint 的「有用性」與「性價比」兩張評分圖，再展示給後來的 Agent 按需選擇。</li>
+  <li><b>Treg 更像 Costco，而不是批發商。</b>面對「模型公司或頭部數據商為什麼不直接接」的問題，他們的回答是：現實中沒有單一頭部供應商，每個場景都有幾十家，各有強項與價格。Treg 站中立位置，替用戶篩選、以高性價比供貨。跨平台是另一層價值：即使你從 Claude Code 換到 Codex，之前累積的工具調用與數據仍在 Treg。</li>
+  <li><b>Loop Engineering：運營可以，創新不行。</b>石天鑫引用《系統之美》的框架，認為公司是複雜系統，關鍵是開環與閉環回饋。方法論是「不要一開始就建複雜的 loop」——一個 loop 只監控 DDoS 與安全風險，一個只做代碼清理，每次做的事小到很難出錯；建到十幾個之後，它們自然形成一個互相協調的複雜系統。但創新不能交給 loop，否則「給我建一個創業公司」就該直接成功。</li>
+  <li><b>多 Agent 之後，人成了瓶頸。</b>Jason 說 Fable 之後他基本同時跑五到十個 session，因為自完成的質量已經很高；Orca 的重度用戶已經不是同時開十個，而是五十到一百個。他認為這個量級下需要什麼樣的新人機交互，是 Codex 與 Claude Code 團隊都還沒重點想的問題。</li>
+  <li><b>模型選擇沒有忠誠度，只有當下最強。</b>Jason 本來是 Claude Code 重度用戶，Astra 出來後轉到 Codex，理由是模型真的強：給它一條視頻，可以一鏡到底複刻，還會自己從原視頻截圖、裁成合適風格放進新視頻——而做視頻需要素材，這一步原本要人準備。石天鑫則兩邊都用，同一個任務讓兩個模型各做一遍再挑，「這個時代，你只需要長期使用世界上最好的模型」。</li>
+</ul>
+
+<div class="label">關鍵數據</div>
+<ul>
+  <li><span class="num">9</span> 個月、<span class="num">3</span> 次轉型；團隊 <span class="num">4</span> 人。</li>
+  <li>SuperDesign 由週末 Cursor 插件起家，開源數月累積 <span class="num">6,000+</span> GitHub stars，全部自然增長。</li>
+  <li>第二個產品 Coolant 只跑了約 <span class="num">1</span> 個月即停；轉型期有 <span class="num">2</span> 個月完全不碰產品，只做自動化驗證。</li>
+  <li>Treg 上線約 <span class="num">3</span> 週，收入已是 SuperDesign 的數倍（具體數字未披露）；純按用量收費，無月費。</li>
+  <li>參考對象 Posia：2026 年 2 月 ARR 約十幾萬美元；註冊後僅憑郵箱就能推斷你是誰、做什麼，生成兩三個創業想法，選一個就直接建落地頁、找客戶、發冷郵件。</li>
+  <li>Orca 在 GitHub 已達 <span class="num">8 萬</span> stars；重度用戶同時跑 <span class="num">50–100</span> 個 session；Jason 自己 <span class="num">5–10</span> 個。</li>
+  <li>Codex 插件市場早期按字母排序，他們把名字改成「01 SuperDesign」搶到第一位，紅利只維持了幾天，但拿到了啟動量。</li>
+  <li>石天鑫最黑暗的一天：醒來發現 <span class="num">4,000</span> 美元額度被盜。</li>
+  <li>基礎設施公司用量結構變化：約一半是開發者，另一半是不寫代碼的白領。</li>
+</ul>
+
+<div class="label">重點引用</div>
+<blockquote>「未來六到十二個月，零人公司絕對不是一個可能的情景。更需要解決的問題，大概是在人和 Agent 大規模協作的情況下，你怎麼做這件事。」<span class="who">— Jason Zhou（據節目轉錄摘要回譯）</span></blockquote>
+<blockquote>「我理解我們現在很多產品的真正用戶，其實不是那個人，而是那個人的 Agent——所以它對我們的產品有最直接、最真實的感受。」<span class="who">— 石天鑫</span></blockquote>
+<blockquote>「對程序員來說，你永遠不可能再寫贏 AI 了。」<span class="who">— 石天鑫，從 React 前端工程師轉為創辦人時的話</span></blockquote>
+<blockquote>「這個時代，你只需要長期使用世界上最好的模型。」<span class="who">— 石天鑫</span></blockquote>
+
+<div class="label">技術詳情</div>
+<ul>
+  <li><b>轉型中的技術遺產。</b>Coolant 時期做了大量 harness，事後看這些 harness 彼此差異不大；真正可轉移的價值是中間那層「中繼服務」——做 GTM 或任何專業工作，都需要大量專業數據與工具。Treg 就是把這層抽出來單賣。</li>
+  <li><b>Agent 評分機制。</b>每次 API 調用後，由 Agent 對返回數據做脫敏評價：是否有用、哪個字段起了作用。累積後形成 endpoint 的「有用性／性價比」二維評分，供後續 Agent 按場景選擇——要精度就選最貴最好的，要廣度與低價就選性價比高的。這是他們所說的數據飛輪。</li>
+  <li><b>雲端沙盒。</b>Jason 大量使用 Grok Bot，認為它是 OpenClaw 之後少數真正達到 mass adoption 的產品——創新不多，但把雲沙盒體驗做得極順。他把 Treg 與 SuperDesign 的 loop 全搬上去，理由是穩定、隨時可查看；簡單前端修改與 bug 修復直接在雲端做，PR 裡帶一條連結，點進去就是可測試的沙盒。</li>
+  <li><b>模型分工。</b>SuperDesign 時期曾以 Kimi 作主模型，因設計能力強；MiniMax 的 H3 視頻模型質量好、價格合適；石天鑫個人偏好 DeepSeek 4.1 Flash 的效率與速度，曾想把 SuperDesign 第一階段 Agent 換過去，但大併發請求下 Claude 更穩定，生產環境最終沒換。本週熱門的 Jeff 模型被用於兩類場景：endpoint 調用路由（等幾百毫秒都是浪費）、大規模召回數據的清洗與過濾（兩三千條逐條比對）。</li>
+  <li><b>生態圖譜。</b>節目點了一批長在兩大 Coding Agent 周圍的產品：Apify（長尾爬蟲 endpoint，Jason 稱之為 2026 年增長最快的公司之一）、DataForSEO、Exa（已到 C 輪，證明「為 Agent 做的搜索」場景巨大）、Composio／Firecrawl（工具與授權）、Paper（設計畫布）、Vibe Island（用 MacBook 靈動島顯示多線程任務狀態，AI Hacker House 黑客松冠軍產品）、Orca（Agent IDE，可同時管理多家 Agent 並在額度耗盡時平滑轉移半成品任務）、ChatCut（Codex 視頻剪輯插件，保留可拖拽的中間剪輯態，避免每次修改都重生成整條視頻、燒掉大量 token）、Ego（主打用 Codex／Claude Code 做 computer use 時效率極高）。</li>
+</ul>
+
+<div class="label">行業 insight</div>
+<p>這集最有價值的地方，是把「模型吞噬應用」這句口號拆成了具體的坐標系。過去兩年，應用層的預設動作是往上做厚：自建 Agent、自建記憶、自建沙盒，幻想自己成為新的入口。Treg 的路徑說明，當平台層的體驗標準被 Claude Code／Codex 一次性拉高之後，往上做厚反而變成與平台正面對撞；更理性的位置是往下做薄——只做一層平台不願意做、但所有 Agent 都需要的東西，然後隨平台一起長。</p>
+<p>但這裡有一個明顯的張力：Treg 的價值建立在「沒有單一頭部數據供應商」這個前提上。如果某個場景出現贏家通吃，或者模型公司自己把數據整合做得更深，中間層的空間就會被壓縮。他們給出的答案是中立、跨平台、數據飛輪，但飛輪仍早，節目裡沒有任何數據能證明 Agent 評分機制足以形成選擇壁壘。這是需要往後追蹤的指標。</p>
+<p>另一個信號是「基礎設施公司開始直接服務白領」。當一半用量來自不寫代碼的人，產品的競爭維度就從 API 文檔、SDK 質量，變成「裝上之後我的 Claude Code 是不是真的更好用」。這對做開發者工具的人是壞消息，對做體驗層的人是機會。</p>
+
+<div class="label">前後脈絡</div>
+<p>與上期 42章經對談 Articuler.ai 的 Jason 形成有趣對照：那位 Jason 的結論是「PMF 是靠貧窮逼出來的，護城河在工作流裡」；這位 Jason 的結論是「不要自己做工作流，站到別人的工作流邊上」。兩種說法其實不矛盾——前者講的是從 0 到 1 找到真實需求，後者講的是在意識到平台存在之後，如何避免把有限資源投入到會被平台順手吃掉的地方。</p>
+<p>也延續了九月以來中文 AI 圈反覆出現的主題：OpenClaw 之後，大家先是興奮於「一個 Agent 什麼都能做」，然後迅速發現「什麼都能做」等於「不知道該賣給誰」。Treg 的三次轉型，本質上就是在找那個「可以被一句話說清楚、而且別人願意付錢」的切口。</p>
+
+<div class="label">爭議點</div>
+<ul>
+  <li><b>中間層是不是過渡形態？</b>如果 Coding Agent 平台自己開始做工具市場與計費，Treg 的「Costco」定位會直接撞上平台自營。節目的回答是中立性與跨平台，但這更像願景而非已驗證的護城河。</li>
+  <li><b>「零人公司」的時間窗口。</b>六到十二個月是基於 2026 年 10 月的模型能力。如果 2027 年模型再跳一代，這個判斷會立刻被重新檢驗——而它正是他們放棄 Coolant 的核心理由。</li>
+  <li><b>「程序員再也寫不過 AI」。</b>這句話在節目裡是石天鑫的個人轉折，不是嚴謹預測。但放在一個四人團隊靠 Agent 完成大部分工程工作的語境裡，它比單獨拿出來看更有說服力，也更值得警惕。</li>
+</ul>
+
+<hr>
+
+<h2 id="ambi">中文播客 · 02</h2>
+<h3>42章經（曲凱）</h3>
+<p class="host">嘉賓：莫子皓（子皓），Ambi 創辦人｜時長 1 小時 26 分 18 秒</p>
+
+<h4>一個 Personal Agent 創業者的思考｜對談 Ambi 創始人子皓 🎙️</h4>
+<p class="pub">發布時間：2026-10-13 06:00（北京時間）｜2026-10-12 22:00 UTC</p>
+
+<div class="note"><b>補掃說明：</b>這集發布於 10 月 12 日，上一期日報（10-18）只收了 10 月 17 日的 Articuler 一集，漏掉了它。本日補回，並按完整深度處理。</div>
+
+<div class="label">主題</div>
+<p>Personal Agent 是 2026 年下半年最擁擠的概念，但真正跑出來的產品不多。莫子皓的切入點不是「Agent 能幫你做什麼」，而是「你為了一次智能請教，付出多少交互成本」。他認為這波浪潮遲遲沒有爆發，不是模型不夠強，也不是成本太高，而是人機交互的範式沒變：打開應用、重建上下文、提問、得到回答，每次歸零。Ambi 要做的，是讓 AI 從「被召喚」變成「始終在場」。</p>
+
+<div class="label">嘉賓背景</div>
+<p>莫子皓（Peter Mo），連續創業者。2013 年保送北大光華金融碩士，選擇創業而非入學，創辦國內首個網絡公益平台「米公益」，2019 年被輕鬆籌收購。此後任暖哇科技合夥人兼 CPO，探索用技術替代銷售人力；後加入百川智能，任醫療方向產品與運營負責人。2025 年 5 月加入 Plaud，出任中國區 CEO 兼 AI 產研負責人——Plaud 是海外 AI 硬件明星，卡片式 AI 紀要產品覆蓋 170 個國家、出貨超百萬台、年收入達 2.5 億美元。2026 年 3 月離職創辦 Ambi，做「環境智能 + 記憶型 Agent」的軟硬結合產品；團隊分布舊金山、北京、上海、深圳。2026 年 10 月 13 日，Ambi 公布 1.74 億元人民幣（約 2,600 萬美元）Pre-A 輪融資。</p>
+
+<div class="label">核心論點</div>
+<ul>
+  <li><b>這波 Personal AI 變熱，不是模型突然變強，是產品與分發鏈條補齊了。</b>他明確反駁「OpenClaw 之後這波就死了」的說法：從 2026 年初到現在，這條線一直沒斷，只是當時沒到消費級 PMF。OpenClaw 的問題不是技術，而是兩件事——第一，所有人都在說它厲害，但沒法用一個清晰場景和價值主張說清楚到底哪裡厲害；第二，就算知道了，第三方怎麼獲得這個能力？安裝成本高，裝完還要接一堆服務、補大量上下文，想瞬間變得跟分享者一樣強，鏈條太長。Muse 這類產品解決的正是「一句話說得清的使用場景」：以前要付費下載一個 App，現在免費，下載完可能還幫你省 499。</li>
+  <li><b>2025 年「智能已經足夠」是錯的判斷。</b>他的自我修正很具體：「智能足夠——問題是我們設計的任務不夠複雜，給它的上下文不夠豐富、來源不夠多樣，才讓我們覺得智能足夠。」當時他把 AI 的能力局限在聊天場景，沒有把它當成「虛擬世界裡一切皆可為」的東西。現在的做法是：每次新模型發布，先砍掉一層 harness、再砍掉一層 system prompt，同樣的任務結果就會明顯不同。</li>
+  <li><b>成本不是這波的核心約束，速度可以犧牲一點。</b>他在即刻上寫過：這波 Personal Agent 最大的特點是「沒人關心背後跑的是什麼模型」。訂餐廳、買票這類任務，不需要展示多高的智能，用戶對延遲也沒那麼苛刻。所以在成功率、速度、質量三者之間，速度是相對可以讓的那一個。他引用紅杉一位合夥人的觀點：模型公司給出的接口只是 Pareto 最優曲線上的一個點，不同應用公司需要的可能是曲線上的另一個點——追求的不是更高智能，而是速度、智能、成本之間更好的平衡。</li>
+  <li><b>應用公司不該自己訓模型。</b>他的反問很尖：「我憑什麼讓 Claude 來證明我知道一些他們不知道的事？」他認為應用公司訓出更高智能的模型是荒謬的，兩個障礙：一是芯片，二是「你到底有什麼數據，比現有模型更高維，以至於可以被壓縮」。</li>
+  <li><b>需求問題要往上推一層：真正的變量是「獲取智能的交互成本」。</b>面對「個人場景到底有多大需求」的質疑，他不直接回答，而是反問：你獲取智能的成本是多少？這個底層假設一變，需求問題的答案就變。現在的麻煩是用戶得先做一堆設置，做事時還要把東西掏出來、再解釋一遍、再說一遍——這種交互成本與行為成本，讓生活裡所有瑣碎、難以名狀的事情都很難被觸發。他用「續航焦慮」與「增程車」類比：可能一百天都用不上一次增程器，但你就是覺得「哪怕只有一次需要，也會很痛」。如果隨時隨地獲取智能的成本足夠低，為什麼不用？</li>
+  <li><b>反對把需求簡化成「工作 vs 生活」。</b>應該按一天中的時間、場景、不同人所處的不同環境去看。Ambi 的一個核心設計立場是：工作與生活不應該分開，因為兩邊的上下文合起來，AI 才能更懂你、交付更好的價值。區分工作與生活對智能不難，難的是信息架構怎麼交付價值。</li>
+  <li><b>Agent 之間可以有網絡效應，但因果關係是反的。</b>不是「因為有 A2A 連接，所以你要用這個產品」，而是「因為你用了產品、累積了記憶與文件系統，才自然長出 A2A」。人與人連接需要的是別人腦子裡的知識、別人的時間；如果 Agent 之間交換的正好是這些，協作就能互相增益，這就滿足了網絡效應的條件。他的類比是：「不是因為先有 App Store 才有那麼多 iPhone，而是因為你先有了那麼多 iPhone，App Store 才長出來。」</li>
+  <li><b>硬件相對軟件有三個結構性優勢。</b>一是獲客通道：軟件依賴抖音、騰訊這類有強網絡效應的上游，不給你流量就沒有流量；硬件的渠道本身沒有那麼強的網絡效應，一旦建立就能獨立分發（Anker、DJI、Insta360）。二是獨佔性：一個人的電腦右上角可以同時跑五個 App；但你一次只能帶一個東西，AI 時代附加消費的價值會被定得很高。三是容錯：軟件一百個功能你只用一個，難用兩分鐘可以換一個 App 湊合；硬件那兩分鐘的痛，你每天 100% 要吃下去，所以必須把那一個場景做透。</li>
+  <li><b>現在 Personal Agent 的「主動性」設計，方向是錯的。</b>他拆成本結構：主動性來自 connector 變化或定時掃描，然後推理能給你什麼主動價值。但推薦是要花錢的，智能越高成本越高；推送給你之後，用戶是否接受、信息是否匹配、是否真的喜歡，又是另一個漏斗。花掉一大截成本穿過各種漏斗，濾掉的都是不滿意，剩下那一點「哦，有個 wow，我喜歡」——而這個 wow 到底帶來了什麼？付費還是流量？他認為「wow 的比例」與「不打擾的比例」互相拉扯，數學上不成立。Ambi 的主動性來自<b>環境的變化</b>，不是 connector 掃描或定時任務。</li>
+  <li><b>交互是最大的非共識機會，「言出法隨」是終局。</b>他認為人們對 AI 最好的想像就是：張嘴一說，事情就辦好了。這裡有兩件事：一是張嘴說，二是它能做好。現在的底層交互範式沒有大變，所以大家才覺得 Personal AI 做生活場景沒有需求；但當行動成本降到零，需求會暴漲。他批評 AI 眼鏡：想問眼前看到的東西，得先喚醒、再把聽到的重複一遍、再說請求——東西就在你臉上，它明明聽得到，為什麼要重複？</li>
+  <li><b>私隱的答案是 Apple 已經給過的詞：ambient。</b>Ambi 就是 ambient 的縮寫。做法是：所有錄音文件不落任何服務器，第三方平台做完 ASR 之後就消失；圖像存本地還是上傳，遵循同一邏輯。他認為最好的方式是「任何應用方都拿不到」，可以在端側，也可以在可信第三方雲。</li>
+  <li><b>不做人格化，AI 是主體的延伸。</b>Ambi 不做 persona、不做 avatar、不給 AI 起名字。他的理由：從外人視角看，「找曲老師的助理」和「找一個懂曲老師 80% 的、曲老師的延伸」，感受是不同的——後者更容易產生網絡效應。</li>
+  <li><b>中國 AI 應用正在經歷最嚴重的寒冬，大廠失去了做世界第一的雄心。</b>他說從業多年，第一次見到 2026 年這麼嚴重的冬天。他在即刻寫「沒有一個是中國人做的」——Tom、Instinct 這些好產品都不是中國團隊做的；今年無論大廠還是創業公司，中國幾乎沒有好產品。他批評大廠「失去了成為世界第一、引領世界的雄心」，太多人在做「中國版某某」。而這一波裡，做「中國版 X」的團隊沒有一個成功；最後跑出來的 Jasper、Manus、Plaud，都不是這個類型。</li>
+  <li><b>商業本質：對外識別需求隊列，對內以合理成本提取。</b>兩者之間的差額就是你的剩餘利潤；而把事情做成，靠的是人。招聘靠「真誠」與「願意分享」，並且默認「在比你強的人面前，你撒不了謊」。他給了一條止損原則：<b>聊天過程中只要有一點點不舒服，絕對不要繼續</b>，因為那個不舒服一定會被放大。</li>
+</ul>
+
+<div class="label">關鍵數據</div>
+<ul>
+  <li>Ambi 成立於 <span class="num">2026 年 3 月</span>；<span class="num">10 月 13 日</span>公布 <span class="num">1.74 億元</span>人民幣 Pre-A 輪（約 <span class="num">2,600 萬</span>美元）。</li>
+  <li>Plaud 時期成績：年收入 <span class="num">2.5 億</span>美元、覆蓋 <span class="num">170</span> 個國家、出貨超 <span class="num">100 萬</span>台。</li>
+  <li>Ambi 首次私人內測第七日留存 <span class="num">37.8%</span>；<span class="num">2026-10-12</span> 啟動公開測試。</li>
+  <li>節目時長 <span class="num">86</span> 分鐘；涵蓋 Personal Agent 定位、交互演進、軟硬結合、模型成本、Agent 網絡效應、硬件商業模式、創業與招聘、私隱與端側、中國應用寒冬九個主題。</li>
+  <li>Muse 註冊即送每人 <span class="num">10 億</span> tokens；其手環 Charm 厚度五十幾毫米，他判斷是「半成品」，但方向正确。</li>
+  <li>硬件從打樣到穩定量產，與軟件加幾個人手的分別，是 <span class="num">100 倍</span>的差距。</li>
+  <li>他預測六個月內，普通人每天會對 Personal Agent 說 <span class="num">30</span> 句話；若每句都要 30 秒重複，是巨大的浪費。</li>
+  <li>Jobs 的開機時間故事：每天用電腦的人等 30 秒，若能降到 3 秒，等於替全世界省下壽命去做有意義的事。</li>
+  <li>高三暑假賣溜冰票：第一天只賣出 <span class="num">5</span> 張；轉做代理後，以 <span class="num">25</span> 元買、<span class="num">27</span> 元給代理、代理賣 <span class="num">30</span> 元、代理留 <span class="num">10%</span>，一個月內壟斷全場售票。</li>
+  <li>海南電銷：設計紅旗機制（每成交一面紅旗，累積到一定數量換錢），半年利潤增長 <span class="num">3</span> 倍以上；保險業務透過逐頁復盤用戶購買路徑，一天把轉化率提升 <span class="num">30%–40%</span>。</li>
+</ul>
+
+<div class="label">重點引用</div>
+<blockquote>「智能已經足夠——問題是我們設計的任務不夠複雜，給它的上下文不夠豐富、來源不夠多樣，才讓我們覺得智能足夠。」<span class="who">— 莫子皓，自我修正 2025 年的判斷</span></blockquote>
+<blockquote>「不是因為先有 App Store 才有那麼多 iPhone，而是因為你先有了那麼多 iPhone，App Store 才長出來。」<span class="who">— 莫子皓，談 Agent 網絡效應的因果順序</span></blockquote>
+<blockquote>「你要花掉一大截成本穿過各種漏斗，漏斗濾掉的多數是不滿意，剩下的那一點是『哦，有個 wow，我喜歡』。但這個 wow 到底給人帶來了什麼？」<span class="who">— 莫子皓，批評當前的主動性設計</span></blockquote>
+<blockquote>「AI 和你應該是这样的关系——你天然不需要 care 它，它就能聽到，它開著，它始終在那裡。」<span class="who">— 莫子皓，談「始終在場」的交互終局</span></blockquote>
+<blockquote>「自從有了大模型，每一波都是在做『中國版 X』，這一波把大家的熱情消耗得特別厲害。因為做『中國版 X』的創業團隊，從來沒有一個成功過。」<span class="who">— 莫子皓</span></blockquote>
+<blockquote>「我憑什麼讓 Claude 來證明我知道一些他們不知道的事？」<span class="who">— 莫子皓，談應用公司自訓模型</span></blockquote>
+
+<div class="label">技術詳情</div>
+<ul>
+  <li><b>記憶架構。</b>Ambi 的記憶系統借鑑認知科學，支持三維記憶擴展：KV 狀態、語義向量召回、滾動摘要。三層分別對應即時對話狀態、長期語義檢索、以及對長歷史的壓縮，目標不是「記住一切」，而是「智能地遺忘與保留」。</li>
+  <li><b>端側模型。</b>Ambi 目前沒有選用任何端側大模型。制約不是算力，主要是電池——電池做大了，設備就重、就厚，直接影響佩戴與使用時長。這也解釋了為什麼他把「實時」放在產品原則的第一位：實時優於異步，因為真實世界的智能流動是實時的。</li>
+  <li><b>私隱工程。</b>錄音文件不上服務器；ASR 在第三方平台完成後即棄；圖像的本地／上傳策略同理。產品默認「任何應用方都拿不到原始數據」，可在端側或可信第三方雲完成處理。</li>
+  <li><b>交互鍵程。</b>他在 Plaud 時期就批評 Meta 眼鏡的交互：先喊「Hey Meta」，再說一長串指示詞，鍵程太長。Ambi 的產品原則是「交互鍵程越短越好」，理想狀態是環境變化直接觸發，不需要喚醒詞。</li>
+  <li><b>不做 Computer Use 的決定。</b>他認為 Computer Use 在模型能力延長線上，三到六個月會明顯變好；Ambi 現在不做，而是把它當成一項基礎能力，等模型開放權限後直接接。</li>
+</ul>
+
+<div class="label">行業 insight</div>
+<p>這集真正有份量的，不是對 Ambi 的產品介紹，而是對「 Personal Agent 為什麼還不成立」的結構性拆解。過去一年，這個賽道的主流敘事是「模型再強一點，Agent 就能替我做事」。莫子皓把問題換了一個變量：不是能力不足，而是每次使用都要重建上下文的摩擦太大。這個視角解釋了很多現象——為什麼 demo 驚豔、留存卻很差；為什麼用戶說「有用」但不用；為什麼主動推送越做越像騷擾。它也給出了一個可檢驗的產品原則：如果一個功能需要用戶先解釋背景，那它本質上還是軟件，不是 Agent。</p>
+<p>他對「中國版 X」的批評，是這集最容易引起爭議、也最值得記錄的部分。他的論據不是情緒，而是結果：這一波做「中國版 X」的團隊沒有一個成功，跑出來的 Jasper、Manus、Plaud 都不是這個路徑。背後的結構原因是分發被上游掐住，成本與利潤都被擠壓，沒有抵抗擠壓的力量。這個判斷對做國內市場的人是壞消息，但對做全球產品的團隊是一個明確的坐標。</p>
+<p>硬件三優勢的分析也值得單獨拿出來。大多數軟件團隊做硬件，會把它理解成「多一個形態」；他的框架是渠道、獨佔、容錯三個結構變量，這三個變量決定了硬件的商業模型與軟件完全不同——硬件更像 B2B 軟件，簽約那一刻收入就開始流血，所有利潤來自後續交付與成本控制；從第一天就要消滅下游風險。</p>
+
+<div class="label">前後脈絡</div>
+<p>與矽谷 101 第 255 期（張闊）形成一組很好的對照。張闊回答「模型越來越強，為什麼用戶沒感覺」，是從供給側講：模型能力沒有轉化成用戶可感知的價值。莫子皓回答的是同一道題的另一半：不是價值不存在，而是用戶獲取價值的交互成本太高。兩個人一個講「交付」，一個講「入口」，合起來才是完整的答案。</p>
+<p>與上期 42章經對談 Articuler.ai 的 Jason 也有呼應：Jason 說「PMF 是靠貧窮逼出來的」，莫子皓說「商業本質是識別需求隊列、以合理成本提取」。前者是方法，後者是定義。而兩人都不相信「模型會吃掉一切」——這可能是 2026 年下半年中文創投圈正在形成的一個新共識。</p>
+<p>放到更長的線上，這集也是 OpenClaw 敘事的續集。2026 年初 OpenClaw 點燃了「個人 Agent」的想像，但幾百個團隊做完之後基本沒人拿到融資，熱情被消耗；莫子皓認為這反而是 Ambi 的機會，因為拿到錢做這件事的團隊很少。這種「寒冬即護城河」的判斷，與 Treg 那集的「平台即土壤」形成兩種截然不同的生存策略。</p>
+
+<div class="label">爭議點</div>
+<ul>
+  <li><b>「中國完全沒有機會」。</b>這是全集最重的話。他的限定是「依賴它們做分發」的前提下沒有機會，但傳播出去容易被簡化成「中國 AI 沒戲」。對做國內市場的創業者，這是一個需要正面回應的判斷。</li>
+  <li><b>「主動性方向就是錯的」。</b>他直接否定了當前主流 Personal Agent 的主動推送設計，認為漏斗成本結構不成立。這對正在做主動式助理的團隊是正面挑戰；他的替代方案（環境變化觸發）聽起來合理，但同樣缺乏規模化驗證。</li>
+  <li><b>硬件「半成品」的判斷。</b>他稱 Muse 的 Charm 是「definitely a half-finished product」，五十幾毫米厚戴在手腕上，但又承認它解決的正是所有 Personal Agent 缺的線下上下文入口。這種「方向對、產品糙」的評價，本身就很值得玩味。</li>
+  <li><b>護城河的雙重敘事。</b>他一邊說技術不是最大壁壘、對人的理解才是，一邊又把記憶架構與軟硬結合當作核心差異。這兩種說法在早期可以並存，但到規模化競爭時必須選一個。</li>
+</ul>
+
+<hr>
+
+<h2 id="en">英文播客</h2>
+<p>本期五個英文源均無新集。以下為各 feed 最後更新，供核對掃描覆蓋：</p>
+<table>
+  <tr><th>播客</th><th>最後一集</th><th>發布時間（UTC）</th></tr>
+  <tr><td>Dwarkesh Podcast</td><td>Si Sheppard – How did a few hundred Spanish soldiers topple two empires?</td><td>2026-10-01 15:28</td></tr>
+  <tr><td>Latent Space</td><td>[AINews] High Taste Testers Ep. 1</td><td>2026-10-17 07:47</td></tr>
+  <tr><td>The Cognitive Revolution</td><td>AI:AM: Where's the Steering Wheel? My Agent Set the Password, Hidden Valence, Proofs Find Linux Bugs</td><td>2026-10-17 13:47</td></tr>
+  <tr><td>No Priors</td><td>The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman</td><td>2026-10-15 10:00</td></tr>
+  <tr><td>Machine Learning Street Talk</td><td>What Most People Get Wrong About Evolution | Akarsh Kumar</td><td>2026-10-10 05:48</td></tr>
+</table>
+<p>上述內容已在 10-18 日報中完整萃取，本期不重複。Dwarkesh 的 YouTube feed（channel_id <span class="num">UCXl4i9dYBrFOabk0xGmbkRA</span>）目前返回 404，Substack feed 正常，已以 Substack 為準。</p>
+
+<footer>
+  <p><b>方法與出處</b>　中文兩集以官方 RSS show notes、章節時間軸為底本，並以 BigGo Finance 的逐段轉錄摘要補足細節；英文各集僅核對 feed 時間，未重複生成內容。文中標注「回譯」的引用，原話為中文、經英文摘要轉譯後再回譯，字句可能與原音有細微出入，語意不變。</p>
+  <p><b>掃描時間</b>　2026-10-19 02:03–02:08 UTC｜<b>下次掃描</b>　2026-10-20 02:00 UTC</p>
+  <p>Apache License 2.0 · AI Podcast Collection · 由 Vee Mok 為 James 整理</p>
+</footer>
+
+</body>
+</html>
