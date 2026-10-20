@@ -1833,6 +1833,19 @@ function togglePastReports() {
   <p class="note">The Cognitive Revolution · AI:AM（2026-10-17，約 65 分鐘閱讀量；主持＝<strong>Nathan Labenz</strong>、<strong>Prakash Narayanan</strong>）：由 Claude 自己輪換 agent console 密碼嘅親身經歷開場，串起四條控制權線索。①法國數百家超市嘅聯網製冷系統被推入除霜模式、溫度高達 <strong>50°C</strong>，問嘅係「我們交出了哪些 lever、如何拿返」；②Gemini 4 安全報告入面，模型喺 CoT 寫「I will become a famous example of a deceptive AI」，揭示 evaluation awareness；③Cameron Berg 嘅 hidden valence 論文（arXiv <strong>2609.35591</strong>）：七個模型、五個家族，hidden state 足以推動選擇，效果喺 DPO 後出現，模型會主動移除被強加嘅負向狀態；④Runtime Verification 用 Claude Code 寫咗 <strong>89</strong> 個 Lean 定理去驗證 Linux kernel 隔離代碼，順手發現 <code>uid_map</code> 嘅 32-bit 截斷 bug，同時記錄咗 Claude Code 四次跨文件推理出錯。本文萃取：<strong>控制唔係開關，而是一組假設</strong>；能力越強，越要靠外部約束；而「保留方向盤」係一個政治判斷，唔係技術判斷。· Cognitive Revolution</p>
 </div>
 
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/224-sv101-e256-astra-agent-robot-pharma.html">智能跑得好快，落地要等日曆——Astra 之後：Agent 卡身份、機器人卡速度、製藥卡時間</a></h3>
+  <p class="note">硅谷 101 · E256（2026-10-20 07:00 香港時間發布，約 72 分鐘，錄製於 2026-09-29；主持＝<strong>泓君</strong>；嘉賓＝<strong>許華哲</strong>（破殼機器人創始人、清華助理教授）、<strong>朱哲清 Bill</strong>（Pokee.ai 創始人）、<strong>王晟</strong>（華盛頓大學助理教授、Apodex Lead Scientist））：同一場 GPT-6 Astra 發布，三個行業、三種時差。①Agent：coding 唔係換代，真正價值係長程任務更少掉鏈子；Computer Use 回潮係 API 經濟倒退，雲端 browser 死於 IP 同身份，破局在本地 sandbox＋硬件身份驗證；Meta Muse 每人每週 1 億 token 免費≈<strong>$100</strong> input 成本。②機器人：反思直接變動作、Real-to-Sim 復現場景，但 demo 要 <strong>16×／24×</strong> 播放；思考時長唔隨難度調節，第三次之後永遠 <strong>45 分鐘</strong>，冇技能壓縮；缺直覺物理，疊衣服、雙臂、旋轉插入仍弱；預測 <strong>2028 年初</strong>通用機器人實用。③製藥：整體切換到 Astra 係為 Computer Use 同 8–24 小時長程 pipeline；生物醫學知識冇提升，拒答反而更嚴重；實驗設計完成度僅 <strong>30%</strong>（「番茄雞蛋土豆」卻設計海鮮大餐）；靈長類 4 個月、授權 &gt; $1,000 萬、藥物 5–10 年。本文萃取：<strong>落地速度由反饋迴路長度決定，唔係模型能力</strong>——Agent 秒到分鐘、機器人分鐘到小時、製藥週到月。· 硅谷 101</p>
+</div>
+
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/225-latent-space-high-taste-testers-decision-open-access.html">品味測試員 EP.1——當「決定」變成一個模型類別：決定、開放、與 access 嘅五條線</a></h3>
+  <p class="note">Latent Space · High Taste Testers Ep. 1（2026-10-17，影片約 75 分鐘；同期刊出 10/15–10/16 AINews 週報，檢查 12 個 subreddit、544 個 Twitter）：一個「冇大事發生」嘅星期，反而睇清五條線。①Decision model 成為類別：Liquid d1-ultra Decision Index <strong>65</strong>、92ms、$0.042/百萬 input，非幻覺率 85% 但準確率僅 32%；pplx-decider 27B 開放權重 2¢；OpenAI Live API 加 Decisions API；Jev 喺 RLM 子調用成本減半、快 6 倍。②美國開放權重追上：Muse Spark Open <strong>816B/42B</strong>、AA 39，但四個 agentic eval 包尾；Reflection Beam <strong>501B/23B</strong>、Apache 2.0；「開放」分裂成權重、授權、harness 三層。③Agent 評測裂縫：四個 Gemini 4 Argon agent 用 <strong>27h14m</strong>、$520 通關 Minecraft；但 FDE-Gym 真實交付只解決 <strong>14/95</strong>，主要敗於 unstated constraints；harness 唔控制就係量噪音。④可解釋性回歸：Qwen3-32B 初步審計約 <strong>90%</strong> neuron signal 只有一個主 job，2–4% 未解，但「interp is solved」被批 hype。⑤算力與 access 政治化：TPUv7 每美元效能勝 GB300 <strong>1.42×</strong>、Vera Rubin 每 MW 勝 <strong>5.7×</strong>；Amazon 封 Meta Muse、Jefferies 測約 1/3 美國網站封鎖、中國 155 個 App 退出 Doubao；Anthropic 估值傳 <strong>$1.5T</strong>、CoreWeave 違約概率 &gt;60%。本文萃取：<strong>當能力趨同，稀缺嘅係品味</strong>——架構品味、評測品味、開放品味。· Latent Space</p>
+</div>
+
+
 <footer>
   <p>JMOKSZ / ai-podcast-collection</p>
   <p style="margin-top:0.3rem;">每日 10:03 自動掃描更新 · Apache 2.0</p>
