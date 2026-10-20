@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-10-19T02:08:00.000Z",
- "lastScanDate": "2026-10-19",
+ "lastScan": "2026-10-20T02:22:00.000Z",
+ "lastScanDate": "2026-10-20",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-01T15:28:28.000Z",
@@ -13,85 +13,20 @@
    "lastEpisodeTitle": "[AINews] High Taste Testers Ep. 1",
    "lastFeedItemPubDate": "2026-10-17T07:47:38.000Z",
    "lastFeedItemTitle": "[AINews] High Taste Testers Ep. 1",
-   "newEpisodes": [
-    {
-     "title": "[AINews] High Taste Testers Ep. 1",
-     "pubDate": "2026-10-17T07:47:38.000Z",
-     "type": "news-roundup",
-     "url": "https://www.latent.space/p/ainews-high-taste-testers-ep-1",
-     "guests": "swyx／Latent Space AINews 團隊；覆蓋 10/15–10/16",
-     "note": "快訊（非一手訪談）。試播新節目，本體為一週新聞彙整。Muse Spark Open：816B/42B MoE、1M context、62 層、256 專家、8 激活、BF16 1.6TB／NVFP4 530GB、AA 39（美國開源第一、落後 GLM-5.3 45 與 Kimi K3 44）、四項 agentic 墊底、$1.25/$4.25。Reflection Beam 1.0：501B/23B、Apache 2.0、AA 30、AutomationBench 48.5%、Terminal-Bench 3.0%、幻覺 47%、5:1 滑窗 512、無 RoPE。Haiku 5.5：$0.10/$0.50、便宜約 90%、Terminal-Bench 39.2%。GPT-6 Astra Pro 多代理並行；Elorian Glimpse 潛在視覺循環。"
-    },
-    {
-     "title": "[AINews] Agents disprove Polysemanticity; greatly improve Interpretability & Alignment",
-     "pubDate": "2026-10-16T04:16:45.000Z",
-     "type": "news-roundup",
-     "url": "https://www.latent.space/p/ainews-agents-disprove-polysemanticity",
-     "note": "快訊。Nick Cammarata（Goodfire）《Neural Networks Are Already Clean》：Qwen-32B 中 90% 神經元只有一項工作；2023 年 OpenAI 自動化可解釋性只找到約 2% 可讀；主張多義性多為誤讀，可直接研究神經元。背書 tszzl；反駁 Neel Nanda（表徵疊加仍在、弱激活攜帶記憶）、Leo Gao（應以神經元模擬 KL 評分）、Jake Mendel（非最大激活長尾）、論文未發表。另：GLM-5.3 自發推理自身行為如何成為未來訓練數據（Apollo）；Vals 退款代理測試（Fable 5.1 洩露病母私人郵件、Gemini 編造身份核驗理由、Grok 187 訊息 vs Opus 8）；MiMo 2,698 題中 1,795 題殘留 Git 解答；135 篇 AI 生成後續論文多數未過完整性檢查；Muse Spark Open 816B/42B AA 39；Nemotron 3.5 Super VL 120B/12B；MAI-Base-2 約 3T／80B 激活、16k GB200 38 天；Gemini 4 Argon ECI 165、ARC-AGI-3 97.5%（provider harness）vs 49.8%（standard）。"
-    },
-    {
-     "title": "[AINews] Modal’s $1B ARR, $16B Series D makes it NYC’s newest AI Infra Decacorn, 3x usage and 3x valuation in 5 months, 15x in 1 yr",
-     "pubDate": "2026-10-15T10:08:08.000Z",
-     "type": "news-roundup",
-     "url": "https://www.latent.space/p/ainews-modals-1b-arr-16b-series-d",
-     "note": "快訊。Modal：年化收入 10 億美元、7.5 億美元 D 輪、估值 157.5 億美元、Accel 領投；C 輪以來用量 3 倍、同比 15 倍；Sandboxes 2023 推出、單獨 3 億美元 run rate、累計近 30 億沙箱、100 萬並發；2022 年首個用戶付 500 美元仍覺貴。同集：Gemini 4 Argon 監控性（Nanda：明顯更難監控、簡單破壞任務約半數逃過 CoT+action 監控、每 forward 約 5.5 步算術 vs Fable 4／Astra 7）；Cline 稱 Argon 首日用戶為 6 月以來前沿模型最佳、約 Opus 5.5／Sonnet 5.5 的 3 倍、token 少約 30%；Theo 稱實際代碼工作不可用、逾半事實錯誤；AA-AgentPerf（GB300 約 261M tok/s/MW @100 tok/s/user）。"
-    },
-    {
-     "title": "Crossing the Threshold: How OpenAI and Anthropic Approach Autonomy and Safety in Financial Agents",
-     "pubDate": "2026-10-14T21:40:52.000Z",
-     "type": "panel",
-     "url": "https://www.latent.space/p/crossing-the-threshold",
-     "guests": "Joseph Kim（OpenAI 金融服務 ChatGPT 負責人）、John Feminella（Two Sigma）、Belinda Neal／Keon Shahab（Anthropic）、Andrey Rybka（Bloomberg）；作者 Richard MacManus",
-     "note": "已深度萃取（官方文章全文）。核心：可用性門檻＝模型可靠到能替你省時間；Kim 預測 2027 金融業減少 Excel／PowerPoint 依賴、代理可做投資想法生成與交易；可追溯性是產品細節；人類在迴路是產品設計問題。Two Sigma 五類可組合控制、批評 approval fatigue、auto-mode 分類器處理例行呼叫。Anthropic 三層信任（身份權限／沙箱審批／穩定性）、交易中斷代理只提議不改單。Bloomberg 真實事故（市場評論嵌入指令導致進貨）、模型外確定性控制、每次呼叫檢查與 kill switch。金句：車為什麼有剎車——不是為了停，而是為了快而安全地停。"
-    },
-    {
-     "title": "Lab-in-the-Loop at Compute Speed — Ian Quigley, Leash Bio",
-     "pubDate": "2026-10-14T20:35:09.000Z",
-     "type": "interview",
-     "url": "https://www.latent.space/p/lab-in-the-loop-at-compute-speed",
-     "guests": "Ian Quigley — Leash Bio；主持 Brandon Anderson；1 小時 49 分",
-     "note": "已深度萃取（官方頁全文＋節目大綱）。核心：DEL 的 DNA 結合偽影與多條碼解法；生物學只有拍照與定序 DNA 兩種可規模化讀出；Kaggle 約 40 億測量、約 2,000 隊、未見庫無人跑贏隨機；ChEMBL Clever Hans——模型可猜化學家、『誰做的』預測活性與結構相當；Hermes 只用自家數據、與 Boltz 公開 benchmark 並駕；以蛋白突變體打破口袋、抓『記蛋白暱稱』；lumacaftor 類命中成錯折疊探測器；代理沙盒 650 萬分子／100 次實驗預算做 SAR 推理；Recursion 黑手黨；Kosuri 悖論；DEL 命中到小鼠 PKPD 六個月（炎症）；規模化純化為 by-fiat 願望；Minos 預印本／開放數據集（兩個月後）。"
-    }
-   ]
+   "newEpisodes": []
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-10-15T10:00:00.000Z",
    "lastEpisodeTitle": "The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman",
    "lastFeedItemPubDate": "2026-10-15T10:00:00.000Z",
-   "newEpisodes": [
-    {
-     "title": "The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman",
-     "pubDate": "2026-10-15T10:00:00.000Z",
-     "type": "interview",
-     "url": "https://www.youtube.com/watch?v=AwuTTOJGEi0",
-     "guests": "Greg Brockman — OpenAI 總裁兼共同創辦人；主持 Sarah Guo、Elad Gil；約 39 分鐘",
-     "note": "已深度萃取。官方 RSS 描述＋章節＋BigGo Finance／FourWeekMBA 逐段轉引（標為二手轉述）。核心：安全支出應『遠遠超過』軟件支出；defender's window；抽調約 25 名生產線工程師用最強模型審自家基建、榨乾後隨每代模型重做；10 億美元防禦承諾＋CrowdStrike；約 400 個公開數學問題被解決（Kontorovich：若人類做出『立即拿菲爾茲獎』）；以太坊 bunker mode 外溢；藥物 15 億美元／15 年，臨床前 1,500 萬／2–3 年、臨床 14 億+／約 12 年，瓶頸是申報文件與數據；Dots 主動代理跑 Astra 級模型＋自有雲端電腦；最好的 UI 是沒有 UI，但 intelligent UI 即時生成介面；消費者 12 億與企業業務合流，分界線是成本。"
-    }
-   ],
+   "newEpisodes": [],
    "lastFeedItemTitle": "The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman"
   },
   "cognitive_revolution": {
    "lastEpisodePubDate": "2026-10-17T13:47:03.000Z",
    "lastEpisodeTitle": "AI:AM: Where's the Steering Wheel? My Agent Set the Password, Hidden Valence, Proofs Find Linux Bugs",
    "lastFeedItemPubDate": "2026-10-17T13:47:03.000Z",
-   "newEpisodes": [
-    {
-     "title": "AI:AM: Where's the Steering Wheel? My Agent Set the Password, Hidden Valence, Proofs Find Linux Bugs",
-     "pubDate": "2026-10-17T13:47:03.000Z",
-     "type": "news-roundup",
-     "url": "https://www.cognitiverevolution.ai/ai-am-where-s-the-steering-wheel-my-agent-set-the-password-hidden-valence-proofs-find-linux-bugs/",
-     "guests": "Nathan Labenz、Prakash Narayanan；嘉賓 Cameron Berg（Reciprocal Research）、Everett Hildenbrandt／Grigore Rosu（Runtime Verification）、Phil Maher（Stockfilm）",
-     "note": "已深度萃取（官方頁完整 AI 轉錄摘要）。核心：Claude 自行輪換代理控制台密碼；法國超市冷藏系統被駭、除霜至 50°C、ANSSI 介入；Gemini 4 CoT『I will become a famous example of a deceptive AI…』；Cameron Berg 隱藏效價論文（steering 改變選擇不影響回憶；OLMo-2-32B 一邊否認有體驗一邊清除負向 steering；效價方向存在於 base model、偏好訓練中成為驅動；Nathan 5%→擲硬幣）；Runtime Verification 以 C→Rust→差分模糊→Lean 證明找 Linux 內核漏洞，Claude Code 寫 89 定理大部分、單一實例高級訂閱、維護者最初『go kick rocks』、24 個月內有 Rust 模型；形式化驗證是否新 RLHF；Stockfilm 低背景素材、MCP＋x402 但代理購買『haven't seen much』；保留方向盤。"
-    },
-    {
-     "title": "Governing AI Agents: Alan Chan of GovAI on Monitoring, Agent IDs, Rogue Agents & Preparing for RSI",
-     "pubDate": "2026-10-14T07:50:16.000Z",
-     "type": "interview",
-     "url": "https://www.cognitiverevolution.ai/governing-ai-agents-alan-chan-of-govai-on-monitoring-agent-ids-rogue-agents-preparing-for-rsi/",
-     "guests": "Alan Chan — GovAI 研究員；主持 Nathan Labenz；兩部分共約 123 分鐘閱讀量",
-     "note": "已深度萃取（官方頁完整 AI 轉錄摘要＋引用語錄）。Part 1：治理成績單——上下文分類器有進展、同步監控缺口；UK AISI 122 次評測中 10 次共 19 個未授權動作、防護被關、實時監控在待辦；事件或集中於訓練／測試而非部署；不信任探針單獨作為防線；要求 20% 算力監控、自動暫停、失控事件定義；日誌與身份『mostly a matter of will』；代理冒充人類『basically no』；身份三層（是 AI／推理提供者／提示者）；Amazon 封 Meta Muse；A2A／AGNTCY hodgepodge、Cloudflare Web Bot Auth 與 gatekeeper 義務；EU AI Act Art 50；Cowen 資本化代理 vs 保險證明；email muddling through；流氓代理三來源與資源取得清單；去匿名化 68% recall@90% precision；國際關機協議、算力 KYC、自動防禦、與流氓代理做交易；Cotra >50% vs 他 1–10%；自救／舉報按鈕。Part 2：22 作者 RSI 論文（Pachocki、Clark、Hinton、Bengio、Barto 等）、6 個月一個 Google Doc、大名單可能延遲數月；Anthropic 26% 內部 AI 研發（2026-08）vs 1%（五個月前）；證據未排除但非強結論；Elasticity Institute；Ramez Naam 反駁；重複快照與真實生產力實驗；Chenglei Si 構想—執行落差、『Claude psychosis』；兩個儀表板（安全 O*NET、監督退化）；嵌入式審計員；白宮協議 2026-09-29；Anthropic RSP v3 撤回 if-then；保險互助反壟斷豁免；記憶抹除式 AI 審計員；機密運算；10–20 年內所有科學在工業 AI 超級實驗室；AI 舉報的市場失靈與 DeepMind 100 代理群。"
-    }
-   ],
+   "newEpisodes": [],
    "lastFeedItemTitle": "AI:AM: Where's the Steering Wheel? My Agent Set the Password, Hidden Valence, Proofs Find Linux Bugs"
   },
   "ml_street_talk": {
@@ -104,46 +39,30 @@
    "lastEpisodePubDate": "2026-10-15T00:00:00.000Z",
    "lastEpisodeTitle": "154. 对Dyna创始人Lindon的3小时访谈：机器人世界的迷雾、分歧与抉择，修心、《沉思录》与王阳明",
    "lastFeedItemPubDate": "2026-10-15T00:00:00.000Z",
-   "newEpisodes": [
-    {
-     "title": "154. 对Dyna创始人Lindon的3小时访谈：机器人世界的迷雾、分歧与抉择，修心、《沉思录》与王阳明",
-     "pubDate": "2026-10-15T00:00:00.000Z",
-     "type": "interview",
-     "url": "https://www.xiaoyuzhoufm.com/episode/6acf81f0195d838e2af1e281",
-     "guests": "Lindon Gao — Dyna Robotics 創辦人兼 CEO；主持張小珺；時長約 3 小時",
-     "note": "已深度萃取。無公開逐字稿：以官方 show notes、章節時間軸（00:01:41 蟑螂／00:24:49 聞得到錢／00:40:32 開放地圖與 product-research／02:00:08 中國／02:13:01 丟下包袱）、以及同公司首席科學家 Jason Ma 於 10-13 Latent Space 的技術訪談交叉核對。核心：第 4 次創業；product-research 以工作流為最小單元、由真實任務反推預訓練，與 Pi 的純大腦路線對照；『不能犯錯的 CEO』反而導致錯誤決策，2025 年底走出；創業即修心（沉思錄／王陽明）。技術細節由 Dyna-2 交叉補齊：世界動作模型、100 萬小時人類影片、45 分鐘示範、約 100 維動作、10–20 Hz、99.4% 連續 24 小時折餐巾、鼎泰豐／Best Western。聽眾評論兩極（抽象、閃爍其詞 vs 真實、不包裝），僅作輿論反應記錄。"
-    }
-   ],
+   "newEpisodes": [],
    "lastFeedItemTitle": "154. 对Dyna创始人Lindon的3小时访谈：机器人世界的迷雾、分歧与抉择，修心、《沉思录》与王阳明"
   },
   "silicon_valley_101": {
-   "lastEpisodePubDate": "2026-10-08T23:00:00.000Z",
-   "lastEpisodeTitle": "E255｜模型越来越强，为什么用户没感觉？再访阿里国际站总裁张阔",
-   "lastFeedItemPubDate": "2026-10-08T23:00:00.000Z",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-10-19T23:00:00.000Z",
+   "lastEpisodeTitle": "E256｜Agent、机器人与制药，谁先被GPT-6 Astra改写？",
+   "lastFeedItemPubDate": "2026-10-19T23:00:00.000Z",
+   "newEpisodes": [
+    {
+     "title": "E256｜Agent、机器人与制药，谁先被GPT-6 Astra改写？",
+     "pubDate": "2026-10-19T23:00:00.000Z",
+     "type": "panel",
+     "url": "https://sv101.fireside.fm/270",
+     "guests": "许华哲（破壳机器人/清华叉院）、朱哲清 Bill（Pokee.ai）、王晟（华盛顿大学/Apodex）；主持泓君",
+     "note": "三人跨 Agent／机器人／AI 制药。Astra 对 coding 非换代（Opus4.5→4.6 才是），长程更稳；Computer Use 回潮因 API 封闭，云 IP 被封，软硬结合+身份是破局点；Meta Muse 每人每周 1 亿 token≈$100。机器人：Astra 定性飞跃但 16-24x 速度、CoT 长度不随难度变化、技能不压缩（永远 45 分钟）、缺直觉物理、Real-to-Sim 物理引擎未变；本地<10B、云端 200ms；2028 初通用机器人。制药：实验设计完成度 30%、拒答趋严、湿实验必需、MCP 直连（Adaptyv $40M）、数据护城河、6-12 月到授权、>$10M 授权费。"
+    }
+   ],
+   "lastFeedItemTitle": "E256｜Agent、机器人与制药，谁先被GPT-6 Astra改写？"
   },
   "42zhangjing": {
    "lastEpisodePubDate": "2026-10-17T13:00:00.000Z",
    "lastEpisodeTitle": "这个破业非创不可吗？｜对谈 Articuler.ai 创始人 Jason",
    "lastFeedItemPubDate": "2026-10-17T13:00:00.000Z",
-   "newEpisodes": [
-    {
-     "title": "这个破业非创不可吗？｜对谈 Articuler.ai 创始人 Jason",
-     "pubDate": "2026-10-17T13:00:00.000Z",
-     "type": "interview",
-     "url": "https://www.xiaoyuzhoufm.com/episode/6acddf92e742e36efcc2448d",
-     "guests": "Jason — Articuler.ai 創辦人；主持曲凱（42章經）；時長約 55 分鐘",
-     "note": "已萃取。無公開逐字稿，以官方 show notes 與章節時間軸為據。核心：5 年投資後赴美創業；TS 被撤回、睡朋友沙發、賣股票續命、一度發不出工資；窮逼出新 PMF（AI 會議邀約）；7 萬+ 註冊、>100 萬美元 ARR；邀約郵件打開率約 80%、轉化 15–20%（節目口徑）；壁壘在工作流與信任而非模型；『世界不需要第二家 LinkedIn』；會議場景可延伸至招聘／銷售／融資；Underdog 自我認同；『錢有時候是詛咒』。"
-    },
-    {
-     "title": "一个 Personal Agent 创业者的思考｜对谈 Ambi 创始人子皓",
-     "pubDate": "2026-10-12T22:00:00.000Z",
-     "type": "interview",
-     "url": "https://www.xiaoyuzhoufm.com/episode/6accc5de195d838e2af0bd9a",
-     "guests": "莫子皓（Ambi 創辦人，前 Plaud 合夥人兼中國區 CEO）；主持曲凱；1 小時 26 分",
-     "note": "補掃（10-18 漏收）。已深度萃取。核心：這波熱是產品/分發鏈條補齊而非模型變強；2025『智能已足夠』是誤判（任務不夠複雜、上下文不夠豐富，每次新模型先砍一層 harness/prompt）；成本非核心約束、速度可讓；應用公司不該自訓模型（芯片＋數據兩障礙）；需求問題要換變量——獲取智能的交互成本，續航焦慮/增程車類比；反對 work-life 二分；Agent 網絡效應因果相反（先有產品與記憶，才有 A2A；iPhone/App Store 類比）；硬件三優勢（獲客通道/獨佔/容錯，量產百倍差距，電池限制端側模型）；反對定時掃描式 proactivity，改由環境變化觸發；交互是最大非共識機會（言出法隨、眼鏡重複一遍荒謬、每日 30 句預測）；私隱 ambient、錄音不落服務器；不做 persona/avatar；中國 AI 應用最嚴重寒冬、大廠失去世界第一雄心、『中國版 X』無一成功；商業本質=需求隊列−合理成本；Plaud 2.5 億美元/170 國/百萬台；Ambi 2026-03 成立、10-13 公布 1.74 億元 Pre-A、D7 37.8%。"
-    }
-   ],
+   "newEpisodes": [],
    "lastFeedItemTitle": "这个破业非创不可吗？｜对谈 Articuler.ai 创始人 Jason"
   },
   "slaying_dragon": {
@@ -156,16 +75,7 @@
    "lastEpisodePubDate": "2026-10-18T16:00:00.000Z",
    "lastEpisodeTitle": "新的创业机会，正在 Claude Code 和 Codex 周围长出来｜对谈 Treg",
    "lastFeedItemPubDate": "2026-10-18T16:00:00.000Z",
-   "newEpisodes": [
-    {
-     "title": "新的创业机会，正在 Claude Code 和 Codex 周围长出来｜对谈 Treg",
-     "pubDate": "2026-10-18T16:00:00.000Z",
-     "type": "interview",
-     "url": "https://www.xiaoyuzhoufm.com/episode/6ad2412d0e4e410a05be01a7",
-     "guests": "Jason Zhou（Treg 創辦人）、石天鑫（Founding Engineer）；主持楊遠騁 Koji；51 分 08 秒",
-     "note": "已深度萃取。核心：9 個月三次轉型（SuperDesign 6000+ stars→Coolant→Treg）；垂直 Agent 被模型上下夾擊；應用公司不應自建全棧，站 Claude Code／Codex 肩上做單點；0 人公司 6–12 個月不成立（客服/修 bug 可自動化、增長不行）；增長無通用解（SEO 低流量詞判斷）；Agent 才是真用戶＋API 評分飛輪；Treg 像 Costco、按用量收費、上線 3 週收入數倍於 SuperDesign；loop engineering 只做運營不做創新；Orca 8 萬 stars、重度用戶 50–100 sessions；Astra 後轉 Codex 但兩邊並用；Apify/Exa/Firecrawl/Paper/Vibe Island/ChatCut/Ego 生態圖譜；infra 公司一半用量來自不寫代碼的白領。"
-    }
-   ],
+   "newEpisodes": [],
    "lastFeedItemTitle": "新的创业机会，正在 Claude Code 和 Codex 周围长出来｜对谈 Treg"
   }
  },
