@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客深度萃取 · 2026-10-21</title>
+<style>
+  :root{
+    --paper:#faf8f5;
+    --ink:#24211d;
+    --muted:#6f675c;
+    --rule:#ddd5c8;
+    --accent:#8a5a2b;
+    --soft:#f2ede4;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--paper)}
+  body{
+    margin:0 auto;
+    max-width:820px;
+    padding:64px 26px 110px;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+    font-size:17px;
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{border-bottom:2px solid var(--ink);padding-bottom:26px;margin-bottom:14px}
+  .kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  h1{font-size:34px;line-height:1.32;margin:0 0 14px;font-weight:600;letter-spacing:.01em}
+  .deck{font-size:16px;color:var(--muted);margin:0 0 22px;line-height:1.85}
+  .meta{font-size:13px;color:var(--muted);line-height:1.9}
+  .meta span{white-space:nowrap}
+  .meta b{font-weight:600;color:var(--ink)}
+  h2{
+    font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+    margin:64px 0 8px;padding-top:18px;border-top:1px solid var(--rule);
+    color:var(--accent);font-weight:600;
+  }
+  h3{font-size:26px;margin:44px 0 4px;font-weight:600;line-height:1.4}
+  .host{font-size:14px;color:var(--muted);margin:0 0 26px}
+  h4{font-size:20px;margin:34px 0 6px;font-weight:600;line-height:1.55}
+  .pub{font-size:13px;color:var(--muted);margin:0 0 22px;letter-spacing:.02em}
+  p{margin:0 0 18px;text-align:justify}
+  .label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:30px 0 8px}
+  ul{margin:0 0 18px;padding-left:1.3em}
+  li{margin:0 0 12px}
+  li b{font-weight:600}
+  blockquote{
+    margin:24px 0;padding:2px 0 2px 20px;border-left:2px solid var(--accent);
+    font-style:italic;color:#3b352d;font-size:17px;
+  }
+  blockquote .who{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:6px}
+  .note{
+    background:var(--soft);border:1px solid var(--rule);padding:14px 18px;
+    font-size:14px;line-height:1.8;color:#4a443b;margin:22px 0;
+  }
+  .note b{color:var(--ink)}
+  .num{font-variant-numeric:tabular-nums}
+  hr{border:0;border-top:1px solid var(--rule);margin:46px 0}
+  footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted);line-height:1.9}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(138,90,43,.35)}
+  .toc{font-size:14px;line-height:2;color:var(--muted);margin:24px 0 0}
+  .toc a{color:var(--muted);border-bottom:0}
+  .toc a:hover{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;margin:22px 0;font-size:15px;line-height:1.7}
+  th,td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--rule)}
+  th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+  @media(max-width:600px){
+    body{padding:40px 18px 80px;font-size:16px}
+    h1{font-size:27px}
+    h3{font-size:22px}
+    h4{font-size:18px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">AI Podcast Deep Extract · Daily Report</div>
+  <h1>合約、圖譜、接班：三種被拉長的時間</h1>
+  <p class="deck">今天三集，表面毫無關係：一張 GPU 合約怎麼交割、一個細胞的資訊模型怎麼訓練、一家掃地機器人公司怎麼交棒。但三者都在處理同一件事——<b>把「不確定」變成「可定價」</b>。Evan Conrad 把未來三年的算力切成可交易的合約，Alex Rives 把細胞狀態變成一個機率轉移函數，錢程則在把父親留下的公司、以及自己「最年輕 A 股 CEO」的敘事，慢慢交割給下一個階段。三集分別是小時、五年、十年的時間尺度，卻都在回答：當一件事還沒標準化，你憑什麼給它定價？</p>
+  <div class="meta">
+    <span><b>報告日期</b>　2026-10-21（星期三）</span><br>
+    <span><b>生成時間</b>　2026-10-21 02:06 UTC（香港時間 10:06）</span><br>
+    <span><b>掃描範圍</b>　10 個播客 · 5 個中文 RSS · 5 個英文 RSS／YouTube</span><br>
+    <span><b>本期新集</b>　3 集（中文 1／英文 2）｜掃描窗口 10-20 02:22 → 10-21 02:06 UTC</span>
+  </div>
+  <div class="toc">
+    <a href="#zxj">① 張小珺｜155. 和科沃斯錢程聊：父與子、企二代接班、機器人</a><br>
+    <a href="#sf">② Latent Space｜The Programmable Data Center — Evan Conrad, SF Compute</a><br>
+    <a href="#rives">③ Cognitive Revolution｜A World Model of Life — Alex Rives, Biohub</a><br>
+    <a href="#log">④ 掃描日誌與方法</a>
+  </div>
+</header>
+
+<h2 id="zxj">中文播客 · 01</h2>
+<h3>張小珺 Jùn｜商業訪談錄（張小珺）</h3>
+<p class="host">嘉賓：錢程 David（科沃斯 CEO、副董事長）｜時長 1 小時 59 分 51 秒（7191 秒）｜語言：中文</p>
+
+<h4>155. 和科沃斯錢程聊，父與子、企二代接班的樣本與肌理、機器人，和我內心的追尋 🎙️</h4>
+<p class="pub">發布時間：2026-10-21 08:00（香港時間）｜2026-10-21 00:00 UTC｜時長 1:59:51</p>
+
+<div class="note">
+<b>資料來源說明（重要）：</b>這一集音頻於本報告生成前約兩小時才上線，官方僅釋出節目簡介與九章時間軸，<b>沒有公開逐字稿</b>（小宇宙的 transcript 欄位有 mediaId 但需登入授權；YouTube 同步上線的版本無字幕；工作室文字版在其微信公眾號「語言即世界」，尚未發布）。因此本節的「章節骨架」直接取自節目官方時間軸，人物與公司數據取自可查證的公開報導，<b>不代錢程發言、不虛構引語</b>。凡是節目內的具體表述，只引用官方時間軸上的原句並標明其為章節標題。
+</div>
+
+<div class="label">主題</div>
+<p>這不是一集講 AI 的節目，雖然它掛在一個 AI 訪談節目的第 155 期。它真正的主題是<b>傳承</b>：一家中國製造業公司從創一代交到創二代，權力、判斷力、以及「誰說了算」這三樣東西，究竟是怎麼一段一段轉移的。張小珺在簡介裡把意圖寫得很清楚——「當一代中國企業開始從創業進入傳承，真正在經歷這個過程的當事人，他所面臨的現實與所思所想」，並直接點明「科沃斯也許能提供一個企業傳承的樣本」。</p>
+<p>選科沃斯是有講究的。它成立於 1998 年（前身泰怡凱電器），2018 年 5 月 28 日在上交所掛牌，是家用服務機器人第一股；它經歷過掃地機器人的完整週期——從無人知曉到「掃地茅」，再到賽道擁擠、估值回落。也就是說，這家公司把「創業—上市—交班—守成」整條曲線都走完了，樣本足夠完整。而錢程本人，1990 年 8 月出生，2018 年上市敲鐘時 28 歲、任副董事長，之後接手科沃斯機器人品牌，曾被稱為「中國最年輕 A 股上市公司 CEO」——這個標籤本身，就是這集節目要拆解的東西。</p>
+
+<div class="label">嘉賓背景</div>
+<p><b>錢程（David）</b>，1990 年生，科沃斯 CEO。父親<b>錢東奇</b>，1958 年生，南京大學哲學系畢業，1998 年在蘇州創立泰怡凱電器（科沃斯前身），是中國家用機器人行業的開創者之一；2018 年科沃斯上市後，錢東奇逐步把科沃斯機器人品牌交給錢程，自己轉去開創高端智能生活家電品牌<b>添可 TINECO</b>。</p>
+<p>這條交班曲線並不是一條直線。<b>2023 年下半年，錢東奇重新主導核心決策</b>，糾正錢程此前的高端化與渠道策略——這是外界判斷「交班並未真正完成」的關鍵節點。2023 年科沃斯淨利潤同比下滑 63.96%；2024 年上半年收入同比增長 19.18%、歸母淨利潤同比增長 27.40%，業績回暖，但股價自 2022 年底跌至 70 元附近後長期低迷，市值穩定在 300 億上下，較高峰縮水約三分之二。2026 年 6 月，科沃斯推出首款具身智能開源機器人「八界」並開售，為它站台的是 68 歲的錢東奇，提出的主張是「機器人定義權從廠商交還用戶」。</p>
+<p>把這些放在一起，你就會明白這集訪談的張力在哪：<b>一位 36 歲的 CEO，在父親仍然強勢、公司敘事需要重啟、股價不給面子的情況下，談「雲淡風輕」與「內心的追尋」。</b>這不是雞湯局，這是一個人在解釋自己為什麼還沒贏，以及他怎麼理解「還沒贏」這件事。</p>
+
+<div class="label">章節骨架：九段，其實是一條「失落—證明—反思」的曲線</div>
+<p>官方時間軸本身就是一份濃縮的敘事大綱。把它按順序讀，會看到一個很清楚的情緒與認知弧線：</p>
+
+<table>
+<thead><tr><th>時間</th><th>章節（官方原句）</th><th>這一段在做什麼</th></tr></thead>
+<tbody>
+<tr><td class="n">00:02:11</td><td>雲淡風輕的企二代</td><td>建立人物：不急、不躁、在意經營。簡介裡那兩個細節——最愛吃燕麥碗、朋友圈頭像是自家的狗但把狗眼改成發光的紅色「提醒自己要更有狼性」——就是這一章的濃縮：外表鬆弛，內裡較勁。</td></tr>
+<tr><td class="n">00:11:37</td><td>我靠，那個失落感還是挺大的</td><td>全集的第一次轉折。一個「最年輕 A 股 CEO」說失落，落差來自哪裡，是這一集最值得聽的十分鐘。</td></tr>
+<tr><td class="n">00:18:28</td><td>德國，6 個月拿到 30% 市場份額</td><td>戰績陳列。歐洲市場的快速切入，說明這代人的能力不是繼承來的，是在具體戰役裡打出來的。</td></tr>
+<tr><td class="n">00:31:22</td><td>當上 CEO 的一刻：成功之巔，即愚昧之巔</td><td>全集題眼。「成功之巔即愚昧之巔」是錢程自己的話，也是他對接班最誠實的註解——職位到手的那一刻，往往是判斷力最差的那一刻。</td></tr>
+<tr><td class="n">00:43:20</td><td>欲望與克制</td><td>從「想做什麼」轉向「決定不做什麼」。對照他 2023 年公開說過的「戰略，就是學會放棄」。</td></tr>
+<tr><td class="n">00:58:18</td><td>我們像農耕，不像是游牧</td><td>組織與節奏。製造業的複利來自長期耕耘，不是追風口；這一句也解釋了科沃斯為什麼在 AI 浪潮裡顯得慢。</td></tr>
+<tr><td class="n">01:14:45</td><td>今天 AI 還沒到搶肉的状态</td><td>行業判斷：市場還在長大，不是零和。這是全集唯一直接談 AI 競爭的段落，約 20 分鐘。</td></tr>
+<tr><td class="n">01:35:04</td><td>父與子的傳承與接班</td><td>核心。父子如何分工、如何衝突、如何處理「老頭子又回來了」這件事。</td></tr>
+<tr><td class="n">01:50:04</td><td>我內心的追尋</td><td>收尾。從經營回到人：一個 36 歲、已經當過「最年輕 CEO」的人，接下來為什麼還要幹。</td></tr>
+</tbody>
+</table>
+
+<div class="label">核心論點（依章節與公開資料推導，非逐字轉述）</div>
+<ul>
+  <li><b>接班不是一次交棒，而是一段長期共治。</b>科沃斯的時間線本身就是論據：2018 年上市時把兒子推到鏡頭前，2019 年交出科沃斯品牌，2023 年下半年父親重新主導核心決策。這不是失敗，而是中國家族企業的常態——創一代交的是職位，不是判斷權；判斷權要靠一次次打贏才能拿。錢程在「父與子的傳承與接班」這一章要處理的，正是這個不對稱。</li>
+  <li><b>「成功之巔，即愚昧之巔」是對自己的判決書。</b>把這句話放在 00:31:22，緊接在德國 30% 份額之後，順序很刻意：先講戰功，再講戰功如何讓人膨脹。2023 年的高端化與渠道糾偏、淨利下滑 63.96%，就是這句話的代價。這一章的價值不在於他承認錯誤，而在於他把「上任即盲區」當成一個結構性問題，而不是個人失誤。</li>
+  <li><b>製造業是農耕，不是游牧。</b>這是一個關於時間的判斷：游牧民族追水草，農耕民族守土地。掃地機器人是一門要建供應鏈、建渠道、建售後、建品牌認知的生意，週期以年計。所以當 AI 浪潮來時，科沃斯不可能像新創一樣三個月轉向；它只能把 AI 當作農具改良，而不是換一塊地。</li>
+  <li><b>「AI 還沒到搶肉的状态」是一個階段判斷，也是一個自我保護。</b>如果市場還在增量，慢一點沒關係；如果已經進入存量搏殺，農耕就會變成守城。這句話兩面都成立：對內是安撫（我們沒錯過什麼），對外是立場（別用純 AI 公司的估值框架看我們）。而 2026 年 6 月推出「八界」、由父親站台喊「機器人定義權交還用戶」，恰恰說明公司自己也知道：只靠掃地機的舊敘事，已經撐不起估值。</li>
+  <li><b>「欲望與克制」是整集的經營方法論。</b>錢程 2023 年公開講過「戰略，就是學會放棄」；放在這一集，它和「愚昧之巔」是一組的：擴張的衝動要能被自我否決，尤其在接班的頭幾年——因為那幾年最容易被「我要證明自己」驅動。</li>
+</ul>
+
+<div class="label">關鍵數據（公開資料，非節目內引述）</div>
+<ul>
+  <li><b>1998</b>：錢東奇在蘇州創立泰怡凱電器，科沃斯前身。</li>
+  <li><b>2018-05-28</b>：科沃斯在上交所掛牌，錢程 28 歲，任副董事長。</li>
+  <li><b>2019</b>：錢東奇將科沃斯機器人品牌交棒錢程，自己轉做添可。</li>
+  <li><b>2023 H2</b>：錢東奇重新主導核心決策，糾偏高端化與渠道策略。</li>
+  <li><b>-63.96%</b>：2023 年淨利潤同比降幅。</li>
+  <li><b>+19.18% / +27.40%</b>：2024 年上半年收入與歸母淨利潤同比增速。</li>
+  <li><b>約 300 億元</b>：2026 年市值水平，較峰值縮水約三分之二；股價自 2022 年底起在 70 元附近。</li>
+  <li><b>2026-06</b>：首款具身智能開源機器人「八界」開售。</li>
+  <li><b>1:59:51</b>：本集時長；九章時間軸，最長一段是「父與子的傳承與接班」（約 15 分鐘）。</li>
+</ul>
+
+<div class="label">重點引用（僅限官方時間軸原句，非對話逐字稿）</div>
+<blockquote>「當上 CEO 的一刻：成功之巔，即愚昧之巔」
+<span class="who">— 節目官方章節標題，00:31:22</span></blockquote>
+<blockquote>「我們像農耕，不像是游牧」
+<span class="who">— 節目官方章節標題，00:58:18</span></blockquote>
+<blockquote>「今天 AI 還沒到搶肉的状态」
+<span class="who">— 節目官方章節標題，01:14:45</span></blockquote>
+<blockquote>「我靠，那個失落感還是挺大的」
+<span class="who">— 節目官方章節標題，00:11:37</span></blockquote>
+
+<div class="label">行業 insight</div>
+<p><b>一、掃地機器人已經從「品類創新」進入「供應鏈與渠道的消耗戰」。</b>石頭、雲鯨、追覓輪流用單點功能（自清潔拖布、機械臂、基站）撕開口子，而科沃斯的優勢是渠道深度與製造規模，劣勢是決策鏈長、對市場信號的反應慢——2023 年雲鯨推出自清潔拖布時科沃斯的遲滯，就是這個結構的產物。這類公司的估值，最終不會由「AI 含量」決定，而由「換機週期 + 海外滲透率」決定。</p>
+<p><b>二、「具身智能」對傳統硬體公司是一個估值敘事，也是一個真實的技術岔路。</b>科沃斯選擇了開源（八界），並把「定義權交還用戶」作為主張——這在策略上是把開發者生態拉進來分擔探索成本，在資本市場上則是把自己從「掃地機公司」重新貼回「機器人公司」。這一步能不能走通，取決於它能否把家用場景的數據與供應鏈優勢，遷移到通用具身平台上；目前尚無公開證據。</p>
+<p><b>三、中國家族企業的交班，正在從「血緣繼承」轉向「能力認證」。</b>錢程的案例說明：職位可以先給，權威必須後補。二代真正接手的標誌，不是頭銜變更，而是「上一次他主導的戰略被證明是對的」。這也解釋了為什麼這類訪談裡，二代總要反覆講戰績（德國 30% 份額）——他們在補一張能力的證書。</p>
+
+<div class="label">前後脈絡</div>
+<p>把這一集放進最近的收聽序列，會看到三組對照。第一，<b>與 10-15 的 #154（Dyna 創始人 Lindon）對讀</b>：一位是機器人原生創業者，談的是模型、數據與技術路線的迷霧；一位是機器人商品化的守成者，談的是渠道、接班與組織節奏。同一個「機器人」詞，兩種完全不同的時間感——前者按季度迭代模型，後者按十年折舊產線。</p>
+<p>第二，<b>與 10-17 的 42 章經（Articuler.ai 創始人 Jason）對讀</b>：初創者談「窮逼出 PMF」，二代談「慾望與克制」。一邊是沒資源所以只能聚焦，一邊是有資源所以必須自我限制——限制的難度其實更高。</p>
+<p>第三，<b>與矽谷 101 的 E256（10-20）對讀</b>：許華哲說通用機器人 2028 年初可能到來；錢程說「AI 還沒到搶肉」。兩句話不矛盾，但指向不同的生死時限：對創業公司，2028 是機會窗口；對科沃斯，2028 是必須完成的轉型期限。</p>
+
+<div class="note">
+<b>可追問但本集未給答案的問題：</b>①錢東奇 2023 年回歸後，哪些決策權至今沒有交回？②「八界」是防禦性敘事還是真的資源投入（研發人數、預算、出貨目標）？③德國 30% 份額的打法，在今天的歐洲關稅與合規環境下還能不能複製？④如果掃地機賽道真的進入存量競爭，「農耕」策略的止損線在哪裡？
+</div>
+
+<hr>
+
+<h2 id="sf">英文播客 · 02</h2>
+<h3>Latent Space（swyx + Alessio Fanelli）</h3>
+<p class="host">嘉賓：Evan Conrad（SF Compute 創始人兼 CEO）｜時長 36 分 43 秒｜錄製於 AI Engineer NYC 的 Compute Trading 專場後台</p>
+
+<h4>The Programmable Data Center — Evan Conrad, SF Compute 🎙️</h4>
+<p class="pub">發布時間：2026-10-21 03:31（香港時間）｜2026-10-20 19:31 UTC｜36:43</p>
+
+<div class="label">主題</div>
+<p>這集是 Latent Space 兩年前那場「把算力商品化」訪談的 201 進階版。上次 Evan 講的是「算力應該像石油一樣交易」；這次他講的是<b>為什麼大多數算力市場會失敗</b>——因為它們只做了金融化，沒做交割。SF Compute 花了三年，從「轉租一個集群」變成「運營一整朵雲」，只為了讓一張 GPU 合約到期時，買方真的拿到能跑任務的機器，而不是一筆現金。</p>
+<p>節目的問題意識很尖銳：Jump 剛宣布進入算力市場，SemiAnalysis 開始覆蓋這個賽道，一時間所有人都在做「算力交易所」。Evan 的回答是：<b>這件事的門檻不在金融工程，在物理交付。</b>你要做市，先得會蓋機房、拉光纖、修固件、分 InfiniBand。</p>
+
+<div class="label">嘉賓背景</div>
+<p><b>Evan Conrad</b>，SF Compute 創始人兼 CEO。公司前身叫 Junark，最初只是想轉租自己的一個集群；此後一路補齊雲端的運營能力——選址、BOM、供應鏈、集群架構、機櫃部署、背板管理（PDU、交換機、DPU、UFM、BMC）。他自稱公司「像 Palantir for compute」，因為每一單都是新的戰場。SF Compute 已完成的里程碑包括：數億美元規模的交易量、2.45 億美元算力銷售、以及自研結算帳本 Abel。</p>
+
+<div class="label">核心論點</div>
+<ul>
+  <li><b>從「賣房間」到「經營酒店」。</b>Evan 用旅館比喻公司的演進：客戶租一個房間，然後問「你打掃嗎」，於是你需要清潔間；再問「有客房服務嗎」，於是你需要廚房；再問「有安保嗎」，於是你需要保安室。做到最後，你發現自己是在經營整間酒店。這就是 SF Compute 的路徑——從轉租集群，變成運營整朵雲。這不是業務擴張，而是<b>被交割義務逼出來的縱向整合</b>。</li>
+  <li><b>沒有物理交割，算力市場一定會被操縱。</b>他用 2020 年原油期貨負價格作類比：當石油卡在港口、買方無處可放，賣方要付錢請人把油拉走。算力也一樣——「即將到期」的算力不能賣到過去，只能降價出清。差別在於，石油有管道、有儲罐，算力有存儲系統、有跨集群專線、有中斷恢復時間。這些物理約束不進order book，價格就是幻覺。</li>
+  <li><b>標準化是結果，不是前提。</b>上一輪訪談他們還在跟 CFTC 談合約標準化；Evan 現在承認那條路走不通。「我們只需要把整件事運營起來，否則你無法標準化它。」先讓所有操作一致，才可能有所謂的標準合約。這是典型的 <b>運營先行、標準後至</b>。</li>
+  <li><b>用多約束訂單取代商品分級。</b>既然短期內無法把算力分成「輕質低硫原油」那樣的等級，SF Compute 反過來做：讓買方在訂單上掛約束（時間、可中斷性、存儲類型、GPU 世代、互聯域大小），由撮合引擎去匹配。代價是流動性被攤薄、買賣價差變大；好處是不必等技術穩定就能開市，而且對「什麼算力都能吃」的買方來說，價差就是套利空間。</li>
+  <li><b>獨立性是這門生意的執照。</b>SF Compute 不擁有硬件——「我們必須是瑞士」。因為一旦自己持有 GPU，就有動機操縱遠期曲線。同理，NVIDIA 做不了這件事（不夠中立）、Crusoe／CoreWeave／Lambda／Base10／Fireworks／Modal 也做不了（在需求側的利益太大）。Evan 的原話很狠：「你必須殺掉自己的業務才能做這件事。」</li>
+  <li><b>現金交割應該從物理交割長出來，而不是反過來。</b>他不反對現金結算，但反對「先做現金、後補物理」——那會變成《大空頭》裡那種與底層無關的側注。指數操縱的風險他拿 LIBOR 作比：如果指數只基於少量、與真實成交關聯很弱的數據，它就會被操縱。</li>
+</ul>
+
+<div class="label">關鍵數據</div>
+<ul>
+  <li><b>5%</b>：目前放在 order book 上的容量佔總容量比例（流動性集中，但成交量還小）。</li>
+  <li><b>25%</b>：客戶每花 100 美元買算力，平均可透過轉售拿回 25 美元——他們用來衡量「流動性對商業客戶是否有用」的指標。</li>
+  <li><b>3–5 年</b>：集群的融資週期，也是遠期合約能延伸到的最長時間；理論上可從 1 小時買到 3 年後。</li>
+  <li><b>40%</b>：同一運營商提供的兩種虛擬機，在 GPU kernel launch 上的性能差距——足以讓 MFU 顯著不同，因此無法抽像成單一「算力單位」。</li>
+  <li><b>40 美元／小時</b>：一台 B300 跑推理、滿載時的收入；50% 利用率下約 25 美元／小時。</li>
+  <li><b>5–6 美元／小時</b>：同期租一台 B300 的成本。</li>
+  <li><b>2.45 億美元</b>：SF Compute 已完成的一筆算力銷售規模（節目 show notes）。</li>
+  <li><b>數億美元</b>：累計交易量（Evan 口述“several hundred million”）。</li>
+</ul>
+
+<div class="label">價格曲線：為什麼是「駝峰」而不是單純的期貨曲線</div>
+<p>主持人以衍生品交易員的身分追問：遠期價格是高於還是低於現貨（contango 還是 backwardation）？Evan 的答案是「看情況，我們看到一個駝峰」。邏輯是：即將到期的閒置容量賣不掉，只能降價出清（像快過期的牛奶）；再往後，價格回升到應有水平；更遠的未來，因為買方偏好「現在就能用」，遠期反而折價。<b>這條曲線的形狀，本質上由「GPU 交付週期 + 折舊 + 現金流壓力」決定，而不是由利率決定。</b></p>
+<p>而在這條曲線底下，藏著一個巨大的套利：推理收入 40 美元／小時 vs 租賃成本 5–6 美元／小時。Evan 只說了一句：「這些數字裡有一個必須變。」要麼算力租金漲，要麼推理價格崩，要麼利用率大幅提升。這是整集最值得記住的一句話——它是對當前 AI 基礎設施估值的一個直接壓力測試。</p>
+
+<div class="label">技術細節</div>
+<ul>
+  <li><b>中斷與恢復</b>：合約的一個核心維度是「可不可以中斷」。批量推理只需提前一小時通知；實時推理客戶則需要一到三個月的遷移窗口，因為背後有 SLA。這使「中斷權」本身成為可定價的商品。</li>
+  <li><b>存儲與廣域網</b>：是否配 WEKA／VAST、存儲容量多大，決定了被搶佔後多快能恢復；集群之間是否有私有廣域網（WAN）決定能否「在這裡被中斷、在那裡重新起來」。GPU 集群通常建在電源旁邊而不是客戶旁邊，因此很多新集群根本沒有好的互聯路徑。</li>
+  <li><b>GPU 世代與「批次」</b>：早期 H100、GB200 有固件／硬件缺陷（他舉例 Super Micro 的固件 bug，需要整批更新）；成熟買家願意為「晚批次」付溢價。因此「同型號」不等於「同品質」，cohort 成為定價維度。</li>
+  <li><b>InfiniBand 即時切分</b>：這是他們最新、也最能說明「可編程數據中心」的功能——客戶可以自己重新劃分 InfiniBand fabric，不必發工單等雲廠商操作。對需要頻繁擴縮的 PaaS 公司，這是剛需。</li>
+  <li><b>Abel</b>：自研結算帳本，處理物理交割下的頭寸與現金流。</li>
+  <li><b>合約現金流</b>：容量區塊（block）要求全額預付；長期租約則按期支付。</li>
+</ul>
+
+<div class="label">重點引用</div>
+<blockquote>「我們的印象是 NVIDIA 做不了這件事，但它從這件事的存在中獲益極大。做不了的原因是——它會變得不夠獨立，獨立到人們不敢在上面交易。」
+<span class="who">— Evan Conrad，00:00</span></blockquote>
+<blockquote>「你必須殺掉自己的業務，才能做這件事。這就是為什麼沒人做。」
+<span class="who">— Evan Conrad，33:55</span></blockquote>
+<blockquote>「我們在虛擬化數據中心，讓它變得可編程。」
+<span class="who">— Evan Conrad，35:43</span></blockquote>
+<blockquote>「如果我有牛奶，而它快過期了，我會降價。」
+<span class="who">— Evan Conrad，18:52（解釋近月合約為何折價）</span></blockquote>
+<blockquote>「一台 B300 跑推理一小時能賺 40 美元左右……而你可以用 5 到 6 美元一小時買到 B300。這兩個數字有一個必須變。」
+<span class="who">— Evan Conrad，19:28</span></blockquote>
+
+<div class="label">行業 insight</div>
+<p><b>一、算力市場正在裂成三層，而且互為前提。</b>第一層是物理交割（SF Compute、雲廠商）；第二層是現金結算的金融產品（Silicon Data／Compute Exchange）；第三層是圍繞它的服務——殘值保險、押金借貸、標準制定（SemiAnalysis）。Evan 的判斷是：第二層必須從第一層長出來，否則就是空中樓閣。這對所有想「用金融工程解決算力短缺」的人是當頭一棒。</p>
+<p><b>二、中立性成為一種稀缺資產。</b>NVIDIA 因為賣鏟子不能做交易所，雲廠商因為買賣兩邊都做不能做交易所，於是「不持有硬件」反而成了護城河。這是一個很有意思的結構：<b>你必須放棄資產，才能獲得定價權。</b>類比一下，這正是當年 Nicira 把控制面與數據面分離的邏輯，只是這次分離的是「算力的所有權」與「算力的調度權」。</p>
+<p><b>三、主權算力是下一個需求側變量。</b>Evan 提到他們在全球部署集群，合作對象「看起來像主權算力玩家」，賣點是「我們帶來舊金山的 offtake 與專業能力，幫你在自己的國家建一朵雲」。這條線與中東、東南亞、歐洲的主權 AI 投資直接相關，也意味著算力市場的價格將越來越受政策與補貼扭曲，而不是單純的供需。</p>
+<p><b>四、對 AI 創業者的含義：算力成本即將從「固定支出」變成「可交易的風險」。間接影響是，模型公司可以用遠期合約鎖定訓練成本，也可以把閒置容量賣回市場；這會改變毛利率結構，也會讓「囤卡」這個策略的會計含義完全不同。</b></p>
+
+<div class="label">前後脈絡</div>
+<p>兩年前同一檔節目，Evan 談的是「算力應該商品化」；今天他談的是「商品化為什麼這麼難」。這個轉變本身就是行業的縮影：2024 年大家相信算力會像電力一樣即插即用，2026 年發現每一批 GPU 都不一樣、每一個機房都不一樣、每一份合約都要人去看現場。另一方面，這集與 Dwarkesh 在 8 月與 Dylan Patel 的對話（「Anthropic 與 OpenAI 到 2028 年將擁有世界大部分算力」）形成對照：Dylan 看的是算力總量的集中，Evan 看的是算力流轉的市場化。兩者其實是同一枚硬幣——<b>集中度越高，現貨市場的價格信號就越重要</b>。</p>
+
+<hr>
+
+<h2 id="rives">英文播客 · 03</h2>
+<h3>The Cognitive Revolution（Nathan Labenz）</h3>
+<p class="host">嘉賓：Alex Rives（Biohub 科學主管；前 EvolutionaryScale 共同創辦人兼首席科學家；Meta FAIR ESM 項目發起人）｜時長約 63 分鐘｜2026 TIME100 AI</p>
+
+<h4>A World Model of Life: Biohub's Alex Rives on Virtual Cells, Measurement, &amp; the $1.8B Data Push 🎙️</h4>
+<p class="pub">發布時間：2026-10-21 19:00（香港時間）｜2026-10-20 11:00 UTC｜約 63 分鐘（章節至 01:03:11）</p>
+
+<div class="label">主題</div>
+<p>如果要用一句話概括這集：<b>「虛擬細胞」這個詞被用爛了，而真正的版本需要先造出能看見細胞的儀器。</b>Alex Rives 是 ESM 蛋白語言模型系列的開創者，如今在 Chan Zuckerberg 支持的 Biohub 負責科學。專輯發布前兩天，Biohub 把 4 月啟動的 Virtual Biology Initiative 從 5 億美元擴大到 18 億美元，拉進美國能源部、NIH、Google DeepMind、Isomorphic Labs 與 Meta。</p>
+<p>但這不是一集「我們拿到了很多錢」的公關訪談。Nathan Labenz 從「治癒所有疾病到底是什麼意思」開始追問，一路逼到「今天的虛擬細胞模型到底行不行」，而 Rives 的回答異常直白：不行，而且不是因為模型不夠大。</p>
+
+<div class="label">嘉賓背景</div>
+<p><b>Alex Rives</b> 在 Meta 基礎 AI 研究實驗室（FAIR）發起 ESM 蛋白語言模型項目：ESM-1b（2021，2.5 億條蛋白序列的無監督學習）、ESM-2／ESMFold（2023，原子級結構預測）、ESM3（「用語言模型模擬 5 億年演化」）。離開 Meta 後共同創辦 EvolutionaryScale，2025 年 11 月團隊加入 Biohub，他出任科學主管。他的技術血統是「用大規模自監督學習處理生物序列」，因此他對「虛擬細胞」的批評，不是外行對內行的挑剔，而是同路人對路線的修正。</p>
+
+<div class="label">核心論點</div>
+<ul>
+  <li><b>「治癒所有疾病」被定義為「一個沒有疾病的世界」。</b>不是永生，不是「解決生物學」這種含糊說法，而是具體的三無：沒有癌症、沒有傳染病、沒有慢性病與退行性疾病。他自稱是「一個務實的人」，所以把目標設定在「現實時間框架內可能做到」的範圍。路徑有兩條腿：一條是理解疾病如何運作的基础科學，一條是讓醫學從「藥丸與小分子」走向「可編程干預」——用他的話說，是「讀寫生物學的程序」。</li>
+  <li><b>生命是一個程序，疾病是程序裡一段規律展開的子程序。</b>這是整集的哲學底座：細胞是資訊處理機器，基因組編碼了運行生命的程序；疾病「以非常規律的方式展開」。因此，只要我們有足夠好的細胞狀態模型，就能問出那個關鍵問題——<b>如何把一個病理狀態推回健康狀態</b>。</li>
+  <li><b>今天的「虛擬細胞」名不副實。</b>「今天被稱為虛擬細胞的那些模型，我不認為它們符合『能真正模擬細胞、並成為實驗生物學神諭（oracle）』的定義。」三個瓶頸必須同時推進：<b>建模範式</b>（Transformer 缺乏細胞所需的多尺度結構）、<b>規模化數據</b>、以及最根本的<b>觀測與測量工具</b>。</li>
+  <li><b>歸納偏置 vs 無限數據。</b>Nathan 提出外行觀點：如果數據夠好，今天的技術應該就夠了。Rives 基本同意——在極限情況下，數據與算力無限時，所有架構都退化為函數逼近器，歸納偏置會消失。蛋白質生物學因為有大規模基因測序，已經接近這個極限，這就是 ESM 與 AlphaFold 能成功的原因；<b>細胞生物學離這個極限還很遠，所以架構仍然重要</b>。</li>
+  <li><b>兩個時間尺度的目標要分開講。</b>長期目標是「生命的世界模型」——能把細胞狀態投射到原子分辨率、讓發育在矽上重演；他明說「我們離這非常遠」。五年內可及的，是一個<b>資訊層面的細胞模型</b>：一個機率轉移函數，輸入當前細胞狀態與外部輸入，輸出下一時刻狀態的分佈。</li>
+  <li><b>生物學的 RLVR 必須以實驗室為驗證器。</b>他預期生物學會走與語言模型相同的配方：自監督表徵學習 → 規模定律 → 引導（elicitation）→ 最終是 RLVR。但關鍵差異是：數學與代碼可以在計算機上快速驗證，生物學不行。「生物學最大的挑戰是它是經驗性的。」因此需要「經驗型 AI」（empirical AI）：提出假設、做實驗、從結果學習、再提出更好的實驗，形成遞歸循環——<b>實驗室就是 reward function</b>。</li>
+</ul>
+
+<div class="label">關鍵數據</div>
+<ul>
+  <li><b>18 億美元</b>：Virtual Biology Initiative 擴大後的總承諾（2026-10-07 宣布）。</li>
+  <li><b>5 億美元</b>：2026 年 4 月啟動時的初始承諾。</li>
+  <li><b>&gt;5 億美元／5 年</b>：美國能源部透過 Genesis Mission 的出資。</li>
+  <li><b>&gt;5 億美元</b>：NIH 協調的既有聯邦投資數據集規模。</li>
+  <li><b>3 億美元</b>：Google DeepMind、Isomorphic Labs、Meta 三方合計出資。</li>
+  <li><b>數千億個細胞</b>：細胞圖譜計劃的目標觀測規模（「hundreds of billions or more cells」）。</li>
+  <li><b>1–2 年</b>：健康與疾病細胞圖譜「初稿」的預期時間。</li>
+  <li><b>約 5 年</b>：較完整圖譜、以及「如何逆轉病理狀態」這類問題開始可答的時間。</li>
+  <li><b>15 年</b>：雷射相位板從概念（Holger Müller 與 Robert Glaeser 提出）到《Science》發表結果的時間跨度。</li>
+</ul>
+
+<div class="label">技術細節</div>
+<ul>
+  <li><b>雷射相位板（laser phase plate）</b>：為電子顯微鏡帶來相位對比——用一道極強的駐波雷射改變電子束的相位。Rives 稱它是「世界上最強的駐波雷射」（Biohub 官方措辭保守一些：「同類中最亮的雷射之一」）。主要應用於冷凍電子斷層掃描（cryo-ET），讓單個大分子在細胞內的位置與相互作用變得可見。這是「測量工具驅動範式轉移」的具體案例：解析度不是靠算法補出來的，是靠儀器看出來的。</li>
+  <li><b>多尺度成像</b>：從原子級（相位板）→ 細胞場（可擾動、可統計測量）→ 全生物體（透明斑馬魚，用顯微鏡追蹤從單細胞胚胎到成體的每一個細胞；可標記免疫細胞並觀察其在活體中的遷移與互動，即 Zebrahub 的工作）。</li>
+  <li><b>「in mice」問題的雙向錯誤</b>：模式生物會兩邊誤導——在小鼠身上有效的療法在人體無效（假治愈），以及人類真正相關的機制在小鼠身上找不到代理（漏掉靶點）。他的解法不是找完美代理，而是<b>跨演化遷移</b>：ESM 與 AlphaFold 之所以有效，是因為它們在所有演化序列上訓練，而不是只訓練人類蛋白。</li>
+  <li><b>「程序完全重連，積木完全相同」</b>：脊椎動物之間，構建模塊是保守的，但調控程序被徹底改寫。這是遷移學習在生物學上的邊界條件。</li>
+  <li><b>器官組織（organoids）</b>：目前最接近人體組織複雜度的體外代理，但仍非完整上下文；Rives 堅持「真正的細胞模型必須包含細胞所處的上下文」，而非培養皿中的細胞。</li>
+  <li><b>電子健康記錄（EHR）的警告</b>：如果沒有正確的因果基礎，「你學到的只是一堆相關性」。他坦言自己對這個問題思考不多，因為他聚焦在更底層的生物學。</li>
+</ul>
+
+<div class="label">重點引用</div>
+<blockquote>「我們想要的，是真正活在一個沒有疾病的世界裡。」
+<span class="who">— Alex Rives，開場</span></blockquote>
+<blockquote>「今天被稱為虛擬細胞的那些模型，我不認為它們符合那個定義——一個能真正模擬細胞、並真正成為實驗生物學神諭的模型。」
+<span class="who">— Alex Rives，09:18 段落</span></blockquote>
+<blockquote>「你可以把它想成一個世界模型，對吧？一種生命的世界模型、生物學的世界模型。我認為我們離那還非常遠。」
+<span class="who">— Alex Rives，13:37 段落</span></blockquote>
+<blockquote>「細胞是一台資訊處理機器，它的基因組編碼了運行生命的程序。」
+<span class="who">— Alex Rives</span></blockquote>
+<blockquote>「ESM 和 AlphaFold 不是靠只訓練人類蛋白質來的。它們真正來自於橫跨整個演化的訓練……如果你只用 人類蛋白質訓練，你不會得到準確的預測模型。」
+<span class="who">— Alex Rives，35:44 段落</span></blockquote>
+<blockquote>「這些程序被完全重連了，但它們是用同樣的積木搭起來的。」
+<span class="who">— Alex Rives</span></blockquote>
+<blockquote>「我們最想知道的那些生物學知識，並不存在於文本裡。它們也無法從第一性原理、或從我們已知的東西推導出來。」
+<span class="who">— Alex Rives，52:04 段落</span></blockquote>
+<blockquote>「在生物學裡，我們必須建立真正能在實驗室裡完成驗證的系統。」
+<span class="who">— Alex Rives，42:24 段落</span></blockquote>
+<blockquote>「我有一隻手錶會追蹤睡眠。大概就到這裡為止。」
+<span class="who">— Alex Rives，被問到自己如何追蹤健康時</span></blockquote>
+
+<div class="label">行業 insight</div>
+<p><b>一、生物 AI 的瓶頸正從「模型」移到「測量」。</b>這是這集最重要的判斷。過去三年，業界的默認路徑是「等一個更大的模型 + 更多公開數據」；Rives 的說法是，公開數據裡根本沒有我們最想知道的信息，因為那些信息從來沒有被測量過。因此 Biohub 把 18 億美元大部分投向「生成新數據」與「造新儀器」，而不是算力。這與 AI 製藥的普遍做法（買數據、拼模型）形成鮮明對比。</p>
+<p><b>二、18 億美元這個數字，真正的意義是「數據公共品」。</b>出資方是 DOE、NIH 與三家前沿實驗室——這是一個政府 + 巨頭的混合體，目標是建立可公開的、預測性生物學數據層。如果成功，它會成為所有生物基礎模型的公共底座；如果失敗，它會成為「大科學項目不如分散競爭」的又一個案例。值得注意的是 DeepMind／Isomorphic 同時出資又自建模型，這種「既當股東又當對手」的結構，會決定數據的開放程度。</p>
+<p><b>三、「世界模型」這個詞在生物學裡有嚴格定義。</b>Rives 把它限定為「能投射到原子分辨率、能讓發育在矽上重演」；而五年內可及的是「資訊層面的轉移函數」。這個區分很重要——它把市場上大量自稱「虛擬細胞」的產品，直接歸類為「相關性模型」。對投資人而言，這是一個判斷真偽的標尺。</p>
+<p><b>四、RLVR for biology 是一個新範式，也是一個組織問題。</b>如果 reward 來自濕實驗，那麼迭代速度就受制於實驗室吞吐量，而不是 GPU。這意味著未來的生物 AI 公司，核心資產可能是「自動化實驗平台 + 實驗設計能力」，而不是模型權重。Rives 說的「empirical AI」正是這個意思。</p>
+<p><b>五、對「百萬個 Bryan Johnson」的回應，透露了 Biohub 的自我定位。</b>Nathan 提出：如果有一百萬人做深度縱向監測，數據會非常值錢。Rives 同意價值，但說 Biohub 的槓桿在「技術層」——造儀器、建圖譜，而不是說服個人自我追蹤。這是一個清晰的分工主張：公共基礎設施 vs 個人健康數據。</p>
+
+<div class="label">前後脈絡</div>
+<p>這集要與三天前的 AI:AM（10-17）對讀。那一集的新聞條目裡有一句「Virtual Cells Saturate at 2%」——虛擬細胞的解釋力停在 2% 就上不去了。當時聽起來像一個技術八卦；Rives 這集給出了完整解釋：不是模型不夠大，是<b>輸入數據裡沒有因果結構</b>，2% 就是相關性模型的天花板。兩集連起來，構成一個完整的論證鏈。</p>
+<p>再往前，10-03 的 Google DeepMind 機器人訪談（Keerthana，Gemini Robotics 2）談的是「一個大腦、任何身體」的跨具身遷移；Rives 談的是「一套積木、不同程序」的跨物種遷移。兩者共享同一個方法論信念：<b>泛化來自橫跨多樣性訓練，而不是在單一目標上堆數據</b>。這可能是 2026 年 AI for science 最一致的一條經驗法則。</p>
+<p>而與 10-14 的 Alan Chan（AI 代理治理）對照，還有一個隱含的共同點：兩集都在談「可驗證性」。Chan 要的是代理行為可審計、可暫停；Rives 要的是生物學假設可在實驗室驗證。當模型能力溢出之後，<b>驗證機制的吞吐量，成了真正的瓶頸</b>——這條線，今天三個節目其實都碰到了。</p>
+
+<hr>
+
+<h2 id="log">掃描日誌與方法</h2>
+
+<div class="label">本輪掃描結果</div>
+<table>
+<thead><tr><th>播客</th><th>最新一集</th><th>狀態</th></tr></thead>
+<tbody>
+<tr><td>張小珺商業訪談錄</td><td>#155 科沃斯錢程（10-21 00:00Z）</td><td>新增 ✅</td></tr>
+<tr><td>Latent Space</td><td>The Programmable Data Center（10-20 19:31Z）</td><td>新增 ✅</td></tr>
+<tr><td>Cognitive Revolution</td><td>A World Model of Life（10-20 11:00Z）</td><td>新增 ✅</td></tr>
+<tr><td>硅谷 101</td><td>E256（10-19 23:00Z）</td><td>已於 10-20 報告處理</td></tr>
+<tr><td>十字路口 Crossing</td><td>Treg（10-18 16:00Z）</td><td>已處理</td></tr>
+<tr><td>42 章經</td><td>Jason（10-17 13:00Z）</td><td>已處理</td></tr>
+<tr><td>No Priors</td><td>Greg Brockman（10-15 10:00Z）</td><td>無新增</td></tr>
+<tr><td>Dwarkesh</td><td>Si Sheppard（10-01 15:28Z）</td><td>無新增</td></tr>
+<tr><td>ML Street Talk</td><td>Akarsh Kumar（10-10 05:48Z）</td><td>無新增</td></tr>
+<tr><td>屠龍之術</td><td>EDA 與芯片設計（09-28 16:00Z）</td><td>無新增</td></tr>
+</tbody>
+</table>
+
+<div class="label">內容抓取與萃取方法</div>
+<ul>
+  <li><b>Latent Space</b>：抓取官方 Substack 文章全文，含完整自動轉錄稿（約 47,000 字元），所有引語均取自轉錄稿原文；時間碼對應官方章節。</li>
+  <li><b>Cognitive Revolution</b>：抓取官方節目頁全文（約 72,000 字元），含 AI 生成摘要、Topics、Resources、Quotes 與完整轉錄稿；引語以官方「Quotes worth pulling」與轉錄稿雙重核對。</li>
+  <li><b>張小珺 #155</b>：官方頁面僅提供節目簡介與九章時間軸（無公開逐字稿）；人物與公司數據另以公開報導核實（上市時間、職位、財務數據、市值、八界發布）。<b>本節未虛構任何嘉賓引語</b>，引號內文字均為官方時間軸原句並已標註。</li>
+  <li><b>取捨</b>：Latent Space 10-20 05:21 的 [AINews] 每日彙整未列入（屬新聞聚合，非訪談）；如需可另行補讀。</li>
+</ul>
+
+<div class="label">Jev 前置過濾</div>
+<p>本輪對三條候選跑 <span class="num">jev.py triage --profile news</span>：available=true、failed=0/3。相對排序：SF Compute 1.40 &gt; Biohub 0.92 &gt; 張小珺 0.85。三者均遠高於 0.6 的噪音線，故全數保留並全量萃取。需注意的是 primary_source 分數偏低（0.25–0.34），這是因為送入的是節目描述而非原文；實際寫作時已改用一手轉錄稿／官方時間軸，此分數不影響內容可信度。</p>
+
+<footer>
+  <p><b>AI 播客深度萃取 · 2026-10-21</b><br>
+  來源：張小珺 Jùn｜商業訪談錄（小宇宙）、Latent Space（Substack）、The Cognitive Revolution（官方節目頁）。<br>
+  報告由自動化流程生成，內容以節目原文為準；中文集數缺公開逐字稿之處已明確標註。<br>
+  Licensed under the Apache License, Version 2.0.</p>
+</footer>
+
+</body>
+</html>
