@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space：The Programmable Data Center——當算力合約到期，你要收到機器，唔係現金</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-10-20 · 36 分 43 秒 · 錄於 AI Engineer NYC「Compute Trading」專場後台</div>
+  <h1>可編程數據中心——算力合約到期嗰日，你要收到嘅係機器，唔係一筆現金</h1>
+  <div class="meta">
+    <span>📅 2026-10-20</span><span>·</span><span>🎙️ swyx + Alessio Fanelli</span><span>·</span><span>👤 Evan Conrad（SF Compute 創辦人兼 CEO）</span><span>·</span><span>⏱️ 36:43</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集表面上係「算力交易所」嘅 201 進階課，實際上係一個更根本嘅問題：<strong>一樣仲未標準化嘅東西，憑什麼可以被定價？</strong>Evan Conrad 嘅答案唔係金融工程，而係一句聽落好唔性感嘅話——你要先識得去機房、拉光纖、修固件、分 InfiniBand，然後才有資格談合約。
+</p>
+
+<blockquote class="strong">
+  「我們的印象是 NVIDIA 做不了這件事，但它從這件事的存在中獲益極大。做不了的原因是——它會變得不夠獨立，讓人不敢在上面交易。」
+  <span class="attribution">Evan Conrad，00:00</span>
+</blockquote>
+
+<div class="highlight-box">
+  <strong>📌 來源說明：</strong>本文以 Latent Space 官方文章 <em>The Programmable Data Center — Evan Conrad, SF Compute</em>（2026-10-20 19:31 UTC 發布）為底本，內含官方自動轉錄稿（約 45,000 字元）與章節時間碼。文中所有引號內容均取自該轉錄稿原文，時間碼對應官方章節；數字（5%、25%、40%、$245M 等）取自節目口述或官方 show notes 連結。<strong>轉錄稿為自動生成、未經人工校對，語氣詞與斷句有雜訊；本文引用時保留原意，只作最小幅度嘅語法整理。凡屬本文判斷而非嘉賓原話者，均以「本文認為」標明。</strong>
+</div>
+
+<div class="section-title">一、先講結論：呢集真正賣嘅係「交割」，唔係「交易」</div>
+<p>如果你只聽標題，會以為呢集係講「算力期貨點炒」。聽完你會發現完全相反：Evan Conrad 用咗三年時間，由一間叫 Junark 嘅小公司（只係想轉租自己手上一個集群）做到今日嘅 SF Compute，中間做嘅事幾乎全部係<strong>反金融化</strong>嘅——去現場睇機房、設計 BOM、盯供應鏈、裝機櫃、接管 PDU／交換機／DPU／UFM／BMC。佢自己都承認，呢啲工作「唔光彩」（unglamorous）。</p>
+<p>點解一間想做算力市場嘅公司，最後變成半間雲廠商？因為佢發現：<strong>冇物理交割，價格就係幻覺。</strong>買方拎到嘅唔應該係一筆對指數嘅現金賠付，而係一批佢今晚就可以跑 training 嘅機器。呢個聽落好基本，但正因為基本，大部分做「算力交易所」嘅人跳過咗。</p>
+<blockquote class="strong">
+  「我們花了三年才明白為什麼需要物理交割。……如果你在產業仲未建立物理交割之前，就做太多金融化，你得到的會是一個非常容易被操縱、而且 basis risk 極大的市場——你對沖嘅價格，同你實際買到容量嘅價格，可以完全無關。」
+  <span class="attribution">Evan Conrad，23:30 段落（原文：“we spent three years learning why you need physical settlement”）</span>
+</blockquote>
+
+<div class="section-title">二、旅館比喻：縱向整合唔係策略，係被交割義務逼出來的</div>
+<p>整集最好用嘅一個比喻在 02:23。Evan 話，一開始佢哋只係想賣一間房：</p>
+<blockquote>
+  「你喺酒店入面，想賣嗰間房。然後客人問：你會唔會幫我打掃？你話，哦，咁我大概要埋個清潔房。然後佢要 room service，你就去攞個廚房。然後佢要保安，你就去攞個保安室。做下做下，你發現自己喺度經營成間酒店。」
+  <span class="attribution">Evan Conrad，02:45（意譯自轉錄稿）</span>
+</blockquote>
+<p>呢個比喻嘅殺傷力在於，它將「業務擴張」重寫成「責任擴散」。傳統 SaaS 嘅思路係：我只賣我一層，其他交畀市場。但算力合約唔容許你咁做，因為你簽嘅係「幾時、幾多、咩規格、可唔可以中斷」——每一個條款背後都對應一件物理工作。你唔做，合約就交唔到貨；交唔到貨，市場就冇人敢在上面定價。</p>
+<p><strong>本文認為，呢個係 2026 年 AI 基建最被低估嘅一條經濟規律：當一個資源嘅「可用性」本身成為稀缺品，中間層就一定會被迫向下整合。</strong>因為客戶買嘅唔係「GPU 小時」呢個抽象單元，而係「我聽日有 512 張 B300 可以跑 72 小時，而且唔會被人踢走」。後者係一個運營承諾，唔係一個商品。</p>
+
+<div class="section-title">三、石油、電網、同一個問題：物理約束點樣進入 order book</div>
+<p>Evan 用兩個成熟市場做類比，兩個都指向同一件事——<strong>交割網絡決定價格結構</strong>。</p>
+<p><strong>石油（2020 年負價格）。</strong>疫情期間原油期貨跌到負數，原因唔係「石油冇價值」，而係油卡在港口、買方冇地方放，賣方要付錢請人拉走。Evan 用呢個講「即将到期」嘅算力：容量唔可以賣到過去，只能降價出清。</p>
+<p><strong>電網（鍋爐冷卻時間）。</strong>電力市場嘅買賣單入面，有一部分參數係因為「鍋爐要時間冷卻」而存在——你唔可以話停就停、話開就開，所以order book 必須把呢個物理延遲寫入去。</p>
+<p>然後佢講咗一句關鍵嘅方法論：</p>
+<blockquote class="strong">
+  「我們同時設計物理交割與 order book。呢個意味住，我哋可以直接處理算力嘅真實約束——例如：我接受被中斷，但前提係嗰部機上面有存儲，我可以好快恢復。」
+  <span class="attribution">Evan Conrad，05:10 段落</span>
+</blockquote>
+<p>呢句嘅含義比表面大。大部分市場設計係「先定商品，再定合約」；SF Compute 係「先定約束，再讓撮合引擎去配對」。呢個順序倒轉，令佢哋可以喺技術仍然高速變化嘅時期開市，代價係流動性被攤薄到好多個 variant 上面。</p>
+
+<table>
+  <tr><th>市場</th><th>物理約束</th><th>對價格嘅影響</th></tr>
+  <tr><td>原油</td><td>管道、儲罐、港口吞吐</td><td>近月可以負價格；儲存成本主導 term structure</td></tr>
+  <tr><td>電力</td><td>鍋爐啟停時間、輸電容量</td><td>day-ahead 與實時市場分離；ramp 能力有價</td></tr>
+  <tr><td>算力</td><td>可中斷性、存儲恢復時間、跨集群專線、GPU 批次</td><td>同一「GPU 小時」可以有數倍價差；遠期曲線呈駝峰</td></tr>
+</table>
+
+<div class="section-title">四、市場有幾深？5% 在 order book，$100 買入可以收回 $25</div>
+<p>主持人 swyx（自稱做過衍生品交易員）直接問：今日算力市場有幾成熟、幾深、幾流動？Evan 答得好乾脆：「唔係好成熟、唔係好深、唔係好流動。」然後補上現況：</p>
+<div class="data-point">
+  <span>5%</span> 目前放到 order book 上嘅容量，佔 SF Compute 總容量比例；其餘逐步搬過去。<br>
+  <span>25%</span> 客戶每花 $100 買容量，平均可以透過轉售收回 $25——佢哋用來衡量「流動性對商業客戶有冇用」嘅指標。<br>
+  <span>3–5 年</span> 集群融資週期，亦係遠期合約可以延伸嘅最長時間；理論上可以由 1 小時買到 3 年後。<br>
+  <span>$245M</span> 官方 show notes 連結提到嘅一筆算力銷售規模；Evan 口述「累計好幾億美元成交量」。
+</div>
+<p>「成交量細，但流動性集中」——呢個區分好重要。傳統市場用「深度」同「買賣價差」量度流動性；Evan 用咗一個<strong>產品指標</strong>：客戶實際可以拿回幾多錢。$25／$100 呢個數字，本質上係「你嘅算力存貨有幾可變現」，而唔係「市場有幾多 maker」。</p>
+<p><strong>本文認為，呢個指標嘅選擇透露咗佢哋真正嘅客戶係邊個：</strong>唔係炒家，而係「買多咗容量、驚閒置」嘅 AI 公司。對呢班人嚟講，25% 回收率嘅意義，等於將算力開支嘅有效折扣由 0 拉到 25%——呢個比任何「市場深度」數字都更接近成交理由。</p>
+
+<div class="section-title">五、標準化係結果，唔係前提：40% 效能差距嘅啟示</div>
+<p>兩年前同一個節目，Evan 仲喺度同 CFTC 傾合約標準化。今日佢嘅答案變了：</p>
+<blockquote class="strong">
+  「標準化仲係好遠。我們過去幾年學到嘅係：你必須把整件事運營起來，否則你無法標準化它。要接近一個可以標準化嘅東西，你首先要令所有操作一樣。」
+  <span class="attribution">Evan Conrad，07:31 段落</span>
+</blockquote>
+<p>佢畀咗一個具體到令人不安嘅例子：<strong>同一個運營商提供嘅兩種虛擬機，GPU kernel launch 嘅效能可以差 40%。</strong>40% 唔係雜訊，係足以令 MFU（模型浮點利用率）顯著不同、令同一張卡嘅經濟價值差一大截嘅差距。而 kernel launch 只係中間層——終端影響係訓練迭代速度同推理吞吐。</p>
+<p>呢個數字直接否定了「算力可以抽象成一個單位」嘅假設。你可以想像一個叫「H100-hour」嘅商品，但實際上市場裡面嘅每一批貨，都帶住唔同嘅固件、唔同嘅互聯域大小、唔同嘅存儲後端。</p>
+<p><strong>本文認為，呢度有一個好少人講嘅推論：算力市場嘅「標準化」不會由監管機構或者行業協會完成，而會由運營商嘅內部一致性完成。</strong>當幾間公司嘅運營流程收斂到同一套（同樣嘅 burn-in、同樣嘅 backplane 管理、同樣嘅中斷語義），合約自然可以標準化。呢個路徑同貨櫃運輸嘅歷史好相似——標準化係喺實際操作中形成，然後才寫成規範，唔係反過來。</p>
+
+<div class="section-title">六、一張訂單有幾多維度：可中斷性、存儲、WAN、批次</div>
+<p>既然唔可以標準化，SF Compute 嘅做法係做一個「多約束訂單簿」：買方可以掛一堆屬性，撮合引擎去配對。Evan 列出嘅維度，本身就係一份「算力經濟學」嘅清單：</p>
+<ul>
+  <li><strong>現在 vs 未來。</strong>賣「現在」嘅容量，意味住你要中斷自己正在跑嘅工作；賣「一個月後」嘅容量，可以隨時買賣，流動性高好多。</li>
+  <li><strong>中斷嘅方式。</strong>批量推理只需要提前一小時通知；實時推理客戶背後有 SLA，需要一到三個月遷移窗口。所以「中斷權」本身係一件可以定價嘅商品。</li>
+  <li><strong>存儲後端。</strong>有冇 WEKA 或 VAST、容量幾大，決定被搶佔之後幾快可以恢復。</li>
+  <li><strong>跨集群專線。</strong>集群之間有冇私有 WAN，決定你能唔能夠「喺呢邊被踢、喺嗰邊起返」。而 GPU 集群通常建在電源旁邊，唔係客戶旁邊，所以好多新集群根本冇好嘅互聯路徑。</li>
+  <li><strong>GPU 批次（cohort）。</strong>早期 H100 有固件問題、早期 GB200 出事、Super Micro 嘅固件 bug 要整批更新、連 B300 都中過招。所以「同型號」唔等於「同品質」，成熟買家願意為「晚批次」付溢價。</li>
+  <li><strong>記憶體與 NVLink 域大小。</strong>呢兩樣令「FLOPs 總量」變成一個唔夠用嘅指標——同一個總算力，可以因為 VRAM 或互聯域唔同而跑唔到同一個模型。</li>
+</ul>
+<blockquote class="strong">
+  「冇辦法將呢啲全部抽象成一個通用嘅算力單位，然後隨便攪勻。……就算係石油，石油都唔係石油，石油其實係一堆唔同類型嘅油。」
+  <span class="attribution">Evan Conrad，20:40 段落（意譯）</span>
+</blockquote>
+<p>主持人接得好：「但你哋有煉油廠，可以將原油變成各種產品。」Evan 嘅回應係：算力太異質，你被迫將底層複雜度暴露畀客戶——「呢個對做市商嚟講係壞事」。所以佢哋嘅工作本質上係<strong>降維</strong>：把無限多嘅硬件組合，壓縮成有限幾個 SKU，再容許客戶自己命名查詢（例如「Blackwell，$6 一小時以下，唔理係 GB300 定 B300」）。</p>
+<p><strong>本文認為，呢個「cohort」維度係整集最容易被忽略、但最有金融意義嘅一點。</strong>它引入咗一個二手車市場式嘅資訊不對稱：賣方知道呢批貨係第幾批、有冇中過固件 bug；買方唔知。結果係「檸檬市場」——唔知情嘅買家只願意付平均價，好貨退出市場。SF Compute 嘅做法（把 cohort 寫入 order book）等於強制披露 vintage，呢個係任何硬體資產證券化都要解決嘅第一步。GPU 而家係唯一一種「同款同型號但年份唔同、價值可以差 20%」嘅大宗資產。</p>
+
+<div class="section-title">七、價格曲線係「駝峰」——因為它定價嘅係折舊，唔係利率</div>
+<p>swyx 用衍生品交易員嘅語言追問：係 contango 定 backwardation？Evan 答：「我哋見到一個駝峰（hump）。」</p>
+<blockquote class="strong">
+  「如果我有牛奶，而它快過期，我會降價。……有一塊算力接近現在，它唔可以賣到過去，所以它必須降價才能出清。然後價格會升返上應有水平；再遠啲，未來嘅算力反而值少啲，因為人們想要現在就能用。」
+  <span class="attribution">Evan Conrad，17:58–19:28</span>
+</blockquote>
+<p>呢條曲線嘅形狀，本質上由三樣東西決定：<strong>GPU 交付週期、折舊速度、持有者嘅現金流壓力</strong>。同利率曲線唔同——利率曲線反映時間偏好同貨幣政策；算力曲線反映嘅係「硬件會壞、會過時、會貶值」。呢個係一個<strong>資產曲線</strong>，唔係一個<strong>資金曲線</strong>。</p>
+<p>而曲線底下藏住一個巨大嘅套利：</p>
+<div class="data-point">
+  <span>$40/hr</span> 一台 B300 跑推理、100% 利用率下嘅收入（Evan 口述，泛指任何模型）。<br>
+  <span>$25/hr</span> 同一個數字在 50% 利用率下。<br>
+  <span>$5–6/hr</span> 同期租一台 B300 嘅成本。<br>
+  <span>「其中一個數字必須變。」</span> Evan 對呢個差價嘅唯一評語。
+</div>
+<p>呢句係整集最值得記住嘅一句，因為它同時係三個行業嘅壓力測試：</p>
+<ol>
+  <li><strong>如果租金唔升：</strong>推理價格要跌 5–6 倍，或者利用率要大幅提升——兩者都會壓縮模型公司嘅毛利。</li>
+  <li><strong>如果推理價格唔跌：</strong>算力租金一定要升，咁所有以「$5/hr」做財務模型嘅 neocloud 都要重估。</li>
+  <li><strong>如果兩者都唔變：</strong>咁差價會吸引更多資本進入租賃側，直到租金被推高或者產能過剩。呢個係典型嘅資本週期，而資本週期嘅末端通常係違約。</li>
+</ol>
+<p><strong>本文認為，$40 vs $5–6 呢個 7 倍差價，比任何「AI 泡沫」討論都更具體。</strong>它說明而家嘅產業鏈利潤幾乎全部集中喺「推理服務」呢一層，而資產擁有者（租出 GPU 嘅人）只拿到極少。歷史上呢種結構通常出現在兩種情況：要麼下游有定價權（品牌、渠道），要麼上游有補貼。AI 推理而家兩樣都有少少——所以呢個差價可以維持一段時間，但唔會永久。</p>
+
+<div class="section-title">八、現金交割 vs 物理交割：為什麼「先金融、後實物」一定會出事</div>
+<p>呢一段係整集嘅思想核心。Evan 唔反對現金結算——佢明確話「現金結算作為未來概念係好主意」。但佢反對次序：</p>
+<blockquote class="strong">
+  「我們認為現金結算應該由物理交割衍生出來。……如果你先做現金、後補物理，就有如你在實物未存在之前就賣衍生品。」
+  <span class="attribution">Evan Conrad，24:59 段落</span>
+</blockquote>
+<p>佢用三個類比支撐：</p>
+<ul>
+  <li><strong>《大空頭》式側注。</strong>CDS 市場規模可以係標的債券嘅十幾倍，價格同底層脫鈎。</li>
+  <li><strong>未上市股票嘅 synthetic share。</strong>你可以買賣「OpenAI 嘅股份」，但同真正嘅股權無關——「好多呢類交易都收場好差」。</li>
+  <li><strong>LIBOR。</strong>十二間銀行坐埋一齊定一個 fixing，全市場跟住交易——然後它被操縱咗。Evan 嘅擔心係：如果指數只基於少量、同真實成交關聯很弱嘅數據，同樣嘅事會再發生。</li>
+</ul>
+<p>呢個論證有一個好精妙嘅地方：佢唔係講「金融化唔好」，而係講<strong>金融化嘅合法性來自底層可交割性</strong>。當你買一張期貨，你買嘅其實係「違約時我可以告你、可以拿到貨」嘅權利。冇貨，合約只係一張紙。</p>
+<blockquote class="strong">
+  「你必須殺掉自己的業務，才能做這件事。這就是為什麼沒有人做。」
+  <span class="attribution">Evan Conrad，33:55</span>
+</blockquote>
+<p>呢句係講中立性。NVIDIA 做唔到，因為它賣鏟子；Crusoe、CoreWeave、Lambda、Hyperscaler、Base10、Fireworks、Modal 都做唔到，因為它們在需求側嘅利益太大。要做交易所，你必須<strong>唔持有硬件</strong>——「我們必須是瑞士」。而唔持有硬件，意味住你放棄咗最容易賺錢嘅部分。</p>
+
+<div class="section-title">九、中立性作為執照：一個反直覺嘅護城河</div>
+<p>呢度有一個結構性嘅洞見，值得單獨拎出來講。</p>
+<p>一般商業邏輯係：擁有資產 → 有定價權。SF Compute 係反過來：<strong>放棄資產 → 才有定價權</strong>。因為一個市場嘅價格只有在「買賣雙方都相信造市者唔會用資訊優勢劏自己」嘅時候，才會有人願意在上面做遠期交易。而一旦你擁有 GPU，你就有動機在近月合約上壓價掃貨、在遠期上抬價出貨。</p>
+<p>呢個邏輯同當年 Nicira 把網絡嘅控制面（control plane）同數據面（data plane）分離一樣：<strong>擁有轉發能力嘅人，唔應該同時決定流量點走。</strong>Latent Space 喺文章開頭就放咗呢個類比（Cisco 出價 6 億、VMware 出價 13 億收購 Nicira）。而 Evan 嘅版本係：分離「算力嘅所有權」同「算力嘅調度權」。</p>
+<div class="highlight-box">
+  <strong>本文判斷：</strong>呢個「中立性溢價」唔會永久存在。當市場夠大，交易所最終會走向縱向整合（歷史上所有交易所都係咁：從會員制走向上市公司、從中立走向自營）。SF Compute 而家嘅中立，係因為它太細、太需要信任。當它大到可以影響價格，呢個矛盾會回來。
+</div>
+
+<div class="section-title">十、生態地圖：三層結構，而且互為前提</div>
+<p>Evan 喺 27:00 段落把整個生態分咗幾類，呢個分類值得抄落筆記：</p>
+<table>
+  <tr><th>層</th><th>做什麼</th><th>代表</th><th>關鍵風險</th></tr>
+  <tr><td>物理交割</td><td>真的把機器交到買方手上</td><td>SF Compute、雲廠商</td><td>資本開支、運營能力、選址</td></tr>
+  <tr><td>現金結算／指數</td><td>對算力價格做現金賠付</td><td>Silicon Data、Compute Exchange</td><td>指數可操縱、basis risk</td></tr>
+  <tr><td>周邊服務</td><td>殘值保險、押金借貸、標準制定</td><td>SemiAnalysis、保險與信貸公司</td><td>定價模型未成熟</td></tr>
+</table>
+<p>Evan 對第二層嘅態度好清楚：「我哋係大粉絲，佢哋好早入場，行嘅路我哋認為最終會做合作夥伴。」但同時：「佢哋做現金交割，我哋做物理交割；兩者可以並存，而且應該並存。」</p>
+<p>而第三層——殘值保險同押金借貸——係本文認為最值得留意嘅一塊。因為呢啲產品直接決定「擁有 GPU」嘅資本成本。如果一張 GPU 可以買保險（保證三年後有殘值），咁它就可以被槓桿、被證券化、被放進退休基金嘅資產配置。到嗰一步，算力就真係變成「石油」。而 Evan 提到嘅「主權算力」需求（32:24），正正係呢條路嘅最大催化劑：主權基金想要算力資產，但唔想承擔運營風險。</p>
+
+<div class="section-title">十一、硬技術清單：一間「唔擁有硬件嘅雲」要做啲乜</div>
+<p>29:03 段落係整集最實務嘅部分。Evan 列出交付一個 GPU 集群要做嘅事：</p>
+<ol>
+  <li><strong>Site visit。</strong>親身去數據中心睇——電力、冷卻、樓板承重、光纖入戶。</li>
+  <li><strong>BOM 設計與供應鏈。</strong>同唔同 OEM 建立關係，確保準時交付。</li>
+  <li><strong>集群架構。</strong>節點數、拓撲、互聯域大小。</li>
+  <li><strong>上架與監督。</strong>自己上或者同夥伴一齊上，但一定要有人盯。</li>
+  <li><strong>Backplane 管理。</strong>接管 PDU、交換機、DPU、UFM、BMC——即係「裸金屬以外嘅所有嘢」。</li>
+</ol>
+<p>佢哋嘅商業模式叫「supercomputing as a service」：對方有 X 兆瓦（或者一塊有電嘅地），可以選擇賣集群、賣數據中心、或者自己變成雲；SF Compute 嘅提案係「你做的數據中心部分，我做超級運算部分，我們合夥，我幫你賣」。有人形容佢哋係「Palantir for compute」——因為每一單都係新嘅戰場。</p>
+<blockquote class="strong">
+  「我們虛擬化數據中心，令它變得可編程。所有你擁有硬件時會有嘅東西，我們試圖虛擬化它。」
+  <span class="attribution">Evan Conrad，35:43</span>
+</blockquote>
+<p>而最具體嘅一個功能，係<strong>彈性 InfiniBand 分割</strong>：客戶可以自己重新劃分 fabric，唔需要開工單等雲廠商處理。對需要頻繁擴縮嘅 PaaS 公司，呢個係剛需——因為「重新畫線」正正係 scale up／down 嘅物理對應物。</p>
+<div class="data-point">
+  <span>Elastic InfiniBand</span> 客戶自行重新劃分 InfiniBand fabric，無需向 SF Compute 申請——官方稱為「虛擬化數據中心」嘅第一個具體產品。<br>
+  <span>Abel</span> 自研結算帳本，處理物理交割下嘅頭寸與現金流。<br>
+  <span>區塊預付</span> 容量區塊（block）要求全額預付；長期租約則按期支付。
+</div>
+
+<div class="section-title">十二、主權算力：下一個需求側變量</div>
+<p>Evan 提到佢哋在全球部署集群，合作對象「看起來像主權算力玩家」，推銷話術係：「讓我們幫你喺自己國家建一朵雲，我們帶來三藩市嘅 offtake 同專業能力。」</p>
+<p>呢條線嘅意義唔止於生意。它意味住<strong>算力價格會越來越受政策同補貼扭曲</strong>，而唔係單純由供需決定。當一個國家用主權基金補貼本地數據中心，它實際上係喺全球算力市場上做一個價格接受者兼產能提供者——呢種行為會令現貨價格更難預測，亦令「指數」更難代表真實邊際成本。</p>
+<p>而對於想做算力金融產品嘅人，呢個係一個警號：如果一個市場嘅最大參與者係唔以利潤為目標嘅主權實體，價格發現就會失效。</p>
+
+<div class="section-title">十三、我嘅萃取：三條可以帶走嘅判斷</div>
+<blockquote class="strong">
+  一、算力市場嘅門檻唔在金融工程，在物理交付。任何試圖「先做指數、後補實物」嘅方案，都會變成一個同底層無關嘅側注。
+</blockquote>
+<blockquote class="strong">
+  二、標準化係運營嘅輸出，唔係前提。當同一批 GPU 可以因為固件、批次、互聯域而有 40% 效能差距，「算力單位」就只是一個方便嘅虛構。
+</blockquote>
+<blockquote class="strong">
+  三、$40 一小時嘅推理收入 vs $5–6 一小時嘅租賃成本，係整個 AI 基建估值嘅壓力測試。呢個差價唔會永遠存在，而它收窄嘅方式，決定咗邊一層被壓縮。
+</blockquote>
+<p>如果要用一句話總結呢集：<strong>Evan Conrad 用三年時間證明，想做算力嘅交易所，你要先變成算力嘅承辦商。</strong>呢個結論對所有「輕資產平台」敘事都係一個提醒——當你賣嘅東西需要交付，你就唔可能輕。</p>
+
+<div class="section-title">十四、未解問題</div>
+<p><strong>1. 5% 嘅容量、$25／$100 嘅回收率，夠唔夠支撐一個真市場？</strong>呢兩個數字說明流動性仍然係「點狀」而唔係「面狀」。如果一個客戶想賣 500 張卡三個月，市場吃唔吃得下？節目冇答。</p>
+<p><strong>2. 中立性同規模化嘅矛盾。</strong>SF Compute 而家唔持有硬件，但如果它要保證交割，遲早要對某些集群做出承諾（take-or-pay）。承諾就係風險暴露，風險暴露就會侵蝕中立。</p>
+<p><strong>3. 主權算力會唔會令「指數」失效？</strong>如果全球新增產能很大部分由補貼驅動，邊際成本就唔再反映市場價格。呢個對現金結算產品係結構性風險。</p>
+<p><strong>4. 3–5 年嘅合約，對應 3–5 年嘅硬件生命週期。</strong>呢個設計好優雅，但它假設 GPU 壽命同融資週期大致匹配。如果模型架構變化令 B300 兩年就過時，遠期合約會變成一個計時炸彈。</p>
+<p><strong>5. 「可編程數據中心」嘅終局係咩？</strong>如果客戶可以自己劃 InfiniBand、自己擴縮、自己定 SLA，咁雲廠商仲剩低咩價值？答案可能係「電力與選址」——即係最唔性感嘅部分。而呢個答案，會決定未來五年 AI 基建嘅利潤分佈。</p>
+
+<hr>
+<footer>
+  <p>來源：Latent Space, <em>The Programmable Data Center — Evan Conrad, SF Compute</em>（2026-10-20 19:31 UTC），錄於 AI Engineer NYC「Compute Trading」專場後台，36 分 43 秒；官方文章含自動轉錄稿與章節時間碼。</p>
+  <p>文中引語取自官方轉錄稿原文（自動生成、未經人工校對），時間碼對應官方章節；$245M 算力銷售、Abel 結算帳本、彈性 InfiniBand 分割等資料取自節目 show notes 所連結之 SF Compute 官方公告。$40／$25／$5–6 每小時等數字為嘉賓口述估算，非審計數據。</p>
+  <p style="margin-top:0.6rem;">深度復述由 Vee Mok 整理 · 生成時間 2026-10-21 06:00 UTC · 英文引述保留原意，分析屬本文視角。</p>
+</footer>
+</div>
+</body>
+</html>
