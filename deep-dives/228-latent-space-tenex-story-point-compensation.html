@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space：按件計酬十八個月——當 AI 令工程師產出翻倍，時薪就變成對自己的懲罰</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-10-21 · 約 43 分鐘 · swyx + Alessio Fanelli 主持</div>
+  <h1>按件計酬十八個月——當 AI 令工程師產出翻倍，時薪就變成對自己的懲罰</h1>
+  <div class="meta">
+    <span>📅 2026-10-21</span><span>·</span><span>🎙️ swyx、Alessio Fanelli</span><span>·</span><span>👤 Alex Lieberman（Tenex 共同創辦人）、CJ Hess（工程總監）</span><span>·</span><span>⏱️ 43 分鐘</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集表面係「一家 AI 顧問公司點樣用 agent 做軟件」，實際上係一集關於<strong>計價單位</strong>嘅訪談。Tenex 兩年前提出一個尖銳設計：既然 AI 令工程師產出唔再同工時成正比，就唔好按工時付錢，按交付嘅工作量（story point）付錢。十八個月後返嚟對帳，有啲設想成立，有啲喺真實組織裡碎掉。而主持人 swyx 同時擺上另一條線：Latent Space 自己辦咗場「Kill My SaaS」，用 1,000 美元重做一套年費 4.3 萬美元嘅系統。兩條線最後撞在同一個問題上——<strong>當「建造」變便宜，你憑咩判斷一件工作值幾多錢？</strong>
+</p>
+
+<blockquote class="strong">
+  「The thesis is that AI is really just a leveraged bet on a human's intellect and work ethic.」
+  <span class="attribution">Alex Lieberman（意譯：AI 本質上係對一個人嘅智力與工作倫理嘅一場槓桿押注）</span>
+</blockquote>
+
+<div class="highlight-box">
+  <strong>📌 來源說明：</strong>本文以 Latent Space 官方 Substack 文章〈AI for the Fortune 2000: How Tenex Builds an AI-Native SDLC〉（2026-10-21 05:01 UTC）為底本。該文含官方章節時間碼與完整自動轉錄稿；轉錄為機器生成、未標註說話人，個別詞語有誤（例如把 Codex 聽成 “codecs”、把 Claude Code 聽成 “Cloud Code”），本文引用時保留原意並在必要處加註。凡屬本文判斷者，以「本文認為」標明。
+</div>
+
+<div class="section-title">一、先睇成績表：75 人、4 倍、2x、5%</div>
+<p>Alex Lieberman 同技術共同創辦人 Armand 十八個月前在紐約創立 Tenex。最初定位好簡單：一間「AI 驅動嘅外包開發店」，睇準工程組織係 AI 滲透嘅煤礦金絲雀。今日公司 75 人，九成係工程師或 AI strategist（本質上係技術顧問），客戶一半係財富 2000 強、一半係營收 1 億至 5 億美元嘅中型企業。</p>
+<p>最受關注嘅當然係薪酬離散度。上一集節目時，Tenex 有兩三個人年收入超過 100 萬美元；今次 Alex 被追問最高與最低差幾多，答案係：</p>
+<blockquote class="strong">
+  「It's probably something around 4X difference.」
+  <span class="attribution">Alex Lieberman</span>
+</blockquote>
+<p>主持人明顯意外：「不是 10 倍？」Alex 答：「That's the dream.」呢句比任何論證都誠實。如果 AI 真係「對人的智力與工作倫理嘅槓桿」，理應放大差距；實際只有 4 倍，說明模型目前做嘅更多係<strong>托底</strong>，而唔係<strong>拔高</strong>——每一代模型變強，都係替平庸嘅執行兜底，把人與人嘅差距壓回中位數。</p>
+
+<div class="data-point">
+  <p><span>公司</span><strong>75 人</strong>，90% 工程師或 AI strategist，成立 18 個月。</p>
+  <p><span>客戶</span><strong>50% 財富 2000 強</strong>，50% 營收 1 億–5 億美元中型企業。</p>
+  <p><span>薪酬</span>最高與最低工程師收入差約 <strong>4 倍</strong>（創辦人願景係 10 倍）。</p>
+  <p><span>產出</span>今年內每位工程師實際產出「大約翻倍」（<strong>2x</strong>）。分水嶺係去年 12 月嘅 Opus 4.5。</p>
+  <p><span>Token</span>token 支出對人力支出約 <strong>1:1 至 2:1</strong>。</p>
+  <p><span>企業階梯</span>90% 鋪開 LLM → 60% 培訓 → 50% 工程組織有 coding agent → <strong>5%</strong> 非工程 agent 進生產。</p>
+</div>
+
+<div class="section-title">二、CJ 的個人動機：產出越好，收入越少</div>
+<p>CJ Hess 係 Tenex 第一位員工，現任工程總監兼「特殊項目」負責人——用佢嘅講法，就係「找出模型能力嘅最前沿，然後給它們工具」。佢軟件工程師出身，加入前有一串創業墳場，最後一家係自己嘅工程諮詢公司。</p>
+<p>佢對按產出計酬有非常個人嘅動機，而呢句係全集最好嘅開場：</p>
+<blockquote class="strong">
+  「I just felt my output getting better and faster, and ultimately getting paid less.」
+  <span class="attribution">CJ Hess（意譯：我只係覺得自己嘅產出越來越好、越來越快，但最後拿到嘅錢越来越少）</span>
+</blockquote>
+<p>按小時收費嘅世界裡，AI 提升效率等於工程師自我降薪。呢個邏輯荒謬到一個點：你越擅長用工具，你嘅時薪就越貶值。Tenex 嘅答案係把計價單位由「時間」換成「交付」，令激勵方向倒轉。</p>
+<p>但 Alex 好清楚呢套模型唔係人人適合：</p>
+<blockquote>
+  「Our model isn't for everyone, but for the person who basically wants to go long themselves... there's no better way to earn.」
+  <span class="attribution">Alex Lieberman（意譯：呢套模型唔適合所有人；但對於想對自己下重注嘅人，冇更好嘅賺錢方式）</span>
+</blockquote>
+<p>呢句隱含一個組織設計判斷：<strong>薪酬制度本身就係篩選器</strong>。按產出付費會自動吸引「想對自己下重注」嘅人，過濾掉想要穩定嘅人。對知識密集型公司，這可能比招聘流程更強嘅文化過濾。</p>
+
+<div class="section-title">三、兩個預言會失效的模式，為何冇發生</div>
+<p>外界對 story point 嘅經典質疑有兩個：估點主觀，工程師會虛報（sandbagging）；以及為衝點數會亂出貨、只勾選框。Alex 話呢兩件事「完全不是問題」，原因係組織裡存在一個激勵方向相反嘅物種——<strong>AI strategist</strong>。</p>
+<blockquote class="strong">
+  「We incentivize, I think, perfectly at odds with engineers, where AI strategists are incentivized for customer retention and growth.」
+  <span class="attribution">Alex Lieberman（意譯：我哋嘅激勵同工程師完美地相反——AI strategist 對客戶留存與增長負責）</span>
+</blockquote>
+<p>呢個係一個值得記住嘅組織設計：唔係靠更精細嘅估點制度去防作弊，而係靠一個<strong>利益相反角色嘅否決權</strong>。AI strategist 有強烈動機否決那些「對客戶冇用但很好估點」嘅工作。任何想複製呢套薪酬模型嘅公司，如果只抄 story point 而唔設呢個否決角色，大概率會直接撞上兩個失效模式。</p>
+<p>本文認為，呢一點比「4 倍」更有轉移價值。大部分公司抄薪酬制度時，只抄表面嘅計分卡，唔抄權力結構；但真正令制度唔腐敗嘅，唔係分數，而係<strong>邊個有權話呢個分數唔值錢</strong>。</p>
+
+<div class="section-title">四、真正解不掉的：唔寫 code 的時間</div>
+<p>Alex 承認，最大難題唔係外部質疑，而係「唔寫 code 嘅時間」：</p>
+<blockquote class="strong">
+  「The biggest challenge has been how do you compensate engineers for all the time that's not spent coding, whether it's architecting, meeting with clients.」
+  <span class="attribution">Alex Lieberman</span>
+</blockquote>
+<p>CJ 嘅親身軌跡係：寫好多 code → 寫少一點 → 而家模型拿到正確上下文就可以做到九成方案。剩下那一成之前嘅工作——坐在客戶對面聽佢把腦子倒出來、整理成模型食得落嘅形式——恰恰係價值所在，卻最難塞進一張 ticket。</p>
+<blockquote>
+  「The models are more or less given the right context and can get you to 90% of the solution.」
+  <span class="attribution">CJ Hess</span>
+</blockquote>
+<p>CJ 推測，未來會更看「產出到底係咩、長咩樣」，而唔係傳統點數，但仍然以點數為錨定單位。本文認為，呢句揭示咗一個更根本嘅轉移：<strong>計價單位暫時唔會換，但估點嘅內涵正由「寫了多少」漂移到「定義了什麼」</strong>。而後者係無法標準化嘅，所以薪酬制度最終還是會回到人的判斷。</p>
+
+<div class="section-title">五、MetaHarness：把「為什麼」commit 入 Git</div>
+<p>這是全集技術含量最高嘅部分。Tenex 把工程流程標準化成三層：一組共用 skills；repo 內一套結構化文檔；以及一層包住它們嘅 CLI，讓模型自己驅動整個流程（產生計畫、視覺化、給客戶嘅 readout）。核心係一份 canonical plan document，agent 被要求以非常特定嘅方式記錄決策與進度，全部進 Git。</p>
+<blockquote class="strong">
+  「The code can actually be the memory of a code base. And I do think you do. You need to know why you made a decision.」
+  <span class="attribution">CJ Hess（意譯：code 可以係 codebase 嘅記憶；但我認為你確實仲需要知道當初為什麼做這個決定）</span>
+</blockquote>
+<blockquote class="strong">
+  「It's never in someone's head. It's always in the repo.」
+  <span class="attribution">CJ Hess</span>
+</blockquote>
+<p>呢段話嘅份量，在於它反駁咗一個當下很流行嘅說法——「有 code 就唔需要文檔」。Tenex 嘅立場係：code 記錄「做了什麼」，決策記錄記錄「為什麼」，而後者才係 agent 接手長程任務時真正缺嘅上下文。</p>
+<p>有趣嘅係，隨着模型變強，佢哋反而<em>減少</em>咗文檔結構嘅強制性。CJ 話模型自己會組織，人只需要提供素材；佢而家更喜歡讓 agent 產出 HTML 而非 markdown——「I like to see these picture books that the agents fit out.」</p>
+<p>佢哋用一個單一指標量度整套流程有冇效：<strong>每位工程師每月平均 story point 係唔係呈上升趨勢</strong>。呢個指標好粗糙，但正因為粗糙，好難造假。</p>
+
+<div class="section-title">六、模型組合與成本：Opus 5.5 做默認，Codex 做交叉審查</div>
+<p>Tenex 目前默認 Opus 5.5。CJ 嘅評價好直接：「It's fast, it's cheap. It kind of hits all my checkboxes.」佢以前要兩三個模型分工（便宜快、真聰明、解特定問題），而家 Opus 覆蓋咗整個區間。</p>
+<p>但佢哋唔係單一模型派。最佳實踐係讓 Opus 同 Codex 喺自己機器上「互相來回審」：</p>
+<blockquote>
+  「Using a codex to review and having them actually work back and forth on your machine, I think still produces the best results.」
+  <span class="attribution">CJ Hess</span>
+</blockquote>
+<p>遠端環境用 AMP 嘅 orbs。CJ 特別稱讚跨模型能力：Opus 喺一個 orb 寫，跳到另一個 orb 話「去看那個 orb 並審查它」。佢認為 Anthropic 一直冇把遠端環境做好（Claude Code in the cloud、Claude Tag 都差一口氣）。成本上，AMP 支援掛接 Claude Code 訂閱後，佢話成本「大約砍掉 80%」。</p>
+<p>Alex 觀察到六到八個月前係「token maxing」嘅高危期——大家比 token 用量、上有排行榜——而家則到達一個帕雷托點：因為單任務成本大幅下降，今日要「把公司燒穿」比以前難得多。</p>
+<blockquote class="strong">
+  「Would a 10 times smarter model really justify the cost of moving some cells in a spreadsheet? Probably not.」
+  <span class="attribution">Alex Lieberman（意譯：一個聰明 10 倍嘅模型，值得為咗移動表格裡幾個儲存格付那個錢嗎？大概不值得）</span>
+</blockquote>
+<p>呢句係對「模型軍備競賽」最冷靜嘅一盆水。但 Alex 亦留咗反向情境：如果出現 Astra 6.5、Fable 5.5 呢類「超貴但效果最好」嘅模型，趨勢可能再擺返去。</p>
+
+<div class="section-title">七、企業階梯：90 / 60 / 50 / 5</div>
+<p>這是全集最可直接引用嘅一組數字。以佢哋正在談嘅約 100 家企業為樣本：</p>
+<table>
+  <tr><th>階段</th><th>比例</th><th>含義</th></tr>
+  <tr><td>向員工鋪開通用 LLM（Claude／Codex）</td><td><strong>90%</strong></td><td>基本上已經係入場券</td></tr>
+  <tr><td>真正嘅培訓與 enablement</td><td><strong>60%</strong></td><td>Alex：呢環「從來沒有得到它應得的重視」</td></tr>
+  <tr><td>工程組織部署 coding agent</td><td><strong>約 50%</strong></td><td>AI Engineer 現場估 70–80%，實際只有一半</td></tr>
+  <tr><td>非工程 agent 真正在生產環境跑</td><td><strong>5%</strong></td><td>整條階梯最大嘅一級落差</td></tr>
+</table>
+<blockquote class="strong">
+  「Most enterprises that we talk to that have more than a thousand employees do not have an agent in production that is doing work that is not building software.」
+  <span class="attribution">Alex Lieberman</span>
+</blockquote>
+<p>Alex 嘅解釋有兩層。第一層係心理：呢一波由「一小群懂嘅人」加「一大群 FOMO 嘅人」共同驅動。FOMO 唔係壞事，它提供動能；但它會令人抓住最時髦嘅口號——所以「Every year is the year of the agent」。第二層係工程現實，見下一節。</p>
+
+<div class="section-title">八、「你無法自動化一個不存在的流程」</div>
+<p>這是全集最鋒利嘅一句。Alex 話佢對團隊就是這樣講：</p>
+<blockquote class="strong">
+  「You can't automate a process that does not exist.」
+  <span class="attribution">Alex Lieberman</span>
+</blockquote>
+<p>展開嘅場景很具體：一家公司裡有 40 個人做大致相同嘅職能，但每個人做法都略有不同。你可以坐下來教每個人怎麼用工具輔助自己，但要做出一個「在背景主動推進工作」嘅 agent，幾乎不可能——因為 agent 無法判斷自己做得對唔對，你也沒辦法為它建 evals。</p>
+<blockquote>
+  「Without some form of standardization, it's going to be impossible for the agent to know whether it's doing it right, for us to build evals around this system, and actually deliver the value.」
+  <span class="attribution">Alex Lieberman</span>
+</blockquote>
+<p>所以 Tenex 嘅建議順序係反直覺嘅：<strong>先幫公司在組織內建立流程，再談把工作交給 agent。</strong>沒有標準化，就沒有 eval；沒有 eval，就沒有可交付嘅價值。這也解釋了為什麼「5%」如此頑固——卡點唔在模型能力，在組織嘅流程熵。</p>
+<p>本文認為，呢個判斷嘅殺傷力在於它把「企業 AI」由一個技術採購問題，變成一個<strong>管理顧問問題</strong>。如果你賣嘅係 agent，你真正嘅競爭對手唔係別家嘅 agent，而係客戶內部嗰 40 種唔同嘅做事方式。</p>
+
+<div class="section-title">九、權限是 CIO／CISO 的第二個噩夢</div>
+<p>當每個員工都有一個 Claude 或 Codex、且都需要存取特定資料，RBAC 與資料權限變成災難。Alex 話市場上「基本上沒有一個好的 gateway」可以做控制面板式嘅資料權限管理。</p>
+<blockquote>
+  「As every employee in a company has Claude or they have Codex and they need access to certain data, it has turned into an absolute nightmare for CIOs and CISOs.」
+  <span class="attribution">Alex Lieberman</span>
+</blockquote>
+<p>Tenex 一開始為客戶客製，後來把它<strong>產品化</strong>成自己嘅 gateway。這是本集少見嘅「從服務長出產品」嘅路徑，也是佢哋由 dev shop 走向平台嘅具體一步。本文認為，權限層可能係企業 AI 裡最少人講、但最容易被鎖定嘅位置——因為它唔需要模型能力，只需要對組織嘅理解。</p>
+
+<div class="section-title">十、對 vertical AI 偏空：one-of-one 遇上軟件毛利</div>
+<p>Alex 與 CJ 都話對垂直／行業專屬 AI 方案「整體偏空」，理由來自佢哋每日待在企業內臟裡嘅觀察：買方而家期待嘅係<strong>一對一</strong>嘅軟件體驗，而這正是軟件公司紛紛自建 FDE（forward deployed engineer）團隊嘅原因——服務與軟件正在收斂。</p>
+<blockquote class="strong">
+  「How will they be able to do this at software margins if everyone expects a one-of-one solution?」
+  <span class="attribution">Alex Lieberman</span>
+</blockquote>
+<p>主持人當場用 Harvey（法律）與 OpenEvidence（醫療）反駁，Alex 嘅回應係「So far you've been wrong」，但仍堅持：這類公司嘅護城河係「ChatGPT 拿不到的資料」與專屬嘅介面 affordance（佢舉 Harvey 嘅 Tabular Review 為例），而 Anthropic／OpenAI 也在買同樣嘅資料源，只係冇那麼專注。</p>
+<p>CJ 給出一個比「垂直 AI 贏或輸」更有用嘅切分：一種產品，主功能就係「一個 agent 替你做某個任務」；另一種產品，係改善做那個任務嘅整個工作流。前者會被模型吸收，後者可以活。這與主持人舉嘅 Superhuman 例子呼應——大家都有 Gmail，但有人願意每月付 30 美元買一個為「整天住在信箱裡嘅人」重做嘅介面。</p>
+
+<div class="section-title">十一、Salesforce／SAP 為什麼不會被拆：風險成本與認知負荷</div>
+<p>對於「Kill My SaaS」那套邏輯能不能上移到大型系統，Alex 嘅判斷很清楚：</p>
+<blockquote class="strong">
+  「The more you move upmarket in business, the harder the proposition of ripping out and building from scratch gets.」
+  <span class="attribution">Alex Lieberman</span>
+</blockquote>
+<p>原因唔係技術，係風險趨避：一旦拆換出錯，代價係數億到數十億美元。佢反而認為這類系統在當下「正在累積價值」。但他也給中小型 SaaS 一個可操作嘅判準：這筆錢佔營收／成本嘅比例，係唔係大到值得抽調工程資源？以及更根本嘅——</p>
+<blockquote class="strong">
+  「One of the beauties of software is not just the utility that you get from it. It is all of the headaches you don't have to think about in maintaining it and improving it when it's not in your core.」
+  <span class="attribution">Alex Lieberman（意譯：軟件嘅美妙不只在於它帶來嘅效用，還在於那些你「不必去想」嘅維護與改進煩惱——當它不是你的核心業務時）</span>
+</blockquote>
+<p>這是對「AI 令人人自建軟件」熱潮最冷靜嘅一盆水：自建嘅真正成本唔係第一版嘅 1,000 美元，而係此後每一天嘅認知負荷。swyx 嘅反駁也值得記錄——佢承認維護成本，但強調 upside 不只是帳單：團隊忍受一個平庸產品很久，如果自己擁有這個工作流，可以在幾分鐘內迭代，而唔係等供應商幾個月。</p>
+
+<div class="section-title">十二、Kill My SaaS：4.3 萬 vs 1,000 美元，人類冠軍排第 19</div>
+<p>Latent Space 自己辦咗場實驗：用 AI agent 取代一套每年報價 4.3 萬美元嘅研討會講者管理系統。結果花 1,000 美元就做出來，收到 72 份投稿，冠軍即將上線。但最有意思嘅數字唔係省錢：</p>
+<div class="data-point">
+  <p><span>原報價</span><strong>43,000 美元／年</strong></p>
+  <p><span>重建成本</span><strong>1,000 美元</strong></p>
+  <p><span>投稿</span><strong>72 份</strong></p>
+  <p><span>評審落差</span>人類評審選出嘅冠軍，在 AI 評審排行榜只排<strong>第 19</strong></p>
+</div>
+<blockquote class="strong">
+  「Checking whether software satisfies a list of scenarios and judging whether people want to use it are different jobs.」
+  <span class="attribution">swyx（意譯：檢查軟件是否滿足一組場景，同判斷人是否想用它，係兩種完全唔同嘅工作）</span>
+</blockquote>
+<p>本文認為，呢個落差比「1,000 美元」重要得多。它說明：agent 可以通過驗收清單，但無法判斷「人會唔會想用」。而 software 嘅價值，有一大半在後者。這也係為什麼 Tenex 說「沒有標準化就沒有 eval」——eval 能覆蓋嘅，永遠只係可以被寫成清單嘅部分。</p>
+
+<div class="section-title">十三、就業：重新配置，而不是削減</div>
+<p>被問到 agent 係唔係在取代人，Alex 嘅答案唔係樂觀口號，而係一個營運觀察：</p>
+<blockquote>
+  「I don't think any business would claim like once we have this solved, there's nothing for this group of people to work on.」
+  <span class="attribution">Alex Lieberman</span>
+</blockquote>
+<p>佢嘅框架係「reallocation」：先換掉可自動化嘅工作，然後問「下一個最大嘅問題係咩」。大型企業裡，這個循環幾乎永遠唔會停——永遠有 next problem。被釋放嘅 subject matter expert 可以浮上水面，去處理跨團隊、策略性嘅問題，而唔係每日喺 spreadsheet 裡搬數。</p>
+<p>CJ 補了一段更誠實嘅話：唔好把事情講成「發生在人身上」，因為咁樣低估咗人嘅 agency。同時佢也唔賣雞湯：</p>
+<blockquote>
+  「A lot of people don't have the luxury of liking or not liking a job. They do a job to make money.」
+  <span class="attribution">CJ Hess（意譯：好多人冇「鍾意唔鍾意份工」嘅奢侈；他們做一份工係為咗賺錢）</span>
+</blockquote>
+<p>所以佢嘅建議係雙向嘅：雇主有責任做 enablement 與 re-skilling，員工也有責任問自己「我份工未來幾年嘅可替代性有幾高，我可以點樣 skill up」。呢個講法唔會令被取代嘅人好過，但它至少拒絕用「AI 會做走你唔想做嘅事」呢種 cope 嚟包裝現實。</p>
+
+<div class="section-title">十四、紐約 vs 舊金山：1% 城市與商業價值套利</div>
+<p>最後一段講地理，但其實講嘅係 AI 擴散嘅路徑。swyx 話自己住在舊金山，所有人整天都在講 agents、Grok、Muse，「唔係講你鍾意唔鍾意 AI」。Alex 嘅觀察係：紐約也有一個 bubble，但比舊金山細得多。</p>
+<blockquote class="strong">
+  「We're roughly 1% of the city now.」
+  <span class="attribution">Alex Lieberman，談紐約 AI 社群佔全市人口比例（提到 World's Fair）</span>
+</blockquote>
+<p>佢嘅策略係套利：把舊金山嘅人帶到紐約見客戶，順便「get a reality check」。因為紐約有大量商業流量，AI 喺呢度落地對 GDP 嘅影響更直接。呢個觀察同 Tenex 嘅整個商業模式呼應——佢哋賣嘅唔係模型，而係<strong>最後一哩嘅擴散</strong>。</p>
+<blockquote>
+  「The hardest problem to solve is the final mile to actually diffuse it through the economy.」
+  <span class="attribution">Alex Lieberman</span>
+</blockquote>
+
+<div class="section-title">十五、我嘅萃取：六條帶得走嘅判斷</div>
+<blockquote class="strong">
+  一、按產出計酬唔係為咗省錢，係為咗令激勵方向正確。但它需要一個利益相反嘅角色做否決，否則一定會腐敗。
+</blockquote>
+<blockquote class="strong">
+  二、AI 目前係「托底」多過「拔高」。4 倍而唔係 10 倍嘅薪酬差距，就係證據。
+</blockquote>
+<blockquote class="strong">
+  三、最難計價嘅係「唔寫 code 嘅時間」。呢部分恰恰係價值所在，也係任何以 ticket 為單位嘅制度嘅盲區。
+</blockquote>
+<blockquote class="strong">
+  四、企業 AI 嘅瓶頸係流程熵，唔係模型能力。「你無法自動化一個不存在的流程」係全集最值得貼在牆上嘅一句。
+</blockquote>
+<blockquote class="strong">
+  五、垂直 AI 嘅生死線，唔係「有冇 domain data」，而係「你係 agent 做任務，還係改造整個工作流」。
+</blockquote>
+<blockquote class="strong">
+  六、當建造變便宜，稀缺嘅唔係 code，而係「判斷咩值得建」同「判斷人會唔會用」。Kill My SaaS 嘅第 19 名就係證明。
+</blockquote>
+<p>如果要用一句話總結呢集：<strong>Tenex 賣嘅唔係 AI 工程，而係一套令 AI 嘅產出可以被計價、被審查、被接手嘅組織基建。</strong>而呢套基建最難嘅部分，唔係寫 code，而係令一間公司嘅工作方式變得可以被描述。</p>
+
+<div class="section-title">十六、爭議與未解問題</div>
+<p><strong>1. 4 倍 vs 10 倍，係唔係在打自己上一集嘅臉？</strong>如果 AI 係「對人的智力與工作倫理嘅槓桿」，理應放大差距；實際只有 4 倍，說明模型嘅貢獻更多係托底。Alex 用「that's the dream」輕輕帶過，但呢個落差值得持續追蹤。</p>
+<p><strong>2. story point 嘅道德風險冇被真正回答。</strong>Alex 用 AI strategist 嘅否決權解掉作弊動機，但冇回答：當模型令同一個點數只需要三分之一時間，把單點價值下調，本質上就係資方在回收 AI 紅利。佢承認「理論上應該通縮」，並說每季校準——這句話的另一個讀法是：工程師唔會自動拿到生產力增長嘅果實。</p>
+<p><strong>3. 對 vertical AI 嘅看空，到目前為止係錯嘅。</strong>主持人直接講「so far you've been wrong」，Alex 也承認。呢個係本集最值得記住嘅「未解決分歧」，因為它可以用時間驗證。</p>
+<p><strong>4. 5% 嘅分母。</strong>「約 100 家企業」係佢哋正在談嘅客戶，唔係隨機樣本。呢個數字好有說服力，但唔可以當成整體企業市場嘅統計。</p>
+<p><strong>5. MetaHarness 嘅可轉移性。</strong>Tenex 自己承認，咁多結構對細團隊、單一項目可能係 overkill。呢套方法嘅適用邊界，可能比佢哋嘅語氣更窄。</p>
+
+<div class="section-title">十七、前後脈絡：三組對讀</div>
+<p><strong>與 10-20 的 Evan Conrad（SF Compute）對讀。</strong>Evan 講算力市場嘅物理交割，Alex 講 AI 產出嘅計價單位。兩集共享同一個問題：<strong>當一個資源嘅價格信號失真，你要用咩做錨？</strong>Evan 嘅答案是機器，Alex 嘅答案是 story point。</p>
+<p><strong>與 10-16 的 Lindon Gao（Dyna）對讀。</strong>Lindon 講「把工作流做完就係 99×99×99」，Alex 講「你無法自動化一個不存在的流程」。一個係機器人，一個係軟件，但兩者都把<strong>工作流標準化</strong>視為自動化嘅前提。呢個可能係 2026 年 AI 落地最一致嘅一條經驗法則。</p>
+<p><strong>與 10-17 的 High Taste Testers 對讀。</strong>嗰集講「當能力趨同，稀缺嘅係品味」。呢集嘅 Kill My SaaS 正好給出一個量化案例：AI 評審可以排名 72 份作品，但人類冠軍只排第 19——品味唔止係主觀偏好，它係一種目前無法被 eval 捕捉嘅判斷力。</p>
+
+<hr>
+<footer>
+  <p>來源：Latent Space, <em>AI for the Fortune 2000: How Tenex Builds an AI-Native SDLC — Alex Lieberman &amp; CJ Hess</em>（2026-10-21 05:01 UTC，約 43 分鐘，章節至 42:28）；主持 swyx、Alessio Fanelli；錄製於 AI Engineer New York。</p>
+  <p>引語逐字取自官方 Substack 文章所附自動轉錄稿（機器生成、未標註說話人，個別詞語可能有誤）；數字（75 人、4 倍、2x、90/60/50/5%、4.3 萬 vs 1,000 美元、72 份投稿、第 19 名）均取自該轉錄稿與文章正文。本文分析屬本站視角。</p>
+  <p style="margin-top:0.6rem;">深度復述由 Vee Mok 整理 · 生成時間 2026-10-22 06:00 UTC · 英文引述保留原意。</p>
+</footer>
+</div>
+
+</body>
+</html>
