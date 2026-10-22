@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-10-21T02:06:00.000Z",
- "lastScanDate": "2026-10-21",
+ "lastScan": "2026-10-22T02:03:00.000Z",
+ "lastScanDate": "2026-10-22",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-01T15:28:28.000Z",
@@ -9,11 +9,20 @@
    "newEpisodes": []
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-10-20T19:31:00.000Z",
-   "lastEpisodeTitle": "The Programmable Data Center — Evan Conrad, SF Compute",
-   "lastFeedItemPubDate": "2026-10-20T19:31:00.000Z",
-   "lastFeedItemTitle": "The Programmable Data Center — Evan Conrad, SF Compute",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-10-21T05:01:26.000Z",
+   "lastEpisodeTitle": "AI for the Fortune 2000: How Tenex Builds an AI-Native SDLC — Alex Lieberman & CJ Hess",
+   "lastFeedItemPubDate": "2026-10-21T13:04:19.000Z",
+   "lastFeedItemTitle": "Claude Mods: Flipping the Harness Inside Out",
+   "newEpisodes": [
+    {
+     "title": "AI for the Fortune 2000: How Tenex Builds an AI-Native SDLC — Alex Lieberman & CJ Hess",
+     "pubDate": "2026-10-21T05:01:26.000Z",
+     "type": "interview",
+     "url": "https://www.latent.space/p/tenex",
+     "guests": "Alex Lieberman（Tenex 共同創辦人）、CJ Hess（工程總監）；錄於 AI Engineer New York",
+     "note": "Tenex 按 story point 計酬 18 個月後的對帳：75 人、90% 工程師/AI strategist、50% F2000 + 50% 中型企業、最高最低薪差 4x（願景 10x）、年內產出 2x、token:人力支出 1:1–2:1、AMP 掛 Claude Code 訂閱省 80%。企業階梯 90% LLM / 60% 培訓 / 50% coding agent / 5% 非工程 agent 進生產。MetaHarness 把 plan 與決策全進 Git。對 vertical AI 與 Salesforce/SAP 被取代均偏空。"
+    }
+   ]
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-10-15T10:00:00.000Z",
@@ -80,12 +89,12 @@
   }
  },
  "notes": {
-  "scan_status": "2026-10-21 掃描（02:03–02:12 UTC）：窗口 10-20 02:22 → 10-21 02:06 內 10 檔播客新增 3 條。中文 1 條：張小珺 #155（10-21 00:00Z，科沃斯錢程，1:59:51）。英文 2 條：Latent Space SF Compute（10-20 19:31Z）、Cognitive Revolution Alex Rives（10-20 11:00Z）。其餘 7 檔零新增：硅谷101 仍 E256（已於 10-20 報告）、Crossing 仍 Treg 10-18、42章經 仍 Jason 10-17、No Priors 仍 Brockman 10-15、Dwarkesh 仍 10-01、MLST 仍 10-10、屠龍之術 仍 09-28。",
-  "report_date": "2026-10-21",
-  "deep_content_fetched": "①Latent Space：官方 Substack 全文 363,849 bytes，含完整自動轉錄稿（約 47,000 字元）+ 官方 timestamps + show notes；引語逐字取自轉錄稿。②Cognitive Revolution：官方節目頁 156,058 bytes / 純文本 71,986 字元，含 AI 摘要、Topics、Resources、9 條官方 Quotes 與完整轉錄稿（章節至 01:03:11）。③張小珺 #155：小宇宙頁 99,819 bytes，__NEXT_DATA__ 內含 description 與 9 章時間軸；無公開逐字稿。④背景核實：虎嗅「錢東奇交班快十年，科沃斯繼續等錢程」（2026-09-16）要點、上證報 2022 專訪、騰訊新聞 2023「戰略，就是學會放棄」。",
-  "transcript_attempts": "①張小珺 #155：小宇宙 transcript 欄位存在（transcriptMediaId: 626b46ea9cbbf0451cf5a962/ltpY6K_PLBv7SfR1D4RZchFHwzII.m4a）但 API 回 401、oia player 僅回 SPA 殼；YouTube 同步版本 vhKLKoKhI0s / 英文版 86wFCPat2GY 均無字幕（\"has no automatic captions\"）；本地 whisper CLI 仍缺 libwhisper.so.1，faster-whisper 未安裝，單核 CPU 轉錄 2 小時音頻不可行；Metacast 回 403。故改用官方時間軸 + 公開資料，未虛構引語。②Latent Space 與 Cognitive Revolution 均有官方全文轉錄，無需另抓。",
-  "jev_prefilter": "2026-10-21 對 3 條候選跑 jev.py triage --profile news：available=true、failed=0/3。worth：SF Compute 1.40、Biohub 0.92、張小珺 0.85，全部高於 0.6，全數保留。primary_source 偏低（0.25–0.34）係因送入為節目描述，寫作時已改用一手轉錄稿／官方時間軸。",
-  "notable_for_james": "①SF Compute 是全輪最可直接交易的一集：B300 推理 40 美元/小時 vs 租賃 5–6 美元/小時，Evan 明說「兩個數字有一個必須變」——這是對 AI infra 估值的直接壓力測試；另有 order book 5% 容量、100 美元買進可回收 25 美元、3–5 年遠期、駝峰曲線。②Rives 給出可判斷真偽的標尺：真正的虛擬細胞需能作 experimental oracle；現有模型困在 2% 解釋力，瓶頸是測量而非模型；18 億美元中 DOE >5 億/5 年、NIH 協調 >5 億數據、DeepMind/Isomorphic/Meta 共 3 億。③張小珺 #155 是接班樣本：錢程 1990 生、2018 上市時 28 歲、2023 H2 父親回歸主導、2023 淨利 -63.96%、2024H1 收入 +19.18%/淨利 +27.40%、市值約 300 億縮水三分之二；章節「成功之巔即愚昧之巔」「農耕 vs 游牧」「AI 還沒到搶肉」可直接引用。④跨集共振：三集都在把不確定性變成可定價/可驗證——合約交割、實驗室驗證、能力認證。",
+  "scan_status": "2026-10-22 掃描（02:03–02:25 UTC）：窗口 10-21 02:06 → 10-22 02:03 內 10 檔播客新增 1 集。英文 1：Latent Space Tenex（10-21 05:01Z）。中文 0：張小珺仍 #155（10-21 00:00Z，已於 10-21 報告）、硅谷101 仍 E256、Crossing 仍 Treg 10-18、42章經 仍 Jason 10-17、屠龍之術 仍 09-28。英文其餘：Dwarkesh 仍 10-01、No Priors 仍 10-15、Cognitive Revolution 仍 Alex Rives 10-20、MLST 仍 10-10。",
+  "report_date": "2026-10-22",
+  "deep_content_fetched": "①Tenex：Latent Space 官方 Substack 全文 51,938 bytes，含 14 個官方章節時間碼 + 完整自動轉錄稿（約 26,000 字元，至 43:20）；引語逐字取自轉錄稿。②附錄 A Claude Mods：Substack 文章 API body_html 全文（164 行純文本），非摘要。③附錄 B DeepInfer：AINews body_html 全文（1,175 行純文本），含 DeepSeek 一手工程數據與 vLLM 反駁。",
+  "failures": "兩個 YouTube RSS 端點全數 404（UCXl4i9dYBrFOabk0xGmbkRA / UCSI7h9hydQ40K5MJHnCrQvw），web_fetch 與 curl（含 UA + Atom Accept）皆同；回應來自 YouTube RSS Feeds server，屬端點失效而非本機網路。已改替代源：No Priors→feeds.megaphone.fm/nopriors、MLST→anchor.fm/s/1e4a0eac/podcast/rss、Dwarkesh→Substack feed。無漏集，但若日後僅 YouTube 首發需重設計。",
+  "jev_prefilter": "2026-10-22 對 3 條候選跑 jev.py triage --profile news：available=true、failed=0/3。worth：Tenex 1.16、DeepInfer 1.05、Claude Mods 0.62，全部 ≥0.6 全數保留。Claude Mods 貼線（0.62）且 category=agent-infra conf=1.0，判定為框架性文章，降級為附錄。primary_source 0.17–0.30 係送入描述而非原文，寫作已改用一手轉錄稿/全文。",
+  "notable_for_james": "①5% 這個數字是本輪最可操作的硬情報：>1000 人的企業中僅 5% 有非工程 agent 在生產環境跑，50% 工程組織有 coding agent（現場所有人猜 70–80%）。賣 enterprise agent 的真對手是客戶內部 40 種做事方式，不是別家 agent。②「You can't automate a process that does not exist」＋「沒有標準化就沒有 eval」是可直接引用的方法論。③4x vs 10x：按產出計酬 18 個月後，薪資離散度只有 4 倍——模型是在托底不是拔高，這打臉「AI 放大個體差距」的敘事。④Alex 間接看空企業專屬模型：企業要成為資料公司買方就必須大量 fine-tune，但品質跑不過 frontier、價格又被 token 降價碾壓，兩前提都難成立。⑤附錄 B 的 81 天回本／1660 億美元每 GW／>80% 毛利是第一方宣稱且高度快取（96% 命中、72 小時 cache），vLLM 稱 GB200 decode 差距僅 6%——三個數字要一起讀才不會被誤導。",
   "index_html": "未更新 index.html（該落地頁自 2026-07-19 起停更，維持既有慣例）。",
   "deep_dive_link": "本輪未新增 deep-dive；報告本體已含完整萃取。"
  }
