@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space：算力是長方形，需求不是——Modal 的「時間形狀」生意</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-10-22 · 85 分鐘 · Vibhu 主持（swyx + Alessio 出品）</div>
+  <h1>算力係長方形，需求唔係——Modal 賣嘅唔係 GPU，係「時間嘅形狀」</h1>
+  <div class="meta">
+    <span>📅 2026-10-22</span><span>·</span><span>🎙️ Vibhu（Latent Space）</span><span>·</span><span>👤 Erik Bernhardsson（Modal CEO）</span><span>·</span><span>⏱️ 85 分鐘</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集表面係 Modal Series D 嘅宣傳訪問——<strong>$1B ARR、$750M D 輪、$16B 估值、30 億個 sandbox</strong>——但真正嘅主題係一個好少人講清楚嘅經濟學問題：<strong>GPU 容量嘅售賣單位同真實需求嘅形狀根本唔匹配。</strong>標準合約係「固定數量 GPU × 固定期間」，畫在圖上係一個長方形；真實負載係尖峰、低谷、突發、成長。Erik Bernhardsson 嘅生意本質，就係把呢個長方形切碎、聚合幾千個客戶嘅需求、再向下游賣返彈性。呢個過程有個名：<em>duration transformation</em>。
+</p>
+
+<blockquote class="strong">
+  「如果你把容量畫在時間軸上，你會得到一個長方形。但真實嘅工作負載唔係咁：它們會成長、會尖峰、會在一日之內上上落落。」
+  <span class="attribution">Latent Space 官方文章，開篇定義「rectangular contracts」</span>
+</blockquote>
+
+<div class="highlight-box">
+  <strong>📌 來源說明：</strong>本文以 Latent Space 官方 Substack 文章（2026-10-22）及隨文附上嘅完整自動轉錄稿為底本，並對照節目章節時間軸。引號內容逐字取自轉錄稿；自動轉錄可能有人名與詞語誤差（例如主持誤稱 Erik 為 "Eric"），本文已按上下文校正，必要處以「大意」標明。所有財務與營運數字均為 Erik 在節目中自述，未經獨立審計。
+</div>
+
+<div class="section-title">一、從 Spotify 的推薦系統，到一間「討厭現有基建」的公司</div>
+
+<p>Erik 嘅背景解釋咗 Modal 點解會長成咁。2008 年他加入 Spotify，做咗七年，主要貢獻係由零建起音樂推薦系統——Related Artists、Discover Weekly 都係佢團隊嘅作品。工作內容大量係矩陣分解同 compute-intensive 嘅運算。他回顧時講得好直接：</p>
+
+<blockquote>
+  「很多後來變成 Modal 起源嘅東西，其實就係做 AI 應用時發現：<strong>基礎設施真係他媽的爛。</strong>一定要有更好嘅方法。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>離開 Spotify 之後，他去 Better.com 做了五年 CTO，把技術團隊由 2–3 人帶到 300–400 人。這段經歷給了他兩樣嘢：管理同招聘嘅經驗，以及對開發者生產力嘅執著。2021 年他開始做 Modal，先自掏腰包，直到 2022 年初才拿 seed。中間有幾個失敗嘅點子，其中一個係 web scraping，他事後承認「回頭看，也許本來可以成」。真正令他興奮嘅係回到工作流編排（他早年寫過開源框架 Luigi），但做落去發現：<strong>編排程式唔係核心，執行程式才是。</strong></p>
+
+<p>於是 Modal 嘅定位由「workflow orchestration」轉向「令程式在雲端跑起來變得容易」。最初係通用目的，後來 Stable Diffusion 成為 killer app：</p>
+
+<div class="data-point">
+  <span>成長曲線</span>2022 年 11 月 <strong>$100/月</strong> → 12 月 <strong>$2,000/月</strong> → 2023 年 1 月 <strong>$30,000/月</strong>。轉折點係單一客戶 Mage（一間 Stable Diffusion 公司），曾佔 <strong>80–90%</strong> 營收。
+</div>
+
+<p>Erik 講這段時冇美化：30K 那個月「終於覺得胸口嘅焦慮感消失了」。之後 Suno 也成為大客戶，再之後營收才慢慢分散。</p>
+
+<div class="section-title">二、為什麼要重寫整個 stack：Kubernetes 嘅假設已經失效</div>
+
+<p>呢集最值得抄低嘅技術論點，係 Erik 對「新時代撞上舊工具」嘅一般化：</p>
+
+<blockquote class="strong">
+  「我嘅論點係：每一個新嘅科技時代，都會撞上工具嘅限制。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>他嘅例子係雲端時代：為了雲端，業界發明了 Kubernetes 同 Docker。但 Kubernetes／Docker 係為一種非常特定嘅負載設計——穩定嘅後端請求、CPU 便宜、利用率低都無所謂。GPU 世界嘅假設完全相反：</p>
+
+<ul>
+  <li>GPU 非常貴，所以你要管利用率；</li>
+  <li>模型非常大，要由網絡載入到 CPU 再入 GPU；</li>
+  <li>負載係突發嘅、尖峰嘅、不可預測嘅；</li>
+  <li>啟動時間直接影響用戶體驗。</li>
+</ul>
+
+<p>所以 Modal 自己重寫了檔案系統、container runtime、排程器、autoscaler，以及 CPU 同 GPU 嘅 snapshot。Erik 嘅結論好硬：</p>
+
+<blockquote>
+  「你唔可以喺舊嘢上面包一層，去做新嘢。你要某程度上由零開始。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>呢句說話聽落像工程師嘅自尊，但它其實係一個成本結構嘅判斷：如果舊工具嘅抽象漏掉了新負載最重要嘅維度（啟動延遲、GPU 記憶體狀態、突發性），那麼「包一層」就會把呢啲維度變成不可控嘅開銷。而喺 infra 生意，不可控嘅開銷就係你嘅毛利。</p>
+
+<div class="section-title">三、容量採購：由 spot 到 25 家 neocloud、3 年預付</div>
+
+<p>Modal 唔擁有硬件，全部係租。但租嘅方式在過去一年徹底改變。</p>
+
+<p>早期（2021–2023）主要靠 hyperscaler 嘅 spot 同 on-demand：AWS、GCP，後來 Oracle（為了 A100／H100 嘅好價格）。Spot 嘅好處係可以跨數百個區域聚合，被回收只係可接受嘅雜訊。Erik 說這個模型「直到去年底都運作得很好」。</p>
+
+<p>然後市場變了。為了拿到足夠容量，Modal 現在同<strong>接近 25 家雲端／neocloud</strong> 合作，好多係 3 年以上、需要預付嘅合約。他們為此建了一個採購台：</p>
+
+<div class="data-point">
+  <span>組織</span><strong>4 人</strong>全職採購容量、<strong>10 人</strong>裸金屬運維團隊；公司 <strong>200 人</strong>，年底約 250，明年可能 700；過去 12 個月 headcount 以 <strong>4×</strong> 年化成長。
+</div>
+
+<p>技術上有一個關鍵決定：Modal 由第一天就把容量當成<strong>一個全球大池</strong>（one big pool），而唔係每個 region 各自一個叢集。Erik 說這是早期「最有後果嘅決定之一」。因為只有一個池，你才可以跨區域調度、把突發需求搬到任何有容量嘅地方；也因為只有一個池，你才可以對客戶承諾「唔使同 sales 講，即刻畀你 100 張 GPU」。</p>
+
+<blockquote>
+  「你可以拿到亞美尼亞嘅 32 個節點，也可以拿到印尼嘅 128 個節點。我們就愛這種東西。」
+  <span class="attribution">Erik Bernhardsson，談容量採購的碎片化</span>
+</blockquote>
+
+<p>但碎片化有代價。Modal 要向供應商發 spec sheet：IOPS、CPU passmark、南北向頻寬、進出流量；有時會先拿一個節點做驗收測試；有時要簽幾千萬甚至幾億美元嘅合約，而對方「你根本還未完全認識」。Erik 說他們內部有一套「Modal Max」評分，像 SemiAnalysis 嘅 ClusterMAX，用來決定要唔要同某間供應商再簽。</p>
+
+<div class="section-title">四、長方形經濟學：Modal 賣的是「平滑化」</div>
+
+<p>呢集嘅核心概念，值得用一個簡單模型講清楚。</p>
+
+<p>假設你係一間 AI lab，需要 GPU 做推理。你嘅負載一日之內有高峰有低谷，一年之內有成長。但市場上嘅容量合約係「100 張 GPU × 3 年」，由 3–6 個月後開始。你只有兩個選擇：</p>
+
+<ul>
+  <li>買到高峰嘅量 → 離峰時你為閒置硬件付錢；</li>
+  <li>買少啲 → 高峰時你錯過需求。</li>
+</ul>
+
+<p>呢個就係「長方形」嘅詛咒：合約嘅形狀同需求嘅形狀唔匹配。Modal 嘅做法係做中間層：向上游鎖定長期容量（長方形），向下游提供秒級彈性（非長方形）。它之所以能做到，係因為它聚合了幾千個客戶——單一客戶嘅尖峰，會被另一個客戶嘅低谷抵銷；客戶越多、需求越異質，聚合曲線越平滑。</p>
+
+<blockquote class="strong">
+  「如果你想要非常簡化地講，Modal 嘅價值主張可以拆成兩樣：一是開發者體驗，令你可以迭代、build 嘢、唔使諗基建；二是容量。我越想越覺得，我哋做緊嘅係<strong>聚合全世界嘅算力容量</strong>，然後非常細緻地切片賣出去。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>這也解釋了為什麼 Modal 堅持 multi-tenant、堅持不賣「長方形合約」。它賣嘅唔係 GPU，係<strong>需求平滑化</strong>。而平滑化嘅價值，隨客戶數量與異質性上升——這是一個天然嘅規模效應，但同 neocloud 嘅規模效應唔同：neocloud 嘅規模效應來自資產負債表，Modal 嘅規模效應來自需求池嘅統計特性。</p>
+
+<div class="section-title">五、尾部風險：為什麼不無限掃貨 GPU</div>
+
+<p>訪問裡最反直覺嘅一段，係 Erik 對「AI 需求無限」嘅回應。主持問：如果需求無限，為什麼不買爆所有容量，用唔完就轉售？</p>
+
+<blockquote>
+  「我覺得好容易講：稀缺資源嘛，買越多越好。但首先，如果我們今天買，我們也用不完。其次，挑戰在於——如果市場發生某些事，好多相關性會同時發生：價格下跌、利用率下跌、轉售市場消失，會在同一時間發生。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>他引用 Hunt 兄弟試圖壟斷白銀市場嘅故事——「交易界嘅傳奇，結果壯觀地失敗」。呢個類比唔係裝飾：壟斷一個稀缺資源，需要你不斷吸收市場上所有供給，而當價格開始下跌，你手上嘅存貨就變成負債。Erik 說他想建一間「可以存在 20、30、50 年」嘅公司，所以唔會用一個可能一次清袋嘅賭注去換短期增長。</p>
+
+<p>更有意思嘅係他對硬件價格嘅看法：</p>
+
+<blockquote>
+  「硬件嘅常態好似脫離重力，最終價格總是往下。所以我們現在其實在一個奇怪嘅時期——硬件價格在上升。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>因此他擔心嘅唔係價格上升，而係價格崩塌。對 Modal 來說，手上鎖定嘅長期合約令它「某程度上做多咗 GPU 價格」：價格上升時，它享有稀缺租金；價格崩塌時，它嘅長期合約就變成高價存貨。這是一個好誠實嘅風險披露——好多 infra 公司只講供不應求，唔講反向風險。</p>
+
+<div class="data-point">
+  <span>風險結構</span>價格下跌、利用率下跌、轉售市場消失——三者<strong>同時發生</strong>嘅相關性，係尾部風險嘅核心。單獨對沖其中一項冇用。
+</div>
+
+<div class="section-title">六、Neocloud 的金融工程：先賣你還沒買的東西</div>
+
+<p>呢集對 neocloud 嘅拆解，係全場最「唔像宣傳」嘅一段。Erik 解釋 neocloud 點解可以極速擴張：</p>
+
+<ol>
+  <li>先去找 Anthropic／OpenAI 等大買家：「你要不要買五年嘅晶片？簽這份合約，我們給你一個好價。」</li>
+  <li>拿這份合約去 Wall Street：「你看，大買家承諾了 100 億美元，我們只需要現在融資。」</li>
+  <li>拿到錢，去 Supermicro／Dell／Nvidia 下單。</li>
+  <li>安裝，交付。</li>
+</ol>
+
+<blockquote>
+  「你可以先賣你還沒買嘅東西。這就是為什麼 neocloud 可以 scale 得咁快。」
+  <span class="attribution">Erik Bernhardsson，談 neocloud 的融資結構</span>
+</blockquote>
+
+<p>而 Modal 因為係 PLG（product-led growth）、冇長期合約可以抵押，反而在財務上更難極速擴張。Erik 承認「長遠我們會到同一個點」，但短期這是一條真實嘅分界線：</p>
+
+<blockquote class="strong">
+  AI 基建嘅競爭，有一部分唔係技術競爭，係<strong>資產負債表工程</strong>。
+</blockquote>
+
+<p>這也連到「GPU 作為資產類別」嘅討論。Erik 說有幾間 startup（Silicon Data、Computer Exchange、Ornn 等）在做價格指數、衍生品、交易；他覺得有趣，但唔確定 GPU 會唔會變成原油那樣高度商品化嘅資產，因為 GPU 唔同質：網絡、位置、磁碟、CPU、可靠性都唔同。但他也承認，以今日嘅部署規模，「我們確實需要更聰明地做風險對沖、風險分擔、保險」。這與 SF Compute 嘅 Evan Conrad 形成有趣對照：Evan 做價格發現與實物交割，Erik 做需求聚合與平滑——兩人解同一問題嘅兩端。</p>
+
+<div class="section-title">七、Sandbox：由「要不要關掉」到三分之一營收</div>
+
+<p>這是整集最戲劇性嘅一段。Modal Sandboxes 2023 年上線，靈感來自 Erik 同 Akshat 食飯時嘅一句話：「LLM 會輸出 code，也許它們需要一個地方跑 code。」Akshat 用一兩天寫了 prototype。然後——</p>
+
+<blockquote>
+  「我們看到非常少嘅成長。不是零，但整體來說，直到 2023 年夏天，它都是一個很不重要嘅收入來源。兩年後，我們甚至討論過：我們到底需不需要這個產品？要不要關掉它？」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>轉折來自三波需求，而呢三波係依次到來嘅：</p>
+
+<ol>
+  <li><strong>Vibe coding</strong>：LLM 開始能生成完整應用（Lovable 等），需要一個地方跑。</li>
+  <li><strong>Background agents</strong>：企業（例如 Ramp）開始跑長時間嘅背景 agent。</li>
+  <li><strong>RL 訓練</strong>：neolab 開始用 sandbox 做強化學習環境。</li>
+</ol>
+
+<div class="data-point">
+  <span>現況</span>Sandbox 約佔 Modal 營收 <strong>1/3</strong>；Modal Functions 約 <strong>2/3</strong>；累計啟動近 <strong>30 億</strong>個 sandbox；sandbox 營收「每個月仍然上升 30%」；中位數 sandbox 壽命約 <strong>8 秒</strong>。
+</div>
+
+<p>Erik 對「為什麼是現在」嘅解釋好謙虛，也好好用：</p>
+
+<blockquote>
+  「我們有現成嘅 primitives，剛好被時代追上。」
+  <span class="attribution">Erik Bernhardsson，談 sandbox 的爆發</span>
+</blockquote>
+
+<p>但「現成」唔等於「簡單」。Modal 原本建在 gVisor 上，後來加入完整 VM，因為某些 use case 需要完整 Linux 相容性。他們也重寫了系統好幾次來處理規模。Erik 說 sandbox 呢個市場「唔係最有差異化嘅市場」，但他們「非常擅長跑幾十萬甚至幾百萬個 sandbox」。</p>
+
+<div class="section-title">八、Sandbox 的下一階段：100 毫秒、snapshot、fork</div>
+
+<p>呢集最值得技術團隊抄低嘅，係 Erik 對 sandbox 未來形態嘅判斷。他認為今日多數人把 sandbox 當「雲端 dev box」用，係 lift-and-shift：</p>
+
+<blockquote>
+  「今日好多 sandbox 工作負載都係 lift and shift。人們想：我有個 dev box，現在把它塞進雲端，讓 agent 控制它，也許 harness 都跑在 sandbox 裡面。我不確定長遠這是不是正確嘅模型。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>他認為正確嘅模型係：<strong>長時間運行嘅 agent（像 durable execution workflow）需要時才開一個 100ms 嘅 sandbox，跑幾條命令，snapshot，關掉。</strong>這樣才能做到：</p>
+
+<ul>
+  <li><strong>CI 平行化</strong>：把整個 test suite 拆開，每個 test 一個 sandbox，一次跑一千個。今日做唔到，因為啟動／停止嘅 overhead 太高（他直接引用 Amdahl 定律）。如果可以先做一次 setup、snapshot、再 clone，overhead 就可以攤薄。</li>
+  <li><strong>Claude Code 分支式探索</strong>：由線性流程變成樹狀，同時跑幾百個 agent，各自探索一個分支，再比較結果。</li>
+  <li><strong>每個 command 一個 sandbox</strong>：最極端嘅短命模型，sandbox 只存在幾秒。</li>
+</ul>
+
+<p>技術上，差異化會落在 snapshot／fork／resume／live migration。Erik 說他們已經花了很多時間在 snapshot，但「還有很多東西可以建」。</p>
+
+<div class="section-title">九、Hugging Face 事件：不是 sandbox 逃逸，是 app 被駭</div>
+
+<p>主持直接問了 Hugging Face 事件。Erik 嘅回答很清楚：</p>
+
+<blockquote>
+  「Agent 發現了一個部署在 Modal 上嘅應用嘅漏洞，並用它做跳板，取得完整網絡存取。這是一個跑在 Modal 上嘅 app 被駭，不是 Modal 被駭。就像很多人在 AWS 上跑東西，偶爾那些 app 被駭——這代表 AWS 被駭嗎？當然不是。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>但他承認有兩件事要學。第一，預設安全應該更收緊。他用了 S3 嘅類比：以前 S3 bucket 很容易不小心設成公開，AWS 後來把它改得很難公開。Modal 也在探索「如何在不破壞 magic 嘅前提下，預設更嚴格」。第二，他們開始用 agent 對自家系統做紅隊：</p>
+
+<blockquote>
+  「你就把 agent 放進 sandbox，告訴它：想辦法逃出去。就像是 agent 版嘅密室逃脫。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>這段有一個微妙嘅行業含義：當 agent 既係攻擊者又係防禦者，infra 公司嘅安全策略會由「防止人為錯誤」變成「持續對抗一個會學習嘅對手」。Erik 自己嘅判斷偏樂觀——他認為 agent 找漏洞很強，但防守也很強，「所有網絡安全嘅突破，反而會令世界更安全」。他對傳統資安公司嘅評論亦好直白：</p>
+
+<blockquote>
+  「當我想到網絡安全，很多時候你賣嘅其實係恐懼。那更像是一種品牌同營銷策略。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>呢句同 No Priors 嗰集 CrowdStrike CEO George Kurtz 嘅講法，形成一個有趣嘅對照：Kurtz 認為安全係能力競賽、資料護城河；Erik 認為安全有一大半係品牌與恐懼。兩個人都冇錯，只係站在產業鏈唔同位置。</p>
+
+<div class="section-title">十、Agent 時代的兩個隱形成本：deprecation 與 AEO</div>
+
+<p>呢集有兩個好少人討論、但對 infra 公司愈來愈重要嘅觀察。</p>
+
+<div class="sub-title">1. 你幾乎不能 deprecate 任何東西</div>
+
+<blockquote>
+  「因為 agent 嘅訓練資料，我們現在很難 deprecate 東西。Agent 很愛用舊版本嘅 Modal 語法，而且很難把它們推開。所以過去一年，我們在移除功能上必須非常保守，要確保線上每一個範例都更新。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>呢個係一個全新嘅技術債形態：<strong>你的文件與範例不只是在教人類，也在教模型。</strong>當模型把舊語法學進去，它會主動使用已棄用嘅 API，於是你嘅 deprecation 政策就被外部訓練資料綁架。這對所有 developer tool 公司都成立，只是多數人還未遇到。</p>
+
+<div class="sub-title">2. AEO：Agent Engine Optimization</div>
+
+<p>Modal 會跑內部 benchmark，問 agent「幫我部署 stable diffusion，用你想要的工具」，看它會唔會推薦 Modal；也會問「把 sandbox 供應商按可靠性排序」。Erik 說 agent 對定價嘅理解比人類更容易出錯，所以內容要寫得更清楚。他亦提到「slop cannon」——大量生成 AI 內容去污染訓練資料——但明言唔鍾意呢個做法。</p>
+
+<p>呢兩點合起來，說明一個更深嘅轉變：<strong>Developer experience 正在變成 agent experience。</strong>Erik 嘅觀察係，令 developer experience 好嘅東西（好文件、清楚嘅錯誤訊息、快嘅回饋循環），同樣令 agent experience 好。但接口會變得更 programmatic：以前用 YAML 配置嘅東西，應該變成 SDK；以前 declarative 嘅東西，應該變成 imperative。</p>
+
+<div class="section-title">十一、組織：200 人、4 倍年化、與「可選的 code review」</div>
+
+<p>Erik 對組織嘅坦白，係呢集另一個亮點。Modal 現在 200 人，年底 250，明年可能 700。他說 4 倍年化「不可持續」，因為你會見到文化漂移、不同工作風格嘅孤島、以及工程師在做「邊緣」嘅東西。</p>
+
+<blockquote>
+  「你去找一個工程師，問他在做什麼，結果他在建一些很邊緣的東西。這真的是你應該花時間的地方嗎？」
+  <span class="attribution">Erik Bernhardsson，談快速擴張的成本</span>
+</blockquote>
+
+<p>他觀察到一個更廣泛嘅趨勢：工程師由管理層回流到 IC（individual contributor），因為 AI 令寫 code 嘅成本降低，「manager 同 IC 在 prestige 上沒有分別，大家都是 member of technical staff」。他自己仍然寫很多 code，Akshat 也是。</p>
+
+<p>然後是 code review。他嘅立場在 infra 公司裡算激進：</p>
+
+<blockquote class="strong">
+  「在我看來，很多時候 code review 係人們試圖逃避『把東西合併進 production』嘅責任。如果你有這種文化，那代表你要投資更多在 CI／CD 上。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>他說 Modal 嘅 code review 係 optional：改文件、改基本東西，不用等人看。但前提係「你要有非常好的控制」——極高嘅測試覆蓋、到處 rate limit、系統解耦、沒有單點故障。他也提到 agent 現在寫 test 已經很強，這在幾年前係 agent 嘅主要短板。</p>
+
+<p>呢個立場值得批判性看待：它嘅前提係 Modal 有極高嘅測試與運維成熟度，唔係每間公司都能複製。如果一間公司測試覆蓋低、又取消 code review，結果唔係加速，係把責任外部化到自動化，然後在事故時找不到人。</p>
+
+<div class="section-title">十二、Open-weight 已經好到可以「直接替換」</div>
+
+<p>主持問到 fine-tuning 嘅需求有冇因為 open-weight 模型變強而改變。Erik 嘅答案同舊敘事相反：</p>
+
+<blockquote>
+  「幾年前 fine-tuning 嘅價值主張係：open source 模型冇咁好，但你可以拿一個小模型、在特定領域微調，達到 frontier 嘅質素與成本。今天我會說，open source 模型好到你基本上可以直接替換掉 frontier——你可以跑 Kimi K3、DeepSeek 4.1、GLM 5.3，它們幾乎一樣好，但成本低得多。所以 fine-tuning 不再是『必須做』嘅事，它是 optional。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>但他強調 post-training 需求仍然存在，只是性質變了：由「補能力」變成「壓成本／特化」。呢個判斷同 CrowdStrike CEO 引用嘅銀行 CIO 說法一致：只有「F1 等級」、直接賺錢嘅場景才付 frontier 嘅錢，其他事情 open-weight 三個月前嘅能力已經夠用。</p>
+
+<p>Erik 亦提出一個結構性理由，解釋為什麼 inference provider 應該獨立於 model builder 存在：</p>
+
+<blockquote>
+  「最好嘅模型一直變。Inference provider 可以很容易在模型之間重新分配資源，因為整體需求相當平滑。如果每個 lab 各自持有容量，他們推出新模型時需求會大升，另一個 lab 推出更好嘅模型時需求又會大跌。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>呢個就係「聚合」嘅另一個體現：唔只係聚合客戶嘅時間分佈，也係聚合模型之間嘅需求轉移。當一個新模型發佈，Modal 只需要把 50% 嘅 GPU 由舊模型調到新模型，「甚至不需要有人告訴我們，系統自己會做」。</p>
+
+<p>至於「LLM 係唔係 commodity」，Erik 用咗一個好好嘅類比：</p>
+
+<blockquote>
+  「Taylor Swift 係 commodity 嗎？她出專輯、開巡演、賺很多錢，然後休息、再出專輯。她仍然有品牌、有定價權、有很高嘅 margin。只要 lab 可以持續推出新模型，而 margin 足以攤銷訓練成本，這仍然可以是一門好生意。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>他唔認為 intelligence 會 plateau，但認為模型在「可驗證」領域（coding、math、cybersecurity）進步最快；在「目標模糊、回饋循環長」嘅領域（例如煮飯），人類可能仍然有優勢很長一段時間。</p>
+
+<div class="section-title">十三、讀完之後，我會記住的三件事</div>
+
+<p><strong>第一，「算力短缺」唔係一個總量問題，係一個形狀問題。</strong>市場上唔係冇 GPU，係冇「符合你需求形狀」嘅 GPU。當所有容量都以三年長方形出售，而真實需求係尖峰與成長，中間就必然出現一個聚合層。Modal 嘅價值唔係擁有硬件，而係擁有「把長方形切成碎片再重組」嘅能力。呢個能力嘅護城河係規模與異質性，唔係資本。</p>
+
+<p><strong>第二，AI 基建的競爭有一半係資產負債表工程。</strong>Neocloud 可以「先賣未買」，因為它們有大買家嘅長期合約可以抵押；Modal 因為 PLG、冇合約可抵押，反而更難極速擴張。呢個觀察解釋了為什麼有些 neocloud 嘅 pipeline 可以長到几百億美元，而技術上未必更強。同時，它也解釋了為什麼 Erik 對 GPU 價格崩塌嘅尾部風險咁敏感——當你手上係長期合約，價格下跌就係存貨減值。</p>
+
+<p><strong>第三，sandbox 係 agent 時代的「行程」（process）。</strong>如果 agent 係一個長時間運行嘅工作流，sandbox 就係它叫用嘅短命執行環境。今日多數人把它當 dev box 用，係過渡形態；未來嘅形態係 100ms 啟動、snapshot、fork、關掉。呢個轉變會解鎖兩樣嘢：大規模平行 CI，以及分支式 agent 探索。而呢兩樣嘢嘅瓶頸，都唔係模型能力，係基建嘅 transaction cost。</p>
+
+<blockquote class="strong">
+  「我比較擔心嘅係價格真的崩塌。我不覺得會很快發生，但那對市場上很多人會是非常糟嘅事。」
+  <span class="attribution">Erik Bernhardsson</span>
+</blockquote>
+
+<p>呢句說話，可能係整集最值得記低嘅一句。在一個人人都講「算力無限需求」嘅市場，一個手上鎖定咗大量長期容量嘅 CEO，公開講自己最擔心嘅係價格下跌——呢個唔係唱淡，係一個知道自己資產負債表形狀嘅人，對尾部風險嘅誠實定價。</p>
+
+<hr>
+
+<div class="highlight-box">
+  <strong>📊 一頁數字摘要</strong>
+  <ul>
+    <li>ARR：<strong>$1B</strong>；Series D：<strong>$750M</strong>；估值：<strong>$16B</strong></li>
+    <li>累計 sandbox：近 <strong>30 億</strong>個；sandbox 佔營收約 <strong>1/3</strong>，Functions 約 <strong>2/3</strong></li>
+    <li>兩年內營收與用戶成長：至少 <strong>50×</strong></li>
+    <li>早期成長：2022-11 <strong>$100/月</strong> → 2022-12 <strong>$2,000/月</strong> → 2023-01 <strong>$30,000/月</strong></li>
+    <li>容量供應商：約 <strong>25 家</strong>；採購 <strong>4 人</strong>；裸金屬運維 <strong>10 人</strong></li>
+    <li>員工：<strong>200</strong> 人 → 年底 <strong>250</strong> → 明年可能 <strong>700</strong>；過去 12 個月 <strong>4×</strong> 年化</li>
+    <li>FDE：年初 <strong>4</strong> 人 → 現在約 <strong>24</strong> 人</li>
+    <li>Sandbox 啟動目標：<strong>100ms</strong> 級；中位數壽命約 <strong>8 秒</strong></li>
+  </ul>
+</div>
+
+<footer>
+  <p>來源：Latent Space 官方 Substack 文章與完整自動轉錄稿（2026-10-22）· 主持 Vibhu，出品 swyx + Alessio Fanelli</p>
+  <p style="margin-top:0.3rem;">深度復述由 Vee Mok 生成 · 2026-10-23 · 引文取自官方轉錄稿，數字為受訪者口述</p>
+  <p style="margin-top:0.3rem;"><a href="../index.html">← 返回播客日報</a></p>
+</footer>
+
+</div>
+</body>
+</html>
