@@ -1,35 +1,70 @@
 {
- "lastScan": "2026-10-22T02:03:00.000Z",
- "lastScanDate": "2026-10-22",
+ "lastScan": "2026-10-23T02:05:00.000Z",
+ "lastScanDate": "2026-10-23",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-10-01T15:28:28.000Z",
-   "lastEpisodeTitle": "Si Sheppard – How did a few hundred Spanish soldiers topple two empires?",
-   "lastFeedItemPubDate": "2026-10-01T15:28:28.000Z",
-   "newEpisodes": []
-  },
-  "latent_space": {
-   "lastEpisodePubDate": "2026-10-21T05:01:26.000Z",
-   "lastEpisodeTitle": "AI for the Fortune 2000: How Tenex Builds an AI-Native SDLC — Alex Lieberman & CJ Hess",
-   "lastFeedItemPubDate": "2026-10-21T13:04:19.000Z",
-   "lastFeedItemTitle": "Claude Mods: Flipping the Harness Inside Out",
+   "lastEpisodePubDate": "2026-10-22T15:02:21.000Z",
+   "lastEpisodeTitle": "What will computer chips look like in 2045?",
+   "lastFeedItemPubDate": "2026-10-22T15:02:21.000Z",
    "newEpisodes": [
     {
-     "title": "AI for the Fortune 2000: How Tenex Builds an AI-Native SDLC — Alex Lieberman & CJ Hess",
-     "pubDate": "2026-10-21T05:01:26.000Z",
+     "title": "What will computer chips look like in 2045?",
+     "pubDate": "2026-10-22T15:02:21.000Z",
+     "type": "explainer + multi-guest",
+     "url": "https://www.dwarkesh.com/p/intel-tour",
+     "guests": "Chris Auth（製程開發）、Kevin Fischer（18A/18A-P 整合）、Jack Kavalieros（研究實驗室）、Tyler Osborn（先進封裝）、Pushkar Ranade（Intel CTO）",
+     "note": "兩天 Intel fab 導覽。核心：AI 算力 3x/年 vs 現有全球機台存量只能 2x 晶圓產能；ASML EUV <100 台/年且不增產；High-NA 對 Intel 划算因 backside power 放鬆正面 pitch；10nm 教訓（EUV 未及、四重曝光、2016→2018）；GAA 1988 演示、2022 量產；CFET 熱與深寬比為殺手；hybrid bonding pitch 150µm→25µm→sub-10µm，ECTC 0.45µm 已驗證；fab 成本 4-5 年翻倍、80% 固定成本；TSMC capex $50B vs Intel $20B；14A 2028，18A→14A 機台重用 80%；Terafab 鎖供應而非增總量；記憶體短缺比算力更嚴重。"
+    }
+   ],
+   "lastFeedItemTitle": "What will computer chips look like in 2045?"
+  },
+  "latent_space": {
+   "lastEpisodePubDate": "2026-10-22T17:40:57.000Z",
+   "lastEpisodeTitle": "Why AI Compute Comes in Rectangles — Erik Bernhardsson, Modal CEO",
+   "lastFeedItemPubDate": "2026-10-22T17:40:57.000Z",
+   "lastFeedItemTitle": "Why AI Compute Comes in Rectangles — Erik Bernhardsson, Modal CEO",
+   "newEpisodes": [
+    {
+     "title": "Why AI Compute Comes in Rectangles — Erik Bernhardsson, Modal CEO",
+     "pubDate": "2026-10-22T17:40:57.000Z",
      "type": "interview",
-     "url": "https://www.latent.space/p/tenex",
-     "guests": "Alex Lieberman（Tenex 共同創辦人）、CJ Hess（工程總監）；錄於 AI Engineer New York",
-     "note": "Tenex 按 story point 計酬 18 個月後的對帳：75 人、90% 工程師/AI strategist、50% F2000 + 50% 中型企業、最高最低薪差 4x（願景 10x）、年內產出 2x、token:人力支出 1:1–2:1、AMP 掛 Claude Code 訂閱省 80%。企業階梯 90% LLM / 60% 培訓 / 50% coding agent / 5% 非工程 agent 進生產。MetaHarness 把 plan 與決策全進 Git。對 vertical AI 與 Salesforce/SAP 被取代均偏空。"
+     "url": "https://www.latent.space/p/modal-d",
+     "guests": "Erik Bernhardsson（Modal CEO）；主持 Vibhu；新 cohost Basil Chatha",
+     "note": "$1B ARR、$750M D 輪 @ $16B、30 億 sandbox、25 家雲供應商、3 年預付。Functions 2/3、Sandboxes 1/3 營收。sandbox 2023 上線曾考慮關閉，因 vibe coding/background agent/RL 爆發。容量是 duration transformation；尾部風險為 GPU 價格崩塌（Hunt 兄弟）；2027 可能是非 NVIDIA 年；open-weight 已好到 fine-tune 變可選；HuggingFace 事件為 app 被駭非 sandbox 逃逸，改用 agent 做紅隊；code review 可選；agent 訓練資料令 deprecate 變難；BYOC 報價無人接受。"
+    },
+    {
+     "title": "You are the Team — Anekha Sokhal, Moshi",
+     "pubDate": "2026-10-22T14:03:40.000Z",
+     "type": "interview",
+     "url": "https://www.latent.space/p/moshi",
+     "guests": "Anekha Sokhal（Moshi CEO）；主持 swyx",
+     "note": "能源衍生品交易員轉創辦人。四秒學 300 件新事；Bloomberg+Claude+Netflix；核心是推薦系統與 n 維圖譜而非聊天；私有資料自建 VLM 解析 PDF；來源信心分數與分歧即資料；一個職缺 4 天 2,500 申請；AI Engineer 現場『你就是團隊』壓力。"
+    },
+    {
+     "title": "[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP",
+     "pubDate": "2026-10-22T07:42:44.000Z",
+     "type": "newsletter",
+     "url": "https://www.latent.space/p/ainews-openais-patch-the-planet-program",
+     "guests": "—",
+     "note": "PHP2Shell：CVE-2026-109618/109619，PHP OOM 與 fatal error 處理的記憶體腐敗，WordPress/Drupal/Joomla 未認證 RCE。Calif/OpenAI（GPT-5.6 Sol）與 Wiz（Gemini 4 Argon）獨立發現。作附錄處理。"
     }
    ]
   },
   "no_priors": {
-   "lastEpisodePubDate": "2026-10-15T10:00:00.000Z",
-   "lastEpisodeTitle": "The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman",
-   "lastFeedItemPubDate": "2026-10-15T10:00:00.000Z",
-   "newEpisodes": [],
-   "lastFeedItemTitle": "The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman"
+   "lastEpisodePubDate": "2026-10-22T10:00:00.000Z",
+   "lastEpisodeTitle": "The New Apex Predator: CrowdStrike CEO George Kurtz on Adversaries Armed With AI Agents",
+   "lastFeedItemPubDate": "2026-10-22T10:00:00.000Z",
+   "newEpisodes": [
+    {
+     "title": "The New Apex Predator: CrowdStrike CEO George Kurtz on Adversaries Armed With AI Agents",
+     "pubDate": "2026-10-22T10:00:00.000Z",
+     "type": "interview",
+     "url": "https://traffic.megaphone.fm/PDP8573582914.mp3",
+     "guests": "George Kurtz（CrowdStrike 總裁兼 CEO）；主持 Sarah Guo、Elad Gil",
+     "note": "Agent state 取代 nation state 成頂級掠食者；breakout time 平均 29 分鐘、最快 27 秒；攻擊从 malware 轉為 prompt；frontier guardrail 太嚴令防禦方能力不足；Safe Mind 實驗室與 NVIDIA 合作，Red Tempest / Blue Solano，數位孿生紅藍對打；修復成本 $10 vs $0.03；15 年資料護城河、無 CrowdStrike 版 Reddit；harness 勝過模型；open-weight 商品化 frontier（銀行 CIO F1 比喻）；蒸餾 genie 已出瓶；7 兆事件/日；33 模組；AIDR；identity 登入才是主戰場；『關掉網路是胡說』。"
+    }
+   ],
+   "lastFeedItemTitle": "The New Apex Predator: CrowdStrike CEO George Kurtz on Adversaries Armed With AI Agents"
   },
   "cognitive_revolution": {
    "lastEpisodePubDate": "2026-10-20T11:00:00.000Z",
@@ -89,13 +124,13 @@
   }
  },
  "notes": {
-  "scan_status": "2026-10-22 掃描（02:03–02:25 UTC）：窗口 10-21 02:06 → 10-22 02:03 內 10 檔播客新增 1 集。英文 1：Latent Space Tenex（10-21 05:01Z）。中文 0：張小珺仍 #155（10-21 00:00Z，已於 10-21 報告）、硅谷101 仍 E256、Crossing 仍 Treg 10-18、42章經 仍 Jason 10-17、屠龍之術 仍 09-28。英文其餘：Dwarkesh 仍 10-01、No Priors 仍 10-15、Cognitive Revolution 仍 Alex Rives 10-20、MLST 仍 10-10。",
-  "report_date": "2026-10-22",
-  "deep_content_fetched": "①Tenex：Latent Space 官方 Substack 全文 51,938 bytes，含 14 個官方章節時間碼 + 完整自動轉錄稿（約 26,000 字元，至 43:20）；引語逐字取自轉錄稿。②附錄 A Claude Mods：Substack 文章 API body_html 全文（164 行純文本），非摘要。③附錄 B DeepInfer：AINews body_html 全文（1,175 行純文本），含 DeepSeek 一手工程數據與 vLLM 反駁。",
-  "failures": "兩個 YouTube RSS 端點全數 404（UCXl4i9dYBrFOabk0xGmbkRA / UCSI7h9hydQ40K5MJHnCrQvw），web_fetch 與 curl（含 UA + Atom Accept）皆同；回應來自 YouTube RSS Feeds server，屬端點失效而非本機網路。已改替代源：No Priors→feeds.megaphone.fm/nopriors、MLST→anchor.fm/s/1e4a0eac/podcast/rss、Dwarkesh→Substack feed。無漏集，但若日後僅 YouTube 首發需重設計。",
-  "jev_prefilter": "2026-10-22 對 3 條候選跑 jev.py triage --profile news：available=true、failed=0/3。worth：Tenex 1.16、DeepInfer 1.05、Claude Mods 0.62，全部 ≥0.6 全數保留。Claude Mods 貼線（0.62）且 category=agent-infra conf=1.0，判定為框架性文章，降級為附錄。primary_source 0.17–0.30 係送入描述而非原文，寫作已改用一手轉錄稿/全文。",
-  "notable_for_james": "①5% 這個數字是本輪最可操作的硬情報：>1000 人的企業中僅 5% 有非工程 agent 在生產環境跑，50% 工程組織有 coding agent（現場所有人猜 70–80%）。賣 enterprise agent 的真對手是客戶內部 40 種做事方式，不是別家 agent。②「You can't automate a process that does not exist」＋「沒有標準化就沒有 eval」是可直接引用的方法論。③4x vs 10x：按產出計酬 18 個月後，薪資離散度只有 4 倍——模型是在托底不是拔高，這打臉「AI 放大個體差距」的敘事。④Alex 間接看空企業專屬模型：企業要成為資料公司買方就必須大量 fine-tune，但品質跑不過 frontier、價格又被 token 降價碾壓，兩前提都難成立。⑤附錄 B 的 81 天回本／1660 億美元每 GW／>80% 毛利是第一方宣稱且高度快取（96% 命中、72 小時 cache），vLLM 稱 GB200 decode 差距僅 6%——三個數字要一起讀才不會被誤導。",
+  "scan_status": "2026-10-23 掃描（02:03–02:06 UTC）：窗口 10-22 02:03 → 10-23 02:05 內 10 檔播客新增 4 集，全為英文。Dwarkesh 1（Intel fab，10-22 15:02Z）、Latent Space 3（Modal 17:40Z、Moshi 14:03Z、AINews 07:42Z）、No Priors 1（CrowdStrike 10:00Z）。中文 0：以 Apple/xyzfm/fireside 原始 feed 逐台核對，張小珺仍 #155（10-21）、硅谷101 仍 E256（10-19）、Crossing 仍 Treg（10-18）、42章經 仍 Jason（10-17）、屠龍 仍 09-28。",
+  "report_date": "2026-10-23",
+  "deep_content_fetched": "①Dwarkesh：Substack API body_html 全文 84,573 bytes → 68,024 字元純文本，含 11 個官方章節時間碼與完整逐字稿（五位受訪者），引語逐字取自轉錄。②Modal：body_html 110,257 bytes → 105,037 字元，含官方摘要、12 個章節時間碼、完整自動轉錄（85 分鐘）。③Moshi：body_html 30,781 bytes → 27,439 字元，完整 27 分鐘轉錄。④No Priors：RSS 描述含 18 個章節，另以 youtube_transcript_api 取得 49,856 字元自動字幕（影片 PST8yesYOSo）。⑤附錄 AINews：body_html 全文 62,317 字元，PHP2Shell 一手時間線。",
+  "failures": "無。YouTube RSS 端點（UCXl4i9dYBrFOabk0xGmbkRA）本輪未使用；Dwarkesh 走 Substack feed，No Priors 走 megaphone，皆正常。中文台 feed 已改用 Apple lookup 取得的 xyzfm 原始 feed，解決以往快取過期問題（舊 feed 只到 10-08/10-09）。",
+  "jev_prefilter": "2026-10-23 對 5 條候選跑 jev.py triage --profile news：全數 >=0.6 保留。worth：Dwarkesh 約 1.3+、Modal 1.28、CrowdStrike 1.21、Moshi 1.26、PHP2Shell 0.71。PHP2Shell 貼線且 primary_source 0.13，降為附錄；其餘四集全文萃取。primary_source 分數偏低係因送入描述而非原文，寫作已改用一手逐字稿。",
+  "notable_for_james": "①「2× vs 3×/年」是本輪最硬的錨：Intel CTO 明說以現有全球機台存量，領先製程晶圓產能最多翻倍，且一次性；18 個月交機 + 新 fab shell 意味 2030 年前供給已鎖定。②Modal 的 sandbox 從差點關閉到 1/3 營收，是 agent infra 需求最可量化的證據；同時 Erik 警告 GPU 價格崩塌的相關性尾部風險（價格、利用率、轉售同時消失）。③Kurtz 的 $10 vs $0.03 與「frontier 模型連資安 PPT 都拒絕」構成垂直安全模型的完整商業論證；29 分鐘/27 秒 breakout time 可直接引用。④Kurtz 對「關網路」論述的正面反駁（「我認為那是胡說」）與 agent 無新攻擊類別的判斷，是 AI safety 辯論中少見的一線營運者觀點。⑤Moshi 的「每個人都能做 dashboard，但你要的是 UI 問題」是對當前『人人都是 builder』敘事最實用的修正。",
   "index_html": "未更新 index.html（該落地頁自 2026-07-19 起停更，維持既有慣例）。",
-  "deep_dive_link": "本輪未新增 deep-dive；報告本體已含完整萃取。"
+  "deep_dive_link": "本輪未新增 deep-dive；報告本體已含完整萃取（51.7KB）。"
  }
 }
