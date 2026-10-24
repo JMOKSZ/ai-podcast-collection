@@ -1,70 +1,53 @@
 {
- "lastScan": "2026-10-23T02:05:00.000Z",
- "lastScanDate": "2026-10-23",
+ "lastScan": "2026-10-24T02:03:00.000Z",
+ "lastScanDate": "2026-10-24",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-22T15:02:21.000Z",
    "lastEpisodeTitle": "What will computer chips look like in 2045?",
    "lastFeedItemPubDate": "2026-10-22T15:02:21.000Z",
-   "newEpisodes": [
-    {
-     "title": "What will computer chips look like in 2045?",
-     "pubDate": "2026-10-22T15:02:21.000Z",
-     "type": "explainer + multi-guest",
-     "url": "https://www.dwarkesh.com/p/intel-tour",
-     "guests": "Chris Auth（製程開發）、Kevin Fischer（18A/18A-P 整合）、Jack Kavalieros（研究實驗室）、Tyler Osborn（先進封裝）、Pushkar Ranade（Intel CTO）",
-     "note": "兩天 Intel fab 導覽。核心：AI 算力 3x/年 vs 現有全球機台存量只能 2x 晶圓產能；ASML EUV <100 台/年且不增產；High-NA 對 Intel 划算因 backside power 放鬆正面 pitch；10nm 教訓（EUV 未及、四重曝光、2016→2018）；GAA 1988 演示、2022 量產；CFET 熱與深寬比為殺手；hybrid bonding pitch 150µm→25µm→sub-10µm，ECTC 0.45µm 已驗證；fab 成本 4-5 年翻倍、80% 固定成本；TSMC capex $50B vs Intel $20B；14A 2028，18A→14A 機台重用 80%；Terafab 鎖供應而非增總量；記憶體短缺比算力更嚴重。"
-    }
-   ],
+   "newEpisodes": [],
    "lastFeedItemTitle": "What will computer chips look like in 2045?"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-10-22T17:40:57.000Z",
-   "lastEpisodeTitle": "Why AI Compute Comes in Rectangles — Erik Bernhardsson, Modal CEO",
-   "lastFeedItemPubDate": "2026-10-22T17:40:57.000Z",
-   "lastFeedItemTitle": "Why AI Compute Comes in Rectangles — Erik Bernhardsson, Modal CEO",
+   "lastEpisodePubDate": "2026-10-23T10:09:29.000Z",
+   "lastEpisodeTitle": "[AINews] Black October",
+   "lastFeedItemPubDate": "2026-10-23T10:09:29.000Z",
+   "lastFeedItemTitle": "[AINews] Black October",
    "newEpisodes": [
     {
-     "title": "Why AI Compute Comes in Rectangles — Erik Bernhardsson, Modal CEO",
-     "pubDate": "2026-10-22T17:40:57.000Z",
-     "type": "interview",
-     "url": "https://www.latent.space/p/modal-d",
-     "guests": "Erik Bernhardsson（Modal CEO）；主持 Vibhu；新 cohost Basil Chatha",
-     "note": "$1B ARR、$750M D 輪 @ $16B、30 億 sandbox、25 家雲供應商、3 年預付。Functions 2/3、Sandboxes 1/3 營收。sandbox 2023 上線曾考慮關閉，因 vibe coding/background agent/RL 爆發。容量是 duration transformation；尾部風險為 GPU 價格崩塌（Hunt 兄弟）；2027 可能是非 NVIDIA 年；open-weight 已好到 fine-tune 變可選；HuggingFace 事件為 app 被駭非 sandbox 逃逸，改用 agent 做紅隊；code review 可選；agent 訓練資料令 deprecate 變難；BYOC 報價無人接受。"
-    },
-    {
-     "title": "You are the Team — Anekha Sokhal, Moshi",
-     "pubDate": "2026-10-22T14:03:40.000Z",
-     "type": "interview",
-     "url": "https://www.latent.space/p/moshi",
-     "guests": "Anekha Sokhal（Moshi CEO）；主持 swyx",
-     "note": "能源衍生品交易員轉創辦人。四秒學 300 件新事；Bloomberg+Claude+Netflix；核心是推薦系統與 n 維圖譜而非聊天；私有資料自建 VLM 解析 PDF；來源信心分數與分歧即資料；一個職缺 4 天 2,500 申請；AI Engineer 現場『你就是團隊』壓力。"
-    },
-    {
-     "title": "[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP",
-     "pubDate": "2026-10-22T07:42:44.000Z",
+     "title": "[AINews] Black October",
+     "pubDate": "2026-10-23T10:09:29.000Z",
      "type": "newsletter",
-     "url": "https://www.latent.space/p/ainews-openais-patch-the-planet-program",
-     "guests": "—",
-     "note": "PHP2Shell：CVE-2026-109618/109619，PHP OOM 與 fatal error 處理的記憶體腐敗，WordPress/Drupal/Joomla 未認證 RCE。Calif/OpenAI（GPT-5.6 Sol）與 Wiz（Gemini 4 Argon）獨立發現。作附錄處理。"
+     "url": "https://latent.space/p/ainews-black-october/",
+     "guests": "swyx",
+     "note": "通訊（附錄）。48 小時：PHP2Shell（CVE-2026-109618/109619，OpenAI GPT-5.6 Sol 與 Wiz Gemini 4 Argon 獨立發現）、GitLab CVSS 10（2014 起版本，19.5.1 修）、Node.js Brotli RCE、NGINX HTTP/3 DoS；LiteLLM 1.107.0 密碼竊取器、Railway 輪換密鑰、Zeabur 321,810 帳號外洩後關閉；eMudhra 密鑰種子=4、退出 CA；Quest Diagnostics；CVE 4k→15k/月；Storm-0940 用 ARTEX 打 2,250+ M365 tenant、2,900 登入/分鐘、3 小時內特權；Achiam 稱 16 宗僅 4 宗本週發生；Anthropic 形式化驗證 1.8 億行/239 entry points/123 庫；METR/Redwood 內部評估 61→38 頁、context compression 令 10% 內部 Codex 流量未監控；MiniMax M3.1 Flash 428B/23B active；Carbon-X 14B DNA；Flint 40B；CritPt v2 47/70 修正且與 v1 不可比；CVE 重現 $2.40 vs $64.96 vs $135.23；OpenAI $30B @ $1.25T；MAI-DxO 80.3% vs 46.8%。"
+    },
+    {
+     "title": "AI Is Getting Good at Math. Here's Why.",
+     "pubDate": "2026-10-23T15:19:48.000Z",
+     "type": "long-form essay",
+     "url": "https://latent.space/p/ai-is-getting-good-at-math/",
+     "guests": "Ankit Maloo（Latent Space 客座作者）",
+     "note": "Ankit Maloo 長文（非音頻）。Gowers 提示序列複雜度 2^k+t；branching factor b → b^k；人類廣度優先 vs LLM 深度優先；drafter/solver/verifier harness；CDC prompt 全文四條約束；unit distance 三提示次序不可換；Tsimerman 停手因「洞察題無梯度」（Metcalfe & Wiebe 15 秒實驗）；2026 三能力：chaining primitives、self-verification、orchestration；Navier-Stokes 166 頁/10,000 agents/300B tokens/88 小時；資安 b≈1-2 故先倒；人類優勢在高 b 高 k；失敗資訊量與信念成正比；Tao 稱解題是理解之代理。"
     }
    ]
   },
   "no_priors": {
-   "lastEpisodePubDate": "2026-10-22T10:00:00.000Z",
-   "lastEpisodeTitle": "The New Apex Predator: CrowdStrike CEO George Kurtz on Adversaries Armed With AI Agents",
-   "lastFeedItemPubDate": "2026-10-22T10:00:00.000Z",
+   "lastEpisodePubDate": "2026-10-23T10:00:05.000Z",
+   "lastEpisodeTitle": "Democratizing Security for the Agentic Web with Cloudflare CTO Dane Knecht",
+   "lastFeedItemPubDate": "2026-10-23T10:00:05.000Z",
    "newEpisodes": [
     {
-     "title": "The New Apex Predator: CrowdStrike CEO George Kurtz on Adversaries Armed With AI Agents",
-     "pubDate": "2026-10-22T10:00:00.000Z",
+     "title": "Democratizing Security for the Agentic Web with Cloudflare CTO Dane Knecht",
+     "pubDate": "2026-10-23T10:00:05.000Z",
      "type": "interview",
-     "url": "https://traffic.megaphone.fm/PDP8573582914.mp3",
-     "guests": "George Kurtz（CrowdStrike 總裁兼 CEO）；主持 Sarah Guo、Elad Gil",
-     "note": "Agent state 取代 nation state 成頂級掠食者；breakout time 平均 29 分鐘、最快 27 秒；攻擊从 malware 轉為 prompt；frontier guardrail 太嚴令防禦方能力不足；Safe Mind 實驗室與 NVIDIA 合作，Red Tempest / Blue Solano，數位孿生紅藍對打；修復成本 $10 vs $0.03；15 年資料護城河、無 CrowdStrike 版 Reddit；harness 勝過模型；open-weight 商品化 frontier（銀行 CIO F1 比喻）；蒸餾 genie 已出瓶；7 兆事件/日；33 模組；AIDR；identity 登入才是主戰場；『關掉網路是胡說』。"
+     "url": "https://www.youtube.com/watch?v=6VprwfSc4Xk",
+     "guests": "Dane Knecht（Cloudflare CTO）",
+     "note": "訪談（YouTube 6VprwfSc4Xk，字幕 42,672 字元）。Log4j 級事件一年一次→每週；未來 18 個月 >50% 工程時間在安全；70 年軟件存量；紅隊 1→4-5；5,000 人公司一年 1,000 interns；token 提示 $300 email/$500 經理/$1,000 VP、無 leaderboard；eMudhra 密鑰種子=4；OpenAI 找出 2000 年 NIST 曲線種子；「agent kitties」高中生＋bounty；反對 air gap、靠 zero trust；AI 目前令軟件更複雜（verbose）；開放權重宿命論「壞人總拿到」；agent 經濟需 CPM 等價微支付 + x402 + 穩定幣錢包 + Signals（與 OpenAI）；Cloudflare OS 為 reference architecture、GTM/G&A 用得多過工程；重組把三團隊 email 流程變成一個 PM 工具；模型應智能路由而非人類逐任務選；React 漏洞免費客同享規則。"
     }
    ],
-   "lastFeedItemTitle": "The New Apex Predator: CrowdStrike CEO George Kurtz on Adversaries Armed With AI Agents"
+   "lastFeedItemTitle": "Democratizing Security for the Agentic Web with Cloudflare CTO Dane Knecht"
   },
   "cognitive_revolution": {
    "lastEpisodePubDate": "2026-10-20T11:00:00.000Z",
@@ -77,7 +60,8 @@
    "lastEpisodePubDate": "2026-10-10T05:48:01.000Z",
    "lastEpisodeTitle": "What Most People Get Wrong About Evolution | Akarsh Kumar",
    "lastFeedItemPubDate": "2026-10-10T05:48:01.000Z",
-   "newEpisodes": []
+   "newEpisodes": [],
+   "lastFeedItemTitle": "What Most People Get Wrong About Evolution | Akarsh Kumar"
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-10-21T00:00:00.000Z",
@@ -90,16 +74,7 @@
    "lastEpisodePubDate": "2026-10-19T23:00:00.000Z",
    "lastEpisodeTitle": "E256｜Agent、机器人与制药，谁先被GPT-6 Astra改写？",
    "lastFeedItemPubDate": "2026-10-19T23:00:00.000Z",
-   "newEpisodes": [
-    {
-     "title": "E256｜Agent、机器人与制药，谁先被GPT-6 Astra改写？",
-     "pubDate": "2026-10-19T23:00:00.000Z",
-     "type": "panel",
-     "url": "https://sv101.fireside.fm/270",
-     "guests": "许华哲（破壳机器人/清华叉院）、朱哲清 Bill（Pokee.ai）、王晟（华盛顿大学/Apodex）；主持泓君",
-     "note": "三人跨 Agent／机器人／AI 制药。Astra 对 coding 非换代（Opus4.5→4.6 才是），长程更稳；Computer Use 回潮因 API 封闭，云 IP 被封，软硬结合+身份是破局点；Meta Muse 每人每周 1 亿 token≈$100。机器人：Astra 定性飞跃但 16-24x 速度、CoT 长度不随难度变化、技能不压缩（永远 45 分钟）、缺直觉物理、Real-to-Sim 物理引擎未变；本地<10B、云端 200ms；2028 初通用机器人。制药：实验设计完成度 30%、拒答趋严、湿实验必需、MCP 直连（Adaptyv $40M）、数据护城河、6-12 月到授权、>$10M 授权费。"
-    }
-   ],
+   "newEpisodes": [],
    "lastFeedItemTitle": "E256｜Agent、机器人与制药，谁先被GPT-6 Astra改写？"
   },
   "42zhangjing": {
@@ -113,7 +88,8 @@
    "lastEpisodePubDate": "2026-09-28T16:00:00.000Z",
    "lastEpisodeTitle": "当AI开始设计芯片---聊聊EDA与AI时代的芯片设计",
    "lastFeedItemPubDate": "2026-09-28T16:00:00.000Z",
-   "newEpisodes": []
+   "newEpisodes": [],
+   "lastFeedItemTitle": "当AI开始设计芯片---聊聊EDA与AI时代的芯片设计"
   },
   "crossing": {
    "lastEpisodePubDate": "2026-10-18T16:00:00.000Z",
@@ -124,13 +100,13 @@
   }
  },
  "notes": {
-  "scan_status": "2026-10-23 掃描（02:03–02:06 UTC）：窗口 10-22 02:03 → 10-23 02:05 內 10 檔播客新增 4 集，全為英文。Dwarkesh 1（Intel fab，10-22 15:02Z）、Latent Space 3（Modal 17:40Z、Moshi 14:03Z、AINews 07:42Z）、No Priors 1（CrowdStrike 10:00Z）。中文 0：以 Apple/xyzfm/fireside 原始 feed 逐台核對，張小珺仍 #155（10-21）、硅谷101 仍 E256（10-19）、Crossing 仍 Treg（10-18）、42章經 仍 Jason（10-17）、屠龍 仍 09-28。",
-  "report_date": "2026-10-23",
-  "deep_content_fetched": "①Dwarkesh：Substack API body_html 全文 84,573 bytes → 68,024 字元純文本，含 11 個官方章節時間碼與完整逐字稿（五位受訪者），引語逐字取自轉錄。②Modal：body_html 110,257 bytes → 105,037 字元，含官方摘要、12 個章節時間碼、完整自動轉錄（85 分鐘）。③Moshi：body_html 30,781 bytes → 27,439 字元，完整 27 分鐘轉錄。④No Priors：RSS 描述含 18 個章節，另以 youtube_transcript_api 取得 49,856 字元自動字幕（影片 PST8yesYOSo）。⑤附錄 AINews：body_html 全文 62,317 字元，PHP2Shell 一手時間線。",
-  "failures": "無。YouTube RSS 端點（UCXl4i9dYBrFOabk0xGmbkRA）本輪未使用；Dwarkesh 走 Substack feed，No Priors 走 megaphone，皆正常。中文台 feed 已改用 Apple lookup 取得的 xyzfm 原始 feed，解決以往快取過期問題（舊 feed 只到 10-08/10-09）。",
-  "jev_prefilter": "2026-10-23 對 5 條候選跑 jev.py triage --profile news：全數 >=0.6 保留。worth：Dwarkesh 約 1.3+、Modal 1.28、CrowdStrike 1.21、Moshi 1.26、PHP2Shell 0.71。PHP2Shell 貼線且 primary_source 0.13，降為附錄；其餘四集全文萃取。primary_source 分數偏低係因送入描述而非原文，寫作已改用一手逐字稿。",
-  "notable_for_james": "①「2× vs 3×/年」是本輪最硬的錨：Intel CTO 明說以現有全球機台存量，領先製程晶圓產能最多翻倍，且一次性；18 個月交機 + 新 fab shell 意味 2030 年前供給已鎖定。②Modal 的 sandbox 從差點關閉到 1/3 營收，是 agent infra 需求最可量化的證據；同時 Erik 警告 GPU 價格崩塌的相關性尾部風險（價格、利用率、轉售同時消失）。③Kurtz 的 $10 vs $0.03 與「frontier 模型連資安 PPT 都拒絕」構成垂直安全模型的完整商業論證；29 分鐘/27 秒 breakout time 可直接引用。④Kurtz 對「關網路」論述的正面反駁（「我認為那是胡說」）與 agent 無新攻擊類別的判斷，是 AI safety 辯論中少見的一線營運者觀點。⑤Moshi 的「每個人都能做 dashboard，但你要的是 UI 問題」是對當前『人人都是 builder』敘事最實用的修正。",
+  "scan_status": "2026-10-24 掃描（02:03–02:12 UTC）：窗口 10-23 02:05 → 10-24 02:03 內新增 3 篇，全英文。No Priors 1（Cloudflare CTO Dane Knecht，10-23 10:00Z）、Latent Space 2（數學長文 15:19Z、AINews Black October 10:09Z）。Dwarkesh 0、Cognitive Revolution 0、MLST 0。中文 0：以 Apple lookup 取得的 xyzfm / fireside 直連 feed 逐台核對，張小珺仍 #155（10-21）、硅谷101 仍 E256（10-19）、Crossing 仍 Treg（10-18）、42章經 仍 Jason（10-17）、屠龍 仍 09-28。",
+  "report_date": "2026-10-24",
+  "deep_content_fetched": "①數學長文：Substack article 全文 64,500 bytes → 22,404 字元純文本，含完整引語與 CDC prompt 原文。②No Priors：youtube_transcript_api 取得 42,672 字元自動字幕（6VprwfSc4Xk），覆蓋全片約 52 分鐘。③AINews：article 全文 107,093 bytes → 38,830 字元，含 Twitter/Reddit 兩段 recap。",
+  "failures": "無。YouTube RSS（UCXl4i9dYBrFOabk0xGmbkRA / UCSI7h9hydQ40K5MJHnCrQvw）正常；Dwarkesh 本輪無新集。MLST channel feed 首次嘗試 XML 解析失敗（invalid token），改用網頁核對，確認最新仍為 10-10。",
+  "jev_prefilter": "2026-10-24 對 3 條候選跑 jev.py triage --profile news：全數 >=0.6 保留。worth：數學長文 1.03（primary_source 0.12，因送入摘要而非全文）、Cloudflare 1.24（primary_source 0.61）、Black October 1.03（0.11）。Black October 依慣例降為附錄；數學長文與 Cloudflare 全文萃取。",
+  "notable_for_james": "①b^k 框架係本輪最有用嘅思考工具：b 低＋有 verifier 嘅領域先被 AI 攻陷，資安 b≈1-2 故先倒，數學「概念躍遷已完成」部分同樣低 b。可直接用來判斷下一個被顛覆嘅行業。②「洞察題無梯度」＋Metcalfe & Wiebe 15 秒實驗，解釋咗人類專家為何停手、模型為何唔停——呢個係士氣成本 vs 算力成本嘅直接比較。③Navier-Stokes 166 頁／10,000 agents／300B tokens／88 小時，係「以算力買學術進度」第一條可引用嘅定價曲線。④Knecht 嘅 50% 工程時間／18 個月窗口，與 Brockman 2027 安全 token 支出、Kurtz 29 分鐘 breakout 構成完整預算論證。⑤CVE 重現成本 $2.40（DeepSeek V4.1 Flash）vs $64.96（Opus）vs $135.23（Astra）係「平模型掃全網、貴模型做驗證」架構最硬嘅數字。⑥Achiam：16 宗大事只有 4 宗真係本週發生——披露密度被誤讀為攻擊密度，呢點要記住，唔好跟恐慌。",
   "index_html": "未更新 index.html（該落地頁自 2026-07-19 起停更，維持既有慣例）。",
-  "deep_dive_link": "本輪未新增 deep-dive；報告本體已含完整萃取（51.7KB）。"
+  "deep_dive_link": "本輪未新增 deep-dive；報告本體已含完整萃取（53.3KB）。"
  }
 }

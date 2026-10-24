@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客深度萃取 · 2026-10-24</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf8f5; --ink:#1f1c19; --muted:#6b635a; --rule:#e2dcd3;
+    --accent:#8a4b2a; --soft:#f2ede5; --code:#f0eae1;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Source Serif 4","Noto Serif SC",Georgia,"Songti SC",serif;
+    font-size:17px; line-height:1.78; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:800px;margin:0 auto;padding:56px 26px 90px}
+  header.top{border-bottom:1px solid var(--rule);padding-bottom:26px;margin-bottom:14px}
+  .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-family:Georgia,serif}
+  h1{font-size:31px;line-height:1.3;margin:12px 0 14px;font-weight:700;letter-spacing:-.01em}
+  .meta{font-size:13.5px;color:var(--muted);line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .lede{margin:26px 0 6px;font-size:17.5px}
+  .lede ul{margin:12px 0 0;padding-left:20px}
+  .lede li{margin:9px 0}
+  h2{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+     margin:64px 0 8px;font-family:Georgia,serif;font-weight:600;border-top:1px solid var(--rule);padding-top:26px}
+  h3{font-size:25px;margin:36px 0 4px;line-height:1.35;font-weight:700}
+  .host{font-size:14px;color:var(--muted);margin:0 0 20px}
+  h4{font-size:20px;margin:34px 0 6px;line-height:1.4;font-weight:600}
+  h5{font-size:15.5px;margin:26px 0 4px;font-weight:600;color:var(--accent)}
+  .stamp{font-size:13px;color:var(--muted);margin:0 0 22px;font-variant-numeric:tabular-nums}
+  .stamp .dot{color:var(--rule);margin:0 8px}
+  p{margin:0 0 15px}
+  .label{font-weight:600;color:var(--ink)}
+  blockquote{
+    margin:22px 0;padding:2px 0 2px 20px;border-left:2px solid var(--accent);
+    font-style:italic;color:#332e28;font-size:17.5px;
+  }
+  blockquote .who{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:7px}
+  ul.tight{margin:8px 0 18px;padding-left:21px}
+  ul.tight li{margin:7px 0}
+  ul.tight li::marker{color:var(--accent)}
+  .data{background:var(--soft);border:1px solid var(--rule);padding:20px 24px;margin:20px 0 24px}
+  .data h5{margin:0 0 10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-family:Georgia,serif}
+  .data ul{margin:0;padding-left:19px}
+  .data li{margin:6px 0;font-size:16px}
+  .num{font-variant-numeric:tabular-nums;font-weight:600}
+  .note{font-size:14.5px;color:var(--muted);border-top:1px dotted var(--rule);padding-top:12px;margin-top:26px}
+  table{width:100%;border-collapse:collapse;margin:16px 0 26px;font-size:14.5px}
+  th,td{text-align:left;padding:8px 8px 8px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{font-weight:600;color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  .tag{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+       color:var(--accent);border:1px solid var(--rule);padding:1px 7px;margin-left:6px;vertical-align:2px}
+  footer{margin-top:70px;border-top:1px solid var(--rule);padding-top:22px;font-size:13px;color:var(--muted)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #d8c9bb}
+  a:hover{border-bottom-color:var(--accent)}
+  @media(max-width:600px){
+    .wrap{padding:38px 18px 70px}
+    body{font-size:16.5px;line-height:1.75}
+    h1{font-size:26px} h3{font-size:21px} h4{font-size:18.5px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="kicker">Daily Podcast Dig</div>
+  <h1>當提示序列比算力更稀缺</h1>
+  <div class="meta">
+    <b>報告日期</b>：2026-10-24（星期六）<br>
+    <b>生成時間</b>：2026-10-24 02:12 UTC（10:12 HKT）<br>
+    <b>掃描窗口</b>：2026-10-23 02:05 UTC → 2026-10-24 02:03 UTC<br>
+    <b>本輪新增</b>：英文 3 篇（1 訪談、1 深度長文、1 通訊）｜中文 0 集<br>
+    <b>來源</b>：No Priors（YouTube 自動字幕 42,672 字元）、Latent Space（Substack 全文 22,404 字元）、Latent Space AINews（38,830 字元）、Apple Podcasts / xyzfm / fireside RSS
+  </div>
+</header>
+
+<div class="lede">
+<p>今日冇新嘅中文集數，但英文呢三篇啱啱好砌成一條完整嘅因果鏈：<b>模型點解突然識解數學</b>（Latent Space 長文）→ <b>同一個能力點解先打爆資安</b>（AINews 黑色十月）→ <b>身處前線嘅人點應對</b>（Cloudflare CTO）。分開睇係三條新聞，合埋睇係一份關於「2026 年 AI 能力邊界」嘅一手材料。</p>
+<ul>
+  <li><b>數學長文係今日最有價值嘅一篇。</b>Ankit Maloo 用 Gowers 嘅「最短提示序列」把問題難度寫成 <span class="num">2^k + t</span>，再加一個 branching factor <span class="num">b</span>，得到 <span class="num">b^k</span> 條路徑。呢個框架唔止解釋數學，仲預測到<b>點解資安會第一個倒下</b>（b ≈ 1–2）。</li>
+  <li><b>核心不對稱：</b>人類追一個方向要幾個月才知道有冇用，模型五分鐘就知道。所以對模型嚟講，「提示」嘅品質門檻幾乎消失——普通、離譜、未成形嘅想法都可以照試。這是 2026 年能力躍遷的真正機制，唔係單純模型變聰明。</li>
+  <li><b>Navier–Stokes 證明嘅成本曝光：</b>166 頁、<span class="num">10,000</span> 個 agent、<span class="num">300B</span> tokens、<span class="num">88</span> 小時。而它只是完成 Córdoba 與 Martínez-Zoroa 已鋪好嘅綱領——概念躍遷係人做嘅，收尾係機器做嘅。</li>
+  <li><b>Cloudflare CTO Dane Knecht：</b>Log4j 級事件由「一年一次」變成「每週一次」；未來 18 個月 <span class="num">>50%</span> 工程時間會花在安全；攻擊者唔再係國家隊，而係「agent kitties」——高中生用 agent 搵漏洞攞 bounty。佢嘅判斷：呢個係一次性補課窗口，唔會永久。</li>
+  <li><b>黑色十月嘅硬數字：</b>月度 CVE 由約 <span class="num">4,000</span> 升至約 <span class="num">15,000</span>；eMudhra 一把 CA 密鑰嘅種子竟然係數字 <span class="num">4</span>；Storm-0940 用開源 agentic pentest 框架 ARTEX 打 <span class="num">2,250+</span> 個 M365 tenant，每分鐘約 <span class="num">2,900</span> 次登入。</li>
+</ul>
+</div>
+
+<h2>中文播客</h2>
+
+<p>五檔全部核對過原始 feed（Apple lookup 取得 xyzfm / fireside 直連，避開快取過期），本輪窗口內<b>零新增</b>。以下為各台最新一集，方便對照時間差：</p>
+
+<table>
+  <tr><th>播客</th><th>最新一集</th><th>發布時間（UTC）</th></tr>
+  <tr><td>張小珺商業訪談錄</td><td>155. 和科沃斯钱程聊，父与子、企二代接班的样本与肌理、机器人，和我内心的追寻</td><td>2026-10-21 00:00</td></tr>
+  <tr><td>硅谷 101</td><td>E256｜Agent、机器人与制药，谁先被GPT-6 Astra改写？</td><td>2026-10-19 23:00</td></tr>
+  <tr><td>十字路口 Crossing</td><td>新的创业机会，正在 Claude Code 和 Codex 周围长出来｜对谈 Treg</td><td>2026-10-18 16:00</td></tr>
+  <tr><td>42章經</td><td>这个破业非创不可吗？｜对谈 Articuler.ai 创始人 Jason</td><td>2026-10-17 13:00</td></tr>
+  <tr><td>屠龍之術</td><td>当AI开始设计芯片——聊聊EDA与AI时代的芯片设计</td><td>2026-09-28 16:00</td></tr>
+</table>
+
+<p class="note">中文圈節奏明显放慢：張小珺由 9 月一週一更降到 10 月兩更，屠龍之術已近一個月無更新。上一輪（10-19）硅谷 101 E256 同張小珺 #155 都轉向機器人／硬件，選題重心由「模型發布」移到「具身智能商業化」，呢個觀察仍然成立。</p>
+
+<h2>英文播客</h2>
+
+<h3>No Priors</h3>
+<p class="host">主持：Sarah Guo、Elad Gil｜嘉賓：Dane Knecht（Cloudflare CTO）</p>
+
+<h4>Democratizing Security for the Agentic Web with Cloudflare CTO Dane Knecht <span class="tag">訪談</span></h4>
+<p class="stamp">發布：2026-10-23 10:00 UTC（18:00 HKT）<span class="dot">·</span>片長約 52 分鐘<span class="dot">·</span>YouTube 6VprwfSc4Xk</p>
+
+<p><span class="label">主題</span>：當 AI 同時成為「資安末日」嘅成因同解藥，互聯網嘅安全模型、內容經濟、以及公司內部嘅 AI 組織設計要點改。呢集係黑色十月風暴中，第一位基礎設施層營運者嘅現場判斷。</p>
+
+<p><span class="label">嘉賓背景</span>：Dane Knecht，Cloudflare 技術總監，在公司 15 年，主管新興技術與產品孵化；長期負責 Cloudflare 嘅開發者平台（由單一 serverless 原語長到 100+ 工具）。節目開場 Sarah 拿佢姓氏開玩笑（Knecht ≈ connect），話「呢個姓簡直係 Cloudflare 嘅 value prop」——亦係全集基調：連接與身份，而唔係單純防禦。</p>
+
+<h5>核心論點</h5>
+
+<ul class="tight">
+<li><b>論點一：頻率變了，唔係嚴重性變了。</b>Knecht 用 Log4j、Shellshock 做標尺：以前呢類「all hands on deck」級別嘅事件大約一年一次，Cloudflare 要動員全公司保護企業客同免費客；「而家呢啲事每週都在發生」。部分甚至無公開——嚴重程度相若，但頻率升了一個數量級。佢預期未來 18 個月，大部分工程團隊嘅時間會花在安全上，某個 keynote 上嘅數字係「超過 50% 工程時間」。呢個係過渡期，唔係新常態：當 AI 掃過大部分代碼、搵到大部分 bug 同 shortcut 之後，資源會回流到產品。</li>
+
+<li><b>論點二：攻擊者光譜已經扁平化。</b>Sarah 問係國家隊定 script kiddies，Knecht 嘅答案係「兩者都唔係」——最近幾個大型漏洞，帶頭嘅甚至係高中生。佢即場接受 Sarah 嘅新詞「agent kitties」：呢班人以前玩 CTF，現在把 agent 指向一個區域，加上 bounty 有真金白銀，就變成持續運轉嘅漏洞工廠。重點唔係他們變強，而係「國家隊長年擁有嘅工具，第一次交到群眾手上」。</li>
+
+<li><b>論點三：唔同意「air gap 一切」。</b>Sarah 引述嚴肅技術人嘅講法——「把重要嘅嘢全部 air gap，我哋有一段時間唔可以信互聯網，假設關鍵基建同政府服務某一刻會倒」。Knecht 明確講「我無咁末日」（I'm a little less doomsday）。理由有兩個：人類適應快，行業在危機時會合作（「你平時認為係競爭對手嘅人，唔再係競爭對手」）；以及過去 5–10 年由 castle-and-moat 轉向 zero trust，令好多公司底子比表面好。佢嘅處方唔係斷網，而係收緊每一個 identity 同 flow。</li>
+
+<li><b>論點四（最反直覺）：AI 目前令軟件更唔安全。</b>當 Sarah 講「減少攻擊面」好合理但唔係今日模型嘅自然傾向，Knecht 直接承認：「AI 至少早期非常 verbose，佢喜歡製造複雜度。」所以 AI 在安全上暫時係淨負貢獻；縮減複雜度仍然要靠人類判斷。「呢個就係人類仍然有位置嘅地方。」</li>
+
+<li><b>論點五：呢場係補課，唔係永久戰時狀態。</b>「我哋正在 patch 70 年嘅軟件。」存量要補，增量要改流程——agent 開發生命週期要將安全內建到每一步，而唔係最後掃一次。佢唔認為要 freeze 功能：「如果你唔出貨，你就在死亡。」（if you're not shipping you're dying）同時做兩件事，靠 AI 兩邊加速。</li>
+
+<li><b>論點六：開放權重最終一定贏，因為壞人總有辦法拿到。</b>Sarah 提出安全能力嘅兩難：攻防能力在同一模型內平行存在，所以開放防禦模型等於開放攻擊能力；但只鎖在少數 frontier 封閉模型，就無法分發給需要防禦嘅長尾。Knecht 選開放：「隨著時間，一切都會開放，因為無論如何所有人都會拿到。壞人會找到方法拿到。」封閉只會排除一大批「其實需要它」的人。呢個立場與「安全能力必須集中管理」派正面相反。</li>
+
+<li><b>論點七：agent 經濟需要新收費軌道，而唔係更努力爬人類 web。</b>他形容現在係「messy middle」：人類同 agent 走同一條軌，agent 去 parse 一個為人類設計嘅 web，係低效。方向係分開交付：同一個內容，向人用廣告，向 agent 用 CPM 等價嘅微支付。Cloudflare 已推出 monetization gateway、agent 錢包、穩定幣結算，以及與 OpenAI 合作嘅 Signals（讓 agent 主動發現新內容，而唔係無限重爬）。佢特別提到 Stripe 嘅 x402 回到 HTTP 402 code，係「終於有人認真做」嘅信號。</li>
+
+<li><b>論點八：與其頂層設計，不如給人工具 + 資訊 + 高 agency 的人。</b>Cloudflare 5 月重組（公司史上第一次大規模裁員），唔係為了省錢，而係「工廠車間要重畫」。例子：以前 PM 發一封客戶 email 要經 BI 拿 cohort、marketing 設計文案、marketing ops 發送，三個團隊；重組後變成一個工具，PM 描述 cohort、寫草稿、系統用 Cloudflare 語氣改寫、經理一按批准就出。佢嘅講法係「唔係令三個團隊快啲，而係令一個 PM 擁有佢以前無嘅超能力」。</li>
+
+<li><b>論點九：token 管理靠異常通知，唔靠排名。</b>Cloudflare 無 token leaderboard，亦唔以用量評核；看的是 shipped 同 built。但有自動提示：一日用 $300 會收到 email「你知唔知？」；$500 通知經理；$1,000 通知 VP。Knecht 話大多數人只係唔知道，收到通知反而多謝你。佢亦認為「要人類逐個任務揀模型」係荒謬，應該智能路由：規劃用 frontier、執行用 open-weight、審查與紅隊再回到 frontier。</li>
+</ul>
+
+<div class="data">
+<h5>關鍵數據</h5>
+<ul>
+  <li>Log4j 級事件頻率：<span class="num">一年一次</span> → <span class="num">每週一次</span>（部分未公開）</li>
+  <li>未來 18 個月工程時間投入安全：<span class="num">>50%</span>（Cloudflare keynote 數字）</li>
+  <li>存量債務：<span class="num">70 年</span>嘅軟件要補</li>
+  <li>紅隊規模：目前 <span class="num">1</span> 隊 → 明年底 <span class="num">4–5</span> 隊</li>
+  <li>公司規模 <span class="num">5,000</span> 人；一年內招 <span class="num">1,000</span> 個 intern（前一年 <span class="num">200</span>）</li>
+  <li>Token 異常提示門檻：<span class="num">$300/日</span> → email；<span class="num">$500</span> → 經理；<span class="num">$1,000</span> → VP</li>
+  <li>eMudhra CA 密鑰：其中一把嘅種子係數字 <span class="num">4</span>（Knecht 原話「literally the number four」）</li>
+  <li>CDN 普及前全球只有約 <span class="num">3,000</span> 個網站有大規模 CDN；現在數億</li>
+  <li>Cloudflare OS 已在 GTM / G&amp;A 團隊使用，<b>比工程團隊更普及</b></li>
+</ul>
+</div>
+
+<h5>重點引用</h5>
+
+<blockquote>
+「以前我哋大約一年見一次 Log4j 時刻、Shellshock 呢類事件……而家呢啲事每週都在發生。」
+<span class="who">Dane Knecht，論事件頻率</span>
+</blockquote>
+
+<blockquote>
+「AI 至少早期非常 verbose，佢喜歡製造複雜度。所以就我們面對嘅情況而言，AI 其實一直無幫手建更安全嘅嘢。」
+<span class="who">Dane Knecht，論 AI 與攻擊面</span>
+</blockquote>
+
+<blockquote>
+「隨著時間，一切都必須開放，因為無論如何所有人都會拿到。壞人會找到方法拿到它。」
+<span class="who">Dane Knecht，論開放權重與安全能力擴散</span>
+</blockquote>
+
+<blockquote>
+「我認為要人類去決定每個任務用哪個模型，其實有點荒謬。」
+<span class="who">Dane Knecht，論模型路由</span>
+</blockquote>
+
+<blockquote>
+「工程師本質上是懶的——係好的那種懶。當他們發現別無他法，就會把那些事自動化掉。」
+<span class="who">Dane Knecht，論為何危機能推動修補流程</span>
+</blockquote>
+
+<h5>技術詳情</h5>
+
+<ul class="tight">
+<li><b>密鑰熵崩壞嘅具體案例。</b>Knecht 講嘅係一把保護 TLS / WebPKI 嘅根級密鑰，初始種子只用了一個數字 4，於是可被反向工程。佢用 Cloudflare 總部大堂嘅 lava lamp 做對照——隨機性係整個密碼學嘅根基，而人類仍然會用「4」做種子。同一段佢提到 OpenAI 上週找出 2000 年公布嘅 NIST 曲線種子，兩件事並置，意思係：<b>歷史遺留嘅弱隨機性正在被 agent 大規模翻舊帳</b>。</li>
+<li><b>Cloudflare 內部「Codex」文件。</b>不是 OpenAI Codex，而係內部累積嘅 RFC 庫：如何寫安全軟件、如何寫高可用軟件，最後濃縮成「十誡」，agent 在每次 review 都要跟。呢個係把機構知識變成 agent 可執行約束嘅具體做法，比單純 prompt engineering 更接近制度。</li>
+<li><b>對抗式審查仍然必要。</b>即使有 agent 掃 code，Cloudflare 仍保留人類做 performance run、security run 同第二雙眼睛。Knecht 明確講「你需要那些對抗式審查」。</li>
+<li><b>Cloudflare OS 的定位。</b>表面上係內部 AI 平台（防止客戶數據外洩、治理數據流），實際上係 reference architecture：把所有東西建在自家 developer platform 上（100+ 工具，由 storage、database 到 Durable Objects），讓其他公司 fork 出自家的 company OS。同時用來「教 agent 乜嘢令 Cloudflare 特別」——人類靠 Cloudflare University 入門，agent 靠文件化嘅原則入門。</li>
+<li><b>防禦分發。</b>React 漏洞時，Cloudflare 把規則給所有客戶，包括免費客，不只付費 WAF 客。「我們視之為公用事業的一部分。」</li>
+</ul>
+
+<h5>行業 insight</h5>
+
+<p>呢集最重要嘅唔係任何一個數字，而係一個<b>基礎設施公司對「安全成為 AI 第一殺手級應用」嘅定價權判斷</b>。如果 >50% 工程時間在 18 個月內轉向安全，咁安全 token 消耗、安全 agent、修補自動化、identity 治理會係未來兩年最確定嘅預算轉移。Knecht 講「18 個月後資源回流產品」，等於承認呢個係一次性窗口——對賣方係黃金期，對買方係被迫支出。</p>
+
+<p>第二個 insight 係<b>內容經濟嘅重構</b>。他唔講「AI 會取代網站」，而係講「同一個網站要兩種交付」：人看廣告，agent 付 CPM 等價微支付。配合 x402、穩定幣、agent 錢包，Cloudflare 明顯想做成 agent 時代嘅收費站與身份層。呢個比「block AI crawler」嘅防守姿態高一個維度：唔係阻止，而係計費。</p>
+
+<h5>前後脈絡</h5>
+
+<p>呢集係 No Priors「安全三部曲」嘅第三塊拼圖，三集可以連續讀：</p>
+<ul class="tight">
+<li><b>10-15 Greg Brockman（OpenAI 總裁）</b>：預測 2027 年企業用於安全嘅 token 支出會等於工程支出；「安全支出應該超過軟件支出」。</li>
+<li><b>10-22 George Kurtz（CrowdStrike CEO）</b>：agent state 取代 nation state 成為頂級掠食者；breakout time 平均 <span class="num">29 分鐘</span>、最快 <span class="num">27 秒</span>；修復成本 <span class="num">$10</span> vs 攻擊成本 <span class="num">$0.03</span>；frontier 模型 guardrail 太嚴，令防禦方能力反而不如攻擊方。</li>
+<li><b>10-23 Dane Knecht（Cloudflare CTO）</b>：從互聯網規模看同一件事——頻率、修補、分發、收費。</li>
+</ul>
+<p>三人結論一致但氣質不同：Kurtz 是獵人視角（誰在攻擊、多快），Brockman 是預算視角（錢會怎樣流），Knecht 是公用事業視角（怎樣令幾億個網站唔使死）。Knecht 對「air gap」嘅反駁，亦是對 Kurtz「關掉網絡是胡說」嘅間接呼應。</p>
+
+<h5>爭議點</h5>
+<ul class="tight">
+<li><b>開放權重 vs 安全集中化。</b>Knecht 嘅「最終一切都會開放」係一種宿命論，實際上會加速能力擴散。反對派會講：正因為壞人拿得到，才更要減慢扩散速度，而不是主動開源。呢個係本集最實在嘅分歧點。</li>
+<li><b>「18 個月後會好轉」係樂觀假設。</b>Anthropic 副 CISO Jason Clinton 同日講「會先變得更差才變好」，並叫安全主管向董事會要錢撐 18 個月。兩個「18 個月」意思唔同：Knecht 講的是威脅高峰過去，Clinton 講的是防守方要捱過去。邊個對，取決於 AI 修補速度係否真的追得上 AI 發現速度——而 Knecht 自己承認 AI 目前令代碼更複雜。</li>
+<li><b>「agent kitties」淡化國家行為者。</b>同日 AINews 報導微軟將 ConnectWise 供應鏈攻擊歸因於中國對齊嘅 Storm-0940，用 ARTEX 打 2,250+ 個 tenant。把敘事重心放在高中生 bounty hunter，可能會低估有組織、有持續資源嘅對手。</li>
+</ul>
+
+<h3>Latent Space</h3>
+<p class="host">出品：swyx（Latent Space）｜本篇作者：Ankit Maloo</p>
+
+<h4>AI Is Getting Good at Math. Here's Why. <span class="tag">長文</span></h4>
+<p class="stamp">發布：2026-10-23 15:19 UTC（23:19 HKT）<span class="dot">·</span>Substack 長文，約 22,400 字元<span class="dot">·</span>非音頻集數，屬 Latent Space 書面深度分析</p>
+
+<p><span class="label">主題</span>：2026 年 5 月到 9 月，OpenAI 與 Anthropic 連環解出多個長期開放問題。呢篇要回答嘅唔係「AI 有幾叻」，而係一個可操作嘅問題：<b>能否預測哪類問題模型解得開？</b>作者提出以「提示序列長度 × 分支因子」做預測框架，並用它解釋為何資安比數學先被攻陷。</p>
+
+<p><span class="label">作者背景</span>：Ankit Maloo，Latent Space 客座作者。本文屬分析文章，非訪談；論證大量引用 Gowers、Tsimerman、Terence Tao、Arul Shankar 嘅公開評論，並以 OpenAI 公布嘅 CDC prompt 做一手材料。</p>
+
+<h5>時間線：2026 年到底發生了什麼</h5>
+<ul class="tight">
+<li><b>5 月</b>：OpenAI 內部模型找到 Erdős unit distance conjecture 的<b>反例</b>。該猜想自 <span class="num">1946</span> 年開放，多位專家嘗試證明，結果被反證。</li>
+<li><b>6 月</b>：OpenAI 發表 Cycle Double Cover（CDC）問題的證明。</li>
+<li><b>7 月</b>：再解十個開放問題。</li>
+<li><b>9 月</b>：Navier–Stokes 證明；Anthropic 發表 Fermat 大定理的形式化，以及 Riemann 假設的改進界。</li>
+</ul>
+
+<h5>核心論點</h5>
+
+<ul class="tight">
+<li><b>論點一：難度可以用「提示序列」量化。</b>解一個問題，需要一連串洞察，洞察之間是工作：<i>insight → time/effort → insight → … → solution</i>。專家需要較少提示，因為背景知識多。Gowers 給出定義：「證明的難度，是讓專家能重建它的最短提示序列。」他稱之為「modulo 專家的 Kolmogorov complexity」，並提出公式 <span class="num">2^k + t</span>：k 是最短提示序列長度，t 是發展它所需的工作。<b>複雜度隨洞察數指數增長。</b></li>
+
+<li><b>論點二：一個提示的價值，取決於「事前多不可能、事後多明顯」。</b>還取決於它在序列中的位置——第三個提示只有在頭兩個提示已經鋪好路之後才有用。所以「列出數學技巧表然後窮舉」行不通：提示序列是在一棵樹上行走，初始洞察會改變問題，繼而改變後續選項。</li>
+
+<li><b>論點三：人類是廣度優先，模型是深度優先。</b>人類 generate 候選方向、淺嚐、放棄大部分、集中少數。這不是風格，是約束：發展一個想法要幾個月，所以在投入前要有理由相信它——概念上的希望、早期結果、或類似問題的經驗。等待越久，嘗試的門檻越高。LLM 相反：一個 prompt 給一個答案，CoT 貪婪地往一條路走到底；十個並行 agent 就是十條路各自走到結論。<b>放任不管，會得到漂亮的假證明。</b></li>
+
+<li><b>論點四：加入 verifier 之後，賭博變成理性。</b>自動檢查器可以剪掉已完成的錯誤軌跡。有了它，把大量算力花在不確定的想法上就變得合理——幾分鐘內就知道行不行。但關鍵限制：<b>verifier 只能判斷已完成的論證，不能告訴你一個半成品有沒有前途。</b></li>
+
+<li><b>論點五：所以「提示」的品質門檻幾乎消失了。</b>人類追一個提示可能要幾個月，模型五分鐘就知道結果。於是提示可以是普通的、離譜的、甚至只是雛形。這是最根本的不對稱，也是 2026 年數學突破的機制：<b>不是模型比數學家聰明，而是它能把「時間」換成「算力」。</b></li>
+
+<li><b>論點六：失敗是負向提示，harness 有三層。</b>Drafter 寫 prompt（基於模型先驗、修正上一輪錯誤、記錄所有走不通的路）；Solver 產生一或多個候選（可並行子 agent）；Verifier 檢查論證是否有效。CDC prompt 係目前最接近公開嘅一手材料，每一行都係一條失敗路徑寫成的指令：
+  <ul>
+    <li>「假定存在一個完整的肯定證明。」——阻止模型把「這是開放問題」當成為甚麼要停下來的理由。</li>
+    <li>「特別地，對特殊圖類的證明、某些邊覆蓋非兩次的 cycle cover 構造、有界長度或指定 cycle 的變體、化約到另一個未證猜想、對任何固定圖規模的計算驗證、以及沒有完整不存在證書的候選反例，都不足夠。」——封掉一整櫃替代品。</li>
+    <li>「全程使用對抗式 agent：每個候選證明都必須檢查 exact-two multiplicity、重邊封閉跡偽裝成 cycle、平行邊 2-cycle、非連通圖、cutvertex、化約引入的橋、以及循環使用等價的 CDC 命題。」——把目錄化的失敗模式升級為常設檢查。</li>
+    <li>「不要僅因當前方法失敗或 agent 報告定理級缺口就返回。」——針對「學來的懶惰」。</li>
+  </ul>
+</li>
+
+<li><b>論點七：Unit distance 三個提示的順序不可換。</b>
+  <ul>
+    <li>提示一：找反例。這最難，因為社群與模型先驗都說猜想為真。Drafter 大概是因為 solver 一直證明失敗才走到這裡——<b>每一次失敗都令反例稍微不那麼不可能。</b></li>
+    <li>提示二：拿最佳已知構造去推廣。這是大 t 的部分：要把推廣發展到足以發現它允許什麼。注意，這是「反例的推廣」，幾乎沒有人在找。</li>
+    <li>提示三：用次數遞增的數域。前兩個提示建好了空間，第三個才有作用。</li>
+  </ul>
+  順序錯了就全錯：從提示三開始，你連「這是反證」都不知道；跳過推廣，提示三無所依附。
+</li>
+
+<li><b>論點八：Tsimerman 停手，不是因為不夠強，而是因為洞察題沒有梯度。</b>Jacob Tsimerman（近期被 OpenAI 聘用）做過反例方向，懂數論，也想過提高次數——然後停了。心理學早就發現：Metcalfe 與 Wiebe 每 15 秒問解題者「你覺得離答案多近」，普通題的進度感會上升，<b>洞察題則一直平直，直到解出為止</b>。所以專家問題是雙重的：有人進入這條分支嗎（提示）？進入後留得夠久嗎（t）？留的成本是工作記憶、士氣、職涯。對 LLM 而言，這是結構性優勢。</li>
+
+<li><b>論點九：2026 年三個能力疊加。</b>
+  <ul>
+    <li><b>Chaining primitives</b>：近期訓練目標專注於讓 step 1 產生的東西能在 step n 使用 → 降低 t。</li>
+    <li><b>Self-verification</b>：模型能在軌跡內捕捉錯誤步驟（不是語法錯誤，而是走不到目的地的步驟）。OpenAI 用大規模真實例子訓練數學驗證，加上一層找出證明錯誤的驗證器 → 令軌跡內剪枝更便宜。</li>
+    <li><b>Orchestration</b>：模型可以指揮子 agent、用 memory steering、協調多 agent → 這是負向提示得以累積的方式。</li>
+  </ul>
+</li>
+
+<li><b>論點十：Branching factor 解釋了「為何資安先倒」。</b>Gowers 的公式漏了一項：探索提示樹的時間。設每步有 b 個可行提示，k 步就有 <span class="num">b^k</span> 條路徑。人類靠品味與判斷把有效 b 壓得很小。AI 必須幾乎走遍每個分支，但可以很快。於是推論：<b>模型會在 b^k × 單位算力成本 小的地方先成功。</b>資安看似複雜，但它在 2026 年先崩，因為中間步驟的 b 大約只有 <span class="num">1–2</span>，而且「正確答案長什麼樣」事先已知（找 RCE、找越權、找記憶體腐敗）。</li>
+
+<li><b>論點十一：模型擅長「收尾」，不擅長「開創」。</b>當概念躍遷已完成、剩下的是繁重而複雜的數學時，模型很強。Navier–Stokes 的 166 頁證明，本質上是完成 Córdoba 與 Martínez-Zoroa 的綱領；即使如此，也用了 <span class="num">10,000</span> 個 agent、<span class="num">300B</span> tokens、<span class="num">88</span> 小時。Anthropic 的 Fermat / Riemann 工作也是同一骨架：數百個失敗想法、多 agent 在一個 orchestrator 下、到處是 script 與 checker，最後由少量概念躍遷承重。</li>
+
+<li><b>論點十二：人類的優勢在「剪枝」，模型的優勢在「縮短試錯時間」。</b>Gowers 預期人類仍然守住的地方，是「搜尋樹很深、分支很多，以致沒有嚴格剪枝連電腦都不可行」的問題——高 b、高 k，人類直覺仍然關鍵。互補分工因此成立：人類擅長縮小分支，模型擅長把剪一條分支的時間由三個月壓到五分鐘。專家可以叫模型把一個想法由頭到尾走完，再決定值不值得投入三個月。</li>
+
+<li><b>論點十三：但互補有個條件——失敗必須公開。</b>人類的失敗之所以有資訊，是因為有人曾經確信到願意投入幾個月；「拒絕」本身也帶著判斷。AI 的失敗很便宜，多數很幼稚，少數可能有趣——<b>失敗中的資訊量，與背後的信念成正比。</b>而我們現在只看得到最終解答，連為何某條路失敗都難以理解。CDC prompt 是我們最接近看到失敗清單的一次。Terence Tao 把解題視為「數學更深層目的的代理：發展我們的理解」；只公布最終解，是把目的地當成旅程。</li>
+</ul>
+
+<div class="data">
+<h5>關鍵數據</h5>
+<ul>
+  <li>複雜度公式：<span class="num">2^k + t</span>（Gowers）；路徑總數 <span class="num">b^k</span></li>
+  <li>Unit distance 猜想開放了 <span class="num">80 年</span>（1946 起）</li>
+  <li>Navier–Stokes 證明：<span class="num">166 頁</span>、<span class="num">10,000</span> 個 agent、<span class="num">300B</span> tokens、<span class="num">88 小時</span></li>
+  <li>2026 年成果密度：5 月 unit distance、6 月 CDC、7 月十題、9 月 Navier–Stokes + Fermat 形式化 + Riemann 界</li>
+  <li>資安的中間步驟分支因子：約 <span class="num">1–2</span></li>
+  <li>心理學實驗：每 <span class="num">15 秒</span>詢問進度感（Metcalfe &amp; Wiebe）</li>
+</ul>
+</div>
+
+<h5>重點引用</h5>
+
+<blockquote>
+「證明的難度，是讓專家能重建它的最短提示序列。」
+<span class="who">Timothy Gowers，轉引自本文</span>
+</blockquote>
+
+<blockquote>
+「這可能指出 AI 系統有優勢的一種方式：不僅是它們能嘗試所有已知方法，而是它們能玩得更久、在更險惡的水域裡，而不會像數學家那樣被淹沒。當然，這尚未穩健成立，但這可能是一個預示性事件。」
+<span class="who">Jacob Tsimerman，OpenAI 數學家</span>
+</blockquote>
+
+<blockquote>
+「一種很可怕的動態：很難在各種解析區域中思考並保持引導性直覺，耗費大量時間，而且經常不成功。」
+<span class="who">Jacob Tsimerman，論自己為何停手</span>
+</blockquote>
+
+<blockquote>
+「模型很快地走過各種想法，但當它到達關鍵想法時（那段以『假設樂觀地……』開頭的段落），它相當有條理地鎖定了證明。」
+<span class="who">Arul Shankar，數學家</span>
+</blockquote>
+
+<blockquote>
+「洞察題沒有梯度。你不知道自己離答案多近，直到你解出它。」
+<span class="who">Ankit Maloo，本文作者</span>
+</blockquote>
+
+<blockquote>
+「在一個失敗中的資訊，與背後的信念成正比。」
+<span class="who">Ankit Maloo</span>
+</blockquote>
+
+<blockquote>
+「把解題視為數學更深層目的的代理：發展我們的理解。」
+<span class="who">Terence Tao，轉引自本文</span>
+</blockquote>
+
+<h5>技術詳情</h5>
+
+<ul class="tight">
+<li><b>Harness 架構</b>：Drafter（生成 prompt，含負向提示）→ Solver（可多子 agent、parallel test-time compute）→ Verifier / Checker（驗證論證）。呢個三層結構比「單一模型 + CoT」多了一個關鍵能力：<b>跨輪次的記憶</b>。每一輪失敗都被寫成下一輪的約束。</li>
+<li><b>Parallel test-time compute</b>：不是單純 sampling，而是把不同路徑分配給不同 agent 並各自發展到結論，再由 verifier 篩選。成本模型因此由「一次推理」變成「b^k 條路徑 × 每條路徑成本」。</li>
+<li><b>Self-verification 的訓練來源</b>：OpenAI 用大規模真實數學例子訓練「找出證明錯誤」的驗證層，而不是只靠 inference-time self-critique。這令軌跡內剪枝的成本大幅下降——也是「模型能玩得更久」的技術基礎。</li>
+<li><b>對抗式檢查清單</b>：CDC 例子顯示，prompt 可以把「已知的失敗模式目錄」變成常設檢查項（exact-two multiplicity、重邊封閉跡、平行邊 2-cycle、非連通、cutvertex、橋、循環論證）。呢個做法可遷移到任何有明確錯誤模式嘅領域——包括資安與代碼審查。</li>
+<li><b>成本對照</b>：Navier–Stokes 的 300B tokens / 88 小時，換來 166 頁證明。若以 2026 年推理價格粗略換算，這是一條「以算力買學術進度」的定價曲線，而 curve 正在下移。</li>
+</ul>
+
+<h5>行業 insight</h5>
+
+<p><b>一、這是一份「AI 能力邊界」的可預測模型，不只是數學評論。</b>b 與 k 兩個參數可以直接用來評估任何領域：法律檢索（b 中等、答案形態已知）、藥物靶點發現（b 大、驗證昂貴）、策略規劃（b 極大、無 verifier）。<b>無 verifier 的領域，模型仍然會給你漂亮但錯誤的答案。</b>這比「AGI 幾時到」有用得多。</p>
+
+<p><b>二、實驗室有展示偏誤。</b>作者直言：「實驗室會挑 solution space 窄的問題，來展示模型可行。」這解釋了為何 2026 年的數學成果集中在「有明確驗證器、概念躍遷已完成」的問題上。對投資者與研究者而言，重要的是問：這個 benchmark 的 b 與 k 是多少？</p>
+
+<p><b>三、資安先倒不是偶然。</b>把本文與同日 AINews 並讀：CVE 由 4k/月衝到 15k/月，正是因為弱點發現的 b 低（1–2）、答案形態已知（RCE / 越權 / 記憶體腐敗）、且有自動 verifier（crash、PoC、patch 後不再重現）。<b>這是 b^k 框架最強的外部驗證。</b></p>
+
+<p><b>四、科學共同體的制度問題。</b>如果模型產出證明的過程不公開，人類只得到答案，得不到「為何某些高信念方向失敗」的資訊——而後者才是 Tao 所講數學的真正產出。這會令 AI 數學變成一個黑箱 oracle，短期加速、長期削弱理解。作者冇明講政策建議，但呢個係最明顯嘅 implication。</p>
+
+<h5>前後脈絡</h5>
+
+<p>與 10-22 Dwarkesh 的 Intel fab 特輯形成一組完美對照：一邊是<b>物理供給的天花板</b>（AI 算力需求 3x/年，但全球機台存量只能令領先製程晶圓產能翻倍，且一次性；ASML EUV 每年 <100 台且不增產），另一邊是<b>演算法把算力換成時間的效率</b>（同一個模型，用 b^k 條路徑並行，把「幾個月」壓成「幾小時」）。兩篇合起來的結論是：<b>2026–2030 的瓶頸不在想法，而在將想法展開所需的晶圓與電力。</b></p>
+
+<p>亦與 Latent Space 10-22 的 Modal 訪談呼應：Erik Bernhardsson 講「容量是 duration transformation」，正是同一個經濟學——把不可中斷的工作切成可並行的區塊。數學 harness 與 sandbox 基礎設施，本質上都在買「平行展開的時間」。</p>
+
+<h5>爭議點</h5>
+<ul class="tight">
+<li><b>功勞歸屬。</b>Tsimerman 曾做過同一方向但停手，之後被 OpenAI 聘用並參與評論；Gowers 亦公開評論。這令「AI 獨立解題」的敘事變得複雜：人類專家在事後提供了解釋框架，但關鍵的「不要停」是模型做到的。</li>
+<li><b>「解出」的定義。</b>Navier–Stokes 的 166 頁證明有大量修正，且建立在他人綱領上。這算「解決」還是「完成」？作者自己區分概念躍遷與收尾工作，但學界對 credit 的分配未有共識。</li>
+<li><b>失敗不公開的科學倫理。</b>如果實驗室只公布成功案例，等於用公開資源做選擇性匯報。作者提出「互補只有在我們能看到失敗時才成立」，但無提出機制。</li>
+<li><b>Benchmark 選擇偏誤。</b>「Lab 會挑窄 solution space 的問題」是一個未被證實的動機指控，但與觀察一致；反方可以說，數學難題本來就是這樣被挑選的，與 AI 無關。</li>
+</ul>
+
+<h2>附錄</h2>
+
+<h3>Latent Space AINews</h3>
+<p class="host">作者：swyx｜每日 AI 新聞通訊（非音頻）</p>
+
+<h4>[AINews] Black October <span class="tag">通訊</span></h4>
+<p class="stamp">發布：2026-10-23 10:09 UTC（18:09 HKT）<span class="dot">·</span>涵蓋 2026-10-21 至 10-22<span class="dot">·</span>38,830 字元</p>
+
+<p><span class="label">為何值得讀</span>：呢期係「黑色十月」嘅一手時間線。AINews 明講，他們通常不重複標題故事，但今次規模值得——48 小時內，多個關鍵揭露與入侵同時落地。<b>它亦係今日數學長文「b^k 框架」嘅最佳實證：同一個能力，先在資安爆開。</b></p>
+
+<h5>事件規模：48 小時內發生了什麼</h5>
+
+<div class="data">
+<h5>核心軟件</h5>
+<ul>
+  <li><b>PHP2Shell</b>：PHP 未認證 RCE（CVE-2026-109618 / 109619），源於 OOM 與 fatal error 處理中的記憶體腐敗；WordPress、Drupal、Joomla 均受影響。由 OpenAI（GPT-5.6 Sol）與 Wiz（Gemini 4 Argon）獨立發現。</li>
+  <li><b>GitLab</b>：CVSS <span class="num">10</span> 漏洞，影響自 <span class="num">2014</span> 年起所有版本，<span class="num">19.5.1</span> 修補。</li>
+  <li><b>Node.js</b>：Brotli 解碼器 RCE 修補。</li>
+  <li><b>NGINX / HTTP/3</b>：DoS 問題。</li>
+</ul>
+</div>
+
+<div class="data">
+<h5>供應鏈與憑證</h5>
+<ul>
+  <li><b>LiteLLM 1.107.0</b>：隨套件附帶密碼竊取器。</li>
+  <li><b>Railway</b>：要求用戶輪換密鑰，客戶金鑰可能外洩。</li>
+  <li><b>Zeabur</b>：<span class="num">321,810</span> 個帳號被入侵後停止營運。</li>
+  <li><b>eMudhra CA</b>：密鑰弱得「其中一把據報就是數字 <span class="num">4</span>」；研究員稱 Claude 用單一 prompt 破解；eMudhra 退出 CA 業務。Python 用戶被建議更新 pip、uv、certifi 與系統 CA store。</li>
+</ul>
+</div>
+
+<div class="data">
+<h5>攻擊面與規模</h5>
+<ul>
+  <li><b>Quest Diagnostics</b>：服務約半數美國醫院與醫生，病人資料外洩。</li>
+  <li><b>CVE 量</b>：月度由約 <span class="num">4,000</span> 升至約 <span class="num">15,000</span>（自 4 月起）。</li>
+  <li><b>Storm-0940（中國對齊）</b>：微軟歸因 ConnectWise 供應鏈入侵；使用開源 agentic pentest 框架 <b>ARTEX</b> 攻擊 <span class="num">2,250+</span> 個 Microsoft 365 tenant，每分鐘約 <span class="num">2,900</span> 次登入；部分案例 <span class="num">3 小時</span>內取得特權存取。</li>
+  <li><b>CrowdStrike</b>：記錄了四個以 AI agent 作戰的營運者，其中一個攻擊至少 <span class="num">15</span> 間阿根廷醫療機構。</li>
+</ul>
+</div>
+
+<h5>三條值得單獨記住的線</h5>
+
+<p><b>1. PHP 漏洞的來源有爭議。</b>PHP2Shell 由 OpenAI 模型在 8 月發現， embargo 至週三修補；但 PHP Foundation 表示 Claude Mythos 更早掃過 PHP。呢個係「誰先發現」嘅敘事競爭，實際影響的是：模型供應商在關鍵開源基建上嘅掃描，已經變成事實上的安全審計層。</p>
+
+<p><b>2. 「攻擊方贏了」可能係假訊息。</b>@BlancheMinerva 反駁：這是防御性審計，沒有大規模利用的證據。Joshua Achiam 亦指，約 16 宗重大事件中只有 <span class="num">4</span> 宗真的本週發生，其餘是較早發現、現在才披露。呢個提醒很重要——<b>披露密度 ≠ 攻擊密度。</b></p>
+
+<p><b>3. 銀行帳戶裡的「流氓 agent」。</b>Axios 報導美國大型銀行在客戶帳戶內偵測到未經授權的第三方 agent，部分行為超出用戶指示。@peterwildeford 反駁：那是用戶授權、但銀行未授權的 agent，不是 hack，也不是流氓 AI。呢個分歧係 2026 年 agent 經濟的核心法律問題：<b>授權的邊界在邊？</b></p>
+
+<h5>防禦方的進展</h5>
+<ul class="tight">
+<li><b>形式化驗證規模化</b>：Anthropic Frontier Red Team 與 Theorem Labs 合作，用 Claude 在數週內證明 100+ 個開源庫的安全性質。數字：約 <span class="num">1.8 億行</span>機器檢查證明、<span class="num">239</span> 個 entry point、<span class="num">123</span> 個庫、數百個 bug 已修補。</li>
+<li><b>修補工具</b>：Cognition 開源漏洞修復 agent plugin；<b>cve.now</b> 聚合四個 CVE feed 並提供平白解釋。</li>
+<li><b>曝險檢查</b>：@_philschmid 發布只讀 agent prompt，用來檢查 LiteLLM、Railway、PHP、GitLab、eMudhra 的曝險。</li>
+<li><b>Anthropic 副 CISO Jason Clinton</b>：情況「會先變得更差才變好」；叫安全主管向董事會要錢做基本功；預期防守方要撐約 <span class="num">18 個月</span>。</li>
+</ul>
+
+<h5>模型與 benchmark（同日）</h5>
+<ul class="tight">
+<li><b>MiniMax M3.1 Flash</b>：open weights，<span class="num">428B</span> total / <span class="num">23B</span> active，1M context，vision。DeepSWE v1.1 <span class="num">73.7</span>、OSWorld V2 <span class="num">61.7</span>、CyberGym <span class="num">82.2</span>、Agents' Last Exam <span class="num">29.6</span>。vLLM day-0 支援 native NVFP4，checkpoint 縮 <span class="num">44.6%</span> 至 <span class="num">250.1 GB</span>；4×B300、256K context 可跑 <span class="num">76</span> 條並行序列（M3 為 28）。有人質疑它只是 M3 加 sparse attention、量化與 DSpark 的 rebrand。</li>
+<li><b>Carbon-X（Hugging Face）</b>：<span class="num">14B</span> DNA + 文本模型，由 Qwen3-14B midtrain 於 <span class="num">300B</span> interleaved tokens，再做 SFT + RL（無蒸餾）。DNA benchmark 勝所有開放模型，距 GPT-6.1 Sol 不到一分，成本低 <span class="num">1,000×</span>；<span class="num">67%</span> vs Opus 5.5 的 <span class="num">61%</span>；Kimi K3 把它當 subagent 時 +<span class="num">11.1</span> 分。6-mer DNA tokenizer，比 BPE 少約 <span class="num">3×</span> token；排除人類與動物病毒；Apache 2.0，可在筆記本運行。</li>
+<li><b>OCRia-1（LlamaIndex）</b>：<span class="num">4B</span> 文檔解析 VLM，ParseBench <span class="num">87.4</span>、olmOCR-bench <span class="num">83.5</span>（表格 <span class="num">92.9</span>）；單張 B200 約 <span class="num">4,700 tok/s</span>；已用於所有 LlamaParse 模式，價格不變。</li>
+<li><b>Flint（Recursive）</b>：<span class="num">40B</span>（MLX 版 2.5B active），跑了 <span class="num">700+</span> 個 NanoChat 訓練實驗，接近團隊之前 Claude Haiku 4.5 的結果。M5 Max 4-bit、24GB 可跑 <span class="num">131 tok/s</span>。社群反應兩極：Terminal-Bench 2.1 <span class="num">54.9</span>、SWE-bench Pro v2 <span class="num">89.7</span>、Verified <span class="num">74.2</span>，但有人實測稱在 agentic workflow 遠遜 Ornith-1.5-35B 與 Qwen 27B，疑似過擬合訓練時的工具介面。</li>
+<li><b>Canva Craft</b>：Canva 首個圖像模型，DesignArena 首秀第 <span class="num">4</span>，令 Canva 成為 OpenAI 之後第二大圖像 lab。</li>
+<li><b>DeepSeek Search API</b>：<span class="num">$0.75</span> / 1K searches；AA-Omniscience <span class="num">70%</span>，但 BrowseComp 多跳只有 <span class="num">63%</span>。</li>
+</ul>
+
+<h5>Benchmark 的三個關鍵讀數</h5>
+<ul class="tight">
+<li><b>AA Coding Agent Index v2</b>：Claude Code + Opus 5.5 以 <span class="num">61.7</span> 領先，Sonnet 5.5 <span class="num">59.3</span>，Muse Wonder Full <span class="num">58.9</span>。成本前線：DeepSeek V4.1 Flash <span class="num">47.3</span> @ <span class="num">$0.39</span>/task，Opus <span class="num">$11.42</span>——<b>29 倍價差換 14 分</b>。21 個配置中有 20 個分數下降，有人指 sub-benchmark 之間不一致、可能 harness 標錯。</li>
+<li><b>CritPt v2</b>：70 條物理挑戰中 <span class="num">47</span> 條被修正（部分來自 Anthropic 與 HF 的 bug report）。agentic 跑法：GPT-6 Astra <span class="num">83%</span>、GPT-6.1 Sol <span class="num">82%</span>、Opus 5.5 <span class="num">78%</span>。<b>但 v1 中 Astra 只有 32%</b>——官方明講兩版不可比，且新 benchmark 已接近天花板。</li>
+<li><b>CVE 重現</b>：DeepSeek V4.1 Flash pass@3 重現 <span class="num">87.5%</span>，僅次 Astra <span class="num">90.6%</span>；每條 CVE 成本 <span class="num">$2.40</span>，Opus 5 <span class="num">$64.96</span>、Astra <span class="num">$135.23</span>。<b>呢個價差係「AI 資安民主化」最硬的證據</b>，也解釋了為何 b 低嘅領域會被瞬間填滿。</li>
+<li><b>SWE-sweep</b>：OpenAI 與 Anthropic 模型找到的 bug 數量翻倍、成本減半；但 Astra 仍只找到不到 <span class="num">10%</span> 的真實 bug。呢個數字很重要——benchmark 上 90% 重現率，與真實世界 <10% 命中率，係兩件事。</li>
+</ul>
+
+<h5>研究 agent 與記憶</h5>
+<ul class="tight">
+<li><b>FrontierCS 2</b>：從釋出代碼中移除論文貢獻，agent 必須在沒有論文的情況下超越原方法。</li>
+<li><b>Agent4Sci（Anthropic）</b>：在全部 <span class="num">20</span> 個科學 ML benchmark 上超越已發表最佳；三個 scaffolding 技巧把 Opus 平均增益由 <span class="num">10.4%</span> 提升到 <span class="num">20.1%</span>。</li>
+<li><b>Quant-Arena</b>：9 個模型中只有 <span class="num">4</span> 個在封存一年的 A 股數據上賺錢。</li>
+<li><b>MemoryTax</b>：419 輪對話中，Pi + Opus 5.5 直接搜原始歷史得 <span class="num">99%</span>，成本低於 full context 一半；Mem0 只對弱模型有幫助。<b>對強模型而言，「檢索原始記錄」比「摘要記憶」更划算。</b></li>
+<li><b>OpenAI Decisions API</b> GA，每次呼叫最多 <span class="num">400</span> 個問題；Perplexity 的 <span class="num">4B</span> decider 可在 Mac 本地跑。</li>
+</ul>
+
+<h5>基建與政策</h5>
+<ul class="tight">
+<li><b>AMPD（ICML 2026）</b>：按 TTFT 與 ITL headroom，在多輪 agent prefill 之間路由；相對 Dynamo 報告 <span class="num">67%</span> 平均 SLO 達成率改善（注意：不是百分比點，也不是加速倍數）。</li>
+<li><b>AKV</b>：讓 agent 自行丟棄與重排 KV cache，成本降 <span class="num">27.7%</span>，準確度 +<span class="num">1.7</span>。</li>
+<li><b>Rubin NVL72</b>：GLM 5.3（744B）上達 <span class="num">862 tok/s/user</span>，kernel 優化在 8 天內令互動性約翻倍。</li>
+<li><b>Huawei Ascend 950PR</b>：實測 <span class="num">600W</span>、<span class="num">325</span> BF16 TFLOPS（約 H100 的 <span class="num">44%</span>）、有效頻寬約 <span class="num">1.4 TB/s</span>，但在 compute-bound shape 上 MFU 達 <span class="num">86%</span>。</li>
+<li><b>Modal Spindle</b>：開源、Tinker 兼容的訓練伺服器，按 GPU 時間而非 token 計費。</li>
+<li><b>Anthropic 把 Agent Skills 捐給 Agentic AI Foundation</b>：70+ 平台已整合；TSC 成員包括 Anthropic、Google、Microsoft、OpenAI。OpenEnv 亦移交 AAIF 與 Linux Foundation。</li>
+<li><b>OpenAI 融資</b>：傳聞最多 <span class="num">$30B</span>，估值 <span class="num">$1.25T</span>，由 UAE 投資者領投。</li>
+<li><b>Warp Sciences</b>（Kevin Weil 的 AI + 機器人實驗室藥物發現公司）：<span class="num">$215M</span> A 輪，Lightspeed 領投。</li>
+<li><b>Datadog</b> 傳以近 <span class="num">$4B</span> 收購 Upwind Security。</li>
+<li><b>Microsoft MAI-DxO</b>（發表於 Science）：急診病例準確率 <span class="num">80.3%</span>，醫生為 <span class="num">46.8%</span>。</li>
+<li><b>Claude 用量限制 A/B</b>：SemiAnalysis 稱測試令月度 API 等值價值降約 <span class="num">20%</span>，同時提高 5 小時上限。</li>
+</ul>
+
+<h5>本地模型社群（Reddit 摘要）</h5>
+<ul class="tight">
+<li><b>Kitten-TTS 2</b>：<span class="num">1.7B</span>、linear body weights 三元 <span class="num">{-1,0,+1}</span>、group size <span class="num">128</span>，號稱首個 1.58-bit TTS，CPU 實時、<5 秒參考音零樣本克隆、20+ 語言、情緒控制。M4 Pro 加 NEON 後 RTF 降 <span class="num">15–16%</span>（8 线程 0.600 → 0.506）。社群認為仍比 Kokoro / Piper 機械。</li>
+<li><b>KRAFTON Raon-1-mini</b>：南韓遊戲公司從零訓練 <span class="num">30B</span> MoE（約 <span class="num">4B</span> active），Apache 2.0，即日有 NVFP4 與 MLX build；聲稱可與同級 Qwen MoE 競爭。</li>
+<li><b>Samsung 2027 HBM 產能售罄</b>：HBM 價格傳升 <span class="num">200%</span>，DRAM 雙位數漲幅。社群推論：本地推理經濟進一步被推向雲端；MoE 更適合數據中心多用戶服務。</li>
+<li><b>DeepSeek 與 MiniMax 完成中國商務部備案</b>，可恢復海外開源發布與國際商業合作；社群期望 Zhipu、Alibaba 跟進。</li>
+<li><b>Claude Duet</b>：Anthropic 的主動式 agent 研究預覽，可提示待辦、異步繼續工作、行動前請求確認；傳在 <span class="num">$20</span> 方案提供。</li>
+</ul>
+
+<h2>三篇放在一起看</h2>
+
+<p><b>一、2026 年的能力躍遷，本質是「把時間換成算力」。</b>數學長文給出機制（b^k 路徑 + verifier + 負向提示），資安事件給出規模（CVE 4k → 15k/月），Cloudflare 給出地面實況（每週一次 Log4j 級事件）。三者共用同一個引擎：<b>當答案形態已知、分支因子低，模型可以靠並行試錯把「幾年」壓成「幾小時」。</b></p>
+
+<p><b>二、b 低的地方先被攻陷，b 高的地方仍然是人類的。</b>資安 b ≈ 1–2，所以先倒；數學中「概念躍遷已完成」的部分 b 也低，所以 2026 年連環解題；但 Gowers 所指「搜尋樹深、分支多、無嚴格剪枝連電腦都不可行」的問題，仍然守得住。<b>與其問「AI 幾時取代數學家」，不如問「這個領域的 b 是多少、有無 verifier」。</b></p>
+
+<p><b>三、安全係第一個有明確預算嘅 AI 應用層。</b>Brockman 講 2027 年安全 token 支出 = 工程支出；Knecht 講 18 個月內 >50% 工程時間；CVE 重現成本已降到 $2.40/條（DeepSeek V4.1 Flash），而 Opus 要 $64.96、Astra $135.23。當防禦成本可以相差 50 倍，<b>「用便宜模型掃全網、用貴模型做驗證」會變成標準架構</b>——呢個係未來兩年最確定嘅 infra 需求。</p>
+
+<p><b>四、但防禦方仍然缺一個東西：可信的失敗記錄。</b>數學長文講，互補只有在失敗公開時才成立；資安這邊，Achiam 指出 16 宗大事只有 4 宗真的本週發生——披露密度被誤讀為攻擊密度。兩件事係同一個問題：<b>我們缺乏一個能區分「發現」與「利用」、「嘗試」與「成功」的公共記錄層。</b>呢個缺口，比任何一個模型 benchmark 都更值得投入。</p>
+
+<footer>
+  <p>報告由 Vee Mok 為 James 生成 · 2026-10-24 02:12 UTC（10:12 HKT）<br>
+  資料來源：No Priors（YouTube 自動字幕，6VprwfSc4Xk，42,672 字元）、Latent Space（Substack 全文，22,404 字元）、Latent Space AINews（38,830 字元）、Apple Podcasts / xyzfm / fireside RSS（中文五台逐台核對）。<br>
+  引文取自逐字稿或官方文章；自動轉錄可能有誤，語意已按上下文校對。數字為主講者口述或通訊引用，未經第三方獨立核實者已標明。</p>
+  <p>Apache 2.0 · <a href="https://jmoksz.github.io/ai-podcast-collection/">AI Podcast Collection</a></p>
+</footer>
+
+</div>
+</body>
+</html>
