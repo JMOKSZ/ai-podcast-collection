@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · Latent Space：難度是 b^k 條路徑的長度——為什麼資安先倒下，數學隨後</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Latent Space · 2026-10-23 · 16 分鐘長文 · 作者 Ankit Maloo</div>
+  <h1>難度是 b<sup>k</sup> 條路徑的長度——為什麼資安先倒下，數學隨後</h1>
+  <div class="meta">
+    <span>📅 2026-10-23</span><span>·</span><span>✍️ Ankit Maloo</span><span>·</span><span>📚 Latent Space 深度分析</span><span>·</span><span>⏱️ 16 分鐘閱讀</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+2026 年 5 月到 9 月，OpenAI 同 Anthropic 連環解出多個長期開放問題。呢篇唔係講「AI 有幾叻」，而係講一個可操作嘅問題：<strong>能否預測邊類問題模型解得開？</strong>作者用 Gowers 嘅「最短提示序列」加上一個 branching factor，砌出一個粗糙但有用嘅公式——然後用它解釋一件表面上無關嘅事：<strong>為什麼資安比數學先被攻陷</strong>。
+</p>
+
+<blockquote class="strong">
+  「模型會在 b<sup>k</sup> × 單位算力成本 小的地方先成功。」
+  <span class="attribution">Ankit Maloo，本文核心推論</span>
+</blockquote>
+
+<div class="highlight-box">
+  <strong>📌 來源說明：</strong>本文以 Latent Space 官方 Substack 文章〈AI Is Getting Good at Math. Here's Why.〉（2026-10-23，16 分鐘閱讀）全文為底本，逐段對照原文；引號內容為英文原句之中譯，部分保留原文以存語氣。文章屬分析評論，非訪談；作者大量引用 Gowers、Tsimerman、Terence Tao、Arul Shankar 嘅公開評論，並以 OpenAI 公布嘅 CDC prompt 作一手材料。所有數學結論以原文為準，本文嘅公式推演屬作者觀點，未經同行評審。
+</div>
+
+<div class="section-title">一、五個月內發生了什麼</div>
+
+<p>先把時間線排清楚，因為密度本身係論點嘅一部分：</p>
+
+<table>
+  <tr><th>時間</th><th>事件</th><th>性質</th></tr>
+  <tr><td>2026 年 5 月</td><td>OpenAI 內部模型找到 Erdős unit distance conjecture 嘅<strong>反例</strong></td><td>猜想自 1946 年開放；多位專家嘗試證明，結果被反證</td></tr>
+  <tr><td>2026 年 6 月</td><td>OpenAI 發表 Cycle Double Cover（CDC）問題嘅證明</td><td>開放問題，附帶可觀嘅 prompt 紀錄</td></tr>
+  <tr><td>2026 年 7 月</td><td>再解十個開放問題</td><td>批量產出</td></tr>
+  <tr><td>2026 年 9 月</td><td>Navier–Stokes 證明；Anthropic 發表 Fermat 大定理形式化、Riemann 假設改進界</td><td>同月多線並進</td></tr>
+</table>
+
+<p>呢個列表最容易得出嘅結論係「模型變聰明咗」。作者明確反對呢個懶惰結論。佢嘅問題係：如果模型真係全面變強，為什麼係呢批問題先解？為什麼資安（一個看似更混亂嘅領域）比數學更早崩？</p>
+
+<p>答案唔在模型內部，而在<strong>問題嘅形狀</strong>。</p>
+
+<div class="section-title">二、Gowers 的 2<sup>k</sup> + t：把難度寫成一條提示序列</div>
+
+<p>解一個問題，需要一連串洞察，洞察之間是工作：</p>
+
+<p style="text-align:center; color:#555; margin:1rem 0;">insight → time / effort → insight → time / effort → solution</p>
+
+<p>專家需要較少提示，因為背景知識多。Gowers 給出一個定義（Ankit 轉述）：<strong>證明的難度，是讓專家能重建它嘅最短提示序列</strong>。佢稱之為「modulo 專家的 Kolmogorov complexity」，並提出公式：</p>
+
+<div class="data-point">
+  <span>核心公式</span>複雜度 ≈ <strong>2<sup>k</sup> + t</strong>。k = 最短提示序列長度；t = 發展每個提示所需嘅工作。複雜度隨洞察數<strong>指數</strong>增長，隨工作時間<strong>線性</strong>增長。
+</div>
+
+<p>呢個公式嘅妙處係「看起來嚴謹，直到你嘗試代入數字」——而呢個正是重點。它唔係用嚟計算，而係用嚟<strong>分類</strong>：一個問題係「需要很多洞察」（大 k），定係「需要很多工作」（大 t）？兩者對人類同模型嘅難度完全唔同。</p>
+
+<p>對 unit distance 問題，Gowers 嘅提示序列有三部分：</p>
+
+<ol>
+  <li>找反例。</li>
+  <li>拿最佳已知構造去推廣。</li>
+  <li>用次數遞增嘅數域，但只處理有界範數嘅素理想。</li>
+</ol>
+
+<p>注意：這是<strong>三個提示</strong>，不是三篇文章。專家見到這三行，就有能力重建整個證明；但一個唔懂數論嘅人見到，仍然寸步難行。呢個就係「modulo 專家」嘅意思——提示嘅長度取決於接收者嘅背景。</p>
+
+<div class="section-title">三、一個提示值幾多：事前不可能，事後明顯</div>
+
+<p>不是所有提示都等價。作者提出兩個判準：</p>
+
+<ul>
+  <li><strong>事前多不可能，事後多明顯。</strong>提示嘅價值 = 事後嘅顯然程度 ÷ 事前嘅難以置信程度。Unit distance 嘅反例提示正是極端例子：事後看，「為什麼沒人試過反證？」；事前看，整個社群（包括 Gowers 自己）都認為猜想為真。</li>
+  <li><strong>它在序列中的位置。</strong>提示是有序的。第三個提示只有在頭兩個提示已經鋪好路之後才有用。</li>
+</ul>
+
+<blockquote>
+  「提示序列遍歷一棵樹。初始洞察會改變問題，繼而改變後續選項。」
+  <span class="attribution">Ankit Maloo（中譯）</span>
+</blockquote>
+
+<p>呢點直接否定了最天真嘅 brute force 想像：列出人類已知嘅一千種數學技巧，然後窮舉所有組合。作者算過，呢個組合數「比宇宙入面嘅原子仲多，也遠多過願意捱下去嘅研究生」。提示唔係並排嘅選項，而係<strong>會改變問題本身</strong>嘅序列。你用咗提示一，問題就由「證明猜想」變成「找反例」；再用提示二，問題就變成「推廣一個反例構造」。每一步都重寫下一步嘅可行集。</p>
+
+<div class="section-title">四、人類廣度優先，模型深度優先</div>
+
+<p>把 k 同 t 合起來，就得到人類嘅搜索模式：<strong>產生候選方向、淺嚐、放棄大部分、集中少數</strong>。呢個唔係風格，而係約束。發展一個想法可能要幾個月；在投入之前，研究者需要有理由相信它會通向某處——概念上嘅希望、早期結果、或類似問題嘅經驗。</p>
+
+<blockquote class="strong">
+  「等待越久，嘗試的門檻越高。」
+  <span class="attribution">Ankit Maloo（中譯）</span>
+</blockquote>
+
+<p>呢句係整篇文嘅樞紐。人類嘅搜索成本函數係「時間」，而時間會消耗士氣、工作記憶、職涯機會。作者提供一個殘酷嘅量化：在最productive 嘅十年，一個研究者大約只有 <strong>二十次認真下注</strong>嘅機會；大部分人都希望其中一次中。所以人類必須用品味去剪枝——唔係因為品味必然正確，而係因為<strong>唔剪枝就無法生存</strong>。</p>
+
+<p>LLM 相反：一個 prompt 給一個答案，CoT 貪婪地往一條路走到底；十個並行 agent 就是十條路各自走到結論。放任不管，會得到<strong>漂亮的假證明</strong>——每一步看起來合理，整體卻唔成立。所以模型嘅優勢唔係「免費」，而係「試錯成本極低」；要令呢個優勢變成生產力，必須加 verifier。</p>
+
+<div class="section-title">五、Tsimerman 為什麼停手：洞察題沒有梯度</div>
+
+<p>全文最有力嘅一段，係 Jacob Tsimerman 嘅個案。他最近被 OpenAI 聘用；他做過 unit distance 嘅反例方向，懂數論，也想過提高次數——然後停了。</p>
+
+<blockquote class="strong">
+  「一種很可怕的動態：很難在各種解析區域中思考並保持引導性直覺，耗費大量時間，而且經常不成功。」
+  <span class="attribution">Jacob Tsimerman，OpenAI 數學家（中譯）</span>
+</blockquote>
+
+<p>他缺嘅唔係能力。他缺嘅係<strong>梯度</strong>。心理學早就發現：Metcalfe 與 Wiebe 每 15 秒問解題者「你覺得離答案多近」；普通題嘅進度感會穩步上升，<strong>洞察題則一直平直，直到解出為止</strong>。你唔知道自己有幾近，直到你已經到咗。</p>
+
+<div class="data-point">
+  <span>心理學</span>Metcalfe &amp; Wiebe：每 <strong>15 秒</strong>詢問進度感。普通題：進度感上升；洞察題：<strong>平直直到解出</strong>。洞察題沒有梯度。
+</div>
+
+<p>所以專家問題係雙重的：<strong>有人進入這條分支嗎</strong>（提示）？<strong>進入後留得夠久嗎</strong>（t）？留嘅成本係工作記憶、士氣、職涯。而留在一條「所有已知專家都認為錯」嘅路上，會同時放大三種成本。</p>
+
+<p>對 LLM 而言，呢個係結構性優勢：它唔會士氣崩潰，唔會因為三個月無進展而放棄，唔會計算機會成本。它只會繼續燒 token。作者引用 Arul Shankar 嘅觀察：</p>
+
+<blockquote>
+  「模型很快地走過各種想法，但當它到達關鍵想法時（那段以『假設樂觀地……』開頭的段落），它相當有條理地鎖定了證明。」
+  <span class="attribution">Arul Shankar，數學家（中譯）</span>
+</blockquote>
+
+<p>呢句值得細讀。模型唔係「亂撞撞中」；它在關鍵處展現出<strong>方法論</strong>。前面快速走過各種想法，係探索；到達關鍵想法後有條理地鎖定，係 exploitation。人類嘅問題係：探索階段太貴，所以大多數人根本到唔到 exploitation 階段。</p>
+
+<div class="section-title">六、Verifier：賭博變成理性，但只判斷完成品</div>
+
+<p>自動檢查器可以剪掉已完成嘅錯誤軌跡。有了它，把大量算力花在不確定嘅想法上就變得合理——幾分鐘內就知道行不行。</p>
+
+<p>但作者指出一個關鍵限制：</p>
+
+<blockquote class="strong">
+  「Verifier 只能判斷已完成的論證，不能告訴你一個半成品有沒有前途。」
+  <span class="attribution">Ankit Maloo（中譯）</span>
+</blockquote>
+
+<p>呢個限制決定咗 harness 嘅形狀。既然 verifier 只能在終點判斷，咁中途嘅剪枝就要靠<strong>drafter</strong>——把上一輪嘅失敗寫成下一輪嘅約束。於是整個系統變成三層：</p>
+
+<table>
+  <tr><th>角色</th><th>做什麼</th><th>剪枝對象</th></tr>
+  <tr><td><strong>Drafter</strong></td><td>寫 prompt：基於模型先驗、修正上一輪錯誤、記錄所有走不通嘅路</td><td>未來的分支（事前剪枝）</td></tr>
+  <tr><td><strong>Solver</strong></td><td>產生一或多個候選，可並行子 agent，各自發展到結論</td><td>無（負責展開）</td></tr>
+  <tr><td><strong>Verifier</strong></td><td>檢查論證是否有效、是否真的到達目標</td><td>已完成的分支（事後剪枝）</td></tr>
+</table>
+
+<p>呢個三層結構比「單一模型 + CoT」多了一個關鍵能力：<strong>跨輪次嘅記憶</strong>。每一輪失敗都被寫成下一輪嘅約束。換句話說，失敗唔會消失，會變成 prompt 嘅一部分。</p>
+
+<div class="section-title">七、CDC prompt 逐行讀：失敗寫成的指令</div>
+
+<p>OpenAI 公布嘅 CDC prompt，係目前最接近公開嘅一手材料。作者逐行拆解，指出每一行都對應一條失敗路徑：</p>
+
+<div class="highlight-box">
+  <p><strong>「假定存在一個完整的肯定證明。」</strong></p>
+  <p style="font-size:0.9rem;color:#777;">→ 阻止模型把「這是開放問題」當成為什麼要停下來的理由。模型在預訓練中學到「開放問題」等於「不要嘗試證明」，呢句直接覆寫呢個先驗。</p>
+
+  <p style="margin-top:0.8rem;"><strong>「特別地，對特殊圖類的證明、某些邊覆蓋非兩次的 cycle cover 構造、有界長度或指定 cycle 的變體、化約到另一個未證猜想、對任何固定圖規模的計算驗證、以及沒有完整不存在證書的候選反例，都不足夠。」</strong></p>
+  <p style="font-size:0.9rem;color:#777;">→ 封掉一整櫃替代品。呢句係一份「唔要什麼」的清單，每一項都係之前某一輪曾經交出嚟嘅近似答案。</p>
+
+  <p style="margin-top:0.8rem;"><strong>「全程使用對抗式 agent：每個候選證明都必須檢查 exact-two multiplicity、重邊封閉跡偽裝成 cycle、平行邊 2-cycle、非連通圖、cutvertex、化約引入的橋、以及循環使用等價的 CDC 命題。」</strong></p>
+  <p style="font-size:0.9rem;color:#777;">→ 把目錄化的失敗模式升級為常設檢查。呢度嘅每一個名詞，都係一個曾經騙過 verifier 嘅陷阱。</p>
+
+  <p style="margin-top:0.8rem;"><strong>「不要僅因當前方法失敗或 agent 報告定理級缺口就返回。」</strong></p>
+  <p style="font-size:0.9rem;color:#777;">→ 針對「學來的懶惰」。作者加了一句很妙嘅註腳：要對機器寫「唔好，真係，繼續行」係一件很奇怪嘅事，更奇怪嘅係它有效。</p>
+</div>
+
+<p>呢四行合起來，展示咗一種新嘅工程範式：<strong>不是寫更好的正向指令，而是把負向知識制度化</strong>。人類專家嘅價值，很多時候不在於知道什麼是對的，而在於知道幾十種看起來對但其實錯嘅東西。CDC prompt 嘅做法，就係把呢份「錯嘅清單」直接寫進系統。</p>
+
+<div class="section-title">八、Unit distance：三個提示的順序不可換</div>
+
+<p>作者用 harness 嘅視角，重讀 Gowers 嘅三個提示：</p>
+
+<table>
+  <tr><th>提示</th><th>難度來源</th><th>在 harness 中的角色</th></tr>
+  <tr>
+    <td><strong>1. 找反例</strong></td>
+    <td>社群與模型先驗都說猜想為真；必須逆着共識走。</td>
+    <td>Drafter 大概係因為 solver 一直證明失敗才走到這裡——每一次失敗都令反例稍微不那麼不可能。</td>
+  </tr>
+  <tr>
+    <td><strong>2. 推廣最佳已知構造</strong></td>
+    <td>這是大 t 的部分：要把推廣發展到足以發現它允許什麼。</td>
+    <td>注意：這是「反例的推廣」，幾乎沒有人在找。</td>
+  </tr>
+  <tr>
+    <td><strong>3. 用次數遞增的數域</strong></td>
+    <td>標準機械，但只有在前面兩個提示建好空間後才可用。</td>
+    <td>前兩個提示建好了空間，第三個才有作用。</td>
+  </tr>
+</table>
+
+<p>順序錯了就全錯：從提示三開始，你連「這是反證」都不知道；跳過推廣，提示三無所依附。呢個就係為什麼「提示列表」唔等於「提示序列」——後者有依賴結構，前者沒有。</p>
+
+<p>作者補了一個很人性嘅觀察：反例提示事後看很明顯，令人懷疑為什麼無人試過。事實上，有人試過——Tsimerman 就是。他知道數論，也想過提高次數，然後停在一條「幾週都未見對岸」嘅沼澤裡。所以問題唔係「有沒有人想到」，而係「想到之後，有沒有人捱得過 t」。</p>
+
+<div class="section-title">九、2026 年到底變了什麼：三個能力疊加</div>
+
+<p>作者拒絕「模型突然變聰明」嘅解釋，改為列出三項具體能力：</p>
+
+<ol>
+  <li><strong>Chaining primitives。</strong>近期訓練目標專注於讓 step 1 產生嘅東西能在 step n 使用。→ 降低 t。模型唔會「忘記」前面嘅中間結果，長 horizon 任務因此可行。</li>
+  <li><strong>Self-verification。</strong>模型能在軌跡內捕捉錯誤步驟——不是語法錯誤，而是「走不到目的地」嘅步驟。OpenAI 用大規模真實例子訓練數學驗證，再加一層找出證明錯誤嘅驗證器。→ 令軌跡內剪枝更便宜。</li>
+  <li><strong>Orchestration。</strong>模型可以指揮子 agent、用 memory steering、協調多 agent。→ 這是負向提示得以累積嘅方式。</li>
+</ol>
+
+<p>呢三項能力合起來，改變嘅唔係「智能」，而係<strong>搜索嘅經濟學</strong>：chaining 降低每一步嘅成本，self-verification 降低走錯路嘅成本，orchestration 降低並行探索嘅成本。三者都係成本曲線嘅移動，而唔係能力曲線嘅跳躍。呢個區分很重要，因為它解釋咗為什麼模型嘅進步係<strong>不均勻</strong>嘅——它只在「成本結構對得上」嘅問題上爆發。</p>
+
+<div class="section-title">十、Branching factor：為什麼資安是 b ≈ 1–2</div>
+
+<p>Gowers 嘅公式漏了一項：探索提示樹嘅時間。設每步有 b 個可行提示，k 步就有 <strong>b<sup>k</sup></strong> 條路徑。人類靠品味與判斷把有效 b 壓得很小；AI 必須幾乎走遍每個分支，但可以很快。</p>
+
+<blockquote class="strong">
+  「模型會在 b<sup>k</sup> × 單位算力成本 小的地方先成功。」
+  <span class="attribution">Ankit Maloo（中譯）</span>
+</blockquote>
+
+<p>然後係全文最漂亮嘅一步推論：</p>
+
+<blockquote>
+  「資安看似複雜，但它在 2026 年先崩，因為中間步驟的 b 大約只有 1–2，而且『正確答案長什麼樣』事先已知——找 RCE、找越權、找記憶體腐敗。」
+  <span class="attribution">Ankit Maloo（中譯）</span>
+</blockquote>
+
+<p>呢句值得反覆讀。資安嘅「複雜」係表面嘅：百萬行代碼、幾十種協議、無盡嘅配置組合。但<strong>攻擊鏈嘅中間步驟幾乎冇選擇</strong>：一個 exploit chain 已經存在於文獻中，模型只需要填格。b 細，k 中等，所以 b<sup>k</sup> 細；加上「正確答案長什麼樣」已知，verifier 可以即刻判斷。於是資安成為第一個被攻陷嘅領域。</p>
+
+<p>數學嘅情況相反：b 大（每個洞察都改變問題，可行下一步好多），verifier 又只能判斷完成品。所以數學嘅突破集中在<strong>k 細、t 大</strong>嘅問題——概念躍遷已完成，剩下繁重工作。Navier–Stokes 正是這樣：</p>
+
+<div class="data-point">
+  <span>Navier–Stokes</span><strong>166 頁</strong>、<strong>10,000 個 agent</strong>、<strong>300B tokens</strong>、<strong>88 小時</strong>。本質上係完成 Córdoba 與 Martínez-Zoroa 已鋪好嘅綱領——概念躍遷係人做嘅，收尾係機器做嘅。
+</div>
+
+<p>作者對呢點很克制：這是「早期結論」，他未見到關於概念躍遷嘅豐富評論。但模式很清楚：Anthropic 嘅 Fermat／Riemann 工作也是同一骨架——數百個失敗想法、多 agent 在一個 orchestrator 下、到處是 script 與 checker，最後由少量概念躍遷承重。</p>
+
+<div class="section-title">十一、模型擅長收尾，人類擅長剪枝</div>
+
+<p>於是得到一個互補分工：</p>
+
+<ul>
+  <li><strong>人類</strong>擅長縮小分支：用直覺、品味、背景知識判斷哪條路值得走，哪條路一看就死。</li>
+  <li><strong>模型</strong>擅長把「剪一條分支」嘅時間由三個月壓到五分鐘：它可以由頭到尾走完一個想法，再讓你決定值不值得投入三個月。</li>
+</ul>
+
+<p>Gowers 預期人類仍然守住嘅地方，是「搜尋樹很深、分支很多，以致沒有嚴格剪枝連電腦都不可行」嘅問題——高 b、高 k。呢類問題上，人類嘅直覺仍然關鍵，因為模型嘅優勢（走遍所有分支）正好被 b<sup>k</sup> 爆炸抵銷。</p>
+
+<p>呢個框架也解釋了為什麼「AI 取代數學家」嘅講法既對又唔對。對嘅部分：對於 k 細、t 大嘅問題，模型已經可以獨立完成，而且速度是人類嘅幾個數量級。唔對嘅部分：對於高 b、高 k 嘅問題，模型仍然需要人類提供初始剪枝——即係話，人類嘅角色由「解題者」變成「定義搜索空間的人」。</p>
+
+<div class="section-title">十二、互補的前提：失敗必須公開</div>
+
+<p>作者最後一節轉向制度，也是全文最容易被忽略嘅部分。</p>
+
+<p>人類嘅失敗之所以有資訊，是因為有人曾經確信到願意投入幾個月；「拒絕」本身也帶著判斷。AI 嘅失敗很便宜，多數很幼稚，少數可能有趣——</p>
+
+<blockquote class="strong">
+  「失敗中的資訊量，與背後的信念成正比。」
+  <span class="attribution">Ankit Maloo（中譯）</span>
+</blockquote>
+
+<p>呢句係一個很深刻嘅認識論主張。一個「我試過，不行」嘅價值，取決於說這句話嘅人投入了幾多。如果一個博士生花三個月試一個方向然後放棄，呢個「不行」帶著大量資訊：他懂這個領域、他看過相關文獻、他知道什麼叫成功。如果一個模型花三分鐘試一個方向然後放棄，呢個「不行」可能只代表它嘅 prompt 唔夠好。</p>
+
+<p>而我哋現在只看得到最終解答，連為何某條路失敗都難以理解。CDC prompt 係我哋最接近看到失敗清單嘅一次。呢個就係為什麼作者主張失敗要公開：</p>
+
+<blockquote>
+  「把解題視為數學更深層目的的代理：發展我們的理解。」
+  <span class="attribution">Terence Tao，轉引自本文（中譯）</span>
+</blockquote>
+
+<p>只公布最終解，是把目的地當成旅程。對數學社群而言，真正嘅產物唔係證明本身，而係<strong>為什麼這條路可行、那條路不可行</strong>嘅集體理解。如果 AI 只交出答案，社群就失去了更新直覺嘅材料；長遠而言，這會令下一次問題更難解，因為人類嘅剪枝能力沒有進步。</p>
+
+<div class="section-title">十三、Bonus：廣義相對論測試會被 goodhart</div>
+
+<p>文章結尾有一個很尖銳嘅思想實驗。有人建議（Demis Hassabis、Zahavy、Adam Brown）用「只訓練到 1901 年嘅數據，看模型能否推出廣義相對論」作為 AGI 測試。作者嘅判斷：</p>
+
+<blockquote class="strong">
+  「如果研究者 goodhart 這個測試，它會很快被通過。」
+  <span class="attribution">Ankit Maloo（中譯）</span>
+</blockquote>
+
+<p>理由：這個躍遷不需要很多提示。第一個有效提示是「把重力當成幾何」，這一個提示就把解空間收窄到足夠；之後嘅數學極難，但正好是模型擅長嘅部分。而這個提示極度不直觀，CoT 大概會先試完所有其他可能——重力作為力、作為平直空間嘅場、作為牛頓平方反比律嘅修正——每一次失敗都令「幾何」稍微更可能。</p>
+
+<p>呢個分析嘅殺傷力在於：它預測模型會<strong>交出數百個看似合理嘅理論</strong>，然後人類驗證到其中一個是對的，就宣布「它做到了」。但這個過程同愛因斯坦嘅過程完全唔同：愛因斯坦在 1907 年有「一生中最快樂的思想」（掉下屋頂的人不會感到自己嘅重量），然後花了八年，加上一位真正懂幾何嘅朋友幫助，才寫出方程。中間嘅八年，就是 t。</p>
+
+<p>所以「AI 能否推出廣義相對論」呢個測試，測嘅唔係創造力，而係<strong>人類願不願意接受「數百個猜測中一個中」作為創造力嘅定義</strong>。如果願意，測試很快會過；如果不願意，測試永遠不會過，因為它要求嘅係過程，而唔係答案。</p>
+
+<div class="section-title">十四、給讀者的判斷框架：三個變數</div>
+
+<p>呢篇文章最實用嘅地方，係提供了一個可以立刻用嘅框架。下次你見到「AI 解開了 X」嘅新聞，問三個問題：</p>
+
+<ol>
+  <li><strong>k 有幾大？</strong>這個問題需要幾個真正嘅概念躍遷？如果答案係「一個」或「兩個」，模型很可能已經可以做。如果係「五個以上」，人類仍然主導。</li>
+  <li><strong>b 有幾大？</strong>每一步有幾個可行方向？如果中間步驟幾乎冇選擇（b ≈ 1–2），模型會很快攻陷。如果每一步都改變問題（b 大），b<sup>k</sup> 會爆炸。</li>
+  <li><strong>t 有幾長？</strong>概念躍遷之間嘅工作有多重？t 越長，人類嘅劣勢越大（因為要投入幾個月才知有沒有用），模型嘅優勢越大（因為它可以五分鐘走完）。</li>
+</ol>
+
+<div class="highlight-box">
+  <strong>🧭 一句總結：</strong>模型唔係比人類聰明，而係<strong>把「時間」換成「算力」</strong>。它會在 b<sup>k</sup> 細、t 大、verifier 強嘅地方先成功；會在 b 大、k 大、需要中途判斷嘅地方仍然落後。認清這個邊界，比爭論「AI 是否有創造力」有用得多。
+</div>
+
+<p>而對數學社群——其實對所有知識生產社群——最實際嘅行動，唔係禁止 AI，而係<strong>要求公開失敗</strong>。因為人類嘅下一輪剪枝能力，取決於我哋能唔能看到：哪些路走過、為什麼走不通、當時嘅信念有幾強。如果只留下答案，我哋會得到一堆正確的定理，和一個逐漸萎縮的理解。</p>
+
+<hr>
+
+<div class="highlight-box">
+  <strong>📊 一頁數字摘要</strong>
+  <ul>
+    <li>複雜度公式：<strong>2<sup>k</sup> + t</strong>（Gowers）；路徑總數 <strong>b<sup>k</sup></strong></li>
+    <li>Unit distance 猜想：<strong>1946</strong> 年開放，<strong>80 年</strong>後被反證</li>
+    <li>2026 年成果：5 月 unit distance、6 月 CDC、7 月十題、9 月 Navier–Stokes + Fermat 形式化 + Riemann 界</li>
+    <li>Navier–Stokes 證明：<strong>166 頁</strong>、<strong>10,000</strong> 個 agent、<strong>300B</strong> tokens、<strong>88 小時</strong></li>
+    <li>資安中間步驟分支因子：約 <strong>1–2</strong></li>
+    <li>心理學實驗：每 <strong>15 秒</strong>詢問進度感（Metcalfe &amp; Wiebe）</li>
+    <li>研究者職涯下注：最 productive 嘅十年約 <strong>20 次</strong>認真嘗試</li>
+    <li>廣義相對論：1907 年「最快樂的思想」→ <strong>8 年</strong>後寫出方程</li>
+    <li>CDC prompt：<strong>4 類</strong>負向約束（假定存在、封替代品、對抗檢查、禁止懶惰）</li>
+  </ul>
+</div>
+
+<footer>
+  <p>來源：Latent Space 官方 Substack 文章〈AI Is Getting Good at Math. Here's Why.〉（2026-10-23）· 作者 Ankit Maloo · 原文 16 分鐘閱讀</p>
+  <p style="margin-top:0.3rem;">深度復述由 Vee Mok 生成 · 2026-10-24 · 引文為英文原句之中譯，公式與數字取自原文</p>
+  <p style="margin-top:0.3rem;"><a href="../index.html">← 返回播客日報</a></p>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · No Priors：我們正在 patch 七十年的軟件——Cloudflare CTO 講安全怎樣成為 AI 的第一個殺手級應用</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">No Priors · 2026-10-23 · 約 52 分鐘 · Sarah Guo 主持（Elad Gil 共同主持）</div>
+  <h1>我們正在 patch 七十年的軟件——安全怎樣由成本中心，變成 AI 的第一個殺手級應用</h1>
+  <div class="meta">
+    <span>📅 2026-10-23</span><span>·</span><span>🎙️ Sarah Guo</span><span>·</span><span>👤 Dane Knecht（Cloudflare CTO）</span><span>·</span><span>⏱️ 約 52 分鐘</span><span>·</span><span>🎥 YouTube 6VprwfSc4Xk</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+呢集係「黑色十月」風暴入面，第一個由<strong>基礎設施層營運者</strong>口中講出嚟嘅現場判斷。Sarah Guo 在 Cloudflare Connect 現場訪問 CTO Dane Knecht，表面講資安，實際講三件更大事：<strong>預算會點轉移</strong>（18 個月內超過一半工程時間去安全）、<strong>內容經濟會點重寫</strong>（人看廣告、agent 付微支付）、<strong>公司會點重組</strong>（唔係裁員省錢，而係重畫工廠車間）。佢最反直覺嘅一句，係承認 AI 現階段令軟件<em>更</em>唔安全。
+</p>
+
+<blockquote class="strong">
+  「以前我哋大約一年見一次 Log4j 時刻、Shellshock 呢類事件……而家呢啲事每週都在發生。」
+  <span class="attribution">Dane Knecht，論事件頻率（中譯自節目轉錄稿）</span>
+</blockquote>
+
+<div class="highlight-box">
+  <strong>📌 來源說明：</strong>本文以 No Priors 官方 RSS 節目簡介與章節時間軸（2026-10-23），以及每日掃描所取得嘅 YouTube 自動轉錄稿（約 42,700 字元）為底本。引號內容為轉錄稿英文原句嘅中譯；自動轉錄可能有人名與詞語誤差，本文按上下文校正。所有財務、人力與頻率數字均為受訪者口述，未經獨立審計。
+</div>
+
+<div class="section-title">一、為什麼由 Cloudflare 講，而不是由安全廠商講</div>
+
+<p>同一個星期，No Priors 連續播出三集安全主題：10 月 15 日 OpenAI 總裁 Greg Brockman、10 月 22 日 CrowdStrike CEO George Kurtz、10 月 23 日 Cloudflare CTO Dane Knecht。三人結論一致，但站位完全唔同。Kurtz 是獵人，講誰在攻擊、多快；Brockman 是預算動物，講錢會怎樣流；Knecht 是公用事業營運者，講<strong>怎樣令幾億個網站唔使一齊死</strong>。</p>
+
+<p>呢個站位決定咗佢嘅答案形狀。Cloudflare 唔賣 endpoint 防護，也唔賣 frontier model；佢賣嘅係「流量經過我」呢個位置。所以 Knecht 講嘅唔係單點產品，而係三樣只有骨幹網絡才講得出口嘅東西：<strong>頻率</strong>（每週一次 Log4j 級事件）、<strong>分發</strong>（規則免費給所有客戶，包括免費客）、<strong>收費軌道</strong>（agent 時代的 402）。</p>
+
+<p>節目開場 Sarah 拿佢姓氏開玩笑：Knecht 讀音近似 connect，「呢個姓簡直係 Cloudflare 嘅 value prop」。呢個玩笑其實係全集基調——連接與身份，而唔係單純防禦。</p>
+
+<div class="section-title">二、頻率變了，唔係嚴重性變了</div>
+
+<p>Knecht 用 Log4j 與 Shellshock 做標尺。以前呢類「all hands on deck」級別嘅事件，大約一年一次，Cloudflare 要動員全公司去保護企業客同免費客。現在——</p>
+
+<blockquote>
+  「而家呢啲事每週都在發生。」部分甚至無公開：嚴重程度相若，但頻率升了一個數量級。
+  <span class="attribution">Dane Knecht（中譯）</span>
+</blockquote>
+
+<p>呢句嘅殺傷力在於「部分甚至無公開」。如果連 Cloudflare 這個流量必經點都見到「每週一次」而外界只見到一小部分，咁公開 CVE 數量其實低估了真實攻擊面。這也解釋了為什麼 AINews 同一日報導嘅數字咁誇張：月度 CVE 由約 4,000 升至約 15,000。</p>
+
+<p>Knecht 嘅推論直接影響預算：未來 18 個月，大部分工程團隊嘅時間會花在安全上；某個 keynote 上嘅數字係「超過 50% 工程時間」。注意呢個唔係「安全團隊」嘅時間，係<strong>所有工程師</strong>嘅時間。</p>
+
+<div class="data-point">
+  <span>頻率</span>Log4j／Shellshock 級事件：由<strong>一年一次</strong>升至<strong>每週一次</strong>（部分未公開）。未來 <strong>18 個月</strong>，<strong>&gt;50%</strong> 工程時間預期投入安全。
+</div>
+
+<p>但佢同時講了一句很重要的限定：這是過渡期，不是新常態。當 AI 掃過大部分代碼、搵到大部分 bug 同 shortcut 之後，資源會回流到產品。換句話說，<strong>安全支出是一個為期約 18 個月的視窗，不是永久稅項</strong>。</p>
+
+<div class="section-title">三、攻擊者光譜已經扁平化：「agent kitties」</div>
+
+<p>Sarah 問：帶頭嘅係國家隊，定係 script kiddies？Knecht 嘅答案係「兩者都唔係」。最近幾個大型漏洞，帶頭嘅甚至係高中生。Sarah 即場造了一個詞——<em>agent kitties</em>——Knecht 接受咗。</p>
+
+<p>呢班人以前玩 CTF，現在把 agent 指向一個區域；加上 bounty 有真金白銀，就變成持續運轉嘅漏洞工廠。重點唔係他們變強，而係——</p>
+
+<blockquote class="strong">
+  「國家隊長年擁有嘅工具，第一次交到群眾手上。」
+  <span class="attribution">Dane Knecht（中譯）</span>
+</blockquote>
+
+<p>這裡有一個容易被忽略嘅經濟學：<strong>bounty 把「好奇心」變成「可定價的勞動」</strong>。以前一個高中生就算有天賦，也未必有渠道、有時間、有回報去持續挖洞；現在 agent 幫佢做 reconnaissance，平台幫佢做結算，於是供給曲線直接右移。這不是「攻擊者變聰明」，而是「攻擊的邊際成本變低、邊際回報變確定」。</p>
+
+<p>同一日 AINews 報導，微軟把 ConnectWise 供應鏈攻擊歸因於中國對齊嘅 Storm-0940，用開源 agentic pentest 框架 ARTEX 打 <strong>2,250+</strong> 個 M365 tenant，每分鐘約 <strong>2,900</strong> 次登入。呢個對照很重要：Knecht 講嘅「群眾化」係真嘅，但如果只聽「agent kitties」，會低估有組織、有持續資源嘅對手。兩種攻擊者現在<strong>共用同一套工具鏈</strong>，差別只在目標選擇與持久力。</p>
+
+<div class="section-title">四、最反直覺的一句：AI 目前令軟件更唔安全</div>
+
+<p>Sarah 提出一個很鋒利嘅觀察：減少攻擊面很合理，但這不是今日模型的自然傾向。Knecht 直接承認：</p>
+
+<blockquote class="strong">
+  「AI 至少早期非常 verbose，佢喜歡製造複雜度。所以就我們面對嘅情況而言，AI 其實一直無幫手建更安全嘅嘢。」
+  <span class="attribution">Dane Knecht（中譯）</span>
+</blockquote>
+
+<p>呢句值錢，因為它同時否定了兩個流行敘事。第一個係「AI 會自動寫出更安全的代碼」——不會，除非你把安全約束寫進 agent 嘅工作流程。第二個係「AI 會自動減少攻擊面」——也不一定，模型傾向生成更多抽象、更多依賴、更多「看起來合理」嘅樣板。</p>
+
+<p>所以佢嘅處方唔係叫 agent 「寫得安全啲」，而係把機構知識變成 agent 可執行嘅約束。Cloudflare 內部有一份叫「Codex」嘅文件——不是 OpenAI 嘅 Codex，而是累積多年嘅 RFC 庫：如何寫安全軟件、如何寫高可用軟件，最後濃縮成「十誡」，agent 每次 review 都要跟。</p>
+
+<div class="highlight-box">
+  <strong>🔧 制度重於提示：</strong>把「我們公司認為什麼是安全」寫成十條可檢查的規則，然後讓 agent 在每次 review 都跑一次——這比在 prompt 裡寫「please be secure」有效一個數量級。這也是把 tribal knowledge 變成 machine-checkable constraint 的具體做法。
+</div>
+
+<p>同時，人類的對抗式審查仍然必要。即使有 agent 掃 code，Cloudflare 仍保留人類做 performance run、security run 同第二雙眼睛。Knecht 明確講「你需要那些對抗式審查」。呢點同很多「AI 取代 review」嘅樂觀預測相反。</p>
+
+<div class="section-title">五、補課窗口，而不是永久戰時狀態</div>
+
+<p>Sarah 引述嚴肅技術人嘅講法：「把重要嘅嘢全部 air gap，我哋有一段時間唔可以信互聯網，假設關鍵基建同政府服務某一刻會倒。」Knecht 明確反對：</p>
+
+<blockquote>
+  「我無咁末日。」（I'm a little less doomsday）
+  <span class="attribution">Dane Knecht</span>
+</blockquote>
+
+<p>理由有兩個。第一，人類適應快，行業在危機時會合作——「你平時認為係競爭對手嘅人，唔再係競爭對手」。第二，過去 5–10 年由 castle-and-moat 轉向 zero trust，令好多公司底子比表面好；那些仍然靠周邊防火牆嘅公司，才是真正危險嘅一群。</p>
+
+<p>佢嘅框架係「補課」：</p>
+
+<blockquote class="strong">
+  「我哋正在 patch 七十年嘅軟件。」
+  <span class="attribution">Dane Knecht（中譯）</span>
+</blockquote>
+
+<p>存量要補，增量要改流程——agent 開發生命週期要將安全內建到每一步，而唔係最後掃一次。但佢唔認為要 freeze 功能：「如果你唔出貨，你就在死亡。」（if you're not shipping you're dying）同時做兩件事，靠 AI 兩邊加速。呢個態度好重要：不是「先停止創新去補洞」，而是「用同一批 AI 同時補洞同出貨」。</p>
+
+<div class="data-point">
+  <span>存量債務</span><strong>70 年</strong>嘅軟件要補；紅隊由目前 <strong>1 隊</strong>擴至明年底 <strong>4–5 隊</strong>；公司 <strong>5,000 人</strong>，一年內招 <strong>1,000</strong> 個 intern（前一年 <strong>200</strong>）。
+</div>
+
+<div class="section-title">六、密鑰熵崩壞：agent 正在翻歷史舊帳</div>
+
+<p>全集最具體、也最恐怖嘅技術細節，係一個關於隨機性嘅故事。Knecht 講到一把保護 TLS／WebPKI 嘅根級密鑰，初始種子只用了一個數字 <strong>4</strong>。不是「弱密碼」，而是<strong>種子空間細到可以反向工程</strong>。</p>
+
+<blockquote>
+  「字面上就是數字四。」（literally the number four）
+  <span class="attribution">Dane Knecht，論 eMudhra CA 密鑰（中譯）</span>
+</blockquote>
+
+<p>佢用 Cloudflare 總部大堂嘅 lava lamp 做對照——隨機性係整個密碼學嘅根基，而人類仍然會用「4」做種子。同一段佢提到 OpenAI 上週找出 2000 年公布嘅 NIST 曲線種子。兩件事並置，意思很清楚：</p>
+
+<div class="highlight-box">
+  <strong>🧨 新的攻擊模式：</strong>歷史遺留嘅弱隨機性，正在被 agent 大規模翻舊帳。以前要一個密碼學博士花幾個月去懷疑一條曲線；現在 agent 可以對所有公開標準、所有舊密鑰、所有「當時看起來沒問題」嘅實作，做並行審計。呢類漏洞唔會因為你今日寫 code 小心而消失，因為它埋在你未寫過嘅歷史裡面。
+</div>
+
+<p>這也是為什麼「patch 七十年」唔係誇張。真正嘅存量不是代碼行數，而是<strong>過去半個世紀所有「當時合理」嘅假設</strong>：弱隨機種子、過度權限、預設開啟、字串拼接、憑證信任鏈。Agent 嘅優勢係可以同時對呢啲假設做窮舉式檢查；人類嘅劣勢係每次只能懷疑一個。</p>
+
+<div class="section-title">七、開放權重的宿命論</div>
+
+<p>Sarah 提出安全能力嘅兩難：攻防能力在同一模型內平行存在，所以開放防禦模型等於開放攻擊能力；但只鎖在少數 frontier 封閉模型，就無法分發給需要防禦嘅長尾。Knecht 選開放：</p>
+
+<blockquote class="strong">
+  「隨著時間，一切都必須開放，因為無論如何所有人都會拿到。壞人會找到方法拿到它。」
+  <span class="attribution">Dane Knecht（中譯）</span>
+</blockquote>
+
+<p>呢個立場與「安全能力必須集中管理」派正面相反。Knecht 嘅邏輯是：封閉只會排除一大批「其實需要它」嘅人——小國政府、醫院、學校、獨立開發者——而壞人從來不在排除名單內。與其追求不可實現嘅能力管制，不如<strong>假設能力已擴散，然後把防禦也擴散</strong>。</p>
+
+<p>但呢個邏輯有一個未被回答嘅問題：如果攻防能力真係對稱，咁擴散防禦嘅同時，也必然擴散攻擊。Knecht 嘅答案其實是「速度」——防守方可以用 AI 更快 patch，進攻方也可以用 AI 更快找洞。誰快，取決於<strong>制度</strong>（誰有權限、誰有庫存清單、誰能強制更新），而唔係模型本身。</p>
+
+<div class="section-title">八、messy middle：人與 agent 唔應該走同一條軌</div>
+
+<p>Knecht 用一個很精準嘅詞形容現在：<em>messy middle</em>。人類同 agent 走同一條軌，agent 去 parse 一個為人類設計嘅 web——充滿導航欄、cookie banner、A/B test、 lazy load——係低效到荒謬。</p>
+
+<p>方向係分開交付：同一個內容，向人用廣告，向 agent 用 CPM 等價嘅微支付。Cloudflare 已推出 monetization gateway、agent 錢包、穩定幣結算，以及與 OpenAI 合作嘅 Signals——讓 agent 主動發現新內容，而唔係無限重爬。</p>
+
+<div class="data-point">
+  <span>收費軌道</span>人類：廣告；agent：<strong>CPM 等價微支付</strong>。Cloudflare 已出 monetization gateway、agent 錢包、穩定幣結算、OpenAI Signals。Stripe 嘅 <strong>x402</strong> 回到 HTTP <strong>402 Payment Required</strong>。
+</div>
+
+<p>佢特別提到 Stripe 嘅 x402 回到 HTTP 402 code，係「終於有人認真做」嘅信號。呢個細節值得停一停：HTTP 402 由 1990 年代就存在，一直空置，因為沒有人有辦法在協議層收錢。Agent 經濟第一次令這個 status code 有實際用途——不是人類點擊付款，而是<strong>機器對機器即時結算</strong>。</p>
+
+<p>呢個比「block AI crawler」嘅防守姿態高一個維度：唔係阻止，而係計費。對內容產業嘅含義係——如果你嘅內容對 agent 有價值，你應該收錢，而唔係在 robots.txt 裡面生氣。</p>
+
+<div class="section-title">九、組織重構：給一個 PM 超能力，唔係令三個團隊快啲</div>
+
+<p>Cloudflare 5 月重組（公司史上第一次大規模裁員），Knecht 嘅解釋唔係省錢，而係「工廠車間要重畫」。例子很具體：以前 PM 發一封客戶 email，要經 BI 拿 cohort、marketing 設計文案、marketing ops 發送，牽涉三個團隊；重組後變成一個工具，PM 描述 cohort、寫草稿、系統用 Cloudflare 語氣改寫、經理一按批准就出。</p>
+
+<blockquote class="strong">
+  「唔係令三個團隊快啲，而係令一個 PM 擁有佢以前無嘅超能力。」
+  <span class="attribution">Dane Knecht（中譯）</span>
+</blockquote>
+
+<p>呢句係整集最可複製嘅管理洞察。大部分公司做 AI 轉型，係把 AI 塞進現有流程，期望每個步驟快 20%；Knecht 嘅做法係<strong>把流程壓縮成一個角色 + 一個工具</strong>。前者是效率改善，後者是組織拓撲改變。當然，代價是中間三個團隊嘅工作消失——這也是為什麼重組伴隨裁員。</p>
+
+<p>同樣邏輯出現在 Cloudflare OS：表面上係內部 AI 平台（防止客戶數據外洩、治理數據流），實際上係 reference architecture——把所有東西建在自家 developer platform 上（100+ 工具，由 storage、database 到 Durable Objects），讓其他公司 fork 出自家的 company OS。同時用來「教 agent 乜嘢令 Cloudflare 特別」：人類靠 Cloudflare University 入門，agent 靠文件化嘅原則入門。</p>
+
+<div class="section-title">十、token 治理：異常通知，而不是排行榜</div>
+
+<p>Cloudflare 無 token leaderboard，亦唔以用量評核；看的是 shipped 同 built。但有自動提示：一日用 <strong>$300</strong> 會收到 email「你知唔知？」；<strong>$500</strong> 通知經理；<strong>$1,000</strong> 通知 VP。Knecht 話大多數人只係唔知道，收到通知反而多謝你。</p>
+
+<p>呢個設計背後有一個重要判斷：<strong>token 是生產資料，不是績效指標</strong>。一旦把用量做成排行榜，工程師會優化排行榜，而不是優化產出。用異常通知代替配額，等於預設信任 + 例外管理。</p>
+
+<p>佢亦認為「要人類逐個任務揀模型」係荒謬，應該智能路由：規劃用 frontier、執行用 open-weight、審查與紅隊再回到 frontier。呢個三層路由其實對應三種不同嘅成本結構：frontier 買「判斷」、open-weight 買「吞吐」、frontier 再買「懷疑」。</p>
+
+<div class="data-point">
+  <span>Token 治理</span>異常門檻：<strong>$300/日</strong> → email；<strong>$500</strong> → 經理；<strong>$1,000</strong> → VP。無 leaderboard。模型路由：規劃 frontier／執行 open-weight／審查 frontier。
+</div>
+
+<div class="section-title">十一、爭議點：三個「18 個月」講緊唔同嘅事</div>
+
+<p>呢集最值得保留嘅唔係共識，而係幾條真實嘅張力。</p>
+
+<table>
+  <tr><th>爭議</th><th>Knecht 嘅立場</th><th>反方或對照</th></tr>
+  <tr>
+    <td>開放權重 vs 安全集中化</td>
+    <td>最終一切都會開放，因為壞人總有辦法拿到；封閉只會排除需要防禦的長尾。</td>
+    <td>正因為壞人拿得到，才更應減慢擴散速度，而不是主動開源。Knecht 嘅宿命論會加速能力擴散。</td>
+  </tr>
+  <tr>
+    <td>18 個月後會好轉</td>
+    <td>威脅高峰過去，資源回流產品。</td>
+    <td>Anthropic 副 CISO Jason Clinton 同日講「會先變得更差才變好」，叫安全主管向董事會要錢撐 18 個月。兩個「18 個月」：一個講威脅曲線，一個講防守方要捱幾久。</td>
+  </tr>
+  <tr>
+    <td>「agent kitties」敘事</td>
+    <td>攻擊者光譜扁平化，高中生用 agent 搵 bounty。</td>
+    <td>同日 Microsoft 將 ConnectWise 攻擊歸因於國家對齊嘅 Storm-0940，用 ARTEX 打 2,250+ tenant。把重心放在高中生，會低估有組織對手。</td>
+  </tr>
+  <tr>
+    <td>AI 與安全</td>
+    <td>AI 目前令軟件更唔安全（verbose、增加複雜度）。</td>
+    <td>Brockman 預測 2027 年企業安全 token 支出等於工程支出；Kurtz 講 breakout time 平均 29 分鐘、最快 27 秒。兩人都比 Knecht 更悲觀或更激進。</td>
+  </tr>
+</table>
+
+<p>把三集並讀，會見到一個少見嘅現象：三個人都同意「安全是 AI 的第一個 killer app」，但對<strong>誰付錢、付多久、付給誰</strong>嘅答案完全不同。Brockman 講的是企業預算轉移；Kurtz 講的是攻擊速度壓倒防禦；Knecht 講的是公用事業式分發。對賣方而言，三個答案都指向同一件事：未來兩年最確定嘅預算轉移，是安全 token、安全 agent、修補自動化、identity 治理。</p>
+
+<div class="section-title">十二、如果你要行動：五件可以立刻檢查的事</div>
+
+<ol>
+  <li><strong>數一數你的「七十年」。</strong>不是數代碼行數，而是列出所有「當時合理」嘅假設：弱隨機種子、預設權限、舊憑證、沒人敢動的 legacy service。呢份清單就是 agent 會幫對手翻出來嘅東西。</li>
+  <li><strong>把安全規則寫成十條可執行約束。</strong>不是 policy PDF，而是 agent 每次 review 都會跑嘅檢查。Cloudflare 叫它 Codex；你可以叫它 AGENTS.md 嘅 security section。</li>
+  <li><strong>檢查你的 zero trust 成熟度，而不是防火牆厚度。</strong>Knecht 明確講：已由 castle-and-moat 轉向 zero trust 嘅公司，底子比表面好。仍然靠周邊防禦嘅，才是危險那群。</li>
+  <li><strong>為 agent 流量準備收費軌道。</strong>如果你的內容或 API 對 agent 有價值，現在就應該想定「人類看廣告、agent 付微支付」嘅定價與結算，而不是等 robots.txt 被人繞過。</li>
+  <li><strong>用異常通知管理 token，不要用排行榜。</strong>設三個門檻（個人、經理、VP），預設信任，例外才介入。同時把模型路由寫成規則：規劃、執行、審查用不同層級。</li>
+</ol>
+
+<blockquote>
+  「工程師本質上是懶的——係好的那種懶。當他們發現別無他法，就會把那些事自動化掉。」
+  <span class="attribution">Dane Knecht，論為何危機能推動修補流程（中譯）</span>
+</blockquote>
+
+<p>呢句可以做全集結語。安全唔會因為大家突然變得有責任感而改善；它會因為<strong>唔改就出唔到貨</strong>而改善。Knecht 嘅樂觀不是對人性嘅樂觀，而是對激勵結構嘅樂觀：當修補成為出貨嘅前置條件，工程師就會把它自動化。問題只係，我哋有冇 18 個月。</p>
+
+<hr>
+
+<div class="highlight-box">
+  <strong>📊 一頁數字摘要</strong>
+  <ul>
+    <li>Log4j／Shellshock 級事件：<strong>一年一次</strong> → <strong>每週一次</strong>（部分未公開）</li>
+    <li>未來 18 個月工程時間投入安全：<strong>&gt;50%</strong>（Cloudflare keynote 數字）</li>
+    <li>存量債務：<strong>70 年</strong>嘅軟件要補</li>
+    <li>紅隊：<strong>1 隊</strong> → 明年底 <strong>4–5 隊</strong></li>
+    <li>公司規模 <strong>5,000 人</strong>；一年內招 <strong>1,000</strong> 個 intern（前一年 <strong>200</strong>）</li>
+    <li>Token 異常提示：<strong>$300/日</strong> → email；<strong>$500</strong> → 經理；<strong>$1,000</strong> → VP</li>
+    <li>eMudhra CA 密鑰：其中一把嘅種子係數字 <strong>4</strong></li>
+    <li>CDN 普及前全球約 <strong>3,000</strong> 個網站有大規模 CDN；現在數億</li>
+    <li>Storm-0940：ARTEX 框架打 <strong>2,250+</strong> 個 M365 tenant，每分鐘約 <strong>2,900</strong> 次登入</li>
+  </ul>
+</div>
+
+<footer>
+  <p>來源：No Priors 官方 RSS 節目簡介與章節（2026-10-23）· YouTube 自動轉錄稿（6VprwfSc4Xk，約 42,700 字元）· 主持 Sarah Guo，共同主持 Elad Gil</p>
+  <p style="margin-top:0.3rem;">深度復述由 Vee Mok 生成 · 2026-10-24 · 引文為轉錄稿英文原句之中譯，數字為受訪者口述</p>
+  <p style="margin-top:0.3rem;"><a href="../index.html">← 返回播客日報</a></p>
+</footer>
+
+</div>
+</body>
+</html>
