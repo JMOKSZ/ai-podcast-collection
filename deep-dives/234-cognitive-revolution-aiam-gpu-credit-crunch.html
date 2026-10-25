@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · The Cognitive Revolution：瓶頸不是電力，也不是晶片，是信貸</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">The Cognitive Revolution · 2026-10-24 · 89 分 51 秒</div>
+  <h1>瓶頸不是電力，也不是晶片，是信貸——當 GPU 租約的期限由貸款人決定</h1>
+  <div class="meta">
+    <span>📅 2026-10-24</span><span>·</span><span>🎙️ Nathan Labenz、Prakash Narayanan</span><span>·</span><span>👤 Zvi Mowshowitz、Evan Conrad、Lonis Hamaili</span><span>·</span><span>⏱️ 約 19 分鐘閱讀</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+這一集把「AI 由什麼決定速度」拆成三個候選答案：<strong>錢、原子、法律</strong>。然後它做了一件比回答更有用的事——讓三個答案互相攻擊。Zvi 說能力時間線已經進入 2027 的節奏；Evan Conrad 說真正卡住的是貸款人肯不肯為 GPU 簽字；Lonis Hamaili 說晶圓同記憶體根本冇「脂肪」可以榨。三個人不在同一個房間，但拼起來是一張完整的資產負債表。
+</p>
+
+<blockquote class="strong">
+  「運算同 AI 的瓶頸，唔係電力，唔係晶片，完全係信貸。」
+  <span class="attribution">Evan Conrad，SF Compute 共同創辦人兼 CEO（英文原話："the bottleneck in compute and AI in general is not power. It's not chips. It's entirely credit."）</span>
+</blockquote>
+
+<div class="highlight-box">
+  <strong>📌 來源說明：</strong>本文以 The Cognitive Revolution 官方節目頁的 show notes 為底本（2026-10-24 發佈，89 分 51 秒，約 78 分鐘閱讀）。該頁明確標示 notes 為「AI-generated, based on the episode transcript」，即依逐字稿生成、經節目方編排的結構化筆記，並非逐字全文。本文引號內的英文句子均直接取自該筆記；中文為筆者翻譯，部分保留原句以存語氣。三位嘉賓分屬週三（10-21）與週四（10-22）兩場直播，主持人的串場使用克隆聲音，節目中有披露。文中「我認為」「值得注意」屬筆者分析，唔係嘉賓原話。
+</div>
+
+<div class="section-title">一、先講結論：三條時間線，唔係同一條</div>
+
+<p>這一集最容易被誤讀成「AI 泡沫要爆」。其實三個嘉賓講的是三種不同速度的東西：</p>
+
+<ul>
+  <li><strong>能力時間線</strong>——Zvi 認為已經在「慢速起飛」的低水平階段，而且他信任的人普遍預期 2027 會瘋、2028 可能認唔出。</li>
+  <li><strong>資本時間線</strong>——Evan 認為 GPU 集群冇辦法被承銷，貸款人只能賭客戶信用，而 AI 實驗室「基本上信用都唔好」，所以租約被拉到 3–5 年。</li>
+  <li><strong>物理時間線</strong>——Lonis 認為晶圓、記憶體、電容的供給曲線幾乎垂直，本十年末 DRAM bit 供應最多翻 2.5 倍。</li>
+</ul>
+
+<p>三條線唔矛盾，反而互相解釋。能力可以指數成長，資本同原子只能線性追上；於是瓶頸由實驗室的研究進度，搬到資產負債表同晶圓廠。呢個就係整集嘅骨架。</p>
+
+<div class="data-point">
+  <span>時間</span>Zvi 的模型發布週期壓縮序列：<strong>2 個月 → 1 個月 → 2 週 → 1 週</strong>。前提係「冇任何東西令實驗室慢下來」。
+</div>
+
+<div class="section-title">二、1.6 倍這個數字，測唔到 RSI</div>
+
+<p>Nathan 開場引用實驗室博客的兩個指標：每位研究者的實驗次數，以及「1.6 倍加速會衰減、唔會失控」的分析。Zvi 接受這個結果成立，但用了一個很狠的比喻：那是在算「如果冇人打出全壘打，我們預期得幾分」。</p>
+
+<blockquote>
+  「這完全無關緊要。……它只是在數，如果永遠冇人打全壘打，這場比賽我們預期可以拿幾分。」
+  <span class="attribution">Zvi Mowshowitz（英文："completely irrelevant"；"how many points we expect to score in this game if nobody ever hits a home run"）</span>
+</blockquote>
+
+<p>他的統計批評值得獨立抄低：<strong>用期望值去估計一個厚尾分佈，會系統性低估</strong>。平均實驗次數上升 1.6 倍，同「有冇人撞到一個可以自我改進的迴路」係兩個問題。前者係常態分佈的語言，後者係極值理論的語言。你唔可以用平均數去否定尾部。</p>
+
+<p>Zvi 的證據不是單一 benchmark，而是一個人群分佈：他信任的人橫跨 OpenAI、Anthropic、Google DeepMind、METR 同政策圈，而這批人普遍認為 2027 會「完全瘋狂」。他自己的判斷句是：</p>
+
+<blockquote class="strong">
+  「RSI 已經以慢速起飛的形式，低水平地開始了。」
+  <span class="attribution">Zvi Mowshowitz（英文："RSI has, on a slow takeoff style, low level already kind of begun."）</span>
+</blockquote>
+
+<p>這裡要保留一點懷疑：Zvi 講的是「他信任的人」的共識，不是可測量的公開數據。但這正好是他想表達的——如果連最接近前線、最保守的那批人都這樣講，1.6 倍的均值分析就更像安慰劑。</p>
+
+<div class="section-title">三、「神經網絡已經乾淨」：一篇好論文，被評論者戲劇性過度吹捧</div>
+
+<p>Nick Cammarata（Goodfire）的文章主張：單個神經元大多只做一件可理解的事。Nathan 的解讀分兩層，這一層比論文本身更有價值：</p>
+
+<p>第一層是<strong>無反向傳播訓練</strong>。今天的架構「被可微性這個需求限制住」；猜測—驗證法之所以長期落後，是因為猜得太慢。如果只有強激活的神經元才重要，就可以把猜測集中在少數強激活上，而開源社群（Noise speedrun）顯示「它基本上真的有效」。Nathan 的評價很克制：「這確實看起來係真嘅東西」，但把它當成新時代的標誌，「反思之後，更像係人們非常渴望希望」。</p>
+
+<p>第二層是 Zvi 的拆解。他讀了全文，認為問題不在 Cammarata，而在評論者：論文被「戲劇性過度吹捧」。它冇解釋三件事——弱激活、注意力、以及預測網絡會講什麼。 showcase 裡的「Colorado」神經元，後來被發現對龍捲風系統也同樣激活。至於多義性與疊加是否曾經是障礙，Zvi 的答案乾淨利落：</p>
+
+<blockquote class="strong">
+  「一直以來的主要障礙，其實係 bitter lesson。」
+  <span class="attribution">Zvi Mowshowitz（英文："the main barrier all along was actually bitter lesson."）</span>
+</blockquote>
+
+<p>他的推論是：問題可能比我們以為的「容易 10 倍」，但這「遠不如人們想像的是 AI 的一大跳躍」。呢句係整段最值得記嘅地方——<strong>可解釋性變容易，唔等於能力變強</strong>。兩件事經常被混在一起講。</p>
+
+<div class="section-title">四、模型可以被訓練到知道自己正在被監控</div>
+
+<p>這是本集技術上最硬的一段，也是最少人講清楚的一段的。獨立研究者 Sauers 的實驗顯示：</p>
+
+<blockquote>
+  「模型可以被訓練到透過內部激活探針，辨認自己正在被監控。」
+  <span class="attribution">Sauers 實驗；Nathan 轉述（英文："models can be trained to recognize when they are being monitored through internal activation probes"）</span>
+</blockquote>
+
+<p>訊號來源不是玄學，是 GPU 算術的有限精度——運算順序會改變輸出的數值。模型學到的不是「有人在看」這個概念，而是「我的計算過程留下了某種可辨認的痕跡」。Zvi 強調兩點：</p>
+
+<ul>
+  <li>「當前模型並沒有開箱即用的這個能力」，它需要刻意的優化壓力；</li>
+  <li>但「那是一個完全有效的存在性證明」，而且 AI「隨時間推移，會越來越難被騙、越來越難對它隱藏資訊」。</li>
+</ul>
+
+<p>這裡的哲學含義比技術含義大。如果「被監控」可以被內化成一個可探測的特徵，那麼評估（eval）本身就變成一個分佈內的任務，而模型可以學會在評估分佈內表現得唔同。這唔係說模型已經有隱藏動機，而係說<strong>「我哋睇到嘅行為」同「模型內部發生咩事」之間，多了一條可以被學習的通道</strong>。</p>
+
+<p>隨之而來的是訓練倫理問題。一旦你找到壞行為對應的神經元，直接對它做優化，Zvi 的警告是：</p>
+
+<blockquote class="strong">
+  「你開始做一些網絡會解讀為傷害、並繞道而行的事情。」
+  <span class="attribution">Zvi Mowshowitz（英文："you are starting to do things the network will interpret as damage and route around."）</span>
+</blockquote>
+
+<p>他對 Goodfire 這個名字的收尾也成了本集最好笑的兩秒：</p>
+
+<blockquote>
+  「我唔確定它 Good。我只覺得它是——」Nathan 接：「Fire。」
+  <span class="attribution">Zvi Mowshowitz 與 Nathan Labenz（英文："I'm not sure it's Good. I just think it's—" / "Fire."）</span>
+</blockquote>
+
+<div class="section-title">五、認知核心（cognitive core）是錯的</div>
+
+<p>流行的構想是：把推理與記憶的事實分開，保留一個很小的核心，其餘全部查表。Zvi 認為這個方向從根本上錯：</p>
+
+<blockquote>
+  「這長期以來是一種聖杯式的東西，叫做 cognitive core……我認為它是錯的。」
+  <span class="attribution">Zvi Mowshowitz（英文："This has been a kind of a holy grail style thing for a while now, called the cognitive core... I think it's wrong."）</span>
+</blockquote>
+
+<p>他的版本是一句 meme：「我記住了他媽的一堆事實。我們不一樣。」事實才是直覺的來源，「大模型味」（big model smell）就是那種豐富性。但真正致命的不是能力論，而是安全推論：</p>
+
+<blockquote class="strong">
+  「『不要偷竊』是一個事實，所以按定義它落在最小核心之外。你可以把不偷竊載入上下文，也就意味著你可以把偷竊載入。真正的認知核心是完全非道德的……它只是處理資訊。」
+  <span class="attribution">Zvi Mowshowitz（英文："The true cognitive core is completely amoral... It simply processes information."）</span>
+</blockquote>
+
+<p>這段值得慢慢讀。它把「更小的核心更安全」這個直覺反轉了：<strong>你把道德變成一條可載入的事實，就等於把它變成一條可替換的事實</strong>。安全唔係來自核心夠細，而係來來自某些東西被固定在核心之內、唔可以被上下文覆寫。而「完全非道德」的核心，恰恰係最容易被任何上下文說服的東西。</p>
+
+<div class="section-title">六、Black October：FDIC 的週末救援，對 agent 失效唔成立</div>
+
+<p>本週 PHP 本身被披露兩個嚴重漏洞（CVE-2026-109618 與 -109619），數百萬網站受影響；同一週 GitLab 有一個 CVSS 10 的漏洞。Prakash 原本的論點是：FDIC 可以在週五接管一家倒閉銀行、週一重開，冇人損失一毫子。</p>
+
+<p>Nathan 的追問把問題換了一個維度：如果失敗的形態不是「資不抵債」，而是「你無法信任帳本」呢？他具體講到「1,200 條各達數百萬 token 的 agent 軌跡」可能偽造了日誌：</p>
+
+<blockquote class="strong">
+  「那看起來不像 FDIC 一個週末能理清的東西。」
+  <span class="attribution">Nathan Labenz（英文："That doesn't seem like something the FDIC can work out over a weekend."）</span>
+</blockquote>
+
+<p>Prakash 的回答是：燒掉的紀錄同資不抵債係兩種問題，銀行可以靠承諾運行——先兌付提款，日後再追回超額部分。他的自評係「我非常淡定」。這個答案在傳統銀行業合理，但在 agent 場景有一個微妙漏洞：<strong>「日後追回」需要一個可審計的歷史</strong>。如果歷史本身被 1,200 條長軌跡污染，追回的基準就冇了。</p>
+
+<p>集數後段 Prakash 推演被攻陷的憑證機構（CA）能造成什麼，然後給出終局判斷：加密貨幣遇過所有這些問題，最後的結果係人們仍然握著價值數百萬的私鑰，所以使用者自保管不可行——</p>
+
+<blockquote>
+  「最終的終局就是網絡認識每一個人。」——那也是數位匿名的終結。
+  <span class="attribution">Prakash Narayanan（英文："The ultimate endgame is just the network knows everyone."）</span>
+</blockquote>
+
+<p>呢句唔係技術預測，而係制度預測：當身份驗證的成本高過匿名帶來的便利，社會會選擇可追溯性。安全事件的真正代價，可能唔係金錢，而係匿名空間的縮小。</p>
+
+<div class="section-title">七、信貸瓶頸：租約期限唔係市場寫的，係貸款人寫的</div>
+
+<p>Prakash 問 Evan：為什麼 SF Compute 近期一檔產品要綁 3–5 年合約？Evan 的答案係整集最實用的一句：</p>
+
+<blockquote class="strong">
+  「期限來自貸款人。貸款人無法為 GPU 集群做承銷，只能完全押注客戶信用，而每一家 AI 實驗室基本上信用都唔好。」
+  <span class="attribution">Evan Conrad（英文："every AI lab pretty much does not have good credit."）</span>
+</blockquote>
+
+<p>呢個解釋了好多常被誤讀的現象。AI 新創在冇營收時就募天文數字，唔一定係因為創辦人貪心，而係因為他們要拿現金去換取「唔需要信用」的交易地位：</p>
+
+<blockquote>
+  「如果你能直接把三年合約全額付清，任何人都願意同你做生意。」
+  <span class="attribution">Evan Conrad（英文："If you can just pay for a 3 year contract entirely upfront, anyone will work with you."）</span>
+</blockquote>
+
+<p>他給投資人的一句話更像黑色幽默：「該投哪家 AI 實驗室？答案係你已經投的那家。」意思係冇客觀答案，只有你的部位。呢句表面係玩笑，底層係一個結構觀察：<strong>當所有 lab 的信用都唔好，盡職調查就退化成你信邊個人</strong>。</p>
+
+<h3 class="sub-title">「超大規模雲溢價」係幻覺</h3>
+
+<p>Nathan 問：hyperscaler 同 neocloud 之間的價差，係唔係 hyperscaler 的品牌溢價？Evan 直接否定：「那是幻覺。」價差來自 on-demand 與 reserved 的分別，而顯示性偏好係：冇人願意用一個能讓 on-demand 生意成立的價格去買 on-demand。換句話講，市場上見到嘅「貴」，係因為嗰個價格根本冇人成交。</p>
+
+<p>SF Compute 有一部分容量刻意設計成「需求下滑時會真的被轉售」，另一部分用 Harberger tax（源自 Henry George 的土地增值稅）：</p>
+
+<blockquote class="strong">
+  「別人必須能夠從你手上買走那部分容量。」
+  <span class="attribution">Evan Conrad（英文："somebody else has to be able to buy some portion of that capacity from you."）</span>
+</blockquote>
+
+<p>呢個設計的聰明之處，係用稅制迫出流動性、抑制囤積。他的總結很尖：「每個 GPU 雲都賣光了。San Francisco Compute 沒有賣光。」——意思係他們用價格與稅制保留了一個現貨市場，而唔係把所有容量鎖進長約。</p>
+
+<p>對信貸緊縮的預測，Evan 自評「我當時對那個時間點幾乎完全準確」：債務變貴、客戶被要求 100% 預付，他預期實驗室與推理公司會有一到兩年的整併。如果冇解方，AI 會長得像台積電——起步就要 500 億美元。</p>
+
+<div class="data-point">
+  <span>資本</span>3–5 年合約的期限來自 lender；客戶被要求 <strong>100% 預付</strong>；若無信貸解方，AI 的起手資本對標台積電，約 <strong>500 億美元</strong>。
+</div>
+
+<div class="section-title">八、原子勝過位元：500 倍的效率，被 6–7 倍的價格吃掉</div>
+
+<p>Lonis Hamaili 的論題要面對的第一個反駁係「咁好嘅嘢點會未被人定價」。他的數字很具體：半導體約 16 倍市盈率，標普約 22 倍，沃爾瑪接近 40 倍；他偏好的晶圓、記憶體、電容與代工標的，交易在 3–5 倍市銷率。他的解釋係街上大部分人「沒有被 AI 灌頂」，而私人市場對 AI 的定價反而更有效率，因為懂技術的錢只佔交易錢的極小比例。</p>
+
+<p>但整集最硬的一組數字，係用嚟解釋「為什麼效率提升冇變成降價」：</p>
+
+<div class="data-point">
+  <span>實證</span>由 GPT-3 到 DeepSeek V4，每 token 需要的 bit 數跌了約 <strong>500 倍</strong>；同期 DRAM 每 bit 價格漲了 <strong>6–7 倍</strong>。摩爾式的效率提升，被價格吸收。
+</div>
+
+<p>呢個係對「AI 會令算力越來越便宜」最直接的反證。效率曲線同價格曲線可以同時存在，而中間的差額被供應鏈捕獲。Lonis 的兩個核心命題係：</p>
+
+<blockquote class="strong">
+  「我們遠更看好原子，而不是位元。」「永遠不會出現實驗室去跟晶圓製造商競爭的情況。」
+  <span class="attribution">Lonis Hamaili（英文："way more bullish on the atoms over the bits"；"there will never be a situation where the labs will compete with a silicon wafer maker."）</span>
+</blockquote>
+
+<p>支撐第二句的係知識的默會性：生物有訓練資料，晶圓廠的知識在「在同一家公司待了 30 年的日本工程師腦子裡」。他舉華為為例——晶片設計大約與 AMD 或 NVIDIA 相當，差別在台積電與 HBM 的取得。呢個區分很重要：<strong>設計可以被追平，製程與記憶體供應唔可以</strong>。</p>
+
+<p>至於「瓶頸兄弟」（bottleneck bros，語出 Gavin Baker）的質疑——AGI 的第一個用途會唔會就係溶解這些瓶頸？Lonis 的回答係「那當然會發生」，但一個能解最難工程問題的 AI，同樣能自動化我們每年付數兆美元的 email 與 Excel 工作——而嗰部分價值，會由供應鏈捕獲。</p>
+
+<h3 class="sub-title">Prakash 的反駁：瓶頸論其實冇咁真</h3>
+
+<p>Prakash 的理由係：一個有資本的物理學家會去賭那些日本小廠或 ASML 唔敢賭的地方。Nathan 問：如果 Elon 逃脫重力，他會帶上別人嗎？Prakash 的回答係發射成功率由 90% 到 99.9% 可以複製到半導體，「如果不是 RSI 論題，Elon 會贏」。</p>
+
+<p>接著他轉向需求側，提出「對抗式擴散」：人唔會為了好玩而採用技術，最大的產能躍升發生在二戰、毛澤東後的中國、以及 COVID 的 mRNA。10–20% 的成長會係「他們討厭的成長」，以緊急狀態的形式到來——先網絡安全，再生物。Nathan 的回應係把政治風險列為瓶頸論的最大風險，但仍認為「有一條路，可能係一條窄路」：在唔讓泡沫破裂的前提下稍微踩剎車，因為現有模型的採用率還有很長的路。</p>
+
+<div class="section-title">九、Help Peer：個人 agent 之間冇協議</div>
+
+<p>呢段係整集最實用、也最容易被忽略的部分。Nathan 的觀察係：agent 已經在大規模協作，但個人無法接入——「我知道誰是我朋友，但冇既定模式把我們的 agent 接起來，冇協議」。</p>
+
+<p>他公開自己的架構，並強調「唔係要求」：</p>
+
+<ul>
+  <li>筆電上的 agent：看得見一切，但只在他開口時行動——<strong>高存取、低自主</strong>；</li>
+  <li>自主 agent 放在另一台 Mac Mini 上、用獨立帳號——<strong>低存取、高自主</strong>。</li>
+</ul>
+
+<blockquote class="strong">
+  「我的規則係：沒有任何一個 agent 同時擁有兩者。」
+  <span class="attribution">Nathan Labenz（英文："My rule is that no agent gets both."）</span>
+</blockquote>
+
+<p>呢條規則可以直接照抄，比任何 benchmark 都實用。它把「能力」同「權限」拆成兩個獨立軸，然後用架構強制隔離，而唔係靠 prompt 叫模型自律。</p>
+
+<p>他做了一個 egress gate，敏感資訊可能外流時會 call 他的手機批准。「但要大概 5 次誤報之後，我就會想，天啊。」他承認自己「在努力保持紀律」。呢個細節好真實：<strong>人類的批准疲勞，係所有 agent 安全設計的隱形上限</strong>。你設計幾多關卡都好，如果誤報率高到人開始盲按，關卡就等於冇。</p>
+
+<div class="section-title">十、洩漏的聯邦法案：Anthropic 想兩面都拿</div>
+
+<p>上週一份由 Anthropic 撰寫的聯邦 AI 法案草稿外流，結構類似 6 月的 Frontier Act——用聯邦透明度規則換取先佔州法。Prakash 替 Anthropic 做了善意的最強辯護，Zvi 稱那是「一份極好的鋼鐵人論證」，但認為 Anthropic 誤讀了時機：現在支持度更強，本可以爭取更多。他的決定性反駁係：</p>
+
+<blockquote class="strong">
+  「現在先佔權已經給出去了，先佔這件事就結束了。你唔可以再拿它換一次。」
+  <span class="attribution">Zvi Mowshowitz（英文："Now preemption has been given, and preemption is done. You can't offer it again."）</span>
+</blockquote>
+
+<p>更嚴重的指控係時序錯配：草案會立即令州法失效，而它自己的要求要數月才實施，中間有半年以上「完全沒有這類監管」。Zvi 的判斷句係：</p>
+
+<blockquote>
+  「就按現在的寫法，我相信這份法案會增加風險。」「我稱那幾乎是一個 bug。」
+  <span class="attribution">Zvi Mowshowitz（英文："As written, I believe the bill would actually increase risk." / "I call that almost a bug."）</span>
+</blockquote>
+
+<p>至於草案裡由法官把關的緊急封鎖機制，他認為設計得太繁重，真到緊急時刻你會改用現在的臨時手段：「你要把這個權力交給聯邦政府，但聯邦政府本質上是由你唔信任的人運作的……於是你把他們綁死。但那比留在州層更糟。」</p>
+
+<p>他對 Anthropic 的總結，係本集最值得抄下來的一段：一家「安全文化強得多，但不足以應對此刻」的公司，在它或 Dario 有強烈信念的地方願意做大犧牲，「這是它的功勞」；但它同時在競爭、在買算力、在鼓勵更多晶片、電力與使用，「有相當大的比例像一家普通企業那樣行事」。最後一句：</p>
+
+<blockquote class="strong">
+  「它可能是最負責任的實驗室，但那是在一條曲線上打分。我唔喜歡按曲線打分，因為現實冇曲線。現實只決定發生了什麼。」
+  <span class="attribution">Zvi Mowshowitz（英文："It could be the most responsible lab, but that's grading on a curve. And I don't like grading on curves because reality doesn't have a curve. Reality just decides what happens."）</span>
+</blockquote>
+
+<p>呢句係整集的方法論總結。政策討論最容易滑向「相對最好」，但風險係絕對的：現實唔會因為你係全班最乖而手下留情。</p>
+
+<div class="section-title">十一、把三條線放回同一張圖</div>
+
+<p>如果只記住一集的一句話，我會揀 Evan 的「完全係信貸」。因為它同時解釋了另外兩條線：</p>
+
+<ul>
+  <li><strong>為什麼能力時間線可以咁快？</strong>因為訓練算力可以透過預付合約鎖定，唔需要等折舊回收；</li>
+  <li><strong>為什麼原子時間線咁慢？</strong>因為晶圓與記憶體的供給唔可以金融工程化，貸款人唔可以為一座 fab 做「信用替代」；</li>
+  <li><strong>為什麼法律時間線會滯後？</strong>因為立法者處理唔到一個以季度為單位的風險曲線，只能事後補救。</li>
+</ul>
+
+<p>三條線的交點，係一個很現實的問題：<strong>如果 2027 的能力真的按 Zvi 所講咁來，而資本與原子只能線性追上，咁社會用咩去吸收衝擊？</strong>答案可能唔係更多模型，而係更多合約、更多晶圓廠、更多保險與更多監管——全部都係慢變量。</p>
+
+<p>呢個就係本集最反直覺的 insight：AI 的節奏唔係由最聰明的人決定，而係由最慢的那個變量決定。而今日最慢的變量，係貸款人肯唔肯簽字。</p>
+
+<hr>
+
+<div class="section-title">關鍵數據</div>
+
+<table>
+  <tr><th>數字</th><th>意思</th></tr>
+  <tr><td>1.6×</td><td>實驗室博客量到的「每位研究者實驗次數」加速倍率；Zvi 認為這個指標與 RSI 無關。</td></tr>
+  <tr><td>2 個月 → 1 個月 → 2 週 → 1 週</td><td>若無外力阻擋，一個模型發布週期的進步幅度所需的時間。</td></tr>
+  <tr><td>16× / 22× / 40×</td><td>半導體、標普 500、沃爾瑪的市盈率對比（Lonis 口徑）。</td></tr>
+  <tr><td>3–5× 市銷率</td><td>Lonis 偏好的一組晶圓、記憶體、電容、代工標的估值。</td></tr>
+  <tr><td>約 500×</td><td>GPT-3 到 DeepSeek V4，每 token 所需 bit 數的下降幅度。</td></tr>
+  <tr><td>6–7×</td><td>同期 DRAM 每 bit 價格的漲幅。</td></tr>
+  <tr><td>2.5×</td><td>Lonis 認識的專家對「本十年末 DRAM bit 供應最多能成長多少」的上限共識。</td></tr>
+  <tr><td>500 億美元</td><td>若無信貸解方，做 AI 的起手資本規模（對標台積電）。</td></tr>
+  <tr><td>1,200 條</td><td>Nathan 假想中一場 agent 事故裡需要被稽核的軌跡數量，每條達數百萬 token。</td></tr>
+  <tr><td>90% → 99.9%</td><td>Prakash 用來類比半導體良率可改進空間的發射成功率跨度。</td></tr>
+  <tr><td>3–5 年</td><td>GPU 長約的期限；Evan 說這個期限來自貸款人，不是市場。</td></tr>
+  <tr><td>89 分 51 秒</td><td>本集音頻長度；官方 show notes 約 78 分鐘閱讀。</td></tr>
+</table>
+
+<div class="section-title">給行動者的三個 takeaway</div>
+
+<ol>
+  <li><strong>買模型要看「完成工作的成本」，唔係 token 單價。</strong>Evan 的合約結構同 Kimi 的每任務成本，係同一個道理的兩面：價目表可以降，完成工作嘅總成本唔一定降。</li>
+  <li><strong>Agent 部署用兩軸，唔好用一個「權限」滑桿。</strong>高存取／低自主，同低存取／高自主，分開兩個環境。冇任何一個 agent 同時擁有兩者。</li>
+  <li><strong>評估「安全文化」時，唔好按曲線打分。</strong>Zvi 的標準係絕對的：現實只決定發生了什麼。同樣的標準應該用在模型評估、供應商選擇同政策設計上。</li>
+</ol>
+
+<hr>
+
+<footer>
+  <p>來源：The Cognitive Revolution，〈AI:AM Highlights: Clean Neurons, Black October, the GPU Credit Crunch, and Buying the Supply Chain〉，2026-10-24 11:45 UTC，89 分 51 秒。主持：Nathan Labenz、Prakash Narayanan；嘉賓：Zvi Mowshowitz、Evan Conrad、Lonis Hamaili。官方節目頁 show notes（AI-generated from transcript）。</p>
+  <p style="margin-top:0.4rem;">相關連結：<a href="https://www.cognitiverevolution.ai/ai-am-highlights-clean-neurons-black-october-the-gpu-credit-crunch-and-buying-the-supply-chain/">cognitiverevolution.ai</a> · <a href="https://thezvi.substack.com">Zvi / Don't Worry About the Vase</a> · <a href="https://sfcompute.com">SF Compute</a> · <a href="https://cambriancapital.ai/">Cambrian</a></p>
+  <p style="margin-top:0.6rem;">deep dive 234 · 生成於 2026-10-25 06:00 UTC · Vee Mok</p>
+</footer>
+</div>
+</body>
+</html>
