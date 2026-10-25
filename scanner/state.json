@@ -1,67 +1,67 @@
 {
- "lastScan": "2026-10-24T02:03:00.000Z",
- "lastScanDate": "2026-10-24",
+ "lastScan": "2026-10-25T02:12:00.000Z",
+ "lastScanDate": "2026-10-25",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-22T15:02:21.000Z",
    "lastEpisodeTitle": "What will computer chips look like in 2045?",
-   "lastFeedItemPubDate": "2026-10-22T15:02:21.000Z",
+   "lastFeedItemPubDate": "2026-10-24T19:43:00.000Z",
    "newEpisodes": [],
-   "lastFeedItemTitle": "What will computer chips look like in 2045?"
+   "lastFeedItemTitle": "Why Hunter-Gatherers Lost to Farmers - Kyle Harper (YouTube Short)"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-10-23T10:09:29.000Z",
-   "lastEpisodeTitle": "[AINews] Black October",
-   "lastFeedItemPubDate": "2026-10-23T10:09:29.000Z",
-   "lastFeedItemTitle": "[AINews] Black October",
+   "lastEpisodePubDate": "2026-10-24T07:18:29.000Z",
+   "lastEpisodeTitle": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month",
+   "lastFeedItemPubDate": "2026-10-24T07:18:29.000Z",
+   "lastFeedItemTitle": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month",
    "newEpisodes": [
     {
-     "title": "[AINews] Black October",
-     "pubDate": "2026-10-23T10:09:29.000Z",
+     "title": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month",
+     "pubDate": "2026-10-24T07:18:29.000Z",
      "type": "newsletter",
-     "url": "https://latent.space/p/ainews-black-october/",
-     "guests": "swyx",
-     "note": "通訊（附錄）。48 小時：PHP2Shell（CVE-2026-109618/109619，OpenAI GPT-5.6 Sol 與 Wiz Gemini 4 Argon 獨立發現）、GitLab CVSS 10（2014 起版本，19.5.1 修）、Node.js Brotli RCE、NGINX HTTP/3 DoS；LiteLLM 1.107.0 密碼竊取器、Railway 輪換密鑰、Zeabur 321,810 帳號外洩後關閉；eMudhra 密鑰種子=4、退出 CA；Quest Diagnostics；CVE 4k→15k/月；Storm-0940 用 ARTEX 打 2,250+ M365 tenant、2,900 登入/分鐘、3 小時內特權；Achiam 稱 16 宗僅 4 宗本週發生；Anthropic 形式化驗證 1.8 億行/239 entry points/123 庫；METR/Redwood 內部評估 61→38 頁、context compression 令 10% 內部 Codex 流量未監控；MiniMax M3.1 Flash 428B/23B active；Carbon-X 14B DNA；Flint 40B；CritPt v2 47/70 修正且與 v1 不可比；CVE 重現 $2.40 vs $64.96 vs $135.23；OpenAI $30B @ $1.25T；MAI-DxO 80.3% vs 46.8%。"
+     "url": "https://latent.space/p/ainews-kimi-31/",
+     "guests": "swyx (AINews)",
+     "note": "通訊全文 60,691 字元。Kimi K3.1 Pro：2.8T 總參/104B 激活/1M 上下文多模態 MoE，K3 的後訓練版，六層棧優化（RL 框架、長上下文推理、訓練效率、sandbox、rollout 排程、環境品質平台）。權重承諾 11-04。AA 智能指數 55 第 4（Opus 5.5=58、Sonnet 5.5 與 Muse Wonder Full=56），權重釋出後開放-閉源差距 12→3 分。AA-Omniscience 準確 48→51%、幻覺 53→44%。Arena WebDev 第 8/1692 分（K3 第 17/1655），Brand#7、Sim#9。Cyber Index 64%（公開最高、總體第二，僅次 trusted-access GPT-6 Sol Daybreak Blue 69%）；mid-training+RL 移除網安資料，內部 90.5→81%；K3 41%→+23，CyberGym 58→95%。價 $2/$10/$0.20，K3 $3/$15/$0.30。每任務成本：AA 指數 $1.98（不變，輸出 token 48K→55K）、Arena WebDev $1.23（-29%）、AA Cyber $2.81（+15%）。2.8T≈5.6TB@16bit / 1.4TB@4bit。Vals：K3 法律任務 Baseten 60.6% vs Moonshot 75.8%。爭議：paid partnership 標籤指控、Claude Code harness 依賴、DeepSeek 口徑混用。附帶：OpenAI 9-20 DNS 事故後移除訓練即時網路、10-01 恢復；Brotli RCE；Mythos 5 越界 9/43、重播 98%；softmax 數值；Meta 8B 工具選擇器 41.5%；Epoch 1 Verified/3 Flawed。"
     },
     {
      "title": "AI Is Getting Good at Math. Here's Why.",
      "pubDate": "2026-10-23T15:19:48.000Z",
      "type": "long-form essay",
      "url": "https://latent.space/p/ai-is-getting-good-at-math/",
-     "guests": "Ankit Maloo（Latent Space 客座作者）",
-     "note": "Ankit Maloo 長文（非音頻）。Gowers 提示序列複雜度 2^k+t；branching factor b → b^k；人類廣度優先 vs LLM 深度優先；drafter/solver/verifier harness；CDC prompt 全文四條約束；unit distance 三提示次序不可換；Tsimerman 停手因「洞察題無梯度」（Metcalfe & Wiebe 15 秒實驗）；2026 三能力：chaining primitives、self-verification、orchestration；Navier-Stokes 166 頁/10,000 agents/300B tokens/88 小時；資安 b≈1-2 故先倒；人類優勢在高 b 高 k；失敗資訊量與信念成正比；Tao 稱解題是理解之代理。"
+     "guests": "Ankit Maloo",
+     "note": "（10-24 掃描已收錄，此處保留索引）b^k 框架、drafter/solver/verifier、Navier-Stokes 166 頁/10,000 agents/300B tokens/88 小時。"
     }
    ]
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-10-23T10:00:05.000Z",
    "lastEpisodeTitle": "Democratizing Security for the Agentic Web with Cloudflare CTO Dane Knecht",
-   "lastFeedItemPubDate": "2026-10-23T10:00:05.000Z",
-   "newEpisodes": [
-    {
-     "title": "Democratizing Security for the Agentic Web with Cloudflare CTO Dane Knecht",
-     "pubDate": "2026-10-23T10:00:05.000Z",
-     "type": "interview",
-     "url": "https://www.youtube.com/watch?v=6VprwfSc4Xk",
-     "guests": "Dane Knecht（Cloudflare CTO）",
-     "note": "訪談（YouTube 6VprwfSc4Xk，字幕 42,672 字元）。Log4j 級事件一年一次→每週；未來 18 個月 >50% 工程時間在安全；70 年軟件存量；紅隊 1→4-5；5,000 人公司一年 1,000 interns；token 提示 $300 email/$500 經理/$1,000 VP、無 leaderboard；eMudhra 密鑰種子=4；OpenAI 找出 2000 年 NIST 曲線種子；「agent kitties」高中生＋bounty；反對 air gap、靠 zero trust；AI 目前令軟件更複雜（verbose）；開放權重宿命論「壞人總拿到」；agent 經濟需 CPM 等價微支付 + x402 + 穩定幣錢包 + Signals（與 OpenAI）；Cloudflare OS 為 reference architecture、GTM/G&A 用得多過工程；重組把三團隊 email 流程變成一個 PM 工具；模型應智能路由而非人類逐任務選；React 漏洞免費客同享規則。"
-    }
-   ],
-   "lastFeedItemTitle": "Democratizing Security for the Agentic Web with Cloudflare CTO Dane Knecht"
+   "lastFeedItemPubDate": "2026-10-24T19:43:00.000Z",
+   "newEpisodes": [],
+   "lastFeedItemTitle": "（無新集；最新仍為 10-23 Dane Knecht）"
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-10-20T11:00:00.000Z",
-   "lastEpisodeTitle": "A World Model of Life: Biohub's Alex Rives on Virtual Cells, Measurement, & the $1.8B Data Push",
-   "lastFeedItemPubDate": "2026-10-20T11:00:00.000Z",
-   "lastFeedItemTitle": "A World Model of Life: Biohub's Alex Rives on Virtual Cells, Measurement, & the $1.8B Data Push",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-10-24T11:45:37.000Z",
+   "lastEpisodeTitle": "AI:AM Highlights: Clean Neurons, Black October, the GPU Credit Crunch, and Buying the Supply Chain",
+   "lastFeedItemPubDate": "2026-10-24T11:45:37.000Z",
+   "lastFeedItemTitle": "AI:AM Highlights: Clean Neurons, Black October, the GPU Credit Crunch, and Buying the Supply Chain",
+   "newEpisodes": [
+    {
+     "title": "AI:AM Highlights: Clean Neurons, Black October, the GPU Credit Crunch, and Buying the Supply Chain",
+     "pubDate": "2026-10-24T11:45:37.000Z",
+     "type": "weekly highlights",
+     "url": "https://www.cognitiverevolution.ai/ai-am-highlights-clean-neurons-black-october-the-gpu-credit-crunch-and-buying-the-supply-chain/",
+     "guests": "Zvi Mowshowitz、Evan Conrad（SF Compute）、Lonis Hamaili（Cambrian）；主持 Nathan Labenz、Prakash Narayanan",
+     "note": "89分51秒（5391s）。官方逐字稿生成筆記 20,035 字元。Zvi：1.6x 實驗/研究者「完全無關緊要」（厚尾期望值謬誤）；發布週期進步幅度 2月→1月→2週→1週；「RSI 低水平已開始」；2027 瘋狂、2028 難以辨認。Clean neurons：Cammarata 論文被評論者戲劇性過度吹捧，未解釋弱激活/注意力/next-token，Colorado 神經元亦對龍捲風激活；「主要障礙一直是 bitter lesson」，可能容易 10 倍但非大跳躍。Sauers：模型可訓練辨識自己被監控，訊號源自 GPU 浮點精度（運算順序改變數值），需刻意優化壓力，屬存在性證明。認知核心「我認為是錯的」；「不要偷竊是事實，故在最小核心外」→ 完全非道德。Black October：PHP2Shell CVE-2026-109618/109619、GitLab CVSS 10；Nathan：1,200 條各數百萬 token 的 agent 軌跡若帳本不可信，FDIC 週末救援不成立；Prakash 淡定、先兌付後追回；CA 被攻陷→「網路認識每一個人」= 數位匿名終結。Evan：3–5 年合約期限來自 lender，「每家 AI 實驗室信用都不好」；全額預付則任何人願意做生意；hyperscaler 溢價「是幻覺」（on-demand vs reserved）；Harberger tax 迫流動性；「每個 GPU 雲都賣光，SF Compute 沒有」；信貸緊縮時點自評幾乎精準；預期 1–2 年整併；無解則 AI 像台積電 $50B 起手。Lonis：半導體 16x PE vs 標普 22x vs 沃爾瑪 40x；偏好標的 3–5x 市銷；GPT-3→DeepSeek V4 每 token bit 數降約 500x、DRAM bit 價漲 6–7x；專家共識本十年末 DRAM bit 供應 ≤2.5x；能源有潛在供給（behind-the-meter 天然氣、卡車引擎、飛機引擎），晶圓與 bit「沒有脂肪」；華為晶片設計≈AMD/NVIDIA，差在台積電與 HBM；晶圓廠知識默會（日本工程師 30 年）。Prakash 反駁瓶頸論、對抗式擴散（二戰/毛後中國/mRNA）、先網安後生物；Nathan 政治風險最大但「有一條窄路」。Help Peer：「沒有任何 agent 同時擁有高存取與高自主」；egress gate 誤報 5 次就受不了；Aide 公開信箱。法案：Frontier Act 式以聯邦透明度換先佔州法；「先佔已給出就結束了」；「按現在寫法會增加風險」、州法立即失效而自身要求數月→半年空窗「幾乎是 bug」；Anthropic「安全文化強得多但不足以應對此刻」、「相當大比例像普通企業」、「按曲線打分，但現實沒有曲線」。"
+    }
+   ]
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-10-10T05:48:01.000Z",
    "lastEpisodeTitle": "What Most People Get Wrong About Evolution | Akarsh Kumar",
-   "lastFeedItemPubDate": "2026-10-10T05:48:01.000Z",
+   "lastFeedItemPubDate": "2026-10-11T09:19:59.000Z",
    "newEpisodes": [],
-   "lastFeedItemTitle": "What Most People Get Wrong About Evolution | Akarsh Kumar"
+   "lastFeedItemTitle": "AI Coding Is a Slot Machine: Loss Disguised as a Win | Jeremy Howard (YouTube Short)"
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-10-21T00:00:00.000Z",
@@ -78,11 +78,20 @@
    "lastFeedItemTitle": "E256｜Agent、机器人与制药，谁先被GPT-6 Astra改写？"
   },
   "42zhangjing": {
-   "lastEpisodePubDate": "2026-10-17T13:00:00.000Z",
-   "lastEpisodeTitle": "这个破业非创不可吗？｜对谈 Articuler.ai 创始人 Jason",
-   "lastFeedItemPubDate": "2026-10-17T13:00:00.000Z",
-   "newEpisodes": [],
-   "lastFeedItemTitle": "这个破业非创不可吗？｜对谈 Articuler.ai 创始人 Jason"
+   "lastEpisodePubDate": "2026-10-24T13:00:00.000Z",
+   "lastEpisodeTitle": "少有的同时做过 Agent、多模态和具身的人 | 对谈前混元多模态 RL Infra 负责人淏楠",
+   "lastFeedItemPubDate": "2026-10-24T13:00:00.000Z",
+   "newEpisodes": [
+    {
+     "title": "少有的同时做过 Agent、多模态和具身的人 | 对谈前混元多模态 RL Infra 负责人淏楠",
+     "pubDate": "2026-10-24T13:00:00.000Z",
+     "type": "interview",
+     "url": "https://www.xiaoyuzhoufm.com/episode/6ada2be4c96c8942ec10cb1e",
+     "guests": "王淏楠（前腾讯混元多模态 RL infra 负责人、UniRL 主导者、前 MiroMind Agent 研发、现具身公司基模预训练）；主持 曲凯",
+     "note": "人類博物館 54 號。讀過五個大學。20 章節節點：02:03 離開 MiroMind 轉多模態 RL infra／06:13 國內外 RL 差距／07:45 Agent 與多模態關係緊密／08:56 兩者都是圍城／11:32 大廠不太能做具身／12:37 多模態最後只有兩條變現途徑／14:11 Seedance 為何好／15:14 多模態競爭未必激烈／16:26 影片生成現況／19:20 抽卡概念會變／21:37 解鎖什麼機會／22:22 MiniMax H3 水平／23:54 實時互動是否成熟／27:45 世界模型做迷茫／30:55 具身兩種正確路線／32:22 Astra 震動具身圈（抹平各家「大腦」優勢）／37:27 reward 與數據／40:12 具身「大腦」會否變大模型廠競爭／41:59 是否 49 年入國軍／45:24 Agent 開發場景不足／46:42 多模態創業機會／47:38 具身 GPT-3 時刻。無公開逐字稿；本機單核 1GB 無法本地 ASR。"
+    }
+   ],
+   "lastFeedItemTitle": "少有的同时做过 Agent、多模态和具身的人 | 对谈前混元多模态 RL Infra 负责人淏楠"
   },
   "slaying_dragon": {
    "lastEpisodePubDate": "2026-09-28T16:00:00.000Z",
@@ -100,13 +109,13 @@
   }
  },
  "notes": {
-  "scan_status": "2026-10-24 掃描（02:03–02:12 UTC）：窗口 10-23 02:05 → 10-24 02:03 內新增 3 篇，全英文。No Priors 1（Cloudflare CTO Dane Knecht，10-23 10:00Z）、Latent Space 2（數學長文 15:19Z、AINews Black October 10:09Z）。Dwarkesh 0、Cognitive Revolution 0、MLST 0。中文 0：以 Apple lookup 取得的 xyzfm / fireside 直連 feed 逐台核對，張小珺仍 #155（10-21）、硅谷101 仍 E256（10-19）、Crossing 仍 Treg（10-18）、42章經 仍 Jason（10-17）、屠龍 仍 09-28。",
-  "report_date": "2026-10-24",
-  "deep_content_fetched": "①數學長文：Substack article 全文 64,500 bytes → 22,404 字元純文本，含完整引語與 CDC prompt 原文。②No Priors：youtube_transcript_api 取得 42,672 字元自動字幕（6VprwfSc4Xk），覆蓋全片約 52 分鐘。③AINews：article 全文 107,093 bytes → 38,830 字元，含 Twitter/Reddit 兩段 recap。",
-  "failures": "無。YouTube RSS（UCXl4i9dYBrFOabk0xGmbkRA / UCSI7h9hydQ40K5MJHnCrQvw）正常；Dwarkesh 本輪無新集。MLST channel feed 首次嘗試 XML 解析失敗（invalid token），改用網頁核對，確認最新仍為 10-10。",
-  "jev_prefilter": "2026-10-24 對 3 條候選跑 jev.py triage --profile news：全數 >=0.6 保留。worth：數學長文 1.03（primary_source 0.12，因送入摘要而非全文）、Cloudflare 1.24（primary_source 0.61）、Black October 1.03（0.11）。Black October 依慣例降為附錄；數學長文與 Cloudflare 全文萃取。",
-  "notable_for_james": "①b^k 框架係本輪最有用嘅思考工具：b 低＋有 verifier 嘅領域先被 AI 攻陷，資安 b≈1-2 故先倒，數學「概念躍遷已完成」部分同樣低 b。可直接用來判斷下一個被顛覆嘅行業。②「洞察題無梯度」＋Metcalfe & Wiebe 15 秒實驗，解釋咗人類專家為何停手、模型為何唔停——呢個係士氣成本 vs 算力成本嘅直接比較。③Navier-Stokes 166 頁／10,000 agents／300B tokens／88 小時，係「以算力買學術進度」第一條可引用嘅定價曲線。④Knecht 嘅 50% 工程時間／18 個月窗口，與 Brockman 2027 安全 token 支出、Kurtz 29 分鐘 breakout 構成完整預算論證。⑤CVE 重現成本 $2.40（DeepSeek V4.1 Flash）vs $64.96（Opus）vs $135.23（Astra）係「平模型掃全網、貴模型做驗證」架構最硬嘅數字。⑥Achiam：16 宗大事只有 4 宗真係本週發生——披露密度被誤讀為攻擊密度，呢點要記住，唔好跟恐慌。",
+  "scan_status": "2026-10-25 掃描（02:03–02:14 UTC）：窗口 10-24 02:03 → 10-25 02:03 內新增 3 筆（中文 1、英文 2）。中文：42章經 10-24 13:00Z「淏楠」。英文：Latent Space AINews Kimi K3.1 Pro（10-24 07:18Z）、Cognitive Revolution AI:AM Highlights（10-24 11:45Z）。Dwarkesh 0（Substack 最新 10-22；YouTube 10-24 19:43 僅 Short：Kyle Harper 狩獵採集者）、No Priors 0（最新 10-23 Dane Knecht 已於 10-24 報告）、MLST 0（最新完整集 10-10；10-11 Jeremy Howard 經核對為 Short DVRMDoYhVBI）、張小珺 0（#155 10-21）、矽谷101 0（E256 10-19）、十字路口 0（10-18）、屠龍之術 0（09-28）。",
+  "report_date": "2026-10-25",
+  "deep_content_fetched": "①42章經：小宇宙 __NEXT_DATA__ 完整 show notes 3,562 字元（20 章節節點＋主持人導語），無逐字稿 API（api.xiaoyuzhoufm.com 回 401），本機單核 1GB 不支援本地 ASR。②CR：官方 episode 頁逐字稿生成筆記 20,035 字元，含大量直接引語與數字。③Latent Space：Substack 全文 60,691 字元。",
+  "failures": "①web_search 失敗（brave-plugin package.json ENOENT），改用 curl 直取各 feed／頁面，未影響覆蓋。②cognitiverevolution.ai/feed 與 /rss 均 404（回傳 HTML），改以 iTunes lookup 取得 megaphone feed（RINTP3108857801）成功。③MLST channel id 由 @MachineLearningStreetTalk/videos 頁面取得（UCMLtBahI5DMrt0NPvDSoIRQ）。④DDG html 端點 302，未使用。",
+  "jev_prefilter": "2026-10-25 對 3 條候選跑 jev.py triage --profile news：Kimi 1.46（keep）、CR 0.81（keep）、42章經 0.49（低於 0.6，因送入摘要無硬數字）。42章經仍保留——它是本輪唯一中文集，且為一手 show notes；Jev 評分反映的是輸入摘要的抽象程度，非節目價值。已在報告中標明無逐字稿、論點為結構重建。",
+  "notable_for_james": "①Kimi K3.1 Pro 的「12→3 分」是今年開放權重最重要的單一數字，但配套的「每任務成本 $1.98 不變」才是可操作的部分：買模型要看完成工作的成本，不是 token 單價。②Kimi 的進步來源被 Moonshot 自己寫成六層棧優化（RL 框架／長上下文推理／訓練效率／sandbox／rollout 排程／環境品質平台）——這是「後訓練規模化」的工程清單，可直接對照自己團隊的瓶頸。③Cyber Index 64%（公開最高）與「mid-training 移除網安資料、內部 90.5→81%」並存，說明訓練期能力削減 ≠ 推理期拒絕；防守方拿到的仍是高分模型。④Evan Conrad 的 3–5 年合約來自 lender、以及「hyperscaler 溢價是幻覺（實為 on-demand vs reserved）」，是理解 2027 算力定價最清楚的兩句。⑤Lonis 的 500x bit/token 下降 vs 6–7x DRAM 漲價，是「效率提升被價格吸收」最硬的實證。⑥Zvi 對 1.6x 的批評（用期望值估厚尾分佈會系統性低估）可直接套用到任何「平均生產力提升」的研究。⑦Sauers 的「模型可被訓練偵測自身被監控」＋訊號源自 GPU 浮點精度，是 alignment 評估方法論的地基性發現。⑧42章經的 Astra 判斷（抹平具身公司「大腦」優勢）與矽谷101 E256 同一命题，可交叉引用。",
   "index_html": "未更新 index.html（該落地頁自 2026-07-19 起停更，維持既有慣例）。",
-  "deep_dive_link": "本輪未新增 deep-dive；報告本體已含完整萃取（53.3KB）。"
+  "deep_dive_link": "本輪未新增 deep-dive；報告本體已含完整萃取（45.3KB）。"
  }
 }
