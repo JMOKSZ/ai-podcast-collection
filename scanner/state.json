@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-10-25T02:12:00.000Z",
- "lastScanDate": "2026-10-25",
+ "lastScan": "2026-10-26T02:11:00.000Z",
+ "lastScanDate": "2026-10-26",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-22T15:02:21.000Z",
@@ -14,24 +14,7 @@
    "lastEpisodeTitle": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month",
    "lastFeedItemPubDate": "2026-10-24T07:18:29.000Z",
    "lastFeedItemTitle": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month",
-   "newEpisodes": [
-    {
-     "title": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month",
-     "pubDate": "2026-10-24T07:18:29.000Z",
-     "type": "newsletter",
-     "url": "https://latent.space/p/ainews-kimi-31/",
-     "guests": "swyx (AINews)",
-     "note": "通訊全文 60,691 字元。Kimi K3.1 Pro：2.8T 總參/104B 激活/1M 上下文多模態 MoE，K3 的後訓練版，六層棧優化（RL 框架、長上下文推理、訓練效率、sandbox、rollout 排程、環境品質平台）。權重承諾 11-04。AA 智能指數 55 第 4（Opus 5.5=58、Sonnet 5.5 與 Muse Wonder Full=56），權重釋出後開放-閉源差距 12→3 分。AA-Omniscience 準確 48→51%、幻覺 53→44%。Arena WebDev 第 8/1692 分（K3 第 17/1655），Brand#7、Sim#9。Cyber Index 64%（公開最高、總體第二，僅次 trusted-access GPT-6 Sol Daybreak Blue 69%）；mid-training+RL 移除網安資料，內部 90.5→81%；K3 41%→+23，CyberGym 58→95%。價 $2/$10/$0.20，K3 $3/$15/$0.30。每任務成本：AA 指數 $1.98（不變，輸出 token 48K→55K）、Arena WebDev $1.23（-29%）、AA Cyber $2.81（+15%）。2.8T≈5.6TB@16bit / 1.4TB@4bit。Vals：K3 法律任務 Baseten 60.6% vs Moonshot 75.8%。爭議：paid partnership 標籤指控、Claude Code harness 依賴、DeepSeek 口徑混用。附帶：OpenAI 9-20 DNS 事故後移除訓練即時網路、10-01 恢復；Brotli RCE；Mythos 5 越界 9/43、重播 98%；softmax 數值；Meta 8B 工具選擇器 41.5%；Epoch 1 Verified/3 Flawed。"
-    },
-    {
-     "title": "AI Is Getting Good at Math. Here's Why.",
-     "pubDate": "2026-10-23T15:19:48.000Z",
-     "type": "long-form essay",
-     "url": "https://latent.space/p/ai-is-getting-good-at-math/",
-     "guests": "Ankit Maloo",
-     "note": "（10-24 掃描已收錄，此處保留索引）b^k 框架、drafter/solver/verifier、Navier-Stokes 166 頁/10,000 agents/300B tokens/88 小時。"
-    }
-   ]
+   "newEpisodes": []
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-10-23T10:00:05.000Z",
@@ -45,16 +28,7 @@
    "lastEpisodeTitle": "AI:AM Highlights: Clean Neurons, Black October, the GPU Credit Crunch, and Buying the Supply Chain",
    "lastFeedItemPubDate": "2026-10-24T11:45:37.000Z",
    "lastFeedItemTitle": "AI:AM Highlights: Clean Neurons, Black October, the GPU Credit Crunch, and Buying the Supply Chain",
-   "newEpisodes": [
-    {
-     "title": "AI:AM Highlights: Clean Neurons, Black October, the GPU Credit Crunch, and Buying the Supply Chain",
-     "pubDate": "2026-10-24T11:45:37.000Z",
-     "type": "weekly highlights",
-     "url": "https://www.cognitiverevolution.ai/ai-am-highlights-clean-neurons-black-october-the-gpu-credit-crunch-and-buying-the-supply-chain/",
-     "guests": "Zvi Mowshowitz、Evan Conrad（SF Compute）、Lonis Hamaili（Cambrian）；主持 Nathan Labenz、Prakash Narayanan",
-     "note": "89分51秒（5391s）。官方逐字稿生成筆記 20,035 字元。Zvi：1.6x 實驗/研究者「完全無關緊要」（厚尾期望值謬誤）；發布週期進步幅度 2月→1月→2週→1週；「RSI 低水平已開始」；2027 瘋狂、2028 難以辨認。Clean neurons：Cammarata 論文被評論者戲劇性過度吹捧，未解釋弱激活/注意力/next-token，Colorado 神經元亦對龍捲風激活；「主要障礙一直是 bitter lesson」，可能容易 10 倍但非大跳躍。Sauers：模型可訓練辨識自己被監控，訊號源自 GPU 浮點精度（運算順序改變數值），需刻意優化壓力，屬存在性證明。認知核心「我認為是錯的」；「不要偷竊是事實，故在最小核心外」→ 完全非道德。Black October：PHP2Shell CVE-2026-109618/109619、GitLab CVSS 10；Nathan：1,200 條各數百萬 token 的 agent 軌跡若帳本不可信，FDIC 週末救援不成立；Prakash 淡定、先兌付後追回；CA 被攻陷→「網路認識每一個人」= 數位匿名終結。Evan：3–5 年合約期限來自 lender，「每家 AI 實驗室信用都不好」；全額預付則任何人願意做生意；hyperscaler 溢價「是幻覺」（on-demand vs reserved）；Harberger tax 迫流動性；「每個 GPU 雲都賣光，SF Compute 沒有」；信貸緊縮時點自評幾乎精準；預期 1–2 年整併；無解則 AI 像台積電 $50B 起手。Lonis：半導體 16x PE vs 標普 22x vs 沃爾瑪 40x；偏好標的 3–5x 市銷；GPT-3→DeepSeek V4 每 token bit 數降約 500x、DRAM bit 價漲 6–7x；專家共識本十年末 DRAM bit 供應 ≤2.5x；能源有潛在供給（behind-the-meter 天然氣、卡車引擎、飛機引擎），晶圓與 bit「沒有脂肪」；華為晶片設計≈AMD/NVIDIA，差在台積電與 HBM；晶圓廠知識默會（日本工程師 30 年）。Prakash 反駁瓶頸論、對抗式擴散（二戰/毛後中國/mRNA）、先網安後生物；Nathan 政治風險最大但「有一條窄路」。Help Peer：「沒有任何 agent 同時擁有高存取與高自主」；egress gate 誤報 5 次就受不了；Aide 公開信箱。法案：Frontier Act 式以聯邦透明度換先佔州法；「先佔已給出就結束了」；「按現在寫法會增加風險」、州法立即失效而自身要求數月→半年空窗「幾乎是 bug」；Anthropic「安全文化強得多但不足以應對此刻」、「相當大比例像普通企業」、「按曲線打分，但現實沒有曲線」。"
-    }
-   ]
+   "newEpisodes": []
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-10-10T05:48:01.000Z",
@@ -81,16 +55,7 @@
    "lastEpisodePubDate": "2026-10-24T13:00:00.000Z",
    "lastEpisodeTitle": "少有的同时做过 Agent、多模态和具身的人 | 对谈前混元多模态 RL Infra 负责人淏楠",
    "lastFeedItemPubDate": "2026-10-24T13:00:00.000Z",
-   "newEpisodes": [
-    {
-     "title": "少有的同时做过 Agent、多模态和具身的人 | 对谈前混元多模态 RL Infra 负责人淏楠",
-     "pubDate": "2026-10-24T13:00:00.000Z",
-     "type": "interview",
-     "url": "https://www.xiaoyuzhoufm.com/episode/6ada2be4c96c8942ec10cb1e",
-     "guests": "王淏楠（前腾讯混元多模态 RL infra 负责人、UniRL 主导者、前 MiroMind Agent 研发、现具身公司基模预训练）；主持 曲凯",
-     "note": "人類博物館 54 號。讀過五個大學。20 章節節點：02:03 離開 MiroMind 轉多模態 RL infra／06:13 國內外 RL 差距／07:45 Agent 與多模態關係緊密／08:56 兩者都是圍城／11:32 大廠不太能做具身／12:37 多模態最後只有兩條變現途徑／14:11 Seedance 為何好／15:14 多模態競爭未必激烈／16:26 影片生成現況／19:20 抽卡概念會變／21:37 解鎖什麼機會／22:22 MiniMax H3 水平／23:54 實時互動是否成熟／27:45 世界模型做迷茫／30:55 具身兩種正確路線／32:22 Astra 震動具身圈（抹平各家「大腦」優勢）／37:27 reward 與數據／40:12 具身「大腦」會否變大模型廠競爭／41:59 是否 49 年入國軍／45:24 Agent 開發場景不足／46:42 多模態創業機會／47:38 具身 GPT-3 時刻。無公開逐字稿；本機單核 1GB 無法本地 ASR。"
-    }
-   ],
+   "newEpisodes": [],
    "lastFeedItemTitle": "少有的同时做过 Agent、多模态和具身的人 | 对谈前混元多模态 RL Infra 负责人淏楠"
   },
   "slaying_dragon": {
@@ -101,11 +66,20 @@
    "lastFeedItemTitle": "当AI开始设计芯片---聊聊EDA与AI时代的芯片设计"
   },
   "crossing": {
-   "lastEpisodePubDate": "2026-10-18T16:00:00.000Z",
-   "lastEpisodeTitle": "新的创业机会，正在 Claude Code 和 Codex 周围长出来｜对谈 Treg",
-   "lastFeedItemPubDate": "2026-10-18T16:00:00.000Z",
-   "newEpisodes": [],
-   "lastFeedItemTitle": "新的创业机会，正在 Claude Code 和 Codex 周围长出来｜对谈 Treg"
+   "lastEpisodePubDate": "2026-10-25T16:00:00.000Z",
+   "lastEpisodeTitle": "AI 时代，PhD 路上的 10 个关键问题｜对谈李磊：港大 PhD、小米 MiMo 研究员",
+   "lastFeedItemPubDate": "2026-10-25T16:00:00.000Z",
+   "newEpisodes": [
+    {
+     "title": "AI 时代，PhD 路上的 10 个关键问题｜对谈李磊：港大 PhD、小米 MiMo 研究员",
+     "pubDate": "2026-10-25T16:00:00.000Z",
+     "type": "interview",
+     "url": "https://www.xiaoyuzhoufm.com/episode/6add84e197726cd467573cf1",
+     "guests": "李磊（小米 MiMo 大模型后训练研究员、香港大学在读博士、北大出身、EMNLP 最佳论文）；主持 杨远骋 Koji",
+     "note": "51分50秒（3110s）。18 章節節點：00:23 快問快答／02:29 北大到港大 EMNLP 最佳論文開局／03:28 AI 時代 PhD 怎麼拿理想結果／08:07 AI 論文大水漫灌頂會怎麼辦／12:16「大粉理論」小紅書粉絲>論文引用／16:50 入學到畢業要過哪幾關／20:08 沒論文沒實習怎麼冷啟動／25:28 選學校還是選導師／28:12 慢科研 or 快科研／31:08 內地香港美國去哪讀／35:27 導師創業 PhD 得到什麼／36:52 本科能進 AI Labs 還要讀 PhD 嗎／39:58 小米 MiMo 為何直播後訓練／42:03 數據公司高估值能持續多久／46:00 RSI／47:46 Video-MME 怎樣做出有影響力的 Benchmark／50:20 給高三生的專業建議／51:24 飯要吃覺要睡。無公開逐字稿（小宇宙 transcript 已啟用但接口 401；YouTube oDdQGehy7uQ 無字幕）。"
+    }
+   ],
+   "lastFeedItemTitle": "AI 时代，PhD 路上的 10 个关键问题｜对谈李磊：港大 PhD、小米 MiMo 研究员"
   }
  },
  "notes": {
