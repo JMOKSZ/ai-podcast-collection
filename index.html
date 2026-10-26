@@ -1905,6 +1905,18 @@ function togglePastReports() {
   <p class="note">Latent Space AINews（2026-10-24 07:18 UTC 發布，約 36 分鐘長文；作者＝<strong>swyx（Shawn Wang）</strong>；來源＝<strong>官方 Substack 全文</strong>，四層分離廠商說法／獨立評測／社群反應／爭議）：Kimi K3.1 Pro 係 <strong>2.8T 總參／104B 激活／1M 上下文</strong>的多模態 MoE，權重承諾 11-04；AA 智能指數 <strong>55 第 4</strong>（Opus 5.5=58），權重釋出後開放與閉源差距 <strong>12→3 分</strong>。核心：①<strong>後訓練勝利</strong>——六層棧優化（RL 框架、長上下文推理、訓練效率、sandbox、rollout 排程、環境品質平台），「每一單位 RL 算力帶來可預測回報」；②agentic 進步大於知識，AA-Omniscience 48→51%、幻覺 53→44%；③<strong>便宜的是價目表</strong>——$2/$10/$0.20 降三分一，但每任務成本 <strong>$1.98 同 K3 一樣</strong>，因輸出 token 48K→55K（+14%）；Arena WebDev $1.23（-29%）；④Cyber 移除訓練資料、內部 90.5→81%，AA Cyber 仍 <strong>64%</strong>（公開最高），CyberGym 58→95%、無安全拒絕；⑤<strong>開放權重≠開源≠便宜服務</strong>——2.8T 約 5.6TB@16bit／1.4TB@4bit；⑥Vals：Kimi K3 法律任務 Baseten 60.6% vs Moonshot 75.8%，provider 係變量；⑦基準政治：Claude Code harness、DeepSeek 42.3 口徑、paid partnership 標籤指控（未證實）。本文萃取：<strong>你買的不是 token，是被完成的任務；能力、經濟、倫理要分開評分，任何一個都不能推論另外兩個。</strong>· Latent Space</p>
 </div>
 
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/236-crossing-lilei-phd-ten-questions.html">當研究對象每三個月換一次代，PhD 變成一場折舊率計算</a></h3>
+  <p class="note">十字路口 Crossing（2026-10-26 00:00 CST 發布，51 分 50 秒；主持＝<strong>楊遠騁 Koji</strong>；嘉賓＝<strong>李磊</strong>，北京大學出身、香港大學在讀博士、小米 MiMo 大模型後訓練研究員、EMNLP 最佳論文；來源＝<strong>小宇宙 show notes 全文（節目導語＋18 個章節時間戳）</strong>，無公開逐字稿，嘉賓引語從缺）：一集由「PhD 十問」切進 2026 年個體職涯決策的訪談。核心：①<strong>PhD 的通脹不是學位通脹，是信號通脹</strong>——論文供給超過審稿吞吐，學位的擔保功能下降，剩下的是「入場時拿到的問題」與可遷移能力；②<strong>慢科研 vs 快科研本質是折舊率</strong>——研究週期必須短於研究對象的換代週期，否則在優化一個已不存在的目標；③<strong>影響力由認證轉向分發</strong>——「大粉理論」（小紅書粉絲 &gt; 論文引用）是信號真空下的自發填補，分發成為研究流程的一部分；④<strong>產學邊界消失後最優策略是雙線並行</strong>——用工業界算力做實驗、用學校身份買自由，代價是兩邊都不夠深；⑤<strong>RSI 是隱藏變量</strong>——若研究被部分自動化，最值錢的能力是選題與驗收，而這正是 PhD 訓練最少教的部分。技術側：小米 MiMo 直播後訓練（以可驗證性換信任、招募廣告、公開研究與工程界線）、Video-MME 的 benchmark 產品化三條件（未飽和維度／可重跑協議／引用傳播路徑）。爭議：大粉理論是描述還是合理化；進 Labs 可逆 vs 讀 PhD 不可逆的機會成本不對稱；導師創業的外溢效應被高估。本文萃取：<strong>先選問題，再選導師，然後才選學校；先確認你的週期短過對象的換代週期，再談五年規劃。</strong>· 十字路口</p>
+</div>
+
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/237-42zhangjing-wanghaonan-agent-multimodal-embodied.html">三次逆勢轉向，一個不變量——由 Agent 到多模態再到具身，他賣的其實是訓練系統</a></h3>
+  <p class="note">42章經（2026-10-24 13:00 UTC 發布，約 50 分鐘，人類博物館 54 號藏品；主持＝<strong>曲凱 Kyle</strong>；嘉賓＝<strong>王淏楠</strong>，讀過五間大學、前騰訊混元多模態 RL infra 負責人、主導開源框架 <strong>UniRL</strong>、曾在 MiroMind 參與 Agent 研發、現於具身公司負責基模預訓練；來源＝<strong>小宇宙 show notes 全文（節目導語＋27 個章節時間戳）</strong>，無公開逐字稿）：用一個工程師的三次轉身，反推 Agent／多模態／具身三條線的真實進展與價值分配。核心：①<strong>三次轉向其實是同一個動作</strong>——每次都往更上游的「訓練系統」移動，技能可遷移而賽道不可依賴；②<strong>兩個賽道都是圍城</strong>——外面看風口，裡面是資料管線、rollout 排程、sandbox 穩定性、reward 可信度；③<strong>RL 差距在 infra 不在演算法</strong>，與 Moonshot Kimi 六層棧優化的官方說法互相印證；④<strong>大廠結構上不適合做具身</strong>——組織取樣頻率跟不上物理世界，但「不需要做」比「做不了」更危險；⑤<strong>世界模型被當成目標而非手段</strong>——沒有下游控制器的世界模型只是昂貴的影片生成器；⑥<strong>Astra 抹平「大腦」優勢</strong>——具身護城河只剩本體、資料、部署；⑦「49 年入國軍」被反轉為<strong>具身的 GPT-3 時刻</strong>。技術細節：UniRL 解多模態 reward 定義／rollout 並行／跨模態梯度對齊；Seedance、MiniMax H3 作橫向坐標；「抽卡」概念會變但不會消失。本文萃取：<strong>賽道會換，訓練系統的方法論不會；Astra 抹平的不是能力，是溢價。</strong>· 42章經</p>
+</div>
+
 
 <footer>
   <p>JMOKSZ / ai-podcast-collection</p>

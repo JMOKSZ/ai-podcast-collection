@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 十字路口：當研究對象每三個月換一次代，PhD 變成一場折舊率計算</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">十字路口 Crossing · 2026-10-25 · 51 分 50 秒</div>
+  <h1>當研究對象每三個月換一次代，PhD 變成一場折舊率計算</h1>
+  <div class="meta">
+    <span>📅 2026-10-26 00:00 CST</span><span>·</span><span>🎙️ 主持：楊遠騁 Koji</span><span>·</span><span>👤 嘉賓：李磊</span><span>·</span><span>⏱️ 約 14 分鐘閱讀</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+這一集表面上是「讀 PhD 的十個操作問題」，實際上只講了一件事：<strong>當一個領域的知識半衰期短過學位修業期，學位的擔保功能就會失效，剩下的只有你入場時拿到的那個問題，以及你在解它的過程中長出來的可遷移能力。</strong>嘉賓李磊一邊在小米 MiMo 做後訓練、一邊在港大讀博士——他不是「讀唔落去才去工業界」的樣本，而是開局就拿到 EMNLP 最佳論文、再主動選擇雙線並行的人。這個身份令整集的說服力完全不同：他講的不是退路，是已經跑通過的一條路。
+</p>
+
+<blockquote class="strong">
+  「在 AI 时代，一个 PhD 学生怎么拿到『理想的结果』——不是怎么毕业，是怎么在一个模型每三个月换一次代的领域里，让三到五年的研究仍然成立、仍然被看见、仍然换得到下一份工作。」
+  <span class="attribution">節目導語與主題設定（小宇宙 show notes 原文，簡體）。這句不是嘉賓原話，是主持人 Koji 對整集問題意識的定義。</span>
+</blockquote>
+
+<div class="highlight-box">
+  <strong>📌 來源與方法說明：</strong>本文底本為小宇宙節目頁（episode 6add84e1…）的完整 show notes 原文——包括節目導語、嘉賓背景、18 個帶時間戳的章節標題，以及主辦方自報的「10 個關鍵問題」框架。該集<strong>沒有公開逐字稿</strong>：小宇宙頁面雖標記 transcript 已啟用，但轉錄接口回 401；YouTube 版本（oDdQGehy7uQ）經 <code>yt-dlp --list-subs</code> 確認無字幕軌與自動字幕；本機為單核 1 GB，不支援本地 ASR。因此本文<strong>不提供任何嘉賓直接引語</strong>，凡引號內容均為 show notes 原文並已標明；其餘屬結構分析與推演，會用「意味著」「真正的含義是」「我的判斷是」等措辭區分。這是本文唯一的內容缺口，寧可標明，不以轉述冒充原話。
+</div>
+
+<div class="section-title">一、這一集為什麼在 2026 年才問得出來</div>
+
+<p>同一個問題——「讀 PhD 值不值得」——在 2020 年問是多餘的，在 2026 年問是必要的。差別不在答案變了，在<strong>供需兩端同時變了</strong>。</p>
+
+<p><strong>供給端：認證體系被自己的產出淹沒。</strong>節目在 08:07 直接問「AI 論文大水漫灌，頂會怎麼辦？」這個問法本身就承認了一件事：頂會不是變嚴格了，是<strong>處理能力追不上投稿量</strong>。當一個信號的供給量超過驗證系統的吞吐量，這個信號的資訊含量必然下降——這不是學術界的道德問題，是任何認證體系在供給暴增時都會遇到的情況。GitHub star 不再代表代碼質量、Kaggle 獎牌不再代表建模能力，都是同一類現象。學位只是最後一個還沒被公開承認的同類資產。</p>
+
+<p><strong>需求端：實驗室與工業界之間的牆消失了。</strong>一個本科畢業生可以直接進 AI Labs 做大模型訓練，而一個 PhD 四年級學生可能還在等一篇一作。當「訓練模型的經驗」比「發表論文的記錄」更稀缺，僱主的定價邏輯就會重算。李磊本人的履歷就是這個重算的結果：他沒有等到學位完成才進工業界，而是同時在做。</p>
+
+<p>把這兩端放在一起，這一集真正的問題就浮出來了：<strong>PhD 的價值不再是「學位」這個憑證，而是「入場時拿到的問題」。</strong>這也是為什麼 25:28「選學校還是選導師」會被單獨列為一題——如果價值在問題與人，導師的權重理應高於學校的招牌。節目的章節排序本身就在給答案。</p>
+
+<div class="section-title">二、十問的真實結構：三題硬題，七題操作手冊</div>
+
+<p>節目自報「10 個關鍵問題」，但 18 個章節節點實際覆蓋 12 個問題（另加專業建議、MiMo、數據公司、RSI、Video-MME）。把章節按「它真正在問什麼」重排，會看到一個很清楚的分層：</p>
+
+<table>
+  <tr><th>時間</th><th>章節</th><th>它真正在問什麼</th><th>層級</th></tr>
+  <tr><td>00:23</td><td>快問快答：年齡、畢業院校、MBTI、星座</td><td>把嘉賓從「研究員」還原成「人」，建立可信度</td><td>開場</td></tr>
+  <tr><td>02:29</td><td>北大到港大：EMNLP 最佳論文開局</td><td>高開局的人為什麼還要換環境</td><td>履歷</td></tr>
+  <tr><td>03:28</td><td>AI 時代，PhD 怎麼拿到理想結果</td><td><strong>總問題：目標函數怎麼定義</strong></td><td><strong>硬題</strong></td></tr>
+  <tr><td>08:07</td><td>AI 論文大水漫灌，頂會怎麼辦</td><td><strong>評價體系失效後，信號從哪裡來</strong></td><td><strong>硬題</strong></td></tr>
+  <tr><td>12:16</td><td>「大粉理論」：小紅書粉絲 &gt; 論文引用</td><td><strong>影響力的計價單位正在換</strong></td><td><strong>硬題</strong></td></tr>
+  <tr><td>16:50</td><td>PhD 從入學到畢業要過哪幾關</td><td>把五年拆成可管理的關卡</td><td>手冊</td></tr>
+  <tr><td>20:08</td><td>沒論文、沒實習，PhD 怎麼冷啟動</td><td>零資源狀態下的第一個動作</td><td>手冊</td></tr>
+  <tr><td>25:28</td><td>選學校還是選導師</td><td>機構品牌 vs 個體槓桿</td><td>手冊（但含硬判斷）</td></tr>
+  <tr><td>28:12</td><td>慢科研 or 快科研</td><td><strong>本集張力最大的一題</strong></td><td><strong>硬題</strong></td></tr>
+  <tr><td>31:08</td><td>內地、香港、美國，去哪讀 PhD</td><td>制度環境與算力可及性的取捨</td><td>手冊</td></tr>
+  <tr><td>35:27</td><td>導師創業，PhD 得到了什麼</td><td>學術創業外溢到學生的真實收益</td><td>手冊</td></tr>
+  <tr><td>36:52</td><td>本科能進 AI Labs，還要讀 PhD 嗎</td><td><strong>本集最實用的一題：機會成本計算</strong></td><td><strong>硬題</strong></td></tr>
+  <tr><td>39:58</td><td>小米 MiMo 為什麼直播後訓練</td><td>工程透明度作為招募與信任策略</td><td>技術</td></tr>
+  <tr><td>42:03</td><td>數據公司的高估值能持續多久</td><td>AI 數據供給側的泡沫判斷</td><td>行業</td></tr>
+  <tr><td>46:00</td><td>RSI：AI 能自己訓練自己嗎</td><td>研究自動化對 PhD 需求的長期含義</td><td>隱藏變量</td></tr>
+  <tr><td>47:46</td><td>Video-MME：怎樣做出有影響力的 Benchmark</td><td>把評測當產品做</td><td>技術</td></tr>
+  <tr><td>49:00</td><td>AI 時代，CS 還值得學嗎</td><td>專業熱度下降意味著什麼</td><td>延伸</td></tr>
+  <tr><td>50:20</td><td>給高三生的專業建議</td><td>把時間軸再往前拉一格</td><td>延伸</td></tr>
+  <tr><td>51:24</td><td>給 PhD 的最後建議：飯要吃，覺要睡</td><td>收在可持續性，不在野心</td><td>收尾</td></tr>
+</table>
+
+<p>這個分層很重要。<strong>七個手冊題解決的是「怎麼做」，三個硬題解決的是「還值不值得做」。</strong>如果只聽手冊部分，會得到一份很實用的 checklist；但這一集的價值在前面三題——因為如果大前提變了，checklist 只會令你更有效率地走錯方向。</p>
+
+<p>還有一個容易漏掉的細節：最後一章是「飯要吃，覺要睡」。這個收尾不是溫情，是對整集主題的校正。前面五十分鐘都在講如何最大化五年的產出，最後一句把「可持續性」放回目標函數裡——這在一個鼓勵所有人 all-in 的行業裡，是相當清醒的選擇。</p>
+
+<div class="section-title">三、五個核心論點</div>
+
+<h3 class="sub-title">論點一：PhD 的通脹不是學位通脹，是信號通脹</h3>
+
+<p>這個區分是整集的地基。學位通脹的意思是「人人都有，所以不值錢」；信號通脹的意思是「判斷信號的成本上升了，所以大家改用更便宜、更粗糙的代理指標」。兩者的處方完全不同：前者要減少供給，後者要重建驗證機制。</p>
+
+<p>08:07 這一題排在總問題之後，順序不是隨機的。它等於在說：<strong>你先別問怎麼拿到理想結果，先問「理想結果由誰認定、用什麼認定」。</strong>當頂會審稿失效，市場會自發尋找替代信號——而替代信號通常比原信號更粗糙，因為它必須便宜。這就是下一題「大粉理論」的出處。</p>
+
+<h3 class="sub-title">論點二：慢科研 vs 快科研，本質是折舊率，不是道德</h3>
+
+<p>28:12 是全集真正的分水嶺。在一個模型三個月換一次代的領域裡，慢科研的風險不是做得不夠好，是<strong>做完之後問題已經消失</strong>；快科研的風險則是產出無法沉澱，三個月後連自己都不想引用。</p>
+
+<blockquote class="strong">
+  你的研究週期必須短於你所研究對象的換代週期，否則你在優化一個已經不存在的目標。
+  <span class="attribution">本文對 28:12 章節的分析結論（推演，非嘉賓原話）</span>
+</blockquote>
+
+<p>這句話聽起來像常識，但它有一個很殘酷的推論：<strong>如果週期被迫縮短，PhD 相對工業界的比較優勢就被侵蝕了。</strong>PhD 的傳統賣點是「時間自由、可以失敗、可以追一個五年才開花的問題」；但如果五年後那個問題已經被模型自己解決，或者整個範式已經換掉，這個賣點就作廢了。所以「本科能進 AI Labs 還要讀 PhD 嗎」這一題的真正前置條件，不是「博士學得更多」，而是「你有沒有一個工業界不會資助、但五年後仍然重要的問題」。沒有這個問題，PhD 就只是一張延遲入場券。</p>
+
+<h3 class="sub-title">論點三：影響力由「認證」轉向「分發」</h3>
+
+<p>12:16 的「大粉理論」——小紅書粉絲量超過論文引用數——是全集在中文網絡上最容易被轉發的一句。但它的位置在 08:07 之後，說明它是對前一題的回答，不是獨立的吐槽。</p>
+
+<p>頂會審稿失效之後，市場需要一個新信號來判斷「這個人的研究值不值得看」。注意力成了默認的替代指標，因為它<strong>可觀測、可比較、取得成本低</strong>。這不是學術墮落，是信號真空下的自發填補。真正的操作含義是：研究做完了不等於研究工作結束，<strong>分發是研究流程的一部分</strong>。</p>
+
+<p>節目導語的措辭很值得注意——主持人沒有把這句話當成嘲諷，而是拉回機制描述：</p>
+
+<blockquote class="strong">
+  「我们也聊到了 PhD 圈里的『大粉理论』：小红书的粉丝量超过论文引用数。这个说法背后，是研究成果传播方式的变化。」
+  <span class="attribution">節目導語（小宇宙 show notes 原文，簡體）</span>
+</blockquote>
+
+<p>矽谷的對應現象是 researcher 個人品牌的崛起（Karpathy 路線），中國的對應現象是小紅書／B 站的學術科普帳號。兩者機制相同，平台不同：<strong>當同行評議的帶寬不足，研究者只能自己承擔一部分「認證」工作。</strong>這對性格內向的研究者是不公平的競爭，但它是當下的實際規則。</p>
+
+<h3 class="sub-title">論點四：產學邊界消失後，最優策略是雙線並行，而不是二選一</h3>
+
+<p>李磊本人就是這個論點的證據：他不是先讀完 PhD 再去小米，而是同時在做。35:27「導師創業，PhD 得到了什麼」補上了另一個側面——當導師自己也在創業，學生接觸到的就不是論文選題，而是真實的產品約束。</p>
+
+<p>這個形態在 2026 年變得可行，原因有三個：模型訓練的知識已經高度公開（技術報告、開源框架、部落格）；工業界的訓練資源遠超學校；而學校提供的東西——選題自由、失敗空間、學術網絡——並沒有被工業界取代。<strong>雙線並行的本質是套利：用工業界的算力做實驗，用學校的身份買自由。</strong>但這個套利有代價，代價是時間被切成兩半，兩邊都不夠深。節目沒有展開這個代價，這是它的盲點之一。</p>
+
+<h3 class="sub-title">論點五：RSI 是隱藏變量，是對前面所有建議的壓力測試</h3>
+
+<p>46:00 問「AI 能自己訓練自己嗎」，位置在數據公司估值（42:03）之後、benchmark 方法論（47:46）之前，看起來像閒聊，其實是對整集建議的壓力測試：<strong>如果研究本身被自動化，那麼「怎麼讀 PhD」這個問題的答案會整體重寫。</strong></p>
+
+<p>節目沒有把它推到極端，但把它放進來本身就是一種提醒——所有關於五年規劃的建議，都建立在「研究仍然主要由人做」這個假設上。而在一個後訓練研究員的口中，RSI 的現實版本不是「AI 全自動做研究」，而是「AI 承擔越來越多的實驗設計與結果判讀，人負責選題與驗收」。<strong>如果這是真的，那 PhD 最應該訓練的能力就不是動手做實驗，而是選題與驗收——恰好是現在課程裡最少教的部分。</strong></p>
+
+<div class="section-title">四、技術側的兩條線：直播後訓練與 benchmark 產品化</div>
+
+<h3 class="sub-title">小米 MiMo 為什麼把後訓練做成直播（39:58）</h3>
+
+<p>這是本集最具體的工程細節，即使只有標題也值得記錄。把後訓練過程做成直播，表面是市場動作，實際同時解決三個問題：</p>
+
+<ul>
+  <li><strong>信任：</strong>後訓練是最不透明、最容易被外界質疑為「調參玄學」的環節。公開過程等於用可驗證性換信任，成本比發一篇技術報告低，說服力比發十條推文高。</li>
+  <li><strong>招募：</strong>對候選人而言，這是最有效的技術品牌廣告——他們能看到真實的訓練流程、真實的失敗、真實的工程細節，而不是 JD 上的關鍵詞。</li>
+  <li><strong>邊界重畫：</strong>它把「研究」和「工程」的界線公開化，讓外界看見後訓練其實是大量資料工程、reward 設計與基礎設施工作，不是靈感。</li>
+</ul>
+
+<p>放在「PhD 怎麼拿理想結果」這個主題下，這一題的潛台詞相當尖銳：<strong>工業界正在把過去只存在於論文中間章節的過程，變成公開內容——這直接壓縮了學術界「方法論首發」的優勢。</strong>當一個團隊願意直播自己的訓練流程，學術界靠「我先想到、我先發表」建立的護城河就變淺了。</p>
+
+<h3 class="sub-title">Video-MME 與 benchmark 的產品化（47:46）</h3>
+
+<p>節目問的是「怎樣做出有影響力的 Benchmark」，這個問法本身很誠實——<strong>benchmark 的價值不在測得準，在被人用。</strong>一個 benchmark 要成立需要三件事同時做到：</p>
+
+<ol>
+  <li>題目覆蓋一個真實但尚未飽和的維度（太易則無區分度，太難則無人敢報）；</li>
+  <li>評分協議足夠簡單，簡單到別人願意重跑；</li>
+  <li>有一條能讓結果被引用的傳播路徑（排行榜、論文、社群習慣）。</li>
+</ol>
+
+<p>Video-MME 之所以成為多模態影片理解的默認評測之一，正是這三件事同時做到。對 PhD 學生而言，這是最划算的一類產出：<strong>成本低於訓練一個模型，引用半衰期卻遠長於一篇方法論文。</strong>一篇方法論文會被下一個方法取代，一個被廣泛使用的 benchmark 會一直被寫進 related work。這是學術研究裡少有的「資產」而非「流量」。</p>
+
+<div class="data-point">
+  <span>規格</span><strong>51 分 50 秒（3,110 秒）</strong>——十字路口常規長度，屬「一頓通勤聽得完」的規格，不是張小珺那種 3–7 小時的檔案級訪談。這個長度決定了它只能是「框架 + 判斷」，不可能給出完整的技術論證。
+</div>
+
+<div class="data-point">
+  <span>結構</span><strong>18 個章節節點</strong>，密度約每 2.9 分鐘一個，屬高度結構化的剪輯——意味著主持人事前做了題綱，而不是自由漫談。章節標題本身就是節目的第二層文本。
+</div>
+
+<div class="data-point">
+  <span>跨度</span><strong>3 個地理選項</strong>被並列比較：內地、香港、美國（31:08）；<strong>4 個行業熱題</strong>放在最後 12 分鐘：MiMo 直播後訓練、數據公司估值、RSI、Video-MME。前者是制度比較，後者是技術前沿，中間用「機會成本」連接。
+</div>
+
+<div class="data-point">
+  <span>排程</span>發布時間 <strong>2026-10-26 00:00 北京時間整點</strong>——十字路口固定在週日凌晨零點上線，這是它的排程習慣，不是偶然。這個時間點剛好卡在週末結束、週一開始之前，是「一個人靜下來想職涯」的時段。
+</div>
+
+<div class="section-title">五、前後脈絡：這不是一個獨立選題，是一條決策鏈的第四步</div>
+
+<p>十字路口最近四期的軌跡很清楚：10-08「AI 無限，人生有限」談一線創作者的消耗；10-11「有了 AI，我感覺自己強得可怕」談個人生產力躍遷；10-18「新的創業機會，正在 Claude Code 和 Codex 周圍長出來」談工具生態的套利窗口；10-25 這一集回到「讀 PhD 值不值得」。</p>
+
+<p>四集連起來是一條完整的決策鏈——<strong>先確認個人生產力真的變了，再看工具層有沒有創業窗口，最後問「那我還要不要走傳統的專業化路徑」。</strong>這不是四個獨立選題，是一個人在 2026 年做職涯規劃時會依序問的問題。節目的選題成熟度體現在這裡：它開始處理「個體決策」，而不只是「行業判斷」。</p>
+
+<p>與 9-27「AI 時代，我們到底該學什麼？｜對談于紅：三種不會過時的能力」對照更有意思。那一集給的是「能力清單」（抽象能力、遷移能力、與人協作），這一集給的是「制度路徑的評估」。前者樂觀，後者務實——中間隔了一個月，語氣變了。原因不難猜：能力清單是你可以自己練的，制度路徑是你必須下注的。下注的語氣自然更沉重。</p>
+
+<div class="section-title">六、三個爭議點，以及我的判斷</div>
+
+<h3 class="sub-title">爭議一：「大粉理論」是描述還是合理化？</h3>
+
+<p>如果把「小紅書粉絲 &gt; 論文引用」當成事實描述，結論是「研究者應該經營社媒」；如果把它當成病徵描述，結論是「評價體系壞了，需要修」。節目用「这个说法背后，是研究成果传播方式的变化」把它中性化了——這是溫和的處理，但也迴避了「粉絲多的研究是否真的更好」這個更難的問題。</p>
+
+<p>我的判斷是：這句話作為<strong>傳播機制</strong>的描述是對的，作為<strong>品質評價</strong>的替代是錯的。問題在於市場沒有能力區分這兩者，所以它會把傳播能力誤讀成品質。對個人的操作建議是「兩者都要做」，但對制度的建議應該是「重建一個比粉絲更貴、但比引用更快的信號」——例如可重現性徽章、代碼採用率、下游任務的實際增益。這些都比粉絲難刷。</p>
+
+<h3 class="sub-title">爭議二：「本科能進 AI Labs 還要讀 PhD 嗎」沒有標準答案，只有機會成本</h3>
+
+<p>節目的處理方式是把兩條路的收益並列，但沒有處理一個關鍵不對稱：<strong>進 Labs 的機會窗口是可逆的（做兩年可以回去讀），讀 PhD 的時間是不可逆的（五年換一個學位）。</strong></p>
+
+<p>如果承認這個不對稱，理性順序應該是「先去 Labs，再決定要不要讀」——而這正好和大眾建議相反。大眾建議是「趁年輕把學位讀完」，理由是「以後沒時間」。但在一個知識每三個月換代的領域，「以後」的學位可能比「現在」的學位更值錢，因為你會帶着真實的工業問題回去。這個反向建議的代價是：你可能再也回不去，因為薪資、家庭、慣性都會拉著你。所以它不是免費的選擇權，是一個有保質期的選擇權。</p>
+
+<h3 class="sub-title">爭議三：「導師創業，PhD 得到了什麼」可能高估了外溢效應</h3>
+
+<p>導師創業對學生的真實影響是雙面的：好處是接觸真實問題與資源，壞處是注意力被稀釋、指導時間減少、選題被商業目標牽引。節目標題用的是「得到了什麼」，預設了正向框架。這個框架在嘉賓本人身上成立（他自己就在工業界），但對一個全職博士生未必成立。<strong>導師創業的最大風險不是學生學不到東西，是學生被當成免費的技術驗證資源。</strong>這一題如果換一個沒有工業界身份的嘉賓來答，答案可能會完全不同。</p>
+
+<div class="section-title">七、如果只帶走三句話</div>
+
+<blockquote class="strong">
+  一、先選問題，再選導師，然後才選學校。順序反了，五年後你會發現自己很努力地解決了一個不再重要的問題。
+  <span class="attribution">本文對 25:28 與 28:12 兩章的分析結論</span>
+</blockquote>
+
+<blockquote class="strong">
+  二、PhD 的風險不在於讀不讀得完，在於你研究的問題在你畢業時還存不存在。
+  <span class="attribution">本文對整集主題的濃縮</span>
+</blockquote>
+
+<blockquote class="strong">
+  三、如果研究會被部分自動化，那麼最值錢的能力是選題與驗收——而這兩件事，現在的 PhD 訓練最少教。
+  <span class="attribution">本文對 46:00 RSI 章節的推論</span>
+</blockquote>
+
+<p>這一集不會給你一個「讀」或「不讀」的答案。它給的是一個把風險顯式化的框架：先確認你的研究週期短於對象的換代週期，再談五年規劃；先確認你拿到的是問題而不是職位，再談導師與學校。對一個正在焦慮的博士生，這種框架比任何鼓勵都實用——因為它把「我是不是不夠努力」換成了「我是不是在一個會消失的問題上努力」。前者是自我懷疑，後者是可以行動的判斷。</p>
+
+<hr>
+
+<footer>
+  <p><strong>來源</strong>：十字路口 Crossing〈AI 時代，PhD 路上的 10 個關鍵問題｜對談李磊：港大 PhD、小米 MiMo 研究員〉，2026-10-26 00:00 CST 發布，51 分 50 秒。小宇宙 episode <a href="https://www.xiaoyuzhoufm.com/episode/6add84e197726cd467573cf1">6add84e1…</a>；Show notes 全文（節目導語＋18 章節時間戳）；YouTube 視頻版 oDdQGehy7uQ（無字幕）。</p>
+  <p style="margin-top:0.4rem;">本集無公開逐字稿，嘉賓引語從缺；文中引號內容均為 show notes 原文，推演部分已明確標記。生成時間：2026-10-26 06:20 UTC。</p>
+  <p style="margin-top:0.6rem;"><a href="../index.html">← 返回播客日報</a> · JMOKSZ / ai-podcast-collection</p>
+</footer>
+</div>
+</body>
+</html>
