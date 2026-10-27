@@ -1917,6 +1917,18 @@ function togglePastReports() {
   <p class="note">42章經（2026-10-24 13:00 UTC 發布，約 50 分鐘，人類博物館 54 號藏品；主持＝<strong>曲凱 Kyle</strong>；嘉賓＝<strong>王淏楠</strong>，讀過五間大學、前騰訊混元多模態 RL infra 負責人、主導開源框架 <strong>UniRL</strong>、曾在 MiroMind 參與 Agent 研發、現於具身公司負責基模預訓練；來源＝<strong>小宇宙 show notes 全文（節目導語＋27 個章節時間戳）</strong>，無公開逐字稿）：用一個工程師的三次轉身，反推 Agent／多模態／具身三條線的真實進展與價值分配。核心：①<strong>三次轉向其實是同一個動作</strong>——每次都往更上游的「訓練系統」移動，技能可遷移而賽道不可依賴；②<strong>兩個賽道都是圍城</strong>——外面看風口，裡面是資料管線、rollout 排程、sandbox 穩定性、reward 可信度；③<strong>RL 差距在 infra 不在演算法</strong>，與 Moonshot Kimi 六層棧優化的官方說法互相印證；④<strong>大廠結構上不適合做具身</strong>——組織取樣頻率跟不上物理世界，但「不需要做」比「做不了」更危險；⑤<strong>世界模型被當成目標而非手段</strong>——沒有下游控制器的世界模型只是昂貴的影片生成器；⑥<strong>Astra 抹平「大腦」優勢</strong>——具身護城河只剩本體、資料、部署；⑦「49 年入國軍」被反轉為<strong>具身的 GPT-3 時刻</strong>。技術細節：UniRL 解多模態 reward 定義／rollout 並行／跨模態梯度對齊；Seedance、MiniMax H3 作橫向坐標；「抽卡」概念會變但不會消失。本文萃取：<strong>賽道會換，訓練系統的方法論不會；Astra 抹平的不是能力，是溢價。</strong>· 42章經</p>
 </div>
 
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/238-tulong-zhuangminghao-2026-ai-152-slide-capital.html">系統已經複雜到沒有人能完整看清——152 頁 PPT 的 AI 年度體檢，由技術講到資產負債表</a></h3>
+  <p class="note">屠龍之術（2026-10-26 17:55 UTC 發布，狂喜播客節現場專場，約 90 分鐘，152 頁 PPT；主講＝<strong>庄明浩</strong>，單口；來源＝<strong>官方 shownotes ＋ 135 個帶時間戳的章節節點</strong>，本集無公開逐字稿）：不是訪談，是一份年報。三章＝技術（41 分）／產業（28 分）／資本（31 分），資本章首次獨立且最重。核心：①<strong>分析單位由模型換成系統</strong>，能力／成本／安全三角必須同時求解；②<strong>benchmark 失效→大奇觀時代</strong>，「不是，怎麼又換版本了」是對迭代頻率超過人類跟讀頻率的描述；③<strong>斬殺線比平均值重要</strong>，「所謂帕累托最優」多半是自選維度的產物；④後訓練崛起與 RSI 由可能性變成共識；⑤產業只看收入，但<strong>收入結構比總額危險</strong>——頭部客戶集中、訂閱毛利隨額度變號、ARR 通脹；⑥教科書級傑文斯悖論＋B300 租價瘋漲＋<strong>英偉達「變態的折舊率」</strong>；⑦資本章的樞紐：<strong>估值可以便宜，現金流卻在惡化，中間的橋是杠杆</strong>——Meta 時隔多年 FCF 轉負、交易結構杠杆化、英偉達由最活躍投資人走到「準央行」；⑧personal agent 的敘事正被量化馴服（Meta-muse 樣本→muse 吐槽→assistantbenchmark.com→403 與協議層）。數據：152 頁、135 節點、平均 54 秒一個論點；95:24 作者現場勘誤「5 億」實為 5,000 萬美元單輪。爭議：RSI 以共識代替論證、「英偉達＝央行」類比過重、PPT 內頁數字無法核實。本文萃取：<strong>2026 年的瓶頸不是能不能做出來，而是能不能算清楚——能力、成本、收入、資本四層同時失去清晰度量。</strong>· 屠龍之術</p>
+</div>
+
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/239-mlst-kevin-hartnett-lean-formalization-gap.html">機器已經讀過，但沒有人讀懂——Lean 的三十年，與被移到上游的信任</a></h3>
+  <p class="note">Machine Learning Street Talk（2026-10-26 14:36 UTC 發布，93 分 33 秒，紀錄片式剪輯；主持＝<strong>Tim Scarfe</strong>；主線＝<strong>Kevin Hartnett</strong>《Proof in the Code》，含 Leonardo de Moura、Jeremy Avigad、Kevin Buzzard、Peter Scholze 等；來源＝<strong>官方 YouTube 完整字幕約 111 KB</strong>）：一部關於「檢查」的紀錄片。核心：①1998 年 Hales 證開普勒猜想，化約 <strong>1,762 種構型／1,767 個程式</strong>，《Annals》審不了，最後以「99% 信心」免責聲明接受；②<strong>de Bruijn factor 20:1</strong>——形式化一行數學要寫 20 行 Lean，這才是數學家不採用的真正原因，不是保守；③<strong>kernel＝信任半徑</strong>：Lean 本體有無數 bug，但你只需信任 kernel；kernel 最嚴重的罪是把假命題驗證為真；Agda／Coq／Isabelle 都曾中招；④Avigad 用 Feit-Thompson 經驗說服 de Moura 選依賴類型論，「能力越大，責任越大」；⑤Mathlib 的真正創新是<strong>圖書館學</strong>——只收「完全成形、知道自己在哪個位置」的概念；⑥perfectoid spaces 的 blueprint 是協調裝置，不是技術文件；⑦Liquid Tensor：Scholze 發現自己 6 頁的證明<strong>沒有人真的讀過</strong>；Lean 能驗證證明，不能驗證定義；⑧AlphaProof 讀不懂題目，靠 autoformalisation 造出數千萬道 Lean 題庫（代數／數論覆蓋約 80%，組合數學最難）；⑨<strong>2026 年 9 月 Epoch 固定預算測試：68 題只解 2 題，其餘四個模型 0</strong>，兩題都在 Lean 通過檢查；⑩Tao 的 Equational Theories：2,200 萬題一個月縮到 238，最後卡 4 題，撞出 magma cohomology；⑪<strong>formalization gap</strong>——checker 認證推導，不認證人類選的目標，<strong>信任被移到上游</strong>；⑫50 條 Annals 定理形式化後發現四篇菲爾茲獎得主的工作「嚴格按字面讀是錯的」，因為人類省略了「n≥3」這類顯然前提；⑬zlib 的 identity function 陷阱：測試通過只證明你寫的測試被滿足；⑭Buzzard 預測一年內會出現<strong>更差但更多</strong>的 AI 數學庫。本文萃取：<strong>形式化沒有消除信任，只是把它移到更上游；機器認證推導，人認證目標。</strong>· MLST</p>
+</div>
+
 
 <footer>
   <p>JMOKSZ / ai-podcast-collection</p>

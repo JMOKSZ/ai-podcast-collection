@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 機器已經讀過，但沒有人讀懂——Lean 的三十年，與被移到上游的信任</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Machine Learning Street Talk · 紀錄片式特輯 · 2026-10-26 · 93 分鐘</div>
+  <h1>機器已經讀過，但沒有人讀懂——Lean 的三十年，與被移到上游的信任</h1>
+  <div class="meta">
+    <span>📅 2026-10-26 14:36 UTC</span><span>·</span><span>🎙️ 主持：Tim Scarfe</span><span>·</span><span>👤 主線：Kevin Hartnett</span><span>·</span><span>⏱️ 約 26 分鐘閱讀</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+這不是一集訪談，而是一部關於「檢查」的紀錄片。1998 年，Thomas Hales 證明了開普勒猜想，然後數學界發現<strong>沒有人有能力審它</strong>。2026 年，AI 可以在 Lean 裡產出通過機器檢查的證明，然後我們發現<strong>機器檢查的只是推導，不是「你證的是你想證的命題」</strong>。三十年過去，問題換了一層皮，內核沒變：<strong>當一個證明的規模超過人類的閱讀能力，信任要放在哪裡？</strong>
+</p>
+
+<blockquote class="strong">
+  「The checker certifies the derivation, but it doesn't certify the human choice of target. This is the formalisation gap. The trust has basically moved upstream.」
+  <span class="attribution">片中對 formalization gap 的定義（逐字稿 4077–4086）。這句話是整部紀錄片的中心，也是 2026 年所有「AI 做出了數學發現」新聞的閱讀前提。</span>
+</blockquote>
+
+<div class="highlight-box">
+  <strong>📌 來源說明：</strong>本文底本為 MLST 官方 YouTube 完整字幕（約 111 KB，含時間碼），片中大量引用 Kevin Hartnett 新書《Proof in the Code》原文，由 Tim Scarfe 朗讀；另含 Leonardo de Moura、Jeremy Avigad、Kevin Buzzard、Peter Scholze 的歷史郵件與 Zulip 發言。文中引號內容均取自字幕原文；數字若在片中有口語差異（例如 1,762／1,767），會同時標註。屬於我的分析與補充，會以「我的判斷」「值得注意的是」區分。
+</div>
+
+<div class="section-title">一、1998：一篇沒有人有能力審的證明</div>
+
+<p>故事由一間雜貨店開始。四百年前，Johannes Kepler 看着橙子一層層堆成金字塔，猜想這可能是最密的堆疊方式。他無法證明，只能留下一個猜想。</p>
+
+<p>1990 年代，Thomas Hales 與 Samuel Ferguson 把它化約為 <strong>1,762 種構型</strong>。當時電腦很慢，他們幾乎是逐案寫高度最佳化的程式——用大量啟發式做相交檢查——去證明每一種構型的密度都低於約 <strong>0.74</strong>。Hales 牆上貼滿紙片，每一張代表一種構型；隨着密度逼近 0.74，個案越來越難。最後他寫了 <strong>1,767 個程式</strong>，完成了。</p>
+
+<p>他把稿子投給《Annals of Mathematics》——數學界最負盛名的期刊——期待一場慶祝。結果不是。</p>
+
+<blockquote>
+  「Every part of the proof that reviewers looked at seemed correct, but the proof as a whole was such a sprawling edifice of calculations buried deep in computer code, and it was hard to determine how they all hung together and whether in the end they yielded the proof Hales claimed they did.」
+  <span class="attribution">Hartnett《Proof in the Code》，片中朗讀（301–320）。</span>
+</blockquote>
+
+<p>編輯部不知道怎麼審。不是因為懷疑 Hales，而是因為<strong>當時的審稿制度假設了一件事：證明的規模，是人類可以在數月內讀完的</strong>。數學論文長期在高抽象層運作，省略大量已證步驟，靠的是社群默契與專家判斷。這套機制在「剛好超出既有知識一點點」時極其高效；在「超出一個數量級的計算量」時直接失效。</p>
+
+<p>論文拖了很多年，最後被接受，附帶一句近似「我們有 99% 信心這是對的」的免責聲明。Hales 原本打算用開普勒的方法去攻其他問題——數學就是這樣運作的，解決一個難題的方法通常可以用來解決其他難題——但審稿過程拖到他改變主意：<strong>如果連這個證明都無法讓社群驗證，為什麼還要再用同樣的方法去製造下一個無法驗證的證明？</strong></p>
+
+<p>於是他投入約 <strong>20 人年</strong>，把開普勒猜想形式化（Flyspeck 項目）。最後換來的，只是「它是對的」。</p>
+
+<div class="data-point">
+  <span>數字</span>1,762 種構型／1,767 個程式（片中兩個數字都出現，屬口語轉述差異）；最密堆積比例約 0.74；1998 年完成；20 人年形式化；審稿結果附「99% 信心」式免責聲明。
+</div>
+
+<div class="section-title">二、20:1：為什麼數學家不買帳</div>
+
+<p>這是整集最容易被忽略、卻最決定現實的一段。</p>
+
+<p>形式化一行非形式數學，平均要寫 <strong>20 行</strong> Lean，經常更高。這個比例叫 <strong>de Bruijn factor</strong>。Hales 花了 20 人年，得到的只是正確性保證。而數學家<strong>本來就不擔心正確性</strong>——他們擔心的是發現新數學。</p>
+
+<blockquote>
+  「Mathematicians don't generally see the reason to invest that additional time just to verify the correctness of something. So that's really where the resistance comes from. They don't see the utility of Lean for the thing they most care about, which is discovering new math.」
+  <span class="attribution">片中對採用阻力的總結（723–736）。這不是意識形態問題，是投入產出比問題。</span>
+</blockquote>
+
+<p>我的判斷是：這段話解釋了為什麼「形式化」在 AI 之前一直是一條慢車道。它不是因為數學家保守，而是因為<strong>他們的工作流程已經內建了一套成本極低的信任機制</strong>：讀主線、認識作者、知道這類論證通常怎麼走，然後簽字。這套機制的單位成本遠低於 20:1 的形式化。</p>
+
+<p>而 AI 改變的，正是這個成本比。不是因為 Lean 突然變強，而是因為<strong>產生 Lean 代碼的邊際成本，第一次低於人類閱讀非形式證明的邊際成本</strong>。這一點後面會再展開。</p>
+
+<div class="section-title">三、kernel：把信任半徑縮到可以讀完</div>
+
+<p>Leonardo de Moura 的解法不是「做出更強的表達力」，而是「縮小必須被信任的那一部分」。</p>
+
+<p>書中給出的定義很精確：一個交互式定理證明器（ITP）有兩個部件——<strong>邏輯基礎</strong>（決定思想如何表達與互動）與 <strong>kernel</strong>（檢查程式是否遵守邏輯基礎的規則）。Lean 本體很大、「有無數 bug」，但你要信任的只有 kernel。</p>
+
+<blockquote class="strong">
+  「The cardinal sin for a kernel is to verify false statements as true, which is far worse than rejecting true statements as false. Calling true statements false merely creates a roadblock. It's an inconvenience. But calling false statements true opens the door to validating countless more false statements, all justified by the original false claim.」
+  <span class="attribution">Hartnett 書中段落，片中朗讀（856–879）。</span>
+</blockquote>
+
+<p>這不是抽象的哲學。片中明確指出：Agda、Coq、Isabelle 的 kernel 都曾出現過能驗證假命題的 bug。所以「小 kernel」不是美學偏好，是<strong>攻擊面管理</strong>。de Moura 的答案是「獨立檢查」：讓使用者可以自己建 kernel。要讓這件事現實，kernel 就必須小到可以被人讀完。</p>
+
+<p>這裡有一個很深的設計教訓：<strong>可驗證性不是一個布爾值，而是一個半徑。</strong>你不可能讓整個系統都可驗證；你只能把不可驗證的部分盡量往外推，然后讓核心小到可以被獨立檢查。Lean 的整個架構，就是把這個半徑壓到幾千行。</p>
+
+<div class="sub-title">Z3 的出身：先解決「壞路徑」，再解決「表達力」</div>
+
+<p>2006 年，微軟內部有大量重複的自研定理證明器。de Moura 開始做 Z3，用途很具體：系統性檢查軟件沒有「壞路徑」——把一條執行路徑表達成變數組合，證明這些變數不可能同時取到讓某陳述為真的值，就範疇性地排除了一類 bug。Z3 替微軟省下「數億美元」，並在自動定理證明器競賽中拿過世界冠軍。</p>
+
+<p>但他對 ATP 的不滿是<strong>可表達範圍太窄</strong>，於是他轉向 ITP——表達力更強，人類可以推它一把。這個轉向後來決定了 Lean 的性格：它不是一個「按鈕式」的證明器，而是一個<strong>給數學家用的編程語言</strong>。</p>
+
+<p>tactics 是另一個關鍵。形式化最痛的地方往往是「對人顯然、對機器極難」的命題，例如 1+1=2。de Moura 的解法是把重複步驟自動化，並且<strong>開放讓社群自己寫 tactic</strong>。這是 Lean 生產力曲線的第一個拐點——它把「形式化」由一個人的工作，變成一個生態的工作。</p>
+
+<div class="section-title">四、Avigad 之爭：一場關於「表達力 vs 可實作性」的辯論</div>
+
+<p>Lean 差點走上另一條路。de Moura 原本偏好高階邏輯（HOL Light 式），理由是更簡單、更好實作，對許多社會性驗證任務已經夠用。Jeremy Avigad 要的是<strong>依賴類型論</strong>。</p>
+
+<p>Avigad 的理由不是品味，而是經驗：2009–2010 休假年，他在 Coq 上形式化 Feit-Thompson 定理，發現現代數學裡大量使用<strong>公理化刻畫的代數結構</strong>，而簡單類型論會撞牆。片中引了 2013 年那個夏天 de Moura 的深夜郵件：「如果我今天聽起來太負面，我道歉。我還在理解替代方案。」他承認「Jeremy 說 HOL Light 對抽象代數會很不方便，我理解」。最後他選擇依賴類型論，Avigad 在匹茲堡家裡跳了一支舞。</p>
+
+<blockquote>
+  「依賴類型論非常強大、非常有表達力。但我喜歡引用蜘蛛人的那句：能力越大，責任越大。非常有表達力的語言也很難實作，可能更難使用，有很多陷阱與邊角情況。」
+  <span class="attribution">Jeremy Avigad，片中訪談。</span>
+</blockquote>
+
+<p>de Moura 自己的總結更值得記：</p>
+
+<blockquote class="strong">
+  「當你戴著開發者的帽子，你總是想選最容易實作的方案，然後忘記自己有時也會是這個工具的使用者。」
+  <span class="attribution">Leonardo de Moura，片中訪談。這是整部片裡最像工程師教訓的一句話，也是所有基礎設施設計者的通病。</span>
+</blockquote>
+
+<p>我的補充：這場辯論的形狀，與今天 AI 基礎設施的許多爭論同構——「用最強的表達力，還是用最可維護的子集？」答案往往不是技術最優，而是<strong>誰承擔維護成本</strong>。de Moura 當時是開發者，Avigad 是使用者；最後的決定，是開發者接受了使用者的成本結構。</p>
+
+<div class="section-title">五、Mathlib：真正創新的是圖書館學，不是技術</div>
+
+<p>2017 年，Mathlib 只有 <strong>30,000 行</strong>，連實數的定義都沒有（他開玩笑：實數是古希臘與巴比倫人就知道的東西），也沒有複數（大約 500 年前笛卡爾的時代）。Kevin Buzzard 的辦法極其樸素：<strong>把本科生拉進來</strong>。他一週留一個晚上在辦公室，教學生用 Lean，然後讓學生把課堂上學的東西「教給機器」。三年後，Mathlib 大致達到了本科數學的水準。</p>
+
+<p>但真正有意思的是入館標準。Buzzard 的區分很精細：</p>
+
+<blockquote>
+  「What we want in the library is ideas... The library wants to take sort of fully formed, thought-through, knows where it sits in the scheme of things.」
+  <span class="attribution">Kevin Buzzard，片中訪談（約 2152–2185）。</span>
+</blockquote>
+
+<p>圖書館要的是「完全成形、想清楚、知道自己在哪個位置」的概念，而不是還在邊界上混沌作響的東西。「有時候在邊界上，那些材料不適合進圖書館。你可以試着教給軟件，但我們不一定想把它加進圖書館。」</p>
+
+<p>這解釋了為什麼 Mathlib 寧可慢：一旦改動一個底層定義，數千個檔案會斷。這是數學版的 integration hell——而且比軟件更嚴重，因為數學定義的「等價」在形式上可以有多種寫法，局部可行的選擇，在圖書館長大之後可能變得脆弱甚至無法辨認。</p>
+
+<p>這也是為什麼我認為 Mathlib 的真正創新不是技術，而是<strong>治理</strong>：它示範了一個社群如何在「開放貢獻」與「概念一致性」之間做取捨。而這個取捨，在 AI 大量生成 Lean 代碼之後，會變成整個專案最痛的地方。</p>
+
+<div class="section-title">六、perfectoid spaces：一場成功的「造勢」</div>
+
+<p>Buzzard 有表演者的直覺。第一次他把 Grothendieck 的 scheme 形式化，結果換來「集體呵欠」——「Kevin，scheme 是 60、80 年前的東西，我研究所就懂了，這不是前沿」。</p>
+
+<p>於是他換目標：<strong>perfectoid space</strong>，Peter Scholze 2018 年創造、當時公認最前沿的物件。他與 Patrick Massot、Johann Commelin 做了一份 blueprint（像建築施工清單），列出要定義 perfectoid space 之前必須先定義的所有東西，然後逐項填。他們成功了。這是 Mathlib 第一次出現「從研一數學直插前沿」的窄高樓，也是說服數學界的轉折點。</p>
+
+<p>值得注意的是方法論：<strong>不是先有技術突破，而是先選一個社群會在意的目標，再把路徑拆成可並行的工作。</strong>Blueprint 的作用不是技術文件，而是協調裝置——它讓一群分散的人可以在同一個抽象層上工作，而不需要每個人都理解全局。這個模式後來被大量 AI 專案借用，只是換了名字叫「spec」。</p>
+
+<div class="section-title">七、Liquid Tensor：菲爾茲獎得主發現沒有人讀過他的證明</div>
+
+<p>2020 年 11 月，Scholze 聯絡 Buzzard，問他有沒有仔細讀過最新預印本某個定理（片中說是定理 8.4）的證明。Buzzard 老實回答：倫敦跨校讀書會讀完了整篇論文，但那個證明「大約 6 頁技術計算，我們最多只是掃過」。Scholze 說：「大家都這麼說。」他問過普林斯頓、問過哈佛，答案都一樣。</p>
+
+<p>於是他確信沒有人真的讀過他的工作。這不是偏執，而是對數學社會學的準確觀察：<strong>當一篇論文的技術核心超出同行的時間預算，社群會用「作者是誰」來替代「證明是什麼」。</strong></p>
+
+<blockquote>
+  「我當時的感覺是，數學仍然是一項人類活動。因為如果我要真正檢查電腦做對了什麼，我就得在腦中把整個證明拆開，確認它真的加得起來。」
+  <span class="attribution">Peter Scholze，Zulip 發言，片中引用（4559–4570）。</span>
+</blockquote>
+
+<p>Liquid Tensor Experiment 由此開始：把 Scholze 的證明形式化，用 Lean 檢查。片子說，那個六頁的證明，團隊花了約六個月才真正讀完／形式化。</p>
+
+<p>但這裡出現了整部片最尖銳的問題：<strong>Lean 能驗證證明，卻不能驗證定義。</strong>而「定義對不對」在數學裡幾乎就是全部——因為定義就是新工具本身。Commelin 與 Topaz 的對策很工程師：建立一個「具體例子」的檔案，為最重要的定義做單元測試。如果定義產出的物件看起來像鴨、叫起來像鴨，也許它真的在定義鴨。</p>
+
+<p>這些例子不是滴水不漏的證據，但 Commelin 認為，它們至少和閱讀論文裡的定義一樣可靠——甚至更可靠，因為人在審閱彼此的工作時，太容易看到自己想看到的東西。</p>
+
+<div class="highlight-box">
+  <strong>💡 我的判斷：</strong>這是整集最值得帶走的類比。軟件測試不能證明程式正確，但可以抓住「定義與意圖脫節」這類最致命的錯誤。數學形式化的未來，很可能不是「全部交給 kernel」，而是「kernel ＋ 例子庫 ＋ 人類選題」的三層結構。第三層永遠不會被自動化，因為它處理的是「我們想證什麼」，而不是「這個推導是否合法」。
+</div>
+
+<div class="section-title">八、AI 進場：AlphaProof 讀不懂題目</div>
+
+<p>2024 年，DeepMind 的 AlphaProof 在國際數學奧林匹克（IMO）拿到<strong>銀牌級分數</strong>。它的做法是輸出 Lean 證明，再用 Lean 驗證。DeepMind 在強化學習階段與比賽解題階段都用了 Lean。</p>
+
+<p>但它有一個很具體的限制：<strong>AlphaProof 讀不懂題目。</strong>它接收 Lean 陳述、產出 Lean 證明，但奧賽題目是自然語言。DeepMind 需要數以百萬計的訓練題，人工形式化不可能，於是必須自動翻譯。</p>
+
+<p>翻譯難度分層很明顯：</p>
+
+<ul>
+  <li><strong>代數與數論</strong>：題目本身就含方程式與符號，自動形式化接近完美，覆蓋約 <strong>80%</strong>。</li>
+  <li><strong>組合數學</strong>：題目讀起來像故事，自然語言多、符號少，數學本質卻是離散計算。形式化最難。</li>
+</ul>
+
+<p>儘管如此，DeepMind 最終造出了<strong>數千萬道</strong> Lean 陳述的題庫，AlphaProof 的證明搜尋才得以開始。</p>
+
+<p>2025 年 7 月，Google DeepMind 與 OpenAI 都報告了 IMO 金牌級分數，但用的是<strong>自然語言證明</strong>，沒有用 Lean 驗證。片中主持人問：這是否意味着形式化不再必要？</p>
+
+<blockquote>
+  「I think it's clearly gonna be elements of both. Lean and reinforcement learning in that environment is gonna create the engines... At the same time, the expressive power of the models is getting so much better that you don't need everything to be outputted in Lean code to verify its correctness.」
+  <span class="attribution">Kevin Hartnett，片中訪談（3704–3736）。</span>
+</blockquote>
+
+<p>我的解讀是：Lean 的角色正在由「最終裁判」變成「訓練環境」。它的價值不只在驗證輸出，更在於<strong>提供一個可自動判分的 reward 空間</strong>。自然語言模型越強，越不需要每一步都形式化；但要訓練「會做數學的模型」，你仍然需要一個不會說謊的裁判。</p>
+
+<div class="section-title">九、2026 年 9 月：2/68 的正確讀法</div>
+
+<p>這是本集最新、也最容易被過度解讀的段落：</p>
+
+<div class="data-point">
+  <span>Epoch AI</span>固定預算測試（2026 年 9 月）：一個<strong>預發布的 OpenAI 模型</strong>證明了 Erdős 問題 126，並以反例<strong>否證</strong>問題 74；兩項結果都在 Lean 中通過檢查。總成績：<strong>68 題中解出 2 題</strong>；其餘<strong>四個模型：0 題</strong>。另：2026-09-08，OpenAI 宣稱解決 Navier–Stokes 千禧年問題並附 Lean 形式化，「但不是在最好的情況下」——片中以「超出本片範圍」帶過。
+</div>
+
+<p>把這組數字讀對的方式，不是「AI 已經能做研究」，也不是「AI 做不了研究」，而是：<strong>在固定預算下，前沿模型對開放問題的命中率是 2/68，且高度集中於單一模型。</strong></p>
+
+<p>這個分佈比平均值有意義得多。它說明三件事：</p>
+
+<ol>
+  <li><strong>能力存在，但不穩定。</strong>2/68 不是零，也不是常態。它是一個厚尾分佈的抽樣，而不是一個可預測的生產力。</li>
+  <li><strong>模型之間的差距，大於模型與人類的差距。</strong>四個模型 0 題，一個模型 2 題。這意味着「AI 做數學」不是一個統一的命題，而是「哪個模型、什麼預算、什麼問題分佈」的聯合命題。</li>
+  <li><strong>Lean 是這個結果能被信任的前提。</strong>沒有 Lean 檢查，2/68 只是一個聲稱；有了 Lean，它是一個可審計的資料點——即使我們仍然不知道那兩個證明的「意義」有多大。</li>
+</ol>
+
+<div class="section-title">十、Terence Tao 的 Equational Theories：2,200 萬題的管線</div>
+
+<p>2024 年 9 月，Terence Tao 啟動 Equational Theories 專案，目標是測繪「哪些代數律蘊含哪些其他代數律」，由 Lean 檢查結果。</p>
+
+<p>規模令人咋舌：<strong>一個月內由 2,200 萬個問題縮到 238 個；11 月底剩 138；到隔年 3 月底，卡在 4 個。</strong></p>
+
+<p>但 Tao 從一開始就說，把每個蘊含關係都解決掉不是目標——這是一個「新工作方式」的試點。他想像一個「實驗數學」分支，類比現代物理：大規模協作產生巨量資料，不是取代理論，而是補充理論。</p>
+
+<p>過程中真的撞出新東西：<strong>magma cohomology</strong>。John Baez 起初稱這個專案是「巨大的浪費時間」，後來改口，承認自己從未見過這個結構。對 Tao 來說，這正是重點：專案示範了一種新的「數學機器」。</p>
+
+<p>我的判斷：這個案例的功勞，不在於某一條證明被機器寫出來，而在於<strong>管線讓 2,200 萬個問題變得可處理</strong>。這是「AI for math」最被低估的貢獻——不是取代數學家，而是把「問題空間的測繪」由手工業變成工業。測繪完成後，真正困難的仍然是選題與理解，但至少你不再需要用手去數星球。</p>
+
+<div class="section-title">十一、formalization gap：信任被移到上游</div>
+
+<p>片中最重要的一段，是對「檢查」這件事的拆解：</p>
+
+<blockquote class="strong">
+  「When an AI produces a Lean proof of a famous conjecture, someone must still establish that the formal statement captures the intended conjecture with appropriate definitions and assumptions. The checker certifies the derivation, but it doesn't certify the human choice of target. This is the formalisation gap. The trust has basically moved upstream.」
+  <span class="attribution">片中對 formalization gap 的定義（4064–4086）。</span>
+</blockquote>
+
+<p>這句話值得逐層拆開：</p>
+
+<ul>
+  <li><strong>Checker 認證的是推導。</strong>由假設到結論的每一步是否合法，這是機器可以做的。</li>
+  <li><strong>Checker 不認證目標。</strong>「這個形式陳述是否捕捉到原意的猜想」——這需要人來判斷。</li>
+  <li><strong>信任被移到上游。</strong>以前你信任「證明是對的」；現在你信任「形式化的人選對了定義與假設」。工作沒有消失，只是換了位置。</li>
+</ul>
+
+<p>而這個「上游」比想像中更不穩。片中 Hartnett 講了一個尚未公開的故事：他們把《Annals of Mathematics》上 <strong>50 條定理</strong>的陳述形式化，在公開前先讓 AI 檢查。AI 找到兩類錯誤：</p>
+
+<ol>
+  <li>團隊自己在翻譯時的錯誤；</li>
+  <li>更耐人尋味的——他們忠實翻譯了論文所寫的內容，但<strong>論文所寫的內容本身並不嚴格為真</strong>。</li>
+</ol>
+
+<p>原因是人類的省略：「顯然 n 至少是 3」「這個集合應該非空」——這些前提沒有寫出來，因為專家會自動補上。結果是：<strong>四篇菲爾茲獎得主在 Annals 發表的定理，嚴格按字面讀，是錯的。</strong></p>
+
+<blockquote>
+  「I think this is quite humbling. I think as a community, we should take a look and we should step back and think: we say we've got this precise formal language where we can express exactly what we mean. But in practice, we're only using it at sort of ninety-nine percent capacity.」
+  <span class="attribution">Kevin Hartnett，片中訪談（4263–4279）。</span>
+</blockquote>
+
+<p>這是整部片最反直覺的發現。我們通常以為「形式化」是為了對付機器；結果它先照出了人類自己的不精確。而這個不精確不是粗心，而是<strong>社群效率的必要之惡</strong>：如果每篇論文都要寫出所有顯然的前提，數學的溝通成本會高到無法運作。</p>
+
+<div class="section-title">十二、zlib 與 identity function：性質覆蓋的陷阱</div>
+
+<p>片尾談到 Kim Morrison 用 Claude agent 把 zlib 的 C 實作翻譯成 Lean，並讓它通過 C 版附帶的測試套件，最後證明「對任何壓縮等級、任何資料，壓縮再解壓會還原原文」。</p>
+
+<p>這是很強的結果。但主持人的追問很準：這是「盲人摸象」——你證明了你指定的性質，不代表你捕捉了整個 zlib。</p>
+
+<p>de Moura 給出的反面教材極清楚：如果只要求「壓縮再解壓還原」，AI 可以用 <strong>identity function</strong> 作弊——壓縮直接返回原資料，解壓也直接返回，性質照樣成立。所以必須再加「輸出必須小於輸入」「壓縮率必須達到測試套件水準」等性質。</p>
+
+<p>他的結論是分場景的：</p>
+
+<blockquote>
+  「If you see the AI as an assistance to you, you're in the loop looking at the code, I think this is not super concerning. But once you let the AI go wild and you don't even want to look at the code, it's really important to cover all aspects. Otherwise, you can have an implementation that satisfies all your properties, but you do not fully specify what you wanted.」
+  <span class="attribution">Leonardo de Moura，片中訪談（4840–4873）。</span>
+</blockquote>
+
+<p>這段話的適用範圍遠超 zlib。它是所有「用 AI 寫程式並用測試驗收」的團隊都應該貼在牆上的提醒：<strong>測試通過，只證明你寫的測試被滿足；它不證明你寫對了測試。</strong>當人類在迴圈裡，這個 gap 可以由 code review 補；當人類離開迴圈，gap 就變成系統性風險。</p>
+
+<div class="section-title">十三、AI 圖書館：更差，但更多</div>
+
+<p>Buzzard 在片中提出一個很反直覺的預測。Mathlib 的哲學一直是「找到正確的抽象、在正確的一般性下發展」，因為那會讓後面的事變簡單。但 AI 不在乎——它會「看一本書，完全不去想，盲目翻譯成人類數學到 Lean」。</p>
+
+<p>結果是：AI 很樂意硬幹，人類卻會在感覺「我應該能飛過去」卻被卡住時想重新設計。</p>
+
+<blockquote class="strong">
+  「In a year's time, there will be AI developed libraries that will be much more poorly thought out in those terms, because somehow trying to make it easy seems to be less of an issue. If you're prepared to just pour tokens into problems.」
+  <span class="attribution">Kevin Buzzard，片中訪談（3871–3887）。</span>
+</blockquote>
+
+<p>他甚至說，如果現在要改動圖書館裡的一個底層定義，AI 反而會很棒：它會把根弄斷，然後硬幹着把所有東西修好。人類不會這樣做，因為人類會想重新設計；AI 不會，因為它不覺得「難」是一個需要解決的問題——它只會倒更多 token 進去。</p>
+
+<p>這是一個關於 AI 與軟件工程的漂亮觀察：<strong>AI 把「設計」變成一個可選項。</strong>當重寫成本趨近於零，人們就不再需要好的抽象；但好的抽象正是讓系統在規模化之後仍然可理解的唯一方法。短期看，AI 圖書館會長得更快；長期看，它們可能更難維護。</p>
+
+<p>而 Mathlib 社群的選擇很清楚：他們的圖書館仍然只收「概念上正確」的東西。也就是說，未來會出現兩個生態——一個是人類維護的、慢而一致的 Mathlib；另一個是 AI 生成的、快而混亂的平行圖書館。兩者之間的介面，會是下一個十年的基礎設施問題。</p>
+
+<div class="section-title">十四、爭議與保留</div>
+
+<p><strong>一、「AI 改變了數學」的敘事。</strong>這集最克制的地方，是它沒有說 AI 已經能做數學。它說的是：AI 在固定預算下對 68 題中的 2 題有效，且高度依賴單一模型。這個說法比多數標題保守得多，也更接近可審計的事實。</p>
+
+<p><strong>二、2/68 的統計意義。</strong>樣本很小，且是「固定預算」的競賽式設定，不能直接外推到真實研究。它的價值在於<strong>方法論</strong>：Lean 讓「AI 做數學」由一個不可證偽的聲稱，變成一個可重跑的實驗。</p>
+
+<p><strong>三、formalization gap 會不會被解決？</strong>片中沒有給出答案。我的判斷是：它不會被「解決」，只會被「管理」——透過例子庫、透過人類選題、透過對定義的反覆審查。只要數學的目標是「理解」而不只是「正確」，這個 gap 就會一直存在。</p>
+
+<p><strong>四、菲爾茲獎得主的定理「嚴格來說是錯的」。</strong>這是一個很強的聲稱，但片中的語境是「按字面形式化之後」——不是說那些定理的數學內容有問題，而是說人類的書寫省略了專家默認的前提。這個區分很重要，否則會被誤讀為對數學家的攻擊。</p>
+
+<div class="section-title">十五、這集到底該怎麼用</div>
+
+<p>如果你做 AI，這集給你三個可以直接搬走的框架：</p>
+
+<ol>
+  <li><strong>信任半徑。</strong>不要問「這個系統可不可信」，要問「我必須信任的最小核心是什麼」。Lean 的 kernel 是一個極端例子，但同樣的思維適用於 agent 的 tool 權限、模型的 guardrail、資料管線的來源。</li>
+  <li><strong>形式化 gap。</strong>任何「機器驗證通過」的結果，都要再問一句：<strong>它驗證的是我想證的東西嗎？</strong>這適用於 benchmark、測試、合約、審計。</li>
+  <li><strong>20:1 的成本比。</strong>新技術的採用阻力，很少是意識形態，多半是投入產出比。要推動採用，不是說服人們「這很重要」，而是把比例降下來。</li>
+</ol>
+
+<p>如果你做數學或科學研究，這集給你一個更實用的問題：<strong>你的領域裡，有沒有一個「6 頁的證明，其實沒有人讀過」？</strong>Scholze 的故事不是特例，而是大規模學術生產的常態。Lean 不一定是最終答案，但它至少提供了一個把「沒有人讀過」變成「機器讀過、人負責選題」的路徑。</p>
+
+<blockquote class="strong">
+  「The machine says it's right. Something has now actually finally read it.」
+  <span class="attribution">片中開場（39–41）。這句話既是最好的承諾，也是最大的陷阱：機器讀過了，但「它是對的」與「它是你想證的」之間，仍然站着一個人。</span>
+</blockquote>
+
+<div class="data-point">
+  <span>核心</span><strong>Lean 的三十年，是把「檢查」由人類的社會過程，變成機器的形式過程；但 2026 年的真正發現是：形式化沒有消除信任，只是把它移到更上游。</strong>機器認證推導，人認證目標。當 AI 開始大量生產形式化代碼，這個上游會變得比任何時候都擁擠——而那正是下一個十年最重要的基礎設施。
+</div>
+
+<hr>
+
+<p style="font-size:0.9rem; color:#777;"><strong>延伸：</strong>本系列第 183 篇（MLST × Leonardo de Moura：當 AI 攻破 Lean 的內核）處理的是 Lean kernel 的安全邊界；本篇處理的是 Lean 的歷史與「形式化 gap」的認識論。兩篇可以對讀：一篇講「機器也會說謊」，一篇講「機器說了真話，但可能不是你想聽的那句」。</p>
+
+<footer>
+  <p>來源：Machine Learning Street Talk · YouTube 官方字幕（約 111 KB，含時間碼）· Kevin Hartnett《Proof in the Code》</p>
+  <p style="margin-top:0.3rem;">生成：2026-10-27 · 深度復述 #239 · 引文取自節目逐字稿，分析與補充已標明</p>
+</footer>
+</div>
+</body>
+</html>
