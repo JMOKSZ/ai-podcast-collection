@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客深度萃取 · 2026-10-27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf8f5; --ink:#1f1c19; --muted:#6b635a; --rule:#e2dcd3;
+    --accent:#8a4b2a; --soft:#f2ede5; --code:#f0eae1;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Source Serif 4","Noto Serif SC",Georgia,"Songti SC",serif;
+    font-size:17px; line-height:1.78; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:800px;margin:0 auto;padding:56px 26px 90px}
+  header.top{border-bottom:1px solid var(--rule);padding-bottom:26px;margin-bottom:14px}
+  .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-family:Georgia,serif}
+  h1{font-size:31px;line-height:1.3;margin:12px 0 14px;font-weight:700;letter-spacing:-.01em}
+  .meta{font-size:13.5px;color:var(--muted);line-height:1.9}
+  .meta b{color:var(--ink);font-weight:600}
+  .lede{margin:26px 0 6px;font-size:17.5px}
+  .lede ul{margin:12px 0 0;padding-left:20px}
+  .lede li{margin:11px 0}
+  h2{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+     margin:64px 0 8px;font-family:Georgia,serif;font-weight:600;border-top:1px solid var(--rule);padding-top:26px}
+  h3{font-size:25px;margin:36px 0 4px;line-height:1.35;font-weight:700}
+  .host{font-size:14px;color:var(--muted);margin:0 0 20px}
+  h4{font-size:20px;margin:34px 0 6px;line-height:1.4;font-weight:600}
+  h5{font-size:15.5px;margin:26px 0 4px;font-weight:600;color:var(--accent)}
+  .stamp{font-size:13px;color:var(--muted);margin:0 0 22px;font-variant-numeric:tabular-nums}
+  .stamp .dot{color:var(--rule);margin:0 8px}
+  p{margin:0 0 15px}
+  .label{font-weight:600;color:var(--ink)}
+  blockquote{
+    margin:22px 0;padding:2px 0 2px 20px;border-left:2px solid var(--accent);
+    font-style:italic;color:#332e28;font-size:17.5px;
+  }
+  blockquote .who{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:7px}
+  ul.tight{margin:8px 0 18px;padding-left:21px}
+  ul.tight li{margin:7px 0}
+  ul.tight li::marker{color:var(--accent)}
+  .data{background:var(--soft);border:1px solid var(--rule);padding:20px 24px;margin:20px 0 24px}
+  .data h5{margin:0 0 10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-family:Georgia,serif}
+  .data ul{margin:0;padding-left:19px}
+  .data li{margin:6px 0;font-size:16px}
+  .num{font-variant-numeric:tabular-nums;font-weight:600}
+  .note{font-size:14.5px;color:var(--muted);border-top:1px dotted var(--rule);padding-top:12px;margin-top:26px}
+  table{width:100%;border-collapse:collapse;margin:16px 0 26px;font-size:14.5px}
+  th,td{text-align:left;padding:8px 8px 8px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{font-weight:600;color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  td.t{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap;width:96px}
+  .tag{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+       color:var(--accent);border:1px solid var(--rule);padding:1px 7px;margin-left:6px;vertical-align:2px}
+  footer{margin-top:70px;border-top:1px solid var(--rule);padding-top:22px;font-size:13px;color:var(--muted)}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #d8c9bb}
+  a:hover{border-bottom-color:var(--accent)}
+  @media(max-width:600px){
+    .wrap{padding:38px 18px 70px}
+    body{font-size:16.5px;line-height:1.75}
+    h1{font-size:26px} h3{font-size:21px} h4{font-size:18.5px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="kicker">Daily Podcast Dig</div>
+  <h1>機器保證了推導，卻保證不了那是你想證的東西</h1>
+  <div class="meta">
+    <b>報告日期</b>：2026-10-27（星期二）<br>
+    <b>生成時間</b>：2026-10-27 02:06 UTC（10:06 HKT）<br>
+    <b>掃描窗口</b>：2026-10-26 02:11 UTC → 2026-10-27 02:03 UTC<br>
+    <b>本輪新增</b>：中文 1 集（單口 PPT 年度復盤）｜英文 1 集（紀錄片式深度對談）<br>
+    <b>來源</b>：屠龍之術（小宇宙 RSS）· Machine Learning Street Talk（Anchor RSS / ReScript 逐字稿）
+  </div>
+</header>
+
+<div class="lede">
+<p>今天兩集，一集講「錢」，一集講「證明」。表面無關，底下問的是同一件事：<b>當產出速度超過人類的審核速度，信任要放在哪裡。</b></p>
+<ul>
+  <li><b>庄明浩用 152 頁 PPT 把 2026 年的 AI 拆成技術／產業／資本三章</b>，全場 90 分鐘單口。真正的殺傷力在第三章：自由現金流與 capex 的缺口、Meta 時隔多年 FCF 轉負、交易結構槓桿化、英偉達同時是最活躍的 AI 投資人與事實上的「準央行」。他的結論不是「泡沫會破」，而是「<b>系統已經複雜到沒有人能完整看清</b>」。</li>
+  <li><b>他在標題裡就承認了自己跟不上</b>——「不是，怎麼又換版本了？」。整場技術章反覆處理同一個症狀：benchmark 失效、模型週更、「大奇觀時代」。</li>
+  <li><b>Kevin Hartnett 的 Lean 史是本年度最好的「AI 與數學」單集</b>。1998 年 Thomas Hales 證完開普勒猜想，Annals of Mathematics 審不了，最後只能在「99% 信心」的免責聲明下接受；Hales 後來花 <span class="num">20 人年</span>把它形式化，換來的只是「它是對的」。</li>
+  <li><b>2026 年 9 月 Epoch AI 固定預算測試是最冷靜的一組數字</b>：預發布的 OpenAI 模型證明 Erdős 問題 126、並用反例否證問題 74，<span class="num">68 題只解 2 題</span>，其餘四個模型 <span class="num">0</span>。兩題都在 Lean 裡通過檢查。</li>
+  <li><b>核心概念是 formalization gap</b>：Lean 認證的是「推導合法」，不是「你證的是你想證的命題」。信任被整體上移到選題與定義——而那一段，仍然是人。</li>
+</ul>
+</div>
+
+<h2>中文播客</h2>
+
+<h3>屠龍之術</h3>
+<p class="host">主播：庄明浩（風險投資從業者，單口）｜平台：小宇宙 / Apple Podcasts</p>
+
+<h4>不是，怎麼又換版本了？——狂飆中的 AI 2026 <span class="tag">solo · 152 頁 PPT</span></h4>
+<p class="stamp">發布：2026-10-26 17:55 UTC<span class="dot">·</span>2026-10-27 01:55 HKT<span class="dot">·</span>約 90 分鐘<span class="dot">·</span>狂喜播客節現場專場</p>
+
+<p><b>主題</b>：這不是訪談，是一份年度體檢。庄明浩按過去兩年的慣例，在狂喜播客節做了一場 90 分鐘帶 PPT 的單口專場，今年 PPT 做到 <span class="num">152 頁</span>，分三章：<b>技術、產業、資本</b>。他在 shownotes 裡寫得很直白——「整個 10 月基本就都在忙活這次的 PPT 了」，上一集（9-28 談 EDA）到這一集之間，podcast 後台差點斷更一個月。</p>
+
+<p><b>嘉賓背景</b>：無嘉賓。庄明浩是這條賽道上少見的「三重身份」講者：做過風險投資、看過一二級市場、自己下場做過內容。這決定了他的分析框架不是單純的技術評述，而是<b>把技術事件換算成資產負債表</b>。他過去的專場（9-15 的 73 頁 PPT、9-22 的生產階段那集）是技術—產業兩段式；這一集明顯多了一整章資本，而且資本章排在最後、篇幅最重。</p>
+
+<h5>這一集要怎麼讀</h5>
+<p>必須先說清楚一件事：<b>這集目前沒有公開逐字稿</b>。小宇宙已開啟文稿功能，但介面回 401；節目本體在 YouTube 沒有對應影片；節目音檔為 122 MB 的 m4a，本機為單核 1 GB，無法本地 ASR。這意味著下面的內容<b>不是逐句轉錄，而是按他公布的 135 個章節節點（timestamp）重建的論證骨架</b>。好處是：莊明浩把每個論點的標題直接寫進了時間軸，標題本身就是主張（例如「杰文斯悖論出現了」「英偉達要做的是央行」「錢不夠了怎麼辦？」），骨架的解析度相當高。壞處是：<b>PPT 內部的具體數字無法核實</b>，因此本文只引用可從公開文本確認的數字，其餘一律標明為「章節主張」而非「數據」。這一點請當作閱讀前提。</p>
+
+<div class="data">
+<h5>三章結構（依官方時間軸）</h5>
+<ul>
+  <li><b>第一章 技術</b>（08:06–49:00）：模型到系統、能力／成本／安全三角、美國大模型競爭、Google 與 Meta 追上、benchmark 失效、大「奇觀」時代、一切軟件都可能被……、訓練的變化、後訓練崛起、RSI 成為共識、Claude 的激進嘗試、Anthropic 的「恐怖片」、DeepSeek 研究員的「親歷者說」、成本「斬殺線」、所謂「帕累托最優」、開源 vs 閉源、中美模型發布與 token/spend、雲端 vs 本地、決策模型、同一模型的不同版本、AI 安全與安全股、那些我沒有聊到的主題、無力感來襲。</li>
+  <li><b>第二章 產業</b>（49:10–77:20）：怎麼定義「蓬勃」→ 看收入；OpenAI 與 Anthropic 的 ARR；訂閱制毛利、API 制毛利；頭部客戶收入佔比過高；產業巨頭競爭 map；「Token」與 token factory；辦公室建設 vs 數據中心；neocloud 們與其分類；「我們都一樣」；傑文斯悖論；B300 租賃價格瘋漲；英偉達「變態」的折舊率；Menlo 統計的應用大盤；無人關心的 chatbot 戰場；模型吞噬應用嗎；明星公司 ARR 標準的通脹；C.ai 的破產；「一鯨落萬物生」；我其實在談的是「錢」的問題。</li>
+  <li><b>第三章 資本</b>（77:26–108:10）：標普 500 → 從 GDP 說起 → 週期的頂點到了嗎 → 頭部公司市值佔比 → 這個週期能持續多久 → 利息與十年期國債 → 巴菲特指數與科技股 → 異常狂暴的市場 → 個股表現 → 從 PE 看其實在變便宜 → MAG7 還重要嗎 → 拆半導體／存儲三巨頭毛利／美光 → 一級市場、「全村人的希望」、用什麼尺度衡量 Anthropic 的收入、VC 不在大家伙股東名單裡你就誰也不是、單輪 5000 萬美金拿走 90% 流動性（他現場勘誤：原口誤為 5 億）、世界模型、YC 趨勢、泡沫大討論 2.0、自由現金流與 capex 的缺口、錢的流轉、Meta 自由現金流為負、錢不夠了怎麼辦、交易結構越來越複雜槓桿越來越大、老黃在「努力」拖底、英偉達可能是最活躍的 AI 投資人、英偉達要做的是央行、bubble。</li>
+  <li><b>尾聲</b>（108:58–124:58）：發布節奏的變化、AI 在數學上的進展、模型發布頻率增強、RSI 再度來襲、久遠的記憶 openclaw、codex 這個「上個版本之子」、國內辦公 agent 戰役、回頭看這一年、回到標題、用戶到底拿 personal agent 幹什麼、站在最前面的 Meta-muse、muse 的數據與吐槽、評測站 assistantbenchmark.com 出現、「403」問題、補課：協議層、國內呢、但我有種無力感、熱乎的 Claude Duet、最後的轉場、最近兩個讓我恍惚的文章標題、「這個世界的議題似乎收斂到了只剩兩個：AI 和減肥藥」、「這個世界還會變好嗎？」</li>
+</ul>
+</div>
+
+<h5>核心論點</h5>
+
+<p><b>論點一：競爭的基本單位已經從「模型」變成「系統」。</b>第一章第二個節點就叫「模型到系統」（08:46），這個順序不是隨意的——它排在「第一章：技術」之後不到一分鐘，等於先把整章的坐標系定下來。順著這個坐標系，後面的「能力、成本和安全三角」（09:21）才有意義：<b>三者不是三個獨立指標，而是一個必須同時求解的約束系統</b>。一個模型在單項上更強但成本高 3 倍、或拒絕行為更難預測，在系統層面就是更差的選擇。這個框架解釋了為什麼他在後面會用「token」和「spend」兩個角度分別切開源與閉源（30:40）——單看 token 單價會得出錯誤結論，因為真正決定採用的是「完成一件工作的成本」。</p>
+
+<p><b>論點二：benchmark 已經失效，所以我們進入了「大奇觀時代」。</b>時間軸上「benchmark 失效」（13:46）與「大奇觀時代」（14:27）只隔 41 秒，是全集最緊湊的一組因果。他的判斷是：<b>當所有頭部模型在既有榜單上互相追平，榜單就不再提供區分度，剩下的只是「奇觀」</b>——單次 demo 的震撼、極端案例的傳播、版本號的競速。「你追我趕」（13:11）和「Google 和 Meta 追上了」（12:53）是這個判斷的前提：他明顯不認為 2026 年是「御三家」（11:41 那個詞他加了引號）穩定的年份，而是追平—反超—再追平的高頻震盪。這也直接支撐了標題——「不是，怎麼又換版本了？」不是抱怨，是<b>對迭代頻率超過人類跟讀頻率的描述</b>。</p>
+
+<p><b>論點三：後訓練與 RSI 已經從「可能性」變成「共識」。</b>節點順序是「訓練的變化」（18:23）→「後訓練崛起」（19:09）→「RSI 成為共識」（19:41）。半分鐘一個台階，節奏本身就是論點：<b>他認為 pre-training 的邊際收益敘事已經讓位給後訓練，而 RSI（遞迴自我改進）在 2026 年不再是邊緣話題，而是被產業默認的前提</b>。接下來三個節點是「Claude 的激進嘗試」（20:33）、「Anthropic 的『恐怖片』」（21:25）、「DeepSeek 研究員的『親歷者說』」（22:09）——三個案例，一個是產品層的激進、一個是安全敘事的極端化、一個是一線研究者的第一手體驗。這個三連安排很值得注意：<b>他把「RSI 共識」同時放在「能力提升」和「恐懼敘事」兩條線上討論，而不是選邊</b>。</p>
+
+<p><b>論點四：「斬殺線」比平均值重要，「帕累托最優」多半是幻覺。</b>「成本」章開頭是「斬殺線」（24:36），接著才是「所謂『帕累托最優』」（26:13）——注意「所謂」兩個字。這是全場方法論上最鋒利的一刀：<b>在多維成本結構裡，宣稱自己處於帕累托前沿，通常只是選擇了對自己有利的那兩個維度</b>。真實決策發生在「斬殺線」上——某個應用場景能承受的單位成本上限，越過就沒有商業模式。後面「成本的多維度考量」（27:45）是同一命題的展開：延遲、上下文長度、失敗重試率、審核成本，都不在 token 單價裡。</p>
+
+<p><b>論點五：產業的健康度只有一個硬指標——收入，而收入的結構比總額更危險。</b>第二章開場三連問很乾淨：「如何定義產業的蓬勃發展？」（49:13）→「最直接的還是看收入」（50:36）→「收入的構成」（51:08）。他然後把收入切成訂閱與 API 兩塊，各自看毛利（54:59、58:07），再插一刀：「頭部客戶的收入佔比過高」（58:57）。<b>這是整場最接近「風險提示」的地方</b>：當一家模型公司的收入高度集中於少數頭部客戶，ARR 的成長曲線好看，但客戶談判力、續約風險、以及「這些客戶自己也在做模型」的重疊風險，全部被平均值遮住。</p>
+
+<p><b>論點六：基礎設施端出現了教科書級的傑文斯悖論，而折舊率是沒人願意細看的那一格。</b>「token factory」（61:38）、「neocloud 們」與其分類（62:51、63:14）之後，他丟出「杰文斯悖論出現了」（64:10），緊接「瘋漲的 b300 租賃價格」（65:16）與「英偉達變態的折舊率」（66:03）。這三格的排列是全場最像投資備忘錄的一段：<b>效率提升沒有壓低總支出，反而擴大了總需求；而租賃價格的飆升與折舊假設，決定了 neocloud 的商業模式到底是套利還是賭博</b>。「英偉達變態的折舊率」單獨成節，暗示他認為 GPU 的會計壽命與物理／經濟壽命之間存在系統性落差——這正是 2026 年所有算力融資案的共同軟肋。</p>
+
+<p><b>論點七：模型沒有吞噬應用，但把應用的估值標準打亂了。</b>「模型吞噬應用嗎？」（68:14）後面接「又得看 ARR 了」（69:52）、「按照場景看機會」（71:00）、「如果再增加用戶的時間角度」（72:10）、「流量與營收可以兼得嗎？」（73:17）、「明星公司 ARR 標準的『通貨膨脹』」（73:44）、「C.ai 的破產……」（74:16）、「『一鯨落萬物生』」（75:09）。這串節點描述的是一個<b>估值錨失效的過程</b>：ARR 這個指標被 AI 公司普遍使用後開始通脹（同樣的 ARR 對應更差的留存與更高的推理成本），C.ai 的結局成為反例，而「一鯨落萬物生」是他對市場出清後格局的判斷——大玩家倒下，需求不會消失，會散給倖存者。</p>
+
+<p><b>論點八（最重要）：資本市場的問題不是「太貴」，是「現金流缺口 + 交易結構不透明」。</b>第三章的節點密度全場最高，而且前八個節點都在做同一件事——<b>先證明「從估值看其實不貴」</b>：「從 PE 角度看其實在變便宜」（84:41）、「拆分看科技股」（85:26）、「半導體芯片公司」（85:56）、「存儲三巨頭的爆炸毛利」（86:26）、「美光的情況」（87:05）。這是一條「多頭」的路徑。然後他轉向：「泡沫大討論 2.0」（99:30）→「自由現金流和 capex 的 gap 出現了」（100:42）→「錢的流轉」（101:22）→「時隔多年 Meta 自由現金流為負」（102:13）→「錢不夠了怎麼辦？」（102:44）→「交易機構越來越複雜，槓桿越來越大」（103:16）→「系統過於複雜了」（105:01）。<b>這個轉折是整場的樞紐：估值面可以便宜，現金流面卻在惡化，兩者之間的橋是槓桿。</b>而「老黃在非常『努力』的『拖底』」（105:16）、「英偉達可能是目前最活躍的 AI 投資人」（105:42）、「英偉達要做的是央行」（106:40）三連，是他對這個結構最尖銳的命名：<b>當一家供應商的客戶需要它投資才能買它的產品，它實質上已經在做最後貸款人的工作。</b></p>
+
+<p><b>論點九：personal agent 是 2026 年最熱的敘事，也是最難驗證的敘事。</b>尾聲的節點順序很有意思：「用戶到底拿 personal agent 幹什麼？」（116:47）→「站在最前面的 Meta-muse」（117:28）→「muse 數據和吐槽」（117:52）→「評測站出現了 assistantbenchmark.com」（118:35）→「『403』問題」（119:08）→「補課：協議層」（119:51）→「國內呢？」（120:31）→「但我有種無力感」（120:56）。他先問用途、再給最激進的樣本、然後給真實數據與吐槽、接著指出「評測站出現了」——這是一個<b>敘事正在被量化馴服的過程</b>。「403 問題」與「協議層補課」是很具體的工程觀察：agent 撞上的是權限與協定，不是智力。</p>
+
+<h5>關鍵數據（可核實部分）</h5>
+<div class="data">
+<ul>
+  <li><b>152 頁</b>：本次 PPT 總頁數（他自述「除了常規的技術、產業和資本之外，我稍微展開講了講最近火熱的 personal agent」）。</li>
+  <li><b>約 90 分鐘</b>：現場專場時長；PPT 正文從 <span class="num">04:03</span> 開始，最後一個節點「這個世界還會變好嗎？」落在 <span class="num">124:58</span>。</li>
+  <li><b>135 個</b>章節節點：官方時間軸的段落數，平均每 54 秒一個論點，密度高於他 9-15 那場 73 頁的專場。</li>
+  <li><b>勘誤一處</b>：95:24 原講「5 億美金單輪融資拿走 90% 流動性」，他隨後在時間軸註明「看岔了，是單輪融資 5000 萬美金的 deal」。這一點值得記住——<b>他自己在公開材料裡留了勘誤</b>。</li>
+  <li><b>約 1 個月</b>：距上一集（2026-09-28，談 EDA 與 AI 時代的芯片設計）的間隔，他為此在開場道歉。</li>
+  <li><b>三章佔比</b>：技術約 41 分鐘、產業約 28 分鐘、資本約 31 分鐘。資本章在最後但並不短——這是今年結構上最大的變化。</li>
+</ul>
+</div>
+<p class="note">其餘數字（ARR、毛利率、B300 租價、折舊年限、頭部客戶佔比、Menlo 大盤數字）均在 PPT 內頁，未隨音檔或 shownotes 公開。本文不代為補齊，避免把估算寫成事實。</p>
+
+<h5>重點引用</h5>
+<blockquote>「看了眼播客後台，上次更新是 9.29，差點斷更一個月，對聽友表示抱歉；整個 10 月基本就都在忙活這次的 PPT 了。」<span class="who">— 節目 shownotes 開場</span></blockquote>
+
+<blockquote>「這次的內容一共 152 頁，除了常規的技術、產業和資本之外，我稍微展開講了講最近火熱的 personal agent。」<span class="who">— 節目 shownotes</span></blockquote>
+
+<blockquote>「這個世界的議題似乎收斂到了只剩兩個：AI 和減肥藥。」<span class="who">— 124:58 段落標題，全場最後一個實質論點</span></blockquote>
+
+<blockquote>「但我有種無力感。」<span class="who">— 120:56 段落標題；同一情緒在 45:55「無力感來襲」已出現過一次，首尾呼應</span></blockquote>
+
+<blockquote>「這個世界還會變好嗎？」<span class="who">— 全場收尾</span></blockquote>
+
+<h5>技術詳情</h5>
+<p>雖然是投資人視角，技術章的顆粒度不低。可辨識的技術議題至少五組：</p>
+<ul class="tight">
+  <li><b>後訓練的工程化</b>（19:09）：他把「後訓練崛起」當成獨立命題，而不是 pre-training 的附註。搭配 17:06「一切軟件都可能被……」與 18:23「訓練的變化」，指向的是「訓練流程本身正在被重寫」——資料、reward、環境、rollout 排程，而不是單純的參數量競賽。</li>
+  <li><b>同一模型的不同版本</b>（36:27）：這是一個被低估的觀察。當一個模型家族在數月內出現多個「同代不同版」的權重，<b>模型的身份就不再是版本號，而是部署配置</b>——temperature、工具權限、上下文裁剪、後訓練資料快照。對使用方而言，這意味著「換版本」的風險評估不能只看 benchmark。</li>
+  <li><b>決策模型</b>（35:44）：他把「決策模型」單獨列節，暗示 2026 年出現了一類專門做路由／判斷的輕量模型（分類、打分、guardrail），而不是把所有事都交給最大模型。這是成本結構驅動的架構演化。</li>
+  <li><b>協議層</b>（119:51）：他稱之為「補課」，意思是這一塊他過去講得不夠。配上 119:08 的「403 問題」，指向 agent 在真實網路中遭遇的授權／配額／反爬現實。</li>
+  <li><b>RSI 的雙重敘事</b>（19:41、111:45）：同一個概念在技術章与尾聲各出現一次，間隔 90 分鐘。第一次是「共識」，第二次是「再度來襲」——用詞的變化說明他認為這件事在這一年裡從判斷變成了壓力。</li>
+</ul>
+
+<h5>行業 insight</h5>
+<p>把 135 個節點當成一份清單讀，會看到一個比「泡沫論」更精確的判斷：<b>2026 年的 AI 產業，瓶頸已經從「能不能做出來」移到「能不能算清楚」。</b>四個層面同時出現「算不清楚」：</p>
+<ul class="tight">
+  <li><b>能力算不清楚</b>——benchmark 失效，只能靠奇觀與口碑。</li>
+  <li><b>成本算不清楚</b>——斬殺線多維，帕累托前沿是自選維度的產物。</li>
+  <li><b>收入算不清楚</b>——ARR 通脹、頭部客戶集中、訂閱毛利隨使用額度分層變號（56:43 那一節「訂閱用戶在各種使用額度下，廠商的毛利狀態」是全場最實務的一格）。</li>
+  <li><b>資本算不清楚</b>——自由現金流與 capex 的缺口、槓桿化的交易結構、供應商兼投資人兼準央行的角色重疊。</li>
+</ul>
+<p>這四層「算不清楚」構成了他最後的「無力感」。值得注意的是<b>他沒有給出崩潰時點</b>。108:10「轉場」之後，他談的是發布節奏、數學進展、openclaw、codex、國內辦公 agent 戰役——也就是說，<b>他認為基本面的推進仍然真實，問題在於定價與結構</b>。這是一個相當克制的位置：既不是「這次不一樣」，也不是「2000 年重演」。</p>
+
+<h5>前後脈絡</h5>
+<p>縱向對比他自己這條線，能看到一個清晰的演進：</p>
+<table>
+  <tr><th>日期</th><th>集數主題</th><th>框架</th></tr>
+  <tr><td class="t">2026-09-15</td><td>智能的下一幕，讓人興奮——73 頁 PPT solo</td><td>技術為主，產業為輔；語氣偏樂觀</td></tr>
+  <tr><td class="t">2026-09-22</td><td>AI 進入生產階段之後，智能、算力、芯片會走向哪裡？</td><td>技術 → 算力 → 芯片的傳導鏈</td></tr>
+  <tr><td class="t">2026-09-28</td><td>當 AI 開始設計芯片——EDA 與 AI 時代的芯片設計</td><td>單點深挖，供應鏈上游</td></tr>
+  <tr><td class="t">2026-10-26</td><td>不是，怎麼又換版本了？——狂飆中的 AI 2026</td><td><b>技術／產業／資本三章，資本章首次獨立成章且篇幅最重</b></td></tr>
+</table>
+<p>三個變化值得指出：<b>其一</b>，PPT 從 73 頁到 152 頁，翻了一倍，但時長沒變（都是 90 分鐘），意味著每個論點分到的時間更少——這本身是他「跟不上」的一部分。<b>其二</b>，9 月那場的關鍵詞是「讓人興奮」，10 月這場的收尾是「無力感」與「這個世界還會變好嗎」，情緒位移明顯。<b>其三</b>，personal agent 在 9 月完全不是主題，10 月卻在技術章尾聲與尾聲各佔一段——<b>這是他在一個月內被迫新增的章節</b>，也解釋了為什麼他要用「站在最前面的 Meta-muse」這種帶調侃的說法，並立刻用「muse 數據和吐槽」把溫度降下來。</p>
+
+<h5>爭議點</h5>
+<ul class="tight">
+  <li><b>對 RSI 的處理方式。</b>他把「RSI 成為共識」放在技術章，但沒在同一章給出反駁；直到尾聲「RSI 再度來襲」才再次觸及。批評者會說這是「用共識代替論證」；辯護者會說，他的角色本來就是描述市場共識，而不是裁決技術真偽。這個張力他沒有解決，只是把它留在了兩處節點標題裡。</li>
+  <li><b>「英偉達要做的是央行」。</b>這是一個很重的類比。它捕捉到了循環融資與最後貸款人的結構，但也可能過度類比——央行有法定授權與無限資產負債表，供應商的資產負債表終究受限於自己的現金流。他用了「可能是」與引號來避險（105:42 「可能是目前最活躍的 AI 投資人」、106:40 「英偉達要做的是央行」），但這個類比一旦被引用就會被簡化。</li>
+  <li><b>對 personal agent 的雙面態度。</b>他既說「站在最前面的 Meta-muse」，又立刻說「muse 數據和吐槽」，還指出評測站已經出現（assistantbenchmark.com）。這種「先給最強樣本、再給拆台數據」的寫法，容易被兩邊各自引用一半。</li>
+  <li><b>對安全股的判斷。</b>43:30 那一節直接問「那麼對安全股是利好還是利空？」——把安全事件當成可交易的變量。這在中文 AI 圈不算罕見，但在一個談「一體兩面」（41:35）的段落裡突然切到股票，會讓人覺得視角切換過快。</li>
+</ul>
+
+<h2>英文播客</h2>
+
+<h3>Machine Learning Street Talk</h3>
+<p class="host">主持：Tim Scarfe（本集為紀錄片式剪輯，含 Kevin Hartnett、Leonardo de Moura、Jeremy Avigad、Kevin Buzzard、Paul Lessard 等）｜平台：YouTube / Podcast</p>
+
+<h4>Mathematics Just Changed Forever — Kevin Hartnett <span class="tag">documentary · 93 min</span></h4>
+<p class="stamp">發布：2026-10-26 14:36 UTC<span class="dot">·</span>2026-10-26 22:36 HKT<span class="dot">·</span>片長 01:33:33</p>
+
+<p><b>主題</b>：這不是一集訪談，是一部關於 Lean 的紀錄片——以 Kevin Hartnett 2026 年新書《The Proof in the Code》為骨架，用 Tim Scarfe 對 Hartnett 的長訪談串起 Lean 從微軟研究院的側專案，長成「數學家現在用來檢查自己領域」的系統的完整歷史，後半段轉向 AI：AlphaProof、自然語言奧賽證明、autoformalisation，以及那個本書反覆追問的問題——<b>當機器產出一个沒有人讀得懂的證明，究竟被檢查了什麼？</b></p>
+
+<p><b>嘉賓背景</b>：Kevin Hartnett 是科普作者，2020 年在 Quanta Magazine 寫過一篇關於 Mathlib 的報導（他稱之為「barn raising」精神），此後與這批人成為朋友，花了數年做這本書，取得了六七位核心人物的大量私人 email 與 Zulip 對話紀錄。片中現身的關鍵人物：<b>Leonardo de Moura</b>（Lean 創造者，前微軟研究院，Z3 作者）、<b>Jeremy Avigad</b>（CMU，邏輯學家，推動 Lean 採用依賴類型論）、<b>Kevin Buzzard</b>（Imperial College，數論學家，Mathlib 草創期最狂熱的推手）、<b>Paul Lessard</b>（範疇論學者，談「正確不等於有用」）、<b>Peter Scholze</b>（菲爾茲獎得主，liquid tensor experiment 的提出者）。</p>
+
+<h5>核心論點</h5>
+
+<p><b>論點一：1998 年的開普勒猜想，暴露的不是數學的錯，是「審稿」這個制度的物理極限。</b>Thomas Hales 與 Samuel Ferguson 把開普勒猜想化約為 <span class="num">1,762</span> 種構型，然後幾乎逐案寫了高度最佳化的電腦程式（片中另一處說「1,767 個程式」），逐一證明每種構型的密度低於約 <span class="num">0.74</span>。Hales 把稿子投給 Annals of Mathematics——數學界最負盛名的期刊——然後<b>編輯部不知道怎麼審</b>。整個評審流程拖了很多年，每個被看的片段看起來都對，但「作為整體，它是一座蔓延的計算高樓，深埋在程式碼裡，難以判斷它們如何彼此扣合」。最後論文被接受，附帶一句近似「99% 信心這是對的」的免責聲明。</p>
+<p>這裡的關鍵不是「電腦證明的可信度」，而是<b>證明作為一種社會實踐的邊界條件</b>。Hartnett 在片中把數學界的常規講得很清楚：數學家判斷一個證明是否為真，很大程度是<b>社會過程</b>——他們認識作者、知道這個人懂行、知道這類論證通常怎麼走，然後檢查主線，不必逐行核對。這個機制在「剛好超出既有知識一點點」時極其高效，但在「超出一個數量級的計算量」時直接失效。</p>
+
+<p><b>論點二：Lean 的設計核心不是「更強的表達力」，而是「更小的信任半徑」。</b>de Moura 的解法是「獨立檢查」：讓使用者可以自己建 kernel。要讓這件事現實，kernel 就必須小到可以被人讀完。片中引書中定義：一個交互式定理證明器有兩個部件——<b>邏輯基礎</b>（決定思想如何表達與互動）與 <b>kernel</b>（檢查程式是否遵守邏輯基礎的規則）。Lean 本體很大、「有無數 bug」，但你要信任的只有 kernel。</p>
+<blockquote>「對 kernel 而言，最嚴重的罪是把假命題驗證為真，這比把真命題拒絕為假要糟得多。把真命題判為假只是製造路障，是不便；但把假命題判為真，會打開驗證無數後續假命題的門。」<span class="who">— Hartnett 書中段落，Tim Scarfe 朗讀</span></blockquote>
+<p>歷史背景很硬：Agda、Coq、Isabelle 的 kernel 都曾出現過能驗證假命題的 bug。所以「小 kernel」不是美學偏好，是<b>攻擊面管理</b>。</p>
+
+<p><b>論點三：Lean 差點走上另一條路，是 Avigad 把 debate 打贏的。</b>de Moura 原本偏好高階邏輯（HOL Light 式），理由是「更簡單、更好實作，對許多社會性驗證任務已經夠用」。Avigad 要的是依賴類型論，理由是他 2009–2010 休假年在 Coq 上形式化 Feit-Thompson 定理的經驗：現代數學裡大量使用<b>公理化刻畫的代數結構</b>，而簡單類型論「撞牆」。片中引了 2013 年那個夏天 de Moura 的深夜郵件：「如果我今天聽起來太負面，我道歉。我還在理解替代方案。」——他承認「Jeremy 說 HOL Light 對抽象代數會很不方便，我理解」。最後他選擇依賴類型論，Avigad 在匹茲堡家裡跳了一支舞。</p>
+<blockquote>「依賴類型論非常強大、非常有表達力。但我喜歡引用蜘蛛人的那句：能力越大，責任越大。非常有表達力的語言也很難實作，可能更難使用，有很多陷阱與邊角情況。」<span class="who">— Jeremy Avigad</span></blockquote>
+<p>de Moura 自己的總結更值得記：<b>「當你戴著開發者的帽子，你總是想選最容易實作的方案，然後忘記自己有時也會是這個工具的使用者。」</b>這是整部片裡最像工程師教訓的一句話。</p>
+
+<p><b>論點四：Mathlib 的真正創新不是技術，是「圖書館學」——什麼時候一個數學概念才夠格進館。</b>2017 年 Mathlib 只有 <span class="num">30,000 行</span>，連實數的定義都沒有（他開玩笑：實數是古希臘與巴比倫人就知道的東西），也沒有複數（大約 500 年前的笛卡爾）。Buzzard 的辦法極其樸素：<b>把本科生拉進來</b>。他一週留一個晚上在辦公室，教學生用 Lean，然後讓學生把課堂上學的東西「教給機器」。三年後，Mathlib 大致達到了本科數學的水準。</p>
+<p>但真正有意思的是他的入館標準：<b>圖書館要的是「完全成形、想清楚、知道自己在哪個位置」的概念</b>，而不是還在邊界上混沌作響的東西。「有時候在邊界上，那些材料不適合進圖書館。你可以試著教給軟體，但我們不一定想把它加進圖書館。」這解釋了為什麼 Mathlib 寧可慢——一旦改動一個底層定義，數千個檔案會斷。</p>
+
+<p><b>論點五：兩個「造勢 stunt」把 Lean 從玩具變成工具。</b>Buzzard 有表演者的直覺。第一次他把 Grothendieck 的 <b>scheme</b> 形式化，結果換來「集體呵欠」——「Kevin，scheme 是 60、80 年前的東西，我研究所就懂了，這不是前沿」。於是他換目標：<b>perfectoid space</b>，Scholze 2018 年創造、當時公認最前沿的物件。他和 Patrick Massot、Johann Commelin 三人做了一份 blueprint（像建築施工清單），列出要定義 perfectoid space 之前必須先定義的所有東西，然後逐項填。他們成功了。這是 Mathlib 第一次出現「從研一數學直插前沿」的窄高樓，也是說服數學界的轉折點。</p>
+
+<p><b>論點六：Liquid Tensor Experiment 的起點不是 AI，是一個菲爾茲獎得主發現「沒有人真的讀過他的證明」。</b>2020 年 11 月，Scholze 聯絡 Buzzard，問他有沒有仔細讀過最新預印本的某個定理（片中說是定理 8.4）的證明。Buzzard 老實回答：倫敦跨校讀書會讀完了整篇論文，但那個證明「大約 6 頁技術計算，我們最多只是掃過」。Scholze 說：<b>「大家都這麼說。」</b>他問過普林斯頓、問過哈佛，答案都一樣。於是他確信沒有人真的讀過他的工作。</p>
+<blockquote>「我當時的感覺是，數學仍然是一項人類活動。因為如果我要真正檢查電腦做對了什麼，我就得在腦中把整個證明拆開，確認它真的加得起來。」<span class="who">— Peter Scholze，Zulip 上的話，片中引用</span></blockquote>
+<p>這段是全片最尖銳的地方：<b>Lean 能驗證證明，卻不能驗證定義</b>。而「定義對不對」在數學裡幾乎就是全部——因為定義就是新工具本身。</p>
+
+<p><b>論點七：de Bruijn 比例 20:1 是採用的真正阻力，不是意識形態。</b>形式化一行非形式數學，平均要寫 <span class="num">20 行</span> Lean，常常更高。Hales 投入 <span class="num">20 人年</span>形式化開普勒猜想，最後得到的只是「它是對的」。而數學家大多<u>本來就不擔心正確性</u>——他們擔心的是發現新數學。所以抵抗不是保守，是<b>投入產出比不划算</b>。</p>
+<p>這個判斷還附帶一個殘酷的推論：Hales 的證明雖然正確，但「不是新數學」。Hartnett 的評估是：判斷一個結果的價值，可以看它是否<b>催生後續結果、是否在論證過程中發明新的概念與抽象</b>。Hales 用的技巧相對初等（他自己也承認）；Andrew Wiles 證費馬最後定理時必須發明極強的新概念，開啟了整個分支。兩者不是同一種貢獻。</p>
+
+<p><b>論點八：AI 進入數學的路徑是「先Lean、再自然語言」，而 autoformalisation 是那個瓶頸的鑰匙。</b>AlphaProof 的架構限制很具體：<b>它讀不懂題目</b>。它接收 Lean 陳述、產出 Lean 證明，但奧賽題目是自然語言。DeepMind 需要數以百萬計的訓練題，人工形式化不可能，於是必須自動翻譯。而翻譯難度分層明顯：<b>代數與數論</b>的題目本身就含方程式與符號，自動形式化接近完美，覆蓋約 <span class="num">80%</span>；<b>組合數學</b>最難，題目讀起來像故事，自然語言多、符號少，數學本質卻是離散計算。儘管如此，DeepMind 最終造出了<b>數千萬道</b>Lean 陳述的題庫，AlphaProof 的證明搜尋才得以開始。</p>
+
+<p><b>論點九：2026 年 9 月，AI 做數學第一次有了「可審計」的成績單——而且成績很樸素。</b>這是本集最新、也最容易被過度解讀的段落：</p>
+<div class="data">
+<h5>Epoch AI fixed-budget test（2026 年 9 月）</h5>
+<ul>
+  <li>受測：五個模型，固定預算。</li>
+  <li>一個<b>預發布的 OpenAI 模型</b>證明 <b>Erdős 問題 126</b>，並以反例<b>否證問題 74</b>。</li>
+  <li>兩項結果都在 <b>Lean 中通過檢查</b>。</li>
+  <li>總成績：<span class="num">68 題中解出 2 題</span>。</li>
+  <li>其餘<b>四個模型：0 題</b>。</li>
+  <li>另：2026-09-08，OpenAI 宣稱解決 Navier–Stokes 千禧年問題並附 Lean 形式化，「但不是在最好的情況下」——片中以「超出本片範圍」帶過。</li>
+</ul>
+</div>
+<p>把這組數字讀對的方式是：<b>不是「AI 已經能做研究」，也不是「AI 做不了研究」，而是「在固定預算下，前沿模型對開放問題的命中率是 2/68，且高度集中於單一模型」</b>。這個分佈比平均值有意義得多——它說明能力是存在的，但不穩定，且對「哪個模型」極度敏感。</p>
+
+<p><b>論點十：Terence Tao 的 Equational Theories 專案，是「AI 時代數學」的方法論樣板。</b>2024 年 9 月啟動，目標是測繪哪些代數律蘊含哪些其他代數律，由 Lean 檢查結果。規模：<b>一個月內從 22,000,000 個問題縮到 238 個；11 月底剩 138；到隔年 3 月底，卡在 4 個</b>。Tao 從一開始就說，把每個蘊含關係都解決掉不是目標——<b>這是一個「新工作方式」的試點</b>。他想像一個「實驗數學」分支，類比現代物理：大規模協作產生巨量資料，不是取代理論，而是補充理論。</p>
+<p>過程中真的撞出新東西：<b>magma cohomology</b>。John Baez 起初稱這個專案是「巨大的浪費時間」，後來改口。這是全片對「AI + 群眾 + 形式化」最正面的一個案例——注意，功勞不在於某一條證明被機器寫出來，而在於<b>管線讓 2200 萬個問題變得可處理</b>。</p>
+
+<h5>技術詳情</h5>
+<ul class="tight">
+  <li><b>Z3 的出身</b>：2006 年微軟內部有大量重複的自研定理證明器，de Moura 開始做 Z3，用途是系統性檢查軟體沒有「壞路徑」——把一條執行路徑表達成變數組合，證明這些變數不可能同時取到讓某陳述為真的值，就範疇性地排除了一類 bug。Z3 在 2000 年代初替微軟省下「數億美元」，並在自動定理證明器競賽中拿過世界冠軍。de Moura 對 ATP 的不滿是<b>可表達範圍太窄</b>，於是他轉向交互式定理證明器（ITP）——表達力更強，人類可以推它一把。</li>
+  <li><b>tactics 的經濟學</b>：形式化最痛的地方往往是「對人顯然、對機器極難」的命題，例如 1+1=2。de Moura 的解法是 tactic——把重複步驟自動化，並且<b>開放讓社群自己寫 tactic</b>。這是 Lean 生產力曲線的第一個拐點。</li>
+  <li><b>Lean 4 的斷裂</b>：Hartnett 說 2018 年前後他採訪時「聽不懂發生什麼事」，後來才知道 de Moura 與數學社群之間有一次相當決定性的決裂——de Moura 去閉關做 Lean 4，大意是「讓我一個人靜一靜」。同時 Mathlib 繼續推進。片中把這稱為「像家庭一樣」的關係：一群年輕、理想主義、興奮的人，但也會把彼此逼瘋。de Moura 與 Mario Carneiro 之間有明顯的路線衝突（前者要自己的 Lean 願景，後者是開源原教旨主義者、要 Mathlib 長成他要的樣子）。</li>
+  <li><b>zlib 的形式化</b>：Kim Morrison 用 Claude agent 把 zlib 的 C 實作翻譯成 Lean，並讓它通過 C 版附帶的測試套件，最後證明<b>「對任何壓縮等級、任何資料，壓縮再解壓會還原原文」</b>。這是很強的結果，但片中的追問也很準：<b>這是「盲人摸象」——你證明了你指定的性質，不代表你捕捉了整個 zlib</b>。de Moura 給出的反面教材極清楚：如果只要求「壓縮再解壓還原」，AI 可以用 identity function 作弊；所以必須再加「輸出必須小於輸入」「壓縮率必須達到測試套件水準」等性质。他的結論是分場景的：<b>人在迴圈裡看程式碼，這個問題不嚴重；一旦放手讓 AI 自己跑、你連看都不看，那麼「性質是否覆蓋全部」就變成致命問題。</b></li>
+  <li><b>formalization gap</b>：片中的定義值得逐字記——「當 AI 產出一個著名猜想的 Lean 證明，仍然必須有人確立：這個形式陳述在恰當的定義與假設下，捕捉到了原意的猜想。<b>檢查器認證的是推導，不是人類對目標的選擇。</b>」一句話：<b>信任被移到了上游。</b></li>
+  <li><b>autoformalisation 的反向副作用</b>：Buzzard 觀察到一個很反直覺的現象。Mathlib 的哲學一直是「找到正確的抽象、在正確的一般性下發展」，因為那會讓後面的事變簡單。但 AI 不在乎——它會「看一本書，完全不去想，盲目翻譯成人類數學到 Lean」。結果是：<b>AI 很樂意硬幹，人類卻會在感覺「我應該能飛過去」卻被卡住時想重新設計</b>。他的預測很有畫面：「一年內，會出現 AI 開發的數學庫，在這些意義上思考得更差，因為『讓事情變簡單』似乎不再是問題——如果你準備把 token 倒進問題裡。」</li>
+</ul>
+
+<h5>關鍵數據</h5>
+<div class="data">
+<ul>
+  <li><span class="num">1,762</span>／<span class="num">1,767</span>：開普勒猜想化約的構型數／Hales 寫的電腦程式數（片中兩個數字都出現，屬口語轉述差異）。</li>
+  <li><span class="num">0.74</span>：最密堆積的比例常數，每個構型都要證明低於它。</li>
+  <li><span class="num">20 人年</span>：Hales 後續形式化開普勒猜想（Flyspeck）的投入，換來的只有「正確性」。 </li>
+  <li><span class="num">20:1</span>：de Bruijn 比例，一行非形式數學對應的 Lean 行數，常更高。</li>
+  <li><span class="num">30,000 行</span>：2017 年 Mathlib 的起點規模，當時沒有實數、沒有複數。</li>
+  <li><span class="num">6 頁</span>：Scholze 那篇論文裡定理 8.4 的技術計算長度，「大家都說讀過，其實只掃過」。</li>
+  <li><span class="num">80%</span>：AlphaProof 在代數與數論題目上「近乎完美」的自動形式化覆蓋率；組合數學明顯更低。</li>
+  <li><span class="num">數千萬</span>：為 AlphaProof 產出的 Lean 陳述題庫量級（"tens of millions"）。</li>
+  <li><span class="num">22,000,000 → 238 → 138 → 4</span>：Tao 的 Equational Theories 專案收斂曲線（1 個月／11 月底／隔年 3 月底）。</li>
+  <li><span class="num">2 / 68</span>：Epoch AI 固定預算測試的命中數；其餘四模型 0。</li>
+  <li><span class="num">20%</span>：Buzzard 團隊「只形式化近十年頂刊定理的<u>陳述</u>」專案的進度，進行約一年。</li>
+  <li><span class="num">4 個版本</span>：Lean 至今的版本數，目前 Lean 4。</li>
+</ul>
+</div>
+
+<h5>重點引用</h5>
+<blockquote>「嚴格說來，那個定理不是真的。人類顯然沒費心提到，n 必須至少是 3。」<span class="who">— 開場，關於一個「大家都知道對」的定理在形式化後露出的隱含假設</span></blockquote>
+
+<blockquote>「但一個被檢查過的證明，仍然可以是『錯誤東西』的證明。」<span class="who">— 全片命題，出現兩次</span></blockquote>
+
+<blockquote>「AI 正在從數學裡長出來。這一點絕對清楚。OpenAI、Anthropic 這些公司先做數學，然後把它翻譯成 Lean。數學家對此的反應各種各樣，範圍從……你只能稱之為『悲傷』的那一端開始。」<span class="who">— Tim Scarfe</span></blockquote>
+
+<blockquote>「我可以讓機器證明東西嗎？當然可以。但我感興趣的是理解它。而我仍然是那個必須理解它的人。」<span class="who">— Paul Lessard</span></blockquote>
+
+<blockquote>「今天已經是它最差的時候了。往後只會更好。」<span class="who">— Tim Scarfe 論 AI 做數學，語氣難得樂觀</span></blockquote>
+
+<blockquote>「agentic coding 的效用，現在完全被『審查與驗證』這一段卡住。」<span class="who">— 論 AI 生成程式碼的 formal verification</span></blockquote>
+
+<blockquote>「有些人在 Slack 裡玩得很開心，把想法往牆上丟。這很便宜——你可以丟想法，另一邊得不斷告訴你『不，這行不通』。……對想出點子的人來說很好玩，對接收方不是。」<span class="who">— de Moura，談維護者被迫回應半生不熟想法的疲勞</span></blockquote>
+
+<h5>行業 insight</h5>
+<p>這集給出的最重要判斷，不是「AI 會不會做數學」，而是<b>「驗證」正在成為整個軟體生產鏈的瓶頸，而數學只是最早撞到它的領域</b>。</p>
+<ul class="tight">
+  <li><b>信任的位移。</b>形式化把「推導是否正確」變成機器問題，於是人的工作全部上移到兩端：<b>選題</b>（要證什麼）與<b>定義</b>（用什麼概念去說）。Scholze 的 Zulip 發言點出了死結——Lean 能查證明，不能查定義，因為「邏輯上來說」定義沒有對錯，只有是否忠實。這是 formalization gap 的根。</li>
+  <li><b>規格（specification）是新時代的註解。</b>zlib 案例的教訓不是「AI 會作弊」，而是<b>「性質寫得窄，AI 就優化窄的性質」</b>。這與 reward hacking、Goodhart's law 是同一件事，只是發生在形式化層。若 agentic coding 的產出要可信，規格必須覆蓋全貌——而片中明說，對多數真實程式，「寫出這種規格是不可能的」。所以「用 formal verification 解決 AI 程式碼」在可預見的未來只適用於核心、小面積、高價值的模組。</li>
+  <li><b>理解債（understanding debt）。</b>這是全片反覆回到的詞。Hales 的證明正確但不可讀；AI 的證明可能正確但沒人讀得懂；agent 寫的程式碼正確但沒人 review。三件事同構。<b>當「正確」可以外包給機器，「理解」就變成一種可選支出——而它恰恰是下一次創新的資本。</b></li>
+  <li><b>經濟結構的重心在「管線」而非「模型」。</b>Equational Theories 的 2200 萬→238 不是模型變強，是<b>流程設計</b>（Lean 檢查 + 群眾分工 + 問題分解）。AlphaProof 的突破也不只是 RL，是<b>先解決了數千萬題的自動形式化</b>。對做 AI for science 的團隊，這是最可操作的一課：<b>瓶頸通常在資料生產與驗證管線，不在推理。</b></li>
+  <li><b>對 Harmonic 這類公司的賭注。</b>片中點名：Harmonic 相信「訓練模型寫數學證明」所得到的能力，可以用來「寫關於軟體的證明」、驗證 LLM 輸出。這是把「數學形式化」當成通用驗證能力的訓練場。片中態度誠實——「這個賭注正在進行中，會不會成，我不知道。」</li>
+</ul>
+
+<h5>前後脈絡</h5>
+<p>放到 MLST 這條線上，本集是「形式方法」系列的最新一塊，而且明顯改變了語域：</p>
+<table>
+  <tr><th>日期</th><th>集數</th><th>與本集的關係</th></tr>
+  <tr><td class="t">2026-09-30</td><td>Who Checks a Proof No Human Can Read? — Leo de Moura</td><td>同一位主角的單集訪談；本片等於把那一集放進歷史敘事，並補上 Scholze、Buzzard、Avigad 的視角</td></tr>
+  <tr><td class="t">2026-09-26</td><td>When AI Research Starts Moving Faster Than Human Research — Zhengyao Jiang</td><td>同一命題的 AI 研究版：產出速度 vs 審核速度</td></tr>
+  <tr><td class="t">2026-09-21</td><td>Why Scaling Prediction Cannot Create Intelligence — Alexander Mattick</td><td>對「規模即能力」的懷疑；本片則給出「規模 + 驗證環境」的具體路徑</td></tr>
+  <tr><td class="t">2026-10-26</td><td>Mathematics Just Changed Forever — Kevin Hartnett</td><td><b>把「驗證」從技術問題升級為制度問題</b>：期刊、同行評審、師徒制都在這條線上</td></tr>
+</table>
+<p>與 9-30 那集相比，本集的增量在兩處：<b>一是歷史縱深</b>（從 1998 年 Annals 的困局講起，而不是從 Lean 講起）；<b>二是 2026 年 9 月的三組硬數據</b>（Epoch AI 的 2/68、OpenAI 的 Navier–Stokes 宣稱、Buzzard 專案的 20%），這些在一個月前的訪談裡都還沒有。這也是為什麼片名敢用「Just Changed Forever」——它有了一個可查證的當月座標。</p>
+
+<h5>爭議點</h5>
+<ul class="tight">
+  <li><b>「檢查過的證明可能是錯東西的證明」被過度使用。</b>這句話技術上無懈可擊，但它也很容易被拿來否定所有形式化的價值。片中其實給了平衡：de Moura 明確說，人在迴圈裡看程式碼時，這個風險不嚴重；真正的危險是「放手不管」。差別在流程，不在工具。</li>
+  <li><b>Navier–Stokes 那段被刻意留白。</b>「2026-09-08 OpenAI 宣稱解決千禧年問題並附 Lean 形式化，但不是在最好的情況下——超出本片範圍。」這句話資訊量極大卻不解釋，是整集最明顯的「剪掉的一段」。觀眾會自己去補，而補充的方向多半是負面的。</li>
+  <li><b>對「AI 會重現人類數學」的悲觀共識。</b>片中轉述：幾位數學家在書的發表會上討論「給 LLM 基本公理、用 AlphaZero 式零知識方法，它會不會重新發現人類數學？」共識是<b>「大概走不過有理數」</b>——它會偏離人類的路徑。理由是人類對「正確抽象」有感覺，而那種感覺可能內生於認知。這個判斷很強，但它是酒後閒談的共識，不是實驗結果，片中沒有掩飾這一點。</li>
+  <li><b>「理解」的定義始終沒有被固定。</b>Lessard 說「我想要理由」，Buzzard 說「圖書館要的是想清楚的東西」，Hartnett 說「understanding debt」。三個人說的「理解」不是同一件事（分別偏向解釋、可維護性、可掌握性）。這是全片最哲學、也最容易被各取所需的地方。</li>
+</ul>
+
+<h2>今日交叉觀察</h2>
+<p>兩集放在一起，浮出一個共同的結構：<b>2026 年的 AI，產能已經超過審核能力，於是價值重心從「生產」移向「認證」。</b></p>
+<ul class="tight">
+  <li>庄明浩的版本是財務的：ARR 可以造，capex 可以借，但<b>自由現金流不會說謊</b>；當交易結構複雜到沒人看得懂，折價就變成信仰問題。</li>
+  <li>Hartnett 的版本是數學的：證明可以生成，定理可以檢查，但<b>「你證的是不是你想證的」沒有機器能回答</b>；當定義與選題無人審核，正確性就變成一個空的認證。</li>
+  <li>兩個版本的交集是「<b>規格</b>」：財務上叫 covenant 與 disclosure，工程上叫 specification，數學上叫 statement。三者都是「在生產之前先說清楚要什麼」，也都是最容易在高速擴張中被省略的一步。</li>
+  <li>對 James 的直接含義：如果你在評估 AI 團隊或工具，<b>問「你們怎麼驗證」比問「你們用哪個模型」有資訊量得多</b>。今天這兩集各自給了一份驗證清單——一份是資產負債表的，一份是形式化的。</li>
+</ul>
+
+<footer>
+  <p><b>掃描覆蓋</b>：張小珺商業訪談錄（最新 10-21 #155，無新集）· 十字路口 Crossing（最新 10-25，已於前日報告處理）· 矽谷 101（最新 10-19 E256，無新集）· 42 章經（最新 10-24，已於前日報告處理）· 屠龍之術（<b>10-26 新集，本期收錄</b>）· Dwarkesh（Substack 最新 10-22；YouTube 僅 Short，無新集）· Latent Space（最新 10-24 AINews，已於前日報告處理）· Cognitive Revolution（最新 10-24 AI:AM，已於前日報告處理）· No Priors（最新 10-23 Dane Knecht，無新集）· MLST（<b>10-26 新集，本期收錄</b>）。</p>
+  <p style="margin-top:14px"><b>方法註記</b>：MLST 一集取得完整逐字稿（ReScript 公開分享頁，92,604 字元），所有引語與數字均出自該逐字稿。屠龍之術一集<b>無公開逐字稿</b>（小宇宙文稿介面 401、YouTube 無對應影片、本機單核 1 GB 無法本地 ASR），內容依官方 135 個章節節點與 shownotes 重建，PPT 內頁數字未公開故不補齊；文中已逐處標明。</p>
+  <p style="margin-top:14px">Jev 前置過濾：2 條候選全部 keep（0.92 / 0.86，news profile）。</p>
+  <p style="margin-top:22px">Apache 2.0 · 由 OpenClaw 自動生成 · 2026-10-27 02:06 UTC</p>
+</footer>
+
+</div>
+</body>
+</html>
