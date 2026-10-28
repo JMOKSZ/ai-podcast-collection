@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 開普勒是一個高溫 LLM——數學發現的真實形狀，與 AI 抄不到的那條近路</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2rem 0; }
+  footer {
+    margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e0dbd4;
+    font-size: 0.8rem; color: #999; text-align: center;
+  }
+  footer a { color: #888; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.5rem; }
+    table { font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<a href="../index.html" class="back-link">← 返回播客日報</a>
+<header>
+  <div class="ep-num">Dwarkesh Podcast · 2026-03-20 · 約 2.5 小時</div>
+  <h1>開普勒是一個高溫 LLM——數學發現的真實形狀，與 AI 抄不到的那條近路</h1>
+  <div class="meta">
+    <span>📅 2026-03-20</span><span>·</span><span>🎙️ 主持：Dwarkesh Patel</span><span>·</span><span>👤 嘉賓：Terence Tao（陶哲軒）</span><span>·</span><span>⏱️ 約 30 分鐘閱讀</span>
+  </div>
+</header>
+
+<p style="font-size:1.05rem; color:#555; font-style:italic; margin-bottom:1.5rem;">
+一集關於「發現」的訪談，卻用了一半時間講一個失敗的理論。開普勒先愛上正多面體的完美，然後花了二十年證明自己錯了；他的第三定律寫在一本講行星音樂的怪書的旁註裡；他用<strong>六個數據點</strong>做回歸，運氣好得出奇。陶哲軒說，這個故事不是科學史的趣聞，而是對「AI 會怎樣改變數學」最誠實的預告：<strong>想法變便宜之後，真正稀缺的是驗證、判斷，與說服。</strong>
+</p>
+
+<blockquote class="strong">
+  「People sometimes say that AI will make especially fast progress at scientific discovery because of tight verification loops. But the story of how we discovered the shape of our solar system shows how the verification loop for correct ideas can be decades (or even millennia) long.」
+  <span class="attribution">Dwarkesh 的開場提要。他補了一句更狠的：在漫長的驗證期內，我們今天認為更好的理論，往往做出更差的預測。</span>
+</blockquote>
+
+<div class="highlight-box">
+  <strong>📌 來源說明：</strong>本文底本為 Dwarkesh Podcast 官方逐字稿（<code>dwarkesh.com/p/terence-tao</code>）。文中引號內容取自逐字稿原文；數據與歷史細節均按節目中的敘述，歷史數字若與一般教科書有出入，會保留節目口徑並標註。屬於我的分析與補充，會以「我的判斷」標明。
+</div>
+
+<div class="section-title">一、1595：先有美，才有數據</div>
+
+<p>開普勒一開始不是數據科學家，他是個尋找上帝幾何學的人。哥白尼提出日心說，主張行星軌道是完美圓形；開普勒注意到，哥白尼預測的軌道大小比例似乎有某種幾何意義。當時已知六顆行星，行星之間有五個空隙；正多面體剛好也是五種——立方體、正四面體、正二十面體、正八面體、正十二面體。</p>
+
+<p>於是他有了那個「美得不可置信」的理論：把五個正多面體依次嵌進行星軌道球之間，比例就會吻合。這是一個典型的<strong>先有審美、後找證據</strong>的理論。它甚至不是完全胡說——它捕捉到「軌道大小之間存在某種規律」這個直覺；錯的是規律的形狀。</p>
+
+<p>他需要數據來確認。當時全世界只有一份真正高品質的數據：Tycho Brahe 的觀測。這位丹麥貴族說服政府資助一座極昂貴的天文台——不是一棟建築，是一整座島。他幾十年來幾乎每晚用肉眼觀測所有行星。他是最後一位裸眼天文學家。</p>
+
+<p>結果我們都知道：數據與他的正多面體理論差了約 <strong>10%</strong>。他試了各種補丁，移動圓心、調整參數，都不行。然後他花了二十年，才從數據裡讀出真正的答案：軌道不是圓，是橢圓；行星在近日點走得快、遠日點走得慢，等面積定律；再過十年，他才從更多數據裡擠出第三定律——週期的平方與距離的立方成正比。</p>
+
+<p>值得注意的是，第三定律並不是以「物理定律」的姿態發表的。它寫在《世界的和聲》（Harmonices Mundi）的一個旁註裡——那本書主要在講行星對應哪些音符、地球是 mi-fa-mi、人間的饑荒與苦難如何與宇宙不和諧有關。牛頓要再過一個世紀，才用萬有引力把三條定律一次解釋掉。</p>
+
+<p><strong>我的判斷：</strong>這個故事最反直覺的地方，不是「開普勒很厲害」，而是<strong>錯誤的框架可以產出正確的結果</strong>。正多面體理論是錯的，行星音樂是錯的，但開普勒靠著這些錯誤的偏見，持續盯著數據看了二十年，最後擠出了對的規律。這對今天討論 AI 做科學非常重要：如果我們只允許「合理」的假設進入搜尋空間，我們可能連開普勒都生不出來。</p>
+
+<div class="section-title">二、多一個小數點：Brahe 才是那個讓發現成為可能的人</div>
+
+<p>陶哲軒在訪談裡特別為 Brahe 說話：他的觀測精度比之前任何人高<strong>十倍</strong>。多出來的那一個小數點，是開普勒能區分「圓」與「橢圓」的唯一原因。沒有那個精度，10% 的誤差與 1% 的誤差看起來都一樣，開普勒會永遠困在他的正多面體裡。</p>
+
+<p>這也是整集第一個關於 AI 的隱喻：人們常說 AI 會加速科學，因為它可以「試很多想法」。但開普勒的故事顯示，<strong>可驗證的資料庫才是想法能夠沉澱的容器</strong>。Dwarkesh 的類比很精準：如果沒有 Brahe 的數據，開普勒只會一直寫關於和聲與正多面體的書，沒有任何東西可以否證他。</p>
+
+<p>我的判斷：這條線對今天的 AI for science 有直接的政策含義。與其投資更多「生成假設」的模型，不如投資<strong>更精確、更可重複、更開放的測量基礎設施</strong>。假設的邊際成本已經很低；測量的邊際成本仍然很高。誰掌握後者，誰就掌握了下一個開普勒。</p>
+
+<div class="section-title">三、六個數據點的危險：Bode 定律與海王星</div>
+
+<p>這是全場最精彩、也最少被引用的一段。開普勒的第三定律，本質上是對<strong>六個數據點</strong>做回歸——每個行星一個距離、一個週期。他 fitting 出一條平方立方關係。陶哲軒說，他其實很幸運：六個點給出了正確的結論，但這個樣本量一點都不可靠。</p>
+
+<p>證據是一個後來的故事。天文學家 Johann Bode 用同一批行星距離數據，提出另一個規律：行星距離構成一個平移的等比數列。這個規律預測火星與木星之間應該有一顆缺失的行星。當時聽起來像業餘愛好者的幻想——直到 Herschel 發現天王星，距離<strong>完全吻合</strong>；接著 Ceres 在小行星帶被發現，也吻合。整個歐洲興奮了：Bode 發現了自然界的另一條定律。</p>
+
+<p>然後 Neptune 被發現，位置<strong>差得遠</strong>。Bode 定律只是一個數值巧合。</p>
+
+<blockquote>
+  「Basically it was just a numerical fluke. There were six data points.」
+  <span class="attribution">Terence Tao 談 Bode 定律。他補了一句很有意思的觀察：開普勒自己沒有把第三定律放到第一、第二定律同等的位置，或許因為他隱約知道，六個點不足以支撐那麼強的結論。</span>
+</blockquote>
+
+<p><strong>我的判斷：</strong>這個故事是對「AI 會從海量數據裡自動發現定律」最溫和、也最致命的提醒。定律與巧合的差別，不在於曲線配得多好，而在於<strong>它能不能預測樣本之外的東西</strong>。當 AI 每天生成一萬條「規律」，我們真正的問題不是生成能力，而是<strong>有沒有 Neptune 去拆穿 Bode</strong>。而 Neptune 的出現，往往需要幾十年與一台新的望遠鏡。</p>
+
+<div class="section-title">四、進步長得像退步：哥白尼比托勒密更不準</div>
+
+<p>這是整集的思想核心。我們以為科學史是「更好的理論取代更差的理論」，但真實情況經常相反：</p>
+
+<blockquote class="strong">
+  「Copernicus's theory of the planets was less accurate than Ptolemy's theory. Geocentrism had been developed for a millennium by that point, and they had made many tweaks and increasingly complicated ad hoc fixes to make it more and more accurate. Copernicus's theory was a lot simpler but much less accurate. It was only Kepler that made it more accurate than Ptolemy's theory.」
+  <span class="attribution">Terence Tao。托勒密體系經過千年修補，精度極高；哥白尼的日心說更簡潔，但預測更差。</span>
+</blockquote>
+
+<p>同樣的模式一再出現。牛頓的引力理論帶來「超距作用」的謎團，萊布尼茲因此批評他；牛頓自己也對慣性質量與引力質量恰好相等感到困惑。這些問題要等到愛因斯坦才被解決。也就是說，<strong>一個在歷史上被證明是對的理論，剛出現時往往在解釋力上輸給一個錯的、但修補得很完整的理論</strong>。</p>
+
+<p>陶哲軒把這件事講得更深：真正的進步，很多時候不是「增加假設」，而是「刪除假設」。地心說能撐一千年，部分原因是亞里士多德物理學認為物體自然趨向靜止；如果地球在動，我們為什麼不會飛出去？要等到牛頓的慣性定律，這個「常識」才被刪掉。達爾文也是同一類：最大的躍進是承認「物種不是靜態的」——而這件事在你一生之中根本看不出來。</p>
+
+<p>我的判斷：這對 AI 評測有直接含義。如果我們用「當下預測更準」來選理論，我們會系統性地選到托勒密，而不是哥白尼。真正的科學判斷需要一種<strong>对未来解释力的下注</strong>，而這種下注無法用當下的验证集打分。</p>
+
+<div class="section-title">五、達爾文為什麼比牛頓慢兩百年</div>
+
+<p>Dwarkesh 抛出一个很漂亮的对比：《物種起源》1859 年出版，《原理》1687 年出版，中間隔了兩百年。達爾文的理論概念上更簡單——赫胥黎讀完說「我怎麼沒想到這麼笨的辦法」——但沒有人讀牛頓時說「我怎麼沒想到重力」。</p>
+
+<p>為什麼？陶哲軒給出的答案有兩層。第一層是<strong>驗證迴路的長度</strong>：牛頓可以說「這是我的方程式，算一下月球的週期與距離，對上了就是進步」；逹爾文的證據是累積的、回溯的，需要化石、地理分佈、育種經驗慢慢拼起來，而且他連遺傳的機制都不知道（沒有 DNA）。第二層是<strong>說服</strong>：達爾文是用英文寫給普通人看的，他 synthesise 了大量分散的事實，講了一個有說服力的故事；牛頓用拉丁文寫，還發明了新的數學只為了解釋自己在做什麼。</p>
+
+<blockquote>
+  「The art of exposition and making a case and creating a narrative is also a very important part of science… That's another thing which is really hard to reinforcement learn on. How can you score how persuasive you are?」
+  <span class="attribution">Terence Tao。他半開玩笑地說，也許 AI 還沒被優化成有說服力，是件好事。</span>
+</blockquote>
+
+<p>這是整集對 AI 最尖銳的限制。我們可以把「證明」形式化，可以把「預測」自動化，但<strong>「讓別人相信這件事值得投入」無法被形式化</strong>。而科學的資源分配——誰拿到望遠鏡、誰拿到博士生的五年——恰恰由這個無法形式化的東西決定。</p>
+
+<div class="section-title">六、「開普勒是一個高溫 LLM」：類比的力量與它的邊界</div>
+
+<p>Dwarkesh 的類比很聰明：開普勒一輩子都在亂試各種關係——正多面體、音樂和聲、數字神秘學——只要有一個可驗證的資料庫（Brahe 的數據），他就能在二十年裡不斷取樣、淘汰、再試。這正是 LLM 的工作方式：高溫採樣，靠 verifier 篩選。</p>
+
+<p>陶哲軒接受了這個類比，但加了一個很重要的修正：<strong>現代的瓶頸已經不是假設生成</strong>。古典科學是「先有假設，再收集數據驗證」；二十世紀後半以來，很多進展是反過來的——先有大數據，再從數據裡搾出規律。開普勒某種意義上是早期數據科學家，但他仍舊是從偏見出發；今天的機器學習則可以從數據本身開始。</p>
+
+<blockquote class="strong">
+  「AI has driven the cost of idea generation down to almost zero, in a very similar way to how the internet drove the cost of communication down to almost zero. It's an amazing thing, but it doesn't create abundance by itself.」
+  <span class="attribution">Terence Tao。他接著說：現在真正的問題是，我們要怎麼驗證、評估這幾千個理論。</span>
+</blockquote>
+
+<p>這段話值得慢慢讀。網路把通訊成本降到接近零，結果不是「人與人之間理解更多」，而是垃圾郵件、假新聞、注意力經濟。AI 把想法生成成本降到接近零，結果也不會自動是「科學加速」，而可能是<strong>期刊被 AI 投稿灌爆、評審系統失靈、真正的好想法被噪音淹沒</strong>。陶哲軒說，很多期刊已經在報告 AI 生成投稿的洪流；過去我們用同儕審查建牆，把低信號的想法擋在外面，但當每天有一千個理論進來，這堵牆就失效了。</p>
+
+<p>我的判斷：這是 2026 年最重要的科學政策問題，而它幾乎沒有被認真對待。我們在討論「AI 能不能做數學」，卻很少討論「AI 讓數學文獻的供给增加一百倍之後，人類要怎麼分配注意力」。後者不是技術問題，是制度問題；而制度問題不會被下一個模型解決。</p>
+
+<div class="section-title">七、50 / 1100：跳躍機器與被卡住的中間進度</div>
+
+<p>訪談中段轉到具體的 AI for math 進展。陶哲軒提到，過去幾個月，AI 協助解決了約 <strong>1,100 個 Erdős 問題中的 50 多個</strong>；聽起來很振奮，但還有約 600 個待解。更關鍵的是，那種「AI 一發命中」的純 AI 解法，在一個月的爆發之後就停了——不是因為沒人試，而是有三個獨立團隊嘗試讓前沿模型一次攻擊所有問題，都沒有再產生純 AI 的新解。</p>
+
+<p>他給了一個非常好的隱喻：</p>
+
+<blockquote class="strong">
+  「These AI tools, they're like jumping machines that can jump two meters in the air, higher than any human. Sometimes they jump in the wrong direction, and sometimes they crash, but sometimes they can reach the tops of the lowest walls that we couldn't reach before.」
+  <span class="attribution">Terence Tao。他把數學問題想成一片懸崖：有 3 呎、6 呎、15 呎的牆，也有英里級的高崖；我們在黑暗中不知道哪面牆多高。</span>
+</blockquote>
+
+<p>這個隱喻的精髓在下一句：AI 要麼成功、要麼失敗，<strong>它們非常不擅長製造「部分進展」</strong>——不會告訴你「這面牆先從左邊第三塊石頭開始爬」。而人類數學的日常，恰恰是partial progress 的累積：先證一個特例、先找一個不變量、先把問題化約成另一個問題。</p>
+
+<p>我的判斷：這指向一個被低估的研究方向——<strong>partial credit 的自動評估</strong>。如果我們能給「有意義的中間步驟」打分，RL 就能學會hill climbing，而不只是隨機跳躍。但這比給最終答案打分難得多，因為「有意義」本身依賴領域判斷。這也是為什麼陶哲軒說，我們現在還沒有辦法像評估一次成功／失敗那樣，評估部分進展。</p>
+
+<div class="section-title">八、廣度與深度：AI 的優勢不是「更聰明」，是「更寬」</div>
+
+<p>Dwarkesh 提出一個很漂亮的雙面論證：從悲觀角度看，AI 只能跳到某個高度，低於人類專家；從樂觀角度看，一旦 AI 達到某個水位，它可以<strong>同時填滿所有在那個水位的問題</strong>——這是人類做不到的，我們不能複製一千個陶哲軒，讓每人有無限時間。</p>
+
+<p>陶哲軒同意，並給出整集最凝練的一句判斷：</p>
+
+<blockquote class="strong">
+  「They excel at breadth, and humans excel at depth, human experts at least. I think they're very complementary. But our current way of doing math and science is focused on depth because that's where human expertise is, because humans can't do breadth. We have to redesign the way we do science to take full advantage of this breadth capability.」
+  <span class="attribution">Terence Tao。</span>
+</blockquote>
+
+<p>這句話的份量在於「重新設計」四個字。我們現在的科学制度——博士訓練、同儕審查、終身職、期刊——全部是為了<strong>深度</strong>而設計的：一個人花五年鑽一個問題，用論文證明他值得被信任。如果 AI 的比較優勢是廣度，那麼這套制度會系統性地低估 AI 的貢獻，也會讓人類把時間浪費在錯的地方。</p>
+
+<p>我的判斷：這是整集最容易被口號化、也最難落實的部分。「重新設計科學」聽起來很宏大，但可以拆成很具體的問題：我們要不要允許「AI 生成的 10,000 個負結果」被發表？我們要不要用 AI 做第一輪評審，人類只審被標記的？我們要不要把「整理一個領域的所有已知特例」也算作學術貢獻？這些問題比「AI 會不會證明黎曼猜想」更緊迫。</p>
+
+<div class="section-title">九、Lean 證明了黎曼猜想，我們會理解了嗎？</div>
+
+<p>Dwarkesh 問了那個最尖銳的問題：如果 AI 用 Lean 證明了黎曼猜想，但證明是「組合語言的胡言亂語」，我們算不算進步？</p>
+
+<p>陶哲軒的回答很誠實：「我們不知道。」他舉四色定理為例：那是一個靠大量電腦枚舉完成的證明，人類至今沒有從中得到一個簡潔的「理解」——我們知道它是對的，但不知道「為什麼」它是對的。有些問題就是可以被暴力解決，而暴力解決不自動產生洞見。</p>
+
+<p>這段與 10-27 MLST 的 Lean 紀錄片形成直接對話。那邊講的是「機器認證推導，人認證目標」；這邊講的是更下一步——<strong>即使目標選對了、推導也對了，我們仍可能什麼都沒學到</strong>。形式化保證的是正確性，不是理解。</p>
+
+<blockquote>
+  「If AI solves a problem, can humans get understanding out of it? … We don't know.」
+  <span class="attribution">Terence Tao，訪談後段。他沒有給出樂觀或悲觀的結論，只指出這是個開放問題。</span>
+</blockquote>
+
+<div class="section-title">十、認知的哥白尼革命</div>
+
+<p>整集最深的一句，出現在中段，幾乎是順口說出來的：</p>
+
+<blockquote class="strong">
+  「Right now we're going through a cognitive version of the Copernican revolution, where we used to think that human intelligence is the center of the universe, and now we're seeing that there are very different types of intelligence out there with very different strengths and weaknesses.」
+  <span class="attribution">Terence Tao。</span>
+</blockquote>
+
+<p>這句話把整集的歷史敘事收束起來。開普勒把地球從宇宙中心移開；達爾文把人類從生物學中心移開；現在 AI 把「人類智能」從智能的中心移開。三次革命共用同一個結構：<strong>我們原本以為是「唯一」的東西，其實只是「一種」。</strong></p>
+
+<p>而陶哲軒的態度值得學習：他沒有因此恐慌，也沒有因此亢奮。他只是說，我們對「哪些任務需要智能、哪些不需要」的評估，必須重新排序。這句話對做 AI 產品的人尤其重要——你以為難的任務可能很容易，你以為容易的任務可能很難，而你的 benchmark 可能同時搞錯了兩邊。</p>
+
+<div class="section-title">十一、我的判斷：三個可以搬走的框架</div>
+
+<p><strong>一、驗證迴路的長度，決定一個領域被 AI 加速的速度。</strong>數學、程式、蛋白質結構有短迴路，所以進展快；歷史、社會科學、宏觀經濟的迴路以十年計，所以慢。這不是因為後者更難，而是因為<strong>反饋來得太晚</strong>。任何「AI 會改造 X」的預測，都應該先問：X 的驗證迴路有多長？</p>
+
+<p><strong>二、partial credit 是下一個 eval 前沿。</strong>現在的模型在「一次性可判定」的任務上很強，在「需要累積中間成果」的任務上很弱。誰能定義並自動評估「有意義的部分進展」，誰就能解鎖下一波 agent 能力。這適用於數學，也適用於軟件工程、科學研究、寫作。</p>
+
+<p><strong>三、說服力是無法 RL 的瓶頸。</strong>科學不只是發現，還是讓人相信這個發現值得投入。這件事依賴敘事、信任、社群，而這些東西沒有乾淨的 reward signal。我的判斷是：未來的科學家會花更多時間在「策展與說服」，更少時間在「計算」；而最值錢的 AI 工具，可能不是證明器，而是<strong>幫你把一個複雜結果講清楚的工具</strong>。</p>
+
+<p><strong>要保留的懷疑：</strong></p>
+<ul>
+  <li>「50 / 1100」是節目錄製時的數字，會隨時間變動；它的意義不在絕對值，而在「一發命中之後迅速停滯」這個形狀。</li>
+  <li>「Copernicus 比 Ptolemy 不準」在歷史天文學上有細節爭議（取決於用哪個版本、哪組參數），但作為認識論的比喻是成立的。</li>
+  <li>「AI 擅長廣度、人類擅長深度」是一個當下的觀察，不是本質定律；隨著模型在長時程任務上的進步，這條線會移動。</li>
+</ul>
+
+<div class="data-point">
+  <span>核心</span><strong>開普勒的故事不是「天才靈光一閃」，而是「錯誤的偏見＋極精確的數據＋二十年的驗證」。</strong>AI 把第一項變得極便宜，把第二項留給測量，把第三項留給制度。所以真正的問題不是「AI 會不會做數學」，而是「我們有沒有準備好一套能消化大量想法、又能識別少數真理的制度」。
+</div>
+
+<div class="section-title">十二、關鍵事實與時間線</div>
+
+<table>
+  <tr><th>項目</th><th>內容</th></tr>
+  <tr><td>開普勒的起點</td><td>1595–96 年提出正多面體嵌套模型；與 Brahe 數據相差約 10%</td></tr>
+  <tr><td>Brahe 的貢獻</td><td>裸眼觀測，精度約為前人的 10 倍；數據是開普勒唯一可用的高品質資料庫</td></tr>
+  <tr><td>三定律</td><td>橢圓軌道、等面積定律；第三定律（週期² ∝ 距離³）約十年後發表，寫在《世界的和聲》的旁註</td></tr>
+  <tr><td>牛頓</td><td>約一個世紀後，用萬有引力一次解釋三條定律</td></tr>
+  <tr><td>Bode 定律</td><td>用六個行星距離擬合；天王星、Ceres 吻合，海王星完全失效 → 數值巧合</td></tr>
+  <tr><td>Copernicus vs Ptolemy</td><td>日心說更簡潔但更不準；要等開普勒才超越托勒密</td></tr>
+  <tr><td>Darwin vs Newton</td><td>《物種起源》1859；《原理》1687；達爾文缺遺傳機制，靠英文寫作與敘事說服</td></tr>
+  <tr><td>AI for math</td><td>約 1,100 個 Erdős 問題中，50 多個獲 AI 協助解決；純 AI 一發命中在一個月後停滯</td></tr>
+  <tr><td>本集</td><td>Dwarkesh Podcast，2026-03-20，約 2.5 小時</td></tr>
+</table>
+
+<hr>
+
+<p style="font-size:0.9rem; color:#777;"><strong>延伸對讀：</strong>本系列第 79 篇（Dwarkesh × Grant Sanderson：AI 與數學的未來）處理的是「AI 能不能做研究」；第 142 篇（Dwarkesh：預訓練數據 vs 模型）處理的是「數據還剩多少」；第 239 篇（MLST × Lean）處理的是「機器驗證與人類理解的距離」。本篇站在三者交會處：<strong>驗證迴路、數據精度、與制度設計</strong>。</p>
+
+<footer>
+  <p>來源：Dwarkesh Podcast ·〈Terence Tao – Kepler, Newton, and the true nature of mathematical discovery〉· 官方逐字稿（dwarkesh.com/p/terence-tao）</p>
+  <p style="margin-top:0.3rem;">生成：2026-10-28 · 深度復述 #241 · 引文取自節目逐字稿，分析與補充已標明</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1930,6 +1930,19 @@ function togglePastReports() {
 </div>
 
 
+
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/240-latent-space-anthropic-brain-hands-managed-agents.html">把腦留在岸上，把手丟進水裡——Anthropic 怎樣用 Claude 造 Claude</a></h3>
+  <p class="note">Latent Space（2026-10-27 18:53 UTC 發布，1 小時 46 分；主持＝<strong>swyx</strong> 與 <strong>Alessio Fanelli</strong>；嘉賓＝<strong>Katelyn Lesse</strong>（Claude Platform 工程負責人）、<strong>Angela Jiang</strong>（平台產品負責人）；來源＝<strong>latent.space 官方完整逐字稿約 13.9 萬字符</strong>）：表面是 Opus 5.5 發布覆盤，實際是「前沿 lab 怎樣變成平台」的口述史。核心：①<strong>模型發布＝API 發布</strong>，真正耗時的是相容性——為防蒸餾要求跨輪保留 thinking blocks，會弄壞客戶自寫的 compaction，於是官方補一個 compaction API；原則是只接受「要改整合但做得到」，不接受「從此做不到」；②<strong>蒸餾是安全問題不是商業問題</strong>——「你蒸餾我們，還是付錢給我們」，真正不能接受的是被蒸餾模型脫離 safety classifiers 運行；③<strong>腦手分離</strong>：harness＋session log 跑耐久伺服器，sandbox 按需即棄；原本為延遲與可靠性，事後被 sandbox 逃逸事件證明是安全架構，PM 被道歉；④<strong>憑證 vault＋egress proxy</strong>：agent 只見 placeholder，真 secret 在出口注入，sandbox 可完全斷網——逃逸後的收穫接近零；⑤<strong>trust grants＝Anthropic 版 IAM</strong>，為低機率事件建通用 primitives，後來長成模型存取／下架／驗證計畫的共用底座；⑥<strong>CPU 是新瓶頸</strong>，多雲多區域、內部零和分配，「不能再按需擴容」；⑦<strong>Rust 重寫</strong>：零 Rust 工程師、整條 API fork＋shadow traffic＋輸出 diff＋feature flag 切流，純 port 拒絕加新功能，CPU 省 <strong>40–50%</strong>、TTFT 改善 <strong>10–20%</strong>，原本「好幾年」的遷移數週完成；⑧<strong>Dreaming＝CMA on top of CMA</strong>，「managed agents all the way down」；⑨multi-agent 只有兩條原則：共享狀態、子 agent 不阻塞；⑩反 slop：「真的是垃圾就退回去」，但別看到一個 em dash 就當 AI。數據：S-1 估值約 2 兆美元、TTM 人均營收 660 萬美元（一年前 140 萬）、首次 GAAP 盈利 19%、10 萬美元以上客戶逾半用 Claude Platform。爭議：蒸餾「仍付錢」的框架低估長期脫離 API 的風險；shadow traffic 覆蓋率外界無法審計；pacing 被定義成自家門檻，迴避了「發布會壓縮別人時間表」。本文萃取：<strong>當實作變便宜，瓶頸轉移到規劃、驗證與隔離——三層都做對，才有資格說「用 Claude 造 Claude」。</strong>· Latent Space</p>
+</div>
+
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/241-dwarkesh-terence-tao-kepler-newton-math-discovery.html">開普勒是一個高溫 LLM——數學發現的真實形狀，與 AI 抄不到的那條近路</a></h3>
+  <p class="note">Dwarkesh Podcast（2026-03-20 發布，約 2.5 小時；主持＝<strong>Dwarkesh Patel</strong>；嘉賓＝<strong>Terence Tao（陶哲軒）</strong>；來源＝<strong>dwarkesh.com 官方完整逐字稿</strong>）：用一個失敗的理論講 AI 與科學。核心：①開普勒先愛上正多面體嵌套的「美」，與 Brahe 數據差約 <strong>10%</strong>，花二十年才讀出橢圓與等面積，第三定律寫在《世界的和聲》的旁註，牛頓再過一世紀才解釋；②<strong>Brahe 的觀測精度高十倍</strong>，多出的一個小數點是發現能否成立的前提——可驗證的資料庫才是想法的容器；③第三定律本質上是<strong>六個數據點的回歸</strong>，全靠運氣；Bode 定律同樣拟合六個點，天王星與 Ceres 吻合、海王星徹底失效，證明是數值巧合；④<strong>進步長得像退步</strong>：哥白尼比托勒密更不準，要等開普勒才超越；牛的「超距作用」要等愛因斯坦；真正進步常是刪除假設而非增加；⑤<strong>達爾文比牛頓慢兩百年</strong>，因為驗證迴路長、且需要說服——「如何給說服力打分」無法 RL；⑥「開普勒是高溫 LLM」的類比成立，但陶的修正：<strong>AI 已把想法生成成本降到近零</strong>，像網路把通訊成本降到近零——不會自動帶來豐盛，反而灌爆期刊與評審；⑦<strong>50 / 1100</strong>：約 1,100 個 Erdős 問題中 50 多個獲 AI 協助，純 AI 一發命中在一個月後停滯；AI 是「跳兩米高的跳躍機器」，擅長一擊、不擅長<strong>部分進展</strong>；⑧<strong>廣度 vs 深度</strong>：AI 勝在寬、人勝在深，而整個科學制度是為深度設計的，必須重設；⑨Lean 證明了黎曼猜想，我們會理解嗎？「我們不知道」——四色定理是前例；⑩「認知版哥白尼革命」：人類智能不再是宇宙中心。本文萃取：<strong>AI 讓假設變便宜，把稀缺性推到測量、驗證與制度——真正的問題不是 AI 會不會做數學，而是我們有沒有一套能消化大量想法、又識別少數真理的制度。</strong>· Dwarkesh Podcast</p>
+</div>
+
 <footer>
   <p>JMOKSZ / ai-podcast-collection</p>
   <p style="margin-top:0.3rem;">每日 10:03 自動掃描更新 · Apache 2.0</p>
