@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-10-27T02:07:00.000Z",
- "lastScanDate": "2026-10-27",
+ "lastScan": "2026-10-28T02:10:00.000Z",
+ "lastScanDate": "2026-10-28",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-22T15:02:21.000Z",
@@ -10,11 +10,20 @@
    "lastFeedItemTitle": "Why Hunter-Gatherers Lost to Farmers - Kyle Harper (YouTube Short)"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-10-24T07:18:29.000Z",
-   "lastEpisodeTitle": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month",
-   "lastFeedItemPubDate": "2026-10-24T07:18:29.000Z",
-   "lastFeedItemTitle": "[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-10-27T18:53:10.000Z",
+   "lastEpisodeTitle": "How Anthropic ships Claude with Claude: Separating the Brain from the Hands",
+   "lastFeedItemPubDate": "2026-10-27T18:53:10.000Z",
+   "lastFeedItemTitle": "How Anthropic ships Claude with Claude: Separating the Brain from the Hands",
+   "newEpisodes": [
+    {
+     "title": "How Anthropic ships Claude with Claude: Separating the Brain from the Hands",
+     "pubDate": "2026-10-27T18:53:10.000Z",
+     "type": "podcast",
+     "url": "https://latent.space/p/opus55/",
+     "guests": "Katelyn Lesse（Anthropic Claude Platform 工程負責人）、Angela Jiang（Claude Platform 產品負責人）",
+     "note": "1:46:30。完整逐字稿由 latent.space/p/opus55/ 取得。關鍵內容：Opus 5.5 發布（less verbose、降價、防蒸餾）、brain/hands 分離架構（harness 耐久、sandbox 即棄、憑證 vault + egress proxy）、Messages API Rust 重寫（零 Rust 團隊、shadow traffic、CPU 省 40-50%、TTFT 10-20%）、CPU 零和分配、trust grants、資料保留政策、multi-agent 建議（shared state + 非阻塞）。S-1 數字：$2T IPO、人均營收 $6.6M、19% GAAP profit。"
+    }
+   ]
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-10-23T10:00:05.000Z",
@@ -34,17 +43,14 @@
    "lastEpisodePubDate": "2026-10-26T14:36:54.000Z",
    "lastEpisodeTitle": "Mathematics Just Changed Forever — Kevin Hartnett",
    "lastFeedItemPubDate": "2026-10-26T14:36:54.000Z",
-   "newEpisodes": [
-    {
-     "title": "Mathematics Just Changed Forever — Kevin Hartnett",
-     "pubDate": "2026-10-26T14:36:54.000Z",
-     "type": "documentary",
-     "url": "https://podcasters.spotify.com/pod/show/machinelearningstreettalk/episodes/Mathematics-Just-Changed-Forever--Kevin-Hartnett-e3r47eh",
-     "guests": "Kevin Hartnett（The Proof in the Code 作者）；片中 Leonardo de Moura、Jeremy Avigad、Kevin Buzzard、Paul Lessard、Peter Scholze",
-     "note": "片長 01:33:33。完整逐字稿經 ReScript 公開分享頁取得（92,604 字元）：https://app.rescript.info/share/8604a0cd6ea4604a368028a05f4e6be4 → API /api/public/share/<id> 的 session.final_transcript。關鍵數據：Hales 1762 構型/20 人年、de Bruijn 比例 20:1、Mathlib 2017 起點 30,000 行、AlphaProof 代數數論自動形式化 80%、數千萬 Lean 題、Tao Equational Theories 2200萬→238→138→4、Epoch AI 2026-09 固定預算 2/68（其餘四模型 0）、OpenAI 09-08 宣稱 Navier-Stokes。"
-    }
-   ],
-   "lastFeedItemTitle": "Mathematics Just Changed Forever — Kevin Hartnett"
+   "newEpisodes": [],
+   "lastFeedItemTitle": "Mathematics Just Changed Forever — Kevin Hartnett",
+   "lastClip": {
+    "title": "The Annals Published It. It Wasn't True. - Kevin Buzzard",
+    "pubDate": "2026-10-28T00:47:40.000Z",
+    "duration": "63s",
+    "note": "Hartnett 紀錄片切片；50 條 Annals 定理形式化，4 位菲爾兹獎得主定理按字面為假（缺隱性假設）。"
+   }
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-10-21T00:00:00.000Z",
@@ -71,32 +77,14 @@
    "lastEpisodePubDate": "2026-10-26T17:55:28.000Z",
    "lastEpisodeTitle": "不是，怎么又换版本了？---狂飙中的AI 2026",
    "lastFeedItemPubDate": "2026-10-26T17:55:28.000Z",
-   "newEpisodes": [
-    {
-     "title": "不是，怎么又换版本了？---狂飙中的AI 2026",
-     "pubDate": "2026-10-26T17:55:28.000Z",
-     "type": "solo-ppt",
-     "url": "https://www.xiaoyuzhoufm.com/episode/6adf8a8dc96c8942ec12aa7d",
-     "guests": "無（庄明浩單口，狂喜播客節現場專場）",
-     "note": "90 分鐘、152 頁 PPT，三章：技術(08:06-49:00)/產業(49:10-77:20)/資本(77:26-108:10)，尾聲至 124:58。官方時間軸共 135 個章節節點。無公開逐字稿（小宇宙文稿 401、YouTube 無對應影片、本機無法 ASR）；報告按節點標題重建論證骨架，PPT 內頁數字未公開故不補齊。"
-    }
-   ],
+   "newEpisodes": [],
    "lastFeedItemTitle": "不是，怎么又换版本了？---狂飙中的AI 2026"
   },
   "crossing": {
    "lastEpisodePubDate": "2026-10-25T16:00:00.000Z",
    "lastEpisodeTitle": "AI 时代，PhD 路上的 10 个关键问题｜对谈李磊：港大 PhD、小米 MiMo 研究员",
    "lastFeedItemPubDate": "2026-10-25T16:00:00.000Z",
-   "newEpisodes": [
-    {
-     "title": "AI 时代，PhD 路上的 10 个关键问题｜对谈李磊：港大 PhD、小米 MiMo 研究员",
-     "pubDate": "2026-10-25T16:00:00.000Z",
-     "type": "interview",
-     "url": "https://www.xiaoyuzhoufm.com/episode/6add84e197726cd467573cf1",
-     "guests": "李磊（小米 MiMo 大模型后训练研究员、香港大学在读博士、北大出身、EMNLP 最佳论文）；主持 杨远骋 Koji",
-     "note": "51分50秒（3110s）。18 章節節點：00:23 快問快答／02:29 北大到港大 EMNLP 最佳論文開局／03:28 AI 時代 PhD 怎麼拿理想結果／08:07 AI 論文大水漫灌頂會怎麼辦／12:16「大粉理論」小紅書粉絲>論文引用／16:50 入學到畢業要過哪幾關／20:08 沒論文沒實習怎麼冷啟動／25:28 選學校還是選導師／28:12 慢科研 or 快科研／31:08 內地香港美國去哪讀／35:27 導師創業 PhD 得到什麼／36:52 本科能進 AI Labs 還要讀 PhD 嗎／39:58 小米 MiMo 為何直播後訓練／42:03 數據公司高估值能持續多久／46:00 RSI／47:46 Video-MME 怎樣做出有影響力的 Benchmark／50:20 給高三生的專業建議／51:24 飯要吃覺要睡。無公開逐字稿（小宇宙 transcript 已啟用但接口 401；YouTube oDdQGehy7uQ 無字幕）。"
-    }
-   ],
+   "newEpisodes": [],
    "lastFeedItemTitle": "AI 时代，PhD 路上的 10 个关键问题｜对谈李磊：港大 PhD、小米 MiMo 研究员"
   }
  },
