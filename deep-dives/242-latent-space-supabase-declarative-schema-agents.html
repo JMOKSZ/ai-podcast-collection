@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 歷史是給人看的，狀態是給 agent 讀的——Supabase 的 100 億美元與「不用遷移」這條護城河</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #888; line-height: 1.7; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">Latent Space · 2026-10-28</div>
+  <h1>歷史是給人看的，狀態是給 agent 讀的<br>——Supabase 的 100 億美元與「不用遷移」這條護城河</h1>
+  <div class="meta">
+    <div>〈Why Agents Love Supabase〉</div>
+    <div>77 分鐘<span>·</span>主持：swyx<span>·</span>嘉賓：Paul Copplestone、Ant Wilson（Supabase 共同創辦人）</div>
+    <div>發布：2026-10-28 19:48 UTC<span>·</span>來源：官方 VTT 完整逐字稿</div>
+  </div>
+</header>
+
+<p>這集表面在講一間資料庫公司的新產品，實際在講一件更普遍的事：<strong>當你的使用者從人變成 agent，你要重新設計的不是介面，而是「狀態放在哪裡、以什麼形式存在」。</strong>Supabase 花了六年，把自己從一個「有漂亮 dashboard 的 Postgres」變成一個「agent 可以直接讀寫的檔案系統＋執行環境」。這條轉向，比任何一個單獨的產品公告都重要。</p>
+
+<p>先講利益關係，因為主持人在開場五分鐘內自己講清楚了：swyx 是 Supabase 種子輪的天使投資人，而且是他人生第一筆天使投資；Supabase 是 2023 年第一屆 AI Engineer 的第一個贊助商，現在也是 Latent Space 的第一個贊助商。這集不是評測，是<strong>拆解</strong>——不問這家公司好不好，問它到底做對了什麼，以及哪些說法還沒有被證明。</p>
+
+<div class="section-title">一、三個動詞：Build、Operate、Scale</div>
+
+<p>Supabase Select 的發佈會用三個動詞組織：<strong>build</strong>（讓 agent 更容易起一個專案）、<strong>operate</strong>（給更多人與 agent 更多上下文：logs、checks、connections、給 SQL 用的 markdown 檔）、<strong>scale</strong>（從 prototype 到 petabyte）。口號也從「build in a weekend, scale to millions」改成「prototype to petabyte」。</p>
+
+<p>三個動詞裡，最被低估的是 build 裡的一個小改動：<strong>不用 Docker 就能在本機起 Supabase</strong>。swyx 的說法是「我需要啟動基本流程去碰資料庫的負重越少越好」。這句話聽起來像開發者體驗的碎念，但它其實是整集的主題句：agent 的迭代速度取決於「起一個可操作環境」的成本，而不是取決於模型多聰明。</p>
+
+<p>第二個是 <strong>Supabase Compute</strong>。既有的 Edge Functions 跑在 Deno 上，有兩秒上限。社群抱怨了很多年：想跑更久的工作——文件切塊、embedding、跑 agent。Compute 的解法是把容器跑在<strong>與資料庫同一個私有網路</strong>，可以直接開 Postgres 連線，支援 Rust、Python，本質上是「container 版 Lambda」。Paul 自己的類比就是這個。</p>
+
+<div class="highlight-box">
+<strong>為什麼這個順序重要：</strong>先有 Compute，才有 durable workflows。社群過去幾年在 Supabase Functions 上自建 workflow engine 全部失敗，原因不是設計不好，是兩秒上限。Paul 說得很直：「我們欠缺的原語（primitive）就是 Compute。」<strong>很多「做不出來」的產品，其實是被一個沒人覺得是瓶頸的常數卡住。</strong>
+</div>
+
+<div class="section-title">二、Declarative schema：把「推導」變成「讀取」</div>
+
+<p>整集的技術主線是這一段，值得慢慢拆。</p>
+
+<p>Postgres 的標準工作流是累積式的：你建 schema，然後 migrate、migrate、migrate。每一次變更都是一個檔案，放進 migrations 資料夾，形成一份<strong>歷史日誌</strong>。這對人來說是合理的——你會想看誰在什麼時候改了什麼。但對 agent 來說，這份歷史是一個推導問題：</p>
+
+<blockquote>
+「想像你把 agent 放在一千個檔案前面，問它：這張表的形狀是什麼？它得在一千個檔案裡猜。」
+<span class="attribution">— Paul Copplestone，談 migration 資料夾對 agent 的意義（原文："It has to guess through 1,000 files"）</span>
+</blockquote>
+
+<p>另一條路是：在本機起資料庫、把 migration 全部跑一次、再 introspect。更慢，而且容易錯。Supabase 的解法是把 schema 資料夾變成<strong>完整的宣告式狀態</strong>：tables、policies、database comments，全部捕捉成檔案。他們為此發佈了一個新函式庫 <strong>pgdelta</strong>，可以用在任何 Postgres 資料庫上。</p>
+
+<p>swyx 的類比很準：這是資料庫的 Terraform 時刻。但我會再往前推一步——<strong>這不是「基礎設施即程式碼」的時尚，而是把一個 O(歷史長度) 的問題，降成 O(1) 的讀取。</strong>Agent 的上下文窗口和時間都是稀缺資源；每一次它要「重新推導現在長什麼樣」，都是在燒 token 與出錯機率。宣告式狀態把這個成本一次過外部化。</p>
+
+<blockquote class="strong">
+「好處在於，這其實不是為了 agent。我們本來就一直需要這個。」
+<span class="attribution">— swyx（原文："The beauty of it though is that it's not actually about agents. It's like we just needed this the whole time."）</span>
+</blockquote>
+
+<p>這句話是整集的產品判斷，也是投資判斷：<strong>只為 agent 做的功能，會隨模型演進而貶值；為人做的功能不會。</strong>如果一個功能只有 agent 需要，下一代模型可能自己就能繞過；如果一個功能人本來就想要（例如「一眼看到資料庫現在長什麼樣」），那它會留下來。這也是為什麼 Supabase 的產品線可以同時服務兩邊，而不會變成兩套東西。</p>
+
+<div class="section-title">三、三個方向，不是一個方向：OrioleDB、Multigres、Turso</div>
+
+<p>很多人以為「scale」是一個問題。Supabase 的答案把它拆成兩個相反方向，再加一個儲存引擎。</p>
+
+<div class="sub-title">1. OrioleDB：把 Postgres 的引擎換掉，而不是換掉 Postgres</div>
+
+<p>OrioleDB 是 Postgres 現行 Heap 儲存引擎的 drop-in 替代，快 <strong>1.5–2 倍</strong>，完全相容，不用改任何東西；它移除了 vacuum 與 bloat 這類背景任務。今年做的是「把它扔進洗衣機」：pg_regress 完整相容性、Antithesis、每晚 TPC-C、Jepsen。</p>
+
+<p>最值得記住的是授權處理：Supabase 收購了技術、繼續開發、<strong>付錢買下專利</strong>，然後以 Apache 2.0 釋出，授權涵蓋專利。Ant 的說法是「我們把它免費送出去」。這在資料庫史上是罕見的動作——它不是開源行銷，是把一個可能變成訴訟武器的東西先拆掉引信。</p>
+
+<div class="sub-title">2. Multigres：把 operator 重寫，因為「每一個都會丟資料」</div>
+
+<p>這是全集最刺人的一句話：</p>
+
+<blockquote class="strong">
+「在某些條件下，生態裡每一個 operator 都會丟資料。」
+<span class="attribution">— Ant Wilson，談 Multigres 的立項理由（原文："under certain conditions, every single one of them could lose data"）</span>
+</blockquote>
+
+<p>Operator 是幫你跑整個 Postgres 叢集的東西：failover、備份、多節點。Supabase 把生態裡所有 operator 都測過，結論是沒有一個能在所有條件下保證不丟資料。於是他們從零重寫，測試做到 <strong>1,000 次連續 failover 零資料遺失</strong>，完全開源，平台上 invite-only 給跑重負載的客戶。</p>
+
+<p>設計目標只有一個：<strong>零程式碼改動的 sharding</strong>。Vitess 原作者 Sugu 加入後的優先事項就是「相容性優先」——以往用 Vitess 做 MySQL sharding，你得改查詢；Multigres 想要的是你什麼都不用改。但 sharding 本身<strong>還沒發布</strong>，官方口徑是「明年初部分落地」。設計夥伴包括 Booz Allen、Postman、Perplexity。</p>
+
+<div class="sub-title">3. Turso：把資料庫變回檔案格式</div>
+
+<p>如果 Multigres 是「scale up」，Turso 就是「scale out」——但不是傳統意義的橫向擴充，而是<strong>把資料庫縮小到可以一個念頭一個</strong>。Turso 的架構本質是為 SQLite 做 MVCC，讓單寫入者的檔案格式可以多寫入者；因為 SQLite 授權問題，他們 fork 了它。</p>
+
+<p>Supabase 收購後保留 Turso 品牌，並推出新實例類型 <strong>Supabase Spark</strong>：一個點子一個資料庫，長大了再升級到完整 Postgres，再到 Multigres。Ant 把這條路徑講得很白：</p>
+
+<blockquote>
+「你可以為任何想法、任何原型開一個資料庫；當它起飛，你就升級到完整的 Postgres。」
+<span class="attribution">— Ant Wilson（原文："one database for any idea, any prototype... when it takes off, then you just upgrade"）</span>
+</blockquote>
+
+<p>這裡的關鍵不是技術，是<strong>產品形狀</strong>：Supabase 不再假設「一個客戶一個資料庫」，而是假設「一個想法一個資料庫，大多數會死，少數會長大」。這個假設直接推導出兩個需求：極便宜的建立成本，以及<strong>零停機的升級路徑</strong>。前者靠 Turso，後者靠 Multigres。兩條腿缺一不可。</p>
+
+<div class="data-point">
+<span>Scale</span><strong>每月新建 500 萬個資料庫</strong>；Supabase 判斷 agent 會把這個數字推到每月數十億。參照點：ChatGPT 約 12 億月活——如果每人每月開一個資料庫，就是 12 億個 Postgres server。這個算術是他們收購 Turso 的真正理由。
+</div>
+
+<div class="section-title">四、遷移幾乎不發生——所以唯一的策略是 greenfield</div>
+
+<p>這是全集最反直覺、也最可轉移的一段。Ant 說得極直白：</p>
+
+<blockquote class="strong">
+「遷移資料庫——比如從 MySQL 到 Postgres，或從一個可擴展資料庫到另一個——幾乎從來不發生。」
+<span class="attribution">— Ant Wilson（原文："migrating databases from, say, MySQL to Postgres or from, say, one scalable database to another scalable database almost never happens"）</span>
+</blockquote>
+
+<p>他補了兩個理由。第一，歷史上所有想做「遷移生意」的資料庫公司都失敗了。第二，OLTP 資料庫通常支撐著公司最賺錢的應用，一分鐘停機就是真金白銀；要遷移就得兩邊並行，而 split brain 的對帳是極難的問題。所以企業客戶的行為不是「替換 Oracle」，而是「開一個新 workload」。Supabase 的企業策略因此是：<strong>day one 拿下 greenfield，然後確保客戶留到 day one thousand。</strong></p>
+
+<p>這翻轉了整個企業銷售的直覺。傳統 playbook 是「找到痛點、替換舊系統、算 ROI」；Supabase 的 playbook 是「等新東西出生，然後不要讓它搬走」。前者是說服，後者是<strong>接管出生地</strong>。而資料庫的護城河不是效能，是<strong>遷移成本</strong>——這一點在 AI 時代反而更強，因為 agent 會不斷生成新應用，greenfield 的供應量爆炸。</p>
+
+<p>swyx 提到一個一年前的說法：按營收計，只有 <strong>5% 的 Oracle workload 跑在雲上</strong>，這就是「取代 Oracle」敘事的來源。但 Paul 明確說這不會是未來五年的重心。他寧願先打進企業、處理新 workload，等 Multigres 成熟再談遷移。</p>
+
+<div class="highlight-box">
+<strong>我的解讀：</strong>「不替換、只接手」是 AI 時代基礎設施公司的通用策略。因為 agent 讓新專案的邊際成本趨近零，greenfield 的流量遠大於 replacement 的流量；而 replacement 的風險（停機、對帳、政治）完全沒有下降。選擇戰場，比說服客戶更重要。
+</div>
+
+<div class="section-title">五、AEO：模型為什麼會推薦你</div>
+
+<p>swyx 自己跑了一個 frontier AEO tracker。結果是 Supabase 在<strong>每一個前沿模型</strong>（Astra、Fable、Muse）的「整合式後端首選」項目上幾乎全掃，在「託管資料庫」上也進了候選。他的問題是：這不是理所當然的，為什麼是 Supabase？</p>
+
+<p>答案分三層，而且時間順序很重要。</p>
+
+<ul>
+  <li><strong>它在 LLM 起飛前已經在市場三、四年。</strong>而且它把自己定位成「當時領導者的頭號替代品」——open source Firebase alternative。</li>
+  <li><strong>社群產生的內容被模型吸收。</strong>早期成長策略是花大量時間在社群，結果是使用者自己寫 blog、拍 YouTube、開 podcast 講「我怎樣用 Supabase 做這個」。這些內容全被模型「slurped up」。</li>
+  <li><strong>開源本身是分發。</strong>程式碼、文件、issue、Discord 問答，全部是公開語料。</li>
+</ul>
+
+<p>Paul 的總結很誠實：「我們很幸運，時機完全係意外。」但我不同意「純粹幸運」這個結論。運氣在於 LLM 出現的時間；選擇在於他們<strong>把社群問答從 Discord 鏡像到 GitHub Discussions，再鏡像到官網</strong>。Ant 說得很具體：任何人在任何渠道問了正經問題，他們就 scrape 問題與回答，放進 GitHub Discussions，再同步到網站。這不是為了 SEO，是為了解決「同一個問題被反覆問」——但結果是，它同時變成了模型可讀的語料。</p>
+
+<blockquote>
+「我們當時的成長策略就是花很多時間在社群……他們寫 blog、拍 YouTube、開 podcast 講怎麼用 Supabase。我肯定這些全被模型吸進去了。」
+<span class="attribution">— Paul Copplestone（原文："our growth strategies early was just to spend so much time with the community... I'm sure that all just got slurped up by the models"）</span>
+</blockquote>
+
+<p><strong>這是 2026 年最被低估的護城河：不是「模型認識你」，而是「模型在訓練時已經看過足夠多『別人怎樣用你解決問題』的具體敘事」。</strong>認識你只會讓你進候選；看過使用敘事，才會讓模型在生成架構時把你寫進去。前者是品牌，後者是<strong>預設值</strong>。</p>
+
+<div class="section-title">六、漏斗反常：agent 把 activation 壓成一步</div>
+
+<p>2026 年初，Supabase 看到一個在傳統 SaaS 裡反常的現象：</p>
+
+<blockquote class="strong">
+「通常當漏斗頂端進來更多消費者流量，activation 和付費轉化會下降。但這次兩者同時快速上升。」
+<span class="attribution">— Paul Copplestone（原文："often when you get more consumer life traffic in the top of funnel, your activation and conversion to pay goes down. But both of those things went up."）</span>
+</blockquote>
+
+<p>原因不是行銷變好（他們幾乎不花錢，主要是 memes）。原因是<strong>agent 把 sign-up 到 activation 的中間步驟全部做完了</strong>：</p>
+
+<blockquote>
+「sign-up 到 activation，agent 幫你做完了，一步到位。摩擦消失了。」
+<span class="attribution">— Paul Copplestone（原文："the sign-up to activation, the agent does it for you... in one step... The friction's gone."）</span>
+</blockquote>
+
+<p>這段值得所有 PLG 公司抄下來。傳統漏斗的每一格都是一個流失點：註冊、建專案、設環境、接 SDK、跑第一個 query。Agent 把這五格壓成一格「說一句話」。於是漏斗頂端變大，轉化率不降反升——<strong>因為分母變大時，分子也被同一個動作放大了</strong>。</p>
+
+<p>更值得記的是他們對「vibe coding 客戶會不會留下」的判斷方式。Paul 承認一開始不確定，轉捩點是「看到有人在產品上線頭幾天賺到 10,000 美元」。</p>
+
+<blockquote>
+「當我們看到有人在產品上線頭幾天就賺到一萬美元，我們就知道，這是真的。」
+<span class="attribution">— Paul Copplestone（原文："as soon as we saw someone earn... $10,000 within the first few days of launching their product, we were like, 'Wow, this is real.'"）</span>
+</blockquote>
+
+<p>這是一個<strong>敘事證據</strong>，不是數據證據。真正的問題是：500 萬個資料庫裡，有多少在 90 天後還活著？這集沒有回答，而這正是下面「爭議」一節要追的。</p>
+
+<div class="section-title">七、Product-led sales：把因果推論寫進薪酬</div>
+
+<p>這是全集最實用、也最少人討論的一段。Supabase 的做法不是「業務打電話推銷」，而是先找<strong>產品觸發點</strong>：快撞到限制、出現錯誤、付費到某個水位、重要 logo。每週大約 1,000 個。</p>
+
+<p>然後他們做了一個很像臨床試驗的設計：</p>
+
+<ol>
+  <li>對 1,000 人寄信。</li>
+  <li>約 500 人回應。</li>
+  <li>不回應的那 500 人當<strong>對照組</strong>，量他們的成長。</li>
+  <li>結果：對照組月增 <strong>25%</strong>；回應組月增 <strong>125%</strong>。</li>
+</ol>
+
+<p>於是業務的薪酬只按那 <strong>100% 的增量</strong>計算，而不是按傳統 quota。Ant 的說法是：傳統做法是「打電話賣東西，然後你拿全額 quota」；但因為我們知道這批用戶本來就會月增 25%，所以業務真正帶來的是那額外的 100%。</p>
+
+<div class="highlight-box">
+<strong>為什麼這是好設計：</strong>它把「業務的價值」定義成<strong>相對於反事實的增量</strong>，而不是絕對成交額。這樣業務不會去收割本來就會轉化的客戶，而會去找「本來不會動、但被幫助後會動」的人。代價是：你需要有能力量對照組，而且樣本要夠大。大多數公司做不到，所以只能繼續用 quota。
+</div>
+
+<p>這也解釋了為什麼 Supabase 的 enterprise motion 看起來不像 enterprise：champion 已經在 C 層。Ant 說現在有 CPO 說「我十年沒寫程式，但因為 Lovable 和 Supabase，我在內部建東西」。這種 champion 不需要傳統 sales motion，只需要「幫他解決問題」。</p>
+
+<div class="section-title">八、AI 支出：$300K／月，450 人，與一個比率</div>
+
+<p>swyx 問了一個很實用的問題：公司領袖應該帶什麼數字回家？Paul 給了兩組。</p>
+
+<p>第一組是市場參照：平均個人約 $20／月、平均員工約 $200／月；OpenAI 的 50 百分位客戶約 $3,000–5,000／月，頂端百分位是數十萬美元／月。</p>
+
+<p>第二組是 Supabase 自己：<strong>約 $300K／月，員工約 450 人</strong>。折算下來每人每月約 $667，是「平均員工 $200」的三倍多。</p>
+
+<p>但更有意思的是他提出的指標：<strong>token 支出／人事支出</strong>。多數公司在 0.1；安全上限大概到 1.0；超過 1.5 大概就有問題。這個指標的邏輯是：AI 支出應該相對於你的人力規模來理解，而不是絕對值。一間 10 人的公司每月花 $50K 在 AI 上，可能比一間 1,000 人的公司每月花 $500K 更激進。</p>
+
+<p>Paul 補了一句很重要的話：不應該把焦點放在「花多少」，而應該放在「<strong>有幾多個 end-to-end 流程，已經不需要人類在迴路裡</strong>」。這是把 AI 支出從成本會計問題，變成流程重設計問題。</p>
+
+<div class="data-point">
+<span>對照</span>Supabase 內部有 AI 使用 leaderboard，Paul 說「通常人們會有點羞愧」。但他自己說這是<strong>錯的焦點</strong>：真正該量的是「你解決了幾個端到端流程」，而不是「你燒了幾多 token」。同一個數字，可以被讀成浪費，也可以被讀成投資——取決於你有沒有流程重設計的證據。
+</div>
+
+<div class="section-title">九、爭議與未解</div>
+
+<p><strong>1. 「Prototype to Petabyte」是不是過度承諾？</strong>從 500 萬個資料庫到每月數十億，與「服務單一客戶的 PB 級資料庫」是兩個完全不同的工程問題。他們用 Turso（scale out）＋ Multigres（scale up）兩條腿回答，但 sharding 還沒發布，Multigres 的 sharding 只是「明年初部分落地」。</p>
+
+<p><strong>2. 多雲與 GCP。</strong>CapitalG（Alphabet 生態）入股的理由之一是「需要更多算力」，因此必須考慮 GCP。但 swyx 直接點出矛盾：如果你把 GCS 當 S3 的替代，多雲很難成立——因為 S3 的許多特性（例如強一致性、S3 Express 的低延遲寫入）不是每個物件儲存都有。Ant 承認「我不確定 GCS 是否具備所有特性」。</p>
+
+<p><strong>3. Vibe coding 客戶的留存。</strong>Paul 的證據是一個客戶幾天內賺到 $10,000。這是故事，不是 cohort retention。500 萬個資料庫裡有多少在 90 天後還活著，這集沒有答案。</p>
+
+<p><strong>4. 模型收斂。</strong>swyx 擔心 agent 讓所有人收斂到同一種做法（local maxima）。Paul 的回應分兩層：隨意的 builder 會收斂到模型的平均值；有品味的人仍會在乎細節，並且最終會過濾下來。他補了一句很狠的：「一般的大學大概完蛋了」——因為你可以自學。這句話值得另開一篇討論，但至少它說明：Supabase 對「軟體工藝的未來」是有立場的，不是中立的基础設施。</p>
+
+<p><strong>5. AI 還沒攻克 SRE。</strong>swyx 說他一直公開講「AI SRE 是 agent 新創最難的類別」，目前為止仍然正確。Paul 同意：「寫軟體可以辯論、可以解問題；維持系統運行是另一回事。」而 Supabase 現在有 50 個 open roles，最缺 SRE，且全球同薪。這是一個很誠實的承認：<strong>AI 可以幫你寫 application，但還不能幫你保住 uptime。</strong></p>
+
+<div class="section-title">十、我的萃取：五個可以搬走的判斷</div>
+
+<p><strong>一、Agent-native 的產品，核心設計對象是「狀態的可讀性」，不是「操作的便利性」。</strong>Declarative schema 的價值不在於它比較優雅，而在於它把「現在長什麼樣」從一個推導問題變成一個讀取問題。任何 agent 工具都應該問：我的狀態是不是需要它每次重新推導？如果是，那就是下一個要被外部化的東西。</p>
+
+<p><strong>二、護城河在「出生地」，不在「替換」。</strong>遷移幾乎不發生，所以說服一個既有客戶搬家，是全世界最貴的銷售。反過來，接管新專案的出生地，是全世界最便宜的銷售。AI 讓新專案的數量爆炸，等於讓這條策略的槓桿變大。</p>
+
+<p><strong>三、AEO 是會複利的資本，但它的原料是「真實的使用敘事」。</strong>不是關鍵字，不是 landing page，是「有人具體講他怎樣用你解決了一個問題」。這種內容模型讀得懂，人也讀得懂；它同時是 SEO 和訓練語料。越早開始，複利越長。</p>
+
+<p><strong>四、把因果推論寫進組織設計，是一個被低估的競爭優勢。</strong>25% vs 125% 的對照組設計，讓業務薪酬對齊「增量」而不是「成交」。這需要量測能力，也需要敢承認「有一部分成長與業務無關」。多數公司不願意承認後者，所以永遠量不出前者。</p>
+
+<p><strong>五、AI 支出的正確問題不是「省」，是「流程有沒有被重寫」。</strong>Token/human ratio 是一個有用的粗略指標，但它只是診斷工具；真正的目標是「有幾個流程已經不需要人」。如果支出上升但流程沒變，那只是更貴的同一件事。</p>
+
+<div class="highlight-box">
+<strong>與上一篇對讀：</strong>#240 講 Anthropic 把「腦」與「手」分離，把狀態外部化到 session log；這一篇講 Supabase 把資料庫的「歷史」外部化成「狀態」。兩者其實是同一個原則在不同層的實現：<strong>當執行者（agent）沒有持久記憶，所有重要的東西都必須以可讀的形式存在於它之外。</strong>
+</div>
+
+<div class="section-title">十一、關鍵數據與時間線</div>
+
+<table>
+  <tr><th>項目</th><th>內容</th></tr>
+  <tr><td>估值</td><td>六年由 0 到 100 億美元；全遠端、開源公司</td></tr>
+  <tr><td>規模</td><td>每月新建 500 萬個資料庫；YC 批次 60% 使用 Supabase</td></tr>
+  <tr><td>OrioleDB</td><td>Heap 的 drop-in 替代；1.5–2× 效能；Apache 2.0（含專利）</td></tr>
+  <tr><td>Multigres</td><td>operator 從零重寫；1,000 次連續 failover 零資料遺失；sharding 未發布</td></tr>
+  <tr><td>Turso</td><td>為 SQLite 做 MVCC；fork SQLite；新實例類型 Supabase Spark</td></tr>
+  <tr><td>Compute</td><td>container 版 Lambda；與 DB 同私有網路；支援 Rust / Python；解除 2 秒限制</td></tr>
+  <tr><td>Sales 實驗</td><td>每週 1,000 個觸發點；500 回應；對照組 +25% MoM，回應組 +125% MoM</td></tr>
+  <tr><td>AI 支出</td><td>約 $300K／月；約 450 人；token/human ratio 0.1 常見、1.0 上限</td></tr>
+  <tr><td>社群</td><td>Gary Abbott 六年回答 20,000 題，13,000 題一小時內；$100 萬股票</td></tr>
+  <tr><td>本集</td><td>Latent Space，2026-10-28 19:48 UTC，77 分鐘</td></tr>
+</table>
+
+<hr>
+
+<p style="font-size:0.9rem; color:#777;"><strong>延伸對讀：</strong>本系列 #240（Anthropic：腦手分離）處理「agent 的狀態要放在哪裡」；#231（Modal：compute 的長方形）處理「算力如何被切成可販賣的形狀」；#200（Stacklok：cloud-native harness）處理「agent 的執行環境如何被治理」。本篇站在三者交會處：<strong>狀態、算力、與出生地</strong>。</p>
+
+<footer>
+  <p>來源：Latent Space ·〈Why Agents Love Supabase〉· 官方 VTT 完整逐字稿（latent.space/p/supabase）</p>
+  <p style="margin-top:0.3rem;">生成：2026-10-29 · 深度復述 #242 · 引文取自節目逐字稿，分析與補充已標明</p>
+</footer>
+
+</div>
+</body>
+</html>
