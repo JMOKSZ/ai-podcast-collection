@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客日報 · 2026-10-30</title>
+<style>
+  :root{
+    --bg:#faf8f5; --ink:#211f1c; --sub:#5f5a52; --rule:#e2dcd2;
+    --accent:#8a5a2b; --soft:#f2ece2;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+    font-size:17px; line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:64px 28px 96px}
+  header.top{border-bottom:1px solid var(--rule); padding-bottom:28px; margin-bottom:12px}
+  .kicker{font-size:12.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin-bottom:14px}
+  h1{font-size:34px; line-height:1.25; margin:0 0 16px; font-weight:600; letter-spacing:-.01em}
+  .meta{font-size:14px; color:var(--sub); line-height:1.9}
+  .meta span{white-space:nowrap}
+  .meta .dot{color:#c3b9a9; padding:0 6px}
+
+  h2.section{
+    font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--accent);
+    margin:56px 0 0; padding-bottom:10px; border-bottom:1px solid var(--rule); font-weight:600;
+  }
+  .show{margin-top:40px}
+  .show h3{font-size:22px; margin:0 0 4px; font-weight:600; letter-spacing:-.01em}
+  .show .host{font-size:14px; color:var(--sub); margin:0 0 18px}
+  .ep{margin:0 0 22px}
+  .ep .title{font-size:19.5px; font-weight:600; line-height:1.5; margin:0 0 6px}
+  .ep .when{font-size:13.5px; color:var(--sub); margin:0 0 4px}
+  .ep .len{font-size:13.5px; color:var(--sub)}
+
+  h4{font-size:15px; margin:30px 0 8px; color:var(--accent); letter-spacing:.04em; font-weight:600}
+  p{margin:0 0 15px}
+  ul{margin:0 0 16px; padding-left:22px}
+  li{margin:0 0 10px}
+  li strong{font-weight:600}
+  blockquote{
+    margin:22px 0; padding:2px 0 2px 20px; border-left:3px solid #d9cdb9;
+    color:#3a352e; font-style:italic;
+  }
+  blockquote .who{display:block; font-style:normal; font-size:13.5px; color:var(--sub); margin-top:8px}
+  .note{
+    background:var(--soft); border-left:3px solid #d9cdb9; padding:14px 18px;
+    font-size:14.5px; color:#4a443b; margin:18px 0 22px;
+  }
+  .metrics{display:flex; flex-wrap:wrap; gap:12px; margin:20px 0 26px}
+  .metric{
+    flex:1 1 150px; border:1px solid var(--rule); background:#fffdfa;
+    padding:12px 14px; border-radius:2px;
+  }
+  .metric .v{font-size:20px; font-weight:600; display:block; letter-spacing:-.01em}
+  .metric .k{font-size:12.5px; color:var(--sub); display:block; margin-top:2px; line-height:1.5}
+  .chapters{font-size:14px; color:var(--sub); line-height:1.95; margin:0 0 18px}
+  .chapters b{color:var(--ink); font-weight:500}
+  .divider{text-align:center; color:#c9bfae; letter-spacing:.5em; margin:46px 0 0; font-size:13px}
+  footer{margin-top:64px; padding-top:22px; border-top:1px solid var(--rule); font-size:13px; color:var(--sub)}
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid #ddcdb6}
+  a:hover{border-bottom-color:var(--accent)}
+  .toc{border:1px solid var(--rule); background:#fffdfa; padding:18px 22px; margin:30px 0 8px; font-size:14.5px}
+  .toc div{margin:4px 0; color:var(--sub)}
+  .toc b{color:var(--ink); font-weight:600}
+  hr.sep{border:none; border-top:1px solid var(--rule); margin:44px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="kicker">每日 AI 播客深度萃取</div>
+  <h1>護城河唔係能力，<br>係把規則寫進結構</h1>
+  <div class="meta">
+    <span>報告日期 2026-10-30（五）</span><span class="dot">·</span>
+    <span>生成時間 2026-10-30 10:03 HKT / 02:03 UTC</span><br>
+    <span>掃描窗口 2026-10-29 02:06 UTC → 2026-10-30 02:03 UTC</span><span class="dot">·</span>
+    <span>來源：RSS feeds + 官方逐字稿 + 節目頁</span>
+  </div>
+</header>
+
+<div class="toc">
+  <div><b>今日新增</b>：英文 2 集（Dwarkesh、No Priors）＋ 延伸閱讀 1 篇（Latent Space）</div>
+  <div><b>中文</b>：五個 feed 全部無新集</div>
+  <div><b>取材深度</b>：Dwarkesh 26,127 字元逐字稿；No Priors 46,860 字元 YouTube 逐字稿；Latent Space 7,650 字元全文</div>
+</div>
+
+<h2 class="section">今日焦點</h2>
+<ul>
+  <li><strong>Dwarkesh 把 Caro 兩套傳記拆成一本權力操作手冊。</strong>Moses 靠「寫規則」——在 1933 年法案第 9 條的一個小節塞一句話，令一個 40 年到期的橋樑管理局變成可無限續期、可建任何東西的融資機器；再靠債券契約把權力鎖進美國憲法的契約條款，立法會、州長、市長全部收唔返。LBJ 走相反路：把一個「唯一正式權力係先發言」的廢位，變成控制委員會席位、議程、資訊的權力中心。</li>
+  <li><strong>No Priors 最好聽的一句：Serval 賣的不是智能，是邊界。</strong>「Serval is the boundary. Serval is the guardrails.」Jake Stauch 2.5 年、200 人，直接打 ServiceNow 的 system of record；Fox 全公司採用。他同時潑冷水：背景 agent 係 enterprise 的 ultimate moonshot，暫時無人解決到安全問題。</li>
+  <li><strong>Latent Space 的 DecoyCount 揭示一個被 benchmark 掩蓋的裂縫：</strong>frontier model 數物件全部低於 50%，最高 GPT-6 Astra 43.17%。多數評測只看最後個數字，把「睇唔到」同「諗錯」混為一談。Elorian 的 Glimpse 自稱 50.48%，但係單次內部測試、唔在論文入面。</li>
+  <li><strong>三條線的共同點：</strong>Moses 把權力寫進法律結構、Serval 把權限寫進審批結構、Elorian 把推理寫進圖像結構。2026 年的競爭壁壘，愈來愈少來自「做得到」，愈來愈多來自「改唔返」。</li>
+</ul>
+
+<h2 class="section">英文播客</h2>
+
+<div class="show">
+  <h3>Dwarkesh Podcast</h3>
+  <p class="host">主持：Dwarkesh Patel</p>
+
+  <div class="ep">
+    <div class="title">What I learned about power from LBJ and Robert Moses 🎙️</div>
+    <div class="when">發布 2026-10-29 16:48 UTC（10-30 00:48 HKT）</div>
+    <div class="len">形式：Dwarkesh 自撰 video essay，附完整逐字稿 · 共同撰稿 Max Farrens</div>
+  </div>
+
+  <p><strong>主題</strong>：Dwarkesh 花了六年想訪問 Robert Caro——寫了四卷 LBJ 傳（The Years of Lyndon Johnson）同《The Power Broker》的人。訪問終於約到，本集係訪問前的「預習」：他把 Caro 兩套書裡「權力如何被取得、如何使用、如何失去」的機制，逐條拆出來。呢集表面上講政治史，實際上係一套關於制度設計的教材。</p>
+
+  <h4>嘉賓背景</h4>
+  <p>本集冇現場嘉賓，真正的「嘉賓」係 Robert Caro 的兩套書。Caro 用 7 年寫 Robert Moses，再用 50 年寫 Lyndon Johnson 四卷；他被公認為英語世界寫政治權力長篇非虛構的第一人。Dwarkesh 在開場講得很白：這些書是他最喜歡的書，他追了 Caro 的經紀人、出版社、檔案館，甚至親筆寫信，才拿到訪問。Caro 訪問本身會在幾日內播出——文中先寫「this Friday」，後段又寫「this Thursday」，一日之差，大概係錄製與排期改動留下的痕跡。</p>
+
+  <h4>核心論點</h4>
+  <ul>
+    <li><strong>論點一：權力的第一來源，係「寫規則的權力」。</strong>Moses 被稱為 Albany 最好的法案起草人。1933 年 Triborough Bridge Authority Act 表面寫得很乾淨：管理局在債券還清後解散，債券最長 40 年，聽起來有明確到期日。但 Moses 在 Section 9 的一個小節塞入一句：管理局可以「from time to time」發新債還舊債，而新債可以「for any other corporate purpose」。於是，到期前一刻，管理局可以再發一批 40 年票據，用途可以完全唔同。原本只准建兩條橋同「approaches」，他又加咗「connecting」roads 同「facilities not inconsistent with the use of the project」——一條路連一條路連一條路，最後整個紐約的道路、公園、住宅都可以話係「連接設施」。Dwarkesh 的判斷：呢個唔係鑽空子，係精準地把「授權」寫成「產權」。</li>
+    <li><strong>論點二：真正令權力不可撤回的，係契約，唔係職位。</strong>美國憲法規定，州不得通過「impairing the Obligation of Contracts」的法律。Moses 在債券合約中加入一條：「any other matters, of like or different character, which in any way affect the security or protection of the bonds」——包括收幾多年隧道費、盈餘歸邊個。債券一賣出，這些條款就受憲法保護；立法會、州長、市長都改唔到，除非召開制憲會議。而債券可以不斷 refinance，所以「永久」可以不斷延長。呢個係全集最硬的一個機制：<em>把政治權力轉換成金融契約，再用憲法鎖死。</em></li>
+    <li><strong>論點三：不可替代性來自「交付」，唔係來自民意。</strong>Moses 高峰期同時持有 12 個公職：城市建設協調專員、州公園委員會主席、州電力局主席等等。任命來源分散——有些由市長委任，有些由州長委任——所以冇任何人可以一次過摘掉他所有頭。免職條款又寫成「on stated charges after a formal hearing」，而他個人財務乾淨（Caro：他「money honest」，對受賄的興趣「as any public servant who ever lived」咁低），根本冇 charge 可以提。更關鍵係：市長唔想 fire 他。他四個月的公園專員任期內完成 1,700 項公園翻新；1936 年紐約拿到聯邦 work-relief 經費的七分之一——注意，係全國經費的七分之一，而項目由 Moses 揀。市長如果唔用他，就要自己另搞一套圖則同工程團隊，實際上等於「要麼建 Moses 想建的，要麼乜都建唔到」。</li>
+    <li><strong>論點四：受歡迎程度係一種「可信的辭職威脅」。</strong>1930 至 40 年代，紐約高中生票選 Moses 為「最受敬仰的紐約人」。他動不動就話辭職；市長 Wagner 手下說他「seemed like he was resigning about one thing or another about twice a day」。La Guardia 的律師索性印好一疊表格：「I, Robert Moses, do hereby resign as…」，等他唔用每次手寫。笑話背後係真恐懼：一旦接受辭職，市長同時失去工程、失去已撥款項、還要同全紐約最受敬重的官員公開開戰；而 Moses 逢週末去 Sulzberger 家族（紐約時報老闆）的避暑屋，第二朝頭版會寫成「above politics 的人被政客逼走」。</li>
+    <li><strong>論點五：Moses 建立了一個「Yes 聯盟」，逆轉 NIMBY。</strong>今日我們習慣 NIMBY：少數集中利益可以拖死多數人支持的項目。Moses 建的是 concentrated YIMBY machine：銀行可以免競標、折價買他的債券；工會得到工程職位；有政治關係的律師得到法律費用；黨機器收到「橋樑保險」佣金——而那些橋根本冇可能塌。每當有區長或州長阻路，這些受益者會替 Moses 打電話。Dwarkesh 的框架很清楚：<em>把足夠多有力人士變成項目的股東，反對者就會被自己的盟友圍剿。</em></li>
+    <li><strong>論點六：LBJ 走的是完全相反的路——由「無權」開始。</strong>1950 年代參議院多數黨領袖的唯一正式權力，係「the right to be recognized first on the floor」。之前兩任領袖都輸掉自己的議席，因為這個位在全國傳媒同家鄉都係「事事做唔成」的代罪羔羊。Johnson 44 歲上任，當時參院平均年齡約 60 歲——唔係因為他特別年輕有為，而係因為冇人想要這份工。</li>
+    <li><strong>論點七：LBJ 的三層槓桿——可給可收、議程、資訊。</strong>第一層，他把參院規則、制度、慣例改成「只有 Johnson 可以給你好處」：法案排期、委員會席位、競選捐款人脈。1957 年 Estes Kefauver 在一個重要動議投反對票，同一星期，他期待已久的外交委員會席位就給了資歷淺得多的 John F. Kennedy。第二層，他把 unanimous consent agreement 由例外變成常態：法案未上院，先談好辯論時間同修正案範圍；他要所有表決在私下談妥，最怕公開辯論改變任何人的主意。Paul Douglas 的形容：「all the action takes place offstage, before the play begins.」第三層，他控制資訊：每個委員會都要派一個職員向他報告草案，助手追蹤每個參議員的動向，他本人終日在 cloakroom 同走廊聽人講。任何法案都有幾十種修正組合，誰做 broker，誰就永遠贏。</li>
+    <li><strong>論點八：1957 年民權法案係「把唔相關的東西綁在一起」的教科書案例。</strong>Johnson 需要一條弱到南方唔拉布、強到北方收貨的法案，因為他 1960 年要選總統，而一個終身投反民權票的南方人贏唔到提名。死結在陪審團：南方要求由陪審團審選舉官壓制黑人選民；北方知道南方陪審員必須係登記選民，全白人陪審團永遠唔會定罪。任何一邊接受得到的版本，另一邊都會否決。Johnson 用七個月，把完全唔相關的訴求綁成一包：西部參議員得到 Idaho 與 Oregon 之間爭取多年的聯邦水壩；中西部共和黨（州內有強大鐵路工會）得到罷工工人也享陪審團審理的權利；溫和派得到「黑人公民可出任聯邦陪審員」條款，可以向選民交代「創造了一項新民權」；南方則保留選舉官的陪審團審理，令法案弱到唔拉布。水壩、工會、聯邦陪審規則同南方投票權表面上毫無關係——但這就是 Johnson 的產品設計。</li>
+    <li><strong>論點九：兩條人格曲線，方向相反。</strong>Moses 由 1910 年代「good government」運動的年輕改革者開始，理想被 Tammany Hall 機器碾碎，於是得出「理想冇權力就係廢話」的結論；權力最初係夢想的僕人，最後變成目的。LBJ 剛好相反：早期幾乎冇連貫意識形態，係徹底的機會主義者；Caro 訪問前喬治亞州參議員 Herman Talmadge，問他對新任參議員 Johnson 的印象，Talmadge 答「Master and servant」，再問 Johnson 有冇任何同情黑人的地方，Caro 的筆記寫「long pause」，然後係兩個字：「None indicated.」但有了真正的權力之後，Johnson 推動了 1964 民權法案同 1965 投票權法案。</li>
+  </ul>
+
+  <h4>關鍵數據</h4>
+  <div class="metrics">
+    <div class="metric"><span class="v">672 / 899</span><span class="k">1964 年紐約州完成的高速公路英里數中，Moses 建的部分</span></div>
+    <div class="metric"><span class="v">12</span><span class="k">Moses 同時持有的公職數目</span></div>
+    <div class="metric"><span class="v">$150M vs $360M</span><span class="k">1946 年紐約市政府借貸上限 vs Triborough 管理局可借額</span></div>
+    <div class="metric"><span class="v">1,700</span><span class="k">Moses 上任公園專員首四個月的公園翻新數</span></div>
+  </div>
+  <ul>
+    <li>1936 年，紐約取得聯邦政府全國 work-relief 經費的 <strong>七分之一</strong>，項目由 Moses 揀。</li>
+    <li>第二大道地鐵 1972 年動工，2017 年首段通車；首兩英里造價 <strong>45 億美元</strong>。Dwarkesh 用嚟對比 Moses 年代「一兩個選舉週期內交貨」的速度。</li>
+    <li>Johnson 44 歲當上多數黨領袖，參院平均年齡約 60 歲；之前兩任領袖都輸掉議席。</li>
+    <li>1957 年民權法案：談判 <strong>七個月</strong>，最終通過的版本被公認為極弱，但足以讓 Johnson 在 1960 年提名戰中交代。</li>
+    <li>Moses 的債券期最長 40 年；只要在到期前 refinance，就可以無限延續。</li>
+  </ul>
+
+  <h4>重點引用</h4>
+  <blockquote>
+    「Robert Moses was not himself corrupt. He was, in fact, as uninterested in obtaining payoffs for himself as any public servant who ever lived. In the politicians' phrase, he was 'money honest.'」
+    <span class="who">Robert Caro，The Power Broker，由 Dwarkesh 引用</span>
+  </blockquote>
+  <blockquote>
+    「In the beginning—and for decades of his career—the power Robert Moses amassed was the servant of his dreams, amassed for their sake, so that his gigantic city-shaping visions could become reality. But power is not an instrument that its possessor can use with impunity. It is a drug that creates in the user a need for larger and larger dosages. And Moses was a user.」
+    <span class="who">Robert Caro，全集的主題句</span>
+  </blockquote>
+  <blockquote>
+    「He was master of the Senate—master of an institution that had never before had a master, and that at the time, almost half a century later, when this book is being written, has not had one since.」
+    <span class="who">Robert Caro，Master of the Senate</span>
+  </blockquote>
+  <blockquote>
+    「Master and servant.」……「None indicated.」……「He was with us in his heart. I believed him. I believed him.」
+    <span class="who">Herman Talmadge 談初入參院的 LBJ，Caro 訪談筆記</span>
+  </blockquote>
+  <blockquote>
+    「Two, four, six, eight—who do we appreciate? Mr. Moses! MR. MOSES!! MR. MOSES!!!」
+    <span class="who">Caro 記錄的公園開幕式兒童口號</span>
+  </blockquote>
+
+  <h4>技術詳情</h4>
+  <p>本集冇模型或工程技術，但有一個值得拆開的「制度工程」結構，可以當成系統設計讀：</p>
+  <ul>
+    <li><strong>授權條款（enabling clause）</strong>：決定一個機構「可以做乜」的，唔係它的名字，而係最底層那句定義。Moses 把「兩條橋」寫成「任何連接設施」，等於把一個窄 interface 變成通用 runtime。</li>
+    <li><strong>契約不可撤銷性（non-revocability）</strong>：債券條款 = 把權限寫進一個更高優先級的 layer（憲法），令上層（立法會、市長）無法 override。技術上等於把設定寫入 immutable storage，而 key 揸在自己手。</li>
+    <li><strong>分散式任命（redundant appointment）</strong>：12 個職位、多個任命者 = 冇 single point of failure；任何一個上級想移除他，都要面對其他上級的否決權。</li>
+    <li><strong>議程控制（agenda control）</strong>：unanimous consent agreement 係一個「預先鎖定參數」的機制——辯論時間、修正案範圍在上院前已固定，等於把 runtime 的不確定性移到 compile time。</li>
+    <li><strong>資訊聚合（information broker）</strong>：每個委員會派人向他報告 = 他擁有全市場的 order book；邊個想要成交，都要經他 match。</li>
+  </ul>
+
+  <h4>行業 insight</h4>
+  <p>以下係我按本集框架對 AI 行業的延伸解讀，Dwarkesh 本人冇明講，請當作分析而唔係引述：</p>
+  <ul>
+    <li><strong>護城河的三種寫法。</strong>第一種係 Moses 式：把自己的權限寫進一個更難改的層——API 契約、benchmark 定義、監管認定、生態授權條款。第二種係 LBJ 式：控制分發與資訊的 broker 位置——雲市集、算力配給、模型路由、企業採購的審批鏈。第三種最弱：單純「能力領先」，因為能力會被追平。</li>
+    <li><strong>「不可撤回」比「更好」值錢。</strong>Moses 的橋唔一定係最好，但一旦債券賣出，就冇人可以拆。對應到 AI：一個已經寫進客戶合規流程、審計日誌、員工訓練的系統，轉換成本遠高於模型分數差距。</li>
+    <li><strong>「交付速度」係政治資本。</strong>Moses 能在一個選舉週期內交貨，所以市長願意給他權力。AI 公司同樣：能喺客戶一個財年內展示可審計的 ROI，才拿到下一輪預算。呢點同今日 No Priors 那一集完全對得上。</li>
+    <li><strong>反面教訓：程序正當 ≠ 結果正義。</strong>Moses 冇貪污、程序合法、工程按時，但他建的 Cross Bronx Expressway 拆散整個社區。Dwarkesh 在文中也承認 Caro 的結論有爭議，但呢個張力本身係重點：一個完全「乾淨」的權力結構，可以造成最大規模的破壞。</li>
+  </ul>
+
+  <h4>前後脈絡</h4>
+  <p>Dwarkesh 近期一路在鋪「制度與權力」的底：10 月 22 日講 2045 年的晶片（Intel 廠房導覽），9 月 17 日講 Noam Brown 的 agent swarms 與 recursive self-improvement，8 月 25 日講 Dylan Patel 的算力集中預測。呢集突然轉去 Caro，表面係一次「追星成功」，實際上係他訪問 Caro 的前置作業，也可能是他為之後訪問政治/政策人物（RAND、國會、監管機構）搭框架。他之前多次講，AI 治理的瓶頸唔係技術而係國家能力——Caro 的書正好係「國家能力如何被個人操作」的個案研究。</p>
+
+  <h4>爭議點</h4>
+  <ul>
+    <li><strong>Dwarkesh 直接反駁 Caro 的因果判斷。</strong>他說《The Power Broker》副標題「Robert Moses and the Fall of New York」把紐約 1970 年代的犯罪、去工業化、白人逃離太多歸因於 Moses；他認為結構因素更大，並舉 Detroit、St. Louis 為例——呢兩個城市同 Moses 無關，但衰退更劇烈。這係一個具體、可辯論的歷史學分歧，唔係客套話。</li>
+    <li><strong>「Moses 唔腐敗」同「Moses 摧毀社區」可以同時成立。</strong>Caro 自己也唔否認後者；問題係讀者容易把「money honest」聽成「道德清白」。Dwarkesh 冇回避，但節奏上確實讓 Moses 的魅力蓋過受害者。</li>
+    <li><strong>LBJ 的民權轉向，係信念還是計算？</strong>Caro 的證據兩邊都有：Talmadge 說他「in his heart」係同南方同一邊；但他 1957 年推弱法案，明顯係為提名鋪路。Dwarkesh 的處理係保留矛盾，唔急住裁決——呢個係本集寫得最好的地方。</li>
+  </ul>
+</div>
+
+<hr class="sep">
+
+<div class="show">
+  <h3>No Priors</h3>
+  <p class="host">主持：Sarah Guo、Elad Gil</p>
+
+  <div class="ep">
+    <div class="title">Taking on ServiceNow: Coding Agents the Rest of Us with Serval Co-Founder and CEO Jake Stauch 🎙️</div>
+    <div class="when">發布 2026-10-29 10:00 UTC（18:00 HKT）</div>
+    <div class="len">長度 38:06 · 逐字稿 46,860 字元 · 章節 18 段</div>
+  </div>
+
+  <p><strong>主題</strong>：把 code-generation agent 交到企業 IT 部門手上，直接取代 ServiceNow 作為 enterprise automation 與 service management 的 system of record。表面係產品訪談，實際上係一堂「企業 AI 點樣賣、點樣交付、點樣定價」的課。</p>
+
+  <h4>嘉賓背景</h4>
+  <p>Jake Stauch，Serval 共同創辦人兼 CEO，共同創辦人 Alex。之前他在 Verkada 做企業物理安全產品，賣給 IT 團隊，多年來問客戶兩條問題：「你花最多錢喺邊？你最憎乜？」ServiceNow 經常同時上榜。公司 2026 年 1 月至今由細團隊擴到 <strong>200 人</strong>，成立兩年半。客戶包括 Fox Corporation（全公司採用）。他自己講，公司第一天在 Alex 客廳、只有兩個人時，就已經講明要「be the largest enterprise software company of all time」，並在地圖上圈住 ServiceNow。</p>
+
+  <h4>核心論點</h4>
+  <ul>
+    <li><strong>論點一：ServiceNow 的問題唔係功能，係「實現速度」。</strong>它係一個非常 robust、可高度客製的 workflow automation 平台，可以映射幾乎所有企業流程；但每個想法都要自己 build，好多時要請顧問，結果永遠落後 6 至 12 個月。對於十年不變的 onboarding flow， upfront 投資值得；對於層出不窮的自動化需求，它追唔上，而且越來越貴。Jake 的說法好具體：「it's always kind of running 6 to 12 months behind where you want it to be.」</li>
+    <li><strong>論點二：Code 係企業自動化的正確表達方式；drag-and-drop 係「痛苦的中間抽象」。</strong>他的原話：drag-and-drop workflow builder「is a painful level of abstraction because it's too complex for non-technical users and it's annoyingly abstracted for technical users.」Code 更直接、更可版本化、更可審計。問題係唔夠人識寫；AI 令「任何人都可以寫」成立，所以整個自動化平台可以重做。呢個係 Serval 的 founding insight，唔係後來 pivot。</li>
+    <li><strong>論點三：目標客群係 IT，唔係工程師。</strong>「Most companies have an IT department, not a team of software engineers.」IT 其實想 build，只是長期被當成「唔識技術」而被餵簡化版工具。Serval 的定位係「IT 部門的 IDE」：under the hood 係 code-gen，但外面包住 SDLC——dev、staging、prod、審批、UAT、audit trail。Jake 反覆講「treat them as adults」：你可以睇 code，也可以永遠唔睇，但唔會因為唔睇而失去能力。</li>
+    <li><strong>論點四：個人 agent 在大企業根本做唔到事。</strong>大型企業的個人權限窄到難以置信：即使公司准你帶 agent 返工（好多時唔准），它連讀 email 都受限。Serval 用 service account / admin 級憑證，配合 just-in-time access、deterministic approval、ticketing 與 audit trail，做到個人 agent 做唔到的自動化。代價係「annoying」——你要批核、要等——但呢個正正係 regulated enterprise  adoption 的前提。</li>
+    <li><strong>論點五：安全模型係「增量升級」，唔係全自主。</strong>背景 agent 係「the ultimate moonshot in enterprise software」：agent 自己發現問題、自己解決、唔使人湊。但 Jake 明言無人解決到安全：agent 一旦有能力寫 code 去改你的系統，就係 unbounded security risk。Serval 的做法係逐步授權：agent 提出「我想呼叫這個 tool、跑這個 script」，人批准，toolkit 慢慢變大，能力慢慢變強。這條路唔完美、要 babysit，但係目前唯一在大型企業可行的路。</li>
+    <li><strong>論點六：day one 就打 system of record，唔做 layer、唔做 down-market。</strong>他分析兩種常見打法：一係做一個小 layer 疊在 incumbent 上（他同意唯一成功例子係 Veeva 由 Salesforce 上長出自己的平台）；二係向下市場，做「Workday / Salesforce 的便宜版」。Serval 選第三條：直接打最大的。理由唔係逞強，而係「產品決策、團隊組成、增長方式」由第一天就完全唔同；如果先服務細市場再向上，會做出一堆之後要拆掉的決定。</li>
+    <li><strong>論點七：SaaS-pocalypse 會發生，但只發生在 point solution 那層。</strong>他觀察企業嘗試「自己 build 內部 SaaS」的結果：system of record 級別的軟件太貴、太難維護，除非需求極度 bespoke，否則自建唔符合經濟。真正會被吞掉的是數以百計的 point solution 同 middleware——「companies have hundreds and hundreds of SaaS applications. They probably need a couple dozen tools.」ERP、HRIS、ITSM、CRM 唔會消失，只會換一代 incumbent。呢個係對矽谷「SaaS 全滅」敘事的溫和修正。</li>
+    <li><strong>論點八：下一個瓶頸係 ROI 證明，唔係 token 成本。</strong>2026 年企業客戶由「token maxing」轉向收緊開支，但 Jake 認為總量仍會大幅上升，因為多數公司才剛開始。客戶真正要的是「prove this spend was worth it」。Serval 按 workflow run 收費，而唔係按 token——他的理由很利落：token 係「verbosity and inefficiency」的度量，workflow run 才反映實際完成的工作。</li>
+    <li><strong>論點九：模型越強，Serval 越重要，因為客戶會把權限收得更緊。</strong>這是他最反直覺的論點：AI 能力越強，單一員工被授予的權限就越危險；企業會把所有人壓到真正的 least privilege，於是「例外授權」的流程變成核心基礎設施。誰掌握特權升級（privilege escalation），誰就越有價值。他預測個人 agent 同工作 agent 會分開，好似 Gmail 同公司 email。</li>
+    <li><strong>論點十：組織上，Serval 冇 product function。</strong>工程師直接駐在客戶 Slack channel，多數人每週（甚至每日）開 customer call；產品決策下放到工程師，因為「not every single product decision can be bubbled up to leadership」。領導層的工作係確保請到 product-oriented engineers、願意 undo、願意殺掉自己的寶貝。Jake 說他最自豪的是「how many times we've decided to erase things we've done in the past」。</li>
+  </ul>
+
+  <h4>關鍵數據</h4>
+  <div class="metrics">
+    <div class="metric"><span class="v">2.5 年</span><span class="k">公司成立時間</span></div>
+    <div class="metric"><span class="v">200 人</span><span class="k">團隊規模（2026 年內快速擴張）</span></div>
+    <div class="metric"><span class="v">6–12 個月</span><span class="k">ServiceNow 客戶實作平均落後的時間</span></div>
+    <div class="metric"><span class="v">38:06</span><span class="k">本集長度</span></div>
+  </div>
+  <ul>
+    <li>客戶 <strong>Fox Corporation</strong> 全公司採用；帶頭遷移的員工被提名為全公司 MVP。</li>
+    <li>企業客戶平均有<strong>數百個 SaaS 應用</strong>，Jake 認為實際只需要「a couple dozen」。</li>
+    <li>Serval 定價單位：<strong>workflow run</strong>，唔係 token。</li>
+    <li>部署模式：deployment strategist + deployed software engineer 駐場；另有 <strong>ProServal</strong> 自動化工程團隊做長期支援。</li>
+    <li>產品內建兩個「由客戶行為長出來」的功能：知識庫文章衝突/過期偵測、閒置軟件授權回收。</li>
+  </ul>
+
+  <h4>重點引用</h4>
+  <blockquote>
+    「Serval is the boundary. Serval is the guardrails. We are the way that a large enterprise with a lot of rules and approvals and process and politics can adopt these tools safely and comfortably at scale.」
+    <span class="who">Jake Stauch，開場白，也是全集的定位句</span>
+  </blockquote>
+  <blockquote>
+    「We set out from the beginning to be the largest enterprise software company of all time. We actually made a list of all the companies. We circled ServiceNow and we said we're going to beat them.」
+    <span class="who">Jake Stauch，談 day-one ambition</span>
+  </blockquote>
+  <blockquote>
+    「Drag-and-drop workflow builders is a painful level of abstraction because it's too complex for non-technical users and it's annoyingly abstracted for technical users.」
+    <span class="who">Jake Stauch，解釋為何用 code 做自動化</span>
+  </blockquote>
+  <blockquote>
+    「This is the ultimate moonshot in enterprise software. These agents that go off and do work for you and magically discover all your problems and solve all your problems… I think no one's really figured out how to do this well.」
+    <span class="who">Jake Stauch，談 background agents</span>
+  </blockquote>
+  <blockquote>
+    「I think there will be a SaaS apocalypse, but in that kind of point solution smaller market cap type companies. I don't think that you're going to truly get away from the core systems of record.」
+    <span class="who">Jake Stauch，談 SaaS 整合</span>
+  </blockquote>
+  <blockquote>
+    「Every employee is so much more productive, we actually want more of them, not less of them.」
+    <span class="who">Jake Stauch，談為何 AI 時代仍要加速招聘</span>
+  </blockquote>
+
+  <h4>技術詳情</h4>
+  <ul>
+    <li><strong>Catalyst</strong>：Serval 內建的 admin agent，係管理平台的 primary interface。你可以用自然語言講需求，它翻譯成產品 primitives：建立自動化、設定審批規則、權限檢查、policy、更新系統、理解整個 deployment。存在理由係「第一代 AI 工具太複雜，要派 FTE 教客戶」——Catalyst 把教學變成對話。</li>
+    <li><strong>Under the hood 係 code-gen，但唔強迫你睇 code。</strong>平台保留完整源碼可視性，同時提供抽象層；同一套系統要服務兩種 persona：會寫 code 的 IT engineer，同永遠唔想睇 code 的 marketing/people team。</li>
+    <li><strong>Deterministic workflow + approval + audit。</strong>Agent 提出要執行的動作（呼叫 tool、跑 script），生成 access request，經審批後取得 just-in-time 權限，執行一次，全程記錄。因為 Serval 本身都係 ticketing system，所以每個動作有 ticket、有 audit trail。</li>
+    <li><strong>SDLC 作為產品原則。</strong>Dev → staging → prod，中間有 user acceptance testing、compliance check、branch 隔離。Jake 指出多數新 AI 產品直接 ship to prod，這在大型金融機構不可能通過。</li>
+    <li><strong>「永遠唔做 custom feature」。</strong>部署時唔會為單一客戶寫 bespoke 功能；如果同一個自動化在多個客戶重複出現，才考慮升級為 first-class feature。好處係產品唔會分裂，壞處係客戶要等。</li>
+    <li><strong>無 product function 的 org design。</strong>工程師在客戶 Slack、每日 customer call，直接吸收偏好變化；領導層只做架構與取捨。呢個模式要求極高濃度的 product-oriented engineers，也是 200 人可以打大廠的原因之一。</li>
+  </ul>
+
+  <h4>行業 insight</h4>
+  <ul>
+    <li><strong>企業 AI 的護城河正在由「模型」移到「權限」。 </strong>當模型能力變成公用事業，差異化來自誰掌握審批、審計、例外處理。Jake 的反脆弱論點值得記住：模型越強 → 企業越怕 → 權限收得越緊 → Serval 越核心。</li>
+    <li><strong>Forward-deployed 係今輪 enterprise AI 的標準動作。</strong>Palantir 模式被複製：deployment strategist + deployed engineer + 長期 automation engineering。呢個係對 Accenture / Deloitte 的直接替代，也解釋咗為何 Serval 兩年半要 200 人。</li>
+    <li><strong>「打 system of record」係 2026 年最擁擠也最值錢的賽道。</strong>Serval 對 ServiceNow，同時間有大量公司在打 Salesforce、Workday、Epic。Jake 的判斷係：做 layer 會被 cap，做 down-market 會養成錯誤肌肉；只有 day one 打最大，產品決策才會一致。</li>
+    <li><strong>定價由 token 轉向 outcome。</strong>workflow run 定價係把「verbosity」同「value」分開。如果行業跟隨，token 消耗量將唔再係收入代理指標，模型公司與應用公司的利益會開始分叉。</li>
+    <li><strong>200 人、2.5 年、直接挑戰市值千億的 incumbent</strong>，本身就係一個關於 AI 原生公司 org design 的數據點：冇 product manager、冇 quarterly roadmap、工程師直接對客，靠極高招聘標準同快速 undo 維持方向。</li>
+  </ul>
+
+  <h4>前後脈絡</h4>
+  <p>No Priors 過去一個月連續三集講企業安全與 agentic web：10 月 23 日 Cloudflare CTO Dane Knecht（為 agentic web 民主化安全）、10 月 22 日 CrowdStrike CEO George Kurtz（對手已配備 AI agent）、10 月 15 日 OpenAI 總裁 Greg Brockman（網絡安全與藥物開發的物理學變化）。今日呢集係同一條線的「應用層」版本：唔再講威脅，而係講企業內部點樣在恐懼之中仍然交付自動化。Sarah 與 Elad 近期的問題意識很清楚——agent 的瓶頸由 capability 轉向 governance，而 governance 係可以賣錢的。</p>
+
+  <h4>爭議點</h4>
+  <ul>
+    <li><strong>「背景 agent 係 moonshot」同 No Priors 一貫的樂觀基調有張力。</strong>Jake 講得比主持人更保守：他認為短期內無人解決到自主 agent 的安全，企業只能做人批核的增量授權。呢個判斷如果正確，好多「全自主 enterprise agent」的估值假設要重寫。</li>
+    <li><strong>「企業會收緊權限」同個人 agent 普及叙事相反。</strong>主流看法係每個員工都會有 personal agent；Jake 認為在大企業，個人權限只會越收越窄，agent 要透過例外機制運作。呢個係對「consumer 經驗直接搬去 enterprise」的直接否定。</li>
+    <li><strong>SaaS-pocalypse 被降級為 consolidation。</strong>他唔認為 core system of record 會消失，只會換 incumbent。呢個同激進的「software is dead」敘事有明顯分歧；但他的論據（自建與維護成本）係來自客戶實際嘗試，唔係抽象推理。</li>
+    <li><strong>對 ServiceNow 的批評帶有前銷售視角。</strong>Jake 自己在 Verkada 賣過 IT 產品，他對 ServiceNow 的觀察來自主觀客戶訪談；節目內冇 ServiceNow 一方回應。呢個唔算不誠實，但讀者要記得係單邊證詞。</li>
+    <li><strong>「200 人、無 product function」係一種幸存者偏差？</strong>Serval 目前增長極快，但呢種組織模式在規模更大、客戶更雜時是否仍然可行，節目內沒有答案。Jake 自己也承認「product ships faster than anyone can keep up, including myself」。</li>
+  </ul>
+</div>
+
+<h2 class="section">中文播客</h2>
+<p>今日五個中文 feed 全部冇新集。以下係各台最新一集，均已在之前的報告覆蓋：</p>
+<ul>
+  <li><strong>張小珺商業訪談錄</strong>：10-21《155. 和科沃斯钱程聊，父与子、企二代接班的样本与肌理、机器人，和我内心的追寻》</li>
+  <li><strong>十字路口 Crossing</strong>：10-25《AI 时代，PhD 路上的 10 个关键问题｜对谈李磊：港大 PhD、小米 MiMo 研究员》</li>
+  <li><strong>硅谷 101</strong>：10-28（美西 16:00）《E257｜对话 Vitalik：AI 安全背后的哲学思想，有效利他主义如何影响硅谷？》——上期已深度覆蓋</li>
+  <li><strong>42 章经</strong>：10-24《少有的同时做过 Agent、多模态和具身的人｜对谈前混元多模态 RL Infra 负责人淏楠》</li>
+  <li><strong>屠龙之术</strong>：10-26《不是，怎么又换版本了？——狂飙中的 AI 2026》</li>
+</ul>
+<div class="note">
+  方法註記：中文五台以 iTunes lookup 取得的 xyzfm.space / fireside RSS 直接比對 pubDate，唔靠搜尋引擎。今日 <code>web_search</code> 工具因插件載入失敗（ENOENT: brave-plugin）而無法使用，所以中文「無新集」的結論來自 RSS，而非搜尋結果；RSS 係更可靠的來源，但若某台臨時改 feed，可能漏報。
+</div>
+
+<h2 class="section">延伸閱讀（非播客）</h2>
+
+<div class="show">
+  <h3>Latent Space · 文章</h3>
+  <p class="host">作者：Richard MacManus</p>
+
+  <div class="ep">
+    <div class="title">Can Frontier Models See Past a Decoy? Elorian Tests Visual Reasoning</div>
+    <div class="when">發布 2026-10-29 16:00 UTC（10-30 00:00 HKT）· 6 分鐘閱讀</div>
+  </div>
+
+  <p><strong>主題</strong>：Elorian 推出首個視覺推理模型 Glimpse，並與 AI 數據公司 Mercor 共同發布 DecoyCount benchmark，測試語言模型係真正數物件，抑或依賴視覺捷徑與 substitution heuristic。</p>
+
+  <h4>核心內容</h4>
+  <ul>
+    <li><strong>Benchmark 設計：</strong>1,660 條題目，覆蓋七種可解釋的計數失敗機制。論文結論：「stronger general reasoning does not by itself generalize to aligned visual reasoning.」</li>
+    <li><strong>Frontier 模型全線低於 50%：</strong>GPT-6 Astra 43.17%（最高）、Gemini-3.8-flash 32.71%、Qwen3.8-max 28.31%、Claude-Fable-5.1 25.22%。</li>
+    <li><strong>Glimpse 自稱 50.48%</strong>，但係單次內部測試、無 agent/tool harness；論文內六個模型係三次運行平均。Elorian 說評估圖文已從訓練資料剔除，污染檢查無重疊。</li>
+    <li><strong>CEO Andrew Dai 背景：</strong>2015 年在 Google 與 Quoc Le 合著 Semi-supervised sequence learning（pretrain-then-finetune 的早期版本）；之後做 GLaM MoE、PaLM 2、Gemini；今年離開 Google 創立 Elorian。4 月出 stealth，$55M seed，由 Striker Venture Partners、Menlo Ventures、Altimeter Capital 共同領投。</li>
+    <li><strong>視覺思考（visual thinking）：</strong>Glimpse 把「生成/編輯圖像」放入推理鏈，而唔只係輸出。Dai 的類比：買沙發時在腦中想像它放在客廳；數人時在腦中逐個剔走。</li>
+    <li><strong>同 world model 的分別：</strong>World Labs 的 Atlas（9 月發布，公司後來被 AMD 收購）同 Google 的 Genie 4 係「direct action on a world」——建立可導航、可操作的 3D 模擬；Elorian 做「indirect action」——用視覺推理支持決策，例如判斷用戶上傳的影片有冇違規，唔需要 3D render。</li>
+    <li><strong>應用場景：</strong>機械人（WGO Bench、ERQA 兩個 benchmark 自稱同 frontier 打和或更好，且更便宜）、工程、國防、建築法規合規檢查、倉庫機械人點貨（「12 格 tray 可能只有 10 件；24 包裝標籤唔代表箱內仍有 24 件」）。</li>
+    <li><strong>AGI 主張：</strong>Elorian 認為視覺推理係 AGI 的基礎要求；Dai 承認人機仍有巨大差距，但「we can't just skip visual」。</li>
+  </ul>
+
+  <h4>為何值得讀</h4>
+  <p>呢篇的價值唔在於「又一個 benchmark」，而在於它指出一個評測方法論的盲點：多數視覺 benchmark 只看最終答案，所以「睇唔到蘋果」同「把鏡中倒影數成兩個蘋果」會被當成同一種錯。前者係 vision failure，後者係 reasoning failure；唔分開，就唔知要改模型邊一層。呢個區分對做 eval 的人好實用。</p>
+
+  <h4>保留意見</h4>
+  <ul>
+    <li>Benchmark 由模型公司共同發布，Glimpse 的成績係內部單次測試、唔在論文內、亦未經第三方複現。</li>
+    <li>50.48% 對 43.17% 的差距只有 7 個百分點，而測試條件（單次 vs 三次平均、有無 harness）唔一致；呢個差距唔足以支持「只有 Glimpse 過 50%」的強結論。</li>
+    <li>「視覺推理係 AGI 必要條件」係公司立場，唔係論文結論。</li>
+  </ul>
+</div>
+
+<h2 class="section">橫向觀察</h2>
+<p>今日三條材料的共同結構，係「把規則寫進一個更難改的層」：</p>
+<ul>
+  <li><strong>Dwarkesh / Moses：</strong>把政治授權寫進債券契約，再用憲法契約條款鎖死。權力的持久性唔來自民意，而來自可執行性。</li>
+  <li><strong>No Priors / Serval：</strong>把企業自動化寫進審批、審計、ticket、SDLC。產品賣的不是「agent 好叻」，而係「agent 做錯事嘅時候，系統會接住」。模型越強，這一層越值錢。</li>
+  <li><strong>Latent Space / Elorian：</strong>把推理寫進中間圖像，令「睇錯」同「諗錯」可以分開檢查。評測的價值唔係排名，而係可診斷性。</li>
+</ul>
+<p>如果要用一句話串起今日：<strong>能力決定你能做幾多，結構決定你做完之後有冇人改得返。</strong>Moses 的橋、Serval 的 audit trail、Elorian 的 reasoning trace，本質上都係同一種東西——把不可見的過程變成可檢查、可繼承、可對抗未來的結構。</p>
+<p>對 James 的實用啟示：如果你要評估一間 AI 公司，唔好只問「模型幾強」，要問「它的權限/審批/資料留在邊個層、邊個改得返」。呢個問題比 benchmark 分數更難答，但答案的保鮮期長得多。</p>
+
+<footer>
+  <p>報告由 Vee Mok 自動生成 · 2026-10-30 10:03 HKT / 02:03 UTC</p>
+  <p>素材：Dwarkesh Podcast（Substack RSS + 官方逐字稿）、No Priors（Megaphone RSS + YouTube 自動字幕，38:06）、Latent Space（beehiiv RSS + 文章全文）。所有直接引用均取自上述逐字稿；「行業 insight」段落中標明為延伸解讀者，並非受訪者原話。</p>
+  <p>授權：Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>
