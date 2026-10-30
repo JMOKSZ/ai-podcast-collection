@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 賣的不是智能，是邊界——Serval 怎樣用「權限」去打 ServiceNow</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #888; line-height: 1.7; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">No Priors · 2026-10-29</div>
+  <h1>賣的不是智能，是邊界<br>——Serval 怎樣用「權限」去打 ServiceNow</h1>
+  <div class="meta">
+    <div>〈Taking on ServiceNow: Coding Agents for the Rest of Us〉</div>
+    <div>38 分 06 秒<span>·</span>主持：Sarah Guo、Elad Gil<span>·</span>嘉賓：Jake Stauch（Serval 共同創辦人兼 CEO）</div>
+    <div>發布：2026-10-29 10:00 UTC<span>·</span>來源：節目逐字稿、官方章節與簡介</div>
+  </div>
+</header>
+
+<p>這一集表面上是產品訪談：一家成立兩年半、200 人的公司，怎樣去打一間市值千億的 incumbent。但它實際上是一堂很罕見的課——<strong>關於企業 AI 究竟賣什麼、怎樣交付、按什麼收費、以及為什麼「能力」不是最值錢的部分。</strong></p>
+
+<p>Jake Stauch 之前在做企業物理安全產品（Verkada），賣給 IT 團隊。多年來他問客戶兩條問題：「你花最多錢在哪裡？」「你最憎什麼？」——<strong>ServiceNow 經常同時出現在兩個答案裡。</strong>這個觀察成了 Serval 的起點。</p>
+
+<p>而他開場的第一句話，就把整集的定位講完了：</p>
+
+<blockquote class="strong">
+「Serval is the boundary. Serval is the guardrails. We are the way that a large enterprise with a lot of rules and approvals and process and politics can adopt these tools safely and comfortably at scale.」
+<span class="attribution">— Jake Stauch，開場</span>
+</blockquote>
+
+<p>不是「我們的 agent 更聰明」。是「我們是那條線」。</p>
+
+<div class="section-title">一、ServiceNow 的問題不是功能，是節奏</div>
+
+<p>Jake 對 ServiceNow 的批評很精準，而且不是一般矽谷式的「incumbent 太慢」：</p>
+
+<p>ServiceNow 是一個非常 robust、可高度客製的 workflow automation 平台，理論上可以映射幾乎所有企業流程。問題是——<strong>每一個想法都要你自己 build，很多時候要請顧問，結果永遠落後 6 到 12 個月。</strong></p>
+
+<blockquote>
+「它總是有點像跑在你想要的位置之後 6 到 12 個月。」
+<span class="attribution">— Jake Stauch（原文："it's always kind of running 6 to 12 months behind where you want it to be."）</span>
+</blockquote>
+
+<p>這個觀察有一個很重要的推論：<strong>對十年不變的流程（例如入職 onboarding），前期投入是值得的；但對層出不窮、變動頻繁的自動化需求，這種模式永遠追不上，而且越來越貴。</strong></p>
+
+<p>所以問題不是「ServiceNow 做不到」，而是「它的交付節奏不匹配一個自動化需求爆炸的年代」。這是一個 timing 問題，不是功能問題——而 timing 問題最適合用新工具解決。</p>
+
+<div class="section-title">二、Code 是正確的表達方式；drag-and-drop 是痛苦的中間抽象</div>
+
+<p>Serval 的 founding insight 不是後來 pivot 出來的，而是第一天就有的：<strong>企業自動化的正確表達方式是 code。</strong></p>
+
+<blockquote class="strong">
+「Drag-and-drop 的 workflow builder 是一個痛苦的中間抽象層——對非技術用戶來說太複雜，對技術用戶來說又抽象得令人煩躁。」
+<span class="attribution">— Jake Stauch（原文："a painful level of abstraction because it's too complex for non-technical users and it's annoyingly abstracted for technical users."）</span>
+</blockquote>
+
+<p>這句話值得停一停。它同時否定了矽谷兩個常見假設：</p>
+
+<ul>
+  <li><strong>「要讓非技術的人用，就要把東西簡化成拖拉方塊」</strong>——錯。拖拉方塊並沒有真的簡化，它只是把複雜度換了一種形狀，而且是一種無法版本化、無法 diff、無法審計的形狀。</li>
+  <li><strong>「code 只有工程師用得到」</strong>——在 AI 之前是對的，在 AI 之後不成立。</li>
+</ul>
+
+<p>Code 的優勢不只是「快」，而是它天生具備企業需要的三個屬性：<strong>可以版本控制、可以審查、可以留審計軌跡。</strong>而 drag-and-drop 的 workflow，本質上是一堆無法閱讀的狀態。這一點在 regulated industry 是致命的——不是「不好用」，是「過不了關」。</p>
+
+<p>所以真正的解鎖不是「AI 會寫 code」，而是：<strong>AI 令「寫 code」這件事的邊際成本，降到一個連 IT 部門都負擔得起的水平。</strong>於是整個以「不用寫 code」為前提建構的自動化平台市場，前提被抽走了。</p>
+
+<div class="section-title">三、客戶是 IT 部門，不是工程師</div>
+
+<p>這是 Serval 定位最關鍵的一步，也是最容易被誤解的一步。</p>
+
+<blockquote>
+「大部分公司有的是一個 IT 部門，不是一隊軟件工程師。」
+<span class="attribution">— Jake Stauch（原文："Most companies have an IT department, not a team of software engineers."）</span>
+</blockquote>
+
+<p>Jake 的觀察是：IT 部門其實<strong>想</strong> build，只是長期被當成「唔識技術」，所以幾十年來都被餵簡化版工具——拖拉方塊、表單設計器、低代碼平台。這些工具不是在做他們想做的事，而是在遷就一個對他們的錯誤假設。</p>
+
+<p>Serval 的定位是「IT 部門的 IDE」：底層是 code generation，但外層包住完整的 SDLC——dev、staging、prod、審批、UAT、audit trail。他反覆用一個說法：<strong>「treat them as adults」</strong>。你可以看 code，也可以永遠不看；但你不會因為不看而失去能力、被鎖死在一個抽象層裡。</p>
+
+<p>這個「adults」的框架，其實是對整個 enterprise SaaS 行業的一個批評：<strong>過去二十年的 enterprise UX，建立在「用戶需要被保護」的假設上；而 AI 令這個假設從保護變成閹割。</strong></p>
+
+<div class="section-title">四、個人 agent 在大企業根本做唔到事</div>
+
+<p>這是全集最反直覺、也最有價值的一段。</p>
+
+<p>主流敘事是：每個員工都會有一個 personal agent，幫你處理郵件、排會、寫報告。Jake 的說法是——在大型企業，這件事目前根本行不通。原因不是模型能力，而是<strong>權限</strong>：</p>
+
+<p>大型企業的個人權限，窄到難以置信。即使公司准你帶 agent 返工（很多時候根本不准），它連讀你的 email 都受限。而企業要的自动化，往往需要跨系統、跨部門、動別人的資料——一個綁在你個人身份上的 agent，永遠拿不到那些權限。</p>
+
+<p>Serval 的做法是用 <strong>service account / admin 級憑證</strong>，配合 just-in-time access、deterministic approval、ticketing 與 audit trail。這讓它可以做到個人 agent 做不到的自動化。代價是「annoying」——你要批核、要等——但這個「annoying」正是 regulated enterprise 願意採用的前提。</p>
+
+<blockquote class="strong">
+「這是企業軟件裡終極的 moonshot：那些自己跑出去幫你工作、神奇地發現你所有問題、解決你所有問題的 agent……我認為沒有人真正搞清楚怎樣做好這件事。」
+<span class="attribution">— Jake Stauch，談 background agents</span>
+</blockquote>
+
+<p>這句是全集最清醒的一句，因為它來自一個正在賣 agent 的人。他的立場是：<strong>背景 agent（background agent）——agent 自己發現問題、自己解決、不需要人盯著——是企業軟件的終極目標，但目前沒有人解決到安全問題。</strong>理由很直接：agent 一旦有能力寫 code 去改你的系統，它就是一個 unbounded security risk，而企業的容忍度不是「低」，是「零」。</p>
+
+<p>所以 Serval 選的路是<strong>增量升級</strong>：agent 提出「我想呼叫這個 tool、跑這個 script」，人批准，toolkit 慢慢變大，能力慢慢變強。這條路不完美、要 babysit，但它是目前唯一在大型企業可行的那條。</p>
+
+<div class="data-point">
+  <span>核心張力</span>能力越強的 agent，企業越不敢放手；企業越不敢放手，就越需要一層「審批／審計／例外處理」的基礎設施。<strong>這一層，就是 Serval 賣的東西。</strong>
+</div>
+
+<div class="section-title">五、Day one 就打 system of record</div>
+
+<p>Jake 分析過三種打法：</p>
+
+<ol>
+  <li><strong>做一個小 layer 疊在 incumbent 上</strong>——他同意唯一真正成功的例子是 Veeva，由 Salesforce 之上長出自己的平台，但那是一個極罕見的路徑。</li>
+  <li><strong>向下市場</strong>——做「Workday / Salesforce 的便宜版」，靠價格搶中小的客戶。</li>
+  <li><strong>直接打最大的</strong>——Serval 選這條。</li>
+</ol>
+
+<blockquote>
+「我們從第一天就立志成為史上最大的企業軟件公司。我們真的列了一張所有公司的清單，圈住了 ServiceNow，然後說我們要打敗它。」
+<span class="attribution">— Jake Stauch</span>
+</blockquote>
+
+<p>理由不是逞強，而是<strong>一致性</strong>：產品決策、團隊組成、增長方式，由第一天就完全不同。如果先服務細市場再向上攻，會做出一堆之後必須拆掉的決定——而那些決定會變成技術債、組織債、品牌債。他寧願一開始就假設最難的客戶、最嚴的合規、最複雜的審批鏈。</p>
+
+<p>這一點值得跟同日 Dwarkesh 那集對讀（見文末）。<strong>「一開始就選最難的結構」是一種護城河策略</strong>：因為它令你之後不需要重寫自己。</p>
+
+<div class="section-title">六、SaaS-pocalypse 會發生，但只發生在 point solution 那層</div>
+
+<p>矽谷流行一個敘事：AI 會令 SaaS 全滅，因為每個人都可以自己生成軟件。Jake 給了一個溫和但具體的修正。</p>
+
+<p>他觀察企業嘗試「自己 build 內部 SaaS」的結果：<strong>system of record 級別的軟件太貴、太難維護</strong>；除非需求極度 bespoke，否則自建不符合經濟。真正會被吞掉的，是數以百計的 point solution 與 middleware。</p>
+
+<blockquote class="strong">
+「我認為會有一場 SaaS 末日，但發生在 point solution、較小市值的那類公司。我不認為你真的能擺脫核心的 system of record。」
+<span class="attribution">— Jake Stauch</span>
+</blockquote>
+
+<p>他的具體說法更狠：</p>
+
+<blockquote>
+「公司有幾百、幾百個 SaaS 應用。他們大概只需要兩打工具。」
+<span class="attribution">— Jake Stauch（原文："companies have hundreds and hundreds of SaaS applications. They probably need a couple dozen tools."）</span>
+</blockquote>
+
+<p>所以真正的走勢不是「軟件消失」，而是<strong>整合（consolidation）</strong>：ERP、HRIS、ITSM、CRM 不會消失，只會換一代 incumbent。這對創業者的含義很清楚——如果你做的是 point solution，你的風險不是「AI 太強」，而是「你的功能會被吸進 system of record」。而 system of record 的護城河，從來不是功能，是<strong>資料與流程的慣性</strong>。</p>
+
+<div class="section-title">七、定價：workflow run，唔係 token</div>
+
+<p>這一段對行業的訊號價值很高。</p>
+
+<p>2026 年企業客戶由「token maxing」轉向收緊開支，但 Jake 認為總量仍會大幅上升，因為多數公司才剛開始。客戶真正要的是<strong>「prove this spend was worth it」</strong>——證明這筆錢花得值。</p>
+
+<p>Serval 按 <strong>workflow run</strong> 收費，而不是按 token。理由很利落：<strong>token 是「verbosity and inefficiency」的度量；workflow run 才反映實際完成的工作。</strong></p>
+
+<p>這個選擇的意義比定價本身大。它是一個訊號：<strong>應用層開始與模型層的利益分叉。</strong>如果愈來愈多應用公司按「完成的工作」收費，那麼模型公司按 token 收費的模式，就會面對一個結構性矛盾——應用公司有動機用更少 token 完成同一件事。而模型公司有動機鼓勵更多 token。<strong>同一條價值鏈上，上下游第一次出現了相反的優化方向。</strong></p>
+
+<div class="section-title">八、模型越強，Serval 越重要</div>
+
+<p>這是 Jake 最反直覺的論點，也是我認為整集最值得記住的一個。</p>
+
+<p>主流假設：模型越強，中介層越沒有價值，因為模型可以自己做完所有事。Jake 的推論剛好相反：</p>
+
+<p><strong>AI 能力越強，單一員工被授予的權限就越危險。</strong>一個能自動執行任何操作的 agent，如果綁在一個普通員工的身份上，等於給了他一個無限權限的代理。企業的反應必然是——把所有人壓到真正的 least privilege（最小權限）。而一旦所有人都在最小權限，<strong>「例外授權」的流程就變成核心基礎設施。</strong></p>
+
+<p>誰掌握特權升級（privilege escalation），誰就越有價值。</p>
+
+<p>他由此預測：<strong>個人 agent 與工作 agent 會分開，好像 Gmail 與公司 email 的分別。</strong>你不會用私人 Gmail 處理公司機密；同理，你不會用一個綁在你個人身份上的 agent 去動公司的系統。</p>
+
+<div class="highlight-box">
+<strong>這個論點的結構：</strong>它把「AI 能力」視為一個<strong>風險放大器</strong>，而不是一個<strong>中介消除器</strong>。能力越強 → 風險越大 → 管制越緊 → 管制層越值錢。<br><br>
+這是一個 anti-fragile 的商業模型：<strong>它的需求，隨著它所依賴的技術變強而增加。</strong>矽谷很少有這種形狀的公司。
+</div>
+
+<div class="section-title">九、交付方式：forward-deployed 是今輪 enterprise AI 的標準動作</div>
+
+<p>Serval 的部署模式是：deployment strategist + deployed software engineer 駐場；另外有 <strong>ProServal</strong> 這個自動化工程團隊做長期支援。</p>
+
+<p>這是 Palantir 模式被複製。它同時解釋了兩件事：</p>
+<ul>
+  <li>為什麼 200 人的公司可以打大廠——因為交付深度不是靠產品自動化，而是靠人。</li>
+  <li>為什麼這輪 enterprise AI 公司都在擴張服務團隊——因為<strong>企業買的不是軟件，是「有人保證它會work」。</strong></li>
+</ul>
+
+<p>這對 Accenture / Deloitte 是直接替代，也是這一輪 AI 應用公司毛利率普遍低於傳統 SaaS 的結構原因。Jake 沒有迴避這一點，但他把它講成一種選擇：<strong>先用人力換取部署深度與產品學習，之後再產品化。</strong></p>
+
+<p>值得注意的細節：<strong>「永遠不做 custom feature」。</strong>部署時不會為單一客戶寫 bespoke 功能；如果同一個自動化在多個客戶重複出現，才考慮升級為 first-class feature。好處是產品不會分裂，壞處是客戶要等。這是一條很硬的紀律，多數 forward-deployed 公司做不到，因為單一客戶的合約金額太誘人。</p>
+
+<div class="section-title">十、組織：冇 product function</div>
+
+<p>Jake 說 Serval 沒有 product function。工程師直接駐在客戶的 Slack channel，多數人每週（甚至每日）開 customer call；產品決策下放到工程師，因為：</p>
+
+<blockquote>
+「不是每一個產品決策都可以被 bubbled up 到領導層。」
+<span class="attribution">— Jake Stauch</span>
+</blockquote>
+
+<p>領導層的工作，變成確保請到 product-oriented engineers、願意 undo、願意殺掉自己的寶貝。他說他最自豪的，是：</p>
+
+<blockquote class="strong">
+「我們有多少次決定把自己過去做的東西擦掉。」
+<span class="attribution">— Jake Stauch（原文："how many times we've decided to erase things we've done in the past"）</span>
+</blockquote>
+
+<p>然後他補了一句很誠實的話：</p>
+
+<blockquote>
+「產品出貨的速度，比任何人能跟上的速度都快，包括我自己。」
+<span class="attribution">— Jake Stauch</span>
+</blockquote>
+
+<p>這是一個值得記住的組織設計數據點：<strong>200 人、2.5 年、無 product manager、無 quarterly roadmap、工程師直接對客。</strong>它之所以可行，前提是極高的招聘標準與極短的決策鏈；它之所以危險，也是同一個原因——當客戶變多、產品線變寬，這種模式會不會失效，節目內沒有答案。</p>
+
+<div class="section-title">十一、技術細節：Catalyst 與「可讀的權限」</div>
+
+<p><strong>Catalyst</strong> 是 Serval 內建的 admin agent，也是管理平台的 primary interface。你可以用自然語言講需求，它翻譯成產品 primitives：建立自動化、設定審批規則、權限檢查、policy、更新系統、理解整個 deployment。</p>
+
+<p>它存在的理由很務實：第一代 AI 工具太複雜，要派一個 FTE 去教客戶。Catalyst 把「教學」變成「對話」。這其實是一個被低估的產品洞察——<strong>企業軟件的採購成本，有一大半是「學會用它」的成本。</strong></p>
+
+<p>平台保留完整源碼可視性，同時提供抽象層。同一套系統要服務兩種 persona：會寫 code 的 IT engineer，和永遠不想看 code 的 marketing / people team。這是一個典型的「同一個 runtime，兩個 interface」設計。</p>
+
+<p>流程上是 deterministic workflow + approval + audit：agent 提出要執行的動作（呼叫 tool、跑 script），生成 access request，經審批後取得 just-in-time 權限，執行一次，全程記錄。因為 Serval 本身就是 ticketing system，所以每個動作有 ticket、有 audit trail。</p>
+
+<p><strong>SDLC 作為產品原則</strong>也值得注意：dev → staging → prod，中間有 UAT、compliance check、branch 隔離。Jake 指出多數新 AI 產品直接 ship to prod，這在大型金融機構不可能通過。這句話是對整個 AI 應用層的批評：<strong>大家把「demo 可以跑」當成「可以上線」，而中間隔著一整套企業的信任機制。</strong></p>
+
+<div class="section-title">十二、爭議與保留</div>
+
+<p><strong>一、對 ServiceNow 的批評是單邊證詞。</strong>Jake 自己在 Verkada 賣過 IT 產品，他對 ServiceNow 的觀察來自主觀客戶訪談；節目內沒有 ServiceNow 一方回應。這不算不誠實，但讀者要記得這是銷售視角的證詞，不是中立評測。</p>
+
+<p><strong>二、「背景 agent 係 moonshot」與 No Priors 一貫的樂觀基調有張力。</strong>Jake 講得比主持人更保守：他認為短期內無人解決到自主 agent 的安全，企業只能做人批核的增量授權。如果這個判斷正確，很多「全自主 enterprise agent」的估值假設要重寫。</p>
+
+<p><strong>三、「企業會收緊權限」與個人 agent 普及敘事相反。</strong>主流看法是每個員工都會有 personal agent；Jake 認為在大企業，個人權限只會越收越窄。這是對「consumer 經驗直接搬去 enterprise」的直接否定——而歷史上，這個搬運幾乎每次都失敗。</p>
+
+<p><strong>四、「200 人、無 product function」有倖存者偏差的風險。</strong>Serval 目前增長極快，但這種組織模式在規模更大、客戶更雜時是否仍然可行，節目內沒有答案。Jake 自己承認跟不上產品出貨速度——這既是優點，也是預告。</p>
+
+<p><strong>五、「客戶只需要兩打工具」是一個未經證實的斷言。</strong>它在直覺上成立（企業 SaaS 確實冗餘嚴重），但沒有數據支撐，也沒有區分「工具數量」與「工作流程數量」。用它來推論 SaaS 整合的規模，要小心。</p>
+
+<div class="section-title">十三、行業 insight：這一集真正在講什麼</div>
+
+<p><strong>一、企業 AI 的護城河，正在由「模型」移到「權限」。</strong>當模型能力變成公用事業，差異化來自誰掌握審批、審計、例外處理。Jake 的反脆弱論點值得記住：<strong>模型越強 → 企業越怕 → 權限收得越緊 → Serval 越核心。</strong></p>
+
+<p><strong>二、Forward-deployed 是這一輪 enterprise AI 的標準動作。</strong>Palantir 模式被複製：deployment strategist + deployed engineer + 長期 automation engineering。這既是對傳統顧問公司的替代，也解釋了為何 Serval 兩年半要 200 人。同時它是一個警告：<strong>如果你的產品需要大量人駐場才work，你的毛利率就永遠不會像 SaaS。</strong></p>
+
+<p><strong>三、「打 system of record」是 2026 年最擁擠也最值錢的賽道。</strong>Serval 對 ServiceNow，同時間有大量公司在打 Salesforce、Workday、Epic。Jake 的判斷是：做 layer 會被 cap，做 down-market 會養成錯誤肌肉；只有 day one 打最大，產品決策才會一致。</p>
+
+<p><strong>四、定價由 token 轉向 outcome，會改變整條價值鏈的力學。</strong>workflow run 定價把「verbosity」與「value」分開。如果行業跟隨，token 消耗量將不再是指標；模型公司與應用公司的利益會開始分叉——應用層有動機用更少 token 完成同一件事。<strong>這是 2026 年最值得觀察的一條結構性裂縫。</strong></p>
+
+<p><strong>五、200 人、2.5 年、直接挑戰千億市值 incumbent，本身就是一個組織設計的數據點。</strong>沒有 product manager、沒有 quarterly roadmap、工程師直接對客，靠極高招聘標準與快速 undo 維持方向。這種模式的關鍵不是「扁平」，而是<strong>「決策必須發生在擁有最多資訊的那個人身上」</strong>——而在 enterprise AI，擁有最多資訊的人，是每天在客戶 Slack 裡的那個工程師。</p>
+
+<div class="highlight-box">
+<strong>與同日 Dwarkesh 對讀：</strong>Dwarkesh 講 Robert Moses 怎樣把權力寫進債券契約，令立法會、市長都改唔返；Jake 講 Serval 怎樣把 agent 的動作寫進 ticket、審批、audit trail，令企業改得返。<br><br>
+一個追求<strong>不可撤回</strong>，一個提供<strong>可撤回</strong>。但兩者其實是同一種技術的兩面：<strong>誰能定義「改得返」與「改唔返」的邊界，誰就掌握了那個系統的實際權力。</strong>Moses 把邊界寫在憲法層，Serval 把邊界寫在審批層。而企業願意為後者付錢，正因為前者太可怕。
+</div>
+
+<div class="section-title">十四、關鍵數據與事實</div>
+
+<table>
+  <tr><th>項目</th><th>內容</th></tr>
+  <tr><td>公司</td><td>Serval，共同創辦人 Jake Stauch（CEO）與 Alex</td></tr>
+  <tr><td>成立時間</td><td>兩年半；2026 年 1 月至今由細團隊擴至 200 人</td></tr>
+  <tr><td>起點</td><td>第一天在 Alex 客廳、只有兩個人時，已立志成為史上最大企業軟件公司，並圈住 ServiceNow</td></tr>
+  <tr><td>客戶</td><td>Fox Corporation 全公司採用；帶頭遷移的員工被提名為全公司 MVP</td></tr>
+  <tr><td>ServiceNow 落後時間</td><td>客戶實作平均落後 6–12 個月</td></tr>
+  <tr><td>本集長度</td><td>38 分 06 秒；18 個章節</td></tr>
+  <tr><td>定價單位</td><td>workflow run，而非 token</td></tr>
+  <tr><td>企業 SaaS 數量</td><td>平均數百個應用；Jake 認為實際只需「兩打」</td></tr>
+  <tr><td>部署模式</td><td>deployment strategist + deployed software engineer 駐場；另有 ProServal 自動化工程團隊</td></tr>
+  <tr><td>產品原則</td><td>永遠不做 custom feature；同一自動化在多客戶重複出現才升級為 first-class</td></tr>
+  <tr><td>組織</td><td>無 product function；工程師駐客戶 Slack、每日 customer call</td></tr>
+  <tr><td>內建 admin agent</td><td>Catalyst，以自然語言翻譯成產品 primitives</td></tr>
+  <tr><td>安全模型</td><td>deterministic approval + just-in-time access + ticket + audit trail</td></tr>
+</table>
+
+<hr>
+
+<p style="font-size:0.9rem; color:#777;"><strong>系列對讀：</strong>本系列 #225（Latent Space：高品味測試者與開放取用）處理「企業採購如何被 AI 改寫」；#218（Latent Space：金融 agent 的自主門檻）處理「自主程度與責任歸屬」；#167（矽谷 101：agentic commerce 的信任基建）處理「誰來做 agent 的身份與授權」。本篇把它們拉到產品層：<strong>當所有人都能用同一批模型，差異化只剩「你怎樣管住它」。</strong></p>
+
+<footer>
+  <p>來源：No Priors ·〈Taking on ServiceNow: Coding Agents for the Rest of Us with Serval Co-Founder and CEO Jake Stauch〉（2026-10-29 10:00 UTC，38:06）· 節目逐字稿、官方章節與簡介</p>
+  <p style="margin-top:0.3rem;">生成：2026-10-30 · 深度復述 #245 · 引文取自節目逐字稿；「行業 insight」與「爭議」兩節為分析延伸，已標明</p>
+</footer>
+
+</div>
+</body>
+</html>
