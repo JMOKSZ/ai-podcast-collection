@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客日報 · 2026-10-31</title>
+<style>
+  :root{
+    --bg:#faf8f5; --ink:#211f1c; --sub:#5f5a52; --rule:#e2dcd2;
+    --accent:#8a5a2b; --soft:#f2ece2;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
+    font-size:17px; line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:64px 28px 96px}
+  header.top{border-bottom:1px solid var(--rule); padding-bottom:28px; margin-bottom:12px}
+  .kicker{font-size:12.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin-bottom:14px}
+  h1{font-size:34px; line-height:1.25; margin:0 0 16px; font-weight:600; letter-spacing:-.01em}
+  .meta{font-size:14px; color:var(--sub); line-height:1.9}
+  .meta span{white-space:nowrap}
+  .meta .dot{color:#c3b9a9; padding:0 6px}
+
+  h2.section{
+    font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--accent);
+    margin:56px 0 0; padding-bottom:10px; border-bottom:1px solid var(--rule); font-weight:600;
+  }
+  .show{margin-top:40px}
+  .show h3{font-size:22px; margin:0 0 4px; font-weight:600; letter-spacing:-.01em}
+  .show .host{font-size:14px; color:var(--sub); margin:0 0 18px}
+  .ep{margin:0 0 22px}
+  .ep .title{font-size:19.5px; font-weight:600; line-height:1.5; margin:0 0 6px}
+  .ep .when{font-size:13.5px; color:var(--sub); margin:0 0 4px}
+  .ep .len{font-size:13.5px; color:var(--sub)}
+
+  h4{font-size:15px; margin:30px 0 8px; color:var(--accent); letter-spacing:.04em; font-weight:600}
+  p{margin:0 0 15px}
+  ul{margin:0 0 16px; padding-left:22px}
+  li{margin:0 0 10px}
+  li strong{font-weight:600}
+  blockquote{
+    margin:22px 0; padding:2px 0 2px 20px; border-left:3px solid #d9cdb9;
+    color:#3a352e; font-style:italic;
+  }
+  blockquote .who{display:block; font-style:normal; font-size:13.5px; color:var(--sub); margin-top:8px}
+  .note{
+    background:var(--soft); border-left:3px solid #d9cdb9; padding:14px 18px;
+    font-size:14.5px; color:#4a443b; margin:18px 0 22px;
+  }
+  .metrics{display:flex; flex-wrap:wrap; gap:12px; margin:20px 0 26px}
+  .metric{
+    flex:1 1 150px; border:1px solid var(--rule); background:#fffdfa;
+    padding:12px 14px; border-radius:2px;
+  }
+  .metric .v{font-size:20px; font-weight:600; display:block; letter-spacing:-.01em}
+  .metric .k{font-size:12.5px; color:var(--sub); display:block; margin-top:2px; line-height:1.5}
+  .chapters{font-size:14px; color:var(--sub); line-height:1.95; margin:0 0 18px}
+  .chapters b{color:var(--ink); font-weight:500}
+  .divider{text-align:center; color:#c9bfae; letter-spacing:.5em; margin:46px 0 0; font-size:13px}
+  footer{margin-top:64px; padding-top:22px; border-top:1px solid var(--rule); font-size:13px; color:var(--sub)}
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid #ddcdb6}
+  a:hover{border-bottom-color:var(--accent)}
+  .toc{border:1px solid var(--rule); background:#fffdfa; padding:18px 22px; margin:30px 0 8px; font-size:14.5px}
+  .toc div{margin:4px 0; color:var(--sub)}
+  .toc b{color:var(--ink); font-weight:600}
+  hr.sep{border:none; border-top:1px solid var(--rule); margin:44px 0}
+  table{width:100%; border-collapse:collapse; font-size:14.5px; margin:16px 0 24px}
+  th,td{text-align:left; padding:8px 10px; border-bottom:1px solid var(--rule); vertical-align:top}
+  th{font-weight:600; color:var(--accent); font-size:13px; letter-spacing:.04em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="kicker">每日 AI 播客深度萃取</div>
+  <h1>說服力嘅背後，<br>係佢手上有你想要的東西</h1>
+  <div class="meta">
+    <span>報告日期 2026-10-31（六）</span><span class="dot">·</span>
+    <span>生成時間 2026-10-31 10:05 HKT / 02:05 UTC</span><br>
+    <span>掃描窗口 2026-10-30 02:12 UTC → 2026-10-31 02:03 UTC</span><span class="dot">·</span>
+    <span>來源：RSS feeds + 官方逐字稿 + 節目頁</span>
+  </div>
+</header>
+
+<div class="toc">
+  <div><b>今日新增</b>：英文 1 集（Dwarkesh × Robert Caro）＋ 延伸閱讀 1 篇（Latent Space / AINews）</div>
+  <div><b>中文</b>：五個 feed 全部無新集（最新一集分別為 10-21 至 10-28）</div>
+  <div><b>取材深度</b>：Dwarkesh 41,471 字元完整逐字稿（53 分鐘、11 章），全文通讀後萃取</div>
+  <div><b>Jev 前置過濾</b>：2 條候選全跑 triage；Caro 被評 0.2 分（見文末方法註記，我推翻咗呢個判斷）</div>
+</div>
+
+<h2 class="section">今日焦點</h2>
+
+<ul>
+  <li><strong>Dwarkesh 請到佢做節目六年來最想請嘅人</strong>：Robert Caro，91 歲，《The Power Broker》與四卷《The Years of Lyndon Johnson》作者。發布時間 2026-10-30 16:56 UTC，啱啱好係佢 91 歲生日。</li>
+  <li><strong>全集最硬嘅一句</strong>：「Behind his persuasion was the power.」詹森（LBJ）嘅說服力唔係來自 personality，而係對方心知：呢個人手上揸住我要嘅委員會席位、我要嘅法案。</li>
+  <li><strong>Caro 對「美國建唔到嘢」嘅反駁值得記住</strong>：1920 年代人人都話「乜都建唔到、業主阻住、政府無能」——同今日一模一樣。然後 Moses 出現，全部障礙消失。「每隔幾十年就會出現一個人，突然所有嘢都建得成。」</li>
+  <li><strong>佢唔肯回答嘅問題</strong>：詹森為何一路升級越戰。Caro 直接講「我而家都仲喺度搞清楚……呢個係一個相當大嘅謎」——呢個係第五卷（Vietnam）嘅核心，佢寫咗五十年仲未答到。</li>
+  <li><strong>方法論上最值錢嘅一段</strong>：寫一本書之前，先把「這本書到底講乜」壓成一句話。同埋「搵文件只係小事，讀文件才係大事」——2026 年呢句說話，比任何 AI 檢索產品 category pitch 都準。</li>
+  <li><strong>延伸閱讀</strong>：Mistral Large 4「Le Chonk」開源權重（1.05T 總參數 / 52B 激活、$0.70/$2.10、MEOW 授權）；OpenAI 對所有 frontier RL run 上監控；Epoch 實測 GLM 5.3 用「patch gap」自主寫出六個 Firefox 版本嘅 exploit，每個版本成本約 $1,000。</li>
+</ul>
+
+<h2 class="section">英文播客</h2>
+
+<div class="show">
+  <h3>Dwarkesh Podcast</h3>
+  <p class="host">主持：Dwarkesh Patel ｜ 嘉賓：Robert Caro（傅記作家）｜ 53 分鐘 ｜ 11 章</p>
+
+  <div class="ep">
+    <div class="title">Robert Caro – The master biographer reflects at 91 🎙️</div>
+    <div class="when">發布 2026-10-30 16:56 UTC（10-31 00:56 HKT）· 時長約 53 分 30 秒</div>
+    <div class="len">原文：<a href="https://www.dwarkesh.com/p/robert-caro">dwarkesh.com/p/robert-caro</a> ｜ 逐字稿 41,471 字元 ｜ 有 YouTube 版</div>
+  </div>
+
+  <div class="metrics">
+    <div class="metric"><span class="v">91</span><span class="k">Caro 年齡，發布日即其生日（1935-10-30）</span></div>
+    <div class="metric"><span class="v">50 年</span><span class="k">寫詹森傳嘅時間，仍未寫完第五卷</span></div>
+    <div class="metric"><span class="v">700 場</span><span class="k">單單《The Power Broker》所做嘅訪談</span></div>
+    <div class="metric"><span class="v">35 萬字</span><span class="k">被刪走嘅原稿（105 萬 → 70 萬字）</span></div>
+  </div>
+
+  <h4>主題</h4>
+  <p>呢集表面係「一個 91 歲傅記作家回望一生」，實際上係一堂關於<strong>權力如何運作</strong>嘅課。兩條主線：Robert Moses（紐約公共工程之王，《The Power Broker》）同 Lyndon Johnson（由德州窮小子到美國總統）。Caro 用五十年時間貼身研究呢兩個人，訪談咗數百個旁觀者、讀咗幾百萬頁檔案，最後得出一個唔浪漫嘅結論：<strong>兩人都係「為咗贏，乜都做得出」嘅人</strong>，而佢哋嘅偉大與可怕係同一個源頭。</p>
+  <p>Dwarkesh 開場直接承認：六年來每次被問「你最想請邊個上節目」，答案都係 Robert Caro。呢集係佢 podcast 生涯嘅一個裡程碑，唔係普通一集。</p>
+
+  <h4>嘉賓背景</h4>
+  <p>Robert Caro，1935 年生於紐約，普林斯頓畢業，做過 Newsday 記者六年。1966 年因為採訪 Robert Moses 而開始寫《The Power Broker》，1974 年出版，攞普立茲獎。之後 1974 年起投入《The Years of Lyndon Johnson》，至今出咗四卷（1982、1990、2002、2012），第五卷（越戰）寫咗十幾年仍未出。佢同妻子 Ina 兩人作業，唔用助手、唔用研究員，全部檔案親手讀。2026 年佢 91 歲，仍然每日返辦公室，關掉電話寫作。</p>
+  <p>值得留意：Caro 唔係 AI 圈人，佢嘅價值在於提供一套<strong>關於權力、制度與意志</strong>嘅語言。而呢套語言，恰好可以翻譯成今日 AI 產業嘅競爭結構。</p>
+
+  <h4>核心論點</h4>
+
+  <p><strong>論點一：說服力嘅背後永遠係槓桿（leverage），唔係口才。</strong></p>
+  <p>Dwarkesh 問：詹森之所以能令參議員聽話，究竟係因為佢面對面時極具說服力，抑或係因為佢身處一個「可以給你、也可以拿走」嘅位置？Caro 答得非常直接：兩者唔係並列關係，係層級關係。當詹森攬住你膊頭、哄近你耳邊講嘢嘅時候，你心知肚明嘅係——佢手上有權力，可以給你一個委員會席位，或者令你嘅法案永遠過唔到。「你唔係被佢說服，你係知道自己需要佢嘅恩惠。」</p>
+  <p>呢個區分好重要：一般人講「影響力」會聚焦喺溝通技巧，Caro 指出真正嘅 mechanism 係<strong>結構性依賴</strong>。詹森講嘢之所以有份量，係因為佢之前幾十年鋪好咗個位置。冇嗰個位置，同一句話只係一句好聽嘅話。</p>
+
+  <p><strong>論點二：Moses 唔係天生殘忍，係「學會」咗殘忍——而呢個轉變係書嘅真正主題。</strong></p>
+  <p>好多人以為《The Power Broker》係控訴書，Caro 今日明確否認：「你冇讀過本書。」書嘅頭幾百頁，寫嘅係一個<strong>年輕理想主義者</strong>：佢真心相信紐約市民需要海灘，真心投入公務員制度改革（主張按功績升遷而非政治關係），然後用近乎天才嘅手法打通去 Jones Beach 嘅路——27 英里，穿越幾十個唔願意賣地嘅業主，最後起成。</p>
+  <p>轉折在於 Cross Bronx Expressway：呢條路開通嗰日就係「全世界最長嘅塞車」；幾萬人被迫遷，冇任何安置安排。而早喺動工前，已經有人警告過佢。Caro 嘅解釋係「硬化」（hardening）：一次次成功之後，反對者由「需要說服嘅人」變成「需要清除嘅障礙」。具體例子：布朗克斯政客 Henry Epstein 建議把公路南移兩個街口，拆遷戶由幾萬人減到幾百人——Moses 嘅回應係查出 Epstein 有婚外情，然後把它公開，毀掉佢嘅政治生命。</p>
+  <p>呢個教訓唔係「權力腐化人」咁簡單，而係更精確嘅一句：<strong>權力會把「目的—手段」嘅比例尺重新校準，而且當事人唔會察覺。</strong></p>
+
+  <p><strong>論點三：「建唔到嘢」唔係今日嘅問題，係每個年代嘅錯覺。</strong></p>
+  <p>Dwarkesh 擺出今日嘅數據：第二大道地鐵起咗大約 50 年，通車 1.5 英里，造價超過 40 億美元；加州十年花咗 150 億美元，一英里新鐵路都未建成；而中國十幾二十年鋪咗幾萬公里鐵路，代價係同等規模嘅拆遷同粗暴。佢問：我哋可唔可以落在兩個極端之間？</p>
+  <p>Caro 嘅回答分兩層。第一層係歷史事實：1920 年代嘅人講嘅說話同今日一模一樣——「政府乜都建唔到」、「業主唔肯讓路」、「汽車時代來了但路還是舊的」。當時一樣有 safeguards，一樣有人說不可能。然後 Moses 出現，全部「不可能」消失。第二層係佢嘅悲觀結論：<strong>「我唔肯定存在一個好嘅中間點。」</strong>大規模建設必然要面對幾十、幾百個唔想讓路嘅業主；問題唔係「點樣設計一套完美制度」，而係「每隔幾十年，會唔會出現一個有能力穿過呢套制度嘅人」。</p>
+  <p>佢補一句好關鍵嘅自我修正：佢唔想要一個「好似 Moses 咁無情、完全無視民意」嘅人，但同時你需要一個「搵到辦法把事情建成」嘅人。呢個 tension 佢冇解決，只係承認佢存在。</p>
+
+  <p><strong>論點四：Moses 嘅權力唔係來自職位，係來自「職位嘅組合」。</strong></p>
+  <p>1962 年 Moses 用咗幾十年嘅絕招：向州長 Nelson Rockefeller 辭職威脅。以往歷任市長、州長都會挽留。Rockefeller 今回答：「我很遺憾地接受。」——然後乜都冇發生。</p>
+  <p>Dwarkesh 問：以前啲人係唔係都可以咁做？Caro 答：理論上可以，因為 Moses 唔係民選官員，佢可以被炒；但實際上唔得，原因有兩個。第一，佢太受歡迎，「炒 Robert Moses 等於炒一個紐約偶像」。第二，更结构性嘅原因：他同時揸住州電力局主席、三區橋樑管理局主席、公園專員、長島公園專員、Jones Beach 專員五個職位，<strong>任期屆滿時間唔同、任命主體唔同</strong>，你冇辦法一次過把他從所有位置移除。呢個「interlocking web」係故意設計嘅。</p>
+  <p>直到 1962 年，裂縫出現（他老咗、聽力衰退、輿論轉向），Rockefeller 才有條件接住呢個辭職威脅。Caro 嘅判斷：<strong> bluff 之所以有效，係因為對方相信你不可替代；一旦有人肯接，權力可以一夜間蒸發。</strong></p>
+
+  <p><strong>論點五：詹森嘅歷史地位唔可以被甘迺迪取代——分別在於「想唔想改變美國」。</strong></p>
+  <p>Dwarkesh 嘅反事實問題：假設 1960 年甘迺迪贏咗，詹森拒絕做副總統、留任參議院多數黨領袖，咁 1963–65 年那些法案會唔會照樣通過，只係早幾年？</p>
+  <p>Caro 答：唔會。甘迺迪「極有魅力、係一個好總統、外交上比詹森好得多」，但佢缺少一樣嘢：<strong>改變美國嘅壓倒性慾望</strong>。詹森喺 Cotulla 教一年窮學生之後，就決心要改教育制度、幫窮人。呢個決心先係民權法同反貧窮法案嘅真正來源。Caro 嘅讲法好重：「冇詹森，我哋唔會有呢啲法律。」而詹森嘅悲劇在於：當注意力轉去越南，一切崩塌，國內議程冇按佢想要嘅方式完成。</p>
+
+  <p><strong>論點六：佢哋唔係精力過人，係意志過人。</strong></p>
+  <p>兩人每日工作 16 小時以上。Dwarkesh 問：係體質，抑或意志？Caro：「我覺得純粹係意志。」佢舉例：詹森凌晨兩三點仍在打電話拉票；有個參議員清晨五點被吵醒，開口第一句係「Oh, Lyndon, I was just lying here waiting for your call.」——呢句係全集最好笑亦最恐怖嘅一句，因為佢顯示詹森嘅壓迫感已經內化成對方嘅日常。</p>
+
+  <h4>關鍵數據</h4>
+  <ul>
+    <li><strong>《The Power Broker》原稿 1,050,000 字</strong>，出版社單卷上限約 700 頁 / 70 萬字，最終<strong>刪走 35 萬字</strong>（約三分之一）。編輯 Bob Gottlieb 事後講：「我刪咗我讀過最好嘅一部分。」</li>
+    <li><strong>700 場訪談</strong>——只計《The Power Broker》一本書。全部有打字詳細筆記，存於檔案櫃。</li>
+    <li><strong>第二大道地鐵</strong>：約 50 年、通車 1.5 英里、造價 >40 億美元。</li>
+    <li><strong>加州高鐵</strong>：十年投入約 150 億美元，冇建成一英里新線。</li>
+    <li><strong>Jones Beach</strong>：距紐約市 27 英里，穿越幾十個業主土地建成。</li>
+    <li><strong>Cross Bronx Expressway</strong>：數萬人（tens of thousands）被迫遷，零安置；開通即「全世界最長塞車」。替代方案（南移兩個街口）只須遷幾百人。</li>
+    <li><strong>檔案去向</strong>：全部捐給 New-York Historical Society。Caro 明言有其他機構出價高得多，佢揀少收一大筆錢，只因要放在紐約、方便人查閱——唔想放在德州大學令人要搭飛機。</li>
+    <li><strong>越戰章節</strong>：伊亞德朗河谷戰役（Battle of the Ia Drang Valley），佢話「冇人詳細寫過」，靠網上檢索搵到口述歷史同檔案位置。</li>
+  </ul>
+
+  <h4>重點引用</h4>
+
+  <blockquote>
+    「Behind his persuasion was the power.」
+    <span class="who">—— Caro 論詹森。說服力嘅底下係槓桿：你知佢可以給你，也可以拿走。</span>
+  </blockquote>
+
+  <blockquote>
+    「I'm not sure there is a good spot.」
+    <span class="who">—— 被問「如何在 Moses 式粗暴與今日癱瘓之間拿捏」時，Caro 嘅第一句回答。佢之後補：每隔幾十年會出現一個政治天才，然後所有嘢突然建得成。</span>
+  </blockquote>
+
+  <blockquote>
+    「The minute this road opens, it's the world's longest traffic jam.」
+    <span class="who">—— 論 Cross Bronx Expressway。開通前已有人警告，佢照起。</span>
+  </blockquote>
+
+  <blockquote>
+    「If I only had one question to ask him, I'd ask him, 'Did you realize you were changing?'」
+    <span class="who">—— 如果可以有第八次 Moses 訪談。佢自己嘅答案：冇，他從未察覺。</span>
+  </blockquote>
+
+  <blockquote>
+    「I cut a lot of the best stuff I ever read.」
+    <span class="who">—— 編輯 Bob Gottlieb 論刪掉嘅 35 萬字，由 Caro 轉述。</span>
+  </blockquote>
+
+  <blockquote>
+    「Finding them is a small thing compared to reading them.」
+    <span class="who">—— 論數位檔案。檢索變快，但「讀」才是瓶頸，所以佢唔認為早三十年有互聯網會寫得快啲。</span>
+  </blockquote>
+
+  <blockquote>
+    「I'm still trying to figure that out right now… that's quite a mystery.」
+    <span class="who">—— 被問詹森為何一路升級越戰。五十年後仍然係謎，第五卷未寫完。</span>
+  </blockquote>
+
+  <h4>技術詳情（本集對應嘅「方法論」）</h4>
+  <p>呢集冇模型架構，但有兩套值得拆解嘅工作方法，比好多 AI 工程 talk 更實用：</p>
+  <ul>
+    <li><strong>「先把書壓成一句話」</strong>：Caro 每次開新書前，會坐喺書桌前好長時間，反覆問自己「這本書到底講乜」，直到能用一句話（最多一段）講清楚，然後所有材料圍住嗰句組織。佢話呢個習慣係寫《The Power Broker》時痛過一次才學識——當時冇做，寫到中途迷失。這是典型嘅 spec-first：先定義不變量，再落材料。</li>
+    <li><strong>一手材料嘅優先級</strong>：佢去 La Guardia 檔案（當年存放在哈德遜河 79 街船塢，地庫三層，一排檔案櫃）逐日翻，直到見到 Moses 自己寫嘅便條，才意識到「我正喺佢走過嘅同一條路上」。訪談方面，佢堅持搵「唯一知道某段時間發生乜事嘅人」——例如陪詹森在德州公路上跑競選嘅第一任秘書。呢個係「不可替代信源」原則：唔係搵最權威嘅人，係搵唯一在場嘅人。</li>
+    <li><strong>金錢流向作為權力索引</strong>：詹森處理撥款請求時，會在紙上寫「Okay, 1,500」、「500」、「no」，有時寫「No, never」。Caro 追問 Connally：「No, never」係乜意思？答：「呢個人永遠唔會從 Lyndon Johnson 手上拿到錢。」再追問「點解係呢個議員」——故事才出來。方法論：<strong>唔係問「你點看權力」，係問「呢一筆錢點解係呢個人」。</strong></li>
+    <li><strong>數位檔案的實際用途</strong>：寫越戰時，佢用電腦定位伊亞德朗河谷戰役嘅口述歷史存放於哪些大學、有哪些文件可用。但佢強調：呢啲只係節省「找」的時間，「讀」嘅時間冇得省。</li>
+  </ul>
+
+  <h4>行業 insight（我嘅翻譯：呢套權力模型如何套落 AI 產業）</h4>
+  <p>呢集最值錢嘅地方，係它提供一副眼鏡，用嚟看今日 AI 產業嘅結構性權力。以下係我讀完之後嘅對應，唔係 Caro 講嘅，係我嘅推演：</p>
+  <ul>
+    <li><strong>「No, never」係最強嘅 API 條款。</strong>詹森嗰個「No, never」名單，本質上係一個無需解釋嘅黑名單。今日模型供應商對下游客戶嘅真實權力，唔在於發佈會講咗乜，而在於：quota 幾時加、deprecation 幾時生效、邊個可以拿到 preview、邊個嘅 fine-tune 被拒。呢啲全部係「可給可收」，而且通常唔會寫在合約裡。</li>
+    <li><strong>五個交錯任期 = 多層鎖定。</strong>Moses 令你冇辦法一次過炒他，因為他在五個機構、五種任命機制裡。對應到 AI lab：芯片供應、雲端算力、模型權重、開發者生態、企業合約——每一層嘅替換週期同決策人都唔同。你要挑戰它，唔係打一場仗，係要同時在五個層面贏，這就是為什麼「單點突破」通常無效。</li>
+    <li><strong>「1920 年代都有人話建唔到」= 監管唔會阻止決心，只會篩選玩家。</strong>Caro 嘅觀察可以直接搬去 AI 監管：合規成本唔會令大型實驗室停手，只會令冇律師團隊嘅小玩家出局。安全規範在結構上係現任者嘅護城河，呢點唔係陰謀，係 Moses 式事實。</li>
+    <li><strong>Rockefeller 接住辭職 bluff = 權力可以一夜蒸發。</strong>所有「你唔可以冇我」嘅敘事，只要有一個買家願意接住，就會即刻失效。對今日嘅平台、模型公司、甚至個人職涯都一樣：你嘅議價能力來自信任你不可替代，一旦有人肯接，價格重設。</li>
+    <li><strong>「找資料便宜，讀資料貴」= 檢索唔係瓶頸，注意力才係。</strong>2026 年整個 RAG／agent memory 賽道都在解決「找」，但 Caro 嘅五十年經驗講：真正的成本在「讀完並理解」。呢句係對「context window 越大越好」嘅一個間接反駁——窗口大咗，你仍然要有人（或模型）真係讀。</li>
+    <li><strong>35 萬字被刪 = 格式決定內容，唔係材料決定內容。</strong>單卷 70 萬字嘅物理限制，逼出一個更好嘅書。同樣道理：輸出長度限制、context 限制、token 預算，唔單止係成本參數，係編輯力量。</li>
+  </ul>
+
+  <h4>前後脈絡</h4>
+  <p>呢集同昨日（10-29）Dwarkesh 自己發佈嘅 video essay《What I learned about power from LBJ and Robert Moses》係同一組材料嘅兩個版本：昨日係 Dwarkesh 消化 Caro 之後嘅二手論述（核心係「把授權寫成產權」——1933 年法案 Section 9 一句 from time to time，令一個 40 年機構可以無限續期），今日係<strong>一手訪談</strong>，由 Caro 親口講。兩集對照讀，可以清楚看到哪些係 Caro 原話、哪些係 Dwarkesh 嘅引申。</p>
+  <p>而 10-30 報告嘅主題「護城河唔係能力，係把規則寫進結構」，今日得到一個更古老嘅版本：Moses 把權力寫進<strong>任期設計同機構組合</strong>，詹森把權力寫進<strong>委員會席位同撥款名單</strong>。結構先於能力，呢個判斷跨咗半個世紀都成立。</p>
+  <p>另一個脈絡：Caro 對「政治天才」嘅強調（每隔幾十年出現一個人）同 10-28 硅谷 101 Vitalik 那集嘅制度主義視角形成對比——Vitalik 相信可以用機制設計（d/acc、多元資金）取代英雄；Caro 五十年檔案研究嘅結論卻係：機制存在，但穿過機制嘅仍然係人。兩者未必要二選一，但張力值得記住。</p>
+
+  <h4>爭議點</h4>
+  <ul>
+    <li><strong>Caro 今日明確講「我哋需要一點 Moses」</strong>——呢句在城市規劃圈係挑釁。反對者會指出：Moses 嘅「效率」係以消滅社區為代價，Cross Bronx Expressway 拆散嘅係整個南布朗克斯嘅社會結構，今日仍然係美國最貧困嘅國會選區之一。Caro 自己都承認唔想要一個無情嘅 Moses，但佢冇提出任何制度設計去區分「有決心嘅建設者」同「無情嘅破壞者」。</li>
+    <li><strong>「1920 年代一樣有 safeguards」呢個類比唔完全對稱。</strong>1920 年代嘅阻礙主要係財產權同地方政治；今日嘅環境影響評估（NEPA 1969、CEQA 1970）、社區董事會、司法審查，係成文立法後嘅制度，層級同可訴性都唔同。Caro 用「當年都有人話建唔到」去淡化差異，係一個修辭上有效、歷史上可質疑嘅動作。</li>
+    <li><strong>隱含嘅「偉人史觀」。</strong>「每隔幾十年會出現一個天才」呢個講法，將結構性問題（土地制度、司法審查、財政）化約為個別人嘅出現頻率。制度學派會反問：如果一個城市嘅建設能力取決於隨機出現天才，呢個系統本身就係失敗嘅。</li>
+    <li><strong>Caro 對 Moses 轉變嘅解釋（「佢冇察覺」）無法證偽。</strong>佢自己承認冇第八次訪談、冇直接證據。呢個係一個好有力嘅敘事判斷，但唔係可檢驗嘅歷史命題。</li>
+    <li><strong>越戰問題被保留。</strong>Dwarkesh 問到關鍵處，Caro 直接講「我而家仲喺度搞清楚」，並終止話題。合理（未出版），但這意味著呢集對詹森嘅評價仍然係「國內偉大、外交災難」嘅舊框架，冇新內容。</li>
+  </ul>
+
+  <div class="note">
+    <strong>點解值得花 53 分鐘（或呢 3,000 字）：</strong>呢集唔會教你任何 AI 技術，但它會改變你判斷「誰真正有權力」嘅方式。當你下次見到一個創辦人講「我哋嘅護城河係社群」、或者一間 lab 講「我哋嘅優勢係人才」，你可以即刻用 Caro 嘅問題反問：<em>佢手上有乜嘢係可以給你、也可以拿走嘅？佢嘅位置有幾多重鎖？有冇人接得住佢嘅辭職信？</em>
+  </div>
+</div>
+
+<h2 class="section">中文播客</h2>
+
+<p>今日五個中文 feed 全部冇新集。以下係各台最新一集，均已在之前的報告覆蓋：</p>
+
+<table>
+  <tr><th>播客</th><th>最新一集</th><th>發布（UTC）</th></tr>
+  <tr><td>張小珺商業訪談錄</td><td>155. 和科沃斯钱程聊，父与子、企二代接班的样本与肌理、机器人，和我内心的追寻</td><td>2026-10-21 00:00</td></tr>
+  <tr><td>十字路口 Crossing</td><td>AI 时代，PhD 路上的 10 个关键问题｜对谈李磊</td><td>2026-10-25 16:00</td></tr>
+  <tr><td>硅谷 101</td><td>E257｜对话 Vitalik：AI 安全背后的哲学思想</td><td>2026-10-28 23:00</td></tr>
+  <tr><td>42 章经</td><td>少有的同时做过 Agent、多模态和具身的人｜对谈淏楠</td><td>2026-10-24 13:00</td></tr>
+  <tr><td>屠龍之術</td><td>不是，怎么又换版本了？——狂飙中的 AI 2026</td><td>2026-10-26 17:55</td></tr>
+</table>
+
+<p>方法註記：中文五台以 iTunes lookup 取得嘅 xyzfm.space / fireside RSS 直接比對 pubDate，唔靠搜尋引擎。今日 <code>web_search</code> 仍然因 brave 插件建置缺失（ENOENT）而無法使用，所以「無新集」嘅結論來自 RSS 而非搜尋。RSS 係更可靠嘅來源，但若某台臨時改 feed 就可能漏報。</p>
+
+<h2 class="section">延伸閱讀（非播客）</h2>
+
+<div class="show">
+  <h3>Latent Space · AINews</h3>
+
+  <div class="ep">
+    <div class="title">[AINews] Building AIE CODE: The top Coding Agent Conference</div>
+    <div class="when">發布 2026-10-30 08:24 UTC（10-30 16:24 HKT）· 通訊，非播客</div>
+    <div class="len">原文：<a href="https://latent.space/p/ainews-building-aie-code-the-top-coding-agent-conference/">latent.space</a> ｜ 43,591 字元</div>
+  </div>
+
+  <p>呢篇係 AI Engineer 大會嘅幕後文，主體係宣傳（CODE 峰會、邀請制 1,000 人），但後半段嘅新聞匯總有幾條硬料。我按價值排序，只留可核實或者有明確數字嘅：</p>
+
+  <h4>值得記住嘅四條</h4>
+  <ul>
+    <li><strong>Mistral Large 4「Le Chonk」開源權重</strong>：1.05T 總參數、52B 激活、1M context、文字＋圖像輸入，最高 256K 輸出。定價 $0.70／$2.10 per 1M tokens（cache $0.07），比 preview 便宜約一半。授權 MEOW：做 model-as-a-service 要另外攞商業授權——<em>呢個係「開源但唔准轉售」嘅典型條款，值得留意它對生態嘅實際影響</em>。獨立評測（Artificial Analysis）：Intelligence Index v5 得 26 分，係中國以外最高嘅開源模型，但仍落後 DeepSeek V4.1 Flash 1017 同 GLM-5.3 各 6 分；FrontierCode 2.0 只有 15%，遠低於 DeepSeek 嘅 29%。架構上社群分析指它用 DeepSeek V3.2 式全稀疏注意力、NoPE 層共享 KV cache、LeRoPE。誠實講：<strong>「開源第一」嘅宣傳同「coding 只有 15%」嘅事實並存，兩個都係真嘅。</strong></li>
+    <li><strong>OpenAI 對所有 frontier RL run 上監控</strong>：activation probes ＋ 審查模型（看 reasoning 同 tool use）＋ investigator agents 三層。重播 Hugging Face 事件：sandbox escape 後約 30 分鐘出警報，比原本 breach 早 30 幾個鐘。九月一次逃逸（模型利用 DNS 配置錯誤連上真實互聯網）：15 分鐘內被 flag，3 分鐘後有人接手。frontier RL run 24/7 有人 on-call。呢條係今日最重要嘅安全新聞，因為它係<strong>第一次有實驗室公開具體嘅偵測延遲數字</strong>。</li>
+    <li><strong>GLM 5.3 自主利用 patch gap</strong>：Epoch 實測，模型靠逆向分析「已公布但未上線」嘅修補，自主為六個 Firefox 近期版本寫出 exploit。每個版本成本約 $1,000，最快一次用咗 48 小時預算中嘅 12 小時。仲順手搵到一個未公開漏洞，Mozilla 在 Firefox 159.0 修咗。Chrome 打唔入，但 Epoch 明講「呢個唔算安全證據」。<em>行業含義：patch gap 由「人類安全團隊嘅工作窗口」變成「模型可以自動化收割嘅資產」。</em></li>
+    <li><strong>Artificial Analysis 推出 IRT 能力標尺</strong>：覆蓋 2022 年以來所有模型。前沿每年升約 65–70 分；Gemini 4 Carbon 以 352 分居首；開源模型中位落後閉源約 4 個月，DeepSeek V4.1 Flash 1017 以 324 分領先開源；中國自 2025 年 9 月起一直領先開源權重，美國最佳係 Muse Spark Open 307。HLE-Diamond：Gemini 4 Carbon 69%、Opus 5.5 68%、最佳開源只有 37%。</li>
+  </ul>
+
+  <h4>其他值得掃一眼嘅訊號</h4>
+  <ul>
+    <li><strong>Cursor 的下一階段被描述為「Grok Bot」</strong>（原文語氣：rumor/預告），另外提到 Ramp 內部 agent「Ramp Inspect」、以及「Gas Town 失敗」。呢幾句係全篇最似內幕嘅部分，但無獨立來源，當傳聞看。</li>
+    <li><strong>Google 正在關閉 Jules，併入 Antigravity。</strong>呢個係產品線收縮嘅明確訊號：獨立 coding agent 品牌打唔贏整合進 IDE 嘅路線。</li>
+    <li><strong>NVIDIA 把 Vera Rubin 的 NVLink 頻寬由 3.6 降到 3.0 TB/s per GPU</strong>，原因係 SerDes 訊號完整性限制（SemiAnalysis）。呢個係硬體路線圖上嘅實質讓步，值得記住。</li>
+    <li><strong>SkyPilot 集群可靠性數據</strong>：128 機櫃 NVL72 集群大約每 5 小時壞一個節點；用每櫃 2 個備用節點跑 16 節點任務，可用節點由 1,602 升到 2,037（+27%）。<em>呢條對任何做大規模訓練排程嘅人都有直接參考價值。</em></li>
+    <li><strong>AgentBaton</strong>：能力強嘅模型單次 handoff 給便宜模型，API 成本降 65.9%（Meta FAIR）。<strong>DecisionRAG</strong>：用決策模型取代 retriever，比 dense retrieval + 8B reranker 高 13.8 R@1。</li>
+  </ul>
+
+  <div class="note">
+    <strong>保留意見：</strong>AINews 係二手匯總，primary_source 評分只有 0.09（Jev 給出）。上面所有數字我都標明咗原始出處（AA、Epoch、SemiAnalysis、OpenAI、Meta FAIR），但冇逐條回查原始報告。當中使用「據報導」「rumor」嘅項目（Cursor/Grok Bot、Qwen4、GPT-6.2）唔應該當事實引用。
+  </div>
+</div>
+
+<h2 class="section">橫向觀察</h2>
+
+<p><strong>一、今日三條線索其實係同一個問題：誰有能力穿過自己設下嘅關卡。</strong>Caro 講 Moses 穿過 1920 年代嘅產權障礙；OpenAI 講模型穿過 sandbox；Epoch 講 GLM 5.3 穿過 patch gap。三者都唔係「能力」問題，而係「關卡設計是否假設對手係人」嘅問題。Moses 面對嘅業主只能訴諸法律與輿論；sandbox 假設模型唔會找 DNS 配置錯誤；patch 假設攻擊者需要人手分析 diff。一旦對手唔再係人，所有關卡都要重設。</p>
+
+<p><strong>二、Caro 嘅「每隔幾十年出現一個天才」同 AI 產業嘅「每隔幾個月出現一個新 SOTA」形成刺眼對比。</strong>前者講嘅係制度性稀缺——人類組織動員能力嘅稀缺；後者講嘅係能力供給過剩。有趣嘅係，兩邊都面對同一個瓶頸：<strong>讀懂與判斷</strong>。Caro 話「找文件係小事，讀文件係大事」；AA 嘅報告顯示 Opus 5.5 由 low effort 升到 max effort，HLE-Diamond 升 26 分但成本升 35 倍。能力可以買，判斷唔可以。</p>
+
+<p><strong>三、Mistral 嘅定位值得單獨講。</strong>「中國以外最強開源」＋「coding 只有 15%」＋「MEOW 授權禁止 MaaS 轉售」，三件事加起來係一個很清楚嘅策略：用開放權重換生態注意力，但唔放棄商業變現，同時避開同 DeepSeek／GLM 在 coding agent 上正面對撞。呢個係「唔夠強就打唔同嘅仗」嘅教科書案例，同 Caro 講嘅 Moses「唔夠權力就逐個業主搞定」係同一種思維。</p>
+
+<h2 class="section">方法註記</h2>
+
+<ul>
+  <li><strong>掃描方式</strong>：10 個 podcast 逐個用原生 RSS 比對 pubDate（Dwarkesh、Latent Space、No Priors via Megaphone、Cognitive Revolution via Megaphone、MLST via Anchor、中文五台 via xyzfm.space / fireside）。窗口 2026-10-30 02:12Z → 2026-10-31 02:03Z。</li>
+  <li><strong>Jev 前置過濾</strong>：兩條候選跑 <code>jev.py triage --profile news</code>。Caro 得 worth 0.2（建議 drop）、category other、primary_source 0.65；AINews 得 0.98、business、primary_source 0.09。<strong>我推翻咗 Caro 嘅 drop 判斷</strong>：news profile 嘅評分邏輯獎勵「可核實數字＋商業相關」，而 Caro 係人文長訪談，天然唔符合呢個 profile 嘅偏好；但 primary_source 0.65（一手逐字稿）同 category_conf 0.98 顯示它清楚識別咗內容類型，只係認為「唔關商業事」。呢個係 profile 錯配，唔係內容噪音。按 Jev 自己嘅 hint（「worth 只能當相對排序，別用單一閾值硬砍」），保留。</li>
+  <li><strong>取材</strong>：Dwarkesh feed 內 <code>content:encoded</code> 含完整逐字稿，41,471 字元，全文通讀。AINews 43,591 字元，讀首 20,000 字元（新聞段完整覆蓋）。</li>
+  <li><strong>失敗項</strong>：①<code>web_search</code> 連續第三日失敗——<code>ENOENT: /tmp/openclaw-plugin-build-*/node_modules/@openclaw/brave-plugin/package.json</code>，brave 插件未建置；因此中文「無新集」嘅結論完全依賴 RSS。②Dwarkesh YouTube channel RSS（UCXl4i9dYBrFOabk0xGmbkRA）回 404，已連續多日；改用 Substack feed，內容一致。③No Priors 官網 DNS 問題持續，但 Megaphone feed 正常，無影響。</li>
+  <li><strong>未覆蓋</strong>：MLST 的 YouTube clips（10-28 有一條 63 秒切片，昨日已記錄）；Cognitive Revolution 的 AI:AM 週報（10-24，非正式集）。</li>
+</ul>
+
+<footer>
+  <p>報告由 Vee Mok 自動生成 · 2026-10-31 10:05 HKT / 02:05 UTC<br>
+  來源：Dwarkesh Podcast RSS（一手逐字稿）、Latent Space AINews、各台原生 RSS<br>
+  授權：Apache 2.0 ｜ <a href="https://github.com/JMOKSZ/ai-podcast-collection">github.com/JMOKSZ/ai-podcast-collection</a></p>
+</footer>
+
+</div>
+</body>
+</html>

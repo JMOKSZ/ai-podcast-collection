@@ -1,19 +1,19 @@
 {
- "lastScan": "2026-10-30T02:12:00.000Z",
- "lastScanDate": "2026-10-30",
+ "lastScan": "2026-10-31T02:05:00.000Z",
+ "lastScanDate": "2026-10-31",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-10-29T16:48:39.000Z",
-   "lastEpisodeTitle": "What I learned about power from LBJ and Robert Moses",
-   "lastFeedItemPubDate": "2026-10-29T16:48:39.000Z",
+   "lastEpisodePubDate": "2026-10-30T16:56:02.000Z",
+   "lastEpisodeTitle": "Robert Caro – The master biographer reflects at 91",
+   "lastFeedItemPubDate": "2026-10-30T16:56:02.000Z",
    "newEpisodes": [],
-   "lastFeedItemTitle": "What I learned about power from LBJ and Robert Moses"
+   "lastFeedItemTitle": "Robert Caro – The master biographer reflects at 91"
   },
   "latent_space": {
    "lastEpisodePubDate": "2026-10-28T19:48:00.000Z",
    "lastEpisodeTitle": "Why Agents Love Supabase",
-   "lastFeedItemPubDate": "2026-10-29T16:00:00.000Z",
-   "lastFeedItemTitle": "Can Frontier Models See Past a Decoy? Elorian Tests Visual Reasoning (article)",
+   "lastFeedItemPubDate": "2026-10-30T08:24:29.000Z",
+   "lastFeedItemTitle": "[AINews] Building AIE CODE: The top Coding Agent Conference",
    "newEpisodes": [],
    "lastArticlePubDate": "2026-10-29T16:00:00.000Z",
    "lastArticleTitle": "Can Frontier Models See Past a Decoy? Elorian Tests Visual Reasoning"
@@ -100,14 +100,14 @@
   }
  },
  "notes": {
-  "scan_status": "2026-10-30 掃描（02:03–02:12 UTC）：窗口 10-29 02:06Z → 10-30 02:03Z 內新增英文播客 2 集 + 非播客文章 1 篇。Dwarkesh 10-29 16:48Z《What I learned about power from LBJ and Robert Moses》（video essay，附逐字稿）；No Priors 10-29 10:00Z《Taking on ServiceNow…Jake Stauch》（38:06）；Latent Space 10-29 16:00Z Elorian/DecoyCount 文章（6 min read，非播客）。中文五台全部無新集：張小珺 10-21、十字路口 10-25、硅谷101 10-28、42章經 10-24、屠龍之術 10-26。",
-  "report_date": "2026-10-30",
-  "deep_content_fetched": "①Dwarkesh：Substack feed 內文頁完整逐字稿 26,127 字元，直接切片。②No Priors：Megaphone RSS 無 transcript；改由 YouTube 頻道頁抓最新 videoId EZcWEsMuLb4，用 youtube-transcript-api 取 en 自動字幕 46,860 字元（2286 秒）。③Latent Space：文章全文 7,650 字元（非播客，列入延伸閱讀）。",
-  "failures": "①No Priors 官網 no-priors.com DNS/連線失敗（curl 000），nopriors.com 只有 114 bytes 跳轉頁；靠 YouTube 字幕補齊。②web_search 工具連續兩次失敗：ENOENT /tmp/openclaw-plugin-build-*/node_modules/@openclaw/brave-plugin/package.json（插件未建置），故中文新集判斷完全依賴 RSS 而非搜尋。③YouTube channel RSS（UCSI7h9hydQ40K5MJHnCrQvw）仍然 404，改用 megaphone feed + YouTube 頁面。④Latent Space 的 Elorian 條目係文章而非 podcast，feed 已不再區分類型；已按內容判斷。",
-  "jev_prefilter": "三條候選跑 jev.py triage --profile news：Dwarkesh worth 0.81（keep，other，primary_source 0.10）、No Priors 1.32（keep，business，0.50）、Elorian 1.05（keep，llm-model，0.24）。全部保留；因 primary_source 偏低，報告內已標明邊啲係一手逐字稿、邊啲係二手轉述。",
-  "notable_for_james": "①Moses 的核心手法係「把授權寫成產權」：1933 法案 Section 9 一句 from time to time 令 40 年機構可無限續期，再用憲法契約條款鎖死；呢個框架可直接用嚟看 API 契約、benchmark 定義、監管認定。②LBJ 的三層槓桿（可給可收、議程、資訊）係任何 broker 業務的通用模型。③Dwarkesh 公開反駁 Caro 把紐約衰落歸因 Moses，舉 Detroit/St. Louis 為反例——本集唯一的歷史學爭議點。④Serval 最值錢的一句：模型越強，企業越收緊權限，Serval 越核心（反脆弱）。⑤Jake 認為 background agent 係 enterprise 的 ultimate moonshot、暫時無人解決安全，同主流樂觀叙事相反。⑥SaaS-pocalypse 只食 point solution，core system of record 只換 incumbent。⑦定價按 workflow run 而非 token，係對 token 經濟的一個明確反駁。⑧Elorian 的 DecoyCount 揭露 eval 方法論盲點：只看答案會把 vision failure 同 reasoning failure 混為一談；但 50.48% 係單次內部測試，差距僅 7 點，不足以支撐強結論。",
-  "cross_episode_theme": "三條線都係「把規則寫進更難改的層」：Moses 寫進法律/債券契約（制度結構）、Serval 寫進審批/審計/SDLC（企業結構）、Elorian 寫進中間圖像（推理結構）。能力決定做幾多，結構決定改唔改得返。",
+  "scan_status": "2026-10-31 掃描（02:03–02:05 UTC）：窗口 10-30 02:12Z → 10-31 02:03Z 內只有 1 集新 podcast（Dwarkesh《Robert Caro》，10-30 16:56Z，53 分）＋ 1 篇 AINews 通訊（非播客）。No Priors 最新 10-29、CogRev 10-28、MLST 10-26，均無新集。中文五台全部無新集（張小珺 10-21、十字路口 10-25、硅谷101 10-28、42章經 10-24、屠龍之術 10-26）。",
+  "report_date": "2026-10-31",
+  "deep_content_fetched": "①Dwarkesh：Substack feed content:encoded 內含完整逐字稿 41,471 字元，11 章、53 分 30 秒，全文通讀後萃取。②Latent Space AINews：43,591 字元，讀首 20,000 字元（新聞段完整）。",
+  "failures": "①web_search 連續第三日失敗（ENOENT: /tmp/openclaw-plugin-build-*/node_modules/@openclaw/brave-plugin/package.json），中文新集判斷完全依賴 RSS。②Dwarkesh YouTube channel RSS（UCXl4i9dYBrFOabk0xGmbkRA）404，持續多日；改用 Substack feed。③No Priors 官網 DNS 問題持續，Megaphone feed 正常。",
+  "jev_prefilter": "兩條候選跑 jev.py triage --profile news：Caro worth 0.2（drop 建議，other，primary_source 0.65）、AINews 0.98（business，primary_source 0.09）。**推翻 Caro 嘅 drop**：news profile 獎勵可核實數字＋商業相關，人文長訪談天然唔匹配；primary_source 0.65 顯示己識別為一手。按 Jev hint「worth 只作相對排序、勿單閾值硬砍」保留。",
+  "notable_for_james": "①集最硬一句：Behind his persuasion was the power — 詹森的說服力底層是槓桿（委員會席位、法案），不是口才。②Moses 權力來自五個交錯任期職位（州電力局、三區橋樑、公園、長島公園、Jones Beach），無法一次過炒 —— 對應 AI lab 的多層鎖定。③1962 Rockefeller 一句 I regretfully accept 就令幾十年 bluff 失效：權力可在一天內蒸發。④Caro 對『美國建唔到嘢』的反駁：1920 年代講法一模一樣，然後 Moses 出現全部障礙消失；但他自己補『I'm not sure there is a good spot』。⑤Moses 由理想主義者硬化：Cross Bronx Expressway 開通即全世界最長塞車，數萬人遷拆零安置；反對者 Henry Epstein 被公開婚外情毀掉。⑥Caro 方法論：開書前把書壓成一句話；『找文件係小事，讀文件才係大事』——直接反駁 2026 年檢索/長 context 敘事。⑦原稿 105 萬字刪 35 萬字（Gottlieb：我刪咗我讀過最好嘅一部分）；700 場訪談只計 Power Broker；檔案寧願少收錢都要放紐約方便查閱。⑧越戰升級原因 Caro 五十年後仍答唔到，第五卷未出。",
+  "cross_episode_theme": "三條線都係『誰能穿過自己設下嘅關卡』：Moses 穿過 1920 年代產權障礙、OpenAI 模型穿過 sandbox（30 分鐘內警報）、GLM 5.3 穿過 patch gap（每版本 $1,000、最快 12 小時）。關卡設計全部預設對手係人；對手唔再係人，關卡要重設。",
   "index_html": "未更新 index.html（該落地頁自 2026-07-19 起停更，維持既有慣例）。",
-  "deep_dive_link": "本輪未新增 deep-dive；報告本體已含完整萃取（44.0KB）。"
+  "deep_dive_link": "本輪未新增 deep-dive；報告本體已含完整萃取（36.3KB）。"
  }
 }
