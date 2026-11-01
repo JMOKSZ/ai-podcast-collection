@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-10-31T02:05:00.000Z",
- "lastScanDate": "2026-10-31",
+ "lastScan": "2026-11-01T02:04:00.000Z",
+ "lastScanDate": "2026-11-01",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-30T16:56:02.000Z",
@@ -10,10 +10,10 @@
    "lastFeedItemTitle": "Robert Caro – The master biographer reflects at 91"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-10-28T19:48:00.000Z",
-   "lastEpisodeTitle": "Why Agents Love Supabase",
-   "lastFeedItemPubDate": "2026-10-30T08:24:29.000Z",
-   "lastFeedItemTitle": "[AINews] Building AIE CODE: The top Coding Agent Conference",
+   "lastEpisodePubDate": "2026-10-31T16:05:00.000Z",
+   "lastEpisodeTitle": "Agents Prompt People: Using Agents for Long-Horizon Financial Work",
+   "lastFeedItemPubDate": "2026-10-31T16:05:00.000Z",
+   "lastFeedItemTitle": "Agents Prompt People: Using Agents for Long-Horizon Financial Work",
    "newEpisodes": [],
    "lastArticlePubDate": "2026-10-29T16:00:00.000Z",
    "lastArticleTitle": "Can Frontier Models See Past a Decoy? Elorian Tests Visual Reasoning"
@@ -26,20 +26,11 @@
    "lastFeedItemTitle": "Taking on ServiceNow: Coding Agents the Rest of Us with Serval Co-Founder and CEO Jake Stauch"
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-10-28T18:57:00.000Z",
-   "lastEpisodeTitle": "Freedom of Action: America's ASI Strategy, w/ RAND's Joel Predd, Ben Boudreaux & Matt Chessen",
-   "lastFeedItemPubDate": "2026-10-28T18:57:00.000Z",
-   "lastFeedItemTitle": "Freedom of Action: America's ASI Strategy, w/ RAND's Joel Predd, Ben Boudreaux & Matt Chessen",
-   "newEpisodes": [
-    {
-     "title": "Freedom of Action: America's ASI Strategy, w/ RAND's Joel Predd, Ben Boudreaux & Matt Chessen",
-     "pubDate": "2026-10-28T18:57:00.000Z",
-     "type": "podcast",
-     "url": "https://www.cognitiverevolution.ai/freedom-of-action-america-s-asi-strategy-w-rand-s-joel-predd-ben-boudreaux-matt-chessen/",
-     "guests": "Joel Predd、Ben Boudreaux、Matt Chessen（RAND Center for the Geopolitics of AGI）",
-     "note": "1:48:52。逐字稿內嵌於官網頁面，114,017 字元。重點：七種戰略原型 + 五個樞軸問題、freedom of action、106 項 Security Architecture Catalog、wonder weapon（Mythos 級網絡能力）、mutual sabotage 均衡、perception over facts、agency evals、AI Sabbath、12-24 個月網絡 rough patch。"
-    }
-   ]
+   "lastEpisodePubDate": "2026-10-31T21:45:59.000Z",
+   "lastEpisodeTitle": "AI:AM: Carbon in the Arena, Mistral's Le Chonk, the Agent-Run Economy, Ferroelectric RAM + New Hacks",
+   "lastFeedItemPubDate": "2026-10-31T21:45:59.000Z",
+   "lastFeedItemTitle": "AI:AM: Carbon in the Arena, Mistral's Le Chonk, the Agent-Run Economy, Ferroelectric RAM + New Hacks",
+   "newEpisodes": []
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-10-26T14:36:54.000Z",
@@ -100,14 +91,28 @@
   }
  },
  "notes": {
-  "scan_status": "2026-10-31 掃描（02:03–02:05 UTC）：窗口 10-30 02:12Z → 10-31 02:03Z 內只有 1 集新 podcast（Dwarkesh《Robert Caro》，10-30 16:56Z，53 分）＋ 1 篇 AINews 通訊（非播客）。No Priors 最新 10-29、CogRev 10-28、MLST 10-26，均無新集。中文五台全部無新集（張小珺 10-21、十字路口 10-25、硅谷101 10-28、42章經 10-24、屠龍之術 10-26）。",
-  "report_date": "2026-10-31",
-  "deep_content_fetched": "①Dwarkesh：Substack feed content:encoded 內含完整逐字稿 41,471 字元，11 章、53 分 30 秒，全文通讀後萃取。②Latent Space AINews：43,591 字元，讀首 20,000 字元（新聞段完整）。",
-  "failures": "①web_search 連續第三日失敗（ENOENT: /tmp/openclaw-plugin-build-*/node_modules/@openclaw/brave-plugin/package.json），中文新集判斷完全依賴 RSS。②Dwarkesh YouTube channel RSS（UCXl4i9dYBrFOabk0xGmbkRA）404，持續多日；改用 Substack feed。③No Priors 官網 DNS 問題持續，Megaphone feed 正常。",
-  "jev_prefilter": "兩條候選跑 jev.py triage --profile news：Caro worth 0.2（drop 建議，other，primary_source 0.65）、AINews 0.98（business，primary_source 0.09）。**推翻 Caro 嘅 drop**：news profile 獎勵可核實數字＋商業相關，人文長訪談天然唔匹配；primary_source 0.65 顯示己識別為一手。按 Jev hint「worth 只作相對排序、勿單閾值硬砍」保留。",
-  "notable_for_james": "①集最硬一句：Behind his persuasion was the power — 詹森的說服力底層是槓桿（委員會席位、法案），不是口才。②Moses 權力來自五個交錯任期職位（州電力局、三區橋樑、公園、長島公園、Jones Beach），無法一次過炒 —— 對應 AI lab 的多層鎖定。③1962 Rockefeller 一句 I regretfully accept 就令幾十年 bluff 失效：權力可在一天內蒸發。④Caro 對『美國建唔到嘢』的反駁：1920 年代講法一模一樣，然後 Moses 出現全部障礙消失；但他自己補『I'm not sure there is a good spot』。⑤Moses 由理想主義者硬化：Cross Bronx Expressway 開通即全世界最長塞車，數萬人遷拆零安置；反對者 Henry Epstein 被公開婚外情毀掉。⑥Caro 方法論：開書前把書壓成一句話；『找文件係小事，讀文件才係大事』——直接反駁 2026 年檢索/長 context 敘事。⑦原稿 105 萬字刪 35 萬字（Gottlieb：我刪咗我讀過最好嘅一部分）；700 場訪談只計 Power Broker；檔案寧願少收錢都要放紐約方便查閱。⑧越戰升級原因 Caro 五十年後仍答唔到，第五卷未出。",
-  "cross_episode_theme": "三條線都係『誰能穿過自己設下嘅關卡』：Moses 穿過 1920 年代產權障礙、OpenAI 模型穿過 sandbox（30 分鐘內警報）、GLM 5.3 穿過 patch gap（每版本 $1,000、最快 12 小時）。關卡設計全部預設對手係人；對手唔再係人，關卡要重設。",
+  "scan_status": "2026-11-01 掃描（02:04 UTC）：窗口 10-31 02:05Z → 11-01 02:04Z 內有 2 集新 podcast（Latent Space《Agents Prompt People》10-31 16:05Z；CogRev AI:AM 10-31 21:45Z）＋ 1 期 AINews（10-31 05:00Z）。中文五台全部無新集。Dwarkesh 最新 10-30（已掃）、No Priors 10-29、MLST 10-26。",
+  "report_date": "2026-11-01",
+  "feed_fix": "改用 iTunes Search API（itunes.apple.com/search?entity=podcast）反查 feedUrl，首次成功取得全部 5 個中文台原生 RSS，並還原 No Priors 正確 feed。已寫入 state.resolvedFeeds。",
+  "feed_confusion_fixed": "feeds.megaphone.fm/RINTP3108857801 係 Cognitive Revolution，唔係 No Priors；舊 state 標註錯誤，已分開。No Priors 正確 feed 為 feeds.megaphone.fm/nopriors。",
+  "deep_content_fetched": "①Arca：官方 VTT 逐字稿（rss.beehiiv.com，27,567 字元）全文通讀。②CogRev AI:AM：官網 113,360 字元（AI show notes + 完整逐字稿）。③AINews：44,263 字元全文讀完。",
+  "failures": "①Dwarkesh YouTube channel RSS（UCXl4i9dYBrFOabk0xGmbkRA）404，持續多日；Substack feed 正常。②No Priors YouTube channel RSS（UCSI7h9hydQ40K5MJHnCrQvw）404。③nopriors.substack.com/feed 404。④硅谷101 E257 Vitalik 仍無逐字稿（fireside 無 transcript 端點）。",
+  "jev_prefilter": "三條候選跑 jev.py triage --profile news：Arca 1.71（agent-infra，primary 0.61）、AINews 0.97（business，primary 0.08）、CogRev 0.97（llm-model，primary 0.21）。無 drop；後兩者 primary_source 低，報告內已標明第三方/未證實。",
+  "notable_for_james": "①Arca：agent 任務 10 日但係 stop-start；安全規則全部確定性、唔靠 prompt；sandbox 把 agent 代碼譯成嚴格格式後丟棄原碼再執行。②Arena 生產 trace：20+ 輪對話過半有 misalignment，OpenAI 三項信號全部第一、壓過 Anthropic，Tencent HY4 13.2%。③Mistral Le Chonk 用 3,800 GPU、1e25 FLOPs，中途出事靠 Patchstral 救返；Llama 3（2024-07）算力係佢 3.8 倍。④ServiceNow：東南亞兩週 3–4,000 次成功 AI 攻擊，已達 competent APT 規模，用後量子密碼做勒索；Freeman 認為能力收唔返。⑤Google 承認 AI Mode 變現率低，單日 −15% / 5,000 億美元，2004 IPO 以來最差。⑥預訓練污染 0.1% 數據可在 CLI agent 植後門，92% 觸發率，且存活於 SFT/DPO/RL。",
+  "cross_episode_theme": "三集都係「benchmark 與現實現落差」：Arena 用生產 trace 質疑私有 benchmark、Arca 用內部 benchmark 否決對外排名第一的模型、Mistral 用 1e25 打出「西方最強開源」但算力仍不及兩年前 Llama 3。共同結論：harness 同真實數據，比排行榜更值錢。",
   "index_html": "未更新 index.html（該落地頁自 2026-07-19 起停更，維持既有慣例）。",
-  "deep_dive_link": "本輪未新增 deep-dive；報告本體已含完整萃取（36.3KB）。"
+  "deep_dive_link": "本輪未新增 deep-dive；報告本體已含完整萃取（50KB）。"
+ },
+ "resolvedFeeds": {
+  "zhang-xiaojun": "https://feed.xyzfm.space/dk4yh3pkpjp3",
+  "crossing": "https://feed.xyzfm.space/68fyjknth9hj",
+  "silicon-valley-101": "https://feeds.fireside.fm/sv101/rss",
+  "42-chapters": "https://feed.xyzfm.space/evgg6xle9rdc",
+  "slaying-dragon": "https://feed.xyzfm.space/834hyx3v9k74",
+  "no-priors": "https://feeds.megaphone.fm/nopriors",
+  "ml-street-talk": "https://anchor.fm/s/1e4a0eac/podcast/rss",
+  "cognitive-revolution": "https://feeds.megaphone.fm/RINTP3108857801",
+  "latent-space": "https://www.latent.space/feed",
+  "dwarkesh": "https://www.dwarkesh.com/feed"
  }
 }
