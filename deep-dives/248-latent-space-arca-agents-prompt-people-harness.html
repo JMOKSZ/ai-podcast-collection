@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 唔係人 prompt agent，係 agent prompt 人——Arca 怎樣用一個 harness 運行一間受監管金融機構</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #888; line-height: 1.7; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">Latent Space · 2026-10-31 · 26 分鐘</div>
+  <h1>唔係人 prompt agent，係 agent prompt 人<br>——Arca 怎樣用一個 harness 運行一間受監管金融機構</h1>
+  <div class="meta">
+    <div>〈Agents Prompt People: Using Agents for Long-Horizon Financial Work〉</div>
+    <div>主持：Richard MacManus<span>·</span>嘉賓：Aman Singh（Arca AI 平台主管）<span>·</span>26 分鐘</div>
+    <div>錄音：AI Engineer New York 2026 現場<span>·</span>來源：官方文章＋節目逐字稿</div>
+  </div>
+</header>
+
+<p>呢集只有 26 分鐘，但係佢講嘅嘢比好多 90 分鐘嘅訪談更接近「AI 原生公司到底長什麼樣」這個問題的核心。因為 Arca 唔係一間「用 AI 提升效率」的財富管理公司，佢係一間<strong>用 agent 運行後台、再請人類顧問負責簽名</strong>的公司——而呢個次序調轉，會令幾乎所有 SaaS 的設計假設失效。</p>
+
+<p>Aman Singh 係 Arca 的 AI 平台主管（lead AI Engineer），負責整條 agent harness。Arca 做財務規劃、稅務、保險、遺產規劃，客戶由「剛賣咗公司嘅創業者」到「想提早退休的大型科技高管」到「買第一層樓嘅小家庭」。最近一輪融資由 General Catalyst 領投，Index Ventures 與 Venrock 參與。</p>
+
+<div class="data-point">
+<span>注意</span>主持開場講 Arca「最近融了 6,400 萬美元」，而 Latent Space 官方文字稿寫 <strong>4,850 萬美元</strong>（General Catalyst 領投）。錄音與稿件不一致。本文以官方稿為準，但呢個差異本身就係一個提醒：現場 podcast 的數字係即時講，唔一定對過數——連主持都會講錯自己嘉賓公司的融資額。
+</div>
+
+<div class="section-title">一、一句話把 SaaS 的方向倒轉</div>
+
+<p>全集的主軸，係 Singh 在 AI Engineer New York 演講上講的一句：</p>
+
+<blockquote class="strong">
+「Agents prompt people more than people prompt agents.」
+<span class="attribution">— Aman Singh，Arca</span>
+</blockquote>
+
+<p>呢句唔係文字遊戲。傳統「SaaS + AI 工具」的模式係：人打開一個介面，打字叫 agent 做嘢，agent 做完，人再檢查。整個產品設計圍繞「輸入框」和「按鈕」展開。Arca 反過來——agent 24/7 在背景運行，佢判斷幾時需要拉邊個人入嚟做決定，然後<strong>向人發出任務</strong>。人收到的唔係「幫我寫封信」，而係「呢個客戶有一張十萬美元稅單，你要在兩日內決定賣邊批資產，因為以下三個約束……」</p>
+
+<p>Singh 的描述係：客戶根本唔會直接接觸 AI，佢哋只感受到「一個以前呢個行業做唔到嘅服務水平」，而交付嘅仍然係有同理心的人類顧問。所以 AI 唔係取代顧問，係取代<strong>顧問周圍所有嘅工作</strong>。</p>
+
+<p>這裡有一個容易被忽略的推論：如果 agent 的工作是「向人發任務」，那麼產品最重要的介面唔係 chat，而係<strong>任務佇列</strong>——每一項要清楚寫明：發生咩事、為什麼要我、deadline、如果我唔做會怎樣、做完之後系統會接住邊一步。這也解釋了為何 Arca 要建自己的記憶系統，而不是把狀態塞進對話歷史。</p>
+
+<div class="section-title">二、長 horizon ≠ 長 running：十日任務其實係接力賽</div>
+
+<p>「長期任務」這個詞很容易被誤解成「agent 連續跑十日」。Singh 明確糾正：Arca 最長的 agent 任務可以橫跨<strong>十日</strong>（典型例子：客戶收到十萬美元稅單，要決定賣邊啲資產、幾時賣、賣幾多），但佢唔係連續運行，而係「stop-start」。</p>
+
+<blockquote class="strong">
+「It's very stop-start, there's many actors in between, many decision points, many handoffs.」
+<span class="attribution">— Aman Singh，講十日級任務的真正形態</span>
+</blockquote>
+
+<p>呢個區分非常重要，因為它把技術難題由「推理」搬到「狀態管理」。一個連續跑十日的 agent，難點在於唔斷線、唔偏離目標、唔爆 context；一個接力十日的流程，難點在於——<strong>邊個知道而家跑到邊一步？</strong>電話錄音入嚟、客戶臨時改主意、顧問放大假、經紀行改規則，每一個事件都要掛上正確的 client 與正確的個案，而唔係開一個新對話由零開始。</p>
+
+<p>所以 Arca 建了一套 per-client 的記憶系統，回答五個問題：</p>
+
+<ul>
+  <li><strong>而家發生咩事？</strong>（當前狀態，唔係歷史）</li>
+  <li><strong>跟住要追咩？</strong>（下一個里程碑與負責人）</li>
+  <li><strong>兩日內要即刻做咩？</strong>（時間敏感項）</li>
+  <li><strong>長期要盯咩？</strong>（例如三年後的遺產稅安排）</li>
+  <li><strong>邊個人負責邊個動作？</strong>（人與 agent 的分工）</li>
+</ul>
+
+<p>Singh 的原話係：「So we have this persistence for every client. What has happened so far? What are we tracking for next? What needs to happen immediately in the next couple of days [and] what are we tracking for the long term? Which individual is responsible for which action? All of this is being tracked by our memory systems that our agents contribute to.」</p>
+
+<div class="highlight-box">
+<strong>我的讀法：</strong>這五條其實係一個「狀態機的 schema」，唔係「記憶」。分別在於——記憶係檢索式的（想起什麼），狀態機係承諾式的（欠什麼）。財務工作出錯，通常唔係因為忘記了某件事，而係因為某個 handoff 冇人接。所以真正的護城河唔係 vector DB，而係「邊個 handoff 未完成」這件事被系統記住。
+</div>
+
+<p>仲有一層：記憶有一個背景「做夢」機制。除咗即時狀態，每日有一個 process 反思「呢個客戶的世界而家係點」，更新記憶。效果係：一個因為電話錄音而觸發的全新 agent session，可以即刻知道「我哋而家正在處理一張大稅單」，並把新信號掛上去，而唔係由零開始問「請問你係邊位」。</p>
+
+<div class="section-title">三、模型商品化之後，router 才是資產</div>
+
+<p>Arca 用過 Gemini、OpenAI、Anthropic 三代模型，現時以 Claude 為主。但 Singh 講得好清楚：決定用邊個模型，唔係看公開排行榜，而係看<strong>自家 harness 的內部 benchmark</strong>。</p>
+
+<p>他點名一個反例：某個叫「Luna」的模型對外 benchmark 好靚，但「對我們嚟講完全唔 work，太慢，而且好貴」。呢句係全集最實用的一句——因為它同時否定了兩種常見做法：追排行榜，以及用單一模型跑所有任務。</p>
+
+<p>Arca 的做法係把模型選擇抽象化：顧問完全唔知道背後用邊個模型，由 harness 按任務複雜度分層自動路由——稅務分析用最重的一層（Opus／Sonnet／重型 GPT 級），背景活動用輕模型。這帶來三個好處：</p>
+
+<ol>
+  <li><strong>成本可控</strong>：唔需要為「檢查日曆」付 frontier 模型的價錢。</li>
+  <li><strong>可換供應商</strong>：新模型出來，只改路由規則，唔改產品。</li>
+  <li><strong>可量度</strong>：內部 benchmark 用真實任務，唔用考試題。</li>
+</ol>
+
+<blockquote>
+「Owning your intelligence… gives you the ability to impact the business.」
+<span class="attribution">— Aman Singh，講為何不用模型商的 managed agents</span>
+</blockquote>
+
+<p>他明確講唔會依賴模型商嘅 managed agent harness。理由唔係「唔信任大廠」，而係<strong>議價能力</strong>：如果把「智能」外判，就失去控制業務形狀的能力。對 Anthropic 推出金融服務方案，他的回應好清楚——呢件事對行業係 validation，但「一間有 AI 工具嘅服務公司」同「一間為 AI 原生而建的公司」係兩件完全不同的事：前者要人 prompt，後者係 agent 主動 prompt 人。</p>
+
+<div class="data-point">
+<span>對照</span>同一週 No Priors 的 Serval（Jake Stauch）賣的正是「買回來的企業級 coding agent harness」；Arca 則是「唔買、自己建」的反面案例。兩邊都同意 harness 係核心，分歧只在自建抑或外購——而這個分歧的判準，其實係「你的業務形狀有幾特殊」。財富管理的合規流程特殊到唔可以標準化，所以自建；一般企業的 IT 工單流程相對標準，所以可以買。
+</div>
+
+<div class="section-title">四、安全限制必須是確定性的，唔可以係 prompt</div>
+
+<p>這是全集技術上最值得偷的一節。Singh 的立場極端清楚：</p>
+
+<blockquote class="strong">
+「All of our safety restrictions are fully deterministic, and they take the decision making off the agent's hands.」
+<span class="attribution">— Aman Singh</span>
+</blockquote>
+
+<p>什麼意思？即係規則寫死在代碼裡，agent 冇得說服自己繞過。凡是<strong>動錢、變現資產、直接聯絡客戶</strong>，一律人手。Agent 只能做分析、提出方案、準備材料。</p>
+
+<p>呢個設計的關鍵唔係「有 guardrail」，而係 guardrail 的位置：唔係在 prompt 裡寫「你不可以執行交易」，而係 agent 根本<strong>冇這個工具</strong>，或者工具層要求一個只有人能提供的簽名。Prompt 係可以被人說服、被 injection 覆寫、被長上下文沖淡的；權限邊界唔會。</p>
+
+<h3 class="sub-title">Sandbox 的真正用法：唔係隔離 agent，係隔離「它寫的代碼」</h3>
+
+<p>呢一點係全集最反直覺的地方。一般講 sandbox，默認係「把 agent 關在籠裡，就算它被攻破都出唔到去」。Arca 的設計唔同：</p>
+
+<blockquote>
+「We've built systems to make it safe for code inside of that sandbox to access our data. So we have this thing which translates the code it [the agent] wrote into a strict format that we expect, throw away the code, and install guardrails on that format before it reaches your back end.」
+<span class="attribution">— Aman Singh</span>
+</blockquote>
+
+<p>拆開嚟睇，係一條五步管道：</p>
+
+<ol>
+  <li>Agent 寫代碼，用嚟查數據（aggregate、munge、整理）。</li>
+  <li>系統把代碼「翻譯成一個我們預期的嚴格格式」——本質上係編譯成一個受限 DSL，而唔係容許任意 Python/SQL。</li>
+  <li><strong>丟棄原始代碼。</strong></li>
+  <li>在那個受限格式上安裝 guardrail（可查什麼表、可返回什麼欄位、可聚合到什麼粒度）。</li>
+  <li>才接觸後端。</li>
+</ol>
+
+<p>結果係：即使 prompt injection 成功說服 agent 寫出一段惡意查詢，那段查詢都要先過「翻譯」這一關；而翻譯器只接受它預期的結構，所以攻擊面由「任意代碼執行」縮窄成「受限 DSL 的表達式」。呢個係典型的 capability narrowing——<strong>唔係審查輸出，而係限制輸入的表達能力</strong>。</p>
+
+<div class="highlight-box">
+<strong>為何重要：</strong>大部分 agent 安全方案係「跑完再檢查」（detect after the fact），但金融數據一被讀取就已經洩漏，檢查得再快都補唔返。先編譯、再執行，等於把「檢查」由事後搬到事前，而且檢查的是結構而唔係語義——結構檢查可以做到 100% 確定，語義檢查永遠有漏。
+</div>
+
+<h3 class="sub-title">Artifact 驗證：PDF 出街前要過兩層</h3>
+
+<p>財務計劃以 PDF 形式產出。一生成就即刻跑兩層檢查：</p>
+
+<ul>
+  <li><strong>確定性檢查</strong>：有無把原始帳號寫入文件、有無違反格式與披露要求。</li>
+  <li><strong>小模型檢查</strong>（包括 Jev 這類 decision model）：有無「承諾回報」等不合規語句。</li>
+</ul>
+
+<p>兩層都過關才可發布。呢個組合有講究：確定性的部分交俾代碼（零假陽性、零疲勞），需要判斷的部分交俾小模型（便宜、快、可以針對單一類別調到很高精度）。</p>
+
+<h3 class="sub-title">Decision model 當事實守門員</h3>
+
+<p>Singh 提到一個所有做 AI 產品的人都會撞到的問題：模型對財務知識「非常有自信」——會直接用 2025 年的稅階做 2026 年的分析，講得斬釘截鐵。Arca 的解法係用 decision model 在「即將作出財務建議」的那一瞬間偵測，然後強制模型去查內部知識庫（已驗證、今日仍為真的事實）或者上網搜。</p>
+
+<p>注意這裡的架構含義：<strong>decision model 唔係用嚟生成答案，係用嚟決定「而家可唔可以生成答案」</strong>。這是一個 guard，唔是一個 generator。呢個分工在 Arca 的系統裡反覆出現——小模型做守門、大模型做推理、人手做簽名。</p>
+
+<h3 class="sub-title">Auditability by default</h3>
+
+<p>每一個動作都產生 change log：改咗乜、邊個改、由系統哪一部分改、幾時。而且唔止 agent，人手在 UI 的改動一樣記錄。</p>
+
+<p>好處係雙向的。對合規：有完整審計軌跡。對 agent：它讀同一條 log，就知道「啱啱有人改過呢個客戶的風險偏好」，於是唔會用舊假設繼續做。呢個係一個好少人講的設計模式——<strong>audit log 同時充當 agent 的短期記憶</strong>，唔需要另建一條同步通道。</p>
+
+<div class="section-title">五、回饋迴路：每一次人手修改都要填「why」</div>
+
+<p>Arca 最值得抄的一招可能係這個：每一次員工修改或取消 agent 的輸出，都<strong>必須填「why」</strong>。呢個 why 自動變成 eval。每晚由一個 meta-agent 讀取真實世界 trace，提出 harness 修改建議。</p>
+
+<blockquote>
+「I've noticed that agents will make really nasty prompt changes if you leave them to it. Every little fix becomes the whole prompt.」
+<span class="attribution">— Aman Singh</span>
+</blockquote>
+
+<p>呢句係全集最誠實的一句。它同時承認了兩件事：第一，自我改進的迴路已經存在；第二，佢目前只去到「提建議」層級，未到「自治」——因為 agent 改 prompt 的品味太差，每個小修補都變成整個 prompt 重寫。</p>
+
+<p>這裡有一個很深的洞察：<strong>「自我改進」的瓶頸唔在於能不能改，而在於改完之後如何知道改得更好。</strong>Arca 的答案是「why 變成 eval」——把人類的糾正變成可重複的測試，於是 meta-agent 的建議有客觀分數可以參考。冇這一步，自我改進只會變成 prompt 通脹。</p>
+
+<p>另一個相關設計係知識庫。左邊欄有一個「Knowledge」tab，放滿 agent 用的營運上下文，由公司內部專家直接編輯；agent 引用知識時會標註來源，錯誤會回流成修正。呢個等於把「公司怎麼做事」由人的腦搬到一個可被引用、可被審計、可被修正的地方——而呢個地方同時係 agent 的 context 與人類的 SOP。</p>
+
+<div class="section-title">六、客戶案例：1,500 美元的顧問，同一個唔係 fiduciary 的問題</div>
+
+<p>Singh 講了一個案例：一位準客戶原本有位顧問收 1,500 美元。Arca 的 agent 讀完文件後發現兩件事——有未披露的費用，而且該顧問<strong>唔係 fiduciary</strong>（無法律義務以客戶利益為先）。</p>
+
+<p>呢個案例的意義唔在於「AI 找到騙子」，而在於它展示了 agent 真正擅長的事：<strong>逐字讀完所有文件，然後交叉比對條款與法規要求</strong>。人類顧問唔會唔識，而係唔會為一份 40 頁文件花三個鐘逐句對。呢個就係 Singh 講的「AI 唔係取代顧問，係取代顧問周圍所有嘅工作」的具體形態。</p>
+
+<blockquote class="strong">
+「Doing this actually makes our compliance better than if humans were doing it, because AI is tireless at finding even the smallest mention of a non-compliant piece of writing.」
+<span class="attribution">— Aman Singh</span>
+</blockquote>
+
+<p>呢句係全集最反直覺、也最值得監管行業留意的一句。合規失敗的主因，通常唔係有人故意違規，而係人類疲倦、抽樣、趕時間。一個逐字逐句掃的系統，在「唔漏掉」這個維度上，先天贏人類。</p>
+
+<div class="section-title">七、爭議與未答的問題</div>
+
+<h3 class="sub-title">1. 客戶知道後台係 agent，信任會唔會變？</h3>
+<p>Singh 講客戶唔會接觸 AI、只感受服務水平。但主持追問的其實係另一件事：當客戶知道後台係 agent，信任會唔會變？佢冇正面答。</p>
+<p>呢個唔係小問題。財富管理的核心產品係信任，而信任的一個重要成分係「有人為我負責」。如果客戶知道分析係 agent 做、簽名係人做，咁「簽名的人」還有幾多實質把關？如果答案係「他把關得很好」，咁 agent 的角色就被低估；如果答案係「他主要係蓋章」，咁信任就轉移到一個唔可見的系統上。</p>
+
+<h3 class="sub-title">2. Agent 本體唔在 sandbox 內</h3>
+<p>Singh 明講 agent 唔在 sandbox 裡面，sandbox 只係 harness 的一個組件，用嚟卸載計算。靠的是工具層的確定性限制 + 寫入驗證 + 出口檢查。</p>
+<p>呢個係 defense-in-depth，但唔係「agent 被攻破都無所謂」的架構。對於處理客戶資產的系統，這個取捨值得記住：<strong>你保護的是數據與動作，唔係 agent 本身。</strong>只要 agent 的所有能力都經工具層，agent 被操控都只能做出工具層允許的事——但如果某個工具本身的權限設計有漏洞，就冇第二道牆。</p>
+
+<h3 class="sub-title">3. Meta-agent 只到建議層</h3>
+<p>如前述，Singh 自己承認 agent 改 prompt 改得差，所以仍然要人手審批。呢個等於承認「自我改進」目前只去到「提建議」層級。</p>
+
+<h3 class="sub-title">4. 26 分鐘的深度限制</h3>
+<p>呢集係 AIE 現場的短訪，好多技術細節只有一句帶過（例如「翻譯成嚴格格式」具體是什麼格式、guardrail 怎樣表達、內部 benchmark 有幾多題）。呢啲係最有價值的部分，但也是最少講的部分。所以本文的技術解讀有相當部分是根據 Singh 的描述做的合理重建，唔係他逐字講的架構圖。</p>
+
+<div class="section-title">八、我的萃取：這一集真正教了什麼</div>
+
+<p>如果把呢集濃縮成三條可以拿走的原則：</p>
+
+<p><strong>第一，把「權限」同「能力」分開設計。</strong>大部分 agent 產品的做法係「給 agent 一個万能工具箱，然後在 prompt 裡叫它小心」。Arca 的做法係「給它一個窄工具箱，窄到就算它想亂來都做唔到」。前者靠模型自律，後者靠系統結構。而模型越強，前者越危險——因為越強的模型越擅長說服自己（同說服你）某個例外是合理的。</p>
+
+<p><strong>第二，先編譯、再執行，係處理不可逆動作的唯一可靠方法。</strong>讀取可以補救（至少可以知道洩漏了什麼），寫入與交易唔可以。所以對於不可逆的動作，檢查必須在動作之前，而且檢查的對象必須是「結構化的意圖」而唔係「自然語言的輸出」。</p>
+
+<p><strong>第三，AI 原生公司與用 AI 的公司的差距，在 harness 而唔在模型。</strong>全行都用同一批 frontier model，但 Arca 的差異化來自：自家 benchmark、自家路由、自家記憶、自家 sandbox 編譯層、自家 audit log。模型會換（Gemini → OpenAI → Anthropic → 下一個），harness 唔會。呢個同 SemiAnalysis 一路講的「lab 之外的價值在 harness」完全對得上。</p>
+
+<div class="highlight-box">
+<strong>延伸一則：</strong>Anthropic 推出金融服務方案，對 Arca 這類公司其實係一個雙面訊號。正面：市場被教育，客戶知道 agent 可以做這些事。負面：模型商正在把你的 harness 商品化——它賣的正是你最核心的資產。Singh 的回應「we are not a SaaS company, we are the firm ourselves」其實係一個定位防守：如果你賣的是「一間更好的公司」而唔係「一套軟件」，模型商就唔可以直接取代你，因為它冇牌照、冇合規責任、冇客戶關係。
+</div>
+
+<p>最後一個觀察，關於「agents prompt people」這句話的長期含義。如果 agent 真係成為發任務的一方，咁組織圖會變成點？Singh 冇講，但同週 Cognitive Revolution 的 Union 給了一個極端的答案：CMO 下面全部係 AI sub-employee，人只負責提出新方向。兩集放在一起看，會發現同一件事的兩面——<strong>當 agent 開始派工作給人，人的價值就由「完成任務」轉移到「判斷哪個任務值得做」。</strong>而 Arca 的版本溫和得多：人仍然簽名、仍然負責、仍然是最終決策者，但佢哋的時間由「做」轉移到「批」。</p>
+
+<p>這條線會怎麼走，取決於一個很實際的問題：<strong>當「批」的比例高到某個點，簽名還算不算把關？</strong>如果一個顧問一日批 200 份 agent 產出的計劃，他其實已經變成人肉 rate limiter。Arca 目前的設計（每一次修改都要填 why、why 變成 eval）正是防止這件事發生的機制——因為它強迫人手真正讀、真正判斷、真正留下理由。呢個機制能撐到幾時，係下一個值得追的問題。</p>
+
+<hr>
+
+<footer>
+  <p><strong>來源：</strong>Latent Space，〈Agents Prompt People: Using Agents for Long-Horizon Financial Work〉，2026-10-31 16:05 UTC 發布，26 分鐘，主持 Richard MacManus，嘉賓 Aman Singh（Arca），於 AI Engineer New York 2026 現場錄音。文字依據：Latent Space 官方文章（latent.space/p/arca）與節目逐字稿；部分技術細節為根據嘉賓描述的合理重建，已於文中標明。</p>
+  <p><strong>生成：</strong>2026-11-01 · AI Podcast Deep Dives #248</p>
+  <p>← <a href="../index.html" style="color:#888;">返回播客日報</a></p>
+</footer>
+
+</div>
+</body>
+</html>
