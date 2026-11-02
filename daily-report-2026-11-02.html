@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客日報 · 2026-11-02</title>
+<style>
+  :root{
+    --bg:#faf8f5;
+    --ink:#1f1d1a;
+    --ink-soft:#4a463f;
+    --ink-faint:#7d776d;
+    --rule:#e2dcd1;
+    --accent:#8a5a2b;
+    --accent-soft:#f2ece2;
+    --quote:#6b4a24;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Source Han Serif SC","Songti SC",serif;
+    font-size:17px;line-height:1.85;
+    text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:64px 26px 90px}
+  header.top{border-bottom:1px solid var(--rule);padding-bottom:26px;margin-bottom:44px}
+  .kicker{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px}
+  h1{font-size:34px;line-height:1.3;margin:0 0 14px;font-weight:600;letter-spacing:-.01em}
+  .meta{font-size:14px;color:var(--ink-faint);line-height:1.9}
+  .meta span{white-space:nowrap}
+  .meta em{font-style:normal;color:var(--ink-soft)}
+  .lede{margin:34px 0 0;font-size:16.5px;color:var(--ink-soft)}
+  .lede p{margin:0 0 10px}
+  h2{
+    font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:600;
+    margin:64px 0 26px;padding-bottom:10px;border-bottom:1px solid var(--rule);
+  }
+  h3{font-size:24px;line-height:1.45;margin:0 0 6px;font-weight:600}
+  .host{font-size:14px;color:var(--ink-faint);margin:0 0 4px}
+  .ep{margin:0 0 44px;padding-top:8px}
+  .ep h4{font-size:21px;line-height:1.55;margin:18px 0 10px;font-weight:600}
+  .ep .when{font-size:13.5px;color:var(--ink-faint);margin:0 0 26px;font-variant-numeric:tabular-nums}
+  h5{
+    font-size:15px;letter-spacing:.04em;margin:34px 0 12px;
+    font-weight:600;color:var(--accent);
+  }
+  p{margin:0 0 15px}
+  ul{margin:0 0 16px;padding-left:1.15em}
+  li{margin:0 0 12px}
+  li::marker{color:var(--accent)}
+  .point{margin:0 0 18px;padding-left:16px;border-left:2px solid var(--accent-soft)}
+  .point b{font-weight:600}
+  .point .t{display:block;margin-bottom:4px}
+  blockquote{
+    margin:22px 0;padding:18px 22px;
+    background:#f5f0e7;border-left:3px solid #c9b28e;
+    font-size:17.5px;line-height:1.8;color:var(--quote);
+  }
+  blockquote p{margin:0}
+  blockquote cite{display:block;margin-top:8px;font-size:13px;color:var(--ink-faint);font-style:normal}
+  .data{list-style:none;padding:0;margin:0 0 18px}
+  .data li{
+    margin:0;padding:10px 0;border-bottom:1px dotted var(--rule);
+    display:flex;gap:16px;align-items:baseline;
+  }
+  .data li:last-child{border-bottom:none}
+  .data .k{flex:0 0 116px;color:var(--ink-faint);font-size:14px}
+  .data .v{flex:1;font-variant-numeric:tabular-nums}
+  .note{
+    font-size:14.5px;color:var(--ink-soft);background:var(--accent-soft);
+    padding:14px 18px;margin:22px 0;border-radius:2px;
+  }
+  .note b{color:var(--ink)}
+  .empty{color:var(--ink-soft);font-size:16px;padding:6px 0 0}
+  .divider{height:1px;background:var(--rule);margin:40px 0}
+  footer{
+    margin-top:70px;padding-top:24px;border-top:1px solid var(--rule);
+    font-size:13.5px;color:var(--ink-faint);line-height:1.9;
+  }
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #d8c3a4}
+  a:hover{border-bottom-color:var(--accent)}
+  .toc{font-size:14.5px;color:var(--ink-soft);background:#f5f1e9;padding:18px 22px;margin:0 0 10px}
+  .toc ol{margin:0;padding-left:1.4em}
+  .toc li{margin:5px 0}
+  @media (max-width:600px){
+    .wrap{padding:40px 20px 70px}
+    h1{font-size:27px}
+    h3{font-size:21px}
+    .ep h4{font-size:19px}
+    body{font-size:16.5px}
+    .data li{display:block}
+    .data .k{display:block;margin-bottom:2px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="kicker">AI Podcast Daily · 深度萃取</div>
+  <h1>十個 Aha Moments：RSI 的雞皮疙瘩、字節的視頻霸權，與「粗糙」的反叛</h1>
+  <div class="meta">
+    <span>報告日期 2026-11-02</span> ·
+    <span>生成時間 <em>2026-11-02 02:13 UTC</em></span><br>
+    掃描窗口 2026-11-01 02:04 UTC → 2026-11-02 02:13 UTC<br>
+    來源 10 條 RSS feed（5 中 5 英）＋ 1 集逐字稿全文（本機轉寫）
+  </div>
+  <div class="lede">
+    <p>今日只有一集新節目，但這一集的信息密度足以撐起整份報告：莊明浩在《十字路口》年終復盤裡，用十個切片把 2026 年的 AI 講成了一條主線——範式收斂、算力與能源的硬牆、RSI 敘事的自我複製，以及當「奇觀」通脹到令人 PTSD 之後，人反而往回找粗糙。</p>
+    <p>本報告的逐字稿來源是節目音頻（53 分 20 秒），以語音轉寫取得，時間戳按音頻實際位置標註。涉及型號、日期、數字的口述內容有幾處前後不一致，文中已標明。</p>
+  </div>
+</header>
+
+<h2>中文播客</h2>
+
+<div class="toc">
+  <b>本期十個切片</b>
+  <ol>
+    <li>OpenClaw：刷屏之後留下了什麼</li>
+    <li>Seedance 2.0：字節贏的只是模型嗎</li>
+    <li>Sora 2 關閉：一鯨落，誰在生</li>
+    <li>RSI：Anthropic 那篇讓人毛骨悚然的文章</li>
+    <li>文藝復興：老硬件廠商為何重回聚光燈</li>
+    <li>Codex 與 ChatGPT 合併：版本之子換人</li>
+    <li>Qwen 小模型：能力下放端側，舊機會能否重做</li>
+    <li>App Store 收入首降：軟件護城河還守得住嗎</li>
+    <li>模型「斬殺線」：競爭開始算另一筆賬</li>
+    <li>Opus 5.5：毀滅吧，以及一點粗糙的人味</li>
+  </ol>
+</div>
+
+<article class="ep">
+  <h3>十字路口 Crossing</h3>
+  <p class="host">主播 楊遠騁（Koji）· 真格基金 Venture Partner、AI Hacker House 發起人</p>
+
+  <h4>[年終復盤①] AI 帶給我的 10 個 Aha Moments｜莊明浩：RSI 來了、AI 的奇觀與粗糙、巨頭夾縫中的創業機會</h4>
+  <p class="when">發布 2026-11-01 16:00 UTC（北京時間 11-02 00:00）· 時長 53:20 · 中文訪談</p>
+
+  <h5>主題</h5>
+  <p>《十字路口》今年不做大而全的新聞盤點——「你要追求全面，去問 AI 就可以了」——改為請一線的創業者、研究員、投資人各講十個真正觸動自己的 AI 瞬間。第一期嘉賓是《屠龍之術》主播莊明浩，一個每季度用幾十頁 PPT 覆盤行業的投資人。十個瞬間按時間排，從春節前後的 OpenClaw 一直排到十月的微信小遊戲，最後落在一個略帶反諷的結論：AI 天天造奇觀，人卻越來越想要一點粗糙。</p>
+
+  <h5>嘉賓背景</h5>
+  <p>莊明浩，風險投資從業者，《屠龍之術》主理人，長期以季度演講與 PPT 形式追蹤 AI 產業。他的優勢不是實驗室內部信息，而是把產品、資本、分發、內容幾條線拼在一起的觀察位置——這也決定了他這一集的視角：幾乎不談模型架構，只談「什麼東西被收斂了、什麼錢流向了哪裡、什麼護城河正在失效」。</p>
+
+  <h5>核心論點</h5>
+
+  <div class="point">
+    <span class="t"><b>論點一：OpenClaw 的真正遺產不是產品，是「Harness 範式」的收斂。</b></span>
+    2025 年 12 月發布，真正在國內引爆是 2026 年春節前後（1 月底）。當時騰訊樓下排隊裝機、搶 Mac mini、花錢請人代裝。莊明浩認為，那一輪大家不是在看一個工具，而是在共同確認一套打包方案：給用戶什麼組件、要不要雲端、要不要一台常駐 24 小時的設備、通知走 App 還是網頁還是既有的 IM。這套問題在 OpenClaw 那個時間點「被認為已經收斂」。對照 Sam Altman 2024 年的 L1–L5 分級（L2 推理、L3 Agent），L3 在這一年真正兑現。今天 Q4 討論的 Personal Agent，幾乎所有推演——包括「我要一個 Agent 集群」——在當時都已經被想過，現在只是變成標配。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點二：對普通人，錯過那一輪沒差；對從業者，那是必須付的學費。</b></span>
+    他的讓步很坦率：普通人當時沒必要買一台 Mac mini 折騰。但反方向也成立——「你如果沒有在那個時間點體驗到那些難處，你就不太能知道為什麼今天新的這一波的代表產品會這麼做。」體驗層、操作層、組件層、協議層、更底層的技術層，每一層都有人去啃，像木桶一樣每塊板都拉上一點，才到今天這個樣子。他甚至預判當下的「Skills」也會變得不重要，因為模型能力會覆蓋掉；但走過那一段的人知道能力邊界在哪、實現方式是什麼，「用不用其實你就很自由了」。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點三：視頻模型這張椅子，字節已經坐穩，而且不是靠單點模型。</b></span>
+    語言模型一年到頭天天換版本號，視頻模型卻是階梯式的：Seedance 2.0 到 2.5 隔了半年多，中間「幾乎沒有做什麼事情」，依然是公認第一。原因不是對手不努力，而是結構性的：獨家數據的邊際效應在 2025 年底到 2026 年明顯放大；字節在資本、人員富餘度、戰略決心上「超過一到兩個身位」；更關鍵的是它有一個閉環——短劇與 AI 短劇的產能、全家桶分發、廣告消耗、用戶行為回收，全部回流到模型。「這真的就是 RSI，廣義上的 RSI，全流程全部吃掉，利潤也全部吃掉。」可靈的形狀類似，但圈子小好幾號；Luma、Pika 已經淡出主流視線。剩下的戰場是古典指標：4K、超長、動作一致性、人物穩定性。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點四：RSI 不是未來式，是 2026 年 6 月 4 日的一份公開文件。</b></span>
+    Anthropic 發布《When AI Builds Itself》。莊明浩講的不是技術細節，而是兩張圖：標題圖裡方塊複製、疊加、再變成更大的 logo；正文圖裡第一行是「人類＋電腦 → Anthropic」，第二行「人類＋電腦＋Anthropic → 新的 Anthropic」，一路加下去，「到最後，人類不見了」。他的判斷是：能在 6 月 4 日發出來，意味著內部至少已經跑了兩個季度以上，經歷測試、實施，才敢給公眾看。此後半年的敘事全部圍繞它展開：智譜唐杰說 GLM-6 完全基於 RSI；Ilya 的 TTT（實時訓練）是同一邏輯；田淵棟的新公司直接叫 Recursive（RSI 換個詞）；DeepMind 首席科學家、27 年 Google 老員工 Jeff Dean 離職創業，logo 是無限符號；Mira 講的也是 loop。一批最核心位置的人在同一時間做類似的事，代表方向已經收斂到「可操作」的狀態。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點五：RSI 的錢會往下游漏，這是 2026 下半年收入爆炸的真正原因。</b></span>
+    新 Lab 與大 Lab 都要建 RSI 體系：人、組織、訓練環境、數據、算力。這些支出變成下游的收入——後訓練、RL 環境搭建、數據、benchmark，中美皆然，從 Q2 開始「收入爆炸」。他甚至用「潘多拉魔盒」形容：你了解這個循環，就知道打開之後關不上。制約只剩能源與設備。而他引用的一個細節很刺人：Anthropic 監測到模型能把二十幾台電視盒子串起來給自己跑——幾十美元一台，中國更便宜。「你光把數據中心的電源看掉已經沒有用了。」
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點六：當頭部公司長到 1,000–2,000 億美元，巨頭的支出就是初創公司的收入。</b></span>
+    這是他對「巨頭夾縫」最實用的一段。Sora 2 關閉（節目稱 3 月 24 日）被解讀為戰略放棄：純視頻模型獨立狀態被 Seedance 衝擊得太厲害，OpenAI 在有限資源下做了取捨。但「大模型吃掉一切」與「垂直公司照樣長大」兩派都對，沒有人會 100% 統治誰。他列了幾個被默認判死刑卻活得很好的角落：Perplexity 收入與流量一直很好，大約兩三億美元收入、兩三百億美元估值；AI 瀏覽器戰場上 OpenAI 自己發過的產品「已經不重要了」；Character.AI 板塊在美國「名存實亡」，但中國、韓國、東南亞跑出四五家，估值十億到小幾十億美元、月流水千萬美元以上、ARR 過億。他的結論很樸素：不是所有人都要做千億公司，「做一家一兩百億美元公司其實也很強」；而「今天這個戰場裡 10 億美金的公司可能剛融完天使輪」。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點七：Codex 是「版本之子」，它定義了這一波產品的長相。</b></span>
+    7 月 9 日前後，OpenAI 做了一次「狸貓換太子」，把 Codex 併進 ChatGPT，使用曲線瞬間暴漲（口述由百萬級衝到約四千萬，單位不確定）。時間線值得記住：Claude Code 去年已發，Q1 被認為無敵；Codex 從 Q2 開始追；7 月 9 日之後口碑反轉。此後幾乎所有 Agent 產品——Kimi Code、Cursor、Windsurf、國內各種辦公 Agent——都長成同一個三欄結構：左邊項目、中間執行、右邊產物。最早其實是 Manus 先長的，但把這個形態變成行業共識的是 Codex。他的延伸判斷：產品一旦複雜到包袱太重，就一定會有一個更簡單的東西出來扎你一下——Claude 把 Design、Code、聊天往終端裡塞，同時又默認幫你找 Worker；Koji 自己的行為變化更直白：ChatGPT 變慢、要選聊天還是工作、要算額度與重置，於是他把簡單任務搬去了 Grok-bot，複雜任務留給 Manus。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點八：端側追平 SoTA 的時間，從 18–24 個月壓到 9 個月。</b></span>
+    他挑 8 月 14 日 Qwen 小模型發布，只因為一張甘特圖：某個時間點 GPT-4o 的能力，要多久才能被一個 30B 以下、可本地部署的模型追上。答案是曾經 18–24 個月，到 Qwen2.5-32B 只要 9 個月，而這個 32B 已具備 Opus 4.6/4.7 級別的能力（口述，型號與版本對應不完全可靠）。原因兩層：後訓練與 RL 環境的成熟；以及前沿模型衝到 T 甚至十 T 參數量級後，激活、專家路由、優化這些問題讓頭部「一定在放慢」，只是沒有工具量化。小模型則在效率、路由、滲透率上更靈活。推論很硬：「今天我們被稱為奇觀的東西，9 個月之後就可以在一台很小的設備上本地跑。」他還把「端側」和「角色模型」並置——本質都是低成本下的高效率，成本是五六個維度的問題：單價、中美對抗、開源閉源、本地與雲、以及 Pro Max / Pro / 標準版 / Flash / Lite 的產品分層。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點九：App Store 收入十幾年來首次下降，是「人人自己造軟件」的第一個財務證據。</b></span>
+    8 月 21 日蘋果第三季度財報，App Store 單季收入首次下降。他沒有把因果說死——蘋果自己的增長、設備普及率、運營問題都可能是原因——但認為其中一定有一條是 AI Coding 到了「每個人可以做自己的軟件」的程度。證據是生活化的：李楠（前魅族 VP）做鼠標，鬼谷買了之後嫌固件不好，自己寫了一版開源，李楠轉發說「以後大家用這個吧，不要用我們自己的」；Koji 為了辨認鴴鷸，讓 AI 做了一個遵循艾賓浩斯曲線的打卡學習程序。GitHub 成了新的小紅書。多鄰國收入還在長，股價卻跌得一塌糊塗。他認為最後只剩支付、密碼、安全隱私這類最核心的軟件還有護城河——「也只是可能吧」。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點十：榜單已死，斬殺線當立；而斬殺線之後，大家開始造「奇觀」。</b></span>
+    Artificial Analysis 的帕累托圖（縱軸分數、橫軸 token 價格）被自媒體命名為「斬殺線」——一個新模型若以更低價格打出更高分，就往右下拉出一個矩形，矩形裡的模型「又沒有你強，還比你貴」，失去存在意義。有意思的是話語權的轉移：這個概念是自媒體發明的，後來智譜在官方公眾號自己畫斬殺線（還借了 Gemini 1.5 Flash 匿名打榜「牛來」的梗），此後國內所有廠商發布會都放斬殺線，因為柱狀打分表「已經沒有任何意義」——只要出榜就會被打滿。他引用 OpenRouter 的數據補了一刀：去年一季度，benchmark 前十的模型佔調用量約八成；五個季度後只剩兩成。日常任務沒那麼複雜，SOTA 又貴，於是用的人越來越少。而當分數與性價比都無法區分，頭部模型只能造「奇觀」——帝國時代裡那個公告天下、招人來打的巨大建築。Opus 5.5 把播客直接做成動態可視化 PPT，Koji 把徐葳那期重看一遍，理解度從六七成提到八成；GPT-4o 做 Blender 3D、魔改魔獸爭霸做塔防、讓馬力歐跑神廟逃亡。都是奇觀。
+  </div>
+
+  <h5>關鍵數據</h5>
+  <ul class="data">
+    <li><span class="k">OpenClaw 熱度曲線</span><span class="v">官方推文當日轉發峰值「幾萬」→「幾千」→ 目前「幾十」；發布 2025-12，國內引爆 2026 春節前（1 月底）</span></li>
+    <li><span class="k">Seedance 迭代</span><span class="v">2.0 → 2.5 間隔「半年多」，期間幾乎無動作，仍為公認第一</span></li>
+    <li><span class="k">Sora 2 關閉</span><span class="v">節目稱 3 月 24 日（逐字稿口述，與章節排序略有出入）</span></li>
+    <li><span class="k">RSI 文章</span><span class="v">Anthropic《When AI Builds Itself》，2026-06-04 發布；文中案例為「二十幾台電視盒子串聯」自行運行</span></li>
+    <li><span class="k">標普 500 漲幅前 20</span><span class="v">16–18 家為戴爾、SanDisk、希捷、西部數據、美光、Arista、三星、AMD、NVIDIA、微星、聯想、技嘉等；其餘兩家為減肥藥公司</span></li>
+    <li><span class="k">Codex 曲線</span><span class="v">合併後由 100/200/300/500/600 量級升至約 4,000 萬（口述，單位未明）</span></li>
+    <li><span class="k">端側追平週期</span><span class="v">GPT-4o 級能力下放到 30B 以下：18–24 個月 → 9 個月（Qwen2.5-32B）</span></li>
+    <li><span class="k">App Store</span><span class="v">2026-08-21 蘋果 Q3 財報，單季收入十幾年來首次下降</span></li>
+    <li><span class="k">OpenRouter 集中度</span><span class="v">benchmark 前十模型調用量佔比：約 80%（去年 Q1）→ 約 20%（五個季度後）</span></li>
+    <li><span class="k">AI 議題降溫</span><span class="v">環球播客節 AI 相關場次：峰值 15%（2024/25）→ 12% → 11% → 今年 88 場中 8 場（不足 10%）</span></li>
+    <li><span class="k">邊緣戰場體量</span><span class="v">Perplexity 收入約 2–3 億美元；Character.AI 類公司 4–5 家，估值 10 億–小幾十億美元，月流水千萬美元以上，ARR 過億</span></li>
+  </ul>
+
+  <h5>重點引用</h5>
+  <blockquote>
+    <p>「我當時看完就跟那個恐怖片裡那個地上全是那個害蟲在爬的那種感覺是一模一樣的。就是，哦這個太……這個可視化做得太清楚了。一生二，二生三，三生萬物，就是這麼簡單的東西。」</p>
+    <cite>—— 莊明浩談 Anthropic《When AI Builds Itself》的兩張圖，約 19:30</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>「在這個世界大就是好，對吧？好就是大，就這麼簡單。那那怎麼辦呢對吧？」</p>
+    <cite>—— 談字節在視頻模型上的規模優勢，約 10:08</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>「最懂代碼規則的 AI，當然最懂得如何利用漏洞。你在追求的 7×24 小時的 Agent 的同時，也是一個 7×24 無休息、無終止的貓，在一一直運行。就是，這是這件事情的一體兩面。」</p>
+    <cite>—— 引述某 RL 環境廠商 CEO，約 27:00；「貓」應為「矛」的轉寫誤差</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>「當這個市場最大的公司已經長到 1,000 億美金、2,000 億美金的時候……他們花了那麼多錢的情況下，他的那些錢就會變成另外一些公司的收入。這個量級就夠養活出來一堆可能幾億美金的公司了。」</p>
+    <cite>—— 談巨頭夾縫中的機會，約 18:30</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>「學霸考 100 分是因為卷子只有 100 分，你要給它 10,000 分它也能考 10,000 分。但是 100 分跟 10,000 分對於比如一個 60 分的人而言沒區別。」</p>
+    <cite>—— 談「奇觀」通脹與感知脫節，約 49:20</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>「什麼他媽的 AI 不 AI 的，享受生活吧。」</p>
+    <cite>—— 結尾引用的演講最後一頁 PPT，約 52:50</cite>
+  </blockquote>
+
+  <h5>技術詳情</h5>
+  <ul>
+    <li><b>Harness 的構成要素</b>：會話與上下文管理、雲端／本地部署、常駐設備（24 小時在線）、通知通道（App／Web／既有 IM）、權限邊界。莊明浩認為這套組合在 OpenClaw 時期完成「收斂」，此後 Personal Agent 的差異化不在這些組件本身，而在模型能力與場景。</li>
+    <li><b>視頻模型的競爭軸線轉移</b>：當通用能力被拉平後，競爭回到 4K、超長時長、動作一致性、人物穩定性等古典畫質指標；另一部分廠商則轉去打世界模型。這一分叉在 2026 年變得明顯。</li>
+    <li><b>RSI 的工程含義</b>：不是單點自我改進，而是「人＋算力＋模型」逐步替換掉人的位置——訓練環境、數據生成、評測、再訓練形成閉環；文章內部披露已在部分環節投入使用，並給出了速度與影響的量化。</li>
+    <li><b>小模型追平的機制</b>：後訓練與 RL 環境標準化降低了復現成本；MoE 的激活／專家路由／優化難度讓超大參數模型的邊際收益變慢；蒸餾與多教師方案讓 30B 級模型承接上一代旗艦能力。</li>
+    <li><b>斬殺線的讀法</b>：帕累托前沿不是「絕對能力排序」，而是「單位成本下的最優」。單維度打分不能代表用戶體驗，但它能把「又貴又弱」的模型直接判死，這在採購決策上比榜單更有效。</li>
+  </ul>
+
+  <h5>行業 insight</h5>
+  <ul>
+    <li><b>2026 的主線是「收斂」而非「突破」</b>：Agent 形態收斂、harness 範式收斂、RSI 方向收斂、成本評價體系收斂（斬殺線）。真正的突破發生在能力下放的速度上——旗艦能力每 9 個月下沉一檔。</li>
+    <li><b>字節的護城河是「循環」不是「模型」</b>：內容產能（短劇）→ 分發（全家桶）→ 變現（廣告）→ 行為數據 → 模型。這個閉環讓它在視頻這條線上不需要遲疑，而 Google 因為內部資源競爭（雲、語言模型、DeepMind 多模態、視頻）與美國敘事裡「多模態只是半桌」的定位而搖擺。</li>
+    <li><b>頭部模型的放緩是結構性的</b>：參數量級上去之後，激活、路由、優化的複雜度是非線性的；同時評測已經飽和，無法量化「到底慢了多少」。這給了追趕者與小模型窗口。</li>
+    <li><b>話語權從廠商轉向觀察者，再被廠商收編</b>：斬殺線由自媒體發明，卻成為廠商發布會的標準配件。這是 2026 年 AI 傳播的一個縮影——敘事先於指標，指標再被敘事馴化。</li>
+    <li><b>安全與能力是同一枚硬幣</b>：7×24 的 Agent 等於 7×24 的攻擊面；零日漏洞的窗口被壓縮到接近瞬時，且「很多攻擊不帶任何目的」。他提到錄節目當天前後接連發生 PHP 漏洞與拼多多被攻擊的事件。</li>
+  </ul>
+
+  <h5>前後脈絡</h5>
+  <ul>
+    <li>與莊明浩 10 月 26 日《屠龍之術》那期《不是，怎麼又換版本了？——狂飆中的 AI 2026》是同一套框架的兩種講法：那期講「版本之子」的更替節奏，這期把節奏拆成十個具體事件。兩集可以對讀。</li>
+    <li>與 2024 年 Sam Altman 的 L1–L5 分級呼應：L2 推理在 2025 年兑現，L3 Agent 在 2026 年春節被大眾感知。他特意點出「在那之前做 Agent 的嘗試已經很多，大家都在找範式」——這是一個典型的「事後看必然、事前看混沌」的技術史節點。</li>
+    <li>與他自己的季度總結一脈相承：6 月 27 日那場叫「文藝復興」，講老硬件回歸與 AIGC 的三次死亡（素材、流程、版權）；這一集把「文藝復興」從內容行業延伸到資本市場（標普 500 漲幅榜）。</li>
+    <li>與 Koji 近期節目形成對照：10 月 25 日談 PhD 的十個關鍵問題、10 月 18 日談 Claude Code 與 Codex 周邊長出的創業機會。後者正是這一集「版本之子定義產品形態」的微觀版本。</li>
+  </ul>
+
+  <h5>爭議點與可質疑處</h5>
+  <ul>
+    <li><b>「OpenClaw 熱潮是否 FOMO」沒有正面回答。</b>他的立場是「普通人錯過沒差、從業者必須經歷」，等於把泡沫的社會成本與從業者的學習收益分開計算——這個切割合理，但也迴避了對普通用戶時間與金錢損失的評價。</li>
+    <li><b>視頻／世界模型會不會被通用模型「統穿」，他自己承認兩派都成立。</b>他引述「羽數」的朋友圈說 GPT-7 應該會統穿物理，並直言對今天做物理 AI 的獨立廠商「可能是挑戰，也可能是危險」。這是全集最不確定的判斷。</li>
+    <li><b>App Store 下滑的歸因不完整。</b>他明確說「是不是唯一的原因，或者是不是充分必要條件我們不知道」，但仍把它放進 Aha Moments，等於用一個無法證偽的相關性支撐一個強敘事。</li>
+    <li><b>斬殺線本身是被批評的對象。</b>單維度打分與真實體驗的落差，他自己也承認；而「所有人都在畫斬殺線」之後，它同樣會失去區分度——這是敘事通脹的另一個例子。</li>
+    <li><b>數字可靠性</b>：Codex 曲線的單位、Qwen 型號與對標版本、Sora 2 關閉日期，均為口述且前後不完全一致，宜作方向性參考而非引用數據。</li>
+  </ul>
+
+  <div class="note">
+    <b>彩蛋：粗糙的逆襲。</b>十月微信小遊戲排名第一的是《趙雲與阿斗》——所有畫面都是漢字：弓手是一個「弓」字，槍兵是一個「槍」字，趙雲是「趙」「雲」兩個字，兩個字合成一個武將。玩法是成熟的塔防＋二合＋Roguelike，畫面「極度粗糙，你甚至覺得是一個大學生做的產品」，而它是刻意做的。莊明浩的解釋是：人類被 AI 生成的高清、高量、精細畫面（加上短劇）連續刺激了將近一年，「物極必反」，開始需要顆粒感與粗糙感。Koji 呼應：他最近錄公路播客，那種不受控制、帶沙粒感的狀態，和錄音棚裡完全不同。這一層和第十個 Aha Moment 是同一個硬幣——當奇觀通脹到讓人 PTSD，人會往回找「人味」。
+  </div>
+</article>
+
+<div class="divider"></div>
+
+<h2>英文播客</h2>
+<p class="empty">本窗口內四個英文節目均無新集。最近一期如下（均已在先前報告覆蓋）：</p>
+<ul>
+  <li><b>Dwarkesh Podcast</b> —《Robert Caro – The master biographer reflects at 91》，2026-10-30 16:56 UTC。</li>
+  <li><b>Latent Space</b> —《Agents Prompt People: Using Agents for Long-Horizon Financial Work》，2026-10-31 16:05 UTC；同日 05:00 UTC 另有 AINews 通訊。</li>
+  <li><b>The Cognitive Revolution</b> —《AI:AM: Carbon in the Arena, Mistral's Le Chonk, the Agent-Run Economy, Ferroelectric RAM + New Hacks》，2026-10-31 21:45 UTC。</li>
+  <li><b>No Priors</b> —《Taking on ServiceNow: Coding Agents the Rest of Us with Serval Co-Founder and CEO Jake Stauch》，2026-10-29 10:00 UTC。</li>
+  <li><b>ML Street Talk</b> —《Mathematics Just Changed Forever — Kevin Hartnett》，2026-10-26 14:36 UTC。</li>
+</ul>
+
+<div class="note">
+  <b>抓取狀況。</b>十條 RSS 全部正常（HTTP 200）。Dwarkesh 與 No Priors 的 YouTube channel feed（UCXl4i9dYBrFOabk0xGmbkRA、UCSI7h9hydQ40K5MJHnCrQvw）今日仍返回 404，已連續多日；兩者的 Substack／Megaphone 原生 feed 正常，內容不受影響。中文五台除《十字路口》外均無新集：《張小珺商業訪談錄》最新 10-21、《硅谷 101》10-28、《42 章經》10-24、《屠龍之術》10-26。
+</div>
+
+<div class="divider"></div>
+
+<h2>今日一句</h2>
+<p>這一集值得反覆看的地方，不是那十個事件本身，而是它們共用的一條隱線：<b>所有「能力」最終都會變成「成本問題」</b>——模型比的是每 token 的分數，端側比的是每美元的效率，App Store 比的是自己寫一個功能便不便宜，連奇觀也是在比誰能用最低的理解成本讓人震驚一次。而當成本被壓到接近零，稀缺的反而變成粗糙、顆粒感、以及「不 AI」的那點人味。</p>
+
+<footer>
+  <p><b>AI 播客日報</b> · 2026-11-02 · 由掃描器自動生成，逐字稿為本機語音轉寫，可能存在人名、型號與數字的聽寫誤差。</p>
+  <p>來源：十字路口 Crossing RSS（feed.xyzfm.space）· 小宇宙單集頁 · 節目音頻（53:20）· 各節目原生 RSS。Jev 前置過濾：worth 0.61（keep），primary_source 0.10 —— 內容為一手訪談，但嘉賓所述事件多為二手轉述，文中已標注不確定處。</p>
+  <p>Apache License 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>

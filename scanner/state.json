@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-11-01T02:04:00.000Z",
- "lastScanDate": "2026-11-01",
+ "lastScan": "2026-11-02T02:13:00.000Z",
+ "lastScanDate": "2026-11-02",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-30T16:56:02.000Z",
@@ -56,16 +56,7 @@
    "lastEpisodePubDate": "2026-10-28T16:00:00.000Z",
    "lastEpisodeTitle": "E257｜对话Vitalik：AI安全背后的哲学思想，有效利他主义如何影响硅谷？",
    "lastFeedItemPubDate": "2026-10-28T16:00:00.000Z",
-   "newEpisodes": [
-    {
-     "title": "E257｜对话Vitalik：AI安全背后的哲学思想，有效利他主义如何影响硅谷？",
-     "pubDate": "2026-10-28T16:00:00.000Z",
-     "type": "podcast",
-     "url": "https://sv101.fireside.fm/271",
-     "guests": "Vitalik Buterin（以太坊联合创始人）、Afra（科技记者）",
-     "note": "1:52:34。無逐字稿（fireside 無 transcript 端點、小宇宙 401、B站被攔），僅 shownotes 7.4KB + 40 條名詞解釋。章節涵蓋 EA 四次轉向、80,000 Hours、METR 爭議、Lighthaven/The Curve、SBF、FLI 分歧、d/acc vs e/acc。"
-    }
-   ],
+   "newEpisodes": [],
    "lastFeedItemTitle": "E257｜对话Vitalik：AI安全背后的哲学思想，有效利他主义如何影响硅谷？"
   },
   "42zhangjing": {
@@ -83,25 +74,25 @@
    "lastFeedItemTitle": "不是，怎么又换版本了？---狂飙中的AI 2026"
   },
   "crossing": {
-   "lastEpisodePubDate": "2026-10-25T16:00:00.000Z",
-   "lastEpisodeTitle": "AI 时代，PhD 路上的 10 个关键问题｜对谈李磊：港大 PhD、小米 MiMo 研究员",
-   "lastFeedItemPubDate": "2026-10-25T16:00:00.000Z",
+   "lastEpisodePubDate": "2026-11-01T16:00:00.000Z",
+   "lastEpisodeTitle": "[年终复盘①]AI带给我的10个Aha Moments｜庄明浩：RSI 来了、AI 的奇观与粗糙、巨头夹缝中的创业机会",
+   "lastFeedItemPubDate": "2026-11-01T16:00:00.000Z",
    "newEpisodes": [],
-   "lastFeedItemTitle": "AI 时代，PhD 路上的 10 个关键问题｜对谈李磊：港大 PhD、小米 MiMo 研究员"
+   "lastFeedItemTitle": "[年终复盘①]AI带给我的10个Aha Moments｜庄明浩：RSI 来了、AI 的奇观与粗糙、巨头夹缝中的创业机会"
   }
  },
  "notes": {
-  "scan_status": "2026-11-01 掃描（02:04 UTC）：窗口 10-31 02:05Z → 11-01 02:04Z 內有 2 集新 podcast（Latent Space《Agents Prompt People》10-31 16:05Z；CogRev AI:AM 10-31 21:45Z）＋ 1 期 AINews（10-31 05:00Z）。中文五台全部無新集。Dwarkesh 最新 10-30（已掃）、No Priors 10-29、MLST 10-26。",
-  "report_date": "2026-11-01",
+  "scan_status": "2026-11-02 掃描（02:03–02:13 UTC）：窗口 11-01 02:04Z → 11-02 02:13Z 內僅 1 集新 podcast（十字路口《年終復盤①》11-01 16:00Z，53:20）。英文四台與其餘四台中文均無新集。",
+  "report_date": "2026-11-02",
   "feed_fix": "改用 iTunes Search API（itunes.apple.com/search?entity=podcast）反查 feedUrl，首次成功取得全部 5 個中文台原生 RSS，並還原 No Priors 正確 feed。已寫入 state.resolvedFeeds。",
   "feed_confusion_fixed": "feeds.megaphone.fm/RINTP3108857801 係 Cognitive Revolution，唔係 No Priors；舊 state 標註錯誤，已分開。No Priors 正確 feed 為 feeds.megaphone.fm/nopriors。",
-  "deep_content_fetched": "①Arca：官方 VTT 逐字稿（rss.beehiiv.com，27,567 字元）全文通讀。②CogRev AI:AM：官網 113,360 字元（AI show notes + 完整逐字稿）。③AINews：44,263 字元全文讀完。",
-  "failures": "①Dwarkesh YouTube channel RSS（UCXl4i9dYBrFOabk0xGmbkRA）404，持續多日；Substack feed 正常。②No Priors YouTube channel RSS（UCSI7h9hydQ40K5MJHnCrQvw）404。③nopriors.substack.com/feed 404。④硅谷101 E257 Vitalik 仍無逐字稿（fireside 無 transcript 端點）。",
-  "jev_prefilter": "三條候選跑 jev.py triage --profile news：Arca 1.71（agent-infra，primary 0.61）、AINews 0.97（business，primary 0.08）、CogRev 0.97（llm-model，primary 0.21）。無 drop；後兩者 primary_source 低，報告內已標明第三方/未證實。",
-  "notable_for_james": "①Arca：agent 任務 10 日但係 stop-start；安全規則全部確定性、唔靠 prompt；sandbox 把 agent 代碼譯成嚴格格式後丟棄原碼再執行。②Arena 生產 trace：20+ 輪對話過半有 misalignment，OpenAI 三項信號全部第一、壓過 Anthropic，Tencent HY4 13.2%。③Mistral Le Chonk 用 3,800 GPU、1e25 FLOPs，中途出事靠 Patchstral 救返；Llama 3（2024-07）算力係佢 3.8 倍。④ServiceNow：東南亞兩週 3–4,000 次成功 AI 攻擊，已達 competent APT 規模，用後量子密碼做勒索；Freeman 認為能力收唔返。⑤Google 承認 AI Mode 變現率低，單日 −15% / 5,000 億美元，2004 IPO 以來最差。⑥預訓練污染 0.1% 數據可在 CLI agent 植後門，92% 觸發率，且存活於 SFT/DPO/RL。",
-  "cross_episode_theme": "三集都係「benchmark 與現實現落差」：Arena 用生產 trace 質疑私有 benchmark、Arca 用內部 benchmark 否決對外排名第一的模型、Mistral 用 1e25 打出「西方最強開源」但算力仍不及兩年前 Llama 3。共同結論：harness 同真實數據，比排行榜更值錢。",
+  "deep_content_fetched": "十字路口本集無現成逐字稿（小宇宙 transcript 需 auth，API 401），改用節目音頻 → Gemini 3.5 Flash 分段轉寫（4×800s chunk，每段約 6.2–6.7k 字），全稿約 26k 字元，逐段通讀後萃取。",
+  "failures": "①Dwarkesh YouTube channel RSS（UCXl4i9dYBrFOabk0xGmbkRA）404，連續多日。②No Priors YouTube channel RSS（UCSI7h9hydQ40K5MJHnCrQvw）404。③小宇宙 transcript API 401；gemini-3.5-transcribe 免費層 10k TPM 不足，改用 gemini-3.5-flash 轉寫。",
+  "jev_prefilter": "單條候選跑 jev.py triage --profile news：worth 0.61（keep）、category llm-model（conf 0.38）、primary_source 0.10。已在報告標明「一手訪談、嘉賓所述多為二手轉述」及數字不確定處。",
+  "notable_for_james": "①Anthropic 6/4《When AI Builds Itself》：RSI 已進入工程實施，兩張圖講到「人類消失」，此後半年敘事（智譜 GLM-6、Ilya TTT、田淵棟 Recursive、Jeff Dean 無限 logo）全部圍繞它。②RSI 的錢漏到下游：後訓練／RL 環境／數據／benchmark，Q2 起收入爆炸。③字節視頻霸權不是模型而是循環：短劇產能＋全家桶分發＋廣告變現＋行為數據 → 廣義 RSI；Google 因內部搶資源與「多模態只是半桌」而搖擺。④端側追平 SoTA 由 18–24 個月壓到 9 個月（Qwen2.5-32B ≈ Opus 4.6/4.7），「今天的奇觀 9 個月後本地跑」。⑤App Store 單季收入十幾年首降（8/21），AI Coding 讓人人自造軟件；GitHub 成新小紅書。⑥斬殺線由自媒體發明、被廠商收編；OpenRouter 前十模型調用量 80%→20%（5 個季度）。⑦巨頭夾縫：千億公司的支出就是初創的收入；Character.AI 賽道 4–5 家 ARR 過億。",
+  "cross_episode_theme": "與 10-26《屠龍之術》「版本又換了」同框架：2026 的主線是範式收斂＋能力下放，而非單點突破；所有能力最終都變成成本問題。",
   "index_html": "未更新 index.html（該落地頁自 2026-07-19 起停更，維持既有慣例）。",
-  "deep_dive_link": "本輪未新增 deep-dive；報告本體已含完整萃取（50KB）。"
+  "deep_dive_link": "本輪未新增 deep-dive；報告本體約 30KB，已含完整十段萃取與逐字引用。"
  },
  "resolvedFeeds": {
   "zhang-xiaojun": "https://feed.xyzfm.space/dk4yh3pkpjp3",
