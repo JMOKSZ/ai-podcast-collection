@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 睇唔到 trace 的法律 AI——Legora 用 3 個工程師、3 個律師，重建一個世界來做 eval</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #888; line-height: 1.7; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">Latent Space · 2026-11-02 · 約 1 小時 7 分</div>
+  <h1>睇唔到 trace 的法律 AI<br>——Legora 用 3 個工程師、3 個律師，重建一個世界來做 eval</h1>
+  <div class="meta">
+    <div>〈Building AI for Lawyers — Jacob Lauritzen, CTO of Legora〉</div>
+    <div>主持：swyx（Shawn Wang）、Alessio Fanelli<span>·</span>嘉賓：Jacob Lauritzen（Legora CTO）</div>
+    <div>來源：Latent Space 官方文章與逐字稿<span>·</span>發布 2026-11-02 23:01 UTC</div>
+  </div>
+</header>
+
+<p>這一集表面上是 Legora 的產品訪談：一家剛完成 5.5 億美元 E 輪、估值 88 億美元的法律 AI 公司，CTO 第一次把「法律垂直 agent 到底怎麼造」講清楚。但它真正有價值的部分，不是那些融資數字，而是一個多數 agent 團隊不會遇到的工程約束：<strong>你完全看不到客戶的數據，也不能看。</strong></p>
+
+<p>大多數 agent 公司靠讀 trace 改產品：用戶怎麼問、agent 怎麼走錯、哪一步幻覺、哪個工具呼叫失敗。Legora 一條都讀不到。用戶上傳的幾乎全是機密，而且大部分屬於律所的客戶，不是律所本身。於是他們只能做一件更貴、更慢、但也更本質的事：<strong>把客戶工作的世界重建出來，然後在裡面做 eval。</strong></p>
+
+<blockquote class="strong">
+「We can't look at any traces basically. We can't look at any data because it's all super confidential… I have no idea what people are actually doing.」
+<span class="attribution">— Jacob Lauritzen，談產品指標的盲區，約 26:12</span>
+</blockquote>
+
+<p>這句話值得停下來。它不是抱怨，而是對整個垂直 AI 行業的一個精確描述：當你的產品進入受監管、高價值、強隱私的工作流程，<strong>「觀察用戶」這條最便宜的產品回饋通道會被結構性地關閉。</strong>剩下能用的，只有領域知識、合成環境、以及對工作本身的重新建模。這篇文章會把這集拆成八個部分：商業模式、eval 方法、能力分佈、產品 primitive、兩種工程師、harness 與模型套利、垂直 AI 的邊界，最後是這集沒有回答的問題。</p>
+
+<div class="section-title">一、先講錢：按小時收費不是被產品說服的</div>
+
+<p>Jacob 當年在幫 Max Junestrand 改 Legora（當時叫 Leya）的 YC 申請時，只給了一條反饋：法律科技被做過一百萬次，從來沒成過。原因不是技術不行，而是激勵錯位——</p>
+
+<blockquote>
+「If lawyers bill by the hour, getting faster means earning less. Why would they buy a tool that does that?」
+<span class="attribution">— Jacob 回憶當年的判斷，文章開頭</span>
+</blockquote>
+
+<p>這是一個純經濟學的判斷，而且幾乎無懈可擊。任何提升效率的工具，在按小時計費的專業服務裡，都是在削減客戶的收入。所以真正的問題不是「AI 夠不夠好」，而是「什麼力量大到足以讓律所放棄按小時收費」。</p>
+
+<p>Jacob 的答案不是產品說服，而是競爭壓力。美國市場上，低階的 review 類工作已經轉為 flat project fee；有些律所甚至免費做，只為留住客戶關係。利潤中心移向 M&A、訴訟，以及「花在客戶身上的時間」。也就是說，<strong>AI 沒有說服律師，是市場先說服了律師。</strong></p>
+
+<div class="data-point">
+<span>數字</span>
+Legora 的 ARR 在 2026 年 4 月突破 1 億美元，上線不到 18 個月；官方稱現已超過 2 億美元。2026 年 3 月以 55.5 億美元估值完成 5.5 億美元融資，10 月再以 88 億美元估值完成 5.5 億美元 E 輪。客戶超過 1,800 家，今年完成第 5 宗收購（4 月 Qura、10 月 Wexler）。
+</div>
+
+<p>這段最重要的 insight 不是「法律 AI 市場很大」，而是<strong>採用曲線的形狀由買方激勵決定，不由產品能力決定。</strong>如果一個行業的收費模式與效率提升方向相反，那麼產品再強也只會被當成「好用的玩具」。反過來，一旦外部壓力打破了收費模式，採用會突然加速，而且會集中在少數能承受合規審查的供應商身上。Legora 的 1,800 家客戶，某種程度上是這個結構性轉折的結果，而不是單純的產品勝利。</p>
+
+<div class="sub-title">初級律師沒有消失，而是被重新定價</div>
+
+<p>主持人拋出流行敘事：「Paralegals, gone. Junior lawyers, gone.」Jacob 直接否定：</p>
+
+<blockquote class="strong">
+「Paralegals, gone. Junior lawyers, gone. I don't need them. That's actually not what we're seeing.」
+<span class="attribution">— Jacob Lauritzen，約 16:40</span>
+</blockquote>
+
+<p>他的解釋與工程師市場同構：一個好的初級律師今天比兩年前值錢得多，因為同樣的人能產出多得多的東西。真正被壓縮的是「只做機械勞動」的那部分職位；留下來的人被要求同時懂工具、懂判斷、懂客戶。他也不諱言這更兩極化——好的更好，平庸的更難進場。</p>
+
+<p>這裡有一個值得記錄的張力：swyx 自己承認「junior engineers are kind of cooked」，而 Jacob 說法律市場看到的不是這樣。兩邊可能都對，只是時間尺度不同。工程師市場的入門職位已經被壓縮了兩三年；法律市場的入門職位才剛開始被重新定義。而且法律有執照、有責任、有客戶關係，這些摩擦會讓「消失」比工程師市場慢，但一旦發生，反彈也更小，因為整個行業已經習慣用資歷來定價。</p>
+
+<div class="section-title">二、沒有 trace 的 eval：在花園裡造一個世界</div>
+
+<p>這是全場最硬的工程段落。Legora 的 eval 團隊只有 3 個工程師加 3 個律師，但他們要模擬的是一個非常大的空間：不同 practice area、不同 task、不同文件類型、不同客戶工作流。方法不是讀真實 trace，而是<strong>重建客戶工作的世界</strong>。</p>
+
+<p>最具體的例子是一個 10,000 檔案的 data room：agent 要做 due diligence，最後產出一份 GRIP report。評估標準不是單一分數，而是拆成幾個問題：紅旗有沒有抓對？措辭是否得體？分析是否成立？草稿是否包含所有該有的東西？有沒有包含不該有的東西？</p>
+
+<blockquote>
+「Because lawyers work in projects always, more or less, so it's like, here's a 10,000 file data room, you're doing your due diligence, in the end, a GRIP report looks like this…」
+<span class="attribution">— Jacob 描述 eval 環境，約 09:00</span>
+</blockquote>
+
+<p>結果畫成一張 practice area × task 的熱力圖。最關鍵的觀察是：很多模型版本是「某些任務變好、某些變差」，而且比你想的常見。所以單一分數沒有意義，必須看分佈。</p>
+
+<div class="highlight-box">
+<strong>Insight：</strong>當你沒有 trace，eval 就從「觀察」變成「建模」。你不再問「用戶實際怎麼用」，而是問「這個工作在世界裡長什麼樣」。這會帶來一個系統性偏差：<strong>你只能評估你能重建的東西。</strong>那些難以模擬、依賴客戶關係、依賴口頭上下文的工作，會系統性地被低估。這不是 Legora 獨有的問題，而是所有「無 trace 垂直 AI」的共同盲點。
+</div>
+
+<div class="sub-title">eval 曾經不值得做，因為模型每兩三個月就自己變好</div>
+
+<p>Jacob 承認，有一段時間他們的結論是「花時間做複雜 eval，不如把 harness 做好，然後等下一版模型」。最戲劇性的例子是 citation 正確率：</p>
+
+<blockquote class="strong">
+「We had one problem where it wouldn't cite properly… next model release solved it. It went from 70% to 99%. We did nothing and, great.」
+<span class="attribution">— Jacob Lauritzen，約 11:03</span>
+</blockquote>
+
+<p>這句話的推論很重要：<strong>垂直 AI 公司的護城河不在 eval 分數，而在隱私、可標註可排序的數據、工作流編排與新功能。</strong>eval 是防守，不是進攻。當模型能力每季跳一級，你把 eval 做到 95 分，下一版模型可能直接把你沒做的 30% 補上；但客戶的數據治理、權限、審計、工作流，模型不會幫你做。</p>
+
+<p>不過這裡也有一個反面：正因為模型會自己變好，<strong>eval 的真正價值不是排名，而是防止「某些任務變差」被忽略。</strong>熱力圖的用處不是證明你比對手強，而是讓你在換模型時看到局部退化。這是一種保險，不是一種武器。</p>
+
+<div class="section-title">三、60% 與 40%：能力是一條分佈，不是一個分數</div>
+
+<p>Jacob 對「模型夠不夠好」的回答很克制：</p>
+
+<blockquote>
+「I think it's a power distribution. So, like, there's probably, like, 60% of the work we can do really well right now, and from now on, it's like a cost and latency thing. But then there's the rest of the thing where, especially for, like, very complex analysis, we still need more intelligence.」
+<span class="attribution">— Jacob Lauritzen，約 07:48</span>
+</blockquote>
+
+<p>這個 60% 不是「模型通過了 60% 的考試」，而是「60% 的法律工作已經可以被很好地完成，剩下的問題是成本與延遲」。剩下的 40% 主要是兩類：複雜分析，以及百萬 token 級合約的跨文檔編輯。後者不是「再聰明一點」能解決的，而是長上下文推理與編排的問題——你改了前面的定義，後面的條款、排序、交叉引用全部要跟著動。</p>
+
+<p>他也提醒：工作範圍本身會隨智能擴張，不是固定份額的重新分配。今天被算進「40%」的工作，可能明年變成「60%」；但同時又會出現新的、以前沒人做的工作。這是典型的 capability expansion，而不是零和替代。</p>
+
+<div class="data-point">
+<span>能力分佈</span>
+約 60% 法律工作可做好，之後主要是成本與延遲問題；複雜分析與百萬 token 合約的跨文檔編輯仍需更強智能。citation 正確率曾由 70% 升到 99%，靠的是換模型，不是產品改動。
+</div>
+
+<div class="section-title">四、四個 primitive：Legora 真正的產品不是功能</div>
+
+<p>Jacob 說他的工作是「讓客戶感覺你建了很多東西，其實你只建了幾個」。這幾個東西是：</p>
+
+<table>
+<tr><th>Primitive</th><th>作用</th><th>為什麼重要</th></tr>
+<tr><td><strong>Projects</strong></td><td>文件容器／檔案系統</td><td>法律工作總是以 project 為單位；這是所有上下文與權限的邊界。</td></tr>
+<tr><td><strong>Agent</strong></td><td>可以不同配置啟動的執行者</td><td>從 assistant 到 agent 的轉折點；能主動跑長流程。</td></tr>
+<tr><td><strong>Tabular Review</strong></td><td>每行一份文件、每列一個問題</td><td>fan-out 抽取與審查的最佳形式；上限 100 萬 cell，預設先跑 10 行讓你修 prompt。</td></tr>
+<tr><td><strong>Lists</strong></td><td>Notion 式資料庫，帶 trigger 與 automation</td><td>協調層：agent 可以建立與讀取 list，list 的變動可以啟動 agent——「agent swarm comes alive」。</td></tr>
+</table>
+
+<p>Intake 是一個 Slack bot，把請求變成 ticket 放進 list；agent 可以建立與讀取 list，list 的變動可以啟動 agent。連今年收購的 Wexler（訴訟事實情報：從百萬份文件抽 named entities、日期，再做交叉驗證，甚至比對庭審轉錄與郵件時間線）也跑在同一組 primitive 上。</p>
+
+<blockquote class="strong">
+「Agents can create lists, and lists can create agents, and agents can read lists, and so it's like, the agent swarm comes alive.」
+<span class="attribution">— Jacob Lauritzen，約 39:11</span>
+</blockquote>
+
+<p>這段是整集最值得抄下來的架構思想。多數 agent 產品把「agent」當成產品，然後不斷加功能；Legora 把 agent 當成一個 primitive，然後用 list 當協調層。<strong>真正的護城河不是 agent 多聰明，而是 agent 之間、agent 與人之間的工作如何被編排。</strong>這也是為什麼 legal engineer 可以在不寫程式的情況下，用既有 primitive 拼出新產品：他們不是在寫 workflow，而是在配置一個工作隊列。</p>
+
+<div class="highlight-box">
+<strong>對照：</strong>這與 10-31 Latent Space 訪 Arca 的「Agents Prompt People」是同一個 pattern。當 agent 接管長流程，人的工作被重新編排成「回應 agent 的請求」，而不是「操作工具」。Legora 的 Intake（Slack → ticket → list → agent）就是這個編排的具體形態。
+</div>
+
+<div class="section-title">五、legal engineer 與 FDE：兩種人，一條邊界</div>
+
+<p>Legora 有兩種面向客戶的工程角色，界線是「寫不寫生產代碼」：</p>
+
+<ul>
+<li><strong>Legal engineer</strong>：power user 式配置。不寫程式，用既有 primitive 拼出工作流、訓練律師使用。池子約 100 人，多為 big law 3–4 年、常帶 CS 學位。</li>
+<li><strong>Forward deployed engineer（FDE）</strong>：寫 production code、接客戶的 CRM／DMS、擴充 API，並把學到的東西回灌核心產品。他們仍然不碰客戶數據。</li>
+</ul>
+
+<p>第一個 FDE 是九個月前在紐約招的 Di Qi，兩次 YC 創始人、在 Meta 做過 search。Jacob 的目標是一年內形成輪動小組：駐客戶兩個月，建完就走。他坦承這還在早期，沒有 Palantir 那種「四天駐場、一天回饋」的固定節奏。</p>
+
+<p>這個分工的 insight 在於：<strong>它把「客製化」拆成了兩個成本層級。</strong>Legal engineer 是可規模的配置層，FDE 是不可規模的工程層。大多數企業 AI 公司只有其中一種：要麼全是顧問，要麼全是工程師。Legora 的設計是讓 80% 的需求在配置層解決，20% 才進入工程層。這既控制了成本，也避免產品被單一客戶的奇怪需求拉歪。</p>
+
+<div class="section-title">六、模型套利與 harness：把 domain 烤進基礎設施</div>
+
+<p>Legora 抵抗了很久才加入 model picker。Jacob 的觀點是：律師不應該被要求判斷「這份合約是 Sonnet-high 還是 Opus-mid 的任務」——「他們的時薪是一千美元，你只要讓它能用」。Legora 的責任是在 quality、cost、latency、governance、regional availability 五個維度上做取捨，讓客戶永遠待在 Pareto 前沿上。</p>
+
+<blockquote>
+「If you go to a lawyer and ask them, oh, you're gonna draft this contract based on this precedent, do you think that's a sonnet high or an opus mid task? They won't know. Just make it work.」
+<span class="attribution">— Jacob Lauritzen，約 06:00（意譯自逐字稿）</span>
+</blockquote>
+
+<p>最後他們還是投降了：客戶想嘗鮮、想「table one」、會問 Mythos。代價是 credits 燒快十倍。這是一個很誠實的產品觀察：<strong>model picker 不是功能，是心理需求。</strong>客戶要的不是控制，而是「我沒有被鎖在舊模型裡」的安全感。</p>
+
+<div class="sub-title">Harness 是核心資產</div>
+
+<p>Jacob 說：「我們編輯檔案的方式、做分析的方式、做法律檢索的方式，全部烤進 harness。」Agent 遇到問題時知道去查判例、找先例、回來回答；governance（audit log、data retention）也在這一層。Drafting 本質上是 search problem——律師不會憑空打字，而是先找「類似交易」的先例，再判斷哪一份文件的哪一段可以拿來用；「類似」可以是同產業、同規模、同律所風格。這比生成難。</p>
+
+<p>長文檔不用單次百萬 token。他們在 MapReduce 與大 context 之間反覆搬遷，隨模型能力改 scaffolding。痛點是「跨 chunk 才成立的相關性」：一份文件用兩頁篇幅講一件事，單獨看每個 chunk 都不相關，合起來才相關——這種情況 MapReduce 會丟掉 nuance。</p>
+
+<p>檢索用 late interaction／multivector。團隊裡有一個人專門盯 search，甚至去推動 turbopuffer 支援 multivector。Jacob 的建議是：如果你的 RAG 工作量很大，只看 MTEB 榜首、用預設 embedding 是浪費 alpha；要自訂 embedding，唯一例外是多語言場景。</p>
+
+<p>幻覺處理是引用系統，不是提示詞。Agent 寫的每一句都要有 citation，點擊後在來源 PDF 上畫 bounding box；如果是基於 Tabular Review 寫的，可以引用某一格、某一列，然後多層下鑽回原始文件。他觀察到律師檢查 citation 的行為和工程師 code review 一樣分化：有人逐字看，有人「聽起來合理就過了」。</p>
+
+<div class="data-point">
+<span>基礎設施</span>
+全部 Azure——起步時律所不接受 AWS／GCP，Microsoft 因 365 已是核准供應商。轉錄不用 ElevenLabs，因為 DPA 上的供應商越少越好；用早期 Gemini 與 Microsoft MAI-Transcribe。Eval 規模：2,000 個平行 agent eval，跑在 Modal sandboxes。
+</div>
+
+<div class="section-title">七、垂直 AI 會不會被 lab 吃掉</div>
+
+<p>這是全場最直接的一個判斷。Jacob 認為模型 lab 不會像對 coding 公司那樣切斷法律垂直公司，理由是「廣度 vs 深度」：lab 必須覆蓋整個知識工作（分析、銷售、市場、財務、法律），所以每個領域都會做，但不會做到 Legora 的深度。</p>
+
+<blockquote class="strong">
+「If you're doing a $400,000,000 M&amp;A transaction, you're gonna want Legora.」
+<span class="attribution">— Jacob Lauritzen，約 1:03:26</span>
+</blockquote>
+
+<p>兩年後他預期：大企業透過 Claude Cowork 之類的介面調用 Legora，律所則直接住在 Legora 裡。這是一個罕見的、對「垂直 AI 被平台吞掉」敘事的正面反駁，且來自一個剛剛拿到 5.5 億美元的人。</p>
+
+<p>他的答案建立在三個不可替代性上：<strong>資料治理</strong>（律所的客戶數據連律所自己都不能隨便給你看，lab 更不可能）、<strong>工作流編排</strong>（把 intake、review、drafting、協作串成一條線，這是產品問題不是模型問題）、<strong>領域人力</strong>（100 個懂 big law 的 legal engineer，這是最難複製的資產）。模型越商品化，這三樣越值錢。</p>
+
+<p>另一個值得記住的判斷是「agent 能不能成為 API」。他明確說這只是一個在腦子裡盤旋的念頭，還不是路線：對某些整合場景，客戶要的其實只是「觸發某件事發生」，那用 agent 觸發可能比維護一套穩定的 API 更實際——代價是不確定性、成本與延遲。他說，大概 100 次裡有 2 次 agent 會做出「我們不想要的怪事」。</p>
+
+<div class="highlight-box">
+<strong>Insight：</strong>「agent as API」不是一個技術提案，而是一個組織權力的重新分配。如果 agent 可以取代 API 表面，那麼產品團隊就不需要為每一個整合維護穩定介面；但代價是可靠性從「合約」變成「機率」。對受監管行業來說，這個交換只有在「失敗可審計、可回滾、可人工接手」的前提下才成立。
+</div>
+
+<div class="section-title">八、這集沒有回答的問題</div>
+
+<p>這是一集高質量的訪談，但它終究是單邊證詞。有幾個地方值得保留：</p>
+
+<ul>
+<li><strong>「60%」沒有定義。</strong>是按小時、按任務數、按收入、還是按難度加權？沒有定義的百分比很容易變成行銷語言。</li>
+<li><strong>沒有 trace 的 eval 會系統性偏向可模擬的工作。</strong>那些依賴客戶關係、口頭上下文、辦公室政治的法律工作，可能永遠不會出現在熱力圖上。這不是 Legora 的錯，但會讓「能力分佈」看起來比實際更平。</li>
+<li><strong>100 個 legal engineer 是成本護城河，也是成本包袱。</strong>如果模型能力繼續上升，配置層的價值會下降；如果客戶需求繼續碎片化，配置層的價值會上升。Jacob 賭的是後者。</li>
+<li><strong>「lab 不會切斷我們」是談判桌上的判斷，不是結構保證。</strong>Anthropic 已經推出 Claude for Legal；今天的「廣度 vs 深度」分工，明天可能變成「平台 + 垂直插件」的關係。Legora 的護城河是真的，但不是永久。</li>
+<li><strong>agent picker 的投降，說明客戶教育比產品邏輯更強。</strong>這對所有做企業 AI 的人都是一個提醒：你有時不是輸給競爭對手，而是輸給客戶的 FOMO。</li>
+</ul>
+
+<div class="section-title">九、如果只記住三件事</div>
+
+<ol>
+<li><strong>沒有 trace 的時候，eval 就是重建世界。</strong>這比讀 trace 貴得多，但也更接近「工作本身」。代價是你只能評估你能重建的東西。</li>
+<li><strong>垂直 AI 的護城河是治理、編排與領域人力，不是模型分數。</strong>模型會自己變好；這三樣不會。</li>
+<li><strong>產品的力量來自 primitive，不是功能。</strong>四個 primitive 加一個協調層，讓 100 個 legal engineer 可以在不寫程式的情況下，長出無數個產品。這是「客戶感覺你建了很多，其實你只建了幾個」的具體做法。</li>
+</ol>
+
+<hr>
+
+<footer>
+<p><strong>來源：</strong>Latent Space,〈Building AI for Lawyers — Jacob Lauritzen, CTO of Legora〉，2026-11-02 發布。文章與逐字稿：<br>
+https://latent.space/p/building-ai-for-lawyers-jacob-lauritzen-cto-of-legora</p>
+<p>本集音頻約 1 小時 7 分；本文引用之英文原句來自官方文章與自動轉寫逐字稿，部分口語重複與轉寫誤差已清理，語意未改。所有數字與引述均以節目內容為準；「60%」等自報數字未經獨立核實。</p>
+<p>深度復述生成時間：2026-11-03 06:10 UTC · 由 Vee Mok 整理</p>
+</footer>
+
+</div>
+</body>
+</html>
