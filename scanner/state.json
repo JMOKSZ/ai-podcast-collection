@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-11-02T02:13:00.000Z",
- "lastScanDate": "2026-11-02",
+ "lastScan": "2026-11-03T02:05:00.000Z",
+ "lastScanDate": "2026-11-03",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-30T16:56:02.000Z",
@@ -10,13 +10,12 @@
    "lastFeedItemTitle": "Robert Caro – The master biographer reflects at 91"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-10-31T16:05:00.000Z",
-   "lastEpisodeTitle": "Agents Prompt People: Using Agents for Long-Horizon Financial Work",
-   "lastFeedItemPubDate": "2026-10-31T16:05:00.000Z",
-   "lastFeedItemTitle": "Agents Prompt People: Using Agents for Long-Horizon Financial Work",
+   "lastEpisodePubDate": "2026-11-02T23:01:02.000Z",
+   "lastEpisodeTitle": "Building AI for Lawyers - Jacob Lauritzen, CTO of Legora",
+   "lastFeedItemPubDate": "2026-11-02T23:01:02.000Z",
+   "lastFeedItemTitle": "Building AI for Lawyers - Jacob Lauritzen, CTO of Legora",
    "newEpisodes": [],
-   "lastArticlePubDate": "2026-10-29T16:00:00.000Z",
-   "lastArticleTitle": "Can Frontier Models See Past a Decoy? Elorian Tests Visual Reasoning"
+   "note": "同集另有 22:54:03Z 條目「Building Legal Agents When You Can't See the Data」，為同一集 podcast/article 雙發，已去重。"
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-10-29T10:00:00.000Z",
@@ -33,11 +32,11 @@
    "newEpisodes": []
   },
   "ml_street_talk": {
-   "lastEpisodePubDate": "2026-10-26T14:36:54.000Z",
-   "lastEpisodeTitle": "Mathematics Just Changed Forever — Kevin Hartnett",
-   "lastFeedItemPubDate": "2026-10-26T14:36:54.000Z",
+   "lastEpisodePubDate": "2026-11-02T04:43:47.000Z",
+   "lastEpisodeTitle": "Why Leibniz Couldn't Find the Mind Inside the Mill (Joscha Bach)",
+   "lastFeedItemPubDate": "2026-11-02T04:43:47.000Z",
+   "lastFeedItemTitle": "Why Leibniz Couldn't Find the Mind Inside the Mill (Joscha Bach)",
    "newEpisodes": [],
-   "lastFeedItemTitle": "Mathematics Just Changed Forever — Kevin Hartnett",
    "lastClip": {
     "title": "The Annals Published It. It Wasn't True. - Kevin Buzzard",
     "pubDate": "2026-10-28T00:47:40.000Z",
@@ -67,11 +66,16 @@
    "lastFeedItemTitle": "少有的同时做过 Agent、多模态和具身的人 | 对谈前混元多模态 RL Infra 负责人淏楠"
   },
   "slaying_dragon": {
-   "lastEpisodePubDate": "2026-10-26T17:55:28.000Z",
-   "lastEpisodeTitle": "不是，怎么又换版本了？---狂飙中的AI 2026",
-   "lastFeedItemPubDate": "2026-10-26T17:55:28.000Z",
+   "lastEpisodePubDate": "2026-11-02T16:00:00.000Z",
+   "lastEpisodeTitle": "一个非典型内容创作者的知识付费新尝试，也是一个重轻粉丝对重轻的致敬",
+   "lastFeedItemPubDate": "2026-11-02T16:00:00.000Z",
+   "lastFeedItemTitle": "一个非典型内容创作者的知识付费新尝试，也是一个重轻粉丝对重轻的致敬",
    "newEpisodes": [],
-   "lastFeedItemTitle": "不是，怎么又换版本了？---狂飙中的AI 2026"
+   "crossPost": {
+    "title": "从龙虾到《赵云与阿斗》，我的10个AI-aha moment",
+    "pubDate": "2026-11-02T05:41:56.000Z",
+    "note": "與十字路口 2026-11-01 16:00Z 年終復盤①同一段錄音串台重發，已在 11-02 報告萃取。"
+   }
   },
   "crossing": {
    "lastEpisodePubDate": "2026-11-01T16:00:00.000Z",
@@ -82,17 +86,15 @@
   }
  },
  "notes": {
-  "scan_status": "2026-11-02 掃描（02:03–02:13 UTC）：窗口 11-01 02:04Z → 11-02 02:13Z 內僅 1 集新 podcast（十字路口《年終復盤①》11-01 16:00Z，53:20）。英文四台與其餘四台中文均無新集。",
-  "report_date": "2026-11-02",
-  "feed_fix": "改用 iTunes Search API（itunes.apple.com/search?entity=podcast）反查 feedUrl，首次成功取得全部 5 個中文台原生 RSS，並還原 No Priors 正確 feed。已寫入 state.resolvedFeeds。",
-  "feed_confusion_fixed": "feeds.megaphone.fm/RINTP3108857801 係 Cognitive Revolution，唔係 No Priors；舊 state 標註錯誤，已分開。No Priors 正確 feed 為 feeds.megaphone.fm/nopriors。",
-  "deep_content_fetched": "十字路口本集無現成逐字稿（小宇宙 transcript 需 auth，API 401），改用節目音頻 → Gemini 3.5 Flash 分段轉寫（4×800s chunk，每段約 6.2–6.7k 字），全稿約 26k 字元，逐段通讀後萃取。",
-  "failures": "①Dwarkesh YouTube channel RSS（UCXl4i9dYBrFOabk0xGmbkRA）404，連續多日。②No Priors YouTube channel RSS（UCSI7h9hydQ40K5MJHnCrQvw）404。③小宇宙 transcript API 401；gemini-3.5-transcribe 免費層 10k TPM 不足，改用 gemini-3.5-flash 轉寫。",
-  "jev_prefilter": "單條候選跑 jev.py triage --profile news：worth 0.61（keep）、category llm-model（conf 0.38）、primary_source 0.10。已在報告標明「一手訪談、嘉賓所述多為二手轉述」及數字不確定處。",
-  "notable_for_james": "①Anthropic 6/4《When AI Builds Itself》：RSI 已進入工程實施，兩張圖講到「人類消失」，此後半年敘事（智譜 GLM-6、Ilya TTT、田淵棟 Recursive、Jeff Dean 無限 logo）全部圍繞它。②RSI 的錢漏到下游：後訓練／RL 環境／數據／benchmark，Q2 起收入爆炸。③字節視頻霸權不是模型而是循環：短劇產能＋全家桶分發＋廣告變現＋行為數據 → 廣義 RSI；Google 因內部搶資源與「多模態只是半桌」而搖擺。④端側追平 SoTA 由 18–24 個月壓到 9 個月（Qwen2.5-32B ≈ Opus 4.6/4.7），「今天的奇觀 9 個月後本地跑」。⑤App Store 單季收入十幾年首降（8/21），AI Coding 讓人人自造軟件；GitHub 成新小紅書。⑥斬殺線由自媒體發明、被廠商收編；OpenRouter 前十模型調用量 80%→20%（5 個季度）。⑦巨頭夾縫：千億公司的支出就是初創的收入；Character.AI 賽道 4–5 家 ARR 過億。",
-  "cross_episode_theme": "與 10-26《屠龍之術》「版本又換了」同框架：2026 的主線是範式收斂＋能力下放，而非單點突破；所有能力最終都變成成本問題。",
-  "index_html": "未更新 index.html（該落地頁自 2026-07-19 起停更，維持既有慣例）。",
-  "deep_dive_link": "本輪未新增 deep-dive；報告本體約 30KB，已含完整十段萃取與逐字引用。"
+  "scan_status": "2026-11-03 掃描（02:03–02:05 UTC）：窗口 11-02 02:13Z → 11-03 02:05Z 內 4 條新 feed item，去重後 3 集（Latent Space×1、MLST×1、屠龍之術×2 其中 1 集為串台重發）。英文其餘三台與中文其餘四台均無新集。",
+  "report_date": "2026-11-03",
+  "deep_content_fetched": "①Latent Space 官方逐字稿（95,526 字元，含 timestamps 與 transcript 全文）。②MLST YouTube 自動字幕 yW_ngvMFlYs（原 VTT 181KB，去重後 98,450 字元）；rescript 分享頁為 SPA，API 未公開，改走 yt-dlp 字幕。",
+  "jev_prefilter": "Legora worth 1.23 keep（business, primary_source 0.35）；Bach worth 0.04（news profile 對思想類內容失效，人工覆核保留並在報告標註）；屠龍之術重發 0.29、非 AI 集 0.22，均如實標為低優先。",
+  "failures": "①Dwarkesh YouTube channel RSS（UCXl4i9dYBrFOabk0xGmbkRA）404。②No Priors YouTube channel RSS（UCSI7h9hydQ40K5MJHnCrQvw）404。③rescript.info 分享頁需 JS，api.rescript.info 無公開端點。",
+  "notable_for_james": "①Legora：$550M E @ $8.8B（10月），3月 $550M @ $5.55B；ARR >$200M，2026-04 破 $100M（<18 個月）；1,800+ 客戶；今年第 5 宗收購；工程師 20→100。②模型已做好約 60% 法律工作，剩餘是長文檔推理；citation 70%→99% 靠換模型而非工程。③無 trace 的 eval：3 工程師+3 律師造 RL 環境，10k 檔 data room，practice area×task 熱力圖；很多版本「部分變好部分變差」。④計時收費由競爭壓力撬開，非產品說服；初級律師更值錢而非消失（與 Swyx 的 junior engineer 論述相衝）。⑤Bach：意識可能不比 transformer 複雜；IIT 用丘奇-圖靈可證其形式缺陷；zombie 有時比有意識 agent 更貴；「模擬的水不會弄濕你」是壞論證。",
+  "cross_episode_theme": "今日兩集共同方法論：內部不可見時，只能重建外部環境或推論因果結構。Legora 重建客戶工作世界做 eval；Bach 用因果模式取代內省。與 10-26 屠龍之術「範式收斂」、11-01 十字路口「RSI 與粗糙」構成連續敘事：能力下放後，剩下的都是判斷與治理問題。",
+  "index_html": "未更新 index.html（沿用 2026-07-19 起停更的慣例）。",
+  "deep_dive_link": "本輪未新增 deep-dive；報告本體約 42KB，含兩集完整萃取與逐字引用。"
  },
  "resolvedFeeds": {
   "zhang-xiaojun": "https://feed.xyzfm.space/dk4yh3pkpjp3",

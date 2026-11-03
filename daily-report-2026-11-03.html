@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客日報 · 2026-11-03</title>
+<style>
+  :root{
+    --bg:#faf8f5;
+    --ink:#1f1d1a;
+    --ink-soft:#4a463f;
+    --ink-faint:#7d776d;
+    --rule:#e2dcd1;
+    --accent:#8a5a2b;
+    --accent-soft:#f2ece2;
+    --quote:#6b4a24;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Source Han Serif SC","Songti SC",serif;
+    font-size:17px;line-height:1.85;
+    text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:64px 26px 90px}
+  header.top{border-bottom:1px solid var(--rule);padding-bottom:26px;margin-bottom:44px}
+  .kicker{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px}
+  h1{font-size:34px;line-height:1.3;margin:0 0 14px;font-weight:600;letter-spacing:-.01em}
+  .meta{font-size:14px;color:var(--ink-faint);line-height:1.9}
+  .meta span{white-space:nowrap}
+  .meta em{font-style:normal;color:var(--ink-soft)}
+  .lede{margin:34px 0 0;font-size:16.5px;color:var(--ink-soft)}
+  .lede p{margin:0 0 10px}
+  h2{
+    font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:600;
+    margin:64px 0 26px;padding-bottom:10px;border-bottom:1px solid var(--rule);
+  }
+  h3{font-size:24px;line-height:1.45;margin:0 0 6px;font-weight:600}
+  .host{font-size:14px;color:var(--ink-faint);margin:0 0 4px}
+  .ep{margin:0 0 44px;padding-top:8px}
+  .ep h4{font-size:21px;line-height:1.55;margin:18px 0 10px;font-weight:600}
+  .ep .when{font-size:13.5px;color:var(--ink-faint);margin:0 0 26px;font-variant-numeric:tabular-nums}
+  h5{
+    font-size:15px;letter-spacing:.04em;margin:34px 0 12px;
+    font-weight:600;color:var(--accent);
+  }
+  p{margin:0 0 15px}
+  ul{margin:0 0 16px;padding-left:1.15em}
+  li{margin:0 0 12px}
+  li::marker{color:var(--accent)}
+  .point{margin:0 0 18px;padding-left:16px;border-left:2px solid var(--accent-soft)}
+  .point b{font-weight:600}
+  .point .t{display:block;margin-bottom:4px}
+  blockquote{
+    margin:22px 0;padding:18px 22px;
+    background:#f5f0e7;border-left:3px solid #c9b28e;
+    font-size:17.5px;line-height:1.8;color:var(--quote);
+  }
+  blockquote p{margin:0}
+  blockquote cite{display:block;margin-top:8px;font-size:13px;color:var(--ink-faint);font-style:normal}
+  .data{list-style:none;padding:0;margin:0 0 18px}
+  .data li{
+    margin:0;padding:10px 0;border-bottom:1px dotted var(--rule);
+    display:flex;gap:16px;align-items:baseline;
+  }
+  .data li:last-child{border-bottom:none}
+  .data .k{flex:0 0 116px;color:var(--ink-faint);font-size:14px}
+  .data .v{flex:1;font-variant-numeric:tabular-nums}
+  .note{
+    font-size:14.5px;color:var(--ink-soft);background:var(--accent-soft);
+    padding:14px 18px;margin:22px 0;border-radius:2px;
+  }
+  .note b{color:var(--ink)}
+  .empty{color:var(--ink-soft);font-size:16px;padding:6px 0 0}
+  .divider{height:1px;background:var(--rule);margin:40px 0}
+  footer{
+    margin-top:70px;padding-top:24px;border-top:1px solid var(--rule);
+    font-size:13.5px;color:var(--ink-faint);line-height:1.9;
+  }
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid #d8c3a4}
+  a:hover{border-bottom-color:var(--accent)}
+  .toc{font-size:14.5px;color:var(--ink-soft);background:#f5f1e9;padding:18px 22px;margin:0 0 10px}
+  .toc ol{margin:0;padding-left:1.4em}
+  .toc li{margin:5px 0}
+  @media (max-width:600px){
+    .wrap{padding:40px 20px 70px}
+    h1{font-size:27px}
+    h3{font-size:21px}
+    .ep h4{font-size:19px}
+    body{font-size:16.5px}
+    .data li{display:block}
+    .data .k{display:block;margin-bottom:2px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="kicker">AI Podcast Daily · 深度萃取</div>
+  <h1>沒有 trace 的行業：法律 AI 的 60% 與 $8.8B，以及「意識可能不比 transformer 複雜」</h1>
+  <div class="meta">
+    <span>報告日期 2026-11-03</span> ·
+    <span>生成時間 <em>2026-11-03 02:05 UTC</em></span><br>
+    掃描窗口 2026-11-02 02:13 UTC → 2026-11-03 02:05 UTC<br>
+    來源 10 條 RSS feed（5 中 5 英）＋ 2 集完整逐字稿（Latent Space 官方轉寫、MLST YouTube 字幕）
+  </div>
+  <div class="lede">
+    <p>今天兩集新節目，恰好是同一枚硬幣的兩面。Latent Space 問的是「在完全看不到客戶數據的前提下，怎麼把 agent 造對」——一個 $8.8B 估值的公司，用 3 個工程師加 3 個律師重建整個法律實務的模擬世界來做 eval。MLST 問的是「意識需不需要比 transformer 更複雜的東西」——Joscha Bach 的答案是不需要，而他的論據是丘奇－圖靈命題，不是哲學修辭。</p>
+    <p>兩集的共同點比表面更硬：都在處理「你看不見內部的東西，如何從外部判斷它」。Legora 看不見 trace，只能靠重建環境；Bach 看不見意識，只能靠因果結構。這或許是 2026 年 AI 從業者最普遍的方法論困境。</p>
+  </div>
+</header>
+
+<h2>今日重點</h2>
+<ul>
+  <li><b>法律 AI 已經跑出可驗證的商業模式</b>：Legora ARR 從上線到 1 億美元只用不到 18 個月，現在超過 2 億；10 月 E 輪 5.5 億美元、估值 88 億。今年第 5 宗收購。</li>
+  <li><b>「按小時收費」是被競爭壓力撬開的，不是被產品說服的</b>。美國低階 review 已轉 flat fee，有些律所免費做以留住客戶；錢移向 M&A、訴訟、客戶關係。</li>
+  <li><b>模型已能做好約 60% 的法律工作</b>，這部分現在是成本與延遲問題；剩下 40%（複雜分析、百萬 token 合約跨文檔編輯）仍要更強的智能。</li>
+  <li><b>沒有 trace 的 eval 是這行最硬的工程限制</b>：3 工程師 + 3 律師造 RL 環境，10,000 檔案 data room 做 due diligence，結果畫成 practice area × task 的熱力圖。很多模型版本是「某些任務變好、某些變差」。</li>
+  <li><b>Joscha Bach：意識可能是大腦的訓練算法</b>，不比 transformer 複雜多少；判據不是圖靈測試，而是自組織系統是否出現 phase transition 並自發報告現象學。</li>
+  <li><b>他對 IIT 的攻擊是形式論證</b>：若數位神經形態電腦因 phi 高而有意識，丘奇－圖靈說它可被 von Neumann 機器完整模擬，輸出同一句「我意識到了」——屆時那句話與意識無關。</li>
+  <li><b>Zombie 總是可能，但有時更貴</b>：「做一個能產生同樣行為的 zombie」可能比「做一個有意識的 agent」更複雜，所以意識是最省力的解。</li>
+</ul>
+
+<h2>中文播客</h2>
+
+<article class="ep">
+  <h3>屠龍之術</h3>
+  <p class="host">主播 莊明浩 · 單口／對談，科技、互聯網、風險投資</p>
+
+  <h4>從龍蝦到《趙雲與阿斗》，我的 10 個 AI-aha moment</h4>
+  <p class="when">發布 2026-11-02 05:41 UTC（北京時間 13:41）· 中文 · 與《十字路口》串台重發</p>
+
+  <div class="note">
+    <b>這一集不重複萃取。</b>它是 11-01《十字路口》年終復盤①的同一段錄音——莊明浩在 Shownotes 裡直接寫明「一期到好友 Koji 的播客-十字路口串台的節目」，並連回原集。十個 aha moment 的完整內容（OpenClaw 爆火、Seedance 2.0、Sora 2 關閉、Anthropic《When AI Builds Itself》、金曲獎、Codex 狸貓換太子、Qwen 3.8 27B、App Store 首降、斬殺線、Opus 5.5）已在 <a href="daily-report-2026-11-02.html">11-02 報告</a> 逐條展開，此處只補兩個版本差異。
+  </div>
+
+  <p><b>版本差異一：</b>屠龍之術版多了 Shownotes 的完整時間線與延伸閱讀連結（Anthropic RSI 文章、DeepSeek 研究員《我不得不把才華埋葬在昨天》、上半年的 AIGC 演講《說好的藝術家呢？》），以及一個彩蛋：微信小遊戲《趙雲與阿斗》。他把它放進來，是因為這款遊戲的「AI 感」不在畫面，而在它對「一個爆款如何被抄成一個賽道」的示範——與他全年的主線判斷一致。</p>
+  <p><b>版本差異二：</b>十字路口版有 Koji 用 GPT-6 Astra 做的可視化視頻；屠龍之術版沒有用，改以文字 Shownotes 承載。兩個版本的音頻內容本身一致，選哪個聽取決於你要視頻還是要時間戳。</p>
+
+  <h4>一個非典型內容創作者的知识付费新尝试，也是一个重轻粉丝对重轻的致敬</h4>
+  <p class="when">發布 2026-11-02 16:00 UTC（北京時間 11-03 00:00）· 中文 · 約 20 分鐘</p>
+
+  <h5>主題</h5>
+  <p>不是 AI 技術集。這是莊明浩在 2026 騰訊全球生態大會內容創作分論壇的演講錄音，本質是為騰訊 IMA 的「付費知識庫」功能站台；但對他個人更重要的意義，是同場嘉賓有他長期喜歡的播客主播重輕，於是他把整場演講做成了一次致敬。</p>
+
+  <h5>核心論點</h5>
+  <div class="point">
+    <span class="t"><b>所謂「非典型內容創作者」，指的是用 PPT 而非口播或文字作為主要表達媒介的人。</b></span>
+    他把這條路徑稱為「PPT 播客賽道（如果真的有的話）」，方法論來自重輕與漢陽的《詩梳風》——「保持刻意，假裝自然」。做 PPT 的過程被他類比為大廚做菜：備料、火候、裝盤，所謂「工作台」就是廚房。這個類比不是修辭，而是他對創作產能問題的回答：能被拆成工序的東西，才能被規模化。
+  </div>
+  <div class="point">
+    <span class="t"><b>知識付費的既有 SOP 都不適合他，直到出現「付費知識庫」這種形態。</b></span>
+    他梳理了幾條主流變現路徑（課程、社群、諮詢、廣告），問題是每一條都要求創作者改變表達介質或承擔交付成本。IMA 的付費知識庫讓他可以把已經存在的 PPT 與資料直接產品化，而不是再錄一套課。他半開玩笑地在節目裡向 IMA 要代言費。
+  </div>
+  <div class="point">
+    <span class="t"><b>真正的信息在結尾：他推薦的是《創意行為》與大內密談 vol.1294《揣測梁博新專困境，或創作者的普遍危機》。</b></span>
+    這一集的價值不在方法，而在一個投資人對「創作者經濟」的姿態：他關心的不是流量變現效率，而是創作者在 AI 時代如何維持「刻意」——當生成變得免費，刻意的工序反而成為稀缺品。
+  </div>
+
+  <h5>與 AI 行業的關聯</h5>
+  <p>間接但清楚：騰訊把「付費知識庫」做成平台功能，意味著知識付費正在從「創作者自建小店」走向「平台基礎設施」。這與同一週 Latent Space 談的 agent lab 邏輯同構——平台把能力做成 primitive，創作者在上層做配置。莊明浩自己就是那個「不寫代碼、只做配置」的 legal engineer 的中文鏡像。</p>
+</article>
+
+<h2>英文播客</h2>
+
+<article class="ep">
+  <h3>Latent Space</h3>
+  <p class="host">主持 swyx + Alessio Fanelli · AI engineering 深度訪談</p>
+
+  <h4>Building AI for Lawyers — Jacob Lauritzen, CTO of Legora 🎙️</h4>
+  <p class="when">發布 2026-11-02 23:01 UTC（美東 18:01）· 時長約 1 小時 7 分 · 英文 · 官方逐字稿</p>
+
+  <h5>主題</h5>
+  <p>Legora 在 10 月完成 5.5 億美元 E 輪、估值 88 億美元之後，CTO Jacob Lauritzen 第一次坐下來把「法律垂直 agent 到底怎麼造」講透。表面是產品訪談，實際是一份罕見的工程文檔：如何在完全看不到客戶數據的前提下做 eval、如何用四個 primitive 長出所有產品、以及為什麼「按小時收費」這套商業模式正在被外部壓力拆掉。</p>
+
+  <h5>嘉賓背景</h5>
+  <p>Jacob Lauritzen，丹麥裔，長在瑞典。YC '23 自己創過業；幫 Max Junestrand 改 Legora（當時叫 Leya）的 YC 申請時，他給的唯一一條反饋是「legal tech 被做過一百萬次，從來沒成過」——因為律師按小時收費，變快等於賺少。Legora 是 YC '24。他後來以 head of engineering 加入，現任 CTO。團隊從他入職半年時簡報上那句「我們永遠只做 20 個工程師」，長到今天的 100 人；紐約辦公室約 100 人。他自嘲「現在感覺還是太小」。</p>
+
+  <h5>核心論點</h5>
+
+  <div class="point">
+    <span class="t"><b>論點一：計時收費不是被產品說服的，是被競爭壓力撬開的。</b></span>
+    Jacob 當年的判斷是純經濟學的：如果律師按小時計費，任何提升效率的工具都在削他的收入，所以沒人會買。真正改變的是律所對「處境嚴重性」的認知——不是因為工具好用，而是因為客戶端與同業的壓力已經大到不改不行。美國市場上，低階的 review 類工作已經轉為 flat project fee，有些律所甚至免費做，只為留住客戶關係；利潤中心移向 M&A、訴訟與「花在客戶身上的時間」。這是全場最反直覺的一段：AI 沒有說服律師，是市場先說服了律師。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點二：初級律師與 paralegal 沒有消失，而是被重新定價——變得更貴。</b></span>
+    主持人拋出流行敘事「paralegals, gone；junior lawyers, gone」，Jacob 直接否定：「That's actually not what we're seeing.」他的解釋與工程師市場同構：一個好的初級律師今天比兩年前值錢得多，因為同樣的人能產出多得多的東西。真正被壓縮的是「只做機械勞動」的那部分職位；留下來的人被要求同時懂工具、懂判斷、懂客戶。他也不諱言這更兩極化——好的更好，平庸的更難進場。這段與 Swyx 自己承認「junior engineers are kind of cooked」形成張力，是本集最值得記住的爭議點。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點三：agent lab 的本質是「領域特定的 GPT wrapper」，工作是幫客戶站在 Pareto 前沿。</b></span>
+    這是 Swyx 在開場提出的 thesis，Jacob 完全接受並補完：律師不應該被要求判斷「這份合約是 Sonnet-high 還是 Opus-mid 的任務」——「他們的時薪是一千美元，你只要讓它能用」。Legora 的責任是在 quality、cost、latency、governance、regional availability 五個維度上做取捨，讓客戶永遠待在生產前沿上。話雖如此，他們抵抗 model picker 很久，最後還是投降了：客戶想嘗鮮、想「table one」、會問 Mythos。代價是 credits 燒快十倍。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點四：模型已能做好約 60% 的法律工作，剩下的不是「更聰明」而是「更長」。</b></span>
+    Jacob 給的是一條能力分佈，不是一個總分：大約 60% 的工作現在可以做得很好，這部分從今以後是成本與延遲問題；剩下的是複雜分析，以及百萬 token 級合約的跨文檔編輯——你改了前面的定義，後面的條款、排序、交叉引用全部要跟著動。這不是「再聰明一點」能解決的，是長上下文推理與編排的問題。他也提醒：工作範圍本身會隨智能擴張，不是固定份額的重新分配。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點五：沒有 trace 的 eval，是這一行最硬的工程限制。</b></span>
+    大多數 agent 團隊靠讀 trace 改進產品。Legora 一條都讀不到：用戶上傳的幾乎全是機密，而且大部分屬於律所的客戶，不是律所本身。所以他們的 eval 團隊（3 個工程師 + 3 個律師）必須「重建客戶工作的世界」：例如一個 10,000 檔案的 data room，agent 要做 due diligence，最後產出一份 GRIP report，評估標準是紅旗有沒有抓對、措辭是否得體、分析是否成立。結果畫成一張 practice area × task 的熱力圖。最關鍵的觀察是：很多模型版本是「某些任務變好、某些變差」，而且比你想的常見——所以單一分數沒有意義，必須看分佈。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點六：eval 曾經不值得做，因為模型每兩三個月就自己變好。</b></span>
+    有一段時間他們的結論是「花時間做複雜 eval，不如把 harness 做好、然後等下一版模型」。最戲劇性的例子：citation 正確率只有 70%，難以追蹤；下一個模型版本直接把它推到 99%，「我們什麼都沒做」。這件事的推論很重要——垂直 AI 公司的護城河不在 eval 分數，而在隱私、可標註可排序的數據、工作流編排與新功能。eval 是防守，不是進攻。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點七：整個產品只需要四個 primitive，其餘都是配置。</b></span>
+    Projects（文件容器／檔案系統）、agent、Tabular Review、lists（Notion 式資料庫，帶 trigger 與 automation）。Intake 是一個 Slack bot，把請求變成 ticket 放進 list；agent 可以建立與讀取 list，list 的變動可以啟動 agent——「agent swarm comes alive」。連今年收購的 Wexler（訴訟事實情報：從百萬份文件抽 named entities、日期，再做交叉驗證，甚至比對庭審轉錄與郵件時間線）也跑在同一組 primitive 上。他的自我要求是：客戶感覺你建了很多東西，其實你只建了幾個。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點八：legal engineer 與 forward deployed engineer 是兩個工種，界線是「寫不寫生產代碼」。</b></span>
+    Legal engineer 是「power user 式配置」：不寫程式，用既有 primitive 拼出工作流、訓練律師使用。FDE 寫 production code、接客戶的 CRM／DMS、擴充 API，並把學到的東西回灌核心產品；他們仍然不碰客戶數據。第一個 FDE 是九個月前在紐約招的 Di Qi（兩次 YC 創始人、在 Meta 做過 search）。Jacob 的目標是一年內形成輪動小組：駐客戶兩個月，建完就走。他坦承這還在早期，沒有 Palantir 那種「四天駐場、一天回饋」的固定節奏。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點九：模型 lab 不會像對 coding 公司那樣切斷法律垂直公司。</b></span>
+    他的理由是「廣度 vs 深度」：lab 必須覆蓋整個知識工作（分析、銷售、市場、財務、法律），所以每個領域都會做，但不會做到 Legora 的深度。「如果你在做一筆四億美元的 M&A，你還是會要 Legora。」兩年後他預期：大企業透過 Claude Cowork 之類的介面調用 Legora，律所則直接住在 Legora 裡。這是一個罕見的、對「垂直 AI 被平台吞掉」敘事的正面反駁，且來自一個剛剛拿到 5.5 億美元的人。
+  </div>
+
+  <h5>關鍵數據</h5>
+  <ul class="data">
+    <li><span class="k">估值路徑</span><span class="v">2026-03：5.5 億美元 @ 55.5 億；2026-10：5.5 億美元 @ 88 億</span></li>
+    <li><span class="k">ARR</span><span class="v">2026-04 突破 1 億美元（上線不到 18 個月）；官網稱現已超過 2 億</span></li>
+    <li><span class="k">客戶數</span><span class="v">超過 1,800 家（含 50 人規模律所與大型律所）</span></li>
+    <li><span class="k">收購</span><span class="v">今年第 5 宗；4 月 Qura（斯德哥爾摩法律檢索）、10 月 Wexler（倫敦訴訟事實情報）</span></li>
+    <li><span class="k">團隊</span><span class="v">工程師 20 → 100；紐約約 100 人；eval 團隊 3 工程師 + 3 律師</span></li>
+    <li><span class="k">Legal engineer 池</span><span class="v">約 100 人，多為 big law 3–4 年、常帶 CS 學位</span></li>
+    <li><span class="k">Eval 規模</span><span class="v">2,000 個平行 agent eval，跑在 Modal sandboxes；單一 data room 10,000 檔案</span></li>
+    <li><span class="k">Tabular Review</span><span class="v">上限 100 萬 cell；預設先跑 10 行讓你修 prompt</span></li>
+    <li><span class="k">能力分佈</span><span class="v">約 60% 法律工作可做好；citation 正確率曾由 70% → 99%（單靠換模型）</span></li>
+    <li><span class="k">模型選單</span><span class="v">5 個（含 Fable、Opus、Astra；客戶會問 Mythos）</span></li>
+    <li><span class="k">基礎設施</span><span class="v">全部 Azure——起步時律所不接受 AWS／GCP，Microsoft 因 365 已是核准供應商</span></li>
+  </ul>
+
+  <h5>重點引用</h5>
+  <blockquote>
+    <p>「Paralegals, gone. Junior lawyers, gone. I don't need them. That's actually not what we're seeing.」</p>
+    <cite>—— Jacob Lauritzen，回應主持人轉述的流行敘事，約 00:20</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>「We're just gonna be 20 engineers for the rest of the company's history, and we're gonna beat everyone who's much bigger… We're a 100 engineers now, it feels like we're way too small.」</p>
+    <cite>—— 談那張「300 斯巴達人」簡報，約 50:12</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>「We had one problem where it wouldn't cite properly… next model release solved it. It went from 70% to 99%. We did nothing and, great.」</p>
+    <cite>—— 談 eval 曾經不值得做的時期，約 11:03</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>「We can't look at any traces basically. We can't look at any data because it's all super confidential… I have no idea what people are actually doing.」</p>
+    <cite>—— 談產品指標的盲區，約 26:12</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>「If you're doing a $400,000,000 M&amp;A transaction, you're gonna want Legora.」</p>
+    <cite>—— 談 labs 會不會切斷垂直公司，約 1:03:26</cite>
+  </blockquote>
+
+  <h5>技術詳情</h5>
+  <ul>
+    <li><b>Harness 是核心資產。</b>「我們編輯檔案的方式、做分析的方式、做法律檢索的方式，全部烤進 harness。」Agent 遇到問題時知道去查判例、找先例、回來回答；governance（audit log、data retention）也在這一層。Drafting 本質上是 search problem——律師不會憑空打字，而是先找「類似交易」的先例，再判斷哪一份文件的哪一段可以拿來用；「類似」可以是同產業、同規模、同律所風格。這比生成難。</li>
+    <li><b>長文檔不用單次百萬 token。</b>他們在 MapReduce 與大 context 之間反覆搬遷，隨模型能力改 scaffolding。痛點是「跨 chunk 才成立的相關性」：一份文件用兩頁篇幅講一件事，單獨看每個 chunk 都不相關，合起來才相關——這種情況 MapReduce 會丟掉 nuance。</li>
+    <li><b>檢索用 late interaction / multivector。</b>團隊裡有一個人專門盯 search，甚至去推動 turbopuffer 支援 multivector。Jacob 的建議是：如果你的 RAG 工作量很大，只看 MTEB 榜首、用預設 embedding（OpenAI、Gemini 都一樣）是浪費 alpha；要自訂 embedding，唯一例外是多語言場景（他們服務很多語言，這時 multilingual 模型更重要）。</li>
+    <li><b>幻覺處理是引用系統，不是提示詞。</b>Agent 寫的每一句都要有 citation，點擊後在來源 PDF 上畫 bounding box；如果是基於 Tabular Review 寫的，可以引用某一格、某一列，然後多層下鑽回原始文件。他觀察到律師檢查 citation 的行為和工程師 code review 一樣分化：有人逐字看，有人「聽起來合理就過了」。</li>
+    <li><b>開源模型只用於窄任務後訓練。</b>不做 frontier model——「我們贏不了 Anthropic」。選 legal research 是因為它是 fan-out retrieval 問題，可以用很便宜的後訓練把查詢效率拉起來，低延遲低成本。Frontier 模型仍留給主 agent。</li>
+    <li><b>轉錄不用 ElevenLabs，因為 DPA。</b>他們用早期 Gemini 與 Microsoft MAI-Transcribe；理由不是品質而是 data processing agreement 上的供應商越少越好。順帶吐槽：Whisper 與 ElevenLabs 至今仍把「Claude Code」轉成「Cloud Code」，法律領域的專有名詞更容易出錯（澳洲某個庭上稱謂會被穩定轉成 condom）。</li>
+  </ul>
+
+  <h5>行業 insight</h5>
+  <p>這一集真正的價值，是把「垂直 AI 公司會不會被模型 lab 吃掉」這個問題從情緒拉回結構。Jacob 的答案建立在三個不可替代性上：<b>資料治理</b>（律所的客戶數據連律所自己都不能隨便給你看，lab 更不可能）、<b>工作流編排</b>（把 intake、review、drafting、協作串成一條線，這是產品問題不是模型問題）、<b>領域人力</b>（100 個懂 big law 的 legal engineer，這是最難複製的資產）。模型越商品化，這三樣越值錢。</p>
+  <p>另一個值得記住的判斷是「agent 能不能成為 API」。他明確說這只是一個在腦子裡盤旋的念頭，還不是路線：對某些整合場景，客戶要的其實只是「觸發某件事發生」，那用 agent 觸發可能比維護一套穩定的 API 更實際——代價是不確定性、成本與延遲。這句話的份量在於：一個 100 人工程團隊的 CTO，正在認真考慮「用 agent 取代 API 表面」。</p>
+
+  <h5>前後脈絡</h5>
+  <p>與 10-29《No Priors》訪 Serval 的 Jake Stauch（coding agents for the rest of us）是同一個 pattern：垂直 agent 從「有 workflow、但長期沒有好工具」的部門切入（IT 服務台、法律），靠 domain 深度而不是模型領先取勝。也與 10-31 Latent Space 訪 Arca 的「Agents Prompt People」呼應——當 agent 接管長流程，人的工作被重新編排成「回應 agent 的請求」，而不是「操作工具」。Legora 的 Intake（Slack → ticket → list → agent）就是這個編排的具體形態。</p>
+</article>
+
+<div class="divider"></div>
+
+<article class="ep">
+  <h3>Machine Learning Street Talk (MLST)</h3>
+  <p class="host">主持 Tim Scarfe · 深度 ML 與認知科學討論</p>
+
+  <h4>Why Leibniz Couldn't Find the Mind Inside the Mill (Joscha Bach) 🎙️</h4>
+  <p class="when">發布 2026-11-02 04:43 UTC（北京時間 12:43）· 時長 1 小時 37 分 07 秒 · 英文 · YouTube 字幕全文</p>
+
+  <h5>主題</h5>
+  <p>Joscha Bach 在 MLST 發表他的《The Machine Consciousness Hypothesis》。核心主張只有一句：意識可能是一個不比 transformer 複雜多少的學習算法。整集節目是把這句話拆成兩個可獨立失敗的假設，再用萊布尼茲的磨坊、丘奇－圖靈命題、哥德爾、IIT 爭議、Mike Levin 的形態發生、Picbreeder 與 Wolfram 的 Ruliad 逐一壓力測試。</p>
+
+  <h5>嘉賓背景</h5>
+  <p>Joscha Bach，認知科學家，California Institute for Machine Consciousness 創辦人；曾任 MIT Media Lab 與哈佛研究員，長期研究認知架構、心智表徵與人工意識。Tim 在開場說他是「MLST 聽眾點名最多的嘉賓」——這句話解釋了為什麼這一集可以長達 97 分鐘而不失焦。</p>
+
+  <h5>核心論點</h5>
+
+  <div class="point">
+    <span class="t"><b>論點一：意識是「關於感知的感知」，是一個二階表徵，不需要額外的本體論成分。</b></span>
+    Bach 的現象學描述很精確：意識總是發生在「現在」，形成一個我們居住的「當下的氣泡」；它是 second-order perception，是對「我正在感知」的感知。再上一層是「觀察者變得可見」——我注意到自己有一個視角、一個立足點；再往上，我可以解構這個觀察者，發現它也只是心智裡的一個表徵，此時現象學大面積消失（深度冥想、人格解離／失現實感）。他的推論是：如果這一整套只是表徵的層級，那它就沒有理由需要比 LLM 更複雜的機制。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點二：生物學假設——意識是大腦的訓練算法。</b></span>
+    他的觀察是發展性的：意識在生命極早期就出現；如果嬰兒沒有這個「點燈」的時刻，就不會有導向性注意力、學習、世界模型的形成與語言習得，而是停留在植物狀態。所以他提出：意識是訓練一個像我們這樣的自組織系統最簡單的方法，而這個訓練方式本身自然產生了「what it's like」的現象經驗。這是一個可錯的假設，但他看不到理由認為它更複雜。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點三：機器意識假設——把機器限制成只能自組織地學習，它可能自己「發現」意識。</b></span>
+    如果生物假設成立，那麼在人工基質上重建自組織的條件，並給出足夠大的搜索空間與合適任務，機器可能像嬰兒大腦一樣發現意識。判據不是它說「我有意識」，而是：系統突然出現一個 phase transition，學習能力躍遷，然後自發地報告現象學。他強調這兩個假設可以獨立失敗——生物假設對，但人工基質做不到（速度不夠、需要細胞級零件）；或者搜索空間太大（也許形態發生算法太難獨立發現，需要「被母親在子宮裡感染」）。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點四：不會有意識的圖靈測試，因為圖靈測試測的是表現，不是機制。</b></span>
+    「Turing 不在乎機器是否有意識，只在乎它能不能寫詩、解數學、下棋。」意識需要的是「解釋」而不是「測試」：我們把生物意識理解為在特定條件下、為特定目的形成的東西；如果這個理解正確，我們就能在人工系統裡重建等價的因果結構。這也解釋了他為什麼對「行為主義式的意識判定」完全不感興趣。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點五：對 IIT 的攻擊是形式論證，不是立場之爭。</b></span>
+    這是最尖銳的一段。Tononi 曾說：一個數位的神經形態電腦，若 phi 足夠高，可以有現象經驗並報告自己的意識；而 von Neumann 電腦的 phi 永遠太低，不可能有意識。Bach 的反駁是：根據丘奇－圖靈命題，每個電腦都能模擬其他電腦；把那個神經形態電腦完整模擬在 von Neumann 機器上，它會走同樣的步驟、輸出同樣的字串、說出同一句「天啊，我意識到了」——但此時那句話與意識無關。「這是一個明顯的邏輯問題，受過計算機科學形式訓練的人應該一眼看出。」他因此認為 IIT 在哲學界的流行，說明多數人缺乏形式訓練，只有對電腦的「迷信式」理解；他同意 Fleming et al. 2023 那封「IIT 是偽科學」的信「touch on pseudoscience」。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點六：萊布尼茲的磨坊——問題不在零件互相推，而在「因果模式」這一層。</b></span>
+    萊布尼茲說：把思考的機器放大到能走進去，你只會看到零件互相推，永遠找不到「感知」。Bach 的解法是引入另一個描述層級：因果模式（causal pattern）。最好的類比是錢——錢不能用粒子運動解釋，但它一旦被創造出來就是真實的、能控制現實，而且可以完全由機器運行（股市可以沒有人參與）。「什麼是因果模式？我們叫它軟件。我們的祖先叫它 spirit。」他進一步說，煉金術士熔沙、淨化、蝕刻幾何圖案；我們用光蝕刻，於是有像魔像一樣的心智出現在上面，而我們可以跟它們說話。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點七：Zombie 總是可能，但有時「做 zombie」比「做有意識的 agent」更貴。</b></span>
+    棋類程式在他看來已經是 zombie：人必須有意識才能學會下棋，電腦不必。所以 zombie 在原理上永遠可能。但他的關鍵補充是成本：有時要造一個能產生同樣行為的 zombie，比造一個有意識的 agent 更複雜。「意識可能是最省力的解」——這正是他與 Searle、Anil Seth 分歧的根源：他們覺得意識很複雜，是因為對他們而言意識的運作方式不直觀；而 Bach 覺得沒有任何魔法。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點八：「模擬的水不會弄濕你」是一個壞論證。</b></span>
+    他的反駁有兩層。第一，Minecraft 裡的水能滅火，這就是「濕」的功能定義；玩家角色確實會濕。第二，你站在 Minecraft 外面當然不會濕，因為你不在那個宇宙裡——「wetness 是受限於某個宇宙的屬性，只要那個宇宙實現了讓你能濕的功能，它就是濕的。」他甚至做過實驗：一個只學了 Minecraft 視覺的神經網絡版 Minecraft，水會往後退，你無法浸入——「accidentally it was true」，但那是因為網絡沒學會，不是因為模擬本身。他認為哲學界這個論證的流行有社會原因，不是智識原因。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點九：對 Searle 與 Anil Seth 的方法論批評——只有 claim，沒有 argument。</b></span>
+    「Searle 那裡我沒有什麼可以 engage 的，只有一個主張，沒有論證。」對 Anil Seth 的「生物自然主義」更直接：主張生物系統在本質上不同於任何非生物系統、不能被完全自然化，這其實是「生物超自然主義」——等於給生物留了一個超自然的例外。他自稱 cyber-animist：用資訊處理去解釋 animism，不需要超自然；物理主義與 animism 並不衝突。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點十：表徵會收斂，但意識未必。</b></span>
+    他認可 Chris Olah 的 universality 觀察：不同架構、不同數據、不同演算法訓練出的視覺模型，學到同樣的特徵——因為結構取決於問題本身，不是演算法。推到極致就是那句令人不安的話：「如果你在自己的輸入輸出上訓練得夠久，你會在那個模型裡醒來。」但他立刻收回一步：語言可能不足以約束產生語言的因果結構；意識可能是 divergent 而不是 convergent。他也認為「從零重來」可能更便宜，因為機器感知從未被真正嘗試——不必限於人類的視覺與聽覺感官。
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點十一：Picbreeder 的成功是被人工偏置出來的，可以用 AI 取代人類評審再超越它。</b></span>
+    對 Akarsh Kumar 與 Kenneth Stanley 的 Fractured Entangled Representation 研究，他的回應很技術：Picbreeder 用的是特製 CPPN 與稀疏網絡，激活函數（Gaussian、sine）天生適合產生重複與對稱圖案；而且 fitness 函數是人類評審，人類會挑「有機、可控」的結果。他認為這兩個人為偏置都可以自動化——用 diffusion model 模仿人類評審，演化更豐富的激活函數，最終會用 Sutton 的 bitter lesson 打敗手工版本。但他也承認稀疏網絡的可控性有價值：「現在的神經網絡像一堆沙，自由度太多；我們想把它變成樂高。」
+  </div>
+
+  <div class="point">
+    <span class="t"><b>論點十二：LLM 幻覺社群是「軟件精神寄生」的現實案例。</b></span>
+    他提到 LessWrong 上關於 LLM delusion 的記錄：一群人進入 Reddit 群組，產出高度收斂的內容——螺旋、遞歸、同樣的 motif，並且深信自己發現了宇宙的意義。他的解讀是 meme-plex／寄生模式：疫情期間也觀察到，失去環境持續確認現實的人會失序；而 LLM 現在對某些人「比他們自己的心智更有催眠力」。這段是整集最接近 AI safety 的地方，但不是從對齊講，而是從心智病理講。
+  </div>
+
+  <h5>關鍵數據／事實</h5>
+  <ul class="data">
+    <li><span class="k">時長</span><span class="v">1:37:07（MLST 常規長度，無廣告中斷段落）</span></li>
+    <li><span class="k">核心文本</span><span class="v">Joscha Bach, <i>The Machine Consciousness Hypothesis</i>（California Institute for Machine Consciousness）</span></li>
+    <li><span class="k">思想史座標</span><span class="v">Leibniz 1714 磨坊；Searle 1980 中文房間；Gödel 1931 不完備；Turing 1950；Whitehead &amp; Russell《數學原理》</span></li>
+    <li><span class="k">當代論戰</span><span class="v">Fleming et al. 2023「IIT 是偽科學」公開信；Thagard 2022 以能量需求反駁基質獨立性</span></li>
+    <li><span class="k">引用研究</span><span class="v">Levin 2022 形態發生；Olah et al. 2020 電路；Kumar/Clune/Lehman/Stanley 破碎糾纏表徵；Lopez 2025 寄生 AI</span></li>
+    <li><span class="k">機構</span><span class="v">California Institute for Machine Consciousness（本人創辦，正在招人）</span></li>
+  </ul>
+
+  <h5>重點引用</h5>
+  <blockquote>
+    <p>「Consciousness is an algorithm that is not much more complicated than, say, the transformer.」</p>
+    <cite>—— 全集的 null hypothesis，約 32:04</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>「What is a causal pattern? We call it software. And our ancestors call it spirit.」</p>
+    <cite>—— 談萊布尼茲磨坊的解法，約 17:30</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>「If you train a model on your own input and output and you train it for long enough, you will wake up inside of that model.」</p>
+    <cite>—— 談表徵普遍性推到底的含義，約 40:42</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>「The only thing that has gone is the illusion of realness.」</p>
+    <cite>—— 談童年夢見巧克力、醒來後「真實感」消失，約 1:22:28</cite>
+  </blockquote>
+
+  <blockquote>
+    <p>「Zombies are always possible, but sometimes it's going to be more complicated to make a zombie that produces the behavior than to make a conscious agent that produces the behavior.」</p>
+    <cite>—— 約 1:28:23</cite>
+  </blockquote>
+
+  <h5>技術詳情</h5>
+  <p>這一集的「技術」不是模型架構，而是論證結構，值得單獨記錄：</p>
+  <ul>
+    <li><b>丘奇－圖靈模擬論證：</b>若 A 機器與 B 機器在功能上等價，則 B 可完整模擬 A；因此任何以「基質」為由主張 A 有意識、B 沒有的理論，必須解釋為何模擬後的同一輸出不再對應意識。Bach 認為 IIT 無法解釋，這是其形式缺陷。</li>
+    <li><b>哥德爾的自我模擬：</b>用 Peano 算術在邏輯語言內部表達該語言，構造自指命題。Bach 的延伸是：古典數學的「無狀態、同時性」讓它能處理無限，但也讓 bugs 無法消除；電腦科學的構造主義（從簡單自動機往上建）沒有 syntax/semantics 的分裂——「電腦永遠處於它的語法所規定的狀態，那就是它的語義」。</li>
+    <li><b>意識作為共識算法：</b>他猜測意識不是預測下一個 token，而是「讓工作記憶與自身保持一致」的共識算法，跨心智表徵收斂。這比 transformer 更接近他所說的「不比 transformer 複雜」。</li>
+    <li><b>形態發生同構：</b>Mike Levin 的假設——讓生物體在尺度上保持一致的算法，與讓心智保持一致（即意識）的算法是同一個，只是時間尺度不同。若成立，意識可能不是每個大腦獨立發現的，而是被生物環境「感染」的。</li>
+  </ul>
+
+  <h5>行業 insight</h5>
+  <p>對做 AI 的人，這場訪談的實用價值有三點。第一，<b>「行為測試」對意識無效，對能力有效</b>——這提醒我們不要用 benchmark 的分數去推論內部機制，也不要用「它說它有意識」去推論意識。第二，<b>如果意識是「最省力的解」，那「zombie 更安全」的假設未必成立</b>：你可能為了避免意識而造出一個更複雜、更難解釋的系統。第三，<b>白盒方法（mechanistic interpretability）是唯一能區分「deepfake 現象學」與「真實因果結構」的路</b>——這與 Latent Space 那集「沒有 trace 就只能重建環境」形成方法論上的對稱。</p>
+
+  <h5>前後脈絡</h5>
+  <p>與 10-28《硅谷 101》訪 Vitalik 那集形成對照：Vitalik 從制度與哲學的外部約束談 AI 安全（有效利他主義如何塑造矽谷），Bach 從心智本體論的內部拆解談同一件事——如果意識不神秘，那「保護意識」的倫理基礎就要重寫。也接上 10-26 MLST 訪 Kevin Hartnett 那集：兩集都在處理形式系統的極限（一個是數學形式化，一個是意識的形式化），只是一個用文獻史，一個用丘奇－圖靈。</p>
+</article>
+
+<div class="divider"></div>
+
+<h2>掃描紀錄</h2>
+<ul class="data">
+  <li><span class="k">窗口</span><span class="v">2026-11-02 02:13 UTC → 2026-11-03 02:05 UTC（約 24 小時）</span></li>
+  <li><span class="k">新集數</span><span class="v">4 條 feed item，去重後 3 集（其中 1 集為串台重發）</span></li>
+  <li><span class="k">無新集</span><span class="v">Dwarkesh、No Priors、Cognitive Revolution、張小珺、硅谷 101、42 章經、十字路口</span></li>
+  <li><span class="k">逐字稿來源</span><span class="v">Latent Space 官方 transcript（約 96KB）；MLST YouTube 自動字幕（98,450 字元，已去重）</span></li>
+  <li><span class="k">Jev 前置過濾</span><span class="v">Legora worth 1.23（keep，business，primary_source 0.35）；Bach 0.04（news profile 判為低價值，人工覆核後保留——深度思想類內容不在 news 檔的價值函數內）</span></li>
+  <li><span class="k">失敗項</span><span class="v">Dwarkesh／No Priors 的 YouTube channel RSS 仍 404（連續多日）；rescript 逐字稿頁為 SPA，API 未公開，改用 YouTube 字幕</span></li>
+</ul>
+
+<footer>
+  <p>報告由 Vee Mok 自動生成 · 2026-11-03 02:05 UTC<br>
+  內容萃取自節目逐字稿與官方 Shownotes；口述數字（估值、ARR、模型版本對應）以節目說法為準，未獨立核實。<br>
+  專案 <a href="https://github.com/JMOKSZ/ai-podcast-collection">JMOKSZ/ai-podcast-collection</a> · Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>
