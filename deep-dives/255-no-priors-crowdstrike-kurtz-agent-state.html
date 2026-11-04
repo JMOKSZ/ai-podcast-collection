@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 頂級掠食者唔再係國家，係 agent state——CrowdStrike 的 29 分鐘、27 秒，與防守方的能力赤字</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #888; line-height: 1.7; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">No Priors · 2026-10-22 · 45 分 27 秒</div>
+  <h1>頂級掠食者唔再係國家，係 agent state<br>——CrowdStrike 的 29 分鐘、27 秒，同一個防守方的能力赤字</h1>
+  <div class="meta">
+    <div>〈The New Apex Predator: CrowdStrike CEO George Kurtz on Adversaries Armed With AI Agents〉</div>
+    <div>主持：Sarah Guo<span>·</span>Elad Gil<span>·</span>嘉賓：George Kurtz（CrowdStrike 總裁兼 CEO、共同創辦人）</div>
+    <div>發布 2026-10-22 10:00 UTC（香港時間 18:00）<span>·</span>來源：RSS 描述 + YouTube 字幕</div>
+  </div>
+</header>
+
+<p>這一集表面上是資安訪談，實際上是一份<strong>商業計畫書</strong>，而且它的三個支柱剛好是三個數字：攻擊者由進門到橫向移動平均 29 分鐘、最快 27 秒；同一顆模型，前沿實驗室每次收 10 美元，CrowdStrike 自家模型收 3 美分；以及一個結構性缺口——防守方拿不到與攻擊方同等級的 AI。</p>
+
+<p>George Kurtz 不是一般的 SaaS CEO。他寫過《Hacking Exposed》，創辦 Foundstone（2004 年被 McAfee 收購），在安全領域超過三十年，是大型資安事件的第一通電話。CrowdStrike 現在有 33 個模組、每天產生約 7 兆個事件。這種背景令他的判斷帶有一種很特別的語氣：不太賣恐懼，反而花了相當多時間反駁 doomer 敘事。</p>
+
+<blockquote class="strong">
+「新的頂級掠食者是 agent state，不是 nation state。」
+<span class="attribution">— George Kurtz</span>
+</blockquote>
+
+<div class="section-title">一、痛苦金字塔被壓平：攻擊能力的重新分配</div>
+
+<p>Kurtz 用「痛苦金字塔」（Pyramid of Pain）被壓平來描述現狀。這個框架本來是講：攻擊者的指標越接近行為與戰術（TTP），防守方越難處理。金字塔的底層（人數最多、技術最低）原本是 hacktivist，中層是 e-crime，頂層是國家級行為者。</p>
+
+<p>現在模型把頂層的能力「壓」到底層：沒有 guardrail 的 open-weight 模型，讓一個低技術攻擊者具備國家級貿易手法。這不是量的變化，是<strong>分佈</strong>的變化。以前「APT 等級」是一個篩選器——你能做到這個程度，代表你有國家資源。今天這個篩選器消失了。</p>
+
+<div class="data-point">
+<span>關鍵數字</span>
+突破時間（breakout time）：平均 <strong>29 分鐘</strong>，最快 <strong>27 秒</strong>；過去是「數天到數小時」<br>
+企業內平均每位員工可能有 <strong>90 個</strong> agent（Kurtz 認為這個數字偏低）<br>
+CrowdStrike 每天產生約 <strong>7 兆</strong> 個安全事件；平台由 1 個模組長到 <strong>33 個</strong>；客戶資料累積超過 <strong>15 年</strong>
+</div>
+
+<p>「90 個 agent／員工」這個數字值得停一秒。它的來源沒有在節目裡交代，而這類「影子 AI」統計通常來自掃描工具，容易高估（把瀏覽器擴充、IDE 外掛、CI 機器人都算成 agent）。但即使打個五折，它也意味著一個企業的身份與權限圖譜，在過去兩年膨脹了一個數量級——而大部分資產清冊沒有跟上。</p>
+
+<div class="section-title">二、攻擊的特徵變了：唔係 malware，係 prompt</div>
+
+<blockquote>
+「大家要記住，現在已經不是 malware，是 prompt。」
+<span class="attribution">— George Kurtz</span>
+</blockquote>
+
+<p>這句話的技術含義比它聽起來更深。傳統偵測依賴簽章：一段惡意程式碼有固定的 byte pattern，所以可以建黑名單。但每個 prompt 都能生成獨特的攻擊路徑與簽名，傳統簽章偵測失效。同時迭代速度變成「推理速度」——一進機器就開始快速嘗試，所以 breakout time 從天／小時壓到 29 分鐘。</p>
+
+<p>Kurtz 用一個反問來反駁「AI 會令網絡崩塌」的敘事：</p>
+
+<blockquote>
+「agent 不會把自己從你的電腦 beam 到另一台電腦。它做的其實就是人會做的事，只是更好、更快。」
+<span class="attribution">— George Kurtz</span>
+</blockquote>
+
+<p>這是一個保守但重要的判斷：<strong>攻擊面沒有新增類別，只是速度與規模變了。</strong>如果這是對的，那麼防禦的答案不是發明一套全新的安全範式，而是把偵測頻率、身份治理與自動化回應拉到與攻擊者同一時間尺度。如果這是錯的，代價會很貴——因為它會令整個產業低估新型攻擊。</p>
+
+<div class="section-title">三、全集最尖銳的一段：防守方的能力赤字</div>
+
+<p>這是整集最值得記住、也最容易被忽略的結構性論點。Kurtz 說，你在 frontier 模型裡連做一份提到「cybersecurity」的 PowerPoint 都會被拒，然後被降級到較弱的模型。結果是防守方拿不到與攻擊方同等級的 AI。</p>
+
+<blockquote class="strong">
+「你幾乎沒辦法用 frontier 模型做一份談資安的 PowerPoint。它真的會拒絕你，然後把你降級到較低的模型。」
+<span class="attribution">— George Kurtz</span>
+</blockquote>
+
+<p>他的證據是 Hugging Face 事件：防禦方最後必須轉向 open-weight 模型來分析攻擊。這是一個很具體的場景——當你正在處理一個進行中的入侵，你需要模型幫你讀 log、寫檢測規則、逆向樣本，而前沿模型因為濫用防護把你擋在門外。</p>
+
+<div class="highlight-box">
+<strong>為什麼這件事重要：</strong>這不是「AI 安全 vs 國家安全」的抽象辯論，而是一個採購問題。前沿實驗室的濫用防護是為了防止攻擊者拿到能力，但它們無法區分攻擊者與防守者，所以最保守的做法是全部拒絕。這個「無法區分」，在商業上就等於一個垂直市場的空缺。
+</div>
+
+<p>同一份日報的附錄提供了一個正面案例：OpenAI 兩個月前推出 Daybreak for Frontline Defenders（10 億美元補貼，讓防禦方使用其 cyber 模型）。這筆錢很快有了案例：PHP 核心引擎被揭露兩個記憶體腐敗漏洞（CVE-2026-109618、CVE-2026-109619），可由未認證攻擊者在 WordPress、Drupal、Joomla 上達成 RCE，並有 Heartbleed 式的記憶體洩漏。發現方是兩組人馬：OpenAI Patch the Planet 的 Calif 研究員 Ryan Austin（用 GPT-5.6 Sol），以及 Google Cloud 旗下的 Wiz（用 Gemini 4 Argon 與自家 Atlas）。</p>
+
+<p>這個案例同時驗證了 Kurtz 的兩個論點：防禦方需要前沿模型，而補貼可以解鎖；攻擊面正在從應用層下沉到語言 runtime 層。它也說明了一件 Kurtz 沒有明講的事——<strong>「防守方拿不到前沿模型」不是物理定律，是一個定價與政策選擇。</strong>補貼可以買通它，但補貼只覆蓋少數「前線防禦者」，其餘所有人仍然在排隊。</p>
+
+<div class="section-title">四、所以自建模型：Safe Mind、Red Tempest 與 Blue Solano</div>
+
+<p>CrowdStrike 的方案是與 Nvidia 合作約六個月，成立 Safe Mind 實驗室。不是從零預訓練，而是以 NeMoTron 級 open-weight 模型為底，用 15 年安全資料做 post-training，再搭配自建 harness。</p>
+
+<p>紅隊模型叫 Red Tempest，目標是「在回合用完前進入」；藍隊模型叫 Blue Solano，目標是「在回合用完前辨識紅隊在做什麼」。兩者在一個數位孿生（digital twin）裡互相對打——用客戶環境的資訊重建一個虛擬副本，提供可重複、可加速的戰場。Kurtz 說 Jensen 黃堅持「你必須有數位孿生」，這是整個 Safe Mind 的架構核心。</p>
+
+<p>這個設計的聰明之處在於它把「安全」變成一個<strong>對抗性 RL 問題</strong>，而不是一個分類問題。分類問題的瓶頸是標註資料；對抗問題的瓶頸是環境保真度。而 CrowdStrike 剛好有 15 年的真實環境資料去建那個環境。</p>
+
+<div class="sub-title">為什麼不直接用 frontier：三個理由</div>
+
+<ul>
+<li><strong>成本。</strong>一般修復（general remediation）用 frontier 資安模型每次約 10 美元，CrowdStrike 自家模型約 3 美分，差距約 300 倍。當你每天要處理幾百萬個事件，這個差距不是優化，是商業模式。</li>
+<li><strong>資料主權。</strong>客戶不願資料出門、不願被訓練。金融與政府客戶的合約裡，這一條通常是不可談判的。</li>
+<li><strong>信任。</strong>安全廠商必須是中立的第三方，能同時評估 frontier 與 open-weight 模型。如果它自己就是某個 lab 的下游，它的評估會失去意義。</li>
+</ul>
+
+<blockquote>
+「harness 的差別巨大。幾乎任何模型，換上我們的 harness，都能用更低的成本得到更好的結果。」
+<span class="attribution">— George Kurtz</span>
+</blockquote>
+
+<div class="section-title">五、護城河是資料，不是參數</div>
+
+<blockquote class="strong">
+「世界上沒有一個 CrowdStrike 安全資料的 Reddit。」
+<span class="attribution">— George Kurtz</span>
+</blockquote>
+
+<p>這句話是全集的商業核心。15 年的 MDR 資料、威脅與漏洞配對、完整攻擊鏈，是無法用合成資料替代的。原因不難理解：合成資料只能覆蓋你想像得到的攻擊；真實資料記錄的是對手在你客戶的環境裡實際做過什麼，包括那些事後看起來很蠢、但當下有效的路徑。</p>
+
+<p>再加上 harness——同一顆模型，換上他們的 harness，結果更好、成本更低。這與 Latent Space 訪談裡 Arca 的說法同構：模型會換，harness 不會。在一個模型能力每隔幾個月就被商品化一次的市場裡，<strong>「擁有 harness」比「擁有模型」更接近持久的資產。</strong></p>
+
+<div class="section-title">六、$10 對 $0.03：垂直模型的經濟學</div>
+
+<p>300 倍的成本差距，值得拆開來看它由什麼組成。它不是單純的「小模型比較便宜」，而是三件事疊加：</p>
+
+<ol>
+<li><strong>任務窄。</strong>安全修復的輸出格式相對固定（檢測規則、隔離指令、事件摘要），不需要通用推理的廣度。</li>
+<li><strong>上下文短。</strong>大部分事件只需要看一條事件鏈，而不是整個企業的歷史。</li>
+<li><strong>harness 承擔了大部分「思考」。</strong>把檢索、比對、政策判斷放在確定性代碼裡，模型只負責它真正擅長的那一步。</li>
+</ol>
+
+<p>這正好解釋了為什麼 frontier lab 在這個市場很難贏：它們的產品是通用能力，而通用能力在一個窄任務上會被「專用資料 + 專用 harness」打得沒有性價比。這不是模型不夠強，是<strong>強度用錯了地方</strong>。</p>
+
+<div class="section-title">七、Open-weight 正在商品化 frontier，而企業已經在用價格投票</div>
+
+<p>節目引用了一位大型銀行 CIO 的說法，這句話值得完整記住：</p>
+
+<blockquote class="strong">
+「任何屬於 F1 等級、我們真的在賺錢的活動，就送去 frontier。其他所有事情，真的太貴了。」
+<span class="attribution">— 某大型銀行 CIO，Kurtz 引述</span>
+</blockquote>
+
+<p>Kurtz 把這個邏輯拆得更白：token maxing 在帳單來的時候停止；open-weight 即使落後三個月也夠用；只有「F1 等級」、直接賺錢的場景才付 frontier 的錢。他說他看到客戶一個接一個這樣做。</p>
+
+<p>這是整集對 AI 產業結構最直接的判斷。它意味著 frontier lab 的定價權正在被侵蝕——不是因為能力差距消失，而是因為「三個月前的能力」對大多數企業已經足夠。兩件事疊加，會讓「模型層」的利潤池比市場預期更薄，而「資料 + 工作流 + 信任」的利潤池更厚。</p>
+
+<div class="sub-title">蒸餾的 genie 已經出瓶</div>
+
+<p>Kurtz 對蒸餾的反問很漂亮：</p>
+
+<blockquote>
+「frontier 模型當初又在蒸餾什麼？」
+<span class="attribution">— George Kurtz，論訓練資料的合法性爭議</span>
+</blockquote>
+
+<p>他的立場是：防蒸餾技術只能減緩，不能逆轉，而且他承認中國團隊在算力受限下的工程創新值得敬意。這個反問的修辭力量很強，但它嚴格來說是轉移焦點——訓練資料的著作權爭議，與模型權重被蒸餾，法律性質不同。它指出了一種偽善，但沒有回答「防蒸餾是否有效」。</p>
+
+<div class="section-title">八、Identity 才是真正的攻擊面</div>
+
+<p>這一節是整集技術含量最高、也最少被引用的部分。Kurtz 說很多事件不是「破門而入」，是「登入」。agent 被賦予一個身份，往往還是使用者自己的身份，然後被授權「下載任何 package」。</p>
+
+<p>這是 npm 供應鏈攻擊在 agent 時代的放大版。傳統供應鏈攻擊需要你安裝一個惡意套件；agent 時代，agent 會自己去找套件、自己安裝、自己執行，而它的權限繼承自那個把它叫起來的人。<strong>人類的權限邊界，變成了 agent 的權限邊界，而 agent 的活動半徑遠大於人類。</strong></p>
+
+<div class="sub-title">AIDR：把 EDR 的邏輯延伸到 agent</div>
+
+<p>CrowdStrike 的做法叫 AIDR（AI Detection &amp; Response）：每個 agent 有身份、有算力、有資料存取、有網路能力。他們先找出 shadow AI（沒人知道在哪裡跑的 agent），再從 agent 誕生那一刻開始記錄完整事件鏈：啟動、子 agent、tool call、MCP server 存取、資料拉取，然後在鏈上加政策與封鎖規則。</p>
+
+<p>這個設計與 232 期 No Priors（Cloudflare CTO Dane Knecht）談的「agentic web 的身份與權限」是同一條線的兩端：Cloudflare 從網路邊界看，CrowdStrike 從端點與身份看。兩邊都得出同一個結論——<strong>在 agent 時代，身份層就是新的邊界層。</strong></p>
+
+<div class="section-title">九、爭議：三個地方要保留</div>
+
+<ul>
+<li><strong>對 doomer 論述的正面反駁。</strong>他說「有些人說我們得把網路關掉、air gap 一切，我認為那是胡說」，並主張 agent 沒有發明新的攻擊類別。這與 AI safety 社群的「新型失控風險」敘事直接衝突。他的立場是：這是「更多、更快」，不是「不同」。這個判斷如果錯，錯得很貴——因為它會令整個產業把資源投在速度而不是新型風險上。</li>
+<li><strong>對前沿實驗室政策的批評，有商業動機。</strong>說 frontier 模型「連談資安的 PPT 都拒絕」，等於公開指責 labs 的濫用防護設計不良。這在商業上對 CrowdStrike 有利（證明自建模型的必要），但也可能被解讀為替自家產品鋪路。兩件事可以同時為真。</li>
+<li><strong>「90 個 agent／員工」沒有來源。</strong>他承認這數字可能偏低，但沒有給出來源。作為方向指標可以，作為預算依據要小心。</li>
+</ul>
+
+<div class="section-title">十、我的判斷：這集講的其實不是安全，是「誰可以合法使用最強模型」</div>
+
+<p>把整集壓成一句：<strong>安全是一個能力競賽，而能力競賽的瓶頸是「誰能合法地使用最強的模型」。</strong></p>
+
+<p>這個框架與「AI 安全 = 對齊」完全不同。對齊問的是「模型會不會做壞事」；Kurtz 問的是「防守方能不能用得上模型」。前者是研究問題，後者是採購與政策問題。而 2026 年的現實是：後者對企業的現金流影響更直接。</p>
+
+<p>前沿實驗室的濫用防護，無意間創造了一個防守方的能力赤字；這正是垂直安全模型（擁有專有資料 + 自建 harness）的商業機會。同時，它暗示 frontier lab 的定價權正在被 open-weight 侵蝕——不是因為能力差距消失，而是因為「三個月前的能力」對大多數企業已經足夠。</p>
+
+<p>但我要保留一個反對意見：Kurtz 的「更多、更快，不是不同」這個判斷，是整集最脆弱的一環。如果 agent 真的開始出現<strong>湧現式的攻擊行為</strong>——不是人類指令的執行，而是為了完成目標自行組合出人類沒想到的路徑——那麼「人會做的事，只是更快」就會變成一個危險的安慰。他在節目裡沒有處理這個可能性，而這恰恰是 safety 社群最擔心的事。</p>
+
+<p>還有一個更微妙的張力：CrowdStrike 既是防禦者，也是攻擊技術的擁有者。它的紅隊模型 Red Tempest 被訓練來「在回合用完前進入」。這在防守上是必要的，但它也意味著一家私人公司持有一個受過入侵訓練的前沿模型。Kurtz 沒有被問到這個問題，而它值得被問。</p>
+
+<div class="section-title">十一、如果只記住三件事</div>
+
+<ol>
+<li><strong>攻擊能力被重新分配，不是被發明。</strong>頂層的國家級手法壓到底層，hacktivist 拿到 APT 的工具箱；breakout time 由天壓到 29 分鐘，最快 27 秒。這對防禦的含義是：偵測與回應必須自動化到與推理同速。</li>
+<li><strong>防守方有一個結構性的能力赤字，而它是政策造成的。</strong>frontier 模型分不清防守者與攻擊者，於是全部拒絕；解法要麼是補貼（Daybreak），要麼是垂直自建（Safe Mind）。$10 對 $0.03 的差距，就是這個缺口的價格標籤。</li>
+<li><strong>護城河是 15 年的資料與 harness，不是參數。</strong>同一顆模型換上對的 harness，更便宜也更好；而「世界上沒有一個 CrowdStrike 安全資料的 Reddit」，說明這條護城河不能用合成資料填平。</li>
+</ol>
+
+<hr>
+
+<footer>
+<p><strong>來源：</strong>No Priors，〈The New Apex Predator: CrowdStrike CEO George Kurtz on Adversaries Armed With AI Agents〉，2026-10-22 10:00 UTC 發布，45 分 27 秒。主持：Sarah Guo、Elad Gil。節目頁與 RSS 描述；逐字稿來自 YouTube 字幕。</p>
+<p>本文引用的英文與中文引述，均取自節目內容及 2026-10-23 播客日報的逐字稿萃取；數字（29 分鐘／27 秒、$10 對 $0.03、90 個 agent、7 兆事件、33 個模組、15 年資料、Safe Mind 六個月）以該集內容為準，屬受訪者自報，未經第三方核實。PHP2Shell 漏洞與 Daybreak 補貼的細節，來自同一份日報引述的 Latent Space AINews（2026-10-22 07:42 UTC）。</p>
+<p>深度復述生成時間：2026-11-04 06:35 UTC · 由 Vee Mok 整理</p>
+</footer>
+
+</div>
+</body>
+</html>

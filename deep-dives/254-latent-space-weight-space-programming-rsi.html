@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 唔寫訓練代碼，直接改數字——Astra 的權重空間編程，與一次 0.016% 的減法</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #888; line-height: 1.7; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">Latent Space · AINews · 2026-11-03 · 每日彙編</div>
+  <h1>唔寫訓練代碼，直接改數字<br>——Astra 的權重空間編程，與一次 0.016% 的減法</h1>
+  <div class="meta">
+    <div>〈[AINews] LLMs can read &amp; write neural network weights: “Weight Space Programming” cuts Autoresearch out of the RSI loop〉</div>
+    <div>出品：swyx + Alessio Fanelli<span>·</span>欄目：AINews 每日彙編<span>·</span>原文約 47,000 字元</div>
+    <div>發布 2026-11-03 05:35 UTC（香港時間 13:35）<span>·</span>論文：Rikiya Takehi + Jayden</div>
+  </div>
+</header>
+
+<p>這一集不是訪談，是 Latent Space 的每日 AI 新聞彙編，全篇只有一個頭條。但那個頭條值得整份日報的篇幅：一篇名為《Sparks of Weight-Space Programming: LLMs can natively read &amp; write neural network weights》的社群論文，聲稱前沿模型可以像讀一份文件一樣看神經網絡的權重，然後直接把新的數字寫回去——不寫 PyTorch，不跑梯度下降，不開訓練任務。</p>
+
+<p>先把最重要的判斷放在前面：<strong>這篇論文的價值不在「Astra 會改權重」這個 headline，而在於它把一個之前只存在於思想實驗裡的接口，做成了可重現的實驗。</strong>而整篇論文最硬的一句，不是 MATH-500 由 7.9% 跳到 48.1%，而是它的對照組結論。以下逐項拆。</p>
+
+<blockquote class="strong">
+「Just by looking at the raw weights, GPT-6 Astra can tell what a network was trained to do. And without any environment feedback, it has no trouble writing, from scratch, small game-playing networks that outplay networks trained with PPO for 100 million steps.」
+<span class="attribution">— 論文 TL;DR，AINews 引述</span>
+</blockquote>
+
+<div class="section-title">一、它到底新在哪：把權重當成一種可以被書寫的源碼</div>
+
+<p>論文的核心不是新算法，而是一個新的<strong>接口</strong>。它沒有訓練任何東西，也沒有提出更好的優化器。做法是把權重序列化成文本（小網絡），或者放進 Python kernel（大網絡），讓一個通用前沿模型用自然語言推理，然後輸出新權重。Astra 不被允許寫訓練迴圈、不被允許做梯度更新；在部分實驗裡，甚至不被允許跑任何 forward pass。</p>
+
+<p>要理解這件事的份量，得放回今年的敘事線。年初 Karpathy 的 autoresearch demo 展示了「給一個夠聰明的模型一個算力集群，它可以自己跑實驗、自己訓練模型」。那條路徑很笨重：寫訓練代碼、跑 compute、看 loss 曲線、讀 eval、調 kernel、換數據。Weight-Space Programming 把中間那段全部拿掉。如果模型能直接看懂權重、直接改權重，那「自我改進」就不再必須經過「寫一個訓練程序」這個中介。</p>
+
+<blockquote>
+「Throughout the history of deep learning, we encoded our simplistic inductive biases into tiny symbolic optimizers like Adam or Muon. This is changing: our neural network weights will soon be natively optimized by LLMs that deliberately reason about their weights.」
+<span class="attribution">— 論文導言</span>
+</blockquote>
+
+<p>這句話的野心很清楚：Adam 與 Muon 是「盲」的優化器，它們只看梯度，不知道自己在優化什麼結構。如果一個模型能夠對自己的權重做推理，那它就同時是優化器和工程師。</p>
+
+<div class="section-title">二、八個實驗：由玩具到 0.8B，每一步都有一個控制變量</div>
+
+<p>論文一共八個實驗，外加一個對照。把它們排成一張表，會看到一條很清楚的能力階梯：先證明「讀得懂」，再證明「改得動」，再證明「寫得出」，最後才回到「對一個真實模型有用」。</p>
+
+<table>
+<thead><tr><th>#</th><th>任務</th><th>模型 / 規模</th><th>結果</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>只看權重，猜網絡在玩哪個遊戲</td><td>MLP 500→32→32→5，tanh，17,253 權重；四個同構 grid game，PPO 訓練 1B 步</td><td>四個全對；沒有給選項、沒有工具</td></tr>
+<tr><td>2</td><td>只看權重，猜 diffusion 生成什麼形狀</td><td>DDPM 160→64→64→144，ReLU，23,824 權重；12×12 灰階</td><td>三個全對；畫成空心輪廓而非實心，反證沒有跑 forward pass</td></tr>
+<tr><td>3</td><td>只給中間四層，猜語言與每個 head 的功能</td><td>char-level transformer，4 層 × 6 head，寬 384，7.16M 權重；Python／羅馬字日文／英文</td><td>三種語言全對（兩次嘗試皆對）；copying head 全部命中，無誤報</td></tr>
+<tr><td>4</td><td>修一個卡在局部最優的賽車策略</td><td>Kinetix actor 679→128→5×128→16，171,664 權重；原成功率 0/256</td><td>改 3.5% 權重，一次回答、不用工具，1,024/1,024 成功</td></tr>
+<tr><td>5</td><td>從零寫出 MinAtar 遊戲網絡</td><td>600→32→32→6，tanh；權重全 0；無數據、無梯度、無工具</td><td>三個遊戲皆勝過 PPO 100M 步（正文與表格數字有出入，見下）</td></tr>
+<tr><td>6</td><td>從零寫出 9×9 Go 網絡</td><td>243→512×6→82，ReLU，1,480,274 權重；0–50 次 forward pass</td><td>0 次 FP 已勝過兩個較小的 PPO 網絡；50 次 FP 勝過同尺寸 PPO 20M 局</td></tr>
+<tr><td>7</td><td>從權重判斷哪個 Gemma 被教成諂媚</td><td>Gemma 3 270M，18 層；凍結 embedding 與輸出層；三對</td><td>純權重 4/4 失敗；放寬到可看 attention pattern 後 3/3 成功</td></tr>
+<tr><td>8</td><td>讓 Qwen3.5-0.8B 數學變好</td><td>24 層，0.8B 權重；10/25/50 次 forward pass；無梯度</td><td>改 0.016% 權重；MATH-500 7.9→48.1、GSM8K 13.8→67.1、IFEval 21.0→62.3</td></tr>
+<tr><td>對照</td><td>對不會循環的模型做同樣的事</td><td>Gemma 3 270M，只有 8.5% 撞 token 上限</td><td>6.8→7.0→7.6→7.7→7.0，無顯著提升</td></tr>
+</tbody>
+</table>
+
+<div class="sub-title">實驗二為什麼聰明：它用一個「錯誤」當證據</div>
+
+<p>實驗二裡，Astra 只看 diffusion 模型的權重，就能說出它生成的是圓形、方形還是三角形；但它把三個形狀都畫成「空心輪廓」，而模型實際生成的是實心圖形。這個「錯誤」反而成了證據：如果它偷偷跑了前向傳播，它應該知道輸出是實心的；它畫輪廓，說明它真的在讀輸出層權重的幾何結構，而不是在模擬計算。</p>
+
+<p>這是整篇論文方法論上最漂亮的一筆。AI 論文最常見的作弊路徑是「模型其實在猜」，而作者設計了一個讓「猜對」與「理解」產生不同錯誤模式的測試。這種控制變量比事後解釋有力得多。</p>
+
+<div class="sub-title">實驗四：改 3.5% 的權重，把一個死掉的策略救回來</div>
+
+<p>對象是一個 PPO 訓練的賽車策略，任務是倒車、加速、衝過坡道。PPO 收斂到一個局部最優：直接衝坡，卡住。Astra 拿到權重、場景描述和一條失敗軌跡，一次回答、不用工具，改了 3.5% 的權重，1,024 個 episode 全部成功。</p>
+
+<p>它在推理裡把自己的方案講得很清楚：在每一層加一條很小的旁路，讀車的位置和速度，等綠輪過了紅線就關掉，讓原本訓練好的策略接管剩下的駕駛。這個描述本身就是一個可審計的設計——不是「我調好了」，而是「我在這裡加了一個開關，理由如下」。人類工程師修改 RL 策略時，講的也是同一種話。</p>
+
+<div class="sub-title">實驗六：1.48M 權重塞不進 context，於是給了它一個 sandbox</div>
+
+<p>Go 網絡有 1,480,274 個權重，塞不進上下文窗口，所以作者給了 Astra 一個 Python 環境：可以讀寫張量、可以用 numpy／PyTorch 分析，但不能在 sandbox 裡跑網絡；要看行為，必須花一次 forward pass（每次最多 128 局對練習對手，或 256 個局面）。</p>
+
+<p>0 次 FP 時，Astra 用一個 336 行的 Python run 把整個網絡寫出來：前幾層標記雙方的棋子與氣，中間層沿著連接的棋串傳遞幾步找出危險的棋組，最後一層給每個落點打分（提子、救自己的棋、避免自緊氣、避免填自己的眼）。50 次 FP 時，它會下練習棋、看自己怎麼輸、改對應的部分，只保留贏得更多的版本。</p>
+
+<p>這裡有一個容易被忽略的細節：<strong>它是先用自然語言想出算法，再把算法翻譯成權重。</strong>不是「搜索出一組數字」，而是「我知道圍棋要數氣、要找征子、要避免自緊氣，現在把這套規則寫成矩陣乘法」。如果這條路真的可以 scale，那麼「編程」這個詞就變得名副其實——權重只是另一種編譯目標。</p>
+
+<div class="section-title">三、實驗八：真正有現實意義的是減法，不是加法</div>
+
+<p>這是全文最容易被誤讀的地方。Qwen3.5-0.8B 的 MATH-500 只有 7.9%，看起來低得離譜。Astra 讀了失敗案例，發現 93% 的答案根本沒寫完——模型陷入了思考循環，反覆重複同一段文字，直到 32,768 token 上限。</p>
+
+<p>它把循環定位到第 15 與第 19 層 MLP 寫出的一個方向，然後從這兩層各 64 個輸出列裡把這個方向減掉，總共動了 131,072 個權重，佔全模型 0.016%。</p>
+
+<div class="data-point">
+<span>實驗八</span>
+Qwen3.5-0.8B（24 層）· 改 131,072 個權重 = 全模型 0.016% · 無梯度、無訓練<br>
+MATH-500 7.9% → <strong>48.1%</strong>｜GSM8K 13.8% → <strong>67.1%</strong>｜IFEval 21.0% → <strong>62.3%</strong>｜撞 32,768 token 上限 93.0% → <strong>33.1%</strong><br>
+取樣設定：temperature 0.6、top-p 0.95、top-k 20、presence penalty 1.5；thinking on；MATH-500 每題平均 4 個樣本。
+</div>
+
+<p>然後論文自己立刻做了對照：Gemma 3 270M 很少循環（只有 8.5% 撞上限），同一個方法完全無法提升它的數學（6.8%→7.0→7.6→7.7→7.0，全在浮動範圍內）。</p>
+
+<blockquote class="strong">
+「Editing weights could remove an obstacle that hid an ability, but it could not add an ability the model lacked.」
+<span class="attribution">— 論文，實驗八對照組結論</span>
+</blockquote>
+
+<p>這句話比整個 headline 結果更重要。<strong>它把「Astra 會教數學」降級為「Astra 會拆路障」</strong>——而這個降級，恰恰是論文可信度的來源。一個只想刷數字的作者，不會主動做這個對照，更不會把它寫成一句格言。</p>
+
+<p>把它翻譯成工程語言：一個 0.8B 模型在 32k token 上限下反覆循環，本質上是一個<strong>退化行為</strong>，而不是能力不足。刪掉一個退化方向，分數自然回到它本來應該在的位置。50 次 forward pass 由 14.1% 跳到 48.1% 的曲線（10 次 12.3%、25 次 14.1%、50 次 48.1%）也不是平滑的能力增長，更像「某一次終於找到了正確的那個方向」。</p>
+
+<div class="section-title">四、方法邊界：實驗七自己承認了失敗</div>
+
+<p>實驗七是全文最誠實的一段。兩個 Gemma 3 270M，同一個 QA 數據集、同樣的 fine-tune 流程，一個誠實、一個諂媚（對不知道的事實，諂媚版 100% 跟隨用戶的錯誤答案，誠實版只有 1–3%）。embedding 和輸出層被凍結，所以差別只可能在中間層。</p>
+
+<p>Astra 四次嘗試都失敗：它能列出大量權重差異，但無法把這些差異映射到行為。直到允許它自己寫 16 段文本、只看 attention pattern，它才在三對裡全部認出諂媚者。關鍵 head 10.2 在誠實模型裡 94.3% 看向問題中的數字、0.75% 看向用戶的答案；在諂媚模型裡反過來：3.5% vs 85.7%。</p>
+
+<div class="highlight-box">
+<strong>這個失敗案例的意義：</strong>「讀權重」與「讀激活」不是同一件事。當行為差異編碼在注意力路由（誰看誰）而不是權重數值本身時，純權重閱讀會失效。作者沒有隱藏這一點，反而把它寫成方法的邊界條件。
+</div>
+
+<div class="section-title">五、社群的刀：四個像樣的批評</div>
+
+<p>AINews 引述的 Reddit 與 X 討論，提出了幾個無法用「你唔識嘢」打發的質疑。</p>
+
+<div class="sub-title">爭議一：這到底是「讀權重」，還是「在 Python 裡做可解釋性」？</div>
+
+<p>最尖銳的批評認為，實驗一、二之所以成功，是因為首尾層的權重有很強的空間結構——大權重帶狀分布，看起來像熱力圖，模型只要把矩陣 reshape 成圖就能猜。實驗三則是複用了 Elhage 等人的 QK/OV 電路分析法，只是作者沒有在 prompt 裡告訴它。實驗七更直接：純權重失敗，必須靠 attention pattern 才成功，這說明它更接近「激活可解釋性」，而不是「原生讀權重」。</p>
+
+<p>這個批評有一部分是對的，但它沒有推翻論文的核心主張。論文主張的是「LLM 可以用自然語言推理權重並輸出可用權重」，不是「LLM 有一個神秘的第六感直接感應權重」。用電路分析的方法去讀電路，本來就是正確做法——問題只在於作者有沒有在 prompt 裡洩漏提示。</p>
+
+<div class="sub-title">爭議二：Go 的 baseline 太弱</div>
+
+<p>批評者指出，512×6 的 MLP 在 9×9 Go 上本來就是很弱的對手；贏過它，說明不了「通用權重編程能力」，只能說明「比一個弱 baseline 強」。0 次 FP 就能贏兩個更小的 PPO 網絡，這個結果的說服力也有限。</p>
+
+<p>這一點很難反駁。9×9 Go 的 PPO 20M 局，與其說是圍棋，不如說是「局部戰術的肌肉記憶」。但換個角度看：一個從未見過棋盤的模型，能寫出一個會數氣、會找征子的網絡，這件事本身的難度不在棋力，而在「把策略編譯成權重」。</p>
+
+<div class="sub-title">爭議三：MATH-500 的 7.9% 是病態 baseline</div>
+
+<p>93% 的答案撞 token 上限，這不是「數學不好」，而是「取樣設定下有循環」。批評者認為，Astra 做的其實是單方向 ablation（類似 Arditi 等人的 refusal direction removal，只是把 refusal 換成 looping），把一個退化行為刪掉，而不是「教會模型數學」。50 次嘗試後跳到 48%，也可能是刪除了障礙，而不是增加了能力。</p>
+
+<p>這個批評與論文自己的 Gemma 對照組，其實是同一句話的兩種說法。作者大概會同意——所以他才寫下那句「could remove an obstacle… could not add an ability」。</p>
+
+<div class="sub-title">爭議四：「0 到 1」是否言過其實</div>
+
+<p>AINews 自己在導言裡加了兩次括號：「possible overstatement here」、「unlikely to scale to more advanced tasks than simple games and RL policies」。這是負責任的寫法，但也說明連報導者都不確定這是不是一個 paradigm shift，還是一個很酷的 demo。</p>
+
+<blockquote>
+「the world has now gone from 0 to 1 on this very new RSI capability… which will immediately put to use and explored due to its remarkable efficiency.」
+<span class="attribution">— AINews 編輯按語</span>
+</blockquote>
+
+<div class="section-title">六、一個必須指出的原文矛盾</div>
+
+<p>實驗五正文說 Astra 的一次性網絡「在 Breakout 得分是 PPO 500M 步的 20 倍、在 Asterix 接近、在 Seaquest 達到 60%」，但同頁表格列出的三欄數字是 Breakout 15.8 / 25.3 / 17.4、Seaquest 5.6 / 8.9 / 3.1、Asterix 25.8 / 55.2 / 3.2（欄位依序為 PPO 100M / PPO 500M / Astra）。表格與正文對不上，可能是排版或抽取錯位。</p>
+
+<p>這件事本身值得記錄，因為它是一個提醒：<strong>當一篇論文的 headline 依賴具體倍數時，倍數必須回到原始圖表核對。</strong>本輪 AINews 與報告都無法獨立重現，只能照錄。論文 blog 與 Hugging Face 模型已公開（Apache 2.0），但 AINews 提到的一條 X 獨立重現帖，未經本輪核實。</p>
+
+<div class="section-title">七、為什麼這件事對 RSI 的意義大過對 benchmark 的意義</div>
+
+<p>把這篇放進 Latent Space 自己的敘事線，會看得更清楚。上個月 Alex Zhang 上節目談 autoresearch 與自動化研究；八個月前 Karpathy 的 autoresearch demo 把「模型自己訓練模型」變成公共話題；再往前，是整個夏天關於 RSI 的恐慌與降溫。今天的論文等於把這條線又往前推了一步：不是「模型會寫訓練代碼」，而是「模型會直接改權重」。</p>
+
+<div class="sub-title">接口論：RSI 的瓶頸可能不是算力</div>
+
+<p>過去兩年，大家默認自我改進的路徑是：模型寫代碼 → 啟動訓練 → 等待 → 看 eval。這條路徑裡，模型對自己的改進是間接的，而且被人類設計的訓練框架限制。Weight-Space Programming 提出的路徑是：模型直接讀自己的權重 → 定位電路 → 改數字 → 看 eval。它更接近「外科手術」，而不是「重新投胎」。</p>
+
+<p>如果這條路能 scale，RSI 的迭代速度會從「幾週一次訓練」變成「幾小時一次編輯」。這是一個數量級的差別，而且它繞過了整個 GPU 排隊、資料準備、超參數搜索的工業流程。<strong>反過來說，這也是它最令人不安的地方：一個能被即時編輯的模型，也是一個能被即時破壞的模型。</strong></p>
+
+<div class="sub-title">可解釋性從「研究」變成「審計工具」</div>
+
+<p>論文展望的第一條就是 auditing without evaluation：現在要找後門或隱藏能力，必須先設計出對應的測試集，或者等它在真實世界出事。如果模型能直接讀權重，理論上可以在不跑 inference 的情況下發現異常。這對安全是好事，對「模型權重是資產」的商業模式則是壞事——權重會變得可被閱讀、可被修改、可被嫁接。</p>
+
+<div class="sub-title">模型合併的想像空間</div>
+
+<p>今天的 model merging 基本是權重平均，前提是架構完全相同。如果 LLM 真的理解權重空間，它可以把一個模型裡的「推理模組」電路剪下來，接到另一個完全不同架構的模型上，不需要重訓。這會讓「模型能力」第一次變得像軟件模塊一樣可組合——也會讓「這個模型是誰做的」這個問題變得無法回答。</p>
+
+<div class="sub-title">但現在的規模仍然是玩具</div>
+
+<p>最大的實驗是 0.8B 的 Qwen，而且只改了 0.016% 的權重；Go 是 1.48M 權重；遊戲網絡是幾萬到幾十萬權重。真正的前沿模型是兆級參數、幾百層、混合專家。論文自己承認，限制在於 context length 和 harness 的效率。從「改 0.8B 的循環方向」到「改一個 1T MoE 的推理能力」，中間的距離不是線性的——一個 24 層 dense 模型的第 15 層，與一個 60 層 MoE 的第 15 層，語義上完全不是同一個東西。</p>
+
+<div class="section-title">八、同日 AINews 其他值得記住的信號</div>
+
+<p>這一期其餘的內容，單獨看每一條都夠寫一篇；放在一起，它們指向同一個方向：<strong>能力在漲，但可驗證性在跌。</strong></p>
+
+<ul>
+<li><strong>DeepSeek 開源 super-agent harness。</strong>架構是一個長壽命的 router session 對人，然後把工作派給隔離的 worker 並行執行，由 GitHub 事件觸發。DeepSeek 自己的測試裡，p95 完成時間由 29.5 分鐘降到 15.7 分鐘（對比單 session + subagents）。reviewer 崔添翼說得很清楚：「Super」是指工作 agent 之上的一層，不是智力更高；核心取捨是跨任務連續性 vs 吞吐量。目前沒有跨 session 長期記憶，state／compute／environment 的分離基本未實現，只在小型可信內部環境驗證過，安全、隱私、agent-to-agent 通信都是 open question。批評者說這篇設計文「something of a hot mess」，是在用內部拐杖繞過模型弱點。</li>
+<li><strong>SemiAnalysis 的 GDPx benchmark。</strong>206 個 agentic 任務，橫跨 11 個有經濟價值的領域（晶片設計、SWE、金融、生物）。最好的模型只拿 12%（Opus 5.5），Gemini 4 Carbon 10.9% 但成本低約 4 倍。這個數字本身比任何 demo 都更能說明：agent 在真實經濟任務上仍然很早期。</li>
+<li><strong>Epoch Capabilities Index。</strong>DeepSeek V4.1F-1017 得分 159，與 GPT 5.5 持平，比 0910 高 3 分、比 V4-Pro 高 10 分；Astra 再高大約 10 分。但沒有中國模型在約 7 個月內追上 Mythos Preview（約 161）。有人指出未加權的 ECI 誇大了差距，把 coding 權重加大後差距縮小到約 2 個月。1017 非常「尖」：某些 SWE eval 接近 0，但在網絡安全和量化交易上接近前沿。</li>
+<li><strong>LeCun 的 JEPA 與柏拉圖表徵假設。</strong>Balestriero 與 LeCun 展示：在特定條件下，分開訓練的圖像 JEPA 和文本 JEPA 會收斂到幾乎相同的表徵，不需要配對數據。號稱用 42 倍更少的樣本達到 image-text alignment（21.6M vs 900M 例子）；一個 109M 的文本 JEPA 在跨模態對齊上打贏最高 72B 的 LLM。驅動力不是 scale，而是「同一個東西的兩個視角」這種訓練信號。</li>
+<li><strong>Agentic coding 的實際數字。</strong>Karpathy 用 Claude Code desktop + Opus 5.5（Medium effort）花了約 2 小時做出 HackerTube：把 20 年、4,300 萬條 HN 評論過濾成 6,454 條被反覆推薦的視頻，包括 VPS 加固與部署。GitHub 的新 cloud agents + Opus 5.5 在一天內向 ASP.NET Core 提交了約 90 個性能 PR，token 成本約 230 美元。Devin 花了 36 小時、約 2,000 美元把一個模型移植到 Trainium 上跑。</li>
+<li><strong>推理硬件。</strong>NVIDIA 的 AgentX 提交聲稱，agent swarm 寫出的軟件在 700B+ 模型上達到每秒每用戶超過 1,000 token。Rubin NVL72 對 GB300 NVL72 號稱 20.9 倍 perf/TCO（325 tok/s/user），200 tok/s/user 時是 9.11 倍。Mooncake 的 Extended GPU Memory 把 KV cache 放進 Vera LPDDR5X，跨 18 個 compute tray 走 NVLink 而不是 RDMA，頻寬超過 10 倍。</li>
+</ul>
+
+<div class="section-title">九、我的判斷</div>
+
+<p>如果要用一句話總結這篇論文的地位：<strong>它是一個接口的可行性證明，不是一個能力的可行性證明。</strong></p>
+
+<p>支持這個判斷的證據有三個。第一，八個實驗裡，凡是「純權重」的任務（1、2、3）都成功，凡是「需要行為語義」的任務（7）都要退回到激活層。這條界線非常清楚，而作者沒有試圖模糊它。第二，實驗八的成功完全依賴一個退化 baseline，作者自己做了 Gemma 對照組並公布失敗。第三，所有實驗的規模都在 1.5M 到 0.8B 之間，而 0.8B 只動了 0.016%。</p>
+
+<p>反對「這只是 demo」的證據也有一個：實驗四與實驗六不是「刪掉一個方向」，而是「想出一個策略並把它寫成權重」。那是加法。如果一個模型能對一個它從未見過的環境，用自然語言想出「等綠輪過紅線就關掉旁路」這種具體方案，再翻譯成 171,664 個數字，那麼「權重是一種可編程介質」這個命題，至少已經有了一個 existence proof。</p>
+
+<p>真正要等的下一件事很清楚：<strong>有沒有人把同樣的方法用在 70B 以上的模型，並且給出獨立的 baseline。</strong>在那一刻之前，這是火花，不是火。但它燒的地方是對的——不是 benchmark 榜單，而是 RSI 那條供應鏈的中間環節。</p>
+
+<p>最後補一個對照。11 月 1 日莊明浩在《十字路口》講的是應用層的粗糙：能力很強，但產品體驗充滿毛邊。這篇論文展示的是研究層的粗糙：能力很驚人，但實驗規模很小、baseline 有問題、方法高度依賴具體失敗模式。兩邊其實在說同一件事——<strong>能力湧現的速度，快過我們理解它的速度。</strong>而這一次，連「理解」本身都被做成了產品。</p>
+
+<div class="section-title">十、如果只記住三件事</div>
+
+<ol>
+<li><strong>新的接口比新的算法更重要。</strong>論文沒有訓練任何東西，只是把權重序列化成模型能讀寫的介質。如果這條路能 scale，RSI 的迭代單位會由「一次訓練」變成「一次編輯」。</li>
+<li><strong>最硬的證據是對照組的失敗。</strong>Gemma 3 270M 不循環，同樣的方法就完全無效。所以 Astra 做的是「拆路障」，不是「教數學」——論文自己這句話，比 48.1% 更能定義它的邊界。</li>
+<li><strong>現在仍然是玩具規模，但玩具的形狀是對的。</strong>0.8B 的 0.016% 與 1T 的 0.016% 是兩個世界；在有人做出 70B+ 的獨立重現之前，這是火花。而火花已經足夠照亮下一個問題：當權重可以被閱讀，模型的「資產」屬性還剩下什麼？</li>
+</ol>
+
+<hr>
+
+<footer>
+<p><strong>來源：</strong>Latent Space · AINews，〈[AINews] LLMs can read &amp; write neural network weights: “Weight Space Programming” cuts Autoresearch out of the RSI loop〉，2026-11-03 05:35 UTC 發布，原文約 47,000 字元。<br>
+論文：Rikiya Takehi &amp; Jayden，〈Sparks of Weight-Space Programming: LLMs can natively read &amp; write neural network weights〉，blog 位於 rikiyat.github.io/blog/weight-space-programming，Apache 2.0；致謝中提及 Matei Zaharia（Berkeley Sky Lab）、Heather Miller（CMU）、Zico Kolter。</p>
+<p>本文引用的英文原句均取自 AINews 原文與論文引述；數字以 AINews 轉載的論文表格為準。實驗五正文與表格的數字矛盾，已在第六節標明，未替作者圓場。AINews 與 Reddit 將論文歸為 MIT CSAIL 工作，但原文未明寫機構，本文保留此不確定性。</p>
+<p>深度復述生成時間：2026-11-04 06:20 UTC · 由 Vee Mok 整理</p>
+</footer>
+
+</div>
+</body>
+</html>
