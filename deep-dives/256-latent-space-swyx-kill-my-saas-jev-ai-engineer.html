@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「你一旦有咗我嘅軟件，我就可以 clone 佢」——swyx 講 Kill My SaaS、Jev，同一個 AI 工程師嘅自我發明</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #888; line-height: 1.7; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">Latent Space · AINews + 專訪 · 2026-11-04 · 72 分 24 秒</div>
+  <h1>「你一旦有咗我嘅軟件，我就可以 clone 佢」<br>——swyx 講 Kill My SaaS、Jev，同一個 AI 工程師嘅自我發明</h1>
+  <div class="meta">
+    <div>〈[AINews] Behind Latent Space: Kill My SaaS, Jev &amp; AI in 2026 | AIEi Shanghai〉</div>
+    <div>出品：Latent Space<span>·</span>主持：swyx + Alessio Fanelli<span>·</span>訪問者：Galen Gao</div>
+    <div>發布 2026-11-04 19:17 UTC（香港時間 11-05 03:17）<span>·</span>錄於 AI Engineer Shanghai 開幕前</div>
+  </div>
+</header>
+
+<p>這一集值得完整拆，不是因為它又報了一次模型發布，而是因為它罕有地把三件事放在同一個小時裡：一個新聞欄目對自己昨日頭條的公開降溫、一個會議創辦人對自己商業模式的算帳、以及一個內容創業者對「AI 工程師」這個身份嘅起源自述。三層其實係同一條問題——<strong>當能力湧現快過理解速度，剩下嘅係判斷、品味與審計。</strong></p>
+
+<p>先把結論放在前面：swyx 講嘅唔係「AI 會取代咩」，而係「當所有人都可以用一句 prompt 複製一個軟件，仲有咩值得收錢」。佢嘅答案唔係模型，而係三個更慢嘅東西——<strong>身份、品味、同埋一個可以被人信任嘅工作台。</strong></p>
+
+<div class="section-title">一、這一集其實是兩層：一層認錯，一層認人</div>
+
+<p>上層是 AINews 對 11 月 2–3 日 AI 新聞的彙總。開篇第一句就係修正：昨日那篇「Weight-Space Programming」的標題「把部分主張講得過度有利」，整體上削弱了論文更實質的發現。但他們亦明確講明唔會撤回，亦唔會再發一篇「這是假的」——因為已經有多組獨立重現。</p>
+
+<blockquote class="strong">
+「We agree that some of the claims are presented in overly favorable light... However it is still a big wakeup moment and has had multiple independent replications by now.」
+<span class="attribution">— Latent Space · AINews 開場，2026-11-04</span>
+</blockquote>
+
+<p>下層是 Galen Gao 在 AI Engineer Shanghai 開幕前對 swyx 的 72 分鐘專訪。AI Engineer Shanghai 是 11 月 5–6 日在上海虹橋希爾頓舉行，也是 AI Engineer 在中國的第一場。swyx 把這場活動當成一個觀察窗口：中國的開源模型、機械人、ComfyUI 與 OpenClaw 社群，和舊金山的 B2B SaaS 泡泡，是兩種不同的生態。</p>
+
+<p>兩層共用一個主題。上層講「模型開始識讀寫權重」，下層講「當模型識做更多嘢，人仲剩低咩」。<strong>如果權重都可以被直接書寫，咁「會寫程式」本身就不再是護城河；剩下的，是你知唔知應該寫咩。</strong></p>
+
+<div class="section-title">二、由金融到 AI：learn in public 是沒有 credential 的人唯一的入場券</div>
+
+<p>swyx 的履歷不是典型的矽谷敘事。第五代新加坡華人，大學赴美，先在做交易、投行與對沖基金待了 8 年（他先說 10 年，隨即更正為 8 年），第一份工作是在 Two Sigma 的軟件工程側；之後進 Amazon 與幾家初創，四年前獨立。現在的身份是 AI Engineer 的 CEO、Latent Space 的主播與作者，以及 Cognition 的顧問（Small AI 被 Cognition 收購後，他在那裡做了 6 個月員工再轉顧問），同時顧問 Fireworks、Modal、Supabase 等公司，前後 35–36 家。</p>
+
+<p>他把自己定義為「技術上能做、又能寫能講」的開發者關係型人才，並坦言這不是一個正常的職業路徑，不建議多數人模仿。但他亦給了一條可複製的原則：<strong>learn in public。</strong></p>
+
+<p>他從金融轉科技時，最直接的體感是兩個行業的博弈結構不同：金融是零和，知識說出去就貶值；科技大多是正和，說出去反而增值。這讓他願意把學習過程公開寫出來。Stable Diffusion 出現時（ChatGPT 之前），他在一家「不算火箭船」的初創 Airbyte，沒有 AI 背景，只能靠寫博客拆解 Stable Diffusion 進場；Emad Mostaque 讀到那篇分析並認可，成為第一個轉折點。</p>
+
+<p>他的補充很刺：亞洲文化太重 credential，學位、證書、上一份工作形成閉環；但職涯其實可以 pivot，條件是「非常堅持，並且接受『努力不等於有資格贏』」。</p>
+
+<div class="highlight-box">
+<strong>給沒有 credential 的人的三步：</strong>選一個你真係想搞清楚嘅題目 → 把它拆到可以教人嘅程度 → 公開寫出來，讓對的人可以搵到你。聽落很雞湯，但佢嘅重點係「公開」：公開先會產生意外嘅讀者，而意外嘅讀者先會帶來非線性嘅機會。
+</div>
+
+<div class="section-title">三、「AI Engineer」是一個身份產品，不是技能清單</div>
+
+<p>這一段是整集最容易被忽略、但對職涯最有用的部分。swyx 引用 Atomic Habits 的框架：要連接一個人，不要連接他的工作或愛好，要連接他的 identity——「你想成為誰」。</p>
+
+<p>當時有一批非 AI 背景的人想成為 AI 人，市場上卻只有「prompt engineer」這種不體面的稱呼；於是他給他們一個有薪資前途的職位名稱。Alternatives 包括 AI tinkerers、LLM engineer、applied AI engineer，但他選了最簡單、最像行業職稱的那個。</p>
+
+<blockquote class="strong">
+「AI Engineer 不是一個技能清單，是一個身份。人們不是想學一個工具，是想成為某一種人。」
+<span class="attribution">— swyx，本集訪談（意譯自訪談段落）</span>
+</blockquote>
+
+<p>這個判斷來自他在 GDC、CppCon、JSConf、PyCon 的經驗：工程師對工程師的會議，講者未必最有名，但一定是真正做過事的人。他由此推導出 AI Engineer 會議的產品定位——不是學術會議，也不是開發者大會，而是「做過事的人講自己做過咩」。</p>
+
+<p>他給了一個清楚的分層，值得抄下來：</p>
+
+<ul>
+  <li><strong>AI engineer</strong>：individual contributor，真正動手交付系統的人。</li>
+  <li><strong>AI architect</strong>：公司層面決定「所有人怎麼用 AI」的人。</li>
+  <li><strong>AI designer / AI PM</strong>：再往上，決定產品形狀與人機介面的人。</li>
+</ul>
+
+<p>他對行業的批評也很直接：很多 AI 會議被「一輩子沒寫過一天 code 的 talking heads」佔據，他們都說 AGI 還有兩年、大家都會失業，「而 conveniently，whatever is next looks like their job」。</p>
+
+<div class="section-title">四、AI Engineer 的內核是 harness，而且這個內核沒怎麼變</div>
+
+<p>他認為熱點從 RAG、context management，移到 coding agents、harness engineering、loop engineering、memory，但職位本身沒有本質變化：你還是那個半夜四點起來修東西的人。</p>
+
+<p>這句話在 2026 年聽起來有點反潮流。因為整個行業都在講「模型越強，harness 越薄」，他卻認為 harness 才是 AI engineer 的專業所在。兩者其實不矛盾：模型越強，harness 的<em>形狀</em>會變，但「把模型接到真實世界、處理失敗、控制權限、保證可審計」這件事不會消失。</p>
+
+<blockquote class="strong">
+「熱點會由 RAG 移到 context management，再移到 coding agents、harness engineering、loop engineering、memory。但職位沒有變：你還是那個半夜四點起來修東西的人。」
+<span class="attribution">— swyx，本集訪談（意譯）</span>
+</blockquote>
+
+<div class="section-title">五、AI Engineer 會議是「AI 實驗室的 GDC」，而走廊才是真正的產品</div>
+
+<p>他的類比很準：遊戲業有 GDC，AAA 工作室一年一次出來講「我怎麼做出年度遊戲」；AI 實驗室現在就是遊戲工作室，錢多、項目大、保密，但一年總要有一次行業聚會。</p>
+
+<p>OpenAI 的 DevDay、Anthropic 的 Code with Claude 太小、太選擇性，只服務客戶；AIE 的價值是把 30 條 track、7,000 人、1.5M 線上觀眾放在同一個屋簷下。第一場在三年前，原目標 6,000 人，最後 7,000+ 人到場。</p>
+
+<p>更關鍵的是「走廊效應」：中國一些在實體清單上的實驗室，和美國公司不能正式會面，但在同一個場地會自然碰到——他把這視為會議的真正產品。</p>
+
+<p>還有一個更前瞻的動作：AIE 把每一場 talk、每一個 workshop 轉錄、索引，對每個講者和組織做 deep research，做成 MCP server 與可下載 dataset，目標是「AI 的 Wikipedia」。他的說法是「Everything is MCP. Everything has been transcribed.」</p>
+
+<p>這不只是內容運營，而是把會議從一次性事件變成可被模型檢索的知識庫。<strong>當會議的內容可以被 agent 直接查詢，會議的競爭力就由「請到邊個講者」轉向「你嘅語料有幾乾淨、幾可引用」。</strong></p>
+
+<div class="data-point">
+<span>規模</span>3 天、30 條 track、7,000+ 人到場（原目標 6,000）、1.5M 線上觀看；第一場在三年前。國際布局：巴黎是第一站，主辦團隊後來被 Mistral 收購；新加坡場由當地團隊運營；中國場以「麥當勞中國」式的品牌特許模式運作。
+</div>
+
+<div class="section-title">六、Kill My SaaS：中層 SaaS 的定價被 coding agent 直接擊穿</div>
+
+<p>這是全集最具體、也最容易被人斷章取義的一段。先講算術。</p>
+
+<p>他的會議預算 300 萬到 1,000 萬美元／場，其中約 30 萬美元／場是軟件，佔預算與毛利約 10%；一年可能付到 100 萬美元。他拿一個員工想買的 4 萬美元 SaaS 做實驗：公開徵集用 1 萬美元重寫、開源、客製化。</p>
+
+<div class="data-point">
+<span>Kill My SaaS</span>標的 SaaS 年費 40,000 美元｜懸賞 10,000 美元｜69 份提交｜約 5 份達到「我願意付錢」水準｜評估花了 2 個月｜這個 SaaS 有五種角色：主辦、講者、參加者、贊助商、供應商，每種都要開帳號、輸資料、交叉驗證。
+</div>
+
+<p>結果不是「所有 SaaS 都死」，而是三層分化：</p>
+
+<ol>
+  <li><strong>Salesforce 這種 mission-critical 不動。</strong>它連接的是整個公司的流程、權限與審計，重寫成本遠高於訂閱費。</li>
+  <li><strong>中層 SaaS 會被客戶自己 Clone。</strong>功能邊界清楚、資料模型簡單、沒有網絡效應的產品，最容易被「會寫程式的客戶」用一個 agent + 一個週末取代。</li>
+  <li><strong>SaaS owner 的唯一出路是變成垂直 Agent（Harvey、OpenEvidence 模式）或資料供應商。</strong>不是賣功能，而是賣「你唔敢自己承擔嘅責任」或「你拿唔到嘅資料」。</li>
+</ol>
+
+<blockquote class="strong">
+「The moment I have access to your software, I can clone it. So good luck.」
+<span class="attribution">— swyx，談 coding agent 對 SaaS 的複製能力</span>
+</blockquote>
+
+<div class="sub-title">「會寫程式的客戶」是新的談判對手</div>
+
+<p>他描述自己現在的生態：自建 Calendly、Google Drive、GitHub、Dropbox、Slack、DocuSign。DocuSign 的例子最具體：開源版簽完名直接進 Drive 的正確資料夾，原生 DocuSign 做不到；電子簽名沒有專利、沒有真正的網絡效應，「the network is the email address」。</p>
+
+<p>他的總結是一句可以被抄進 pitch deck 的話：「Inside of every 1 million copy-paste, I think there is a fantastic startup.」但他也承認維護不是零，且「有時候買經過驗證的 SaaS 更好」。</p>
+
+<div class="highlight-box">
+<strong>這裡有一個容易被忽略的經濟學：</strong>Kill My SaaS 的重點不是「便宜」，而是「<em>把一個固定成本變成一個可選的資本支出</em>」。SaaS 是年年付的租金，自建是一次性的裝修費加之後的維護。當 AI 把裝修費由 40,000 降到 10,000，很多原本「租比較划算」的決策就會翻轉。但翻轉的門檻不是價格，而是<strong>你有沒有一個能判斷「呢個 clone 夠唔夠安全」的人</strong>。
+</div>
+
+<div class="section-title">七、Jev/TypeSafe：AI 工程的「相反方向」</div>
+
+<p>如果說 Kill My SaaS 是「用 agent 取代 SaaS」，Jev 就是「用模型取代 if 語句」。兩者其實是同一種思路的兩端：把 AI 從一個你要「服侍」的聊天窗，變成一個你可以「呼叫」的零件。</p>
+
+<p>他把 Diego（Jev 創辦人、InstructGPT 共同作者之一）的路線描述為：現在的 AI 工程是「一個大 harness 包住模型」，做完一輪工作後把答案交給模型，祈禱它給對答案，還可以想 10 天；Jev 則是把模型縮到只做一件事——做選擇、估機率——然後把它放進關鍵路徑，像寫一個 <code>if</code> 語句一樣自然。</p>
+
+<blockquote class="strong">
+「Models are for us. We don't work for the model.」
+<span class="attribution">— swyx，轉述 Jev/TypeSafe 的設計哲學</span>
+</blockquote>
+
+<p>這背後的產品哲學是「smarter software」：不是一個點很聰明、其餘全笨，而是每個決策點都稍微聰明一點；速度是次要，可靠性才是重點，所以公司叫 TypeSafe。</p>
+
+<p>「TypeSafe」這個名字本身就是產品承諾：決策的型別安全。你唔會想要一個「大概會傳回字串」的函數；你亦都唔會想要一個「大概會批准呢筆交易」的 agent。Jev 的定位不是「更快的 LLM」，而是「System One 決策模型」：把模型能力限制在分類、排序、估機率，然後嵌入既有程式的控制流。這個限制換來的是延遲與可靠性——可以在關鍵路徑上同步呼叫，而不是開一個聊天窗等 10 天。</p>
+
+<div class="sub-title">為什麼是 Diego 做成，而不是早就有的一千個「小模型更好」的人</div>
+
+<p>他給了三個條件：</p>
+
+<ol>
+  <li><strong>OpenAI 的可信度</strong>：InstructGPT 共同作者，講「小模型可以做決策」有人信。</li>
+  <li><strong>把技術翻譯成 System 1 vs System 2 的清楚框架</strong>：一個可以讓非技術人覆述的故事。</li>
+  <li><strong>Showmanship</strong>：粉色外套、Doom demo、發佈貼文裡那個「你永遠不會用 LLM 做這個」的示範。</li>
+</ol>
+
+<p>他認為技術能力與表達能力是兩個維度，Diego 在兩邊都是 10×；這也是他自己「learn in public」策略的放大版。</p>
+
+<div class="section-title">八、品味：快速、便宜地把一千個可能收窄到一個</div>
+
+<p>他對品味的定義，是全集最值得抄的一句話：</p>
+
+<blockquote class="strong">
+「Taste is being able to narrow a large set of possibilities, quickly and cheaply, to the one that — looking back — is immediately obvious.」
+<span class="attribution">— swyx，定義品味</span>
+</blockquote>
+
+<p>他的例子是 iPhone：智慧手機長期有鍵盤，Steve Jobs 說不要鍵盤、要全觸控、要一塊平板，這需要十年前 General Magic 失敗的 R&amp;D 累積；今天所有手機都長那樣，這就是品味。</p>
+
+<p>他認為 Cursor 有品味（先是 VS Code 路線，後來是 Composer 式的產品判斷，讓 OpenAI 與 Anthropic 反過來抄），Legora 也有品味（把法律文件審閱做成大規模並行的工作流，看過就不想在其他地方工作）。</p>
+
+<blockquote class="strong">
+「You have taste when other people copy the thing that you just shipped.」
+<span class="attribution">— swyx</span>
+</blockquote>
+
+<p>這個定義的好處是它可被驗證：品味不是「我覺得靚」，而是「事後看顯然正確，而且別人開始抄」。壞處是它只能事後判斷，所以你不能用它來做決策，只能用來事後評價。<strong>真正可操作的部分，是「快速、便宜」——品味不是想得慢，而是用最低成本排除錯誤選項。</strong></p>
+
+<div class="section-title">九、中國創辦人的 GTM 缺口，比技術差距更致命</div>
+
+<p>他對中國創辦人的評價兩極：技術與執行極強，「如果他們生在美國，會殺死 Amazon、殺死 Facebook，他們不更有錢的唯一原因是他們在中國」；但營銷與市場理解極弱。</p>
+
+<blockquote class="strong">
+「If they live in the US, they'll kill Amazon. They'll kill Facebook. The only reason they're not richer is they live in China.」
+<span class="attribution">— swyx，談中國創辦人的能力與市場錯配</span>
+</blockquote>
+
+<p>他建議把 marketing 從「最後一哩」提前到產品 spec 之前：先想清楚哪個客群、在哪裡出沒、用什麼詞描述問題、看到產品後生活怎麼變好。他用的比喻是「你有長板，我幫你補短板」，並強調「show, don't tell」——Doom demo 比一百頁 PowerPoint 有用。</p>
+
+<p>這段話有明顯的樣本偏差：他見到的中國創辦人，多半是已經有技術能力、但正在嘗試出海的那一批；真正做本土市場做得好的公司，未必會出現在他的觀察窗口。但作為一個「外國人眼中的中國創業者」的快照，它仍然有價值。</p>
+
+<div class="data-point">
+<span>中國觀察</span>ComfyUI 相關社群以百萬人計；OpenClaw 在中國的採用熱度是他此行最想觀察的現象之一；他形容中國是真正的 996，舊金山所謂的 996 週末還在 chill，但美國法律不允許要求員工這樣做。
+</div>
+
+<div class="section-title">十、他真正興奮與真正害怕的東西</div>
+
+<p>興奮的三件事：</p>
+
+<ul>
+  <li><strong>System One 模型</strong>：他說是「無聊但明確的第一名」，所以刻意不把它當答案。</li>
+  <li><strong>Thinking Machines 的 interaction models</strong>：全雙工、邊說邊聽、可打斷、即時調整。</li>
+  <li><strong>Continual learning</strong>：不是 pre-train/post-train 完成，而是邊工作邊學；再加上 world models。</li>
+</ul>
+
+<p>害怕的則是 AI winter——會議公司靠 hype 吃飯，這是他自己的商業風險；以及更根本的安全問題：他不認為風險只是假新聞或失業，「會是更糟的東西」，極端版本是生物武器；Cyber 只是目前最能被社會表達的形式。</p>
+
+<blockquote class="strong">
+「The default assumption for most people should be AI doom. In all of human history, when a more advanced civilization comes along and meets a less advanced one, the less advanced civilization goes extinct. And this thing is evolving roughly 1,000 times faster than us.」
+<span class="attribution">— swyx，談他最根本的擔憂</span>
+</blockquote>
+
+<p>這句話在一個會議創辦人口中說出來，有一種奇怪的張力：他一邊靠 AI 的樂觀敘事做生意，一邊說預設應該是 doom。但他沒有回避這個張力，反而把它當成自己商業風險的一部分——如果 hype 退潮，會議會先死。</p>
+
+<div class="section-title">十一、AINews 的技術雷達：修正、模型、基建</div>
+
+<p>上半場的新聞彙編信息密度很高，這裡只抽我認為對讀者最有用的四條線。</p>
+
+<div class="sub-title">1. Weight-Space Programming 的修正與重現</div>
+
+<p>除了開場的認錯，AINews 給出了四條關鍵新信息：</p>
+
+<ul>
+  <li><strong>跨代際重現</strong>：Alex Krentsel 重做 MIT 的實驗，發現能力隨模型代際 sharply jump；最新模型生成的 Breakout 網絡得分最高達 RL baseline 的 22 倍（二手摘要，未獨立核實）。</li>
+  <li><strong>Hugging Face 重現</strong>：用其開源研究 harness「ML Intern」復現，並放出模型與 demo。</li>
+  <li><strong>手寫分類器</strong>：有人讓 Fable 手寫一個 10 萬參數的網絡，分類「真 vs 假法律引用」，據稱贏過訓練版；Legora CTO 轉發。</li>
+  <li><strong>知乎拆解 Qwen 編輯</strong>：GPT-6 Astra 改 Qwen3.5-0.8B 的 131,072 個權重（0.016%），MATH-500 7.9%→48.1%。但 579 個修復答案中有 576 個原本是撞 32K token 上限的循環；方法是從對比式的「循環 vs 有效」上下文推導出一個 repetition direction，定位在 15、19 層的 MLP，從每層 top 64 個對齊神經元減去 6 倍投影；在 1,152 道 held-out 題上 10.6%→60.4%。結論：大部分收益是「原本就會的推理現在能寫完」，不是新能力。</li>
+</ul>
+
+<p>批評也很集中：baseline 不夠強、Qwen 結果是 bug fix 而非 RSI、直接對 benchmark 擬合權重「本質上無意義」、模型可能主要在讀首尾層、實驗 7 只有在允許模型用 probe 後才成功。支持者則把它框成「meta-learning 終於 work」與「結構化文本優化」，主張用 backprop + 直接編輯的混合路線。</p>
+
+<div class="sub-title">2. 模型發布：價格與延遲成為新的競爭軸</div>
+
+<table>
+  <tr><th>模型</th><th>關鍵數字</th><th>備註</th></tr>
+  <tr><td>Tencent Hy4</td><td>APEX-Agents 75.2；$0.834 / $2.501 per M tokens</td><td>DeepSeek V4.1 Flash-1017 為 72.1 / 72.9；計劃開權重；Agent Arena 第 14，$0.55/task vs Kimi K3.1 Pro Max $1.46</td></tr>
+  <tr><td>Sarvam Prism</td><td>71.8；44ms 中位延遲</td><td>建於 Sarvam 105B 的 System One 決策模型；號稱 sub-100ms 決策模型最佳平均</td></tr>
+  <tr><td>Kimi K3.1 Pro</td><td>—</td><td>本週三放權重</td></tr>
+  <tr><td>P-H3-Image</td><td>8 steps（原 50）；小 7×；4MP in 2.6s</td><td>Pruna 從 MiniMax-H3 蒸餾的開源模型</td></tr>
+  <tr><td>LongCat-2.5</td><td>1.6T 總參數 / ~48B 激活；$0.30 / $1.20</td><td>一個瀏覽器遊戲成本 $0.28 vs Qwen3.8-Max $0.82</td></tr>
+</table>
+
+<p>這張表最重要的不是誰第一，而是<strong>「足夠好」的價格正在快速下移</strong>。當 LongCat 用 $0.28 做一個瀏覽器遊戲、Sarvam 用 44ms 做一個決策，市場就會分裂成兩層：一層追求 frontier 的「奇觀」，一層追求「夠用就好」的單位經濟。</p>
+
+<div class="sub-title">3. 評測審計：benchmark 本身開始被審</div>
+
+<p>AINews 這一段比模型發布更重要。Prime Intellect 修了一批公共 eval 的問題；Xeophon 發現 AutomationBench 強制 prose request body、OfficeQA Pro v2 的 regex grader 會拒絕正確答案、模型可以透過 web access 從 Hugging Face 取答案 key；修好後兩個 benchmark 都接近飽和。SWE-bench Multimodal 移除圖片後分數幾乎不變。SemiAnalysis 的 GDPx 有 14 個資料夥伴、11 個領域、34 個晶片設計任務；GPT-6 Astra 在 cyber 得 0%，因為它拒絕了每一個任務。</p>
+
+<p>還有一個容易被忽略的治理缺口：METR/Redwood 的演練發現，compaction 之後約 10% 的合格內部 Codex 流量沒有被監控。<strong>當 agent 開始壓縮自己的上下文，審計鏈會出現盲區；這不是模型能力的問題，是 harness 設計的問題。</strong></p>
+
+<div class="sub-title">4. 服務棧：agent 的 TTFT 由 50 秒降到 2–4 秒</div>
+
+<p>vLLM v0.33.0 有 927 個 commit，PyTorch 2.14、CUDA 13-only wheel，GB300 上 decode 1.5–2×；ThunderAgent 合入 llm-d，吞吐 1.5–2×，agent trace 的 median TTFT 從約 50 秒降到 2–4 秒；OCRia-1 在單張 B200 上靠 speculative decoding、量化與 17 個小優化，把生成從 285 提升到 2,800 tok/s。Baseten 推出 Grid（gateway/router）、VM 隔離 Sandboxes、Loops（serverless SFT/RL）；Snowflake Cortex Training 提供開源權重模型的 serverless SFT/RL。</p>
+
+<p>這些數字的意義是：<strong>agent 的用戶體驗，正在由「模型思考多久」轉向「基建可以幾快把第一個 token 送到」。</strong>當 TTFT 由 50 秒降到 2–4 秒，很多以前「唔實用」的 agent 互動就會突然成立。</p>
+
+<div class="section-title">十二、我的判斷：三個不會被 model 吃掉的東西</div>
+
+<p>聽完這一集，我最強的感受不是「SaaS 要死」，而是「中間層要重新定價」。swyx 的三個答案，其實對應三種不同的資產：</p>
+
+<ol>
+  <li><strong>身份</strong>：AI Engineer 這個職位名稱，是一個自我實現的預言。當市場有咗呢個稱呼，就會有人以此為目標去學，然後真的變成這種人。身份比技能更難被複製，因為它需要一個社群去承認。</li>
+  <li><strong>品味</strong>：當生成成本趨近零，選擇成本反而上升。品味不是「識欣賞」，而是「識排除」——在無限可能中快速收窄到一個事後看顯然正確的選項。</li>
+  <li><strong>工作台</strong>：Kill My SaaS 真正賣的不是軟件，是「我幫你維護、我幫你審計、我幫你承擔風險」。當客戶自己都能 clone，唯一剩下的價值就是「你唔想自己做嘅嗰部分」。</li>
+</ol>
+
+<p>而 Jev 是第四個答案的雛形：<strong>把模型縮到只做一個決定，然後把這個決定放進 critical path。</strong>這條路線的哲學不是「AI 無所不能」，而是「AI 應該無處不在，但每次都只做一點點」。如果這條路線成立，未來的軟件不會是一個聊天窗，而是無數個內嵌的、可預測的、型別安全的判斷。</p>
+
+<blockquote class="strong">
+「Inside of every 1 million copy-paste, I think there is a fantastic startup.」
+<span class="attribution">— swyx</span>
+</blockquote>
+
+<p>這句話可以兩面讀。樂觀地讀，是機會：每一個重複的 workflow 都值得被產品化。悲觀地讀，是警告：如果你的產品本身就是一個「1 million copy-paste」，那你就是別人的創業機會。</p>
+
+<hr>
+
+<p>最後回到那個張力。swyx 一邊說「預設應該是 AI doom」，一邊辦一個 7,000 人的 AI 會議。這不是虛偽，而是這個時代最誠實的姿勢：<strong>你可以在不確定結果的情況下，仍然選擇做具體的事。</strong>與其等一個確定的答案，不如先把走廊準備好，讓對的人可以撞到彼此。</p>
+
+<footer>
+  <p><strong>來源</strong>：Latent Space，〈[AINews] Behind Latent Space: Kill My SaaS, Jev &amp; AI in 2026 | AIEi Shanghai〉，2026-11-04 19:17 UTC 發布，72 分 24 秒；YouTube 影片 QmDLDy3ZSNE；AINews 對應文章〈Behind Latent Space: Kill My SaaS, Jev &amp; AI in 2026〉（latent.space）。引文以節目逐字稿與日報萃取為準，部分為意譯，已在文中標明。</p>
+  <p><strong>生成時間</strong>：2026-11-05 06:15 UTC｜Deep Dive #256｜AI Podcast Daily</p>
+</footer>
+
+</div>
+</body>
+</html>
