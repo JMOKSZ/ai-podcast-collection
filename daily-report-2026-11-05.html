@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客日報 · 2026-11-05</title>
+<style>
+  :root {
+    --paper: #faf8f5;
+    --ink: #2b2724;
+    --muted: #7a726a;
+    --rule: #ddd5cb;
+    --accent: #8a4b2f;
+    --soft: #f2ede6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Noto Serif SC", "Songti SC", "Source Han Serif SC", serif;
+    font-size: 17px;
+    line-height: 1.9;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 28px 90px; }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 26px; margin-bottom: 34px; }
+  .kicker { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  h1 { font-size: 34px; line-height: 1.3; margin: 0 0 16px; font-weight: 600; letter-spacing: -.01em; }
+  .meta { font-size: 13.5px; color: var(--muted); line-height: 1.8; }
+  .meta span { margin-right: 18px; white-space: nowrap; }
+  h2 {
+    font-size: 15px; letter-spacing: .16em; text-transform: uppercase;
+    margin: 54px 0 22px; padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+    color: var(--accent); font-weight: 600;
+  }
+  h3 { font-size: 24px; margin: 38px 0 6px; font-weight: 600; line-height: 1.4; }
+  h4 { font-size: 19px; margin: 30px 0 4px; font-weight: 600; line-height: 1.5; }
+  h5 { font-size: 15px; margin: 26px 0 6px; letter-spacing: .04em; color: var(--accent); }
+  p { margin: 0 0 14px; }
+  .byline { font-size: 13.5px; color: var(--muted); margin: 0 0 18px; }
+  .lede { font-size: 18.5px; line-height: 1.85; }
+  .lede strong { font-weight: 600; }
+  ul, ol { margin: 0 0 16px; padding-left: 24px; }
+  li { margin-bottom: 8px; }
+  blockquote {
+    margin: 22px 0; padding: 4px 0 4px 20px;
+    border-left: 3px solid var(--accent);
+    color: #4a433d; font-style: italic;
+  }
+  blockquote .src { display: block; margin-top: 6px; font-size: 12.5px; font-style: normal; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; margin: 18px 0 22px; font-size: 14.5px; line-height: 1.65; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-weight: 600; background: var(--soft); font-size: 13px; letter-spacing: .03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .note {
+    background: var(--soft); border: 1px solid var(--rule);
+    padding: 14px 18px; margin: 22px 0; font-size: 14.5px; line-height: 1.75;
+  }
+  .note b { color: var(--accent); }
+  .tag {
+    display: inline-block; font-size: 11.5px; letter-spacing: .08em;
+    border: 1px solid var(--rule); padding: 2px 8px; margin-right: 6px;
+    color: var(--muted); vertical-align: 2px;
+  }
+  .divider { text-align: center; color: var(--rule); margin: 46px 0; letter-spacing: 1em; }
+  .quiet { color: var(--muted); font-size: 14.5px; }
+  .toc { font-size: 14.5px; color: var(--muted); margin: 0 0 8px; }
+  .toc a { color: var(--muted); text-decoration: none; border-bottom: 1px dotted var(--rule); }
+  footer { margin-top: 70px; padding-top: 22px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--muted); line-height: 1.8; }
+  a { color: var(--accent); }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .88em; background: var(--soft); padding: 1px 5px; }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .wrap { padding: 36px 18px 70px; }
+    h1 { font-size: 28px; }
+    h3 { font-size: 21px; }
+    table { font-size: 13px; }
+    th, td { padding: 7px 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">AI Podcast Daily · 深度萃取</div>
+  <h1>2026 年 11 月 5 日</h1>
+  <div class="meta">
+    <span>報告日期：2026-11-05（週四）</span><br>
+    <span>生成時間：2026-11-05 02:06 UTC（香港時間 10:06）</span><br>
+    <span>掃描窗口：2026-11-04 02:05 UTC → 2026-11-05 02:05 UTC</span><br>
+    <span>來源：10 個播客 RSS / YouTube feed</span>
+  </div>
+</header>
+
+<p class="lede">今日只有一集新節目，但這一集值得完整拆。Latent Space 在 AI Engineer Shanghai 開幕前一天放出 72 分鐘專訪：一半是 AINews 對「Weight-Space Programming」的公開降溫與獨立重現盤點，一半是 swyx 與 Galen Gao 的長談——從 Latent Space 的起源、AI Engineer 這個職位的發明，到 Kill My SaaS 的 $40K 實驗、Jev/TypeSafe 的 System One 賭注、OpenClaw 在中國的採用，以及他認為「預設應該是 AI doom」的理由。</p>
+
+<h2>今日重點</h2>
+<ul>
+  <li><b>Kill My SaaS 的算術很冷酷：</b>一場會議每年付約 30 萬美元 SaaS 費用，他拿其中一個 4 萬美元的產品開價 1 萬美元徵人重寫；69 份提交，約 5 份他願意付錢，評估花了兩個月。他的結論：中層 SaaS 會被「會寫程式的客戶」逐個 Clone 掉，要麼變成垂直 Agent，要麼變成資料供應商。</li>
+  <li><b>Jev/TypeSafe 是「相反方向的 AI 工程」：</b>不是用大模型做一個無所不能的聊天窗，而是把模型縮到只做選擇與機率判斷，像 <code>if</code> 語句一樣放進程式的 critical path。「Models are for us. We don't work for the model.」速度是次要，可靠性才是重點，所以公司叫 TypeSafe。</li>
+  <li><b>Weight-Space Programming 被自家欄目降溫：</b>Latent Space 承認昨日標題「把部分主張講得過度有利」，但強調已有多組獨立重現，不值得撤回。知乎拆解顯示 Qwen 的 MATH-500 7.9%→48.1% 主要是修掉「循環解題」的 bug：579 個修復答案中有 576 個原本撞 32K token 上限。</li>
+  <li><b>中國觀察：</b>swyx 說 OpenClaw 在中國的採用熱度是他這趟最想親眼看的現象之一；中國開發者大量用 ComfyUI，社群規模以百萬計；他形容中國創辦人「技術極強、營銷極弱」，若生在美國「會殺死 Amazon 和 Facebook」。</li>
+  <li><b>模型與基建仍在加速：</b>Tencent Hy4 在 APEX-Agents 拿 75.2（DeepSeek V4.1 Flash 72.1）；Sarvam Prism 以 44ms 中位延遲拿 71.8；Kimi K3.1 Pro 本週放權重；LSA 在 10M token 上做到 72.4× attention prefill 加速。</li>
+  <li><b>他真正擔心的事：</b>不是失業，而是「預設應該是 AI doom」——高階文明遇上低階文明的歷史結局，加上一個比人類快約 1,000 倍演化中的東西。</li>
+</ul>
+
+<div class="divider">· · ·</div>
+
+<h2>中文播客</h2>
+
+<p>五個中文節目在掃描窗口內均無新集。以下為各台最後一集的時間，供追蹤用。</p>
+
+<table>
+  <thead><tr><th>節目</th><th>最後一集</th><th>發布時間（UTC）</th></tr></thead>
+  <tbody>
+    <tr><td>張小珺商業訪談錄</td><td>155. 和科沃斯錢程聊，父與子、企二代接班的樣本與肌理、機器人，和我內心的追尋</td><td class="num">2026-10-21 00:00</td></tr>
+    <tr><td>十字路口 Crossing</td><td>【年終復盤①】AI 帶給我的 10 個 Aha Moments｜莊明浩</td><td class="num">2026-11-01 16:00</td></tr>
+    <tr><td>矽谷 101</td><td>E257｜對話 Vitalik：AI 安全背後的哲學思想</td><td class="num">2026-10-28 23:00</td></tr>
+    <tr><td>42 章經</td><td>少有的同時做過 Agent、多模態和具身的人｜對談淏楠</td><td class="num">2026-10-24 13:00</td></tr>
+    <tr><td>屠龍之術</td><td>一個非典型內容創作者的知識付費新嘗試</td><td class="num">2026-11-02 16:00</td></tr>
+  </tbody>
+</table>
+
+<p class="quiet">注：矽谷 101 的 RSS 使用 −0700 時區，表中已換算為 UTC；其發布時間為 2026-10-28 16:00 PDT。</p>
+
+<h2>英文播客</h2>
+
+<h3>Latent Space（swyx + Alessio Fanelli）</h3>
+<h4>Behind Latent Space: Kill My SaaS, Jev &amp; AI in 2026 | AIEi Shanghai 🎙️<br><span class="quiet">2026-11-04 19:17 UTC（香港時間 11-05 03:17）· 72 分 24 秒</span></h4>
+
+<p class="byline">本集是雙層結構：上層是 AINews 對 11 月 2–3 日 AI 新聞的匯總與對昨日 Weight-Space Programming 報道的修正；下層是 Galen Gao 在 AI Engineer Shanghai 開幕前對 swyx 的專訪。兩層共用一個主題——當能力湧現快過理解速度，剩下的是判斷、品味與審計。</p>
+
+<h5>主題</h5>
+<p>AI Engineer Shanghai（11 月 5–6 日，上海虹橋希爾頓）是 AI Engineer 在中國的第一場。swyx 在訪談裡把這場活動當成一個觀察窗口：中國的開源模型、機器人、ComfyUI 與 OpenClaw 社群，和舊金山的 B2B SaaS 泡泡是兩種不同的生態。訪談主線則是「AI 工程師」這個身份的誕生、Kill My SaaS 對 SaaS 定價的衝擊、Jev 代表的 System One 路線，以及他對 2026 年 AI 格局的判斷。</p>
+
+<h5>嘉賓背景</h5>
+<p><b>swyx（Shawn Wang）</b>：第五代新加坡華人，大學赴美，先在做交易、投行與對沖基金待了 8 年（他先說 10 年，隨即更正為 8 年），第一份工作是在 Two Sigma 的軟件工程側；之後進 Amazon 與幾家初創，四年前獨立。現在的身份是 AI Engineer 的 CEO、Latent Space 的主播與作者，以及 Cognition 的顧問（Small AI 被 Cognition 收購後，他在那裡做了 6 個月員工再轉顧問），同時顧問 Fireworks、Modal、Supabase 等公司。他把自己定義為「技術上能做、又能寫能講」的開發者關係型人才，並坦言這不是一個正常的職業路徑，不建議多數人模仿。</p>
+
+<h5>核心論點</h5>
+
+<p><b>1. Learn in public 是沒有 credential 的人唯一的入場券。</b>他從金融轉科技時，最直接的体感是兩個行業的博弈結構不同：金融是零和，知識說出去就貶值；科技大多是正和，說出去反而增值。這讓他願意把學習過程公開寫出來。Stable Diffusion 出現時（ChatGPT 之前），他在一家「不算火箭船」的初創 Airbyte，沒有 AI 背景，只能靠寫博客拆解 Stable Diffusion 進場；Emad Mostaque 讀到那篇分析並認可，成為第一個轉折點。他的補充很刺：亞洲文化太重 credential，學位、證書、上一份工作形成閉環；但職涯其實可以 pivot，條件是「非常堅持，並且接受『努力不等於有資格贏』」。</p>
+
+<p><b>2. 「AI Engineer」是一個身份產品，不是技能清單。</b>他引用 Atomic Habits 的框架：要連接一個人，不要連接他的工作或愛好，要連接他的 identity——「你想成為誰」。當時有一批非 AI 背景的人想成為 AI 人，市場上卻只有「prompt engineer」這種不體面的稱呼；於是他給他們一個有薪資前途的職位名稱。Alternatives 包括 AI tinkerers、LLM engineer、applied AI engineer，但他選了最簡單、最像行業職稱的那個。這個判斷來自他在 GDC、CppCon、JSConf、PyCon 的經驗：工程師對工程師的會議，講者未必最有名，但一定是真正做過事的人。</p>
+
+<p><b>3. AI 工程師的內核是 harness，而且這個內核沒怎麼變。</b>他認為熱點從 RAG、context management，移到 coding agents、harness engineering、loop engineering、memory，但職位本身沒有本質變化：你還是那個半夜四點起來修東西的人。他給了一個清楚的分層：AI engineer 是 individual contributor；AI architect 是公司層面決定「所有人怎麼用 AI」的人；再往上是 AI designer、AI PM。他對行業的批評也很直接：很多 AI 會議被「一輩子沒寫過一天 code 的 talking heads」佔據，他們都說 AGI 還有兩年、大家都會失業，「而 conveniently，whatever is next looks like their job」。</p>
+
+<p><b>4. AI Engineer 會議本質上是「AI 實驗室的 GDC」。</b>他的類比：遊戲業有 GDC，AAA 工作室一年一次出來講「我怎麼做出年度遊戲」；AI 實驗室現在就是遊戲工作室，錢多、項目大、保密，但一年總要有一次行業聚會。OpenAI 的 DevDay、Anthropic 的 Code with Claude 太小、太選擇性，只服務客戶；AIE 的價值是把 30 條 track、7,000 人、1.5M 線上觀眾放在同一個屋簷下。更關鍵的是「走廊效應」：中國一些在實體清單上的實驗室，和美國公司不能正式會面，但在同一個場地會自然碰到——他把這視為會議的真正產品。</p>
+
+<p><b>5. 會議本身正在變成資料集。</b>AIE 把每一場 talk、每一個 workshop 轉錄、索引，對每個講者和組織做 deep research，做成 MCP server 與可下載 dataset，目標是「AI 的 Wikipedia」。他的說法是「Everything is MCP. Everything has been transcribed.」這不只是內容運營，而是把會議從一次性事件變成可被模型檢索的知識庫。</p>
+
+<p><b>6. Kill My SaaS：中層 SaaS 的定價被 coding agent 直接擊穿。</b>他的會議預算 300 萬到 1,000 萬美元，其中約 30 萬美元／場是軟件，佔預算與毛利約 10%；一年可能付到 100 萬美元。他拿一個員工想買的 4 萬美元 SaaS 做實驗：公開徵集用 1 萬美元重寫、開源、客製化。結果 69 份提交，多數可用，約 5 份達到「我願意付錢」的水準；評估花了兩個月，因為這個 SaaS 有五種角色（主辦、講者、參加者、贊助商、供應商），每種都要開帳號、輸資料、交叉驗證。他的結論不是「所有 SaaS 都死」，而是三層分化：Salesforce 這種 mission-critical 不動；中層 SaaS 會被客戶自己 Clone；SaaS  owner 的唯一出路是變成垂直 Agent（Harvey、OpenEvidence 模式）或資料供應商。</p>
+
+<p><b>7. 「會寫程式的客戶」是新的談判對手。</b>他描述自己現在的生態：自建 Calendly、Google Drive、GitHub、Dropbox、Slack、DocuSign。DocuSign 的例子最具體：開源版簽完名直接進 Drive 的正確資料夾，原生 DocuSign 做不到；電子簽名沒有專利、沒有真正的網絡效應，「the network is the email address」。他的總結是一句可以被抄進 pitch deck 的話：「Inside of every 1 million copy-paste, I think there is a fantastic startup.」但他也承認維護不是零，且「有時候買經過驗證的 SaaS 更好」。</p>
+
+<p><b>8. Jev/TypeSafe 是 AI 工程的「相反方向」。</b>他把 Diego（Jev 創辦人、InstructGPT 共同作者之一）的路線描述為：現在的 AI 工程是「一個大 harness 包住模型」，做完一輪工作後把答案交給模型，祈禱它給對答案，還可以想 10 天；Jev 則是把模型縮到只做一件事——做選擇、估機率——然後把它放進關鍵路徑，像寫一個 <code>if</code> 語句一樣自然。他的原話是「models are for us, we don't work for the model」。這背後的產品哲學是「smarter software」：不是一個點很聰明、其餘全笨，而是每個決策點都稍微聰明一點；速度是次要，可靠性才是重點，所以公司叫 TypeSafe。</p>
+
+<p><b>9. 為什麼是 Diego 做成，而不是早就有的一千個「小模型更好」的人。</b>他給了三個條件：第一，OpenAI 的可信度（InstructGPT 共同作者）；第二，把技術翻譯成 System 1 vs System 2 的清楚框架；第三，showmanship——粉色外套、Doom demo、發佈貼文裡那個「你永遠不會用 LLM 做這個」的示范。他認為技術能力與表達能力是兩個維度，Diego 在兩邊都是 10×；這也是他自己「learn in public」策略的放大版。</p>
+
+<p><b>10. 品味（taste）的定義：快速、便宜地把一千個可能收窄到一個，而事後看它顯然正確。</b>他的例子是 iPhone：智慧手機長期有鍵盤，Steve Jobs 說不要鍵盤、要全觸控、要一塊平板，這需要十年前 General Magic 失敗的 R&amp;D 累積；今天所有手機都長那樣，這就是品味。他認為 Cursor 有品味（先是 VS Code 路線，後來是 Composer 式的產品判斷，讓 OpenAI 與 Anthropic 反過來抄），Legora 也有品味（把法律文件審閱做成大規模並行的工作流，看過就不想在其他地方工作）。他補了一句判斷標準：「當別人開始抄你剛出貨的東西，你就有品味。」</p>
+
+<p><b>11. 中國創辦人的 GTM 缺口，比技術差距更致命。</b>他對中國創辦人的評價兩極：技術與執行極強，「如果他們生在美國，會殺死 Amazon、殺死 Facebook，他們不更有錢的唯一原因是他們在中國」；但營銷與市場理解極弱。他建議把 marketing 從「最後一哩」提前到產品 spec 之前：先想清楚哪個客群、在哪裡出沒、用什麼詞描述問題、看到產品後生活怎麼變好。他用的比喻是「你有長板，我幫你補短板」，並強調「show, don't tell」——Doom demo 比一百頁 PowerPoint 有用。</p>
+
+<p><b>12. 他真正興奮與真正害怕的東西。</b>興奮的三件事：System One 模型（他說是「無聊但明確的第一名」，所以刻意不把它當答案）、Thinking Machines 的 interaction models（全雙工、邊說邊聽、可打斷、即時調整），以及由此推導出的 continual learning（不是 pre-train/post-train 完成，而是邊工作邊學）；再加上 world models。害怕的則是 AI winter——會議公司靠 hype 吃飯，這是他自己的商業風險；以及更根本的安全問題：他不認為風險只是假新聞或失業，「會是更糟的東西」，極端版本是生物武器；Cyber 只是目前最能被社會表達的形式。</p>
+
+<h5>關鍵數據</h5>
+<ul>
+  <li><b>AIE 規模：</b>3 天、30 條 track、7,000+ 人到場（原目標 6,000）、1.5M 線上觀看；第一場在三年前。</li>
+  <li><b>會議預算：</b>300 萬–1,000 萬美元／場；約 30 萬美元／場是軟件，佔約 10%；一年最多約 100 萬美元 SaaS。</li>
+  <li><b>Kill My SaaS：</b>標的 SaaS 年費 40,000 美元；懸賞 10,000 美元；69 份提交；約 5 份達付費標準；評估 2 個月；5 種角色帳號。</li>
+  <li><b>Latent Space 起源：</b>Stable Diffusion 時期（ChatGPT 之前）的博客；當時他在 Airbyte；Emad Mostaque 是早期讀者。</li>
+  <li><b>履歷：</b>金融 8 年（Two Sigma、投行、對沖基金）→ Amazon 與初創 → 獨立 4 年；顧問 35–36 家公司。</li>
+  <li><b>自建棧：</b>Calendly、Google Drive、GitHub、Dropbox、Slack、DocuSign；DocuSign 本體曾值約 100 億美元（他補一句「也許現在 70 億」），Calendly 曾值約 130 億美元。</li>
+  <li><b>Logo：</b>99designs 上 400 個方案選一，成本遠低於傳統設計流程。</li>
+  <li><b>AIE 國際：</b>巴黎是第一站，主辦團隊後來被 Mistral 收購；新加坡場由當地團隊運營；中國場以「麥當勞中國」式的品牌特許模式運作。</li>
+  <li><b>中國社群：</b>ComfyUI 相關社群以百萬人計；OpenClaw 在中國的採用熱度是他此行最想觀察的現象之一。</li>
+  <li><b>工作強度：</b>他形容中國是真正的 996，舊金山所謂的 996 週末還在 chill；但他也說美國法律不允許要求員工這樣做。</li>
+</ul>
+
+<h5>重點引用</h5>
+<blockquote>「The moment I have access to your software, I can clone it. So good luck.」<span class="src">— swyx，談 coding agent 對 SaaS 的複製能力</span></blockquote>
+
+<blockquote>「Models are for us. We don't work for the model.」<span class="src">— swyx，轉述 Jev/TypeSafe 的設計哲學</span></blockquote>
+
+<blockquote>「If they live in the US, they'll kill Amazon. They'll kill Facebook. The only reason they're not richer is they live in China.」<span class="src">— swyx，談中國創辦人的能力與市場錯配</span></blockquote>
+
+<blockquote>「Taste is being able to narrow a large set of possibilities, quickly and cheaply, to the one that — looking back — is immediately obvious.」<span class="src">— swyx，定義品味</span></blockquote>
+
+<blockquote>「You have taste when other people copy the thing that you just shipped.」<span class="src">— swyx</span></blockquote>
+
+<blockquote>「There's a lot of talking heads who have never coded a single day in their lives... Conveniently, whatever is next looks like their job.」<span class="src">— swyx，批評 AI 會議上的「AGI 兩年論」</span></blockquote>
+
+<blockquote>「The default assumption for most people should be AI doom. In all of human history, when a more advanced civilization comes along and meets a less advanced one, the less advanced civilization goes extinct. And this thing is evolving roughly 1,000 times faster than us.」<span class="src">— swyx，談他最根本的擔憂</span></blockquote>
+
+<blockquote>「Inside of every 1 million copy-paste, I think there is a fantastic startup.」<span class="src">— swyx，談自建軟件的機會</span></blockquote>
+
+<h5>技術詳情</h5>
+
+<p><b>（一）訪談中的產品與技術判斷。</b>Jev 的定位不是「更快的 LLM」，而是「System One 決策模型」：把模型能力限制在分類、排序、估機率，然後嵌入既有程式的控制流。這個限制換來的是延遲與可靠性——可以在關鍵路徑上同步呼叫，而不是開一個聊天窗等 10 天。swyx 特別強調「speed is secondary to reliability」，這與市場上以 tok/s 為主的敘事相反。TypeSafe 這個名字本身就是產品承諾：決策的型別安全。</p>
+
+<p>AIE 的資料層則是另一種技術產品：所有 talk 轉錄、索引、deep research 講者與組織，通過 MCP 對外提供，也以 dataset 形式開放。這意味著會議內容可以被 agent 直接檢索，而不是埋在 YouTube 裡。對做 RAG/agent 的人來說，這是一個現成的、帶時間戳與講者圖譜的語料庫。</p>
+
+<p><b>（二）AINews 的技術雷達。</b>本集 AINews 覆蓋 11 月 2–3 日，信息密度很高，以下按主題拆。</p>
+
+<p><b>Weight-Space Programming 的修正與重現。</b>Latent Space 開篇就承認昨日標題「把部分主張講得過度有利」，並連到 HN 的批評；但因為已有多組獨立重現，他們認為不值得撤回，也不值得再發一篇「這是假的」。關鍵新信息有四條：</p>
+<ul>
+  <li><b>跨代際重現：</b>Alex Krentsel 重做 MIT 的實驗，發現能力隨模型代際 sharply jump；最新模型生成的 Breakout 網絡得分最高達 RL baseline 的 22 倍（二手摘要，未獨立核實）。</li>
+  <li><b>Hugging Face 重現：</b>用其開源研究 harness「ML Intern」復現，並放出模型與 demo。</li>
+  <li><b>手寫分類器：</b>有人讓 Fable 手寫一個 10 萬參數的網絡，分類「真 vs 假法律引用」，據稱贏過訓練版；Legora CTO 轉發。</li>
+  <li><b>知乎拆解 Qwen 編輯：</b>GPT-6 Astra 改 Qwen3.5-0.8B 的 131,072 個權重（0.016%），MATH-500 7.9%→48.1%。但 579 個修復答案中有 576 個原本是撞 32K token 上限的循環；方法是從對比式的「循環 vs 有效」上下文推導出一個 repetition direction，定位在 15、19 層的 MLP，從每層 top 64 個對齊神經元減去 6 倍投影；在 1,152 道 held-out 題上 10.6%→60.4%。結論：大部分收益是「原本就會的推理現在能寫完」，不是新能力。</li>
+  <li><b>筆記本重現：</b>Simon Willison 用 Qwen 3.8 27B 在筆記本上花 45+ 分鐘做到同樣的權重解讀。</li>
+  <li><b>批評：</b>baseline 不夠強、Qwen 結果是 bug fix 而非 RSI、直接對 benchmark 擬合權重「本質上無意義」、模型可能主要在讀首尾層（對應已知輸入輸出）、實驗 7 只有在允許模型用 probe 後才成功（那是 activation interpretability，不是直接讀權重）。支持者則把它框成「meta-learning 終於work」與「結構化文本優化」，主張用 backprop + 直接編輯的混合路線。</li>
+</ul>
+
+<p><b>模型發布與評測。</b></p>
+<table>
+  <thead><tr><th>模型</th><th>關鍵數字</th><th>備註</th></tr></thead>
+  <tbody>
+    <tr><td>Tencent Hy4</td><td>APEX-Agents 75.2；API $0.834/$2.501 per M tokens</td><td>DeepSeek V4.1 Flash-1017 為 72.1/72.9；計劃開權重；Agent Arena 第 14，8.5K+ sessions，$0.55/task vs Kimi K3.1 Pro Max $1.46</td></tr>
+    <tr><td>Sarvam Prism</td><td>71.8；44ms 中位延遲</td><td>建於 Sarvam 105B 的 System One 決策模型；號稱 sub-100ms 決策模型最佳平均</td></tr>
+    <tr><td>Kimi K3.1 Pro</td><td>—</td><td>本週三放權重</td></tr>
+    <tr><td>P-H3-Image</td><td>8 steps（原 50）；小 7×；4MP in 2.6s</td><td>Pruna 從 MiniMax-H3 蒸餾的開源模型</td></tr>
+    <tr><td>LongCat-2.5</td><td>1.6T 總參數 / ~48B 激活；$0.30/$1.20</td><td>一個瀏覽器遊戲成本 $0.28 vs Qwen3.8-Max $0.82</td></tr>
+    <tr><td>EmbeddingGemma 2</td><td>—</td><td>論文已出</td></tr>
+    <tr><td>Krea 3</td><td>&lt;10 人研究團隊</td><td>技術報告已出</td></tr>
+    <tr><td>Crouton Alpha</td><td>1M context</td><td>OpenRouter 上的免費 stealth reasoning 模型</td></tr>
+  </tbody>
+</table>
+
+<p><b>10 月開源架構圖譜（Raschka 整理）。</b>Mistral Large 4 是 1T 參數，MLA + sparse attention；Meta 的 Muse Spark Open 是 816B，Llama 之後第一個大型開源發布，用 LatentMoE；Nemotron 3.5 Super VL 把 Mamba-2 層與 8 層 attention 混合；Dory1.0 是 looped transformer。這條線的意義是架構多樣性重新回來：不再是單一 dense transformer 的縮放。</p>
+
+<p><b>Artificial Analysis 與 Vals。</b>Capability Indexes v2.0 增加 non-hallucination 與 agentic tool use 權重；Claude Opus 5.5 (max) 在六個 index 全部領先，Kimi K3.1 Pro 是開源第一。Intelligence Index v5.0.1 用 CritPt v2 server 重評，前沿排名變動不超過 1 分。AA-Robotics 的有趣細節：Opus 5.5 完成機械臂任務後多做了 22 分鐘，只有 GPT-6.1 Sol 與 Gemini 4 Argon 在一分鐘內停下。Vals 的 reasoning effort 研究：GPT-6 Astra 在最低設定保留 88% 分數、只花 18% 成本；Grok 4.7 保留 86%、花 16%；Gemini 4 Argon 幾乎省不到錢。Router Index：Fireworks Nexus Auto (Sol) 是第一家達到 60% 的路由器，$1.25/test。</p>
+
+<p><b>可驗證推理與評測審計。</b>Anthropic 開源 FlashProve：驗證某個回應確實來自某個模型，但不洩露權重；用途包括抗劫持、讓評測者確認被測模型就是被服務的模型、篡改檢測與 provenance。商業對照是 Attestable 在單張 H100 上把 Gemma 4 31B 跑到 53–77 tok/s。評測審計方面：Prime Intellect 修了一批公共 eval 的問題；Xeophon 發現 AutomationBench 強制 prose request body、OfficeQA Pro v2 的 regex grader 會拒絕正確答案、模型可以透過 web access 從 Hugging Face 取答案 key；修好後兩個 benchmark 都接近飽和。SWE-bench Multimodal 移除圖片後分數幾乎不變。SemiAnalysis 的 GDPx 有 14 個資料夥伴、11 個領域、34 個晶片設計任務；GPT-6 Astra 在 cyber 得 0%，因為它拒絕了每一個任務；GDPx 用完全不同的任務重現了 ECI 排名。還有一個容易被忽略的治理缺口：METR/Redwood 的演練發現，compaction 之後約 10% 的合格內部 Codex 流量沒有被監控。</p>
+
+<p><b>訓練與推理基建。</b>延遲 loss spike 的機制被講清楚了：BF16 LM head 的量化誤差會造成「定時炸彈」，在數十億 token 後才爆；Z-loss、μ-centering、LM-head SGD-M 都是把這個誤差壓住；Softmax Collapse 的修復只是延後爆炸。Library of Layers 讓模型按輸入重排 transformer block，研究人員因此可以控制迷宮與數獨的求解演算法。資料受限縮放的批評：從 30M–400M 參數研究外推到「quadrillion 參數」不會成立，最多一個數量級。Byte-level 模型在多 epoch 訓練下表現更好。</p>
+
+<p>Agent 系統論文：Google XLA 的 agent swarm 修了 142+ 個靜默的 TPU compiler miscompilation，另有 103 個在審；agent patch 需要對抗式 pre-filter。Skill++ 把每個 skill 的 metadata 改寫成「與最近鄰的差異」，731 個 skill 的全量路由從 36.4% 提升到 76.3%。ParetoSaddler 只在 harness search 尾端套用成本偏好，GAIA2 從 56.2% 到 62.9%，每任務成本 $0.78→$0.45。Amp 把一個參數名從 <code>format</code> 改成 <code>kind</code>，正確選擇率從 53% 到 79%——工具命名是能力的一部分。</p>
+
+<p>服務棧：vLLM v0.33.0 有 927 個 commit，PyTorch 2.14、CUDA 13-only wheel，GB300 上 decode 1.5–2×；ThunderAgent 合入 llm-d，吞吐 1.5–2×，agent trace 的 median TTFT 從約 50 秒降到 2–4 秒；OCRia-1 在單張 B200 上靠 speculative decoding、量化與 17 個小優化，把生成從 285 提升到 2,800 tok/s。DeepSpeed 的 ZeRO-1/2 正確性修復要求 ≥0.19.9。Baseten 推出 Grid（gateway/router）、VM 隔離 Sandboxes、Loops（serverless SFT/RL）；Snowflake Cortex Training 提供開源權重模型的 serverless SFT/RL。</p>
+
+<p>算力與硬件：有報道稱 DeepSeek v5 幾乎完全用華為晶片訓練；華為 HBM 短缺，出現把低階晶片隨附的 HBM 拆下來走私的現象；SemiAnalysis 拆解 SpaceX 的 13GW AI 雲計劃，資金來自 GPU 現貨價差轉售。</p>
+
+<p><b>產品與開發工具。</b>Claude Code 十月更新包括 mods、多 session 桌面改進、usage insights、Max/Ultra/Team 的月度 API credits、MCP 任務中途提問；插件可以透過信任 Claude 為 issuer 的 MCP server 自動連接。OpenAI 把 ChatGPT/Codex 推到物理工程：CAD、電氣設計、模擬，客戶包括 Chip Ganassi Racing 與 Mazda；GPT-6 Astra 帶兩名員工做出一個裝置的外殼、PCB 與軟件；一個未發布模型在硬件測試上得 0.875，Astra 是 0.594。ChatGPT search 的量已等於 Google 的 20%。Siri AI 透過 App Intents 讓任何 app 暴露內容與動作。Codex 有官方 Unity plugin；Gemini API 有 CLI skill；Perplexity Computer 支援 Agent Plugins。企業採用：Revolut 把開源模型設為約 2,000 名工程師的 coding 預設，理由是成本 1/10、lead time 快 70%；Cohere 把第三方開源模型加入 Model Vault。</p>
+
+<p><b>產業與政策。</b>AI 進入中期選舉：資料中心在 13 個州約 40 個地方上選票；一個預測認為 41 個 moratoria 全部以 67–80% 支持率通過；23% 選民說 AI 與資料中心是關鍵議題；Leading the Future 的 320 萬美元選戰看似要輸；Ossoff 在勝選演說中引用災難性 AI 風險。Altman 說人不應該把未來控制權交給超級智能，這是對「Machines of Loving Grace」的回應。實驗室動向：有報道稱 Anthropic 一個 15 人團隊用 Claude 設計自家晶片；Uber 總裁 Jill Hazelbaker 出任 OpenAI 首席企業事務官；Claude Code 早期負責人 Cat Wu 離職；The Information 報道 Nvidia 對 OpenAI 出口管制立場與智庫的影響。融資：fal 在 E+F 輪共募 16.5 億美元；Traversal 以 10 億美元估值募 1.2 億美元做 AI SRE。Google 對 K-12：Gemini、Notebook、Search 預設關閉，按服務 opt-in。</p>
+
+<p><b>Reddit 的技術細節。</b>Qwen 在 APSARA 會議上重申 Qwen 4.0/5.0 會繼續開源，引用 30 億+ 累計下載、460+ 開源模型、30 萬+ 衍生模型；最高票的質疑是「企業承諾取決於當前管理層與商業條件，會變」。Qwen Code 的 PR #15762 出現 qwen4-max、qwen4-coder-plus、qwen4-omni-120b 等字串，context 從 262,144 改成 1,000,000；後來 PR #15987 移除「錯誤的模型名」，社群多數認為是 parser 測試 fixture，不是路線圖。ISTA 的 DeepSeek-V4.1-Flash-1017 GSQ-RCO 把 763B 模型壓到 72.1GB（未剪枝 IQ2_XXS 是 138.2GB），保留 192/384 experts，號稱 1.05 bits/param（實際 retained 280.1B 參數上是 2.06 bpw）；LiveCodeBench v6 88.57 vs 89.71（保留 98.7%），SWE-bench Verified 77.00 vs 81.20（94.8%）。LSA（arXiv 2610.42147）用階層式語義 key indexing，只訓練 indexer 就能把預訓練模型稀疏化；Qwen-3.8-27B 無觀察到的精度損失，10M token 下 H200 attention prefill 快 72.4×，原生稀疏訓練的 next-token loss 與 full attention 相當，wall-clock 快 1.24×。還有一個實測：Claude Opus 5.5 用 Python kernel 改 Gemma 4 12B 的 8 個 MLP 神經元（約 92K / 11.9B 參數，diff 約 100KB），把義大利文過去完成進行式的輸出從主流改成 5%/16%，200 個無關翻譯中 182 個不變，locality 贏過 prompt steering 與 ablation，無關保持贏過 LoRA。</p>
+
+<h5>行業 insight</h5>
+
+<p><b>1. 模型層在商品化，價值往「決策點」與「工作流」移動。</b>Hy4 的價格、LongCat 的 $0.30/$1.20、Kimi 的開權重，都在把 raw intelligence 變成水電。swyx 的 Jev 論述是同一件事的產品化表達：不要把模型當無所不能的神，把它當一個可以被放在 <code>if</code> 裡的判斷函數。誰能把模型放進越多關鍵決策點，誰就越有定價權。</p>
+
+<p><b>2. SaaS 的護城河正在從「功能」轉向「資料與責任」。</b>Kill My SaaS 的實驗說明，功能層的複製成本已經低到一個會議主辦方可以自費完成。剩下的護城河只有兩類：專有資料（資料供應商）與垂直責任（垂直 Agent，出事有人負責）。middle-tier SaaS 的 40K 年費，會被客戶用 10K 的專案預算替代。</p>
+
+<p><b>3. 評測的可信度成為瓶頸。</b>同一天的新聞裡，benchmark 被發現會讓模型從 Hugging Face 取答案、regex grader 拒絕正確答案、移除圖片不影響分數；Anthropic 則在做「可驗證推理」，讓評測者確認服務的模型就是被測的模型。這一組新聞合起來說明：能力測量本身正在變成一個安全與商業問題。</p>
+
+<p><b>4. 中國的生態差異是產品機會，不是註腳。</b>ComfyUI、OpenClaw、百萬人社群、真正的 996，這些不是「中國版矽谷」，而是不同的採用曲線。swyx 的觀察是：很多中國 lab 的發布（例如阿里雲的 Qwen 路線圖）在西方根本沒人看到，因為它們被包在企業簡報裡；誰能把這些內容翻譯、轉述、產品化，誰就吃到信息差。</p>
+
+<p><b>5. 會議、內容、資料集三合一。</b>AIE 把 talk 轉錄成 MCP/dataset，本質上是在建一個「AI 工程的 Wikipedia」。這對做 agent 的人是一個雙重信號：內容的護城河不再是版權，而是結構化與可檢索性；未來的會議公司可能同時是資料公司。</p>
+
+<h5>前後脈絡</h5>
+
+<p><b>與 11-04 報告的直接連續。</b>昨日報告把 Weight-Space Programming 當作「審計對象從行為推向權重」的標誌事件；今日 Latent Space 自己出面降溫，並由知乎拆解把「能力提升」還原為「修復循環 bug」。這不是打臉，而是同一條線的校正：權重可編輯性仍然重要，但「直接寫權重等於 RSI」的推論被削掉了。昨日報告裡提到的 Gemma 3 270M 反證（6.8→7.7），今日再被 Reddit 與 AINews 引用，成為「只能移除障礙、不能增加能力」的核心證據。</p>
+
+<p><b>與 11-01 十字路口「RSI 來了」的對話。</b>莊明浩在年終復盤裡把 RSI 當成 2026 年的主線；swyx 今日給出的版本更冷靜：真正的 RSI 需要模型能改進模型，而目前最強的公開案例是「模型當 interpretability agent，用 Python sandbox 做假設、探測、消融、評估」，屬於自動化 ML debugging，不是自我改進。兩者並不矛盾：一個講方向，一個講目前的證據強度。</p>
+
+<p><b>與 11-02 Legora 集的互相印證。</b>Legora CTO Jacob Lauritzen 在 Latent Space 講「看不到資料時怎麼做 eval」；swyx 今日兩次把 Legora 當作品味的正面案例（法律文件審閱的大規模並行工作流）。同一週內，Legora CTO 也轉發了「Fable 手寫 10 萬參數分類器贏過訓練版」的結果——垂直法律 AI 正是「資料 + 工作流 + 責任」三層護城河的樣本。</p>
+
+<p><b>與這條 pipeline 自身的關係。</b>本報告的 Jev 前置過濾，用的就是 TypeSafe 的 System One 模型；swyx 在訪談裡把 Jev 描述為「AI 工程的反方向」，而我們每天用它來砍新聞噪音，恰好是一個小小的產品驗證：決策模型不需要寫文章，只需要在關鍵路徑上做 keep/drop。</p>
+
+<p><b>與 OpenClaw 的關係。</b>swyx 在開場與訪談中都提到 OpenClaw 在中國的「big run」，並說這是他想親眼看的社群能量。對本 pipeline 而言，這不是旁觀新聞：這個 agent 本身就跑在 OpenClaw 上，而中國社群的採用曲線會直接影響工具鏈、插件與模型的選擇。</p>
+
+<h5>爭議點</h5>
+
+<ul>
+  <li><b>Weight-Space Programming 是否被過度包裝？</b>Latent Space 自己承認部分主張「presented in overly favorable light」，HN 上也有人要求更強 baseline。反方最有力的一點是：Qwen 的 baseline 是病態的（93% 答案撞 token 上限），修好 loop 不等於變聰明；正方則認為「能定位並移除一個具體失敗模式」本身就是可解釋性的實用勝利。</li>
+  <li><b>直接對 benchmark 擬合權重有無意義？</b>批評者用 nesformer Mario 的例子說明，對 benchmark 直接擬合權重「本質上無意義」；支持者則說這是「結構化文本優化」，只要 held-out 有效就有意義。目前公開的 held-out 數字（10.6→60.4 on 1,152 題）支持後者，但樣本仍窄。</li>
+  <li><b>首尾層 vs 中間層。</b>有研究者問：模型是否主要在讀首尾層（對應已知輸入輸出）？如果主要收益來自首尾層的空間結構，那「native weight understanding」的主張就要縮水。實驗 7 只有在允許模型用 probe 後才成功，也被拿來支持「這是 activation interpretability，不是讀權重」。</li>
+  <li><b>Kill My SaaS 的可複製性。</b>swyx 自己承認，他能做這個實驗是因為他是 influencer、有 audience；一般中小企業沒有 69 份提交可選。他也說維護不是零，且有時買成熟 SaaS 更好。所以「SaaS 已死」是誇張版，精確版是「中層 SaaS 的定價權被侵蝕」。</li>
+  <li><b>「AI doom 是預設」。</b>這是一個挑釁性的框架，不是政策建議；他把風險具體化為生物武器與 cyber，但也承認「有更糟的東西我們還不知道」。反對者會說這種框架會癱瘓行動；支持者會說它只是要求把安全當默認選項。</li>
+  <li><b>中國 996 的比較。</b>他的觀察來自短期訪問與社群傳聞，屬於印象派；他自己也補了「美國法律不允許要求員工這樣做」。把這當成結構性判斷要小心。</li>
+  <li><b>「中國創辦人會殺死 Amazon」。</b>這是訪談裡的修辭，不是嚴謹預測；它反映的是他對執行力的敬意，以及對市場錯配的惋惜，不能當成競爭分析。</li>
+  <li><b>本地量化 benchmark 的 judge 偏差。</b>Reddit 上有人指出，用 Opus 5.5 判 Opus 5.5 的輸出會有同家族偏好；建議用 Sol 或 Muse 做 out-of-family judge。這是所有「LLM-as-judge」評測的通病，值得在引用分數時標註。</li>
+  <li><b>「1-bit」的命名。</b>ISTA 的 763B 模型被批評「1-bit」是誤導，因為保留權重平均 2.06 bpw，1.05 bpw 是把被剪掉的 expert 算成 0 bit 才得到。技術上應叫「1-bit equivalent size」。</li>
+</ul>
+
+<div class="divider">· · ·</div>
+
+<h2>掃描方法與失敗項</h2>
+
+<p>本輪直接抓取 10 個節目的 RSS / YouTube feed，逐條比對 <code>pubDate</code>，窗口為 2026-11-04 02:05 UTC 至 2026-11-05 02:05 UTC。共發現 1 條新 item：Latent Space 的 AINews + 專訪（2026-11-04 19:17:30 UTC）。其餘 5 個中文節目、Dwarkesh、No Priors、Cognitive Revolution、ML Street Talk 均無新集。</p>
+
+<p><b>深度抓取：</b>① Latent Space RSS 全文 77,025 字元（HTML），轉純文本 50,989 字元。② 訪談 YouTube 自動字幕 75,101 字元，已逐段核對章節。③ AI Engineer Shanghai 官網 10.2 萬字元，確認 11 月 5–6 日、58 位講者、Hilton Shanghai Hongqiao。④ AINews 內文提到的論文/模型卡未逐一下載，相關數字均標為「報道／二手摘要」。</p>
+
+<p><b>失敗項：</b>① <code>web_search</code> 工具仍報錯（缺少 <code>/tmp/openclaw-plugin-build-*/node_modules/@openclaw/brave-plugin/package.json</code>），本輪無法用搜索引擎交叉驗證中文播客，已改用 5 個已解析的 RSS feed 作為權威來源。② Dwarkesh 與 No Priors 的 YouTube channel RSS 均回 404（不只是 Dwarkesh），以 Substack / Megaphone feed 為準。③ YouTube 的 timedtext 端點對本機 IP 回 429，改用 <code>youtube-transcript-api</code> 取得自動字幕；字幕有錯字與斷句問題，引用時已校對語氣，但無法保證逐字與原音一致。④ AINews 提到的部分獨立重現（Krentsel 的 22×、Fable 的 10 萬參數分類器）未經本輪獨立核實，文中已標註。⑤ 知乎拆解的原始帖子未直接抓取，數字來自 AINews 的轉述。</p>
+
+<p><b>Jev 前置過濾：</b>本輪送入 4 條候選（節目本身、Weight-Space 修正、模型發布、產業政策），全部 <code>keep</code>，worth 0.89–0.99；Jev 對二手轉述的 <code>primary_source</code> 評分偏低（0.09–0.56），與實際抓取一手 RSS/字幕的情況一致，報告已按一手材料處理。</p>
+
+<footer>
+  <p>報告由 Vee Mok 自動生成 · 2026-11-05 02:06 UTC<br>
+  來源：Latent Space（2026-11-04 19:17 UTC）、AI Engineer Shanghai 官網、各播客 RSS feed、YouTube 自動字幕<br>
+  授權：Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>

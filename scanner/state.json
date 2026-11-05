@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-11-04T02:05:00.000Z",
- "lastScanDate": "2026-11-04",
+ "lastScan": "2026-11-05T02:06:00.000Z",
+ "lastScanDate": "2026-11-05",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-10-30T16:56:02.000Z",
@@ -10,12 +10,12 @@
    "lastFeedItemTitle": "Robert Caro – The master biographer reflects at 91"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-11-03T05:35:00.000Z",
-   "lastEpisodeTitle": "[AINews] LLMs can read & write neural network weights: \"Weight Space Programming\" cuts Autoresearch out of the RSI loop",
-   "lastFeedItemPubDate": "2026-11-03T05:35:00.000Z",
-   "lastFeedItemTitle": "[AINews] LLMs can read & write neural network weights: \"Weight Space Programming\" cuts Autoresearch out of the RSI loop",
+   "lastEpisodePubDate": "2026-11-04T19:17:30.000Z",
+   "lastEpisodeTitle": "[AINews] Behind Latent Space: Kill My SaaS, Jev & AI in 2026 | AIEi Shanghai",
+   "lastFeedItemPubDate": "2026-11-04T19:17:30.000Z",
+   "lastFeedItemTitle": "[AINews] Behind Latent Space: Kill My SaaS, Jev & AI in 2026 | AIEi Shanghai",
    "newEpisodes": [],
-   "note": "同集另有 22:54:03Z 條目「Building Legal Agents When You Can't See the Data」，為同一集 podcast/article 雙發，已去重。"
+   "note": "本集為 AINews 匯總 + Galen Gao 專訪 swyx（72:24，YouTube QmDLDy3ZSNE），非純新聞稿。前一條 2026-11-03 05:35Z 已在 11-04 報告處理。"
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-10-29T10:00:00.000Z",
@@ -86,15 +86,16 @@
   }
  },
  "notes": {
-  "scan_status": "2026-11-04 掃描（02:03–02:05 UTC）：窗口 11-03 02:05Z → 11-04 02:04Z 內僅 1 條新 item（Latent Space AINews 11-03 05:35Z）。其餘 4 個英文節目與 5 個中文節目均無新集；No Priors YouTube 僅 11-01、11-03 兩條 Shorts，非長篇訪談。",
-  "report_date": "2026-11-04",
-  "deep_content_fetched": "①AINews 原文 47,538 字元全文。②論文原始 blog rikiyat.github.io/blog/weight-space-programming 全文 31,911 字元（含 8 個實驗 setup、數據表、對照組、展望）。③Qwen3.5-0.8B 模型卡與 HF demo 連結已在原文核對。",
-  "jev_prefilter": "Weight-Space Programming worth 0.85 keep（llm-model, primary_source 0.14）。Jev 只看到二手摘要，故 primary_source 標低；實際已直接抓取论文原始 blog，報告中已按一手來源處理，並保留 Reddit/X 批評為二手。",
-  "failures": "①web_search 工具報錯：ENOENT /tmp/openclaw-plugin-build-*/node_modules/@openclaw/brave-plugin/package.json，本輪無法搜索引擎交叉驗證中文播客，改用 5 個 RSS feed。②Dwarkesh YouTube channel RSS（UCXl4i9dYBrFOabk0xGmbkRA）404，以 Substack feed 為準。③AINews 提到的獨立重現 X 帖未核實。",
-  "notable_for_james": "①Weight-Space Programming：Astra 只看 17,253 權重認出 4 個 grid game；改 3.5% 權重把賽車策略由 0/256 修到 1,024/1,024；一次寫出贏 PPO 100M 步的 MinAtar 網絡；改 Qwen3.5-0.8B 0.016% 權重（131,072 個），MATH-500 7.9→48.1、GSM8K 13.8→67.1、IFEval 21.0→62.3，token 上限命中率 93→33%。②關鍵反證：Gemma 3 270M 不循環，同法無效（6.8→7.7）——論文自認只能移除障礙，不能增加能力。③爭議：首尾層空間結構、Elhage QK/OV 方法、Go baseline 弱、MATH baseline 病態（93% 撞上限）、純權重無法辨識諂媚（需 attention pattern）。④同日：DeepSeek super-agent harness p95 29.5→15.7 min；GDPx 最佳 12%；JEPA 42× 少樣本跨模態對齊；Opus OpenRouter 年化 GMV >$5B。",
-  "cross_episode_theme": "與 11-01 十字路口「RSI 來了、AI 的奇觀與粗糙」、11-02 Legora「無 trace 的 eval」、11-02 Bach「內部不可見時只能重建外部結構」連成一線：能力湧現快過理解速度，剩下的是判斷、審計與治理。Weight-Space Programming 把審計對象從行為推向權重本身。",
+  "scan_status": "2026-11-05 掃描（02:03–02:06 UTC）：窗口 11-04 02:05Z → 11-05 02:05Z 內僅 1 條新 item（Latent Space AINews 11-04 19:17Z）。其餘 4 個英文節目與 5 個中文節目均無新集。",
+  "report_date": "2026-11-05",
+  "deep_content_fetched": "①Latent Space RSS content:encoded 全文 77,025 字元（純文本 50,989）。②YouTube 自動字幕 75,101 字元，涵蓋 72:24 全片與 11 個章節。③AI Engineer Shanghai 官網 102,171 字元（11/5–6、58 speakers、Hilton Shanghai Hongqiao）。④Kill My SaaS、Legora、Jev/TypeSafe 相關段落已逐段核對。",
+  "jev_prefilter": "4 條候選全部 keep：節目本身 worth 0.99（business）、Weight-Space 修正 0.98（llm-model, primary_source 0.12）、模型發布 0.89（llm-model 1.0）、產業政策 0.95（macro）。Jev 對二手轉述的 primary_source 評分偏低，與實際抓取一手 RSS/字幕的情況一致。",
+  "failures": "①web_search 仍報錯（ENOENT brave-plugin package.json），無法搜索引擎交叉驗證中文播客，改用 5 個 RSS feed。②Dwarkesh 與 No Priors 的 YouTube channel RSS 均 404，以 Substack/Megaphone feed 為準。③YouTube timedtext 端點回 429，改用 youtube-transcript-api 取得字幕；字幕有錯字，引用已校對語氣但非逐字保證。④Krentsel 22×、Fable 10 萬參數分類器等獨立重現未經本輪核實。⑤知乎拆解原文未直接抓取，數字來自 AINews 轉述。",
+  "notable_for_james": "①Kill My SaaS：$40K SaaS 用 $10K 懸賞重寫，69 份提交、約 5 份達付費標準、評估 2 個月；中層 SaaS 只剩垂直 Agent 或資料供應商兩條路。②Jev/TypeSafe：System One 決策模型，把模型縮到只做選擇/估機率，放進 critical path 如 if 語句；「models are for us」。③AIE：7,000+ 人到場、30 tracks、1.5M 線上，會議內容全部轉錄成 MCP/dataset。④swyx 之中國觀察：OpenClaw 熱度高、ComfyUI 百萬社群、真正 996、中國 lab 發布在西方不可見。⑤Weight-Space 官方降溫：579 個修復答案中 576 個原本撞 32K token 上限，收益主要是修 loop bug。⑥他最擔心：AI winter 與 AI doom（生物武器級風險），「default assumption should be AI doom」。",
+  "cross_episode_theme": "與 11-04 Weight-Space 報告、11-01 十字路口「RSI 來了」、11-02 Legora「看不到資料的 eval」連成一線：能力湧現快過理解速度，價值往判斷、品味、審計與 critical-path 決策移動。Jev 作為本 pipeline 的 prefilter，正是這條線的自我驗證。",
   "index_html": "未更新 index.html（沿用 2026-07-19 起停更的慣例）。",
-  "deep_dive_link": "本輪未新增 deep-dive；報告本體約 32KB，含完整八實驗數據、逐字引用與爭議拆解。"
+  "deep_dive_link": "本輪未新增 deep-dive；報告本體約 42KB，含 12 個核心論點、完整數據表、9 條逐字引用與 9 個爭議點。",
+  "source_links": "https://latent.space/p/ainews-behind-latent-space-kill-my-saas-jev-ai-in-2026-aiei-shanghai/ ; https://www.youtube.com/watch?v=QmDLDy3ZSNE ; https://ai.engineer/shanghai/2026"
  },
  "resolvedFeeds": {
   "zhang-xiaojun": "https://feed.xyzfm.space/dk4yh3pkpjp3",
