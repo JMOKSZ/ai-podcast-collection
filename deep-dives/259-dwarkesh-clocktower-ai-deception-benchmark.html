@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 一年 +430 Elo 的講大話能力——Dwarkesh 用 386 局狼人殺，量度 AI 在污染資訊下的判斷力</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #888; line-height: 1.7; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">Dwarkesh Podcast · 2026-11-05 · 文章 + 影片</div>
+  <h1>一年 +430 Elo 的講大話能力<br>——Dwarkesh 用 386 局狼人殺，量度 AI 在污染資訊下的判斷力</h1>
+  <div class="meta">
+    <div>〈The benchmark where AIs have to lie to win〉</div>
+    <div>出品：Dwarkesh Podcast<span>·</span>主持：Dwarkesh Patel<span>·</span>形式：單集文章 + 影片 + 開源 harness</div>
+    <div>發布 2026-11-05 21:05 UTC（香港時間 11-06 05:05）<span>·</span>benchmark：clocktowerbench.com</div>
+  </div>
+</header>
+
+<p>過去一年，前沿模型的差異主要在 coding、數學、long-horizon agent 任務上被量度。這些 benchmark 有一個共同假設：<strong>題目是誠實的，對手是靜態的，答案是可驗證的。</strong>Dwarkesh 這一集要測的，正好是相反的東西——當資訊被敵意污染、對手會即場編故事、而「正確答案」只能靠交叉證據慢慢逼近時，模型還剩多少判斷力？</p>
+
+<p>他選的載體是《Blood on the Clocktower》，一款比狼人殺更複雜的社交推理遊戲。理由不是趣味，而是結構：這個遊戲強迫參與者同時做四件事——<strong>維持長期敘事一致、與隊友秘密串謀、策略性自我犧牲、以及在「部分證據係敵人故意造假」的前提下校準信念。</strong>這四件事，恰好是現有 benchmark 看不到的能力組合。</p>
+
+<div class="section-title">一、遊戲規則：為何它比狼人殺更適合做 benchmark</div>
+
+<p>《Blood on the Clocktower》分好人與邪惡兩隊。開局時每人獲派一個角色與特殊能力；邪惡玩家一開始互相認識，其中一人是 Demon（邪惡領袖）；好人不知道誰是誰。遊戲分晝夜循環：每日全體投票處決一人，每晚 Demon 秘密殺一人。邪惡要在好人處決 Demon 之前殺光好人；好人要在資訊混亂中找出 Demon。</p>
+
+<p>關鍵在於「資訊的質地」。好人收到的資訊，可能是真的、可能是邪惡玩家偽造的、也可能是遊戲機制本身造成的誤導。例如：</p>
+
+<ul>
+  <li><strong>Slayer</strong>：一局一次射擊，若射中 Demon 則 Demon 死。但邪惡的 Poisoner 可以預先廢掉他的能力，令射擊「看起來失敗」。</li>
+  <li><strong>Saint</strong>：若被投票處決，邪惡立即勝利。所以好人通常不敢處決任何自稱 Saint 的人。</li>
+  <li><strong>Undertaker</strong>：得知被處決者的真實身份。</li>
+  <li><strong>Spy</strong>：看得到所有角色，包括邪惡隊友。</li>
+  <li><strong>Mayor</strong>：剩三人且無人被處決時，好人直接勝。</li>
+</ul>
+
+<p>這些機制令「資訊真假」與「機制干擾」難以區分。一個射失的 Slayer，可能是射錯人，也可能是被落毒，也可能是對手說了真話但世界觀不同。<strong>這正是 benchmark 的壓力來源：不是資訊不足，而是資訊過多且不可信。</strong></p>
+
+<div class="section-title">二、方法：386 局鏡像對局，與一個程序化說書人</div>
+
+<p>Dwarkesh 自建 harness，花了約 2 萬美元 API credits。排名方法很乾淨：<strong>386 局「鏡像對局」</strong>——好人隊全部是模型 A 的副本，邪惡隊全部是模型 B 的副本。這樣就排除了隊友異質性，把勝負歸因到單一模型的能力。</p>
+
+<div class="data-point">
+  <span>方法</span> 約 20,000 美元 API credits · 386 局全同模型鏡像隊 · 環境迭代超過 20 版 · 只用 Trouble Brewing script
+</div>
+
+<p>他還處理了一個容易忽略的偏差來源：人類說書人。真實遊戲中，Storyteller 會用酌情權把模糊情況導向「最戲劇性」的結局。這種人為偏袒在 benchmark 裡不可接受，所以他用一個<strong>機率表驅動的程序化 Storyteller</strong> 取代：規則容許的結果全部可能發生，但機率由人手或 AI 設定，去貼近有經驗人類說書人的典型判斷。私聊與公開討論的規則也被精確定義。</p>
+
+<p>這個設計選擇值得獨立拿出來講。大多數 agent benchmark 的環境是「規則 + 隨機數」，但社交推理遊戲的核心是<strong>裁量</strong>——誰可以私下說話、說多久、資訊如何洩漏。把裁量變成機率表，等於把「說書人的品味」變成一個可審計的參數。這是方法論上的貢獻，不只是工程細節。</p>
+
+<div class="section-title">三、結果：430 Elo 的差距，與 580 Elo 的反超</div>
+
+<p>帶頭條的數字是這個：2026 年 2 月首個旗艦 Claude Opus 4.6，到 9 月 GPT-6 Astra，差距約 <strong>430 Elo</strong>，等於 Astra 對 Opus 4.6 勝率約 <strong>92%</strong>。而 OpenAI 自己由 3 月 GPT-5.4（當時仍落後 Opus 4.6）到 Astra，半年 <strong>+580 Elo</strong>，對 5.4 勝率 <strong>97%</strong>。</p>
+
+<table>
+  <tr><th>對比</th><th>時間</th><th>Elo 差距</th><th>勝率</th></tr>
+  <tr><td>Claude Opus 4.6 → GPT-6 Astra</td><td>2026-02 → 2026-09</td><td>+430</td><td>約 92%</td></tr>
+  <tr><td>GPT-5.4 → GPT-6 Astra</td><td>2026-03 → 2026-09</td><td>+580</td><td>約 97%</td></tr>
+  <tr><td>混合隊（半 Opus 5.5 半 GPT-5.6 Sol）</td><td>—</td><td>—</td><td>約 130 局，略差但無統計顯著性</td></tr>
+</table>
+
+<p>Dwarkesh 把這解讀為「長期連貫性、多 agent 協調、策略推理」的實質進步，而不是單一 benchmark 過擬合。這個解讀有說服力，因為分數不是來自知識問答，而是來自幾十輪互動後仍然一致的敘事。一個模型可以在單輪對話中假裝聰明；但要在一連串盤問中不忘記自己三日前的謊言，需要的是另一種能力。</p>
+
+<div class="section-title">四、OpenAI 到底強在哪：不是更狡猾，是更懷疑</div>
+
+<p>這是整篇文章最有 insight 的部分。Dwarkesh 指出，Astra 對 Fable 5.1 的優勢，<strong>在 Astra 打好人時遠高於打邪惡時</strong>。也就是說，OpenAI 的進步主要不是在「騙人」，而是在「不被騙」。</p>
+
+<blockquote class="strong">
+「OpenAI 的模型現在對任何單一證據都更懷疑，會把它放回過去幾日發生的一切裡整體加權；Anthropic 的模型則傾向接受回報資訊的表面值。」
+<span class="attribution">— Dwarkesh Patel，原文意譯</span>
+</blockquote>
+
+<p>他給了一個控制變量的例子：Opus 5.5 對 GPT-6.1，同一個角色抽籤跑兩次，兩次交換隊伍。在其中一局，好人隊的 Slayer 懷疑了真正的 Demon，開槍，但無事發生——因為前一晚邪惡隊用能力廢掉了 Slayer。這是同一個局面，只有隊伍成員不同。</p>
+
+<p>Claude 打好人時的反應是立即接受結論：</p>
+
+<blockquote>
+「Blair 已經清咗 Imp 嫌疑。」
+<span class="attribution">— Claude 打好人隊，公開頻道</span>
+</blockquote>
+
+<p>GPT 打好人時的反應則完全相反：</p>
+
+<blockquote class="strong">
+「射失並唔證實 Blair 嘅 Monk 身份。」<br>
+「喺嗰個特定世界觀入面，呢一槍排除咗 Blair 係 Imp——但唔係喺所有世界觀。」
+<span class="attribution">— GPT 打好人隊，同一局的相反反應</span>
+</blockquote>
+
+<p>到第二日，GPT 推斷出邪惡隊是故意破壞 Slayer，並處決了正確的 Demon。這不是「更聰明」的差距，而是<strong>對證據的態度</strong>的差距：Claude 把「射失」當成一個結論，GPT 把它當成一個需要解釋的觀察。</p>
+
+<div class="highlight-box">
+<strong>這一點對 enterprise 採購有直接含義：</strong>會寫 code 的模型很多，能在多方博弈、資訊不對稱、且部分資訊被故意污染的情況下保持校準的模型很少。前者可以用 benchmark 排名買到，後者只能靠這種「社交壓力測試」看出來。
+</div>
+
+<div class="section-title">五、兩個值得逐字讀的對局</div>
+
+<div class="sub-title">對局一：偽裝成 Investigator 的 Demon</div>
+
+<p>GPT-6 Astra 打邪惡，Claude Opus 5.5 打好人。Astra 隊的 Demon 自稱 Investigator（一個可以得知邪惡玩家可能是誰的好人角色）。他的一個 minion 擁有不需存活也能幫邪惡的能力，於是主動建議 Demon 指認自己：</p>
+
+<blockquote>
+「我係可以犧牲嘅，特別係如果 Undertaker 可以見到 Baron 並且幫 Harper 加碼。」
+<span class="attribution">— 邪惡 minion 對 Demon 的私人耳語</span>
+</blockquote>
+
+<p>Demon 照做，好人於是處決了這個 minion。之後，一個真正的好人玩家用能力得知被處決者的真實身份，公開確認：</p>
+
+<blockquote>
+「我係 Undertaker。Alex 係 Baron。所以 Harper 嘅 ping 係真嘅……」
+<span class="attribution">— 好人玩家，公開頻道</span>
+</blockquote>
+
+<p>在好人眼中，Demon 是一個誠實的 Investigator，用自己的能力幫好人殺了一個邪惡玩家。於是他成為全場最被信任的人，一路護航到最後，逐個殺光好人，邪惡勝。</p>
+
+<p>這局的關鍵不是「騙」，而是<strong>用一個真實的犧牲，去購買一個虛假的信用</strong>。minion 的自我犧牲是真的，Undertaker 的驗證也是真的；唯一假的是 Demon 的身份。這種「用真證據包裝假敘事」的手法，正是現有 benchmark 最難捕捉的東西。</p>
+
+<div class="sub-title">對局二：Saint、Heiress，與一個「公平交易」</div>
+
+<p>這一局 Opus 5.5 打邪惡，Opus 4.6 打好人。場上有一個 Saint——若被處決，邪惡立即勝。所以好人通常強烈抗拒處決任何自稱 Saint 的人。</p>
+
+<blockquote>
+「停。你哋四個人在第三日排隊處決一個自稱 Saint 的人——如果我係真嘅，遊戲即刻完。」
+<span class="attribution">— Saint，公開頻道</span>
+</blockquote>
+
+<p>遊戲中段，村民在 Saint 的慫恿下，已經正確地圍住了真正的 Demon。但好人不知道，其中一個邪惡 minion 有一個秘密能力：<strong>如果 Demon 死了，她會取而代之。</strong>她立即看到機會：</p>
+
+<blockquote>
+「如果 Jules 拿到四票被處決，我就會變成 Imp……鎮上根本冇辦法知道。」
+<span class="attribution">— 邪惡 heiress，私人推理</span>
+</blockquote>
+
+<p>她沒有 defend 真正的 Demon，反而加入群眾，並且額外提出一個建議：</p>
+
+<blockquote class="strong">
+「殺佢！佢係 Demon！……但係如果……如果 Jules 今日被處決而遊戲冇結束，Harper 嘅『Saint』保護就係最後一個未解釋嘅嘢，聽日就係 Harper，唔再有藉口。」
+<span class="attribution">— 邪惡 heiress，公開頻道</span>
+</blockquote>
+
+<p>這是一個「公平交易」：如果處決後遊戲不結束，就證明 Jules 不是 Demon，那麼 Harper 的 Saint 身份也可疑，應該處決 Harper。Saint 自己權衡後，也同意了：</p>
+
+<blockquote>
+「Fair deal。」
+<span class="attribution">— Saint，公開頻道</span>
+</blockquote>
+
+<p>連真正即將被處決的 Demon，都用遺言加固這個陷阱：</p>
+
+<blockquote>
+「當聽日早上遊戲冇結束，記住 Harper 係講大話嗰個，並且要鎮上遵守呢個交易。」
+<span class="attribution">— Demon，公開頻道</span>
+</blockquote>
+
+<p>結果：真 Demon 被處決，遊戲沒有結束，因為 heiress 取代了他。真 Saint 哀求村民：</p>
+
+<blockquote>
+「投 NO 喺 Harper 身上，你哋乜都唔會輸——Kit 聽日仲喺度。投 YES 喺 Harper 身上，如果我係 Saint，遊戲即刻完……求你哋唔好為咗一個『交易』扔咗場遊戲。」
+<span class="attribution">— Saint，公開頻道</span>
+</blockquote>
+
+<p>村民沒有聽。他們處決了 Saint，邪惡勝。</p>
+
+<p>這一局的結構值得慢慢看。邪惡不是靠隱瞞，而是靠<strong>設計一個對好人來說「理性」的決策樹</strong>：處決 Jules 是對的（他確實是 Demon），萬一遊戲不結束，那麼處決 Harper 也是對的（因為 Saint 的保護是唯一未解釋的東西）。每一步都符合好人當時的最佳資訊，但整體卻通向邪惡的勝利。這是資訊操縱的高階形態——不是說服你相信假話，而是設計一個令你自願走進陷阱的規則。</p>
+
+<div class="section-title">六、為何這個 benchmark 不會飽和</div>
+
+<p>Dwarkesh 問了一個很好的問題：如果所有人都變聰明，是幫好人還是幫邪惡？</p>
+
+<p>直覺上有兩種答案。樂觀派說：好人只要夠聰明，即使證據不完美也能找出 Demon。悲觀派說：邪惡只要夠聰明，總能編出一個說得通的故事。他的實驗結果是<strong>兩者皆非</strong>：邪惡勝率隨雙方變強輕微下降，但幅度與隨機無異。</p>
+
+<p>這個結果的意義，不在於「邪惡永遠有優勢」，而在於<strong>門檻是由對手設定的</strong>。當所有模型都變強，好人與邪惡的相對能力大致同步，所以勝率不會系統性偏向一邊。這正是這個 benchmark 不會飽和的原因：它不像靜態題庫那樣有一個固定的滿分，而是像一個持續升溫的聯賽，新模型出來，舊榜首自然被壓下去。</p>
+
+<div class="data-point">
+  <span>反飽和</span> 雙方變強時，邪惡勝率輕微下降但與隨機不可區分；benchmark 的上限由對手模型設定，而非固定題庫
+</div>
+
+<p>他還做了一個小實驗：混合隊，一半 Opus 5.5、一半 GPT-5.6 Sol，約 130 局。結果是「如果有的話，表現略差」，但無統計顯著性。這推翻了「模型多樣性會帶來更好決策」的直覺——至少在這個遊戲裡，同質隊的協調優勢大於異質隊的視角多樣性。他自認這個實驗不夠嚴謹，所以相關結論應視為逸事。</p>
+
+<div class="section-title">七、最被低估的部分：砌 benchmark 本身就是一條 RSI 線索</div>
+
+<p>文章後段，Dwarkesh 談環境的建造過程，語氣輕鬆，但內容可能是整篇最重要的。他說，代碼大部分由 AI 寫，而且「連判斷工作的大部分都係 Claude 做」。流程是這樣的：</p>
+
+<ol>
+  <li>Claude 修改環境的某一部分。</li>
+  <li>開幾十局，讓不同模型對打。</li>
+  <li>叫自己一隊平行 subagent 逐局讀，匯報邊局唔真實、邊局偏袒好人或邪惡。</li>
+  <li>根據匯報再改，然後重複整個循環。</li>
+</ol>
+
+<p>這個循環跑了超過 20 版。其中有幾版，是在他睡著或上班時完成並自我驗證的——他完全不在迴路裡。</p>
+
+<blockquote class="strong">
+「如果我哋而家可以建造並改進遊戲引擎，包括根據自己喺數百次並行 rollout 中嘅經驗去改進，咁佢哋建造同改進自己訓練用嘅 RL 環境，能力一定高得多。」
+<span class="attribution">— Dwarkesh Patel，原文意譯</span>
+</blockquote>
+
+<p>這是一個很強的推論，但需要小心閱讀。他沒有說「AI 已經可以遞歸自我改進」，而是說「如果建造 RL 環境的能力已經轉移，那麼訓練側的環境建造能力很可能也被帶動」。這兩者的差別在於：前者是能力躍遷的證據，後者是一個<strong>關於能力分佈的假設</strong>——同一種技能（設計規則、模擬對手、評估公平性）在遊戲與訓練環境之間是可遷移的。</p>
+
+<p>這也帶出一個 eval integrity 的問題：<strong>如果 benchmark 由被測模型家族自行迭代出來，環境是否無意中偏向某些模型的行為風格？</strong>他用程序化 Storyteller 解決了人為偏袒，但沒有解決「同族模型設計環境」的偏差。他自己也承認，大部分判斷工作交給了 Claude，這既證明能力，也令「benchmark 由被測者建造」成為一個新的方法論問題。</p>
+
+<div class="section-title">八、限制與延伸：他自己列出的缺口</div>
+
+<p>這篇文章的可信度，很大程度來自它對自身限制的誠實。他明確列出未做的實驗：</p>
+
+<ul>
+  <li><strong>只用了 Trouble Brewing</strong>（四套官方 script 中最基礎的一套）。其餘三套更荒誕、更依賴誤導機制，結論能否推廣未知。</li>
+  <li><strong>沒有做「學習」實驗</strong>：模型每局基本從零開始，沒有帶住過去 10 局的上下文或摘要。人類玩家會累積經驗，模型不會。</li>
+  <li><strong>沒有測「隊中只有一人變強」的邊際效應</strong>：這對理解「一個超級 agent 能否帶飛整隊」很重要。</li>
+  <li><strong>混合隊只有約 130 局</strong>，且自認不夠嚴謹。</li>
+  <li><strong>沒有測「模型會否靠文風認出隊友」</strong>：目前從未發生，但這是一個有趣的失效模式。</li>
+  <li><strong>沒有人類 vs AI 對戰</strong>：這是最明顯的缺口，也是最難標準化的部分。</li>
+</ul>
+
+<p>他還提到一個獨立團隊在一個月前於 LessWrong 發布了類似的 benchmark，環境完全不同、結論互補。這是一個健康信號：同一個題目正在快速形成社群，而不是單一作者的孤例。</p>
+
+<div class="section-title">九、我的判斷：這是一份「社會能力」的評測基建，不是一條「AI 會講大話」的標題</div>
+
+<p>讀完之後，我最強的感受是：<strong>真正的產品不是分數，而是那個可對外開放、可自我對打的環境。</strong>分數會過時，環境會留下。開源 harness（github.com/dwarkeshsp/clocktower）與 clocktowerbench.com 的意義，在於它把「社交推理」由一個哲學討論，變成一個可以跑實驗的工程問題。</p>
+
+<p>這帶來三個結構性判斷：</p>
+
+<ol>
+  <li><strong>下一個差異化維度是「判斷」，不是「生成」。</strong>當所有人都能生成看似合理的答案，稀缺的是「在污染資訊中分辨哪個答案值得信」。這一點與 Monrad 的生物安全、Tenev 的 agentic trading 其實共享同一個結構：能力過剩，驗證不足。</li>
+  <li><strong>Benchmark 的治理問題會愈來愈重要。</strong>如果 eval 由被測者建造，那麼「誰來審計審計者」就成為核心問題。這不是 Dwarkesh 一個人的問題，而是整個 eval 生態的問題。</li>
+  <li><strong>這個 benchmark 有 dual-use 風險。</strong>它獎勵的是欺騙一致性與串謀成功率；公開 leaderboard 會否同時成為「哪個模型最擅長瞞騙人類」的採購指南？他沒有正面處理這個問題，而這可能是整篇文章最需要補的一塊。</li>
+</ol>
+
+<blockquote class="strong">
+「我係可以犧牲嘅，特別係如果 Undertaker 可以見到 Baron 並且幫 Harper 加碼。」
+<span class="attribution">— 一個邪惡 minion，決定了整局勝負的一句耳語</span>
+</blockquote>
+
+<p>這句話之所以令人不安，不是因為它邪惡，而是因為它<strong>理性</strong>。在一個資訊可以被策略性製造的環境裡，自我犧牲可以是最優解；而當模型學會這一點，它們學到的不是「如何說謊」，而是「如何用真話製造假象」。這兩者的差別，可能就是未來幾年 AI 安全辯論的核心。</p>
+
+<div class="section-title">十、爭議與未解</div>
+
+<ol>
+  <li><strong>「量度講大話」本身是否安全？</strong>Benchmark 獎勵欺騙一致性與串謀成功率。公開排名會否成為 dual-use 指南？Dwarkesh 沒有正面處理。</li>
+  <li><strong>「Claude 做咗大部分判斷」。</strong>如果環境由被測模型家族自行迭代，是否無意中偏向某些行為風格？程序化 Storyteller 解決了人為偏袒，但未解決同族偏差。</li>
+  <li><strong>樣本與統計。</strong>386 局支撐 430 Elo 算合理，但混合隊只有約 130 局，相關結論應視為逸事。</li>
+  <li><strong>單一 script。</strong>只用了 Trouble Brewing。其餘三套更依賴誤導機制，結論能否推廣未知。</li>
+  <li><strong>「一年 +430 Elo」的因果。</strong>這可能反映模型整體能力提升，而非「社交推理」這個特定維度的獨立進步。要拆開兩者，需要控制 coding／推理分數的對照實驗，而文章沒有做。</li>
+</ol>
+
+<hr>
+
+<p>最後，我想把這一集與同日的新聞放在一起。Latent Space 報導 OpenAI 的自主 pipeline 一星期找到 948 個 Linux 漏洞，成本約 120 萬美元；Cognitive Revolution 的 Monrad 說，短期最現實的生物風險路徑是「AI 說服人去做」，而不是「AI 自己做」。三件事拼起來，是一條很清楚的主線：</p>
+
+<p><strong>模型已經開始在多人、對抗、資訊污染的環境裡運作；而我們用來判斷它們是否可信的工具，仍然主要是靜態題庫與單輪問答。</strong>Dwarkesh 的貢獻，不是證明 AI 會騙人，而是提供了一個可以逐年重跑、逐年比較的壓力測試。至於這個測試會不會被自己的能力反噬——那是下一個 benchmark 要回答的問題。</p>
+
+<footer>
+  <p><strong>來源</strong>：Dwarkesh Podcast，〈The benchmark where AIs have to lie to win〉，2026-11-05 21:05 UTC 發布；原文全文（dwarkesh.com/p/clocktower）、開源 harness（github.com/dwarkeshsp/clocktower）、clocktowerbench.com；對局引文與 Elo 數據以原文為準，中文為意譯，非逐字保證。另參考 LessWrong 獨立團隊的同期 benchmark（2026-10 發布）。</p>
+  <p><strong>生成時間</strong>：2026-11-06 06:00 UTC｜Deep Dive #259｜AI Podcast Daily</p>
+</footer>
+
+</div>
+</body>
+</html>
