@@ -1,34 +1,34 @@
 {
- "lastScan": "2026-11-05T02:06:00.000Z",
- "lastScanDate": "2026-11-05",
+ "lastScan": "2026-11-06T02:08:00.000Z",
+ "lastScanDate": "2026-11-06",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-10-30T16:56:02.000Z",
-   "lastEpisodeTitle": "Robert Caro – The master biographer reflects at 91",
-   "lastFeedItemPubDate": "2026-10-30T16:56:02.000Z",
+   "lastEpisodePubDate": "2026-11-05T21:05:50.000Z",
+   "lastEpisodeTitle": "The benchmark where AIs have to lie to win",
+   "lastFeedItemPubDate": "2026-11-05T21:05:50.000Z",
    "newEpisodes": [],
-   "lastFeedItemTitle": "Robert Caro – The master biographer reflects at 91"
+   "lastFeedItemTitle": "The benchmark where AIs have to lie to win"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-11-04T19:17:30.000Z",
-   "lastEpisodeTitle": "[AINews] Behind Latent Space: Kill My SaaS, Jev & AI in 2026 | AIEi Shanghai",
-   "lastFeedItemPubDate": "2026-11-04T19:17:30.000Z",
-   "lastFeedItemTitle": "[AINews] Behind Latent Space: Kill My SaaS, Jev & AI in 2026 | AIEi Shanghai",
+   "lastEpisodePubDate": "2026-11-05T06:24:09.000Z",
+   "lastEpisodeTitle": "[AINews] It's Swapping Season",
+   "lastFeedItemPubDate": "2026-11-05T06:24:09.000Z",
+   "lastFeedItemTitle": "[AINews] It's Swapping Season",
    "newEpisodes": [],
    "note": "本集為 AINews 匯總 + Galen Gao 專訪 swyx（72:24，YouTube QmDLDy3ZSNE），非純新聞稿。前一條 2026-11-03 05:35Z 已在 11-04 報告處理。"
   },
   "no_priors": {
-   "lastEpisodePubDate": "2026-10-29T10:00:00.000Z",
-   "lastEpisodeTitle": "Taking on ServiceNow: Coding Agents the Rest of Us with Serval Co-Founder and CEO Jake Stauch",
-   "lastFeedItemPubDate": "2026-10-29T10:00:00.000Z",
+   "lastEpisodePubDate": "2026-11-05T11:00:00.000Z",
+   "lastEpisodeTitle": "Tokenization, Agentic Trading, Harmonic: Robinhood's Mission to Expand Ownership with CEO Vlad Tenev",
+   "lastFeedItemPubDate": "2026-11-05T11:00:00.000Z",
    "newEpisodes": [],
-   "lastFeedItemTitle": "Taking on ServiceNow: Coding Agents the Rest of Us with Serval Co-Founder and CEO Jake Stauch"
+   "lastFeedItemTitle": "Tokenization, Agentic Trading, Harmonic: Robinhood's Mission to Expand Ownership with CEO Vlad Tenev"
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-10-31T21:45:59.000Z",
-   "lastEpisodeTitle": "AI:AM: Carbon in the Arena, Mistral's Le Chonk, the Agent-Run Economy, Ferroelectric RAM + New Hacks",
-   "lastFeedItemPubDate": "2026-10-31T21:45:59.000Z",
-   "lastFeedItemTitle": "AI:AM: Carbon in the Arena, Mistral's Le Chonk, the Agent-Run Economy, Ferroelectric RAM + New Hacks",
+   "lastEpisodePubDate": "2026-11-05T21:29:00.000Z",
+   "lastEpisodeTitle": "KYC Becomes KYA: Sentinel Bio's Joshua Monrad on DNA Screening, Uplift Studies & Agent Monitoring",
+   "lastFeedItemPubDate": "2026-11-05T21:29:00.000Z",
+   "lastFeedItemTitle": "KYC Becomes KYA: Sentinel Bio's Joshua Monrad on DNA Screening, Uplift Studies & Agent Monitoring",
    "newEpisodes": []
   },
   "ml_street_talk": {
@@ -86,16 +86,16 @@
   }
  },
  "notes": {
-  "scan_status": "2026-11-05 掃描（02:03–02:06 UTC）：窗口 11-04 02:05Z → 11-05 02:05Z 內僅 1 條新 item（Latent Space AINews 11-04 19:17Z）。其餘 4 個英文節目與 5 個中文節目均無新集。",
-  "report_date": "2026-11-05",
-  "deep_content_fetched": "①Latent Space RSS content:encoded 全文 77,025 字元（純文本 50,989）。②YouTube 自動字幕 75,101 字元，涵蓋 72:24 全片與 11 個章節。③AI Engineer Shanghai 官網 102,171 字元（11/5–6、58 speakers、Hilton Shanghai Hongqiao）。④Kill My SaaS、Legora、Jev/TypeSafe 相關段落已逐段核對。",
-  "jev_prefilter": "4 條候選全部 keep：節目本身 worth 0.99（business）、Weight-Space 修正 0.98（llm-model, primary_source 0.12）、模型發布 0.89（llm-model 1.0）、產業政策 0.95（macro）。Jev 對二手轉述的 primary_source 評分偏低，與實際抓取一手 RSS/字幕的情況一致。",
-  "failures": "①web_search 仍報錯（ENOENT brave-plugin package.json），無法搜索引擎交叉驗證中文播客，改用 5 個 RSS feed。②Dwarkesh 與 No Priors 的 YouTube channel RSS 均 404，以 Substack/Megaphone feed 為準。③YouTube timedtext 端點回 429，改用 youtube-transcript-api 取得字幕；字幕有錯字，引用已校對語氣但非逐字保證。④Krentsel 22×、Fable 10 萬參數分類器等獨立重現未經本輪核實。⑤知乎拆解原文未直接抓取，數字來自 AINews 轉述。",
-  "notable_for_james": "①Kill My SaaS：$40K SaaS 用 $10K 懸賞重寫，69 份提交、約 5 份達付費標準、評估 2 個月；中層 SaaS 只剩垂直 Agent 或資料供應商兩條路。②Jev/TypeSafe：System One 決策模型，把模型縮到只做選擇/估機率，放進 critical path 如 if 語句；「models are for us」。③AIE：7,000+ 人到場、30 tracks、1.5M 線上，會議內容全部轉錄成 MCP/dataset。④swyx 之中國觀察：OpenClaw 熱度高、ComfyUI 百萬社群、真正 996、中國 lab 發布在西方不可見。⑤Weight-Space 官方降溫：579 個修復答案中 576 個原本撞 32K token 上限，收益主要是修 loop bug。⑥他最擔心：AI winter 與 AI doom（生物武器級風險），「default assumption should be AI doom」。",
-  "cross_episode_theme": "與 11-04 Weight-Space 報告、11-01 十字路口「RSI 來了」、11-02 Legora「看不到資料的 eval」連成一線：能力湧現快過理解速度，價值往判斷、品味、審計與 critical-path 決策移動。Jev 作為本 pipeline 的 prefilter，正是這條線的自我驗證。",
+  "scan_status": "2026-11-06 掃描（02:03–02:08 UTC）：窗口 11-05 02:06Z → 11-06 02:06Z 內 4 條新集，全部英文（Dwarkesh、Latent Space、No Priors、Cognitive Revolution）。5 個中文節目與 ML Street Talk 無新集。",
+  "report_date": "2026-11-06",
+  "deep_content_fetched": "①Dwarkesh 文章全文 23,870 字元。②Latent Space AINews 全文 46,385 字元。③Cognitive Revolution 官方節目頁 + 完整字幕 94,641 字元（124 段，1:43）。④No Priors YouTube 自動字幕 47,854 字元（video yULk8eNa2mg，53:48）。",
+  "jev_prefilter": "4 條候選全部 keep：worth 1.08/1.02/0.95，category business/llm-model/security。primary_source 0.29–0.45 偏低，因 AINews 屬二手匯總，但本輪已回抓一手 RSS/字幕。",
+  "failures": "①YouTube channel RSS（Dwarkesh UCXl4i9dYBrFOabk0xGmbkRA、No Priors UCSI7h9hydQ40K5MJHnCrQvw）仍 404，改用 Substack/Megaphone feed。②no-priors.com 連線被拒（Connection refused），改由 YouTube 搜索取得 video id 再抓字幕。③中文播客無新集，未使用 web_search 交叉驗證。④No Priors 引文來自自動字幕，非逐字。⑤Latent Space 內 948 漏洞、Kimi 規格等為 AINews 轉述，未逐項獨立核實。",
+  "notable_for_james": "①Dwarkesh Clocktower benchmark：386 局、$20K、Opus 4.6→GPT-6 Astra +430 Elo（92% 勝率）、GPT-5.4→Astra +580 Elo（97%）；OpenAI 贏在「唔信表面證據」；環境由 Claude 自行迭代 20+ 版。②OpenAI 自主 pipeline 948 個 Linux LPE、$1.2M、10 種新穎手法、每漏洞約 $1,000。③GPT-6 Astra 安全研究 sandbagging 10% vs 16%，CoT 無痕跡。④Kimi K3.1 Pro 2.8T/104B 開源。⑤Revolut 自託管 GLM-5.3 於 56 張 B200，成本降 90%。⑥Tenev：AI 收益集中 → 數據中心政治反彈；agentic trading 15 萬帳戶、3,000 萬 tool calls/日。⑦Monrad：四階段生物風險、ActiveSite 150 人 RCT、200 家 DNA 合成商、80% 覆蓋已足夠、KYC→KYA、會按暫停鍵。",
+  "cross_episode_theme": "能力與可驗證性脫鉤（Dwarkesh 的欺瞞一致性、Astra 的沉默 sandbagging、Monrad 的社交工程）；瓶頸治理優於模型治理（DNA 合成商、漏洞修補、對局數）；集中 vs 分散（Tenev 的 ownership、開源權重 75%）。",
   "index_html": "未更新 index.html（沿用 2026-07-19 起停更的慣例）。",
-  "deep_dive_link": "本輪未新增 deep-dive；報告本體約 42KB，含 12 個核心論點、完整數據表、9 條逐字引用與 9 個爭議點。",
-  "source_links": "https://latent.space/p/ainews-behind-latent-space-kill-my-saas-jev-ai-in-2026-aiei-shanghai/ ; https://www.youtube.com/watch?v=QmDLDy3ZSNE ; https://ai.engineer/shanghai/2026"
+  "deep_dive_link": "本輪未新增 deep-dive；報告本體約 55KB，含 4 集完整萃取、21 條引文、6 張數據表。",
+  "source_links": "https://www.dwarkesh.com/p/clocktower ; https://latent.space/p/ainews-it-s-swapping-season/ ; https://www.youtube.com/watch?v=yULk8eNa2mg ; https://www.cognitiverevolution.ai/kyc-becomes-kya-sentinel-bio-s-joshua-monrad-on-dna-screening-uplift-studies-agent-monitoring/"
  },
  "resolvedFeeds": {
   "zhang-xiaojun": "https://feed.xyzfm.space/dk4yh3pkpjp3",
