@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 由畫地圖到指揮下一個實驗——Fabian Theis 的三段論，與虛擬細胞的五年冷水</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #888; line-height: 1.7; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">Latent Space · AI for Science · 2026-11-06 · 51 分鐘</div>
+  <h1>由畫地圖，到指揮下一個實驗<br>——Fabian Theis 的三段論，與虛擬細胞的五年冷水</h1>
+  <div class="meta">
+    <div>〈Controlling Biology — Fabian Theis, Helmholtz Munich〉</div>
+    <div>出品：Latent Space<span>·</span>主持：RJ Honicky（Mira Omics CTO）、Brandon Anderson（Atomic AI）<span>·</span>嘉賓：Fabian Theis</div>
+    <div>發布 2026-11-06 15:10 UTC（香港時間 23:10）<span>·</span>來源：官方節目逐字稿</div>
+  </div>
+</header>
+
+<p>這一集的題目叫「控制生物學」（Controlling Biology）。它不是修辭。Fabian Theis 把系統生物學過去十年拆成三段：<strong>mapping（造圖譜）→ prediction（建世界模型）→ control（指揮下一個實驗）</strong>。他認為前兩段已經走得七七八八，第三段才剛開始——而第三段，才是 AI 真正變成科學方法一部分的地方。</p>
+
+<p>這個框架之所以值得認真對待，不是因為它新鮮，而是因為它同時解釋了三件看似矛盾的事：為什麼虛擬細胞炒了五年還沒兌現；為什麼 Arc 競賽的線性 baseline 可以打贏深度模型；以及為什麼一家「建生物基礎模型」的公司最後幾乎都去做藥。Theis 不是旁觀者——Scanpy、AnnData、scVerse 都出自他實驗室，scGen、NicheFormer、scConcert、cell-flow 到本週的 Lab Compass 構成了一條完整的技術線。他有資格說「這條路我走過，這裡有個坑」。</p>
+
+<div class="section-title">一、先把三個詞講清楚：轉錄組、擾動、虛擬細胞</div>
+
+<p>主持人問了一個很好的入門問題：到底什麼是 perturbation？Theis 沒有直接答，而是先把整個知識鏈條鋪開。</p>
+
+<p><strong>基因組是同一本食譜，每個細胞是不同的菜。</strong>人體幾乎每個細胞都擁有同一份 DNA，但不同細胞讀取不同的部分，產生不同的 messenger RNA。一個細胞的轉錄組，實務上就是一個<strong>約 20,000 維的稀疏向量</strong>——大部分是零，少數位置有表現量。把每個細胞畫成這個空間裡的一點，點會聚成團；這些團，人類叫「細胞類型」；如果點連成香腸狀的軌跡，就叫分化路徑。</p>
+
+<blockquote>
+「DNA 像一本食譜，每個細胞是一道菜；轉錄組學就是拿起一道菜，反推裡面放了什麼材料。」
+<span class="attribution">— Brandon Anderson 的比喻，Theis 說他回家要常用</span>
+</blockquote>
+
+<p>然後才是擾動。Theis 特意把定義拉闊：<strong>擾動不只是 CRISPR 敲除</strong>。細胞無時無刻在接收外來訊號——鄰居的接觸、梯度、荷爾蒙、培養基配方、藥物、基因變異、疾病、時間，全部都是輸入。連 Yamanaka 因子把皮膚細胞誘導回類胚胎狀態，在他眼裡也只是「一組很強的擾動組合」。</p>
+
+<blockquote class="strong">
+「For me, a perturbation space is just an input space to stuff that happens to a cell.」
+<span class="attribution">— Theis，把 perturbation 由「實驗操作」重新定義為「細胞的輸入空間」</span>
+</blockquote>
+
+<p>這個定義很重要，因為它决定了模型的形狀。如果擾動只是 CRISPR，那只是一個分類問題；如果擾動是任意輸入，那就是一個<strong>受控動力系統</strong>——而控制系統，是可以反過來求「要給什麼輸入，才能到某個狀態」的。</p>
+
+<p>至於「虛擬細胞」，Theis 的態度很清楚：這個詞被用得太窄。細胞是有記憶、有規格、有多層分子的輸入輸出系統，RNA 只是其中一層。把 virtual cell 等同 perturbation prediction，他的評語是「a bit too simplistic」——但同時承認，這正是目前整個領域實際在做的事，也是資金正在湧入的地方。</p>
+
+<div class="section-title">二、數據的爆炸：由「幾百個樣本」到「一次一千萬個轉錄組」</div>
+
+<p>Theis 回憶自己入行時，整個領域只有幾百個轉錄組；做單細胞有一部分原因是「樣本數夠多」，適合他這種機器學習出身的人。現在的情況完全相反。</p>
+
+<div class="data-point">
+  <span>規模</span> Pars Bio 的「giga lab」級設施，<strong>單次實驗量測 1,000 萬個轉錄組</strong>；同類設施在競爭對手處亦已出現。對比：早期整個領域只有數百個樣本。
+</div>
+
+<p>更關鍵的是<strong>擾動空間的密度</strong>。以前 perturbation 軸非常稀疏——通常只有「對照 vs 疾病」兩個點。現在有幾百個 cell line、完整的 CRISPR 篩選、上千種藥物組合，擾動空間突然變得豐富。Theis 的判斷是：<strong>細胞空間一直夠大，是擾動空間終於追上來了</strong>，這才讓「fancy perturbation prediction」變得可能。</p>
+
+<p>但他沒有停在 cell line。他實驗室正參與 organoid 層級的擾動實驗，理由很直接：<strong>單一細胞類型的讀數不夠有趣，多細胞系統才有真正值得預測的行為。</strong>他描述類器官時帶著明顯的興奮——可以在培養皿裡養出會互相連接、甚至會做運算的迷你大腦；可以養出會跳動的心臟細胞團；可以由皮膚細胞誘導出研究神經退行性疾病所需的組織，解決「拿不到病人腦組織」的問題。</p>
+
+<p>限制他也講得很白：沒有免疫系統、營養供給困難、可重複性問題。但類器官仍然「much, much more than just a cell line」。這是整個訪談裡少數他語氣完全正面的段落。</p>
+
+<div class="section-title">三、冷水是怎樣來的：Arc 競賽與「問題不夠難」</div>
+
+<p>2025 年 Arc Institute 辦了 Virtual Cell Challenge。結果是線性 baseline 打贏一票深度模型，整個領域被潑了一盆冷水。外界當時的解讀是「深度學習在生物行不通」。</p>
+
+<p>Theis 認為這個解讀錯了，而且錯得很典型。真相是：<strong>題目本身太簡單。</strong>只有幾個 cell line、少量基因敲除、效應微弱——在這種設定下，複雜模型只會 overfit，線性模型自然有優勢。他的原話很平實：</p>
+
+<blockquote>
+「The datasets and the questions that we asked on top were just sort of still on the simplistic side.」
+<span class="attribution">— Theis，解釋為何 perturbation prediction 五年來沒有明顯突破</span>
+</blockquote>
+
+<p>他沒有停在「數據不夠」這種萬能答案，而是給了一個更鋒利的版本：<strong>問題的難度，决定了哪一類模型會贏。</strong>在同一個訪談裡，他用細胞類型預測做對照：</p>
+
+<ul>
+  <li><strong>器官內部</strong>：logistic regression 至今仍接近 state-of-the-art。他們五六年前那篇標題非常直白的論文——「Deep Learning is not needed for cell type prediction」——在這個範圍內仍然成立。CellTypist 就是靠這個吃飯。</li>
+  <li><strong>跨器官</strong>：細胞類型會重複出現，免疫細胞在不同組織會微調，這時非線性才開始有價值。他們用 scTab（表格型基礎模型）證明非線性確實能超越 baseline。</li>
+  <li><strong>空間鄰域預測</strong>：NicheFormer 設計了一個新任務——給你一個細胞的基因表現，預測它鄰居的狀態。因為細胞持續通訊，鄰居的狀態會在這個細胞留下痕跡。這個任務明顯更難，非線性模型才拉開差距。</li>
+</ul>
+
+<div class="highlight-box">
+<strong>這是整集的方法論核心：</strong>不是「深度學習行不行」，而是「你問的是什麼問題」。同一個模型，在簡單問題上看起來很蠢，在難問題上才顯出價值。把「模型無用」當成結論，等於承認自己設計不出夠難的題目。
+</div>
+
+<p>他也順帶補了一刀：Arc 的指標是固定的，而且「not even so single-cell specific」，可以被 exploit。Open Problems 聯盟（多個實驗室共同參與）的做法，是要求參賽者<strong>同時提交自訂指標</strong>，用來量化那些主辦方沒想到的細節。而 Bo Wang 團隊在 Nature 的論文則證明：把指標校準好之後，深度模型其實可以贏過 mean baseline——之前是「問錯問題得到錯答案」。</p>
+
+<blockquote class="strong">
+「I know you wanna do the most fancy deep learning thing, but please, please, have the baseline.」
+<span class="attribution">— Theis 對學生的原話；他補一句：最難的 baseline 有時只是「贏過 mean」</span>
+</blockquote>
+
+<div class="section-title">四、世界模型的正確寫法：F(x, a)，不是 F(x)</div>
+
+<p>這是全集技術含量最高的一段。Theis 把 perturbation prediction 明確定義為 transcriptome 空間的世界模型：</p>
+
+<blockquote class="strong">
+「It's not just a model that is sort of F of X, but F of X comma A.」
+<span class="attribution">— 狀態 x 加上動作 a，預測下一個狀態 x'</span>
+</blockquote>
+
+<p>這個定義帶來一個工程上的必然結果：<strong>表徵學習與生成模型要分開做。</strong></p>
+
+<ul>
+  <li><strong>scConcert</strong> 負責學狀態空間。對比學習，3.5 億個細胞、16 個物種、最大版本約 1 億參數，已在 Hugging Face 公開。論文裡他們以 Geneformer 的 3,000 萬細胞作對照，規模大一個數量級。</li>
+  <li><strong>cell-flow</strong> 負責沿動作 push forward。在同一個 latent space 上做 flow matching，生成擾動後的分佈。已被 Nature Methods 接收。</li>
+</ul>
+
+<p>Theis 反覆強調兩件事不能混為一談：生成質素「very much dependent on a good latent space」。這聽起來像常識，但它是對「端到端建一個虛擬細胞」這個流行敘事的直接否定——<strong>你要先有一個好的狀態空間，才談得上動作模型。</strong></p>
+
+<p>跨物種的 latent space 還帶來一個意外的副產品：可以問演化問題。這不是他實驗室的核心專長，但他顯然覺得有趣——16 個物種放在同一個空間，某種程度上是把「細胞類型」這個人類隱喻，換成一個可以計算的座標系。</p>
+
+<div class="section-title">五、Bitter Lesson 在生物領域：有效，但未輪到</div>
+
+<p>主持人問了一個很深的問題：科學的目標不是預測，而是<strong>簡化</strong>——找到一個描述性模型，可以推廣到未測過的案例。這和 scaling 的邏輯相反。</p>
+
+<p>Theis 的回答分兩層。</p>
+
+<p>第一層是經驗事實：<strong>在主要數據集上，硬塞 inductive bias 會損失預測力。</strong>他舉 AlphaFold 為例：早期版本花了極大力氣把旋轉不變性寫進模型結構；後期版本靠更多數據，讓模型自己學出對稱性，而且更靈活——因為任何你寫死的物理約束，都不會完全正確。</p>
+
+<blockquote>
+「At some point data beats human-made additional concepts in these models.」
+<span class="attribution">— Theis，談 Bitter Lesson 在生物學的版本</span>
+</blockquote>
+
+<p>第二層是但書：<strong>我們還沒到那個點。</strong>細胞空間很大，但擾動空間仍然數據飢渴。在這種 regime 下，混合模型（hybrid，帶適度 inductive bias）仍然是正確選擇。他的判斷不是意識形態，而是對「數據密度」的現實評估。</p>
+
+<p>這也解釋了他為何對 foundation model 熱潮的態度既投入又保留。他承認早期大家「buying into the hype，maybe a bit overbuying」，然後迎來 sobering up；但他不認為這證明 foundation model 方向錯，只證明<strong>當時的數據與任務配不上模型的表達能力</strong>。現在 scConcert 在 3.5 億細胞上已見到清晰的 scaling 行為，他認為這個 regime 很快就會到。</p>
+
+<div class="section-title">六、指標是問題的一部分，不只是模型</div>
+
+<p>這一集最有價值的部分，是把「評測」當成一個獨立的技術問題來談，而不是模型的附屬品。</p>
+
+<p>Theis 的觀察鏈條是這樣的：</p>
+
+<ol>
+  <li><strong>Arc 的指標固定且非單細胞專用</strong>，因此可以被 exploit；移除 exploit 之後，真正最強的方案仍然是 flow matching——這說明非線性確實有必要，只是被錯誤的計分方式掩蓋了。</li>
+  <li><strong>Open Problems 的做法是要求自帶指標</strong>，因為主辦方不可能預先想到所有重要的細節。</li>
+  <li><strong>Bo Wang 的 Nature 論文</strong>更進一步：問題可能出在指標本身；校準之後，深度模型贏過 mean baseline。</li>
+  <li><strong>他自己承認</strong>：在「少數 cell line + 微弱效應」的設定下，線性 baseline 永遠有優勢，因為複雜模型會 overfit。這兩個結論同時成立。</li>
+</ol>
+
+<p>結果是：<strong>評估變得高度依賴任務設計，而任務設計目前沒有共識。</strong>這不是生物學獨有的問題——它和 LLM 領域的 benchmark 通脹、endpoint 準確率差異、scaling law 外推爭議，是同一種病。</p>
+
+<p>他還提到一個有趣的未來：Agent 會自動嘗試各種算法組合，AutoML 類型的工作會被吃掉。他與這類實驗室有合作。那麼人類還剩下什麼？他的答案很清楚：<strong>指標的制定。</strong>「Where maybe our biggest ideas go into it is actually this metric formulation.」</p>
+
+<div class="section-title">七、Lab Compass：反過來問「要做什麼」</div>
+
+<p>如果 perturbation 模型是 F(x, a)，那麼只要有了 forward model，就可以反解：<strong>要達到目標狀態 x'，應該施加什麼動作 a？</strong>這就是 Lab Compass——一個 inverse generative model。</p>
+
+<p>技術上不是最難的部分。Theis 說得坦白：真正的難點在<strong>人</strong>。</p>
+
+<blockquote class="strong">
+「The big part of the work was not just the model, but actually the work with experimental people.」
+<span class="attribution">— Theis，談 Lab Compass 與劍橋造血系統實驗室的合作</span>
+</blockquote>
+
+<p>實驗對象是造血系統，因為它的週轉時間夠快，可以在合理時間內完成 3–4 輪 lab-in-the-loop。每一輪：模型預測 → 濕實驗驗證 → 修正模型 → 再預測。這是「由預測走向指揮下一個實驗」的第一個具體案例，而不是概念圖。</p>
+
+<p>但說服實驗室的人是另一回事。這些實驗往往佔用研究員幾個月時間，而模型的預測只是概率性的。濕實驗的人有直覺、有經驗、有「這個 cell line 不值得做」的判斷；你要他們把幾個月押在一個模型上，靠的不是 benchmark 分數，是信任。</p>
+
+<blockquote>
+「These experiments often take some time... to actually buy into and then actually measure some of the follow-ups.」
+<span class="attribution">— 為何 lab-in-the-loop 是文化問題，不只是技術問題</span>
+</blockquote>
+
+<p>他刻意把機械人降溫：<strong>assay 的週轉時間仍然太長</strong>，在這種 cycle time 下，機械人自動化的回報有限。現階段做的是 active learning（主動選下一個最有信息量的實驗），而不是端到端 RL。「Ultimate vision 是 RL everything，但現在還差得遠。」</p>
+
+<p>這個次序判斷很重要。市場上很多「自動駕駛實驗室」的敘事，把機械人與 RL 放在前面；Theis 把<strong>模型選題</strong>放在前面，因為在 cycle time 以月計的環境裡，選錯實驗的代價遠高於執行慢。</p>
+
+<div class="section-title">八、平台故事為什麼講唔通：護城河是數據，不是模型</div>
+
+<p>這是全集最「不客氣」的一段。Theis 說，過去每一家「建生物基礎模型」的公司，最後幾乎都轉去做藥。原因不是技術失敗，是<strong>投資者的理解框架</strong>：</p>
+
+<blockquote class="strong">
+「If you say you build a virtual cell platform, typically what investors understand... is that at some point you develop a drug.」
+<span class="attribution">— Theis，談平台公司在歐洲與美國的融資現實</span>
+</blockquote>
+
+<p>平台故事的問題是它沒有終點。你可以賣 API、賣 consulting，但這些生意的規模化路徑不清楚，而且隨時可能被通用模型向上侵蝕。他直接點名這種焦慮：「Astra 2.0 might be doing parts of this already.」</p>
+
+<p>他認為唯一講得通的模式，是<strong>模型 + 獨家數據生成</strong>：</p>
+
+<blockquote class="strong">
+「If you couple it with data generation, not just with the modeling part, I think this is where sweet spot hits.」
+<span class="attribution">— Theis，虛擬細胞商業模式的核心條件</span>
+</blockquote>
+
+<p>具體形狀是 consortium，不是 dataset。他與多家藥廠共建 <strong>Cancer Organoid Perturbation Atlas</strong>：藥廠出錢，換取類器官擾動數據的早期訪問權。這個結構同時解決三個問題——數據成本、藥廠對 cell-type context 的需求、初創公司的收入來源。他直言這比「賣模型 API」實在得多，也比「先燒錢建平台、再想辦法變現」可持續。</p>
+
+<p>他也提到 Noetic 是正面例子：有相當規模的數據生成能力，而其中很大一部分是數據 access。這與他對「平台」的保留形成對照——<strong>不是不能做平台，是不能只做平台。</strong></p>
+
+<div class="section-title">九、制度設計：Y 模型、45 個 group leader、三年一個 spinoff</div>
+
+<p>訪談中段轉向科研制度，這部分對做 AI 研究的人可能比技術細節更有用。</p>
+
+<p>Theis 在 Helmholtz Munich 建立的 Computational Health Center，現在約 <strong>45 個 group leader / 教授、500–600 人</strong>。他說是歐洲最大的學術健康 AI 研究中心。結構上與大學不同：沒有本科教學，只有博士生與博士後，但與慕尼黑工業大學、慕尼黑大學（他說是歐盟排名最高的兩所）以及醫院深度連接。</p>
+
+<p>他花了很多時間講 <strong>Munich School for Data Science 的 Y 模型</strong>：每個學生需要兩位 PI——一位方法、一位領域——共同提出項目。學生跑兩個 lab meeting：一個學生物語言與真實問題，一個學方法。這個制度已運行約八年。</p>
+
+<blockquote>
+「Y plus Y equals H.」
+<span class="attribution">— Theis 的冷笑話：兩個 Y 模型導師，帶出一個 H 型人才</span>
+</blockquote>
+
+<p>成果不是口號。他說很多論文來自他原本完全不懂的系統：肺、腦、造血；學生把生物實驗室裡「還沒有函數形式」的問題，翻譯成指標與模型。後續出口也很分散：藥廠、學術、初創、純 AI；NVIDIA 幾個月內從他實驗室挖了兩個人。</p>
+
+<p>他對學生的職涯建議很直接：<strong>不要只做「在歐洲期刊上改進 2% 的模型」</strong>，要有一個真實的濕實驗室問題。下一代計算生物學 PhD 的典型履歷，應該是「一個方法 + 一個應用」，而不是單一維度的論文數量。</p>
+
+<p>制度壓力也來自上面。他對中心的 group leader 說得很白：<strong>三年內每人至少一個 spinoff。</strong>這不是他個人的野心，而是 Helmholtz 這類聯邦研究機構開始要求「value creation outside the academic realm」的結果。他觀察到這件事同時由下而上發生——學生自己在推，因為機會太多。</p>
+
+<div class="section-title">十、歐洲的斷層：早期有錢，後期沒錢</div>
+
+<p>他給了一個很具體的歐洲創新診斷：</p>
+
+<ul>
+  <li><strong>初創數量不缺。</strong>歐盟每年新創公司數量與美國相當。</li>
+  <li><strong>斷層在 Series A/B 之後。</strong>早期 VC 與非稀釋性資金都在，但願意承擔大風險的大額基金仍然在美國。要拿大 ticket，人還是往美國跑。</li>
+  <li><strong>慕尼黑是大陸的 deep tech 資本中心</strong>，尤其 bio 與國防，正在快速增長。他半開玩笑說自己快拿德國公民身份。</li>
+  <li><strong>官僚與數位化仍然是阻力</strong>，但初創創建在德國已比歐洲多數地方有競爭力，柏林與慕尼黑是熱點。</li>
+</ul>
+
+<p>監管則是雙面刃。他一方面讚 EU 的標準化能力——USB-C 這種「全歐洲一個插頭」的協調，是真正的優勢；另一方面直指 AI Act 令數據訪問更複雜，尤其醫院之間的資料互通。他舉芬蘭與丹麥的 biobank 為例：醫療記錄與採樣連接得比德國、甚至比美國跨州系統都好。European Health Data Space 要求兩年內跨境互通，他認為方向正確，但速度不夠。</p>
+
+<p>這種「同一套制度既是優勢也是阻力」的觀察，比單純讚或彈監管更有信息量。歐洲的問題不是沒有制度，而是<strong>制度的協調成本被計入創新成本，卻沒有被計入政策宣傳</strong>。</p>
+
+<div class="section-title">十一、空間組學的語言缺口</div>
+
+<p>訪談後段有一個很短但很重要的觀察。Theis 說，單細胞領域有一個非常成功的人類隱喻——「細胞類型」。它不完美（「nature doesn't care about it」），但它讓整個領域可以溝通、可以分類、可以建模型。</p>
+
+<p>但對於「局部 niche」，我們沒有對應的詞彙。</p>
+
+<blockquote class="strong">
+「We don't have a similar metaphor for local niches of cells.」
+<span class="attribution">— Theis，談空間組學的方法論空白</span>
+</blockquote>
+
+<p>病理學家看 H&E 切片時仍然高度定性；目前的做法是把 niche 當成細胞分佈來處理，但他認為應該更接近<strong>圖（graph）結構</strong>——節點是細胞，邊是鄰接與訊號。這不是一個模型架構問題，而是一個<strong>表徵語言</strong>問題：沒有共同詞彙，就沒有共同 benchmark；沒有共同 benchmark，就很難比較模型。</p>
+
+<p>這與他前面談 NicheFormer 的邏輯一致：先造一個夠難、夠有意義的任務（預測鄰居狀態），逼模型學到空間結構；但任務背後的語言，仍然未發明。</p>
+
+<div class="section-title">十二、我的萃取：五個判斷</div>
+
+<ol>
+  <li><strong>「虛擬細胞」的瓶頸不是模型能力，是問題設計。</strong>五年來最大的進步不是某個架構，而是終於承認「現有數據配不上深度學習」。這句話的表面是謙虛，實際上是對整個領域的批評：如果你五年都做不出夠難的數據集，那是領域的瓶頸，不是模型的錯。</li>
+  <li><strong>世界模型的形式定義，比「foundation model」這個詞有用得多。</strong>F(x, a) 逼你回答三個問題：狀態空間怎麼學、動作怎麼表示、兩者怎麼對齊。任何一個答不出來，「虛擬細胞」就只是願景。</li>
+  <li><strong>Control 是文化問題，不是 RL 問題。</strong>Lab Compass 最難的部分是說服濕實驗室的人押上幾個月。這一點對所有「AI 自動做實驗」的敘事都是冷水：機械人的瓶頸不是動作精度，是 assay 的 cycle time 與人的信任。</li>
+  <li><strong>護城河是「模型 + 獨家數據生成」，不是模型本身。</strong>Consortium 模式（藥廠付費換早期數據訪問）同時解決數據成本、客戶需求與收入來源，是這集最具體、最可複製的商業 insight。平台公司轉做藥，不是策略選擇，是融資語言的必然。</li>
+  <li><strong>制度是技術路線的一部分。</strong>Y 模型、三年一個 spinoff、European Health Data Space——這些不是背景，而是決定了什麼樣的研究可以存在。Theis 的實驗室能同時做 scConcert（3.5 億細胞）與 Lab Compass（3–4 輪濕實驗），靠的是 Helmholtz 這種「長期聯邦資金 + 醫院連接」的結構，不是任何一個 PI 的個人能力。</li>
+</ol>
+
+<div class="section-title">十三、爭議與未解</div>
+
+<ol>
+  <li><strong>「問題不夠難」是否等於「模型無用」？</strong>他的立場比多數人溫和，但更尖銳：不是深度學習不行，是現有數據集配不上。反對者會說：如果一個領域五年都做不出夠難的數據集，那本身就是領域的瓶頸。這個反駁他沒有正面回應。</li>
+  <li><strong>指標校準 vs 指標投機。</strong>他承認 Arc 的優勝方案（flow matching）在移除 exploit 之後仍然最強，但同時承認簡單設定下線性 baseline 永遠有優勢。兩個結論同時成立，令評估高度依賴任務設計——而任務設計目前沒有共識。</li>
+  <li><strong>平台公司的價值。</strong>他對「建生物基礎模型」的公司相當保留，認為多數最後會轉做藥。這對目前以 platform 估值融資的公司，是一個不客氣的判斷。但 consortium 模式本身也有依賴：少數大藥廠的採購週期、數據獨家性與學術發表之間的張力，他都沒展開。</li>
+  <li><strong>歐洲監管的雙面性。</strong>他一方面讚 EU 標準化與健康數據空間，另一方面直指 AI Act 令數據訪問更複雜。這種「同一套制度既是優勢也是阻力」的觀察有信息量，但他沒有給出任何具體的政策優先次序。</li>
+  <li><strong>訪談本身的限制。</strong>這是學術視角的訪談，他開場就聲明自己對初創生態的了解是「overview and intuition」，不是 day-to-day。所有關於估值、融資、商業模式的判斷，應該當作學術觀察，不是投資建議。引文來自自動字幕，語氣已校對，但非逐字保證。</li>
+</ol>
+
+<hr>
+
+<p>把這一集與同日的 Latent Space AINews 放在一起，會看到一條很清楚的主線：<strong>2026 年 11 月，AI 行業真正的瓶頸已經不是能力，而是「如何設計一個值得解的難題，並且誠實地測量它」。</strong></p>
+
+<p>Theis 用 1.8 億美元級的 Biohub 計劃買數據，來製造更難的問題；Thinking Machines 用 launch-blocking eval 鎖住「可定制」這個目標；METR 用 Anthropic 內部數據繞過公開 benchmark 的失真。三個機構、三種方法、同一個方向。</p>
+
+<p>而 Theis 這一集最珍貴的，不是任何一個數字，而是一個次序：<strong>先承認問題太簡單，再談模型；先有好的狀態空間，再談動作；先有數據生成，再談平台；先說服人，再談自動化。</strong>在一個所有人都想直接跳到「AI 科學家」的行業裡，這種次序感本身就是一種稀缺品。</p>
+
+<footer>
+  <p><strong>來源</strong>：Latent Space「AI for Science」子系列，〈Controlling Biology — Fabian Theis, Helmholtz Munich〉，2026-11-06 15:10 UTC 發布，51 分鐘；主持 RJ Honicky（Mira Omics CTO）、Brandon Anderson（Atomic AI）。逐字稿取自官方 podcast transcript（62,971 字元）。文中引文為自動字幕轉錄，語氣已校對，非逐字保證。數據與論文名稱（scGen 2019、NicheFormer、scConcert、cell-flow、Lab Compass、Biohub $1.8B、Pars Bio 1,000 萬轉錄組、Helmholtz 45 group leaders）以節目內容及公開資料為準；部分數字為嘉賓口述，未逐項回查一手論文。</p>
+  <p><strong>生成時間</strong>：2026-11-07 06:00 UTC｜Deep Dive #260｜AI Podcast Daily</p>
+</footer>
+
+</div>
+</body>
+</html>
