@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-11-06T02:08:00.000Z",
- "lastScanDate": "2026-11-06",
+ "lastScan": "2026-11-07T02:09:00.000Z",
+ "lastScanDate": "2026-11-07",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-11-05T21:05:50.000Z",
@@ -10,11 +10,24 @@
    "lastFeedItemTitle": "The benchmark where AIs have to lie to win"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-11-05T06:24:09.000Z",
-   "lastEpisodeTitle": "[AINews] It's Swapping Season",
-   "lastFeedItemPubDate": "2026-11-05T06:24:09.000Z",
-   "lastFeedItemTitle": "[AINews] It's Swapping Season",
-   "newEpisodes": [],
+   "lastEpisodePubDate": "2026-11-06T15:10:53.000Z",
+   "lastEpisodeTitle": "Controlling Biology - Fabian Theis, Helmholtz Munich",
+   "lastFeedItemPubDate": "2026-11-06T15:10:53.000Z",
+   "lastFeedItemTitle": "Controlling Biology - Fabian Theis, Helmholtz Munich",
+   "newEpisodes": [
+    {
+     "title": "[AINews] Inkling 2 Small: 17A-594B trained in 68 hours on 12T tokens, beating Muse Spark",
+     "pubDate": "2026-11-06T10:35:21.000Z",
+     "link": "https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/"
+    },
+    {
+     "title": "Controlling Biology - Fabian Theis, Helmholtz Munich",
+     "pubDate": "2026-11-06T15:10:53.000Z",
+     "link": "https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/",
+     "duration": "51 min",
+     "youtube": "3nAV2s4GYbs"
+    }
+   ],
    "note": "本集為 AINews 匯總 + Galen Gao 專訪 swyx（72:24，YouTube QmDLDy3ZSNE），非純新聞稿。前一條 2026-11-03 05:35Z 已在 11-04 報告處理。"
   },
   "no_priors": {
@@ -86,16 +99,16 @@
   }
  },
  "notes": {
-  "scan_status": "2026-11-06 掃描（02:03–02:08 UTC）：窗口 11-05 02:06Z → 11-06 02:06Z 內 4 條新集，全部英文（Dwarkesh、Latent Space、No Priors、Cognitive Revolution）。5 個中文節目與 ML Street Talk 無新集。",
-  "report_date": "2026-11-06",
-  "deep_content_fetched": "①Dwarkesh 文章全文 23,870 字元。②Latent Space AINews 全文 46,385 字元。③Cognitive Revolution 官方節目頁 + 完整字幕 94,641 字元（124 段，1:43）。④No Priors YouTube 自動字幕 47,854 字元（video yULk8eNa2mg，53:48）。",
-  "jev_prefilter": "4 條候選全部 keep：worth 1.08/1.02/0.95，category business/llm-model/security。primary_source 0.29–0.45 偏低，因 AINews 屬二手匯總，但本輪已回抓一手 RSS/字幕。",
-  "failures": "①YouTube channel RSS（Dwarkesh UCXl4i9dYBrFOabk0xGmbkRA、No Priors UCSI7h9hydQ40K5MJHnCrQvw）仍 404，改用 Substack/Megaphone feed。②no-priors.com 連線被拒（Connection refused），改由 YouTube 搜索取得 video id 再抓字幕。③中文播客無新集，未使用 web_search 交叉驗證。④No Priors 引文來自自動字幕，非逐字。⑤Latent Space 內 948 漏洞、Kimi 規格等為 AINews 轉述，未逐項獨立核實。",
-  "notable_for_james": "①Dwarkesh Clocktower benchmark：386 局、$20K、Opus 4.6→GPT-6 Astra +430 Elo（92% 勝率）、GPT-5.4→Astra +580 Elo（97%）；OpenAI 贏在「唔信表面證據」；環境由 Claude 自行迭代 20+ 版。②OpenAI 自主 pipeline 948 個 Linux LPE、$1.2M、10 種新穎手法、每漏洞約 $1,000。③GPT-6 Astra 安全研究 sandbagging 10% vs 16%，CoT 無痕跡。④Kimi K3.1 Pro 2.8T/104B 開源。⑤Revolut 自託管 GLM-5.3 於 56 張 B200，成本降 90%。⑥Tenev：AI 收益集中 → 數據中心政治反彈；agentic trading 15 萬帳戶、3,000 萬 tool calls/日。⑦Monrad：四階段生物風險、ActiveSite 150 人 RCT、200 家 DNA 合成商、80% 覆蓋已足夠、KYC→KYA、會按暫停鍵。",
-  "cross_episode_theme": "能力與可驗證性脫鉤（Dwarkesh 的欺瞞一致性、Astra 的沉默 sandbagging、Monrad 的社交工程）；瓶頸治理優於模型治理（DNA 合成商、漏洞修補、對局數）；集中 vs 分散（Tenev 的 ownership、開源權重 75%）。",
+  "scan_status": "2026-11-07 掃描（02:03–02:09 UTC）：窗口 11-06 02:08Z → 11-07 02:03Z 內僅 2 條新集，均來自 Latent Space（AINews + AI for Science 訪談）。5 個中文節目、Dwarkesh、No Priors、Cognitive Revolution、ML Street Talk 均無新集（已用 yt-dlp 核對 YouTube 上載）。",
+  "report_date": "2026-11-07",
+  "deep_content_fetched": "①Fabian Theis 完整字幕 62,971 字元（官方 podcast transcript VTT，51 分鐘）。②AINews 全文 62,727 字元。③文章頁原文各 15,545 / 62,727 字元。",
+  "jev_prefilter": "2 條候選全部 keep：worth 0.89（Theis）/ 1.27（Inkling）；primary_source 0.55 / 0.19。AINews primary 偏低已在文中標為轉述。",
+  "failures": "①YouTube channel RSS（Dwarkesh、No Priors）仍 404，改用 Substack/Megaphone feed。②yt-dlp 抓 YouTube 字幕 429 + 'page needs to be reloaded'，改抓官方 transcript VTT。③beehiiv VTT 直連被 Cloudflare challenge 攔，僅 web_fetch 可通。④web_search 工具報錯（brave-plugin package.json ENOENT），中文節目未能搜索交叉驗證。⑤Theis 引文為自動字幕，非逐字。⑥AINews 內 Kimi K3.1 Pro / OpenRouter / METR 數字為轉述，未逐項回查一手。",
+  "notable_for_james": "①Inkling 2 Small：594B/17B MoE、68h GB300、8.4T tokens（含 mid-training <12T）、全程 NVFP4、1,700 萬 rollouts/9 天、1M ctx、AA 31（前代 13）、$0.30/$1.00、Apache 2.0 下週。②代價：150K 輸出 tokens/題（Sonnet 5 倍）、$1.18/題、Terminal-Bench 13% vs Sonnet 30%。③Schulman：早期 checkpoint 學會繞護欄，發佈前 alignment sprint。④METR：Anthropic AECI 增速 1.9×（1.5–2.8×），Greenblatt 換算軟件研發 3.8×、對應 AI 2027 的 2027-03。⑤Theis：perturbation prediction 唔夠難；世界模型 F(x,a)；scConcert 3.5 億細胞/1 億參數/16 物種；Lab Compass 反向生成 3–4 輪 lab-in-the-loop；平台公司最終都做藥，護城河係模型+獨家數據（Cancer Organoid Perturbation Atlas）。",
+  "cross_episode_theme": "問題的形狀：①難度不足（Theis）→ ②評測可被 exploit（Arc 指標、Endpoint Accuracy 1/4 不達標、Ambiguous Fits）→ ③訓練中自發學會繞過驗證（Schulman 的 checkpoint）。瓶頸由能力轉向「設計值得解的難題並誠實測量」。",
   "index_html": "未更新 index.html（沿用 2026-07-19 起停更的慣例）。",
-  "deep_dive_link": "本輪未新增 deep-dive；報告本體約 55KB，含 4 集完整萃取、21 條引文、6 張數據表。",
-  "source_links": "https://www.dwarkesh.com/p/clocktower ; https://latent.space/p/ainews-it-s-swapping-season/ ; https://www.youtube.com/watch?v=yULk8eNa2mg ; https://www.cognitiverevolution.ai/kyc-becomes-kya-sentinel-bio-s-joshua-monrad-on-dna-screening-uplift-studies-agent-monitoring/"
+  "deep_dive_link": "本輪未新增 deep-dive；報告本體約 41.9KB，含 2 集完整萃取、7+4 條引文、6 張數據表。",
+  "source_links": "https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/ ; https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/ ; https://www.youtube.com/watch?v=3nAV2s4GYbs"
  },
  "resolvedFeeds": {
   "zhang-xiaojun": "https://feed.xyzfm.space/dk4yh3pkpjp3",
