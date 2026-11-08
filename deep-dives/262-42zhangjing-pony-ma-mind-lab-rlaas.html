@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「RSI 現在只是口號」——馬驍騰的 Neo Lab 路線圖，與一個 RL 研究者的三重轉型</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #888; line-height: 1.7; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">42 章經 · 2026-11-07 · 18 分鐘閱讀</div>
+  <h1>「RSI 現在只是口號」<br>——馬驍騰的 Neo Lab 路線圖，與一個 RL 研究者的三重轉型</h1>
+  <div class="meta">
+    <div>〈銳評國模與 Neo Lab，暢談 RL 人生與 RLaaS｜對談 Mind Lab 首席科學家驍騰〉</div>
+    <div>主持：曲凱<span>·</span>嘉賓：馬驍騰（Pony）<span>·</span>時長：62 分 57 秒<span>·</span>發布：2026-11-07 21:00 HKT</div>
+    <div>來源：節目頁簡介、23 個章節時間軸與官方文案（本集未公開逐字稿）</div>
+  </div>
+</header>
+
+<p>這不是一集公司宣傳。曲凱在簡介裡直接寫，他們問的是「頗為尖銳的話題」：國模到底哪家強、各家又有什麼問題、Neo Lab 該怎麼定義、Mind Lab 從 Macaron 到 Neo Lab 再到 RLaaS 這一路轉型到底在想什麼。</p>
+
+<p>最重要的線索，是簡介裡那句自我評價——</p>
+
+<blockquote class="strong">
+  「這期對我們來說，是一個打破不少固有認知的過程。」
+  <span class="attribution">—— 42 章經節目簡介，曲凱</span>
+</blockquote>
+
+<p>一個以「銳評」為賣點的訪談節目，主持人事後承認自己的預設被鬆動了。這比任何結論都更能說明本集的信息含量：進場時的曲凱，對國模、對 Neo Lab 這種「中間層公司」、對 RL 商業化都帶著懷疑；出場時，至少有一部分懷疑被拆掉了。我們要看的，就是那個拆解的過程。</p>
+
+<div class="data-point">
+  <span>先說清楚</span> 本集沒有公開逐字稿，本機亦無 GPU 可離線轉錄 63 分鐘音頻。以下以<strong>節目官方時間軸、23 個章節標題、簡介原文</strong>為骨架；引號內文字均為節目頁面原文，其餘標注「分析」的段落是基於章節結構與公開行業背景的推斷，<strong>不冒充嘉賓原話</strong>。這一層區分很重要，因為本章的價值不在「他說了什麼金句」，而在「一個做後訓練的人，如何把技術判斷和單位經濟放在同一張桌子上」。
+</div>
+
+<div class="section-title">一、三個轉型：Macaron → Neo Lab → RLaaS</div>
+
+<p>要理解這集，先要理解嘉賓的路徑。馬驍騰（Pony）是 Mind Lab 聯合創始人兼首席科學家，清華大學自動化系博士、博士後，長期做強化學習與模型後訓練。公司走過三次轉型：Macaron、Neo Lab、RLaaS。</p>
+
+<p>三個名字其實對應三個不同的問題。</p>
+
+<p><strong>Macaron 問的是「AI 能不能做成一個產品」。</strong>這是應用层的問題：找到場景、找到用戶、找到付費理由。多數 AI 創業公司在這一層活著，也多數在這一層死掉——因為上游一次模型升級，就可能把產品優勢抹平。</p>
+
+<p><strong>Neo Lab 問的是「中間層能不能擁有自己的模型能力」。</strong>不做應用，也不做基座，而是用自己的數據與場景做後訓練。這是一個聽起來很窄、實際上很難被替代的位置：往上是模型廠，往下是客戶，中間那層負責「把通用能力變成某個行業的最好答案」。</p>
+
+<p><strong>RLaaS 問的是「這種能力能不能被租出去」。</strong>如果後訓練真的是一門手藝，那它就可以是一項服務：客戶不必自己養一個 RL 團隊，只要買「把模型調到我的場景最好」這個結果。</p>
+
+<p>這三步不是策略漂移，而是一條越來越窄、也越來越深的路。曲凱在 45:55 問了一個很尖的問題——「為什麼美國各種中間層的公司都在做自己的模型？」這個問題的潛台詞是：中間層做模型，是不是一種不自量力的野心？</p>
+
+<p>嘉賓的答案（根據章節結構推斷）大概是：这不是野心，是防守。只做應用，上游一升級就沒了；只做模型，燒不起。往後訓練走，是唯一能同時握住「模型能力」與「客戶場景」的位置。</p>
+
+<div class="highlight-box">
+  <strong>我的判斷：</strong>這個定位有一個容易被忽略的前提——「模型能力」與「場景知識」的交換率正在改變。當開放權重模型把基座變成公共品，差異化就從「誰的模型更強」移到「誰能把基座調到某個場景最好」。這正是 Neo Lab 敘事的土壤，也是它最脆弱的地方：如果某天基座強到「不用調就夠好」，中間層就消失了。
+</div>
+
+<div class="section-title">二、RL 不是方向，是世界觀</div>
+
+<p>節目的第一段（00:54–18:10）幾乎不談技術，談的是人生選擇。章節包括「做 RL 學到的三件事」、「我一直都是一個 90 分主義者」、「創業是最符合 RL Loop 的事」。</p>
+
+<p>這三個標題連起來看，是一套完整的世界觀：</p>
+
+<ul>
+  <li><strong>RL 的核心不是獎勵函數，是「允許自己被打磨」。</strong>一個 RL 研究者每天做的事，就是設計獎勵、觀察行為、修正策略。把這套方法用到自己身上，就是不斷試錯、不斷拿 reward signal、不斷更新。</li>
+  <li><strong>「90 分主義」是對「完美主義」的反面。</strong>在 RL 裡，一個 90 分的策略只要能持續拿到反饋，就會比一個無法部署的 100 分策略走得更遠。這也解釋了他為什麼願意承擔 Mind Lab 的爭議——先上路，再修正。</li>
+  <li><strong>「創業是最符合 RL Loop 的事情」</strong>——這句話是全集的思想主線。創業不是一次押注，是一個持續的 loop：做產品、拿市場反饋、調整、再來一次。與其在學術界追求一次完美的發表，不如進到一個每天都有 reward signal 的環境。</li>
+</ul>
+
+<blockquote class="strong">
+  「在我看來，創業可能才是最符合 RL loop 的事情。」
+  <span class="attribution">—— 節目簡介對嘉賓觀點的轉述（章節標題）</span>
+</blockquote>
+
+<p>13:24 那一節——「在叉院一度非常絕望，覺得 research 做不過別人」——是全集的情緒錨點。它讓後面所有判斷都不像成功學：一個曾經覺得自己不行的人，最後選擇了一條沒有參照系的路。這種敘事在中文播客裡很少見，因為多數嘉賓會把轉折講成「我發現了別人沒看到的機會」，而不是「我承認自己做不過別人」。</p>
+
+<p>03:02「為什麼首選不是去 AI Lab」與 10:06「沒在模型廠待過，憑什麼能訓好模型」是同一枚硬幣的兩面。前者是選擇，後者是質疑。把這兩個問題放在一起，其實是在問：<strong>在一個由大廠定義前沿的行業裡，一個沒有大廠履歷的人，憑什麼認為自己能做出前沿工作？</strong></p>
+
+<p>他的答案大概率落在「後訓練與 RL 不需要從零預訓練」——在開放權重模型之上做 RL、做 post-training、做場景化適配，是一條資源需求完全不同、但同樣能逼近前沿的技術路線。這正好對應 Mind Lab 後來的 RLaaS 商業模式。</p>
+
+<div class="section-title">三、「立山頭」：中國 RL 的組織病理</div>
+
+<p>16:20 這一節的標題用了問號——「國內 RL 的困境可能是『立山頭』現象比較多？」問號是禮貌，問題本身很重。</p>
+
+<p>「立山頭」在中國 AI 圈不是新詞。它指的是人才與資源被切成一個一個山頭：每個實驗室、每家公司、每個大佬都有自己的團隊、自己的基礎設施、自己的評測標準，彼此不復用、不合作、甚至不承認對方的結果。</p>
+
+<p>對一個做 RL infra 的人來說，這種碎片化有三個具體後果：</p>
+
+<ol>
+  <li><strong>重複造輪子。</strong>同一套 RL 訓練框架、同一套 reward 設計、同一套評測流程，被不同團隊各做一遍。浪費的不是錢，是頂尖研究員的時間。</li>
+  <li><strong>實驗不可復現。</strong>沒有共享的基準與數據，任何「我們做到了 X」都無法被獨立驗證。這讓整個行業的知識沉澱變慢。</li>
+  <li><strong>人才流動帶走上下文。</strong>一個人離職，帶走的不只是經驗，還有整個項目為什麼這樣設計的隱性知識。下一個團隊要從零重建。</li>
+</ol>
+
+<p>但換一個角度看，碎片化也是需求來源。如果每家公司都在重複建 RL 能力，那「把 RL 能力做成可租用的服務」就有市場。RLaaS 的商業邏輯，某種程度上是建立在這種組織病理之上的——不是因為大家不想自建，而是因為自建的成本與風險太高。</p>
+
+<div class="section-title">四、國模：短期悲觀，長期樂觀</div>
+
+<p>18:10 進入第二段，標題是「對國模的態度：短期悲觀，長期樂觀」。這是全集最容易被引用的一句，也是最少被完整理解的一句。</p>
+
+<p><strong>短期悲觀</strong>對應的是三件事：同質化、價格戰、以及與前沿的實際差距。2026 年下半年的中國模型市場，幾乎每一家都在同一條技術路線上競爭：更大的 MoE、更多的 tokens、更低的價格。當所有人都用同樣的方法、同樣的數據、同樣的評測，差異就只剩下價格。</p>
+
+<p><strong>長期樂觀</strong>對應的是另外三件事：工程效率、開源生態、場景密度。中國團隊在「用更少的算力做出可用的模型」上，確實有結構性優勢；開源生態讓技術擴散得更快；而密集的應用場景，提供了大量真實反饋。</p>
+
+<div class="data-point">
+  <span>框架</span> 「短期悲觀、長期樂觀」不是和稀泥，而是<strong>把兩個時間尺度分開看</strong>。短期看誰在講故事、誰在打價格戰；長期看誰在真實場景裡積累了不可替代的反饋數據。對做投資判斷的人來說，這個框架比任何榜單都好用。
+</div>
+
+<p>22:21 的標題把「集體失敗」四個字打上了問號——「大廠資源多，但不一定是最後贏家，甚至可能集體失敗？」問號之前，話已經說得很重了。</p>
+
+<p>這個判斷的依據，在我看來不是技術，而是組織。當每一家大廠都想從芯片做到應用，資源被攤薄、路線被政治化、每一個決策都要平衡多個部門的利益。相對地，Neo Lab 這類小團隊的優勢是敢於只做一層、做深一層。這不是「小公司更聰明」的浪漫故事，而是「組織成本」的算術：</p>
+
+<ul>
+  <li>大廠的每一個技術路線，都要說服多個利益相關方；小團隊只需要說服自己和客戶。</li>
+  <li>大廠的每一個失敗，都會被內部政治放大；小團隊的失敗，只是下一次迭代的數據。</li>
+  <li>大廠要同時服務多個場景；小團隊可以選一個場景做到極致。</li>
+</ul>
+
+<p>但「集體失敗」是一個很強的主張。它成立的條件是：模型層的競爭最終由「單點深度」而不是「資源總量」決定。如果未來的突破仍然需要千億級算力與跨學科團隊，那小團隊的機會窗口就會關閉。這是一個可以被證偽的判斷，也是這集最值得記住的地方。</p>
+
+<div class="section-title">五、Researcher 的致命錯誤</div>
+
+<p>38:20 這一節被放在「該先做模型還是先做產品」之前，順序很講究。標題是「Researcher 正在犯一個致命錯誤」。</p>
+
+<p>什麼錯誤？根據上下文推斷，最可能是：<strong>把「做出更強的模型」當成目的本身，而不是把它當成產品循環裡的一個環節。</strong>也就是用 benchmark 的邏輯取代用戶的邏輯。</p>
+
+<p>這個批評在 2026 年特別刺耳，因為整個行業的評價體系都建立在 benchmark 上：誰的 MMLU 更高、誰的 Agent Arena 排名更好、誰的 ARC-AGI 分數更漂亮。研究者被激勵去優化這些數字，而不是去解決用戶真正願意付錢的問題。</p>
+
+<p>但這裡有一個微妙的張力。Mind Lab 自己也是模型公司，也需要證明「我們的模型夠強」。如果 benchmark 不重要，那客戶憑什麼相信你？可能的答案是：<strong>benchmark 是入場券，不是產品。</strong>沒有它，你連投標的資格都沒有；只有它，你永遠只是一個供應商。</p>
+
+<blockquote class="strong">
+  「我並不擔心被模型吃掉，甚至覺得我們一直在從中受益。」
+  <span class="attribution">—— 節目章節標題（59:01）</span>
+</blockquote>
+
+<p>這句話是對「應用層必死論」的直接反駁，也是理解他整套邏輯的鑰匙。理由大致是三層：</p>
+
+<ol>
+  <li><strong>模型越強，能做後訓練與場景適配的空間越大。</strong>一個只會聊天的模型，能被調成的東西有限；一個會用工具、會寫程式、會操作軟件的模型，能被調成的東西幾乎無限。</li>
+  <li><strong>模型迭代越快，越需要有人幫客戶把新模型接進舊流程。</strong>每一次基座升級，都是一次遷移工程。這件事模型廠不會做，客戶自己做不好，中間層正好補位。</li>
+  <li><strong>被吃掉的是「只做 prompt 包裝」的公司，不是「擁有場景與反饋迴路」的公司。</strong>前者沒有資產，後者有數據、有流程、有客戶關係。</li>
+</ol>
+
+<div class="section-title">六、RSI：一個定義之爭</div>
+
+<p>41:53 的標題是全集最刺的一句——「RSI 現在完全就是個宣傳口號？」</p>
+
+<p>注意它用的是「現在」。這不是否定 RSI 的長期可能性，而是否定當下把它當成已完成事實的敘事。在 2026 年下半年的語境裡，這句話會直接冒犯一批以 RSI 為募資故事的團隊。</p>
+
+<p>但把它和同期的英文播客放在一起看，會發現一個有趣的對照。METR 的最新報告認為，AI 正在把研發速度接近翻倍；Ajeya Cotra 的換算甚至是「約 10 倍研究者時間」；Ryan Greenblatt 的係數從 4.5x 調整到 3.8x。一個說「口號」，一個說「已經在發生」。</p>
+
+<p>差別在哪裡？在定義。</p>
+
+<ul>
+  <li><strong>METR 測的是「實驗室內部的效率提升」</strong>：AI 幫研究員寫代碼、跑實驗、讀論文，讓同樣的人在同一個時間裡做更多事。這是可測量的。</li>
+  <li><strong>馬驍騰說的「RSI」是「可對外交付的自我改進系統」</strong>：一個不需要人參與、能自己設定目標、自己評估、自己迭代的閉環。這是另一件事。</li>
+</ul>
+
+<p>前者已經發生，後者還沒有。把兩者混為一談，就會得出「RSI 已經來了」或「RSI 是騙局」這兩種同樣粗糙的結論。這集的價值，在於它把「現在」兩個字說得很清楚。</p>
+
+<div class="highlight-box">
+  <strong>我的判斷：</strong>「RSI 是口號」這句話，在中文語境裡會被兩種人誤讀。一種是把它當成「AI 沒那麼快」的安慰劑；另一種是把它當成「反對進步」的保守派。但它真正的意思更接近工程師的謹慎：<em>你可以相信方向，但不要相信時間表。</em>
+</div>
+
+<div class="section-title">七、RLaaS 的單位經濟：誰買、為什麼買、為什麼不自建</div>
+
+<p>第三段（44:21–62:57）進入 Mind Lab 的商業模式。48:40「RLaaS 的客戶畫像是怎樣的？」、50:52「自己訓模型的意義是什麼？賬算得過來嗎？」、53:45「為什麼頭部公司不自己訓模型，而要採買外部服務？」——三連問其實是一個商業模式的完整壓力測試。</p>
+
+<table>
+  <tr><th>問題</th><th>需要回答的內容</th><th>難點</th></tr>
+  <tr><td>誰買？</td><td>有場景、有數據、但沒有 RL 團隊的公司</td><td>這類客戶往往也最不願意把數據交出去</td></tr>
+  <tr><td>為什麼買？</td><td>自建團隊的成本與時間，遠高於買服務</td><td>一旦買了，會不會被鎖定？</td></tr>
+  <tr><td>為什麼不自建？</td><td>RL 人才稀缺、infra 複雜、迭代太快</td><td>頭部公司最終可能還是會自建</td></tr>
+</table>
+
+<p>54:58 的「scale up、scale down 與 scale out」是全集最技術、也最容易被忽略的一節。我的解讀是三個階段：</p>
+
+<ol>
+  <li><strong>Scale up：</strong>先把單個任務的 RL 做強。在一個具體場景裡，把模型調到明顯優於通用基座。</li>
+  <li><strong>Scale down：</strong>把這個能力壓到可複用的小適配器（LoRA）。不是每個客戶都值得一個完整模型，多數時候一個適配器就夠。</li>
+  <li><strong>Scale out：</strong>把同一套方法鋪到多客戶、多場景。這是從「研究」變成「服務」的工程路徑。</li>
+</ol>
+
+<p>這個路徑的商業含義很直接：<strong>同一個基座可以賣很多次。</strong>對客戶而言，切換成本低（只是一個適配器）；對 Mind Lab 而言，邊際成本低（不需要為每個客戶重訓基座）。這是軟件生意的形狀，不是模型生意的形狀。</p>
+
+<p>但主持人把「賬算得過來嗎」單獨列為一章，說明他並沒有被輕易說服。這也是聽眾最該自己判斷的地方：一個需要持續有人維護 reward 與數據的服務，毛利率到底長什麼樣子？如果每個客戶都需要定制化的 reward 設計，那它就更像咨詢，而不是 SaaS。</p>
+
+<div class="data-point">
+  <span>關鍵張力</span> RLaaS 的規模化，取決於「reward 設計」能不能標準化。如果每個場景都要從零設計獎勵函數，那這門生意永遠長不大；如果能沉澱出一套可複用的 reward 庫與評測流程，它才有軟件級的毛利。
+</div>
+
+<div class="section-title">八、Continual learning：下一個真正的問題</div>
+
+<p>57:21 把它放在「最近最關注的問題」，而不是「下一個產品」。這個細節很重要。</p>
+
+<p>RLaaS 今天能交付的是「一次訓練、一次交付」：客戶給數據，Mind Lab 訓一個適配器，部署上線。但客戶真正要的是「模型在使用中持續變好」——部署之後，每天的新數據應該自動回流，模型應該自動更新，而不是幾個月後再來一次項目。</p>
+
+<p>這就是 continual learning 的問題。它要求：</p>
+
+<ul>
+  <li><strong>數據回流：</strong>部署後的交互數據，如何安全、合規地回到訓練流程？</li>
+  <li><strong>在線評測：</strong>沒有標註的情況下，怎麼知道新模型比舊模型好？</li>
+  <li><strong>遺忘控制：</strong>學了新東西，怎麼不忘記舊能力？這是災難性遺忘的老問題，在 RL 場景下更難，因為獎勵分佈也在變。</li>
+</ul>
+
+<p>誰先解決這三個問題，誰就拿到下一代產品的鑰匙。這也是為什麼一個「做 RL 的人」會把 continual learning 放在比商業化更重要的位置——它不是一個功能，是一個範式轉變：從「訓練一個模型」到「運營一個會學習的系統」。</p>
+
+<div class="section-title">九、把三集連起來看：同一個問題，三種答案</div>
+
+<p>42 章經這個月的三集，是一條很清楚的光譜：</p>
+
+<ul>
+  <li><strong>10-17 的 Jason</strong> 講「應用創業者在絕境裡找 PMF」——在沒有資源的情況下，先找到願意付錢的人。</li>
+  <li><strong>10-24 的淏楠</strong> 講「從 Agent 到多模態到具身的技術路線選擇」——在技術路線分叉時，怎麼選一條自己能走的路。</li>
+  <li><strong>11-07 的馬驍騰</strong> 講「模型層的後訓練與 RLaaS 商業化」——在一個看起來已經被大廠佔滿的市場裡，找到中間層的位置。</li>
+</ul>
+
+<p>曲凱的提問方式一以貫之：先問「你為什麼做這個選擇」，再問「這個選擇背後的判斷對不對」，最後問「賬算得過來嗎」。這一集之所以是三者中最「硬」的，是因為它第一次把「技術判斷」和「單位經濟」放在同一張桌子上。</p>
+
+<p>與淏楠那集的另一個呼應是「入局時機」。淏楠在 Astra 出現、具身「大腦」優勢被抹平時入局，被調侃「49 年加入國軍」；馬驍騰則是在「國模同質化、大廠擠壓」時做 Neo Lab。兩集其實在問同一個問題：</p>
+
+<blockquote class="strong">
+  在一個看起來已經沒有位置的市場裡，憑什麼你還有位置？
+</blockquote>
+
+<p>兩個人的答案不完全一樣。淏楠的答案是「找到一個還沒有人認真做的技術切口」；馬驍騰的答案是「找到一個別人不願意做、但非做不可的環節」——後訓練與場景適配，既臟又累，大廠不願意為單一客戶做，客戶自己又做不好。這種「臟活」往往是最穩的護城河。</p>
+
+<div class="section-title">十、爭議點：哪些話不能照單全收</div>
+
+<ol>
+  <li><strong>「RSI 現在完全就是個宣傳口號？」</strong>這是最容易被斷章取義的一句。它針對的是當下的敘事泡沫，不是 RSI 的長期可行性。但在 2026 年下半年的語境裡，這句話會直接冒犯一批以 RSI 為募資故事的團隊。引用時必須保留「現在」兩個字。</li>
+  <li><strong>「大廠可能會集體失敗？」</strong>標題帶問號，但問題本身已經足夠挑釁。它挑戰的是「資源決定論」。如果未來的突破仍然需要千億級算力，這個判斷就會被證偽。它是一個可檢驗的假設，不是結論。</li>
+  <li><strong>「Researcher 都在犯一個致命錯誤」</strong>如果指的是「把 benchmark 當產品」，那幾乎是對整個研究社群的方法論批評。但說這句話的人自己也在做模型，也在跑 benchmark——這不是虛偽，而是這個行業的結構性矛盾：你必須先證明自己，才有資格說證明方式不重要。</li>
+  <li><strong>「賬算得過來嗎」</strong>主持人把這個問題單獨列為一章，說明他並沒有被輕易說服。RLaaS 的毛利率、客戶集中度、數據所有權，這些問題在節目裡可能都沒有得到完整回答。</li>
+  <li><strong>「打破固有認知」是誰的認知？</strong>這是主持人的主觀感受，不是客觀結論。一個訪談能讓主持人改變看法，可能是嘉賓說服力強，也可能是問題本身沒有被追問到底。讀者應該自己判斷。</li>
+</ol>
+
+<hr>
+
+<p>把這一集放進 2026 年 11 月的行業背景裡，它其實在回答一個比「Neo Lab 是什麼」更大的問題：</p>
+
+<p><strong>當預訓練變成公共品，價值會往哪裡轉移？</strong></p>
+
+<p>馬驍騰的答案是：往後訓練、往場景、往「把模型變成客戶能用的東西」轉移。這個答案不新，但他給出了一個具體的商業形態（RLaaS）、一個具體的交付單位（LoRA 適配器）、一個具體的技術門檻（continual learning）。這比「中間層很重要」這種空話有用得多。</p>
+
+<p>而「RSI 是口號」這句話，也不是潑冷水，而是一個工程師對時間表的誠實。方向可以相信，時間表不能相信——這大概是 2026 年最值得記住的一句從業者忠告。</p>
+
+<footer>
+  <p><strong>來源</strong>：42 章經（曲凱），〈銳評國模與 Neo Lab，暢談 RL 人生與 RLaaS｜對談 Mind Lab 首席科學家驍騰〉，2026-11-07 21:00 HKT 發布，62 分 57 秒。本集未公開逐字稿；本文以節目頁官方簡介、23 個章節時間軸與文案為骨架，引號內文字均為節目頁面原文或章節標題。標注「分析」、「我的判斷」的段落為基於章節結構與公開行業背景的推斷，不代表嘉賓原話。節目中提到但未展開的技術細節（reward 設計、數據回流、毛利率）本文未作具體數字推測。</p>
+  <p><strong>生成時間</strong>：2026-11-08 06:00 UTC｜Deep Dive #262｜AI Podcast Daily</p>
+</footer>
+
+</div>
+</body>
+</html>
