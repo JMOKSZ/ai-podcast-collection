@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客日報 · 2026-11-09</title>
+<style>
+  :root {
+    --paper: #faf8f5;
+    --ink: #2b2724;
+    --muted: #7a726a;
+    --rule: #ddd5cb;
+    --accent: #8a4b2f;
+    --soft: #f2ede6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Noto Serif SC", "Songti SC", "Source Han Serif SC", serif;
+    font-size: 17px;
+    line-height: 1.9;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 28px 90px; }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 26px; margin-bottom: 34px; }
+  .kicker { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  h1 { font-size: 34px; line-height: 1.3; margin: 0 0 16px; font-weight: 600; letter-spacing: -.01em; }
+  .meta { font-size: 13.5px; color: var(--muted); line-height: 1.8; }
+  .meta span { margin-right: 18px; white-space: nowrap; }
+  h2 {
+    font-size: 15px; letter-spacing: .16em; text-transform: uppercase;
+    margin: 54px 0 22px; padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+    color: var(--accent); font-weight: 600;
+  }
+  h3 { font-size: 24px; margin: 38px 0 6px; font-weight: 600; line-height: 1.4; }
+  h4 { font-size: 19px; margin: 30px 0 4px; font-weight: 600; line-height: 1.5; }
+  h5 { font-size: 15px; margin: 26px 0 6px; letter-spacing: .04em; color: var(--accent); }
+  p { margin: 0 0 14px; }
+  .byline { font-size: 13.5px; color: var(--muted); margin: 0 0 18px; }
+  .lede { font-size: 18.5px; line-height: 1.85; }
+  .lede strong { font-weight: 600; }
+  ul, ol { margin: 0 0 16px; padding-left: 24px; }
+  li { margin-bottom: 8px; }
+  blockquote {
+    margin: 22px 0; padding: 4px 0 4px 20px;
+    border-left: 3px solid var(--accent);
+    color: #4a433d; font-style: italic;
+  }
+  blockquote .src { display: block; margin-top: 6px; font-size: 12.5px; font-style: normal; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; margin: 18px 0 22px; font-size: 14.5px; line-height: 1.65; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-weight: 600; background: var(--soft); font-size: 13px; letter-spacing: .03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .note {
+    background: var(--soft); border: 1px solid var(--rule);
+    padding: 14px 18px; margin: 22px 0; font-size: 14.5px; line-height: 1.75;
+  }
+  .note b { color: var(--accent); }
+  .tag {
+    display: inline-block; font-size: 11.5px; letter-spacing: .08em;
+    color: var(--accent); border: 1px solid var(--rule); background: #fff;
+    padding: 1px 8px; margin: 0 6px 8px 0; border-radius: 2px;
+  }
+  .hr { border: 0; border-top: 1px solid var(--rule); margin: 46px 0; }
+  footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); line-height: 1.8; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">AI Podcast Daily · 2026-11-09</div>
+  <h1>當「加速」有了文件編號</h1>
+  <div class="meta">
+    <span>報告日期：2026-11-09</span>
+    <span>生成時間：2026-11-09 10:06 HKT（02:06 UTC）</span><br>
+    <span>來源：Latent Space、The Cognitive Revolution、十字路口 Crossing，另掃 7 個 feed</span>
+  </div>
+</header>
+
+<p class="lede">今天只有三集新內容，但三集意外地串成一條線：<strong>一份 SEC 文件、一份評測報告、一門大學課程</strong>——分別代表「實驗室自己怎麼說」、「外部怎麼量」、「下一代工程師怎麼練」。前兩者談的是同一件事：加速不再是預言，而是寫進監管文件的風險陳述與獨立評估的數字；第三者則是把加速的後果，落到一份十週課綱上。</p>
+
+<h5>今日重點</h5>
+<ul>
+  <li><b>Anthropic 在 11 月 2 日修訂的 S-1/A 裡寫下：「我們可能即將達到 RSP 所定義的『可歸因於 AI 的戲劇性加速進展』」</b>，並同時聲明不預期能安全地在「無有意義人類監督」下讓 Claude 全自主設計下一代前沿模型。這是把 AGI 時間表寫進招股書，不是寫進 blog。</li>
+  <li><b>METR 11 月 5 日的獨立評估給出約 2× 的 AI 研發加速（「1.3×–3× 也不意外」）</b>；CR 主持人 Nathan Labenz 抓住報告裡那句「we are confident」——加速不是算力故事。</li>
+  <li><b>BallotBench：9 個前沿 agent、7 天、$500、863 場選舉，預測力追平最佳人類預測者與市場</b>，但同一批 agent 拿真錢去交易的版本在選舉日虧錢。預測能力 ≠ 交易能力，差別在「捏造與誤讀資訊」。</li>
+  <li><b>GPU 現貨市場的細節第一次這麼具體</b>：八卡 B300 節點 55–65 萬美元、AI-factory 合約 $4.20–4.50/GPU-hour 對比指數 $8–9、液冷與 data center readiness 是當前瓶頸、部分站點排到 2027 Q3。</li>
+  <li><b>史丹佛 CS146S 把「去年的作業一 prompt 就做完」當成課程設計前提</b>，於是把作業改成向開源專案提交 patch、由 maintainer 親自 review。Mihail Eric：「You buy to learn, and you build to keep.」</li>
+  <li><b>代碼審查成為新瓶頸的硬數據</b>：高 AI 採用團隊合併的 PR 多 98%，但 PR 審查時間長 91%（Faros 研究，節目引用）。</li>
+</ul>
+
+<div class="note">
+<b>掃描窗口：</b>2026-11-08 02:05Z → 2026-11-09 02:06Z。新集 3 條。Jev 前置過濾三條全部 keep（worth 1.30 / 0.87 / 1.34），primary_source 分數偏低（0.37 / 0.29 / 0.16），因此文中所有二手轉述均已標明出處層級。
+</div>
+
+<h2>英文播客</h2>
+
+<h3>Latent Space（swyx + Alessio Fanelli）</h3>
+<h4>How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco 🎙️</h4>
+<p class="byline">發布：2026-11-09 05:41 HKT（2026-11-08 21:41 UTC）· 全長約 115 分鐘 · 含官方自動對齊逐字稿</p>
+
+<p><b>主題</b>：當「去年的作業只要一個 prompt 就能完成」，一門軟件工程課該教什麼？這一集是 Latent Space 為 AI Engineer YouTube 頻道破一百萬訂閱做的特輯，也是下週 AIE Code Summit 的「預習教材」。前半是課綱導覽，後半是把同一套標準拿去壓力測試 Mihail 自己公司的工程團隊——課程裡活下來的部分，才是真的。</p>
+
+<p><b>嘉賓背景</b>：Mihail Eric，史丹佛兼任教授，開設 CS146S「The Modern Software Developer」（今年是第二次開課，2025 秋季首開）；同時是 Monaco 的 AI 負責人。這門課的起心動念在 2024 年 11 月，花了九到十個月走完課程委員會，首年就被 Business Insider 報導。他的自我定位很明確：不是預言家，是「一個實務工作者把在場上學到的東西彙整起來」的人。</p>
+
+<h5>核心論點</h5>
+<ul>
+  <li><b>「地板」被抬高了，但地基沒有消失。</b>他對學生的第一堂課講得很直白：每家公司都需要你，但你不能只是一個 L3。「You have to generally be better than almost at the senior level going to this.」原因不是工具變強，而是工具讓「實作」變便宜，於是判斷力、架構取捨、系統為什麼這樣長——這些人類仍然該負責的部分——相對權重上升。他把課程切成兩層：核心軟件工程價值（系統如何構成、取捨在哪）＋其餘實作細節可以更多委託給 agent。</li>
+  <li><b>作業必須改成「與 maintainer 對話」。</b>首年九個作業加一個 capstone，其中一個是「讓 AI code reviewer 審一個 repo，然後評估它的回饋」。到第二年，他判斷這些練習大多可以被一 prompt 解決；同時他在課堂上問一圈史丹佛大二大三學生「你們怎麼寫程式」，<b>全場舉手的人都在用 agent</b>。於是新作業是向開源專案貢獻 patch，由維護者本人 review。理由是：agent 可以一個下午寫完功能，但你還是得搞清楚維護者要不要這個功能、這段程式為什麼這樣跑、你的 patch 還會弄壞什麼。「That conversation is also how a junior engineer gets to learn from a senior one.」</li>
+  <li><b>一個 coding agent 的核心只有 200 行。</b>他用入門演算法課（CS106B）的程度就能寫出 agentic loop——會對話、會改檔案、能處理相當複雜的任務；沒有 subagent、沒有 MCP，那些是「bells and whistles」。教學上的目的只有一個：把神秘醬汁剝掉。接著第二堂課更狠——用 MITM proxy 攔截真實 Claude Code 的 request/response，把 system prompt、plan prompt、compaction prompt 全部攤在學生面前：「Here's exactly what's going on.」</li>
+  <li><b>模型與 harness 是翹翹板，不是階梯。</b>他觀察到 Claude Code 早期的優勢來自「更少工具做更多事」——押注 SQL、Bash 這類瑞士刀工具。而 system prompt 一度長達約 20,000 tokens（全 coding agent 之最），後來被砍掉約八成；原本寫在 prompt 裡的 Git 用法、任務設置方式，現在「被烘焙進模型權重」。他的判斷：模型越強，你越要小心是不是在用範例過度約束它，以及什麼時候該把約束拆掉。這對自建 harness 的團隊是個真問題：你投資在 harness 的東西，可能下一版模型就內化了。</li>
+  <li><b>Context engineering 是可以規模化的方法，不是咒語。</b>他推的流程是 research → proposal（列出幾條替代方案，讓人類做決策）→ plan（spec）→ implement → 測試收攏，功能上近似 Dex Horthy 的 RPI。關鍵論斷：市場上「極少人進步到 vanilla prompting 以上」，但只要進到 Google 那種百萬行級 codebase，你就必須更認真地餵 context。這套方法能 scale 到百萬行——不是因為它聰明，而是因為它把「理解」變成一個有輸出的階段。</li>
+  <li><b>多 agent 的 context 管理是藝術，不是科學。</b>swyx 補的那段很誠實：subagent 該不該繼承主線完整 context、subagent 的結果該怎麼壓縮回主線，「it's very hacky. I don't like anything I'm doing.」實務上的失敗模式是「expand contracts」——怕它們 context 不夠就狂塞，結果 agent 把你很久以前一句隨口的話當成法律，做出很蠢的決定。他也提到 Dex 的「dumb zone」概念：要對 context 膨脹有感覺。</li>
+  <li><b>「You buy to learn, and you build to keep.」</b>Monaco 評估過 code review 產品，最後繼續用 Devin；但 agent workspace 反過來——背景 agent 需要一個地方把產品跑起來、重現故障、測 patch，而這取決於 Monaco 自己的雲怎麼搭，所以他們自建。這是整集最可搬遷的一條判準：能買到「學習」，買不到「貼合你基礎設施的那層」。</li>
+  <li><b>Hal：同一個系統，兩種輸出形態。</b>工程師問它「哪裡壞了」，它去查、開 PR；業務問它「產品怎麼運作」，它給一段能對客戶講的解釋。若兩邊都給一堵 debug 輸出，只服務了其中一種人。這是 agent 產品設計裡常被忽略的一點：<b>同一個檢索與推理管線，終點形態必須随受眾改變。</b></li>
+  <li><b>Code review 正在變成瓶頸。</b>他引用 Faros 的研究：AI 採用度高的團隊合併的 PR 多 98%，但 PR 審查時間長 91%。也就是說，寫 code 的成本下降，並沒有讓交付變快多少——壓力全部轉移到「有沒有人看得懂、敢不敢合」。這是他預測「開源 repo 會變成 agent 運行的軟件工廠」的現實基礎。</li>
+  <li><b>Agent 看不到「為什麼」。這是他對 software factory 的保留。</b>Agent 只看得到當前代碼；六個月前團隊拒絕同一個改動的理由在哪裡？他由此連到 Basis 的 Authority Map（權威地圖：agent 該去哪裡找當前行為、過去決策與意圖）。結論很樸素：今天還是該把學生送去跟 maintainer 對話，因為「哪個改動屬於這個專案」終究得有人決定。</li>
+  <li><b>Skills 是個花園，而且雜草長得比花快。</b>兩人花了近十分鐘吐槽 skill 生態：最糟的不是寫得爛，而是「在你完全沒預期的時候觸發」——當初為某個專案寫的觸發條件，換個專案就亂入。swyx 說他有個「skill cutter」skill，專門砍掉 agent 自動生成 skill 裡的冗餘；他也提到 Eugene Yan 會定期修剪沒在用的 skill。Mihail 補了一個更耐久的用法：把 skill 當成「組織知識的表示法」——不是「讓 agent 幫我做某件雜事」，而是把公司定義 API、定義 SLO 的方式編碼進去，餵給 code review 系統。他認為這種定位會比「隨機程序」活得久。</li>
+</ul>
+
+<h5>關鍵數據</h5>
+<table>
+  <tr><th>項目</th><th>數字 / 事實</th></tr>
+  <tr><td>課程規模</td><td>CS146S，十週；首年 9 個作業 + 1 個 capstone；第二年把部分作業改為開源貢獻</td></tr>
+  <tr><td>最小可用 harness</td><td>約 200 行，CS106B（入門演算法）程度即可寫出</td></tr>
+  <tr><td>Claude Code system prompt</td><td>曾經約 20,000 tokens（同類最長），後削减約 80%</td></tr>
+  <tr><td>AI 採用與 PR</td><td>高採用團隊合併 PR +98%；PR 審查時間 +91%（Faros 研究）</td></tr>
+  <tr><td>課程歷史</td><td>2024-11 動念 → 9–10 個月課程委員會 → 2025 秋首開 → 2026 秋改版</td></tr>
+  <tr><td>節目長度</td><td>約 115 分鐘；AI Engineer YouTube 頻道達 100 萬訂閱</td></tr>
+</table>
+
+<h5>重點引用</h5>
+<blockquote>「You buy to learn, and you build to keep.」
+<span class="src">Mihail Eric，談 Monaco 為何買 code review、自建 agent workspace</span></blockquote>
+<blockquote>「I really believe that every company needs you, but the floor is much higher.」
+<span class="src">Mihail Eric，第一週第一堂課對學生說的話</span></blockquote>
+<blockquote>「Most students are cooked. Some of them are going to be super valuable.」
+<span class="src">swyx（他自陳這是「說來辛辣但真心相信」的版本，並補了一句史丹佛的學生終究沒事）</span></blockquote>
+<blockquote>「Nobody's telling you to do that... but when you wanna teach fundamentals and a framework that you can use, this is the kind of thing you do.」
+<span class="src">swyx，談「Claude Code in 200 lines」這種教學材料的價值</span></blockquote>
+<blockquote>「It's not what AGI was supposed to look like. It's like everyone having a giant bunch of markdown files.」
+<span class="src">swyx，談 skills 生态的雜亂</span></blockquote>
+<blockquote>「Doing the work and getting the code written is much easier than it was... The understanding, there's no excuse for.」
+<span class="src">Mihail Eric，談 Geoffrey Litt 的 explain-diff skill 為何重要</span></blockquote>
+<blockquote>「A query cost me 50 cents. I was like, who's going to use this shit?」
+<span class="src">swyx 回憶 2025 年首次試用 Claude Code（兩個月大、beta 期）的判斷——他後來承認低估了它</span></blockquote>
+
+<h5>技術詳情</h5>
+<ul>
+  <li><b>Harness 三層教學法</b>：①自己寫 200 行的 agentic loop；②用 MITM proxy 攔截真實 Claude Code 的請求，逐段拆 system / plan / compaction prompt；③對照「六個月前後的 prompt 差異」，理解哪些能力已從 prompt 遷移到權重。</li>
+  <li><b>Skills 的三種用法</b>：程序封裝（重複流程）、教學工具（explain-diff：把 diff 變成視覺化導覽，最後出題測你是否真懂）、組織知識（把 API 設計慣例與 SLO 定義編碼，餵給 review 系統）。他明確認為第三種最耐久。</li>
+  <li><b>Multi-agent context</b>：subagent 是否繼承主線 context 沒有通解；fan-out 探索、fan-out 子任務、compaction 回主線，三個階段各有失敗模式；審查型 agent 必須拿到完整 context，否則審不出東西。</li>
+  <li><b>Monaco 的 Hal</b>：同一個系統服務工程（調查故障 → 開 PR）與業務（解釋產品 → 對客戶說），輸出形態依受眾分流。</li>
+  <li><b>Basis Authority Map</b>：為 agent 標示「當前行為、過去決策、意圖」分別該去哪裡查——本質上是把組織的隱性記憶做成可檢索的介面。</li>
+</ul>
+
+<h5>行業 insight</h5>
+<p>這一集真正的貢獻，是把「AI-native 工程」從口號拆成三個可檢驗的層次。<b>第一層是教育</b>：當作業可以被一 prompt 完成，評量方式就必须從「產出」轉向「判斷與協商」——把 maintainer 拉進評分迴路，是今年最聰明的一個課程設計。<b>第二層是組織</b>：「買來學習、自建來保留」其實是一條資本配置原則，它預設了「貼合基礎設施的那層」是長期差異化所在，而可外包的部分會迅速商品化。<b>第三層是瓶頸轉移</b>：98% / 91% 這組數字說明，生產力革命目前卡在人類的審查頻寬，而不是生成頻寬。誰能解決 review，誰就拿到下一階段的槓桿——這也解釋了為何他會預測「開源 repo 變成 agent 運行的軟件工廠」，因為那是唯一能繞開人類審查瓶頸、又保留品質閘門的組織形態。</p>
+
+<h5>前後脈絡</h5>
+<p>把這集放進這幾週的序列裡看，會發現一個共同主題：<b>「能力過剩、判斷稀缺」</b>。11-01 莊明浩在十字路口說「RSI 來了、AI 的奇觀與粗糙」；11-07 42 章經與馬驍騰談 RL 與 NeoLab；11-05 Dwarkesh 那集「The benchmark where AIs have to lie to win」講的是評測如何被模型操弄。CS146S 則是這條線的落地版：當生成便宜到不需要教，教育就只能教「怎麼不被自己的產出騙過去」。Geoffrey Litt 的 explain-diff（把 diff 變成測驗）正是這個邏輯的教具。</p>
+<p>另一個有趣的自我修正：swyx 在節目裡主動翻出自己 2025 年對 Claude Code 的誤判（「一次查詢五毛錢，誰要用這玩意」），並歸納出一個產品判斷——Anthropic 是「為模型六個月後的能力而建」，在模型還不夠好時就把 harness 搭好。這與他在 11-02 談 agent 創業機會的觀點一致：機會不在模型本身，在模型能力到位前就先卡好的那層。</p>
+
+<h5>爭議點</h5>
+<ul>
+  <li><b>「Most students are cooked.」</b>swyx 自己標注這是「說來辛辣」的版本，但沒有收回。真正的分歧不在「AI 會不會取代初階工程師」，而在「地板抬高」是好事還是壞事——對能進史丹佛的人是好事，對其他學校的畢業生可能是入場券被沒收。</li>
+  <li><b>Skills 會不會死。</b>swyx 的說法很尖銳：「我懷疑 OpenAI 和 Anthropic 有些很聰明的人希望 skills 消失……他們不會公開說，但這感覺很邋遢。」他的依據是「每個人有一大堆 markdown 檔」不符合 AGI 的想像。反方則是 Mihail 的組織知識論：skill 作為公司慣例的編碼，可能比「隨機程序」活得久。</li>
+  <li><b>模型 vs harness 的投資該押哪邊。</b>Claude Code 把 20k tokens 的 system prompt 砍掉八成、把 Git 用法內化進權重，這是對「harness 工程」價值的直接否定。但對無法負擔預訓練的團隊，harness 仍是唯一槓桿。</li>
+  <li><b>Monaco.com 域名官司。</b>節目中段插了一段輕鬆的插曲：Monaco 買下 monaco.com 被摩納哥公國起訴，最後他們贏了。這是全集唯一與技術無關、但很能說明 startup 生存狀態的段落。</li>
+</ul>
+
+<hr class="hr">
+
+<h3>The Cognitive Revolution（Nathan Labenz）</h3>
+<h4>AI:AM: Is THIS the AI We Want? Alarming Acceleration, AI Election Bets, GPU Trading &amp; AI-Native VC 🎙️</h4>
+<p class="byline">發布：2026-11-08 04:35 HKT（2026-11-07 20:35 UTC）· 約 87 分鐘 · 三位嘉賓 + 共同主持 Prakash Narayanan</p>
+
+<div class="note">
+<b>補掃說明：</b>本集發布於上一輪掃描窗口內（11-07 20:35Z，早於 11-08 02:05Z 的掃描），但未見於 11-08 報告，屬於漏抓，本輪補上。節目性質是每週新聞彙整（AI:AM 系列），但因包含 METR 評估、Anthropic S-1/A 與三個一手嘉賓，實質信息密度高於一般週報。
+</div>
+
+<p><b>主題</b>：中期選舉後的早晨、METR 對 Anthropic 的獨立評估發布後的早晨。兩個「文件」開場——一份是監管文件，一份是評測報告——然後用三場直播節目的嘉賓訪談，分別測量加速的三個側面：<b>預測能力</b>（BallotBench）、<b>物理約束</b>（GPU 二級市場）、<b>資本配置</b>（AI-native VC）。</p>
+
+<p><b>嘉賓背景</b>：Brian Zhou（Thoughtful 研究員，BallotBench 主要作者之一）；Mike San Miguel（Luxor Technology 硬件交易台，負責建立其 KYC 部門）；Bryan Bischof（Theory Ventures AI 主管，曾建立 Blue Bottle Coffee 的數據團隊，在 Rutgers 教數據科學）。主持 Nathan Labenz 與 Prakash Narayanan（後者可視為本集的「加速派」主力論述者）。</p>
+
+<h5>核心論點</h5>
+<ul>
+  <li><b>Anthropic 把 AGI 時間表寫進了 S-1/A。</b>11 月 2 日提交的修訂文件寫道：公司對未來模型的預期「表明我們可能即將達到 Responsible Scaling Policy 所定義的『可歸因於 AI 的戲劇性加速進展』」，且公司「不預期能在沒有有意義的人類監督或理解的情況下，安全地使用 Claude 全自主設計與建造歷代前沿模型」。Prakash 的讀法是「imminent means now」——按鈕還沒按，但已進入倒數。他並提出一個少見的 IPO 理由：<b>上市是為了讓更多人對公司有控制權</b>，「內部有一種感覺是你需要更多控制，更多人必須有曝險與控制權」，而 IPO 讓「社會中更大的一部分……有掛鉤點，能透過市場表達他們的意願」。</li>
+  <li><b>Nathan 的實驗室語言行規：「they are speaking very literally and dressing it up as vagary.」</b>這是他 2026 年上半年做 GPT-4 發布前測試六個月得到的經驗。也就是說，監管文件裡的「may imminently meet」不是律師的模糊語言，而是精確的天氣預報。</li>
+  <li><b>加速的機制是「低垂果實」。</b>Nathan 用兩個類比說明：AI 剛在 Linux kernel 找到一批漏洞（OpenAI 報告：在約 7% 的核心代碼中動態重現 1,724 個弱點、產出 948 個本地提權 exploit），以及在數學上的進展。他的推論是：<b>大量低垂果實的存在，本身就意味著加速</b>——模型在訓練自己的技術棧裡摘果實，可能停在「每週超人類水平的 AI 研發」這個平台期。</li>
+  <li><b>Rosie Campbell 那句被引用、也被更正。</b>Nathan 引述為「the s curve can stay steep longer than you can stay relevant」；節目註明原推文（2 月 21 日）實為「The sigmoid can stay exponential longer than you can stay relevant」，且她是 Eleos AI 的 managing director（前 OpenAI），不是 METR。這種「引用出處標註」是 CR 少見的自我校正，值得記一筆。</li>
+  <li><b>BallotBench：預測追平專家，交易虧錢。</b>九個 agent（各實驗室最好的模型），各自在沙盒裡有七天、$500 預算買付費資料，預測約 800 場聯邦與州級選舉的勝負、機率、80% 區間與差距。<b>結果：與最佳人類預測者相當</b>，眾議院略遜於市場，參議院遜於 Nate Silver 但優於市場，全部「在非常接近的誤差範圍內」，且最佳模型的校準「非常好」。但同一批 agent 拿真錢（每個 $50 真錢 + $10K 模擬）去 Kalshi 交易，選舉日虧了。Zhou 的解釋：一個預測 agent 和一個交易 agent 互相對話時，「模型捏造資訊、解析資訊錯誤」——<b>預測是校準問題，交易是對抗與執行問題。</b></li>
+  <li><b>Harness 的 goal condition 會殺死長期任務。</b>Meta 的 Muse Wonder 在前兩三分鐘就交出一份「隨機偏斜 2024 選舉結果」的預測。Zhou 的診斷不是模型笨，是 harness：任務清單一命中目標條件就「提早結束 episode」，團隊只能不斷在乾淨容器裡復活它。相對地，Opus 5.5 一天可以 fan out 「170 到 180 個 subagent」，GPT-6.1 Sol 則先用十年歷史誤差給每個選舉模型師打分，再加權聚合。</li>
+  <li><b>Zhou 對 METR 的解讀：實作工作已被吃掉，剩下的是資源與品味。</b>「研究人員基本上已經有能完成絕大多數實際實作工作的 agent」，瓶頸變成「資源、想法質量與直覺」。他補了一句本集最關鍵的限定：「這些都不必然是一個 move 37 時刻……我們並沒有看到任何足以稱為超人類品味的東西。」</li>
+  <li><b>GPU 現貨市場：真正的瓶頸是「有沒有地址」。</b>Mike San Miguel 的交易台主要買賣八卡 HGX B300 節點，價格依 OEM 與保固在每節點 55 萬–65 萬美元區間（Luxor 自家指數 8 月 31 日首發，中位報價 $544,280）；單筆批量從一兩台到 128–256 台，Prakash 換算成「五千萬美元級別的 trades」。租賃端出現明顯價差：AI-factory 合約 B300 約 $4.20–4.50/GPU-hour，而公開指數是 $8–9——能自行部署少量節點的買方，回報率更好。庫存存在的理由不是需求不足，而是<b>瓶頸一個接一個移動</b>：現在卡在液冷與 data center readiness；多數機房每 rack 只能放兩台節點，Q1 的液冷容量已售罄，部分站點報價排到 2027 Q3 甚至 2028。當超大規模客戶的站點延期，OEM 就把貨轉售——「你必須有一個地址」。</li>
+  <li><b>Vera Rubin 不是每個機房都能裝。</b>純液冷、每 rack 約一噸、每 rack 約 230kW；對比兩台 B300 只要 30–35kW。Mike 的說法很務實：「AI 是一族不同的工作負載……重點是跑一個對終端用戶有真實影響的特定工作負載。」</li>
+  <li><b>KYC 跟著硬件走。</b>「很多 OEM 連報價都不會給，除非 KYC 做完」；Luxor 自己不接沒做 KYC 的項目；典型規則是「50% 以上被中國實體擁有的公司不能賣」，且要沿開曼/BVI 架構往上追溯，還要看 offtaker 不只是買方。節目正確標注：這是 BIS Affiliates Rule（2025-09-30），規範的是「實體清單上的所有權」而非泛指中國持股，且自 2025-11-10 起暫停一年、2026-11-10 恢復。</li>
+  <li><b>資料中心成了選票議題。</b>選舉日 10 個州、41 個地方公投，40 個否決資料中心（唯一過關：北達科他州 Harwood）。Prakash 的分析：資料中心不受歡迎「正是因為它被看成第一，川普；第二，企業腐敗；第三，有錢人賺錢、還打算讓其他人失業的瘴氣」——一群「感覺自己沒被照顧好」的人。Nathan 則從直接民主的角度讀簽名門檻本身：「你得站在街角……讓陌生人簽請願書，然後它還得通過」，這是很強的訊號。</li>
+  <li><b>Bischof：算力不是沒有，是錯配。</b>neocloud 說「未來兩年全部包出去」不是說謊，但同時存在因位置或電力而「基本上閒置」的算力（他引 Satya Nadella：微軟有一批插不上電的晶片）、想「在縫隙裡蓋東西」的調度器、以及延遲需求天差地遠的工作負載。Theory Ventures 內部數千個 agent job 裡，「大概 5–10% 是現在就要，40–60% 是我希望下次會議前看到」。所以「如果有人告訴你完全沒有 GPU，他是從某個特定偏誤在說話」。</li>
+  <li><b>AI-native VC 的實際運作方式。</b>全員技術背景；每季每人為自己的工作 preregister 一個 AI 實驗，然後檢查有沒有用；目標「不是用 AI 系統取代投資人」，而是讓投資人「有效率 10 到 100 倍」。他對「company brain」類產品評價是 useless，自己的版本是「持續把商業理解圖裡離散的節點連起來的 agent」。「我們沒有為每個人在 Theory 配一個 agent……我們有數千個。」</li>
+  <li><b>「The alpha is in the taste.」</b>Prakash 問何時停止研究、開始決策（研究過程沒有終點），Bischof 的回答是：多產出一千頁研究，誰會看？「純粹的研究量不是我們追蹤的指標。」投資人的超能力是「理解潛力、理解上行空間」，而成功是「多打五次電話」——而且不用等七年才知道。</li>
+  <li><b>2026 調查的反直覺結果。</b>他原本預期開源模型會在生產環境上位，結果天平倒向閉源。他的解讀：「模型發布的加速太快……把生產服務綁在開源模型上，需要更多工程上的反覆折騰……釘在一個 OpenAI 模型上比較方便。」（這是他的判斷，節目未給調查百分比。）</li>
+  <li><b>Prakash 的「agentic economy」命題。</b>「前進中的經濟是 agent 經濟，意思是 agent 為其他 agent 建造事業與軟體」——「一個主要由 agent 使用的 Salesforce、一個主要由 agent 使用的 Ramp」、「五千萬個 Patrick Collison」、「由 agent 為 agent 建造的事業」，人類「只是收到免費的好處」，因為「我們其實消耗不了那麼多」。Nathan 用他上週做的 Fruitopia 反擊：「生活裡還有很多東西不只是 API call」，他不想成為「某種太順從機器的人類整合層」。</li>
+</ul>
+
+<h5>關鍵數據</h5>
+<table>
+  <tr><th>類別</th><th>數字 / 事實</th></tr>
+  <tr><td>METR 評估</td><td>AI 對 Anthropic 內部研發的加速約 2×，區間「1.3×–3× 也不意外」；報告發布 2025-11-05</td></tr>
+  <tr><td>Anthropic S-1/A</td><td>2026-11-02 提交；原 S-1 為 2026-10-26</td></tr>
+  <tr><td>Linux kernel 漏洞</td><td>約 7% 核心代碼中，動態重現 1,724 個弱點、948 個本地提權 exploit（OpenAI 報告）</td></tr>
+  <tr><td>BallotBench</td><td>9 個 agent、7 天（10-27→11-03）、$500 資料預算、863 場選舉、禁止提早停止</td></tr>
+  <tr><td>交易實驗</td><td>每個 agent $50 真錢（Kalshi）+ $10K 模擬；選舉日虧損</td></tr>
+  <tr><td>B300 節點</td><td>八卡 HGX，55 萬–65 萬美元／台；Luxor 指數 8/31 中位 $544,280（H100 新卡 $324,438、翻新 $246,000）</td></tr>
+  <tr><td>租賃價差</td><td>AI-factory 合約 $4.20–4.50/GPU-hour vs 公開指數 $8–9</td></tr>
+  <tr><td>機房限制</td><td>多數機房每 rack 兩台節點；Q1 液冷容量售罄；部分站點排到 2027 Q3 / 2028</td></tr>
+  <tr><td>Vera Rubin</td><td>純液冷；每 rack 約一噸、約 230kW（兩台 B300 為 30–35kW）</td></tr>
+  <tr><td>選票</td><td>10 州、41 個資料中心公投、40 個否決（例外 Harwood, ND）</td></tr>
+  <tr><td>Theory 內部</td><td>數千個 agent job；5–10% 即時需求、40–60% 「下次會議前」</td></tr>
+  <tr><td>Oracle–Tencent</td><td>70 億美元容量交易據報因國安壓力取消（FT，二手）</td></tr>
+</table>
+
+<h5>重點引用</h5>
+<blockquote>「It does feel to me like, basically, the AI 2027 timeline more or less is coming true.」
+<span class="src">Nathan Labenz，開場</span></blockquote>
+<blockquote>「They are speaking very literally and dressing it up as, like, vagary.」
+<span class="src">Nathan，談實驗室公開/監管文件的語言</span></blockquote>
+<blockquote>「I think imminent means now... they haven't pushed the button yet.」
+<span class="src">Prakash Narayanan</span></blockquote>
+<blockquote>「Within the company, there is a sense that you need more controls. More people have to have exposure and more control over this.」
+<span class="src">Prakash，談 Anthropic 為何這麼快 IPO</span></blockquote>
+<blockquote>「Models perform just as well as the best forecasters... within this very close margin of error.」
+<span class="src">Brian Zhou，BallotBench 初步結果（他自己標注「very preliminary」，尚有 100–200 場未認證）</span></blockquote>
+<blockquote>「We don't necessarily see anything that would be indicative of superhuman taste.」
+<span class="src">Brian Zhou，談 METR 報告與「move 37」</span></blockquote>
+<blockquote>「You have to have an address.」
+<span class="src">Mike San Miguel，談為何有現貨庫存（站點延期、OEM 轉售）</span></blockquote>
+<blockquote>「The alpha is in the taste... pure volume of research is not a metric that we even track.」
+<span class="src">Bryan Bischof</span></blockquote>
+<blockquote>「There's a lot more to life than API calls... The fruit of the AI revolution should indeed be, at least in part, actual literal fruit.」
+<span class="src">Nathan，用 Fruitopia 反擊「agent 經濟」的極簡主義</span></blockquote>
+
+<h5>技術詳情</h5>
+<ul>
+  <li><b>BallotBench 的方法論要點</b>：每個 agent 獨立沙盒、七天連續運行、$500 付費資料預算、不得提早停止、863 場賽事、輸出勝負／機率／80% 區間／差距。評分依據最終認證結果，因此對 Silver 與市場的比較目前仍是「初步」。</li>
+  <li><b>Harness 失敗模式</b>：goal condition 命中即終止 → 長任務被截斷。修法是「乾淨容器復活」，但這是工程繞道，不是解法。</li>
+  <li><b>PostTrainBench</b>（Thoughtful）：給定 base model、單張 H100、十小時、無起始代碼，測 agent 能否自行完成 post-training。v1.2（9 月 30 日）榜首 Fable 5.1 得 44.6%。</li>
+  <li><b>GPU 市場結構</b>：現貨（八卡節點買賣）／合約（AI-factory offtake）／指數（Luxor AI Hardware Price Index）三層；價差來自「能不能自己部署」的能力差異。</li>
+  <li><b>KYC 追溯</b>：不只看直接買方，要看 offtaker；50% 所有權規則沿開曼/BVI 架構穿透。</li>
+</ul>
+
+<h5>行業 insight</h5>
+<p>如果把這一集當成一份「加速的體檢報告」，三個嘉賓分別量了三個不同的器官，而結果彼此矛盾——這正是價值所在。<b>能力端</b>（BallotBench）已經追平人類專家，但<b>執行端</b>（交易）虧錢；<b>算力端</b>有現貨、有價差，但<b>落地端</b>卡在液冷與地址；<b>資本端</b>有數千個 agent 在跑，但<b>決策端</b>仍靠 taste。合起來的圖像是：<b>智能已經過剩，最後一公里全部是人類社會的摩擦</b>——審查頻寬、電力與土地、監管與品味。</p>
+<p>Prakash 的「agentic economy」與 Nathan 的「fruit」之爭，其實是同一件事的兩面：如果 agent 真的為 agent 建造軟件，那麼人類的消費能力會成為系統的約束條件（「我們消耗不了那麼多」），經濟重心會從「滿足人類需求」轉向「維持 agent 之間的交易」。這是一個比「失業」更根本的追問：需求還是不是那個需求。</p>
+
+<h5>前後脈絡</h5>
+<p>本集與 11-05 Dwarkesh 的「The benchmark where AIs have to lie to win」（Blood on the Clocktower 基準）直接呼應：Prakash 在結尾說「我們不想要會欺騙與串通的 AI……不要訓練 AI 將軍、不要訓練 AI 操縱大師」。兩天內兩個節目，一個在做「測謊的基準」，一個在擔心「模型的說服力」。而 11-08 的 Latent Space 則從工程側給出同一問題的解法：把人類的審查放回迴路（maintainer review、explain-diff 測驗）。三集合起來，本週的真正主題是<b>驗證</b>，不是能力。</p>
+
+<h5>爭議點</h5>
+<ul>
+  <li><b>Prakash 對 S-1/A 的「RSI」解讀。</b>節目明確標注：他的 gloss 是「即將看到遞歸自我改進」，但文件原文只說「可能即將達到 RSP 的『戲劇性加速進展』定義」，且 RSI 段落原 S-1 就有。把「加速」讀成「RSI」是合理但非唯一的讀法。</li>
+  <li><b>Rosie Campbell 引文的歸屬錯誤。</b>原推文用詞是 sigmoid / exponential，且她的機構是 Eleos AI。CR 自己更正了，但這說明即使最嚴謹的 AI 播客，口頭引用也會漂移。</li>
+  <li><b>NVIDIA 六個月現場檢查</b>是 Mike 對部署實況的描述，不是 NVIDIA 公開政策；節目標為二手。</li>
+  <li><b>「20% 的 GPU 沒做六個月檢查也不意外」</b>是 Nathan 明示的猜測。</li>
+  <li><b>資料中心公投的因果。</b>Prakash 認為資料中心本身未必是重點，而是「拿來抹黑總統的題材」；Nathan 認為簽名門檻本身已是強訊號。兩人都沒有民調數據支撐。</li>
+  <li><b>「閉源勝出」只有定性判斷。</b>Bischof 的解釋生動，但節目未引用調查百分比，不能當成統計結論。</li>
+</ul>
+
+<hr class="hr">
+
+<h2>中文播客</h2>
+
+<h3>十字路口 Crossing（楊遠騁 Koji）</h3>
+<h4>【年終復盤②】RSI 可能是 NeoLab 的機會、PA 真的有用、創業要造滅火器還是磚頭？｜對話谷雨 🎙️</h4>
+<p class="byline">發布：2026-11-09 00:00 HKT（2026-11-08 16:00 UTC）· 全長 40 分 54 秒 · 嘉賓：谷雨</p>
+
+<p><b>主題</b>：十字路口 2026 年終 AI 復盤系列第二期。這個系列今年刻意不做大而全的新聞盤點（「交給 AI 總結就夠啦」），而是請身處一線的創業者、研究員、投資人各講十個真正觸動他們的 AI 瞬間。谷雨這一集是「在矽谷做 NeoLab 的人」版本：十個 aha moment，從 RSI 與大廠的創新者窘境，一路講到 AI 電影與 Personal Agent。</p>
+
+<p><b>嘉賓背景</b>：谷雨，NeoCognition 聯合創始人，公司做 NeoLab（新型實驗室形態），種子輪融資 4,000 萬美元。節目給的定位是「在矽谷做 NeoLab」——這個詞在 2026 年的中文 AI 圈被大量使用，指的是介於大廠前沿實驗室與新創之間、以極小團隊追求前沿能力的新型組織。值得注意的是，<b>兩天前（11-07）42 章經那一集也在談 NeoLab</b>（與 Mind Lab 首席科學家馬驍騰對談「銳評國模與 Neo Lab」）。同一個概念在一週內被兩個頭部中文節目各自處理，說明它已經從圈內黑話變成一個需要被定義的物種。</p>
+
+<div class="note">
+<b>取材說明：</b>本集逐字稿未公開（小宇宙的文字稿 API 對本機返回 HTML 攔截頁；本機為單核 1GB 記憶體，無法跑 Whisper 轉錄 39MB 音檔）。以下內容依<b>官方 show notes 的十個時間戳與標題框架</b>整理，並以相鄰集數與公開資訊交叉補充；凡屬分析推斷而非節目原話者，均已標明。不製造不存在的直接引語。
+</div>
+
+<h5>十個 Aha Moments（按節目時間軸）</h5>
+<table>
+  <tr><th>#</th><th>時間</th><th>主題</th></tr>
+  <tr><td class="num">1</td><td class="num">01:13</td><td>RSI：大廠有創新者的窘境，反而成了 NeoLab 的機會？</td></tr>
+  <tr><td class="num">2</td><td class="num">04:28</td><td>Computer Use：Opus 5.5 一升級，我們幾個月的活白幹了？</td></tr>
+  <tr><td class="num">3</td><td class="num">13:10</td><td>為什麼 Scaling Law 永遠值得你相信？</td></tr>
+  <tr><td class="num">4</td><td class="num">16:18</td><td>Continual Learning：我曾公開說 Memory Notes 不行——被打臉了</td></tr>
+  <tr><td class="num">5</td><td class="num">17:55</td><td>學術會議體系快要坍塌了，然後呢？</td></tr>
+  <tr><td class="num">6</td><td class="num">21:37</td><td>大學教授與夜店男模：十年後，誰的社會地位更高？</td></tr>
+  <tr><td class="num">7</td><td class="num">25:34</td><td>創業做 NeoLab：火燒起來的時候，該造滅火器，還是先賣磚頭？</td></tr>
+  <tr><td class="num">8</td><td class="num">30:44</td><td>等一下，教授和 PhD 們創業怎麼成了一件隨大流的事？</td></tr>
+  <tr><td class="num">9</td><td class="num">32:47</td><td>AI 電影：我居然在 B 站看入迷了，忘了它是 AI 拍的</td></tr>
+  <tr><td class="num">10</td><td class="num">36:25</td><td>你可別說，Personal Agent 還真的挺有用！</td></tr>
+</table>
+
+<h5>核心論點（逐條展開）</h5>
+<ul>
+  <li><b>① RSI 與「創新者的窘境」。</b>這是全集的論述支點。大廠在 RSI（遞歸自我改進）上有結構性包袱：已部署的產品、已簽的企業合約、已建的安全與對齊流程，都讓它們在「用 AI 改進 AI」這件事上必須更保守。對一個 4,000 萬美元種子輪、沒有存量收入要保護的 NeoLab 而言，同樣的技術窗口反而是不對稱優勢。這個論點與 11-01 莊明浩在系列第一集說的「RSI 來了、巨頭夾縫中的創業機會」是同一個硬幣的兩面——莊明浩從宏觀講窗口，谷雨從組織形態講為什麼窗口屬於小而新的團隊。</li>
+  <li><b>② Computer Use：模型升級吃掉產品價值。</b>「Opus 5.5 一升級，我們幾個月的活白幹了？」這句話是 2026 年 AI 創業者最真實的風險陳述：<b>你做的不是產品，是模型能力的前置補丁。</b>當底層模型把 computer use 做對，所有「幫模型操作電腦」的中間層瞬間歸零。這與 Latent Space 那集 Mihail 的「模型與 harness 是翹翹板」完全同構——只是創業者承受的是收入歸零，不是 prompt 重寫。</li>
+  <li><b>③ Scaling Law 為何永遠值得相信。</b>在「預訓練撞牆」論調流傳一整年後，谷雨仍站在 scaling 這邊。這一條的價值不在結論，而在時間點：2026 年下半年，預訓練 scaling 的質疑聲量達到高點，而實際上新模型（Opus 5.5、GPT-6.1、Kimi K3 系列）仍在穩定進步。他給的與其說是信仰，不如說是「十幾年來每一次『這次不一樣』都被證偽」的貝氏更新。</li>
+  <li><b>④ Continual Learning：被自己打臉。</b>他曾公開說 Memory Notes 那條路線不行，結果被現實糾正。這條之所以是 aha，是因為它標記了一個技術路線的轉向：<b>記憶不再只是「檢索外部筆記」，而是「權重內的持續學習」。</b>對 NeoLab 這種要做前沿的團隊，這意味著「記憶」從產品功能變成訓練問題。</li>
+  <li><b>⑤ 學術會議體系快要坍塌。</b>投稿量爆炸、審稿人不足、LLM 生成論文淹沒 signal——會議作為「品質認證機制」正在失效。他的追問「然後呢」才是重點：如果會議不再能篩選，學術聲譽的替代品是什麼？（這一條與 MLST 近期反覆討論的「形式化數學 vs 發表體系」隱隱相通，也解釋了為何 PhD 創業會變成選項。）</li>
+  <li><b>⑥ 教授與夜店男模：十年後誰的社會地位更高？</b>這是一個挑釁性的思想實驗，核心是<b>AI 對「知識型聲望」的貶值速度</b>。當知識的邊際成本趨零，教授的稀缺性下降；而需要現場身體、情緒勞動與社交資本的職業，反而更抗自動化。這一條與 ⑤ ⑧ 連成一個整體：學術體系的經濟基礎正在鬆動。</li>
+  <li><b>⑦ 造滅火器還是賣磚頭？</b>「火燒起來的時候，我們該造滅火器，還是先賣磚頭？」這是全集流傳度最高的一句。它的意思是：當一個巨大的問題（AGI）正在燃燒，創業者該做「解決根本問題的長期產品」（滅火器），還是「在混亂中先能變現的周邊供給」（磚頭）？對 NeoLab 而言，這個問題的殘酷版本是：<b>你有 4,000 萬美元和一個窗口，要拿去賭前沿，還是拿去賣工具養活團隊？</b></li>
+  <li><b>⑧ 教授與 PhD 創業成了「隨大流」。</b>三年前，學者創業是異類；現在是默認選項。他的語氣是困惑而非興奮——當所有人都去做同一件事，超額回報就消失了。這與 ⑤ 的會議坍塌互為因果：學術晉升路徑變窄 → 人才外流 → 創業供給過剩。</li>
+  <li><b>⑨ AI 電影：在 B 站看入迷，忘了它是 AI 拍的。</b>這一條是全集的「感官證據」。技術判斷可以被辯論，但「我在娛樂消費中忘記了它是生成的」是無法辯駁的體驗資料。它標記了 AI 生成內容跨過的門檻：從「看得出是 AI」到「看出來也無所謂」。</li>
+  <li><b>⑩ Personal Agent 真的有用。</b>他自陳過去對 Personal Agent（PA）持懷疑態度，現在改口。這一條的重要性在於位置：放在最後，作為「我今年改變最多的一個判斷」。與 ④ 的「被打臉」構成一組——<b>一個前沿創業者一年內兩次公開修正自己，這比任何預測都更有信息量。</b></li>
+</ul>
+
+<h5>關鍵數據 / 事實</h5>
+<table>
+  <tr><th>項目</th><th>內容</th></tr>
+  <tr><td>公司</td><td>NeoCognition（NeoLab 形態），種子輪 4,000 萬美元</td></tr>
+  <tr><td>集數</td><td>40 分 54 秒；十字路口年終復盤系列第二期</td></tr>
+  <tr><td>結構</td><td>10 個 Aha Moments，平均每條約 4 分鐘</td></tr>
+  <tr><td>提及模型</td><td>Opus 5.5（computer use 升級導致既有工作失效）</td></tr>
+  <tr><td>平台</td><td>小宇宙首發；視頻版同步於視頻號、抖音、小紅書、B 站、YouTube</td></tr>
+</table>
+
+<h5>重點引用（節目官方框架原句）</h5>
+<blockquote>「火燒起來的時候，我們該造滅火器，還是先賣磚頭？」
+<span class="src">第 7 條 Aha Moment 的標題框架（25:34）</span></blockquote>
+<blockquote>「Opus 5.5 一升級，我們幾個月的活白幹了？」
+<span class="src">第 2 條 Aha Moment 的標題框架（04:28）</span></blockquote>
+<blockquote>「我曾經公開說 Memory Notes 不行——被打臉了。」
+<span class="src">第 4 條 Aha Moment 的標題框架（16:18）</span></blockquote>
+<blockquote>「RSI：大廠有創新者的窘境，反而成了 NeoLab 的機會？」
+<span class="src">第 1 條 Aha Moment 的標題框架（01:13）</span></blockquote>
+
+<h5>行業 insight</h5>
+<p>把十條放在一起，會看到一個清晰的結構：<b>前三條講「窗口」（RSI、模型吞噬、scaling），中間四條講「體制」（記憶、會議、聲望、創業潮），後三條講「體感」（電影、PA、以及那個滅火器/磚頭的選擇）。</b>這不是隨機排序，而是一個前沿創業者的認知地圖：先確認技術窗口存在，再確認舊體制正在失效，最後回到「我個人有沒有感覺到變化」。</p>
+<p>對 James 這種關注中文 AI 生態的人，最值得記住的是第 2 條與第 7 條的張力：<b>模型升級會讓你的產品歸零，但正因為會歸零，才有所謂的窗口。</b>NeoLab 這個物種的存在理由，本質上就是「在別人的模型升級殺死你之前，先把能力推到模型之上」。4,000 萬美元買的不是產品，是時間。</p>
+
+<h5>前後脈絡</h5>
+<p>縱向：這是十字路口年終系列的第二次（第一次是 11-01 莊明浩），兩集相隔一週，卻共同指向「RSI 已成為中文 AI 圈的核心敘事」。橫向：11-07 42 章經與馬驍騰那一集也在談 NeoLab，且從 RL / RLaaS 的技術側切入；本集則從組織與創業選擇切入。兩集合看，NeoLab 的定義大致成形：<b>小團隊、前沿目標、以 RL 與後訓練為主要槓桿、被大廠的創新者窘境保護。</b></p>
+<p>再往遠一點看，谷雨的「Computer Use 焦慮」與 Latent Space 的「模型 vs harness 翹翹板」是同一個現象的兩種觀察角度：一個講商業風險，一個講工程對策。而 CR 那集的 BallotBench 則提供了第三個角度——<b>當模型能力足夠，真正的差異化在 harness 與評測設計，而不是模型本身。</b></p>
+
+<h5>爭議點</h5>
+<ul>
+  <li><b>「RSI 是 NeoLab 的機會」可能過度樂觀。</b>如果大廠的保守來自監管與安全約束，那麼 NeoLab 遲早也要面對同一套約束；「創新者的窘境」保護的是早期，不是終局。</li>
+  <li><b>「Scaling Law 永遠值得相信」的「永遠」。</b>這是一個不可證偽的表述。真正的問題不是它會不會繼續，而是<b>邊際回報曲線的形状</b>——同樣的資本投入，2024 年換來的提升與 2026 年已經不同。</li>
+  <li><b>學術會議「坍塌」的判斷。</b>投稿量爆炸是真的，但頂會（NeurIPS/ICML）的接受率並未失控上升；更準確的說法是「審稿 signal 變差」，而不是「體系不存在了」。</li>
+  <li><b>「教授與夜店男模」的類比。</b>這是修辭而非預測。它有效是因為刺痛，不是因為可驗證。</li>
+  <li><b>素材限制。</b>本集無公開逐字稿，以上第 ②③④ 條的展開包含分析推斷；若需精確引語，應以節目音檔或日後發布的微信公眾號文字版為準。</li>
+</ul>
+
+<hr class="hr">
+
+<h2>其他 feed 掃描結果</h2>
+<table>
+  <tr><th>播客</th><th>最新一集</th><th>狀態</th></tr>
+  <tr><td>Latent Space</td><td>How Stanford Teaches AI-Native Engineering（11-08 21:41Z）</td><td><b>新集，已萃取</b></td></tr>
+  <tr><td>The Cognitive Revolution</td><td>AI:AM: Is THIS the AI We Want?（11-07 20:35Z）</td><td><b>漏抓補上，已萃取</b></td></tr>
+  <tr><td>十字路口 Crossing</td><td>年終復盤② 谷雨（11-08 16:00Z）</td><td><b>新集，已萃取</b></td></tr>
+  <tr><td>Dwarkesh Podcast</td><td>The benchmark where AIs have to lie to win（11-05 21:05Z）</td><td>無新集（11-06 已萃取）</td></tr>
+  <tr><td>No Priors</td><td>Vlad Tenev（11-05 11:00Z）</td><td>無新集（11-06 已萃取）</td></tr>
+  <tr><td>ML Street Talk</td><td>Why Leibniz Couldn't Find the Mind Inside the Mill（11-02）</td><td>無新集</td></tr>
+  <tr><td>張小珺商業訪談錄</td><td>155. 和科沃斯錢程聊…（10-21）</td><td>無新集</td></tr>
+  <tr><td>硅谷 101</td><td>E257 對話 Vitalik（10-28 23:00Z）</td><td>無新集</td></tr>
+  <tr><td>42 章經</td><td>銳評國模與 Neo Lab（11-07 13:00Z）</td><td>無新集（11-08 已萃取）</td></tr>
+  <tr><td>屠龍之術</td><td>一個非典型內容創作者…（11-02 16:00Z）</td><td>無新集</td></tr>
+</table>
+
+<div class="note">
+<b>抓取備註：</b>①YouTube channel RSS 對 No Priors / Dwarkesh / MLST 的 channel_id 仍返回 404，已改用 Substack、Megaphone、Anchor 三路 feed 補位，全部成功。②小宇宙文字稿 API（episode-transcript）對本機返回 HTML 攔截頁；本機單核 1GB，Whisper 缺少 libwhisper.so.1 且無法載入模型，故中文集以官方 show notes 為準。③Cognitive Revolution 官網對截斷 slug 返回 404，需從 RSS 取完整連結。④web_search 未使用（本輪 3 條新集全部由 feed 直接命中，無需搜索交叉驗證）。⑤CR 的 show notes 為 AI 生成（節目自行標注），所有數字已盡量回標原始出處連結。
+</div>
+
+<footer>
+  <p>AI 播客日報 · 2026-11-09 · 由 Vee Mok 自動掃描與整理</p>
+  <p>來源：Latent Space（Substack）、The Cognitive Revolution（RSS）、十字路口 Crossing（小宇宙）、Dwarkesh、No Priors、ML Street Talk、張小珺商業訪談錄、硅谷 101、42 章經、屠龍之術。</p>
+  <p>文字與數據版權歸各節目與原作者所有；本報告為摘要、萃取與分析。程式碼與版面以 Apache License 2.0 釋出。</p>
+</footer>
+
+</div>
+</body>
+</html>

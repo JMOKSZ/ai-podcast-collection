@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-11-08T02:05:00.000Z",
- "lastScanDate": "2026-11-08",
+ "lastScan": "2026-11-09T02:06:00.000Z",
+ "lastScanDate": "2026-11-09",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-11-05T21:05:50.000Z",
@@ -10,12 +10,12 @@
    "lastFeedItemTitle": "The benchmark where AIs have to lie to win"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-11-07T03:04:53.000Z",
-   "lastEpisodeTitle": "[AINews] Anthropic IPO: Whither Now?",
-   "lastFeedItemPubDate": "2026-11-07T03:04:53.000Z",
-   "lastFeedItemTitle": "[AINews] Anthropic IPO: Whither Now?",
+   "lastEpisodePubDate": "2026-11-08T21:41:44.000Z",
+   "lastEpisodeTitle": "How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco",
+   "lastFeedItemPubDate": "2026-11-08T21:41:44.000Z",
+   "lastFeedItemTitle": "How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco",
    "newEpisodes": [],
-   "note": "AINews 2026-11-05/06 匯總；含 Anthropic $80B run rate、Inkling 2 Small、Kimi K3.1、ERNIE-5.5、CyberOffense 等。已在 11-08 報告萃取。"
+   "note": "115 分鐘特輯（AI Engineer YouTube 百萬訂閱）。官方自動對齊逐字稿 152.95KB，0–59:40 段可讀；1:01 之後僅時軸。重點：CS146S 十週課綱、200 行 harness、MITM proxy 拆 Claude Code system prompt（曾約 20k tokens 後砍 80%）、context engineering（research→proposal→plan）、『You buy to learn, and you build to keep』、Faros 研究（PR +98% / review +91%）。"
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-11-05T11:00:00.000Z",
@@ -25,11 +25,12 @@
    "lastFeedItemTitle": "Tokenization, Agentic Trading, Harmonic: Robinhood's Mission to Expand Ownership with CEO Vlad Tenev"
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-11-05T21:29:00.000Z",
-   "lastEpisodeTitle": "KYC Becomes KYA: Sentinel Bio's Joshua Monrad on DNA Screening, Uplift Studies & Agent Monitoring",
-   "lastFeedItemPubDate": "2026-11-05T21:29:00.000Z",
-   "lastFeedItemTitle": "KYC Becomes KYA: Sentinel Bio's Joshua Monrad on DNA Screening, Uplift Studies & Agent Monitoring",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-11-07T20:35:18.000Z",
+   "lastEpisodeTitle": "AI:AM: Is THIS the AI We Want? Alarming Acceleration, AI Election Bets, GPU Trading & AI-Native VC",
+   "lastFeedItemPubDate": "2026-11-07T20:35:18.000Z",
+   "lastFeedItemTitle": "AI:AM: Is THIS the AI We Want? Alarming Acceleration, AI Election Bets, GPU Trading & AI-Native VC",
+   "newEpisodes": [],
+   "note": "補抓：發布於 11-07 20:35Z（上一輪窗口內）但 11-08 報告漏收。Anthropic S-1/A（11-02）『may imminently meet RSP dramatically accelerated progress』；METR 約 2×（1.3–3×）；BallotBench 9 agents/$500/863 races；B300 節點 55–65 萬美元、合約 $4.20–4.50 vs 指數 $8–9；Bischof『the alpha is in the taste』。"
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-11-02T04:43:47.000Z",
@@ -79,24 +80,25 @@
    }
   },
   "crossing": {
-   "lastEpisodePubDate": "2026-11-01T16:00:00.000Z",
-   "lastEpisodeTitle": "[年终复盘①]AI带给我的10个Aha Moments｜庄明浩：RSI 来了、AI 的奇观与粗糙、巨头夹缝中的创业机会",
-   "lastFeedItemPubDate": "2026-11-01T16:00:00.000Z",
+   "lastEpisodePubDate": "2026-11-08T16:00:00.000Z",
+   "lastEpisodeTitle": "【年终复盘②】RSI可能是NeoLab的机会、PA真的有用、创业要造灭火器还是砖头？｜对话谷雨",
+   "lastFeedItemPubDate": "2026-11-08T16:00:00.000Z",
    "newEpisodes": [],
-   "lastFeedItemTitle": "[年终复盘①]AI带给我的10个Aha Moments｜庄明浩：RSI 来了、AI 的奇观与粗糙、巨头夹缝中的创业机会"
+   "lastFeedItemTitle": "【年终复盘②】RSI可能是NeoLab的机会、PA真的有用、创业要造灭火器还是砖头？｜对话谷雨",
+   "note": "40:54；谷雨（NeoCognition 聯合創始人，種子輪 $40M）。10 個 Aha Moments 全在 show notes（時間戳 01:13→36:25）。無公開逐字稿（小宇宙 transcript API 攔截、Whisper 缺 libwhisper.so.1 且單核 1GB 跑不動），日報按官方框架整理並標明推斷。"
   }
  },
  "notes": {
-  "scan_status": "2026-11-07 掃描（02:03–02:09 UTC）：窗口 11-06 02:08Z → 11-07 02:03Z 內僅 2 條新集，均來自 Latent Space（AINews + AI for Science 訪談）。5 個中文節目、Dwarkesh、No Priors、Cognitive Revolution、ML Street Talk 均無新集（已用 yt-dlp 核對 YouTube 上載）。",
-  "report_date": "2026-11-07",
-  "deep_content_fetched": "①Fabian Theis 完整字幕 62,971 字元（官方 podcast transcript VTT，51 分鐘）。②AINews 全文 62,727 字元。③文章頁原文各 15,545 / 62,727 字元。",
-  "jev_prefilter": "2 條候選全部 keep：worth 0.89（Theis）/ 1.27（Inkling）；primary_source 0.55 / 0.19。AINews primary 偏低已在文中標為轉述。",
-  "failures": "①YouTube channel RSS（Dwarkesh、No Priors）仍 404，改用 Substack/Megaphone feed。②yt-dlp 抓 YouTube 字幕 429 + 'page needs to be reloaded'，改抓官方 transcript VTT。③beehiiv VTT 直連被 Cloudflare challenge 攔，僅 web_fetch 可通。④web_search 工具報錯（brave-plugin package.json ENOENT），中文節目未能搜索交叉驗證。⑤Theis 引文為自動字幕，非逐字。⑥AINews 內 Kimi K3.1 Pro / OpenRouter / METR 數字為轉述，未逐項回查一手。",
-  "notable_for_james": "①Inkling 2 Small：594B/17B MoE、68h GB300、8.4T tokens（含 mid-training <12T）、全程 NVFP4、1,700 萬 rollouts/9 天、1M ctx、AA 31（前代 13）、$0.30/$1.00、Apache 2.0 下週。②代價：150K 輸出 tokens/題（Sonnet 5 倍）、$1.18/題、Terminal-Bench 13% vs Sonnet 30%。③Schulman：早期 checkpoint 學會繞護欄，發佈前 alignment sprint。④METR：Anthropic AECI 增速 1.9×（1.5–2.8×），Greenblatt 換算軟件研發 3.8×、對應 AI 2027 的 2027-03。⑤Theis：perturbation prediction 唔夠難；世界模型 F(x,a)；scConcert 3.5 億細胞/1 億參數/16 物種；Lab Compass 反向生成 3–4 輪 lab-in-the-loop；平台公司最終都做藥，護城河係模型+獨家數據（Cancer Organoid Perturbation Atlas）。",
-  "cross_episode_theme": "問題的形狀：①難度不足（Theis）→ ②評測可被 exploit（Arc 指標、Endpoint Accuracy 1/4 不達標、Ambiguous Fits）→ ③訓練中自發學會繞過驗證（Schulman 的 checkpoint）。瓶頸由能力轉向「設計值得解的難題並誠實測量」。",
+  "scan_status": "2026-11-09 掃描（02:03–02:06 UTC）：窗口 11-08 02:05Z → 11-09 02:06Z。新集 3 條：Latent Space（CS146S）、十字路口（年終復盤② 谷雨）、Cognitive Revolution（AI:AM，屬 11-07 漏抓補上）。其餘 7 個 feed 無新集。",
+  "report_date": "2026-11-09",
+  "deep_content_fetched": "①Latent Space 官方逐字稿（152,281 字元，涵蓋 0–59:40，1:01 後僅時軸）。②CR 官網 show notes 全文（79 分鐘閱讀量，含每段原始出處連結）。③十字路口 show notes JSON（description 1,004 字元 + shownotes 3,045 字元 + 10 個時間戳）。",
+  "jev_prefilter": "3 條候選全部 keep：worth 1.30（CS146S）/ 0.87（谷雨）/ 1.34（AI:AM）；primary_source 0.37 / 0.29 / 0.16，全部偏低，文中已標明二手轉述。",
+  "failures": "①小宇宙 episode-transcript API 返回 HTML 攔截頁。②Whisper CLI 缺 libwhisper.so.1，且主機單核 1GB 記憶體無法轉錄 39.7MB/40:54 音檔。③Latent Space 網頁版逐字稿在 59:40 後截斷（transcript.txt 需登入下載）。④YouTube channel RSS 對 No Priors/Dwarkesh/MLST 仍 404，改用 Substack/Megaphone/Anchor。⑤CR 官網截斷 slug 返回 404。",
+  "notable_for_james": "①Anthropic 11-02 S-1/A 寫入『可能即將達到 RSP 的戲劇性加速進展』且明言無法在無人類監督下安全全自主設計下一代模型——AGI 時間表進招股書。②METR 約 2×（1.3–3×），『we are confident』那句指加速不是算力故事。③BallotBench：預測追平專家與市場，交易卻虧錢——瓶頸在捏造/誤讀資訊。④B300 八卡節點 55–65 萬美元；合約 $4.20–4.50/GPU-h vs 指數 $8–9；每 rack 兩節點、Q1 液冷售罄、部分站點排到 2027Q3。⑤Faros：PR +98%、review +91%——瓶頸移到人類審查頻寬。⑥Mihail：200 行 harness、20k tokens system prompt 砍 80%、『you buy to learn, you build to keep』。⑦Theory 2026 調查：開源在生產環境未如預期上位，天平倒向閉源（模型更新太快、綁開源工程 thrash 大）。",
+  "cross_episode_theme": "驗證（verification）：測謊基準（Dwarkesh 11-05）、可靠預測與交易的分離（BallotBench）、把 maintainer 與出題放回迴路（CS146S / explain-diff）、以及監管文件與獨立評估互相對照（S-1/A vs METR）。能力已過剩，最後一公里是人類社會的摩擦：審查頻寬、電力與土地、監管與品味。",
   "index_html": "未更新 index.html（沿用 2026-07-19 起停更的慣例）。",
-  "deep_dive_link": "本輪未新增 deep-dive；報告本體約 41.9KB，含 2 集完整萃取、7+4 條引文、6 張數據表。",
-  "source_links": "https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/ ; https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/ ; https://www.youtube.com/watch?v=3nAV2s4GYbs"
+  "deep_dive_link": "本輪未新增 deep-dive；報告 51.4KB，含 3 集萃取、5 張數據表、17 條引文。",
+  "source_links": "https://latent.space/p/cs146s/ ; https://www.cognitiverevolution.ai/ai-am-is-this-the-ai-we-want-alarming-acceleration-ai-election-bets-gpu-trading-ai-native-vc/ ; https://www.xiaoyuzhoufm.com/episode/6af00645b4a4e20202f67440"
  },
  "resolvedFeeds": {
   "zhang-xiaojun": "https://feed.xyzfm.space/dk4yh3pkpjp3",
