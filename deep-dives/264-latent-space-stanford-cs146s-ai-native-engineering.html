@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「去年的作業，一個 prompt 就做完」——史丹佛 CS146S 與 AI-native 工程的三層拆解</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #888; line-height: 1.7; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">Latent Space · 2026-11-08 · 約 21 分鐘閱讀</div>
+  <h1>「去年的作業，一個 prompt 就做完」<br>——史丹佛 CS146S 與 AI-native 工程的三層拆解</h1>
+  <div class="meta">
+    <div>〈How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco〉</div>
+    <div>出品：Latent Space<span>·</span>主持：swyx（Shawn Wang）、Alessio Fanelli<span>·</span>嘉賓：Mihail Eric<span>·</span>全長約 115 分鐘</div>
+    <div>發布：2026-11-09 05:41 HKT（2026-11-08 21:41 UTC）<span>·</span>含官方自動對齊逐字稿</div>
+    <div>來源：節目逐字稿與官方 show notes 整理；本文所有引語均出自節目，分析推斷部分另行標明</div>
+  </div>
+</header>
+
+<p>這一集表面上是「一位教授介紹他的課」，實際上是<strong>一份關於 AI 時代工程教育該怎麼活的現場記錄</strong>。Mihail Eric 在史丹佛開 CS146S「The Modern Software Developer」，今年是第二年。第一年他設計了九個作業加一個 capstone；到了第二年，他判斷這些作業<strong>大部分已經可以被一個 prompt 解決</strong>。</p>
+
+<p>於是他做了一件很誠實、也很殘酷的事：把作業改成向開源專案提交 patch，由維護者本人 review。</p>
+
+<blockquote class="strong">
+  「That conversation is also how a junior engineer gets to learn from a senior one.」
+  <span class="attribution">—— Mihail Eric，談為何要把 maintainer 拉進評分迴路</span>
+</blockquote>
+
+<p>這句話是整集的核心。它說的不是「AI 不會寫程式」，而是「當寫程式變便宜，<strong>唯一還值得教、也還教得動的東西，是判斷與協商</strong>」。而判斷與協商，只能在有真實對手的地方發生——不是在你和模型之間，是在你和一個會說「不，我們不要這個功能」的人之間。</p>
+
+<div class="section-title">一、這門課的由來：九到十個月，只為了一門選修</div>
+
+<p>先把時間線排好。CS146S 的起心動念在 2024 年 11 月，花了九到十個月走完史丹佛的課程委員會，2025 年秋季首次開課，2026 年秋季改版。首年就被 Business Insider 報導。</p>
+
+<p>這個細節值得停下來看：<strong>九到十個月</strong>。在一個模型每三個月換一代的行業裡，開一門課的行政週期比模型的迭代週期長三倍。這意味著課程設計從第一天起就必須接受一個事實——你教的工具會在你教完之前過時。</p>
+
+<div class="data-point">
+  <span>課程時間軸</span> 2024-11 動念 → 9–10 個月課程委員會 → 2025 秋首開（9 個作業 + 1 個 capstone）→ 2026 秋改版（部分作業改為開源貢獻）。十週課程；主持搭檔為 swyx 與 Alessio Fanelli；本集同時是 AI Engineer YouTube 頻道破百萬訂閱特輯。
+</div>
+
+<p>Mihail 對自己的定位很清楚：不是預言家，是「一個實務工作者把在場上學到的東西彙整起來」的人。這個自我定位很重要，因為它決定了整集的語氣——不是「未來會怎樣」，而是「我上學期試了什麼、哪裡失敗、哪裡活下來」。</p>
+
+<p>而「課程裡活下來的部分，才是真的」這句話，其實是整集的認識論。教書和做產品一樣，你說得再漂亮，學生交不出來就是沒用。</p>
+
+<div class="section-title">二、「地板抬高了」到底是什麼意思</div>
+
+<p>Mihail 在第一堂課對學生說的話，是全集流傳最廣的一句：</p>
+
+<blockquote class="strong">
+  「I really believe that every company needs you, but the floor is much higher.」
+  <span class="attribution">—— Mihail Eric，第一週第一堂課</span>
+</blockquote>
+
+<p>以及更刺的那一句：</p>
+
+<blockquote class="strong">
+  「You have to generally be better than almost at the senior level going to this.」
+  <span class="attribution">—— Mihail Eric，對學生的要求</span>
+</blockquote>
+
+<p>要注意他沒有說「初階工程師會消失」。他說的是「地板抬高」。這兩件事在修辭上很接近，在經濟上完全不同：地板抬高意味著<strong>入場券變貴</strong>，而不是<strong>入場被取消</strong>。對能進史丹佛的人，這是好消息；對其他學校的畢業生，這是入場券被沒收。</p>
+
+<p>為什麼地板會抬高？Mihail 的解釋不是「工具變強」，而是<strong>工具讓「實作」變便宜，於是人類仍然該負責的部分，相對權重上升</strong>。他把課程切成兩層：</p>
+
+<ul>
+  <li><strong>核心軟件工程價值</strong>：系統如何構成、取捨在哪、為什麼這樣長。</li>
+  <li><strong>其餘實作細節</strong>：可以更多委託給 agent。</li>
+</ul>
+
+<p>這個切法聽起來很自然，但它有一個隱含的殘酷推論：<strong>如果你只會第二層，你的邊際價值正在趨零</strong>。而第二層恰好是過去十年 CS 教育最擅長教的部分——寫出能跑的程式。</p>
+
+<div class="highlight-box">
+  <strong>我的判斷：</strong>「地板抬高」這個說法比「失業」溫和，但它的分配效果更劇烈。失業是存量問題，地板抬高是流量問題——它不會讓現有工程師立刻失業，但它會讓下一屆畢業生的起點往後退。而教育體系的反應速度（九到十個月）遠慢於地板抬高的速度（一次模型升級）。這才是這一集沒有明說、但貫穿全集的那個焦慮。
+</div>
+
+<div class="section-title">三、作業的革命：把 maintainer 拉進評分迴路</div>
+
+<p>第一年的九個作業裡，有一個是「讓 AI code reviewer 審一個 repo，然後評估它的回饋」。這在 2025 年是很前衛的設計——它教的不是「怎麼寫 code」，而是「怎麼判斷 code review 的好壞」。</p>
+
+<p>但到了第二年，Mihail 判斷這些練習大多可以被一個 prompt 解決。同時他在課堂上問一圈史丹佛大二大三學生「你們怎麼寫程式」——</p>
+
+<blockquote class="strong">
+  全場舉手的人都在用 agent。
+  <span class="attribution">—— Mihail Eric，課堂現場觀察（節目轉述）</span>
+</blockquote>
+
+<p>這兩個觀察合起來，構成了一個教學上的死局：<strong>如果學生已經用 agent 寫 code，而你出的作業 agent 也能做，那你到底在評什麼？</strong></p>
+
+<p>他的解法是把評分標準從「產出」移到「協商」：向開源專案貢獻 patch，由維護者 review。理由很具體：</p>
+
+<ul>
+  <li>agent 可以一個下午寫完功能；</li>
+  <li>但你還是得搞清楚維護者要不要這個功能；</li>
+  <li>你得搞清楚這段程式為什麼這樣跑；</li>
+  <li>你得搞清楚你的 patch 還會弄壞什麼。</li>
+</ul>
+
+<p>這四件事裡，前三件 agent 都幫不上——因為它們不在代碼裡，在人的腦子裡、在專案的歷史裡、在 issue tracker 的爭論裡。</p>
+
+<div class="data-point">
+  <span>評分設計</span> 第一年：9 個作業 + 1 個 capstone，其中一項是「評估 AI code reviewer 的回饋」。第二年：部分作業改為向開源專案提交 patch，由 maintainer 本人 review。課程十週。
+</div>
+
+<p>我認為這是 2026 年最聰明的一個課程設計，原因不是它「更難」，而是它<strong>把評分者從教授換成了利害關係人</strong>。教授可以給同情分，maintainer 不會。這解決了 AI 時代評量的一個根本問題：當產出可以被偽造，評分就必須依賴一個有真實利害的第三方。</p>
+
+<p>而「That conversation is also how a junior engineer gets to learn from a senior one」這句話，其實也回答了「AI 能不能取代師徒制」——不能，因為師徒制的內容不是知識傳遞，是<strong>在具體決策上被糾正</strong>。你看一百篇文章都不會學會「這個 PR 該不該合」，你只會在第三次被 maintainer 拒絕之後學會。</p>
+
+<div class="section-title">四、200 行：把神秘醬汁倒出來</div>
+
+<p>課程的第二個設計，是讓學生自己寫一個 coding agent。</p>
+
+<p>規模小到有點挑釁：<strong>約 200 行</strong>，用入門演算法課（CS106B）的程度就能寫出一個 agentic loop——會對話、會改檔案、能處理相當複雜的任務。沒有 subagent、沒有 MCP，Mihail 把這些稱為「bells and whistles」。</p>
+
+<blockquote class="strong">
+  「Nobody's telling you to do that... but when you wanna teach fundamentals and a framework that you can use, this is the kind of thing you do.」
+  <span class="attribution">—— swyx，談「Claude Code in 200 lines」這種教學材料的價值</span>
+</blockquote>
+
+<p>教學目的只有一個：<strong>把神秘醬汁剝掉</strong>。當學生發現「agent」就是一個 while 迴圈加上工具調用，他們對這個技術的恐懼與崇拜會同時消失。這是教育應有的效果——不是讓你覺得它很厲害，是讓你覺得你可以拆開它。</p>
+
+<p>接著第二堂課更狠：用 MITM proxy 攔截真實 Claude Code 的 request / response，把 system prompt、plan prompt、compaction prompt 全部攤在學生面前。</p>
+
+<blockquote class="strong">
+  「Here's exactly what's going on.」
+  <span class="attribution">—— Mihail Eric，談 MITM proxy 那一堂課</span>
+</blockquote>
+
+<p>這個做法在商業上是有爭議的（攔截自家流量是一回事，公開拆解別人的 prompt 是另一回事），但在教學上非常有效。因為它同時教了三件事：</p>
+
+<ol>
+  <li><strong>agent 的行為是可讀的</strong>——它不是魔法，是一段文字加上一個迴圈。</li>
+  <li><strong>prompt 是工程產物</strong>——有結構、有取捨、有歷史包袱。</li>
+  <li><strong>你可以比較不同版本</strong>——六個月前的 prompt 和現在的 prompt 差在哪，哪些能力已經從 prompt 遷移到權重。</li>
+</ol>
+
+<p>第三點是整個課程裡最有價值的部分。因為它教的不是「怎麼寫 prompt」，而是「<strong>怎麼觀察一個系統的演化</strong>」。</p>
+
+<div class="section-title">五、20,000 tokens 的 system prompt，與被砍掉的八成</div>
+
+<p>Mihail 觀察到一個很具體的歷史：Claude Code 早期的優勢來自「更少工具做更多事」——押注 SQL、Bash 這類瑞士刀工具，而不是給模型一百個專用工具。而它的 system prompt 一度長達約 <strong>20,000 tokens</strong>，是同類 coding agent 之最。</p>
+
+<p>然後，它被砍掉了約八成。</p>
+
+<p>原本寫在 prompt 裡的 Git 用法、任務設置方式，現在「被烘焙進模型權重」。這是一個非常乾淨的案例，說明<strong>模型能力與 harness 設計之間是翹翹板，不是階梯</strong>。</p>
+
+<div class="data-point">
+  <span>兩個數字</span> Claude Code system prompt 峰值約 <strong>20,000 tokens</strong>（同類最長）→ 後續削減約 <strong>80%</strong>。被刪掉的內容（Git 用法、任務設置）大多遷移進模型權重。
+</div>
+
+<p>這個觀察對自建 harness 的團隊是個真問題：<strong>你投資在 harness 的東西，可能下一版模型就內化了。</strong> 你花六個月寫的 prompt 工程、工具編排、錯誤恢復邏輯，可能在一次模型升級後全部變成冗餘——更糟的是，它可能變成<strong>負債</strong>，因為你用範例過度約束了一個已經更強的模型。</p>
+
+<blockquote class="strong">
+  模型越強，你越要小心是不是在用範例過度約束它，以及什麼時候該把約束拆掉。
+  <span class="attribution">—— Mihail Eric 的判斷（本文轉述）</span>
+</blockquote>
+
+<p>這句話的實務含義是：harness 的設計應該<strong>假設自己會被淘汰</strong>。好的 harness 不是「讓弱模型看起來很強」，而是「在模型變強時，可以一層一層拆掉」。這也解釋了為什麼 Mihail 說「200 行就夠」——不是因為複雜的 harness 沒用，而是因為<strong>你必須知道哪 200 行是核心，其餘都是可拆的鷹架</strong>。</p>
+
+<div class="highlight-box">
+  <strong>我的判斷：</strong>「模型與 harness 是翹翹板」這個比喻，比「模型即一切」和「harness 即一切」都準確。它的推論是：harness 工程的價值不在於「累積」，而在於「可刪除性」。一個團隊的 harness 成熟度，可以用一個問題測試——<em>如果明天模型升級一代，你能在多長時間內刪掉三成不必要的約束？</em> 答不出來的團隊，其實是在用工程對抗模型進步。
+</div>
+
+<div class="section-title">六、Context engineering：把「理解」變成有輸出的階段</div>
+
+<p>Mihail 推的流程是：</p>
+
+<p><strong>research → proposal → plan → implement → 測試收攏</strong></p>
+
+<p>功能上近似 Dex Horthy 的 RPI（Research-Plan-Implement）。每個階段都有明確的產出物：</p>
+
+<table>
+  <tr><th>階段</th><th>產出</th><th>誰做決定</th></tr>
+  <tr><td>Research</td><td>把相關代碼、歷史、約束找出來</td><td>agent 執行，人設定範圍</td></tr>
+  <tr><td>Proposal</td><td>列出幾條替代方案與取捨</td><td><strong>人做決策</strong></td></tr>
+  <tr><td>Plan</td><td>具體 spec，可被檢查</td><td>人審，agent 細化</td></tr>
+  <tr><td>Implement</td><td>patch</td><td>agent</td></tr>
+  <tr><td>測試收攏</td><td>測試、修復、邊界條件</td><td>agent 為主，人驗收</td></tr>
+</table>
+
+<p>這個流程的關鍵不在於它有多聰明，而在於它<strong>把「理解」變成一個有輸出的階段</strong>。傳統的 vibe coding 是「我大概知道我要什麼，你先寫」，問題是「大概知道」無法被檢查。Proposal 階段強迫你把「大概知道」寫成「A 方案好在這裡、壞在那裡；B 方案相反」——一旦寫出來，決策就變便宜了。</p>
+
+<p>Mihail 的論斷很直接：市場上「極少人進步到 vanilla prompting 以上」。但只要你進到 Google 那種百萬行級 codebase，你就必須更認真地餵 context。</p>
+
+<blockquote class="strong">
+  這套方法能 scale 到百萬行——不是因為它聰明，而是因為它把「理解」變成一個有輸出的階段。
+  <span class="attribution">—— 本文對 Mihail 流程的歸納</span>
+</blockquote>
+
+<p>這也是為什麼「context engineering」不是咒語。咒語是「你要給模型更多 context」；方法是「你要在正確的階段、用正確的格式、給正確的人（或模型）看正確的東西」。</p>
+
+<div class="section-title">七、多 agent 的 context：藝術，而且是有點髒的藝術</div>
+
+<p>swyx 補的那段，是整集最誠實的部分。他談 subagent 該不該繼承主線完整 context、subagent 的結果該怎麼壓縮回主線：</p>
+
+<blockquote class="strong">
+  「it's very hacky. I don't like anything I'm doing.」
+  <span class="attribution">—— swyx，談多 agent 的 context 管理</span>
+</blockquote>
+
+<p>這句話來自一個每天在做這件事的人，份量比任何架構圖都重。它承認了一個行業現狀：<strong>多 agent 系統目前沒有理論，只有工作模式</strong>。</p>
+
+<p>他指出的具體失敗模式叫「expand contracts」——怕 subagent context 不夠，就狂塞背景資料。結果是 agent 把你很久以前一句隨口的話當成法律，做出很蠢的決定。</p>
+
+<p>這個失敗模式值得展開，因為它很反直覺：<strong>給太多 context 的傷害，不是「浪費 token」，而是「提高錯誤資訊的權重」</strong>。當你把三個月前的會議紀錄、上週的 Slack 討論、今天的 ticket 全部塞進去，模型無法區分「這是當前約束」和「這是某人當時的猜想」。它會把所有文字當成同等有效的指令。</p>
+
+<p>swyx 也提到 Dex 的「dumb zone」概念：要對 context 膨脹有感覺。而 Mihail 的分類更細：fan-out 探索、fan-out 子任務、compaction 回主線，三個階段各有失敗模式；審查型 agent 必須拿到完整 context，否則審不出東西。</p>
+
+<div class="data-point">
+  <span>三種 fan-out</span> ①<strong>探索型</strong>：廣度優先找線索，context 可以窄；②<strong>子任務型</strong>：需要局部完整，context 要準；③<strong>審查型</strong>：必須拿到完整 context，否則只會給出表面意見。壓縮回主線時，最常丟失的是「為什麼排除某些方案」。
+</div>
+
+<p>這裡有一個我認為整集沒有明說、但很重要的推論：<strong>多 agent 的瓶頸不是協調，是遺忘</strong>。人類團隊靠會議紀錄、代碼註釋、口頭傳統來對抗遺忘；agent 團隊目前只能靠 context window 和摘要，而這兩者都會系統性地丟掉「否定性知識」——也就是「我們試過 X，不行，因為 Y」。而否定性知識恰好是最有價值的部分。</p>
+
+<div class="section-title">八、Buy to learn, build to keep：一條資本配置原則</div>
+
+<p>Monaco 的案例，是整集最可搬遷的一條判準。</p>
+
+<p>他們評估過 code review 產品，最後繼續用 Devin。但 agent workspace 反過來——背景 agent 需要一個地方把產品跑起來、重現故障、測 patch，而這取決於 Monaco 自己的雲怎麼搭，所以他們自建。</p>
+
+<blockquote class="strong">
+  「You buy to learn, and you build to keep.」
+  <span class="attribution">—— Mihail Eric，談 Monaco 為何買 code review、自建 agent workspace</span>
+</blockquote>
+
+<p>這句話之所以好，是因為它把「買 vs 建」從意識形態問題變成了<strong>資本配置問題</strong>。買是為了獲取學習曲線（別人的產品已經把問題定義清楚了），建是為了保留那層「貼合你基礎設施」的東西。</p>
+
+<p>推論很直接：<strong>能外包的部分會迅速商品化，貼合基礎設施的那層才是長期差異化。</strong> 這也解釋了為什麼 2026 年這麼多公司自建 agent runtime 卻買 code review——因為 runtime 必須長在你的雲、你的權限、你的故障重現流程上，而 code review 的「好」是相對通用的。</p>
+
+<div class="highlight-box">
+  <strong>我的判斷：</strong>「You buy to learn, and you build to keep」其實是一條<em>時間</em>判準，不是<em>功能</em>判準。你買的是「六個月的學習」，你建的是「六個月後還成立的東西」。所以正確的問題不是「這個功能重不重要」，而是「六個月後，這層還會是我們的差異化嗎？」如果答案是否，就買；如果是，就建——但要有心理準備，你建的東西可能被下一代模型吃掉。
+</div>
+
+<div class="section-title">九、Hal：同一條管線，兩種終點</div>
+
+<p>Monaco 的產品叫 Hal，它的設計有一個很細的觀察：</p>
+
+<ul>
+  <li>工程師問它「哪裡壞了」——它去查、開 PR；</li>
+  <li>業務問它「產品怎麼運作」——它給一段能對客戶講的解釋。</li>
+</ul>
+
+<p>如果兩邊都給一堵 debug 輸出，只服務了其中一種人。</p>
+
+<p>這是 agent 產品設計裡常被忽略的一點：<strong>同一個檢索與推理管線，終點形態必須隨受眾改變</strong>。大多數 agent 產品失敗，不是因為推理錯，而是因為它把「內部表徵」直接倒給使用者。工程師看得懂 stack trace，業務看不懂；業務需要的是因果敘述，工程師覺得那是廢話。</p>
+
+<p>這個觀察的價值在於：它把「personalization」從「語氣調整」升級成「<strong>表徵轉換</strong>」。不是把同一段話說得更客氣，而是<strong>決定哪些中間步驟該被展示、哪些該被壓縮成結論</strong>。</p>
+
+<div class="section-title">十、+98% 與 +91%：瓶頸轉移的硬數據</div>
+
+<p>Mihail 引用 Faros 的研究：AI 採用度高的團隊，合併的 PR 多 <strong>98%</strong>，但 PR 審查時間長 <strong>91%</strong>。</p>
+
+<div class="data-point">
+  <span>一組對照</span> 高 AI 採用團隊：合併 PR <strong>+98%</strong>｜PR 審查時間 <strong>+91%</strong>（Faros 研究，節目引用）。解讀：寫 code 的成本下降，並沒有讓交付變快多少——壓力全部轉移到「有沒有人看得懂、敢不敢合」。
+</div>
+
+<p>這組數字的重要性，遠超過它看起來的樣子。它說明生產力革命目前卡在<strong>人類的審查頻寬</strong>，而不是<strong>生成頻寬</strong>。</p>
+
+<p>而且 +98% 與 +91% 幾乎同比例，意味著<strong>每個 PR 的平均審查成本沒有下降</strong>。也就是說，AI 沒有讓人「審得更快」，只是讓人「審得更多」。這是一個非常不性感的結論，但它是目前唯一有數據支撐的結論。</p>
+
+<blockquote class="strong">
+  誰能解決 review，誰就拿到下一階段的槓桿。
+</blockquote>
+
+<p>這也解釋了 Mihail 為什麼預測「開源 repo 會變成 agent 運行的軟件工廠」——因為那是唯一能繞開人類審查瓶頸、又保留品質閘門的組織形態。維護者不是被取代，而是被<strong>升級成瓶頸</strong>：他的「要不要」決定了一切，而 agent 負責把「怎麼做」的成本壓到接近零。</p>
+
+<p>反過來說，如果 review 是瓶頸，那麼「review 工具」的市場才剛剛開始。而目前大多數 AI code review 產品的問題是：它們增加的是<strong>意見的數量</strong>，不是<strong>決策的速度</strong>。這正好對應 Hal 那個「兩種輸出形態」的設計——review 的產出應該是「這個可以合，理由如下」，不是「這裡有十七個可能問題」。</p>
+
+<div class="section-title">十一、Skills：花園、雜草、與組織知識</div>
+
+<p>兩人花了近十分鐘吐槽 skill 生態，而這段吐槽其實是整集最實用的部分。</p>
+
+<p>最糟的不是寫得爛，而是「<strong>在你完全沒預期的時候觸發</strong>」——當初為某個專案寫的觸發條件，換個專案就亂入。swyx 說他有個「skill cutter」skill，專門砍掉 agent 自動生成 skill 裡的冗餘；他也提到 Eugene Yan 會定期修剪沒在用的 skill。</p>
+
+<blockquote class="strong">
+  「It's not what AGI was supposed to look like. It's like everyone having a giant bunch of markdown files.」
+  <span class="attribution">—— swyx，談 skills 生態的雜亂</span>
+</blockquote>
+
+<p>而 Mihail 補了一個更耐久的用法：把 skill 當成「<strong>組織知識的表示法</strong>」。不是「讓 agent 幫我做某件雜事」，而是把公司定義 API、定義 SLO 的方式編碼進去，餵給 code review 系統。他認為這種定位會比「隨機程序」活得久。</p>
+
+<div class="data-point">
+  <span>Skills 的三種用法</span> ①<strong>程序封裝</strong>：重複流程自動化（最容易腐壞）；②<strong>教學工具</strong>：explain-diff 把 diff 變成視覺化導覽，最後出題測你是否真懂；③<strong>組織知識</strong>：把 API 設計慣例與 SLO 定義編碼，餵給 review 系統（最耐久）。
+</div>
+
+<p>第三種用法之所以耐久，是因為它<strong>編碼的是約束，不是步驟</strong>。步驟會隨工具變，約束不會——「我們的 API 不回傳 500，錯誤一律用 problem+json」這種規則，換十個模型都成立。</p>
+
+<p>而 Geoffrey Litt 的 explain-diff 值得單獨說：它把 diff 變成視覺化導覽，最後出題測你是否真懂。Mihail 對它的評價，其實就是整集的教育哲學：</p>
+
+<blockquote class="strong">
+  「Doing the work and getting the code written is much easier than it was... The understanding, there's no excuse for.」
+  <span class="attribution">—— Mihail Eric，談 explain-diff 為何重要</span>
+</blockquote>
+
+<p>「The understanding, there's no excuse for」——這句話可以貼在每一間工程辦公室的牆上。它承認了前半句（寫 code 變容易），但拒絕接受後半句的推論（所以理解也不重要）。恰恰相反：<strong>正因為寫 code 變容易，不理解的成本變高了</strong>，因為你會更快地產出更多你不懂的東西。</p>
+
+<div class="section-title">十二、爭議點：哪些話不能照單全收</div>
+
+<ol>
+  <li><strong>「Most students are cooked.」</strong> swyx 自己標注這是「說來辛辣」的版本，但沒有收回。真正的分歧不在「AI 會不會取代初階工程師」，而在「地板抬高」是好事還是壞事。對能進史丹佛的人是好事，對其他學校的畢業生可能是入場券被沒收。這是一個分配問題，不是技術問題。</li>
+  <li><strong>Skills 會不會死。</strong> swyx 的說法很尖銳：「我懷疑 OpenAI 和 Anthropic 有些很聰明的人希望 skills 消失……他們不會公開說，但這感覺很邋遢。」他的依據是「每個人有一大堆 markdown 檔」不符合 AGI 的想像。反方則是 Mihail 的組織知識論。這是預測，不是觀察。</li>
+  <li><strong>模型 vs harness 該押哪邊。</strong> Claude Code 把 20k tokens 的 system prompt 砍掉八成、把 Git 用法內化進權重，這是對「harness 工程」價值的直接否定。但對無法負擔預訓練的團隊，harness 仍是唯一槓桿。兩邊都對，取決於你的資本結構。</li>
+  <li><strong>Faros 的 +98% / +91%。</strong>這是節目引用的研究，不是本集自製數據；「AI 採用度高」的定義、樣本組成、時間窗口都會影響結論。把它當成方向性證據，不要當成精確係數。</li>
+  <li><strong>「200 行就夠」的適用範圍。</strong>這是教學簡化，不是產品建議。真實的 coding agent 要處理權限、沙盒、長任務恢復、成本控制，200 行絕對不夠。Mihail 自己也沒有說它是產品規格。</li>
+  <li><strong>Monaco.com 域名官司。</strong>節目中段插了一段輕鬆的插曲：Monaco 買下 monaco.com 被摩納哥公國起訴，最後他們贏了。這是全集唯一與技術無關、但很能說明 startup 生存狀態的段落——你有沒有想過，買一個域名也會被一個國家告？</li>
+</ol>
+
+<div class="section-title">十三、前後脈絡：這一集在講什麼，其實是「驗證」</div>
+
+<p>把這集放進這幾週的序列裡看，會發現一個共同主題：<strong>能力過剩、判斷稀缺</strong>。</p>
+
+<ul>
+  <li>11-01 莊明浩在十字路口說「RSI 來了、AI 的奇觀與粗糙」；</li>
+  <li>11-07 42 章經與馬驍騰談 RL 與 NeoLab；</li>
+  <li>11-05 Dwarkesh 那集「The benchmark where AIs have to lie to win」講的是評測如何被模型操弄；</li>
+  <li>而 CS146S 則是這條線的<strong>落地版</strong>：當生成便宜到不需要教，教育就只能教「怎麼不被自己的產出騙過去」。</li>
+</ul>
+
+<p>Geoffrey Litt 的 explain-diff（把 diff 變成測驗）正是這個邏輯的教具。它不是教你寫 code，它是<strong>測試你是否真的懂你剛剛寫了什麼</strong>。</p>
+
+<p>另一個有趣的自我修正：swyx 在節目裡主動翻出自己 2025 年對 Claude Code 的誤判——</p>
+
+<blockquote class="strong">
+  「A query cost me 50 cents. I was like, who's going to use this shit?」
+  <span class="attribution">—— swyx，回憶 2025 年首次試用 Claude Code（兩個月大、beta 期）</span>
+</blockquote>
+
+<p>他後來承認低估了它，並歸納出一個產品判斷：<strong>Anthropic 是「為模型六個月後的能力而建」</strong>，在模型還不夠好時就把 harness 搭好。這與他在 11-02 談 agent 創業機會的觀點一致：機會不在模型本身，在模型能力到位前就先卡好的那層。</p>
+
+<p>而這正好回到 Mihail 的翹翹板：<strong>為六個月後的模型而建，意味著你今天的 harness 有一半是為了被刪掉而存在的。</strong> 這是一種很特別的工程美德——你投資的東西，價值在於它讓你能安全地拆掉它。</p>
+
+<hr>
+
+<p>最後，回到那門課。</p>
+
+<p>十週、九個作業、一個 capstone、一個 200 行的 agent、一次 MITM 攔截、一份開源 patch。這些東西沒有一項是「教你用 AI」。它們全部在教同一件事：</p>
+
+<blockquote class="strong">
+  當產出變便宜，唯一還稀缺的是「知道哪個產出值得留下」。
+</blockquote>
+
+<p>而這句話，對學生、對工程師、對創業者，都是同一句話。</p>
+
+<footer>
+  <p><strong>來源</strong>：Latent Space，〈How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco〉，2026-11-08 21:41 UTC 發布，約 115 分鐘，含官方自動對齊逐字稿。主持 swyx（Shawn Wang）與 Alessio Fanelli；嘉賓 Mihail Eric（史丹佛兼任教授、CS146S 授課者、Monaco AI 負責人）。文中數字與引語以節目逐字稿及官方 show notes 為準；Faros 研究為節目引用之第三方數據；「Course 時間軸」「+98% / +91%」等均按節目陳述整理。本文分析與判斷部分已標明為作者歸納，不代表節目立場。</p>
+  <p><strong>生成時間</strong>：2026-11-09 06:00 UTC｜Deep Dive #264｜AI Podcast Daily</p>
+</footer>
+
+</div>
+</body>
+</html>

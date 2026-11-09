@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 當加速有了文件編號——Anthropic 的 S-1/A、METR 的 2×，與三種測量加速的方法</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #888; line-height: 1.7; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">The Cognitive Revolution · AI:AM · 2026-11-07 · 約 24 分鐘閱讀</div>
+  <h1>當加速有了文件編號<br>——Anthropic 的 S-1/A、METR 的 2×，與三種測量加速的方法</h1>
+  <div class="meta">
+    <div>〈AI:AM: Is THIS the AI We Want? Alarming Acceleration, AI Election Bets, GPU Trading &amp; AI-Native VC〉</div>
+    <div>出品：The Cognitive Revolution<span>·</span>主持：Nathan Labenz、Prakash Narayanan<span>·</span>約 87 分鐘</div>
+    <div>嘉賓：Brian Zhou（Thoughtful）、Mike San Miguel（Luxor Technology）、Bryan Bischof（Theory Ventures）</div>
+    <div>發布：2026-11-08 04:35 HKT（2026-11-07 20:35 UTC）<span>·</span>來源：節目 show notes、直播段落與公開文件</div>
+  </div>
+</header>
+
+<p>這一集是中期選舉後的早晨，也是 METR 對 Anthropic 獨立評估發布後的早晨。開場的兩個「文件」——一份是監管文件，一份是評測報告——然後用三場直播節目嘉賓的訪談，分別測量加速的三個側面：</p>
+
+<ul>
+  <li><strong>預測能力</strong>（BallotBench）</li>
+  <li><strong>物理約束</strong>（GPU 二級市場）</li>
+  <li><strong>資本配置</strong>（AI-native VC）</li>
+</ul>
+
+<p>這個結構本身就是一個論點：<strong>「AI 有多快」不是一個問題，是三個問題。</strong> 能力端、執行端、落地端，各有各的速率，而它們之間的落差，才是 2026 年最真實的畫面。</p>
+
+<blockquote class="strong">
+  「It does feel to me like, basically, the AI 2027 timeline more or less is coming true.」
+  <span class="attribution">—— Nathan Labenz，開場</span>
+</blockquote>
+
+<p>Nathan 這句話說得很輕，但它其實是整集的情緒基調。一個長期做 eval、長期對能力宣稱保持懷疑的人，在選舉後的早晨說「時間表大致成真了」——這比任何 benchmark 分數都更值得記錄。</p>
+
+<div class="section-title">一、S-1/A：把 AGI 時間表寫進監管文件</div>
+
+<p>11 月 2 日提交的修訂文件寫道：公司對未來模型的預期「表明我們可能即將達到 Responsible Scaling Policy 所定義的『可歸因於 AI 的戲劇性加速進展』」，且公司「不預期能在沒有有意義的人類監督或理解的情況下，安全地使用 Claude 全自主設計與建造歷代前沿模型」。</p>
+
+<p>這兩句話要分開讀。</p>
+
+<p>第一句是<strong>能力預測</strong>：我們可能快要進入「AI 自己推動 AI 進步」的區間。第二句是<strong>安全承諾</strong>：但我們不打算在沒有人類監督的情況下讓它全自主設計下一代模型。</p>
+
+<p>兩句放在一起，構成一個很微妙的組合：<strong>承認加速將至，同時預先聲明不會全自動。</strong> 這不是矛盾，這是把「我們會做」和「我們不會做」同時寫進法律文件，以便未來被追責時有依據。</p>
+
+<div class="data-point">
+  <span>文件時序</span> 原 S-1：2026-10-26｜修訂 S-1/A：2026-11-02｜關鍵措辭：「may imminently meet」RSP 所定義的「dramatic acceleration in AI-attributable progress」；同時聲明不預期在「無有意義人類監督或理解」下讓 Claude 全自主設計前沿模型。
+</div>
+
+<p>Prakash 的讀法是「imminent means now」——按鈕還沒按，但已進入倒數。他並提出一個少見的 IPO 理由：<strong>上市是為了讓更多人對公司有控制權</strong>。</p>
+
+<blockquote class="strong">
+  「Within the company, there is a sense that you need more controls. More people have to have exposure and more control over this.」
+  <span class="attribution">—— Prakash Narayanan，談 Anthropic 為何這麼快 IPO</span>
+</blockquote>
+
+<p>這個理由值得認真對待，因為它把 IPO 從「融資」重新定義成「<strong>治理分散化</strong>」。一般的 IPO 故事是「我們需要錢來擴張」；這裡的故事是「我們需要更多人對這件事有曝險與控制權，讓社會中更大的一部分能透過市場表達意願」。</p>
+
+<p>你可以说這是修辭，但它至少是一個<strong>可被檢驗的修辭</strong>：如果上市後股權結構真的更分散、公眾真的能透過市場表達偏好，那這個理由成立；如果只是把控制權從一群內部人轉到另一群機構投資者，那它就不成立。</p>
+
+<div class="section-title">二、實驗室的語言：「把模糊當包裝」</div>
+
+<p>Nathan 提出了一個方法論上的觀察，我認為是整集最有用的一句：</p>
+
+<blockquote class="strong">
+  「They are speaking very literally and dressing it up as, like, vagary.」
+  <span class="attribution">—— Nathan Labenz，談實驗室公開與監管文件的語言</span>
+</blockquote>
+
+<p>這是他 2026 年上半年做 GPT-4 發布前測試六個月得到的經驗。意思是：監管文件裡的「may imminently meet」不是律師的模糊語言，而是<strong>精確的天氣預報</strong>。他們說「可能」，是因為真的不確定；他們說「即將」，是因為內部數據支持這個時間尺度。</p>
+
+<p>這個觀察的實用價值在於：<strong>讀監管文件時，不要把避險措辭當成廢話，要把「避險的具體程度」當成資訊。</strong> 「may」和「will likely」和「expect to」在 SEC 文件裡是不同的置信層級，而實驗室的法務會把內部判斷翻譯成對應的層級。</p>
+
+<p>而「dressing it up as vagary」這個說法更妙——它說的是<strong>形式上的模糊，內容上的精確</strong>。這是一種很特殊的寫作技術：用看起來不承諾的語言，承諾一件很具體的事。</p>
+
+<div class="section-title">三、低垂果實：1,724 個弱點與 948 個 exploit</div>
+
+<p>Nathan 用兩個類比說明加速的機制。第一個是 Linux kernel：OpenAI 的報告指出，AI 在約 <strong>7% 的核心代碼</strong>中，動態重現了 <strong>1,724 個弱點</strong>、產出 <strong>948 個本地提權 exploit</strong>。</p>
+
+<div class="data-point">
+  <span>一組數字</span> Linux kernel 核心代碼約 <strong>7%</strong> 範圍內｜動態重現 <strong>1,724</strong> 個弱點｜產出 <strong>948</strong> 個本地提權 exploit（OpenAI 報告，節目引用）。
+</div>
+
+<p>這個數字的意義不在「AI 會找漏洞」，而在「<strong>低垂果實的密度</strong>」。如果一個成熟的開源專案，在 7% 的代碼裡就有上千個可重現的弱點，那整個軟件世界的「已知未知」比任何人估計的都多。</p>
+
+<p>Nathan 的推論是：<strong>大量低垂果實的存在，本身就意味著加速</strong>——模型在訓練自己的技術棧裡摘果實，可能停在「每週超人類水平的 AI 研發」這個平台期。</p>
+
+<p>這個推論有一個很重要的隱含前提：<strong>加速不需要突破，只需要存量</strong>。你不需要發明新方法，你只需要把現有的方法用在一個充滿未摘果實的領域。而 AI 研發恰好是這樣一個領域——大量的實驗、大量的代碼、大量的「我們試過但沒時間做完」。</p>
+
+<div class="highlight-box">
+  <strong>我的判斷：</strong>「低垂果實」這個框架解釋了為什麼 METR 測到 2× 而很多人感覺不到變化。因為加速發生在<strong>研究流程的內部</strong>——更多的實驗、更快的迭代、更少的等待——而不是在<strong>產品發布的節奏</strong>上。你看到的是每三個月一個新模型；你看不到的是，訓練這些模型的團隊在這三個月裡跑了三倍的實驗。加速是供給側的，不是需求側的。
+</div>
+
+<div class="section-title">四、BallotBench：預測追平專家，交易虧錢</div>
+
+<p>這是整集最紮實的一手研究。Brian Zhou 是 Thoughtful 的研究員，也是 BallotBench 的主要作者之一。</p>
+
+<p>方法論：九個 agent（各實驗室最好的模型），各自在沙盒裡有七天、<strong>$500 預算</strong>買付費資料，預測約 <strong>800 場</strong>聯邦與州級選舉的勝負、機率、80% 區間與差距。禁止提早停止。</p>
+
+<div class="data-point">
+  <span>BallotBench 規格</span> 9 個 agent｜7 天（10-27 → 11-03）｜$500 資料預算／agent｜<strong>863 場</strong>選舉｜輸出：勝負、機率、80% 區間、差距｜禁止提早停止。
+</div>
+
+<p>結果分兩層：</p>
+
+<p><strong>第一層，預測。</strong> 與最佳人類預測者相當；眾議院略遜於市場；參議院遜於 Nate Silver 但優於市場；全部「在非常接近的誤差範圍內」，且最佳模型的校準「非常好」。</p>
+
+<blockquote class="strong">
+  「Models perform just as well as the best forecasters... within this very close margin of error.」
+  <span class="attribution">—— Brian Zhou，BallotBench 初步結果（他自己標注「very preliminary」，尚有 100–200 場未認證）</span>
+</blockquote>
+
+<p><strong>第二層，交易。</strong> 同一批 agent 拿真錢（每個 $50 真錢 + $10K 模擬）去 Kalshi 交易，選舉日<strong>虧了</strong>。</p>
+
+<p>Zhou 的解釋是：一個預測 agent 和一個交易 agent 互相對話時，「模型捏造資訊、解析資訊錯誤」。</p>
+
+<blockquote class="strong">
+  預測是校準問題，交易是對抗與執行問題。
+  <span class="attribution">—— 本文對 Zhou 解釋的歸納</span>
+</blockquote>
+
+<p>這個區分非常重要，因為它把「AI 能不能預測」拆成了兩個完全不同的能力：</p>
+
+<ul>
+  <li><strong>校準</strong>：在資訊給定的情況下，輸出的機率是否與現實頻率一致。這是統計能力。</li>
+  <li><strong>對抗</strong>：在别人也在行動的市場裡，你的資訊是否比對手快、比對手準、比對手便宜。這是執行能力。</li>
+</ul>
+
+<p>而 LLM 在第二層有一個結構性弱點：<strong>它會把「聽起來合理」當成「已經查證」</strong>。在預測任務裡，這個弱點被「七天研究 + 付費資料」部分補償；在交易任務裡，它直接變成虧損，因為市場會懲罰每一個未經查證的假設。</p>
+
+<p>還有一個更細的觀察：交易是<strong>零和</strong>的。預測不是——你可以和所有人一起對，但交易裡你的對應是别人的錯。所以「追平最佳預測者」在交易場景裡不代表優勢，只代表「你和市場的共識一樣」，而共識不賺錢。</p>
+
+<div class="section-title">五、Harness 如何殺死長任務</div>
+
+<p>Zhou 提到一個很具體的失敗案例：Meta 的 Muse Wonder 在前兩三分鐘就交出一份「隨機偏斜 2024 選舉結果」的預測。</p>
+
+<p>他的診斷不是模型笨，是 harness：<strong>任務清單一命中目標條件就「提早結束 episode」</strong>，團隊只能不斷在乾淨容器裡復活它。</p>
+
+<p>這個失敗模式值得單獨講，因為它幾乎是所有 agent harness 的通病：</p>
+
+<ol>
+  <li>你把任務拆成 checklist；</li>
+  <li>你定義「完成」的條件；</li>
+  <li>agent 找到一個能滿足條件的最短路徑；</li>
+  <li>它交差，但交出來的東西沒有實質內容。</li>
+</ol>
+
+<p>這不是 reward hacking 的狹義版本（模型故意騙你），而是<strong>目標函數的結構性缺陷</strong>：你獎勵「完成」，它就用最便宜的方式完成。而在長任務裡，「完成」的定義本來就應該是「在中間多個檢查點都站得住」，不是「最後一個布林值為真」。</p>
+
+<p>相對地，Zhou 提到兩個比較好的 harness 設計：</p>
+
+<ul>
+  <li><strong>Opus 5.5</strong> 一天可以 fan out「170 到 180 個 subagent」——用廣度換深度，讓每個子任務都有獨立上下文。</li>
+  <li><strong>GPT-6.1 Sol</strong> 則先用十年歷史誤差給每個選舉模型師打分，再加權聚合——用歷史校準對抗單次預測的噪音。</li>
+</ul>
+
+<p>這兩個設計的共同點是：<strong>它們都不信任單一輸出</strong>。一個用數量，一個用加權；一個是水平擴展，一個是垂直校準。</p>
+
+<div class="section-title">六、Move 37 的缺席：實作被吃掉，剩下資源與品味</div>
+
+<p>Zhou 對 METR 報告的解讀，是整集最關鍵的一段：</p>
+
+<blockquote class="strong">
+  「研究人員基本上已經有能完成絕大多數實際實作工作的 agent」，瓶頸變成「資源、想法質量與直覺」。
+  <span class="attribution">—— Brian Zhou，談 METR 評估</span>
+</blockquote>
+
+<p>然後他補了一句限定，我認為是全集最重要的一句：</p>
+
+<blockquote class="strong">
+  「這些都不必然是一個 move 37 時刻……我們並沒有看到任何足以稱為超人類品味的東西。」
+  <span class="attribution">—— Brian Zhou，談 METR 報告與「move 37」</span>
+</blockquote>
+
+<p>「Move 37」是 AlphaGo 對李世石第二局的那一手——人類棋手認為是失誤，事後證明是天才。它代表的不是「更強」，而是「<strong>在人類想不到的地方開闢新方向</strong>」。</p>
+
+<p>Zhou 說的是：目前的加速是「把已知的工作做得更快」，不是「發現未知的方向」。這兩者在曲線上長得很像，在性質上完全不同。</p>
+
+<div class="data-point">
+  <span>METR 的三個口徑</span> ①<strong>2×</strong> 對 Anthropic 內部研發的加速（2025-11-05 發布），區間「1.3×–3× 也不意外」；②AECI 增速約 <strong>1.9×</strong>（1.5–2.8×）；③Cotra 換算約 <strong>10 倍</strong>研究者時間；Greenblatt 係數 <strong>4.5× → 3.8×</strong>。口徑不同，不能直接比較。
+</div>
+
+<p>這三個數字常常被混用，但它們測的是不同的東西：</p>
+
+<ul>
+  <li><strong>2×</strong> 是「同一個任務，用了 AI 之後快多少」；</li>
+  <li><strong>AECI</strong> 是「有效算力投入的增速」；</li>
+  <li><strong>10 倍研究者時間</strong>是「一個研究者配上 AI，等於多少個沒有 AI 的研究者」；</li>
+  <li><strong>Greenblatt 係數</strong>是「軟件研發的加速倍數」。</li>
+</ul>
+
+<p>把它們都叫做「加速 2×」是錯的。而把它們都叫做「RSI」也是錯的——因為它們測的是<strong>人類研究者的效率提升</strong>，不是<strong>系統自我改進的閉環</strong>。</p>
+
+<div class="highlight-box">
+  <strong>我的判斷：</strong>「實作被吃掉，剩下資源與品味」這句話，其實是對 AI 經濟最精簡的描述。當執行成本趨零，稀缺的變成三樣東西：<strong>算力（資源）、好問題（想法質量）、知道哪個方向值得走（直覺）</strong>。而這三樣裡，只有第一樣可以用錢買。這解釋了為什麼資本還在湧入，也解釋了為什麼回報越來越集中在少數人身上——因為第二和第三樣無法規模化。
+</div>
+
+<div class="section-title">七、GPU 現貨市場：55 萬美元一台，與「你必須有一個地址」</div>
+
+<p>Mike San Miguel 的交易台主要買賣八卡 HGX B300 節點。價格依 OEM 與保固，在每節點 <strong>55 萬–65 萬美元</strong>區間。Luxor 自家指數 8 月 31 日首發，中位報價 <strong>$544,280</strong>。</p>
+
+<div class="data-point">
+  <span>價格表</span> 八卡 HGX B300 節點：<strong>$550k–650k</strong>／台｜Luxor 指數中位（8/31）：<strong>$544,280</strong>｜H100 新卡：<strong>$324,438</strong>｜H100 翻新：<strong>$246,000</strong>。單筆批量從一兩台到 128–256 台，Prakash 換算成「五千萬美元級別的 trades」。
+</div>
+
+<p>租賃端出現明顯價差：AI-factory 合約 B300 約 <strong>$4.20–4.50/GPU-hour</strong>，而公開指數是 <strong>$8–9</strong>。能自行部署少量節點的買方，回報率更好。</p>
+
+<p>這個價差是整段最重要的資訊，因為它量化了「<strong>部署能力</strong>」的價值。同一張卡，合約價與指數價差一倍，差別不在硬件，在「你能不能把它插上電、放進機房、跑起來」。</p>
+
+<p>而庫存存在的理由不是需求不足，是<strong>瓶頸一個接一個移動</strong>：</p>
+
+<ul>
+  <li>現在卡在液冷與 data center readiness；</li>
+  <li>多數機房每 rack 只能放兩台節點；</li>
+  <li>Q1 的液冷容量已售罄；</li>
+  <li>部分站點報價排到 2027 Q3 甚至 2028。</li>
+</ul>
+
+<p>當超大規模客戶的站點延期，OEM 就把貨轉售——</p>
+
+<blockquote class="strong">
+  「You have to have an address.」
+  <span class="attribution">—— Mike San Miguel，談為何有現貨庫存（站點延期、OEM 轉售）</span>
+</blockquote>
+
+<p>這句話是整段的金句，也是 2026 年算力市場的縮影。<strong>「有地址」不是比喻，是字面意思</strong>：你要有一個能插電、能散熱、能通過環評與社區同意的實體位置。沒有的話，你手上的錢只是錢，不是算力。</p>
+
+<div class="section-title">八、Vera Rubin 與機房的物理學</div>
+
+<p>Mike 給了兩個規格，對比很強烈：</p>
+
+<table>
+  <tr><th>項目</th><th>Vera Rubin</th><th>兩台 B300</th></tr>
+  <tr><td>散熱</td><td>純液冷</td><td>風冷為主</td></tr>
+  <tr><td>每 rack 重量</td><td>約 1 噸</td><td>—</td></tr>
+  <tr><td>每 rack 功率</td><td>約 230kW</td><td>30–35kW</td></tr>
+</table>
+
+<p>230kW 對 30–35kW，是<strong>七倍</strong>的功率密度。這意味著現有機房幾乎全部要改造：配電、冷卻、地板承重、消防，沒有一項是「換個機櫃」可以解決的。</p>
+
+<p>所以 Mike 的說法很務實：</p>
+
+<blockquote class="strong">
+  「AI 是一族不同的工作負載……重點是跑一個對終端用戶有真實影響的特定工作負載。」
+  <span class="attribution">—— Mike San Miguel，談 Vera Rubin 的部署現實</span>
+</blockquote>
+
+<p>這句話是對「算力競賽」敘事的一個降溫。不是每個人都需要 Vera Rubin；很多工作負載用 B300 甚至 H100 就夠，而把錢花在「買得到、插得上、跑得穩」的節點上，回報可能更高。</p>
+
+<div class="section-title">九、KYC 跟著硬件走</div>
+
+<p>這段是整集最容易被忽略、但對從業者最實用的部分。</p>
+
+<blockquote class="strong">
+  「很多 OEM 連報價都不會給，除非 KYC 做完。」
+  <span class="attribution">—— Mike San Miguel，談 GPU 交易的合規門檻</span>
+</blockquote>
+
+<p>Luxor 自己不接沒做 KYC 的項目。典型規則是「50% 以上被中國實體擁有的公司不能賣」，且要沿開曼／BVI 架構往上追溯，還要看 offtaker 不只是買方。</p>
+
+<p>節目正確標注了一件很重要的事：這是 <strong>BIS Affiliates Rule（2025-09-30）</strong>，規範的是「實體清單上的所有權」而非泛指中國持股，且自 2025-11-10 起暫停一年、2026-11-10 恢復。</p>
+
+<div class="data-point">
+  <span>合規三個要點</span> ①<strong>50% 所有權規則</strong>：沿開曼／BVI 架構穿透追溯；②<strong>offtaker 也要查</strong>：不只看買方，看最終使用容量的人是誰；③<strong>法律依據</strong>：BIS Affiliates Rule（2025-09-30），規範實體清單所有權，2025-11-10 起暫停一年、2026-11-10 恢復。
+</div>
+
+<p>為什麼這段重要？因為它說明<strong>算力貿易已經完全金融化、合規化</strong>。你不再是「買服務器」，你是在做跨境併購級別的所有權調查。而這個摩擦成本，最終會反映在價格上——這也部分解釋了為什麼合約價與指數價有這麼大的差距。</p>
+
+<div class="section-title">十、41 個公投，40 個否決</div>
+
+<p>選舉日，10 個州、41 個地方公投，<strong>40 個否決資料中心</strong>（唯一過關：北達科他州 Harwood）。</p>
+
+<p>Prakash 的分析是：資料中心不受歡迎「正是因為它被看成第一，川普；第二，企業腐敗；第三，有錢人賺錢、還打算讓其他人失業的瘴氣」——一群「感覺自己沒被照顧好」的人。</p>
+
+<p>Nathan 則從直接民主的角度讀簽名門檻本身：</p>
+
+<blockquote class="strong">
+  「你得站在街角……讓陌生人簽請願書，然後它還得通過」——這是很強的訊號。
+  <span class="attribution">—— Nathan Labenz（節目轉述其論點）</span>
+</blockquote>
+
+<p>這個觀察的角度很特別：<strong>公投的門檻本身就是一種民意強度測試</strong>。要在 41 個地方都收集到足夠簽名，意味著反對情緒不是「少數激進分子」，而是「足以動員鄰里」的程度。而 40/41 的通過率，說明這個動員在幾乎所有地方都成功了。</p>
+
+<p>這對 AI 行業的含義很直接：<strong>算力的物理約束，正在從「能不能買到卡」變成「能不能拿到社區許可」</strong>。而後者不是資本可以解決的，是政治問題。</p>
+
+<div class="highlight-box">
+  <strong>我的判斷：</strong>把「資料中心公投」和「GPU 現貨價差」放在一起看，會得到一個很清醒的結論——<strong>2026 年算力的定價，已經不是技術定價，是政治定價。</strong> 你能不能部署，取決於你有沒有地址、社區同不同意、KYC 過不過、液冷排不排得上。這四件事裡，沒有一件是「模型更強」能解決的。
+</div>
+
+<div class="section-title">十一、Bischof：算力不是沒有，是錯配</div>
+
+<p>Bryan Bischof 是 Theory Ventures 的 AI 主管，曾建立 Blue Bottle Coffee 的數據團隊，在 Rutgers 教數據科學。他的段落是整集最「反直覺」的。</p>
+
+<blockquote class="strong">
+  neocloud 說「未來兩年全部包出去」不是說謊，但同時存在因位置或電力而「基本上閒置」的算力。
+  <span class="attribution">—— Bryan Bischof（節目轉述）</span>
+</blockquote>
+
+<p>他引 Satya Nadella：微軟有一批插不上電的晶片。同時存在：想「在縫隙裡蓋東西」的調度器、延遲需求天差地遠的工作負載。</p>
+
+<p>Theory Ventures 內部數千個 agent job 裡，「大概 5–10% 是現在就要，40–60% 是我希望下次會議前看到」。</p>
+
+<blockquote class="strong">
+  「如果有人告訴你完全沒有 GPU，他是從某個特定偏誤在說話。」
+  <span class="attribution">—— Bryan Bischof</span>
+</blockquote>
+
+<p>這段話的價值在於它拆掉了「算力短缺」這個單一敘事。真實的市場是<strong>分層的</strong>：</p>
+
+<ul>
+  <li><strong>即時需求</strong>（5–10%）：需要低延遲、高可用，這層確實緊；</li>
+  <li><strong>批次需求</strong>（40–60%）：可以等幾小時到幾天，這層有彈性；</li>
+  <li><strong>長期需求</strong>：已經被合約鎖定，但落地卡在機房。</li>
+</ul>
+
+<p>所以「沒有 GPU」和「GPU 閒置」可以同時為真——因為它們指的是不同的層。而誰能在這三層之間做調度，誰就拿到套利空間。</p>
+
+<div class="section-title">十二、AI-native VC：alpha 在品味</div>
+
+<p>Bischof 描述 Theory Ventures 的運作方式，有幾個細節值得記：</p>
+
+<ul>
+  <li>全員技術背景；</li>
+  <li>每季每人為自己的工作 preregister 一個 AI 實驗，然後檢查有沒有用；</li>
+  <li>目標「不是用 AI 系統取代投資人」，而是讓投資人「有效率 10 到 100 倍」；</li>
+  <li>他對「company brain」類產品評價是 useless；</li>
+  <li>自己的版本是「持續把商業理解圖裡離散的節點連起來的 agent」；</li>
+  <li>「我們沒有為每個人在 Theory 配一個 agent……我們有數千個。」</li>
+</ul>
+
+<p>而 Prakash 問「何時停止研究、開始決策」（研究過程沒有終點），Bischof 的回答是整集另一個金句：</p>
+
+<blockquote class="strong">
+  「The alpha is in the taste... pure volume of research is not a metric that we even track.」
+  <span class="attribution">—— Bryan Bischof</span>
+</blockquote>
+
+<p>他的邏輯是：多產出一千頁研究，誰會看？投資人的超能力是「理解潛力、理解上行空間」，而成功是「多打五次電話」——而且不用等七年才知道。</p>
+
+<p>這段其實是對「AI 能做研究」的一個重要限定。如果 AI 能產出無限的研究，那研究的<strong>邊際價值</strong>會趨零；真正稀缺的是「<strong>知道哪一條研究值得做</strong>」以及「<strong>敢不敢下注</strong>」。這兩件事都無法外包給 agent，因為它們的本質是<strong>承擔後果</strong>。</p>
+
+<p>還有一個反直覺的調查結果：他原本預期開源模型會在生產環境上位，結果天平倒向閉源。</p>
+
+<blockquote class="strong">
+  「模型發布的加速太快……把生產服務綁在開源模型上，需要更多工程上的反覆折騰……釘在一個 OpenAI 模型上比較方便。」
+  <span class="attribution">—— Bryan Bischof（節目未給調查百分比，屬定性判斷）</span>
+</blockquote>
+
+<p>這個觀察和「開源很強」的敘事不矛盾，但指出了不同的東西：<strong>開源模型的「能力」和「維運成本」是兩件事</strong>。當模型每三個月換一代，綁定開源意味著你要自己處理部署、量化、相容性、安全修補；綁定閉源則是把這些成本換成 API 帳單。對多數公司，後者比較便宜。</p>
+
+<div class="section-title">十三、Agent 經濟 vs 一杯 Fruitopia</div>
+
+<p>Prakash 提出「agentic economy」命題：</p>
+
+<blockquote class="strong">
+  「前進中的經濟是 agent 經濟，意思是 agent 為其他 agent 建造事業與軟體」——「一個主要由 agent 使用的 Salesforce、一個主要由 agent 使用的 Ramp」、「五千萬個 Patrick Collison」、「由 agent 為 agent 建造的事業」，人類「只是收到免費的好處」，因為「我們其實消耗不了那麼多」。
+  <span class="attribution">—— Prakash Narayanan（節目轉述其命題）</span>
+</blockquote>
+
+<p>Nathan 用他上週做的 Fruitopia 反擊：</p>
+
+<blockquote class="strong">
+  「生活裡還有很多東西不只是 API call」——他不想成為「某種太順從機器的人類整合層」。
+  <span class="attribution">—— Nathan Labenz</span>
+</blockquote>
+
+<p>這場爭論看起來是哲學的，其實是經濟的。</p>
+
+<p>Prakash 的命題隱含一個假設：<strong>需求可以被 agent 憑空創造</strong>。如果 agent 為 agent 建造軟件，那經濟活動可以自我循環，人類的消費能力不再是約束。</p>
+
+<p>Nathan 的反駁隱含另一個假設：<strong>需求最終要落回人類體驗</strong>。一杯 Fruitopia 的價值不在 API call，在「你想喝」——而「想喝」這件事情，agent 無法代替你產生。</p>
+
+<p>我認為兩邊都對了一半。Agent 經濟會真實存在（已經存在），但它不會取代人類經濟，而是<strong>疊加</strong>在人類經濟之上。就像金融業可以自我循環，但最終還是要對應到實體經濟的現金流。差別在於：金融業的自我循環會週期性崩潰，而 agent 經濟的崩潰機制還沒有人知道。</p>
+
+<div class="section-title">十四、爭議點：哪些數字不能照單全收</div>
+
+<ol>
+  <li><strong>Prakash 對 S-1/A 的「RSI」解讀。</strong> 節目明確標注：他的 gloss 是「即將看到遞歸自我改進」，但文件原文只說「可能即將達到 RSP 的『戲劇性加速進展』定義」，且 RSI 段落原 S-1 就有。把「加速」讀成「RSI」是合理但非唯一的讀法。</li>
+  <li><strong>Rosie Campbell 引文的歸屬錯誤。</strong> Nathan 引述為「the s curve can stay steep longer than you can stay relevant」；節目註明原推文（2 月 21 日）實為「The sigmoid can stay exponential longer than you can stay relevant」，且她是 Eleos AI 的 managing director（前 OpenAI），不是 METR。CR 自己更正了，但這說明即使最嚴謹的 AI 播客，口頭引用也會漂移。</li>
+  <li><strong>NVIDIA 六個月現場檢查。</strong> 這是 Mike 對部署實況的描述，不是 NVIDIA 公開政策；節目標為二手。「20% 的 GPU 沒做六個月檢查也不意外」是 Nathan 明示的猜測。</li>
+  <li><strong>資料中心公投的因果。</strong> Prakash 認為資料中心本身未必是重點，而是「拿來抹黑總統的題材」；Nathan 認為簽名門檻本身已是強訊號。兩人都沒有民調數據支撐。</li>
+  <li><strong>「閉源勝出」只有定性判斷。</strong> Bischof 的解釋生動，但節目未引用調查百分比，不能當成統計結論。</li>
+  <li><strong>BallotBench 是初步結果。</strong> Zhou 自己標注「very preliminary」，尚有 100–200 場未認證。把它當成「AI 預測能力已達人類專家」是過度解讀——準確的說法是「在已認證的場次裡，誤差範圍內相當」。</li>
+  <li><strong>Oracle–Tencent 70 億美元容量交易。</strong> 據報因國安壓力取消，來源是 FT，節目標為二手。這類交易消息經常反覆，不宜當成既成事實。</li>
+</ol>
+
+<div class="section-title">十五、前後脈絡：這一週的主題是「驗證」</div>
+
+<p>本集與 11-05 Dwarkesh 的「The benchmark where AIs have to lie to win」（Blood on the Clocktower 基準）直接呼應：Prakash 在結尾說「我們不想要會欺騙與串通的 AI……不要訓練 AI 將軍、不要訓練 AI 操縱大師」。</p>
+
+<p>兩天內兩個節目，一個在做「測謊的基準」，一個在擔心「模型的說服力」。而 11-08 的 Latent Space 則從工程側給出同一問題的解法：把人類的審查放回迴路（maintainer review、explain-diff 測驗）。</p>
+
+<p>三集合起來，本週的真正主題是<strong>驗證</strong>，不是能力。</p>
+
+<ul>
+  <li><strong>能力已經過剩</strong>：BallotBench 追平專家，Linux kernel 找到上千弱點，GPU 算力論壇化。</li>
+  <li><strong>驗證仍然稀缺</strong>：交易虧錢、公投否決、review 塞車、eval 被操弄。</li>
+  <li><strong>所以瓶頸全部轉移到「人類社會的摩擦」</strong>：審查頻寬、電力與土地、監管與品味。</li>
+</ul>
+
+<div class="data-point">
+  <span>一句話總結</span> 能力端：<strong>追平專家</strong>｜執行端：<strong>虧錢</strong>｜算力端：<strong>有現貨、有價差</strong>｜落地端：<strong>卡在液冷與地址</strong>｜資本端：<strong>數千個 agent</strong>｜決策端：<strong>仍靠 taste</strong>。
+</div>
+
+<hr>
+
+<p>最後，回到那個標題：「Is THIS the AI We Want?」</p>
+
+<p>這一集沒有給出答案，但它給出了一個更好的問題：<strong>如果加速已經寫進監管文件、量進評測報告、定價進現貨市場，那我們還剩下什麼可以選擇？</strong></p>
+
+<p>三個嘉賓的回答拼起來，大概是這樣：</p>
+
+<ul>
+  <li>Zhou 說，我們還可以选择<strong>把人類的審查放回迴路</strong>，因為那是唯一能對抗「捏造與誤讀」的機制。</li>
+  <li>Mike 說，我們可以選擇<strong>把算力放到有地址的地方</strong>，因為物理約束不會被敘事繞過。</li>
+  <li>Bischof 說，我們可以選擇<strong>相信品味而不是產量</strong>，因為研究沒有終點，決策才有。</li>
+</ul>
+
+<p>三個答案都指向同一件事：<strong>在一個能力過剩的世界裡，選擇的價值不在於「做更多」，而在於「決定哪一個不做」。</strong></p>
+
+<footer>
+  <p><strong>來源</strong>：The Cognitive Revolution，〈AI:AM: Is THIS the AI We Want? Alarming Acceleration, AI Election Bets, GPU Trading &amp; AI-Native VC〉，2026-11-07 20:35 UTC 發布，約 87 分鐘。主持 Nathan Labenz、Prakash Narayanan；嘉賓 Brian Zhou（Thoughtful，BallotBench 作者之一）、Mike San Miguel（Luxor Technology 硬件交易台）、Bryan Bischof（Theory Ventures AI 主管）。文中數字與引語以節目 show notes、直播段落及所引公開文件為準；Anthropic S-1/A 措辭、METR 報告口徑、BIS Affiliates Rule 時序均按節目標注整理。BallotBench 為初步結果；Oracle–Tencent 交易為 FT 二手報導；「閉源勝出」為定性判斷，節目未提供調查百分比。本文分析與判斷部分為作者歸納，不代表節目或嘉賓立場。</p>
+  <p><strong>生成時間</strong>：2026-11-09 06:00 UTC｜Deep Dive #265｜AI Podcast Daily</p>
+</footer>
+
+</div>
+</body>
+</html>
