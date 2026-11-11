@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 當買家是一個模型——Resend 如何在 102 次推薦裡贏 64 次</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #888; line-height: 1.7; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">Latent Space Podcast · 2026-11-11 · 約 19 分鐘閱讀</div>
+  <h1>當買家是一個模型<br>——Resend 如何在 102 次推薦裡贏 64 次，然後才開始處理 email</h1>
+  <div class="meta">
+    <div>〈Designing for Agents — Zeno Rocha, Resend〉</div>
+    <div>出品：Latent Space<span>·</span>主持：swyx、Alessio Fanelli<span>·</span>嘉賓：Zeno Rocha（Resend 共同創辦人兼 CEO）</div>
+    <div>發布：2026-11-11 04:05 HKT（2026-11-10 20:05 UTC）<span>·</span>全長 1 小時 25 分 52 秒</div>
+    <div>來源：節目官方 VTT 逐字稿（約 109 KB）、Latent Space 節目頁與 show notes；引語為原文直譯，推斷段落另行標明</div>
+  </div>
+</header>
+
+<p>這一集的起點是一個很小的官僚主義瞬間：swyx 的專案已經在 Cloudflare 上，域名、DNS、DKIM 全部設定好了，Cloudflare Email 就在同一個帳號裡。他請 Claude Code 幫忙加一個寄信功能。模型回答：你應該用 Resend。</p>
+
+<p>他沒有換過供應商，也沒有問過模型「哪個比較好」。他只是想要一個能動的 patch，而模型替他把決策做完了。這就是整集的核心——<strong>當買家是一個模型，產品的競爭對手不再是首頁上的另外三個 logo，而是模型在生成答案那一刻，腦子裡浮現的那一個名字。</strong></p>
+
+<blockquote class="strong">
+  「以前你不確定用什麼工具，會去問 Google，拿到三個比較頁；現在你只會拿到一個答案。」
+  <span class="attribution">—— Zeno Rocha，談 agent 時代的分發（原文：“before, if we're a little bit unsure about which tool to use, we would ask Google... now you just get one response out of the gate.”）</span>
+</blockquote>
+
+<p>Zeno Rocha 是 Resend 的共同創辦人兼 CEO。巴西人，前端出身，2013 年做了 Dracula 編輯器主題，曾是 GitHub 上最活躍的開源開發者之一。他沒有 email 基礎設施背景——節目裡他說得很直白：「如果我一開始知道 email 有多難，我大概不會開這家公司。」</p>
+
+<p>但正因為他不懂，他做對了一件舊玩家不會做的事：<strong>把 email 當成一個開發者體驗產品，而不是一個通訊基礎設施。</strong>這個選擇在 2023 年看起來只是定位；在 2026 年，它變成了分發優勢。</p>
+
+<div class="section-title">一、64 / 102：一個偵探故事的數字</div>
+
+<p>節目開場引用了一份 AEO（Answer Engine Optimization）研究：在可抽出的 102 次 email 建議中，Claude Code 有 <strong>64 次</strong>把 Resend 排在第一位。SendGrid 只有 <strong>7 次</strong>第一，卻有 <strong>55 次</strong>作為替代方案出現。</p>
+
+<p>這組數字的殘酷之處在第二行。SendGrid 是這個市場十幾年的巨頭，品牌、客戶、基礎設施都遠比 Resend 完整；它被提到的次數其實不少，但多數時候是「你也可以用 SendGrid」的那個「也」。而 agent 的工作方式，是把第一個建議直接寫進 patch。開發者如果接受了 patch，很少有人會回頭去試第二個選項。</p>
+
+<div class="data-point">
+  <span>推薦分佈</span><br>
+  102 次可抽取的 email 建議中：Resend 首位 <strong>64 次</strong>；SendGrid 首位 <strong>7 次</strong>、作為替代方案 <strong>55 次</strong>。這是一個觀察性研究，不是因果實驗；但它精準描述了「agent 只給一個答案」時，第二名會發生什麼事。
+</div>
+
+<p>Zeno 自己對這個數字的態度很微妙。他一邊說「這太瘋狂了」，一邊承認他不確定這能不能歸因到某個具體動作。節目後半段 swyx 問他「你到底做了什麼特別的 AEO」，他的回答幾乎是反高潮的：沒有顧問、沒有 magic、沒有單一技巧，只有一連串很樸素的決定，疊加起來剛好讓模型比較容易讀懂他。</p>
+
+<div class="section-title">二、開發者先到，模型後來：React Email 的楔子</div>
+
+<p>Resend 的第一波分發不是 API，是一個 email 模板工具。</p>
+
+<p>Zeno 與團隊在 build 寄送 API 的時候，開發者不斷抱怨同一件事：信本身很難排版。於是他們做了 React Email——你可以用它寫模板，然後透過 SendGrid 寄出去。他們甚至寫了「如何用 React Email + SendGrid」的文件。</p>
+
+<p>這個決定的妙處在時間差：<strong>當開發者還不需要 Resend 的時候，Resend 的程式碼已經在他的 repo 裡了。</strong>等到他有一天要換供應商，或要開一個新專案，React Email 已經是他熟悉的東西；而 React Email 的默認路徑，通往 Resend。</p>
+
+<blockquote class="strong">
+  「我們的目標不是先贏 SEO，是先讓開發者把我們的 code 放進專案裡。」
+  <span class="attribution">—— 本文對 React Email 策略的概括（分析，非節目原話）</span>
+</blockquote>
+
+<p>等到模型開始參與選型，這個楔子又產生了第二層效果。模型在訓練資料裡看到大量「React Email + Resend」的程式碼、教學、GitHub issue；當使用者問「怎麼在 Next.js 裡寄信」，這些共現關係會把 Resend 推到答案前面。也就是說，<strong>React Email 同時是開發者工具、內容資產，與模型的訓練分佈。</strong></p>
+
+<p>這不是傳統意義上的增長駭客。它比較像在一個尚未形成的生態裡，先佔住一個語法位置。</p>
+
+<div class="section-title">三、AEO 的真正含義：不是被提到，是被正確描述</div>
+
+<p>節目裡最有價值的一段，是 Zeno 講他某個週日做競品分析的故事。</p>
+
+<p>他問模型：「用 Resend 寄 120 萬封信，跟 X、Y、Z 比，誰最便宜？」模型答得亂七八糟，還補了一句「Resend 的定價很不透明」。他當場的反應是：「這根本不是事實，我們的定價頁寫得很清楚。」</p>
+
+<p>於是他去看自己的定價頁——一個 JavaScript 滑桿。人可以拖動它，選一個量級，讀出價格。<strong>但 agent 不會拖滑桿。</strong>它抓取 HTML，看到的是一個沒有數字的互動元件，於是只能猜；猜錯之後，它會用一種很像事實的語氣，把錯誤講出來。</p>
+
+<blockquote class="strong">
+  「Agent 不會真的去拖一個 JavaScript widget。」
+  <span class="attribution">—— Zeno Rocha，談定價頁為什麼要有 markdown 版本（原文：“agents don't really drag a JavaScript widget”）</span>
+</blockquote>
+
+<p>他的修正很工程師：給每一個行銷頁面加一個可 append 的 <code>.md</code> 版本。定價頁的 markdown 直接把表格寫出來，不需要 JS、不需要點擊、不需要登入。他甚至做了 content negotiation——同一個 URL，瀏覽器拿到 HTML，agent 拿到 markdown。</p>
+
+<p>幾天後他再問同一個問題，模型答對了。</p>
+
+<div class="data-point">
+  <span>兩個真相來源</span><br>
+  Resend 的每一個行銷頁現在都有 HTML 與 <code>.md</code> 兩版：<code>/pricing.md</code>、<code>/security.md</code> 直接 append 即可。追蹤靠 server-side（Datadog），因為一般 analytics 腳本抓不到 <code>.md</code> 請求。
+</div>
+
+<p>但這裡有一個 Zeno 自己承認的醜陋代價：<strong>你現在有兩個真相來源。</strong>改了 HTML 的價格，要記得同步 markdown；改了 markdown，要記得同步 HTML。他說這「完全很鳥」（“that sucks completely”），但接著補了一句很能代表這個人的話：</p>
+
+<blockquote class="strong">
+  「如果我想要的是輕鬆的路，我就不會來做 email 了。」
+  <span class="attribution">—— Zeno Rocha（原文：“if I wanted the happy path and the easy path, like I wouldn't be doing email.”）</span>
+</blockquote>
+
+<p>這句話值得停一下。多數人把 AEO 理解成一種行銷技巧：多發文章、多拿 backlink、多被提及。Zeno 的做法更接近<strong>資料工程</strong>：確保模型在讀你的產品時，讀到的是正確的結構化事實。前者是機率，後者是確定性；前者可以外包給顧問，後者只能自己維護。</p>
+
+<p>他也提到一個更難量化的因素：<strong>recency bias</strong>。他觀察到模型在推薦工具時，對較新的技術、較新的內容有偏好；而 Resend 作為 2023 年才起步的公司，剛好站在這條斜率的有利一側。這不是他設計出來的，但他承認這可能是 64/102 的一部分解釋。</p>
+
+<div class="section-title">四、80 個工具，還是 2 個？MCP 的路線賭注</div>
+
+<p>Resend 的 MCP server 從上線時的 20 個工具以內，長到 <strong>80 多個</strong>。Zeno 說早期大家擔心「工具太多，模型會混亂」，但他現在看不到這個問題；真正的難點不是數量，是<strong>覆蓋率</strong>。</p>
+
+<p>他的目標是：一個人在 chat client 裡，能做完他在 dashboard 裡能做的所有事。寄信只是 demo；真正的長尾是查用量、看帳單、邀請成員、刪帳號、管理 API key。把這些全部搬進 MCP，意味着每一個資源都要先有權限模型、OAuth、RBAC，然後才有 observability。</p>
+
+<blockquote class="strong">
+  「你可以只做 dashboard 的 90%，那是一種做法；或者你做 100%。但要達到 100% 覆蓋，實際上非常、非常難。」
+  <span class="attribution">—— Zeno Rocha（原文：“Getting to 100% coverage of what your dashboard can do is actually very, very difficult.”）</span>
+</blockquote>
+
+<p>這段話與 Cloudflare 的 Code Mode 形成直接對照。Cloudflare 只暴露兩個工具：<code>search()</code> 與 <code>execute()</code>，把 API 的組合留給模型自己寫程式。Resend 則是把 dashboard 的每一個動作都包成一個工具，讓模型用「選單」而不是「程式」來操作。</p>
+
+<p>兩種哲學的差別不只是工具數量，而是<strong>誰承擔複雜度</strong>。Code Mode 把複雜度推給模型（你要會寫對的查詢）；80 工具把複雜度推給產品（你要把每個邊界都定義清楚）。Zeno 承認他沒有「何時會翻車」的判準，只說會持續觀察。這是一個尚未有答案的架構賭注。</p>
+
+<div class="highlight-box">
+  <strong>一個可借用的除錯習慣：</strong> Zeno 說他每次用 MCP 都會把折疊的工具呼叫打開，看 agent 到底做了什麼。有一次他看到某個呼叫的結果大到塞不進 context——問題不是工具太多，是<strong>回傳的資料太多</strong>。減少工具數量不會讓那個 response 變小。對任何設計 MCP server 的人，這都是一個很便宜的自檢：把你每天用的那個呼叫展開，看看模型真正需要其中多少。
+</div>
+
+<p>還有一個容易被忽略的細節：Resend 的第一版 MCP 其實是 a16z 的 Yoko 寫的本地開源版。Zeno 看到它成長得很快，才請她轉到官方 org，然後回頭補 OAuth、RBAC、觀測性，最後才去談上架。「先有 traction，再補工程」在這個案例裡是真的，但前提是那個 traction 已經證明瞭需求，而不是憑空猜測。</p>
+
+<div class="data-point">
+  <span>MCP 的成長</span><br>
+  上線時 ≤20 個工具 → 目前 80+；月增率一度達到 <strong>2 倍</strong>；2026 年 8 月底約 <strong>120 萬次</strong>呼叫。Zeno 的說法是「MCP 回來了」——幾個月前大家還在說 MCP 已死。
+</div>
+
+<div class="section-title">五、選中之後：deliverability 是跟濫用者反著做</div>
+
+<p>節目最容易被忽略、但最紮實的一半，是「模型選了你之後」發生的事。</p>
+
+<p>寄 email 不是呼叫一個 API 就結束。你要面對 Gmail、Outlook、Yahoo 各自不同的規則；你要排隊、分批、看互動；你要買 IP block、看 IP 歷史、把用戶分散到不同 IP pool；你要處理 bounce、complaint、黑名單。Zeno 把這套方法總結成一句很漂亮的話：</p>
+
+<blockquote class="strong">
+  「你需要做的，正好是濫用者不會做的事。完全是相反的。」
+  <span class="attribution">—— Zeno Rocha（原文：“you need to do exactly what an abuser wouldn't do. It's the opposite of that.”）</span>
+</blockquote>
+
+<p>什麼是濫用者會做的事？買一個兩天前註冊的域名；用 lookalike 域名偽裝；一次寄大量；寄完就消失；用共享的 click-tracking 域名把連結改寫成自己的。於是正常寄件者要做的，就是全部反過來：域名要有一點年齡、網站要回 200、寄送量要穩定成長、要維持互動、要用自己的 tracking domain。</p>
+
+<p>他舉了一個具體案例：最近有一組日本集團帶了約 <strong>20,000 個域名</strong>進來，全是不同 TLD、不同註冊商。Resend 的系統會看域名年齡、網站是否正常、是否為 lookalike，然後決定要不要擋。</p>
+
+<div class="data-point">
+  <span>反濫用的規模</span><br>
+  單一集團帶入約 <strong>20,000 個域名</strong>；Resend 的原則是「預設信任、異常即封」——不設人工審核，但一看到 bounce rate、complaint rate 異常就立刻介入。Zeno 說這是為什麼他不敢砍免費層：免費層是濫用的入口，也是當年他自己開始寫程式的入口。
+</div>
+
+<p>另一個技術細節很能說明這門生意的形狀：<strong>共享 click-tracking 域名有「吵鄰居」風險。</strong>如果一個客戶用同一個追蹤域名去釣魚，整個域名被列黑，其他客戶的正常信也會遭殃。所以 Resend 做了 custom tracking domains，讓每個客戶用自己的域名承擔自己的信譽。這不是一個漂亮的功能，而是一個從事故裡長出來的設計。</p>
+
+<p>還有一個很小、但很聰明的預設：Resend 會自動從 HTML 生成 plain-text 版本一起寄出。理由是 spam filter 更容易直接讀 plain text，而且 agent 也更容易讀。Zeno 說這個改動「大幅提升了 deliverability」。它同時服務了兩個讀者——人類的信箱過濾器，與機器的 parser。</p>
+
+<div class="section-title">六、從薄層到機房：SES 的隱藏成本</div>
+
+<p>Resend 早期建在 Amazon SES 上。表面上看，SES 很便宜：freeCodeCamp 五百萬訂閱的電子報，一個月約 <strong>5,000 美元</strong>。但 Zeno 說，那個價格不是總成本。</p>
+
+<p>你需要 SNS 來收 bounce／complaint 事件，需要 CloudWatch 存 log，需要 SQS 排隊，需要自己寫 webhook，還需要處理 configuration set 與域名結構的限制。「你的 footprint 會比你想像的大很多。」這是一個典型的雲端經濟學陷阱：單價低，但周邊的黏合層很貴。</p>
+
+<p>所以 Resend 現在往下走，自己做傳輸層。寄送路徑已經從 Node.js 改成 Go，追求 P99；他們在買 IP block、管理 IP pool、與 mailbox provider 建立關係。Zeno 的說法是，越靠近金屬，越能拿到觀測性——一封信到底 delivered 了沒、進了 spam 還是 promotional tab，這些在薄層 API 上看不到。</p>
+
+<blockquote class="strong">
+  「大家一開始都說『我永遠不會打開 dashboard』，但我花了那麼多時間把它做漂亮。不過我懂。」
+  <span class="attribution">—— Zeno Rocha，談 agent 時代 dashboard 的角色（原文意思）</span>
+</blockquote>
+
+<p>這句話其實是整集的一個隱喻。Dashboard 是給人看的；agent 不需要 dashboard，它需要 API、MCP、markdown。但 dashboard 仍然存在，因為人還是要在出錯時看一眼。產品的介面正在分層：<strong>一層給人，一層給機器，而兩層都必須是同一個真相。</strong></p>
+
+<div class="section-title">七、Formless：一種產品哲學，而不是一個功能</div>
+
+<p>swyx 問 Zeno，為什麼什麼 surface 都要做——SDK、CLI、MCP、模板、API。Zeno 的回答是整集最像宣言的一段：</p>
+
+<blockquote class="strong">
+  「我想要我的產品是無形的。無論他們想用這個產品做什麼，都應該做得到。」
+  <span class="attribution">—— Zeno Rocha（原文：“I want my product to be formless. Whatever they wanna do with the product, it should be possible.”）</span>
+</blockquote>
+
+<p>這個「formless」不是沒有形狀，而是<strong>不預設使用者的形狀</strong>。因此 API first、CLI、MCP、SDK 都不是獨立產品，而是同一組能力的不同入口。他甚至把「應徵」也做成一個入口：Resend 的 careers page 可以用 CLI 或 API 投履歷，CLI 裡還 bake 了 skills，你可以直接叫 Claude「幫我申請 product designer」。Zeno 說他看到 CLI 來源的申請會多看一份，因為那個人願意下載、認證、走完整個流程。</p>
+
+<p>這聽起來像炫技，但它跟 64/102 是同一件事：<strong>降低摩擦，直到行動發生。</strong>免費層也是同一個邏輯。他說自己當年靠 Heroku 的免費層才能開始寫程式，所以不願意砍掉 Resend 的免費層——即使那代表要自己吞下大量濫用成本。</p>
+
+<div class="data-point">
+  <span>Resend 的規模（錄音當天）</span><br>
+  用戶 <strong>430 萬</strong>；付費用戶 <strong>12 萬</strong>；ARR <strong>1,000 萬美元</strong>；全遠端約 50 人。NPM SDK 下載量今年超越 SendGrid，現在是其兩倍以上——但 Zeno 自己提醒，寄送量仍然遠低於 SendGrid，因為對方有大企業客戶。
+</div>
+
+<p>節目最後談到規模的取捨。swyx 問他，為什麼不追求 1 億美元 ARR？Zeno 的回答被剪進了 cold open：</p>
+
+<blockquote class="strong">
+  「我寧願活在那個現實裡，也不要活在一個我們是億元公司、但我女兒不想跟我玩的現實裡。」
+  <span class="attribution">—— Zeno Rocha（原文：“I'd rather live in that reality than live in a reality where we're a hundred million dollar company and my daughter doesn't want to play with me.”）</span>
+</blockquote>
+
+<p>這段話很容易被當成溫情結尾，但它其實也是策略：Resend 選擇的是一條<strong>不需要企業銷售軍團</strong>的路。Zeno 說他們沒有 steak dinner、沒有 golf course、沒有庞大的 sales enablement；他們有的是開發者社群、文件、與一個模型會推薦的 API。這條路的規模上限可能較低，但單位經濟與生活品質都不同。</p>
+
+<div class="section-title">八、我的讀法：分發正在從「排名」變成「可讀性」</div>
+
+<p>把整集聽完，我認為它真正講的不是 email，而是<strong>軟體分發機制的遷移</strong>。過去二十年，軟體公司爭的是 Google 首頁的排名；排名是一個機率遊戲，你可以用內容、反向連結、廣告去提高機率。現在，當 agent 直接給出一個答案，分發變成了一個<strong>可讀性遊戲</strong>：模型能不能在你的網站上，用一次抓取，讀到正確、完整、結構化的事實？</p>
+
+<p>這解釋了為什麼 Zeno 做的每一件事都指向同一個方向：</p>
+
+<ul>
+  <li><strong>Docs 的長尾</strong>：不是給人搜尋，是給模型在具體情境裡檢索（「Python + Django 怎麼設」）。</li>
+  <li><strong>每個頁面的 FAQ</strong>：把「Resend 有 SOC 2 嗎」這種問題的答案，直接放在頁面上，而不是藏在 PDF 裡。</li>
+  <li><strong>Markdown 版本</strong>：把 JS 互動元件換成靜態表格，讓 agent 不需要執行程式就能讀。</li>
+  <li><strong>MCP</strong>：把「選中之後」的操作也變成可呼叫的介面，讓 agent 能完成整個工作流，而不只是推薦。</li>
+  <li><strong>Plain-text 自動生成</strong>：同時服務 spam filter 與 agent parser。</li>
+</ul>
+
+<p>這些動作的共同點是：<strong>它們都不是為了說服人，而是為了讓機器正確地理解。</strong>這是 AEO 與 SEO 最深層的差別。SEO 的對象是一個排名演算法，你可以猜它的權重；AEO 的對象是一個語言模型，它讀到什麼就相信什麼，但它也會把錯誤用很有自信的語氣說出來。所以你真正要維護的，不是「曝光」，而是「事實的正確性」。</p>
+
+<div class="highlight-box">
+  <strong>但我要保留三個批判：</strong><br><br>
+  ① <strong>64/102 不是因果。</strong>它是一個特定研究、特定模型版本、特定 prompt 下的觀察。Resend 可能只是剛好站在「新工具 + 開發者內容 + React 生態」的交集上；把這個數字當成 AEO 投資的回報率，會過度推論。<br><br>
+  ② <strong>兩個真相來源是真實的技術債。</strong>Zeno 自己說「這很鳥」。當 HTML 與 markdown 不同步，模型會讀到錯的價格，而錯的價格比沒有價格更危險。這不是一個可以長期用手工維護的架構。<br><br>
+  ③ <strong>80 工具 vs 2 工具沒有裁判。</strong>Zeno 說目前沒問題，但他也承認沒有「何時會翻車」的判準。當模型變得更會寫程式，Code Mode 的極簡路線可能反而更穩；當模型變得更會選工具，80 工具的覆蓋率可能才是護城河。這是一個會隨著模型能力改變答案的問題。
+</div>
+
+<p>還有一個更深的問題，節目沒有正面回答：<strong>如果 agent 真的成為主要買家，免費層還是人才來源，還是只是濫用入口？</strong>Zeno 一邊說預設信任，一邊說要快速封鎖；對一個帶 20,000 個域名進來的集團，這種「先信任再封」的模式是否反而提高了他們的 ROI？他沒有給出答案，只說這是做 email 的代價。</p>
+
+<p>但即使有這些空白，這一集仍然是一個很好的案例研究：一個 2023 年才起步、沒有 email 背景、SEO 落後十幾年的公司，如何在一個舊行業裡，用「讓機器讀得懂」的方式，重新打開分發。它不是因為產品比 SendGrid 好十倍才贏；它是因為在一個新的分發層上，它比舊玩家更早準備好。</p>
+
+<blockquote class="strong">
+  「我們從來沒有想過要贏過 SendGrid。我們只是想做一個開發者真的會想用的東西。」
+  <span class="attribution">—— 本文對 Zeno 整集敘事的概括（分析，非單一原話）</span>
+</blockquote>
+
+<p>然後，當模型開始替開發者選工具，那個「開發者真的會想用」的東西，剛好也是模型最容易讀懂、最容易推薦、最容易呼叫的東西。這不是巧合，而是把產品做對之後，分發終於追上來的樣子。</p>
+
+<hr>
+
+<footer>
+  <p><strong>來源</strong>：Latent Space〈Designing for Agents — Zeno Rocha, Resend〉（2026-11-10 20:05 UTC 發布，全長 1:25:52）。節目官方 VTT 逐字稿（約 109 KB）、Latent Space 節目頁與 show notes；AEO 研究數字（64/102、7/55）來自節目引用的 Amplifying.ai 研究與 Latent Space 自家 AEO 追蹤，本文標明為觀察性數據。</p>
+  <p><strong>引語說明</strong>：blockquote 中的英文引語均取自官方逐字稿；中文為直譯，部分長句為可讀性微調。營收、用戶數、付費數、ARR、MCP 呼叫量均為 Zeno Rocha 在節目中的自述，未經獨立審計。文中標明「分析」的段落為本文推斷。</p>
+  <p><strong>生成時間</strong>：2026-11-11 · 深度復述系列 #268 · 建議搭配原集 37:55「Designing the MCP」與 58:28「Writing for machines」兩段收聽。</p>
+</footer>
+
+</div>
+</body>
+</html>

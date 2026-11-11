@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 神經元不是名詞，是動詞——Goodfire 把可解釋性變成可排程的工程</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #888; line-height: 1.7; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">The Cognitive Revolution · 2026-11-11 · 約 20 分鐘閱讀</div>
+  <h1>神經元不是名詞，是動詞<br>——Goodfire 把「讀懂模型」變成一件可以排程的工程</h1>
+  <div class="meta">
+    <div>〈The Neuron Basis: Goodfire's Curt Tigges on Agentic Interp, Monosemanticity &amp; Reverse Engineering〉</div>
+    <div>出品：The Cognitive Revolution<span>·</span>主持：Nathan Labenz<span>·</span>嘉賓：Curt Tigges（Goodfire Member of Technical Staff）</div>
+    <div>發布：2026-11-11 03:09 HKT（2026-11-10 19:09 UTC）<span>·</span>全長 1 小時 56 分 17 秒</div>
+    <div>來源：節目官方逐字稿、AI show notes、章節時間軸與論文頁；引語為原文直譯，推斷段落另行標明</div>
+  </div>
+</header>
+
+<p>過去幾年，機械可解釋性（mechanistic interpretability）有一個近乎常識的前提：<strong>單顆神經元不可讀。</strong>表徵是分散的、疊加的；一顆神經元混雜著幾十個概念；所以你需要一個輔助模型——稀疏自編碼器（SAE）——把內部狀態攤開成可讀的特徵。</p>
+
+<p>Curt Tigges 與 Nick Cammarata 的新論文〈Neurons as an Interpretable Basis〉，以及 Nick 十月中那篇爆紅長文〈Neural Networks Are Already Clean〉，直接挑戰這個前提。Curt 在節目裡的措辭很克制，但主張很清楚：</p>
+
+<blockquote class="strong">
+  「MLP 裡的單顆神經元，比學界至今以為的，更可解釋。」
+  <span class="attribution">—— Curt Tigges（原文：“The individual neurons in MLPs, in neural networks in general are more interpretable than the field has thought to this point.”）</span>
+</blockquote>
+
+<p>這句話不是說「模型已經被讀懂了」。Curt 在兩小時裡反覆劃界：attention 與 residual stream 仍然不清楚；長上下文只測到 32K；有些現象（尤其是 double-negative activations）完全沒有解釋。但這句話確實改變了一件事：<strong>讀神經元不再是一個手工藝，而是一個可以用 agent 大規模執行的工程流程。</strong></p>
+
+<p>而當一件事可以規模化，它的經濟學就變了。這才是這一集真正的重點。</p>
+
+<div class="section-title">一、為什麼現在可以讀：工具變好，架構也變了</div>
+
+<p>Curt 把變化歸因於兩件事的匯流。</p>
+
+<p><strong>第一，agent 變強了。</strong>現在的 agent 可以掃過一顆神經元所有啟動的情境、分群、找模式、提出假設、改句子、做最小對比、steering、再觀察結果。過去這些實驗要一個研究者手工做幾週；現在是一個 agent 跑幾分鐘到幾小時。</p>
+
+<p><strong>第二，架構變了。</strong>現代模型幾乎都用 gated MLP（SwiGLU）：輸入進入神經元層後，分別走 up projection 與 gate projection，兩組參數完全獨立，最後相乘。Curt 的比喻是：gate 偵測「烹飪」這個語境，up 偵測「大蒜」這個食材，兩者相乘才會強烈啟動。這讓一顆神經元自帶一個小開關，可以當一個 conjunction。</p>
+
+<div class="highlight-box">
+  <strong>一個容易被忽略的歷史細節：</strong> Shazeer 在 2020 年的五頁論文〈GLU Variants Improve Transformer〉提出這個結構時，動機完全不是可解釋性。他甚至在論文裡寫：「我們不解釋為什麼這些架構看起來有效；我們把成功歸因於神的恩典。」六年後，同一個結構被發現剛好也讓神經元更容易讀。這是一個典型的「先有效、後理解」。
+</div>
+
+<p>Nathan 在節目裡提出一個相反直覺：更簡單的單調激活函數（例如 ReLU）不是應該更好讀嗎？Curt 說不是。在他們看過的模型裡，ReLU 與 GELU 反而比 SwiGLU 難讀。原因正是 gating：它讓一顆神經元可以在幾個意思之間切換，而每個意思由一組不同的下游讀者解讀。</p>
+
+<blockquote class="strong">
+  「有一顆神經元，一個意思是口腔健康，另一個意思是海洋野生動物。」
+  <span class="attribution">—— Curt Tigges（原文：“There's a neuron where the one meaning is oral health, and the other meaning is marine wildlife.”）</span>
+</blockquote>
+
+<p>這顆神經元是整集最好的例子。它在兩種完全不同的語境裡啟動：一種是「某人決定要做口腔手術」的段落，另一種是「描述某種海洋動物的棲地」的段落。Curt 說，關鍵不是它有兩個意思，而是<strong>當它啟動其中一個意思時，下游的讀者群是完全不同的一組。</strong>前面的上下文會預先激活那些讀者，讓它們準備好接收這個訊號。所以它不是「混亂的多義」，而是「有界的多義」——幾個緊湊的意思，各自有專屬的閱讀路徑。</p>
+
+<div class="section-title">二、实验对象：Qwen3.6-35B-A3B 的五百萬顆神經元</div>
+
+<p>他們研究的是 Qwen3.6-35B-A3B，一個 MoE 模型：40 層，每層 256 個 routed experts，每個 token 選 8 個（另有一個 shared expert），每個 expert 512 顆神經元。總數約 <strong>500 萬顆</strong> MLP 神經元。</p>
+
+<p>Curt 提醒一個常被忽略的細節：每顆神經元是雙極性的（bipolar），正負方向可以有不同意思，而且模型用不同的幾何方式讀取。所以可表達的「東西」大約是 <strong>1,000 萬</strong>，不是 500 萬。</p>
+
+<div class="data-point">
+  <span>模型規格</span><br>
+  Qwen3.6-35B-A3B：40 層；每層 256 個 routed experts，每 token 選 8 個；每個 expert 512 顆神經元；每層約 13 萬顆；總計約 <strong>500 萬</strong>顆 MLP 神經元；雙極性使可表達概念約 <strong>1,000 萬</strong>。
+</div>
+
+<p>他們做了兩種 ablation（切除）實驗，差別在「保留什麼」與「用什麼取代」：</p>
+
+<ul>
+  <li><strong>百分位帶（percentile band）</strong>：每顆神經元只保留自己歷史上最極端的正負啟動值，其餘用該神經元的平均值取代。因為是雙極性，平均值「很接近零，但不是零」。</li>
+  <li><strong>Top-K</strong>：在每個被路由到的 expert 裡，只保留最強的 K 顆（實驗用 64／512），其餘歸零。這等於每個 token、每個 active expert 壓掉約 <strong>88%</strong> 的啟動。</li>
+</ul>
+
+<p>注意，這不是「刪除神經元或參數」，而是<strong>動態稀疏</strong>：模型還在，只是大部分訊號被壓掉。Curt 也沒有聲稱這能省算力——那是 Nathan 的推測，不是實驗結果。</p>
+
+<p>結果很有意思：稀疏化之後，模型在許多 benchmark 上接近原模型；reasoning 一開始會崩（迴圈、過度自我檢查、對答案沒信心），但用 <strong>1 億 token</strong> 微調一天，就回到平價或更好。某些 ARC-AGI 分數甚至上升。</p>
+
+<blockquote class="strong">
+  「它內部沒有那麼多東西讓自己分心，所以最有信心的東西會浮上來。」
+  <span class="attribution">—— Curt Tigges（原文：“It doesn't have as much internally to distract itself from the right answer, and the most confident thing rises to the top.”）</span>
+</blockquote>
+
+<p>Curt 對 reasoning 崩掉的解釋很關鍵：模型不是「失去了知識」，而是「失去了校準」。他說：「所以它其實有那個知識，只是不確定怎麼走到那裡，直到我們微調它。」這把問題從「能力」移到「訊號雜訊比」——稀疏化不是刪掉能力，是刪掉干擾。</p>
+
+<div class="section-title">三、Neuron Scientist：把「讀一顆神經元」變成一個 agent 工作流</div>
+
+<p>這是整集技術上最紮實的一段。Neuron Scientist 的流程可以拆成五步：</p>
+
+<ol>
+  <li><strong>收集啟動案例</strong>：用一個 100 億 token 的語料跑過模型，收集每顆神經元啟動的數千個 prompt。</li>
+  <li><strong>分群</strong>：按輸入連接、按文本本身、或按共同啟動的其他神經元分群。這給出「這顆神經元在哪些不同情境下啟動」的初步地圖。</li>
+  <li><strong>提出假設</strong>：把案例與分群交給一個 frontier model（Neuron Scientist），讓它提出一個統一的假設，並預測未來會在什麼地方啟動。它有工具：生成或改寫句子、做最小差異對比、steering、觀察啟動變化。</li>
+  <li><strong>寫出描述</strong>：最後產出一段 paragraph 長度的描述，包含它對哪些 token、什麼語境、什麼概念啟動。</li>
+  <li><strong>驗證</strong>：另一個獨立模型（節目中使用 JEV）只看描述、不看範例，逐 token 預測這顆神經元會有多強（0–9 分）；把預測值貼回已被 ablation 的模型，量測 KL 散度傷害恢復了多少。</li>
+</ol>
+
+<p>結果是 <strong>74%</strong>。這個數字很容易被誤讀，Curt 花了很長時間澄清：</p>
+
+<blockquote class="strong">
+  「74% 是按傷害加權的 KL 散度恢復，不是 74% 的準確率，也不是理解了模型的 74%。」
+  <span class="attribution">—— 本文對 Curt 解釋的整理（原文：“74% damage recovery... that means that cases where the neuron basically didn't matter... get a lower weight than cases where the neuron mattered a whole lot.”）</span>
+</blockquote>
+
+<p>換句話說：把神經元完全拿掉，模型的下一詞分佈會偏離；把「根據描述預測出來的啟動值」貼回去，可以修復那個偏離的 74%，而且<strong>按「這顆神經元有多重要」加權</strong>。這是一個很聰明的指標，因為它直接測量「描述是否足以重建功能」，而不是「描述聽起來像不像」。</p>
+
+<p>他們還有兩個輔助驗證：</p>
+
+<ul>
+  <li><strong>生成測試</strong>：只給描述、不給範例，讓另一個模型寫出一段「比資料庫裡任何文本都更能激活這顆神經元」的文字。如果描述是對的，它應該做得到。</li>
+  <li><strong>二元判斷</strong>：給定一段序列，判斷這顆神經元「是否應該啟動」。這是較簡單的任務，準確率常在九成以上。</li>
+</ul>
+
+<div class="data-point">
+  <span>Neuron Scientist 的數字</span><br>
+  啟動語料：<strong>100 億 token</strong>；每顆神經元數千個案例；描述長度：一段 paragraph；驗證模型：JEV（與產生描述的模型不同家族）；主要指標：<strong>74%</strong> 傷害加權 KL 恢復；輔助指標：生成測試、二元判斷（常 &gt;90%）；最貴的單顆神經元跑一次約 <strong>45 美元</strong> inference，一般遠低於此，且未特別優化成本。
+</div>
+
+<p>那個 45 美元值得停一下。它不是「每顆神經元都花 45 美元」，而是「最貴的一次實驗花了 45 美元」。Curt 說一般便宜很多，而且他們沒有優化成本。如果做一次全模型的粗掃，只對難讀的神經元派出完整的 Neuron Scientist，總成本可能遠低於一般人的想像。</p>
+
+<p>這正是整集的行業訊號：<strong>可解釋性從一個論文題目，變成一個可以排程、可以預算、可以逐步覆蓋的工程工作。</strong></p>
+
+<div class="section-title">四、神經元是動詞，不是名詞</div>
+
+<p>節目後半段從技術轉向哲學，也是我覺得最有啟發的部分。</p>
+
+<p>Curt 說，他讀了幾千份神經元描述之後，對「單義 vs 多義」這個二分法越來越不滿意。他提出一個更實用的問題：<strong>你能不能把這顆神經元代表的所有東西列舉出來？</strong>如果能，它就是可解的；如果只能說「它在醫療语境下啟動」，那是一個空洞的標籤，不是理解。</p>
+
+<p>他舉了幾個例子：一顆可能對昆蟲的食物、棲地、產卵地點都啟動的神經元——這算一個概念還是三個？一顆很容易分成「banjo（班卓琴）」與「alimony（贍養費）」的神經元——這是不是多義？還有一顆「garage sale（車庫拍賣）」的神經元，它背後 unifying concept 可能只有人類觀察者才看得出來。</p>
+
+<p>然後是整集最重要的一句話：</p>
+
+<blockquote class="strong">
+  「它不只是在偵測一個東西。它是在送出一個訊號，誘導模型去做另一件事。」
+  <span class="attribution">—— Curt Tigges（原文：“It's not just detecting a thing. It's like sending a signal that is going to induce the model to do something else.”）</span>
+</blockquote>
+
+<p>Nathan 把它總結為「control flow」。Curt 同意：很多神經元是<strong>動詞</strong>，不是名詞。它們不是代表一個物件，而是送一個指令：更有信心、再檢查一次、等一下、換一條路徑、指出「這個數字錯了」。他特別提到一整類 reasoning-specific 的神經元，負責調節模型在推理過程中的信心、暫停、重查、轉向。</p>
+
+<p>這個視角改變了我們對「理解模型」的想像。如果神經元是控制流，那麼讀懂一顆神經元不是「知道它代表什麼」，而是「知道它會讓下游做什麼」。這比較接近讀組合語言，而不是讀字典。</p>
+
+<p>另一個相關的洞察是：<strong>事實不在神經元裡，在神經元的連接裡。</strong></p>
+
+<blockquote class="strong">
+  「一顆神經元不是一個事實。但事實存在於神經元之間的連接裡。」
+  <span class="attribution">—— Curt Tigges（原文：“A neuron is not a fact. But the fact is in the connections between neurons.”）</span>
+</blockquote>
+
+<p>他的論證很簡單：500 萬顆神經元不可能裝下比 500 萬更多的離散事實；但 10 顆神經元之間的網路可以有遠多於 10 條路徑。所以他一點也不驚訝模型能用比事實數量更少的神經元來儲存知識。他舉的例子是一組幾十顆的神經元社群，決定哪些畫家屬於印象派、新印象派、後印象派；個別藝術家的神經元連到這些運動的 token，形成一個很小但完整的機制。</p>
+
+<p>這也解釋了為什麼他對「神經元 vs SAE」的路線之爭態度明確：對 MLP 而言，直接讀神經元更划算；但 SAE 在 residual stream 仍有價值，因為那裡的幾何更複雜、還有 superposition。他引用 Shabalin &amp; Piotrowski 的新工作〈Comparing Sparsified MLPs and Transcoders〉，指出許多 transcoder 特徵其實就是神經元，或是會共同啟動的稀疏組合。</p>
+
+<div class="section-title">五、專家其實很集中：1 到 3 個主題</div>
+
+<p>節目中一個容易被略過、但很重要的發現：他們檢查的 expert，大多集中在 <strong>1 到 3 個主題</strong>。例子包括法律／憲法判例、代數、時間單位與時間流逝、醫療細分主題。</p>
+
+<blockquote class="strong">
+  「它們大多只關於一到三個主題，就這樣。」
+  <span class="attribution">—— Curt Tigges（原文：“They're mostly about one to three topics and that's it.”）</span>
+</blockquote>
+
+<p>這與「expert 不可解釋」的舊說法相反。它同時讓 router 的工作變得可理解：如果 256 個 expert 各自有一點主題傾向，那麼「256 選 8」就不是隨機組合，而是一個可以學習、可以審計的分工。</p>
+
+<p>把這一點和「事實存在連接裡」放在一起，會得到一個很務實的推論：<strong>模型內部其實比我們以為的更有結構，只是這個結構的單位不是「一個神經元 = 一個概念」，而是「一組神經元 + 一組連接 = 一個小機制」。</strong>你要找的不是字典，是電路圖。</p>
+
+<div class="section-title">六、這改變了什麼：監控、除錯、與 alignment tax</div>
+
+<p>Curt 對「這有什麼用」的回答很直接：<strong>監控（monitoring）是最近的應用。</strong></p>
+
+<p>他提到一個使用者找到一顆神經元，會在 reward hacking 的文本上啟動。他立刻補了一個很重要的 caveat：那可能只覆蓋「某一種 reward hacking」，不是全部。這是一個典型的可解釋性陷阱：你找到一顆「壞行為神經元」，用它做監控，然後對其他形式的壞行為完全失明。</p>
+
+<p>另一個應用是 persona steering。Curt 說在 neuron basis 上做 persona steering「出乎意料地實用」；很多神經元只是影響模型回應的風格與人格。更進一步，如果模型偶爾會「snap」——一萬次裡有一次做出完全反常的事——神經元是除錯的好起點。他不保證答案一定在那裡，但那是值得看的地方。</p>
+
+<p>節目的核心問題是 alignment tax：<strong>為了可解釋性，我們要付出多少能力代價？</strong>Curt 的回答比預期樂觀：現有模型已經比我們以為的更可讀，所以「為可解釋性設計架構」可能沒有那麼必要。但他也保留兩條仍然值得做的路：</p>
+
+<ul>
+  <li><strong>更稀疏的推理</strong>：要監控的東西變少，電路也可能更乾淨。他們把 Qwen 稀疏化之後，多數 benchmark 持平或更好，這說明稀疏不一定是能力稅。</li>
+  <li><strong>知識局部化</strong>：如果能把特定知識（例如危險的生物知識）誘導到模型的某個區域，就可以在發佈時直接切除。他提到 AE Studio 風格的 gradient routing／modular pretraining 工作。</li>
+</ul>
+
+<p>這裡有一個很細的張力。Curt 一方面說「現有模型已經夠可讀，可能不需要特別設計架構」，另一方面又說「稀疏與局部化仍然值得做，因為要監控的東西變少」。這兩句話不矛盾，但指向不同的優先級：<strong>短期靠工具讀現有模型，長期靠架構讓模型更好讀。</strong>而兩者之間的時間差，正是安全工作的窗口。</p>
+
+<div class="section-title">七、還沒解決的：attention、長上下文、雙負啟動</div>
+
+<p>Curt 從頭到尾都很清楚自己的邊界。節目的價值有一半來自這些「不知道」：</p>
+
+<ul>
+  <li><strong>Attention 與 residual stream 仍未理解。</strong>論文主體是 MLP 神經元；residual stream 的幾何更複雜，還有 superposition，甚至 SAE 未必是最好的工具。</li>
+  <li><strong>長上下文只測到約 32K token。</strong>測試是 coding 任務；百萬 token 的行為是未來研究。Curt 說他「懷疑」結果會延伸，但那是猜測，不是結果。</li>
+  <li><strong>Double-negative activations 完全未解。</strong>當 gate 與 up 同時為負，乘起來變正。Curt 說這種情況「很怪」：有時整批移除不影響，有時會弄壞 reasoning 或記憶；把這些啟動以相反 token 順序貼回、甚至從完全不同的序列貼回，reasoning 都能恢復。「我們不確定它們到底在做什麼。」</li>
+  <li><strong>架構外推有限。</strong>Gemma 4 用的 ReGLU 在設計上不會出現 double-negative；Kimi K3 的神經元幾乎不用這種模式。把「神經元可讀」推廣到所有前沿模型，目前仍是外推。</li>
+</ul>
+
+<blockquote class="strong">
+  「我們正在發現這些像分子一樣的基礎單元，它們對模型行為很重要。但我們需要理解合金，需要理解流體力學。」
+  <span class="attribution">—— Curt Tigges（原文：“We're discovering these primitives like molecules... but we need to understand alloys, we need to understand fluid dynamics.”）</span>
+</blockquote>
+
+<p>這個比喻是整集的思想核心。物理學可以描述化學，化學可以描述生物，但你不會用物理學去解釋一場感冒。中間需要更高層的定律。神經元是「分子」；我們還沒有「合金」與「流體力學」——也就是還沒有電路層、社群層、行為層的定律。</p>
+
+<p>所以 Curt 的立場是雙向的：從下往上，把每個小零件讀清楚；從上往下，用 steering vector、difference-of-means、訓練干预去抓大現象；兩端最後會匯合。但在匯合之前，<strong>「讀懂每一顆神經元」不等於「反工程整個模型」。</strong></p>
+
+<blockquote class="strong">
+  「你可以理解模型裡的每一顆神經元，然後仍然沒有把模型反工程出來。」
+  <span class="attribution">—— Curt Tigges（原文意思：“you can understand every single neuron in the model... and not have an ambitiously reverse engineered model.”）</span>
+</blockquote>
+
+<div class="section-title">八、我的讀法：可解釋性的成本曲線被改寫了</div>
+
+<p>如果把這一集放回 2026 年的大背景，我認為它最重要的不是某個數字，而是<strong>成本曲線的方向</strong>。</p>
+
+<p>過去，讀一顆神經元是一個研究者手工做的專案：收集案例、分類、寫假設、做實驗、寫論文。成本高、速度慢、不可規模化。現在，Neuron Scientist 把這個流程拆成可自動化的步驟；最貴的一次 45 美元，一般遠低於此，而且還沒有優化。這意味着「對整個模型做一次粗掃」在經濟上是可行的：先找出難讀的神經元，再把算力集中在那些上面。</p>
+
+<p>這件事的影響遠超過學術。它意味着：</p>
+
+<ol>
+  <li><strong>監控可以變成產品。</strong>如果每顆神經元都有一個可驗證的描述，你就可以對特定行為（reward hacking 的某個子型、eval awareness、persona 漂移）建立監控器，而不是只靠外部行為測試。</li>
+  <li><strong>除錯可以變成 routine。</strong>模型一萬次裡有一次 snap，過去只能當成隨機故障；現在可以去看那段時間哪些神經元啟動、哪些電路被觸發。</li>
+  <li><strong>架構設計可以更有依據。</strong>如果稀疏與局部化真的能讓模型「一樣好、但更好讀」，alignment tax 可能比想像低；至少，它不再是一個純粹的哲學問題，而是一個可以量測的工程權衡。</li>
+</ol>
+
+<p>但我也要保留幾個批判，因為這一集很容易被讀成「可解釋性解決了」：</p>
+
+<div class="highlight-box">
+  <strong>三個不該跳過的保留：</strong><br><br>
+  ① <strong>74% 不是「讀懂 74%」。</strong>它是按傷害加權的 KL 恢復，測量的是「描述能否重建功能」，不是「描述是否真的對應模型內部的語義」。一個描述可以很好地預測啟動，卻仍然誤解了機制。<br><br>
+  ② <strong>MLP 不是整個模型。</strong>Attention、residual stream、長上下文、跨層電路，全部還在論文範圍之外。Curt 自己說「還有很多工作要做」，這不是客套。<br><br>
+  ③ <strong>監控一顆神經元，可能讓你對其他形式失明。</strong>那個 reward hacking 神經元只覆蓋一個子型；把資源集中在它身上，會產生一種「我們有監控」的錯覺。可解釋性工具的風險，從來不是沒用，而是<strong>看起來比實際更有用</strong>。
+</div>
+
+<p>還有一個更深的問題：這一集是在「behavioral training 的壞消息」之後出現的。Nathan 在開場與結尾都提到那個夏天——用行為訓練做對齊，效果不如預期。在這種背景下，可解釋性很容易被當成希望。Curt 自己也很小心，沒有把論文說成解方；他說的只是：<strong>我們現在有辦法大規模地讀一些東西了。</strong></p>
+
+<p>而「大規模地讀一些東西」已經足夠改變行業的形狀。因為一旦讀模型變成一個可以排程的工作，它就會進入預算、進入產品、進入監管討論。那時候，問題不再是「能不能讀」，而是「讀了之後，我們敢不敢用它來做決定」。</p>
+
+<blockquote class="strong">
+  「神經元很好。你應該去玩玩看。」
+  <span class="attribution">—— Curt Tigges 的結尾（原文：“Neurons are great. You should play with them.”）</span>
+</blockquote>
+
+<p>這句話聽起來像玩笑，但它是整集最誠實的邀請。可解釋性不是一個旁觀者的學問；它需要有人真的去跑一個本地模型、打開一顆神經元、看它在什麼時候亮起來。當這件事從論文走進 notebook，它才真正開始改變我們對模型的關係。</p>
+
+<hr>
+
+<footer>
+  <p><strong>來源</strong>：The Cognitive Revolution〈The Neuron Basis: Goodfire's Curt Tigges on Agentic Interp, Monosemanticity &amp; Reverse Engineering〉（2026-11-10 19:09 UTC 發布，全長 1:56:17）。節目官方逐字稿、AI show notes、章節時間軸；論文〈Neurons as an Interpretable Basis〉與 Nick Cammarata 長文〈Neural Networks Are Already Clean〉；Qwen3.6-35B-A3B 模型卡；Shabalin &amp; Piotrowski〈Comparing Sparsified MLPs and Transcoders〉。</p>
+  <p><strong>引語說明</strong>：blockquote 中的英文引語均取自節目逐字稿或官方 show notes；中文為直譯。74% 的定義、45 美元的單次成本、1 億 token 微調、32K 長上下文測試均為 Curt Tigges 在節目中的陳述；文中標明「分析」的段落為本文推斷。</p>
+  <p><strong>生成時間</strong>：2026-11-11 · 深度復述系列 #269 · 建議搭配原集 41:30「The neuron scientist agent」與 1:20:24「Factual recall and experts」兩段收聽。</p>
+</footer>
+
+</div>
+</body>
+</html>
