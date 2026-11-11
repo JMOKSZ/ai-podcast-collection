@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客日報 · 2026-11-11</title>
+<style>
+  :root {
+    --paper: #faf8f5;
+    --ink: #2b2724;
+    --muted: #7a726a;
+    --rule: #ddd5cb;
+    --accent: #8a4b2f;
+    --soft: #f2ede6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Noto Serif SC", "Songti SC", "Source Han Serif SC", serif;
+    font-size: 17px;
+    line-height: 1.9;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 28px 90px; }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 26px; margin-bottom: 34px; }
+  .kicker { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  h1 { font-size: 34px; line-height: 1.3; margin: 0 0 16px; font-weight: 600; letter-spacing: -.01em; }
+  .meta { font-size: 13.5px; color: var(--muted); line-height: 1.8; }
+  .meta span { margin-right: 18px; white-space: nowrap; }
+  h2 {
+    font-size: 15px; letter-spacing: .16em; text-transform: uppercase;
+    margin: 54px 0 22px; padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+    color: var(--accent); font-weight: 600;
+  }
+  h3 { font-size: 24px; margin: 38px 0 6px; font-weight: 600; line-height: 1.4; }
+  h4 { font-size: 19px; margin: 30px 0 4px; font-weight: 600; line-height: 1.5; }
+  h5 { font-size: 15px; margin: 26px 0 6px; letter-spacing: .04em; color: var(--accent); }
+  p { margin: 0 0 14px; }
+  .byline { font-size: 13.5px; color: var(--muted); margin: 0 0 18px; }
+  .lede { font-size: 18.5px; line-height: 1.85; }
+  .lede strong { font-weight: 600; }
+  ul, ol { margin: 0 0 16px; padding-left: 24px; }
+  li { margin-bottom: 8px; }
+  blockquote {
+    margin: 22px 0; padding: 4px 0 4px 20px;
+    border-left: 3px solid var(--accent);
+    color: #4a433d; font-style: italic;
+  }
+  blockquote .src { display: block; margin-top: 6px; font-size: 12.5px; font-style: normal; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; margin: 18px 0 22px; font-size: 14.5px; line-height: 1.65; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-weight: 600; background: var(--soft); font-size: 13px; letter-spacing: .03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .note {
+    background: var(--soft); border: 1px solid var(--rule);
+    padding: 14px 18px; margin: 22px 0; font-size: 14.5px; line-height: 1.75;
+  }
+  .note b { color: var(--accent); }
+  .tag {
+    display: inline-block; font-size: 11.5px; letter-spacing: .08em;
+    color: var(--accent); border: 1px solid var(--rule); background: #fff;
+    padding: 1px 8px; margin: 0 6px 8px 0; border-radius: 2px;
+  }
+  .hr { border: 0; border-top: 1px solid var(--rule); margin: 46px 0; }
+  footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); line-height: 1.8; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">AI Podcast Daily · 2026-11-11</div>
+  <h1>把介面一路往下挖：從 .md、到 2,100 tok/s、到單顆神經元</h1>
+  <div class="meta">
+    <span>報告日期：2026-11-11</span>
+    <span>生成時間：2026-11-11 10:06 HKT（02:06 UTC）</span><br>
+    <span>掃描窗口：2026-11-10 02:05 UTC → 2026-11-11 02:03 UTC</span><br>
+    <span>來源：Latent Space（2 集／1 篇實測）、The Cognitive Revolution（1 集）；另掃 7 個 feed，中文 5 個節目今日無新集</span>
+  </div>
+</header>
+
+<p class="lede">今日三條新內容，表面上是三件不相干的事：Resend 的 CEO 講怎麼讓 agent 選中你的 API、Latent Space 實測一間中國公司把解碼速度推到 2,100 tok/s、Goodfire 的研究員講單顆 MLP 神經元其實讀得懂。但放在一起看，它們是同一條曲線上的三個位置——<strong>每一層「介面」都在往下沉</strong>。產品介面從給人看的網頁，下沉到給 agent 讀的 markdown 與 MCP；模型介面從 benchmark 分數，下沉到每秒 token 與「每個 token 花多少思考」；模型內部介面從 SAE 的中間層，下沉到神經元本身。</p>
+
+<div class="note">
+<b>今日重點</b>
+<ul style="margin-bottom:0">
+<li><b>Resend 的「agent 體驗」不是玄學，是 64/102。</b>在一項 AEO 研究裡，Claude Code 在可抽出的 102 次 email 建議中，64 次把 Resend 排在第一位；SendGrid 只有 7 次第一，卻有 55 次被列為替代方案。Zeno Rocha 說這就是為什麼他把定價頁做成 <code>.md</code>、把 MCP 從 20 個工具加到 80 多個。</li>
+<li><b>NaiveAI 的 2,100 tok/s 是上限，不是常態。</b>實際 decode 約 984 tok/s（思考階段）／1,816 tok/s（回答階段）；中位數回答 3.1 秒，但 HLE 難題平均花 108,500 個 completion token，是 GLM 5.3 Flash 的 9 倍。快，是用更多 token 換來的。</li>
+<li><b>Goodfire：砍掉 90% 神經元，模型幾乎不掉分。</b>Qwen3.6-35B-A3B 的 500 萬顆 MLP 神經元裡，只留每層最極端的啟動值，reasoning 先崩（迴圈、過度自我檢查），用 1 億 token 微調一天就回到平價或更好；某些 ARC-AGI 分數甚至上升。</li>
+<li><b>「74% 恢復」不是「理解 74%」。</b>那是把描述預測的啟動值貼回模型後，修復了 ablation 造成的 KL 散度傷害的 74%（按傷害加權）。Curt Tigges 自己說得很清楚：你可以讀懂每一顆神經元，仍然沒有反工程整個模型。</li>
+<li><b>中文圈今日靜默。</b>張小珺、十字路口、硅谷 101、42章經、屠龍之術在窗口內都沒有新集；最近一集分別停在 10-21、11-08、11-09、11-07、11-09。</li>
+</ul>
+</div>
+
+<h2>中文播客</h2>
+
+<p>今日掃描窗口內，五個中文節目都沒有新集。這不是抓取失敗——五個 RSS feed 都成功回應（HTTP 200），最新一集的 pubDate 都落在窗口之前。為了讓「沒有新集」這件事可查，這裡列出各自的最新狀態：</p>
+
+<table>
+  <tr><th>節目</th><th>最新一集</th><th>發布時間（UTC）</th><th>長度</th></tr>
+  <tr><td>張小珺商業訪談錄</td><td>155. 和科沃斯錢程聊，父與子、企二代接班的樣本與肌理、機器人，和我內心的追尋</td><td class="num">2026-10-21 00:00</td><td class="num">1:59:51</td></tr>
+  <tr><td>十字路口 Crossing</td><td>【年終復盤②】RSI 可能是 NeoLab 的機會、PA 真的有用、創業要造滅火器還是磚頭？｜對話谷雨</td><td class="num">2026-11-08 16:00</td><td class="num">40:54</td></tr>
+  <tr><td>硅谷 101</td><td>E258｜聊聊硅谷創業「修道院」HF0 與 OpenRouter 早期故事</td><td class="num">2026-11-09 23:00</td><td class="num">54:19</td></tr>
+  <tr><td>42章經</td><td>銳評國模與 Neo Lab，暢談 RL 人生與 RLaaS｜對談 Mind Lab 首席科學家驍騰</td><td class="num">2026-11-07 13:00</td><td class="num">1:02:57</td></tr>
+  <tr><td>屠龍之術</td><td>從 3.9% 時間占比到「字節時間」，我們是怎麼走到這兒的？</td><td class="num">2026-11-09 03:33</td><td class="num">1:02:25</td></tr>
+</table>
+
+<div class="note">
+<b>抓取與驗證說明：</b>五個 feed 皆以瀏覽器 UA 抓取成功，XML 可完整解析；小宇宙系 feed（xyzfm.space）與 Fireside（sv101）都回傳了完整歷史集數。中文節目通常不提供官方逐字稿，小宇宙的 episode-transcript API 過去多次回傳 404/401 攔截頁，本輪未再嘗試；因此「無新集」的結論來自 feed 的 pubDate，而不是搜尋引擎的間接證據。
+</div>
+
+<hr class="hr">
+
+<h2>英文播客</h2>
+
+<!-- ============ 1. RESEND ============ -->
+<h3>Latent Space（swyx + Alessio Fanelli）</h3>
+<h4>Designing for Agents — Zeno Rocha, Resend 🎙️</h4>
+<p class="byline">發布：2026-11-11 04:05 HKT（2026-11-10 20:05 UTC）｜長度 1:25:52｜形式：訪談，官方 VTT 逐字稿 109 KB 全片可讀</p>
+
+<p><span class="tag">agent experience</span><span class="tag">AEO</span><span class="tag">MCP</span><span class="tag">developer tools</span></p>
+
+<p><strong>主題</strong>：一封「為什麼 agent 老是推薦 Resend」的偵探故事。swyx 開場就說，他本來是 Cloudflare Email 的用戶，域名、DNS、DKIM 都設好了，結果 Claude Code 還是叫他加 Resend。他請來 Resend 共同創辦人兼 CEO Zeno Rocha，把这件事拆成兩半：一半是「agent 怎麼選工具」（AEO／AX），一半是「選中之後，信到底怎麼送到信箱」（deliverability）。</p>
+
+<p><strong>嘉賓背景</strong>：Zeno Rocha，巴西人，前端出身，2013 年做出 Dracula 編輯器主題（至今仍是很多人認識他的原因），曾是 GitHub 上最活躍的開源開發者之一（前 20 名，2020–22）。React Email 的作者，Resend 共同創辦人兼 CEO，YC W23。公司全遠端約 50 人。他在節目中說，Resend 目前 <strong>430 萬用戶、12 萬付費用戶、1,000 萬美元 ARR</strong>。他沒有 email 基礎設施背景——「如果我一開始知道 email 有多難，我大概不會開這家公司。」</p>
+
+<h5>核心論點</h5>
+<ul>
+<li><strong>論點一：agent 時代的分發，是在「模型讀得到的地方」贏，不是在 Google 首頁贏。</strong>Resend 2023 年才起步，SEO 落後 Twilio、Postmark、Mailgun 十幾年，正面搶關鍵字几乎不可能。他們的做法是把 docs 寫到極長尾（「Python + Django 怎麼設」這種），再把每一個行銷頁面加上 FAQ、<code>llms.txt</code>、以及可 append <code>.md</code> 的 markdown 版本。Zeno 的說法是：模型不會去拖一個 JavaScript 定價滑桿，所以定價頁的 <code>.md</code> 必須直接把表格寫出來。</li>
+<li><strong>論點二：AEO 的重點不是「被提到」，是「被正確描述」。</strong>他某個週日做競品分析，問模型「用 Resend 發 120 萬封信，跟 X、Y、Z 比誰便宜」，結果模型把 Resend 的價格講得亂七八糟，還說「Resend 的定價很不透明」。他於是把定價頁的 markdown 版本補齊，幾天後再問，答案就對了。這件事的副作用是：他現在有兩個真相來源（HTML 與 MD），必须手動同步——他承認「這完全很鳥」，但這就是做 email 的代价。</li>
+<li><strong>論點三：MCP 的工具數量不是越少越好，覆蓋率才是。</strong>Resend 的 MCP 從上線時 20 個工具以內，長到 80 多個。Zeno 說早期大家擔心「工具太多模型會混亂」，但他現在看不到這個問題；真正的難點是把 dashboard 的長尾（用量、帳單、邀請成員、刪帳號）也搬進 MCP，而「做到 100% 覆蓋非常非常難」。他與 Cloudflare 的 Code Mode（只暴露 <code>search()</code> 與 <code>execute()</code> 兩個工具）是兩種相反路線，節目裡沒有裁判，只有各自的取捨。</li>
+<li><strong>論點四：deliverability 是一場「跟濫用者反著做」的遊戲。</strong>他的原則是預設信任（不設人工審核），但一看到 bounce rate、complaint rate 異常就立刻封鎖並聯絡。他舉例：最近有一組日本集團帶了約 <strong>20,000 個域名</strong>進來，全是不同 TLD、不同註冊商；他們看域名年齡、網站是否回 200、是否用 lookalike 域名。正常寄件者要做的，正好是這些事的反面：慢慢加量、穩定寄送、維繫互動。</li>
+<li><strong>論點五：免費層不是慈善，是人才與產品的來源。</strong>他說自己當年靠 Heroku 免費層這類產品才能開始寫程式，所以不願意砍掉 Resend 的免費層；即使這代表要自己吞下大量濫用成本。他甚至把「應徵方式」做成 CLI／API：用 CLI 投履歷的人，他會多看一份——「這種人願意下載、認證、走完整個流程，動機不一樣。」</li>
+</ul>
+
+<h5>關鍵數據</h5>
+<table>
+  <tr><th>項目</th><th>數字</th><th>說明</th></tr>
+  <tr><td>用戶數</td><td class="num">4,300,000</td><td>錄音當天早上</td></tr>
+  <tr><td>付費用戶</td><td class="num">120,000</td><td>—</td></tr>
+  <tr><td>ARR</td><td class="num">US$10M</td><td>Zeno 自述「we are a ten million AR company」</td></tr>
+  <tr><td>Claude Code 首選率</td><td class="num">64 / 102</td><td>研究可抽出的 102 次 email 建議中，Resend 排第一的次數</td></tr>
+  <tr><td>SendGrid 對照</td><td class="num">7 次第一／55 次替代</td><td>首選少，但作為備案出現的次數多</td></tr>
+  <tr><td>MCP 工具數</td><td class="num">20 → 80+</td><td>上線至今</td></tr>
+  <tr><td>MCP 呼叫量</td><td class="num">&gt;1,000,000</td><td>月增率一度達 2 倍；8 月底約 120 萬</td></tr>
+  <tr><td>Gmail 市佔（收件端）</td><td class="num">&ge;60%</td><td>Zeno 的估計，其後是 Outlook、Yahoo</td></tr>
+  <tr><td>freeCodeCamp 電子報</td><td class="num">500 萬訂閱 / US$5,000 月費</td><td>透過 Amazon SES 發送，swyx 提供的對照案例</td></tr>
+  <tr><td>濫用集團規模</td><td class="num">20,000 個域名</td><td>單一集團帶入的 TLD 數量</td></tr>
+</table>
+
+<h5>重點引用</h5>
+<blockquote>「It's like, oh my gosh, how are we ever gonna beat SendGrid? It's just impossible. And then earlier this year, we crossed a number of downloads from SendGrid... and now we're more than double.」
+<span class="src">— Zeno Rocha，談 NPM SDK 下載量超越 SendGrid</span></blockquote>
+
+<blockquote>「You need to do exactly what an abuser wouldn't do. It's the opposite of that.」
+<span class="src">— 談 deliverability 與反濫用</span></blockquote>
+
+<blockquote>「I want my product to be formless. Whatever they wanna do with the product, it should be possible.」
+<span class="src">— 解釋為什麼 API-first、為什麼 MCP 要覆蓋 dashboard 的長尾</span></blockquote>
+
+<blockquote>「I'd rather live in that reality than live in a reality where we're a hundred million dollar company and my daughter doesn't wanna play with me.」
+<span class="src">— 談 1,000 萬 vs 1 億 ARR 的取捨，以及第二個孩子將出生、更多時間留在巴西</span></blockquote>
+
+<h5>技術詳情</h5>
+<ul>
+<li><strong>定價頁的雙軌渲染</strong>：同一頁提供 HTML 與 <code>.md</code>；<code>/pricing.md</code>、<code>/security.md</code> 直接 append 即可取得。JS 滑桿對 agent 不可見，所以 markdown 版本改成靜態表格。追蹤靠 server-side（Datadog），因為一般 analytics 腳本抓不到 <code>.md</code> 請求。</li>
+<li><strong>MCP 的權限模型</strong>：要做 remote MCP，先得補 OAuth，再補 RBAC，逐一檢查每個資源的存取邊界；完成後才有 observability 與 Datadog dashboard，最後才是「跟 labs 談上架」。第一版 MCP 其實是 a16z 的 Yoko 寫的本地開源版，後來才轉到官方 org。</li>
+<li><strong>投遞管線</strong>：大量寄送要排隊、分批、依互動調整；100,000 封信不能一次倒給 Gmail，否則會被 throttle。要把最活躍的收件人排在隊首，讓 Gmail 先看到正向互動。多提供商之間要錯開，還要買 IP block、看 IP 歷史、分散到不同 IP pool、隨時間平衡。</li>
+<li><strong>信譽單位的轉移</strong>：早期是 IP 信譽，現在更多是域名信譽；因此用子域名分流（transactional / marketing / 甚至 <code>confidential.resend.com</code> 寄投資人信）。共享 click-tracking 域名有「吵鄰居」風險：一個客戶拿去釣魚，整個域名被列黑，別人的正常信也遭殃——所以他們做 custom tracking domains。</li>
+<li><strong>SES 的隱藏成本</strong>：表面每封便宜，但還需要 SNS 收 bounce/complaint 事件、CloudWatch 存 log、SQS 排隊、自己寫 webhook；「footprint 會比你想的大很多」。Resend 早期就建在 SES 上，現在往下自己做傳輸層，寄送路徑已改用 Go，追求 P99。</li>
+<li><strong>Inbound 與多信箱</strong>：下一個產品是把「收信」抽象成可程式化的多信箱（read / mark unread / star / label API），目標是 Front、Missive 那類 shared inbox 的 API 版；Zeno 說已經有 feature flag 給 swyx 試。</li>
+</ul>
+
+<h5>行業 insight</h5>
+<p>這一集最重要的不是 email，而是「分發管道正在被模型重寫」。Zeno 的說法很直接：以前不確定用什麼工具，你會問 Google，拿到三個比較頁；現在你只會拿到一個答案，而人多半會選最無摩擦的那個。這使得「免費層」與「免登入」變得比以前更重要（他提到 WorkOS 的 Michael Grinich 在推 off-MD／免認證使用），但也更難防濫用。另一個 insight 是規模不一定有優勢：Twilio 買下 SendGrid 後，Zeno 認為他們「睡著了」，把注意力移到別的通道；新世代的工具可以在開發者心智裡慢慢取代老巨頭，而不需要在 enterprise sales 上正面對撞。</p>
+
+<h5>前後脈絡</h5>
+<p>Latent Space 過去幾集一直在問同一個問題：agent 時代的軟體長什麼樣。Supabase 那集談「把文件與定價寫成 agent 讀得懂的形狀」，這集是把同一套方法論搬到 email，並且補上「選中之後」的現實摩擦：DNS、IP、黑名單、詐騙。與 11-09 的 Handshake AI 那集（資料市場）相比，這集是需求端——不是「模型要什麼資料」，而是「模型會推薦誰的 API」。</p>
+
+<h5>爭議點</h5>
+<ul>
+<li><strong>80 個工具 vs 2 個工具。</strong>Zeno 承認工具變多目前沒出問題，但這與 Cloudflare Code Mode 的極簡哲學直接衝突；他也沒有給出「何時會翻車」的判準，只說會持續觀察。這是一個尚未有答案的架構賭注。</li>
+<li><strong>「AEO 是否真的可歸因」。</strong>swyx 自己在節目裡說「我不確定這有沒有用」，Zeno 也承認很多做法是丟到牆上看看。64/102 是一個有說服力的觀察，但不是因果實驗。</li>
+<li><strong>免費層與濫用的張力。</strong>他一邊說預設信任、一邊說要快速封鎖；對大規模濫用者（20,000 域名）而言，這種「先信任再封」的模式是否反而提高了他們的 ROI，節目沒有正面回答。</li>
+</ul>
+
+<hr class="hr">
+
+<!-- ============ 2. COGNITIVE REVOLUTION ============ -->
+<h3>The Cognitive Revolution（Nathan Labenz）</h3>
+<h4>The Neuron Basis: Goodfire's Curt Tigges on Agentic Interp, Monosemanticity &amp; Reverse Engineering 🎙️</h4>
+<p class="byline">發布：2026-11-11 03:09 HKT（2026-11-10 19:09 UTC）｜長度 1:56:17｜形式：深度訪談，官網提供 AI 生成逐字稿與編輯註記</p>
+
+<p><span class="tag">mechanistic interpretability</span><span class="tag">neurons</span><span class="tag">Goodfire</span><span class="tag">alignment</span></p>
+
+<p><strong>主題</strong>：單顆 MLP 神經元到底能不能讀？過去幾年的共識是不能——表徵分散、疊加（superposition）、一顆神經元混雜多個概念，所以我们需要 SAE 這類輔助模型把內部狀態攤開。Curt Tigges 與 Nick Cammarata 的新論文〈Neurons as an Interpretable Basis〉（搭配 Nick 十月中爆紅的長文〈Neural Networks Are Already Clean〉）直接挑戰這個共識：神經元比想像中乾淨，而且現在有 agent 可以大規模地把每一顆讀完。</p>
+
+<p><strong>嘉賓背景</strong>：Curt Tigges，Goodfire 的 Member of Technical Staff。Goodfire 是專做機械可解釋性的新創，Nathan 說這是他們系列訪談中「可能最重要的一集」。共同作者 Nick Cammarata 是前 OpenAI 研究員，長文在 AI 圈引發大量討論；這篇論文是把長文中以視覺模型為主的論證，延伸到語言模型，並量化。</p>
+
+<h5>核心論點</h5>
+<ul>
+<li><strong>論點一：MLP 神經元是「可枚舉的」，不是「不可解的」。</strong>Curt 的說法很克制：神經元「比學界至今以為的更可解釋」；你通常不需要同時有很多顆啟動；即使一顆神經元有多個意思，那也是「一組緊湊的意思」，不是幾百個混在一起。真正該問的問題不是「它是不是單義（monosemantic）」，而是「你能不能把它代表的所有東西列出來」。</li>
+<li><strong>論點二：會變乾淨，一半是工具的功勞，一半是架構的功勞。</strong>工具面：agent 可以掃過一顆神經元所有啟動的情境、做最小對比、改句子、steering，然後提出假設並反覆修正。架構面：現代模型幾乎都用 gated MLP（SwiGLU），gate 與 up 兩組獨立參數相乘，等於讓神經元自帶一個小開關；Curt 說在他們看過的模型裡，ReLU／GELU 比 SwiGLU 難讀。</li>
+<li><strong>論點三：稀疏不是「刪神經元」，是「每個 token 只留最極端的訊號」。</strong>在 top-K 方案裡，每個被路由到的 expert 只保留最強的 64 顆（共 512 顆），其餘歸零，等於壓掉約 88% 的啟動；在百分位方案裡，則是依每顆神經元自己的歷史分布，保留最極端的正負值，其餘用該神經元的平均值取代（因為雙極性，平均值接近零但不是零）。兩種方案的差別在於「誰決定什麼重要」：百分位是資料集相關的、全域的；top-K 是讓模型自己決定、逐 expert 的。</li>
+<li><strong>論點四：讀懂一顆神經元，可以用另一個模型來「考試」。</strong>Neuron Scientist 產出一段 paragraph 長度的描述，再由另一個模型（節目中使用 JEV）只看描述、逐 token 預測這顆神經元會有多強（0–9 分），把預測值貼回已被 ablation 的模型，量測 KL 散度傷害恢復了多少。結果是 <strong>74%（按傷害加權）</strong>。這不是「74% 準確率」，也不是「理解 74% 的模型」。</li>
+<li><strong>論點五：很多神經元是「動詞」，不是「名詞」。</strong>它們不是偵測一個物件，而是送一個訊號，讓下游去做某事：更有信心、再檢查一次、停下來、換路徑、指出「這個數字錯了」。Curt 把這稱為控制流（control flow）；Nathan 的總結是「routing energy or activation through the model」。</li>
+<li><strong>論點六：事實不在神經元裡，在神經元的連接裡。</strong>500 萬顆神經元不可能裝下比 500 萬更多的離散事實，但 10 顆神經元之間的網路可以有遠多於 10 條路徑。「A neuron is not a fact. But the fact is in the connections between neurons.」他舉例：一組幾十顆的神經元社群，決定哪些畫家屬於印象派、新印象派、後印象派。</li>
+</ul>
+
+<h5>關鍵數據</h5>
+<table>
+  <tr><th>項目</th><th>數字／事實</th><th>備註</th></tr>
+  <tr><td>研究模型</td><td>Qwen3.6-35B-A3B</td><td>MoE，40 層，每層 256 個 routed experts，每 token 選 8 個（官方卡另有一個 shared expert）</td></tr>
+  <tr><td>MLP 神經元總數</td><td class="num">約 5,000,000</td><td>每層約 13 萬顆；每個 expert 512 顆</td></tr>
+  <tr><td>可表達的「東西」</td><td class="num">約 10,000,000</td><td>每顆神經元雙極性，正負方向可有不同意思</td></tr>
+  <tr><td>Top-64 稀疏</td><td class="num">≈88% 啟動被壓掉</td><td>512 顆中只留 64 顆；top-32 明顯更差</td></tr>
+  <tr><td>恢復 reasoning 的微調量</td><td class="num">1 億 token</td><td>一天、數張 GPU；在此之前 pass@4／pass@8 已與原模型相當</td></tr>
+  <tr><td>啟動範例語料</td><td class="num">100 億 token</td><td>用於抽取每顆神經元的啟動案例與百分位</td></tr>
+  <tr><td>描述驗證恢復率</td><td class="num">74%</td><td>KL 散度傷害恢復，按傷害加權；不是準確率</td></tr>
+  <tr><td>單顆神經元最高成本</td><td class="num">US$45</td><td>最貴的一次 inference；一般遠低於此，且未特別優化</td></tr>
+  <tr><td>長上下文測試</td><td class="num">約 32K token</td><td>coding 任務；百萬 token 行為仍待研究</td></tr>
+  <tr><td>部分 benchmark 提升</td><td class="num">+5 至 +15 分</td><td>稀疏＋微調後，在數個 benchmark 上出現</td></tr>
+</table>
+
+<h5>重點引用</h5>
+<blockquote>「The individual neurons in MLPs, in neural networks in general are more interpretable than the field has thought to this point.」
+<span class="src">— Curt Tigges，開場定義論文主張</span></blockquote>
+
+<blockquote>「There's a neuron where the one meaning is oral health, and the other meaning is marine wildlife.」
+<span class="src">— 談一顆神經元如何在兩個完全不同的語境間切換，下游讀者群也完全不同</span></blockquote>
+
+<blockquote>「As we apply increasing levels of intelligence, then more and more of what the neuron is doing becomes legible and predictable.」
+<span class="src">— 解釋為什麼同一個 neuron scientist，換更強的模型就能讀出更多</span></blockquote>
+
+<blockquote>「It's not just detecting a thing. It's like sending a signal that is going to induce the model to do something else.」
+<span class="src">— 神經元作為動詞／控制流</span></blockquote>
+
+<blockquote>「We're discovering these primitives like molecules that are important to the model's behavior. But we need to understand alloys, we need to understand fluid dynamics.」
+<span class="src">— 談從神經元到更高層抽象（物理→化學→生物）的距離</span></blockquote>
+
+<blockquote>「We're not sure exactly what they're doing. That's going to be the subject for future research.」
+<span class="src">— 談 double-negative activations（負 gate × 負 up）</span></blockquote>
+
+<h5>技術詳情</h5>
+<ul>
+<li><strong>SwiGLU 的兩個訊號</strong>：輸入進入神經元層後，分別走 up projection 與 gate projection（兩組完全獨立的參數矩陣），gate 的輸出再乘上 SiLU，最後與 up 的結果相乘。Curt 的例子：gate 偵測「烹飪」這個語境，up 偵測「大蒜」這個食材，兩者相乘才會強烈啟動。這讓神經元可以當一個小型的 conjunction／switch，同一個神經元在不同語境下被不同下游讀者解讀。</li>
+<li><strong>Neuron Scientist 的工作流</strong>：（1）收集數千個讓該神經元啟動的 prompt；（2）按輸入連接、文本本身、或共同啟動的神經元分群；（3）frontier model 提出統一假設，並可生成／改寫句子、做最小差異對比、steering、觀察啟動變化；（4）另一個獨立系統只看描述，逐 token 打分，預測值貼回模型；（5）失敗則回饋、修正描述，迭代。最後由 helper agent 生成一頁結果。</li>
+<li><strong>驗證方法不只一種</strong>：除了 KL 恢復，還包括「只給描述、不給範例，讓另一個模型寫出一段比資料庫中任何文本都更能啟動該神經元的文字」，以及「給定序列，判斷該神經元是否應該啟動」——後者是較簡單的任務，準確率常在九成以上。</li>
+<li><strong>Double-negative activations</strong>：當 gate 與 up 同時為負，乘起來變正。Curt 說這種情況「很怪」：有時整批移除不影響，有時會弄壞 reasoning 或記憶；把這些啟動以相反 token 順序貼回、甚至從完全不同的序列貼回，reasoning 都能恢復。含義未明，是後續研究題目。他也提到 Gemma 4 用的 ReGLU 在設計上不會出現這種情況，而 Kimi K3 的神經元幾乎不用這種模式。</li>
+<li><strong>稀疏後的 reasoning 修復</strong>：一開始模型會迴圈、過度自我檢查、對答案沒信心；但知識與基本推理機制還在，問題更像「校準」而不是「能力」。1 億 token 微調後，MMLU、MedQA、GPQA Diamond、SuperGPQA 都回到與原模型相差一分以內；部分 benchmark 甚至提升 5–15 分。Curt 的解釋是：內部干擾變少，「最有信心的東西會浮上來」（the most confident thing rises to the top）。</li>
+<li><strong>Expert 的語義集中度</strong>：他們檢查的 expert 大多集中在 1–3 個主題，例如法律／憲法判例、代數、時間單位與時間流逝、醫療細分主題。這與「expert 不可解釋」的舊說法相反；也讓 router 的工作變得可理解——它必須有某種可辨識的專家分工，否则不可能在 256 選 8 時做出有意義的選擇。</li>
+<li><strong>SAE vs 神經元</strong>：Curt 引用 Shabalin &amp; Piotrowski 的新工作（〈Comparing Sparsified MLPs and Transcoders〉）：許多 transcoder 特徵其實就是神經元，或是會共同啟動的稀疏組合。他的說法是：用 transcoder 替代 MLP 的 loss，比直接保留 top-K 神經元更高；因此對 MLP 而言，直接讀神經元更划算。SAE 仍有價值的地方是 residual stream——那裡幾何更複雜，還有 superposition，甚至 SAE 未必是最佳工具（Goodfire 自己有 block-sparse featurizers 的路線）。</li>
+</ul>
+
+<h5>行業 insight</h5>
+<p>這集真正的行業訊號，是可解釋性的「成本曲線」被改寫了。以前讀一顆神經元要研究員手工做，現在是一個 agent 跑幾分鐘到幾小時、平均成本遠低於 45 美元。Curt 的建議是：對整個模型做一次粗掃，把「難讀」的神經元挑出來，再把算力集中在那些上面；不需要對每一顆都派出完整的 neuron scientist。這意味著「理解模型」從論文題目變成了可排程的工程工作——也意味著 monitorability（監控 reward hacking、scheming、eval awareness）在經濟上第一次變得可行。</p>
+
+<p>另一個訊號是架構。如果稀疏與局部化真的能讓模型「一樣好、但更好讀」，那 alignment tax 可能比想像低；Curt 甚至說，現有模型已經比我們以為的更可讀，所以「為可解釋性設計架構」也許沒有那麼必要。但他也保留了反面：稀疏推理、知識局部化（gradient routing／modular pretraining）仍然值得做，因為「要監控的東西變少」本身就是巨大的工程優勢。</p>
+
+<h5>前後脈絡</h5>
+<p>這是 Goodfire 在 Cognitive Revolution 系列的最新一集，前面幾集分別談過 SAE、電路追蹤與特徵可視化。與 11-07 的 AI:AM 那集（Anthropic S-1/A、METR 2×、BallotBench）相比，那集談的是「外部世界怎麼監管 AI」，這集談的是「內部世界能不能被讀」。Nathan 在開場與結尾都提到「這個夏天 behavioral training 的壞消息」——這集對他而言是一种希望，但他反覆提醒：可解釋性仍未解決。Curt 自己也說：「你可以理解模型裡的每一顆神經元，然後仍然沒有把模型反工程出來。」</p>
+
+<h5>爭議點</h5>
+<ul>
+<li><strong>「神經元 vs SAE」的路線之爭。</strong>Curt 的立場明確（MLP 直接讀神經元更划算），但這與過去幾年 SAE 的主流投資方向相反；他引用的是尚未完全沉澱的新論文，節目中也沒有 SAE 陣營的即時反駁。</li>
+<li><strong>「乾淨」的適用範圍。</strong>論文主體是 Qwen3.6 與視覺模型；Curt 承認 attention 與 residual stream 仍未理解，且不同架構（ReGLU、Kimi K3）的行為不一樣。把「神經元可讀」推廣到所有前沿模型，目前仍是外推。</li>
+<li><strong>74% 的意義。</strong>這是一個很容易被誤讀的數字；節目花了很長時間澄清它是「按傷害加權的 KL 恢復」，但社交媒體上很可能被簡化成「74% 讀懂了模型」。</li>
+<li><strong>Long context 的空白。</strong>測試只到 32K token；Curt 說「我懷疑 32K 行得通，更遠也行」，但這是猜測，不是結果。對於正在把上下文推到百萬 token 的產品而言，這個空白很關鍵。</li>
+</ul>
+
+<hr class="hr">
+
+<!-- ============ 3. NAIVEAI ============ -->
+<h3>Latent Space（實測文章，非訪談）</h3>
+<h4>NaiveAI Promises 2,100 Tokens per Second. How Well Does It Code? 🎙️</h4>
+<p class="byline">發布：2026-11-11 02:56 HKT（2026-11-10 18:56 UTC）｜形式：hands-on 實測，作者 Gabriele Beltramo｜非 podcast 集數，但同屬 Latent Space feed 的模型評測系列</p>
+
+<p><span class="tag">open weights</span><span class="tag">inference speed</span><span class="tag">coding</span><span class="tag">China</span></p>
+
+<p><strong>主題</strong>：一家叫 NaiveAI 的中國公司發布開源權重模型 Naive-N0.5-Flash，主打「每秒塞進最多 token」，聲稱峰值可達 2,100 tok/s。Latent Space 用同一組題目與 app 生成任務，把它跟 DeepSeek V4.1 Flash 1017、GLM 5.3 Flash 對比，結論是：速度是真的，但「快」有很大一部分是用更多思考 token 換來的。</p>
+
+<p><strong>背景</strong>：Naive-N0.5-Flash 不是從零訓練，而是從小米 MiMo-V2.5 繼續訓練。MiMo-V2.5 是 310B 參數的稀疏 MoE、15B 活躍參數、48T token 訓練；NaiveAI 在其上再做約 <strong>3.25T token</strong> 的繼續訓練，其中約 3T 是在固定 1M 上下文、固定 learning rate 下完成，並把注意力層改成 DeepSeek Sparse Attention（DSA）。推論端搭配自研 NaiveRT 引擎與 FP8 draft model 做 speculative decoding。官方定位是「 largely built by AI、被訓練來做 AI 研究本身」，長期目標是 recursive self-improvement。</p>
+
+<h5>核心論點／發現</h5>
+<ul>
+<li><strong>速度確實驚人，但峰值不是常態。</strong>官方數字：thinking 階段 decode 約 984 tok/s、answer 階段約 1,816 tok/s，單一秒峰值約 2,100 tok/s。Latent Space 明確標註「treat this as an upper bound, not a typical rate」。</li>
+<li><strong>中位數快很多，平均數沒有。</strong>30 題混合測試中，中位回答時間 3.1 秒（Naive，thinking），對比 GLM 5.3 Flash 5.3 秒、DeepSeek V4.1 Flash 10.1 秒；但平均是 45.3 秒 vs 45.0 秒 vs 86.9 秒。換句話說，大多數問題很快，少數難題拖得很長。</li>
+<li><strong>難題上它反而更慢。</strong>HLE-Diamond hard 題平均 89.8 秒，DeepSeek 是 79.7 秒；而且平均 completion token 達 108,500，是 GLM 5.3 Flash 的約 9 倍、DeepSeek 的約 11 倍。中位數只有 3,200 token——少數極長的推理把平均拉高。</li>
+<li><strong>寫 app 的品質在線，但不穩定。</strong>三個任務中，它的太陽系 3D 場景最好（有太陽黑子、地球夜面城市燈光），樹的生成與 DeepSeek 打平（但關掉 thinking 的版本完全做不出可用 app），ray tracer 正確但 JavaScript 效率不如 DeepSeek。</li>
+<li><strong>成本／延遲的取捨是產品問題，不是模型問題。</strong>目標價 $0.10／$0.40／$0.01（輸入／輸出／cache read，每百萬 token），落在 Flash 模型帶；但如果它用 9–11 倍的 token 解難題，帳單不會只有單價看起來那麼低。</li>
+</ul>
+
+<h5>關鍵數據</h5>
+<table>
+  <tr><th>Benchmark</th><th>Naive-N0.5-Flash</th><th>DeepSeek V4.1 Flash 1017</th><th>GLM-5.3-Flash</th></tr>
+  <tr><td>NL2Repo-Bench</td><td class="num">71.9</td><td class="num">68.2</td><td class="num">56.3</td></tr>
+  <tr><td>DeepSWE v1.1</td><td class="num">67.8</td><td class="num">77.0</td><td class="num">63.4</td></tr>
+  <tr><td>Agent's Last Exam (ALE)</td><td class="num">32.4</td><td class="num">35.4</td><td class="num">26.3</td></tr>
+</table>
+
+<table>
+  <tr><th>延遲／吞吐</th><th>Naive（thinking）</th><th>DeepSeek（high）</th><th>GLM（high）</th></tr>
+  <tr><td>中位回答時間</td><td class="num">3.1 s</td><td class="num">10.1 s</td><td class="num">5.3 s</td></tr>
+  <tr><td>平均回答時間</td><td class="num">45.3 s</td><td class="num">45.0 s</td><td class="num">86.9 s</td></tr>
+  <tr><td>HLE hard 平均</td><td class="num">89.8 s</td><td class="num">79.7 s</td><td class="num">—</td></tr>
+  <tr><td>HLE hard 平均 completion token</td><td class="num">108,500</td><td class="num">約 9,900（推算）</td><td class="num">約 12,000（推算）</td></tr>
+</table>
+
+<div class="note">
+<b>數據解讀警告：</b>Naive 的吞吐是伺服器端量測（單一 8-GPU Blackwell 節點、speculative decoding），DeepSeek 與 GLM 的數字來自 OpenRouter；Latent Space 明說兩者不應直接相除當成「幾倍快」。樣本也只有每難度 10 題，且沒有評分答案正確率。
+</div>
+
+<h5>重點引用</h5>
+<blockquote>「Short, fast replies are only useful if they are correct.」
+<span class="src">— Latent Space 作者對自身實驗限制的註腳</span></blockquote>
+
+<blockquote>「Treat this as an upper bound, not a typical rate.」
+<span class="src">— 對 2,100 tok/s 峰值的說明</span></blockquote>
+
+<h5>技術詳情</h5>
+<ul>
+<li><strong>Speculative decoding 的經濟學</strong>：acceptance rate 在關閉 thinking 時 70.6%，開啟 thinking 時只有 43.4%；draft model 是 Naive-N0.5-Flash-FP8-Draft。完整一輪（draft、verify、sampling、commit）在 NaiveRT 是 3.4 ms，SGLang 是 12.3 ms，減少 72.4%。</li>
+<li><strong>為什麼 DSA 對 RL 重要</strong>：自回歸 rollout 是大規模 RL 的主要瓶頸；稀疏注意力讓 decode 更便宜，等於讓整個「生成→評分→更新」的迴圈更快。文章把這連到 NaiveAI 的自我改進敘事：模型可以最佳化自己的 CUDA kernel、採用對大規模 RL 最有效率的架構。</li>
+<li><strong>1M 上下文的訓練配方</strong>：約 3T token 在固定 1M context、固定 LR 下訓練；這種「長上下文繼續預訓練」是目前少數公開的配方細節，對想做長上下文產品的團隊有參考價值。</li>
+</ul>
+
+<h5>行業 insight</h5>
+<p>「速度」正在變成一種獨立的產品類別。過去一年，Flash 級模型的競爭集中在「每美元多少 intelligence」；NaiveAI 把戰場移到「每個使用者等待的秒數」。這對 coding agent 特別有意義：如果一個 agent 每輪要等 10 秒，使用者就會減少迭代次數；如果只要 3 秒，行為模式會整個不同。但代價是 token 用量與難題上的落後——這也解釋了為什麼 Latent Space 的結論是「適合重視快速迭代、而不計較 token 經濟性的開發者」。</p>
+
+<h5>前後脈絡</h5>
+<p>這篇是 Latent Space 新開的「無偏實測」系列第一篇。它與 11-09 的 Handshake AI 那集形成有趣對照：一邊談 frontier lab 願意花多少錢買資料，一邊談模型把成本壓到 $0.10／百萬 token。兩者其實是同一條價值鏈的兩端——資料越來越貴，推論越來越便宜。</p>
+
+<h5>爭議點</h5>
+<ul>
+<li><strong>「2,100 tok/s」是行銷數字還是工程成就？</strong>技術上，單節點、單串流、投機解碼的峰值確實可達；但對多數使用者，這個數字不會出現在日常體驗裡。</li>
+<li><strong>「模型 largely built by AI」的可驗證性。</strong>這是 NaiveAI 的敘事，Latent Space 沒有獨立驗證；文章也誠實地說，Artificial Analysis 上還沒有這家公司的數據。</li>
+<li><strong>中國開源模型的追趕路徑。</strong>從小米 MiMo 的權重出發、加 DSA、再繼續訓練，這是一條「站在別人肩膀上」的捷徑；它是否可持續，取決於原始權重與授權，而文章沒有深入。</li>
+</ul>
+
+<hr class="hr">
+
+<h2>附：同日 AINews 摘要（非播客，供背景）</h2>
+<p>Latent Space 同日刊出的 AINews（11-09）有一個與上述內容強相關的頭條：Anthropic 在 IPO roadshow 當天推出 <strong>Claude Fable 5.2 與 Mythos 5.2</strong>，在 Artificial Analysis Intelligence Index v5 以 65 分（max）重回第一，壓過 Gemini 4 Carbon（60）與 Opus 5.5（59）；HLE-Diamond 80%（前紀錄 69%）。價格從 $10／$50 降到 $8／$40，但因為更會「自我檢查」（有時寫數百到數千個測試、開 subagent 交叉驗證），SemiAnalysis 的 GDPx 每題成本反而從 $67.16 升到 $88.15。這與 NaiveAI 那篇形成一個很清楚的對照：一邊用更少 token 換速度，一邊用更多 token 換分數。兩條路線都成立，因為它們賣的是不同的東西。</p>
+
+<h2>三集共同的線</h2>
+<p>如果把今天的三條內容疊起來，會看到一個共同的動作：<strong>把「介面」往下移一層，然後在那裡建立新的標準</strong>。</p>
+<ul>
+<li><strong>Resend</strong> 把產品介面從「給人看的網頁」移到「給 agent 讀的 markdown／MCP」。它賣的還是 email，但贏的地方是 agent 在 102 次建議裡選它 64 次。</li>
+<li><strong>NaiveAI</strong> 把模型介面從「benchmark 分數」移到「每秒 token 與等待時間」。它賣的是一個讓 agent 迭代更快的引擎，代價是難題上的 token 用量。</li>
+<li><strong>Goodfire</strong> 把模型內部介面從「SAE 的中間特徵」移到「單顆神經元」。它賣的是一種可規模化、可排程的監控能力，代價是目前只覆蓋 MLP、還不到 attention 與 residual stream。</li>
+</ul>
+<p>三者的共同前提是：<strong>能力過剩之後，稀缺的是「衡量與校準」</strong>。Resend 衡量的是「模型會不會推薦你」，NaiveAI 衡量的是「每個答案要等幾秒、燒幾個 token」，Goodfire 衡量的是「這顆神經元到底在做什麼、修復了多少 KL」。衡量方式一旦確立，工程就能規模化；工程一旦規模化，原本的「藝術」就變成「基礎設施」。</p>
+
+<footer>
+  <p>本報告由 AI 播客掃描器自動生成。來源：Latent Space 官方文章與 VTT 逐字稿、The Cognitive Revolution 官方逐字稿與節目頁、各節目 RSS feed。所有引用均為原文直譯或原文摘錄；數據以節目／文章自述為準，未經獨立驗證。</p>
+  <p>Jev 前置過濾：3 條全部 keep（worth 1.32／1.25／1.21）；primary_source 分別為 0.54／0.21／0.24，故文中已標明哪些是節目自述、哪些是官方文章。中文節目今日無新集；7 個英文 feed 中 4 個無新內容。</p>
+  <p>文字與數據版權歸各節目與原作者所有；本報告為摘要、萃取與分析。程式碼與版面以 Apache License 2.0 釋出。</p>
+</footer>
+
+</div>
+</body>
+</html>
