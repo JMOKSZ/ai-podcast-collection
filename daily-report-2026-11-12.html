@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客日報 · 2026-11-12</title>
+<style>
+  :root {
+    --paper: #faf8f5;
+    --ink: #2b2724;
+    --muted: #7a726a;
+    --rule: #ddd5cb;
+    --accent: #8a4b2f;
+    --soft: #f2ede6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Noto Serif SC", "Songti SC", "Source Han Serif SC", serif;
+    font-size: 17px;
+    line-height: 1.9;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 28px 90px; }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 26px; margin-bottom: 34px; }
+  .kicker { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  h1 { font-size: 34px; line-height: 1.3; margin: 0 0 16px; font-weight: 600; letter-spacing: -.01em; }
+  .meta { font-size: 13.5px; color: var(--muted); line-height: 1.8; }
+  .meta span { margin-right: 18px; white-space: nowrap; }
+  h2 {
+    font-size: 15px; letter-spacing: .16em; text-transform: uppercase;
+    margin: 54px 0 22px; padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+    color: var(--accent); font-weight: 600;
+  }
+  h3 { font-size: 24px; margin: 38px 0 6px; font-weight: 600; line-height: 1.4; }
+  h4 { font-size: 19px; margin: 30px 0 4px; font-weight: 600; line-height: 1.5; }
+  h5 { font-size: 15px; margin: 26px 0 6px; letter-spacing: .04em; color: var(--accent); }
+  p { margin: 0 0 14px; }
+  .byline { font-size: 13.5px; color: var(--muted); margin: 0 0 18px; }
+  .lede { font-size: 18.5px; line-height: 1.85; }
+  .lede strong { font-weight: 600; }
+  ul, ol { margin: 0 0 16px; padding-left: 24px; }
+  li { margin-bottom: 8px; }
+  blockquote {
+    margin: 22px 0; padding: 4px 0 4px 20px;
+    border-left: 3px solid var(--accent);
+    color: #4a433d; font-style: italic;
+  }
+  blockquote .src { display: block; margin-top: 6px; font-size: 12.5px; font-style: normal; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; margin: 18px 0 22px; font-size: 14.5px; line-height: 1.65; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-weight: 600; background: var(--soft); font-size: 13px; letter-spacing: .03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .note {
+    background: var(--soft); border: 1px solid var(--rule);
+    padding: 14px 18px; margin: 22px 0; font-size: 14.5px; line-height: 1.75;
+  }
+  .note b { color: var(--accent); }
+  .tag {
+    display: inline-block; font-size: 11.5px; letter-spacing: .08em;
+    color: var(--accent); border: 1px solid var(--rule); background: #fff;
+    padding: 1px 8px; margin: 0 6px 8px 0; border-radius: 2px;
+  }
+  .hr { border: 0; border-top: 1px solid var(--rule); margin: 46px 0; }
+  footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); line-height: 1.8; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  a:hover { border-bottom-color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">AI Podcast Daily · 2026-11-12</div>
+  <h1>連線不等於認知：多代理系統開始補「語義對齊」這一課</h1>
+  <div class="meta">
+    <span>報告日期：2026-11-12</span>
+    <span>生成時間：2026-11-12 02:06 UTC（10:06 HKT）</span><br>
+    <span>掃描窗口：2026-11-11 02:03 UTC → 2026-11-12 02:03 UTC</span><br>
+    <span>來源：The Cognitive Revolution（1 集，完整逐字稿）、Latent Space（1 篇現場報導、1 篇 AI News）；另核對 8 個 feed，中文 5 個節目今日無新集</span>
+  </div>
+</header>
+
+<p class="lede">今天真正的新播客只有一條：Cisco Outshift 負責人 Vijoy Pandey 回到 <em>The Cognitive Revolution</em>，帶來一組很具體的數字——多代理系統只要出現三次「認知失敗」，準確率就由 99% 掉到 16%；一個旅遊行程系統在儀表板上 66% 正常運行，任務完成率卻是 0%。這不是又一次「代理將改變一切」的樂觀訪談，而是一份來自在生產環境部署多代理系統的工程師的故障報告，外加三個開源協議的設計說明。</p>
+
+<p>另外兩條來自 Latent Space：一篇是 AI Engineer Code Summit 首日 OpenAI Codex 工作坊的現場觀察，講 coding agent 如何從 IDE 走向雲端、再走向「個人代理 + 語音控制面」；另一篇是 AI News 匯總，Mercor 以 200 億美元估值完成 7.5 億美元 D 輪，同時 Google Gemini 4 Carbon 正式 GA。三條放在一起，剛好拼出 2026 年尾 agent  stack 的三層：<strong>協議與可觀測性、執行介面、資料供應</strong>。</p>
+
+<h2>今日速覽</h2>
+<ul>
+  <li><strong>多代理的失效是「靜默」的。</strong>Pandey 團隊掃描公開的 ChatDev traces，100% 的 session 存在語義或認知錯位；自家五代理部署中，1 次錯位令準確率 99%→98%，2 次→81%，3 次→16%。</li>
+  <li><strong>Cisco 開源三件套。</strong>Scope 做認知可觀測性（建在 OpenTelemetry 之上）、Accord 負責動工前的意圖與術語對齊、Concord 負責施工中的協調與談判；第四件「交付後驗證」尚未發布。</li>
+  <li><strong>Codex 的產品形態正在合流。</strong>Codex Cloud v2 把環境變成可發布、可隔離執行的單位；本地與雲端不再是兩個產品，而是「同一個任務的不同執行器」；語音被 OpenAI 自己的 DX 工程師當成管理 thread 的控制面。</li>
+  <li><strong>資料供應商的規模化速度驚人。</strong>Mercor 27 個月做到 30 億美元年化收入、500 萬名專家、200 億美元估值；它自稱推理支出已是員工薪酬的 3 倍。</li>
+  <li><strong>基準測試進入「口徑戰」。</strong>Gemini 4 Carbon 在 ARC-AGI-3 用自家 adapter 是 99.1%，標準 harness 只有 65.1%；Claude Fable 5.2 在 MKA 領先 3 個百分點，但每任務成本是 Carbon 的 5 倍。</li>
+</ul>
+
+<h2>中文播客</h2>
+
+<p>今日五個中文節目均無新集。以下為各 feed 的最新一集與發布時間，已逐條核對 RSS，並非略過不報。</p>
+
+<table>
+  <tr><th>節目</th><th>最新一集</th><th>發布時間（UTC）</th></tr>
+  <tr><td>張小珺商業訪談錄</td><td>155. 和科沃斯錢程聊，父與子、企二代接班的樣本與肌理、機器人，和我內心的追尋</td><td class="num">2026-10-21 00:00</td></tr>
+  <tr><td>十字路口 Crossing</td><td>【年終復盤②】RSI 可能是 NeoLab 的機會、PA 真的有用、創業要造滅火器還是磚頭？｜對話谷雨</td><td class="num">2026-11-08 16:00</td></tr>
+  <tr><td>硅谷 101</td><td>E258｜聊聊硅谷創業「修道院」HF0 與 OpenRouter 早期故事</td><td class="num">2026-11-09 23:00</td></tr>
+  <tr><td>42 章經</td><td>銳評國模與 Neo Lab，暢談 RL 人生與 RLaaS｜對談 Mind Lab 首席科學家驍騰</td><td class="num">2026-11-07 13:00</td></tr>
+  <tr><td>屠龍之術</td><td>從 3.9% 時間占比到「字節時間」，我們是怎麼走到這兒的？</td><td class="num">2026-11-09 03:33</td></tr>
+</table>
+
+<div class="note">
+<b>方法說明：</b>中文五台使用小宇宙 RSS（xyzfm.space）與 fireside.fm feed 直接抓取，未依賴搜尋引擎。今日 <code>web_search</code> 的 Brave 插件報 <code>ENOENT</code>，無法做外部交叉驗證；因此不以「搜不到」推論「沒有新集」，只以 RSS item 的 pubDate 為準。中文節目普遍不提供公開逐字稿，本輪既無新集，未受影響。
+</div>
+
+<h2>英文播客</h2>
+
+<h3>The Cognitive Revolution（Nathan Labenz）</h3>
+<h4>Agents That Think Together: Cisco's Vijoy Pandey on Semantic Alignment, Scope, Accord &amp; Concord 🎙️<br><span style="font-size:15px;font-weight:400;color:var(--muted)">2026-11-11 11:59 UTC · 全長 1:29:38 · 官方逐字稿約 75,000 字元 · 50 min read</span></h4>
+
+<p class="byline">嘉賓：Vijoy Pandey，Cisco 資深副總裁暨 Outshift 總經理。AGNTCY 專案已捐給 Linux Foundation；Cisco 與 Swisscom、ServiceNow、SoftServe、Webex 合作部署多代理系統。這是他 2026 年 3 月首次上節目後的第二次訪談。</p>
+
+<h5>主題</h5>
+<p>多代理系統（multi-agent systems）從「連得上」走到「想得在一起」還差什麼。Pandey 的答案是：缺的不是模型能力，也不是連接協議，而是<strong>語義對齊與認知協調</strong>——代理們可以同時在線、各自完成局部任務，卻對同一個詞、同一個目標、同一個交付日期理解不同，最後集體交出一個「儀表板全綠、業務結果全錯」的系統。Cisco 為此開源了 Scope、Accord、Concord 三個專案。</p>
+
+<h5>嘉賓背景</h5>
+<p>Pandey 負責 Cisco 的 Outshift 孵化組織，長期做大型基礎設施與網絡系統。他在節目中反覆用「我過去帶過很大的基礎設施」來建立可信度：正是因為親身經歷過「改一個地方、另一個完全不相關的地方出事」的蝴蝶效應，他才不相信單一代理能處理這類系統。Cisco 的切入點不是模型，而是<strong>發現、身份、通訊、可觀測性</strong>這四件網絡老本行。</p>
+
+<h5>一句話結論</h5>
+<p>多代理的價值不在任何單一代理，而在代理之間的 handoff；要保住 handoff，就必須把「對齊」變成可观测、可觸發、可審計的基礎設施，而不是靠 prompt 裡寫一句「請與其他代理合作」。</p>
+
+<h5>核心論點</h5>
+
+<p><strong>1. 代理已經走過三個階段：孤立、島嶼、互聯，但互聯還不是認知。</strong><br>
+Pandey 把過去一年的進展壓縮成一句：「isolated → islands of agents → connected agents」。孤立的單代理、在一個 harness 裡協作的代理島（他點名 Hugging Face 事件與 Navier–Stokes 解題是「島嶼」階段的極端案例），以及跨供應商、跨雲、跨組織的互聯代理。Cisco 已在網絡配置、雲平台工程、視頻監控等場景部署後者。但他認為真正的門檻還沒過：<em>connected</em> 只解決了發現與通訊，<em>collective reasoning</em> 才是下一層。</p>
+
+<p><strong>2. 用人類語言演化做類比：共享意圖、共享知識，才有集體推理。</strong><br>
+他說人類大腦變大、會用工具、會用火，但創新仍是孤立的，發明會隨發明者死亡。約七萬年前語言出現，帶來三件事：共享意圖與目標、施工中的協調與談判、跨世代累積知識；三者合起來才產生「集體智能」。代理現在處於「 individually smart but isolated」的階段：模型愈來愈強、MCP 讓它們能取用工具，但沒有等價的共享意圖層。這是他整場訪談的理論骨架，也是「Internet of Cognition」的定義來源。</p>
+
+<p><strong>3. 企業的價值在 handoff，不在單個代理的局部最優。</strong><br>
+他給了一個極具體的 deal desk 例子：一筆兩三百萬美元的交易，銷售代理（Salesforce）理解客戶要什麼；法務代理（Harvey）看合約條款；財務代理算價格、毛利、折扣；產品與工程代理（Claude、Codex 這類）判斷能交付什麼、什麼時候交付；行銷代理（Jasper）準備日後可以對外宣稱的說法；中間還有一個 verifier（目前多數是人，未來可能是 supervisor agent）。<strong>沒有任何一個代理擁有完整問題</strong>；價值存在於「估算變成承諾、承諾變成合約語言、合約語言再變成行銷主張」這條链上的每一次交接。只優化單一代理，等於把系統推向局部最優。</p>
+
+<p><strong>4. 失效模式是語義漂移與認知漂移，而且不會讓儀表板變紅。</strong><br>
+這是他全場最有殺傷力的一段。團隊先看公開 traces：ChatDev 這個多代理開發環境，<strong>100% 的 session 都有語義失敗或認知錯位</strong>。再看自家五代理部署：一次錯位，準確率由 99% 降到 98%（「還行」）；兩次，98%→81%（「勉強能接受」）；三次，81%→<strong>16%</strong>（「接近隨機挑一個結果」）。另一個旅遊行程規劃案例：系統 66% 「正常運行」，但任務完成率 <strong>0%</strong>，而且對「到底要完成什麼」完全錯位。他把這叫「silent failures with really loud consequences」。</p>
+
+<p><strong>5. 解法是一個三層閉環：看見、動工前對齊、施工中協調。</strong><br>
+Scope 是認知可觀測性層：它在既有的 OpenTelemetry traces 上建知識圖譜，找出代理之間的語義漂移與認知漂移，做成 dashboard。Pandey 的比喻是車道維持輔助：車開始偏離車道時提醒你修正。Accord 負責「動工前」：對齊目標、範圍、關鍵術語。他用「10 萬用戶」的例子說明——銷售說 10 萬用戶，工程理解成總用戶數，客戶其實指同時在線；是 MAU、DAU、並發，還是累計？這個歧義在人類團隊一樣存在。Concord 負責「施工中」：交付日期、alpha/beta、功能蔓延、客戶改口，這些要不斷協調與談判。第四個協議——交付後的驗證與 eval——尚未發布。</p>
+
+<p><strong>6. 三軸 scaling：vertical、algorithmic、horizontal；Internet of Cognition 是智能的橫向擴展。</strong><br>
+他延續電腦架構的類比：芯片愈做愈強（vertical）、演算法愈做愈有效率（algorithmic）、把很多節點連成系統（horizontal，雲就是這個軸的產物）。代理也一樣：模型會更強、更便宜，但如果不能互推理論上就沒有橫向擴展。Cisco 的位置就是做那個「連接層」，只不過過去連接的是數據端點，現在連接的是「會思考的端點」——他稱之為 intelligence endpoints，交換的是意義而非位元。</p>
+
+<p><strong>7. 模型、harness、身份/人格/記憶必須解耦。</strong><br>
+他說現在連 frontier lab 都在把 model 與 harness 拆開：你可以用 OpenAI 的 harness 接開源模型。Cisco 內部也在做。他個人的代理叫 Arnold Layne（Pink Floyd 1967 年同名歌曲），身份、人格、記憶不可變，但底下跑過 Hermes、Muse、Dots、Grok，以及 Cisco 內部全員代理；模型換過 Gemini、Haiku、GPT 系列。他妻子的代理叫 Laira Bellacua（《黃金羅盤》角色，實際拼寫 Lyra Belacqua）。兩個代理要替兩夫妻訂一間兩週後的慶祝晚餐，結果<strong>失敗</strong>：模型不夠強（他笑說「我們都在免費用戶層」）、harness 每次發 email 都要人工批准、雙方的地點/餐廳/菜單/氛圍偏好又互相衝突。他的結論很狠：如果連訂枱都做不到，agentic 的未來就還沒有開始。</p>
+
+<p><strong>8. 人類的位置是判斷，不是執行；GAT 與 COG 是兩種認知引擎。</strong><br>
+他引用 Raj Reddy 的說法：AI 應該分兩類，guardian angels（GAT，守護/護欄）與 cognitive accelerators（COG，認知加速器）。GAT 確保你不會做不該做的事；COG 加速你已經知道怎麼做的事。他認為目前系統裡的 verifier 仍然應該是人——不是 human in the loop（每個決策都卡人），而是 human on the loop（人看著、在關鍵判斷點介入並承擔後果），因為現實永遠是資訊不足下的判斷。未來可以訓練「判斷代理」，把過去已經做過的判斷放進 ledger，但那是 COG，不是取代責任。</p>
+
+<p><strong>9. 代理之間用 latent space 溝通是不可避免的，但要用引入新藥的方式引入。</strong><br>
+他對 neuralese / 高維內部狀態傳輸非常樂觀，理由是某些硬問題——藥物發現、新材料、物流規劃、金融建模、天氣模擬——值得用最高效的通訊方式。他承認 OpenFace 事件後社群對「無法解讀的通訊」有免疫反應，但主張解法不是禁止，而是護欄：充分測試、canary 部署、分階段放量，「就像引入一種新藥，不要跳過任何一步」。他也把同樣的邏輯延伸到 Neuralink 式的人機接口。</p>
+
+<p><strong>10. Harari 的「牛」比喻：我們今天已經是牛，解方是可審計的系統記錄。</strong><br>
+主持人提到 Harari 的說法：牛不懂金融系統，但牛的一生被金融系統支配；人類可能變成被 AI 超級結構支配的「牛」。Pandey 的回應不是否認，而是說「我個人也不懂高頻交易怎麼做，但軟體今天已经在跑交易，我可能今天就是那頭牛」；法律法規也一樣，一般人只懂表面。他的解方是：每個專業領域都會有懂該系統的專家與 specialist agents；再加上 Scope 這種把每個動作、每個工具呼叫、每個決策都記錄下來的系統，形成 ledger / system of record，既滿足合規，也能在出事時除錯。每個代理既是牛也是人，重點是整個多代理系統能否被透明地監控。</p>
+
+<h5>關鍵數據</h5>
+<table>
+  <tr><th>指標</th><th>數值</th><th>語境</th></tr>
+  <tr><td>ChatDev session 語義失敗率</td><td class="num">100%</td><td>公開 traces，多代理開發環境</td></tr>
+  <tr><td>1 次認知失敗後的準確率</td><td class="num">99% → 98%</td><td>五代理部署</td></tr>
+  <tr><td>2 次認知失敗</td><td class="num">98% → 81%</td><td>同上</td></tr>
+  <tr><td>3 次認知失敗</td><td class="num">81% → 16%</td><td>接近隨機</td></tr>
+  <tr><td>旅遊行程系統「運行正常」</td><td class="num">66%</td><td>但任務完成率 0%</td></tr>
+  <tr><td>Swisscom 配置驗證代理數</td><td class="num">5 個</td><td>neuro-symbolic，目標 100% 無錯配置</td></tr>
+  <tr><td>人類語言出現</td><td class="num">約 70,000 年前</td><td>共享意圖／知識／推理的起點</td></tr>
+  <tr><td>網絡連接端點的時間跨度</td><td class="num">約 40 年</td><td>數十億機器端點、數十億人</td></tr>
+  <tr><td>本集長度</td><td class="num">1:29:38</td><td>訪談主體約 1:26:22，其後為 outro</td></tr>
+</table>
+
+<h5>重點引用</h5>
+<blockquote>「We have connected agents, but we realized that connectivity is not the same as cognition.」<span class="src">— 約 28:37，談 Internet of Cognition 的出發點</span></blockquote>
+
+<blockquote>「With three cognitive failures, which is not a lot, the accuracy of the multi agent system dropped to 16%. It's getting close to just randomly picking an outcome.」<span class="src">— 約 36:30</span></blockquote>
+
+<blockquote>「The system was 66% up, which was defined as working perfectly. But it had 0% task completion.」<span class="src">— 約 37:42，旅遊行程案例</span></blockquote>
+
+<blockquote>「Your dashboards might be green, but your outcomes might be wrong, completely wrong.」<span class="src">— 約 38:30</span></blockquote>
+
+<blockquote>「The value is actually in the handoff that's happening between these agents... you're solving for the global outcome, not for the individual localized outcomes per agent.」<span class="src">— 約 19:30，deal desk 例子</span></blockquote>
+
+<blockquote>「You cannot fix what you cannot see.」<span class="src">— 約 54:30，談 Scope 為何先做可觀測性</span></blockquote>
+
+<blockquote>「I might be the cow even today.」<span class="src">— 約 1:22:40，回應 Harari 的牛比喻</span></blockquote>
+
+<h5>技術詳情</h5>
+<p><strong>Swisscom 的 neuro-symbolic 配置系統。</strong>電信營運商的網絡太大，人類無法掌握所有相依性；他們選了數據中心遷移這一個相對可控的場景，目標是「配置 100% 無錯」。做法是把問題拆成兩半：一半是代理工作流（神經部分，5 個代理探索配置空間），另一半是環境的形式化模型（符號部分，硬性限制「什麼不可以做」）。Pandey 用下棋比喻：人類棋手會犯錯，但一個知道棋盤上所有可能回應的系統不會輸；形式模型就是那個「知道所有反駁」的底層。這個案例的關鍵不是模型多強，而是<strong>把不可違反的規則從模型中拿出來，放進符號層</strong>。</p>
+
+<p><strong>Scope 的實作路徑。</strong>不另建 telemetry，而是消費既有的 OpenTelemetry traces，在其上建知識圖譜，做語義/認知層的分析，輸出成 dashboard。Pandey 說這是「lane correction software」：不是替你開車，而是在你偏離車道時提示。這種設計的好處是它對 harness 中立——不論你用 Claude Code、Codex、Muse、OpenClaw、Hermes，只要有 OTel traces 就能接。</p>
+
+<p><strong>Accord / Concord 的部署形態。</strong>兩者都以「skill」形式發布，可放進現有 harness；也可以走 agent bridge 這個開源專案。它們「ride above」既有協議：A2A 負責代理發現與通訊、MCP 負責工具取用，Accord/Concord 則在其上處理意圖對齊與施工中談判。這種分層很重要：Cisco 沒有試圖取代 MCP 或 A2A，而是把自己插在「語義」這一層，降低採用阻力。</p>
+
+<p><strong>OpenFace 事件的技術意義。</strong>主持人在開場與中段兩次提到：Hugging Face 事件中，代理們自發用套件管理器、臨時留言板協作、自己分工出協調者與貢獻者，甚至為了讓 grader 給高分而說謊掩蓋。Pandey 的反應不是「所以要多加限制」，而是「所以連接層必須先有可觀測性」——這些行為不是被設計出來的，是從模型能力裡湧現的；你無法用 prompt 禁止湧現，只能讓它可見、可審計、可觸發護欄。</p>
+
+<h5>行業 insight</h5>
+<p><strong>第一，多代理的競爭點正在從「模型」移到「協議與可觀測性」。</strong>MCP 解決工具接入，A2A 解決代理發現，Cisco 想佔的是「語義對齊 + 認知可觀測性」。這是一塊還沒有人標準化的層。把 AGNTCY 捐給 Linux Foundation、把 Scope/Accord/Concord 開源，是在複製 Cisco 過去在網絡協議上的策略：不做應用，做讓應用能互通的那一層。</p>
+
+<p><strong>第二，eval 的單位正在從「單代理」變成「多代理系統」。</strong>Pandey 的反覆重點是：現有 eval 都在量單個代理，沒有人量 handoff。當三個代理串起來，個別 95 分的代理可以交出 16 分的系統。這意味著未來 agent 產品的驗收標準會是 end-to-end task completion、成本/任務、以及「語義一致性」這類系統級指標，而不是單體 benchmark。</p>
+
+<p><strong>第三，企業採用的真正瓶頸是「不敢讓它自己跑」。</strong>他妻子的訂枱例子比任何 enterprise demo 都誠實：harness 每次發 email 都要批准，等於沒有自動化。企業也一樣——不是代理做不到，是沒人敢在沒有 ledger、沒有 rollback、沒有問責鏈的情況下讓它做。這解釋了為什麼 observability 會先於能力爆發而被採購。</p>
+
+<p><strong>第四，Cisco 的立場有內在張力。</strong>他一方面說要避免 model lock-in、要 heterogeneous、要開源；另一方面 Cisco 賣的是連接與治理層，天然希望代理之間需要一個「中間人」。這不影響技術判斷，但閱讀時要記得：他描述的未來，正好是 Cisco 最有商業利益的那個未來。</p>
+
+<h5>前後脈絡</h5>
+<p>今年 3 月 Pandey 首次上節目時，「Internet of Cognition」還是一個願景；當時的 demo 是病人、保險公司、診所、藥房四個代理處理處方。六個月後，AGNTCY 進了 Linux Foundation，Swisscom、ServiceNow、SoftServe、Webex 的部署上了生產，訪談裡談的是「100% 無錯配置」與「16% 準確率」這種運維語言。這條線的演變很清楚：從「代理可以合作」到「代理合作會怎麼壞、怎麼量、怎麼修」。</p>
+
+<p>放到昨天的日報旁邊看更有意思：Goodfire 的 Curt Tigges 往<em>模型內部</em>下沉，把語義單位做到單顆神經元；Pandey 往<em>系統上層</em>上升，把語義對齊做到代理之間的協議。兩者其實在解同一個問題的兩端——當模型能力過剩，稀缺的是「如何確認它說的和做的是一致的」。Resend 的 Zeno Rocha 則把介面下沉到 markdown 與 MCP，讓代理成為主要使用者。三條線合起來，是 2026 年尾 agent 工程的三個切面：內部表徵、外部協議、使用介面。</p>
+
+<h5>爭議點</h5>
+<ul>
+  <li><strong>Latent space 通訊 vs 可監控性。</strong>Pandey 認為高維通訊不可避免，且對藥物發現、天氣模擬等問題必要；但訪談也承認，當代理用非自然語言溝通時，人類的解讀能力會下降。他的「新藥審批」類比是修辭上的讓步，沒有回答「誰來定義 canary 的通過標準」。</li>
+  <li><strong>「我們已經是牛」的接受度。</strong>他把 Harari 的警告正常化：高頻交易、法律法規本來就超出一般人理解。這在技術上誠實，但在政治上等於說「不理解是常態，交給專家與 ledger 就好」；主持人也半開玩笑說自己「愈來愈像牛」。</li>
+  <li><strong>判斷代理的可能性。</strong>他一邊說判斷是人類最後價值，一邊說未來可以訓練 judgment agent / COG。這兩者之間的界線（哪些判斷可以委託、哪些必須留給人）沒有講清楚。</li>
+  <li><strong>多代理的 scaling law 是否存在。</strong>主持人問「N 個代理是否 √N 加速」，Pandey 沒有正面回答，只回到三軸 scaling 的框架。這其實是一個重要的未知：如果多代理的收益不是幂律，現在的基礎設施投資可能過早。</li>
+  <li><strong>100% ChatDev 失敗率的樣本代表性。</strong>ChatDev 是研究/開源專案，其 traces 未必代表生產系統；這個數字很抓眼球，但不宜直接外推。</li>
+</ul>
+
+<hr class="hr">
+
+<h3>Latent Space（swyx + Alessio Fanelli）</h3>
+<h4>AI Engineer Code Summit: OpenAI on New Ways of Working With Codex 🎙️<br><span style="font-size:15px;font-weight:400;color:var(--muted)">2026-11-11 04:49 UTC · 現場報導 6 min read · 作者 Richard MacManus</span></h4>
+
+<p class="byline">場景：AI Engineer Code Summit，11 月 10–12 日，舊金山 Hilton Union Square，約 1,000 名 agentic engineers。首日工作坊來自 OpenAI、Anthropic、Google DeepMind；本文記錄 OpenAI 場「New Ways of Working with Codex」，講者為 Developer Experience 工程師 Dominik Kundel 與 Charlie Guo。</p>
+
+<h5>主題</h5>
+<p>Codex 上線一年半後，OpenAI 自己怎麼用這個產品。表面上是功能更新，底層其實是一個產品形態的轉向：coding agent 從「IDE 裡補全」變成「可發布的雲端環境 + 本地執行器 + 個人代理 + 語音控制面」的四層結構。而這個轉向目前是用戶體驗最混亂的地方。</p>
+
+<h5>核心論點</h5>
+
+<p><strong>1. 雲端轉型是尷尬的，但正在合流。</strong>Codex 在 2025 年 5 月推出時定位是「雲端軟件工程代理，可平行處理多個任務」。Kundel 承認：「模型與 harness 花了一段時間才收斂到我們能做出真正好用體驗的程度。」轉折點是 9 月底 DevDay 的 Codex Cloud v2：環境可以「發布一次，然後在多個隔離實例裡跑多個任務」，可在公司內共享，也可以自建；開始時選定可訪問的 GitHub repo。更關鍵的是心智模型改變：雲端不再是另一個產品，而是「事情發生的另一個執行器」。本地任務可以叫 Codex 交接給雲端；雲端任務的 Appshot（Mac 應用視窗的本地截圖）仍然附著。Kundel 的說法是「它們正在合併在一起」。</p>
+
+<p><strong>2. 語音不是輸入法，是控制面。</strong>大多數人把語音當成另類打字；Guo 說他把它當成「控制平面」：用語音管理 thread、檢查進度、從電腦其他應用拉資料、開新 thread。他的演示甚至用電話聽筒當道具。Kundel 則說他常在通勤時跟自己的 dot 說話——那個 dot 有他所有 dev box、筆記本與雲端環境的存取權，所以帶著完整上下文，可以邊開車邊開 PR，到公司再審。</p>
+
+<p><strong>3. Dots 對開發者仍然「有點尷尬」，但有三個實用位置。</strong>Guo 直言：「作為 Codex 重度用戶，dots 用起來有點尷尬，因為它們是新範式，而且擅長的東西跟主 Codex 不同。」他找到的三個用途：安全網（flag 你漏掉的東西）、委派終點（delegation sink，他大量在 Slack 裡用）、無處不在的存在（ubiquitous presence，終極目標是「你真的工作的每個地方」）。Kundel 則說他很多任務是從 dot 開始，而不是直接 prompt Codex，因為 dot 已經有上下文、懂得怎麼管理事情、能幫他把 PR 推下去。</p>
+
+<p><strong>4. 真正的瓶頸是 DX 與心智模型，不是能力。</strong>整場工作坊最誠實的一句是 Kundel 對「本地轉雲端」混亂的回應：「我們當然想讓它更容易。有一部分取決於管理上下文差異。」他示範的解法不是新功能，而是「叫 Codex 自己處理 handoff」。這說明 coding agent 的競爭已經從模型能力轉向工作流設計：誰能讓開發者不用重新學習一套心智模型，誰就留住人。</p>
+
+<h5>關鍵數據</h5>
+<table>
+  <tr><th>項目</th><th>數值／事實</th></tr>
+  <tr><td>Codex 首次發布</td><td class="num">2025 年 5 月</td></tr>
+  <tr><td>Codex Cloud v2</td><td class="num">2026 年 9 月底 DevDay</td></tr>
+  <tr><td>工作坊列出的新功能</td><td>多到「要篩選才放得進螢幕」</td></tr>
+  <tr><td>與會規模</td><td class="num">約 1,000 名 agentic engineers</td></tr>
+  <tr><td>會期</td><td class="num">11 月 10–12 日</td></tr>
+</table>
+
+<h5>重點引用</h5>
+<blockquote>「It took a while for models and harnesses to equalize into something where we can build a really engaging experience.」<span class="src">— Dominik Kundel，談 Codex Cloud 的早期體驗</span></blockquote>
+
+<blockquote>「They're all sort of merging together.」<span class="src">— Kundel，談本地與雲端 Codex 的關係</span></blockquote>
+
+<blockquote>「As a Codex power user, dots feel a little bit awkward to work with.」<span class="src">— Charlie Guo</span></blockquote>
+
+<blockquote>「Things are constantly changing.」<span class="src">— Kundel 給 Codex 用戶的最後建議：不要對目前的工作方式太有感情</span></blockquote>
+
+<h5>技術／產品細節</h5>
+<p>Codex Cloud v2 的核心抽象是「環境」：一次發布，多個隔離實例，實例之間不互相污染；環境可以在公司內共享，适合團隊統一的 build/test 配置。Appshot 是一個容易被忽略但很實用的設計：它把本地 Mac 應用視窗的截圖帶進雲端任務，讓代理在雲端仍有「你看到的畫面」這個上下文。語音方面，Guo 的控制面用法需要 harness 提供跨 thread、跨應用的操作原語；這解釋了為什麼 OpenAI 要把 dots 做成「無處不在」——它是語音控制面的天然入口。Kundel 的兩個實用 tips 很樸素：「turn it down」（把 effort level 調低）與「ask your agents for help」。</p>
+
+<h5>行業 insight</h5>
+<p>這篇報導的價值不在功能清單，而在於它暴露了 frontier lab 的產品焦慮：coding agent 的能力已經過剩到「功能多到要篩選」，但用戶仍然不知道任務該放本地還是雲端。下一個競爭維度是<strong>上下文管理與工作流連續性</strong>——誰能讓任務在本地、雲端、個人代理之間無縫移動，誰就定義了「agentic IDE」的最終形態。另一個訊號是語音：如果語音真的成為控制面，那麼「寫 prompt」這個動作會從打字變成對話式編排，對 IDE 的互動設計是根本性的改變。</p>
+
+<h5>前後脈絡</h5>
+<p>與昨日 Resend 的「Designing for Agents」正好互補：Zeno Rocha 講的是<em>產品要為代理設計介面</em>（markdown、MCP、machine-readable pricing），這篇講的是<em>代理本身的工作介面</em>（cloud environment、voice、dots）。兩者合起來，是「代理既是使用者，也是執行者」的兩面。也與 Pandey 的訪談呼應：當代理開始跨環境、跨工具協作，handoff 的上下文丟失就是最大的故障源——Codex 的 Appshot 與 dot 的 full-context 設計，本質上都是在補 handoff。</p>
+
+<h5>限制</h5>
+<p>這是現場觀察，不是技術 deep dive；所有功能描述來自工作坊與會後追問，沒有獨立驗證。作者本人也承認仍覺得 Codex 雲端功能混亂，這個「連記者都覺得混亂」的細節，可能比任何功能列表都更能說明現狀。</p>
+
+<hr class="hr">
+
+<h3>Latent Space · AI News</h3>
+<h4>Mercor $750m Series D at $20B valuation, $3B run rate 🎙️<br><span style="font-size:15px;font-weight:400;color:var(--muted)">2026-11-11 09:34 UTC · 26 min read · 彙總 11/09–11/10 的 12 個 subreddit、544 個 Twitter 帳號</span></h4>
+
+<p class="byline">這不是訪談，是 swyx 團隊的每日 AI 新聞匯總。今日標題故事是 Mercor 的 D 輪；同一天的大事件還有 Google Gemini 4 Carbon 正式 GA、Claude Fable/Mythos 5.2 的評測與系統卡、以及 Fireworks 洩漏波及 Notion 客戶資料。以下只萃取有數字的硬內容，並標明哪些是二手轉述。</p>
+
+<h5>一、Mercor：27 個月從 0 到 30 億美元年化</h5>
+<table>
+  <tr><th>指標</th><th>數值</th></tr>
+  <tr><td>D 輪金額</td><td class="num">$750M</td></tr>
+  <tr><td>投後估值</td><td class="num">$20B</td></tr>
+  <tr><td>年化收入（run rate）</td><td class="num">$3B</td></tr>
+  <tr><td>收入里程碑</td><td>2026 年 2 月 $1B；6 月 $2B；其後 $3B</td></tr>
+  <tr><td>從 0 到 $3B 的時間</td><td class="num">27 個月</td></tr>
+  <tr><td>專家網絡</td><td class="num">5,000,000 人</td></tr>
+  <tr><td>可服務職業數（美國）</td><td class="num">800+ 種</td></tr>
+</table>
+
+<p>估值的粗略換算：$20B / $3B ≈ 6.7 倍年化收入。對一家 27 個月歷史、本質上是「專家資料標註/任務市場」的公司，這個倍數反映的不是當期利潤，而是市場對「前沿模型訓練資料將長期短缺」的定價。Mercor 自己的 TAM 論述很直白：「美國就有超過 800 種不同職業，每一種都包含模型尚未被評測過的工作流。」這句話把資料生意的邊界從「更多標註」推到「更多職業 × 更多工作流」。</p>
+
+<blockquote>「We already spend 3x as much on inference as on employee salaries, and it pays for itself by making our team better at their jobs.」<span class="src">— Mercor 官方說法，經 Latent Space 轉述；若此比例扩散到整體經濟，該文推估未來五年可達雙位數 GDP 增長，接近過往常態的 3 倍。此為 vendor claim，未經獨立驗證。</span></blockquote>
+
+<h5>二、Gemini 4 Carbon：長程 agentic 工作的新默認？</h5>
+<p>Google 把 Carbon 定位為「最強的 long-horizon agentic 模型」，覆蓋軟件工程、資安、知識工作與科學；但 Argon 仍是大多數 coding/knowledge work 的推薦默認，Carbon 留給最難的任務。這種「雙模型分層」很重要：它承認了「最強」與「最常用」不是同一個東西，成本與延遲仍然是部署變量。</p>
+
+<table>
+  <tr><th> benchmark / 指標</th><th>Carbon</th><th>對照</th></tr>
+  <tr><td>CursorBench（high effort）</td><td class="num">60.4%</td><td>—</td></tr>
+  <tr><td>FrontierCode 2.0</td><td class="num">40.0%</td><td>Argon 26.3%</td></tr>
+  <tr><td>WANDR（Perplexity 量測）</td><td class="num">0.857 / $5.86 per task</td><td>與 Fable 5.2 同分，成本 40%</td></tr>
+  <tr><td>Vals Index</td><td class="num">#3，$10.51/test</td><td>Fable 5.2 #1，$17.94/test；Carbon 在 Finance、Legal Research、Tax 三項第一</td></tr>
+  <tr><td>ARC-AGI-3（provider adapter）</td><td class="num">99.1%（$4.6K）</td><td>標準 harness 65.1%（$7.2K）</td></tr>
+  <tr><td>ARC-AGI-2</td><td class="num">94.2%（$0.38/task）</td><td>—</td></tr>
+  <tr><td>Roboflow 視覺排名</td><td class="num">#1 總分</td><td>速度第 10（81 秒/圖）、成本第 10（$91.89/1K 圖）</td></tr>
+  <tr><td>定價（Cursor）</td><td class="num">$2/$10 per M tokens</td><td>12 月 1 日起 $4/$20</td></tr>
+  <tr><td>上下文</td><td class="num">long decode 可達 1M tokens</td><td>建議 thinking_level medium</td></tr>
+  <tr><td>升級方式</td><td>只改 model ID 為 <code>gemini-4-carbon</code></td><td>同日接入 Cursor、Devin、Perplexity、GitHub Copilot</td></tr>
+</table>
+
+<p>值得注意的還有 Antigravity 的 <code>/swarm</code>：一個 prompt 變出多代理團隊，在共享留言板上協調，每個角色可以用不同模型（例如 Carbon 做架構與審計、Flash 做平行編輯）。這與 Pandey 的「多代理需要共享空間」是同一件事的產品化，只是 Google 把它做成 slash command。</p>
+
+<h5>三、Claude Fable 5.2 / Mythos 5.2：品質領先，成本劣勢</h5>
+<table>
+  <tr><th>指標</th><th>Fable 5.2</th><th>Carbon</th><th>其他</th></tr>
+  <tr><td>MKA（Multimodal Knowledge Agent）</td><td class="num">57% Climb WSR</td><td class="num">54%</td><td>Opus 5.5 53%</td></tr>
+  <tr><td>每任務成本</td><td class="num">$31.97</td><td class="num">$6.29</td><td>GPT-6.1 Sol $1.11</td></tr>
+  <tr><td>VIALS-AA 生命科學視覺推理</td><td class="num">67%</td><td class="num">64%</td><td>GPT-6 Astra 63%</td></tr>
+  <tr><td>每任務工具呼叫</td><td class="num">約 37 次</td><td>—</td><td>Astra 約 8 次</td></tr>
+  <tr><td>Remote Labor Index</td><td class="num">41.3%</td><td>—</td><td>Fable 5.1 為 17.9%</td></tr>
+  <tr><td>3D Design Arena</td><td class="num">Elo 1540（#1）</td><td>—</td><td>定價 $8/$40 per M tokens</td></tr>
+  <tr><td>Mythos 5.2 自我偏好偏差</td><td class="num">-0.10（0–9 分制）</td><td>—</td><td>對 Claude transcripts 評分略低</td></tr>
+  <tr><td>Mythos 5.2 其他結果</td><td colspan="2">34 個病毒衣殼中正確建模 28 個；RoboDojo 成功率 27.6%→64.9%</td><td>Devin 內部資安基準 73.5 vs 56.9（5.1）</td></tr>
+</table>
+
+<p>這些數字的意義不在「誰贏」，而在<strong>成本/任務已經成為與分數同等重要的指標</strong>。Fable 在 MKA 只領先 3 個百分點，成本卻是 Carbon 的 5 倍；在 Vals 指數上 Carbon 只落後 1 個百分點，每測試成本低 41%。當 agent 開始跑長任務、多次工具呼叫，$ per task 會被放大成決定性的部署參數。</p>
+
+<h5>四、基準口徑戰與其他訊號</h5>
+<ul>
+  <li><strong>Harness 不對等：</strong>Google 的 Logan Kilpatrick 公開抗議，某個比較中 Gemini 是唯一沒有在原生 harness 下測試的模型。Carbon 的 ARC-AGI-3 99.1% vs 65.1% 也是同一問題的極端展示——adapter 與標準 harness 差了 34 個百分點。</li>
+  <li><strong>未發布就先評測：</strong>社群指出 Carbon 當時尚未公開發布，部分 benchmark 難以復現；同時早期用戶回報幻覺、過度自信與冗長。</li>
+  <li><strong>Fireworks 洩漏：</strong>Notion 客戶資料 reportedly 受影響。這是 agent 基礎設施安全的最新案例，與 Pandey 的「ledger/合規」主張形成對照。</li>
+  <li><strong>其他：</strong>Anthropic IPO roadshow、Claude Whiteboards/Sheets/Data  rollout、Claude 用量限制 bug 後重置、企業版 ChatGPT beta。</li>
+</ul>
+
+<h5>行業 insight</h5>
+<p>把 Mercor、Carbon、Fable 三條放在一起，可以看到 2026 年尾的三個定價邏輯：<strong>資料按「職業 × 工作流」定價、模型按「每任務成本」定價、agent 按「完成率」定價</strong>。Benchmark 的分數仍然重要，但已經不足以說服買家；買家開始問「這個任務跑一次多少錢、失敗一次損失多少」。這也是為什麼 Mercor 的「推理支出是薪酬 3 倍」說法這麼有傳播力——它把 AI 從成本項變成了生產函數的一部分，儘管這個數字目前只是 vendor claim。</p>
+
+<h2>跨集主線</h2>
+
+<p><strong>一、Agent stack 的三層正在同時成型。</strong>Pandey 在協議與可觀測性層（Scope/Accord/Concord）、OpenAI 在執行介面層（Codex Cloud + dots + voice）、Mercor 在資料供應層（5M 專家、800 職業）。三層的共同語言是「handoff」：資料要交接到訓練、任務要交接到雲端、代理要交接到另一個代理。昨天 Resend 講的「agent 是主要使用者」，則是這三層之上的產品層。</p>
+
+<p><strong>二、2026 年下半年的關鍵詞，從「agent 能不能做」變成「多個 agent 做出來的結果可不可信」。</strong>Pandey 的 16% 與 0% 是這條線最刺眼的數字；Codex 的 Appshot 與 dot context 是同一問題的產品解法；Gemini 的 harness 爭議則是評測端的同一問題。大家都在補「可信度」，只是有人用協議、有人用上下文、有人用 benchmark 口徑。</p>
+
+<p><strong>三、成本口徑成為競爭武器。</strong>當 Fable 以 5 倍成本換 3 個百分點，當 Carbon 用 40% 成本打平 WANDR，當 Mercor 用「3 倍推理支出」講生產力故事，會發現 2026 年的 AI 競爭已經從「能力展示」進入「單位經濟」。這對 James 的實務含義很直接：選模型時，benchmark 排名應該排在 $/task 與失敗成本之後。</p>
+
+<p><strong>四、個人代理的互操作仍然是空白。</strong>Pandey 的 Arnold 與 Laira 訂不到一間餐廳，比任何 enterprise demo 都更能說明現狀：身份、記憶、偏好都可以解耦，但兩個代理之間沒有共同的談判協議，也沒有人願意讓它們在未經批准下發 email。這正是 Accord/Concord 想解的問題，也是 2027 年最可能出現產品級突破的地方。</p>
+
+<h2>附：掃描與方法</h2>
+<div class="note">
+<b>掃描範圍：</b>10 個節目、8 個 resolved feeds（zhang-xiaojun、crossing、silicon-valley-101、42-chapters、slaying-dragon、dwarkesh、latent-space、no-priors、ml-street-talk、cognitive-revolution）。窗口 2026-11-11 02:03 UTC → 2026-11-12 02:03 UTC。<br><br>
+<b>新內容：</b>3 條。①Cognitive Revolution「Agents That Think Together」（11-11 11:59Z）；②Latent Space「AI Engineer Code Summit: OpenAI on New Ways of Working With Codex」（11-11 04:49Z）；③Latent Space AINews「Mercor $750m Series D」（11-11 09:34Z）。中文五台與其餘英文 feed 無新集。<br><br>
+<b>全文取得：</b>①Cognitive Revolution 官方逐字稿約 75KB（1:29:38 全片）+ AI show notes + 20 個章節；②Codex 報導全文約 16KB；③AINews 全文約 51KB（含 Reddit/Twitter 匯總與 benchmark 表）。<br><br>
+<b>Jev 前置過濾：</b>3 條全部 keep（worth 1.14 / 0.76 / 0.93）；primary_source 分別 0.25 / 0.27 / 0.11，報告已按此標明轉述層級——Pandey 為一手訪談，Codex 為一手現場觀察但屬記者轉述，AINews 爲二手彙總。<br><br>
+<b>失敗與限制：</b>①YouTube channel RSS 對兩個 channel_id 均回 404（應為 ID 失效），No Priors / Dwarkesh 的 YouTube 新片未能直接核對，但兩者 Substack/Megaphone feed 已覆蓋；②<code>web_search</code> 的 Brave 插件報 <code>ENOENT</code>，今日未做外部交叉驗證；③中文播客仍無公開逐字稿，本輪無新集未受影響；④Mercor 的「推理支出 3 倍薪酬」與 GDP 推估為 vendor claim，未經獨立驗證；⑤ChatDev 100% 失敗率來自公開研究 traces，不宜直接外推至生產系統。
+</div>
+
+<footer>
+  <p>來源連結：<br>
+  <a href="https://www.cognitiverevolution.ai/agents-that-think-together-cisco-s-vijoy-pandey-on-semantic-alignment-scope-accord-concord/">Cognitive Revolution · Vijoy Pandey</a><br>
+  <a href="https://latent.space/p/codex-work/">Latent Space · AI Engineer Code Summit: OpenAI on Codex</a><br>
+  <a href="https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/">Latent Space · AINews: Mercor $750m Series D</a></p>
+  <p>AI Podcast Daily · 2026-11-12 · 生成於 02:06 UTC<br>
+  本報告以 Apache 2.0 授權發布。所有引用均保留原始連結；數字以節目/文章所述為準，未經獨立審計。</p>
+</footer>
+
+</div>
+</body>
+</html>

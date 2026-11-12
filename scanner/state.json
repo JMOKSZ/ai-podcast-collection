@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-11-11T02:06:00.000Z",
- "lastScanDate": "2026-11-11",
+ "lastScan": "2026-11-12T02:03:00.000Z",
+ "lastScanDate": "2026-11-12",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-11-05T21:05:50.000Z",
@@ -10,12 +10,12 @@
    "lastFeedItemTitle": "The benchmark where AIs have to lie to win"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-11-10T20:05:17.000Z",
-   "lastEpisodeTitle": "Designing for Agents — Zeno Rocha, Resend",
-   "lastFeedItemPubDate": "2026-11-10T20:05:17.000Z",
+   "lastEpisodePubDate": "2026-11-11T09:34:28.000Z",
+   "lastEpisodeTitle": "[AINews] Mercor $750m Series D at $20B valuation, $3B run rate",
+   "lastFeedItemPubDate": "2026-11-11T09:34:28.000Z",
+   "lastFeedItemTitle": "[AINews] Mercor $750m Series D at $20B valuation, $3B run rate",
    "newEpisodes": [],
-   "lastFeedItemTitle": "Designing for Agents — Zeno Rocha, Resend",
-   "note": "85:52；嘉賓 Zeno Rocha（Resend 共同創辦人/CEO、Dracula 主題作者、React Email）。官方 VTT 逐字稿 109KB 全片可讀。4.3M 用戶／120K 付費／$10M ARR；Claude Code 102 次 email 建議中 64 次首選 Resend，SendGrid 首選 7 次但列替代 55 次；MCP 由 ≤20 工具增至 80+，月增一度 2 倍；Gmail 收件端 ≥60%；日本集團 20,000 域名；SES 隱藏成本 SNS/CloudWatch/SQS；寄送路徑改 Go。同日 feed 另有 NaiveAI 實測文章（18:56Z）。"
+   "note": "同日另有文章 AI Engineer Code Summit: OpenAI on New Ways of Working with Codex（04:49Z，Richard MacManus）。Codex Cloud v2（9 月底 DevDay）環境發布一次多隔離實例；本地↔雲端 handoff；Appshot；voice as control plane；dots 三用途 safety net/delegation sink/ubiquitous presence。AINews：Mercor $750M D @ $20B、$3B run rate、27 個月、5M 專家、800 職業；Gemini 4 Carbon GA（CursorBench 60.4、FrontierCode 40.0 vs 26.3、ARC-AGI-3 99.1% adapter vs 65.1% standard、$2/$10→$4/$20）；Fable 5.2 MKA 57% @ $31.97/task vs Carbon 54% @ $6.29。"
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-11-05T11:00:00.000Z",
@@ -25,12 +25,12 @@
    "lastFeedItemTitle": "Tokenization, Agentic Trading, Harmonic: Robinhood's Mission to Expand Ownership with CEO Vlad Tenev"
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-11-10T19:09:02.000Z",
-   "lastEpisodeTitle": "The Neuron Basis: Goodfire's Curt Tigges on Agentic Interp, Monosemanticity & Reverse Engineering",
-   "lastFeedItemPubDate": "2026-11-10T19:09:02.000Z",
+   "lastEpisodePubDate": "2026-11-11T11:59:15.000Z",
+   "lastEpisodeTitle": "Agents That Think Together: Cisco's Vijoy Pandey on Semantic Alignment, Scope, Accord & Concord",
+   "lastFeedItemPubDate": "2026-11-11T11:59:15.000Z",
+   "lastFeedItemTitle": "Agents That Think Together: Cisco's Vijoy Pandey on Semantic Alignment, Scope, Accord & Concord",
    "newEpisodes": [],
-   "lastFeedItemTitle": "The Neuron Basis: Goodfire's Curt Tigges on Agentic Interp, Monosemanticity & Reverse Engineering",
-   "note": "116:17（6977s）。嘉賓 Curt Tigges（Goodfire MTS），與 Nick Cammarata 合著〈Neurons as an Interpretable Basis〉。官方逐字稿+AI show notes 全可讀。Qwen3.6-35B-A3B：40 層、256 experts、每 token 8 個、512 神經元/expert、5M 神經元、雙極性 10M 可表達；top-64 ≈88% 壓縮；1 億 token 微調一天恢復 reasoning；10B token 啟動語料；74% 傷害加權 KL 恢復；$45/神經元最貴；長上下文測到 32K；double-negative 未解；facts 在連接而非神經元。"
+   "note": "1:29:38（主體 1:26:22）。嘉賓 Vijoy Pandey（Cisco SVP/GM Outshift）。AGNTCY 已捐 Linux Foundation；部署夥伴 Swisscom/ServiceNow/SoftServe/Webex。ChatDev 100% session 有語義失敗；1/2/3 次認知失敗→99/98/81/16%；旅遊行程 66% up 但 0% 完成；Swisscom 5 代理 neurosymbolic；Scope=OTel 認知可觀測性，Accord=動工前對齊，Concord=施工中談判，驗證協議未發布。"
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-11-02T04:43:47.000Z",
@@ -86,16 +86,16 @@
   }
  },
  "notes": {
-  "scan_status": "2026-11-11 掃描（02:03–02:07 UTC）：窗口 11-10 02:05Z → 11-11 02:03Z。新內容 3 條：Latent Space「Designing for Agents」（Zeno Rocha）、Latent Space NaiveAI 實測文、Cognitive Revolution（Curt Tigges）。中文 5 個節目與其餘英文 feed 無新集。",
-  "report_date": "2026-11-11",
-  "deep_content_fetched": "①Resend 官方 VTT 逐字稿 109,615 bytes（全片 1:25:52）。②Cognitive Revolution 官方逐字稿 95.5KB（1:56:17）+ AI show notes + chapters。③NaiveAI 實測文章全文 13.7KB（含 benchmark 表與延遲表）。④AINews 11-09 全文 47KB（Fable 5.2 背景）。",
-  "jev_prefilter": "3 條全部 keep：worth 1.32（Resend）/1.25（NaiveAI）/1.21（Tigges）；primary_source 0.54/0.21/0.24，報告已標明轉述層級。",
-  "failures": "①中文播客仍無公開逐字稿（小宇宙 API 攔截）；本輪中文無新集，未受影響。②web_search 未使用（前幾輪 brave plugin ENOENT）；本輪僅以 RSS 驗證，未做外部交叉。③NaiveAI 吞吐為伺服器端量測，與 OpenRouter 數據不可直接相除。",
-  "notable_for_james": "①Resend：4.3M 用戶、120K 付費、$10M ARR；Claude Code 64/102 首選；MCP 80+ 工具、>1M 呼叫；定價頁 .md 修正模型錯誤報價；免費層是人才來源。②NaiveAI：峰值 2,100 tok/s、thinking decode 984 tok/s；中位 3.1s 但 HLE 平均 108,500 token（9–11×）；NL2Repo 71.9 勝 DeepSeek 68.2；$0.10/$0.40。③Tigges：砍 90% 神經元幾乎不掉分、ARC-AGI 反升；74% KL 恢復非準確率；事實存在連接；expert 只集中 1–3 主題；雙負啟動未解。",
-  "cross_episode_theme": "介面下沉（interface descent）：Resend 把產品介面沉到 markdown/MCP，NaiveAI 把模型價值沉到 tok/s 與等待時間，Goodfire 把模型內部介面沉到單顆神經元。三者共同前提：能力過剩後，稀缺的是衡量與校準。",
+  "scan_status": "2026-11-12 掃描（02:03–02:06 UTC）：窗口 11-11 02:03Z → 11-12 02:03Z。新內容 3 條：Cognitive Revolution（Vijoy Pandey）、Latent Space Codex 工作坊報導、Latent Space AINews（Mercor）。中文 5 台與其他英文 feed 無新集。",
+  "report_date": "2026-11-12",
+  "deep_content_fetched": "①Cognitive Revolution 官方逐字稿 74,959 字元（全片 1:29:38）+ show notes + 20 章節。②Codex 報導全文 16.3KB。③AINews 全文 51.3KB（含 benchmark 表、Reddit/Twitter 匯總）。",
+  "jev_prefilter": "3 條全部 keep：worth 1.14（Pandey）/0.76（Codex）/0.93（Mercor）；primary_source 0.25/0.27/0.11，報告已標明轉述層級。",
+  "failures": "①YouTube channel RSS 兩個 channel_id 均 404（ID 失效），No Priors/Dwarkesh YouTube 未直接核對，Substack/Megaphone feed 已覆蓋。②web_search Brave 插件 ENOENT，未做外部交叉。③中文播客無公開逐字稿（本輪無新集）。④Mercor 3x inference 與 GDP 推估為 vendor claim。",
+  "notable_for_james": "①Pandey：ChatDev 100% 語義失敗；3 次認知失敗→16%；旅遊系統 66% up/0% 完成；Scope/Accord/Concord 開源；latent space 通訊不可避免但需 canary；「我可能今天就是牛」。②Codex：Cloud v2 環境可發布共享、本地↔雲 handoff、voice 控制面、dots 三用途。③Mercor：$20B 估值/6.7x run rate、5M 專家、800 職業；Carbon 成本口徑戰；Fable 5.2 5x 成本換 3pp。",
+  "cross_episode_theme": "Handoff 是 2026 尾 agent stack 的共同瓶頸：Cisco 在代理之間補語義對齊，OpenAI 在本地/雲端/個人代理之間補上下文連續性，Mercor 在人類專家與模型訓練之間補資料交接。能力過剩後，稀缺的是「交接時唔失真」。",
   "index_html": "未更新 index.html（沿用停更慣例）。",
-  "deep_dive_link": "本輪未新增 deep-dive；報告 42.3KB，含 3 條萃取、7 張數據表、14 條引文。",
-  "source_links": "https://latent.space/p/resend/ ; https://latent.space/p/naiveai/ ; https://www.cognitiverevolution.ai/the-neuron-basis-goodfire-s-curt-tigges-on-agentic-interp-monosemanticity-reverse-engineering/"
+  "deep_dive_link": "本輪未新增 deep-dive；報告 44.6KB，含 3 條萃取、6 張數據表、17 條引文。",
+  "source_links": "https://www.cognitiverevolution.ai/agents-that-think-together-cisco-s-vijoy-pandey-on-semantic-alignment-scope-accord-concord/ ; https://latent.space/p/codex-work/ ; https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/"
  },
  "resolvedFeeds": {
   "zhang-xiaojun": "https://feed.xyzfm.space/dk4yh3pkpjp3",
