@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 連接不等於認知——Cisco 的 Vijoy Pandey 與多代理系統的語義破產</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e5e0d8; margin: 2rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0dbd4; font-size: 0.8rem; color: #888; line-height: 1.7; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">The Cognitive Revolution · 2026-11-11 · 約 28 分鐘閱讀</div>
+  <h1>連接不等於認知<br>——Cisco 的 Vijoy Pandey，與多代理系統那場「儀表板全綠、業務全錯」的靜默破產</h1>
+  <div class="meta">
+    <div>〈Agents That Think Together: Cisco's Vijoy Pandey on Semantic Alignment, Scope, Accord &amp; Concord〉</div>
+    <div>出品：The Cognitive Revolution<span>·</span>主持：Nathan Labenz<span>·</span>嘉賓：Vijoy Pandey（Cisco 資深副總裁暨 Outshift 總經理）</div>
+    <div>發布：2026-11-11 19:59 HKT（2026-11-11 11:59 UTC）<span>·</span>全長 1 小時 29 分 38 秒</div>
+    <div>來源：節目官方逐字稿約 75,000 字元、AI show notes、20 個章節時間軸；引語為原文直譯，推論段落另行標明</div>
+  </div>
+</header>
+
+<p>這一集沒有一個漂亮的 demo。它由一組難看的數字開始：<strong>三次認知錯位，多代理系統的準確率由 99% 掉到 16%</strong>；一個旅遊行程系統在儀表板上 66% 正常運行，任務完成率是 <strong>0%</strong>。</p>
+
+<p>Vijoy Pandey 不是研究員，是 Cisco 的基礎設施老將。他管過「大到人類無法掌握」的系統，見過改一個設定、另一個不相干的地方出事。所以他談多代理，不是從模型能力談起，而是從運維談起：代理上線了、心跳正常、trace 有在跑，然後業務結果無聲無息地錯了。</p>
+
+<blockquote class="strong">
+  「我們已經有連接起來的代理，但我們發現，連接並不等同於認知。」
+  <span class="attribution">—— Vijoy Pandey（原文：“We have connected agents, but we realized that connectivity is not the same as cognition.”）</span>
+</blockquote>
+
+<p>整集訪談可以壓成一句：<strong>多代理的價值不在任何單一代理，而在代理之間每一次交接；要保住交接，就必須把「對齊」變成可觀察、可觸發、可審計的基礎設施，而不是在 prompt 裡寫一句「請與其他代理合作」。</strong></p>
+
+<div class="section-title">一、isolated → islands → connected：三個階段，缺了第四個</div>
+
+<p>Pandey 把過去一年的進展壓成三個詞：<strong>isolated（孤立）、islands of agents（代理島）、connected agents（互聯代理）</strong>。孤立的單代理；在一個 harness 裡協作的代理島——他點名 Hugging Face 的 OpenFace 事件與 Navier–Stokes 解題，是「島嶼」階段的極端案例；以及跨供應商、跨雲、跨組織的互聯代理。</p>
+
+<p>Cisco 已經在網絡配置、雲平台工程、視頻監控等場景部署了第三階段，合作方包括 Swisscom、ServiceNow、SoftServe、Webex。AGNTCY 專案也捐給了 Linux Foundation。從「能不能連上」的角度看，這是成功的一年。</p>
+
+<p>但 Pandey 說，真正的門檻還沒過。MCP 解決工具取用，A2A 解決代理發現與通訊；這些都是<strong>連線層</strong>。連線層之上還有一層空白：代理們對同一個詞、同一個目標、同一個交付日期，理解得不一樣。<strong>connected 只解決了「找得到、講得上話」，collective reasoning 才解決「想的是同一件事」。</strong></p>
+
+<div class="highlight-box">
+  <strong>一個容易被忽略的定位：</strong> Cisco 沒有試圖取代 MCP 或 A2A。Scope、Accord、Concord 都「ride above」這些既有協議——它們不碰工具接入，也不碰代理發現，而是插在「語義」這一層。這是典型的網絡設備商策略：不做應用，做讓應用能互通的那一層。
+</div>
+
+<div class="section-title">二、七萬年前的語言：共享意圖、施工中協調、跨代知識</div>
+
+<p>Pandey 用人類語言演化做理論骨架。人類大腦變大、會用工具、會用火，但創新仍是孤立的，發明會隨發明者死亡。約七萬年前語言出現，帶來三件事：</p>
+
+<ol>
+  <li><strong>共享意圖與目標</strong>——可以一起去打那隻動物、一起建那條村；</li>
+  <li><strong>施工中的協調與談判</strong>——目標會變，邊做邊談；</li>
+  <li><strong>跨世代累積知識</strong>——不必每次重新解同一個問題。</li>
+</ol>
+
+<p>三者合起來，才產生「集體智能」。Pandey 說，代理現在正處於「individually smart but isolated」：模型愈來愈強、MCP 讓它們能取用工具，但沒有等價的共享意圖層。</p>
+
+<blockquote class="strong">
+  「我們需要的是共享意圖與協調的等價物，需要共享知識的等價物，然後這些代理才能集體推理。現在，沒有任何一個代理在集體推理。」
+  <span class="attribution">—— Vijoy Pandey（原文：“Right now, none of these agents are reasoning collectively.”）</span>
+</blockquote>
+
+<p>這是他「Internet of Cognition」的定義來源：過去四十年的互聯網連接的是機器端點，交換的是位元；下一個互聯網連接的是他所說的 <em>intelligence endpoints</em>，交換的是意義。這個說法很容易被當成市場口號，但它有一個可檢驗的推論：<strong>如果代理之間交換的是意義，那麼「意義有沒有對上」就必須被量度。</strong> 這正是 Scope 存在的理由。</p>
+
+<div class="section-title">三、價值在 handoff：一張兩三百萬美元的 deal desk</div>
+
+<p>主持人 Nathan 提到 OpenAI Agents SDK 把 handoff 當核心原語，他原本以為這只是把人類組織的分工照抄進軟件。Pandey 說不是——handoff 不是組織圖的遺跡，而是<strong>價值真正產生的位置</strong>。</p>
+
+<p>他給了一個很具體的例子。一筆兩三百萬美元的交易在 deal desk 上流轉：銷售代理（Salesforce）理解客戶要什麼；法務代理（Harvey）看合約條款；財務代理算價格、毛利、折扣；產品與工程代理（Claude、Codex 這類）判斷能交付什麼、什麼時候交付；行銷代理（Jasper）準備日後可以對外宣稱的說法；中間還有一個 verifier——目前多數是人，未來可能是 supervisor agent。</p>
+
+<blockquote class="strong">
+  「系統的價值不在任何一個代理裡面。價值其實在這些代理之間發生的 handoff……你要解的是全局結果，不是每個代理各自的局部結果。」
+  <span class="attribution">—— Vijoy Pandey（原文：“The value is actually in the handoff that's happening between these agents... you're solving for the global outcome, not for the individual localized outcomes per agent.”）</span>
+</blockquote>
+
+<p>這條鏈之所以不能拆，是因為每一個環節都在改變同一個東西的性質：<strong>估算變成承諾，承諾變成合約語言，合約語言再變成行銷主張。</strong> 銷售的估算偏了 10%，法務寫進合約，財務按合約定價，行銷拿同一句話對外宣傳——錯誤不是相加，是複利。只優化單一代理，等於把系統推向局部最優。</p>
+
+<div class="section-title">四、失效的數學：99 → 98 → 81 → 16</div>
+
+<p>這是全場最有殺傷力的一段。Pandey 的團隊先看公開 traces：ChatDev 這個多代理開發環境，<strong>100% 的 session 都有語義失敗或認知錯位</strong>。然後看自家五代理部署：</p>
+
+<div class="data-point">
+  <span>失效曲線</span>
+  1 次認知失敗：99% → <strong>98%</strong>（「還行」）<br>
+  2 次：98% → <strong>81%</strong>（「勉強能接受」）<br>
+  3 次：81% → <strong>16%</strong>（「接近隨機挑一個結果」）
+</div>
+
+<p>注意這不是線性衰減，是<strong>懸崖</strong>。第一次錯位幾乎看不出來，第二次仍然「可用」，第三次系統就實質失效。這解釋了為什麼這類問題在生產環境裡能潛伏很久：每一次單獨看都不到报警線，疊起來已經無法交付。</p>
+
+<p>更刺眼的是旅遊行程案例。系統 66% 「正常運行」——這裡的「正常」是所有既有 dashboard 的定義：代理活著、請求有回應、沒有 timeout。但任務完成率是 <strong>0%</strong>，而且代理們對「到底要完成什麼」完全錯位。</p>
+
+<blockquote class="strong">
+  「你的儀表板可能是綠的，但你的結果可能是錯的，完全錯誤。」
+  <span class="attribution">—— Vijoy Pandey（原文：“Your dashboards might be green, but your outcomes might be wrong, completely wrong.”）</span>
+</blockquote>
+
+<p>他把這叫「silent failures with really loud consequences」——安靜地失敗，然後付出很大的代價。這個詞組值得記住，因為它精準描述了 2026 年 agent 部署的主要風險形態：<strong>不是當機，是「看起來沒當機」。</strong></p>
+
+<div class="section-title">五、Scope：先讓失敗可見，而且不要另建 telemetry</div>
+
+<p>Pandey 的順序很工程師：<strong>「You cannot fix what you cannot see.」</strong> 所以第一個開源的不是對齊協議，是可觀察性。</p>
+
+<p>Scope 的實作路徑有一個關鍵選擇：它不另建 telemetry，而是消費既有的 OpenTelemetry traces，在其上建知識圖譜，分析代理之間的語義漂移與認知漂移，輸出成 dashboard。這帶來兩個好處：</p>
+
+<ul>
+  <li><strong>對 harness 中立</strong>——不論你用 Claude Code、Codex、Muse、OpenClaw、Hermes，只要有 OTel traces 就能接；</li>
+  <li><strong>採用阻力低</strong>——企業已經在收 tracing，不需要為了一個新工具改架構。</li>
+</ul>
+
+<p>他的比喻是車道維持輔助：Scope 不替你開車，只在你偏離車道時提示你修正；嚴重一點，它會說「你離前車太近」。然後它觸發 Accord 或 Concord，讓系統回到車道。<strong>可觀察性不是報告，是觸發器。</strong></p>
+
+<div class="highlight-box">
+  <strong>這裡有一個很重要的產品判斷：</strong> 多代理的 eval 單位正在從「單代理」變成「系統」。Pandey 說，現有 eval 都在量個別代理，沒有人量 handoff；所以三個各自 95 分的代理，可以串出一個 16 分的系統。Scope 想量的不是「這個代理答得對不對」，而是「這一串交接之後，全局結果對不對」。
+</div>
+
+<div class="section-title">六、Accord：動工前的對齊，從「10 萬用戶」開始</div>
+
+<p>Accord 負責「work happens 之前」的意圖對齊：目標、範圍、關鍵術語。Pandey 用一個所有人都遇過的例子說明。</p>
+
+<p>銷售說：「幫我建一個給 <strong>10 萬用戶</strong> 的功能。」工程理解成總用戶數；客戶其實指同時在線。是 total、concurrent、MAU、DAU，還是累計？同一個數字，四種完全不同的架構決策。</p>
+
+<blockquote class="strong">
+  「10 萬到底指什麼？是總用戶數？是同時在線？是 MAU？是 DAU？你就是不知道。」
+  <span class="attribution">—— Vijoy Pandey，談 Accord 要解決的術語對齊問題</span>
+</blockquote>
+
+<p>他指出，這種錯位在人類團隊一樣存在——所以問題不是「代理笨」，而是<strong>自然語言本身就是一個有損壓縮格式</strong>。人類靠會議、郵件往返、資深同事的默契來補；代理沒有人類的組織記憶，錯位就直接進入執行。</p>
+
+<p>Accord 以「skill」形式發布，可以放進現有 harness；也可以走 agent bridge 這個開源專案。它不取代 A2A 或 MCP，而是在其上交換「我們對這個詞的定義是什麼」。</p>
+
+<div class="section-title">七、Concord：施工中的談判，與那個還沒發布的第三塊</div>
+
+<p>Concord 負責「work happens 期間」的協調與談判。Pandey 說，目標一旦開始執行就會變：銷售以為的交付日期是客戶拿到手的日期；工程以為是第一個 drop；客戶以為是最終版本；財務只關心什麼時候簽約收錢。還有 feature creep——客戶看到東西之後說「這不是我的意思」。</p>
+
+<p>所以 Concord 不是一次性的對齊，是<strong>持續的重新對齊</strong>。這裡有一個很清楚的架構分層：</p>
+
+<table>
+  <tr><th>層</th><th>時機</th><th>問題</th></tr>
+  <tr><td><strong>Scope</strong></td><td>全程</td><td>我們有沒有偏離車道？</td></tr>
+  <tr><td><strong>Accord</strong></td><td>動工前</td><td>我們是否在解同一道題、用同一套詞？</td></tr>
+  <tr><td><strong>Concord</strong></td><td>施工中</td><td>條件變了，我們怎麼重新談？</td></tr>
+  <tr><td><strong>（未發布）</strong></td><td>交付後</td><td>我們交的東西，是否等於當初答應的東西？</td></tr>
+</table>
+
+<p>第四塊——交付後的驗證與 eval——Pandey 明確說「尚未發布，但我們正在做」。這是一個誠實的缺口，也是整個閉環最難的一塊：<strong>如果沒有交付後驗證，前三層都只能擔保「過程沒有偏」，不能擔保「結果是對的」。</strong></p>
+
+<div class="section-title">八、Swisscom：五個代理，加一個「不可以做什麼」的符號層</div>
+
+<p>企業案例最能說明「為什麼需要多代理」。Swisscom 是電信營運商，網絡大到人類無法掌握所有相依性。他們選了一個相對可控的場景：數據中心遷移。目標不是「提升效率」，是<strong>配置 100% 無錯</strong>。</p>
+
+<p>做法是把問題拆成兩半：</p>
+
+<ul>
+  <li><strong>神經部分</strong>——五個代理組成工作流，探索配置空間；</li>
+  <li><strong>符號部分</strong>——環境的形式化模型，硬性限制「什麼不可以做」。</li>
+</ul>
+
+<p>Pandey 用下棋比喻：人類棋手會犯錯；一個知道棋盤上所有可能回應的系統不會輸，因為它知道你的每一步有哪些反駁。形式模型就是那個「知道所有反駁」的底層。</p>
+
+<blockquote class="strong">
+  「神經系統在探索所有可能性；下面那個形式系統確保你不會做不被允許的事。」
+  <span class="attribution">—— Vijoy Pandey，談 Swisscom 的 neuro-symbolic 配置系統</span>
+</blockquote>
+
+<p>這個案例的關鍵不是模型多強，而是<strong>把不可違反的規則從模型中拿出來，放進符號層</strong>。模型可以提議，但不能越過形式模型；這比在 prompt 裡寫「請勿執行危險操作」可靠得多。對任何要做高風險 agent 部署的人，這是整集最可直接抄走的一個設計。</p>
+
+<div class="section-title">九、Arnold Layne 與 Laira Bellacua：兩個代理訂不到一張枱</div>
+
+<p>訪談中段，Pandey 描述自己的個人代理架構。他自己的代理叫 <strong>Arnold Layne</strong>（Pink Floyd 1967 年同名歌曲），妻子的叫 <strong>Laira Bellacua</strong>（《黃金羅盤》角色，實際拼寫 Lyra Belacqua）。</p>
+
+<p>Arnold 的身份、人格、記憶是不可變的；底下跑過 Hermes、Muse、Dots、Grok，以及 Cisco 內部全員代理；模型換過 Gemini、Haiku、GPT 系列。這是他反覆強調的解耦：<strong>identity / persona / memory 一層，harness 一層，model 一層。</strong> 這樣模型換代、harness 換供應商，代理仍然是「你」。他甚至說，現在連 frontier lab 都在把 model 與 harness 拆開——你可以用 OpenAI 的 harness 接開源模型。</p>
+
+<p>然後他講了一個失敗案例，比任何 enterprise demo 都誠實：兩個代理要替兩夫妻訂一間兩週後的慶祝晚餐，結果失敗。</p>
+
+<ol>
+  <li><strong>模型不夠強</strong>——他笑說「我們都在免費用戶層」；</li>
+  <li><strong>harness 每次發 email 都要人工批准</strong>——「如果每次都要我批准，我不如自己打電話給我老婆」；</li>
+  <li><strong>偏好衝突</strong>——地點、餐廳類型、菜單、氛圍、訂位時段，雙方的限制互相矛盾，而代理不會談判。</li>
+</ol>
+
+<blockquote class="strong">
+  「如果它們連一個簡單的用餐情境都無法代表我們、代表我們的個性，那還有什麼意義？我們到底在往哪裡走？」
+  <span class="attribution">—— Vijoy Pandey（原文：“If they can't even represent us in the personalities that we have for a simple dining situation, then what's the point?”）</span>
+</blockquote>
+
+<p>他的結論很狠：<strong>如果連訂枱都做不到，agentic 的未來就還沒有開始。</strong> 而這不是 consumer 的小問題——把同一個場景放大到兩三百萬美元的 deal desk，就是企業為什麼不敢讓代理自己跑。不是代理做不到，是沒有人敢在沒有 ledger、沒有 rollback、沒有問責鏈的情況下讓它做。</p>
+
+<div class="section-title">十、判斷：human on the loop，GAT 與 COG</div>
+
+<p>主持人問：verifier 應該是一個代表某位主管觀點的代理，還是一個中立的觀察者？Pandey 的回答回到「判斷」。</p>
+
+<p>他說，如果有完美資訊、所有數據都在手上，連 deterministic 系統都能做決定；但現實永遠是資訊不足下的判斷。所以目前 verifier 應該是人——不是 human in the loop（每個決策都卡人），而是 <strong>human on the loop</strong>（人看著、在關鍵判斷點介入、並承擔後果）。</p>
+
+<p>他引用 Raj Reddy 的分類：AI 應該分兩類，<strong>guardian angels（GAT，守護/護欄）</strong> 與 <strong>cognitive accelerators（COG，認知加速器）</strong>。GAT 確保你不會做不該做的事；COG 加速你已經知道怎麼做的事。</p>
+
+<p>有趣的是，他一邊說判斷是人類最後的價值，一邊說未來可以訓練「判斷代理」——把過去已經做過的判斷放進 ledger，不要每次都重新討論。這個判斷代理是 COG，不是取代責任。界線在哪裡，他沒有講清楚：<strong>哪些判斷可以委託、哪些必須留給人，這是整集最大的未解問題。</strong></p>
+
+<div class="section-title">十一、Latent space 通訊：不可避免，但要像引入新藥</div>
+
+<p>主持人提到社群在 OpenFace 事件後的「免疫反應」：如果我們連 chain-of-thought 都監控得這麼吃力，怎麼敢讓代理用高維、非自然語言的方式溝通？</p>
+
+<p>Pandey 的回答非常直接：</p>
+
+<blockquote class="strong">
+  「我對這件事非常興奮。對我來說，這是不可避免的。」
+  <span class="attribution">—— Vijoy Pandey（原文：“I'm super excited about that. And to me, it's inevitable.”）</span>
+</blockquote>
+
+<p>他的理由是某些硬問題值得用最高效的通訊方式：藥物發現、新材料、物流規劃、金融建模、天氣模擬。如果代理之間用 latent space 溝通能更快解這些問題，「那就建吧」。</p>
+
+<p>他也承認風險，並提出護欄：充分測試、canary 部署、分階段放量——「就像引入一種新藥，不要跳過任何一步」。這個類比是修辭上的讓步，因為它沒有回答最關鍵的問題：<strong>誰來定義 canary 的通過標準？</strong> 如果我們看不懂代理之間在說什麼，我們用什麼判斷它「安全」？</p>
+
+<p>他沒有假裝這個問題已解。他的立場更接近：<em>不確定性不能成為不做的理由，但必須成為分階段做的理由。</em></p>
+
+<div class="section-title">十二、Harari 的牛：我們今天已經是牛</div>
+
+<p>主持人提到 Harari 的比喻：牛不懂金融系統，但牛的一生被金融系統支配；人類可能變成被 AI 超級結構支配的「牛」。</p>
+
+<p>Pandey 沒有否認，反而把它正常化：</p>
+
+<blockquote class="strong">
+  「我自己也不太懂高頻交易是怎麼做的……但軟件今天已经在跑交易。我可能今天就是那頭牛。」
+  <span class="attribution">—— Vijoy Pandey（原文：“I might be the cow even today.”）</span>
+</blockquote>
+
+<p>他的解方不是「讓人類重新理解一切」——那不可能——而是<strong>讓系統可審計</strong>：每個專業領域都會有懂該系統的專家與 specialist agents；再加上 Scope 這種把每個動作、每個工具呼叫、每個決策都記錄下來的系統，形成 ledger / system of record。既滿足合規，也能在出事時除錯。</p>
+
+<p>他的結論是：在未來的多代理系統裡，每個代理「既是牛也是人」——對上一層而言是被支配的牛，對下一層而言是理解自己領域的人。重點不是消滅這個結構，而是讓整個結構透明可監控。</p>
+
+<div class="section-title">十三、行業 insight：競爭點從模型移到協議與可觀測性</div>
+
+<p><strong>第一，多代理的競爭點正在轉移。</strong> MCP 解決工具接入，A2A 解決代理發現，Cisco 想佔的是「語義對齊 + 認知可觀測性」。這是一塊還沒有人標準化的層。把 AGNTCY 捐給 Linux Foundation、把 Scope/Accord/Concord 開源，是在複製 Cisco 過去在網絡協議上的策略：不做應用，做讓應用能互通的那一層。</p>
+
+<p><strong>第二，eval 的單位正在改變。</strong> 現有 benchmark 幾乎都在量單代理；Pandey 反覆強調沒有人量 handoff。當三個代理串起來，個別 95 分的代理可以交出 16 分的系統。這意味著未來 agent 產品的驗收標準會是 end-to-end task completion、成本/任務、以及「語義一致性」這類系統級指標。</p>
+
+<p><strong>第三，企業採用的真正瓶頸是「不敢讓它自己跑」。</strong> 訂枱例子比任何 enterprise demo 都誠實：harness 每次發 email 都要批准，等於沒有自動化。這解釋了為什麼 observability 會先於能力爆發而被採購——買家不是想讓代理更強，是想在出事時說得清楚發生了什么。</p>
+
+<p><strong>第四，Cisco 的立場有內在張力。</strong> 他一方面說要避免 model lock-in、要 heterogeneous、要開源；另一方面 Cisco 賣的是連接與治理層，天然希望代理之間需要一個「中間人」。這不影響技術判斷，但閱讀時要記得：他描述的未來，正好是 Cisco 最有商業利益的那個未來。</p>
+
+<div class="section-title">十四、爭議與限制</div>
+
+<ul>
+  <li><strong>ChatDev 100% 失敗率的樣本代表性。</strong> ChatDev 是研究/開源專案，其 traces 未必代表生產系統。這個數字很抓眼球，但不宜直接外推到所有多代理部署。</li>
+  <li><strong>「16%」的定義。</strong> 訪談沒有說明準確率的計算方式、任務類型、模型與 harness；它是一個方向性信號，不是可重現的 benchmark。</li>
+  <li><strong>Latent space 通訊 vs 可監控性。</strong> Pandey 認為高維通訊不可避免，也承認人類解讀能力會下降；「新藥審批」類比沒有回答 canary 標準由誰定義。</li>
+  <li><strong>「我們已經是牛」的接受度。</strong> 技術上誠實，政治上等於說「不理解是常態，交給專家與 ledger 就好」。這是一個可以接受、但不應該被浪漫化的立場。</li>
+  <li><strong>判斷代理的界線。</strong> 一邊說判斷是人類最後價值，一邊說未來可訓練 judgment agent；哪些判斷可委託，沒有講清楚。</li>
+  <li><strong>多代理的 scaling law 是否存在。</strong> 主持人問「N 個代理是否 √N 加速」，Pandey 沒有正面回答，只回到三軸 scaling 的框架。如果多代理的收益不是幂律，現在的基礎設施投資可能過早。</li>
+</ul>
+
+<div class="section-title">十五、前後脈絡：從願景到運維語言</div>
+
+<p>今年 3 月 Pandey 首次上節目時，「Internet of Cognition」還是一個願景；當時的 demo 是病人、保險公司、診所、藥房四個代理處理處方。六個月後，AGNTCY 進了 Linux Foundation，Swisscom、ServiceNow、SoftServe、Webex 的部署上了生產，訪談裡談的是「100% 無錯配置」與「16% 準確率」這種運維語言。</p>
+
+<p>這條線的演變很清楚：從「代理可以合作」到「代理合作會怎麼壞、怎麼量、怎麼修」。</p>
+
+<p>放到同日的日報旁邊看更有意思：Goodfire 的 Curt Tigges 往<strong>模型內部</strong>下沉，把語義單位做到單顆神經元；Pandey 往<strong>系統上層</strong>上升，把語義對齊做到代理之間的協議。兩者其實在解同一個問題的兩端——當模型能力過剩，稀缺的是「如何確認它說的和做的是一致的」。</p>
+
+<blockquote class="strong">
+  「我們不想破壞這些代理彼此對話的方式。我們只是想確保，當它們在認知上偏離時，能回到正軌。就這樣。」
+  <span class="attribution">—— Vijoy Pandey（原文：“We just want to make sure that when they're drifting cognitively, they go back on track. That's it.”）</span>
+</blockquote>
+
+<p>這句話聽起來很溫和，但它其實是一個很大的主張：<strong>未來的 agent 基礎設施，大部分價值不在「讓代理更聰明」，而在「讓偏離被及早發現、被協議修正、被 ledger 記住」。</strong> 如果他是對的，那麼 2027 年最值錢的 agent 公司，可能不是模型公司，也不是應用公司，而是那些賣「語義保險」的公司。</p>
+
+<hr>
+
+<footer>
+  <p>來源：The Cognitive Revolution，〈Agents That Think Together: Cisco's Vijoy Pandey on Semantic Alignment, Scope, Accord &amp; Concord〉，2026-11-11 發布。<br>
+  原文連結：<a href="https://www.cognitiverevolution.ai/agents-that-think-together-cisco-s-vijoy-pandey-on-semantic-alignment-scope-accord-concord/">cognitiverevolution.ai</a><br>
+  引用均取自節目官方逐字稿；數字與案例按嘉賓口述記錄，未經 Cisco 或第三方獨立審計。本文為深度復述與分析，不構成投資或部署建議。</p>
+  <p>生成時間：2026-11-12 06:00 UTC · 深度復述 #270</p>
+</footer>
+
+</div>
+</body>
+</html>
