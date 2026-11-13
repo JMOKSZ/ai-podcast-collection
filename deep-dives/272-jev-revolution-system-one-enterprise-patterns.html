@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 把分類器撒進代碼裡——Jev 的生產客戶，與「決策原語」的第一次實戰</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  td { color: #444; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.55rem; }
+    table { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">Latent Space · AI Engineer Code Summit 現場報導 · 2026-11-12</div>
+  <h1>把分類器撒進代碼裡<br>——Jev 的生產客戶，與「決策原語」的第一次實戰</h1>
+  <div class="meta">
+    <div>〈The Jev Revolution: What Engineers Are Already Building with System One Models〉</div>
+    <div>出品：Latent Space<span>·</span>作者：Richard MacManus<span>·</span>場合：AI Engineer Code Summit, San Francisco</div>
+    <div>發布：2026-11-12 13:08 HKT（05:08 UTC）<span>·</span>約 4 分鐘閱讀（現場報導）</div>
+    <div>主講：Diogo Almeida（TypeSafe AI 聯合創始人兼 CEO）<span>·</span>講者：Chinmay Goyal（Glean）、Chibi Vikram／Kevin Bernstein（UiPath）、Scott Roberts（Workday）</div>
+  </div>
+</header>
+
+<p>這不是一集訪談，是一場發佈會級的現場報導。但它的價值不在「誰上了台」，而在一個很少被公開展示的東西：<strong>一個新的模型類別，怎樣在兩個月內從 demo 走進 Glean、UiPath、Workday 的生產代碼。</strong></p>
+
+<p>先把場景定住。2026 年 11 月 12 日，AI Engineer Code Summit 把整條「system one」軌道交給了 TypeSafe AI 的 Diogo Almeida。所謂 system one model，指的是<strong>非生成式</strong>模型：它不逐 token 寫字，而是直接回傳結構化的選擇、分數或機率。相對於推理型 LLM（system two），這類模型快一到兩個數量級、便宜一到兩個數量級——代價是它只會回答「哪一個」，不會回答「為什麼」。</p>
+
+<div class="data-point">
+  <span>不到兩個月</span> Jev 於 2026 年 9 月發布，發布當日上了 Latent Space，成為該節目年度最受歡迎的一集；11 月 12 日，它已經在 AIE Code 拿到一整場 keynote。<br>
+  <span>$100M ARR</span> TypeSafe 在 Jev 發布後約兩個月跨過的年化收入（AINews 同期報導）。<br>
+  <span>三種生產模式</span> 零樣本分類（Glean）、錦標賽式排序（UiPath）、推測式預填（Workday）——同一顆模型，三種完全不同的用法。
+</div>
+
+<p>這場演講真正值得記住的，不是「Jev 很強」，而是它給出了一個可以立刻照抄的架構主張。而這個主張，在當天下午就被 Google 用一個 API 定價逼到了牆角。這是本文要處理的張力。</p>
+
+<div class="section-title">一、核心主張：分類呼叫應該下沉到函數級</div>
+
+<p>Almeida 的整場演講，幾乎不談模型架構，全談「怎麼用」。他的中心句是：</p>
+
+<blockquote class="strong">
+  「Code is the language of automation, therefore you need to integrate with code.」
+  <span class="attribution">—— Diogo Almeida, TypeSafe AI，AIE Code 2026 keynote</span>
+</blockquote>
+
+<p>這句話聽起來像廢話，但它其實是對過去兩年 AI engineering 主流做法的一次正面否定。主流做法是：把 LLM 包在應用外面，用 prompt 拼接上下文，然後祈祷它輸出可解析的格式。Almeida 的主張相反——<strong>把決策點打散，塞進應用代碼的每一個需要判斷的地方</strong>，讓每一個 if/else 的位置，都變成一次幾毫秒的分類呼叫。</p>
+
+<p>swyx 的轉述更直接：應該「大方地把 system one 呼叫撒進應用代碼各處」，用這種方式做出更聰明的軟件，而不是繼續做「把字符串拼起來、然後希望最好」的 AI engineering。</p>
+
+<p>這裡有一個容易被忽略的推論：<strong>如果決策是函數級的，那麼軟件的形態會變。</strong> 傳統軟件是「邏輯 + 資料」；加上決策原語之後，軟件變成「邏輯 + 資料 + 一層可校準的判斷」。UI 可以邊打字邊預測、後端可以邊收日誌邊分類、檢索可以邊召回邊淘汰。這些都不是「加一個 chatbot」，而是把判斷力變成基礎設施。</p>
+
+<div class="section-title">二、可靠性：對標邏輯閘，而不是對標 LLM</div>
+
+<p>這場演講最誠實的一段，是 Almeida 承認 LLM 的問題不是「不夠聰明」，而是「不穩定且不可分辨」。</p>
+
+<blockquote class="strong">
+  「You get Einstein 95% of the time, but Mr. Bean 5% of the time. And if you can't tell which is which, how the fuck are you going to automate anything.」
+  <span class="attribution">—— Diogo Almeida, TypeSafe AI</span>
+</blockquote>
+
+<p>這句話的重點在後半句。95% 的正確率在 demo 裡很好聽，在生產裡卻是災難——因為你<strong>不知道哪 5% 會出錯</strong>。一個無法標記自身不確定性的系統，等於把隨機故障藏進了自動化流程。Almeida 的解法是 confidence：每一個答案都帶一個可校準的分數，讓上層代碼可以決定「這一次要不要交给人」。</p>
+
+<p>他把目標講得很高：Jev 應該「和第四個邏輯閘一樣可靠」。意思是開發者應該能像信任 AND／OR 一樣，信任一次分類呼叫——把它當成原語，而不是賭注。這是一個很好的修辭，也是一個很難的承諾：邏輯閘的錯誤率是零，而任何統計模型的錯誤率都不是零。真正可比的，不是「零錯誤」，而是<strong>錯誤率已知、且不隨分佈漂移而失控</strong>。</p>
+
+<div class="highlight-box">
+  <strong>讀法：</strong>「像邏輯閘一樣可靠」不是說它永遠對，而是說它的失敗模式應該是<em>可預期、可觀測、可降級</em>的。這是把模型當「基礎設施」而不是「智能體」的分界線。
+</div>
+
+<div class="section-title">三、Glean：買方要的不是快，是「不用重訓」</div>
+
+<p>如果說 Almeida 給的是願景，Glean 的 Chinmay Goyal 給的就是採購理由。Glean 把 system one 模型與 LLM、其他分類器並用，最適合的場景是<strong>零樣本彈性</strong>。</p>
+
+<blockquote>
+  「As the taxonomy of the decision space changes, we don't have to fine-tune these models again and again.」
+  <span class="attribution">—— Chinmay Goyal, Glean</span>
+</blockquote>
+
+<p>這句話比任何 benchmark 都重要。企業搜尋與知識管理的痛點，不是「分類不準」，而是<strong>分類體系一直在變</strong>：新部門、新產品線、新合規類別、新客戶術語。用傳統分類器，每一次 taxonomy 變動都要重標數據、重訓模型；用一個能讀自然語言標籤的決策模型，改的是 prompt 裡的選項，不是權重。</p>
+
+<p>Goyal 在會後訪談中還補了一句，直接點出產品哲學：</p>
+
+<blockquote>
+  「Jev powers a significant number of flows [but] the user just needs to have a product that works; that is always our aim with building anything. So we want to hide away all the complexity of whether we are using Jev or we are using a full-blown LLM.」
+  <span class="attribution">—— Chinmay Goyal, Glean，會後訪問 Latent Space</span>
+</blockquote>
+
+<p>這句話有兩層意思。第一層是產品層：用戶不應該知道背後是哪種模型。第二層是架構層：<strong>Jev 與 LLM 不是替代關係，是路由關係。</strong> 簡單判斷走 Jev，複雜推理走 LLM；系統的智能不是來自單一模型，而是來自「什麼時候用哪一個」。</p>
+
+<p>值得一提的是，報導說 Goyal 在結尾給出了「什麼時候該用 Jev」的規則，但沒有展開。這是全文最明顯的缺口——對想落地的人來說，那幾條規則比演講金句更有價值。</p>
+
+<div class="section-title">四、UiPath：用呼叫次數換上下文長度</div>
+
+<p>UiPath 的 Chibi Vikram 與 Kevin Bernstein 展示了一個很聰明的工程模式：<strong>錦標賽式 chunk 排序</strong>。做法不是把幾十份文件塞進一個大上下文讓模型一次判斷，而是分組、讓 Jev 在每一小組裡選出最相關的，勝者晉級，逐輪收斂。</p>
+
+<p>結果是：<strong>數千次 Jev 呼叫，全程不到一秒。</strong></p>
+
+<blockquote class="strong">
+  「We realized that Jev is a building block that we can adjust, and we have to find these new strategies where we will be able to apply this building block. It might look less intelligent on its own, but with these strategies and patterns, we can get more intelligent — with even the current Jev model that we have.」
+  <span class="attribution">—— Chibi Vikram, UiPath</span>
+</blockquote>
+
+<p>這段話值得拆開。它承認了單顆決策模型的局限：<strong>它單獨看可能不那麼聰明</strong>。但它同時指出了一條補償路徑：用演算法把「很多次小判斷」組合成「一次大判斷」。從複雜度看，這是把 O(n) 的注意力問題，拆成 O(log n) 的比較樹；從成本看，這是把「長上下文」換成「多次廉價呼叫」。</p>
+
+<p>這個模式的適用邊界也很清楚：它適合<strong>可比較、可淘汰</strong>的任務（排序、檢索、候選收斂），不適合需要全局推理的任務（因果分析、多步規劃）。把錦標賽用在錯的任務上，只會得到一個很快的錯誤答案。</p>
+
+<div class="section-title">五、Workday：從預測下一個字，到預測下一個動作</div>
+
+<p>Workday 的 Scott Roberts 展示的 demo 最短，但可能是最日常的：使用者在請假表單裡還在打字，介面已經開始自動填寫。</p>
+
+<blockquote class="strong">
+  「From predicting what you want to say to predicting what you want to do.」
+  <span class="attribution">—— Scott Roberts, Workday</span>
+</blockquote>
+
+<p>這句話是整場最好的產品總結。LLM 的範式是「預測下一個 token」；決策模型的範式是「預測下一個動作」。前者產出文字，後者產出<strong>狀態轉移</strong>：選哪個請假類型、填哪個日期、走哪條審批路徑、標記哪個欄位。這些判斷的延遲要求是毫秒級，因為它們發生在用戶輸入的間隙裡——超過 200 毫秒，使用者就會感覺到卡頓。</p>
+
+<p>也正因為如此，這個場景幾乎不可能用推理型 LLM 做。不是因為 LLM 不聰明，而是因為<strong>它來不及</strong>。這一點解釋了為什麼 decision model 不是「更便宜的分類器」，而是一個新的互動原語。</p>
+
+<div class="section-title">六、場外的信號：一個與會者做的夢幻足球網站</div>
+
+<p>報導裡有一個很容易被略過的小故事：作者旁邊坐著某公司的 AI 負責人，他用自己的時間，用 Jev 做了一個整理、排序夢幻足球新聞的網站。</p>
+
+<p>這個故事的重要性不在「有趣」，而在它展示了<strong>決策模型的消費級形態</strong>：不是聊天，不是生成，而是「把一堆東西排序、分類、打分」。這類需求在過去要麼用規則硬編碼，要麼用一個昂貴的 LLM 呼叫；現在可以變成一個便宜的、可高頻呼叫的原語。當一個週末項目就能做到，通常意味著一波長尾應用正在路上。</p>
+
+<div class="section-title">七、被同一日發生的事改寫：Google 的 $0.10</div>
+
+<p>這場演講發生在上午。下午，Google 發布了 Gemini Decision 1 與 Decisions API：支援 yes/no、多選、rubric 評分，單次請求最多 1,000 個問題、256K 上下文、255 個選項，接受文字、圖像、音頻、視頻、PDF，端到端 150–250ms，每個答案附 confidence，定價 <strong>$0.10 / 1M input tokens</strong>、輸出免費。</p>
+
+<p>對照 Jev 的 <strong>$0.042 / 1M input</strong>，Google 貴了約 2.4 倍；但 Google 多給的是模態、上下文、與一個雲廠商的默認信任。更重要的是，Google 說這個項目<strong>原本是 DeepMind 的內部原型，約六週內由一個小團隊做成模型加 API</strong>。</p>
+
+<div class="highlight-box">
+  <strong>這就是這場演講的歷史位置：</strong>它記錄了「system one 作為 TypeSafe 的賽道」的最後幾個小時。上午，Almeida 還在台上說要「automate everything」；下午，這個類別就變成了三大雲廠商之一的標準 API。
+</div>
+
+<p>這不意味著 TypeSafe 輸了。恰恰相反，<strong>類別被商品化，通常意味著開創者已經證明市場存在</strong>。但它改變了護城河的形狀：模型本身不再稀缺，稀缺的是<strong>模式庫、工具鏈、與企業工作流的嵌合程度</strong>。UiPath 的錦標賽、Glean 的零樣本路由、Workday 的預填，這些都是「模式」，不是「模型」。它們可以被複製，但需要時間與場景知識。</p>
+
+<div class="section-title">八、獨立評測：66 分與 92.2% 之間</div>
+
+<p>Google 自己的測試說，Decision 1 在 7 個共享 benchmark 中贏 Jev 1.14 五個，包括 JevBench 上 <strong>92.2% vs 90.0%</strong>。但 Artificial Analysis 的獨立結果是：Decision Index <strong>66 分</strong>，與 Jev 1.14、Elephant 9B 並列，落後 Drex Max v1.1 與 GLiDE v1.2 七分。</p>
+
+<table>
+  <tr><th>指標</th><th>Gemini Decision 1</th><th>Jev 1.14</th></tr>
+  <tr><td>輸入定價</td><td>$0.10 / 1M tok</td><td>$0.042 / 1M tok</td></tr>
+  <tr><td>輸出定價</td><td>$0（不生成）</td><td>$0（不生成）</td></tr>
+  <tr><td>JevBench</td><td>92.2%（Google 口徑）</td><td>90.0%</td></tr>
+  <tr><td>Decision Index（AA）</td><td>66</td><td>66</td></tr>
+  <tr><td>每 1M 任務成本（AA）</td><td>$345</td><td>$156</td></tr>
+  <tr><td>平均每任務耗時</td><td>211ms</td><td>92ms</td></tr>
+  <tr><td>Brier 分數</td><td>0.18</td><td>未在本文對照</td></tr>
+</table>
+
+<p>這張表要這樣讀：<strong>Google 在輸入 token 上便宜 2.4 倍，在「完成一個任務」上卻貴 2.2 倍。</strong> 原因不是定價，是效率——它可能需要更多呼叫、更長上下文，才能得到同樣的答案。這正好印證了 Almeida 的架構主張：決策模型的成本，應該按「任務」算，不是按「token」算。</p>
+
+<p>對買家的實務含義很簡單：<strong>不要用 $/token 比較決策模型。</strong> 用 $/task、延遲、與失敗成本。這三個數字加起來，才是部署決策。</p>
+
+<div class="section-title">九、這場報導沒有回答的問題</div>
+
+<ul>
+  <li><strong>錯誤率。</strong> 全文沒有給出具體準確率或失敗率。對生產環境來說，這是最關鍵的一頁。</li>
+  <li><strong>Glean 的使用規則。</strong> 報導提到 Goyal 給了「何時用 Jev」的規則，但沒有展開。這是本文最大的信息缺口。</li>
+  <li><strong>校準。</strong> Almeida 說每個答案都帶 confidence，但沒有說這個 confidence 在不同分佈下是否仍然可靠。Brier 分數 0.18 是 Decision 1 的，不是 Jev 的。</li>
+  <li><strong>樣本偏差。</strong> 這是 TypeSafe 主場的場次，上台的客戶都是成功案例。沒有失敗部署、沒有回退故事。</li>
+  <li><strong>與 LLM 的邊界。</strong> 三種模式都展示了「Jev + 其他模型」的混合，但沒有人給出「什麼時候不該用 Jev」的判準。</li>
+</ul>
+
+<div class="section-title">十、行業 insight：決策層的三個真正變化</div>
+
+<p><strong>第一，軟件的預設形態，從「一次大推理」變成「許多次小判斷」。</strong> 這不是成本優化，是架構重寫。當一次判斷只要幾毫秒，開發者會開始把判斷放進更多地方——表單、日誌、檢索、路由、審批。軟件的「智能」不再是某一個功能，而是<strong>無處不在的微小決策</strong>。</p>
+
+<p><strong>第二，護城河從模型移到模式。</strong> 當 Google 用六週把模型商品化，剩下的差異只能在「怎麼用」：錦標賽、推測式預填、零樣本路由、混合診斷。這些模式需要場景知識，而場景知識不會被一個 API 抹平。</p>
+
+<p><strong>第三，買方的語言變了。</strong> Glean 說的不是「快 10 倍」，是「taxonomy 變化時不用重訓」。這是企業採購的真實痛點：<strong>分類體系會漂移</strong>。任何賣決策層的公司，都應該用這句話做定位，而不是用 benchmark。</p>
+
+<blockquote class="strong">
+  「I think that there's going to be an explosion of what software can do, and we will want people to be exploring those boundaries of software. Not necessarily because it's valuable, but because they can, because we have new frontiers to explore, and this is what the early internet was like.」
+  <span class="attribution">—— Diogo Almeida, TypeSafe AI</span>
+</blockquote>
+
+<p>這句話很浪漫，但也是這場演講最需要打折的一句。「早期互聯網」的類比，暗示了一個開放、無主、實驗成本極低的前沿。但決策層的現實是：它當天下午就被一個雲廠商定價、被一個框架日零支援、被一個 benchmark 口徑戰包圍。前沿是存在的，但它不屬於所有人。</p>
+
+<div class="section-title">十一、如果你星期一就要用</div>
+
+<ol>
+  <li><strong>先找「高頻、低風險、可降級」的判斷點。</strong> 表單欄位、日誌分類、工具選擇、檢索淘汰——這些錯了可以回退，且呼叫量大。</li>
+  <li><strong>用 $/task 做模型選擇，不用 $/token。</strong> 把「一次任務需要幾次呼叫、多少上下文」算進去。</li>
+  <li><strong>把 confidence 當一等公民。</strong> 沒有信心分數的決策模型，不應該接進自動化流程。</li>
+  <li><strong>先做路由，不要做替代。</strong> Jev 處理簡單判斷，LLM 處理複雜推理；用一個 router 把兩者接起來，比換掉整個 stack 現實。</li>
+  <li><strong>量度失敗，不只量度成功率。</strong> 錯誤是否可預測、是否可被護欄接住、是否會靜默傳播——這三個問題比準確率更重要。</li>
+</ol>
+
+<hr>
+
+<footer>
+  <p>來源：Latent Space，Richard MacManus，〈The Jev Revolution: What Engineers Are Already Building with System One Models〉，2026-11-12 發布，AI Engineer Code Summit 現場報導。<br>
+  原文連結：<a href="https://latent.space/p/jev-revolution/">latent.space/p/jev-revolution</a><br>
+  本文所有直接引用均取自該報導；Google Decision 1 與 Artificial Analysis 的數字，取自同日 AINews〈D-Day (Decision Models Day)〉，並已標明口徑。未公開的錯誤率與使用規則，本文不作推測。</p>
+  <p>生成時間：2026-11-13 06:00 UTC · 深度復述 #272</p>
+</footer>
+
+</div>
+</body>
+</html>
