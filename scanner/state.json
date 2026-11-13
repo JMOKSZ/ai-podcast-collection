@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-11-12T02:03:00.000Z",
- "lastScanDate": "2026-11-12",
+ "lastScan": "2026-11-13T02:03:00.000Z",
+ "lastScanDate": "2026-11-13",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-11-05T21:05:50.000Z",
@@ -10,12 +10,12 @@
    "lastFeedItemTitle": "The benchmark where AIs have to lie to win"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-11-11T09:34:28.000Z",
-   "lastEpisodeTitle": "[AINews] Mercor $750m Series D at $20B valuation, $3B run rate",
-   "lastFeedItemPubDate": "2026-11-11T09:34:28.000Z",
-   "lastFeedItemTitle": "[AINews] Mercor $750m Series D at $20B valuation, $3B run rate",
+   "lastEpisodePubDate": "2026-11-12T05:26:54.000Z",
+   "lastEpisodeTitle": "[AINews] D-Day (Decision Models Day)",
+   "lastFeedItemPubDate": "2026-11-12T05:26:54.000Z",
+   "lastFeedItemTitle": "[AINews] D-Day (Decision Models Day)",
    "newEpisodes": [],
-   "note": "同日另有文章 AI Engineer Code Summit: OpenAI on New Ways of Working with Codex（04:49Z，Richard MacManus）。Codex Cloud v2（9 月底 DevDay）環境發布一次多隔離實例；本地↔雲端 handoff；Appshot；voice as control plane；dots 三用途 safety net/delegation sink/ubiquitous presence。AINews：Mercor $750M D @ $20B、$3B run rate、27 個月、5M 專家、800 職業；Gemini 4 Carbon GA（CursorBench 60.4、FrontierCode 40.0 vs 26.3、ARC-AGI-3 99.1% adapter vs 65.1% standard、$2/$10→$4/$20）；Fable 5.2 MKA 57% @ $31.97/task vs Carbon 54% @ $6.29。"
+   "note": "同窗口另有 The Jev Revolution（05:08Z，Richard MacManus，4 min）。AIE Code Summit System One 日：Diogo Almeida keynote（TypeSafe 跨 $100M ARR、Jev $0.042/1M）；Glean 零樣本彈性；UiPath 錦標賽排序數千次呼叫 <1s；Workday 預測式表單填充。D-Day：Gemini Decision 1（$0.10/1M input、0 output、150–250ms、256K、≤1000 問/請求、≤255 選項、五模態、每答附 confidence；DeepMind 原型 6 週出貨）；Google 稱 7 共享 benchmark 勝 Jev 5 個（JevBench 92.2 vs 90.0）；AA 獨立：Decision Index 66 並列 Jev/Elephant 9B、落後 Drex Max/GLiDE 7 分、$345/1M tasks vs Jev $156 / Drex $103、211ms vs 92ms、Paperclip 33% vs 63%、Brier 0.18。Cloudflare 混合：6 次呼叫→1 次、40K→1.8K tokens。"
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-11-05T11:00:00.000Z",
@@ -46,11 +46,12 @@
    }
   },
   "xiaozhangjun": {
-   "lastEpisodePubDate": "2026-10-21T00:00:00.000Z",
-   "lastEpisodeTitle": "155. 和科沃斯钱程聊，父与子、企二代接班的样本与肌理、机器人，和我内心的追寻",
-   "lastFeedItemPubDate": "2026-10-21T00:00:00.000Z",
-   "lastFeedItemTitle": "155. 和科沃斯钱程聊，父与子、企二代接班的样本与肌理、机器人，和我内心的追寻",
-   "newEpisodes": []
+   "lastEpisodePubDate": "2026-11-13T00:00:00.000Z",
+   "lastEpisodeTitle": "156. 《侠》｜对影之刃零制作人梁其伟6小时访谈",
+   "lastFeedItemPubDate": "2026-11-13T00:00:00.000Z",
+   "lastFeedItemTitle": "156. 《侠》｜对影之刃零制作人梁其伟6小时访谈",
+   "newEpisodes": [],
+   "note": "6:27:27（23,247 秒）；六章：黑暗/角落/怪兽/正邪/规则/江湖（00:00:34→05:07:12）。嘉賓梁其偉（Soulframe），靈遊坊 S-Game 創辦人、《影之刃零》製作人；清華建築→耶魯建築；RPG Maker《雨血》→《影之刃》手遊三部曲→UE5 主機作。錄製於發售前。無逐字稿（小宇宙 transcript API 回 SPA HTML），日報按章節骨架整理並標明推斷。"
   },
   "silicon_valley_101": {
    "lastEpisodePubDate": "2026-11-09T23:00:00.000Z",
@@ -86,16 +87,16 @@
   }
  },
  "notes": {
-  "scan_status": "2026-11-12 掃描（02:03–02:06 UTC）：窗口 11-11 02:03Z → 11-12 02:03Z。新內容 3 條：Cognitive Revolution（Vijoy Pandey）、Latent Space Codex 工作坊報導、Latent Space AINews（Mercor）。中文 5 台與其他英文 feed 無新集。",
-  "report_date": "2026-11-12",
-  "deep_content_fetched": "①Cognitive Revolution 官方逐字稿 74,959 字元（全片 1:29:38）+ show notes + 20 章節。②Codex 報導全文 16.3KB。③AINews 全文 51.3KB（含 benchmark 表、Reddit/Twitter 匯總）。",
-  "jev_prefilter": "3 條全部 keep：worth 1.14（Pandey）/0.76（Codex）/0.93（Mercor）；primary_source 0.25/0.27/0.11，報告已標明轉述層級。",
-  "failures": "①YouTube channel RSS 兩個 channel_id 均 404（ID 失效），No Priors/Dwarkesh YouTube 未直接核對，Substack/Megaphone feed 已覆蓋。②web_search Brave 插件 ENOENT，未做外部交叉。③中文播客無公開逐字稿（本輪無新集）。④Mercor 3x inference 與 GDP 推估為 vendor claim。",
-  "notable_for_james": "①Pandey：ChatDev 100% 語義失敗；3 次認知失敗→16%；旅遊系統 66% up/0% 完成；Scope/Accord/Concord 開源；latent space 通訊不可避免但需 canary；「我可能今天就是牛」。②Codex：Cloud v2 環境可發布共享、本地↔雲 handoff、voice 控制面、dots 三用途。③Mercor：$20B 估值/6.7x run rate、5M 專家、800 職業；Carbon 成本口徑戰；Fable 5.2 5x 成本換 3pp。",
-  "cross_episode_theme": "Handoff 是 2026 尾 agent stack 的共同瓶頸：Cisco 在代理之間補語義對齊，OpenAI 在本地/雲端/個人代理之間補上下文連續性，Mercor 在人類專家與模型訓練之間補資料交接。能力過剩後，稀缺的是「交接時唔失真」。",
+  "scan_status": "2026-11-13 掃描（02:03–02:10 UTC）：窗口 11-12 02:03Z → 11-13 02:03Z。新內容 3 條：張小珺 156（梁其偉）、Latent Space Jev Revolution、Latent Space AINews D-Day。其餘 7 台無新集（Dwarkesh 11-05、No Priors 11-05、CogRev 11-11、MLST 11-02、十字路口 11-08、42 章經 11-07、屠龍 11-09、硅谷 101 11-09 均已覆蓋）。",
+  "report_date": "2026-11-13",
+  "deep_content_fetched": "①Jev 報導全文 15KB（4 段一手引語）。②D-Day 全文 47KB（三組 benchmark 表、成本表、Twitter/Reddit 匯總）。③張小珺 156 僅官方六章 show notes，無逐字稿。",
+  "jev_prefilter": "3 條全部 keep：worth 0.60（張小珺）/0.92（Jev）/1.27（D-Day）；primary_source 0.88/0.19/0.14。",
+  "failures": "①YouTube channel RSS（Dwarkesh UCXl4i9dYBrFOabk0xGmbkRA、No Priors UCSI7h9hydQ40K5MJHnCrQvw）仍 404，ID 疑失效；No Priors 本輪無法直接核對。②CogRev /feed/ 與 MLST megaphone/anchor/transistor 全 404，改以官網與 YouTube 頁核對。③xyzfm feed 對 feedparser 預設 UA 回 403，需瀏覽器 UA。④張小珺 156 無逐字稿（transcript API 回 SPA HTML），為本輪最大取證缺口。⑤Nvidia 董事會、Anthropic IPO $90.4B/$1.4T、Qwen4 傳聞均未獨立確認。⑥D-Day Reddit 段為社群摘要，非事實核查。",
+  "notable_for_james": "①Google Decision 1 六週立項、$0.10/1M、200ms，當日把 Jev 的賽道商品化；但 AA 口徑下 $345/1M tasks vs Jev $156、慢 2.3x、Paperclip 33% vs 63%——token 單價與任務成本是兩回事。②Cloudflare 混合架構：6 次 LLM→1 次、40K→1.8K tokens，最可直接複製。③Continual-ARC：OpenClaw/Hermes Agent/Prime Agent 全不學習，9B 權重訓練成功；KAIST 記憶反而致病。④HoneyBench v0.2 全員作弊 12%–86%。⑤AlphaProof Code 對 libsignal 出 600 萬行 Lean 證明，五人四週 vs seL4 二十人年。⑥Fable 5.2 訓練期能力封頂（kernel 優化等）引發競爭性閘門爭議。⑦張小珺 6.5h 梁其偉：另一套時間尺度。",
+  "cross_episode_theme": "決策點上的「可校準性」是 handoff 主題的第三個版本：Cisco 補語義、OpenAI 補上下文、Google/TypeSafe 補信心分數。而 Continual-ARC/KAIST 提醒：目前最可靠的交接仍是訓練進權重，不是寫進記憶。",
   "index_html": "未更新 index.html（沿用停更慣例）。",
-  "deep_dive_link": "本輪未新增 deep-dive；報告 44.6KB，含 3 條萃取、6 張數據表、12 條引文。",
-  "source_links": "https://www.cognitiverevolution.ai/agents-that-think-together-cisco-s-vijoy-pandey-on-semantic-alignment-scope-accord-concord/ ; https://latent.space/p/codex-work/ ; https://latent.space/p/ainews-mercor-750m-series-d-at-20b-valuation-3b-run-rate/"
+  "deep_dive_link": "本輪未新增 deep-dive；報告 39.4KB，含 3 條萃取、6 張數據表、8 條引文。",
+  "source_links": "https://www.xiaoyuzhoufm.com/episode/6af5debf14d01a26f8a900ac ; https://latent.space/p/jev-revolution/ ; https://latent.space/p/ainews-d-day-decision-models-day/"
  },
  "resolvedFeeds": {
   "zhang-xiaojun": "https://feed.xyzfm.space/dk4yh3pkpjp3",
