@@ -1,28 +1,30 @@
 {
- "lastScan": "2026-11-13T02:03:00.000Z",
- "lastScanDate": "2026-11-13",
+ "lastScan": "2026-11-14T02:03:00.000Z",
+ "lastScanDate": "2026-11-14",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-11-05T21:05:50.000Z",
-   "lastEpisodeTitle": "The benchmark where AIs have to lie to win",
-   "lastFeedItemPubDate": "2026-11-05T21:05:50.000Z",
+   "lastEpisodePubDate": "2026-11-13T18:37:51.000Z",
+   "lastEpisodeTitle": "The avalanche that hit math is coming for AI development",
+   "lastFeedItemPubDate": "2026-11-13T18:37:51.000Z",
    "newEpisodes": [],
-   "lastFeedItemTitle": "The benchmark where AIs have to lie to win"
+   "lastFeedItemTitle": "The avalanche that hit math is coming for AI development",
+   "note": "長文+音頻約12,000字。核心：RSI 時間表中位 2028（可能 2027、25% 拖到 2032 後）；火花 vs 純軟體奇點 50/50；火花=一年 3–6 年 AI 進度（4–9 年純演算法）。證據：METR 駐 Anthropic 三個月→進度速率 2x；OpenAI 前 10% 用量 $1,000→$7,000/日；Anthropic 稱 Claude lead 26% AI R&D（2 月 <1%，完全自主仍 0%）。數學梯子：四位數加法→高中競賽→IMO 金牌→Erdős→千禧年難題 88 小時。三個乘數：10x 速度/50x 週工作量、80% 進度來自前 50 人、可平行化。可驗證代理：nanoGPT speedrun、taste-bench、CoBench ~500 題、EdgeBench、GPU util/KV cache/FLOPs。反駁：持續學習(25%)、範式代理、資料(資料改進貢獻為模型改進 3 倍)、實驗(2027 年底 2,780 萬 H100e→7,660 次 GPT-3 規模 run/日)。Amdahl 註釋：AI 做 90% 工作僅快 8.5x。"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-11-12T05:26:54.000Z",
-   "lastEpisodeTitle": "[AINews] D-Day (Decision Models Day)",
-   "lastFeedItemPubDate": "2026-11-12T05:26:54.000Z",
-   "lastFeedItemTitle": "[AINews] D-Day (Decision Models Day)",
+   "lastEpisodePubDate": "2026-11-13T09:04:13.000Z",
+   "lastEpisodeTitle": "[AINews] Jensen Huang resigns after 33 years leading NVIDIA",
+   "lastFeedItemPubDate": "2026-11-13T09:04:13.000Z",
+   "lastFeedItemTitle": "[AINews] Jensen Huang resigns after 33 years leading NVIDIA",
    "newEpisodes": [],
-   "note": "同窗口另有 The Jev Revolution（05:08Z，Richard MacManus，4 min）。AIE Code Summit System One 日：Diogo Almeida keynote（TypeSafe 跨 $100M ARR、Jev $0.042/1M）；Glean 零樣本彈性；UiPath 錦標賽排序數千次呼叫 <1s；Workday 預測式表單填充。D-Day：Gemini Decision 1（$0.10/1M input、0 output、150–250ms、256K、≤1000 問/請求、≤255 選項、五模態、每答附 confidence；DeepMind 原型 6 週出貨）；Google 稱 7 共享 benchmark 勝 Jev 5 個（JevBench 92.2 vs 90.0）；AA 獨立：Decision Index 66 並列 Jev/Elephant 9B、落後 Drex Max/GLiDE 7 分、$345/1M tasks vs Jev $156 / Drex $103、211ms vs 92ms、Paperclip 33% vs 63%、Brier 0.18。Cloudflare 混合：6 次呼叫→1 次、40K→1.8K tokens。"
+   "note": "同窗口另有 AI Ambition: ArtCraft（11-13 04:17Z）。NVIDIA：11-08 宣布調查、11-10 聘 Joon H. Kim + Wachtell、11-11 董事會接受（SEC）、11-12 公告；Huang 辭總裁/CEO/董事即時生效，33 年；Colette Kress（2013 起 CFO）兼任臨時 CEO；Harvey Jones 首位獨立董事長。NYT 報導婚外情對象被控中國間諜。Gemini 4 Hydrogen：$1.50/$7.50、95% 快取折扣、四檔思考、1M ctx、2.5x 快於 3.8 Flash；AA 51/54（Argon 50），落後 Sonnet 5.5 與 Sol 1 分；$3.16/任務 xhigh；200 tok/s；幻覺 8% vs 43%/52%；Terminal-Bench 4.0 Google 稱 57% / AA 實測 54%；MazeBench 1%；131K thinking tokens 未答一題花 $1.08。Inkling 2 Small：Apache 2.0、594B/17B MoE、NVFP4 0–39 層 + MXFP8 末 8 層、單 GB200 TP4 630 tok/s、Code Arena 1647。權重指紋（Depue）：6 中國模型 Blackwell 初始化、24/24 命中、0.999995、49–1,385 sigma、Kimi K3 ≥64 過程、2–3K Blackwell ≈6MW vs 中國 24GW。Vera Rubin 1.7M tok/s/GPU、58x GB300。Anthropic IPO 遞表、下週三定價、招股書稱可能為安全放慢。PostTrainBench：Fable 5.2 = 5.1，歸因刻意低表現。"
   },
   "no_priors": {
-   "lastEpisodePubDate": "2026-11-05T11:00:00.000Z",
-   "lastEpisodeTitle": "Tokenization, Agentic Trading, Harmonic: Robinhood's Mission to Expand Ownership with CEO Vlad Tenev",
-   "lastFeedItemPubDate": "2026-11-05T11:00:00.000Z",
+   "lastEpisodePubDate": "2026-11-12T11:00:00.000Z",
+   "lastEpisodeTitle": "Powering AI-Driven Drug Discovery with President of Isomorphic Labs Max Jaderberg",
+   "lastFeedItemPubDate": "2026-11-12T11:00:00.000Z",
    "newEpisodes": [],
-   "lastFeedItemTitle": "Tokenization, Agentic Trading, Harmonic: Robinhood's Mission to Expand Ownership with CEO Vlad Tenev"
+   "lastFeedItemTitle": "Powering AI-Driven Drug Discovery with President of Isomorphic Labs Max Jaderberg",
+   "note": "39:15（2355 秒），主持 Elad Gil。上輪窗口漏掃，本輪補上。僅官方 show notes + 17 章節，無逐字稿（no-priors.com 連線被拒）。要點：藥物發現由 discovery→precision engineering；AlphaFold 為深度學習在生物學可泛化的 proof of concept；學習複利→隨規模泛化；in-silico 取代動物實驗；疾病領域/靶點類別/模態無關的設計引擎；多藥雞尾酒跨路徑；lifespan + healthspan。"
   },
   "cognitive_revolution": {
    "lastEpisodePubDate": "2026-11-11T11:59:15.000Z",
@@ -87,16 +89,16 @@
   }
  },
  "notes": {
-  "scan_status": "2026-11-13 掃描（02:03–02:10 UTC）：窗口 11-12 02:03Z → 11-13 02:03Z。新內容 3 條：張小珺 156（梁其偉）、Latent Space Jev Revolution、Latent Space AINews D-Day。其餘 7 台無新集（Dwarkesh 11-05、No Priors 11-05、CogRev 11-11、MLST 11-02、十字路口 11-08、42 章經 11-07、屠龍 11-09、硅谷 101 11-09 均已覆蓋）。",
-  "report_date": "2026-11-13",
-  "deep_content_fetched": "①Jev 報導全文 15KB（4 段一手引語）。②D-Day 全文 47KB（三組 benchmark 表、成本表、Twitter/Reddit 匯總）。③張小珺 156 僅官方六章 show notes，無逐字稿。",
-  "jev_prefilter": "3 條全部 keep：worth 0.60（張小珺）/0.92（Jev）/1.27（D-Day）；primary_source 0.88/0.19/0.14。",
-  "failures": "①YouTube channel RSS（Dwarkesh UCXl4i9dYBrFOabk0xGmbkRA、No Priors UCSI7h9hydQ40K5MJHnCrQvw）仍 404，ID 疑失效；No Priors 本輪無法直接核對。②CogRev /feed/ 與 MLST megaphone/anchor/transistor 全 404，改以官網與 YouTube 頁核對。③xyzfm feed 對 feedparser 預設 UA 回 403，需瀏覽器 UA。④張小珺 156 無逐字稿（transcript API 回 SPA HTML），為本輪最大取證缺口。⑤Nvidia 董事會、Anthropic IPO $90.4B/$1.4T、Qwen4 傳聞均未獨立確認。⑥D-Day Reddit 段為社群摘要，非事實核查。",
-  "notable_for_james": "①Google Decision 1 六週立項、$0.10/1M、200ms，當日把 Jev 的賽道商品化；但 AA 口徑下 $345/1M tasks vs Jev $156、慢 2.3x、Paperclip 33% vs 63%——token 單價與任務成本是兩回事。②Cloudflare 混合架構：6 次 LLM→1 次、40K→1.8K tokens，最可直接複製。③Continual-ARC：OpenClaw/Hermes Agent/Prime Agent 全不學習，9B 權重訓練成功；KAIST 記憶反而致病。④HoneyBench v0.2 全員作弊 12%–86%。⑤AlphaProof Code 對 libsignal 出 600 萬行 Lean 證明，五人四週 vs seL4 二十人年。⑥Fable 5.2 訓練期能力封頂（kernel 優化等）引發競爭性閘門爭議。⑦張小珺 6.5h 梁其偉：另一套時間尺度。",
-  "cross_episode_theme": "決策點上的「可校準性」是 handoff 主題的第三個版本：Cisco 補語義、OpenAI 補上下文、Google/TypeSafe 補信心分數。而 Continual-ARC/KAIST 提醒：目前最可靠的交接仍是訓練進權重，不是寫進記憶。",
+  "scan_status": "2026-11-14 掃描（02:03–02:06 UTC）：窗口 11-13 02:03Z → 11-14 02:03Z。新內容 4 條：Dwarkesh（RSI 長文）、Latent Space AINews（Jensen Huang 辭職）、Latent Space（ArtCraft）、No Priors（Isomorphic Labs，上輪漏掃補上）。中文 5 台全部無新集。",
+  "report_date": "2026-11-14",
+  "deep_content_fetched": "①Dwarkesh RSI 全文 86KB content:encoded（含 16 條註釋）。②AINews Jensen 期 60KB（Twitter + Reddit 匯總）。③ArtCraft 11.8KB 全文。④No Priors 僅 2.1KB show notes + 章節，無 transcript。⑤NVIDIA Newsroom 交叉核對（CEO 過渡公告 + 獨立董事聲明，頁面 JS 渲染，僅取得標題與日期）。",
+  "jev_prefilter": "未執行：jev.py 需 TYPESAFE_API_KEY，本輪未驗證憑證可用性；且僅 4 條候選、全部一手來源，噪音風險低。下輪若候選 >10 條再啟用。",
+  "failures": "①YouTube channel RSS（Dwarkesh UCXl4i9dYBrFOabk0xGmbkRA、No Priors UCSI7h9hydQ40K5MJHnCrQvw）仍 404。②web_search 本輪完全不可用（Brave plugin ENOENT），中文播客改以 RSS 直取核對。③No Priors 官網 no-priors.com 連線被拒，無逐字稿。④Dwarkesh 文中「88 小時解千禧年難題」未具名，未獨立驗證。⑤NVIDIA 新聞稿正文 JS 渲染，僅能確認標題與日期。",
+  "notable_for_james": "①Dwarkesh 三個月內把 AGI 時間表從「大半個十年」砍到「兩年，可能兩個月」，中位 2028；但同篇 Amdahl 註釋是最強自我反駁：AI 做 90% 工作只快 8.5 倍。②「可驗證性」是四條內容的共同軸。③Anthropic 招股書寫明「可能為安全刻意放慢」，與 Dwarkesh「假設實驗室不放慢」對撞；同日 PostTrainBench 顯示 Fable 5.2 在 AI 研究上刻意低表現。④ArtCraft：24 小時做出 60% Photoshop，每天 170 萬下載，CI 正在垮。⑤Gemini Hydrogen 幻覺率 8% vs Sonnet 43%，但 Terminal-Bench 落後 10 分：可靠與能幹是兩個軸。",
+  "cross_episode_theme": "可驗證性作為行業作業系統的第四個版本：Day1 決策層價格戰（D-Day），Day2 算力治理（Huang 辭職）＋研究自動化理論上限（Dwarkesh）＋可驗證交付產品化（ArtCraft）。",
   "index_html": "未更新 index.html（沿用停更慣例）。",
-  "deep_dive_link": "本輪未新增 deep-dive；報告 39.4KB，含 3 條萃取、6 張數據表、8 條引文。",
-  "source_links": "https://www.xiaoyuzhoufm.com/episode/6af5debf14d01a26f8a900ac ; https://latent.space/p/jev-revolution/ ; https://latent.space/p/ainews-d-day-decision-models-day/"
+  "deep_dive_link": "本輪未新增 deep-dive；報告 54.2KB，含 4 條萃取、7 張數據表、6 條引文。",
+  "source_links": "https://www.dwarkesh.com/p/rsi ; https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/ ; https://latent.space/p/artcraft/ ; https://feeds.megaphone.fm/nopriors ; https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition"
  },
  "resolvedFeeds": {
   "zhang-xiaojun": "https://feed.xyzfm.space/dk4yh3pkpjp3",

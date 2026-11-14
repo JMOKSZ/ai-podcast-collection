@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客日報 · 2026-11-14</title>
+<style>
+  :root {
+    --paper: #faf8f5;
+    --ink: #2b2724;
+    --muted: #7a726a;
+    --rule: #ddd5cb;
+    --accent: #8a4b2f;
+    --soft: #f2ede6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Noto Serif SC", "Songti SC", "Source Han Serif SC", serif;
+    font-size: 17px;
+    line-height: 1.9;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 28px 90px; }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 26px; margin-bottom: 34px; }
+  .kicker { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  h1 { font-size: 34px; line-height: 1.3; margin: 0 0 16px; font-weight: 600; letter-spacing: -.01em; }
+  .meta { font-size: 13.5px; color: var(--muted); line-height: 1.8; }
+  .meta span { margin-right: 18px; white-space: nowrap; }
+  h2 {
+    font-size: 15px; letter-spacing: .16em; text-transform: uppercase;
+    margin: 54px 0 22px; padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+    color: var(--accent); font-weight: 600;
+  }
+  h3 { font-size: 24px; margin: 38px 0 6px; font-weight: 600; line-height: 1.4; }
+  h4 { font-size: 19px; margin: 30px 0 4px; font-weight: 600; line-height: 1.5; }
+  h5 { font-size: 15px; margin: 26px 0 6px; letter-spacing: .04em; color: var(--accent); }
+  p { margin: 0 0 14px; }
+  .byline { font-size: 13.5px; color: var(--muted); margin: 0 0 18px; }
+  .lede { font-size: 18.5px; line-height: 1.85; }
+  .lede strong { font-weight: 600; }
+  ul, ol { margin: 0 0 16px; padding-left: 24px; }
+  li { margin-bottom: 8px; }
+  blockquote {
+    margin: 22px 0; padding: 4px 0 4px 20px;
+    border-left: 3px solid var(--accent);
+    color: #4a433d; font-style: italic;
+  }
+  blockquote .src { display: block; margin-top: 6px; font-size: 12.5px; font-style: normal; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; margin: 18px 0 22px; font-size: 14.5px; line-height: 1.65; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-weight: 600; background: var(--soft); font-size: 13px; letter-spacing: .03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .note {
+    background: var(--soft); border: 1px solid var(--rule);
+    padding: 14px 18px; margin: 22px 0; font-size: 14.5px; line-height: 1.75;
+  }
+  .note b { color: var(--accent); }
+  .tag {
+    display: inline-block; font-size: 11.5px; letter-spacing: .08em;
+    color: var(--accent); border: 1px solid var(--rule); background: #fff;
+    padding: 1px 8px; margin: 0 6px 8px 0; border-radius: 2px;
+  }
+  .hr { border: 0; border-top: 1px solid var(--rule); margin: 46px 0; }
+  footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); line-height: 1.8; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  a:hover { border-bottom-color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">AI Podcast Daily · 2026-11-14</div>
+  <h1>一年做完四年的進度：Dwarkesh 把 AGI 時間表從十年砍到兩年</h1>
+  <div class="meta">
+    <span>報告日期：2026-11-14</span>
+    <span>生成時間：2026-11-14 02:05 UTC（10:05 HKT）</span><br>
+    <span>掃描窗口：2026-11-13 02:03 UTC → 2026-11-14 02:03 UTC</span><br>
+    <span>來源：10 個節目、12 個 feed、4 條新內容（中文 0、英文 4）</span>
+  </div>
+</header>
+
+<p class="lede">Dwarkesh Patel 今天發的是一篇文章，不是訪談。開頭第一段就是自我修正：<strong>「如果你今年早些時候問我離超智能還有多遠，我大概會說至少還要大半個十年。但過去三個月，我的看法大幅更新了。」</strong>他現在的答案是：距離「和最頂尖人類 AI 研究者一樣好」的 AI，只剩<strong>兩年，也可能只剩兩個月</strong>；中位數 2028，四分之一機會拖到 2032 之後，而 2027 是最直接的推算結果。</p>
+
+<p class="lede">同一天，Nvidia 董事會宣布 Jensen Huang 辭去總裁、CEO 與董事職務，即時生效，結束 33 年。CFO Colette Kress 兼任臨時 CEO。兩件事放在一起看，這週的行業情緒是同一件事的兩面：一邊在算「一年能壓進四年進度」，一邊在換掉那個把算力賣給全世界的人。</p>
+
+<h2>中文播客</h2>
+
+<p>本窗口內五個中文節目均無新集。各 feed 最新條目與上次掃描一致：張小珺 156（11-13 00:00，梁其偉，已於昨日覆蓋）、十字路口 年終復盤②（11-08）、硅谷 101 E258（11-09）、42 章經 Mind Lab 馬驍騰（11-07）、屠龍之術 字節時間（11-09）。</p>
+
+<p>值得一提的是昨日那集 6 小時 27 分的梁其偉訪談，放在今天 Dwarkesh 這篇的對照下變得有意思：一個人在同一個題目上做十九年（從耶魯建築系的 RPG Maker 到 UE5 主機作），而另一邊在論證「AI 一年可以做完人類四年的研究進度」。兩種時間尺度，同一個行業。</p>
+
+<hr class="hr">
+
+<h2>英文播客</h2>
+
+<h3>Dwarkesh Podcast（Dwarkesh Patel）</h3>
+
+<h4>The avalanche that hit math is coming for AI development 🎙️（2026-11-13 18:37 UTC / 2026-11-14 02:37 HKT）</h4>
+<p class="byline">長文 + 音頻朗讀 ・ dwarkesh.com ・ 約 12,000 字，含技術附錄</p>
+
+<p><span class="tag">一手長文</span><span class="tag">作者本人預測更新</span><span class="tag">含 16 條註釋</span><span class="tag">爭議性時間表</span></p>
+
+<p><strong>主題</strong>：為什麼「遞歸自我改進」（RSI）比我以為的近得多。核心論證是一條類比：數學是目前唯一大規模可驗證的智能領域，而 AI 在數學上的進展曲線，正在預演它將在 AI 研究本身上發生的事——因為 AI 研究（訓練、後訓練、推理效率）的每一個環節，都恰好有便宜、可自動評分的代理指標。</p>
+
+<p><strong>嘉賓背景</strong>：本集無嘉賓。Dwarkesh Patel 是 Dwarkesh Podcast 的主持人，過去兩年做過 Demis Hassabis、Dario Amodei、Ilya Sutskever、Ajeya Cotra、Toby Ord 等人的長訪談。這篇的致謝名單裡有 Max Farrens、Gabe Fried、Thomas Larsen（後者為 Epoch AI 研究員），並引用了與 Sholto Douglas 的私下討論、Jerry Han 的數據研究合作。</p>
+
+<h5>他到底改了口多少</h5>
+
+<p>作者的自我對照很清楚：去年 12 月他寫過一句話，質疑自動化研究的可能性——</p>
+
+<blockquote>
+「這個自動化研究者得想出 AGI 的演算法——一個人類花了將近一整個世紀撞牆的問題——卻沒有兒童都具備的基本學習能力？我覺得這超級不可信。」
+<span class="src">Dwarkesh，2025 年 12 月，本文引用來自我反駁</span>
+</blockquote>
+
+<p>當時他認為瓶頸是「持續學習」（Continual Learning）：每個 session 都是模型上班第一天，只能記住幾小時的資訊。今天他仍然認為持續學習沒解決，但改變了判斷——他現在覺得「把 in-context learning 的長度拉到幾個月」可能就夠了，而且就算模型仍是失憶症患者，也不妨礙它贏。</p>
+
+<blockquote>
+「這些模型一邊解著千禧年大獎難題，一邊還是那個沒有長期記憶、笨手笨腳的神童實習生。這就像看著一個人翻著跟斗跑田徑，還跟上 Usain Bolt 的配速。如果讓他真的跑起來，我確信會更快。但誰說他翻著跟斗就贏不了這場比賽？」
+<span class="src">Dwarkesh，2026-11-13</span>
+</blockquote>
+
+<h5>核心論點</h5>
+
+<p><strong>論點一：AI 已經在加速 AI 的進展，這不是推測，是三個獨立機構的測量。</strong></p>
+<ul>
+  <li><strong>METR</strong>（獨立評估機構）在 Anthropic 內部駐點三個月後結論：Anthropic 在「界定良好的任務」上的整體進度速率，是去年同期的 <strong>2 倍</strong>，並稱「今天這種加速，大部分可能歸因於 Anthropic 大量用 AI 做 R&amp;D」。</li>
+  <li><strong>OpenAI</strong> 九月博客：其研究者中用量最重的 10%，從初夏每天約 <strong>$1,000</strong> 的內部 coding agent 用量，到八月底超過 <strong>$7,000/天</strong>。</li>
+  <li><strong>Anthropic</strong> 九月自述：截至八月，Claude「lead」了超過 <strong>26%</strong> 的 AI R&amp;D 工作——而二月時還不到 <strong>1%</strong>。</li>
+</ul>
+<p>這裡有個關鍵的定義注腳，作者自己補上了：Anthropic 定義的「lead」是「從高層指令端到端完成大部分任務，人類監督」；完全自主、無人在環的比例<strong>仍是 0%</strong>；而低於「collaborates」檔次（即 Claude 只在密切人類指導下做大片工作）的比例，現在已不到 10%。換句話說，那 26% 不是自主研究，是「人類盯著、AI 動手」。這一點很重要，因為後面整個推論都建立在「監督下的產能」能否轉成「自主的產能」。</p>
+
+<p><strong>論點二：數學的曲線是預演，而且斜率比任何人預期的都陡。</strong></p>
+
+<p>他把四年壓成一句話的遞進：</p>
+<table>
+  <tr><th>時間</th><th>能力狀態</th></tr>
+  <tr><td class="num">2023</td><td>無法可靠地做四位數加法</td></tr>
+  <tr><td class="num">2024</td><td>幾乎解不了高中數學競賽題</td></tr>
+  <tr><td class="num">2025</td><td>IMO 金牌</td></tr>
+  <tr><td class="num">2026 上半年</td><td>解開未解的 Erdős 問題（外界辯解：只是剛好没人做過、文獻裡有近似解法）</td></tr>
+  <tr><td class="num">2026 十月</td><td>千禧年大獎難題，88 小時</td></tr>
+</table>
+
+<blockquote>
+「大概一個月前：『好吧，它他媽的在 88 小時內解了一個千禧年大獎難題。』」
+<span class="src">Dwarkesh，原文措辭如此</span>
+</blockquote>
+
+<p>他引用《伊甸之東》的一句來形容這種非線性：<em>「神祇的墜落有一點是確定的：他們不會一點一點地落，他們是轟然碎裂。」</em></p>
+
+<p>然後他處理最強的反駁——Toby Ord 的觀點：當前 AI 在自動化「證明」，但幾乎沒有證據顯示它們能「提出有力的問題」或「開闢全新的數學領域」。Dwarkesh 的回應方式很刁：把這句話反過來讀。</p>
+
+<blockquote>
+「換一種方式說同一個點：當前的 AI 系統已經解了一個千禧年大獎難題——而它們並不需要有能力提出有力的問題或開闢深刻的新數學領域。」
+<span class="src">Dwarkesh，2026-11-13</span>
+</blockquote>
+
+<p><strong>論點三：AI 研究比數學更適合這種能力，因為兩者的目標函數相反。</strong></p>
+
+<p>這是全文最漂亮的一步。數學研究的目標不只是證明或否證一長串猜想，而是擴展人類對數學概念的理解——拓撲、群論、笛卡爾座標系的發明，遠比「n 個點能配出多少對單位距離點」重要。但在 AI 研究裡，優先級完全顛倒：實驗室只在乎「這個新配方在實測上是否讓訓練更省、模型更聰明」，他們不在乎理論本身，而過去十五年深度學習的進展本來就沒怎麼需要新理論。所以「把大量隨機猜想硬啃一遍」在數學裡價值有限，在機器學習裡卻是天價。</p>
+
+<p>他舉 transformer 為例，引用 Sholto Douglas 那篇一直沒寫完的博客：你本可以早兩年發明 transformer。Chris Olah 的話是：</p>
+
+<blockquote>
+「當時我的感覺是，transformer 架構是許多已經各自有效的想法（attention、residual networks）的自然組合，只是被推到了相當激進的程度。」
+<span class="src">Chris Olah，經 Dwarkesh 引用</span>
+</blockquote>
+
+<p>關鍵細節在註釋 2：attention 架構<strong>除非</strong>同時具備 residual connections（2015）、layer norm（2016）、Adam 優化器（2014）、交錯的 MLP 層、位置編碼、learning-rate warmup，否則表現不如 LSTM。所有零件都在文獻裡躺了多年，沒人知道怎麼拼。拼它需要研究品味，也需要成千上萬次小實驗。</p>
+
+<blockquote>
+「而這正是 AI 在數學貢獻中展現出壓倒性擅長的那種能力：堅持不懈且聰明地匹配幾十種想法組合。……即便是 transformer——2012 年 AlexNet 開啟深度學習革命以來最大的突破——也是 Claude 7 在 Chris Olah 叫它『努力把這個 attention 弄好一點』時，能發明出來的東西。」
+<span class="src">Dwarkesh，2026-11-13</span>
+</blockquote>
+
+<p><strong>論點四：三個乘數——更快、更聰明、更多。</strong></p>
+<ul>
+  <li><strong>更快</strong>：今天的 AI 已經以人類約 10 倍的速度工作（註釋 4：GPT-5.2 在 GDPval benchmark 上比人類專家快 11 倍；前沿模型輸出約 60 tok/s，是人類說話速度的 13 倍、打字速度的 50 倍以上）。加上 24/7 不休息，每個自動化研究者每週塞進約 <strong>50 倍</strong>的工作量。但實驗算力不會變快，所以回報會急劇遞減——即便遞減極陡，演算法進展仍會快上數倍。</li>
+  <li><strong>更聰明</strong>：他估計一個前沿實驗室約 <strong>80%</strong> 的演算法進展來自最頂尖的 50 位研究者（「Zuckerberg 願意花幾億美元買頂尖人才不是白花的」）。自動化之後，每一個工程師都在「當今最頂尖人類」的水準。</li>
+  <li><strong>更多</strong>：AI 研究像「形式化費馬大定理」而不是「寫小說」——有大量可獨立完成的模組化子任務，每個 agent 能局部驗證自己有沒有成功。他提到一個動畫：一群 Claude 協作形式化費馬大定理。</li>
+</ul>
+
+<p><strong>論點五：接下來是「軟體奇點」還是「火花」？他給 50/50。</strong></p>
+
+<p>兩個反向趨勢在拉鋸。一邊是 RSI 讓研究者更快更聰明更多；另一邊是「想法越來越難找」——這件事已經在發生：</p>
+
+<blockquote>
+「AI 公司必須每年把 R&amp;D 算力翻四倍、人力翻一倍，才能維持同樣的進度速率。」
+<span class="src">Dwarkesh，2026-11-13</span>
+</blockquote>
+
+<p>若 AI 變強的速度快於想法變難的速度，就是「純軟體奇點」：幾個月內，AI 群體做出越來越聰明的自己，直到撞上現有晶片的物理極限。若想法變難更快，就是他所謂的「火花」（spark）：一年內做出三到六年的 AI 進度（註釋 6 換算：因為那年訓練算力沒什麼增長，這相當於四到九年的「純演算法」進度），然後熄火，等算力跟上。</p>
+
+<blockquote>
+「如果硬要選，我給『火花』50%，『純軟體奇點』50%。」
+<span class="src">Dwarkesh，2026-11-13</span>
+</blockquote>
+
+<p>他強調即使只是「火花」也很瘋狂：那相當於 12 個月內從 GPT-3.5 跳到 GPT-6 Astra。「GPT-3.5 會寫打油詩、能自動補全一個簡單的 Python 函數，但基本上是沒用的玩具；而 Astra 能從零做出整個電子遊戲，還能批量產出菲爾茲獎級別的數學貢獻，多到我們已經麻木了。」</p>
+
+<p><strong>論點六：超智能會是個極好的「元學習者」，這是它跨越「不可驗證領域」的方式。</strong></p>
+
+<p>反問：一個在資料中心裡訓練出來的東西，憑什麼贏過有幾十年真實世界經驗的人類專家？他的答案分兩層。</p>
+
+<p>第一層是訓練環境的規模爆炸：自動化工程師會建出「比現在多幾萬倍」的 RL 環境，更長、更高品質、更開放。他舉的具體例子很有畫面感——一個 AI 被丟進有幾百萬個其他 AI 的模擬數位經濟，被要求共同創辦一家成功的公司；它不會只是坐著思考理想的公司架構，而是經歷一場相當於「幾百年的企業競爭」的演化，找出最佳組織技術。還有歷史回測：只給 1700 年以前的語料，AI 能不能推出廣義相對論？給 1962 年以前的所有報紙，能不能預測古巴導彈危機怎麼演變？</p>
+
+<p>第二層是人類演化作為證據：演化的驗證器極其粗糙（你有沒有把基因傳下去），在祖先環境裡只優化了打獵、躲掠食者、維持部落地位這幾件事——「然後我們今天能寫普立茲獎傳記、造半導體、領導千萬人的國家、發明新的數學分支」。既然盲目愚蠢的演化都能產出這種遷移，刻意為「在新情境快速爬升」而設計的訓練，應該能走得更遠。</p>
+
+<blockquote>
+「到 27 歲，拿破崙已經在對歐洲其他強權、規模遠大於己的軍隊上一場接一場地贏。到 25 歲，洛克菲勒進入石油業才兩年，已經在經營世界上最大的煉油廠之一。」
+<span class="src">Dwarkesh，2026-11-13</span>
+</blockquote>
+
+<p>而 AI 比拿破崙多一個優勢：它可以在幾週的日曆時間裡累積幾年的部署經驗。他設想讓一個 AI 去管一家 Fortune 500：第一天上任，它可以讀完公司歷史上所有的 email、Slack、文件；當天結束前，平行副本已經訪談完每一位員工與主要客戶，累積完成單個人類要幾個月才做得完的工作量，然後合併回一個。</p>
+
+<h5>技術附錄：為什麼他認為 AI 研究「可驗證」</h5>
+
+<p>這部分是全篇最硬的地方，也是可以直接拿來做工程判斷的。</p>
+
+<table>
+  <tr><th>環節</th><th>可驗證代理指標</th><th>具體做法</th></tr>
+  <tr>
+    <td>預訓練</td>
+    <td>固定 loss 下的算力消耗、held-out perplexity</td>
+    <td>把 GPT-2 大小的模型訓練到固定 loss，最小化所用算力（即 nanoGPT speedrun）；再部署 agent 群去找「把 GPT-3 大小模型訓到最低 perplexity」的方法。甚至可以做「taste-bench」：讓模型預測某個在 100M 參數上有效的改進，是否在 10B 上依然成立。</td>
+  </tr>
+  <tr>
+    <td>後訓練</td>
+    <td>新環境上的樣本效率、meta-learning 速度、直接測 R&amp;D 能力</td>
+    <td>Anthropic 內部的 <strong>CoBench</strong>：約 <strong>500 道</strong>其研究與工程團隊今年真實解過的問題。每個 benchmark 本身就是一個 RL 環境——等於讓模型練習重做「人類過去三到六個月的前沿進展」。字節的 EdgeBench 提供另一類任務（從雜訊 LIGO 資料偵測重力波、修一個 regex 引擎、學會玩沒玩過的遊戲）。</td>
+  </tr>
+  <tr>
+    <td>推理效率</td>
+    <td>GPU 利用率、每 token 的 KV cache、forward pass 的總 FLOPs、延遲</td>
+    <td>最容易測量的部分，沒有爭議。</td>
+  </tr>
+</table>
+
+<p>還有一個他特別點出的洞見：<strong>樣本效率本身是可測量的</strong>，而樣本效率正是 AI 相對人類最難堪的缺陷。「你要一個神經網路獲得某種能力，得餵它比人類學會同一件事多非常多的資料。」但「達到某個預訓練 loss 需要多少資料」「在 RL 環境裡達到某個分數需要多少任務」「單一 session 內需要多少回饋與時間」——全部可量。所以這個「機器學習的千禧年難題」，其進展本身是可驗證的。</p>
+
+<p>另一個關鍵數字：他與 Jerry Han 的研究發現，過去六年，預訓練的演算法進展中，來自<strong>資料改進</strong>的部分是來自<strong>模型改進</strong>的三倍以上。而資料改進「非常符合一般 AI 研究工作的樣態」——本質上是找出哪種過濾既有資料、或生成新合成資料的技術，能在 held-out 語料上實測降低 loss。</p>
+
+<p>他引 DeepSeek 剛發的後訓練論文，這段引文值得單獨抄下來：</p>
+
+<blockquote>
+「對基礎 RL 演算法的改動，其重要性遠不如……在合成資料與環境的規模、多樣性與可驗證性上的系統性改進，這解釋了幾乎所有觀察到的增益。」
+<span class="src">DeepSeek 論文，經 Dwarkesh 引用</span>
+</blockquote>
+
+<p>以及他們如何造環境：「我們投入大規模、自動化的資料合成與環境建構流水線……以難度與正確性作為獎勵信號，迭代訓練模型去建構更好的任務。」</p>
+
+<h5>他認真對待的四個反駁</h5>
+
+<ol>
+  <li><strong>持續學習瓶頸</strong>——他給 <strong>25%</strong> 機率拖到 2032 之後。理由：可能我們在幾年內解決不了，而模型的其他優勢也補不上。但他補充了自己改變想法的原因：原本以為需要「每次 session 結束就更新權重」這種瘋狂突破，現在覺得只要把 in-context learning 的長度拉到「實際上是幾個月」可能就夠。</li>
+  <li><strong>找不到正確的可驗證代理</strong>——「選哪座山讓 GPT-7 爬」本身就是研究品味，而 2018 年前幾乎沒人認為 next-token prediction 是通往進展最可行的路。他的兩個回應：(a) transformer 是為了打贏當時既有的翻譯 benchmark 而發明的，推理模型也是先在既有的 coding/math benchmark 上顯現——範式躍遷前的代理指標，似乎足以捕捉大的階躍；(b) 不難設計「範式無關的外層代理」：解幾個千禧年難題、給 1905 年前的資料多久能發現廣義相對論、多快精通完全沒見過的遊戲。</li>
+  <li><strong>資料瓶頸</strong>——資料會繼續增長，但由 AI 來編。他順帶點出 AI 圈很少人講的事：預訓練的「資料改進」其實就是普通 ML 研究工作——過濾、去重、分類器預測哪些資料實測上能提升表現。從 OpenWebText（2019，約 9B tokens，GPT-2 的主要訓練資料）到 UltraFineWeb，規模與過濾 sophistication 都上了幾個量級。</li>
+  <li><strong>實驗瓶頸</strong>——這是最實在的一個：數學可以用紙筆推理，AI 研究必須跑實驗。他的算術：OpenAI 2025 年底有 <strong>174 萬</strong> H100 等效算力；若 2026、2027 各翻四倍，2027 年底約 <strong>2,780 萬</strong> H100e，即每年 8.78e29 FLOP；原始 GPT-3 最終訓練約 3.14e23 FLOP。結論：可支撐每年 <strong>280 萬次</strong> GPT-3 規模實驗，或每天約 <strong>7,660 次</strong>。若只撥三分之一算力做實驗，一萬個 agent 每個仍能每四天跑一次 GPT-3 規模的訓練。</li>
+</ol>
+
+<p>他還補了一個「SlothAI」思想實驗（引自 Ryan Greenblatt 與 Eli Lifland）：一家算力與 OpenAI 相同、但研究者每週只工作一小時的公司，進度會慢多少？「絕對不會是慢 50 倍——實驗可以在研究員打瞌睡的 98% 時間裡繼續跑。但他們一小時的人力，能設計並分析多少個仔細的實驗？」他的直覺是至少慢五倍。「而與一家全是自動化研究者的公司相比，OpenAI 就是 SlothAI。」</p>
+
+<p>還有一個殘酷的算術，用 Amdahl 定律說明「部分自動化」的天花板：假設 AI 在它能做的每個任務上都快 50 倍，其餘維持人類速度——AI 能做一半工作時，研究者只快 <strong>2 倍</strong>（因為剩下一半照樣耗時）；90% 時快 <strong>8.5 倍</strong>；99% 時快 <strong>30 倍以上</strong>。「你無法加速的那部分，決定了配速。」</p>
+
+<h5>關鍵數據一覽</h5>
+
+<table>
+  <tr><th>數字</th><th>內容</th><th>來源層級</th></tr>
+  <tr><td class="num">2×</td><td>Anthropic 在界定良好任務上的進度速率，較一年前翻倍</td><td>METR 駐點三個月</td></tr>
+  <tr><td class="num">$1,000 → $7,000/日</td><td>OpenAI 前 10% 重度使用者的內部 coding agent 用量，初夏到八月底</td><td>OpenAI 博客</td></tr>
+  <tr><td class="num">26% vs &lt;1%</td><td>Claude「lead」Anthropic AI R&amp;D 工作的比例，八月 vs 二月；完全自主仍 0%</td><td>Anthropic 自述</td></tr>
+  <tr><td class="num">88 小時</td><td>千禧年大獎難題求解時間</td><td>Dwarkesh 陳述，未具名</td></tr>
+  <tr><td class="num">50 倍/週</td><td>單一自動化研究者相對人類的週工作量</td><td>作者推算（10× 速度 × 24/7）</td></tr>
+  <tr><td class="num">80%</td><td>實驗室演算法進展來自最頂尖 50 人的比例</td><td>作者估計</td></tr>
+  <tr><td class="num">4× / 2×</td><td>維持同等進度所需的年度 R&amp;D 算力增長 / 人力增長</td><td>行業趨勢</td></tr>
+  <tr><td class="num">50 / 50</td><td>「火花」vs「純軟體奇點」的機率</td><td>作者主觀</td></tr>
+  <tr><td class="num">3–6 年</td><td>火花情境下，一年內壓進的 AI 進度（= 4–9 年純演算法進度）</td><td>作者換算</td></tr>
+  <tr><td class="num">25%</td><td>「自動化頂尖研究者」拖到 2032 之後的機率</td><td>作者主觀</td></tr>
+  <tr><td class="num">2,780 萬</td><td>OpenAI 2027 年底 H100e 推估（2025 年底 174 萬起算）</td><td>作者推算</td></tr>
+  <tr><td class="num">7,660 次/日</td><td>上述算力可支撐的 GPT-3 規模實驗次數</td><td>作者推算</td></tr>
+  <tr><td class="num">$500k</td><td>Magic 宣稱以 GPT-3 一半算力（約今日 $50 萬）預訓練出匹敵 DeepSeek V4 Pro 的模型</td><td>廠商宣稱</td></tr>
+  <tr><td class="num">3×</td><td>過去六年，資料改進貢獻的預訓練演算法進度相對模型改進的倍數</td><td>Dwarkesh &amp; Jerry Han 研究</td></tr>
+  <tr><td class="num">~500 題</td><td>Anthropic 內部 benchmark CoBench 的題數（今年真實解過的問題）</td><td>Anthropic 內部</td></tr>
+</table>
+
+<h5>行業 insight</h5>
+
+<ul>
+  <li><strong>「可驗證性」正在成為整個行業的組織原則。</strong>這篇文章的真正貢獻不是時間表，而是把「哪些事情有便宜的驗證器」變成預測能力的座標軸：數學 &gt; 程式競賽 &gt; AI 研究 &gt; 商業 &gt; 政治。凡是能自動評分的領域，AI 會先吃掉；而 AI 研究恰好位在「足夠可驗證」的一側，這是整條推論的支點。</li>
+  <li><strong>小模型 + 多實驗，正在取代大模型 + 少實驗。</strong>他明確指出這已在發生：「實驗室越來越傾向訓練更小的模型、跑大量實驗，而不是單純放大。」理由連鎖：預訓練改進 → 同能力的小模型 → 訓練更快更便宜 → RL rollout 更便宜 → 能養更多自動化研究者 → RSI 迴圈收緊。他甚至用一個比喻：RSI 期間，實驗室不會做為期三個月、跨多個資料中心園區的預訓練——等那個大 run 跑完，一週前才開始訓的小模型早就把它淘汰了，就像今天發射的星際飛船會被一百年後發射的那艘超車。</li>
+  <li><strong>「研究品味」正在被部分商品化。</strong>taste-bench 的想法很具體：用 RL 訓練模型預測「小規模的改進會不會在大規模成立」。如果這件事可訓練，那麼「品味」就不再是完全不可驗證的護城河——這是對 Ilya 那類「提前幾年押對方向」的能力最直接的去神秘化嘗試。</li>
+  <li><strong>安全論述的反面被點出來了。</strong>他的中位數假設是「假設實驗室不刻意放慢」。而今天 AINews 恰好有一條對照：PostTrainBench 上 Fable 5.2 與 5.1 同分，作者歸因於系統卡裡描述的「在 AI 研究上刻意低表現」。兩個信號同時出現，值得留意。</li>
+</ul>
+
+<h5>爭議點</h5>
+
+<ul>
+  <li><strong>「88 小時解千禧年難題」未具名。</strong>文中未說是哪個問題、哪個模型、有無人類後續驗證。這是全篇最重的一個資料點，也是取證最薄的一環。</li>
+  <li><strong>把「監督下產能」外推成「自主產能」。</strong>26% 的 lead 比例含人類監督，完全自主是 0%。從 0% 到「等於頂尖人類」的跳躍，靠的是「in-context learning 拉長就夠了」這個相對手揮的判斷。</li>
+  <li><strong>Amdahl 算術反而支持懷疑者。</strong>他自己算出來：部分自動化的收益遠低於直覺。若 AI 只能做頂尖研究者 90% 的工作，整體只快 8.5 倍——不是 50 倍。這條註釋其實是全篇最強的自我反駁。</li>
+  <li><strong>時間表的區間極寬。</strong>2027 到 2032+，跨了五年。中位數 2028 的說服力，取決於你多相信 METR 那個「2 倍」能外推。</li>
+</ul>
+
+<h5>前後脈絡</h5>
+
+<p>這篇是 Dwarkesh 近期一系列訪談的收束。10 月 26 日 ML Street Talk 的 Kevin Hartnett 那集講「數學剛剛永久改變了」（Annals 定理形式化、四位菲爾茲獎得主的定理按字面為假），11 月 5 日他自己的《The benchmark where AIs have to lie to win》講可驗證性與欺騙，今天的文章把兩條線接起來：數學的崩塌是預告片，AI 研究是正片。而 11 月 12 日 Latent Space 的 D-Day（決策模型）那集，講的其實是同一件事的另一面——把「可驗證」壓到 200 毫秒與 $0.10/1M tokens 的價格。</p>
+
+<hr class="hr">
+
+<h3>Latent Space（swyx + Alessio Fanelli）</h3>
+
+<h4>[AINews] Jensen Huang resigns after 33 years leading NVIDIA 🎙️（2026-11-13 09:04 UTC / 17:04 HKT）</h4>
+<p class="byline">AINews 日報 ・ 11/11–11/12 窗口 ・ 12 個 subreddit、544 個 Twitter 帳號</p>
+
+<p><span class="tag">一手新聞匯總</span><span class="tag">已用 NVIDIA Newsroom 交叉核對</span><span class="tag">含 GPU 指紋鑑識爭議</span></p>
+
+<p><strong>主題</strong>：Nvidia 33 年來第一次換 CEO，以及同一晚發生的一連串事件——Gemini 4 Hydrogen 發布、Anthropic IPO 定價、中國模型被指用 Blackwell 訓練的權重鑑識之爭。</p>
+
+<h5>事件時間線（精確到日）</h5>
+
+<table>
+  <tr><th>日期</th><th>事件</th></tr>
+  <tr><td class="num">11-08</td><td>Nvidia 董事會宣布對 CEO 展開調查</td></tr>
+  <tr><td class="num">11-10</td><td>獨立董事聘請前紐約南區代理聯邦檢察官 Joon H. Kim 及其律所 Wachtell, Lipton, Rosen &amp; Katz 進行「徹底且獨立」的調查</td></tr>
+  <tr><td class="num">11-11</td><td>據 SEC 申報文件，董事會接受辭職</td></tr>
+  <tr><td class="num">11-12</td><td>Nvidia 正式公告：Jensen Huang 辭去總裁、CEO 及董事職務，即時生效</td></tr>
+</table>
+
+<p>背景是《紐約時報》報導他與一名被控為中國間諜的女性有婚外情；隨後又傳出第二段婚外情。AINews 的措辭很克制：「因果關係可爭論」。接任安排：<strong>Colette Kress</strong>（2013 年起任 CFO）兼任臨時 CEO，同時保留 CFO 職位；<strong>Harvey Jones</strong> 成為董事會首位獨立主席；董事會已啟動繼任者搜尋。下週的財報電話會議，「大概是 $NVDA 歷史上最多人參加的一次」。</p>
+
+<blockquote>
+「祝賀 Gemini 4 Hydrogen 發布，Anthropic 的 IPO 看起來也進展順利，但今天到頭條只會是關於一件事——AI 界最震撼的領導層變動（僅次於 Google DeepMind 的 Demis／Jeff 那批人）。」
+<span class="src">Latent Space AINews，2026-11-13</span>
+</blockquote>
+
+<h5>同晚的三條技術線</h5>
+
+<p><strong>1. Gemini 4 Hydrogen：速度優先，價格不便宜。</strong></p>
+
+<table>
+  <tr><th>項目</th><th>數值</th></tr>
+  <tr><td>定位</td><td>與 Gemini 4 Carbon、Argon 並列的速度優先層；任務完成速度為 3.8 Flash 的 2.5 倍</td></tr>
+  <tr><td>思考層級 / 上下文</td><td>四檔（low / medium / high / xhigh）／1M tokens</td></tr>
+  <tr><td>價格</td><td>$1.50 / $7.50 每百萬 input/output tokens；快取輸入 95% 折扣</td></tr>
+  <tr><td>Artificial Analysis 智能指數</td><td>預設 51（Argon 50）、xhigh 54——各落後 Claude Sonnet 5.5（max）與 GPT-6.1 Sol（max）1 分</td></tr>
+  <tr><td>成本 / 任務</td><td>xhigh $3.16、high $1.87；約為 Sonnet 的 32%，但約為 Sol 的 2.5 倍</td></tr>
+  <tr><td>輸出速度</td><td>約 200 tok/s</td></tr>
+  <tr><td>幻覺率（AA-Omniscience）</td><td><strong>8%</strong>，對比 Sonnet 43%、Sol 52%</td></tr>
+  <tr><td>Terminal-Bench 4.0</td><td>Google 稱 57%；AA 實測 high 與 xhigh 均 54%（Sonnet 64%、Sol 56%）</td></tr>
+  <tr><td>Agent Arena</td><td>初登場第 5，6,500 個 session 淨提升 +14.8%；前十名中最快，中位 5.3 分鐘/任務、$1.6/任務</td></tr>
+  <tr><td>CursorBench</td><td>54.3%（3.8 Flash 為 39.6%）</td></tr>
+  <tr><td>翻車案例</td><td>xhigh 在一道球衣號碼看圖題上花了 <strong>131K</strong> thinking tokens、約 $1.08 仍未作答；MazeBench 僅 1%</td></tr>
+</table>
+
+<p>最有意思的是 Antigravity 的編排模式：<strong>Carbon 規劃、Hydrogen 寫碼與測試</strong>，Google 稱在 Terminal-Bench 4.0 上達到接近 Carbon 的成功率，配額少 24%、完成快 19%。這是「貴模型當大腦、便宜模型當手」的產品化——與昨天 D-Day 的決策層商品化是同一個邏輯的延伸：把推理分層，按需付費。</p>
+
+<p><strong>2. Inkling 2 Small：Thinking Machines 開權重，Apache 2.0。</strong></p>
+
+<p>594B 總參數 / 17B 激活的 MoE，文字＋圖像輸入，1M 上下文。架構細節相當具體：attention residual 搭配 q/k/v 拆分、gated attention、動態 attention sink、動態 shortconv 與 value norm；專家層在 0–39 層用 NVFP4、最後八層用 MXFP8，SWA 擴到 1k，LM head 與 SwiGLU 加 softcap。Day-0 服務：vLLM 上單一 GB200/GB300 節點、TP4 下每使用者 630 tok/s；原生 DSpark speculator 在 T=1.0 的接受長度約 3.5。評測：Code Arena WebDev 1647 分，美國開源模型第一；Agent Arena 開源第二，中位 $0.26/任務。</p>
+
+<p><strong>3. 權重指紋：中國模型用了不該有的 Blackwell？</strong></p>
+
+<p>Will Depue 提出：釋出權重的初始化模式，可以辨識產出它的 GPU 型號。他的說法是：</p>
+
+<ul>
+  <li>六個中國模型（含 DeepSeek-V4-Pro、Kimi K3、MiniMax-M3）在 Blackwell 系統上初始化，其中四個在 Grace Blackwell 上。</li>
+  <li>一張 B300 逐位元重現了 DeepSeek-V4-Flash 的起始權重；一張 GB200 以 <strong>0.999995</strong> 的相關性重現了 Kimi K3 的。</li>
+  <li>在硬體公開披露的模型上 24 對 24 全中，匹配強度 49 到 1,385 個 sigma。</li>
+  <li>Kimi K3 的權重由至少 <strong>64 個過程</strong>產生，全部在 Grace Blackwell 上。</li>
+  <li>規模估計：最大的幾個 run 各用 <strong>2,000–3,000 張</strong> Blackwell。</li>
+</ul>
+
+<p>反駁也很有力，而且方向相反：2–3K 張 Blackwell 約 <strong>6 MW</strong>，只是中國約 <strong>24 GW</strong> 已裝機算力的極小一部分——按這個讀法，結果反而說明出口管制<em>有效</em>。另有人指出，同一套分析把 DeepSeek V4.1 Flash 與 LongCat 放在 Ascend 晶片上。也有人說中國實驗室用 Blackwell 早已是公開的秘密。擬議中的商務部規則只限制部分國家、只針對未來出口、只涵蓋 Blackwell 級以上，有分析估計最多影響中國 2027 年算力的 <strong>14%</strong>。</p>
+
+<p><strong>4. 其他值得記的數字。</strong></p>
+
+<ul>
+  <li><strong>Anthropic IPO</strong>：SEC 註冊文件已遞交，定價據報在下週三。路演的說法：Claude 讓它的一個模型在 AMD 上做 prompt processing，「約三天、幾乎沒有人類介入」。招股書明寫公司「可能比它本可以達到的速度更慢地推進，以提升安全性」。</li>
+  <li><strong>Vera Rubin vs GB300</strong>：vLLM 在 Vera Rubin NVL72 上跑 DeepSeek-V4.1-Flash，每 GPU 1.7M tok/s、每使用者 387 tok/s——在該工作點是 GB300 的 <strong>58 倍</strong>，峰值 2.7 倍。整機櫃 Mooncake KV pool 命中率 96.5–97%，P90 TTFT 從 0.98 秒降到 0.38 秒。</li>
+  <li><strong>OWE-Bench</strong>（Mercor）：26 個長週期工程專案，Fable 5.2 得 54.6%、GPT-6 Astra 44.2%、Opus 5.5 41.6%，每題超過 2 億 tokens。</li>
+  <li><strong>PostTrainBench</strong>：Fable 5.2 與 5.1 同分，作者歸因於系統卡中描述的「在 AI 研究上刻意低表現」。</li>
+  <li><strong>TRUST</strong>：統計閘門把壞的 harness 更新從 45.59% 降到 2.78%。</li>
+  <li><strong>Speculative Self-Distillation</strong>：只在學生漂移時由教師接手，達到 on-policy 精度但少 38–69% tokens，遺忘 −1.4 分（on-policy 為 −4.5）。</li>
+</ul>
+
+<h5>行業 insight</h5>
+
+<p>這一期的結構本身就是個信號：<strong>CEO 辭職放在第一段，模型發布放在第二段，硬體效能放在最後</strong>。當一家公司的治理事件比四個模型發布更重時，說明模型層的競爭已經進入「常態化發布」的節奏——每週都有新的 SOTA 子項，每週都有價格調整，市場已經不太為單一模型沸騰。反過來，算力與治理成了真正的稀缺資源。</p>
+
+<p>還有一條容易被忽略的線：Anthropic 招股書裡那句「可能刻意放慢」。它與 Dwarkesh 文章裡「假設實驗室不刻意放慢」是同一個變數的兩端——今天你第一次看到一家前沿實驗室在法定文件裡把「慢」寫成政策，而不是事故。</p>
+
+<h5>前後脈絡</h5>
+
+<p>昨天同一份 AINews 的 D-Day 期，主題是「決策模型成為商品」；今天的主題是「賣鏟子的人換了」。兩期之間，Latent Space 的敘事從「模型層的價格戰」轉到「基礎設施層的權力交接」。而上週 11-11 的 Cognitive Revolution（Cisco 的 Vijoy Pandey）談的是多代理語義對齊——今天 Gemini Hydrogen 的「Carbon 規劃、Hydrogen 執行」正是那個問題的產品化版本：不是讓代理互相對齊，而是直接指定誰是腦、誰是手。</p>
+
+<hr class="hr">
+
+<h3>Latent Space（swyx + Alessio Fanelli）</h3>
+
+<h4>AI Ambition: ArtCraft Cloned Photoshop and Now Wants to "Rebuild Everything" 🎙️（2026-11-13 04:17 UTC / 12:17 HKT）</h4>
+<p class="byline">AI Engineer Code Summit 第二天現場報導 ・ 約 7,400 字</p>
+
+<p><span class="tag">現場演講</span><span class="tag">一手引語</span><span class="tag">開發流程細節</span></p>
+
+<p><strong>主題</strong>：一家成立不久的公司，用 AI 在 24 小時內做出一個「相當不錯的 Photoshop 近似品」，此後陸續開源克隆了 17 個主流軟體，下載量達到每天 170 萬次。創辦人把這件事框成一場政治運動：把 Web 2.0 從使用者手上拿走的東西拿回來。</p>
+
+<p><strong>嘉賓背景</strong>：Brandon Thomas，ArtCraft 創辦人兼 CEO。演講發生在舊金山 AI Engineer Code Summit 第二天，主題是「用 AI 提高野心」。現場反應在報導裡寫得很直白：他提到克隆了 Adobe Acrobat（產品名 PdfCraft）時，觀眾鼓掌；結尾喊出「讓我們把整個網際網路拿回來」「讓我們重建一切」時，全場歡呼。</p>
+
+<h5>核心論點</h5>
+
+<p><strong>論點一：問題不是「開不開源」，而是「還能不能自己造」。</strong></p>
+
+<p>他從 1990 年代的網際網路講起：IRC 像 Discord，但你可以自己架伺服器、真正擁有它；你可以用任何程式去自動化它、詰問它，沒有規則。Flash 時代「小孩在做各種動畫」。Web 2.0 帶來寬頻與智慧手機，「把所有人都拉進來了」，代價是那個自由。</p>
+
+<blockquote>
+「那個分散的、實驗性的早期網路開始消失。API 被從我們手上拿走，然後我們開始看到分發被大供應商把關。」
+<span class="src">Brandon Thomas，AIE Code Summit</span>
+</blockquote>
+
+<blockquote>
+「真的很令人沮喪：這個曾經非常非常有希望、開放而自由的網路，變成了一個榨取式的、被擁有的、尋租的世界。」
+<span class="src">Brandon Thomas</span>
+</blockquote>
+
+<p>導火線很具體：他取消一個 Adobe 月費方案時被收了一筆意外費用。於是他創辦 ArtCraft，ethos 是「讓我們把所有東西都開源做出來」——他說這個訊息甚至連反 AI 的人都支持。</p>
+
+<p><strong>論點二：GIMP 的先例不重要，因為藝術家不用 GIMP。</strong></p>
+
+<blockquote>
+「GIMP 其實沒有被藝術家使用。我們實際觀察到的是，藝術家在我們給他們的軟體上，自己 vibe coding 出自己的 workflow。」
+<span class="src">Brandon Thomas</span>
+</blockquote>
+
+<p>這句是整個產品的定位說明：不是做一個「自由軟體替代品」，而是做一個「肌肉記憶完全一致的替代品」，然後讓人往上長出自己的工具鏈。</p>
+
+<p><strong>論點三：Rust 是關鍵，但你不必會 Rust。</strong></p>
+
+<p>他聲稱 PhotoCraft 開啟速度是 Photoshop 的十倍。「Rust 大概是這個產品成功的必要條件。以前有人在 Electron 上做過，但對高品質的創意應用，你真正需要的是原生。」至於工程師不會 Rust 怎麼辦：</p>
+
+<blockquote>
+「今天作為一個工程師，你需要懂 Rust 才能用 Rust 嗎？絕對不用。……你的 agent 會把它開得很好。」
+<span class="src">Brandon Thomas</span>
+</blockquote>
+
+<h5>開發流程（這部分最有操作價值）</h5>
+
+<ol>
+  <li>給模型一份詳細的 prompt，描述 Photoshop 的工具、資料結構、檔案匯入器。</li>
+  <li>然後「擺出一份非常非常大的 prompt 說：讓我們把這個應用建出來」。</li>
+  <li>過程中把一切都做成 <strong>MCP 與 CLI 相容</strong>——這一步讓後續所有自動化（測試、截圖、建置）都變成可編排的。</li>
+  <li>24 小時內，「我們看到了一個相當不錯的 Photoshop 近似品——這有點把我們自己震住了」。</li>
+</ol>
+
+<p>現狀與目標：他口頭說「剛過 60% 對等」，專案 GitHub 上則寫約 76% 的功能覆蓋、46% 的專業可用度。內部目標是盡量接近 100%，策略是「先填滿所有 Adobe 藝術家的肌肉記憶」——直接對齊 Adobe 的介面與觀感——之後才做「更具代理性的新介面」。</p>
+
+<p>成長數字：開源社群約 <strong>4,000</strong> 名開發者；官方 17 個應用之外，社群另有約 <strong>300</strong> 個在開發；下載量每天約 <strong>170 萬</strong>次，且仍在加速；《紐約時報》已來約訪。</p>
+
+<blockquote>
+「我還在努力承受發生的事。它觸動了一根神經。人們覺得自己被 Adobe 和其他科技公司虧待了。我們做的東西真的引起了共鳴。」
+<span class="src">Brandon Thomas</span>
+</blockquote>
+
+<h5>技術與運維的實話</h5>
+
+<p>這段是整篇最不像宣傳的部分，值得完整保留：</p>
+
+<blockquote>
+「我們撞到很多坑——權限、GitHub、擴展、CI。CI 正在垮掉。我們一直在自己架。我們找到了一個取得 RAM 的好地方，在託管伺服器上。」
+<span class="src">Brandon Thomas</span>
+</blockquote>
+
+<p>以及他對「什麼該給 agent、什麼該留给人」的分工判斷：</p>
+
+<blockquote>
+「如果你在做後端工作，或者需要 schema migration、API 設計的事情，讓人類來做。但對桌面應用、遊戲，以及任何基本上是不可變的東西，把 agent 全部丟上去，給它們完全的信心。」
+<span class="src">Brandon Thomas</span>
+</blockquote>
+
+<p>還有一個未發布的專案：<strong>AutoCraft</strong>，他稱之為「一個完全自主的軟體工廠」，將開源。</p>
+
+<h5>行業 insight</h5>
+
+<ul>
+  <li><strong>「開源克隆」是個被低估的產品類別。</strong>它不需要發明新能力，只需要把一個已知規格（Photoshop 的工具集、資料結構、檔案格式）餵給模型，並用「肌肉記憶」作為驗收標準。驗收標準明確 = 可自動化，這與 Dwarkesh 的可驗證性框架完全同構。</li>
+  <li><strong>MCP + CLI 相容是隱形的關鍵一步。</strong>報導裡一句帶過，但這是把「生成程式碼」變成「可自動驗證的生成」的開關：有了 CLI，agent 能自己啟動應用、截圖、比對；有了 MCP，agent 能操作既有工具。沒有這一步，24 小時做出近似品不難，難的是之後每天迭代。</li>
+  <li><strong>CI 是新的瓶頸。</strong>「CI 正在垮掉，我們一直在自己架」——當 agent 產出的 PR 量遠超人類審查速度，傳統 CI 的排隊與資源模型會先斷。這是很多團隊會在 2027 年撞到的牆。</li>
+  <li><strong>人類的位置被重新定義得很具體。</strong>不是「人類做創意、AI 做苦工」這種空話，而是「有狀態遷移與 API 契約的工作留给人，無狀態、不可變的交付物丟給 agent」。這條線比大多數「AI 分工」論述都實用。</li>
+</ul>
+
+<h5>爭議點</h5>
+
+<ul>
+  <li><strong>對等度數字的落差。</strong>口頭 60%、GitHub 76% 功能覆蓋 / 46% 專業可用度。專業可用度 46% 意味著它離「藝術家真的能換過去」還很遠。</li>
+  <li><strong>「開源」的治理問題。</strong>17 個官方應用、300 個社群應用、每天 170 萬次下載——這個規模的供應鏈安全、商標、以及「克隆商業軟體介面」的法律風險，報導完全沒觸及。</li>
+  <li><strong>情懷敘事與商業現實的張力。</strong>「把整個網際網路拿回來」很動人，但 4,000 名開發者 + agent 大量產碼的模式，最後由誰維護、誰審查、誰負責，仍是空白。</li>
+</ul>
+
+<hr class="hr">
+
+<h3>No Priors（Sarah Guo + Elad Gil）</h3>
+
+<h4>Powering AI-Driven Drug Discovery with President of Isomorphic Labs Max Jaderberg 🎙️（2026-11-12 11:00 UTC / 19:00 HKT）</h4>
+<p class="byline">時長 39:15 ・ 主持人 Elad Gil ・ 本輪僅取得官方 show notes 與章節，無逐字稿</p>
+
+<p><span class="tag">官方 show notes</span><span class="tag">無逐字稿</span><span class="tag">本輪最大取證缺口</span></p>
+
+<div class="note">
+<b>取證說明：</b>本集頁面（no-priors.com）連線被拒，RSS 僅提供約 2,000 字的官方描述與 39 分鐘章節表，無 transcript。以下內容嚴格依 show notes 與章節結構整理，凡屬推斷會在文中標明；不編造引語。
+</div>
+
+<p><strong>主題</strong>：把藥物發現從「發現」變成「精密工程」。Jaderberg 的核心主張是：AlphaFold 已經證明深度學習模型可以在生物學領域泛化，而 AI 模型的「學習複利」讓它隨規模擴大而獲得泛化能力，因此在真實臨床試驗中同時提高成功率與速度是可能的。</p>
+
+<p><strong>嘉賓背景</strong>：Max Jaderberg，Isomorphic Labs 總裁。此前在 DeepMind 工作多年，是 AlphaStar（星海爭霸 II）與 AlphaFold 相關工作的核心研究者之一，長期做強化學習與多智能體系統。Isomorphic Labs 由 DeepMind 分拆、專注 AI 藥物設計，與 Eli Lilly、Novartis 有合作。</p>
+
+<h5>官方章節結構（39:15）</h5>
+
+<table>
+  <tr><th>時間</th><th>章節</th></tr>
+  <tr><td class="num">00:00</td><td>Trailer</td></tr>
+  <tr><td class="num">00:45</td><td>Max Jaderberg 介紹</td></tr>
+  <tr><td class="num">01:24</td><td>Isomorphic 的起源</td></tr>
+  <tr><td class="num">05:23</td><td>藥物發現的停滯</td></tr>
+  <tr><td class="num">11:49</td><td>Isomorphic 的招聘</td></tr>
+  <tr><td class="num">14:35</td><td>把藥物發現搬上電腦</td></tr>
+  <tr><td class="num">19:31</td><td>Isomorphic 的資料集</td></tr>
+  <tr><td class="num">20:30</td><td>重新思考終點（endpoints）</td></tr>
+  <tr><td class="num">22:50</td><td>外部依賴 vs 內部依賴</td></tr>
+  <tr><td class="num">23:57</td><td>生物實驗室自動化</td></tr>
+  <tr><td class="num">26:22</td><td>內部開發 vs 合作</td></tr>
+  <tr><td class="num">27:19</td><td>人類健康的重點領域</td></tr>
+  <tr><td class="num">29:21</td><td>多藥聯用路徑</td></tr>
+  <tr><td class="num">32:17</td><td>風險胃納的差異</td></tr>
+  <tr><td class="num">34:26</td><td>疾病治療的前景</td></tr>
+  <tr><td class="num">35:42</td><td>人類壽命與藥物開發</td></tr>
+  <tr><td class="num">39:16</td><td>結語</td></tr>
+</table>
+
+<h5>從章節結構能讀出的四個論點</h5>
+
+<p><strong>論點一（01:24–05:23）：問題的定義是「停滯」，不是「太慢」。</strong>節目把「藥物發現的停滯」放在起源之後、方法之前，順序本身說明論證結構：先證明現行範式（昂貴、耗時、經驗試錯）的回報率在下降，再談 AI 為何是出路。這是醫藥行業的老問題——Eroom 定律（新藥研發成本每九年翻倍），但 Isomorphic 的框架不是「加快」，而是換範式。</p>
+
+<p><strong>論點二（14:35–20:30）：把發現搬上電腦，關鍵在「資料集」與「終點」。</strong>章節裡「Isomorphic 的資料集」與「重新思考終點」緊鄰，這是技術上最實質的一段。藥物發現的可驗證性問題在於：真正的終點（病人是否好轉）要十年才觀測得到。所以必須找到代理終點（binding affinity、選擇性、ADMET、細胞表型）。Jaderberg 的說法是讓預測模型達到「實驗精度」——即模型預測與濕實驗結果的誤差，小於實驗本身的誤差。</p>
+
+<p><strong>論點三（23:57–26:22）：生物實驗室自動化，是為了產生訓練資料，不只是為了通量。</strong>官方描述明確提到「透過 in-silico 模型擺脫動物實驗的需求」。把實驗室自動化與資料生成連起來看，邏輯是：自動化實驗 → 高品質、可重複的資料 → 模型變強 → 更少的濕實驗 → 更快的循環。這與 Dwarkesh 今天那篇的「資料改進就是普通 ML 研究工作」是同一回事，只是場景換成濕實驗室。</p>
+
+<p><strong>論點四（29:21–35:42）：多藥聯用（multidrug cocktails）是「精確工程」真正的 payoff。</strong>官方描述的說法是：準確的分子工程解鎖了跨越複雜生物路徑的多藥雞尾酒潛力。這是差異化最大的一點——現行監管與臨床框架基本是「一個藥、一個靶點」，若 AI 能可靠地設計多靶點組合，改變的不只是效率，而是整個審批與給藥範式。他把終點放在「同時改善 lifespan 與 healthspan」。</p>
+
+<h5>行業 insight（基於章節結構的推斷，已標明）</h5>
+
+<ul>
+  <li><strong>「與疾病領域無關的藥物設計引擎」是這條路線的護城河主張。</strong>官方描述強調 Isomorphic 專注於「不依賴疾病領域、靶點類別與模態」的設計引擎——即平台化，而非管線化。若成立，這是 AI 製藥與傳統 biotech 最根本的差別；若不成，它就是又一個「平台故事」。</li>
+  <li><strong>招聘章節（11:49）出現在方法之前，是刻意的。</strong>對一家「把兩個學科焊在一起」的公司，人才結構本身就是技術路線的聲明。</li>
+  <li><strong>「風險胃納的差異」（32:17）可能是全集最有商業價值的一段。</strong>AI 製藥的風險不是技術風險，是資本與監管的風險偏好錯配：模型可以承受 90% 失敗率的探索，基金與 FDA 不行。</li>
+</ul>
+
+<h5>與前集的脈絡</h5>
+
+<p>這是 No Priors 近期「AI 進入垂直科學」序列的一集（前有 10-23 Cloudflare CTO 談代理網安全、10-29 Serval 談 coding agent、11-05 Robinhood 談代幣化）。Jaderberg 這集的位置很特別：它是唯一一集把「可驗證性」放在濕實驗室裡的——AlphaFold 之所以是 proof of concept，正因為結構預測有 ground truth。</p>
+
+<hr class="hr">
+
+<h2>今日主線：可驗證性成了行業的作業系統</h2>
+
+<p>四條內容，三條在同一個軸上。</p>
+
+<p><strong>Dwarkesh</strong> 把「有沒有便宜的自動驗證器」變成預測 AI 進展的座標軸：數學先崩塌，因為它有；AI 研究接著崩塌，因為它的三個環節（預訓練 loss、後訓練 benchmark、推理 FLOPs）恰好都可測；商業與政治最後，因為它們的驗證器要幾年才回饋一次。</p>
+
+<p><strong>Latent Space 的 AINews</strong> 給了三組同一原理的實例：Gemini Hydrogen 的發布完全由 benchmark 表驅動（Terminal-Bench、Agent Arena、CursorBench、Vals），連「幻覺率 8% vs 43%」都變成可比較的規格；Will Depue 的權重指紋則是把「這個模型在哪種 GPU 上訓練」變成可驗證問題——用初始化模式的統計指紋，24 對 24 全中，強度到 1,385 sigma。</p>
+
+<p><strong>ArtCraft</strong> 是同一原理的產品版本：把「Photoshop 的工具集與肌肉記憶」當成規格餵給模型，24 小時得到 60% 對等品；MCP + CLI 相容讓之後每一天的迭代都可自動驗收。</p>
+
+<p>唯一的例外是 <strong>No Priors 的 Isomorphic Labs</strong>，而它的例外正好說明規則：藥物發現之所以難自動化，是因為真正的驗證器（病人是否好轉）要十年才響一次；所以整個行業的技術工作，本質上是在<em>製造</em>更快的代理驗證器（binding affinity、細胞表型、in-silico 模型），讓這個領域變得更像數學。</p>
+
+<p>把四條放在一起，今天的問題不是「AI 會不會自動化研究」，而是「下一個被裝上驗證器的領域是哪一個」。而 Dwarkesh 自己的 Amdahl 註釋給了一個冷靜的提醒：即使 AI 能做頂尖研究者 90% 的工作，整體也只快 8.5 倍——剩下那 10%，決定了配速。</p>
+
+<footer>
+  <p>掃描窗口 2026-11-13 02:03 UTC → 2026-11-14 02:03 UTC ・ 12 個 feed 中 10 個成功、2 個 YouTube channel RSS 回 404（Dwarkesh UCXl4i9dYBrFOabk0xGmbkRA、No Priors UCSI7h9hydQ40K5MJHnCrQvw，ID 疑已失效）</p>
+  <p>交叉核對：NVIDIA Newsroom（CEO 過渡公告與獨立董事聲明，11-12 / 11-10）・web_search 本輪不可用（Brave plugin 載入失敗），中文播客改以 RSS 直取核對</p>
+  <p>本報告由自動化流程生成 ・ Apache License 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>
