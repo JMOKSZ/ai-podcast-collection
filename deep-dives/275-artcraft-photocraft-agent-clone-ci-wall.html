@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 把肌肉記憶當規格——ArtCraft 用 agent 在 24 小時內克隆 Photoshop，然後撞上四道牆</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  td { color: #444; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.55rem; }
+    table { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">Latent Space · AI Engineer Code Summit · 2026-11-13 · 約 22 分鐘閱讀</div>
+  <h1>把肌肉記憶當規格<br>——ArtCraft 用 agent 在 24 小時內克隆 Photoshop，然後撞上四道牆</h1>
+  <div class="meta">
+    <div>〈AI Ambition: ArtCraft Cloned Photoshop and Now Wants to "Rebuild Everything"〉</div>
+    <div>出品：Latent Space<span>·</span>作者：Latent Space 編輯部<span>·</span>性質：AI Engineer Code Summit 第二天現場報導</div>
+    <div>發布：2026-11-13 04:17 UTC（12:17 HKT）<span>·</span>約 7,400 字</div>
+    <div>講者：Brandon Thomas（ArtCraft 創辦人兼 CEO）<span>·</span>來源：Latent Space 現場報導全文；產品數字另引 PhotoCraft GitHub 的 parity 文件</div>
+  </div>
+</header>
+
+<p>開場先講一個很具體的場景：會議第二天早上，Brandon Thomas 提到他們把 Adobe Acrobat 也克隆了，產品叫 PdfCraft，台下響起一輪掌聲。演講收尾，他喊「讓我們把整個網際網路拿回來」「讓我們重建一切」，全場歡呼。</p>
+
+<p>這種場面在 AI 會議上不常見。而掌聲的原因不是技術，是情緒——他花了大半場時間講的不是模型，是一筆 Adobe 的取消訂閱費。</p>
+
+<p>但把情緒剝掉之後，這場演講裡有一份<strong>相當具體的產品規格說明</strong>，以及一段關於「agent 能碰什麼、不能碰什麼」的分工判斷。前者解釋了為什麼 24 小時能做出一個 Photoshop 近似品；後者才是真正會被 2027 年的工程團隊反覆引用的部分。</p>
+
+<div class="data-point">
+  <span>24 小時</span> 從一份 prompt 到「相當不錯的 Photoshop 近似品」。<br>
+  <span>17 + 300</span> 官方開源應用 17 個；社群另有約 300 個在開發。<br>
+  <span>170 萬 / 日</span> 下載量，且仍在加速。<br>
+  <span>60% / 76% / 46%</span> 口頭「剛過 60% 對等」；GitHub 寫 76% 功能覆蓋、46% 專業可用度。<br>
+  <span>4,000</span> 開源社群開發者人數。
+</div>
+
+<div class="section-title">一、導火線是一筆取消費，但論證是一整套 Web 2.0 敘事</div>
+
+<p>他從 1990 年代講起。不是為了懷舊，是為了建立一個基準：那時候使用者「可以自己造」。</p>
+
+<blockquote>
+  「我們那時有一堆完全開放的聊天應用。IRC 就像 Discord，但你可以架自己的伺服器，而你真的擁有它。你可以用任何程式去自動化它、去詰問它，沒有規則。」
+  <span class="attribution">—— Brandon Thomas，AI Engineer Code Summit，2026-11-13</span>
+</blockquote>
+
+<p>他的重點不是「那時一切都開源」，而是「那時使用者可以自由地造東西」。他舉 Flash 為例——一個最後被 Adobe 收購的商業動畫工具——「小孩在做各種動畫」。</p>
+
+<p>然後 Web 2.0 來了，寬頻與智慧手機「把所有人都拉進來了」。他承認這擴大了網路軟體的範圍，但代價是那份自由：</p>
+
+<blockquote class="strong">
+  「那個分散的、實驗性的早期網路開始消失。API 被從我們手上拿走，然後我們開始看到分發被大供應商把關。」
+  <span class="attribution">—— Brandon Thomas（原文：<em>The APIs got taken away from us, and then we started seeing distribution being gatekept by the big providers.</em>）</span>
+</blockquote>
+
+<blockquote>
+  「真的很令人沮喪：這個曾經非常非常有希望、開放而自由的網路，變成了一個榨取式的、被擁有的、尋租的世界。」
+  <span class="attribution">—— Brandon Thomas（原文：<em>extractive, owned, rent-seeking world</em>）</span>
+</blockquote>
+
+<p>導火線他自己說了：取消一個 Adobe 月費方案時，被收了一筆意外費用。於是他創辦 ArtCraft，ethos 是「讓我們把所有東西都開源做出來」——他說這個訊息甚至連反 AI 的人都支持。</p>
+
+<p>這裡值得停一下。這段敘事有一個明顯的張力：他一邊說「API 被拿走、分發被把關」，一邊自己的產品是透過一個 launcher 分發、依靠 GitHub 與雲端 CI。他沒有回應這個矛盾。但作為一場動員演講，它有效——因為它把「開源」從一個工程偏好，變成了一個政治立場。</p>
+
+<div class="section-title">二、定位：不是 GIMP 的替代品，是肌肉記憶的替代品</div>
+
+<p>現場有人（或他預期有人）會問：Photoshop 不是早有開源替代品 GIMP 嗎？</p>
+
+<blockquote class="strong">
+  「GIMP 其實沒有被藝術家使用。我們實際觀察到的是，藝術家在我們給他們的軟體上，自己 vibe coding 出自己的 workflow。」
+  <span class="attribution">—— Brandon Thomas（原文：<em>GIMP isn't really used by artists. We actually observed artists vibe coding their own workflows on top of the software that we gave them.</em>）</span>
+</blockquote>
+
+<p>這句話是整個產品的定位說明，而且它比表面聽起來更精確。它包含兩個判斷：</p>
+
+<ol>
+  <li><strong>自由軟體長期輸在遷移成本，不是功能。</strong>GIMP 免費、功能不少，但藝術家的肌肉記憶、快捷鍵、面板佈局、檔案往返流程都在 Photoshop 上。切換成本不是錢，是手指。</li>
+  <li><strong>真正的需求不是「替代」，是「可改造的起點」。</strong>藝術家拿到一個足夠像的工具之後，會自己往上長出自己的 workflow——這件事在 GIMP 上沒發生，因為 GIMP 的架構與 UI 不歡迎這件事。</li>
+</ol>
+
+<p>所以策略很明確：<strong>先做一個肌肉記憶完全一致的替代品，再讓人往上長。</strong>用他的話：</p>
+
+<blockquote>
+  「現在我們想填滿所有用 Adobe 的藝術家的肌肉記憶。所以我們直接對準 Adobe 的介面與『觀感』。」
+  <span class="attribution">—— Brandon Thomas</span>
+</blockquote>
+
+<p>之後才做「有更具代理性的新介面」的新應用。這個順序是刻意的：先用熟悉感換取採用，再用 agent 能力換取差異化。</p>
+
+<div class="section-title">三、24 小時是怎麼發生的：一份規格，一次巨型 prompt，和一個隱形開關</div>
+
+<p>這是整場演講最有操作價值的部分。流程拆開來只有四步：</p>
+
+<ol>
+  <li>給模型一份<strong>詳細的 prompt，描述 Photoshop 的工具、資料結構、檔案匯入器</strong>。</li>
+  <li>然後「擺出一份非常非常大的 prompt 說：讓我們把這個應用建出來」。</li>
+  <li>過程中把一切做成 <strong>MCP 與 CLI 相容</strong>。</li>
+  <li>24 小時內，「我們看到的是一個相當不錯的 Photoshop 近似品——這有點把我們自己震住了」。</li>
+</ol>
+
+<p>第 3 步是全部步驟裡最容易被略過、但最關鍵的一步。報導裡只有一句帶過，但它其實是把「生成程式碼」變成「可自動驗證的生成」的開關：有了 CLI，agent 能自己啟動應用、截圖、比對；有了 MCP，agent 能操作既有工具。<strong>沒有這一步，24 小時做出近似品不難；難的是之後每一天的迭代。</strong></p>
+
+<p>換句話說，他做的不是「讓 AI 寫一個 app」，而是「先造一個 agent 能自己驗收的環境，再讓 agent 在裡面長時間迭代」。這與今天 Dwarkesh 那篇文章的框架完全同構：<strong>先把驗收標準自動化，再生產。</strong></p>
+
+<p>而驗收標準是什麼？他給了兩個層次，數字有落差：</p>
+
+<table>
+  <tr><th>口徑</th><th>數字</th><th>含義</th></tr>
+  <tr><td>口頭（演講）</td><td>剛過 <strong>60%</strong> 對等</td><td>「still not at 100% parity」</td></tr>
+  <tr><td>GitHub parity 文件</td><td><strong>76%</strong> 功能覆蓋</td><td>工具、選單、檔案格式的廣度</td></tr>
+  <tr><td>GitHub parity 文件</td><td><strong>46%</strong> 專業可用度</td><td>職業使用者能否真的換過去</td></tr>
+</table>
+
+<p>這個落差本身就是最有資訊量的一組數字。功能覆蓋 76% 聽起來很強，但專業可用度 46% 意味著一半以上的日常工作流程仍然會斷。而「肌肉記憶」這件事，恰恰是斷在最後那 30% 的細節裡——濾鏡的行為、色彩的預設、批次處理的邊界條件。</p>
+
+<div class="section-title">四、Rust 是必要條件，但你不必會 Rust</div>
+
+<p>他聲稱 PhotoCraft 的開啟速度是 Photoshop 的十倍。</p>
+
+<blockquote>
+  「Rust 大概是這個產品成功的必要條件。以前有人在 Electron 上做過，但對高品質的創意應用，你真正需要的是原生。」
+  <span class="attribution">—— Brandon Thomas（原文：<em>for high-quality creative apps, you really need something that's native.</em>）</span>
+</blockquote>
+
+<p>然後是這場演講裡最「2026」的一句。現場的工程師大概都在想：我的團隊不會 Rust。他的回答：</p>
+
+<blockquote class="strong">
+  「今天作為一個工程師，你需要懂 Rust 才能用 Rust 嗎？絕對不用。……你的 agent 會把它開得很好。」
+  <span class="attribution">—— Brandon Thomas（原文：<em>Your agents will drive it just fine.</em>）</span>
+</blockquote>
+
+<p>這句話值得拆開看，因為它同時是對的與危險的。</p>
+
+<p><strong>對的部分：</strong>語言選擇的成本結構變了。以前選 Rust 意味著招聘、培訓、上手期；現在 agent 能承擔大部分樣板與 API 細節，人類只需要讀懂編譯器錯誤與所有權模型的核心概念。</p>
+
+<p><strong>危險的部分：</strong>「agent 會把它開得很好」在記憶體安全、並發、unsafe 邊界這些地方，恰好是最不成立的。Rust 的價值在於讓錯誤在編譯期暴露；但一個不懂所有權的團隊，加上一個會「想辦法讓它編譯過」的 agent，最後很可能是用 unsafe 或 clone 把問題繞過去。編譯過不代表正確。</p>
+
+<p>這條界線，其實與他自己後面講的分工判斷是同一個邏輯：<strong>不可變的、可驗收的東西可以全交給 agent；有狀態的、契約性的東西必須留给人。</strong></p>
+
+<div class="section-title">五、撞到的牆：CI 正在垮掉</div>
+
+<p>這是整場演講最不像宣傳、也最值得完整保留的一段：</p>
+
+<blockquote class="strong">
+  「我們撞到很多坑——權限、GitHub、擴展、CI。CI 正在垮掉。我們一直在自己架。我們找到了一個取得 RAM 的好地方，在託管伺服器上。」
+  <span class="attribution">—— Brandon Thomas（原文：<em>CI is falling over. We've been spinning up our own.</em>）</span>
+</blockquote>
+
+<p>四個坑裡，三個是「AI 寫程式」這件事的直接副作用：</p>
+
+<ul>
+  <li><strong>權限</strong>——agent 需要能建 repo、推分支、開 PR、讀 CI log；而企業的權限模型是為人類設計的。</li>
+  <li><strong>GitHub</strong>——PR 量遠超人類審查速度時，review queue 變成瓶頸，不是 merge 而是「誰來看」。</li>
+  <li><strong>CI</strong>——傳統 CI 的排隊與資源模型假設「每天幾十個 PR」；當 agent 一天產出幾百個 commit，runner 佇列、測試時間、快取命中率全部失效。他的解法是自己架，並在 co-located 伺服器上找記憶體。</li>
+</ul>
+
+<p>這段話之所以重要，是因為它給出了一個時間點預測：<strong>CI 是 2027 年很多團隊會撞到的牆。</strong>不是模型不夠強，是交付管線的吞吐量跟不上生成速度。</p>
+
+<p>而「我們找到了一個取得 RAM 的好地方，在託管伺服器上」這種句子，是整篇報導裡最真實的一句——它不是架構願景，是一句運維吐槽。</p>
+
+<div class="section-title">六、人與 agent 的分工線：有狀態 vs 不可變</div>
+
+<p>他們最後找到的平衡，用一句話講完：</p>
+
+<blockquote class="strong">
+  「如果你在做後端工作，或者需要 schema migration、API 設計的事情，讓人類來做。但對桌面應用、遊戲，以及任何基本上是不可變的東西，把 agent 全部丟上去，給它們完全的信心。」
+  <span class="attribution">—— Brandon Thomas（原文：<em>for desktop apps and games and anything that's basically immutable, throw your agents at it and give them full confidence.</em>）</span>
+</blockquote>
+
+<p>這條線比大多數「AI 分工」論述都實用，因為它給了一個可操作的判準：<strong>看交付物是不是不可變的。</strong></p>
+
+<table>
+  <tr><th>維度</th><th>留給人類</th><th>丟給 agent</th></tr>
+  <tr><td>狀態</td><td>有狀態（DB、production 資料）</td><td>無狀態（編譯產物、桌面二進位）</td></tr>
+  <tr><td>契約</td><td>API 設計、schema migration（改了就回不去）</td><td>UI 佈局、渲染、互動（錯了重跑）</td></tr>
+  <tr><td>驗收</td><td>需要判斷「這個設計對不對」</td><td>需要判斷「這個測試過不過」</td></tr>
+  <tr><td>失敗成本</td><td>不可逆、影響他人</td><td>可丟棄、只影響自己</td></tr>
+</table>
+
+<p>注意他用的詞是「give them full confidence」——不是「監督下放手」，是「給它們完全的信心」。這在 agent 工程裡是一個很具體的立場：<strong>在可回退的環境裡，審查成本高於錯誤成本。</strong>你不需要 review 每一個 commit，你需要一個能快速丟棄與重建的環境。</p>
+
+<div class="section-title">七、還沒發布的那個東西：AutoCraft</div>
+
+<p>演講尾聲他提到一個未發布的專案：</p>
+
+<blockquote>
+  「AutoCraft 是一個完全自主的軟體工廠，我們將會開源。」
+  <span class="attribution">—— Brandon Thomas</span>
+</blockquote>
+
+<p>報導沒有給細節——沒有架構、沒有時間表、沒有「自主」的定義。這是一個需要標記的空白：在沒有規格的情況下，「完全自主的軟體工廠」目前只是一個名稱。</p>
+
+<p>但把它與前面的流程放在一起，可以合理推測它的形狀（以下為推斷，非報導內容）：一份可驗收的規格 → agent 產碼 → CLI/MCP 自動啟動與截圖驗收 → CI 自動跑 → 失敗則回饋重做。也就是「24 小時克隆 Photoshop」那個流程的產品化與常態化。</p>
+
+<div class="section-title">八、規模與反應：一場沒預期到的共鳴</div>
+
+<p>數字的部分很驚人，但也需要標明口徑：</p>
+
+<ul>
+  <li>開源社群約 <strong>4,000</strong> 名開發者。</li>
+  <li>官方 <strong>17</strong> 個應用；社群另有約 <strong>300</strong> 個在開發。</li>
+  <li>下載量每天約 <strong>170 萬</strong>次，且仍在加速。</li>
+  <li>《紐約時報》已來約訪。</li>
+</ul>
+
+<p>產品線也比他開場講的廣：除了 PhotoCraft，還有 PdfCraft（Acrobat）、Figma 的克隆、WordCraft（文書處理）、以及社群主導、透過 ArtCraft launcher 分發的 CAD 專案 SolidCraft。他強調這些「不只桌面應用開源，連實際的基礎設施也開源」。</p>
+
+<blockquote>
+  「我還在努力承受發生的事。它觸動了一根神經。人們覺得自己被 Adobe 和其他科技公司虧待了。我們做的東西真的引起了共鳴。」
+  <span class="attribution">—— Brandon Thomas</span>
+</blockquote>
+
+<p>報導補了一個細節：演講結束後，他被聽眾圍住。這個畫面比任何下載數字都更能說明這件事的性質——它是一場情緒的釋放，產品只是載體。</p>
+
+<div class="section-title">九、行業 insight：四個可以直接拿走的判斷</div>
+
+<p><strong>第一，「開源克隆」是一個被低估的產品類別。</strong>它不需要發明新能力，只需要把一個已知規格（Photoshop 的工具集、資料結構、檔案格式）餵給模型，並用「肌肉記憶」作為驗收標準。驗收標準明確 = 可自動化 = 可以交給 agent 長時間迭代。這正是 Dwarkesh 那條「可驗證性」軸線的產品版本，只是驗證器不是 benchmark，而是「藝術家打開它會不會找不到工具」。</p>
+
+<p><strong>第二，MCP + CLI 相容是隱形的關鍵一步。</strong>它把「應用」變成「可被 agent 操作的物件」，於是測試、截圖、建置、比對全部變成可編排的步驟。這一層做與不做，決定你是在「用 AI 寫一次程式」還是在「用 AI 持續維護一個產品」。</p>
+
+<p><strong>第三，CI 是新的瓶頸，而且是組織問題不是技術問題。</strong>「CI 正在垮掉，我們一直在自己架」——當 agent 產出的 PR 量遠超人類審查速度，傳統 CI 的排隊與資源模型會先斷。很多團隊會在 2027 年撞到這面牆，而解法不是更快的 runner，是<strong>改變「什麼需要 review」的規則</strong>。</p>
+
+<p><strong>第四，人類的位置被重新定義得很具體。</strong>不是「人類做創意、AI 做苦工」這種空話，而是「有狀態遷移與 API 契約的工作留给人，無狀態、不可變的交付物丟給 agent」。這條線比大多數「AI 分工」論述都實用，因為它可以用一個問題來判斷：<strong>這個東西錯了，能不能直接丟掉重做？</strong></p>
+
+<div class="section-title">十、爭議與空白</div>
+
+<p><strong>一、對等度數字的落差。</strong>口頭 60%、GitHub 76% 功能覆蓋 / 46% 專業可用度。「專業可用度 46%」意味著它離「藝術家真的能換過去」還很遠——而整場演講的敘事前提，正是「藝術家會換過去」。</p>
+
+<p><strong>二、「開源」的治理問題。</strong>17 個官方應用、300 個社群應用、每天 170 萬次下載——這個規模的供應鏈安全、商標、以及「克隆商業軟體介面」的法律風險，報導完全沒觸及。UI 的觀感（look and feel）在部分司法管轄區是可以主張的；而一個以「直接對準 Adobe 介面」為策略的產品，把這件事放在了最前面。</p>
+
+<p><strong>三、情懷敘事與商業現實的張力。</strong>「把整個網際網路拿回來」很動人，但 4,000 名開發者 + agent 大量產碼的模式，最後由誰維護、誰審查、誰負責，仍是空白。開源的歷史告訴我們：下載量與貢獻者數量不是同義詞，而 300 個社群應用裡有多少會活過一年，沒人知道。</p>
+
+<p><strong>四、報導本身的立場。</strong>這是一篇現場報導，語氣明顯帶著好感（「最讓我感興趣的其實是它人類貢獻者社群的增长」）。所有數字都來自講者本人或專案自己的文件，沒有第三方稽核。这一点需要读者自己打折。</p>
+
+<div class="section-title">十一、與同日 Dwarkesh 那篇的對照</div>
+
+<p>把這兩篇放在同一天讀，會看到同一個機制的兩個面。</p>
+
+<p>Dwarkesh 從上往下推：<strong>哪些領域有便宜的自動驗證器，AI 就會先吃掉那裡。</strong>數學 &gt; 程式競賽 &gt; AI 研究 &gt; 商業 &gt; 政治。</p>
+
+<p>ArtCraft 從下往上做：<strong>找到一個已經有明確規格的東西（Photoshop），把規格餵給模型，用肌肉記憶當驗收標準，24 小時得到 60%。</strong></p>
+
+<p>兩篇的中間那層是同一句話：<strong>可驗證性不是模型的能力，是任務的屬性。</strong>Photoshop 之所以能在 24 小時內被克隆，不是因為 Claude 特別懂影像處理，而是因為「Photoshop 應該長什麼樣」這件事有幾百萬個受過訓練的人可以一眼判斷對錯——包括 agent 自己，只要給它 CLI 和截圖。</p>
+
+<p>而這個框架也解釋了 ArtCraft 的天花板在哪：<strong>專業可用度 46% 的那 54%，恰好是「無法用眼睛驗收」的部分</strong>——色彩管理的數值正確性、批次處理的邊界、外掛生態的相容性。這些不是 UI 像不像的問題，是幾十年累積的隱性規格。驗證器覆蓋不到的地方，就是它停下來的地方。</p>
+
+<div class="highlight-box">
+  <p><strong>如果只能帶走一句話：</strong>24 小時做出 60% 的秘密，不是模型會寫程式，而是「像不像 Photoshop」這件事可以被自動截圖驗收。剩下 40% 之所以難，是因為它不再能被看見。</p>
+</div>
+
+<hr>
+
+<footer>
+  <p>來源：Latent Space，〈AI Ambition: ArtCraft Cloned Photoshop and Now Wants to "Rebuild Everything"〉，2026-11-13 發布，AI Engineer Code Summit 第二天現場報導。<br>
+  原文連結：<a href="https://latent.space/p/artcraft">latent.space/p/artcraft</a><br>
+  本文所有直接引語均譯自該報導，關鍵句附英文原句；60% / 76% / 46% 三個數字的口徑差異按報導與 PhotoCraft 的 parity 文件分別標明。AutoCraft 一節的架構描述為本文推斷，已明確標示。</p>
+  <p>生成時間：2026-11-14 06:00 UTC · 深度復述 #275</p>
+</footer>
+
+</div>
+</body>
+</html>

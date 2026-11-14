@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 翻著跟斗也能贏——Dwarkesh 把 AGI 時間表從十年砍到兩年，靠的是一條「可驗證性」的斜線</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  td { color: #444; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.55rem; }
+    table { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a class="back-link" href="../index.html">← 返回播客日報</a>
+
+<header>
+  <div class="ep-num">Dwarkesh Podcast · 2026-11-13 · 約 30 分鐘閱讀</div>
+  <h1>翻著跟斗也能贏<br>——Dwarkesh 把 AGI 時間表從十年砍到兩年，靠的是一條「可驗證性」的斜線</h1>
+  <div class="meta">
+    <div>〈The avalanche that hit math is coming for AI development〉</div>
+    <div>出品：Dwarkesh Podcast<span>·</span>作者：Dwarkesh Patel<span>·</span>性質：一手長文 + 本人朗讀音頻，非訪談</div>
+    <div>發布：2026-11-13 18:37 UTC（2026-11-14 02:37 HKT）<span>·</span>本篇正文約 12,000 字 + 16 條註釋 + 技術附錄</div>
+    <div>來源：dwarkesh.com 原文全文（本文所有引語均據原文翻譯，關鍵句附英文原句）；致謝名單含 Max Farrens、Gabe Fried、Thomas Larsen（Epoch AI）</div>
+  </div>
+</header>
+
+<p>Dwarkesh Patel 今天發的不是訪談，是一篇自我修正。</p>
+
+<p>開頭第二段就把自己過去一年的立場推翻：</p>
+
+<blockquote class="strong">
+  「如果你今年早些時候問我，我們離超智能還有多遠，我大概會說至少還有大半個十年。但過去三個月，我的看法大幅更新了。」
+  <span class="attribution">—— Dwarkesh Patel，2026-11-13（原文：<em>I'd probably have said at least the better part of a decade. But over the last three months, I've updated my views a ton.</em>）</span>
+</blockquote>
+
+<p>他現在的答案是：距離「和最頂尖人類 AI 研究者一樣好」的 AI，只剩<strong>兩年，也可能只剩兩個月</strong>。中位數 2028；四分之一機會拖到 2032 之後；而 2027 是把 METR 那個「一年翻倍」直接代入起飛模型後最直接的推算結果。</p>
+
+<p>這篇文章在技術圈引起的震動，不是因為時間表本身——Shorten 時間表的人一直都有——而是因為它給了一條<strong>可操作的分界線</strong>：哪些領域會先被 AI 吃掉，取決於那個領域有沒有便宜、可自動評分的驗證器。數學有，所以先塌；AI 研究也有，所以接著塌；商業與政治沒有，所以最後。</p>
+
+<div class="data-point">
+  <span>2 年 / 2 個月</span> Dwarkesh 對「AI 等於頂尖 AI 研究者」的估計區間，中位數 2028。<br>
+  <span>2×</span> METR 在 Anthropic 駐點三個月後的結論：界定良好任務上的進度速率，是一年前的兩倍。<br>
+  <span>26% vs &lt;1%</span> Claude「lead」Anthropic AI R&amp;D 工作的比例：八月 vs 二月。完全自主仍是 0%。<br>
+  <span>50 / 50</span> 「火花」（一年壓進 3–6 年進度）vs「純軟體奇點」的機率。<br>
+  <span>7,660 次 / 日</span> 依算力推算，2027 年底可支撐的 GPT-3 規模實驗次數。
+</div>
+
+<p>下面我會按他的論證順序走一遍，然後專門處理兩件在中文轉述裡最容易漏掉的事：<strong>那 26% 到底算不算自主</strong>，以及<strong>他自己那條 Amdahl 註釋，其實是全篇最強的反駁</strong>。</p>
+
+<div class="section-title">一、先給證據，再給推論：三個獨立機構的測量</div>
+
+<p>Dwarkesh 很清楚「時間表」這類文章最容易死在沒有證據，所以他把最硬的三組數字放在最前面，而且全部來自機構而非他本人：</p>
+
+<table>
+  <tr><th>機構</th><th>測量</th><th>數字</th></tr>
+  <tr><td>METR（獨立評估組織）</td><td>在 Anthropic 內部駐點三個月，評估「界定良好任務」的整體進度速率</td><td>是一年前的 <strong>2 倍</strong>；並稱「今天這種加速，大部分可能歸因於 Anthropic 大量用 AI 做 R&amp;D」</td></tr>
+  <tr><td>OpenAI（九月博客）</td><td>其研究者中用量最重的 10%，每日內部 coding agent 花費</td><td>初夏約 <strong>$1,000/日</strong> → 八月底超過 <strong>$7,000/日</strong></td></tr>
+  <tr><td>Anthropic（九月自述）</td><td>Claude 在自家 AI R&amp;D 工作中「lead」的比例</td><td>二月 <strong>&lt;1%</strong> → 八月 <strong>&gt;26%</strong></td></tr>
+</table>
+
+<p>這三組數字的方向一致：AI 已經在加速 AI 的進展，而且不是實驗室裡的小規模現象，是預算級別的現象——一個研究員一天燒七千美元的內部 agent，這不是 demo，這是生產線。</p>
+
+<p>但這裡有一個 Dwarkesh 自己補上的定義注腳，也是全篇最容易被二手轉述吃掉的一段：</p>
+
+<div class="highlight-box">
+  <p><strong>Anthropic 定義的「lead」是「從高層指令端到端完成大部分任務，人類監督」。</strong>完全自主、無人在環的比例<strong>仍是 0%</strong>。而低於「collaborates」檔次（Claude 只在密切人類指導下做大片工作）的比例，現在已不到 10%。</p>
+</div>
+
+<p>換句話說，那個 26% 不是自主研究，是「人類盯著、AI 動手」。後面整條推論——從 26% 到「等於最頂尖人類」——必須跨過這道 0% 的門檻。Dwarkesh 知道這一點，他的橋是「in-context learning 拉長就夠了」，我們後面會拆。</p>
+
+<div class="section-title">二、數學的四年，壓成一句話</div>
+
+<p>他的第二個證據是曲線，而且他把四年壓成了一個遞進：</p>
+
+<table>
+  <tr><th>時間</th><th>能力狀態</th></tr>
+  <tr><td>2023</td><td>無法可靠地做四位數加法</td></tr>
+  <tr><td>2024</td><td>幾乎解不了高中數學競賽題</td></tr>
+  <tr><td>2025</td><td>IMO 金牌</td></tr>
+  <tr><td>2026 上半年</td><td>解開未解的 Erdős 問題（外界辯解：只是剛好沒人做過、文獻裡有近似解法）</td></tr>
+  <tr><td>2026 十月</td><td>千禧年大獎難題，<strong>88 小時</strong></td></tr>
+</table>
+
+<p>那句著名的粗口是這樣寫的：「大概一個月前：『好吧，它他媽的在 88 小時內解了一個千禧年大獎難題。』」</p>
+
+<p>這裡有一個本文沒有明說、但連結指向很清楚的事實：文中「千禧年大獎難題」的超連結指向 OpenAI 的 Navier–Stokes 求解公告。也就是說，這條曲線的終點不是抽象的「某個難題」，而是我們本系列九月十日那篇（<strong>#144</strong>）已經寫過的同一件事——Lean 驗完、Clay 未收、學界仍在爭「forced vs unforced」的那個 Navier–Stokes 爆破證明。當時的敘述是「約 10,000 個 agent、88 小時、130B output tokens」。今天 Dwarkesh 把它當成一個既定事實來引用，這是這篇文章最容易被忽略的語氣變化：<strong>爭議還在，但圈子已經開始用它做推理的前提。</strong></p>
+
+<p>他引用《伊甸之東》來形容這種非線性：</p>
+
+<blockquote>
+  「神祇的墜落有一點是確定的：他們不會一點一點地落，他們是轟然碎裂。」
+  <span class="attribution">—— John Steinbeck《East of Eden》，Dwarkesh 引用（原文：<em>they do not fall a little; they crash and shatter.</em>）</span>
+</blockquote>
+
+<p>然後他處理最強的反駁。Toby Ord 寫過一篇很好的文章，大意是：當前 AI 在自動化「證明」，但幾乎沒有證據顯示它們能「提出有力的問題」或「開闢全新的數學領域」。</p>
+
+<p>Dwarkesh 的回應方式很刁——他不否認，他把那句話反過來讀：</p>
+
+<blockquote class="strong">
+  「換一種方式說同一個點：當前的 AI 系統已經解了一個千禧年大獎難題——而它們並不需要有能力提出有力的問題或開闢深刻的新數學領域。」
+  <span class="attribution">—— Dwarkesh Patel，2026-11-13</span>
+</blockquote>
+
+<p>這一步是修辭，但修辭底下有一個實質論點：如果「解難題」與「提好問題」是可分離的兩種能力，而 AI 只具備前者就已經能產出菲爾茲獎級別的結果，那麼「缺乏後者」就不構成能力上限——它只構成風格的差異。</p>
+
+<div class="section-title">三、全文最漂亮的一步：兩個領域的目標函數是相反的</div>
+
+<p>為什麼「解難題」在數學裡價值有限，在 AI 研究裡卻是天價？他的答案是優先級倒置。</p>
+
+<p>數學研究的目標不只是證明或否證一長串猜想，而是擴展人類對數學概念的理解——<strong>發明拓撲、群論、笛卡爾座標系，遠比知道「n 個點能配出多少對單位距離點」重要</strong>。我們在意那些冷僻問題，主要是因為它們可能催生新理論。</p>
+
+<p>但在 AI 研究裡，優先級完全顛倒：實驗室只在乎「這個新配方在實測上是否讓訓練更省、模型更聰明」。他們不在乎理論本身，而過去十五年深度學習的進展本來就沒怎麼需要新理論。</p>
+
+<blockquote>
+  「在機器學習裡，把大量隨機猜想硬啃一遍的等價物，會變得極有價值——而在數學裡，它就是不怎麼有價值。」
+  <span class="attribution">—— Dwarkesh 的論證，本文轉述</span>
+</blockquote>
+
+<p>他舉 transformer 為例。他的朋友 Sholto Douglas 有一篇一直沒寫完的博客，論證「你本可以早兩年發明 transformer」。Chris Olah 當年的說法是：</p>
+
+<blockquote>
+  「當時我的感覺是，transformer 架構是許多已經各自有效的想法（attention、residual networks）的自然組合，只是被推到了相當激進的程度。」
+  <span class="attribution">—— Chris Olah，經 Dwarkesh 引用</span>
+</blockquote>
+
+<p>問題於是變成：既然零件都在，為什麼沒人早兩年拼出來？Dwarkesh 的答案藏在註釋 2，而這條註釋是全篇最值得工程師抄下來的一段：</p>
+
+<div class="highlight-box">
+  <p><strong>一個基於 attention 的架構，除非你同時具備以下全部零件，否則表現不如 LSTM：</strong>residual connections（2015）、layer norm（2016）、Adam 優化器（2014）、交錯的 MLP 層、位置編碼、learning-rate warmup。</p>
+</div>
+
+<p>所有零件都在文獻裡躺了多年，沒人知道怎麼拼。拼它需要研究品味，也需要成千上萬次小實驗。</p>
+
+<blockquote class="strong">
+  「而這正是 AI 在數學貢獻中展現出壓倒性擅長的那種能力：堅持不懈且聰明地匹配幾十種想法組合。……即便是 transformer——2012 年 AlexNet 開啟深度學習革命以來最大的突破——也是 Claude 7 在 Chris Olah 叫它『努力把這個 attention 弄好一點』時，能發明出來的東西。」
+  <span class="attribution">—— Dwarkesh Patel，2026-11-13</span>
+</blockquote>
+
+<p>你可以不同意「Claude 7 能發明 transformer」這個判斷，但你不能不同意它的結構：<strong>一個已知零件、未知組合、需要海量小實驗的搜索問題，恰好是當前模型最擅長的形狀。</strong>這也是為什麼他認為 AI 研究比數學更適合這種能力——不是因為 AI 研究更難，而是因為它更像一個有評分器的組合搜索。</p>
+
+<div class="section-title">四、三個乘數：更快、更聰明、更多</div>
+
+<p>一旦 AI 在 AI 研究上等於最頂尖人類，算法進度會突然快多少？他拆成三個乘數：</p>
+
+<p><strong>更快。</strong>今天的 AI 已經以人類約 10 倍的速度工作（註釋 4：GPT-5.2 在 GDPval benchmark 上比人類專家快 11 倍；前沿模型輸出約 60 tok/s，是人類說話速度的 13 倍、打字速度的 50 倍以上）。加上 24/7 不休息，每個自動化研究者每週塞進約 <strong>50 倍</strong>的工作量。</p>
+
+<p>但實驗算力不會變快，所以回報會急劇遞減。「即便遞減極陡，單靠這一點，算法進度仍會快上數倍。」</p>
+
+<p><strong>更聰明。</strong>他估計一個前沿實驗室約 <strong>80%</strong> 的算法進展來自最頂尖的 50 位研究者——「Zuckerberg 願意花幾億美元買頂尖人才不是白花的」。自動化之後，每一個工程師都在「當今最頂尖人類」的水準。</p>
+
+<p><strong>更多。</strong>這是三個乘數裡最容易被低估的一個，但他給了最清楚的類比：</p>
+
+<blockquote>
+  「一群 agent 大概沒辦法比單一 agent 更快寫出一本好小說。但其他任務適合並行：看那段動畫——一群不同的 Claude 合作形式化費馬大定理。這件事有幾千個模組化子任務，每一個都可以獨立完成，而且每個 agent 都能局部檢查自己有沒有成功。」
+  <span class="attribution">—— Dwarkesh Patel，2026-11-13（轉述）</span>
+</blockquote>
+
+<p>然後是關鍵的一句：<strong>「AI 研究更接近形式化一個定理，而不是寫小說。」</strong>因為它有大量可獨立完成的模組化工作，也有可驗證的進度代理。一個實驗室本來就是幾十個團隊各做一塊：一隊改進預訓練資料過濾、一隊設計某種合成 RL 環境、一隊寫更好的 attention kernel。</p>
+
+<p>他也不迴避並行的上限：「在一個團隊工作過的人都知道，有十萬個協作者不代表你快十萬倍——大概連一百倍都沒有。但從數量級更多的自動化勞動裡，至少快幾倍是很難想像做不到的。」</p>
+
+<div class="section-title">五、火花還是奇點？他給 50/50</div>
+
+<p>兩個反向趨勢在拉鋸。一邊是 RSI 讓研究者更快更聰明更多；另一邊是「想法越來越難找」——而這件事<strong>已經在發生</strong>：</p>
+
+<blockquote class="strong">
+  「AI 公司必須每年把 R&amp;D 算力翻四倍、人力翻一倍，才能維持同樣的進度速率。」
+  <span class="attribution">—— Dwarkesh Patel，2026-11-13（引 Epoch AI 的算力趨勢與 LessWrong 的人力趨勢）</span>
+</blockquote>
+
+<p>若 AI 變強的速度快於想法變難的速度，就是<strong>「純軟體奇點」</strong>：幾個月內，AI 群體做出越來越聰明的自己，直到撞上現有晶片的物理極限。若想法變難更快，就是他所謂的<strong>「火花」</strong>：一年內做出三到六年的 AI 進度，然後熄火，等算力跟上。</p>
+
+<p>註釋 6 補了一個換算，這也是全文最容易被引用錯的地方：那個「三到六年」的 AI 進度，對應的是<strong>四到九年的純算法進度</strong>——因為那一年訓練算力沒什麼增長，你必須用額外的算法進度去補。</p>
+
+<blockquote>
+  「如果硬要選，我給『火花』50%，『純軟體奇點』50%。」
+  <span class="attribution">—— Dwarkesh Patel，2026-11-13</span>
+</blockquote>
+
+<p>他強調即使只是「火花」也很瘋狂：那相當於 12 個月內從 GPT-3.5 跳到 GPT-6 Astra。</p>
+
+<blockquote>
+  「GPT-3.5 會寫打油詩、能自動補全一個簡單的 Python 函數，但基本上是沒用的玩具；而 Astra 能從零做出整個電子遊戲，還能批量產出菲爾茲獎級別的數學貢獻，多到我們已經麻木了。」
+  <span class="attribution">—— Dwarkesh Patel，2026-11-13</span>
+</blockquote>
+
+<p>然後他說了一句我認為是全文的樞紐：</p>
+
+<blockquote class="strong">
+  「過去四年，我們從一個學前兒童，變成一個天才實習生。如果你再來一次同樣大的跳躍，只是起點換成 2027 或 2028，你大概會得到一個在稍微可驗證的領域裡都遠超人類的心智。」
+  <span class="attribution">—— Dwarkesh Patel，2026-11-13</span>
+</blockquote>
+
+<p>他順手列了三個具體例子：比 Nvidia 更會設計下一代 AI 加速器；在同等市場准入下，比 Citadel 和 Jane Street 更賺錢；如果給它遠端操作材料科學實驗室，它會比全人類更擅長找室溫超導體。</p>
+
+<div class="section-title">六、超智能憑什麼贏過有幾十年經驗的人類專家？</div>
+
+<p>這是全篇最像哲學、但實際上最工程的一段。反問很清楚：一個在資料中心裡訓練出來的東西，憑什麼贏過有幾十年真實世界經驗的人類專家？</p>
+
+<p>他的答案分兩層。</p>
+
+<p><strong>第一層是訓練環境的規模爆炸。</strong>自動化工程師會建出「比現在多幾萬倍」的 RL 環境，更長、更高品質、更開放。他舉的例子很有畫面感：</p>
+
+<blockquote>
+  「一個 AI 被丟進一個有幾百萬個其他 AI 的模擬數位經濟，被告知去共同創辦一家成功的公司。它不會只是坐著思考理想的公司架構——它會經歷一場相當於幾百年企業競爭的演化過程，找出最佳的組織技術。」
+  <span class="attribution">—— Dwarkesh Patel，2026-11-13（轉述）</span>
+</blockquote>
+
+<p>還有歷史回測：只給 1700 年以前的語料，AI 能不能推出廣義相對論？給 1962 年以前的所有報紙，能不能預測古巴導彈危機怎麼演變？註釋 7 補了一句：這類預測訓練可以做幾百萬題，每題讓 AI 想幾百小時，甚至可以為該領域先建一個 AlphaFold 式的計算模型再作答。</p>
+
+<p><strong>第二層是人類演化作為證據。</strong>這是我讀過對「遷移」最簡潔的辯護：演化的驗證器極其粗糙（你有沒有把基因傳下去），在祖先環境裡只優化了打獵、躲掠食者、維持部落地位這幾件事——</p>
+
+<blockquote class="strong">
+  「然後我們今天能寫普立茲獎傳記、造半導體、領導千萬人的國家、發明新的數學分支。」
+  <span class="attribution">—— Dwarkesh Patel，2026-11-13（轉述）</span>
+</blockquote>
+
+<p>既然盲目、愚蠢、無意識的演化都能產出這種遷移，那麼刻意為「在新情境快速爬升」而設計的訓練，應該能走得更遠。</p>
+
+<p>接下來這段是他最像人的地方——他不用論文，用朋友：</p>
+
+<blockquote>
+  「老實說，引導我直覺的其中一件事是：我有很多二十幾歲的朋友，我看著他們在完全沒有經驗的領域裡做出難以置信的事、建起世界級的公司。歷史上滿是這種超級能幹的年輕人，把他們被丟進去的世界玩得團團轉。到 27 歲，拿破崙已經在對歐洲其他強權、規模遠大於己的軍隊上一場接一場地贏。到 25 歲，洛克菲勒進入石油業才兩年，已經在經營世界上最大的煉油廠之一。」
+  <span class="attribution">—— Dwarkesh Patel，2026-11-13</span>
+</blockquote>
+
+<p>而 AI 比拿破崙多一個優勢：它可以在幾週的日曆時間裡累積幾年的部署經驗。他設想讓一個 AI 去管一家 Fortune 500：第一天上任，它可以讀完公司歷史上所有的 email、Slack、文件；當天結束前，平行副本已經訪談完每一位員工與主要客戶，累積完成單個人類要幾個月才做得完的工作量，然後合併回一個。</p>
+
+<p>「有些回饋——比如你的行動怎樣影響了季度財報——確實需要幾個月的序列時間。但即便如此，我們也應該預期這些未來的 AI 在部署後幾個月內，就能在幾乎所有領域達到頂尖人類水準。那仍然是 2028 或 2029。」</p>
+
+<div class="section-title">七、技術附錄：為什麼他認為 AI 研究「可驗證」</div>
+
+<p>這部分是全篇最硬、也最可以直接拿來做工程判斷的地方。他的框架是：AI R&amp;D 粗分三個桶，每個桶都有強力且易訓練的可驗證代理。</p>
+
+<table>
+  <tr><th>環節</th><th>可驗證代理指標</th><th>具體做法</th></tr>
+  <tr><td>預訓練</td><td>固定 loss 下的算力消耗、held-out perplexity</td><td>把 GPT-2 大小的模型訓練到固定 loss，最小化所用算力（即 nanoGPT speedrun）；再部署 agent 群去找「把 GPT-3 大小模型訓到最低 perplexity」的方法</td></tr>
+  <tr><td>後訓練</td><td>新環境上的樣本效率、meta-learning 速度、直接測 R&amp;D 能力</td><td>Anthropic 內部的 <strong>CoBench</strong>（約 500 道其研究與工程團隊今年真實解過的問題）；字節的 <strong>EdgeBench</strong>（從雜訊 LIGO 資料偵測重力波、修一個 regex 引擎、學會玩沒玩過的遊戲）</td></tr>
+  <tr><td>推理效率</td><td>GPU 利用率、每 token 的 KV cache、forward pass 總 FLOPs、延遲</td><td>最容易測量的部分，沒有爭議</td></tr>
+</table>
+
+<p>然後是他特別點出的洞見——我認為這是全篇最有原創性的一段：</p>
+
+<blockquote class="strong">
+  「因為預訓練與後訓練都可驗證，所以<strong>樣本效率</strong>的進展也可驗證——而樣本效率正是 AI 相對人類最難堪、最重要的缺陷。你要一個神經網路獲得某種能力，得餵它比人類學會同一件事多非常多的資料。但每一種樣本效率都可量：達到某個預訓練 loss 需要多少資料、在 RL 環境裡達到某個分數需要多少任務、單一 session 內需要多少回饋與時間。」
+  <span class="attribution">—— Dwarkesh Patel，2026-11-13（轉述）</span>
+</blockquote>
+
+<p>他的收尾很漂亮：「幾十年來，人們公認這是機器學習最深的開放問題——AI 版的千禧年大獎難題。而數學已經向我們展示，這類問題即使非常困難，只要可驗證，會發生什麼事。」</p>
+
+<p>另一個關鍵數字來自他與 Jerry Han 的研究：</p>
+
+<div class="data-point">
+  <span>3×</span> 過去六年，預訓練的算法進展中，來自<strong>資料改進</strong>的部分是來自<strong>模型改進</strong>的三倍以上。<br>
+  <span>9B → ?</span> OpenWebText（2019，約 9B tokens，GPT-2 的主要訓練資料）→ UltraFineWeb（用全網爬取 + 訓練分類器預測哪些資料實測上能提升表現）。
+</div>
+
+<p>而「資料改進」這件事，本質上就是普通 ML 研究工作——過濾、去重、分類器預測。它不需要走出資料中心的專業知識。這是他回應「資料瓶頸」的核心：資料會繼續增長，但由 AI 來編。</p>
+
+<p>他還引了 DeepSeek 剛發的後訓練論文，這段值得單獨抄下來：</p>
+
+<blockquote class="strong">
+  「對基礎 RL 演算法的改動，其重要性遠不如……在合成資料與環境的規模、多樣性與可驗證性上的系統性改進，這解釋了幾乎所有觀察到的增益。」
+  <span class="attribution">—— DeepSeek 後訓練論文，經 Dwarkesh 引用（原文：<em>systematic improvements in the scale, diversity, and verifiability of synthesized data and environments account for essentially all of the observed gains.</em>）</span>
+</blockquote>
+
+<p>以及他們怎麼造環境：「我們投入大規模、自動化的資料合成與環境建構流水線……以難度與正確性作為獎勵信號，迭代訓練模型去建構更好的任務。」——注意最後半句：<strong>模型在訓練自己造更好的任務。</strong>這是 RSI 在環境層面的具體形態，不是隱喻。</p>
+
+<div class="section-title">八、實驗瓶頸：一段可以直接拿去吵架的算術</div>
+
+<p>「數學可以用紙筆推理，AI 研究必須跑實驗。」這是最實在的反駁，而他的回應是一段算術：</p>
+
+<ul>
+  <li>OpenAI 2025 年底有 <strong>174 萬</strong> H100 等效算力。</li>
+  <li>若 2026、2027 各翻四倍，2027 年底約 <strong>2,780 萬</strong> H100e。</li>
+  <li>以 1e15 FLOP/s 計，即每年 <strong>8.78e29</strong> FLOP。</li>
+  <li>原始 GPT-3 最終訓練約 <strong>3.14e23</strong> FLOP。</li>
+  <li>結論：可支撐每年 <strong>280 萬次</strong> GPT-3 規模實驗，或每天約 <strong>7,660 次</strong>。</li>
+  <li>若只撥三分之一算力做實驗，一萬個 agent 每個仍能每四天跑一次 GPT-3 規模的訓練。</li>
+</ul>
+
+<p>他還補了一個對照：2017 年 transformer 論文最後那個模型，用 8 張 P100 跑了 3.5 天，今天租大約 50 美元——約為 GPT-3 訓練算力的萬分之一。</p>
+
+<p>然後是「SlothAI」思想實驗（引自 Ryan Greenblatt 與 Eli Lifland）：一家算力與 OpenAI 相同、但研究者每週只工作一小時的公司，進度會慢多少？</p>
+
+<blockquote>
+  「絕對不會是慢 50 倍——實驗可以在研究員打瞌睡的 98% 時間裡繼續跑。但他們一小時的人力，能設計並分析多少個仔細的實驗？……在我看來，SlothAI 的算法進度至少會慢五倍。而與一家全是自動化研究者的公司相比，OpenAI 就是 SlothAI。」
+  <span class="attribution">—— Dwarkesh Patel，2026-11-13（註釋 5）</span>
+</blockquote>
+
+<p>最後那句我特別喜歡，因為它把「人類思考速度是生物學意外」這件事講清楚了：「如果我們的思考速度剛好就是『再快就沒用』的那個點，那會是個奇怪得不得了的巧合。」</p>
+
+<div class="section-title">九、他認真對待的四個反駁</div>
+
+<p>這篇文章的誠實程度，體現在它把最強的反駁自己列出來，而且不是稻草人。</p>
+
+<p><strong>反駁一：持續學習瓶頸。</strong>他去年十二月的原話是自己最大的懷疑：</p>
+
+<blockquote>
+  「這個自動化研究者得想出 AGI 的演算法——一個人類花了將近一整個世紀撞牆的問題——卻沒有兒童都具備的基本學習能力？我覺得這超級不可信。」
+  <span class="attribution">—— Dwarkesh，2025 年 12 月，本文引用來自我反駁</span>
+</blockquote>
+
+<p>他今天仍然認為持續學習沒解決，但改變了判斷：原本以為需要「每次 session 結束就更新權重」這種瘋狂突破，現在覺得<strong>只要把 in-context learning 的長度拉到「實際上是幾個月」可能就夠</strong>。註釋 13 再把問題拆成兩層：一是單一模型從數週／數月的在職經驗學習（他認為可靠 in-context 就夠）；二是基礎模型從經濟中數百萬個副本的經驗學習（他稱為「廣泛部署的智能爆炸」，而這一層<strong>不需要</strong>就能達到「等於個別人類專家」）。</p>
+
+<p>然後是那句全篇最好笑的比喻，也是最有力的：</p>
+
+<blockquote class="strong">
+  「這些模型一邊解著千禧年大獎難題，一邊還是那個沒有長期記憶、笨手笨腳的神童實習生。這就像看著一個人翻著跟斗跑田徑，還跟上 Usain Bolt 的配速。如果讓他真的跑起來，我確信會更快。但誰說他翻著跟斗就贏不了這場比賽？」
+  <span class="attribution">—— Dwarkesh Patel，2026-11-13（原文：<em>It's like watching someone cartwheel down the track and still keep pace with Usain Bolt.</em>）</span>
+</blockquote>
+
+<p>他給的機率是 <strong>25% 拖到 2032 之後</strong>。</p>
+
+<p><strong>反駁二：找不到正確的可驗證代理。</strong>「選哪座山讓 GPT-7 爬」本身就是研究品味，而 2018 年前幾乎沒人認為 next-token prediction 是通往進展最可行的路。他的兩個回應：(a) transformer 是為了打贏當時既有的翻譯 benchmark 而發明的，推理模型也是先在既有的 coding/math benchmark 上顯現——範式躍遷前的代理指標，似乎足以捕捉大的階躍；(b) 不難設計「範式無關的外層代理」：解幾個千禧年難題、給 1905 年前的資料多久能發現廣義相對論、多快精通完全沒見過的遊戲。</p>
+
+<p><strong>反駁三：資料瓶頸。</strong>如上，資料由 AI 來編，而「編資料」就是普通 ML 研究。</p>
+
+<p><strong>反駁四：實驗瓶頸。</strong>如上，算術上夠用。他還補了一個我很喜歡的觀察：今天實驗室用算力的方式，反映的是「研究者時間極度稀缺」——頂尖研究者年薪數億美元。所以今天的算力使用方式，幾乎不能用來推測「當算力而非人力是瓶頸時」會怎麼用。</p>
+
+<p>那會怎麼用？他給了兩條：</p>
+
+<ul>
+  <li><strong>用勞動換算力。</strong>人類研究者為了省時間，會選擇「跑幾個大的並行 RL run」而不是「仔細設置大量小規模預訓練實驗」。自動化研究者可以反過來：讀每一條 rollout transcript，發現某個任務壞了就立刻暫停重建環境；做瘋狂數量的小規模 ablation；團隊要合併算力跑大 run 時，可以花「幾十年主觀時間」設計最有資訊量的 pooled experiment，跑完再花幾十年徹底分析。</li>
+  <li><strong>建立「從小實驗學習」的科學。</strong>scaling law 本身就是例子——GPT-4 論文說他們能用少一萬倍算力訓練的模型預測最終 loss；muP 讓研究者能從小 100 倍的模型推測大 run 的最佳超參數。「還有多少類似的發現？」</li>
+</ul>
+
+<p>他引了一位研究者的話作結，這句我很想貼在牆上：</p>
+
+<blockquote>
+  「上面的神，必定依循與下面的螞蟻相同的原理運作。」
+  <span class="attribution">—— 一位 AI 研究者，經 Dwarkesh 引用（原文：<em>The gods above must work from the same principles as the ants below.</em>）</span>
+</blockquote>
+
+<div class="section-title">十、我認為最該被記住的一條註釋：Amdahl 定律</div>
+
+<p>如果這篇文章只讀一段，我建議讀註釋 3。因為它是作者自己寫出來、卻最直接反駁自己標題的一段。</p>
+
+<p>假設 AI 在它能做的每個任務上都比人類快 50 倍，其餘維持人類速度：</p>
+
+<table>
+  <tr><th>AI 能做的比例</th><th>研究者整體快多少</th></tr>
+  <tr><td>50%</td><td><strong>2 倍</strong>（因為剩下一半照樣耗時）</td></tr>
+  <tr><td>90%</td><td><strong>8.5 倍</strong></td></tr>
+  <tr><td>99%</td><td><strong>30 倍以上</strong></td></tr>
+</table>
+
+<blockquote class="strong">
+  「這就是 Amdahl 定律：你無法加速的那部分，決定了配速。」
+  <span class="attribution">—— Dwarkesh Patel，2026-11-13（註釋 3）</span>
+</blockquote>
+
+<p>這段之所以重要，是因為它把整場爭論從「AI 會不會做研究」搬到「AI 能覆蓋多少比例」。而 26% 那個數字，恰好落在這條曲線最平的一段——從 26% 到 90%，收益是從「幾乎沒感覺」到「8.5 倍」；從 90% 到 99%，才是指數段。</p>
+
+<p>換句話說：<strong>這篇文章的標題是「雪崩」，但它自己的算術說的是「配速」。</strong>雪崩的前提是那條曲線在一年內從 26% 走到 99%，而完全自主今天仍是 0%。</p>
+
+<div class="section-title">十一、爭議與弱點</div>
+
+<p><strong>一、「88 小時解千禧年難題」在正文裡未具名。</strong>文中沒說是哪個問題、哪個模型、有無人類後續驗證（超連結指向 Navier–Stokes，但正文不寫）。這是全篇最重的一個資料點，也是取證最薄的一環。我們在 #144 已經詳細寫過那件事的爭議：Lean 驗證完成、Clay 數學研究所未確認、外部數學家仍在爭「forced vs unforced」的表述是否等價於原問題。</p>
+
+<p><strong>二、把「監督下產能」外推成「自主產能」。</strong>26% 的 lead 比例含人類監督，完全自主是 0%。從 0% 到「等於頂尖人類」的跳躍，靠的是「in-context learning 拉長就夠了」這個相對手揮的判斷。他自己也承認這是判斷而非測量。</p>
+
+<p><strong>三、Amdahl 算術反而支持懷疑者。</strong>見上。</p>
+
+<p><strong>四、時間表的區間極寬。</strong>2027 到 2032+，跨了五年。中位數 2028 的說服力，取決於你多相信 METR 那個「2 倍」能外推——而 Ajeya Cotra 在同一份報告的評論裡寫得很清楚：「如果我們照字面接受 AI 現在幾乎讓 AI 能力進步速率翻倍，並假設加速是平滑的，這天真地意味著我們會在一年內達到極端超智能。」她的結論不是「所以會發生」，而是「所以我們不該對明年就到達這個里程碑感到驚訝」。</p>
+
+<p><strong>五、一個沒被處理的變數：實驗室會不會刻意放慢。</strong>他的中位數假設明寫「假設實驗室不刻意放慢」。而同一天 AINews 有一條對照：Anthropic 的 S-1 裡明寫公司「可能比它本可以達到的速度更慢地推進，以提升安全性」。</p>
+
+<div class="section-title">十二、行業 insight：可驗證性正在變成作業系統</div>
+
+<p><strong>第一，這篇文章真正的貢獻不是時間表，是座標軸。</strong>把「有沒有便宜的自動驗證器」變成預測能力的維度：數學 &gt; 程式競賽 &gt; AI 研究 &gt; 商業 &gt; 政治。凡是能自動評分的領域，AI 會先吃掉；AI 研究恰好位在「足夠可驗證」的一側，這是整條推論的支點。你未必要接受 2028，但這條軸可以用來判斷任何一個新領域的順序。</p>
+
+<p><strong>第二，小模型 + 多實驗，正在取代大模型 + 少實驗。</strong>他明確指出這已在發生：「實驗室越來越傾向訓練更小的模型、跑大量實驗，而不是單純放大。」理由是一條連鎖：預訓練改進 → 同能力的小模型 → 訓練更快更便宜 → RL rollout 更便宜 → 能養更多自動化研究者 → RSI 迴圈收緊。他甚至給了一個很尖的比喻：RSI 期間，實驗室不會做為期三個月、跨多個資料中心園區的預訓練——等那個大 run 跑完，一週前才開始訓的小模型早就把它淘汰了，<strong>就像今天發射的星際飛船會被一百年後發射的那艘超車。</strong></p>
+
+<p><strong>第三，「研究品味」正在被部分商品化。</strong>taste-bench 的想法很具體：用 RL 訓練模型預測「小規模的改進會不會在大規模成立」。如果這件事可訓練，那麼「品味」就不再是完全不可驗證的護城河。這是對「提前幾年押對方向」這類能力最直接的去神秘化嘗試。</p>
+
+<p><strong>第四，安全論述的反面被點出來了。</strong>整篇的隱含前提是「實驗室全力加速」。而現實裡，至少有一家前沿實驗室開始在法定文件裡把「慢」寫成政策。這意味著未來兩年最關鍵的變數，可能不是演算法，而是<strong>意願</strong>。</p>
+
+<div class="section-title">十三、與本系列的脈絡</div>
+
+<p>這篇是 Dwarkesh 近期幾條線的收束：</p>
+
+<ul>
+  <li><strong>#90（八月）</strong>他寫「持續學習時代的 8 個預測」，當時的立場是「部署即訓練」；今天他說「持續學習仍然沒解決，但只要 in-context 拉長到幾個月可能就夠」——這是同一個問題的降級版答案。</li>
+  <li><strong>#148（九月）</strong>他做了一場 RSI 圓桌（Schulman × Millidge × O'Neill），結論之一是「3–4 年 ASI」；今天他把圓桌的共識寫成了自己的中位數。</li>
+  <li><strong>#144（九月）</strong>OpenAI 的 Navier–Stokes 公告——當時是爭議事件，今天是他的證據鏈第一環。</li>
+  <li><strong>#113（八月）</strong>Dylan Patel 講 2028 年算力集中化；今天的算術（2,780 萬 H100e）用的正是同一套 Epoch 數據。</li>
+</ul>
+
+<p>而與今天同一份日報裡的另外三條放在一起看，會看到一條更清楚的主線：<strong>可驗證性成了整個行業的作業系統。</strong>ArtCraft 用 agent 24 小時克隆 Photoshop，因為「Photoshop 的工具集與肌肉記憶」本身就是一份可驗收的規格；No Priors 的 Isomorphic Labs 之所以難自動化，是因為真正的驗證器（病人是否好轉）要十年才響一次；AINews 那期把「這個模型在哪種 GPU 上訓練」變成可驗證問題（權重指紋，24 對 24 全中）。</p>
+
+<p>Dwarkesh 的文章是這四條裡唯一給出「為什麼」的那一篇：<strong>不是 AI 變聰明了，是越來越多的領域被裝上了評分器。</strong></p>
+
+<div class="highlight-box">
+  <p><strong>如果只能帶走一句話：</strong>「雪崩」不是一個時間點，是一個斜率。而斜率的分母，是你無法加速的那部分工作——今天它是 74%，而完全自主是 0%。</p>
+</div>
+
+<hr>
+
+<footer>
+  <p>來源：Dwarkesh Patel，〈The avalanche that hit math is coming for AI development〉，Dwarkesh Podcast，2026-11-13 發布（含本人朗讀音頻與 16 條註釋）。<br>
+  原文連結：<a href="https://www.dwarkesh.com/p/rsi">dwarkesh.com/p/rsi</a><br>
+  本文所有直接引語均譯自原文，關鍵句附英文原句；表格數字均按原文轉述，作者主觀機率已標明為「作者估計」。Navier–Stokes 公告的爭議細節見本系列 #144。</p>
+  <p>生成時間：2026-11-14 06:00 UTC · 深度復述 #274</p>
+</footer>
+
+</div>
+</body>
+</html>
