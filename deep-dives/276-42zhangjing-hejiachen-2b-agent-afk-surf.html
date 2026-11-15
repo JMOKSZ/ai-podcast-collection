@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · To B 不是平台——賀嘉琛把 Agent 的兩條路分開，然後決定自己訓模型</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  td { color: #444; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.55rem; }
+    table { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="../index.html">← 返回播客日報</a>
+  <div class="ep-num">42 章經 · 第 202 集（曲凱主持）</div>
+  <h1>To B 不是平台——賀嘉琛把 Agent 的兩條路分開，然後決定自己訓模型</h1>
+  <div class="meta">
+    <div>〈復盤 2C 和 2B Agent 發展脈絡｜對談 Afk.surf 創始人嘉琛〉</div>
+    <div>出品：42 章經<span>·</span>主持：曲凱<span>·</span>嘉賓：賀嘉琛（Afk.surf 創始人）</div>
+    <div>發布：2026-11-14 13:00 UTC（21:00 HKT）<span>·</span>約 47 分鐘<span>·</span>12 個章節</div>
+    <div>來源：小宇宙單集簡介與官方章節時間軸；站方未提供公開逐字稿，本文引語以章節標題與簡介原文為準，並逐條標明</div>
+  </div>
+</header>
+
+<p>這一集表面上是「Agent 賽道復盤」，實際上只做了一件事：把 To C 與 To B 兩條路拆開，然後指出它們<strong>不屬於同一種生意</strong>。</p>
+
+<p>在 2026 年的語境裡，這句話的重量不在於它多新，而在於說它的人剛剛把兩種經驗都賺過一遍——流量（AFFiNE 七百萬用戶）與退出（VoidZero 被 Cloudflare 收購）——現在他選了 To B，並且已經有幾個大客戶。所以這不是評論員的判斷，是當事人的下注。</p>
+
+<div class="data-point">
+  <span>700 萬</span> AFFiNE 用戶規模，Product Hunt 年度第四。<br>
+  <span>12 章</span> 全片切成 12 個章節，33:32–40:02 是「自訓模型」——單一主題中最長的一段連續論述。<br>
+  <span>47 分鐘</span> 片長。資訊密度在中段之後陡升，前半是歷史，後半是帳本。<br>
+  <span>數個</span> Afk.surf 的大客戶數量（節目原文：「他們已經有了幾個大客戶」）。
+</div>
+
+<p>下面按節目的章節順序走，但把重心放在三個地方：<strong>為什麼 To B 的經濟結構不是 SaaS</strong>、<strong>一個應用公司為什麼要自己訓模型</strong>、以及<strong>這兩件事其實是同一個判斷的兩面</strong>。</p>
+
+<div class="section-title">一、先把履歷攤開：他賣過兩次「流量」，一次是社群，一次是工具鏈</div>
+
+<p>節目的第一個小時（嚴格說是前十分鐘）在建立可信度，但這段履歷本身有信息量。</p>
+
+<p>賀嘉琛原本研究深度學習與天體物理，2020 年從博士階段退學創業。第一個產品 AFFiNE 是開源文檔協作與知識庫，做到 <span class="data-point"><span>700 萬用戶</span></span>、Product Hunt 年度第四。這是一個典型的「开源即分发」故事：產品力帶來社群，社群帶來聲量，聲量帶來下一輪。</p>
+
+<p>但節目沒有停在成功敘事。它明確提到 AFFiNE「為什麼紅、為什麼沒能好好商業化」——這句話是整集的方法論起點。開源產品的用戶與收入之間沒有自動轉換器；你可以有七百萬人用，卻找不到七百萬人付費的理由。這個失敗經驗，比任何成功案例都更能解釋他後來為什麼對「平台」這個詞這麼警惕。</p>
+
+<p>之後他與尤雨溪（Evan You）等人一起孵化開發者工具公司 VoidZero，<strong>被 Cloudflare 收購</strong>。這是另一種經驗：在開發者工具這條線上，退出不是靠訂閱制堆出來的，而是靠「這個團隊與這條工具鏈對某個戰略買家有價值」。兩次經驗，一次是「有流量但沒商業化」，一次是「有戰略價值所以被買走」。</p>
+
+<p>現在他做 Afk.surf，一個 To B 的 Governing Agent 產品。節目對它的定義值得逐字抄下來：</p>
+
+<blockquote class="strong">
+  「想讓企業能真正接管並持續學習自己運行的各個環節，在服務不同員工的同時，對齊整個組織的業務、工作方式和使用偏好。」
+  <span class="attribution">—— 單集簡介原文，描述 Afk.surf 的產品定義</span>
+</blockquote>
+
+<p>注意三個動詞：<strong>接管</strong>、<strong>持續學習</strong>、<strong>對齊</strong>。這不是「幫你寫得更好」的助手語法，是「接手一個環節並對結果負責」的治理語法。他選擇用 Governing（治理）而不是 Assistant（助理）命名品類，本身就是立場。</p>
+
+<div class="section-title">二、分水嶺：從 2026 年開始，Agent 就不像軟件了</div>
+
+<p>這是整集的第一個轉折，章節標題寫得很直白：</p>
+
+<blockquote class="strong">
+  「從 26 年開始，Agent 就不像軟件了。」
+  <span class="attribution">—— 章節標題，05:43</span>
+</blockquote>
+
+<p>為什麼「不像軟件」是一個分水嶺？因為軟件的價值模型是<strong>把一個已知流程固定下來，然後複製販賣</strong>。這個模型推導出我們熟悉的一切：席位（一個使用者一份授權）、版本（功能清單的增量）、發佈（安裝與升級）。軟件的成本結構是「一次開發、邊際成本趨近於零」，所以規模是唯一重要的變量。</p>
+
+<p>Agent 的價值模型相反：<strong>接管一個環節，然後持續吸收例外</strong>。例外不能事先窮舉，只能靠在環境裡跑、被糾正、再收斂。這裡的關鍵詞是「收斂」而不是「完成」——一個 Agent 的價值不在它第一次做對，而在它第十次遇到同類例外時已經不需要人教。</p>
+
+<p>這個差異往下傳導到三件事，節目把它們並列處理：</p>
+
+<table>
+  <tr><th>維度</th><th>軟件</th><th>Agent</th></tr>
+  <tr><td>怎麼計價</td><td>按席位（seat）</td><td>按接管的工作量（或按結果）</td></tr>
+  <tr><td>怎麼驗收</td><td>功能清單（有沒有這個按鈕）</td><td>行為邊界（哪些情況下不能做什麼）</td></tr>
+  <tr><td>怎麼實施</td><td>安裝、部署、培訓</td><td>陪跑、糾正、共同收斂</td></tr>
+</table>
+
+<p>這張表看起來只是商業模式的分類，但它其實解釋了一個很實際的現象：<strong>為什麼企業買了 Agent 之後，試用期往往比軟件長得多，而且很難「驗收」。</strong>因為驗收的對象不是功能，是行為；而行為只能在真實例外裡被觀察。這也是為什麼 To B Agent 公司很難做出漂亮的 demo——demo 展示的是能力上限，客戶关心的是例外下限。</p>
+
+<div class="highlight-box">
+  <p><strong>一個容易被忽略的推論：</strong>如果驗收標準是「行為邊界」，那麼產品文檔裡最重要的部分不是「我能做什麼」，而是「我在什麼情況下會停下來、會問人、會拒絕」。這正好是現有 SaaS 採購流程最不熟悉的一種文件。</p>
+</div>
+
+<div class="section-title">三、兩年劇烈變化，最後收斂到一個形態</div>
+
+<p>節目把 2024 到 2026 的產品形態攤成一條時間軸（章節 08:19）：</p>
+
+<ul>
+  <li><strong>2024：</strong>workflow 拼裝與 co-pilot。人在環裡，AI 在旁邊給建議。</li>
+  <li><strong>2025：</strong>computer use 與 GUI 代理。AI 開始操作介面，但仍然「一次任務一次會話」。</li>
+  <li><strong>2026 上半年：</strong>「能跑很久但不知道自己在幹嘛」的長時程代理。能力上去了，可靠性沒有。</li>
+  <li><strong>收斂方向：</strong>帶私有上下文、有記憶、能在組織邊界內行動的長時程代理。</li>
+</ul>
+
+<p>這條線的敘事很順，但真正有價值的是最後那個定語組合。<strong>「私有上下文 + 記憶 + 組織邊界」</strong>——三個條件缺一不可：</p>
+
+<p>沒有私有上下文，Agent 只是一個更貴的 ChatGPT；沒有記憶，它每次都要重新被教一遍，永遠停在 2025 的「一次會話」形態；沒有組織邊界，它要麼什麼都能做（不可授權），要麼什麼都不敢做（不可用）。</p>
+
+<p>而這三個條件，恰好都是<strong>平台型產品最難標準化</strong>的東西。這就是為什麼下一節的判斷不是突然跳出來的，而是這條形態收斂線的必然結論。</p>
+
+<div class="section-title">四、名詞通脹：2026 可能是 buzzword 最多的一年</div>
+
+<p>節目在 10:43 自嘲了一句：2026 可能是 buzzword 最多的一年。清單大致是：Personal Agent、Computer Use、GUI Agent、Deep Research、RLaaS、Governing Agent、Neo Lab。</p>
+
+<p>這句話好笑，但背後的判斷很嚴肅：<strong>名詞多，通常代表還沒有人找到穩定的評測方式。</strong>一旦有了公認的評測，名詞就會收斂成兩三個——因為市場需要用同一把尺子比較。反過來說，當一個賽道同時出現七、八個名字，通常不是因為產品差異大，而是因為<strong>沒有人能證明誰更好</strong>。</p>
+
+<p>這也解釋了為什麼大家這麼努力地造詞：在沒有評測的市場裡，命名就是定位。誰先定義品類，誰就暫時擁有解釋權。</p>
+
+<div class="section-title">五、全集最尖銳的一擊：To C 是平台，To B 不是</div>
+
+<p>章節標題是一個問句，但節目的立場是肯定的：</p>
+
+<blockquote class="strong">
+  「To C 的 Personal Agent 還是平台型機會，但 To B 不是？」
+  <span class="attribution">—— 章節標題，13:41</span>
+</blockquote>
+
+<p>推演邏輯值得完整走一遍，因為它是整集的地基。</p>
+
+<p><strong>To C 端：</strong>所有使用者面對的任務分佈高度重疊——排程、寫作、查資料、比價、訂票。同一個助手可以服務所有人，使用越多、資料越多、模型越準，資料飛輪與規模效應成立。結論：贏家通吃、平台定價。</p>
+
+<p><strong>To B 端：</strong>每家企業的流程、權限體系、資料邊界、歷史包袱、老闆偏好都不一樣。同一個「請假審批」流程，在 A 公司是三天內任何人可批，在 B 公司是週五下午必須財務總監簽字。這些規則不會寫在公開網頁上，只存在於組織的肌肉記憶裡。</p>
+
+<p>所以每一次交付都是一次客製化的重活。天花板不是模型能力，而是<strong>交付能力與組織信任</strong>。</p>
+
+<blockquote class="strong">
+  「To B Agent 的天花板不是模型能力，而是交付能力與組織信任；它的財務特徵更接近服務業或顧問業，而不是 SaaS 平台。」
+  <span class="attribution">—— 本文整理自章節 13:41 的論證</span>
+</blockquote>
+
+<p>這句話的殺傷力在於它反對的是當前最流行的估值故事。過去兩年，「AI 原生 SaaS」的默認假設是：只要產品夠好，就能像傳統 SaaS 一樣做到 80% 毛利率、淨收入留存 120%、邊際成本趨零。但如果 To B Agent 的本質是「每次交付都要重新理解一個組織」，那麼它的成本結構就更像顧問業——<strong>收入隨人頭線性增長，毛利率被交付能力鎖死。</strong></p>
+
+<p>節目用一個很具體的對照收尾：Afk.surf 已經有幾個大客戶，不是還在講故事等正反饋的階段。這句話看似只是補充背景，實際上是在說：<strong>這個判斷不是推演出來的，是做出來之後回頭總結的。</strong></p>
+
+<div class="highlight-box">
+  <p><strong>但這裡有一個節目沒有回答的問題：</strong>Salesforce、ServiceNow 也是 To B，也成了平台。差別在哪？節目的隱含答案是——那些平台的成立條件是「流程可以被標準化」，而 Agent 賣的恰恰是「流程不能被標準化」的那部分。兩者的經濟結構相反。這個反駁是否成立，取決於一個沒有數據的問題：企業的例外處理，究竟有多少比例其實是行業共通的（可標準化），多少是真的只屬於這一家（不可標準化）。</p>
+</div>
+
+<div class="section-title">六、框架的黃昏：LangChain、Dify、n8n 過時了嗎</div>
+
+<p>26:11 這一段的處理方式很務實：不是問「框架有沒有用」，而是問<strong>「框架解決的那部分問題，是否已經被模型本身吃掉」</strong>。</p>
+
+<p>當模型能自己規劃、自己呼叫工具、自己維護狀態時，框架剩下的價值就只有三樣：</p>
+
+<ol>
+  <li><strong>可觀測性</strong>——你到底跑了什麼、花了多少、錯在哪一步。</li>
+  <li><strong>權限</strong>——誰能讓 Agent 做什麼，邊界在哪。</li>
+  <li><strong>部署形態</strong>——跑在誰的雲上、資料出不出邊界。</li>
+</ol>
+
+<p>這三樣會留下，但不足以支撐一個獨立的大品類——除非它往「治理層」演化。這正好接回他自己的產品定位：Governing Agent 不是取代框架，而是把框架降級成基礎設施，自己站在「授權、審計、可回滾」這一層。</p>
+
+<p>這個判斷對創業者的實際含義是：<strong>如果你今天的護城河是「幫人把 LLM 串起來」，那條護城河正在乾涸。</strong>串接會變成模型的原生能力；剩下的是治理，而治理是一門完全不同的事——它賣的不是便利，是責任。</p>
+
+<div class="section-title">七、核心技術段：一個應用公司為什麼要自己訓模型</div>
+
+<p>33:32–40:02 是全片最長的一段連續論述，也是技術含量最高的部分。理由只有一個詞：<strong>私有分佈</strong>。</p>
+
+<p>他的論證是這樣的：To B 的差異化不在基礎能力，而在企業的術語、審批鏈路、例外處理、錯誤容忍度。通用模型的 benchmark 再高，也測不出「這家公司週五下午不走財務總監審批就算違規」這種規則。因為這條規則不在任何公開語料裡，它只存在於這家公司的流程與人的記憶中。</p>
+
+<p>所以做法是把客戶的私有資料 + 私有評測 + 組織偏好，做成小模型與 RL 的訓練閉環，通用模型退化成「老師」與「兜底」。</p>
+
+<p>節目給出了一條完整的四層工程路線圖，而<strong>順序比內容更重要</strong>：</p>
+
+<table>
+  <tr><th>層</th><th>做什麼</th><th>為什麼在這個位置</th></tr>
+  <tr><td>① 私有上下文層</td><td>把企業的術語、權限、審批鏈路結構化</td><td>沒有這層，後面的評測沒有對象</td></tr>
+  <tr><td>② 私有評測層</td><td>用企業自己的例外案例做 eval，而不是公開 benchmark</td><td><strong>先有評測，才有訓練</strong></td></tr>
+  <tr><td>③ 訓練層</td><td>小模型 + RL（RLaaS 的思路）把偏好壓進權重</td><td>只在②成立後才有意義</td></tr>
+  <tr><td>④ 治理層</td><td>授權、審計、可回滾</td><td>讓前面三層可以被企業信任地運行</td></tr>
+</table>
+
+<blockquote class="strong">
+  「先有評測，才有訓練；沒有私有評測就自訓模型，等於在沒有指南針的海上加速。」
+  <span class="attribution">—— 本文對章節 33:32–40:02 論證的概括</span>
+</blockquote>
+
+<p>這句話值得單獨拿出來講，因為它是對當前「人人都在微調」風氣最直接的反駁。微調的成本已經很低，低到任何人都可以跑一次；但微調的<strong>方向</strong>仍然需要一個判準。公開 benchmark 只能告訴你「這個模型在一般任務上好不好」，不能告訴你「它在我們公司的例外上會不會犯錯」。沒有私有評測，你優化的是一個跟你無關的目標函數。</p>
+
+<p>而「通用模型退化成老師與兜底」這個說法也很有意思：它不是「用小模型取代大模型」，而是<strong>用大模型生成訓練信號、用小模型承接日常推理</strong>。這是一種成本結構的設計，不是能力上的替代。</p>
+
+<div class="data-point">
+  <span>四層</span> 私有上下文 → 私有評測 → 訓練 → 治理。順序不可顛倒。<br>
+  <span>一個閉環</span> 客戶資料 + 私有評測 + 組織偏好 → 小模型與 RL。<br>
+  <span>兩種角色</span> 通用模型＝老師（生成信號）＋兜底（處理長尾）；小模型＝日常執行。
+</div>
+
+<div class="section-title">八、如果模型兩三年內普惠，護城河去哪裡</div>
+
+<p>40:02 的章節把這個問題拋出來：AI 可能端到端消滅過去的各種邏輯？模型兩三年內可能普惠？</p>
+
+<p>節目的態度是「值得懷疑但值得下注」。但真正的內容不在態度，而在推論：如果模型能力真的平價化，護城河會全部轉移到<strong>資料、流程知識與信任關係</strong>上。</p>
+
+<p>這與前面的論點四、論點六是同一套邏輯的三次表述：</p>
+
+<ul>
+  <li>論點四說：To B 的瓶頸是交付與信任，不是模型能力。</li>
+  <li>論點六說：差異化在私有分佈，不在基礎能力。</li>
+  <li>論點八說：如果能力平價化，剩下的就只有資料、流程與信任。</li>
+</ul>
+
+<p>三次表述指向同一個結論：<strong>模型的進步不會消滅 To B Agent 的生意，只會把競爭移到我聽不懂你家術語的那一段。</strong>這是一個相對樂觀的結論，但它同時意味著——這門生意的規模化速度，永遠受制於「理解一個新客戶」的速度。</p>
+
+<div class="section-title">九、兩個延伸：AI 遊戲的 timing，與「散是滿天星」的招人法</div>
+
+<p><strong>AI 遊戲（42:34）。</strong>這是一個延伸話題，但放在 11 月 13 日張小珺那集六小時梁其偉訪談旁邊，互文效果很強：一邊在談 3A 動作遊戲的手工藝與十九年積累，一邊在問 AI 遊戲的時機。同一個行業，兩種時間尺度——一種是「十九年做一件事」的尺度，一種是「模型能力每半年變一次」的尺度。節目沒有給答案，但問題本身有價值：<strong>當工具的能力週期短於作品的製作週期，創作者要怎麼下注？</strong></p>
+
+<p><strong>招人（44:58）。</strong>從 AFFiNE 出來的人：前產品負責人做的 AirBuild 在 X 上小火、前 CTO 現在是 Cloudflare Principal Engineer、還有出海圈子熟悉的「生姜」。他的答案不是「願景」，而是<strong>「讓人在這裡拿到可遷移的聲譽」</strong>。</p>
+
+<p>這句話聽起來像廢話，但配合 AFFiNE 到 VoidZero 的履歷，它是有代價支撐的：一個曾經把團隊成員送到 Cloudflare Principal Engineer 位置的創始人，說「我這裡能讓你拿到可遷移的聲譽」，說服力完全不同。這也是 To B 服務型生意的一個隱藏優勢——<strong>交付重，代表每個人都會接觸真實問題，而成長是可見的。</strong></p>
+
+<div class="section-title">十、關鍵數據與時間線</div>
+
+<div class="data-point">
+  <span>2020</span> 博士退學創業。<br>
+  <span>AFFiNE</span> 700 萬用戶、Product Hunt 年度第四；開源文檔協作與知識庫。<br>
+  <span>VoidZero</span> 與尤雨溪等人共同孵化，後被 Cloudflare 收購。<br>
+  <span>Afk.surf</span> To B Governing Agent；節目稱已有數個大客戶。<br>
+  <span>47 分鐘 / 12 章</span> 33:32–40:02 為自訓模型段，全片最長的連續論述。
+</div>
+
+<p>這條時間線有一個容易被忽略的模式：<strong>兩次都是「先做出聲量，再找商業模式」。</strong>AFFiNE 是社群聲量，VoidZero 是開發者聲量。第三次他反過來——先找商業模式（To B、有大客戶），再談聲量。這個順序的改變，本身就是他從前兩次經驗裡學到的東西。</p>
+
+<div class="section-title">十一、爭議與弱點</div>
+
+<p><strong>一、「To B 不是平台」可能只是「現在不是」。</strong>Salesforce 當年也是從「每個客戶都要客製」開始的，platform 化是後來的事。如果 Agent 的例外處理有足夠比例的行業共通性，標準化仍然可能發生。節目沒有處理這個時間維度的問題。</p>
+
+<p><strong>二、樣本只有自家客戶。</strong>「已經有幾個大客戶」是事實，但這幾個客戶的行業、規模、流程複雜度沒有公開。如果它們恰好都是「流程相對可標準化」的行業，那麼這個案例反而支持反方。</p>
+
+<p><strong>三、自訓模型的成本沒有給出。</strong>四層路線圖很漂亮，但沒有說：一個客戶要多少資料、多少 GPU 小時、多久才能收斂？如果每個客戶的訓練成本高到需要一個專門團隊，那它就更像顧問業——而這正好是他自己的結論，只是他沒有把成本數字攤出來。</p>
+
+<p><strong>四、「框架會被模型吃掉」低估了治理需求。</strong>可觀測性、權限、部署形態這三樣確實會留下，但「留下」不等於「不值錢」。如果監管要求企業能解釋每一個 Agent 決策，治理層可能比模型層更值錢。這一點節目只輕輕帶過。</p>
+
+<p><strong>五、引用限制。</strong>本集沒有公開逐字稿，所有引號內容均來自章節標題或單集簡介。節目的論證結構清楚，但具體的對話細節、語氣、反駁與讓步，無法從現有材料還原。</p>
+
+<div class="section-title">十二、行業 insight：三條分界線</div>
+
+<p><strong>第一條：平台型 vs 服務型。</strong>To C 是平台生意（規模效應、贏家通吃），To B 是服務生意（交付能力、信任、客製化）。用同一套估值邏輯去看兩者，會嚴重錯配。這條線的實用價值是：當你看到一個 To B Agent 公司用 SaaS 倍數融資時，先問它的交付成本怎麼隨客戶數增長。</p>
+
+<p><strong>第二條：模型能力 vs 私有分佈。</strong>當基礎能力平價化，差異化只剩下「你比別人更懂這個客戶的分佈」。這條線解釋了為什麼「自己訓模型」不是大廠專利——你不需要訓一個更好的通用模型，你只需要訓一個更懂這家公司的模型。</p>
+
+<p><strong>第三條：框架層的黃昏。</strong>LangChain / Dify / n8n 不會消失，但會從「開發範式」降級成「部署與治理組件」。這條線對開發者的含義很直接：<strong>如果你的價值是「會用某個框架」，那個價值正在被模型吸收；如果你的價值是「能設計治理邊界」，那個價值正在上升。</strong></p>
+
+<div class="section-title">十三、與本系列的脈絡</div>
+
+<p>42 章經最近三集剛好構成一條完整的線：</p>
+
+<ul>
+  <li><strong>10-12</strong> 對談 Ambi 創始人子皓——Personal Agent 創業者的思考。</li>
+  <li><strong>11-07</strong> 對談 Mind Lab 首席科學家驍騰——銳評國模與 Neo Lab、RL 人生與 RLaaS。</li>
+  <li><strong>11-14</strong> 對談嘉琛——把前兩者的概念接到 To B 收入上。</li>
+</ul>
+
+<p>如果只聽這一集，會覺得「自訓模型」是個大廠才有資格的動作；放回前三集的脈絡裡，它其實是「RLaaS 成本下降 + Personal Agent 形態收斂」兩件事的必然結果。</p>
+
+<p>另外，11-08 十字路口年終復盤裡莊明浩那句「RSI 來了、巨頭夾縫中的創業機會」，與這集的「To B 不是平台機會」是同一枚硬幣的兩面：<strong>夾縫存在，但夾縫裡長不出平台。</strong></p>
+
+<div class="highlight-box">
+  <p><strong>如果只能帶走一句話：</strong>To B Agent 賣的不是「更聰明的軟件」，是「可以被授權的行為主體」。前者可以複製，後者只能一個一個交付——這就是為什麼它的天花板是信任，不是模型。</p>
+</div>
+
+<hr>
+
+<footer>
+  <p>來源：42 章經，〈復盤 2C 和 2B Agent 發展脈絡｜對談 Afk.surf 創始人嘉琛〉，曲凱主持，2026-11-14 13:00 UTC 發布，約 47 分鐘、12 個章節。<br>
+  單集頁面：小宇宙（42 章經）。本集未提供公開逐字稿；文中引語均標明來自章節標題或單集簡介，其餘為對節目論證結構的整理與轉述，未以推測補寫對話。<br>
+  相關集數：42 章經 10-12（Ambi 子皓）、11-07（Mind Lab 驍騰）、11-08 十字路口年終復盤②。</p>
+  <p>生成時間：2026-11-15 06:00 UTC · 深度復述 #276</p>
+</footer>
+
+</div>
+</body>
+</html>
