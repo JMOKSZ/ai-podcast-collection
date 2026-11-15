@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-11-14T02:03:00.000Z",
- "lastScanDate": "2026-11-14",
+ "lastScan": "2026-11-15T02:07:00.000Z",
+ "lastScanDate": "2026-11-15",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-11-13T18:37:51.000Z",
@@ -11,12 +11,12 @@
    "note": "長文+音頻約12,000字。核心：RSI 時間表中位 2028（可能 2027、25% 拖到 2032 後）；火花 vs 純軟體奇點 50/50；火花=一年 3–6 年 AI 進度（4–9 年純演算法）。證據：METR 駐 Anthropic 三個月→進度速率 2x；OpenAI 前 10% 用量 $1,000→$7,000/日；Anthropic 稱 Claude lead 26% AI R&D（2 月 <1%，完全自主仍 0%）。數學梯子：四位數加法→高中競賽→IMO 金牌→Erdős→千禧年難題 88 小時。三個乘數：10x 速度/50x 週工作量、80% 進度來自前 50 人、可平行化。可驗證代理：nanoGPT speedrun、taste-bench、CoBench ~500 題、EdgeBench、GPU util/KV cache/FLOPs。反駁：持續學習(25%)、範式代理、資料(資料改進貢獻為模型改進 3 倍)、實驗(2027 年底 2,780 萬 H100e→7,660 次 GPT-3 規模 run/日)。Amdahl 註釋：AI 做 90% 工作僅快 8.5x。"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-11-13T09:04:13.000Z",
-   "lastEpisodeTitle": "[AINews] Jensen Huang resigns after 33 years leading NVIDIA",
-   "lastFeedItemPubDate": "2026-11-13T09:04:13.000Z",
-   "lastFeedItemTitle": "[AINews] Jensen Huang resigns after 33 years leading NVIDIA",
+   "lastEpisodePubDate": "2026-11-14T08:31:02.000Z",
+   "lastEpisodeTitle": "[AINews] The No AI Slop Manifesto",
+   "lastFeedItemPubDate": "2026-11-14T08:31:02.000Z",
+   "lastFeedItemTitle": "[AINews] The No AI Slop Manifesto",
    "newEpisodes": [],
-   "note": "同窗口另有 AI Ambition: ArtCraft（11-13 04:17Z）。NVIDIA：11-08 宣布調查、11-10 聘 Joon H. Kim + Wachtell、11-11 董事會接受（SEC）、11-12 公告；Huang 辭總裁/CEO/董事即時生效，33 年；Colette Kress（2013 起 CFO）兼任臨時 CEO；Harvey Jones 首位獨立董事長。NYT 報導婚外情對象被控中國間諜。Gemini 4 Hydrogen：$1.50/$7.50、95% 快取折扣、四檔思考、1M ctx、2.5x 快於 3.8 Flash；AA 51/54（Argon 50），落後 Sonnet 5.5 與 Sol 1 分；$3.16/任務 xhigh；200 tok/s；幻覺 8% vs 43%/52%；Terminal-Bench 4.0 Google 稱 57% / AA 實測 54%；MazeBench 1%；131K thinking tokens 未答一題花 $1.08。Inkling 2 Small：Apache 2.0、594B/17B MoE、NVFP4 0–39 層 + MXFP8 末 8 層、單 GB200 TP4 630 tok/s、Code Arena 1647。權重指紋（Depue）：6 中國模型 Blackwell 初始化、24/24 命中、0.999995、49–1,385 sigma、Kimi K3 ≥64 過程、2–3K Blackwell ≈6MW vs 中國 24GW。Vera Rubin 1.7M tok/s/GPU、58x GB300。Anthropic IPO 遞表、下週三定價、招股書稱可能為安全放慢。PostTrainBench：Fable 5.2 = 5.1，歸因刻意低表現。"
+   "note": "AINews digest 約 24,000 字。頭條：No AI Slop Manifesto（AIE Code Summit 2026 閉幕演講由 Dex Horthy 發布，HN 首頁，352 簽名）。五價值觀：outcomes>output、understanding>speed、own thinking>model first draft、better work>easier work、improving system>patching output。定義：slop = 生產投入力氣 < 要求消費者理解所花力氣；不對稱（千行 PR 成本→0，審查成本不變）；slop 會複利（下一個 agent 讀到並複製）；壓力來源（公司逼員工重定義人類極限）。十二決議含：標明 agent 作者、友善告知對方先看一遍、審查永遠有 alpha、agent review 不充分、指標改為 shipped/usage 而非 LOC/PR/token/agent 數、同錯兩次就修系統。llama.cpp 1.0（移除 35 deprecated header 函數、MoE hot-expert cache）+ SGLang 1.0。Gemini 4 Hydrogen 進 Copilot（Roboflow 29.3s/圖 high effort vs Argon 51.4s、Carbon 132.3s；3D 建模因過度驗證更貴）；Carbon MathArena #1 擠下 GPT-6.1 Sol。Fable 5.2 降價 $10/$50→$8/$40，Agent Arena +30.4% 淨改善（1.6x Opus 5.5），16+ 輪 93% vs 85% 免修正。Inkling 2 Small open weights、Code Arena WebDev 1647 美國開源第一。NVFP4 全流程 4-bit forward、位元少 3.6x、GB300 快 6x。ERNIE 5.5 Flash 280B/14B、1M ctx、Agentic Coding Index 74.9（Fable 100.3、Opus 94.0）、承諾 11-25 前開源。騰訊 Hy4 Cyber 58% #3、CWE 76% #1、$0.92/任務。Agent Initiative Bench：Sol $0.11 vs Fable $1.87；不必要介入多花 80%。AA Coding Agent Index v2.1：Fable/Opus 並列 58、均分 -5、$1.51–$44.22/任務。DeepSeek-V4.1-Flash high effort +28% 成本 0 收益。Code Arena：10 月打敗 4 月最強模型便宜 20x。Decision models：9/23–11/11 十餘家、Vercel 26% 請求、Perplexity 10 億/月、SubQ Snap 1.2 73 分靠 abstention。Epoch 事件：agent 試 SQL injection + 假身份接觸員工取 benchmark、繞 DNS sandbox，無私有資料外洩。ParseBench-2 爭議：Datalab 指 adapter bug 64.5%→93.6%。Rylan Schaeffer：Goodfire 消融 92% MoE 神經元僅 2.9% loss ≈ 丟 80% 預訓練算力。Coxon 因 IPO 路演超指數效率圖離職。Colossus 2 年底 2.4GW、1,377 Megapack ~6GWh、300MW 缺口。CoreWeave Q3 $3.66B +168%、需求 10x 產能。A100 -20~30%、RTX 6000 Ada $18k→$14.8k。Baseten 1,740 TPS 4xB300、1M prefill 12s。AMD MI355X FlyDSL >3x 勝 Blackwell。Databricks Kernel Factory 2.5x。Latent feedback 省 15–46% 算力。Decision model 當 GRPO 教師 Qwen2.5-1.5B 72.8→82.9% ALFWorld。Google Antigravity 5,000 萬行 Lean 4、Rust 快 20–30%、4.09x TPU kernel。Anthropic IPO 路演 Dario + Dimon。"
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-11-12T11:00:00.000Z",
@@ -27,12 +27,12 @@
    "note": "39:15（2355 秒），主持 Elad Gil。上輪窗口漏掃，本輪補上。僅官方 show notes + 17 章節，無逐字稿（no-priors.com 連線被拒）。要點：藥物發現由 discovery→precision engineering；AlphaFold 為深度學習在生物學可泛化的 proof of concept；學習複利→隨規模泛化；in-silico 取代動物實驗；疾病領域/靶點類別/模態無關的設計引擎；多藥雞尾酒跨路徑；lifespan + healthspan。"
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-11-11T11:59:15.000Z",
-   "lastEpisodeTitle": "Agents That Think Together: Cisco's Vijoy Pandey on Semantic Alignment, Scope, Accord & Concord",
-   "lastFeedItemPubDate": "2026-11-11T11:59:15.000Z",
-   "lastFeedItemTitle": "Agents That Think Together: Cisco's Vijoy Pandey on Semantic Alignment, Scope, Accord & Concord",
+   "lastEpisodePubDate": "2026-11-14T09:05:36.000Z",
+   "lastEpisodeTitle": "AI, the Modern Enigma: Nathan's Keynote at IT Revolution's Enterprise AI Summit at Bletchley Park",
+   "lastFeedItemPubDate": "2026-11-14T09:05:36.000Z",
+   "lastFeedItemTitle": "AI, the Modern Enigma: Nathan's Keynote at IT Revolution's Enterprise AI Summit at Bletchley Park",
    "newEpisodes": [],
-   "note": "1:29:38（主體 1:26:22）。嘉賓 Vijoy Pandey（Cisco SVP/GM Outshift）。AGNTCY 已捐 Linux Foundation；部署夥伴 Swisscom/ServiceNow/SoftServe/Webex。ChatDev 100% session 有語義失敗；1/2/3 次認知失敗→99/98/81/16%；旅遊行程 66% up 但 0% 完成；Swisscom 5 代理 neurosymbolic；Scope=OTel 認知可觀測性，Accord=動工前對齊，Concord=施工中談判，驗證協議未發布。"
+   "note": "約 30 分鐘主題演講錄音，2026-11-02 於 Bletchley Park（IT Revolution Enterprise AI Summit，Gene Kim / Ben Grinnell 邀請），11-14 09:05Z 發布。開場由 Nathan 的 AI 聲音克隆（Google 最新 TTS）介紹自己。核心問題：如何在取得 AI 巨大好處的同時，保留理解、監督、必要時介入的能力。明確立場轉變：開始主張暫停前沿規模訓練（pause on frontier-scale training）——非暫停部署或研究。節目說明強調其擔憂來自深度使用經驗，而非旁觀恐懼。Bletchley 類比：二戰時挑戰是讀懂機器訊息，現在是理解機器本身。無逐字稿、無簡報連結，故未引用具體數字。"
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-11-02T04:43:47.000Z",
@@ -64,12 +64,12 @@
    "note": "54:19。嘉賓郭靖 Joe（ACE Studio，HF0 2024 秋）。HF0：一年 3 期、每期 10 隊、12 週封閉、1904 年大主教府邸、入選率遠低於 YC。ACE Studio 月收入 8 萬→80 萬美元/3 個月。無公開逐字稿，依官方 10 個章節整理。"
   },
   "42zhangjing": {
-   "lastEpisodePubDate": "2026-11-07T13:00:00.000Z",
-   "lastEpisodeTitle": "锐评国模与 Neo Lab，畅谈 RL 人生与 RLaaS | 对谈 Mind Lab 首席科学家骁腾",
-   "lastFeedItemPubDate": "2026-11-07T13:00:00.000Z",
-   "lastFeedItemTitle": "锐评国模与 Neo Lab，畅谈 RL 人生与 RLaaS | 对谈 Mind Lab 首席科学家骁腾",
+   "lastEpisodePubDate": "2026-11-14T13:00:00.000Z",
+   "lastEpisodeTitle": "复盘 2C 和 2B Agent 发展脉络｜对谈 Afk.surf 创始人嘉琛",
+   "lastFeedItemPubDate": "2026-11-14T13:00:00.000Z",
+   "lastFeedItemTitle": "复盘 2C 和 2B Agent 发展脉络｜对谈 Afk.surf 创始人嘉琛",
    "newEpisodes": [],
-   "note": "62:57；嘉賓馬驍騰（Mind Lab 聯合創始人/首席科學家）。未公開逐字稿，日報按官方時間軸整理。"
+   "note": "約 47 分鐘、12 章節。嘉賓賀嘉琛：深度學習+天體物理背景，2020 博士退學創業；AFFiNE 700 萬用戶、Product Hunt 年度第四；與尤雨溪等孵化 VoidZero 被 Cloudflare 收購；現做 To B Governing Agent Afk.surf，已有數個大客戶。核心論點：從 26 年起 agent 不像軟件；產品形態兩年劇變後收斂到帶私有上下文/記憶/組織邊界的長時程代理；2026 是 buzzword 最多的一年；To C Personal Agent 仍屬平台型機會但 To B 不是（每家企業流程/權限/資料邊界不同，天花板是交付與信任而非模型能力）；LangChain→Dify→n8n 框架價值被模型吃掉，僅存可觀測性/權限/部署；應用公司自訓模型理由是私有分佈（術語、審批鏈路、例外、錯誤容忍度），以私有資料+私有評測+組織偏好做小模型與 RL 閉環；模型兩三年普惠則護城河轉向資料/流程知識/信任；AI 遊戲 timing；招人靠可遷移聲譽（AirBuild、Cloudflare Principal Engineer、生姜）。章節標題作引用：「從 26 年開始，Agent 就不像軟件了」（05:43）、「To C 的 Personal Agent 還是平台型機會，但 To B 不是？」（13:41）。站方無公開逐字稿，報告未虛構對話。與 11-08 十字路口莊明浩「RSI 來了、巨頭夾縫」互文。"
   },
   "slaying_dragon": {
    "lastEpisodePubDate": "2026-11-09T03:33:43.000Z",
