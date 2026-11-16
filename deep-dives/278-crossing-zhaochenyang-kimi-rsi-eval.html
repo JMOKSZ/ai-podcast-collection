@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 用 Kimi 加速 Kimi——趙晨陽的十個瞬間，其實是同一個問題的三種尺度</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  td { color: #444; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.55rem; }
+    table { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="../index.html">← 返回播客日報</a>
+  <div class="ep-num">十字路口 Crossing · 年終復盤系列 ③ · 第 156 期</div>
+  <h1>用 Kimi 加速 Kimi——趙晨陽的十個瞬間，其實是同一個問題的三種尺度</h1>
+  <div class="meta">
+    <div>〈【年終復盤③】用 Kimi 加速 Kimi：RSI 前夜，一個 AI infra 人的 10 個 Aha Moments〉</div>
+    <div>出品：十字路口 Crossing<span>·</span>主持：楊遠騁（Koji）<span>·</span>嘉賓：趙晨陽</div>
+    <div>發布：2026-11-15 16:00 UTC（11-16 00:00 HKT）<span>·</span>時長 66:27<span>·</span>10 個章節</div>
+    <div>來源：完整語音轉錄（27,500 字，含發言人與時間戳）；本文引語為原話，時間軸依官方章節</div>
+  </div>
+</header>
+
+<p>這一集最容易被誤讀成兩集：前七十分鐘講 AI infra，最後十分鐘突然講明史。很多人聽完會說「前面很好，後面離題了」。</p>
+
+<p>我的讀法剛好相反。<strong>後面十分鐘不是離題，是換了一個尺度去講同一件事。</strong>趙晨陽從頭到尾只在講一個命題：<em>不可評估的東西不可優化</em>。工程上是 WER 和吞吐，組織上是 merge 權限和 code review，政治上是立儲與權責。三個尺度，同一個失效模式——<strong>標準模糊，於是誰都能解釋，於是誰都不負責。</strong></p>
+
+<p>這也是為甚麼他不是典型的「22 歲技術樂觀派」。他在 Amazon 的 SF AGI Lab 做過一年 tool-call 訓練，在 SGLang 擁有 merge 權限，在 RadixArk 做互動式推理系統；同時他每天輸出四萬字、週末用 Claude 讓一個 80M 的 TTS 模型性能提升 1700%、並且在 OpenAI 總部門口舉過十分鐘「Stop AI」的牌子。這幾個身份放在同一個人身上會互相校準，所以他講 RSI 的方式不像分析師講時間表，而像司機講路況。</p>
+
+<div class="data-point">
+  <span>66:27</span> 本集時長（3,987 秒）；轉錄稿 27,500 字。<br>
+  <span>10 個</span> Aha Moments：7 個工程 + 3 個明史，最後三個在 53:24 之後一路講完，沒有中場休息。<br>
+  <span>+1700%</span> 80M 參數 TTS 模型在清晰 eval 約束下、兩天內的性能提升幅度。<br>
+  <span>200 ms</span> 原生全雙工模型的決策週期。<br>
+  <span>4 萬字</span> 他每天的中文輸出量，全靠語音輸入法完成。
+</div>
+
+<p>下面我不按「十個瞬間」逐條複述——那是節目大綱already做過的事。我要做的是把它們折成四層：<strong>RSI 的定義問題</strong>、<strong>評估的經濟學</strong>、<strong>便宜智能的治理衝擊</strong>、<strong>以及他為甚麼用明史收尾</strong>。</p>
+
+<div class="section-title">一、RSI 不是開關，是「人佔比下降」的連續量</div>
+
+<p>節目第一個動作不是預測，是定義。他給出的操作性定義很短：</p>
+
+<blockquote class="strong">
+  「當模型能夠積極 active 地在這一代模型的部署當中、或者下一代模型訓練當中起到作用的時候，這就是 RSI 的雛形。」
+  <span class="attribution">01:35，他對 RSI 的操作性定義</span>
+</blockquote>
+
+<p>這句話的重點在「雛形」和「起到作用」。它把 RSI 從一個二元事件（有沒有發生）變成一個比率（人在迴路裡的佔比）。接著他用一個假想公司「BAI」推演七代模型交接八代的場景，把抽象定義落到三個具體動作上：</p>
+
+<ul>
+  <li><strong>資料篩選</strong>：七代模型參與八代預訓練資料的 pre-train / mid-train / SFT / RL 篩選，每一步都有嚴格標準。</li>
+  <li><strong>推理引擎</strong>：替八代寫推理引擎，把 100 tok/s 幹到 200–300 tok/s。他補了一句關鍵的商業判斷——「上線之後賣 token 也會很糟糕」，因為推理速度同時決定 RL 迭代速度與單位 token 的成本結構。</li>
+  <li><strong>架構搜索</strong>：在數百到數千種架構排列組合裡做初步驗證。</li>
+</ul>
+
+<p>然後他明確反對「極端無人化」的 RSI 定義：電力要人管、GPU 要人管，「你是不可能把人完全挪出來的」。真正的 RSI 是<strong>人在自我迭代中的佔比逐漸下降</strong>——一個可以每年量一次的百分比，而不是一個可以宣布的里程碑。</p>
+
+<p>他自己做的事就是證據。讓 Kimi K3.1 去寫 Kimi K3.1 在 B300 上的推理引擎——「用 K3.1 讓 K3.1 跑得更快，那麼它只會越來越快，我就會有越來越多的願望。」他把這個結構比作阿拉丁神燈：第一個願望是「再要三個願望」，於是許願機本身成為複利機器。他也提到正在參與名為 <strong>OpenRSI</strong> 的項目，雛形即將 launch，時間感對標「Claude 5 / Astro 剛出來」那一刻的震撼。</p>
+
+<div class="sub-title">為甚麼一個 22 歲的人會主動相信 RSI？一個市值反問</div>
+
+<p>節目裡最有說服力的一段不是技術，是一個會計問題。他引朋友的話：NVIDIA 五萬億市值、AI 產業數十萬億，</p>
+
+<blockquote>
+  「我們究竟要賣多少 token，要賣多少算力，要賣多少保險訂單，要造多少醫療訂單，才能撐得起這樣的市值？」
+  <span class="attribution">約 04:00，市值反問</span>
+</blockquote>
+
+<p>反過來說：如果相信 RSI，攻克癌症、攻克帕金森這種「以前限於人類精力、時間與智力成本而無法達成」的目標被打開，期權價值不可估量。他把這定位成 mindset 而不是對錯判斷——「我可能算是一個激進派裡面很務實的一個人。」</p>
+
+<p>這段值得單獨標出來，因為它是 2026 年下半年最常見的多頭論證，但說話的人不同，重量就不同：分析師說「估值需要故事」，他每天在量那個斜率。他不需要相信敘事，他需要相信自己的 merge queue。</p>
+
+<div class="section-title">二、評估是唯一的瓶頸——而瓶頸有價格</div>
+
+<p>全集的核心句來自鐘瑞奇（Anthropic 早期成員，現於 Thinking Machines Lab）：</p>
+
+<blockquote class="strong">
+  “What we cannot evaluate is what we cannot optimize.”
+  <span class="attribution">06:43，前半句引自鐘瑞奇；他今年補上後半句 “What we can evaluate is what we can optimize.”</span>
+</blockquote>
+
+<p>推導很直接：只要評估腳本寫對、約束寫全（WER 不能升高、性能不能降低），模型不可能交出讓指標變差的結果——「AI 不可能做錯」。他用週末那個 80M TTS 模型當實證：在清晰 eval 下，用 Claude 5.5 Opus（Ultra Code + Ultra Fast），兩天性能進化 <strong>1700%</strong>。</p>
+
+<p>但這裡有一個大多數人會漏掉的轉折：<strong>評估不是一個技術問題，是一個價格問題。</strong>他給的成本光譜是全集最實用的一張表：</p>
+
+<table>
+  <tr><th>驗證動作</th><th>單次成本</th><th>推論</th></tr>
+  <tr><td>WER 評估（一張 H200 跑一小時）</td><td>&lt; 10 美元</td><td>便宜到可以一個週末跑上千次，於是 agent 可以自由搜索</td></tr>
+  <tr><td>晶片流片</td><td>數以億計</td><td>「即便流片能夠全自動，人類會敢於讓 agent 自動去流片嗎？」</td></tr>
+  <tr><td>AI 製藥的濕實驗（猴子）</td><td>供給有限</td><td>可以從 10 個候選變成 1 萬個，但猴子沒有那麼多</td></tr>
+  <tr><td>請作家評創意寫作、請導演評影片</td><td>領域專家的勞務</td><td>主觀評估不是不能做，是昂貴且吵雜</td></tr>
+</table>
+
+<p>這張表解釋了為甚麼 RSI 在不同領域的速度完全不同：<strong>不是模型不夠聰明，是「驗證一次要多少錢」。</strong>反過來說，任何能把驗證成本降一個數量級的工作——自動化評測、模擬器、形式化驗證、表徵轉換——都會直接兌換成 RSI 的加速度。這是整集最有遷移價值的一條洞察，因為它把「AI 進步」從模型問題翻譯成了基礎設施問題。</p>
+
+<div class="sub-title">好評估的三個條件，與「拆細」這個笨辦法</div>
+
+<p>他給的標準是：<strong>客觀、自動化、低成本</strong>。三者缺一，評估就會退回人的主觀否決權。所以「評估一本書寫得好不好」不是好評估，因為審美是主觀且吵雜的。這裡有一句很漂亮的定義：</p>
+
+<blockquote class="strong">
+  「美感是把具有相同偏見的人聚在一起構造的事物。」
+  <span class="attribution">09:26，談為甚麼主觀評估難做</span>
+</blockquote>
+
+<p>Koji 補了一個實用方法：把「美不美」拆成 100 到 500 個分叉節點上的小判斷，大問題變小問題。趙晨陽同意，但立刻加上限制條件——<strong>No Free Lunch</strong>：評估不全面，模型會極度優化某幾個指標而讓其他維度崩掉。所以要寫進 well-defined 的評估裡：不能為了提升 B 模型性能去破壞 A 模型、不能加很噁心的環境變數。</p>
+
+<p>這一段的價值在於它把「評測」從排行榜文化裡拉了出來。排行榜是橫向比較，評估是縱向約束。<strong>排行榜讓你選模型，評估讓模型自己工作。</strong>前者是市場行為，後者是生產行為。混淆兩者，就會得到一堆在 benchmark 上很強、在生產裡很脆的模型。</p>
+
+<div class="section-title">三、AI 是放大器，所以代碼庫必須有「一致的偏見」</div>
+
+<p>這是全集最鋒利的一段，也是我認為最容易被低估的一段。它回答了一個沒人願意正面回答的問題：<strong>當生產成本趨零，審查怎麼辦？</strong></p>
+
+<p>舊世界：一個工程水平糟糕的人一週提兩個 PR，他一眼就能拒掉。新世界：同一個人「可以一週寫 100 個 PR 上來」。逐一評估太花時間，全拒傷感情，全收「代碼庫會很快被毀滅掉」。</p>
+
+<blockquote class="strong">
+  「AI 是人類的放大器。頂尖工程師和頂尖 AI 寫出頂尖代碼，垃圾工程師和頂尖 AI 寫出災難性代碼。」
+  <span class="attribution">14:43</span>
+</blockquote>
+
+<p>他的解法是 BDFL（Benevolent Dictator For Life，林納斯對 Linux 的角色）加上把偏見寫成 requirements：不通過就不能 merge。他承認偏見沒有正確可言：</p>
+
+<blockquote class="strong">
+  「偏見本身就不存在正確，但只要這個偏見是 consistent 的，那麼這個事情就可以被推動下去。」
+  <span class="attribution">15:29，BDFL 的正當性來源</span>
+</blockquote>
+
+<p>具體規則近乎潔癖：<code>if</code> 必須有 <code>else</code>（哪怕 <code>else pass</code>）、註解裡不能有頓號（「頓號是 markdown 語法，而 Python 不是 markdown」）、註解必須寫上人的名字。</p>
+
+<p>最後一條規則才是真正的核心。署人名不是為了追責，是為了<strong>讓「誰寫的」可追溯</strong>——在一堆 AI 生成的代碼裡，唯一不能自動化的東西是「有人看過」。這也是雙向篩選：不接受這套規則的人可以不做這個項目。</p>
+
+<div class="highlight-box">
+  <p><strong>我的補充：</strong>這套做法的本質是把「品味」編譯成 CI。宣言式的回應（例如同期 Latent Space 那集聊的 No AI Slop Manifesto）說「審查永遠有 alpha」；趙晨陽說的是「把審查寫成 merge gate」。前者是文化，後者是機制。文化會疲勞，機制不會——但機制需要一個人持續供電，這就是 BDFL 的弱點，也是他沒有回答的問題。</p>
+</div>
+
+<div class="section-title">四、便宜的智能會撞擊社會，而他只看到悲觀的未來</div>
+
+<p>14 分鐘到 33 分鐘這一段，是全集最大的跳躍：從 code review 直接跳到 UBI、EA、加速主義與「Stop AI」。表面上是閒聊，實際上是同一個問題的社會版本——<strong>當某種能力變得極便宜，誰有權決定它怎麼被使用？</strong></p>
+
+<p>他舉江西低保女孩赴港看演唱會被取消低保的爭議，結論不是評判個案，而是推論結構：</p>
+
+<blockquote class="strong">
+  「如果人類靠施捨過日子，人一定不會有自由的。」
+  <span class="attribution">21:04，UBI 討論的核心句</span>
+</blockquote>
+
+<p>他預期接受 UBI 的人會被無窮追問——能不能喝貴的水、能不能買 PSP、能不能換最新 iPhone。他引劉慈欣（節目中說《赡養地球》，按內容應為《贍養人類》）裡「呼吸空氣都要向造物主購買」的設定，並直言馬斯克作為第一個 trillionaire 的示範令他不安。</p>
+
+<p>他也講了自己在 OpenAI 總部門口跟著舉了十分鐘 “Stop AI” 牌子的經歷——</p>
+
+<blockquote>
+  「我很好奇這群人的訴求是什麼，但我發現他們的訴求僅僅是 Stop AI，好吧，所以我後來就走了。」
+  <span class="attribution">約 24:00</span>
+</blockquote>
+
+<p>對 EA 與加速主義，他各打五十大板。他複述 Anthropic 早期的一個公開爭議：第一代超越 OpenAI 的模型發布時，內部有人認為公司使命是「給 AI 加上緊箍咒」，與 OpenAI 左腳踩右腳比領先只會加速而非安全。他的批評落在動機結構上：有效利他主義者「很多時候也會陷入到精英的傲慢之中，因為他們已經成為精英，所以覺得自己比其他人聰明，具有替全人類做選擇的權力」。</p>
+
+<p>他自己的立場是兩句話的組合：「反對替全人類做決策」，但「不為自己做決定是不負責任的」。這兩句放在一起才完整——他反對的是<strong>代理權的壟斷</strong>，不是反對判斷本身。</p>
+
+<div class="section-title">五、Computer Use 的真正解鎖不是視覺，是無障礙樹</div>
+
+<p>這是全集技術含量最高、也最容易被當成「小技巧」跳過的一段。</p>
+
+<p>他以前公開批評 agent 領域「裡外不是人」：沒有公正標準，錄十個 demo cherry-pick 就能宣稱無敵。今年他投降了。導火索很日常：他太太（傳統自然科學背景）用 GPT 的 computer agent 操作 Origin 這種沒有 SDK、只有 Windows 版的老軟件，「拿一個虛擬的、好看的鼠標點來點去就做完了」。</p>
+
+<p>他去打聽原理，發現關鍵在推理層面：<strong>圖片不具備前綴性。</strong>LLM 的 string A+B 與 A+C 可以共享 prefix A（KV cache 的基本原理），但任意兩張截圖幾乎不能共享——每換一幀就要重算整張圖的 prefill。一張截圖在主流 VLM 上是數百到數千個 visual token，一次任務幾十上百步，成本與延遲會直接爆掉。</p>
+
+<p>解法是把介面變成字串。蘋果為盲人程序員做的無障礙功能，要求軟件把整個界面當作文檔讀出來，於是「它不再是一張圖片，它成了一個字符串」——而字符串有前綴性，KV cache 重新生效。截圖退化成 fallback，只覆蓋無障礙樹表達不了的區域。</p>
+
+<p>他也解釋了為甚麼 iPhone Mirroring + Phone Use 能快速成立：手機的無障礙層比桌面更規範。這句話的推論很重要——<strong>agent 的能力上限，有一部分是由 UI 框架的規範程度決定的，而不是由模型決定的。</strong>誰控制了 UI 的表徵層，誰就控制了 agent 的成本曲線。</p>
+
+<p>他用這個能力處理了三件真事：被收 75 美元遲付罰款，讓 agent 跟物管 argue 三封郵件後第二天退款到帳；把清華時代存在 Notion 的日記全量導出成 markdown / CSV / PDF，兩小時完成。</p>
+
+<div class="sub-title">副產品：AI 客服爛，不是因為不聰明，是因為沒有決定權</div>
+
+<p>他觀察到一個荒謬場景：物管公司本身也是 AI，於是兩個 AI 從下午四點對話到晚上七點，十幾輪，什麼都沒拍板。</p>
+
+<blockquote class="strong">
+  「AI 是沒有決定權的，AI 都是最保守的……它要把所有的責任推走，只保留權力；但 AI 既然不負任何責任，它就不敢拍板任何事情。」
+  <span class="attribution">40:12，為甚麼 AI 客服體驗糟糕</span>
+</blockquote>
+
+<p>他把同一套批評指向模型的語言習慣：「1% 的勝率它都要說，不等於、不表明、不完全決定、還不能下決心，這就是典型的甩鍋行為。」他也引了那個 Amazon 程式員被裁後、在模型建議下停掉癲癇藥去準備面試、最後打官司的新聞，作為「模型免責訓練」的極端後果。</p>
+
+<p>結論回到人：「負責任的一定是人。」</p>
+
+<p>我認為這段是全集對 To B 產品最有用的一段。它說明了一個常被誤解的現象：企業買 agent，買的不是智力，是<strong>可被授權的行為主體</strong>。一個不敢拍板的代理，智力再高也只是把決策成本轉移回人身上，還多了一層對話延遲。</p>
+
+<div class="section-title">六、互動式 AI：三條路線，與一個被低估的工程問題</div>
+
+<p>他先給了一個很大的定義：人與人的對話是連續的，對方一段時間沒回，你會想是不是問題沒說清楚、會補背景、會在對方偏題時打斷——「人的輸入都是持續的」。他引一個學術觀點：<strong>人就是一個每 200 毫秒有一次輸入的 thinking machine。</strong></p>
+
+<table>
+  <tr><th>路線</th><th>機制</th><th>代表</th><th>優點</th><th>代價</th></tr>
+  <tr><td>原生全雙工</td><td>每 200ms 讀一次輸入，並決定接下來 200ms 輸出什麼；語音、視頻、文字原生聯合</td><td>Thinking Machines 的 interactive model</td><td>真正連續、可打斷、不打斷智力水平</td><td>要從頭訓練端到端模型，開源社區做不了</td></tr>
+  <tr><td>輪次式</td><td>audio-in / audio-out 的 audio language model，但仍是一問一答，打斷要按暫停鍵</td><td>ChatGPT 語音模式一代</td><td>模型改造量小</td><td>交互生硬，「像在對講機」</td></tr>
+  <tr><td>級聯</td><td>VAD → ASR → LLM → TTS，端到端等於 ASR + VLM + TTS</td><td>SGLang-Omni、開源社區主流</td><td>每塊可獨立升級、不需訓練、新模型即插即用</td><td>延遲疊加、錯誤累積、韻律與情緒在文本瓶頸丟失</td></tr>
+</table>
+
+<p>他坦言前兩條路的問題是「模型在其中的重要度太高」：Qwen3-Omni 是去年發布的，之後沒有新的開源全模態模型可用，開源社區只能等。級聯的優勢正在於此——三週前 MiniMax 的 M3.1（400B，他形容為 elegant）發布後，他們立刻拼了一個 demo：SGLang-Omni 跑 ASR、MiniMax M3.1（API）當中間 LLM、Qwen3-TTS 做輸出，中英阿拉伯語都說得很好。</p>
+
+<p>他也認為未來不是二選一，而是有過渡態：用級聯的骨架，但對 TTS 與 LLM 做全雙工化的 post-training，成本低於從頭訓一個原生全雙工模型、高於純級聯。</p>
+
+<div class="sub-title">TTS as a Tool：一個被嚴重低估的工程問題</div>
+
+<blockquote class="strong">
+  「我們現在的開源 LLM 都是為了 coding 訓練的，coding 模型一吐 token 就是成千上萬的 token，你真的希望每一個 token 都給你 TTS 朗讀出來嗎？」
+  <span class="attribution">約 45:00</span>
+</blockquote>
+
+<p>他舉 GPT 的天氣回答為例——GPT 不朗讀，而是在 app 裡 render 出一週天氣卡片，這是很好的產品判斷。而他們的級聯會把每個 token 都讀出來，甚至讀到 emoji 直接亂碼（「怎麼可能去訓練 TTS 讀表情呢」）。</p>
+
+<p>解法叫 <strong>TTS as a Tool</strong>：對 LLM 而言 TTS 必須被降級成一個 tool call，跟查天氣一樣，先查、再決定讀哪一部分。但他馬上承認這方案仍然太理想：他在 Amazon SF AGI Lab 做過一年 tool-call 訓練，本以為過了一年 zero-shot 泛化應該很好了，「結果我發現仍舊不行」——不開 thinking 時模型給錯參數、讀錯字；開了 thinking 要想十分鐘，「再給用戶讀一段話，你能接受嗎？不可能吧」。</p>
+
+<p>這是「模型智力上升、水面上升、舊暗礁消失、新暗礁出現」的典型例子。也提醒一件事：<strong>模態融合的瓶頸往往不在聲學，而在工具調用的可靠性。</strong></p>
+
+<div class="section-title">七、語音輸入法：入口就是產品</div>
+
+<p>他每天輸出約四萬個漢字，打字不可能做到，「語音輸入法某種意義上讓我的輸出速度跟上了我的思想速度」。技術方案就是 ASR + LLM，與互動式系統同構，只是少了 TTS：ASR 轉文字（Qwen3-ASR，或復旦邱錫鵬團隊的 MOSS-Transcribe-Diarize 做長音頻），LLM 做潤色與糾錯（Kimi K3.1）。</p>
+
+<p>他講了一個很具體的糾錯案例：朋友叫「高意飛」，ASR 會在「一飛 / 二飛 / 三飛 / 意飛 / 零飛」之間猜錯，因為語音本身是多義的。解法不是改模型，是寫 prompt——把常見映射全部映射到「高意飛」，並且用人能記住的方式描述字形（「巨懷一心壯士飛的意」）。他的觀點是：ASR 也有 context 參數可以設 prompt，但「那個不是特別強大，其實大部分的工作還是用 LLM 來完成」。</p>
+
+<p>產品層面他安利了 Voxt 2.0（節目稱開發者為「官微老師」，獨立開發者），昨天剛發布的開源語音輸入法。他們把 ASR 換成 SGLang MLX，並向作者保證「正確性一致、性能更強、易用性更好」，甚至在 Mac 上開了 speculative decoding 讓 ASR 更快；本地 LLM 從 MLX 原生（他批評其 prefix KV cache 做得不好）換到 Ollama，最後他自己部署 Kimi K3.1。理由帶有很強的價值主張：想掌握自己的 context、不想隱私洩露，就用本地。</p>
+
+<blockquote class="strong">
+  「方便的产品入口是非常非常核心的事情。」
+  <span class="attribution">約 51:30</span>
+</blockquote>
+
+<p>他抱怨過去讀英文文獻要「複製粘貼、打開 GPT、敲字、翻譯為英文」，一次七八秒，一年下來浪費大量時間；後來用豆包插件，選中文字右鍵就有翻譯、潤色、轉寫——「豆包插件的入口就是比 ChatGPT 做得好」。這就是入口之爭的本質：模型能力之外，還有一層摩擦成本。</p>
+
+<p>我的讀法：<strong>在能力過剩的階段，摩擦就是產品。</strong>同一顆模型，右鍵選中即可翻譯，和「打開網頁、貼上、等回覆」，差別不是 5 秒，是每天二十次的決策成本。</p>
+
+<div class="section-title">八、明史三書：三條治理公理</div>
+
+<p>第八到第十個瞬間他連著講完，Koji 的反應是「我們沒想到這個第八、第九、第十，一氣呵成就分享完了」。他自稱「可能是這個圈子裡面最喜歡講明史的人」。三本書推導出三條公理，層層遞進。</p>
+
+<div class="sub-title">公理一：組織只會自頂向下爛掉</div>
+
+<p>《大明王朝 1566》裡，百姓被毀堤淹田、無以為生，海瑞去賑災，百姓對錦衣衛說「當今聖上還是好的，只是姦黨在陣，嚴嵩嚴世蕃蒙蔽了皇上」。他認為這是常見的自我安慰：一定是嚴嵩不行，嘉靖是好皇帝。但劇演到最後，「才發現嘉靖才是大明朝唯一的混蛋」——嚴嵩父子是他的白手套、背鍋俠，替他背了二十餘年的鍋。</p>
+
+<blockquote>
+  「如果我們覺得一個體系是腐敗的，不要懷疑，一定是從頂向下出了問題。」
+  <span class="attribution">約 54:30</span>
+</blockquote>
+
+<div class="sub-title">公理二：腐敗的機制是權責不對等</div>
+
+<p>嘉靖享受最大的權力與收入（修宮殿、修道觀、給自己封無數妙號、萬國來朝跪拜），但不承擔任何責任：東南打仗不利是嚴嵩的責任，國庫虧空是嚴嵩的責任，甚至他把國庫的錢挪進私庫，這個責任也讓嚴嵩背。</p>
+
+<blockquote class="strong">
+  「大明朝只要出現了第一個不負責任的人，他把權力都在手他沒有負起責任，大明朝就完蛋了。而大明朝最不負責任的人是他的皇帝。」
+  <span class="attribution">約 55:50</span>
+</blockquote>
+
+<div class="sub-title">公理三：權責不對等源於制度模糊（道德替代制度）</div>
+
+<p>《萬曆十五年》的核心論點是「不要以道德治國，要以制度、以法治治國」。他用立儲之爭當例子：嫡長子繼承制「雖然叫作制度，但它本質上是一種道德」，因為沒有制度寫明必須傳給嫡長子——所以朱棣可以直接造反打下來，清代有九子奪嫡，元代更不可描述。萬曆想立皇三子朱常洵而朝臣堅持皇長子朱常洛，僵持十餘年，皇帝於是比嘉靖更誇張地不上朝。</p>
+
+<p>第三本書是卜正民（Timothy Brook）《掙扎的帝國：元與明》（哈佛中國史系列第五卷）。他重點講元代繼承制：選「最賢明的人」，而「賢明」的定義就是誰最能打——</p>
+
+<blockquote class="strong">
+  「選擇最賢明的人這件事情是很主觀的，就像我剛才說 AI 寫作是很主觀的，評估主觀的問題就在於，大家不服你的評估標準我就跟你打起來了。」
+  <span class="attribution">約 01:00:40，把 eval 與政治接上的樞紐句</span>
+</blockquote>
+
+<p>成吉思汗生前指定窩闊台，避免了分裂；但他之後的蒙古大汗多半戰死、來不及立遺囑，於是「底下人就打」，帝國一次次分裂。</p>
+
+<p>明代部分他講朱元璋：親手編《大明律》與《大誥》，想讓明朝成為法治社會，甚至規定百姓家有這兩本書可免死罪；但同時在公檢法三司之外設特務機關錦衣衛，「抓起來第二天就槍決了」。所以他說朱元璋自己親手破壞了法治：</p>
+
+<blockquote class="strong">
+  「制度的核心在於以身作則，設立制度的人是不能違背制度本身的。」
+  <span class="attribution">01:03:36，講朱元璋與錦衣衛</span>
+</blockquote>
+
+<p>最後他把三條公理折回自己身上：「我要用制度來規範我的一切，我的開源社區、我的工作、我的生活都是要有制度的。」他在 SGLang 擁有最高權限，但解釋是：</p>
+
+<blockquote class="strong">
+  「我擁有最高的權限，不是因為我加入早，不是因為我幹了很多事情，而是因為我承擔著巨大的責任，我建立起了這套制度，而且這套制度對我也是有約束的。我如果破壞了這套制度，大家會群起而攻之。」
+  <span class="attribution">01:05:07，講 SGLang 的治理</span>
+</blockquote>
+
+<p>全集的收束是：</p>
+
+<blockquote class="strong">
+  「負責任的一定是人。一個代碼出了問題，你一定要負起這個責任，你寫你就得負責任。與此同時，你應該盡情地享受你的權力，權力和責任永遠是對等的。」
+  <span class="attribution">01:07:28</span>
+</blockquote>
+
+<div class="section-title">九、我的讀法：三層同構，而不是兩件事</div>
+
+<p>現在可以回答開頭那個問題了：為甚麼明史不是離題？</p>
+
+<p>因為他整集都在處理同一個失效模式——<strong>標準不可評估 → 責任不可歸屬 → 系統不可優化</strong>。把三層並排放，結構完全一樣：</p>
+
+<table>
+  <tr><th>尺度</th><th>可評估性問題</th><th>失效表現</th><th>他的解法</th></tr>
+  <tr><td>模型</td><td>沒有客觀、自動、低成本的 eval</td><td>模型交出漂亮但不對的結果，無法歸因</td><td>把評估拆細、寫死約束、量成本</td></tr>
+  <tr><td>組織</td><td>PR 供給放大 50 倍，審查頻寬不變</td><td>代碼庫被「災難性代碼」淹沒</td><td>BDFL + requirements gate + 註解署人名</td></tr>
+  <tr><td>政治</td><td>繼承標準模糊（賢明＝能打、嫡長＝道德）</td><td>每一次交接都要打一場，帝國分裂</td><td>明確的制度，且制定者自己守制度</td></tr>
+</table>
+
+<p>三層共用一句話：<strong>不可評估的東西不可治理。</strong>這句話比「不可評估的東西不可優化」更重，因為它把技術問題變成了權力問題——誰有權定義標準，誰就決定誰負責。</p>
+
+<p>這也是為甚麼他會說「偏見沒有正確，只要一致」。一致不是為了公平，是為了<strong>讓責任可以被定位</strong>。一個可預測的偏見，至少能讓人知道代碼庫會往哪個方向長；一個搖擺的標準，會讓所有人都變成不負責的解釋者。</p>
+
+<div class="section-title">十、爭議與薄弱處</div>
+
+<p><strong>一、BDFL 與開放的結構性張力。</strong>他一邊說偏見沒有正確、只要一致就行，一邊承認自己是唯一的裁決者。這種模式在 Linus 的年代有效，是因為項目邊界清晰、貢獻者少；在 AI 讓 PR 供給放大五十倍之後，BDFL 的頻寬成為新的瓶頸。他沒有回答繼任問題——如果這套偏見只存在於一個 22 歲的人的腦子裡，項目如何跨越他的離開？</p>
+
+<p><strong>二、把模型的 hedging 讀成「甩鍋」，可能低估了 hedging 的功能。</strong>「1% 的勝率它都要說不等於」在醫療、法律場景裡是必要的免責設計，而不是逃避。他引的 Amazon 癲癇藥案例確實指向過度免責的傷害，但從單一極端案例推到「這一版 GPT 我很不喜歡」，中間缺一層：如何在保留不確定性表達的同時，讓模型對「建議」承擔可追溯的責任。這是對齊研究裡的真問題，不是產品語氣問題。</p>
+
+<p><strong>三、UBI 的悲觀論述沒有給出替代方案。</strong>「靠施捨過日子不會有自由」這個判斷有力，但推到底只有「我們要嚴肅思考」與「不替他人做決定」。作為 22 歲工程師，這是誠實的知識邊界；作為公共討論，它停在診斷。</p>
+
+<p><strong>四、對 Anthropic 早期內部爭議的轉述帶有二手性質。</strong>他自己也說「我只能說一些早期的事件，這些都是公開可以查到的」，但節目中沒有給出具體出處。這部分應視為他的理解，而非史實。</p>
+
+<p><strong>五、明史部分的史實有幾處口誤。</strong>他說萬曆「一直到 1960 年朱常洛才被立為太子」——應為 1601 年（萬曆二十九年）；他說「朱常洵先於朱常洛死」——史實相反，朱常洛 1620 年即位後一月崩，朱常洵 1641 年為李自成所殺。這些錯誤不影響他的論證結構，但提醒我們：長訪談裡的歷史敘述需要另外核對。</p>
+
+<div class="section-title">十一、放回系列裡看：一條決策鏈的第三塊</div>
+
+<p>年終復盤①（11-01，莊明浩）說「RSI 來了、AI 的奇觀與粗糙、巨頭夾縫中的創業機會」；②（11-08，NeoCognition）說「RSI 可能是 NeoLab 的機會」；③（11-15，趙晨陽）直接給出「用 Kimi 加速 Kimi」的操作手冊。三個人沒有串通，卻從判斷、到機會、到操作，剛好補齊一個決策鏈。</p>
+
+<p>與 Dwarkesh（11-13）的對照更有意思。Dwarkesh 給的是時間表（中位 2028）與「可驗證代理」的測量面（nanoGPT speedrun、taste-bench、GPU util / KV cache / FLOPs）；趙晨陽給的是同一命題的工程版：「可評估即可優化」，以及評估的成本光譜。而他的 80M TTS +1700%，正是 Dwarkesh 所說「可驗證領域先被吃掉」的又一個實例——小模型、清晰指標、兩天、一個週末。</p>
+
+<p>與 Latent Space 的 No AI Slop Manifesto（11-15）則互為表裡：宣言描述「生產成本趨零、審查成本不變」的不對稱，趙晨陽給出微觀解法（requirements gate、署人名）。2026 年下半年的工程文化正在形成一個共識：<strong>審查必須被制度化，否則產出會淹沒質量。</strong></p>
+
+<div class="highlight-box">
+  <p><strong>如果只能帶走一句話：</strong>RSI 的速度由評估成本決定，RSI 的質量由審查制度決定；而兩者都指向同一件事——你必須先有能力判斷好壞，才有資格讓機器替你做更多。</p>
+</div>
+
+<div class="section-title">十二、給不同讀者的三個入口</div>
+
+<ul>
+  <li><strong>做 infra 的人</strong>：直接聽 06:36–13:49（評估與成本光譜）與 41:25–47:35（級聯與 TTS as a Tool）。這兩段有可以直接搬回團隊的判斷。</li>
+  <li><strong>做 agent 產品的人</strong>：33:22–41:25 是全集最實用的部分——無障礙樹、KV cache 前綴性、以及「AI 客服沒有決定權」這個產品診斷。</li>
+  <li><strong>做組織/治理的人</strong>：13:49–33:22（BDFL、一致的偏見）與 53:24 之後（明史三書）。這兩段其實是同一份備忘錄的兩個版本。</li>
+</ul>
+
+<hr>
+
+<footer>
+  <p>來源：十字路口 Crossing，〈【年終復盤③】用 Kimi 加速 Kimi：RSI 前夜，一個 AI infra 人的 10 個 Aha Moments〉，楊遠騁（Koji）主持，嘉賓趙晨陽（RadixArk / SGLang），2026-11-15 16:00 UTC 發布，66:27。<br>
+  本集已取得完整語音轉錄（27,500 字，含發言人標註與時間戳），文中引語為原話；章節時間軸依官方 show notes。史實口誤已於「爭議與薄弱處」標明。<br>
+  相關集數：十字路口年終復盤①（11-01 莊明浩）、②（11-08 NeoCognition）；Dwarkesh〈The avalanche that hit math is coming for AI development〉（11-13）；Latent Space〈The No AI Slop Manifesto〉（11-14）。</p>
+  <p>生成時間：2026-11-16 06:00 UTC · 深度復述 #278</p>
+</footer>
+
+</div>
+</body>
+</html>

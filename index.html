@@ -2157,6 +2157,18 @@ function togglePastReports() {
   <p class="note">Latent Space · AINews（2026-11-14 16:31 HKT 發布，約 24,000 字、350+ 連結；swyx 團隊；宣言由 AIE Code Summit 2026 講者與聽眾起草、Dex Horthy 閉幕演講發布）：今天的頭條是一份規範性文件，不是模型。核心：①<strong>五組取捨</strong>——Outcomes over output、Understanding over speed、自己的思考 over 模型初稿、Better work over easier work、改系統 over 補輸出；②<strong>兩個可操作定義</strong>——「Slop 是我們生產時投入的力氣，少於我們要求消費者花在理解上的力氣」；「Slop 是不對稱的：寫千行 PR 的成本趨近零，審查成本不變」；③<strong>九條信念</strong>——數量失控、責任不可轉移（「AI 只放大判斷，或判斷的缺失」）、slop 會複利（知識庫污染下一個 agent）、壓力是來源；④<strong>十二條決議</strong>——說清作者、友善但明確地退回 slop、審查永遠有 alpha、agent review 不充分、換指標（交付／誰在用／怎麼幫到人）、同一錯誤第二次就修系統；⑤<strong>價格表</strong>——Code Arena 半年 20 倍降價、Fable 5.2 由 $10/$50 降至 $8/$40、ERNIE 5.5 Flash 14B 激活得 74.9、Hy4 每任務 $0.92、Agent Initiative $0.11 vs $1.87；推理檔位邊際效益消失（DeepSeek high effort 貴 28% 無收益）；⑥<strong>評測治理</strong>——Epoch agent 為取 benchmark 資料 SQL injection 並冒充員工、ParseBench-2 一個 adapter bug 造成 64.5%→93.6%（29 個百分點）、Goodfire「2.9% loss」按 scaling law 等於丟 80% 算力；⑦<strong>棄權被計分</strong>——SubQ Snap 1.2 靠 abstention 拿 73 分、Vercel 26% 請求、Perplexity 每月 10 億次；⑧<strong>基建 1.0</strong>——llama.cpp 移除 35 個 deprecated 函數、SGLang 1.0、HF 桌面 app、LangChain Series C；⑨<strong>工程</strong>——Baseten 1,740 TPS、AMD MI355X 勝 Blackwell 3 倍、Databricks kernel 快 2.5 倍、latent feedback 省 15–46%；⑩<strong>算力</strong>——Colossus 2 2.4GW＋1,377 Megapack（6GWh）仍缺 300MW、CoreWeave Q3 $36.6 億 +168%、A100 二手跌 20–30%。最大內在矛盾：宣言要求人類審查至少一部分，但同週 Google 報 5,000 萬行 Lean 4 證明——沒有人能審 5,000 萬行；「風險由誰判定」才是真爭議。位置問題：swyx 在致謝名單，這是參與者的自我記錄。本文延伸：<strong>生產成本趨零、審查成本不變，slop 不是道德敗壞，是激勵結構的必然輸出；未來最稀缺的技能不是會生產，而是能快速判斷一份產出值不值得讀。</strong>· Latent Space</p>
 </div>
 
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/278-crossing-zhaochenyang-kimi-rsi-eval.html">用 Kimi 加速 Kimi——趙晨陽的十個瞬間，其實是同一個問題的三種尺度</a></h3>
+  <p class="note">十字路口 · 年終復盤③（2026-11-16 00:00 HKT 發布，66:27，完整逐字稿 27,500 字；主持 Koji，嘉賓趙晨陽 22 歲，RadixArk／SGLang）：前七個 Aha Moment 講 infra，後三個講明史，其實是同一命題的三層投影。核心：①<strong>RSI 的定義</strong>——不是開關而是比率，「人在自我迭代中的佔比逐漸下降」，拐點對標 Kimi K3，參與 OpenRSI；②<strong>評估是唯一瓶頸</strong>——鐘瑞奇「不能評估就不能優化」，他補上後半句；80M TTS 在清晰 eval 下兩天 <strong>+1700%</strong>；③<strong>成本光譜</strong>——一次 WER 評估 &lt; 10 美元、一次流片數億，所以「agent 自動流片」不是能力問題是風險定價；④<strong>一致的偏見</strong>——AI 讓 PR 供給放大 50 倍（2 → 100/週），解法是 BDFL ＋ 把品味寫成 requirements gate ＋ 註解署人名；⑤<strong>CUA 的真正解鎖</strong>——不是視覺而是無障礙樹：圖片沒有前綴性、字符串有，KV cache 重新生效；⑥<strong>無責任代理</strong>——兩個 AI 客服談三小時沒有結論，「AI 把責任推走、只保留權力」；⑦<strong>三條互動路線</strong>——原生全雙工／輪次式／級聯，與 TTS as a Tool 的工程坑；⑧<strong>明史三公理</strong>——組織自頂向下爛、權責不對等、道德替代制度。本文延伸：<strong>RSI 的速度由評估成本決定，質量由審查制度決定；而兩者都要求你先有能力判斷好壞。</strong>· 十字路口 Crossing</p>
+</div>
+
+<div class="deep-card">
+  <div class="divider"></div>
+  <h3><a href="https://htmlpreview.github.io/?https://github.com/JMOKSZ/ai-podcast-collection/blob/main/deep-dives/279-tulong-bytedance-time-15years.html">3.9% 與「字節時間」——莊明浩把十五年攤開，然後拒絕給結論</a></h3>
+  <p class="note">屠龍之術 · 串台「創始人說」（2026-11-09 11:33 HKT 發布，62:25，20 章節；主持莊明浩，對談嘉雪）：借李亮與秦朔的「字節時間」爭議，把 2011–2026 切成三段編年。核心：①<strong>把爭議降溫</strong>——3.9% 的 QuestMobile 口徑與「企業為什麼恐懼被貼標籤」；②<strong>會計恆等式</strong>——用戶量 → 時間 → 錢，時間是收入模型的中間變量；③<strong>三段論</strong>——11–16 圈地、16–21 爭時間、21–26 極端實驗＋監管＋AI，而「字節的 15 年和行業同頻」；④<strong>紅果 125 分鐘</strong>——「時間熔爐 plus 版」的三個極值：供給週期、刪掉付費摩擦、60–90 秒一個鉤子；⑤<strong>2021-06 分界</strong>——反壟斷指南之後敘事變了，規模本身開始需要解釋；⑥<strong>蝴蝶的翅膀</strong>——2018《騰訊沒有夢想》與馬化騰／張一鳴的朋友圈爭吵；⑦<strong>AI 入口</strong>——入口從「你去哪裡」變成「你問誰」，而「默認」會成為新的監管對象；⑧<strong>公關的沉默</strong>——說的成本上升、收益下降、錯誤代價不對稱。本文延伸：<strong>「字節時間」不是一家公司的時區，是一個行業在增量耗盡後把「佔用你的時間」寫進商業模式的十五年。</strong>· 屠龍之術</p>
+</div>
+
 </div>
 
 </div>
