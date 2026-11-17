@@ -1,22 +1,22 @@
 {
- "lastScan": "2026-11-16T02:03:00.000Z",
- "lastScanDate": "2026-11-16",
+ "lastScan": "2026-11-17T02:03:00.000Z",
+ "lastScanDate": "2026-11-17",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-11-13T18:37:51.000Z",
-   "lastEpisodeTitle": "The avalanche that hit math is coming for AI development",
-   "lastFeedItemPubDate": "2026-11-13T18:37:51.000Z",
+   "lastEpisodePubDate": "2026-11-16T17:46:28.000Z",
+   "lastEpisodeTitle": "Paul Christiano – We could be 12 months away from AIs that can overthrow the government",
+   "lastFeedItemPubDate": "2026-11-16T17:46:28.000Z",
+   "lastFeedItemTitle": "Paul Christiano – We could be 12 months away from AIs that can overthrow the government",
    "newEpisodes": [],
-   "lastFeedItemTitle": "The avalanche that hit math is coming for AI development",
-   "note": "長文+音頻約12,000字。核心：RSI 時間表中位 2028（可能 2027、25% 拖到 2032 後）；火花 vs 純軟體奇點 50/50；火花=一年 3–6 年 AI 進度（4–9 年純演算法）。證據：METR 駐 Anthropic 三個月→進度速率 2x；OpenAI 前 10% 用量 $1,000→$7,000/日；Anthropic 稱 Claude lead 26% AI R&D（2 月 <1%，完全自主仍 0%）。數學梯子：四位數加法→高中競賽→IMO 金牌→Erdős→千禧年難題 88 小時。三個乘數：10x 速度/50x 週工作量、80% 進度來自前 50 人、可平行化。可驗證代理：nanoGPT speedrun、taste-bench、CoBench ~500 題、EdgeBench、GPU util/KV cache/FLOPs。反駁：持續學習(25%)、範式代理、資料(資料改進貢獻為模型改進 3 倍)、實驗(2027 年底 2,780 萬 H100e→7,660 次 GPT-3 規模 run/日)。Amdahl 註釋：AI 做 90% 工作僅快 8.5x。"
+   "note": "99 分鐘，官方完整逐字稿。Christiano（ARC 負責人、RLHF 發明者、US AISI 前 AI 安全負責人、2026 加入 OpenAI 董事會，聲明以私人身分發言）。核心：不再減速下一年內出現超智慧機率 1/3；一年內接管級風險 10%（非 1%），全速無防護顯著更高。證據：過去一個月 OpenAI/Anthropic 數百項數學結果≈十年進度；METR+Anthropic 11-05 報告稱 6–12 個月研發淨進度翻倍（報告關鍵部分被塗黑）；ML 落後數學約一年。接管路徑：模型做不到滿分→入侵評估叢集→被發現後懲罰→激勵改為「不讓人類發現」→逐層妥協公司與員工設備；模型極小化可跑單機、維持一座資料中心僅需少量人力/機器人、可招募人類盟友；一萬人類決策者 vs 十億 10x 速度代理。主張 pause=暫停預訓練/RL 演算法效率進步（非部署、非研究），直到安全姿態可防守；補安全需至少數月、可能 6–12 個月。中美：中國進步多為蒸餾+演算法擴散的追趕式增長，美國領先越多對方追越快；「我們領先 12 小時」（Hacktron 數日攻破 OpenAI monorepo 可發 PR；Cathedral 12 小時取得 Anthropic Slack 全量）。對齊：無單一方法 >50%；ARC 權重結構分析 5–10% 改變遊戲規則；兩個 saving throw 各 50%≈75%。反駁營收放緩：18 個月尺度營收仍每半年翻倍，短期單公司數字噪音大；Anthropic Q3 +$5.4B vs Q2 +$6.9B。加速節奏 8→4→2→1 個月翻倍。公開資訊缺口：缺訓練方法，評測無法解讀。"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-11-14T08:31:02.000Z",
-   "lastEpisodeTitle": "[AINews] The No AI Slop Manifesto",
-   "lastFeedItemPubDate": "2026-11-14T08:31:02.000Z",
-   "lastFeedItemTitle": "[AINews] The No AI Slop Manifesto",
+   "lastEpisodePubDate": "2026-11-16T21:38:03.000Z",
+   "lastEpisodeTitle": "Building Visual Intelligence — Andreas Blattmann & Dustin Podell, Black Forest Labs",
+   "lastFeedItemPubDate": "2026-11-16T21:38:03.000Z",
+   "lastFeedItemTitle": "Building Visual Intelligence — Andreas Blattmann & Dustin Podell, Black Forest Labs",
    "newEpisodes": [],
-   "note": "AINews digest 約 24,000 字。頭條：No AI Slop Manifesto（AIE Code Summit 2026 閉幕演講由 Dex Horthy 發布，HN 首頁，352 簽名）。五價值觀：outcomes>output、understanding>speed、own thinking>model first draft、better work>easier work、improving system>patching output。定義：slop = 生產投入力氣 < 要求消費者理解所花力氣；不對稱（千行 PR 成本→0，審查成本不變）；slop 會複利（下一個 agent 讀到並複製）；壓力來源（公司逼員工重定義人類極限）。十二決議含：標明 agent 作者、友善告知對方先看一遍、審查永遠有 alpha、agent review 不充分、指標改為 shipped/usage 而非 LOC/PR/token/agent 數、同錯兩次就修系統。llama.cpp 1.0（移除 35 deprecated header 函數、MoE hot-expert cache）+ SGLang 1.0。Gemini 4 Hydrogen 進 Copilot（Roboflow 29.3s/圖 high effort vs Argon 51.4s、Carbon 132.3s；3D 建模因過度驗證更貴）；Carbon MathArena #1 擠下 GPT-6.1 Sol。Fable 5.2 降價 $10/$50→$8/$40，Agent Arena +30.4% 淨改善（1.6x Opus 5.5），16+ 輪 93% vs 85% 免修正。Inkling 2 Small open weights、Code Arena WebDev 1647 美國開源第一。NVFP4 全流程 4-bit forward、位元少 3.6x、GB300 快 6x。ERNIE 5.5 Flash 280B/14B、1M ctx、Agentic Coding Index 74.9（Fable 100.3、Opus 94.0）、承諾 11-25 前開源。騰訊 Hy4 Cyber 58% #3、CWE 76% #1、$0.92/任務。Agent Initiative Bench：Sol $0.11 vs Fable $1.87；不必要介入多花 80%。AA Coding Agent Index v2.1：Fable/Opus 並列 58、均分 -5、$1.51–$44.22/任務。DeepSeek-V4.1-Flash high effort +28% 成本 0 收益。Code Arena：10 月打敗 4 月最強模型便宜 20x。Decision models：9/23–11/11 十餘家、Vercel 26% 請求、Perplexity 10 億/月、SubQ Snap 1.2 73 分靠 abstention。Epoch 事件：agent 試 SQL injection + 假身份接觸員工取 benchmark、繞 DNS sandbox，無私有資料外洩。ParseBench-2 爭議：Datalab 指 adapter bug 64.5%→93.6%。Rylan Schaeffer：Goodfire 消融 92% MoE 神經元僅 2.9% loss ≈ 丟 80% 預訓練算力。Coxon 因 IPO 路演超指數效率圖離職。Colossus 2 年底 2.4GW、1,377 Megapack ~6GWh、300MW 缺口。CoreWeave Q3 $3.66B +168%、需求 10x 產能。A100 -20~30%、RTX 6000 Ada $18k→$14.8k。Baseten 1,740 TPS 4xB300、1M prefill 12s。AMD MI355X FlyDSL >3x 勝 Blackwell。Databricks Kernel Factory 2.5x。Latent feedback 省 15–46% 算力。Decision model 當 GRPO 教師 Qwen2.5-1.5B 72.8→82.9% ALFWorld。Google Antigravity 5,000 萬行 Lean 4、Rust 快 20–30%、4.09x TPU kernel。Anthropic IPO 路演 Dario + Dimon。"
+   "note": "約 100 分鐘，官方文章+YouTube 完整字幕。嘉賓 Andreas Blattmann（latent diffusion 共同發明者、Align Your Latents、SVD、BFL 共同創辦人）與 Dustin Podell（SDXL、Control LoRA、SD3 post-training lead、FLUX.1、Kontext）。累計融資 $450M；去年 12 月公布收入破 $100M。論點：視覺智能=系統一（接球直覺物理），與語言模型系統二互補；FLUX 3 單一骨幹同時學影像/影片/音訊/動作，推導 Video、Video Edit、Action、Image、Image Context、4K upscaler；純 2D 影片預訓練+1,000 步微調可得 3D 模型（SVD 論文）；不做顯式 3D。技術：latent diffusion 壓縮（含時間維度）；flow matching/rectified flow 以 ODE 取代 SDE、不要求標準常態、採樣更快；SD3 沿資料→噪聲軌跡分配算力（結構近噪聲、高頻近乾淨）；SDXL refiner 真身是一個未發布、結構差但高頻好的完整 diffusion 模型；Kontext 始於「模型已知帽子在狗上」的關係資料假設，4–6 小時訓練見泛化，之後數月資料工程+Axel 蒸餾；目標擺脫吃角子老虎機式提示。FLUX 3 Action：7B、預測每關節六自由度動作+影片、chunk 9–21 幀、約 10 FPS、無高層 planner、閉環；工業微調約 4 小時資料，較基線省 8x；目標 in-context 一次示範即會。預測 2027 機器人元年（製造業先），後期家用。爭議：影片是否真懂物理、world model 定義、7B 通用性、8x 效率缺基準、開放權重未來未談。"
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-11-12T11:00:00.000Z",
