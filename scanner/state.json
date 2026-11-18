@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-11-17T02:03:00.000Z",
- "lastScanDate": "2026-11-17",
+ "lastScan": "2026-11-18T02:04:00.000Z",
+ "lastScanDate": "2026-11-18",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-11-16T17:46:28.000Z",
@@ -16,7 +16,9 @@
    "lastFeedItemPubDate": "2026-11-16T21:38:03.000Z",
    "lastFeedItemTitle": "Building Visual Intelligence — Andreas Blattmann & Dustin Podell, Black Forest Labs",
    "newEpisodes": [],
-   "note": "約 100 分鐘，官方文章+YouTube 完整字幕。嘉賓 Andreas Blattmann（latent diffusion 共同發明者、Align Your Latents、SVD、BFL 共同創辦人）與 Dustin Podell（SDXL、Control LoRA、SD3 post-training lead、FLUX.1、Kontext）。累計融資 $450M；去年 12 月公布收入破 $100M。論點：視覺智能=系統一（接球直覺物理），與語言模型系統二互補；FLUX 3 單一骨幹同時學影像/影片/音訊/動作，推導 Video、Video Edit、Action、Image、Image Context、4K upscaler；純 2D 影片預訓練+1,000 步微調可得 3D 模型（SVD 論文）；不做顯式 3D。技術：latent diffusion 壓縮（含時間維度）；flow matching/rectified flow 以 ODE 取代 SDE、不要求標準常態、採樣更快；SD3 沿資料→噪聲軌跡分配算力（結構近噪聲、高頻近乾淨）；SDXL refiner 真身是一個未發布、結構差但高頻好的完整 diffusion 模型；Kontext 始於「模型已知帽子在狗上」的關係資料假設，4–6 小時訓練見泛化，之後數月資料工程+Axel 蒸餾；目標擺脫吃角子老虎機式提示。FLUX 3 Action：7B、預測每關節六自由度動作+影片、chunk 9–21 幀、約 10 FPS、無高層 planner、閉環；工業微調約 4 小時資料，較基線省 8x；目標 in-context 一次示範即會。預測 2027 機器人元年（製造業先），後期家用。爭議：影片是否真懂物理、world model 定義、7B 通用性、8x 效率缺基準、開放權重未來未談。"
+   "note": "約 100 分鐘，官方文章+YouTube 完整字幕。嘉賓 Andreas Blattmann（latent diffusion 共同發明者、Align Your Latents、SVD、BFL 共同創辦人）與 Dustin Podell（SDXL、Control LoRA、SD3 post-training lead、FLUX.1、Kontext）。累計融資 $450M；去年 12 月公布收入破 $100M。論點：視覺智能=系統一（接球直覺物理），與語言模型系統二互補；FLUX 3 單一骨幹同時學影像/影片/音訊/動作，推導 Video、Video Edit、Action、Image、Image Context、4K upscaler；純 2D 影片預訓練+1,000 步微調可得 3D 模型（SVD 論文）；不做顯式 3D。技術：latent diffusion 壓縮（含時間維度）；flow matching/rectified flow 以 ODE 取代 SDE、不要求標準常態、採樣更快；SD3 沿資料→噪聲軌跡分配算力（結構近噪聲、高頻近乾淨）；SDXL refiner 真身是一個未發布、結構差但高頻好的完整 diffusion 模型；Kontext 始於「模型已知帽子在狗上」的關係資料假設，4–6 小時訓練見泛化，之後數月資料工程+Axel 蒸餾；目標擺脫吃角子老虎機式提示。FLUX 3 Action：7B、預測每關節六自由度動作+影片、chunk 9–21 幀、約 10 FPS、無高層 planner、閉環；工業微調約 4 小時資料，較基線省 8x；目標 in-context 一次示範即會。預測 2027 機器人元年（製造業先），後期家用。爭議：影片是否真懂物理、world model 定義、7B 通用性、8x 效率缺基準、開放權重未來未談。 ｜ 2026-11-17 15:00Z 新增文章（非集數）〈Cloudflare Joins the Jevolution and Labels Itself a Neolab〉（Richard MacManus，約 8,100 字）：Cloudflare AI Platform 產品負責人 Michelle Chen 於 AI Engineer Code Summit 宣布 Cloudflare 為 neolab；Clef＝Jev 複製品（2 週做出，TypeSafe 花 2 年）；Clairic＝首個「System One extraction model」，從非結構化輸入一次前向抽取帶型別值（發票訂單號例）；未來或做推理模型/LLM 但只做 post-training、不從零預訓練；自建模型理由＝Jev 閉源跑不了＋中國開源模型監管風險＋授權漲價；Cloudflare Q3 2026 營收 $782M、+39% YoY、年化 $3B，不符 Deedy Das neolab 定義一半條件；無任何 benchmark 公布。 同窗口 AINews 11-17 09:24Z：Perplexity $1B ARR（年初<$250M、8月>$750M）；Qwen4-Max 43 分/$3.27（34→43，$10.02→$3.27，輸出-39%，2.4T/71B active）；Kimi K3.1 Pro Terminal-Bench 4.0 67% vs Qwen 48%；Anthropic S-1 H1 $16.3B、算力成本 251%→48% 營收；Databricks 開放模型 token 7.3%→30.9%/3.5 月；OpenAI 給 Apollo/METR/Transluce/Goodfire 內部存取但無 Slack、無權重、評測者可被挑選。",
+   "lastPostPubDate": "2026-11-17T15:00:00.000Z",
+   "lastPostTitle": "Cloudflare Joins the Jevolution and Labels Itself a Neolab"
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-11-12T11:00:00.000Z",
@@ -89,16 +91,16 @@
   }
  },
  "notes": {
-  "scan_status": "2026-11-16 掃描（02:03–02:09 UTC）：窗口 11-15 02:07Z → 11-16 02:03Z。新內容 1 條：十字路口年終復盤③（趙晨陽）。其餘 9 台（含 5 個英文）窗口內無新集，feed 最新條目與上輪一致。",
-  "report_date": "2026-11-16",
+  "scan_status": "2026-11-18 掃描（02:03–02:07 UTC）：窗口 11-17 02:03Z → 11-18 02:03Z。十台零新集。新內容僅 Latent Space 文章 1 篇（Cloudflare neolab）＋ AINews 匯總 1 期。",
+  "report_date": "2026-11-18",
   "transcript_pipeline": "新能力：小宇宙 transcript API 仍返回 SPA HTML，改由 episode.__NEXT_DATA__ 取 media.url（64MB m4a）→ Gemini File API 上傳 → gemini-3.5-flash 音頻轉錄（prompt 要求逐字、發言人標註、60–90 秒時間戳）→ 27,467 字逐字稿，finishReason STOP，無截斷。注意 gemini-2.5-pro 已對新用戶關閉（404，建議改用 3.1-pro-preview）。",
-  "jev_prefilter": "已執行：候選 1 條，worth 1.2 keep、primary_source 0.65、category devtools(0.35)。憑證可用，self-test 通過。",
-  "failures": "①YouTube videos.xml 兩個 channel 仍 404（連續多輪，判定本機出口被封）。②web_search 不可用（brave plugin ENOENT）。③小宇宙 oia transcript 端點僅 307 重定向至 SPA。④轉錄有 5 處人名/年號誤字（嘉靖→加進、窩闊台→沃闊台、卜正民→蒲正明、邱錫鵬→秋喜朋、幣安→B 安），已按上下文校正並在報告標注。",
-  "notable_for_james": "①「能評估什麼，就一定能優化什麼」是今年最可操作的 RSI 命題——它把 RSI 從時間表問題變成 eval 成本問題；80M TTS 兩天 +1700% 是最乾淨的實證。②CUA 的真正解鎖是無障礙樹（UI→字符串→恢復 KV cache 前綴共享），不是視覺能力——這一條對做 agent 產品的人直接可用。③「AI 是放大器：垃圾工程師+頂尖 AI=災難性代碼」＋2 PR/週→100 PR/週，是 No AI Slop 宣言的供給側數據。④「AI 客服爛是因為沒有決定權」＝42 章經「To B 天花板是交付與信任」的買方觀測。⑤明史三書推導的治理公理與他對 SGLang merge 權的自述（權限來自責任）構成本集真正的落點。",
-  "cross_episode_theme": "十字路口年終三集獨立收斂到 RSI：①莊明浩（11-01）判斷「RSI 來了」→②谷雨（11-08）「RSI 是 NeoLab 的機會」→③趙晨陽（11-15）「用 Kimi 加速 Kimi 的操作手冊」。與 Dwarkesh（11-13，時間表＋可驗證代理）、AINews（11-14，slop 宣言）合讀：RSI 的速度由評估成本決定，質量由審查制度決定。",
+  "jev_prefilter": "已執行：候選 2 條，worth 1.05 / 1.26 均 keep；primary_source 0.23 / 0.10（二手轉述，文中已標注）。",
+  "failures": "①本窗口無新播客集數（非失敗，屬正常空窗）。②Dwarkesh/No Priors YouTube feed 本輪恢復 200（先前 404），但最新 Dwarkesh 條目為 78 秒 Short，非集數。③web_search 仍不可用（brave plugin ENOENT），中文台僅靠 RSS 核對。④Cloudflare 文章無 benchmark、無音頻，萃取深度受限於文章本身。",
+  "notable_for_james": "①「2 週複製 2 年的模型」是今年最锋利的擴散速度數據：範式一旦公開，壁壘轉移到 API schema、評測與分發。②Cloudflare 明確只做 post-training、不預訓練——基礎設施公司的模型戰略是「消除依賴」而非「追前沿」，理由是閉源不可得＋監管風險＋授權漲價。③Clairic 的抽取模型思路（答案在輸入裡就別生成）可直接套用到任何表單/發票/合約 pipeline，比 LLM 便宜且無 JSON 失敗。④Anthropic 算力成本佔營收 251%→48%、Databricks 開放模型 token 7.3%→30.9%，兩個數字合起來是「便宜智能」的財務證據。⑤OpenAI 外部評測的存取缺口（無 Slack、無權重、可挑受訪者）正好印證 Christiano 那集「缺訓練方法則評測無法解讀」。",
+  "cross_episode_theme": "本週四條線收斂：能力上限（Christiano 12 個月、BFL 視覺智能）→ 成本與路由（Cloudflare System One、Qwen4-Max $3.27/task、Anthropic 48%）→ 評測治理（OpenAI 存取缺口）。主軸是「能力在衝、產品化的關鍵在把能力切碎路由」。",
   "index_html": "未更新 index.html（沿用停更慣例）。",
-  "deep_dive_link": "本輪未新增 deep-dive；全部萃取寫入日報（45.9KB，含 3 張表、12 條原話引文、5 點爭議、3 項事實核查）。",
-  "source_links": "https://www.xiaoyuzhoufm.com/episode/6af936ea14d01a26f8a9fd94 ; https://media.xyzcdn.net/60502e253c92d4f62c2a9577/lhHxptqOANRsmGIh0htFeLq-znBg.m4a"
+  "deep_dive_link": "本輪無 deep-dive；全部萃取寫入日報（22.1KB，含 3 張表、5 條原話引文、4 點爭議）。",
+  "source_links": "https://latent.space/p/cloudflare/ ; https://latent.space/p/jev-revolution/ ; https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026/"
  },
  "resolvedFeeds": {
   "zhang-xiaojun": "https://feed.xyzfm.space/dk4yh3pkpjp3",

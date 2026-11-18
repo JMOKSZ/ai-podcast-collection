@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客日報 · 2026-11-18</title>
+<style>
+  :root {
+    --paper: #faf8f5;
+    --ink: #2b2724;
+    --muted: #7a726a;
+    --rule: #ddd5cb;
+    --accent: #8a4b2f;
+    --soft: #f2ede6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, "Noto Serif SC", "Songti SC", "Source Han Serif SC", serif;
+    font-size: 17px;
+    line-height: 1.9;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 28px 90px; }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 26px; margin-bottom: 34px; }
+  .kicker { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  h1 { font-size: 33px; line-height: 1.32; margin: 0 0 16px; font-weight: 600; letter-spacing: -.01em; }
+  .meta { font-size: 13.5px; color: var(--muted); line-height: 1.8; }
+  .meta span { margin-right: 18px; white-space: nowrap; }
+  h2 {
+    font-size: 15px; letter-spacing: .16em; text-transform: uppercase;
+    margin: 54px 0 22px; padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+    color: var(--accent); font-weight: 600;
+  }
+  h3 { font-size: 24px; margin: 38px 0 6px; font-weight: 600; line-height: 1.4; }
+  h4 { font-size: 19px; margin: 30px 0 4px; font-weight: 600; line-height: 1.5; }
+  h5 { font-size: 14px; margin: 26px 0 6px; letter-spacing: .06em; color: var(--accent); text-transform: uppercase; }
+  p { margin: 0 0 14px; }
+  .byline { font-size: 13.5px; color: var(--muted); margin: 0 0 18px; }
+  .lede { font-size: 18.5px; line-height: 1.85; }
+  .lede strong { font-weight: 600; }
+  ul, ol { margin: 0 0 16px; padding-left: 24px; }
+  li { margin-bottom: 8px; }
+  blockquote {
+    margin: 22px 0; padding: 4px 0 4px 20px;
+    border-left: 3px solid var(--accent);
+    color: #4a433d; font-style: italic;
+  }
+  blockquote .src { display: block; margin-top: 6px; font-size: 12.5px; font-style: normal; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; margin: 18px 0 22px; font-size: 14.5px; line-height: 1.65; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-weight: 600; background: var(--soft); font-size: 13px; letter-spacing: .03em; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .note {
+    background: var(--soft); border: 1px solid var(--rule);
+    padding: 14px 18px; margin: 22px 0; font-size: 14.5px; line-height: 1.75;
+  }
+  .note b { color: var(--accent); }
+  .tag {
+    display: inline-block; font-size: 11.5px; letter-spacing: .08em;
+    color: var(--accent); border: 1px solid var(--rule); background: #fff;
+    padding: 1px 8px; margin: 0 6px 8px 0; border-radius: 2px;
+  }
+  .hr { border: 0; border-top: 1px solid var(--rule); margin: 46px 0; }
+  footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); line-height: 1.8; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  a:hover { border-bottom-color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">AI Podcast Daily · 2026-11-18</div>
+  <h1>Cloudflare 自稱 NeoLab：兩星期複製 Jev、再做「抽取模型」，一場基礎設施公司對模型層的逆襲</h1>
+  <div class="meta">
+    <span>報告日期 2026-11-18</span>
+    <span>生成時間 2026-11-18 02:04 UTC</span>
+    <span>來源 Latent Space / AINews / 10 台 RSS</span>
+  </div>
+</header>
+
+<p class="lede">本窗口（11-17 02:03Z → 11-18 02:03Z）十台播客<strong>零新集</strong>。真正的新內容只有一條：Latent Space 的深度報導——Cloudflare 在 AI Engineer Code Summit 上宣布自己是「neolab」，並已推出兩個 System One 模型（Clef 與 Clairic）。這條看似公關動作，實際上是今年最值得記住的一次<strong>模型層權力轉移樣本</strong>：一家上市公司用兩星期複製別人兩年的成果，然後把「不做預訓練、只做後訓練」變成正式戰略。</p>
+
+<h2>中文播客</h2>
+
+<p>五台在窗口內均無更新，feed 最新條目與上輪一致：張小珺 11-13（梁其偉 6 小時訪談）、十字路口 11-15（年終復盤③趙晨陽）、硅谷 101 11-09（E258 HF0）、42 章經 11-14（2C/2B Agent 脈絡）、屠龍之術 11-09（字節時間）。中文圈的 RSI 討論仍在發酵，但本輪沒有新增素材。</p>
+
+<h2>英文播客</h2>
+
+<h3>Latent Space（swyx + Alessio Fanelli）</h3>
+<h4>Cloudflare Joins the Jevolution and Labels Itself a Neolab 📄（2026-11-17 15:00 UTC）</h4>
+<p class="byline">文章 · 作者 Richard MacManus · 約 8,100 字 · 非音頻集數，屬深度報導</p>
+
+<h5>主題</h5>
+<p>Cloudflare 的 AI Platform 產品負責人 Michelle Chen 在 AI Engineer Code Summit 演講中，把 Cloudflare 定義為「neolab」，並宣布兩個自家 System One 模型：<strong>Clef</strong>（決策模型，直接受 TypeSafe AI 的 Jev 啟發）與 <strong>Clairic</strong>（Cloudflare 稱之為「extract model」的新型 System One）。文章的重點不在模型本身，而在一個判斷：<em>基礎設施公司為什麼要下場做模型</em>。</p>
+
+<h5>嘉賓背景</h5>
+<p>Michelle Chen，Cloudflare AI Platform 產品側負責人。她的表述有兩個身份特徵：一是產品人（談的是「哪些請求不必送去 LLM」），二是平台方（談的是授權、監管、供應風險）。這解釋了為什麼 Cloudflare 的模型戰略從一開始就不是「追前沿」，而是「消除依賴」。</p>
+
+<h5>核心論點</h5>
+<ul>
+  <li><strong>論點一：不是所有請求都值得送進 LLM。</strong>Chen 把 Jev 的出現形容為「東風」——「當 system one 與 Jev 範式出現時，我們覺得這對我們太合理了。我們不必把每個請求都送去 LLM，可以把一部分送去 System One 模型。」這是整篇文章的技術前提：延遲以毫秒計的場景（Cloudflare 的本業）與以秒計的推理模型天然不匹配。</li>
+  <li><strong>論點二：NeoLab 的定義正在被稀釋，但 Cloudflare 認為自己符合「能力邏輯」而非「資本邏輯」。</strong>文章直接指出 Cloudflare 至少不符合 neolab 定義的一半條件：它是上市公司、有實質營收（Q3 營收 7.82 億美元、年增 39%、年化 30 億美元）、不是「沒有營收牽引力」的初創。Chen 的辯護是能力路徑論：從基礎設施 → 算力（Workers 平台）→ 儲存 → 托管開源權重模型（Kimi、GLM、DeepSeek on Workers AI）→ 自建模型，是一條自然演進線。「成為 neolab 意味著我們可以創造我們缺失的東西。」</li>
+  <li><strong>論點三：複製的成本已經塌陷。</strong>Clef 是 Jev 的複製品，團隊<strong>兩星期</strong>做出來；而 TypeSafe AI 造 Jev 花了<strong>兩年</strong>。Chen 把這當成對 TypeSafe 的恭維——「API schema 該長什麼樣，我們已經完全知道」。但這句話同時是整篇文章最锋利的事實：一旦範式被公開，實作就变成兩個星期的工程問題。</li>
+  <li><strong>論點四：第二個模型才是原創性的證明。</strong>Clairic 不是複製，而是把 System One 原則搬到另一個 LLM 被濫用的場景：從非結構化輸入中「抽取、計算、估算、預測」出一個帶型別的值，一次前向傳播完成。Chen 的問題意識很具體——LLM 是自回歸的，所以會幻覺、會吐出格式錯誤的 JSON；而發票上的訂單號「就在那裡，你只要讀它就好」，模型卻會猜「三還是四還是五」。</li>
+  <li><strong>論點五：自建模型是風險對沖，不只是產品擴張。</strong>Chen 的說法異常直白：Jev 是閉源的、他們跑不了；市面上有監管風險（點名中國開源模型）；「很多模型實驗室想真正賺錢，於是執行相當昂貴的授權」。三種風險——不可得、不可用、不可負擔——構成基礎設施公司下場的商業理由。</li>
+  <li><strong>論點六：不做預訓練。</strong>Chen 明確表示未來可能做推理模型與其他 LLM，但「那大概不是我們的重點」，團隊「大部分只做後訓練」，路徑是拿現有資源做得更高效，而非從零預訓練。這是對「neolab」稱號最實質的限定：Cloudflare 要的是<em>能用、能省、能控</em>的模型，不是前沿能力。</li>
+</ul>
+
+<h5>關鍵數據</h5>
+<table>
+  <tr><th>項目</th><th>數值</th><th>說明</th></tr>
+  <tr><td>Clef 開發週期</td><td class="num">2 週</td><td>Jev 的複製品；對照 TypeSafe 造 Jev 用 2 年</td></tr>
+  <tr><td>Cloudflare Q3 2026 營收</td><td class="num">$782M</td><td>年增 39%，年化跨越 $3B</td></tr>
+  <tr><td>NeoLab 門檻（Deedy Das 定義）</td><td>—</td><td>精英研究者、大量算力、無顯著營收、高額募資；Cloudflare 至少一半不符</td></tr>
+  <tr><td>System One 延遲量級</td><td class="num">ms vs s</td><td>文章的核心對比：毫秒 vs 秒</td></tr>
+  <tr><td>Clairic 上線時間</td><td>2026-10</td><td>Cloudflare 稱為「System One extraction models」首個模型</td></tr>
+  <tr><td>Jev 發布</td><td>2026-09</td><td>不到兩個月成為 AIE Code Summit 主線</td></tr>
+</table>
+
+<h5>重點引用</h5>
+<blockquote>「我們不是只為了推出 system one 模型才當 neolab，雖然那對我們的基礎設施來說很合理。我們算是打開了潘朵拉的盒子——我們打開了它，現在可能性無窮。」
+<span class="src">Michelle Chen，談 Cloudflare 的模型路線圖</span></blockquote>
+
+<blockquote>「當 system one 與 Jev 範式開始進來，我們就想，這對我們太合理了。我們不必把每個請求都送去 LLM。」<span class="src">Michelle Chen，演講</span></blockquote>
+
+<blockquote>「全部功勞歸 TypeSafe，真的——是他們攻擊這個空間、發明了新東西，而且讓人能如此強烈地共鳴、能夠使用。我們很快就做出模型，但他們做了大量苦工，我們已經完全知道 API schema 該長什麼樣。」<span class="src">Michelle Chen，論兩星期複製 Jev</span></blockquote>
+
+<blockquote>「當你把它送去 LLM，它們會說：等等，我想訂單號是三，也許是四，也許是五。但那數字就在那裡，你只要讀它就好！」<span class="src">Michelle Chen，論 Clairic 要解決的問題</span></blockquote>
+
+<blockquote>「我覺得 AI 空間有很多風險，就像 Jev 是閉源的、我們跑不了；市面上有很多模型可能有監管風險，比如中國的開源模型。很多模型實驗室也想真正賺錢——於是執行相當昂貴的授權。」<span class="src">Michelle Chen，論自建模型的風險理由</span></blockquote>
+
+<h5>技術詳情</h5>
+<p><strong>System One 是什麼。</strong>這裡的「系統一」借用心理學的雙系統：非生成式的模型，輸出的是結構化的選擇、分數或機率，而不是逐字生成的自然語言；推理 LLM 則是「系統二」。關鍵差異有三：輸出空間（離散選項 vs 開放文本）、成本（單次前向 vs 思維鏈）、可靠性（可驗證的 schema vs 幻覺風險）。</p>
+<p><strong>Clef。</strong>決策模型，直接照 Jev 的 API schema 複製。它回答「這個請求屬於哪一類／該不該做某動作」，所以能嵌進應用程式碼裡，取代一條 if/else 或一次 LLM 呼叫。</p>
+<p><strong>Clairic。</strong>Cloudflare 原創方向：輸入非結構化文本（發票、表單、文件），輸出<em>帶型別的值</em>——抽取、計算、估算、預測，單次前向完成。技術要點是把「讀取」與「推理」分離：如果答案字面上就在輸入裡，用抽取而非生成，就消掉了自回歸的錯誤累積與 JSON 格式失敗。</p>
+<p><strong>為何是後訓練。</strong>團隊「大部分只做後訓練」，意味著路線是拿開放權重或既有基礎模型做對齊與蒸餾，而不是重建預訓練管線。這與 Blattmann 在 BFL 那集的觀點形成有趣對照：一邊是「單一骨幹學多模態」，一邊是「用既有資源做便宜可靠的專才」。</p>
+
+<h5>行業 insight</h5>
+<ul>
+  <li><strong>NeoLab 這個標籤正在從「資本類別」變成「能力類別」。</strong>原始定義（The Information 的 Stephanie Palazzolo，去年 11 月提出）是「新一代研究導向 AI 初創」；Deedy Das 的清單再加四條硬指標：精英研究者、大量算力、無顯著營收、巨額募資。Cloudflare 拿下這個標籤，等於宣告：<em>能不能做模型</em>比<em>是不是初創</em>更能定義 neolab。這對所有「基礎設施 + 模型」混合體（Databricks、Snowflake、甚至雲廠）都是先例。</li>
+  <li><strong>模型層的護城河正在從「訓練」前移到「schema 與分發」。</strong>兩星期複製一個兩年的模型，說明範式一旦公開，實作壁壘極低；真正稀缺的是 API 設計、評測方法、以及「知道該在哪裡放系統一模型」的產品判斷。這與十字路口趙晨陽那集「評估是 RSI 唯一瓶頸」其實是同一個結構：誰定義了評測與介面，誰就控制了擴散速度。</li>
+  <li><strong>推論成本的壓力正在重塑採購決策。</strong>一個 CDN 公司說「不必把每個請求送去 LLM」，在兩年前是效能考量，現在是毛利考量。當 token 單價成為財報項目（Anthropic 的 compute 佔營收比例從 251% 降到 48%），路由到小模型就從工程優化升級為財務策略。</li>
+  <li><strong>「監管風險」首次成為美國公司自建模型的白話理由。</strong>Chen 點名中國開源模型的監管風險與授權漲價，這是把地緣政治與授權 economics 直接寫進產品路線圖。基礎設施公司不能承受上游斷供，這條邏輯會在半導體之外重演一次。</li>
+  <li><strong>但也別忽略反面。</strong>Cloudflare 沒有公布 Clef 或 Clairic 的任何 benchmark；「兩星期複製」是單方說法；「System One」的效能優勢在真實流量下是否成立，仍待第三方驗證。文章本身也承認 neolab 標籤「聽起來有點像行銷花招」。</li>
+</ul>
+
+<h5>前後脈絡</h5>
+<p>這條線的起點是 9 月 Jev 發布——Latent Space 稱那集成為他們<strong>全年最受歡迎的一集</strong>。此後擴散速度極快：Glean 用它做零樣本決策路由（「決策空間的分類法改變時，我們不必反覆微調」）；UiPath 用它做文件 chunk 排序，用「錦標賽」方式分組淘汰，數千次 Jev 呼叫在一秒內完成；Workday 用它做「你還在打字、請假單已經填好」的介面。TypeSafe 的 Diogo Almeida 在 AIE Code 的主題演講把這件事上升到宣言層級：「代碼是自動化的語言，所以你需要與代碼整合」、「你 95% 的時間得到愛因斯坦，5% 的時間得到豆豆先生——如果你分不出哪個是哪個，你要怎麼自動化任何事？」</p>
+<p>把 Cloudflare 這一步放進更大的時間線：<strong>11-13 Dwarkesh 的 RSI 討論</strong>說的是「AI 加速 AI 研究」；<strong>11-15 十字路口趙晨陽</strong>說的是「評估成本決定 RSI 速度」；<strong>11-16 BFL</strong>說的是「視覺智能是系統一、與語言模型互補」；<strong>11-17 Cloudflare</strong>則是「系統一變成基礎設施公司的標配零件」。四集其實在講同一件事的不同樓層：能力在往上衝，而<em>把能力切成可路由的碎片</em>才是產品化的關鍵。</p>
+
+<h5>爭議點與待驗證</h5>
+<ul>
+  <li><strong>NeoLab 標籤的通脹。</strong>一家年化 30 億美元、39% 增長的上市公司自稱 neolab，若這個詞最終什麼都指，就什麼都不指。</li>
+  <li><strong>「兩星期」的比較是否公平。</strong>複製一個已知 schema 的模型，與發明一個範式，難度不可比。Chen 自己承認了這一點，但標題式的數字仍容易被誤讀為「TypeSafe 效率低」。</li>
+  <li><strong>封閉 vs 開放的雙標。</strong>Cloudflare 批評 Jev 閉源、自己跑不了；但 Clef 與 Clairic 同樣沒有開源承諾。它反對的是「別人閉源」，不是閉源本身。</li>
+  <li><strong>沒有基準。</strong>延遲、準確率、成本節省全部缺席。對一個以「毫秒」為賣點的模型家族，這是最大的資訊缺口。</li>
+</ul>
+
+<hr class="hr">
+
+<h3>Latent Space · AINews 每日掃描</h3>
+<h4>[AINews] Perplexity hits a $1B revenue run rate, up 4x in 2026 📄（2026-11-17 09:24 UTC，報導 11-16 動態）</h4>
+<p>非音頻集數，屬每日新聞匯總。但今天這一期數字密度異常高，值得單獨列表——它是理解「2026 下半年 AI 經濟學」最省時間的一頁。</p>
+
+<table>
+  <tr><th>主體</th><th>數字</th><th>意義</th></tr>
+  <tr><td>Perplexity</td><td class="num">$1B ARR</td><td>年初 &lt;$250M、8 月 &gt;$750M；按 agent lab 倍數推算估值 $30–50B</td></tr>
+  <tr><td>Qwen4-Max</td><td class="num">43 / $3.27</td><td>Intelligence Index 由 34 升至 43；每任務成本由 $10.02 降至 $3.27；輸出 token 少 39%</td></tr>
+  <tr><td>Qwen4-Max 架構</td><td class="num">2.4T / 71B</td><td>總參數不變、每 token 激活參數減 25% 至 71B；1M context；圖文輸入</td></tr>
+  <tr><td>Kimi K3.1 Pro</td><td class="num">67%</td><td>Terminal-Bench 4.0，對 Qwen4-Max 的 48%；每 index 任務 $3.68</td></tr>
+  <tr><td>Anthropic S-1</td><td class="num">$16.3B</td><td>2026 上半年營收；算力成本佔營收由 251% 降至 48%</td></tr>
+  <tr><td>Databricks</td><td class="num">7.3% → 30.9%</td><td>開放模型 token 佔比，3.5 個月內翻了四倍</td></tr>
+  <tr><td>OpenAI 外部評測</td><td>4 家</td><td>Apollo（6 人駐場 4 個月）、METR、Transluce（6 週）、Goodfire 獲內部存取</td></tr>
+  <tr><td>MLPerf v6.1</td><td class="num">19.7 min</td><td>GB300 NVL72 訓練 GPT-OSS-20B，比 H100 快 2.86 倍</td></tr>
+  <tr><td>TTS 延遲</td><td class="num">376ms</td><td>串流模型中位數 vs 非串流 2.0 秒</td></tr>
+  <tr><td>GradeBench</td><td class="num">57%</td><td>最強前沿模型批改手寫物理答案時，與教師一致的比例</td></tr>
+  <tr><td>PyBot</td><td class="num">8k PR</td><td>1,000 個 DeepSeek 代理一週寫出 63 萬行零依賴 Python 聊天機器人</td></tr>
+</table>
+
+<h5>三個值得記住的信號</h5>
+<ul>
+  <li><strong>「便宜」正在成為一種能力，而不只是價格。</strong>Qwen4-Max 的分數從 34 升到 43，同時成本降到三分之一、輸出少四成——這不是打折，是效率曲線在移動。當每 index 任務成本變成可比較指標，模型的競爭單位就從「benchmark 分數」變成「每分多少錢」。</li>
+  <li><strong>開放模型在企業端的臨界點可能已經過了。</strong>Databricks 上開放模型 token 佔比 3.5 個月從 7.3% 到 30.9%。這與 Cloudflare 托管 Kimi/GLM/DeepSeek 的動作、以及它對「中國開源模型監管風險」的擔憂，構成同一個現象的兩面：採用速度已經快過風險管理速度。</li>
+  <li><strong>安全評測的「存取」正在被量化審視。</strong>OpenAI 給了四家外部機構內部權限，但批評者指出：沒有 Slack 存取、OpenAI 挑選受訪員工、不能碰權重、不能做基於訓練的誘導；前員工說評測者不能引用員工原話（即使匿名）。這與 Christiano 那集「公開資訊缺口：缺訓練方法，評測無法解讀」是同一條線——存取的形式，決定了評測的意義。</li>
+</ul>
+
+<div class="note">
+<b>與昨日報告的接點。</b>11-17 的兩集（Christiano 的 12 個月時間表、BFL 的視覺智能）談的是能力上限；今天的 Cloudflare 與 AINews 談的是能力如何被切碎、路由、定價。兩者合讀會得出一個不太舒服的結論：<em>前沿能力的時間表在壓縮，而把它變成可靠產品的工程難度並沒有同步下降</em>——所以「兩星期複製」與「376ms 延遲」這類數字，才是這一輪真正在改變競爭格局的東西。
+</div>
+
+<footer>
+  <p><strong>方法與限制。</strong>本窗口十台逐一以 RSS 核對：張小珺、十字路口、硅谷 101、42 章經、屠龍之術（iTunes/xyzfm）、Dwarkesh、Latent Space、Cognitive Revolution、No Priors、ML Street Talk 均無新集；Dwarkesh 與 No Priors 的 YouTube feed 本輪恢復可讀（先前多輪 404），最新的 Dwarkesh 條目實為 78 秒 Short（〈How Fast Can AI Become an Expert?〉，11-17 20:39Z），不構成集數，故不列入報告。Latent Space 本期為文章而非音頻，已標註為「文章」。文中所有引文取自 Latent Space 文章原文，未經轉述改寫；行業背景（Jev 擴散、Glean/UiPath/Workday 用例）取自同站〈The Jev Revolution〉一文，已在文內註明。</p>
+  <p><strong>Jev 前置過濾。</strong>候選 2 條送 TypeSafe Jev（profile: news）：Cloudflare 條 worth 1.05、AINews 條 worth 1.26，均高於 0.6 噪音線；primary_source 分別為 0.23 與 0.10，屬二手轉述，故文中所有數字均標明原始出處，未當作一手確認。</p>
+  <p><strong>來源。</strong>Latent Space, “Cloudflare Joins the Jevolution and Labels Itself a Neolab,” Richard MacManus, 2026-11-17 15:00 UTC, <a href="https://latent.space/p/cloudflare/">latent.space/p/cloudflare</a>；Latent Space, “The Jev Revolution: What Engineers Are Already Building with System One Models,” <a href="https://latent.space/p/jev-revolution/">latent.space/p/jev-revolution</a>；Latent Space, “[AINews] Perplexity hits a $1B revenue run rate, up 4x in 2026,” 2026-11-17 09:24 UTC。</p>
+  <p>AI Podcast Daily · 2026-11-18 · 生成於 02:04 UTC · Apache License 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>
