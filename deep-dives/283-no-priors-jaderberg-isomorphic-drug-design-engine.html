@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 把「發現」改成「設計」——Jaderberg 想把藥物研發的十年，壓進一個可計算的流程</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  td { color: #444; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.55rem; }
+    table { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="../index.html">← 返回播客日報</a>
+  <div class="ep-num">No Priors · 2026-11-12</div>
+  <h1>把「發現」改成「設計」——Jaderberg 想把藥物研發的十年，壓進一個可計算的流程</h1>
+  <div class="meta">
+    <div>〈Powering AI-Driven Drug Discovery with President of Isomorphic Labs Max Jaderberg〉</div>
+    <div>出品：No Priors<span>·</span>主持：Elad Gil<span>·</span>嘉賓：Max Jaderberg（Isomorphic Labs 總裁）</div>
+    <div>發布：2026-11-12 11:00 UTC（11-12 19:00 HKT）<span>·</span>39 分 16 秒<span>·</span>12 個章節</div>
+    <div>來源：官方節目簡介與章節時間軸；無公開逐字稿，引語僅取官方簡介原文，中文為譯述</div>
+  </div>
+</header>
+
+<p>這一集只有 39 分鐘，在一個動輒兩小時的播客生態裡算是短的。但它要處理的問題，是整個 AI for Science 敘事裡最難誠實面對的一個：<strong>如果模型真的那麼準，為什麼新藥還是那麼貴、那麼慢、那麼容易在第三期臨床失敗？</strong></p>
+
+<p>Jaderberg 給的答案不是「模型還不夠強」，而是一個更結構性的說法：藥物研發長期依賴<em>昂貴、耗時、經驗性的試錯</em>；Isomorphic 要做的是把這個過程搬到電腦上，讓它從「發現」（discovery）變成一種「精確工程」（precision engineering）。</p>
+
+<blockquote class="strong">
+「藥物發現與開發長期依賴昂貴、耗時的經驗性試錯。透過把發現過程搬到電腦上，Isomorphic Labs 想從根本上改變醫學——讓它從一個發現的過程，變成一個精確工程的過程。」
+<span class="attribution">— 官方節目簡介（No Priors，2026-11-12）</span>
+</blockquote>
+
+<p>「From a process of discovery to one of precision engineering」——這句話是整集的骨架，也是它最容易被誤讀的地方。它不是在說「AI 會發明藥物」，而是在說：<em>把一個靠運氣與經驗的流程，改寫成一個有規格、有度量、可迭代的流程。</em>前者是魔法，後者是工業。</p>
+
+<div class="data-point">
+  <span>39:16</span> 本集時長，12 個章節；主持 Elad Gil，嘉賓 Max Jaderberg。<br>
+  <span>2021-02-24</span> Isomorphic Labs 註冊成立，Alphabet 旗下、由 DeepMind 分拆。<br>
+  <span>$2.1B</span> 2026 年 5 月新一輪融資，Thrive Capital 領投，Alphabet、GV、MGX、Temasek、CapitalG、英國主權 AI 基金參與。<br>
+  <span>2026-01</span> Jaderberg 由首席 AI 官升任總裁；同月與 Johnson &amp; Johnson 簽跨模態、多靶點合作。<br>
+  <span>2026-11</span> 內部管線仍在臨床前（腫瘤、免疫、發炎），目標是進入首次人體試驗。
+</div>
+
+<h2 class="section-title">一、先定位：這一集是在什麼時刻錄的</h2>
+
+<p>把時間線排出來，會發現這集錄音的時機非常關鍵。</p>
+
+<table>
+  <tr><th>時間</th><th>事件</th><th>意義</th></tr>
+  <tr><td>2021-02</td><td>Isomorphic Labs 成立，Alphabet 子公司，Hassabis 任 CEO</td><td>AlphaFold 2 的商業化載體</td></tr>
+  <tr><td>2024-01</td><td>與 Novartis、Eli Lilly 簽合作，合計潛在價值近 $3B</td><td>第一次證明大藥廠願意付錢買「計算」</td></tr>
+  <tr><td>2024-05</td><td>AlphaFold 3 發布</td><td>從蛋白質結構擴展到生物分子交互作用</td></tr>
+  <tr><td>2025-04</td><td>首輪外部融資 $600M，Thrive 領投</td><td>從「Alphabet 專案」變成「可獨立融資的公司」</td></tr>
+  <tr><td>2026-02</td><td>IsoDDE 技術報告</td><td>自研 drug design engine，宣稱在多個基準上超越 AlphaFold 3</td></tr>
+  <tr><td>2026-05</td><td>融資 $2.1B</td><td>AI 製藥史上最大單筆押注之一</td></tr>
+  <tr><td>2026-11</td><td>本集播出；管線仍在臨床前</td><td>錢已到位，答案尚未提交給 FDA</td></tr>
+</table>
+
+<p>也就是說，這一集是在「資本已經下注、科學尚未驗證」的窗口裡錄的。這個窗口的談話有一個特徵：<strong>所有論證都必須是機率性的</strong>。不能說「我們會成功」，只能說「我們提高了成功的機率、壓縮了時間」。訪談裡大量出現的「機率」「速度」「成功率」，正是這個位置的語言。</p>
+
+<h2 class="section-title">二、AlphaFold 的真正遺產：不是結構，是一個 existence proof</h2>
+
+<p>官方簡介裡有一句話，我認為是整集最重要的一句：</p>
+
+<blockquote class="strong">
+「AlphaFold 的成功提供了第一個概念驗證：一個深度學習模型可以在生物學領域泛化。」
+<span class="attribution">— 官方節目簡介</span>
+</blockquote>
+
+<p>注意它說的不是「AlphaFold 解了蛋白質結構」，而是「它證明了泛化在生物學是可能的」。這個區別决定了整個公司的哲學：</p>
+
+<ul>
+  <li>如果 AlphaFold 的價值是「一個更好的結構預測工具」，那它就是一個軟體產品，天花板是研究經費。</li>
+  <li>如果它的價值是「生物學可以被模型泛化」，那它就是一個<strong>方法論的許可證</strong>——允許你把同樣的邏輯套到親和力、毒性、成藥性、甚至臨床終點上。</li>
+</ul>
+
+<p>簡介裡接著說：模型的學習會<em>複合</em>（compounding），因此能隨規模達到泛化，從而提高真實世界臨床試驗的成功機率與速度。這句話在技術上是有爭議的——生物學的資料量遠小於語言，分布漂移也更嚴重——但它是整個 AI 製藥賭注的邏輯起點：<strong>只要泛化成立，資料就會變成飛輪；只要飛輪轉起來，試錯的次數就會下降。</strong></p>
+
+<h2 class="section-title">三、停滯：為什麼「更努力」不是答案</h2>
+
+<p>章節表裡有一個很早就出現的段落：<strong>05:23 Drug Discovery Stagnation</strong>。這個安排本身就是一個論證順序——先講病灶，再講療法。</p>
+
+<p>藥物研發的停滯有一個著名的名字：Eroom's law（把 Moore's law 倒過來拼）。它描述的是：<em>每十億美元研發支出所帶來的新藥數量，大約每九年減半。</em>換句話說，這個行業在過去幾十年裡，投入的錢越來越多，產出卻越來越少。</p>
+
+<p>原因不神秘，而且每一個都指向同一件事：</p>
+
+<ol>
+  <li><strong>容易的靶點已經被做完了。</strong>剩下的靶點生物學更複雜、族群更異質、終點更難量測。</li>
+  <li><strong>臨床試驗的成本與規模同步上升。</strong>三期試驗的設計越來越保守，因為失敗的代價太高。</li>
+  <li><strong>失敗集中在最貴的階段。</strong>一個分子在臨床前失敗，成本是百萬級；在三期失敗，成本是十億級。而傳統流程對「會不會失敗」的預測能力極弱。</li>
+</ol>
+
+<p>這就帶出了 Isomorphic 的核心主張：<strong>不是要發明更多分子，而是要在最便宜的階段，排除更多錯誤的分子。</strong>這句話聽起來不性感，但它是整個行業唯一算得過來的帳。</p>
+
+<div class="highlight-box">
+<strong>一個常被忽略的重點：</strong>AI 製藥的價值，主要不是「找到更多好藥」，而是「更早殺掉壞藥」。前者是上檔收益，後者是成本結構。而資本市場願意為後者付錢，因為它直接改變現金流的形狀。
+</div>
+
+<h2 class="section-title">四、把發現搬上電腦：三層，不是一層</h2>
+
+<p>章節 <strong>14:35 Bringing Drug Discovery Onto Computers</strong> 是節目的技術核心。從外部知識與 Isomorphic 公開的產品結構看，這件事至少有三層，而大眾討論往往只看到第一層：</p>
+
+<table>
+  <tr><th>層次</th><th>問題</th><th>模型要做的事</th><th>成熟度（公開資訊判斷）</th></tr>
+  <tr><td>結構</td><td>蛋白質長什麼樣、口袋在哪</td><td>結構預測（AlphaFold 系）</td><td>最成熟，已被廣泛使用</td></tr>
+  <tr><td>親和力</td><td>分子與靶點結合得多緊</td><td>結合親和力預測、打分</td><td>快速進步，仍高度依賴實驗校正</td></tr>
+  <tr><td>成藥性與安全性</td><td>吸收、代謝、毒性、選擇性</td><td>ADMET、多目標優化</td><td>最難，資料最私有、最少</td></tr>
+</table>
+
+<p>Isomorphic 在 2026 年 2 月公開的 IsoDDE（Drug Design Engine）技術報告，正是試圖把這三層收進同一個系統：官方說法包括在蛋白—配體結構預測的泛化基準上達到 AlphaFold 3 的兩倍表現、以小分子結合親和力預測在遠低於物理方法的時間與成本下取得更高準確度、並且只靠氨基酸序列就能找到靶點上新的結合口袋。</p>
+
+<p>這些數字的可靠性另當別論（見最後一節），但它們洩露了一個重要的產品哲學：<strong>不做單點模型，做一個「引擎」。</strong>因為藥物設計不是一次預測，是一場多目標的妥協——你要同時滿足活性、選擇性、代謝穩定性、可合成性、專利空間。任何單一指標的優化，都會在另一個指標上付代價。</p>
+
+<h2 class="section-title">五、資料集與端點：這一集最被低估的兩段</h2>
+
+<p>章節 <strong>19:31 Isomorphic's Datasets</strong> 與 <strong>20:30 Rethinking Endpoints</strong> 各只有一分鐘左右，但它們可能是整集最誠實的部分。</p>
+
+<p class="sub-title">資料集：護城河不是模型，是你能不能生成資料</p>
+
+<p>公開資料（PDB、ChEMBL、PubChem）在結構與親和力上已經相當豐富，但它們有一個共同的偏差：<em>它們是「已被研究過」的東西的集合。</em>化學空間裡絕大多數的分子，從未被任何人合成，也從未被任何人測量。這意味著任何純粹在公開資料上訓練的模型，都會在「新化學空間」上失效——而新化學空間正是藥物發現要去的地方。</p>
+
+<p>所以真正的護城河不是模型架構，而是<strong>能在內部生成高品質、針對性資料的能力</strong>：濕實驗室、自動化平台、以及與大藥廠合作取得的私有測定資料。這也解釋了為什麼 Isomorphic 的章節裡會出現「Automating Biologic Labs」（23:57）——那不是一個附帶的話題，那是資料引擎的生產線。</p>
+
+<p class="sub-title">端點：整個領域的評測問題</p>
+
+<p>「Rethinking Endpoints」這四個字，值得比它得到的時間更多的注意。</p>
+
+<p>臨床試驗的終點（endpoint）是整個藥物研發的度量單位。傳統上，很多試驗用<em>代理終點</em>（surrogate endpoint）——例如用「膽固醇下降」代替「心血管事件減少」，用「腫瘤縮小」代替「存活期延長」。代理終點便宜、快、容易量測，但它們與病人真正在意的东西之間，隔著一層未經證明的因果假設。</p>
+
+<p>如果 AI 模型是在代理終點上訓練與評估的，那它優化的就是<em>代理</em>，不是<em>療效</em>。這與 AI 領域熟悉的 reward hacking 是同一個結構：你測量什麼，就得到什麼。</p>
+
+<blockquote class="strong">
+「重新思考終點」——當模型可以預測越來越多東西，你選擇預測什麼，就決定了你在優化什麼。
+<span class="attribution">— 章節標題 20:30 的分析延伸（非引語）</span>
+</blockquote>
+
+<p>這一段之所以重要，是因為它把 AI 製藥從「模型問題」拉回「測量問題」。而測量問題，恰好是這一週另一條線的主題：Christiano 說 RSI 的速度由評估成本決定；趙晨陽說評估是唯一瓶頸。藥物研發其實是同一個結構的慢速版本——<strong>你能多快判斷一個分子好不好，決定你能多快找到好的分子。</strong></p>
+
+<h2 class="section-title">六、外部依賴：為什麼一家 AI 公司要蓋實驗室</h2>
+
+<p>章節 <strong>22:50 External vs. Internal Dependences</strong> 處理的是一個很現實的營運問題：哪些能力必須自己做，哪些可以外購。</p>
+
+<p>AI 製藥公司的典型路徑是「輕資產」：自己做模型，把濕實驗室外包給 CRO（委託研究機構）。這條路的好處是快、資本效率高；壞處是<strong>迭代速度被別人的排期綁定</strong>。當你每週都想更新模型，而外部實驗室只能每季給你一批資料，飛輪就轉不起來。</p>
+
+<p>這解釋了為什麼 Isomorphic 在 2025–2026 年間持續擴張實體據點（倫敦、洛桑、剑桥麻薩諸塞），並且在章節裡單獨討論「自動化生物實驗室」。自動化的目的不是省人力，是<strong>把實驗的週期從「週」壓到「天」</strong>——因為模型迭代的速度，最終受限於資料回流的延遲。</p>
+
+<div class="highlight-box">
+<strong>這是一個很少被講清楚的權衡：</strong>垂直整合在軟體業通常是劣勢（慢、貴、不專注），但在「模型—資料」飛輪裡，它是唯一能控制迭代節奏的方式。Isomorphic 的 $2.1B 有很大一部分不是買算力，是買<strong>時間常數</strong>。
+</div>
+
+<h2 class="section-title">七、自研 vs 合作：三種關係，三種風險</h2>
+
+<p>章節 <strong>26:22 Internal Development vs. Partnerships</strong> 對應的是公司結構的核心矛盾：你既要做自己的管線，又要服務合作夥伴。</p>
+
+<table>
+  <tr><th>關係</th><th>對方</th><th>結構</th><th>對 Isomorphic 的意義</th></tr>
+  <tr><td>平台合作</td><td>Novartis（2024-01，2025-02 擴大）</td><td>針對三個未公開靶點，後續新增三個研究項目</td><td>外部驗證＋里程碑收入</td></tr>
+  <tr><td>平台合作</td><td>Eli Lilly（2024-01）</td><td>小分子、未公開靶點數量</td><td>同上，且是最大單一潛在金額</td></tr>
+  <tr><td>跨模態合作</td><td>Johnson &amp; Johnson（2026-01）</td><td>多靶點、跨模態研究</td><td>證明引擎不限於小分子</td></tr>
+  <tr><td>自研管線</td><td>內部</td><td>腫瘤、免疫、發炎</td><td>長期價值的主要來源</td></tr>
+</table>
+
+<p>這個結構的張力在於：<strong>合作夥伴要的是「對他們的靶點有效」，自研管線要的是「對我們選的靶點有效」。</strong>兩者的最優化目標不同，但共享同一個引擎。這也是為什麼「引擎與疾病領域無關（agnostic of disease area, target class, and modality）」這個設計如此重要——它是唯一能讓兩種需求共存的架構。</p>
+
+<p>而從商業角度看，合作協議其實是一種<strong>選擇權定價</strong>：大藥廠用里程碑付款買「在我們的靶點上試一次」的權利，Isomorphic 用這筆錢養引擎。如果引擎真的通用，這是一筆極好的套利；如果不通用，合作會變成定製專案，毛利迅速下降。</p>
+
+<h2 class="section-title">八、多藥聯用：從「一顆藥」到「一個療程」</h2>
+
+<p>章節 <strong>29:21 Multidrug Approaches</strong> 是整集最有想像力的一段，也是最容易被忽略的一段的商業意義。</p>
+
+<p>簡介的原話是：準確的分子工程，解鎖了「跨越複雜生物路徑的多藥雞尾酒」的潛力。這句話背後的邏輯是：</p>
+
+<ul>
+  <li>大多數複雜疾病（癌症、神經退化、代謝病）不是單一通路失調，而是多條通路同時補償。</li>
+  <li>單一藥物壓住一條通路，腫瘤或細胞會從另一條通路逃逸。</li>
+  <li>雞尾酒療法在愛滋病、部分癌症上已被證明有效，但設計難度是<strong>組合爆炸</strong>：三種藥、每種 50 個候選，就是 125,000 種組合，每一種都要測交互作用。</li>
+</ul>
+
+<p>如果模型能準確預測單一分子的性質，並且能預測<em>組合</em>的協同與拮抗，那組合爆炸就從「不可計算」變成「可搜索」。這是 AI 在藥物領域最有可能產生非線性回報的地方——因為它處理的正是人類與傳統高通量篩選都不擅長的維度。</p>
+
+<p>但這裡也有一個現實的煞車：<strong>監管體系是為單一藥物設計的。</strong>FDA 對固定劑量組合的審批路徑存在，但對「依病人調整的組合」幾乎沒有先例。所以多藥聯用的技術可行性，會遠早於它的商業可行性——這是一條技術上很性感、監管上很漫長的路。</p>
+
+<h2 class="section-title">九、風險偏好：為什麼大藥廠與 neolab 的曲線不同</h2>
+
+<p>章節 <strong>32:17 Risk Appetite Variation</strong> 短，但它觸及了一個結構性事實：<em>不同組織對同一件事的風險評價完全不同。</em></p>
+
+<p>對一家大型藥廠來說，一個成功率 15% 的項目，在資產組合裡是可以接受的（因為有幾十個項目分攤）；但對一個必須靠單一管線證明自己的公司，15% 是不可接受的。反過來，大藥廠的組織流程（委員會、階段門檻、文件）會讓「快速殺掉項目」變得困難，而小公司可以一週內停掉一個方向。</p>
+
+<p>這解釋了為什麼 AI 製藥公司與大藥廠的合作模式通常是「平台＋選擇權」，而不是「共同開發」：<strong>雙方對失敗的容忍度不同，所以必須用合約把風險切成不同的層級。</strong></p>
+
+<p>而 Isomorphic 的特殊位置在於，它同時是 Alphabet 的子公司（有無限耐心的資本）、又是一家要證明自己的公司（有時間壓力）、又是一家平台供應商（要維持中立）。這三重身份讓它的風險偏好變成一條奇怪的曲線：<em>在科學上敢賭，在商業上要保守，在合作上要靈活。</em></p>
+
+<h2 class="section-title">十、壽命與健康壽命：節目的哲學收尾</h2>
+
+<p>最後兩個章節——<strong>34:26 Disease Treatment Outlook</strong> 與 <strong>35:42 Human Longevity and Drug Development</strong>——把話題從「治病」拉到「延長健康壽命」。</p>
+
+<p>這個轉折不是修辭。它對應的是一個正在發生的產業轉向：從「治療疾病」到「壓縮發病期」（compression of morbidity）。前者是醫保支出，後者是生產力與生活品質。而 AI 製藥的長期敘事，正在從「更便宜的藥」變成「更長的健康期」——後者是一個大得多的市場，也是一個更難證明的命題。</p>
+
+<p>簡介的說法是：他相信 AI 的分子優化會同時改善<em>壽命</em>與<em>健康壽命</em>。這句話在科學上仍然是一個 bet，但它解釋了為什麼資本願意給這家公司 $2.1B：<strong>如果藥物研發真的從「發現」變成「工程」，那人類對抗老化的方式就會從「逐個疾病擊破」變成「系統性維護」。</strong></p>
+
+<h2 class="section-title">十一、五個可以帶走的判斷</h2>
+
+<p class="sub-title">1. AI 製藥的價值主要在「排除」，不在「發明」</p>
+
+<p>市場喜歡聽「AI 找到新藥」，但財務上真正重要的是「AI 更早殺掉不會成功的分子」。前者是離散的、罕見的、難以歸因的；後者是連續的、可累積的、可以直接寫進現金流模型的。任何評估這類公司的框架，都應該先看它的<em>排除率</em>，而不是它的<em>命中率</em>。</p>
+
+<p class="sub-title">2. 護城河是資料生成能力，不是模型</p>
+
+<p>模型會折舊（兩個星期就能被複製，見 deep dive 282 的 Cloudflare）；資料不會。而藥物領域的高品質資料，只能靠濕實驗室與合作關係生成。這意味著 AI 製藥公司最終都會變成「有模型的重資產公司」——這與軟體業的直覺相反。</p>
+
+<p class="sub-title">3. 端點就是評測，評測就是策略</p>
+
+<p>「Rethinking Endpoints」這一段的真正含義是：<strong>你選擇用什麼測量成功，決定了你會做出什麼。</strong>這與 Christiano 的「評估成本決定 RSI 速度」、趙晨陽的「評估是唯一瓶頸」是同一條原理在不同尺度的展現。藥物研發只是它最慢、最貴的版本。</p>
+
+<p class="sub-title">4. 多藥聯用是技術上最性感、監管上最遙遠的方向</p>
+
+<p>組合爆炸是 AI 天然擅長的問題，但監管體系沒有對應的審批框架。這是一條「技術先到、制度後到」的路，而制度落後的那幾年，會是商業化的真空期。</p>
+
+<p class="sub-title">5. 這一集是「資本已下注、科學未驗證」的樣本</p>
+
+<p>$2.1B 已經到位，管線還在臨床前。這意味著接下來兩年，Isomorphic 要交出的不是論文，是<strong>一個進入人體試驗的分子</strong>。在那之前，所有關於「precision engineering」的論述都還是前瞻，不是成果。</p>
+
+<h2 class="section-title">十二、反面：三個不能忽略的風險</h2>
+
+<p class="sub-title">臨床是唯一真正的評測</p>
+
+<p>AlphaFold 在結構預測上的成功，讓整個領域產生了一種「生物學可以被計算」的樂觀。但結構預測的 ground truth 是清楚的（有 PDB 的實驗結構可比對），臨床療效的 ground truth 是混亂的（安慰劑效應、族群異質、終點選擇、統計功效）。<strong>從「預測結構」到「預測療效」，中間隔著的不是一個模型，是一整個認識論的斷層。</strong></p>
+
+<p class="sub-title">這個賽道已經有失敗的先例</p>
+
+<p>2020–2024 年間，一批 AI 製藥公司上市、燒錢、然後遭遇臨床挫折或估值崩塌；Exscientia 在 2024 年被 Recursion 收購，是這個週期最明確的句點之一。這些失敗不一定是模型不夠好，而更可能是<strong>商業模式與時間常數不匹配</strong>：資本市場要求三年看到結果，而藥物研發的週期是十年。</p>
+
+<p>Isomorphic 的優勢是它有 Alphabet 的耐心資本與 $2.1B 的跑道；它的風險是，即使技術成立，<em>第一個成功的分子</em>也可能要等到 2030 年代。</p>
+
+<p class="sub-title">「與疾病領域無關的引擎」是一個很强的宣稱</p>
+
+<p>跨模態（小分子、抗體、蛋白質降解劑）的通用引擎，在技術上非常困難，因為不同模態的物理與資料結構完全不同。如果引擎實際上在多個模態上都需要大量定製，那「平台」的規模效應就會大打折扣——而平台效應正是這個估值的前提。</p>
+
+<h2 class="section-title">十三、放回這一週：三集，同一個問題</h2>
+
+<table>
+  <tr><th>集數</th><th>表面主題</th><th>共同的底層問題</th></tr>
+  <tr><td>Christiano（280）</td><td>AI 的時間表與暫停</td><td>我們能不能在行動前判斷好壞？</td></tr>
+  <tr><td>Cloudflare（282）</td><td>基礎設施公司做 System One 模型</td><td>誰有權在請求層做判斷？</td></tr>
+  <tr><td>Jaderberg（283）</td><td>AI 藥物設計</td><td>我們能不能把「判斷好壞」變成一個可計算的流程？</td></tr>
+</table>
+
+<p>三集其實都在處理「判斷」這件事：Christiano 問的是<em>人類有沒有能力判斷</em>；Cloudflare 問的是<em>判斷應該放在哪裡</em>；Jaderberg 問的是<em>判斷能不能被工程化</em>。而三者的答案都指向同一個方向：<strong>判斷的成本，正在成為這個時代最關鍵的變量。</strong></p>
+
+<div class="highlight-box">
+<strong>給 James 的一句話：</strong>這一集最值得抄走的不是任何一個生物學結論，而是那個順序——<strong>先把「發現」重新定義成「設計」，然後你才會有規格、有度量、有迭代。</strong>Isomorphic 做的不是「用 AI 找藥」，是把藥物研發從一門手藝改寫成一條產線；而產線的第一個要求，永遠是先定義什麼叫「合格」。
+</div>
+
+<hr>
+
+<footer>
+  <p><strong>來源</strong>：No Priors，〈Powering AI-Driven Drug Discovery with President of Isomorphic Labs Max Jaderberg〉，2026-11-12 11:00 UTC 發布，39 分 16 秒，主持 Elad Gil。節目頁與 RSS：<a href="https://feeds.megaphone.fm/nopriors">feeds.megaphone.fm/nopriors</a>。公司事實（成立日期、$600M／$2.1B 融資、Novartis／Lilly／J&amp;J 合作、IsoDDE、2026-11 管線狀態）取自 Isomorphic Labs 公開資料與 Wikipedia 條目；Eroom's law 出自 Scannell et al., <em>Nature Reviews Drug Discovery</em>, 2012。</p>
+  <p><strong>證據層級</strong>：本集無公開逐字稿，本文<strong>不引用任何嘉賓原話</strong>。所有標為引語的段落，均為 No Priors 官方節目簡介的原文（英文）之譯述；章節標題與時間戳取自官方章節表。文中對各章節內容的解讀，是依章節標題、官方簡介與公開資料所作的推斷，已在行文中標明。此處理方式與本系列對無逐字稿集數的一貫標準一致：寧可標明層級，不假造原話。</p>
+  <p><strong>延伸</strong>：deep dive 227（Alex Rives 的生命世界模型）、224（矽谷 101：Agent、機器人與製藥）、282（Cloudflare 與 System One 的商品化）。</p>
+  <p style="margin-top:0.8rem;">深度復述 · 生成於 2026-11-18 · JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
