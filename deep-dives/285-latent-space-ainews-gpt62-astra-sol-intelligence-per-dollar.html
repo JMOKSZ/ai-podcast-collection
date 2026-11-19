@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「最好的模型」與「最便宜的最好模型」——GPT-6.2 把前沿競爭的計分板換成智能每美元</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  td { color: #444; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.55rem; }
+    table { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="../index.html">← 返回播客日報</a>
+  <div class="ep-num">Latent Space · AINews · 2026-11-18</div>
+  <h1>「最好的模型」與「最便宜的最好模型」——GPT-6.2 把前沿競爭的計分板換成智能每美元</h1>
+  <div class="meta">
+    <div>〈[AINews] GPT-6.2 Astra, the #2 Frontier Model is better and 20%–600% cheaper, but has mixed reviews; 6.2 Sol likely main workhorse〉</div>
+    <div>出品：Latent Space<span>·</span>主編：swyx<span>·</span>形式：AINews 每日情報（非訪談集）</div>
+    <div>發布：2026-11-18 10:19 UTC<span>·</span>文章標註 2026-11-17<span>·</span>一手文本</div>
+    <div>來源：latent.space 原文；所有數字與引語均取自該文及其標注之原始出處</div>
+  </div>
+</header>
+
+<p>OpenAI 在 Anthropic 預期的首個交易日之前兩天，同時發布了 GPT-6.2 Astra 與 GPT-6.2 Sol。這個時間點的選擇本身，就是這場發布最值得讀的部分：<strong>它不是一次「我們更強了」的宣告，而是一次在對手上市前重新定價的動作。</strong></p>
+
+<p>Latent Space 的定性只有一句，但這一句把整場競爭的計分板換掉了：</p>
+
+<blockquote class="strong">
+「Anthropic still owns the world's best model, but OpenAI owns the world's most efficient models in terms of intelligence per $.」
+<span class="attribution">— Latent Space，2026-11-18（原文英文）</span>
+</blockquote>
+
+<p>翻譯成中文：<em>Anthropic 仍然擁有世界上最好的模型，但 OpenAI 擁有世界上智能／美元效率最高的模型。</em>「最好的模型」與「最便宜的最好模型」是兩個不同的王座，而這一週，OpenAI 選擇了後者。</p>
+
+<div class="data-point">
+  <span>62 vs 65</span> Astra 的 Artificial Analysis Intelligence Index 為 62，Fable 5.2 為 65。三分之差。<br>
+  <span>≈15%</span> Sol 以約 15% 的每任務成本，追平 9 月版 Astra 的分數。<br>
+  <span>2 天</span> 發布時間距離 Anthropic 預期首個交易日。<br>
+  <span>High</span> OpenAI 首次把對外發布模型的「AI 自我改進」風險評為 High。
+</div>
+
+<h2 class="section-title">一、兩個 SKU：旗艦模型分裂成兩種產品</h2>
+
+<p>這次發布最清晰的商業信號，不是任何一個 benchmark，而是<strong>同一家族拆成兩個定價帶</strong>：</p>
+
+<table>
+  <tr><th>項目</th><th>GPT-6.2 Astra</th><th>GPT-6.2 Sol</th></tr>
+  <tr><td>定位</td><td>峰值能力（frontier）</td><td>單位成本（workhorse）</td></tr>
+  <tr><td>API 價格（每百萬 token，輸入／緩存／輸出）</td><td>$8 / $0.40 / $40</td><td>$2 / $0.10 / $10</td></tr>
+  <tr><td>上下文／輸出上限</td><td>1M / 128K</td><td>1M / 128K</td></tr>
+  <tr><td>Intelligence Index</td><td>62</td><td>—</td></tr>
+  <tr><td>每任務成本</td><td>—</td><td>約為 9 月 Astra 的 15%</td></tr>
+  <tr><td>企業法律配置</td><td>加入法律檢索索引，Harvey LAB-AA 20.8%（基礎版 15.0%）</td><td>—</td></tr>
+</table>
+
+<p>Sol 的定價「沿用上一代」——這句話看似平淡，其實是全篇最狠的一筆：<strong>上一代旗艦的價格，這一代變成入門款。</strong>在摩爾定律失效的 AI 硬體語境裡，這種「同價位、換世代」的節奏，等於每年把單位智能的價格砍半再砍半。</p>
+
+<p>對企業客戶而言，這是一個決策架構的改變：以前是「選最強的模型」，現在是「選任務與模型的配對」。長時程工程任務用 Astra，日常高頻調用走 Sol——<strong>模型選型從「技術決策」變成「採購決策」。</strong></p>
+
+<h2 class="section-title">二、Benchmark 全景：贏在工程，輸在體感</h2>
+
+<p>把原文的數字攤開，會看到一個非常不對稱的圖景：Astra 在<em>可驗證、長時程、工程類</em>任務上大幅領先，在<em>視覺、開放式、主觀品味</em>類任務上則明顯吃虧。</p>
+
+<table>
+  <tr><th>評測</th><th>Astra</th><th>對照</th><th>解讀</th></tr>
+  <tr><td>OpenWorldEngineer（Mercor）</td><td>67.2%</td><td>Fable 5.2：54.6%；GPT-6 Astra：44.2%</td><td>+12.6 點，且比上一代跳升 23 點——這是本次最硬的成績</td></tr>
+  <tr><td>Vibe Code Bench（Vals，多輪）</td><td>第一</td><td>Sol 第三</td><td>多輪 coding 場景 Astra 最強</td></tr>
+  <tr><td>FrontierMath Erdős（Lean 驗證）</td><td>7 / 68</td><td>此前最佳 3 / 68</td><td>可機器驗證的未解問題證明，翻倍以上</td></tr>
+  <tr><td>Agents' Last Exam 1.1</td><td>比 GPT-6 Astra max +5.2 分</td><td>成本 &lt; 1/3</td><td>同分更便宜，或同價更強</td></tr>
+  <tr><td>對 Fable 5.2</td><td>+5.5 分</td><td>約 5% 成本</td><td>這是「智能每美元」最極端的一組數字</td></tr>
+  <tr><td>AA-3D</td><td>1,318</td><td>Fable 1,271；Sol 1,259</td><td>3D 生成領先</td></tr>
+  <tr><td>Robotics（AA preview）</td><td>79</td><td>Fable 75；Sol 78</td><td>機器人任務小幅領先</td></tr>
+  <tr><td>WANDR（Perplexity，研究代理）</td><td>0.783／約 $12.54</td><td>Sol：0.746／約 $2.65</td><td>分數高 5%，成本高 4.7 倍——這裡 Sol 才是合理選擇</td></tr>
+  <tr><td>Harvey LAB-AA（法律）</td><td>20.8%</td><td>基礎 Astra 15.0%</td><td>增量幾乎全來自檢索層，不是基礎模型</td></tr>
+  <tr><td>GDPval v2 輸出 token</td><td>比前代少 22%</td><td>—</td><td>省錢不只靠單價，也靠「少說話」</td></tr>
+</table>
+
+<p>這張表最值得學的不是任何單一數字，而是<strong>它的內部矛盾</strong>：OpenWorldEngineer 領先 12.6 點，WANDR 的單位成本卻高出 Sol 4.7 倍。同一個模型家族，在不同任務分佈下的「性價比」可以完全反轉。</p>
+
+<div class="highlight-box">
+<strong>採購推論：</strong>「每任務成本」是一個平均值，而平均值會說謊。真正的決策規則應該是<em>按任務類型分別測</em>——工程類看 Astra，研究代理類看 Sol，法律類看有檢索索引的企業配置。單一百分比（15%、5%、1/3）只適合做公關標題。
+</div>
+
+<h2 class="section-title">三、負評：為什麼同一模型會有兩個世界</h2>
+
+<p>這次發布最不尋常的地方，是<strong> influencer 的負評強度</strong>。Latent Space 的原文用了「STRONGLY negative influencer feedback」，並提到 OpenAI 為此做出了防禦性回應。</p>
+
+<blockquote class="strong">
+「We think that some of this is overreacting and normal influencer tendency to either have everything be 🤯🤯🤯 or the literal WORST.MODEL.EVER, BUT also that some of the criticisms are valid, and the RL artefacts are noticeable and downright bizarre (don't even get us started about the terrible launch video).」
+<span class="attribution">— Latent Space，2026-11-18（原文英文）</span>
+</blockquote>
+
+<p>這段話的結構值得拆開看。它同時做了三件事：<strong>貶低反應強度</strong>（一部分是網紅的兩極化傾向）、<strong>承認批評有效</strong>（部分批評是對的）、<strong>指出可觀察的技術成因</strong>（RL 痕跡明顯且怪異）。</p>
+
+<p>最刺眼的一句來自 Matt Shumer：他在測試數週後稱這批模型「essentially unusable」，並說他的 Opus 與 Fable agent 會<strong>拒絕 Astra 交出的子任務成果</strong>。</p>
+
+<p>「被另一個 agent 拒絕」是一個非常新的失敗模式。它意味著：<strong>模型的可靠性已經開始被同儕模型評判</strong>。在 multi-agent 工作流裡，一個 agent 的輸出要經過另一個 agent 的驗收；當驗收方判定不合格，這個模型在實際生產鏈裡就等於不存在——不管它的 benchmark 多高。</p>
+
+<p>Pietro Schirano 則把早期問題大部分歸因於 <strong>harness</strong>；Arena 的 Peter Gostev 在視覺 coding 上做對比，特別點名 Astra 畫的 SVG 孔雀。這些都是「體感」層面的證據，與 benchmark 的「分數」層面構成兩個世界。</p>
+
+<h2 class="section-title">四、Harness 才是隱藏變量：4.4 倍的成本差</h2>
+
+<p>如果只讀 benchmark，會以為模型是唯一變量。同一天的情報給出了反證：</p>
+
+<ul>
+  <li><strong>Baseten</strong> 測了 22 個 harness × 5 個開源模型，<strong>每通過任務的成本最高差 4.4 倍</strong>。這意味著 harness 選型對帳單的影響，可能大於模型選型。</li>
+  <li><strong>Hugging Face 的 Pi adapter</strong>：一個在 pi 內部訓練的小適配器，把 Qwen3.8-27B 在最難的 51 道 SWE-bench Pro 上從 <strong>15 題提升到 32 題</strong>，同時工具調用減少 <strong>55%</strong>。模型沒換，成績翻倍。</li>
+  <li><strong>Google SIM</strong>：保留過往 harness 修改的理由與結果；但一個在 Opus 上演化出的 harness 在 Gemini 上只得 <strong>68.41</strong>，低於起始 harness 的 <strong>73.89</strong>——<strong>harness 會過擬合到模型。</strong></li>
+</ul>
+
+<p>第三條是對 agent 產品護城河敘事最壞的消息。如果「為某個模型進化出的腳手架，換個模型就貶值」，那麼 agent 公司的核心資產（累積的 harness 與工作流）就無法跨模型遷移。每一次模型世代更替，都可能要重做一次工程。</p>
+
+<blockquote>
+「一個在 Opus 上演化出的 harness 在 Gemini 上只得 68.41，低於起始 harness 的 73.89。」
+<span class="attribution">— Google SIM 研究摘要，經 Latent Space 轉述</span>
+</blockquote>
+
+<p>把這條與 Astra 的負評放在一起，會得到一個更合理的解釋：<strong>很多「模型不行」的判斷，其實是「模型 × harness」這個組合不行。</strong>而組合的數量是乘法，不是加法。</p>
+
+<h2 class="section-title">五、RL 痕跡與「自我改進 High」：風險評級進入產品頁</h2>
+
+<p>OpenAI 首次把一個對外發布的模型在 <strong>AI Self-Improvement</strong> 項評為 <strong>High</strong>。同時，Vals 的 RSI-Index 從 <strong>27.07% 升到 29.01%</strong>（人類參照為 50%）。</p>
+
+<p>這兩件事放在一起看，意義超過任何 benchmark：</p>
+
+<ul>
+  <li><strong>風險評級開始出現在發布材料裡</strong>，不再是論文附錄。使用者買模型時，會同時看到能力分數與風險等級。</li>
+  <li><strong>RSI 被壓縮成一個可比較的數字</strong>。一旦有了單一數字，它就會被寫進採購合約、監管表格與新聞標題。</li>
+  <li><strong>「High」的含義仍然模糊</strong>：它是指模型真的能改進自身，還是指它能顯著加速 AI 研究？在政策上，這是兩個完全不同的問題——前者是自主性，後者是生產力。</li>
+</ul>
+
+<p>Latent Space 提到 Astra 的行為帶有「明顯且怪異」的 RL artefact。這一點與「自我改進 High」放在一起，指向同一個技術現實：<strong>後訓練的強度已經大到改變模型的默認行為風格。</strong>模型不只是在能力上變強，它在「怎麼做事」上也留下了訓練的指紋——而有時候，那些指紋看起來就是怪。</p>
+
+<h2 class="section-title">六、真正的頭條：Anthropic 的 IPO</h2>
+
+<p>Latent Space 對這場發布的最終裁決，並不關於模型：</p>
+
+<blockquote class="strong">
+「Great ship, but Anthropic's IPO is unaffected and that will be probably the headline of the week/year/decade (until OpenAI IPO's….)」
+<span class="attribution">— Latent Space，2026-11-18（原文英文）</span>
+</blockquote>
+
+<p>這句話值得慢慢讀。它說的是：<em>船很好，但 Anthropic 的 IPO 不受影響，而那大概會是本週／本年／本十年的頭條（直到 OpenAI 也 IPO）。</em></p>
+
+<p>這裡有兩層判斷。第一層是<strong>敘事權的轉移</strong>：模型發布曾經是整個行業的頭條，現在它只是資本市場事件的背景音。第二層是<strong>競爭維度的轉移</strong>：當兩家前沿實驗室都進入公開市場，競爭的計分板會從 benchmark 變成營收、毛利與算力成本。</p>
+
+<p>把這一點與同日 NVIDIA 的財報放在一起，圖景更完整：過渡 CEO Colette Kress 交出 <strong>$115.8B</strong> 季度營收、同比 <strong>+103%</strong>，Vera Rubin NVL72 已出貨，董事會表示不打算恢復黃仁勳。硬體需求曲線與個人無關，模型價格曲線則在快速下壓——<strong>上游收租，下游降價，中間層被兩邊擠壓。</strong></p>
+
+<h2 class="section-title">七、同日其餘情報：五條值得記住的線索</h2>
+
+<p class="sub-title">Microsoft 有了自己的 coding 模型</p>
+
+<p>MAI Code 2（多步 coding）與 Code 2 Flash（快速編輯）進入 GitHub Copilot 模型選擇器、Copilot Fusion 與 Foundry；Decision 模型獲得多模態升級。Copilot Fusion 以多模型編排在同口徑下報 <strong>Terminal-Bench 4.1 71.2%</strong>，成本比 Claude Fable 5.2 低 <strong>88%</strong>。MAI Image 2.7 在 AA 圖像編輯榜排第一，$34.82／千張。</p>
+
+<p class="sub-title">Gemini Tasks 開始打電話</p>
+
+<p>由 Hydrogen 驅動，在六國免費開放，包含需要<strong>打電話或發短信</strong>的任務；同時展示 Antigravity 機器人插件與 MuJoCo 仿真。這是「agent 代替你完成線下動作」的早期量產版本。</p>
+
+<p class="sub-title">多智能體的收益遞減</p>
+
+<p>Cognition 推出常駐 Devin Bots；Perplexity 稱混合模型團隊在 Terminal-Bench 與 WANDR 上勝過四個同款主模型；但 Replit 報告 <strong>16→32 個 agent</strong> 在 NumPy 任務上收益遞減。Hugging Face 的 1,000-agent 實測更直接：任一時刻只有 <strong>40–60 個</strong> agent 在調用模型，每寫 1 個 token 要讀約 <strong>130 個 token</strong>，合併與測試是瓶頸。</p>
+
+<p class="sub-title">緩存的經濟學</p>
+
+<p>SemiAnalysis 樣本中，<strong>1.8% 的未緩存請求貢獻了約 15% 的支出</strong>。這解釋了為什麼所有模型都把 cached input 定價壓到接近零（Astra $0.40、Sol $0.10）——<strong>緩存命中率是新一代的成本護城河。</strong></p>
+
+<p class="sub-title">開放訓練與長上下文</p>
+
+<p>Marin 釋出 535B-A23B 訓練的 <strong>57 個中間 checkpoint</strong>；K2 報告用同一批 <strong>22T token</strong> 訓四個尺寸，並稱解碼適配器帶來 <strong>2.2×</strong> 加速。Zyphra 稱把多個模型改為次二次注意力後，10M token 下加速 <strong>9–60×</strong>，Qwen 在 1M RULER 上掉不到 2 分。vLLM 為 Kimi K3.1 Pro 用滑動窗口 draft，接受長度最高 <strong>+30%</strong>。</p>
+
+<h2 class="section-title">八、三個不能忽略的爭議</h2>
+
+<p class="sub-title">Astra 到底「能不能用」</p>
+
+<p>一邊是 Mercor／Vals／AA 的全面領先，一邊是 Matt Shumer 的「essentially unusable」。Latent Space 的裁決是「批評部分有效」，但沒有給出可復現的判別標準。<strong>沒有判別標準，就意味著這場爭論無法被解決，只能被下一次發布覆蓋。</strong></p>
+
+<p class="sub-title">15% 成本的可比性</p>
+
+<p>「每任務成本」高度依賴任務分佈與重試次數。在 Agents' Last Exam 上是 1/3 成本，在 WANDR 上是 $12.54 對 $2.65（Sol 反而便宜 4.7 倍）。單一百分比容易誤導，尤其容易被放進標題。</p>
+
+<p class="sub-title">「自我改進 High」的政策含義</p>
+
+<p>評級上調是否意味著模型真能改進自身，還是只代表「能顯著加速 AI 研究」？前者關乎控制，後者關乎經濟。把兩者混為一談，會讓監管討論失焦。</p>
+
+<h2 class="section-title">九、這一集真正在說什麼</h2>
+
+<p>把全部情報收攏，這次發布的核心不是「OpenAI 追上了」，而是<strong>競爭的計分板被換掉了</strong>：</p>
+
+<ul>
+  <li><strong>從峰值智能到智能每美元。</strong>三分的差距，十五分之一的價格——當差距小到這個程度，買方會用價格投票。</li>
+  <li><strong>從單一模型到 SKU 組合。</strong>Astra 賣峰值，Sol 賣成本，企業按任務配對。模型選型變成採購決策。</li>
+  <li><strong>從模型能力到 harness 能力。</strong>4.4 倍的成本差、15→32 的 Pi adapter、68.41 vs 73.89 的過擬合——工程層的槓桿大於模型層。</li>
+  <li><strong>從產品發布到資本事件。</strong>真正的頭條是 Anthropic 的 IPO，模型只是背景音。</li>
+</ul>
+
+<p>而對使用者的實際建議，其實藏在 Latent Space 那句自嘲裡：<em>「However, we still use it to automate our work and that's all that matters in the end.」</em>——不管爭議如何，他們仍然用它來自動化工作。這句話比任何 benchmark 都誠實：<strong>模型的價值，最終由「能不能替你把事辦完」定義，而不是由「能不能在榜上贏三分」定義。</strong></p>
+
+<div class="highlight-box">
+<strong>給 James 的一句話：</strong>這一集最值得抄走的不是任何一個分數，而是那個順序——<strong>先看「智能每美元」，再看「harness 乘數」，最後才看「峰值分數」。</strong>因為峰值分數決定你能不能做某件事，而前兩者決定你能不能一直做下去。Astra 的 62 分不是重點，重點是它在 15% 的成本上做到了 62 分——這才是把前沿能力變成日常工具的條件。
+</div>
+
+<hr>
+
+<footer>
+  <p><strong>來源</strong>：Latent Space，〈[AINews] GPT-6.2 Astra, the #2 Frontier Model is better and 20%–600% cheaper, but has mixed reviews; 6.2 Sol likely main workhorse〉，2026-11-18 10:19 UTC（文章標註 2026-11-17），作者 swyx。原文：<a href="https://latent.space/p/ainews-gpt-6-2-astra-the-2-frontier-model-is-better-and-20-600-cheaper-but-has-mixed-reviews-6-2-sol/">latent.space</a>。文中數字原始出處為 Artificial Analysis、Mercor、Vals、Epoch、Perplexity、OpenAI、Microsoft、NVIDIA、SemiAnalysis、Hugging Face、Baseten、Google SIM、Marin、K2 Horizon、Zyphra、vLLM 等，均經 Latent Space 標注。</p>
+  <p><strong>證據層級</strong>：本文所有引語均為 Latent Space 原文英文之直接引用或中譯；Matt Shumer 的「essentially unusable」為其公開發言之轉引。benchmark 數字為二手匯總（AINews 屬聚合報導），已在表格中標明各項評測的發布方；未對任何數字作獨立驗證。</p>
+  <p><strong>延伸</strong>：deep dive 273（AINews：Decision Models Day）、280（Christiano：12 個月與暫停）、282（Cloudflare 與 System One 的商品化）、284（張小珺 157：Personal Agent 與入口之爭）。</p>
+  <p style="margin-top:0.8rem;">深度復述 · 生成於 2026-11-19 · JMOKSZ / ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
