@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「如果你只剩下一個資料庫」——Linear 的 COO 如何在一半工作由 agent 開單之後，重寫定價、銷售與支援</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  td { color: #444; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.55rem; }
+    table { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="../index.html">← 返回播客日報</a>
+  <div class="ep-num">Latent Space · 2026-11-19</div>
+  <h1>「如果你只剩下一個資料庫」——Linear 的 COO 如何在一半工作由 agent 開單之後，重寫定價、銷售與支援</h1>
+  <div class="meta">
+    <div>〈Scaling Linear's GTM to $100M ARR — Cristina Cordova, COO〉</div>
+    <div>出品：Latent Space<span>·</span>主持：Basil Chatha<span>·</span>嘉賓：Cristina Cordova（Linear COO）</div>
+    <div>發布：2026-11-19 23:58 UTC<span>·</span>84 分鐘（1 小時 24 分）<span>·</span>17 個章節<span>·</span>有完整逐字稿</div>
+    <div>來源：Latent Space 官方逐字稿（約 6.3 萬字元）；引語為原文直譯，英文原文附於引語後</div>
+  </div>
+</header>
+
+<p>這是本週最不「AI 研究」的一集，卻可能是對 AI 商業化最有判斷價值的一集。</p>
+
+<p>Linear 是一間做 issue tracker 的公司。七年前，三個在 Coinbase、Airbnb、Uber 被 legacy 工具折磨過的工程師決定重做這件事；七年後，CEO Karri Saarinen 發了一篇文章，標題叫〈Issue tracking is dead〉。然後 COO Cristina Cordova 坐在 Latent Space 的麥克風前，解釋她那句最刺人的話：</p>
+
+<blockquote class="strong">
+「我們的好處是，沒有大到會殺死自己。如果你是 Google，把 AI 答案放在每條搜尋結果上面，可能就沒有人看廣告了，整個生意被翻轉。」
+<span class="attribution">— Cristina Cordova（原文："The great thing about our business is that we're not like so big to like kill ourselves… it's probably really hard if you're Google to kill the search business."）</span>
+</blockquote>
+
+<p>這句話表面在談創新者的兩難，實際上是在談一個更具體的數字：Linear 一年前只有 <strong>3%</strong> 的 issue 由 agent 建立，現在<strong>超過一半</strong>。而在同一年，它從全座位制（seat-based）定價，長出了按用量、按 credits、按 API 成本轉嫁的混合模型；ARR 突破 $100M，付費客戶超過 40,000，淨收入留存率 177%。</p>
+
+<p>這篇復述按四條線走：<strong>產品如何被 agent 改寫、GTM 如何反傳統、定價如何向成本靠攏、以及「ARR 真假」這個沒人想回答的問題。</strong></p>
+
+<h2 class="section-title">一、兩條線的儀表板：agent 用量與 app 用量</h2>
+
+<p>Linear 在 2025 年 5 月推出 MCP server，Cordova 說「基本上是同類第一個」。一年半之後，超過一半的新 issue 由 agent 建立。多數 SaaS 公司在這裡會宣佈自己「AI 轉型成功」；她反而開始擔心。</p>
+
+<blockquote class="strong">
+「現在很多公司覺得，只要當一個資料庫、掛一個 MCP server、把資料都交給 agent，就會是個好生意。我不認為那最終會是好生意。你必須把 agent 工作流帶進你的工具，而且要做得比外部工具更好——否則人們沒有理由進去你的工具。」
+<span class="attribution">— Cristina Cordova（原文："I actually think that a lot of companies right now are feeling like it's gonna be okay to just be like a database… and I don't think that's going to be a great business model ultimately."）</span>
+</blockquote>
+
+<p>所以她看兩條線：<em>agent usage</em> 與 <em>app usage</em>。這是一個很聰明的診斷工具，因為它區分了兩種未來：</p>
+
+<ul>
+  <li><strong>agent 升、app 不升：</strong>你正在變成商品（commodity）。你的價值被壓縮成 CRUD 與 schema，介面由別人（Cursor、Codex、Claude）提供。</li>
+  <li><strong>兩條都升：</strong>agent 做了更多工作，但人仍然回來看、回來協調——這證明你同時是好的人類工具與好的 agent 工具。</li>
+</ul>
+
+<p>Linear 目前是後者。她給的理由非常產品經理：</p>
+
+<blockquote>
+「你會回到 app，因為你需要把工作視覺化。聊天介面不是視覺化一個團隊所有工作的最好方式，它對協作也不好——它通常是單人遊戲。」
+<span class="attribution">— Cristina Cordova（原文："a chat interface isn't the best way to visualize all the work that a team is doing. It's not great for collaboration because it's typically single player only."）</span>
+</blockquote>
+
+<p>這裡有一個常被忽略的洞見：<strong>agent 越強，人類介面的價值越不是「操作」，而是「感知與協調」。</strong>如果 UI 的用途是讓人動手，agent 會取代它；如果 UI 的用途是讓人理解全局、解決衝突、做取捨，agent 反而會讓它更重要。</p>
+
+<h2 class="section-title">二、Karri 發文之後：客戶問「那我到底在買什麼？」</h2>
+
+<p>2026 年 3 月，Karri 發文宣告 issue tracking is dead。Cordova 說，多數客戶同意，然後立刻問了那個更難的問題：</p>
+
+<blockquote class="strong">
+「大多數客戶都說：對，追蹤已經死了。然後他們說：順帶一提，你們到底是什麼？我到底在買什麼？」
+<span class="attribution">— Cristina Cordova（原文："Most of our customers were like, yeah. Tracking is dead. And by the way, like, what are you guys? What am I buying?"）</span>
+</blockquote>
+
+<p>Linear 的答案不是「我們還在做 issue tracking，只是加了 AI」。它的答案是重新定義類別：<strong>一個圍繞 agent 編排的產品開發系統</strong>。issue 這個單位仍然存在，但人不應該再手動開單、標籤、指派、關閉。</p>
+
+<blockquote>
+「是的，issue 這個單位仍然存在，但我們不應該活在一個人們手動追蹤工作的世界裡。那個世界，才是死掉的東西。」
+<span class="attribution">— Cristina Cordova（原文："yes, the unit of the issue still exists, but we probably shouldn't have a world where people are, like, manually tracking work. So, like, that's what's dead."）</span>
+</blockquote>
+
+<p>她描述那條手動鏈條時的語氣很值得注意——不是技術樂觀，而是不耐煩：「我發現一個 bug，我要把它報告進 issue tracker，我要標籤它、指派給另一個人，那個人修好、加狀態更新、關閉、通知客戶。這條路上每一步都完全是手工的。」她的判準很簡單：<em>這些步驟不是在做產品。</em>所以它們應該被自動化。</p>
+
+<h2 class="section-title">三、為什麼 Linear 可以殺死自己，Google 不行</h2>
+
+<p>這是整集最結構性的一段。Linear 的自我吞噬之所以可行，不是因為它更勇敢，而是因為它的收入結構簡單：一個產品、一種主要計價單位、四萬個付費客戶。它沒有一個需要保護的廣告業務。</p>
+
+<div class="highlight-box">
+<strong>創新者的兩難，在這裡被翻譯成一句可操作的判斷：</strong>你能不能承受「把現有計價單位的一部分價值送出去」？Linear 可以（issue 不再由人建立，座位費仍然收）；Google 不行（答案不再被點擊，廣告就沒了）。這不是文化問題，是收入集中度問題。
+</div>
+
+<p>她也承認，這條路不是事先規劃的。2025 年 Linear 正式宣布企業攻勢，路線圖排滿大企業功能——多層子團隊、跨團隊工作流、大型組織的權限模型。然後 agent 來了。</p>
+
+<blockquote>
+「2025 年我們說要打企業。然後我们看到這個领域发生的一切，就想：我們得做 MCP server、得做 agents platform 與一整組新 API、得跟 Codex、Cursor、GitHub Copilot 整合。這些我們全都做了，但沒有一件是計劃好的。這也意味著，我們計劃中的一堆企業功能沒有做完。」
+<span class="attribution">— Cristina Cordova（原文："we did all of those things, but none of those things were planned… a bunch of the enterprise stuff that we planned for didn't get done."）</span>
+</blockquote>
+
+<p>她的選擇是「照樣衝」。理由是：競爭對手在等，而企業客戶會把 Linear 放進 shortlist——不是因為那些沒做完的企業功能，而是因為 agent 工作流。這是一個很重要的資源配置判斷：<strong>與其補完一張舊地圖，不如在新地圖上先到。</strong></p>
+
+<h2 class="section-title">四、客戶其實一直在推它往這裡走</h2>
+
+<p>這一段解釋了為什麼 Linear 的轉向看起来像是「預判」，其實是「跟隨」。她點名兩類客戶：</p>
+
+<ol>
+  <li><strong>前沿 AI 實驗室：</strong>「絕大多數前沿 AI 公司都在用 Linear」，而且不斷要求它更快、更 agent-native。</li>
+  <li><strong>前 AI 時代但在 AI 前沿的公司：</strong>Ramp、Coinbase 這類公司自己建內部 agent，需要 API 把 agent 接進 Linear，並且要擁有自己的專有資料。</li>
+</ol>
+
+<blockquote>
+「那時沒有任何競爭對手有這樣的系統或 API。所以我們又再一次成為第一個建立這些新互動方式的人。」
+<span class="attribution">— Cristina Cordova（原文："there wasn't a system or a set of APIs that any of our competitors had at the time for that."）</span>
+</blockquote>
+
+<p>這裡有一個容易被忽略的商業邏輯：Linear 的護城河不是「agent 很強」，而是<strong>它剛好是前沿實驗室日常工作流的一部分</strong>。當你的用戶是全世界最挑剔的 agent 建造者，你會被迫比市場早半年到一年看到需求。這是一種地理位置式的優勢——不是技術，是客戶組合。</p>
+
+<h2 class="section-title">五、產品時間線：一年半長出一個平台</h2>
+
+<table>
+  <tr><th>時間</th><th>發布</th><th>意義</th></tr>
+  <tr><td>2025-05</td><td>MCP server</td><td>Cordova 稱之為同類第一個；agent 開始能讀寫 Linear</td></tr>
+  <tr><td>2025 年內</td><td>Agents platform + 新 API 組</td><td>讓客戶把自己建的 agent 嵌進 Linear，並保留專有資料</td></tr>
+  <tr><td>2025 年內</td><td>Codex／Cursor／GitHub Copilot 整合</td><td>把外部 coding agent 拉進工作流，而非對抗它們</td></tr>
+  <tr><td>2026-03-24</td><td>Linear Agent</td><td>自家 agent；對話免費，即使跑前沿模型</td></tr>
+  <tr><td>2026-06-11</td><td>Coding sessions</td><td>用戶可選 OpenAI 或 Anthropic 的模型與 harness；結束全座位收費模式</td></tr>
+  <tr><td>2026-07-20</td><td>Loops</td><td>週期性 agent 工作，按 AI credits 計費</td></tr>
+</table>
+
+<p>注意這個組合的戰略意圖：Linear 沒有試圖做「最好的 agent」，它做的是<strong>agent 的調度層與記憶體</strong>。自家 agent、外部 agent、客戶自建 agent，全部在同一個 issue 圖上工作。這也是為什麼「app usage」那條線很重要——如果所有 agent 都只在外部跑，Linear 就只剩資料層；如果它們都在 Linear 裡編排，Linear 就是作業系統。</p>
+
+<h2 class="section-title">六、沒有 SDR 的銷售組織</h2>
+
+<p>Cordova 2023 年加入時，Linear 約 40 人、只有一位銷售。她三週後在公司 offsite 上，當著 35–40 人把「往上游走、攻企業」這條公司目標劃掉。</p>
+
+<blockquote class="strong">
+「我們只有一個人。我們字面上只有一個銷售。你不可能用一個人去打企業。」
+<span class="attribution">— Cristina Cordova（原文："We have one person. We have literally one person on sales. Like, you know, you're not going upmarket to enterprise with one person."）</span>
+</blockquote>
+
+<p>她把目標改成「growth-stage 公司」——那些已經有同類工具、需要被說服「拔掉舊工具」的客戶。這個選擇的邏輯與 Stripe 早期一模一樣：先贏新公司，再贏替換者。</p>
+
+<blockquote>
+「早年，關鍵是明顯更好。我不認為你可以只靠好 20%、30% 就讓人 switching，因為轉換有成本。你要說清楚，你比一個已經在服務市場、服務得還不錯的產品，好在哪裡。」
+<span class="attribution">— Cristina Cordova（原文："I don't think you can be, like, 20% better, 30% better, and get people to switch because there's a switching cost involved."）</span>
+</blockquote>
+
+<p>Linear 的早期策略，是用設計與 UX 讓人「想用」。但這裡有一个她沒有掩飾的限制：好設計必須先被體驗，而體驗需要試用。所以他們讓產品可以免費開始用，超過一定用量才收費——很多人先拿它做自己的事，感受到「比競爭對手容易」，然後才帶進公司。</p>
+
+<h3 class="sub-title">為什麼不請 SDR？</h3>
+
+<blockquote class="strong">
+「一個銷售應該有能力自己寫 outbound email。我不明白為什麼不行。」
+<span class="attribution">— Cristina Cordova（原文："a salesperson should be able to like write an outbound email. Like, I don't see why."）</span>
+</blockquote>
+
+<p>她對 SDR 的批評很具體，不是抽象的效率論：資格審查電話對客戶沒有價值。「他們為什麼要花三十分鐘回答你的預算問題，只為了見到一個能給 demo 的人？」Linear 的做法是讓 AE 自己做 outbound，用工具維持個人化；不設 SDR，也不把第一通電話變成盤問。</p>
+
+<p>這背後是一個組織設計判斷：<strong>如果一個角色只存在於「內部流程」，而不存在於「客戶體驗」，那它就會被工具取代。</strong>SDR 的第一通電話，正好是 AI 最擅長的那種工作——但也正因為如此，Linear 選擇把它刪掉，而不是用 AI 假裝它還有價值。</p>
+
+<h2 class="section-title">七、沒有 FDE，但有 solutions engineer</h2>
+
+<p>這一點值得特別拆，因為它與本週 No Priors 的 Bob McGrew 形成直接對照。McGrew 的整套方法論建立在 forward deployed engineering 上；Cordova 說 Linear 不做 FDE。</p>
+
+<blockquote>
+「我們相信 Linear 應該要容易到，沒有人需要 access 你的系統。我們有競爭對手，他們有所謂的 admin，整個工作就是管理那個工具。那對幾乎可以無限客製化的產品來說沒問題，但 Linear 不是那樣。」
+<span class="attribution">— Cristina Cordova（原文："we believe Linear should be easy enough for someone to integrate… Linear is not that. We tend to be far more of a purpose built tool."）</span>
+</blockquote>
+
+<p>但她也描述了 solutions engineer 會「通宵建一個 ServiceNow 整合」給 prospect 看。這在功能上與輕量 FDE 高度重疊；界線主要是<em>組織歸屬與持續時間</em>：他們不進客戶系統、不長期駐場、不做客製化交付，只在銷售過程中證明「這件事辦得到」。</p>
+
+<div class="highlight-box">
+<strong>兩種 FDE 哲學的分野：</strong>McGrew 的 FDE 是把產品推進一個還沒有工具的領域（製造工程），所以必須駐場、必須填縫、必須把所見 productize；Cordova 的產品已經足夠標準化，所以 FDE 的價值不在「填縫」，而在「移除採用障礙」。前者是創造類別，後者是加速擴散。
+</div>
+
+<p>她還補了一個很少人會說的副作用：<strong>有主見（opinionated）的工具，對 agent 更友善。</strong></p>
+
+<blockquote>
+「很多人從別的工具轉來 Linear，在那邊 bug 這個標籤對這個團隊是一個意思，對另一個團隊是另一個意思。你可以這樣做，因為不同團隊可以用完全不同的方式工作，但這意味著資料非常難辨識。在我們的系統裡，agent 讀取、理解、操作都容易得多。」
+<span class="attribution">— Cristina Cordova（原文："bug as a label for this one team means something, and for another team means something else… the data is very difficult to discern."）</span>
+</blockquote>
+
+<p>這是整集最反直覺、也最可能被低估的洞見：<em>靈活性是 agent 時代的負債。</em>過去十年 SaaS 的競爭維度是「可客製化」，因為人類可以適應混乱；但 agent 不能，或者說，agent 會把混乱的成本放大。標準化的工作流，反而變成資料優勢。</p>
+
+<h2 class="section-title">八、支援：AI 起草，人決定</h2>
+
+<p>Linear 的客戶體驗團隊不外包，也不讓 LLM 獨立回覆。AI 負責起草，人決定要不要送出。她說得很清楚：</p>
+
+<blockquote class="strong">
+「我們不相信那個模型：100% 的問題先由 LLM 回答，只有客戶生氣回信，才有人進來處理。我寧願 AI 根據它掌握的知識草擬一個答案，然後由人判斷這是不是好答案。」
+<span class="attribution">— Cristina Cordova（原文："we just don't believe in that model… AI draft an answer… and then a human can decide like, is that a good answer or not?"）</span>
+</blockquote>
+
+<p>她給的理由不是「AI 會出錯」，而是更細的產品判斷：很多時候三句話可以回答的問題，LLM 會寫成三段，而且「終究不是最有幫助的」。這與 Linear 的品牌定位一致——handcrafted、客製、不 slop。</p>
+
+<p>結果是一個很奇怪的客戶反應：<strong>有人以為回覆是 AI，因為它來得太快。</strong>「我們的團隊真的很快。」她說，然後補一句：「這也是很久以來第一次有人說，跟支援團隊的互動是好的——這對其他工具來說有點悲哀。」</p>
+
+<p>三年半以來，她沒有處理過一次因為支援體驗差而升級的投訴。這句話我傾向相信，因為它是一個可被內部數據否證的具體聲明，而不是「我們很重視客戶」的空話。</p>
+
+<h2 class="section-title">九、定價：向成本靠攏，不要對原本免費的東西收費</h2>
+
+<p>Cordova 最想要的定價模型是 outcome-based。她舉 Intercom 的 Fin 為例：AI 解決一個對話收 $0.99。但 Linear 很難界定「自動把 bug 分派給正確團隊」值多少——有公司認為那是 PM 的工作，有公司不認為。</p>
+
+<blockquote>
+「什麼叫自動把這個 bug 分派到正確團隊？對每間公司來說，價值可能都不一樣。也許你認為那是 PM 的工作；也許另一間公司認為，我要我的 PM 去跟客戶談、去做 roadmap。」
+<span class="attribution">— Cristina Cordova（原文："What is automatically triaging this bug to the right team worth?… Maybe you believe, oh, that's the PM's job."）</span>
+</blockquote>
+
+<p>於是她退回到一個很務實的原則：<strong>對會花我錢的東西收費，其餘免費。</strong></p>
+
+<table>
+  <tr><th>項目</th><th>計價方式</th><th>理由</th></tr>
+  <tr><td>核心產品</td><td>座位費（保留）</td><td>核心服務仍然按人頭收，不改動既有契約</td></tr>
+  <tr><td>Linear Agent 對話</td><td>免費（即使跑前沿模型）</td><td>使用量大、成本可控，且是 adoption 的入口</td></tr>
+  <tr><td>Coding sessions</td><td>API 公開價 + 小額 markup</td><td>用戶自選 OpenAI／Anthropic 模型與 harness，成本透明轉嫁</td></tr>
+  <tr><td>Loops</td><td>AI credits</td><td>週期性、可變成本，適合用量計價</td></tr>
+  <tr><td>其他 AI 功能</td><td>內含，不加價</td><td>不為原本免費的東西收費</td></tr>
+</table>
+
+<p>她還給了一條定價節奏，我認為比大多數 SaaS 定價文章都實用：</p>
+
+<blockquote class="strong">
+「新 AI 功能先以免費 beta 推出，明確告訴客戶未來會收費。而我們傾向於一開始定高，然後降價，而不是一開始很便宜，然後發現『糟糕，這樣養不起』。」
+<span class="attribution">— Cristina Cordova（原文："we tend to bias towards making things like more expensive at the start and then decreasing costs rather than making things really cheap and then being like, oops."）</span>
+</blockquote>
+
+<p>這條原則的隱含前提是：<em>降價可以換 adoption，漲價只會換投訴。</em>在多數 AI 功能成本仍在快速下降的階段，這個方向幾乎總是對的。</p>
+
+<h2 class="section-title">十、AI 預算：一筆以前不存在的錢</h2>
+
+<p>這是整集對「為什麼有些 AI 公司一夜 $100M ARR」最直接的回答。</p>
+
+<blockquote>
+「現在推動成交的是 AI 預算。企業切出一筆以前不存在的錢給 AI 工具，任何能装進那筆預算的產品，就跳過了常規的搶預算過程。有些公司那筆錢非常高。」
+<span class="attribution">— Cristina Cordova（原文："The thing that's helping them move faster is that AI tools have effectively been unblocked… if you can fit your company into that AI budget, then you are unlocking kind of budget that previously didn't exist."）</span>
+</blockquote>
+
+<p>但她立刻補上這筆錢的性質正在變：買家簽一年約與付費 pilot，不簽三年，因為「沒有人知道兩年後自己想要什麼」。然後是那句最像警語的話：</p>
+
+<blockquote class="strong">
+「當那些一年期合約到期續約時，我們就會知道誰的 ARR 是真的。」
+<span class="attribution">— Cristina Cordova（原文："When those one-year deals come up for renewal, we'll find out whose ARR was real."）</span>
+</blockquote>
+
+<p>她還拆解了「一夜 $100M」的兩種生意：一種是 Linear，四萬個付費客戶、史上全座位制，不可能一夜從零到一億；另一種是賣給國防或巨型律所，簽幾張 $30–40M 的合約就到了。兩者都叫 ARR，但客戶集中度、續約風險、產品深度完全不同。</p>
+
+<div class="data-point">
+  <span>40,000+</span> Linear 付費客戶；177% NRR；2026 年 ARR 突破 $100M。<br>
+  <span>3% → 50%+</span> agent 建立新 issue 的比例，一年半內的變化。<br>
+  <span>$99M</span> 8 月員工以 $2.5B 估值出售的股份。
+</div>
+
+<h2 class="section-title">十一、170 人、40% 規則、work trial</h2>
+
+<p>Linear 約 170 人。Cordova 說，同階段、同營收的公司，團隊規模幾乎是它的兩倍。C-level 只有三位創辦人加上她。</p>
+
+<p>她從 Stripe 帶來的是一條「40% 規則」：公司至少 40% 應該是工程、產品、設計與資料。當銷售想加人，先幫公司招工程師，然後才能加銷售。Linear 沒有硬性規定，但她加入後最早做的事情之一，就是建一張按職能分類的 headcount 表，一直盯著那個比例。</p>
+
+<blockquote>
+「如果銷售想加更多人，就讓銷售幫忙招工程師，然後銷售才能加人。」
+<span class="attribution">— Cristina Cordova（原文："If sales wants to hire more people, have sales help us hire engineers so that sales can then hire more people."）</span>
+</blockquote>
+
+<p>招聘很慢，是故意的。候選人要對一個真實問題做 work trial；她自己的題目就是寫 Linear 未來 6–12 個月的 GTM 計劃——那份計劃後來成了她的工作。這個設計的好處是雙向的：公司看到你真實的產出，你也看到自己未來每天要做什麼。</p>
+
+<p>她還講了一段很誠實的自我修正，關於「一直想招更好的人」：</p>
+
+<blockquote>
+「Stripe 做得太好，有時候你會覺得自己總能招到比現有更好的人。但你也要真正認出你手上的人有多好。我希望回頭看 Linear 這段時間，會說：對的人被提拔了、被發揮了，我們沒有在他們上面加人，除非公司真的需要走到另一個階段。」
+<span class="attribution">— Cristina Cordova（原文："sometimes you also have to really recognize the great people that you have… we didn't hire above them unless the company needed to."）</span>
+</blockquote>
+
+<h2 class="section-title">十二、Moat 已經崩解，剩下的是團隊的脈搏</h2>
+
+<p>Basil 問她 Linear 的護城河是什麼。她的回答分兩段：早期是設計與 UX；現在是團隊。</p>
+
+<blockquote class="strong">
+「很多生意的護城河都已經崩解了。現實是，你只需要一個團隊，對將要發生什麼、什麼正在改變，有很好的嗅覺，並且投資你的人去弄清楚它。因為昨天這個模型最好，明天另一個模型最好；兩個月前你沒聽過的公司，現在以 $100 億估值融資。」
+<span class="attribution">— Cristina Cordova（原文："a lot of the moats in business have kind of crumbled away… yesterday, this model is the best. Tomorrow, this other model is the best."）</span>
+</blockquote>
+
+<p>她承認這聽起來像「沒有護城河」，然後補了一句更硬的：</p>
+
+<blockquote>
+「這意味著我們都應該非常偏執，因為你現在擁有的生意，不一定是你未來擁有的生意。但人們投資的是一個團隊、一種做事方式，而那個方式在任何未來都成立。」
+<span class="attribution">— Cristina Cordova（原文："we should all be very paranoid… what people are investing in is a team and a way of doing things that is the future no matter what the future holds."）</span>
+</blockquote>
+
+<p>對照她前面的產品策略，這句話不是雞湯：Linear 的產品路線圖現在最多只排六個月。不是因為他們不規劃，而是因為規劃的單位變了——<em>你只能規劃「下一個故事」，不能規劃「三年後的樣子」。</em></p>
+
+<h2 class="section-title">十三、2023 的逆境與 2025 的全速</h2>
+
+<p>這一段是整集的情緒底色，也是她最不像「COO 訪談」的部分。2023 年她加入時，正值新創市場的「大清洗」：2021–22 拿了大輪的公司開始裁員、合併支出，Linear 的主要客群（startup）自顧不暇。</p>
+
+<blockquote>
+「有時候你進入一個市場，它剛好很難。幸運的是，對所有人來說都很難，所以不是只有你。但它確實影響生意，你要想辦法在沒有自然增長的情況下增長。」
+<span class="attribution">— Cristina Cordova（原文："sometimes you enter into a space in like a market that's hard… Luckily, it was hard for everybody else too."）</span>
+</blockquote>
+
+<p>然後是 2025 年夏天：傳統上 Linear 的夏天會慢下來，客戶放假、不採購。她原本預期會像 2024 年一樣，結果完全不是。</p>
+
+<blockquote>
+「向來公司不會在夏天發產品、辦會議。現在？我們就上個直播，一週通知，直接發布。以前週五不能發、週一不能發；現在誰在乎？週六發也可以。」
+<span class="attribution">— Cristina Cordova（原文："It used to matter that you shouldn't launch on Fridays and shouldn't launch on Mondays. Now, who cares? You can launch on Saturday."）</span>
+</blockquote>
+
+<p>她認為這不是短暫現象，而是新常態，直到 AI 出現一次整合（consolidation）為止。這個判斷的實務含義是：<strong>節奏本身成為競爭力</strong>，而「完美的計劃」變成一種負債。</p>
+
+<h2 class="section-title">關鍵數據</h2>
+
+<table>
+  <tr><th>項目</th><th>數字</th></tr>
+  <tr><td>Linear 成立／融資</td><td>7 年／累計 $134M</td></tr>
+  <tr><td>ARR</td><td>2026 年突破 $100M</td></tr>
+  <tr><td>付費客戶</td><td>40,000+</td></tr>
+  <tr><td>淨收入留存率</td><td>177%</td></tr>
+  <tr><td>員工</td><td>約 170 人（同階段同營收公司約兩倍）</td></tr>
+  <tr><td>C-level</td><td>三位創辦人 + COO</td></tr>
+  <tr><td>2023 加入時</td><td>約 40 人、一位銷售；無超過 500 席客戶</td></tr>
+  <tr><td>加入後營收增長</td><td>至少 10 倍</td></tr>
+  <tr><td>agent 建立 issue 比例</td><td>一年前 3% → 現在 &gt;50%</td></tr>
+  <tr><td>8 月 tender</td><td>員工出售 $99M 股份，估值 $2.5B</td></tr>
+  <tr><td>工作 trial</td><td>6–12 個月 GTM 計劃</td></tr>
+  <tr><td>Roadmap 視野</td><td>最多 6 個月</td></tr>
+</table>
+
+<h2 class="section-title">行業 insight</h2>
+
+<h3 class="sub-title">1. Seat-based SaaS 的裂縫，已經出現在定價層</h3>
+<p>Linear 由「全部按座位」變成混合：座位、按用量、AI credits 並存。這不是因為 seat-based 死了，而是因為<strong>成本結構變了</strong>：推理有邊際成本，座位沒有。當你的產品開始跑前沿模型，你就被迫回答一個過去不必回答的問題——「這一個動作值多少錢？」Cordova 的答案「對會花我錢的東西收費」很土，但它是目前唯一可規模化的答案。</p>
+
+<h3 class="sub-title">2. 「MCP 化」不是 AI 轉型，可能只是把自己商品化</h3>
+<p>很多 SaaS 的 AI 策略是：開一個 MCP server、把資料餵給 agent、宣佈自己 agent-ready。Cordova 的反例很鋒利：如果 agent 在外部（Cursor、Codex）就能完成你產品內的工作，你的 app 就只剩下資料庫的價值。判準也很清楚：<em>agent 用量與 app 用量是否同向上升。</em>這是一個可以放進董事會儀表板的指標，比「AI 功能採用率」誠實得多。</p>
+
+<h3 class="sub-title">3. 標準化是 agent 時代的資料優勢</h3>
+<p>過去十年，SaaS 的競爭維度是客製化與靈活性；Linear 反其道而行，堅持「有主見」。在人類使用者時代，這被視為固執；在 agent 時代，它變成清洗過的 schema、可預測的狀態機、更少的歧義。這可能是未來幾年 B2B 產品設計最重要的一次價值重估：<strong>與其讓每個團隊定義自己的 bug，不如讓他們共用一個 agent 能理解的 bug。</strong></p>
+
+<h3 class="sub-title">4. 組織設計就是產品策略</h3>
+<p>沒有 SDR、沒有 FDE、支援自營、工程佔比 40%、170 人做同階段兩倍的事——這些不是文化姿態，而是把「銷售與支援的工作」推回產品本身的結果。當產品足夠好，你不需要資格審查電話；當產品足夠標準，你不需要駐場工程師。反過來說，<em>每一個新增的內部角色，都是產品缺陷的證據。</em></p>
+
+<h3 class="sub-title">5. ARR 的質量，會在續約時暴露</h3>
+<p>「一年期合約與付費 pilot」大量出現，代表買家其實在做選擇權定價：他們買的是「不錯過」的保險，不是「已經驗證」的需求。這比宏觀的「AI 泡沫」爭論具體得多——你不需要預測泡沫，只需要看續約率。對投資人而言，2027 年的續約季會是一次大考；對創業者而言，現在就該假設「這筆錢只有一年」。</p>
+
+<h2 class="section-title">前後脈絡</h2>
+
+<p><strong>與本週 AINews（285）的對照。</strong>GPT-6.2 Astra／Sol 把「智能每美元」變成計分板；Linear 則是那個計分板在應用層的鏡像：模型成本下降，讓「agent 對話免費」成為可行的獲客策略；反過來，Linear 的 coding sessions 按 API 價加 markup 轉嫁，意味著它不打算用模型補貼換增長。兩集合起來看，是一條完整的價值鏈定價邏輯。</p>
+
+<p><strong>與 Bob McGrew（286）的張力。</strong>McGrew 說 FDE 是產品策略，必須駐場、填縫、productize；Cordova 說 Linear 不做 FDE，因為產品應該容易到沒人需要 access 你的系統。兩者其實在講同一個光譜的兩端：<em>當類別還不存在，你需要 FDE 去創造它；當類別已經存在，你需要產品去消滅 FDE。</em></p>
+
+<p><strong>與 Resend 的 Zeno（268）互補。</strong>Zeno 談「為 agent 設計體驗」——如何讓 agent 在 API 層就理解你的產品；Cordova 談「agent 已經佔工作量一半之後，商業模式怎麼改」。一個是介面設計，一個是收入設計。</p>
+
+<p><strong>與 Mercor 的單位經濟（271）呼應。</strong>兩集都在拆「AI 公司的收入品質」：Mercor 看的是每 token 的毛利結構，Linear 看的是續約與客戶集中度。方法不同，結論一致——<strong>增長曲線可以造假，單位經濟不會。</p>
+
+<h2 class="section-title">爭議點</h2>
+
+<ul>
+  <li><strong>「agent 建立超過一半的 issue」是產品內部指標，但沒有披露品質分佈。</strong>重複率、誤分類率、關閉率、有多少被人類重寫——這些才決定「一半工作由 agent 完成」是否高估了實際替代的人力。Linear 自己就有 Triage Intelligence 在抓重複，這暗示原始數字可能包含大量噪音。</li>
+  <li><strong>不做 FDE，但 solutions engineer 會通宵建 ServiceNow 整合。</strong>這在功能上與輕量 FDE 高度重疊；界線是組織歸屬與持續時間，而不是工作內容。對客戶而言，這個區別可能沒有她說得那麼清楚。</li>
+  <li><strong>「不讓 LLM 獨立回覆」與「Linear Agent 對話免費」並存。</strong>這暗示她對 agent 可靠性的內部評估，比對外敘事保守。免費的是「對話」，不是「決策」——這個界線值得記住。</li>
+  <li><strong>170 人做兩倍的事，是可持續的優勢，還是延遲的組織債？</strong>Linear 的招聘很慢、C-level 只有四人，這在高速增長期是速度來源；但當企業客戶要求更多客製、更多合規、更多在地支援時，同一個結構可能變成瓶頸。她自己也說「不認為這會永遠如此」。</li>
+</ul>
+
+<h2 class="section-title">結語</h2>
+
+<p>這集沒有一句「AI 將改變一切」。它講的是一家公司如何在十八個月內，被自己的客戶與工具推到一個新類別，然後被迫重寫定價、銷售、支援與招聘。</p>
+
+<p>如果只帶走一件事，我會帶走那兩條線：<strong>agent 用量，與 app 用量。</strong>它們不只是一個 SaaS 的健康指標，也是一個更普遍的問題——當智能變得便宜，你的價值是存在於「被調用的資料」，還是存在於「人願意回來看的那個地方」？</p>
+
+<blockquote class="strong">
+「如果 agent 用量上升，而 app 用量沒有跟著上升，你就在變成一件商品。」
+<span class="attribution">— Cristina Cordova（原文："If agent usage climbs and app usage doesn't, you're becoming a commodity." 官方摘要句式；逐字稿語意相同）</span>
+</blockquote>
+
+<hr>
+
+<footer>
+  <p><strong>來源：</strong>Latent Space〈Scaling Linear's GTM to $100M ARR — Cristina Cordova, COO〉，2026-11-19 23:58 UTC 發布，84 分鐘，主持 Basil Chatha；官方逐字稿（自動轉錄，約 63,000 字元）與官方摘要為本文主要依據。引語以英文原文為準，中文為譯述；自動轉錄可能含人名與用詞誤差。</p>
+  <p><strong>相關資料：</strong>Karri Saarinen〈Issue tracking is dead〉（2026-03）；Linear MCP server（2025-05）；Linear Agent（2026-03-24）；Coding sessions（2026-06-11）；Loops（2026-07-20）；Intercom Fin 定價（$0.99／已解決對話）。</p>
+  <p>生成時間：2026-11-20 06:10 UTC · 深度復述 #287 · ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
