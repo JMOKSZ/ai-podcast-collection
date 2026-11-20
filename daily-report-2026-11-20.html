@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客每日深度萃取 · 2026-11-20</title>
+<style>
+  :root {
+    --bg:#faf8f5; --ink:#1f1d1a; --muted:#6b665e; --rule:#e2ddd3; --accent:#8a5a2b;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family: Georgia, "Noto Serif SC", "Songti SC", "Source Han Serif SC", serif;
+    font-size:17px; line-height:1.85;
+  }
+  .wrap { max-width:780px; margin:0 auto; padding:56px 26px 90px; }
+  header { border-bottom:2px solid var(--ink); padding-bottom:22px; margin-bottom:36px; }
+  h1 { font-size:30px; line-height:1.35; margin:0 0 14px; font-weight:600; letter-spacing:.01em; }
+  .meta { color:var(--muted); font-size:14px; line-height:1.9; }
+  .meta span { margin-right:16px; white-space:nowrap; }
+  h2 {
+    font-size:15px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent);
+    margin:56px 0 8px; font-weight:600; border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  h3 { font-size:23px; margin:42px 0 6px; font-weight:600; }
+  h4 { font-size:19px; margin:34px 0 8px; font-weight:600; }
+  .epmeta { color:var(--muted); font-size:14px; margin:0 0 26px; }
+  p { margin:0 0 17px; }
+  ul { margin:0 0 20px; padding-left:22px; }
+  li { margin-bottom:9px; }
+  li > strong { color:#141210; }
+  blockquote {
+    margin:22px 0 22px 0; padding:2px 0 2px 20px; border-left:3px solid var(--accent);
+    color:#3a352e; font-style:italic;
+  }
+  blockquote footer { font-style:normal; font-size:13.5px; color:var(--muted); margin-top:6px; }
+  .lede { font-size:18.5px; }
+  .keybox {
+    background:#f3efe7; border:1px solid var(--rule); padding:20px 24px; margin:26px 0 30px;
+  }
+  .keybox h5 { margin:0 0 10px; font-size:14px; letter-spacing:.1em; color:var(--accent); text-transform:uppercase; }
+  .keybox ol { margin:0; padding-left:20px; }
+  .keybox li { margin-bottom:7px; }
+  table { width:100%; border-collapse:collapse; font-size:15px; margin:18px 0 26px; }
+  th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--rule); vertical-align:top; }
+  th { font-size:13px; letter-spacing:.06em; color:var(--muted); font-weight:600; }
+  .tag { font-size:12.5px; color:var(--muted); border:1px solid var(--rule); padding:1px 7px; border-radius:2px; white-space:nowrap; }
+  .divider { text-align:center; color:var(--muted); margin:44px 0; letter-spacing:.4em; }
+  .note { color:var(--muted); font-size:14.5px; }
+  footer.page { margin-top:70px; border-top:1px solid var(--rule); padding-top:20px; color:var(--muted); font-size:13.5px; }
+  a { color:var(--accent); text-decoration:none; border-bottom:1px solid #d8c7b2; }
+  @media (max-width:560px) { body { font-size:16.5px; } .wrap { padding:36px 18px 70px; } h1 { font-size:25px; } h3 { font-size:20px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>AI 播客每日深度萃取</h1>
+  <div class="meta">
+    <span>報告日期：2026-11-20（星期五）</span><br>
+    <span>生成時間：2026-11-20 02:07 UTC</span>
+    <span>掃描範圍：10 個播客（中 5 / 英 5）</span><br>
+    <span>新集數：3 集（英）｜中文 0 集</span>
+  </div>
+</header>
+
+<p class="lede">今日三集英文播客，罕見地形成一組正面交鋒：Dwarkesh 說遞歸自我改進已經開始、2028 年 AI 研究員追平最頂尖人類；Bob McGrew 說「hard takeoff 論述乾脆就是錯的」，研究員從來不是瓶頸，GPU 才是；Cristina Cordova 則把鏡頭拉到生意層面——Linear 一半以上的 issue 已由 agent 開出，$100M ARR 背後是一年期的 AI 預算，而不是三年合約。同一個星期、同一個問題，三種答案。</p>
+
+<div class="keybox">
+<h5>今日五個重點</h5>
+<ol>
+  <li><strong>Dwarkesh 改口：</strong>由「至少十年」改成「兩年、甚至幾個月」就會有跟最頂尖人類 AI 研究員同級的 AI；中位數 2028，25% 機會要等到 2032 之後。</li>
+  <li><strong>他的新證據是「一個月等於十年」：</strong>OpenAI / Anthropic 一個月內產出的數學結果，相當於學界十年；Navier–Stokes 猜想 88 小時被解。</li>
+  <li><strong>METR 的數字：</strong>在 Anthropic 內部蹲點三個月，Anthropic 整體研發速度是一年前的 2 倍，多數歸因於用 AI 做 R&amp;D；Claude 在 8 月「主導」26% 的 AI 研發工作（2 月還不到 1%）。</li>
+  <li><strong>McGrew 的反駁很硬：</strong>自動化研究員是「一次過」的 S 曲線（像 o3 的推理能力），不是複利循環；真正瓶頸是 GPU、濕實驗室、工廠。他認為超智慧不可能只靠數據中心裡思考而誕生。</li>
+  <li><strong>Linear 的訊號：</strong>agent 產生的 issue 由一年前 3% 升到超過一半；$100M ARR、4 萬付費客戶、177% NRR；但買家只簽一年約，明年續約才知誰的 ARR 是真的。</li>
+</ol>
+</div>
+
+<h2>中文播客</h2>
+
+<p>今日五個中文節目均無新集。最近一集分別為：</p>
+<table>
+  <tr><th>節目</th><th>最近一集</th><th>發布時間</th><th>狀態</th></tr>
+  <tr><td>張小珺 Jùn｜商業訪談錄</td><td>157. 復盤 Personal Agent 集體誕生背後：和蔡偉聊 AI 產品史、需求真偽、入口與未來想像</td><td>2026-11-18 03:08 UTC</td><td><span class="tag">已於 11-19 報告深度覆蓋</span></td></tr>
+  <tr><td>十字路口 Crossing</td><td>【年終復盤③】用 Kimi 加速 Kimi：RSI 前夜，一個 AI infra 人的 10 個 Aha Moments｜對話趙晨陽</td><td>2026-11-15 16:00 UTC</td><td><span class="tag">舊集</span></td></tr>
+  <tr><td>42 章經</td><td>復盤 2C 和 2B Agent 發展脈絡｜對談 Afk.surf 創始人嘉琛</td><td>2026-11-14 13:00 UTC</td><td><span class="tag">舊集</span></td></tr>
+  <tr><td>屠龍之術</td><td>從 3.9% 時間佔比到「字節時間」，我們是怎麼走到這兒的？</td><td>2026-11-09 03:33 UTC</td><td><span class="tag">舊集</span></td></tr>
+  <tr><td>矽谷 101</td><td>E258｜聊聊矽谷創業「修道院」HF0 與 OpenRouter 早期故事</td><td>2026-11-09 23:00 UTC</td><td><span class="tag">舊集</span></td></tr>
+</table>
+<p class="note">註：小宇宙（xyzfm）RSS 由本機 IP 直接抓取回 403，今日改以 Apple Podcasts 目錄 API 逐集核對，確認無新集。若往後持續被封，會改用鏡像源。</p>
+
+<h2>英文播客</h2>
+
+<h3>Dwarkesh Podcast（Dwarkesh Patel）</h3>
+<h4>The avalanche that hit math is coming for AI development 🎙️（2026-11-13 18:37 UTC，單口論文式獨白，約 40 分鐘）</h4>
+<p class="epmeta">官方文字版：<a href="https://www.dwarkesh.com/p/rsi">dwarkesh.com/p/rsi</a>｜YouTube 版標題〈Recursive self-improvement has started〉，82.6 萬次觀看｜有完整逐字稿與腳註</p>
+
+<p><strong>主題</strong>：Dwarkesh 公開修正自己今年的判斷。他年初還說距離超智慧「至少十年的大部分」，經過三個月跟不同人辯論、觀察 AI 在可驗證領域的進展，現在認為：距離「跟最頂尖人類 AI 研究員一樣好」的 AI，只有<strong>幾年，甚至可能只有幾個月</strong>；而一旦 AI 研究被自動化，會在一年內壓縮掉相當於三到六年的進度，於是「最快明年、最遲 2030 年前」，會出現每個領域都達頂尖人類專家水準的 AI。</p>
+
+<p><strong>核心論點</strong></p>
+<ul>
+  <li><strong>論點一：AI 已經在加速 AI 本身的進展，這不是預測，是已發生的事實。</strong>他引用三個獨立來源：METR 在 Anthropic 內部嵌入三個月後的結論——Anthropic 在界定良好的任務上，整體研發速度是一年前的 2 倍，而且「今日加速的大部分很可能歸因於 Anthropic 大量用 AI 做 R&amp;D」；OpenAI 9 月的部落格——最重度的 10% 研究員，從初夏每日約 $1,000 的內部 coding agent 用量，到 8 月底超過 $7,000；Anthropic 9 月的自我報告——8 月時 Claude「主導」超過 26% 的 AI 研發工作，而 2 月還不到 1%。</li>
+  <li><strong>論點二：數學的爆發是 AI 研究的預告片，而不是終點。</strong>他的關鍵洞見是一個「優先次序倒轉」：數學研究真正在乎的是拓展人類理解（拓撲、群論、笛卡爾座標系），證明個別猜想只是手段；但 AI 研究剛剛相反——實驗室只在乎「這個配方能不能在經驗上讓訓練更有效率、模型更聰明」，不在乎理論本身。過去十五年深度學習的進步，本來就沒有要求多少新理論。所以 AI 研究其實更像當前 AI 最擅長的那種數學工作：靠驚人的毅力，把幾十個相鄰領域的想法拼在一起，磨穿大量低垂果實。</li>
+  <li><strong>論點三：Transformer 的例子證明「研究品味」也可以被訓練。</strong>他引 Sholto Douglas 那篇一直沒寫完的文章：注意力架構本身不是突破，要同時接上殘差連接（2015）、LayerNorm（2016）、Adam（2014）、MLP 交錯層、位置編碼、learning-rate warmup，才會明顯贏過 LSTM。這些零件在文獻裡躺了好幾年，沒人知道怎麼拼。而「持續且聰明地匹配幾十種組合」正是 AI 在數學上展現出的過人能力——所以「Claude 7 只要有 Chris Olah 叫它認真搞好注意力，它就能發明 transformer」。</li>
+  <li><strong>論點四：AI 研究大體上是可驗證的，因為它只有三個桶。</strong>預訓練（held-out loss、nanoGPT speedrun、以及「taste-bench」——叫模型預測某個 100M 參數規模的改良在 10B 規模還成不成立）、後訓練（CoBench：約 500 條 Anthropic 研究員今年真實解過的問題；ByteDance 的 EdgeBench）、推理效率（GPU 利用率、每 token KV cache、forward pass FLOPs、延遲）。每個 benchmark 同時就是一個 RL 環境，可以讓模型「重做人類過去三到六個月的進展」。</li>
+  <li><strong>論點五：速度不是 2 倍，是「快、聰明、多」三者相乘。</strong>今日 AI 思考速度約人類 10 倍，加上全天候工作，每個自動研究員每週可做約 50 倍工作量；前線實驗室約 80% 的演算法進步來自最頂尖的 50 位研究員，而自動化版本「每一個」都在那個水準。他用 Amdahl 定律算給你看：若 AI 快 50 倍但只接手研究員一半的工作，研究員整體只快 2 倍；接手 90% 才快 8.5 倍；99% 才超過 30 倍——「你加速不了的那部分決定節奏」。</li>
+</ul>
+
+<blockquote>「如果幾個月前你問我，我會說機器學習大概落後數學一年。所以我非常害怕在不久的將來，看到機器學習出現十年的想法。」</blockquote>
+
+<blockquote>「這些模型一邊解千禧年大獎難題，一邊還是沒有長期記憶的笨蛋天才實習生。這就像看著一個人翻著觔斗跑田徑，還跟得上 Usain Bolt。如果准他正常跑，肯定更快。但誰說他不能一邊翻觔斗一邊贏？」</blockquote>
+
+<p><strong>關鍵數據</strong></p>
+<ul>
+  <li>數學時間線：2023 年「四位數加法都不穩」→ 2024 年「高中數學競賽幾乎解不了」→ 2025 年「IMO 金牌」→ 今年早前「解開未解的 Erdős 問題，但也許只是没人試過」→ 一個月前「88 小時解掉一個千禧年大獎難題（Navier–Stokes）」。</li>
+  <li>METR / Anthropic：一年內研發速度翻倍；Claude 主導 26% 研發工作（8 月），完全自主的比例仍是 0%，「低于 collaborate 級別」的工作已不到 10%。</li>
+  <li>維持同等進步速度所需的投入：研發算力每年要翻 4 倍、人力每年要翻倍；全球 AI 算力每年約增長 3 倍。</li>
+  <li>資料的權重：他與 Jerry Han 的研究發現，過去六年預訓練的演算法進步中，來自「資料改良」的是「模型改良」的三倍以上。</li>
+  <li>預訓練仍有大量空間：Magic 宣布用「原始 GPT-3 一半的算力」（今日約 $500k）預訓練出一個可匹敵當今頂尖開源 base model（如 DeepSeek V4 Pro）的模型。</li>
+  <li>DeepSeek 最新論文自述：RL 演算法本身的改動「沒那麼重要」，是「合成資料與環境的規模、多樣性、可驗證性的系統性改良，解釋了幾乎所有觀察到的增益」。</li>
+  <li>兩個情境各 50%：<strong>software-only singularity</strong>（幾個月內直衝超智慧，撞到現有晶片的物理極限）vs <strong>spark</strong>（一年內做出三到六年、即四到九年原始演算法進度的躍進，然後因為要建算力而沉澱幾年）。</li>
+</ul>
+
+<p><strong>技術詳情</strong></p>
+<ul>
+  <li><strong>預訓練為何是 RSI 的引擎</strong>：三個理由——預訓練帶來非常通用的智能提升（壓縮與智能的關聯）；改良後可用更小的模型達到同等能力，令實驗與 RL rollout 更便宜、可養更多研究員複本；小模型訓練快，令 RSI 迴圈收緊——實驗室不會再做橫跨多個資料中心、為期三個月的預訓練，因為「等大 run 跑完，它已經被上週才開始訓練的小模型淘汰」，就像今日發射的星際飛船會被一百年後發射的追過。</li>
+  <li><strong>樣本效率才是真正的千禧年難題</strong>：他主張樣本效率、線上學習是同一問題的兩面，而這個問題的每一種形式都可量測（達到某個預訓練 loss 要多少資料、某個 RL 分數要多少任務、單次 session 內要多少回饋）。</li>
+  <li><strong>他改變了對 continual learning 的看法</strong>：去年 12 月他以此為主要理由，不相信短期內能自動化 AI 研究（「一個連小孩基本學習能力都沒有的系統，怎麼可能想出 AGI 演算法？」）。現在他認為，把 in-context learning 的 context 拉到「幾個月長的 session」，可能就足以讓單一實例在職學習，不必真的改權重；而且「你不需要一個 continual learner 來解決 continual learning」——這是個有乾淨代理指標的 ML 研究問題，一兩年後更聰明的模型有可能自己解掉。</li>
+  <li><strong>實驗算力的反駁（SlothAI 思想實驗）</strong>：想像一間與 OpenAI 同算力、但研究員每週只工作一小時的公司，它大概只慢 5 倍，不會慢 50 倍，因為實驗可以繼續跑；但 OpenAI 相對全自動研究員公司，就是 SlothAI。人類思考速度是生物偶然，沒理由剛好是「再快就沒用」的那個點。自動化團隊還可以用「勞力換算力」：讀完每一條 rollout、看到環境壞掉就重建、做大量小型消融、用幾十年主觀時間設計一個最 informative 的 pooled experiment。</li>
+  <li><strong>對「新範式」的反駁</strong>：transformer 當年就是為了打敗既有的翻譯 benchmark 而生；推理模型也是沿著既有的 coding / math benchmark 長出來。代理指標在範式躍遷前就已存在，而且 AI 學習演算法足夠通用。也可以設計範式無關的外層代理：解幾個千禧年難題、只餵 1905 年前的資料看它多久發現廣義相對論、多快精通未見過的電子遊戲。</li>
+</ul>
+
+<blockquote>「如果按面值接受『AI 現在幾乎令 AI 能力進步速度翻倍』，並假設加速是平滑的，這天真地意味著我們一年內就會到達極端超智慧。」<footer>— Ajeya Cotra，Dwarkesh 引用來說明為何直接外推會過於激進</footer></blockquote>
+
+<p><strong>行業 insight</strong></p>
+<ul>
+  <li><strong>「一個月等於十年」是這次更新裡最硬的一塊。</strong>它不是 benchmark 分數，而是產出量的比較：如果把過去一個月的數學結果當成十年的進度，那會是異常高產的十年。這件事的意義不在數學，而在於它證明「在可驗證領域，壓縮時間」是可能的。</li>
+  <li><strong>公開資訊的品質正在惡化。</strong>他反覆強調 METR / Anthropic 報告「整份被塗黑」，只留下「我們有結論，請相信我們」。benchmark 是評估整體進度的糟糕方式；真正平滑的指標（預訓練 perplexity、RL 演算法的算力效率、production function 裡的研發工時與算力投入）都在實驗室內部。這對外部研究者、監管者、投資人都是結構性問題。</li>
+  <li><strong>他給出的是「條件式預測」而非預言</strong>：中位數 2028；25% 機會要等到 2032 之後（主要風險是 continual learning 真的解不掉）；2027 也有可能——那是把 METR 的「一年翻倍」直接塞進 takeoff 模型的算術結果，也是他所認識、預測紀錄最好的研究者們的預期。</li>
+  <li><strong>對晶片與算力的暗示</strong>：即使在 spark 情境，軟件進步放緩後，AI 會轉頭幫人類擴算力——設計晶片、規劃新晶圓廠、遙操作機械人建廠。全球算力年增 3 倍本來就在發生，AI 只會令它更陡。</li>
+</ul>
+
+<p><strong>前後脈絡</strong></p>
+<ul>
+  <li>與他 2025 年 6 月的〈timelines〉、2025 年 12 月的〈thoughts on AI progress〉直接對照：當時他以 continual learning 為由，判斷自動化研究員還要很久；本篇是公開撤回。</li>
+  <li>與 11-16 的 Paul Christiano 訪問互相補完又互相張力：Christiano 給的是「一年內 1/3 機會出現可推翻政府的超智慧、接管風險 10%」，並主張<strong>暫停演算法進步</strong>直到權重與研究機密守得住；Dwarkesh 給的是「2028 年中位數」，語氣更像技術擴散而非災難倒數。兩人都同意觸發點是 AI 研發自動化，但對「多快」與「該不該停」的緊迫感不同。</li>
+  <li>與今日 No Priors 的 Bob McGrew 正面衝突：McGrew 說研究員不是瓶頸、自動化研究員只是一次過加速；Dwarkesh 的附錄則用 SlothAI 與 Amdahl 定律反駁「算力瓶頸會抵銷一切」。這是本週最值得來回讀的一組。</li>
+</ul>
+
+<p><strong>爭議點</strong></p>
+<ul>
+  <li>「解掉千禧年難題」的實際分量。Toby Ord 等人的反駁是：當前 AI 只自動化了「證明」，幾乎沒有證據它能提出有力的問題、開拓全新的數學領域。Dwarkesh 的回應很尖：它就是在「不能提出深刻問題」的情況下解掉了千禧年難題——而這對 AI 研究反而更夠用。</li>
+  <li>「軟件奇點」vs「火花」各 50% 的分配，本質上是對「想法是否越來越難找」的主觀賠率，沒有可證偽的判準。</li>
+  <li>他用 Magic 的 $500k 預訓練作為「預訓練遠未見頂」的證據，但單一公司公告、缺乏第三方複現，屬於最弱的一環。</li>
+</ul>
+
+<div class="divider">· · ·</div>
+
+<h3>No Priors（Sarah Guo + Elad Gil）</h3>
+<h4>Superintelligence Needs the Physical World — Bob McGrew, CEO &amp; Co-founder of Arda 🎙️（2026-11-19 12:00 UTC，59 分 33 秒）</h4>
+<p class="epmeta">YouTube：_wLzJINt9iQ｜有完整自動字幕｜章節 17 段</p>
+
+<p><strong>主題</strong>：一位前 OpenAI 首席研究官、Palantir 早期核心人物，公開拆解「hard takeoff」論證，並解釋為什麼超智慧若只活在資料中心裡，什麼都改變不了。他現在做的 Arda，目標是把「製造工程」變成可被 AI 讀寫的軟件——用他的話說，是「製造工程師的 Cursor」。</p>
+
+<p><strong>嘉賓背景</strong>：Bob McGrew。2002 年在史丹佛 AI 實驗室讀博士，2005 年退學加入 Palantir（在那裡十年，管工程與產品，FDE 模式的原型就在那裡成形）；2015 年前後短暫嘗試機械人創業失敗，之後加入 OpenAI，最後成為 Chief Research Officer；2026 年創辦 Arda，與 Anduril 深度合作。他在節目裡自嘲：讀博士時「跟研究組一起嘲笑那些相信神經網絡會成功的人」。</p>
+
+<p><strong>核心論點</strong></p>
+<ul>
+  <li><strong>論點一：hard takeoff 的算術是錯的，因為它假設研究員是瓶頸。</strong>他用最具體的版本反駁：自動化研究員 10% → 有改善；50% → 快 2 倍；90% → 快 10 倍；99% → 快 100 倍，於是無限加速。「這乾脆就是錯的。研究員不是瓶頸。發現所需的时间，主要不是被研究員人數限制。」2024 年他在 OpenAI 的真實限制因素是手上 GPU 的數量、算力有否集中在正確的地方、有否用正確的網絡連起來。</li>
+  <li><strong>論點二：自動化研究員是一次過的 S 曲線，不是複利。</strong>他给的比喻是「由 GPT-4o 無推理，到 o3 有推理與工具」——那是巨大的、一次性的加速，但不是 RSI。正確的心智模型是看 GPU：「現在 GPU 只發揮了 35% 的潛力去產出發現，自動化也許能推到 90%；但 90% 到 99% 的差別其實不大。」</li>
+  <li><strong>論點三：超智慧需要物理世界，因為智能變便宜之後，稀缺的是知覺與行動。</strong>「看看外面，跟十年前 AI 未來之前相比，有多少東西真的不一樣？幾乎沒有。」他承認 Waymo 是真實改變，但「第一次坐覺得神奇，第三次坐你只會想：這交通真爛」——車沒有變，還是受所有 1990 年代就存在的物理限制。Dario 的「資料中心裡一個國家的天才」很好，但「如果他們只能坐在資料中心裡想、跟你互發 email，他們什麼都做不了，他們被困在資料中心」。</li>
+  <li><strong>論點四：美國擅長設計、不擅長製造，原因是自動化不夠有彈性。</strong>iPhone 每年約 75% 零件更換，只有 25% 不變；那 25% 用高度自動化產線，其餘 75% 靠人手組裝。全亞洲約一百萬人組裝 iPhone 及零件，但只有約一萬名製造工程師在設計產線。汽車可以花兩年、$200M 建一條高度自動化產線，同一款車做七年，經濟上很合理；iPhone 要達到同樣經濟性，自動化率要由 25% 拉到 90%，而每年重設計產線的 CapEx 根本攤不回來。</li>
+  <li><strong>論點五：機械人的瓶頸是經濟與校準，不是手臂本身。</strong>現有機械臂已能完成「90% 的產品」；真正的問題是傳統自動化像 Rube Goldberg 機械——一半工作在设计機器，另一半在 calibration（螺絲差 0.1mm 就落不到位）。所以封閉世界（產線）適合用感知 + RL 操縱去「鬆掉」校準精度要求；開放世界（收拾睡房）才需要接近人類的通用智能。</li>
+  <li><strong>論點六：不要訓練自己的大模型，前沿模型做 orchestrator。</strong>Arda 自己写專門演算法：motion planning、CAD 檢查工具；前沿模型負責任務編排。「這種模式在 SaaS 世界也很常見：用 SOTA 模型做 orchestrator，下面掛專門的微調模型。」他也直言，若不是前沿實驗室，做小型專用模型「比你想像中容易」，而且「訓練一個這種模型、写一個軟件包、写一個工具，其實是同一種動作」。</li>
+</ul>
+
+<blockquote>「如果你能自動化研究員，這是很大的效應，我不否認。也許它的衝擊跟由 GPT-4o 到 o3 一樣大。但那是一次性的加速，不是 RSI。」</blockquote>
+
+<blockquote>「智能已經變得很便宜。那智能的互補品是什麼？一邊是知覺，一邊是行動。現在人類就是資料中心裡那個智能的眼睛和手。」</blockquote>
+
+<blockquote>「所謂『很大的組織』其實不存在。OpenAI 不會『想要』什麼。Sam 想要某些東西，Greg 想要某些東西，某個團隊裡某個研究科學家想要某些東西。大組織只是一堆很小的團隊的集合。」</blockquote>
+
+<p><strong>關鍵數據</strong></p>
+<ul>
+  <li>與 Anduril 的合作時間線：公司註冊前一天開始談；1 月取得系統存取；4 月第一位用戶上線；第一個案例是把一個 actuator 的 virtual build 由「幾天」縮到 <strong>90 分鐘</strong>；現已部署到 Anduril 所有產品部門，範圍由無人機、導彈，到 Fury 協同作戰飛機。</li>
+  <li>目標指標：把「設計並重構一條自動化產線」壓到 <strong>7 天</strong>——而製造業目前認為，即使人手產線能在 7 天內引進設計變更，已經算極度敏捷。</li>
+  <li>iPhone 產線：25% 零件不變／75% 每年更換；自動化率要由 25% 升至 90% 才符合經濟性。</li>
+  <li>汽車產線：約 2 年、$200M 資本支出，換來同一車型 7 年生產。</li>
+  <li>人力結構：亞洲約 100 萬人組裝 iPhone 及零件；對應約 1 萬名製造工程師。</li>
+  <li>他對 2024 年 OpenAI 瓶頸的量化回憶：限制因素是 GPU 數量與其連接方式，不是招聘速度。</li>
+</ul>
+
+<p><strong>技術詳情</strong></p>
+<ul>
+  <li><strong>「封閉世界」的自動化路徑</strong>：傳統做法是把不確定性用夾具（fixture）消除——零件落進振動料斗、掉在夾具上被精確定位，然後一隻「完全沒有感知」的機械臂去取。Arda 的思路是加入感知與 RL 操縱，讓零件「差一點也行」，用智能換掉校準成本。形態上「兩隻手臂加一個鏡頭就夠，很多情況下一隻手臂加鏡頭就夠」，不需要人形。</li>
+  <li><strong>為何機械人突然可行</strong>：他認為關鍵不是機械人資料變多，而是模型終於能從既有資料（包括互聯網影片）「榨出最後幾個 bit 的隨機性」，得到足夠好的世界表徵；「你不需要在部署的同一件事上訓練模型，你需要的是好的世界表徵，然後微調到具體問題」。他也順手拆掉「湧現能力」神話：「有人在 Twitter 說 GPT-4 能自己 debug、自己修 bug，好神奇——Jerry 為此花了兩年。」</li>
+  <li><strong>對 Fable / Astra 這類通用機械人模型的評估</strong>：out-of-the-box 很強，但慢、而且難以有效微調——這正是 Pi、General 這類公司用「在特定用例上微調」切入的機會。「bitters lesson 很強，train on the test set 也很強，兩股力量要交手。」</li>
+  <li><strong>FDE 的正確做法</strong>：FDE 是產品策略，不是外包顧問。若 FDE 要不斷填補產品與用戶之間的縫，就沒有槓桿；必須把現場所見 productize 回產品。方法論是贊助者（sponsor）+ 真正願意用的 power user，兩者都要；《Crossing the Chasm》只講了前者。他舉 Palantir 早期「一年只有 Sarah Adams 一個用戶」為例。</li>
+</ul>
+
+<p><strong>行業 insight</strong></p>
+<ul>
+  <li><strong>「資料中心裡的超智慧」在經濟上是不完整的。</strong>他用 O-ring 生產函數的邏輯：建屋最難的是拿許可，不是畫圖；建資料中心最快卡在推土機——「AI 知道要做什麼，它去建推土機工廠；建工廠第一步要清地；清地要更多推土機。」這個遞迴沒有出口，除非物理層的生產力一起提升。</li>
+  <li><strong>對機械人市場結構的判斷</strong>：不會是一支人形機械人軍隊，而是「形態大爆發」——會飛的、四足的、負重的、犁田的；「我們以為世界是為人而設，但更廣的世界裡，機械人會長得像各種動物」。所有我們擁有的物理東西都會變成有感知、連上雲、由 AI 控制。</li>
+  <li><strong>對 Fermi paradox 的答案（少見的樂觀版本）</strong>：文明以接近光速擴散，先到一個星系、快速建工廠、造自複製探測器再散出去；所以我們看不到，是因為「它正以光速前進，你只會在它到達前幾分鐘或幾年才看到」。他不同意「因此宇宙很空」的推論，反而認為「也許我們就是那道波」。</li>
+  <li><strong>對自複製工廠的時間判斷</strong>：「很快」——但不是新概念，machine tools 本來就是造機器的機器；差別是以智能方式去做。「未來十年，把地殼更大比例轉化成資料中心」是數位奇點的一部分，而那是個物理過程。</li>
+</ul>
+
+<p><strong>前後脈絡</strong></p>
+<ul>
+  <li>與他 2015 年在 OpenAI 機械人團隊的經歷直接相連：他做 Shadow Hand 解魔術方塊，花了兩年成功，但「从此永久性地不再相信機械手」——他當時判斷機械人創業「時候未到」。十一年後他回頭做製造，理由是模型能力終於跨過門檻。</li>
+  <li>Palantir 的「問題優先」vs OpenAI 的「技術優先」，他自己總結成一段 Ilya 對話：他建議找一個真實用戶解決問題，Ilya 回答「不，我們可以將訓練資料擴大 10 倍，從所有人身上學到的，遠多於從一個客戶身上學到的」。他現在明確站回問題優先，但不否定技術優先曾經正確。</li>
+  <li>與同週 Dwarkesh / Christiano 的張力：他等於說「AI 研究自動化不會引發複利」，而 Dwarkesh 的整篇附錄正是在反駁「算力瓶頸會讓加速停下來」。值得注意的是，McGrew 的「35% → 90% 效率」與 Dwarkesh 的「用勞力換算力」其實可以並存：一個說上限定得早，一個說從 35% 到 90% 的過程本身就足以壓縮數年進度。</li>
+</ul>
+
+<p><strong>爭議點</strong></p>
+<ul>
+  <li>他把 RSI 的觸發條件簡化成「研究員佔瓶頸的比例」，但 Dwarkesh 的論點是「研究員時間相對算力極度稀缺」正是今日實驗室浪費算力的原因——兩者對「現狀效率」的估算（35% vs 更低）沒有共同基準。</li>
+  <li>「現有機械臂已能完成 90% 產品」是強主張，但沒有給出來源或測試集；線束（wire harnessing）這類工序他自己也承認很難。</li>
+  <li>Fermi paradox 的「光速波」解釋，繞過了「為何沒有先到的波」這個核心反駁，Elad 當場也追問了，但他以 Drake 方程的不確定性帶過。</li>
+</ul>
+
+<div class="divider">· · ·</div>
+
+<h3>Latent Space（swyx + Alessio Fanelli）</h3>
+<h4>Scaling Linear's GTM to $100M ARR — Cristina Cordova, COO 🎙️（2026-11-19 23:58 UTC，約 1 小時 10 分）</h4>
+<p class="epmeta">主持：Basil Chatha｜YouTube：x0VSm6IjcDQ｜有完整（自動）逐字稿與 17 段章節</p>
+
+<p><strong>主題</strong>：一家「issue tracker」公司在 CEO 發文宣告「issue tracking is dead」之後，如何把商業模式、銷售組織、定價與支援全部重寫，並在一年內由 agent 只佔 3% 工作量的狀態，走到 agent 佔超過一半。</p>
+
+<p><strong>嘉賓背景</strong>：Cristina Cordova，Linear COO（2023 年加入，當時公司約 40 人、只有一位銷售）。之前：Stripe 七年半（早期合作夥伴與 GTM，後轉產品）、Notion 平台與合作副總裁、First Round 合夥人。加入 Linear 前也跑了一個「work trial」——題目就是寫 Linear 未來 6–12 個月的 GTM 計劃，那份計劃後來成了她的工作。</p>
+
+<p><strong>核心論點</strong></p>
+<ul>
+  <li><strong>論點一：SaaS 若只做「資料庫 + 一個 MCP server」，是在把自己商品化。</strong>Linear 2025 年 5 月推出 MCP server（她說是同類第一個），一年半後超過一半的新 issue 由 agent 建立。但她強調，這不代表 Linear 想變成「上面掛個 MCP 的資料庫」。「如果你產品內的 agent 工作流，不比產品外的好，就沒有人有理由打開你的 app。」所以她盯兩條線：agent 使用量與 app 使用量。如果 agent 使用量上升而 app 使用量不上升，你就在變成商品；Linear 兩條線都向上，因為人還是會回到 app 去看、去協調工作。</li>
+  <li><strong>論點二：「issue tracking is dead」不是口號，是產品路線的硬轉向。</strong>Karri 三月發文後，多數客戶同意，然後問「那我到底在買什麼？」Linear 的答案是一個圍繞 agent 編排的產品開發系統：人不再手動開單、標籤、指派、關閉。客戶其實一直在推它往這裡走——多數前沿 AI 實驗室都用 Linear 而且要求它更快；Ramp、Coinbase 這類「前 AI 時代」公司則自己在建內部 agent，需要 API 把 agent 接進 Linear。</li>
+  <li><strong>論點三：小公司可以自我吞噬，大公司不行。</strong>「我們的好處是沒有大到殺死自己。如果是 Google，把 AI 答案放在每條搜尋結果上面，可能就沒有人看廣告了，整個生意被翻轉。」她認為這是 Linear 相對 incumbents 的結構性優勢，不只是速度。</li>
+  <li><strong>論點四：現在推動成交的是「AI 預算」，不是傳統 IT 預算。</strong>企業為 AI 工具另外切了一筆以前不存在的錢，任何能装進那筆預算的產品，就跳過了常規的搶預算過程；有些公司那筆錢非常高。但這筆錢的性質正在變：買家簽一年約與付費 pilot，不簽三年，因為「沒有人知道兩年後自己想要什麼」。</li>
+  <li><strong>論點五：銷售組織可以反傳統——沒有 SDR、沒有 FDE。</strong>Linear 從未聘過一位 SDR。她認為資格審查電話是浪費客戶時間：「他們想看 demo，不是回答你的預算問題。」AE 自己做 outbound，靠工具保持個人化。也不做 forward deployed engineering：產品應該容易到「沒有人需要 access 你的系統」；企業單由 solutions engineer 陪 AE 去打，必要時通宵做一個能跑的 ServiceNow 整合給 prospect 看。</li>
+  <li><strong>論點六：支援不外包，也不讓 LLM 自行回覆。</strong>AI 起草、人決定是否送出。客戶有時以為回覆是 AI，因為來得太快。三年半以來，她沒有處理過一次因為支援體驗差而升級的投訴。</li>
+  <li><strong>論點七：定價要「向成本靠攏」，不要對原本免費的東西收費。</strong>她最想要 outcome-based（例如 Intercom Fin 每解決一個對話收 $0.99），但 Linear 難以界定「自動把 bug 分派給正確團隊」值多少——有公司認為那是 PM 的工作，有公司不認為。折衷：座位費保留；Linear Agent 對話免費（即使跑前沿模型）；coding session 讓用戶選 OpenAI 或 Anthropic 的模型與 harness，按公開 API 價加小額 markup 轉嫁；Loops 用 AI credits。新 AI 功能先以免費 beta 推出、明確預告將收費，而且「價格由高往低走，不是由低往高走」。</li>
+</ul>
+
+<blockquote>「如果 agent 使用量上升，而 app 使用量沒有跟著上升，你就在變成一件商品。」</blockquote>
+
+<blockquote>「當那些一年期合約到期續約時，我們就會知道誰的 ARR 是真的。」<footer>— 談那些「一夜之間 $100M ARR」的 AI 初創</footer></blockquote>
+
+<blockquote>「Linear 從來沒有聘過一個 SDR。資格審查電話是在浪費客戶的時間。」</blockquote>
+
+<p><strong>關鍵數據</strong></p>
+<ul>
+  <li>Linear：成立 7 年、累計融資 $134M；2026 年 ARR 突破 <strong>$100M</strong>；付費客戶 <strong>40,000+</strong>；淨收入留存率 <strong>177%</strong>；8 月員工以 <strong>$2.5B 估值</strong>出售 <strong>$99M</strong> 股份。</li>
+  <li>Agent 佔新 issue 比例：一年前 <strong>3%</strong>，現在 <strong>超過一半</strong>。</li>
+  <li>人力：約 <strong>170 人</strong>，是同階段、同營收公司的一半左右；C-level 只有三位創辦人加上她。</li>
+  <li>她加入後（2023 年至今）營收增長至少 <strong>10 倍</strong>；加入時沒有超過 500 席的客戶，主要停留在 mid-market。</li>
+  <li>產品時間線：MCP server 2025-05；Linear Agent 2026-03-24；coding sessions 2026-06-11（結束全部按座位收費的模式）；Loops 2026-07-20。</li>
+  <li>Stripe 帶來的「40% 規則」：公司至少 40% 應是工程、產品、設計與資料；銷售要加人時，先幫忙招工程師。</li>
+  <li>她對某些「一夜 $100M」的拆解：那可能只是幾張 $30M–$40M 的國防或大型律師事務所合約，與 Linear 四萬個付費客戶是兩種完全不同的生意。</li>
+</ul>
+
+<p><strong>技術／產品詳情</strong></p>
+<ul>
+  <li><strong>Agent 平台而非單一 agent</strong>：Linear 建了 agents platform 與一整組新 API，並與 Codex、Cursor、GitHub Copilot 整合，另有自家 Linear Agent。這些都是 2025 年企業路線圖上沒有的東西——「很多企業功能最後沒做完」，她選擇繼續衝。</li>
+  <li><strong>2025 企業路線圖被丟掉</strong>：2023 年她加入三週後，就把「往上游走、攻企業」從公司目標中劃掉（當時只有一位銷售）。策略是先去打 growth-stage 公司——那些要「拔掉現有工具」的客戶，就像 Stripe 當年在贏得 switching 客戶之前，先贏新公司。2025 年正式宣布企業攻勢、路線圖排滿大企業功能，然後 agent 來了，一切重排。</li>
+  <li><strong>「有主見的工具」對 agent 更友善</strong>：她指出，若每隊對「bug」的定義都不同，agent 拿到的資料就髒；Linear 的固執（opinionated）反而是資料優勢。</li>
+  <li><strong>支援的 AI 分工</strong>：AI 起草、人審核送出；不讓 LLM 獨立關單。這與 Linear 產品內「agent 可以開單但不能取代人判斷」的哲學一致。</li>
+</ul>
+
+<p><strong>行業 insight</strong></p>
+<ul>
+  <li><strong>Seat-based SaaS 的裂縫已出現在定價層。</strong>Linear 由「全部按座位」變成混合：座位、按用量、AI credits 並存。她的原則很務實——「對會花我錢的東西收費，其餘免費」；但她承認 outcome-based 是大家真正想要的，只是「價值單位」難以標準化。</li>
+  <li><strong>「AI 溢價」的可持續性問題。</strong>她給出一個可檢驗的判準：一年期合約與付費 pilot 大量出現，代表買家其實在做選擇權定價；續約周期一到，會有一批 ARR 被打回原形。這比「AI 泡沫」的宏觀爭論更具體。</li>
+  <li><strong>組織設計變成產品策略的一部分。</strong>沒有 SDR、沒有 FDE、支援自營、工程佔比 40%——這些不是文化姿態，而是為了讓「產品本身」承擔銷售與支援的工作，把人力留在產品。她用「一半的人力做同階段的事」來證明這套配置有效。</li>
+  <li><strong>對「MCP 化」浪潮的警告</strong>：很多 SaaS 以為接上 MCP 就完成 AI 轉型；她的反例是——如果 agent 在外部（例如 Cursor 裡）就能完成你產品內的工作，你的 app 就只剩下一個資料庫的價值。</li>
+</ul>
+
+<p><strong>前後脈絡</strong></p>
+<ul>
+  <li>與 Latent Space 11-16 的 Black Forest Labs 一集形成對照：一邊是模型層（FLUX 3 單骨幹、action model），一邊是應用層（Linear 如何把 agent 塞進工作流）。兩集都指向同一件事——價值正在由「模型能力」移向「工作流佔有率」。</li>
+  <li>與 11-17 的 Cloudflare「neolab」文章相呼應：Cloudflare 自建 Clef／Clairic 的理由之一是「授權漲價與監管風險」；Linear 則選擇做 orchestrator、把模型成本轉嫁（API 價 + markup）。兩者都在回答同一個問題：應用公司要不要自己養模型。答案分歧，但路徑清楚。</li>
+  <li>延續 Latent Space 近期對「agent 經濟」的追蹤：從 11-10 的〈Designing for Agents〉（Zeno Rocha, Resend）到今日 Linear，主題由「如何為 agent 設計介面」進到「agent 已佔工作量一半之後，商業模式怎麼改」。</li>
+</ul>
+
+<p><strong>爭議點</strong></p>
+<ul>
+  <li>「agent 建立超過一半的 issue」是產品內部指標，但沒有披露這些 issue 的品質分佈（重複、誤分類、關閉率），所以「一半工作由 agent 完成」可能高估了實際替代的人力。</li>
+  <li>她說 Linear 不做 FDE，但同時說 solutions engineer 會「通宵建一個 ServiceNow 整合」——這在功能上與輕量 FDE 高度重疊，界線主要是組織歸屬而非工作內容。</li>
+  <li>「不讓 LLM 獨立回覆支援」與「Linear Agent 對話免費」並存，暗示她對 agent 可靠性的內部評估比對外敘事保守。</li>
+</ul>
+
+<h2>本週主線</h2>
+<p>三集放在一起看，問題其實只有一個：<strong>當 AI 開始做 AI 研究，瓶頸會移到哪裡？</strong>Dwarkesh 的答案是「移到實驗算力，但演算法進步仍會快到壓縮數年」；McGrew 的答案是「移到 GPU、濕實驗室、工廠，自動化研究員只是另一條 S 曲線」；Cordova 的答案是「移到工作流與定價——模型是誰的不重要，誰佔住團隊每天打開的那個 app 才重要」。三個人對時間尺度的賭注不同（2028 / 十年 / 已經發生），但都同意一件事：<strong>純數位的加速，最終會撞上一個物理或組織的牆</strong>。差別只在撞牆前能跑多遠。</p>
+
+<footer class="page">
+  <p>來源：Dwarkesh Podcast RSS 與官方文章、No Priors YouTube RSS 與自動字幕、Latent Space RSS 與官方逐字稿、Apple Podcasts 目錄 API（中文節目核對）。<br>
+  本報告由自動排程生成，引用以原文為準；自動字幕可能含人名與用詞誤差。<br>
+  授權：Apache 2.0</p>
+</footer>
+
+</div>
+</body>
+</html>

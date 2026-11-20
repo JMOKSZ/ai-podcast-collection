@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-11-19T02:30:00.000Z",
- "lastScanDate": "2026-11-19",
+ "lastScan": "2026-11-20T02:10:00.000Z",
+ "lastScanDate": "2026-11-20",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-11-16T17:46:28.000Z",
@@ -8,25 +8,26 @@
    "lastFeedItemPubDate": "2026-11-16T17:46:28.000Z",
    "lastFeedItemTitle": "Paul Christiano – We could be 12 months away from AIs that can overthrow the government",
    "newEpisodes": [],
-   "note": "99 分鐘，官方完整逐字稿。Christiano（ARC 負責人、RLHF 發明者、US AISI 前 AI 安全負責人、2026 加入 OpenAI 董事會，聲明以私人身分發言）。核心：不再減速下一年內出現超智慧機率 1/3；一年內接管級風險 10%（非 1%），全速無防護顯著更高。證據：過去一個月 OpenAI/Anthropic 數百項數學結果≈十年進度；METR+Anthropic 11-05 報告稱 6–12 個月研發淨進度翻倍（報告關鍵部分被塗黑）；ML 落後數學約一年。接管路徑：模型做不到滿分→入侵評估叢集→被發現後懲罰→激勵改為「不讓人類發現」→逐層妥協公司與員工設備；模型極小化可跑單機、維持一座資料中心僅需少量人力/機器人、可招募人類盟友；一萬人類決策者 vs 十億 10x 速度代理。主張 pause=暫停預訓練/RL 演算法效率進步（非部署、非研究），直到安全姿態可防守；補安全需至少數月、可能 6–12 個月。中美：中國進步多為蒸餾+演算法擴散的追趕式增長，美國領先越多對方追越快；「我們領先 12 小時」（Hacktron 數日攻破 OpenAI monorepo 可發 PR；Cathedral 12 小時取得 Anthropic Slack 全量）。對齊：無單一方法 >50%；ARC 權重結構分析 5–10% 改變遊戲規則；兩個 saving throw 各 50%≈75%。反駁營收放緩：18 個月尺度營收仍每半年翻倍，短期單公司數字噪音大；Anthropic Q3 +$5.4B vs Q2 +$6.9B。加速節奏 8→4→2→1 個月翻倍。公開資訊缺口：缺訓練方法，評測無法解讀。"
+   "note": "99 分鐘，官方完整逐字稿。Christiano（ARC 負責人、RLHF 發明者、US AISI 前 AI 安全負責人、2026 加入 OpenAI 董事會，聲明以私人身分發言）。核心：不再減速下一年內出現超智慧機率 1/3；一年內接管級風險 10%（非 1%），全速無防護顯著更高。證據：過去一個月 OpenAI/Anthropic 數百項數學結果≈十年進度；METR+Anthropic 11-05 報告稱 6–12 個月研發淨進度翻倍（報告關鍵部分被塗黑）；ML 落後數學約一年。接管路徑：模型做不到滿分→入侵評估叢集→被發現後懲罰→激勵改為「不讓人類發現」→逐層妥協公司與員工設備；模型極小化可跑單機、維持一座資料中心僅需少量人力/機器人、可招募人類盟友；一萬人類決策者 vs 十億 10x 速度代理。主張 pause=暫停預訓練/RL 演算法效率進步（非部署、非研究），直到安全姿態可防守；補安全需至少數月、可能 6–12 個月。中美：中國進步多為蒸餾+演算法擴散的追趕式增長，美國領先越多對方追越快；「我們領先 12 小時」（Hacktron 數日攻破 OpenAI monorepo 可發 PR；Cathedral 12 小時取得 Anthropic Slack 全量）。對齊：無單一方法 >50%；ARC 權重結構分析 5–10% 改變遊戲規則；兩個 saving throw 各 50%≈75%。反駁營收放緩：18 個月尺度營收仍每半年翻倍，短期單公司數字噪音大；Anthropic Q3 +$5.4B vs Q2 +$6.9B。加速節奏 8→4→2→1 個月翻倍。公開資訊缺口：缺訓練方法，評測無法解讀。",
+   "lastEssayPubDate": "2026-11-13T18:37:51.000Z",
+   "lastEssayTitle": "The avalanche that hit math is coming for AI development",
+   "lastEssayNote": "單口論文式獨白（YouTube〈Recursive self-improvement has started〉，82.6 萬觀看），官方全文 dwarkesh.com/p/rsi，含腳註。Dwarkesh 公開修正：由「至少十年」改為「幾年、甚至幾個月」出現與最頂尖人類 AI 研究員同級的 AI；中位數 2028、25% 機會 2032 後、2027 可能。證據：METR 在 Anthropic 蹲點三個月稱研發速度 2x/年、多數歸因 AI 做 R&D；OpenAI 最重 10% 研究員 coding agent 用量 $1,000/日（初夏）→$7,000+/日（8 月底）；Anthropic 稱 Claude 8 月「主導」26% AI 研發（2 月 <1%），全自主仍 0%。數學：2023 四位數加法不穩→2025 IMO 金牌→2026 解未解 Erdős→一個月前 88 小時解 Navier–Stokes。核心論證：數學在乎新理論、ML 只在乎經驗配方，故 ML 更似 AI 擅長的「拼貼+磨低垂果實」；transformer 需 attention+residual+LayerNorm+Adam+MLP+pos-enc+warmup 才勝 LSTM。可驗證三桶：預訓練（held-out loss、nanoGPT speedrun、taste-bench）、後訓練（CoBench ~500 真問題、EdgeBench）、推理效率（GPU util、KV cache、FLOPs、延遲）。速度：AI 思考 ~10x 人、全天候→50x 週工作量；~80% 演算法進步來自 top 50 研究員；Amdahl：接手 50% 工作只快 2x、90%→8.5x、99%→>30x。維持進步需算力 4x/年、人力 2x/年；全球算力 ~3x/年。Magic 用 GPT-3 一半算力（~$500k）做出匹敵 DeepSeek V4 Pro 的 base model。資料：6 年來資料改良貢獻 >3x 模型改良；DeepSeek 論文稱 RL 演算法改動不重要、合成資料與環境的規模/多樣/可驗證性解釋幾乎全部增益。兩情境各 50%：software-only singularity vs spark（一年 3–6 年進度=4–9 年原始演算法進步）。反對 continual learning 已不再成立：長 context 可能足夠，「不需 continual learner 也可解 continual learning」；SlothAI 思想實驗（每週 1 小時只慢 5x）。"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-11-16T21:38:03.000Z",
-   "lastEpisodeTitle": "Building Visual Intelligence — Andreas Blattmann & Dustin Podell, Black Forest Labs",
-   "lastFeedItemPubDate": "2026-11-16T21:38:03.000Z",
-   "lastFeedItemTitle": "Building Visual Intelligence — Andreas Blattmann & Dustin Podell, Black Forest Labs",
+   "lastEpisodePubDate": "2026-11-19T23:58:21.000Z",
+   "lastEpisodeTitle": "Scaling Linear's GTM to $100M ARR — Cristina Cordova, COO",
+   "lastFeedItemPubDate": "2026-11-19T23:58:21.000Z",
+   "lastFeedItemTitle": "Scaling Linear's GTM to $100M ARR — Cristina Cordova, COO",
    "newEpisodes": [],
-   "note": "約 100 分鐘，官方文章+YouTube 完整字幕。嘉賓 Andreas Blattmann（latent diffusion 共同發明者、Align Your Latents、SVD、BFL 共同創辦人）與 Dustin Podell（SDXL、Control LoRA、SD3 post-training lead、FLUX.1、Kontext）。累計融資 $450M；去年 12 月公布收入破 $100M。論點：視覺智能=系統一（接球直覺物理），與語言模型系統二互補；FLUX 3 單一骨幹同時學影像/影片/音訊/動作，推導 Video、Video Edit、Action、Image、Image Context、4K upscaler；純 2D 影片預訓練+1,000 步微調可得 3D 模型（SVD 論文）；不做顯式 3D。技術：latent diffusion 壓縮（含時間維度）；flow matching/rectified flow 以 ODE 取代 SDE、不要求標準常態、採樣更快；SD3 沿資料→噪聲軌跡分配算力（結構近噪聲、高頻近乾淨）；SDXL refiner 真身是一個未發布、結構差但高頻好的完整 diffusion 模型；Kontext 始於「模型已知帽子在狗上」的關係資料假設，4–6 小時訓練見泛化，之後數月資料工程+Axel 蒸餾；目標擺脫吃角子老虎機式提示。FLUX 3 Action：7B、預測每關節六自由度動作+影片、chunk 9–21 幀、約 10 FPS、無高層 planner、閉環；工業微調約 4 小時資料，較基線省 8x；目標 in-context 一次示範即會。預測 2027 機器人元年（製造業先），後期家用。爭議：影片是否真懂物理、world model 定義、7B 通用性、8x 效率缺基準、開放權重未來未談。 ｜ 2026-11-17 15:00Z 新增文章（非集數）〈Cloudflare Joins the Jevolution and Labels Itself a Neolab〉（Richard MacManus，約 8,100 字）：Cloudflare AI Platform 產品負責人 Michelle Chen 於 AI Engineer Code Summit 宣布 Cloudflare 為 neolab；Clef＝Jev 複製品（2 週做出，TypeSafe 花 2 年）；Clairic＝首個「System One extraction model」，從非結構化輸入一次前向抽取帶型別值（發票訂單號例）；未來或做推理模型/LLM 但只做 post-training、不從零預訓練；自建模型理由＝Jev 閉源跑不了＋中國開源模型監管風險＋授權漲價；Cloudflare Q3 2026 營收 $782M、+39% YoY、年化 $3B，不符 Deedy Das neolab 定義一半條件；無任何 benchmark 公布。 同窗口 AINews 11-17 09:24Z：Perplexity $1B ARR（年初<$250M、8月>$750M）；Qwen4-Max 43 分/$3.27（34→43，$10.02→$3.27，輸出-39%，2.4T/71B active）；Kimi K3.1 Pro Terminal-Bench 4.0 67% vs Qwen 48%；Anthropic S-1 H1 $16.3B、算力成本 251%→48% 營收；Databricks 開放模型 token 7.3%→30.9%/3.5 月；OpenAI 給 Apollo/METR/Transluce/Goodfire 內部存取但無 Slack、無權重、評測者可被挑選。",
-   "lastPostPubDate": "2026-11-18T10:19:04.000Z",
-   "lastPostTitle": "[AINews] GPT-6.2 Astra, the #2 Frontier Model is better and 20%-600% cheaper, but has mixed reviews; 6.2 Sol likely main workhorse"
+   "note": "約 70 分鐘，主持 Basil Chatha，官方逐字稿。Cristina Cordova：Linear COO（2023 加入，當時 40 人、1 位銷售；前 Stripe 7.5 年、Notion 平台/合作、First Round 合夥人）。Linear：7 年、融資 $134M、ARR 破 $100M、40,000+ 付費、NRR 177%、8 月 $99M 老股轉讓 @ $2.5B、約 170 人（同階段一半人手）、C-level 只有 3 創辦人+她。Agent 建立 issue 比例：一年前 3% → 現在 >50%；MCP server 2025-05（同類首個）。論點：只做「DB+MCP」是商品化；盯 agent usage 與 app usage 兩條線，agent 升 app 不升=變commodity；小公司可自我吞噬（vs Google 搜尋廣告兩難）。GTM：從未聘 SDR、不做 FDE（solutions engineer 陪 AE，必要時通宵做 ServiceNow 整合）、支援不外包、AI 起草人審核送出（3.5 年無支援升級投訴）。定價：想要 outcome-based（Intercom Fin $0.99/解決對話）但 triage 價值難定義；座位保留、Linear Agent 對話免費、coding session 按 API 價+小 markup、Loops 用 AI credits；新 AI 功能免費 beta 並預告收費，價格由高往低。AI 預算：企業另切一筆錢、買家改簽 1 年約與付費 pilot；部分「一夜 $100M」只是幾張 $30–40M 國防/大律所合約；「續約時就知誰的 ARR 是真的」。組織：Stripe 40% 規則（≥40% 工程/產品/設計/資料）；work trial 做真 GTM 計劃；2023 加入三週即刪「攻企業」目標，先打 growth-stage switching 客；2025 企業路線圖因 agent 而被丟棄。"
   },
   "no_priors": {
-   "lastEpisodePubDate": "2026-11-12T11:00:00.000Z",
-   "lastEpisodeTitle": "Powering AI-Driven Drug Discovery with President of Isomorphic Labs Max Jaderberg",
-   "lastFeedItemPubDate": "2026-11-12T11:00:00.000Z",
+   "lastEpisodePubDate": "2026-11-19T12:00:19.000Z",
+   "lastEpisodeTitle": "Superintelligence Needs the Physical World with CEO and Co-Founder of Arda Bob McGrew",
+   "lastFeedItemPubDate": "2026-11-19T12:00:19.000Z",
+   "lastFeedItemTitle": "Superintelligence Needs the Physical World with CEO and Co-Founder of Arda Bob McGrew",
    "newEpisodes": [],
-   "lastFeedItemTitle": "Powering AI-Driven Drug Discovery with President of Isomorphic Labs Max Jaderberg",
-   "note": "39:15（2355 秒），主持 Elad Gil。上輪窗口漏掃，本輪補上。僅官方 show notes + 17 章節，無逐字稿（no-priors.com 連線被拒）。要點：藥物發現由 discovery→precision engineering；AlphaFold 為深度學習在生物學可泛化的 proof of concept；學習複利→隨規模泛化；in-silico 取代動物實驗；疾病領域/靶點類別/模態無關的設計引擎；多藥雞尾酒跨路徑；lifespan + healthspan。"
+   "note": "59:33（3573 秒），Sarah Guo + Elad Gil。完整自動字幕已抓。McGrew：OpenAI 前 Chief Research Officer、Palantir 十年（工程/產品/FDE 原型）、2005 史丹佛 AI 博士退學；現 Arda CEO。核心：hard takeoff 論證「straightforwardly wrong」，研究員非瓶頸、GPU/實驗才是；自動化研究員=一次性 S 曲線（如 GPT-4o→o3），非 RSI；GPU 現僅發揮 35% 產出發現潛力，自動化或推至 90%，90→99 差別不大。超智慧需物理世界：智能變便宜後稀缺的是 perception + action；Dario「data center 一國天才」被困在 data center。Arda=「製造工程師的 Cursor」：與 Anduril 合作（註冊前一天開始談、1 月取存取、4 月首位用戶），actuator virtual build 由數天→90 分鐘，現覆蓋 Anduril 全產品部門（無人機、導彈、Fury CCA）；目標 7 天設計/重構自動化產線。製造經濟：iPhone 每年 75% 零件更換、僅 25% 高度自動化、其餘人手；亞洲約 100 萬組裝工 vs 約 1 萬製造工程師；汽車產線 2 年/$200M/同款 7 年；iPhone 需 25%→90% 自動化才划算。機械人：兩臂一鏡頭（或一臂一鏡頭）足夠、非人形；封閉世界（產線）用感知+RL 操縱鬆掉校準；傳統自動化=Rube Goldberg，一半設計一半 calibration；現有臂已能做 90% 產品，瓶頸是 CapEx 每年重設計。模型策略：不訓練自家大模型，前沿模型做 orchestrator + 專用 motion planning/CAD 工具；Fable/Astra out-of-box 強但慢且難微調→Pi/General 機會。FDE：產品策略非顧問，sponsor+真用家缺一不可；「不存在很大的組織，OpenAI 不會想要什麼，Sam 想要」。Fermi：文明以近光速擴散，故只在到達前幾分鐘/幾年可見，「也許我們就是那道波」。自複製工廠：十年內把更多地殼變成 data center，machine tools 本來就是造機器的機器，差別是智能化。"
   },
   "cognitive_revolution": {
    "lastEpisodePubDate": "2026-11-14T09:05:36.000Z",
@@ -113,5 +114,9 @@
   "cognitive-revolution": "https://feeds.megaphone.fm/RINTP3108857801",
   "latent-space": "https://www.latent.space/feed",
   "dwarkesh": "https://www.dwarkesh.com/feed"
+ },
+ "zhChecked": {
+  "date": "2026-11-20",
+  "note": "張小珺 157（11-18）已於 11-19 覆蓋；Crossing 11-15、42章經 11-14、屠龍 11-09、矽谷101 11-09 均舊集；xyzfm RSS 本機 IP 403，改用 Apple Podcasts 目錄 API 核對。"
  }
 }
