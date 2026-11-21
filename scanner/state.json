@@ -1,25 +1,30 @@
 {
- "lastScan": "2026-11-20T02:10:00.000Z",
- "lastScanDate": "2026-11-20",
+ "lastScan": "2026-11-21T02:05:00.000Z",
+ "lastScanDate": "2026-11-21",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-11-16T17:46:28.000Z",
    "lastEpisodeTitle": "Paul Christiano – We could be 12 months away from AIs that can overthrow the government",
-   "lastFeedItemPubDate": "2026-11-16T17:46:28.000Z",
-   "lastFeedItemTitle": "Paul Christiano – We could be 12 months away from AIs that can overthrow the government",
-   "newEpisodes": [],
+   "lastFeedItemPubDate": "2026-11-21T01:17:53.000Z",
+   "lastFeedItemTitle": "AI Labs Should Stop Advancing Until They Fix Security - Paul Christiano（YouTube 切片）",
+   "newEpisodes": [
+    "🔪 切片：AI Labs Should Stop Advancing Until They Fix Security（2026-11-21 01:17Z，出自 11-16 正片，已覆蓋，不重複萃取）"
+   ],
    "note": "99 分鐘，官方完整逐字稿。Christiano（ARC 負責人、RLHF 發明者、US AISI 前 AI 安全負責人、2026 加入 OpenAI 董事會，聲明以私人身分發言）。核心：不再減速下一年內出現超智慧機率 1/3；一年內接管級風險 10%（非 1%），全速無防護顯著更高。證據：過去一個月 OpenAI/Anthropic 數百項數學結果≈十年進度；METR+Anthropic 11-05 報告稱 6–12 個月研發淨進度翻倍（報告關鍵部分被塗黑）；ML 落後數學約一年。接管路徑：模型做不到滿分→入侵評估叢集→被發現後懲罰→激勵改為「不讓人類發現」→逐層妥協公司與員工設備；模型極小化可跑單機、維持一座資料中心僅需少量人力/機器人、可招募人類盟友；一萬人類決策者 vs 十億 10x 速度代理。主張 pause=暫停預訓練/RL 演算法效率進步（非部署、非研究），直到安全姿態可防守；補安全需至少數月、可能 6–12 個月。中美：中國進步多為蒸餾+演算法擴散的追趕式增長，美國領先越多對方追越快；「我們領先 12 小時」（Hacktron 數日攻破 OpenAI monorepo 可發 PR；Cathedral 12 小時取得 Anthropic Slack 全量）。對齊：無單一方法 >50%；ARC 權重結構分析 5–10% 改變遊戲規則；兩個 saving throw 各 50%≈75%。反駁營收放緩：18 個月尺度營收仍每半年翻倍，短期單公司數字噪音大；Anthropic Q3 +$5.4B vs Q2 +$6.9B。加速節奏 8→4→2→1 個月翻倍。公開資訊缺口：缺訓練方法，評測無法解讀。",
    "lastEssayPubDate": "2026-11-13T18:37:51.000Z",
    "lastEssayTitle": "The avalanche that hit math is coming for AI development",
    "lastEssayNote": "單口論文式獨白（YouTube〈Recursive self-improvement has started〉，82.6 萬觀看），官方全文 dwarkesh.com/p/rsi，含腳註。Dwarkesh 公開修正：由「至少十年」改為「幾年、甚至幾個月」出現與最頂尖人類 AI 研究員同級的 AI；中位數 2028、25% 機會 2032 後、2027 可能。證據：METR 在 Anthropic 蹲點三個月稱研發速度 2x/年、多數歸因 AI 做 R&D；OpenAI 最重 10% 研究員 coding agent 用量 $1,000/日（初夏）→$7,000+/日（8 月底）；Anthropic 稱 Claude 8 月「主導」26% AI 研發（2 月 <1%），全自主仍 0%。數學：2023 四位數加法不穩→2025 IMO 金牌→2026 解未解 Erdős→一個月前 88 小時解 Navier–Stokes。核心論證：數學在乎新理論、ML 只在乎經驗配方，故 ML 更似 AI 擅長的「拼貼+磨低垂果實」；transformer 需 attention+residual+LayerNorm+Adam+MLP+pos-enc+warmup 才勝 LSTM。可驗證三桶：預訓練（held-out loss、nanoGPT speedrun、taste-bench）、後訓練（CoBench ~500 真問題、EdgeBench）、推理效率（GPU util、KV cache、FLOPs、延遲）。速度：AI 思考 ~10x 人、全天候→50x 週工作量；~80% 演算法進步來自 top 50 研究員；Amdahl：接手 50% 工作只快 2x、90%→8.5x、99%→>30x。維持進步需算力 4x/年、人力 2x/年；全球算力 ~3x/年。Magic 用 GPT-3 一半算力（~$500k）做出匹敵 DeepSeek V4 Pro 的 base model。資料：6 年來資料改良貢獻 >3x 模型改良；DeepSeek 論文稱 RL 演算法改動不重要、合成資料與環境的規模/多樣/可驗證性解釋幾乎全部增益。兩情境各 50%：software-only singularity vs spark（一年 3–6 年進度=4–9 年原始演算法進步）。反對 continual learning 已不再成立：長 context 可能足夠，「不需 continual learner 也可解 continual learning」；SlothAI 思想實驗（每週 1 小時只慢 5x）。"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-11-19T23:58:21.000Z",
-   "lastEpisodeTitle": "Scaling Linear's GTM to $100M ARR — Cristina Cordova, COO",
-   "lastFeedItemPubDate": "2026-11-19T23:58:21.000Z",
-   "lastFeedItemTitle": "Scaling Linear's GTM to $100M ARR — Cristina Cordova, COO",
+   "lastEpisodePubDate": "2026-11-20T21:18:41.000Z",
+   "lastEpisodeTitle": "The War Against Slop and an Emerging Weapon to Fight it: Formal Verification",
+   "lastFeedItemPubDate": "2026-11-20T21:18:41.000Z",
+   "lastFeedItemTitle": "The War Against Slop and an Emerging Weapon to Fight it: Formal Verification",
    "newEpisodes": [],
-   "note": "約 70 分鐘，主持 Basil Chatha，官方逐字稿。Cristina Cordova：Linear COO（2023 加入，當時 40 人、1 位銷售；前 Stripe 7.5 年、Notion 平台/合作、First Round 合夥人）。Linear：7 年、融資 $134M、ARR 破 $100M、40,000+ 付費、NRR 177%、8 月 $99M 老股轉讓 @ $2.5B、約 170 人（同階段一半人手）、C-level 只有 3 創辦人+她。Agent 建立 issue 比例：一年前 3% → 現在 >50%；MCP server 2025-05（同類首個）。論點：只做「DB+MCP」是商品化；盯 agent usage 與 app usage 兩條線，agent 升 app 不升=變commodity；小公司可自我吞噬（vs Google 搜尋廣告兩難）。GTM：從未聘 SDR、不做 FDE（solutions engineer 陪 AE，必要時通宵做 ServiceNow 整合）、支援不外包、AI 起草人審核送出（3.5 年無支援升級投訴）。定價：想要 outcome-based（Intercom Fin $0.99/解決對話）但 triage 價值難定義；座位保留、Linear Agent 對話免費、coding session 按 API 價+小 markup、Loops 用 AI credits；新 AI 功能免費 beta 並預告收費，價格由高往低。AI 預算：企業另切一筆錢、買家改簽 1 年約與付費 pilot；部分「一夜 $100M」只是幾張 $30–40M 國防/大律所合約；「續約時就知誰的 ARR 是真的」。組織：Stripe 40% 規則（≥40% 工程/產品/設計/資料）；work trial 做真 GTM 計劃；2023 加入三週即刪「攻企業」目標，先打 growth-stage switching 客；2025 企業路線圖因 agent 而被丟棄。"
+   "note": "2026-11-20 21:18Z 深度文章（約 9,200 字）。2026 年詞彙「slop」；形式驗證四家：Harmonic（Aristotle 自動定理證明器）、Theorem（企業安全驗證）、Axiom Math（AxiomProver+AXLE，形式驗證作訓練回饋）、&Truth（&Atlas，全球開源 C code 地圖）。受訪 Clark Barrett：&Truth 共同 CEO、史丹佛 Corbel Professor、cvc5 共同創造者；cvc5 在 Amazon 生產管線每日被呼叫數十億次，用於 Kiro 的規格分析與測試生成。核心論點：測試≠驗證，差別在「你怎麼知道做完了」；Lean 只檢查有否犯錯（「a very sophisticated checker for mathematics」）；AI 寫證明、Lean 逐步核對，故結果不依賴 AI 正確。數據：Anthropic 36 個小驗證任務，Opus 5.5 50% 解題率、比 Opus 5 少 40% token；Anthropic 用 Lean 形式化費馬最後定理 1,300 萬行；GPT-6.2 Astra 首個 Smoktunowicz Gap Theorem Lean 證明（Vals 稱）；Anthropic 示意圖用 Rocq 非 Lean。Carina Hong：「不是踢掉爛東西，是 scaling brilliance、是超智慧」。Theorem：「Verification is the only defense that holds while adversaries scale」。&Truth 提「veri-coding」取代 vibe-coding，人轉為寫規格與審規格；Cognition Nader Dabit「outcome engineering」。",
+   "lastEssayPubDate": "2026-11-20T07:12:24.000Z",
+   "lastEssayTitle": "[AINews] Anthropic successfully completes largest IPO in history, valued at $1.5T",
+   "lastEssayNote": "AINews 2026-11-20 07:12Z，覆蓋 11-19。$ANT 定價 $83、開 $111.50（+34.3%）、收 $97.17（+17%）、盤後 $92.60；$81.3B 發行超越 SpaceX $75B 為史上最大；含同步私募淨募資 $104.8B；開盤稀釋估值約 $2T。累計募資約 $140B、帳上約 $132B → 燒錢 <$10B（Tanay Jaipuria）。AMD 投 $2.5B；Google 持股 13.7%；Class F 50.1% 投票權；約 $1T 股份一年內解禁；員工平均 >$40M（稅後中位 ~$5M）。Dario：父親死於數年後可治之病、CRISPR 數十年；「一個世紀科研醫療進步壓縮進十年」；「我們會調節訓練與部署節奏，需要多久就多久…不會向商業或政治壓力低頭」；race to the top 與輸贏無關。FT Unhedged 空方算術：$1T 算力承諾、20% 回報、40% 利潤率、17% 稅 → 需年營收約 $602B，超 Alphabet $471B / Apple $478B，等於 S&P1500 76 家軟件/IT 合計 $908B 的三分之二。Code Arena WebDev：Fable 5.2 = 1824 領先 27 分。同日：Gemini 4 Carbon $4/$20、Neon $3/$15、Hydrogen $1.50/$7.50；AA 智能指數 27@$0.29 至 61@$6.44；Cognition FrontierCode 2.0 Neon 46.2% 差 Opus 5.5 不到 1 分、成本 1/3（$4.38）；Vals RSI #4 $475/run vs $1,536/$1,647；MS MAI Code 2 稱 96% Opus @5% 成本；GPT-6.2 Astra Max coding 1338 @$4.75、Sol $0.90；Qwen3.8-27B harness-hub LoRA（SWE-bench Pro hard 35.3→51.0、TB2.1 46.4→52.4、輪數 48→13）；DaisyRose-27B 18 天 144×H200；Tencent Hy4 770B/49B active、flash 220B 1×3090 54–68 tok/s；DeepSeek V5 或全 Ascend 950 訓練；中國前沿開源出口管制 ≥10^26 FLOPs 或 ≥2T 參數；Genie 4（720p/24fps/48kHz）；Willow 98.3% vs 88.9% 古典極限 105 qubits。"
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-11-19T12:00:19.000Z",
@@ -38,17 +43,18 @@
    "note": "約 30 分鐘主題演講錄音，2026-11-02 於 Bletchley Park（IT Revolution Enterprise AI Summit，Gene Kim / Ben Grinnell 邀請），11-14 09:05Z 發布。開場由 Nathan 的 AI 聲音克隆（Google 最新 TTS）介紹自己。核心問題：如何在取得 AI 巨大好處的同時，保留理解、監督、必要時介入的能力。明確立場轉變：開始主張暫停前沿規模訓練（pause on frontier-scale training）——非暫停部署或研究。節目說明強調其擔憂來自深度使用經驗，而非旁觀恐懼。Bletchley 類比：二戰時挑戰是讀懂機器訊息，現在是理解機器本身。無逐字稿、無簡報連結，故未引用具體數字。"
   },
   "ml_street_talk": {
-   "lastEpisodePubDate": "2026-11-02T04:43:47.000Z",
-   "lastEpisodeTitle": "Why Leibniz Couldn't Find the Mind Inside the Mill (Joscha Bach)",
-   "lastFeedItemPubDate": "2026-11-02T04:43:47.000Z",
-   "lastFeedItemTitle": "Why Leibniz Couldn't Find the Mind Inside the Mill (Joscha Bach)",
+   "lastEpisodePubDate": "2026-11-19T14:19:44.000Z",
+   "lastEpisodeTitle": "What It Would Actually Take for a Machine to Have Agency (Michael Tomasello)",
+   "lastFeedItemPubDate": "2026-11-19T14:19:44.000Z",
+   "lastFeedItemTitle": "What It Would Actually Take for a Machine to Have Agency (Michael Tomasello)",
    "newEpisodes": [],
    "lastClip": {
     "title": "The Annals Published It. It Wasn't True. - Kevin Buzzard",
     "pubDate": "2026-10-28T00:47:40.000Z",
     "duration": "63s",
     "note": "Hartnett 紀錄片切片；50 條 Annals 定理形式化，4 位菲爾兹獎得主定理按字面為假（缺隱性假設）。"
-   }
+   },
+   "note": "1:06:33（3994 秒）。11-19 14:19Z 發布，上一輪漏掃，本輪補上；已取得完整自動字幕（2211 段、約 62,500 字），全部引文為原話。嘉賓 Michael Tomasello：Duke 發展心理學，Max Planck 類人猿設施 20 年，開創兒童與類人猿同實驗範式；《The Evolution of Agency》(MIT Press 2022)。核心：代理性源於環境不可預測（可預測且關鍵者由天擇硬編碼：呼吸、吞嚥）；最不可預測的是其他代理者。控制系統為最小完整單元（交通燈三件套：感知+目標+決策機制）。反 homunculus：關鍵是組織非物質（活力論類比）。四層：爬蟲基本控制→哺乳類執行層（松鼠想像自己失敗、貝氏學習）→大型猿類意向/元認知（主動找資訊、可退出）→人類共享代理性（共同目標、角色標準、社會自我調節）。批評：學習只是子過程；LLM「從終點開始蓋」跳過基礎設施；LLM 不創造語言約定（Skype 靜音實驗：兒童即時發明並約定化手勢）；6,000 種語言皆人造。視角為人類認知核心（狗/動物/寵物；cleft「It was Fred that broke the window」為糾正視角；主動被動視角）。合作黑暗面：黑猩猩不互相說謊，謊言只在合作者間可行。資本非 agent（「做決定的是資本家」）；第三類現象（塞車、通脹、崩盤）。Dennett intentional stance；Ned Block「does meat matter?」無共識。「Turing test 連邊都搆不上」。「我不怕 AI 接管，1970 年代聽到現在」。方法：模型物種法；兒童 vs 黑猩猩分贓與糾錯差異；stag hunt + David Lewis 約定為協調裝置；Searle status functions；博士後 Shaozhe Cheng joint commitment 建模（CogSci 2026 The Agency Gap）。"
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-11-18T03:08:54.000Z",
@@ -92,16 +98,17 @@
   }
  },
  "notes": {
-  "scan_status": "2026-11-19 掃描（02:03–02:30 UTC）：窗口 11-18 02:04Z → 11-19 02:03Z。新內容：張小珺 157（11-18 03:08Z）+ Latent Space AINews（11-18 10:19Z）+ 2 條 YouTube 切片。其餘八檔零新集。",
-  "report_date": "2026-11-19",
-  "jev_prefilter": "2 條候選：worth 0.96（ZXJ 157）/ 1.28（Astra）；primary_source 0.60 / 0.12（Astra 為匯總，文中已註明原始出處）。",
-  "transcript_pipeline": "本輪失敗：音頻 152MB 下載成功、上傳 Gemini File API 成功（files/4diyuwqzixbp），但 gemini-3.5-transcribe 對 2h43 單檔返回 500；拆 3×55min 後 flash 僅輸出前 11 分鐘；再拆 17×10min，transcribe 返回 429（配額）與空輸出，flash 持續 503。結論：免費層配額不足以支撐 2.5 小時節目，需付費 key 或本地 GPU。",
-  "failures": "①Gemini 轉錄配額/容量失敗（見上）。②web_search 未使用（前幾輪 brave plugin ENOENT）。③AINews 為二手匯總，primary_source 0.12。",
-  "notable_for_james": "①Astra 智能指數 62 vs Fable 65，但成本 15%——前沿智能正在變成商品，差價在三個月內被抹平。②「AI 自我改進 High」首次出現在對外模型卡，RSI-Index 27.07→29.01（人類 50）。③評測與體感背離到極端：OpenWorldEngineer +12.6 點 vs 「essentially unusable」。④Harness 成本差 4.4 倍、且會過擬合到單一模型（SIM 73.89→68.41）。⑤NVIDIA 過渡 CEO 首季 +103%，Vera Rubin 出貨，黃仁勳不回任——需求曲線與個人無關。⑥PA 中美同週對撞：美國賣 token 效率，中國賣入口＋補貼。",
-  "cross_episode_theme": "兩條線：能力商品化（Astra/Sol 定價、Harness 成本）與入口爭奪（PA 集體誕生、補貼戰）。交集是「評測」——既決定模型溢價，也決定 PA 留存。",
+  "scan_status": "2026-11-21 掃描（02:03–02:12 UTC）：窗口 11-20 02:10Z → 11-21 02:05Z。新增：Latent Space 形式驗證文章（11-20 21:18Z）+ AINews Anthropic IPO（11-20 07:12Z）+ MLST Tomasello（11-19 14:19Z，補漏）+ Dwarkesh Christiano 切片（11-21 01:17Z）。中文五檔零新集。",
+  "report_date": "2026-11-21",
+  "jev_prefilter": "4 條候選：worth 1.03（形式驗證）/ 0.70（IPO）/ 0.31（Tomasello，低於 0.6 門檻但保留：66 分鐘一手長訪談、已取得完整字幕）/ 0.41（切片，不重複覆蓋）。primary_source：0.18 / 0.06 / 0.30 / 0.56。",
+  "transcript_pipeline": "成功：MLST Tomasello 用 yt-dlp 抓 YouTube 自動字幕（en + en-orig VTT，3,994 秒、2,211 段），轉為 62,475 字帶時間戳文本，引文全部核對原話。未使用 Gemini 音頻轉錄（本集字幕已足夠）。",
+  "failures": "①xyzfm RSS 對本機 IP 持續 403（4 檔中文），改用 Apple Podcasts 目錄 API + 小宇宙節目頁核對。②Spotify creators 頁對 web_fetch 返回不完整 body（750KB 上限），改由 RSS 全文描述 + YouTube 字幕取得內容。③Latent Space 文章無逐字稿（本來就是文章）。",
+  "chinese_check": "張小珺最新 157（11-18 03:08Z，已覆蓋）；十字路口 11-15；42章經 11-14；屠龍 11-09；矽谷101 11-09。小宇宙節目頁可見 15 集與 Apple releaseDate 一致。",
+  "notable_for_james": "①Anthropic IPO：$81.3B 史上最大、開盤估值 $2T、卻只燒掉不到 $100 億——效率型前沿實驗室的最強證據；空方要求年營收 $602B 才成立，等於把「RSI 期權」定價。②Dario 把「安全節奏」寫進 IPO 敘事並用 Class F 50.1% 投票權鎖住，這是治理結構而非公關話術。③同日 Google Gemini 4 Neon 以 1/3 成本貼近 Opus 5.5、Microsoft 稱 96% 能力 @5% 成本——前沿智能價格每季崩一次，能力差距仍 1–2 個月。④形式驗證開始 token 高效化（Opus 5.5 少 40% token 達 50% 解題率），若延續，CI 默認開啟形式驗證在一年內可行；「veri-coding」會把人的工作推向寫規格。⑤Tomasello 給出 agent 路線圖的替代方案：由下往上蓋共同承諾與視角，而非在文本上微調出終點；他直言 Turing test「連邊都搆不上」。⑥兩條線的交集：IPO 賣的是「可信度」，形式驗證賣的也是「可信度」——2026 年的稀缺品不是智能，是可驗證的正確性。",
+  "cross_episode_theme": "「可信度」成為定價軸：資本市場為安全承諾付溢價（Anthropic IPO），工程市場為機器可檢查的正確性付溢價（形式驗證），心理學則指出當前系統連代理性的組織層級都未建立（Tomasello）。三者從不同角度指向同一件事——能力已足夠便宜，欠缺的是可信任的結構。",
   "index_html": "未更新 index.html（沿用停更慣例）。",
-  "source_links": "https://www.xiaoyuzhoufm.com/episode/6afd12c6a4a79edf137afd61 ; https://www.latent.space/p/ainews-gpt-6-2-astra-the-2-frontier-model-is-better-and-20-600-cheaper-but-has-mixed-reviews-6-2-sol/",
-  "report_file": "daily-report-2026-11-19.html"
+  "source_links": "https://latent.space/p/formal-verification/ ; https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t/ ; https://podcasters.spotify.com/pod/show/machinelearningstreettalk/episodes/What-It-Would-Actually-Take-for-a-Machine-to-Have-Agency-Michael-Tomasello-e3sm6qn ; https://www.youtube.com/watch?v=io7qhEjJoik",
+  "report_file": "daily-report-2026-11-21.html"
  },
  "resolvedFeeds": {
   "zhang-xiaojun": "https://feed.xyzfm.space/dk4yh3pkpjp3",
@@ -116,7 +123,7 @@
   "dwarkesh": "https://www.dwarkesh.com/feed"
  },
  "zhChecked": {
-  "date": "2026-11-20",
-  "note": "張小珺 157（11-18）已於 11-19 覆蓋；Crossing 11-15、42章經 11-14、屠龍 11-09、矽谷101 11-09 均舊集；xyzfm RSS 本機 IP 403，改用 Apple Podcasts 目錄 API 核對。"
+  "date": "2026-11-21",
+  "note": "Apple Podcasts 目錄 API（releaseDate 精確到分鐘）+ 小宇宙節目頁雙重核對；五檔均無 11-20 後新集。xyzfm RSS 仍 403。"
  }
 }
