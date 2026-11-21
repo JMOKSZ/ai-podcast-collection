@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「圖靈測試連邊都搆不上」——Tomasello 把代理性拆成四層，然後指出 LLM 是從終點開始蓋</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  td { color: #444; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.55rem; }
+    table { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="../index.html">← 返回播客日報</a>
+  <div class="ep-num">Machine Learning Street Talk · 2026-11-19</div>
+  <h1>「圖靈測試連邊都搆不上」——Tomasello 把代理性拆成四層，然後指出 LLM 是從終點開始蓋</h1>
+  <div class="meta">
+    <div>〈What It Would Actually Take for a Machine to Have Agency — Michael Tomasello〉</div>
+    <div>出品：Machine Learning Street Talk（MLST）<span>·</span>主持：Tim Scarfe 等<span>·</span>嘉賓：Michael Tomasello</div>
+    <div>發布：2026-11-19 14:19 UTC<span>·</span>1 小時 06 分 33 秒<span>·</span>官方章節 + 完整自動字幕（3,994 秒、2,211 段）</div>
+    <div>來源：YouTube 完整字幕；引語按時間戳標注，中文為譯述</div>
+  </div>
+</header>
+
+<p>這一集很奇怪。一位七字頭的發展心理學家，坐在一個以深度學習研究為主的頻道裏，談爬蟲、松鼠、黑猩猩與兩歲小孩；整集沒有提到 loss function、attention、scaling law，卻可能是今年對「agent」這個詞最鋒利的一次定義清理。</p>
+
+<p>Michael Tomasello 在德國 Max Planck 演化人類學研究所主持類人猿設施二十年，開創了「把兒童與類人猿放進同一個實驗」的比較研究範式，十年前回到母校 Duke。他寫《The Evolution of Agency》（MIT Press, 2022）時，對象是動物行為學界——</p>
+
+<blockquote class="strong">
+「我寫這本書是給做動物行為的人看的。結果 AI 圈把它撿走了。」
+<span class="attribution">— Michael Tomasello，本集開場自述（意譯）</span>
+</blockquote>
+
+<p>AI 圈撿走它，是因為這本書提供了一個罕見的東西：一個<strong>不需要假設意識、不需要假設心靈實體</strong>，卻能把「代理性」層層拆開的框架。而 Tomasello 在這一集把框架推到最後一步，然後給出一句在 2026 年極度不受歡迎的判斷：</p>
+
+<blockquote class="strong">
+「我常說，圖靈測試連邊都搆不上。不是『接近但不足』，是連接近都談不上。」
+<span class="attribution">— Michael Tomasello，01:05:20（全片首尾各說一次）</span>
+</blockquote>
+
+<p>下面我按他的論證順序重構：<strong>代理性是什麼、它為什麼長成四層、學習為何只是子過程、以及 LLM 究竟跳過了哪一層地基。</strong></p>
+
+<h2 class="section-title">一、代理性的最小單元：不是物質，是組織</h2>
+
+<p>Tomasello 先處理一個千年老問題：是什麼讓一個東西成為「代理者」（agent）？他的答案從一個課堂練習開始。</p>
+
+<p>設想一個只按計時器運作的笨交通燈。你怎樣把它變聰明？答案只有三步：它必須能<strong>感知</strong>車輛；它必須有<strong>目標</strong>（例如兩邊車流大致相等）；它必須有一個<strong>決策機制</strong>，根據感知與目標決定如何讓世界符合目標。三件套齊備，它就脫離了刺激—反應，成為最小的代理者。</p>
+
+<p>這個定義的關鍵在於：它完全不含「意識」「感受」「自我」這些詞。Tomasello 借用 20 世紀初生物學的活力論（vitalism）之爭作類比——</p>
+
+<blockquote>
+「生命不是因為有某種特殊物質，而是因為同樣的元素以不同方式組織。代理性也一樣：不是奇蹟般的小人（homunculus），不是神奇的心靈實體，而是行動、感知、認知、目標與欲望之間的組織。」
+<span class="attribution">— 本集論述，意譯</span>
+</blockquote>
+
+<p>他刻意選 thermostat 作為例子，理由很樸素：「你可以觸摸它，它是物理機制。」換句話說，<strong>代理性是一個架構問題，不是材質問題。</strong>這一點對他後面評價 LLM 至關重要——他不是在說「硅不夠暖」，而是在說「你的組織層級不夠」。</p>
+
+<div class="highlight-box">
+<strong>為什麼需要代理者？</strong>因為環境不可預測。若某行為在演化上至關重要、而環境可預測，大自然就把它硬編碼進去——呼吸、吞嚥、性行為。需要「決策者」的唯一理由，是環境不可預測；而最不可預測的東西，就是其他代理者：獵物、掠食者，以及同種的競爭者與合作者。
+</div>
+
+<blockquote class="strong">
+「當你需要一個決策代理者，是在環境不可預測的時候。大自然無法預先預測每一種可能的突發狀況，所以它打造一個機制——一個架構，讓個體在當下評估情境、做出情境敏感的彈性決定。」
+<span class="attribution">— Michael Tomasello，00:02:28–00:03:50</span>
+</blockquote>
+
+<p>這句話值得停一下。它把「智能」從一個名詞（有多少）變成一個關係（相對於什麼環境）。也解釋了為什麼他會說：一個完全不學習的 thermostat 式組織，理論上也能運作——只要它的決策規則夠好。學習不是代理性的定義條件，只是生物在不可預測世界裏的一個省力裝置。</p>
+
+<h2 class="section-title">二、四層堆疊：由爬蟲到共享代理性</h2>
+
+<p>Tomasello 明確說他只談「通往人類的那一條線」，不做全域分類。四層如下：</p>
+
+<table>
+  <tr><th>層級</th><th>代表物種</th><th>新增能力</th><th>不可預測性的來源</th></tr>
+  <tr><td>基本控制</td><td>爬蟲類</td><td>簡單控制迴路、目標狀態調節</td><td>獵物（其他代理者）</td></tr>
+  <tr><td>目標導向／執行層</td><td>哺乳類</td><td>executive function；能想像尚未發生的狀態</td><td>多步規劃中的失敗可能性</td></tr>
+  <tr><td>意向性／元認知</td><td>大型猿類</td><td>形成意圖、執行前中止、主動搜集資訊</td><td>自身知識的不確定性</td></tr>
+  <tr><td>共享代理性</td><td>人類</td><td>共同目標、角色分工、互相問責</td><td>他人的角色履行</td></tr>
+</table>
+
+<p>第二層的例子很漂亮。他談松鼠：看起來要跳過樹枝，又爬下去，改走另一根。為什麼？</p>
+
+<blockquote>
+「牠能想像自己失敗。」
+<span class="attribution">— Tomasello 論松鼠的猶豫（意譯）</span>
+</blockquote>
+
+<p>這不是「試錯學習」，而是<strong>在行動前模擬一個未發生的世界</strong>。Tomasello 說，學習因此在這一層變成貝氏式的假設生成與機率更新——但重點仍然是決策，不是學習。</p>
+
+<p>第三層是元認知。大型猿類能在執行意圖前中止，能在後果延遲時主動去尋找更多資訊，面對過難的問題會選擇退出、改做高機率成功的事。他引用 Dennett 的一句話來形容這種「假設可死、人不必死」的能力：</p>
+
+<blockquote>
+「死去的是我的假設，而不是我自己。」
+<span class="attribution">— Daniel Dennett 語，Tomasello 引用</span>
+</blockquote>
+
+<p>第四層才是人類。Tomasello 強調這不是「再上一層」，而是<strong>另一種版本</strong>——共享代理性（shared agency）。它有共同目標、角色分工、以及每個人都知道別人對自己的角色有期待；出錯時，同伴會說「嘿，你在幹什麼？你這樣會讓我們失敗」。</p>
+
+<p>最有說服力的是行為證據，簡單到近乎殘酷：</p>
+
+<ul>
+  <li>合作取得食物後，黑猩猩拿到自己那份就走；人類兒童會<strong>等到同伴也拿到</strong>才結束。</li>
+  <li>同伴沒做好自己的角色，黑猩猩不會糾正；兒童會。</li>
+</ul>
+
+<p>這兩個差異不是「更聰明」，而是「把別人的成功納入自己的目標函數」。這也是他後面批評多 agent 系統的伏筆：<strong>互相反應，不等於共同承諾。</strong></p>
+
+<h2 class="section-title">三、「學習是子過程」——對 RL 範式的本體論批評</h2>
+
+<p>整集最刺人的一段，是他對機器學習研究議程的批評。不是技術細節，而是層級錯置：</p>
+
+<blockquote class="strong">
+「所有 AI 模型幾乎只關注學習。學習、學習、學習。但學習之所以存在，只是為了幫助代理者做出適應性決策。學習是一個子過程。」
+<span class="attribution">— Michael Tomasello（意譯，本集核心批評）</span>
+</blockquote>
+
+<p>這句話的殺傷力在於，它不是在說「RL 不夠好」，而是在說<strong>RL 被放在了錯誤的位置</strong>。按他的框架，主幹是「感知—目標—決策」這個控制迴路；學習是讓這個迴路隨經驗調整的機制。把學習當成為了一切，等於把調整機制當成引擎。</p>
+
+<p>理論上，一個不學習的 thermostat 也能是代理者。現實中，生物會保存經驗、更新策略，但那不改變層級關係。用他的話說：決策是樹幹，學習是支線。</p>
+
+<p>對當前以 scaling + RL 為主的路線，這是一個本體論級別的批評，而不是工程建議。你可以反駁說「大規模學習會湧現決策架構」——但那正是他要檢驗的假設，不是他的前提。</p>
+
+<h2 class="section-title">四、LLM 是「從終點開始蓋」</h2>
+
+<p>那麼 LLM 在這個框架裏是什麼？Tomasello 給了一個很形象的說法：<strong>它從人類成就的頂點切入。</strong></p>
+
+<p>語言並不是憑空出現的。它站在一大堆更基礎的認知能力之上：共同注意（joint attention）、視角切換（perspective-taking）、指物（pointing）、以及約定俗成的創造（conventionalization）。人類嬰兒先學會「我和你看同一個東西」，再學會「你知道我知道」，然後才學會用聲音符號協調這些共享狀態。LLM 直接從終點——海量文本——開始，跳過了整層基礎設施。</p>
+
+<blockquote class="strong">
+「理論上可能，我不排除；但語言建立在這些更基礎的能力上，你能跳過它們直接到最後嗎？我不太確定。」
+<span class="attribution">— Michael Tomasello，論 LLM 能否跳過基礎設施（意譯）</span>
+</blockquote>
+
+<p>他把話說得很清楚，動機也分得很清楚：</p>
+
+<blockquote class="strong">
+「如果你想要的是像現在 LLM 這樣有用的工具，那這層基礎設施當然可以被跳過。但如果你想要它們有代理性，我認為你會需要那層基礎設施。」
+<span class="attribution">— Michael Tomasello，00:55:14</span>
+</blockquote>
+
+<p>這是整集的樞紐。它把爭論從「LLM 有沒有智能」移到「LLM 有沒有代理性所需的組織」。前者可以靠 benchmark 吵十年；後者可以拆成可檢查的清單：有沒有共同注意？有沒有視角切換？有沒有創造約定的能力？有沒有共同承諾？</p>
+
+<h2 class="section-title">五、語言約定：LLM 最明顯缺的那一塊</h2>
+
+<p>Tomasello 說，人類不只<em>使用</em>語言，還<em>創造</em>語言。世界上有 6,000 種語言，全部是人造的約定。這不是修辭——他實驗室做過一個很漂亮的實驗。</p>
+
+<p>讓兩個孩子透過視訊合作完成任務，但<strong>把聲音關掉</strong>。孩子會即時發明手勢；幾輪之內，手勢開始<strong>約定化</strong>——雙方使用同一個手勢、互相修正、形成默契。沒有人教他們，也沒有共同語言作基礎。</p>
+
+<blockquote class="strong">
+「據我所知，大型語言模型不會創造語言約定。它們沒有圍繞主題的論述。」
+<span class="attribution">— Michael Tomasello（意譯）</span>
+</blockquote>
+
+<p>這句話需要小心理解。LLM 當然會生成新詞、新句式；但它們不會<strong>與對話者共同建立</strong>一個雙方都知情、且可被互相問責的约定。約定的本質不是新符號，而是<strong>共同知識</strong>（common ground）：我知道你知道這個手勢的意思，你也知道我知道。</p>
+
+<p>這與 David Lewis《Convention》的論點接上：約定是協調裝置。合作捕鹿是協調問題——「我只在你去的條件下才去，你也只在我去的條件下才去」。語言約定正是人類為了協調活動而創造出來的東西。所以問題不是「模型會不會說話」，而是「模型能不能與你共同建立協調裝置」。</p>
+
+<h2 class="section-title">六、視角：人類認知最被低估的部件</h2>
+
+<p>同一隻動物可以是「狗」、「動物」、「寵物」——取決於你從哪個角度、對誰說話。這種切換對人類而言理所當然，但 Tomasello 指出，其他物種做不到。</p>
+
+<p>更精彩的是他把語法也拉進來。英語的 cleft construction——「It was Fred that broke the window」——為什麼存在？因為<strong>你以為是別人打破的，我在糾正你</strong>。主動句與被動句的選擇，則是在選擇從狗還是從貓的視角敘事。語法不是中性的資訊編碼，它攜帶<strong>說話者對聽者心理狀態的模型</strong>。</p>
+
+<p>這一點對 agent 設計的含義很直接：一個真正有視角的系統，不只知道「事實是什麼」，還知道「你現在相信什麼、我需要修正你哪一部分」。當前的 LLM 在表層可以模仿這種句式，但它是從文本分佈裏學到「這種場合通常這樣說」，而不是從一個關於聽者信念的模型中生成。</p>
+
+<h2 class="section-title">七、合作的黑暗面：說謊只在合作者之間可行</h2>
+
+<p>集裏有一段很黑的觀察。黑猩猩之間不互相說謊——不是因為道德，而是因為在牠們的世界裏，「你說真話若不是對你有利，那根本不會發生」這句話不成立：牠們根本沒有建立起「預設對方說真話」的合作常規。</p>
+
+<p>謊言之所以有效，正因為我們預設他人是合作的、我們是容易上當的。Tomasello 把這稱為合作的黑暗面：<strong>說謊是合作系統的寄生蟲，而不是合作的反面。</strong></p>
+
+<p>他順手拆了幾種政治操作：「他們說」、「我聽到很多人這樣說」、不斷重複——都是在劫持這套自然系統。重複之所以有效，是因為人類的認識論預設「熟悉 = 可信」；把一句話說十次，就能借用這個預設。</p>
+
+<p>這段對 AI 時代的延伸不難想：能夠大規模生成看似來自「很多人」的語言，就等於拿到了這套寄生機制的工業化版本。Tomasello 沒有直接談 deepfake 或輿論操作，但他的框架解釋了為什麼這類攻擊有效——它攻擊的不是事實核查，而是<strong>合作預設</strong>。</p>
+
+<h2 class="section-title">八、資本不是代理者：第三類現象</h2>
+
+<p>主持人問到，市場是否可視為一種超級有機體（super-organism）。Tomasello 劃線：</p>
+
+<blockquote class="strong">
+「你可以說資本傾向流向某處，但做出流向決定的是資本家。」
+<span class="attribution">— Michael Tomasello（意譯）</span>
+</blockquote>
+
+<p>他承認通脹、股市崩盤、塞車這類現象是「第三類現象」——沒有人意圖造成，但由眾多意圖行動湧現。這是哲學家 John Searle 意義下的社會本體論，也與 Harari 所說的「虛構」相鄰：公司是虛構的個體，卻是世界上最有力量的事物之一。</p>
+
+<p>但湧現不等於代理。這一區分對 AI 治理很重要：我們很容易把「系統性結果」擬人化為「系統的意圖」，然後尋找一個可以問責的「它」。Tomasello 提醒，責任仍然落在具體的決策者身上——即使結果是湧現的。</p>
+
+<p>他也提到 Searle 的 status functions：我們把一個人變成總統、把一張紙變成錢、把一個虛構體變成法人。這些都是共享代理性的產物——需要集體承認，也需要角色規範。</p>
+
+<h2 class="section-title">九、對 AI 集體智能的觀察：缺少 joint commitment</h2>
+
+<p>集末，Tomasello 談到當前的「agent 社會」。他的觀察很節制，但方向清楚：現有的多 agent 系統多半只是<strong>互相反應</strong>，缺少共同承諾（joint commitment）與角色規範。</p>
+
+<p>他提到系上的博士後 Shaozhe Cheng 正在用 joint commitment 建模共享代理性，論文《The Agency Gap》將在 CogSci 2026 發表。這條研究線的意義是：把「代理性」從單體屬性變成<strong>關係屬性</strong>——一個系統是否有代理性，取決於它能否與其他代理者建立可問責的共同承諾。</p>
+
+<p>這對當前 agent 架構是直接的批評。LangGraph、AutoGen 式的編排，多半在協調「互相反應的專家」：A 輸出給 B，B 輸出給 C，最後彙總。這種結構可以完成任務，但沒有共同目標的表徵、沒有角色規範的互相檢查、也沒有「我們一起失敗」的問責結構。用他的話說，這是<strong>協調（coordination）而非合作（cooperation）</strong>。</p>
+
+<div class="data-point">
+<span>框架</span> 共享代理性的三個必要條件：①共同目標（joint goal）——不是我幫你完成你的目標，而是我們共享同一個目標；②角色分工（role division）——每個角色有可被他人檢查的標準；③社會性自我調節（social self-regulation）——我會因為「這會讓我們失敗」而調整自己的行為。
+</div>
+
+<h2 class="section-title">十、他的立場邊界：不要把話說得比他更滿</h2>
+
+<p>這一集很容易被兩邊陣營各自挪用，所以邊界要說清楚。</p>
+
+<p><strong>他不認為 LLM 無用。</strong>他甚至說自己每天都用：</p>
+
+<blockquote>
+「我不怕 AI 接管世界。我從 1970 年代就在這裏了，他們從 1970 年代就一直說它會接管世界。我把它看成一個非常重要的工具。」
+<span class="attribution">— Michael Tomasello，00:15:50</span>
+</blockquote>
+
+<p><strong>他也不否認機器可能有代理性。</strong>他用了一個老掉牙但有效的說法：「如果牠走起來像鴨、叫起來像鴨，那就是鴨。」他反對的是兩件事：把語言能力誤認為代理性；以及把圖靈測試當作充分條件。</p>
+
+<p><strong>他反覆承認自己的技術邊界。</strong>談到 AI 內部機制時，他多次說「我沒有足夠技術知識判斷」。這種坦白反而讓論點更難被簡單反駁：他談的是概念層的<em>充分條件</em>，不是能力預測。你可以不同意他的時間表，但很難說他越界。</p>
+
+<p>至於「肉是否要緊」——他引用 Ned Block 的演講標題（does meat matter?）：沒有激素、沒有神經元、沒有肉身，是否影響代理性？他的回答很誠實：「房間裏沒有共識，我也沒有什麼高見。」</p>
+
+<h2 class="section-title">十一、前後脈絡：三組對照</h2>
+
+<p><strong>vs Paul Christiano（Dwarkesh，11-16，已覆蓋）</strong>：Christiano 給出「一年內 10% 接管級風險」的量化判斷，主張暫停預訓練；Tomasello 說「我從七十年代聽到現在」。兩人分歧的根源是本體論：Christiano 擔心能力爬升後的控制失效；Tomasello 認為當前系統根本還沒有代理性所需的組織層級，威脅敘事跳過了中間所有步驟。有趣的是，兩人對「缺什麼」的診斷有交集——都指向 executive／metacognitive 層，以及「知道自己在做什麼」。</p>
+
+<p><strong>vs Dwarkesh 的 RSI 論文（11-13）</strong>：Dwarkesh 論證 ML 研究像「拼貼 + 摘低垂果實」，因此 AI 能接手；Tomasello 的框架正好解釋為何可能，但也指出瓶頸：沒有共享約定與視角的系統，只能在既有文本分佈內拼貼，難以<em>創造</em>新約定。這為「RSI 能否自我加速」提供了一個心理學層面的懷疑理由——不是算力不夠，是組織層級不夠。</p>
+
+<p><strong>vs 42章經 11-14（賀嘉琛）</strong>：中文圈談 To B agent 時強調「私有上下文、權限、組織邊界」——其實就是 Tomasello 所說的角色規範與共同承諾的工程版本。兩邊用不同語言描述同一件事：<strong>代理性的瓶頸是社會結構，不是模型能力。</strong></p>
+
+<h2 class="section-title">十二、爭議點與未解問題</h2>
+
+<ul>
+  <li><strong>「學習是子過程」是否低估了表徵學習？</strong>反方會說：大規模預訓練學到的不只是表面統計，而是世界模型；而世界模型本身就是決策所需的組織。Tomasello 沒有直接回應這一點，這是整集最大的缺口。</li>
+  <li><strong>「LLM 不會創造約定」是否已被反例挑戰？</strong>在人類與模型的長期互動中，確實會出現雙方共同建立的簡寫與暗號。問題是：這算「約定」還是「條件反射式的對齊」？判準應該是<strong>雙方是否知道對方知道</strong>，而這需要實驗設計，不是觀察。</li>
+  <li><strong>四層框架是目的論式的嗎？</strong>Tomasello 明確說只談通往人類的一條線，但這條線容易被讀成「必經階段」。他沒有主張機器必須重演演化史，只主張不能跳過功能等價物。</li>
+  <li><strong>「我不怕 AI 接管」在 2026 年的語境下是少數派立場。</strong>他自己也承認技術判斷有限。這句話的價值不在預測，而在提醒：威脅敘事需要一個關於「代理性如何組成」的實證理論，否則只是把人類意圖投射到一個控制系統上。</li>
+</ul>
+
+<h2 class="section-title">結語</h2>
+
+<p>如果只帶走一句話，我會帶走這句：<strong>代理性不是一個東西，是一種組織。</strong></p>
+
+<p>這個定義把很多爭論變得可檢查。你不需要問「模型有沒有意識」，你可以問：它有沒有目標的表徵？它能不能在行動前模擬失敗？它能不能在後果延遲時主動搜集資訊？它能不能與另一個代理者建立共同承諾，並在角色失靈時互相糾正？</p>
+
+<p>按這張清單，當前的 LLM 是一台極強的<strong>語言終點機器</strong>：它從人類成就的頂點切入，把幾千年積累的約定壓進權重裏。它可以用這些約定，但它不參與約定的創造；它可以協調，但它不承擔共同承諾。</p>
+
+<p>這不是說它沒用。恰恰相反——Tomasello 自己每天都用。但如果我們要的是 agent，而不是工具，那麼缺的不是更多參數，而是那層被跳過的基礎設施：共同注意、視角、指物、約定、問責。</p>
+
+<blockquote class="strong">
+「如果你想要的是像現在 LLM 這樣有用的工具，那這層基礎設施當然可以被跳過。但如果你想要它們有代理性，我認為你會需要那層基礎設施。」
+<span class="attribution">— Michael Tomasello，00:55:14</span>
+</blockquote>
+
+<hr>
+
+<footer>
+  <p><strong>來源：</strong>Machine Learning Street Talk〈What It Would Actually Take for a Machine to Have Agency — Michael Tomasello〉，2026-11-19 14:19 UTC 發布，片長 1:06:33；官方章節與 YouTube 自動字幕（3,994 秒、2,211 段）為本文主要依據。引語按字幕時間戳標注，中文為譯述，英文原句以官方字幕為準；自動轉錄可能含人名與用詞誤差。</p>
+  <p><strong>相關資料：</strong>Michael Tomasello《The Evolution of Agency: Behavioral Organization from Lizards to Humans》（MIT Press, 2022）；David Lewis《Convention》（1969）；John Searle 的 status functions；Ned Block〈Does Meat Matter?〉；Shaozhe Cheng 等《The Agency Gap》（CogSci 2026）。</p>
+  <p>生成時間：2026-11-21 06:10 UTC · 深度復述 #288 · ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>

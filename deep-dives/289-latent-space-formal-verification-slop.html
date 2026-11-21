@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「你的 code 第一次就能跑」——當形式驗證走出數學圈，四家公司如何把 Lean 變成結算層</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  td { color: #444; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.55rem; }
+    table { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="../index.html">← 返回播客日報</a>
+  <div class="ep-num">Latent Space · 2026-11-20</div>
+  <h1>「你的 code 第一次就能跑」——當形式驗證走出數學圈，四家公司如何把 Lean 變成結算層</h1>
+  <div class="meta">
+    <div>〈The War Against Slop and an Emerging Weapon to Fight it: Formal Verification〉</div>
+    <div>出品：Latent Space<span>·</span>作者：swyx 團隊<span>·</span>核心受訪：Clark Barrett（&amp;Truth 共同創辦人兼共同 CEO）</div>
+    <div>發布：2026-11-20 21:18 UTC<span>·</span>深度文章（非訪談）<span>·</span>約 9,200 字</div>
+    <div>來源：latent.space 原文全文；引語為原文直譯，英文原文附於引語後</div>
+  </div>
+</header>
+
+<p>2026 年 AI 圈的年度關鍵詞是「slop」——模型產出的低質代碼與內容。這個詞之所以流行，不是因為模型太差，而是因為模型<strong>看起來很對</strong>：語法正確、命名合理、註釋齊全，跑起來也不一定報錯。審查的人因此陷入一種新型疲勞——你不再對抗明顯的錯誤，而是對抗<em>看起來沒問題的東西</em>。</p>
+
+<p>Latent Space 這篇文章的論點很簡單：對抗 slop 的下一件武器，不是更好的模型，而是<strong>數學證明</strong>。形式驗證（formal verification）用邏輯與證明來確認軟件／硬件的正確性；隨着 AI 解數學題的能力暴漲，它正從學術 niche 變成可用的工程工具。</p>
+
+<p>文章走訪了四家公司——Harmonic、Theorem、Axiom Math、&amp;Truth——但真正的骨架來自一個人：<strong>Clark Barrett</strong>，&amp;Truth 共同創辦人兼共同 CEO、史丹佛計算機科學 Corbel Professor（Research），以及 <strong>cvc5</strong> 的共同創造者。cvc5 是當今最流行的 SMT（satisfiability modulo theories）求解器之一；用他自己的話說：</p>
+
+<blockquote class="strong">
+「很高興看到我的工具從實驗室裏的一個好主意，變成 cvc5 現在每天在 Amazon 的生產管線被呼叫數十億次。」
+<span class="attribution">— Clark Barrett（原文："It's been fun to see my tools go from a good idea in the lab to cvc5 is now called billions of times a day in production pipelines at Amazon."）</span>
+</blockquote>
+
+<p>以下我按四條線重構這篇文章：<strong>測試與驗證的差別、SMT 與 Lean 的分工、四家公司的路線分化、以及成本曲線正在怎麼改寫這件事的商業意義。</strong></p>
+
+<h2 class="section-title">一、測試與驗證：差別在「你怎麼知道做完了」</h2>
+
+<p>當 AI coding agent 公司說自己「驗證」了工作，通常指的是三件事：agent 跑測試、agent 批評自己的輸出、或者另一個模型來當評審。Barrett 被問到這距離真正的驗證有多遠，他的回答是整篇最值得記住的一句：</p>
+
+<blockquote class="strong">
+「主要的分別，就是你怎麼知道你做完了。如果你在做測試、打補丁、掃描——用盡所有現有工具——它們相當好。它們找到一大堆問題。但你永遠不太確定：我是把它們全找到了，還是有一個正潛伏在那裏、我的工具抓不到？」
+<span class="attribution">— Clark Barrett（原文："The main difference is really just, how do you know when you're done… you're never quite sure, did I find all of them or is there one more lurking there that my tool can't find?"）</span>
+</blockquote>
+
+<p>這句話把「驗證」從一個技術詞選變成了<strong>認識論問題</strong>。測試給你的是抽樣信心：我試了這些輸入，都通過。形式驗證給你的是封閉答案：對所有合法輸入，這個性質成立——或者，這是一個反例。</p>
+
+<p>兩者的差別在風險管理上很具體。測試的覆蓋率是一個機率陳述，而機率陳述在對抗性環境裏會失效：攻擊者不需要通過你的測試，他只需要找到你沒測的那一條路。形式驗證的承諾則是「不存在這條路」——前提是你指定的性質（property）本身是對的。這一點很重要，後面會回來談。</p>
+
+<div class="data-point">
+<span>關鍵區分</span> 測試問的是「我有沒有找到錯」；驗證問的是「能不能證明沒有錯」。前者是<em>搜尋</em>，後者是<em>判定</em>。AI 讓搜尋變便宜，但沒有讓判定變便宜——直到現在。
+</div>
+
+<h2 class="section-title">二、cvc5 與 SMT：不太會「想」，但很會「判」</h2>
+
+<p>要理解這個產業，得先分清兩個常被混用的東西：<strong>SMT 求解器</strong>與<strong>證明助手</strong>。</p>
+
+<p>cvc5 是 SMT 求解器。它不負責「想出」證明，而負責在給定邏輯理論下判定一個公式是否可滿足（satisfiable）。實務上，工程師把規格形式化之後，求解器自動搜索反例或證明。它是一個<strong>判定程序</strong>（decision procedure），強項是封閉世界裏的組合爆炸。</p>
+
+<p>Lean 則是證明助手（proof assistant）。你（或 AI）寫出證明，Lean 逐步檢查每一步是否合法。它不替你找路，但它保證你走的每一步都沒有作弊。用 Barrett 的話說：</p>
+
+<blockquote class="strong">
+「Lean 做的事，就是檢查你有沒有弄錯。你可以把它想成一個非常精密、專門檢查數學的檢查器。」
+<span class="attribution">— Clark Barrett（原文："What Lean does is it just checks that you didn't make a mistake. So you can think of it as a very sophisticated checker for mathematics."）</span>
+</blockquote>
+
+<p>這個分工解釋了為什麼 AI 與形式驗證是<strong>協作</strong>而不是取代：LLM 負責生成候選證明與規格草稿（搜索空間），求解器負責判定（剪枝），Lean 負責逐步核對（結算）。三者接起來，才是一條完整的生產線。</p>
+
+<p>也解釋了為什麼 cvc5 能工業化。Amazon 的用法不是「證明整個系統正確」，而是把它塞進具體環節：Kiro（Amazon 的 agentic 開發環境）用它做規格分析與測試生成。這是形式方法幾十年來最現實的落地方式——<strong>不是一次證明全部，而是把判定能力嵌入每一個小決策點。</strong></p>
+
+<h2 class="section-title">三、四家公司，四種賣法</h2>
+
+<p>文章把當前的競爭格局拆得很清楚。四家公司的共同點是都把 Lean 當結算層，差異在<strong>賣給誰、賣什麼</strong>。</p>
+
+<table>
+  <tr><th>公司</th><th>產品</th><th>核心賣點</th><th>主要客戶場景</th></tr>
+  <tr><td><strong>&amp;Truth</strong></td><td>&amp;Atlas（全球開源碼地圖，由 C 起步）、verification machine</td><td>讀懂任何語言的 code，證明它滿足精確陳述的需求；讓人不必逐行理解也能信任</td><td>記憶體安全、供應鏈審計</td></tr>
+  <tr><td><strong>Harmonic</strong></td><td>Aristotle（自動定理證明器）</td><td>AI 寫證明、Lean 逐步檢查，結果不依賴 AI 正確</td><td>數學、形式化研究</td></tr>
+  <tr><td><strong>Axiom Math</strong></td><td>AxiomProver + AXLE</td><td>生成 Lean 證明，並把證明嘗試回饋成訓練信號</td><td>數學推理、模型自我改進</td></tr>
+  <tr><td><strong>Theorem</strong></td><td>企業級驗證</td><td>「Verification is the only defense that holds while adversaries scale.」</td><td>安全、合規</td></tr>
+</table>
+
+<p>Harmonic 的產品承諾寫得最清楚，也最值得抄下來當判準：</p>
+
+<blockquote>
+「在 Aristotle 內部，AI 寫證明，Lean 檢查每一步，所以一個結果永遠不會建立在『AI 是對的』之上。」
+<span class="attribution">— Harmonic 官網（文章引用）</span>
+</blockquote>
+
+<p>這句話是整個產業的信任架構。它把「AI 可能幻覺」這個風險，轉移到一個<strong>不依賴 AI 的檢查器</strong>上。你可以不信任模型，但仍然信任結論——因為結論的每一步都被一個獨立的、可審計的程式核對過。</p>
+
+<p>Axiom 的路線更進一步：形式驗證不只是防守，也是<strong>訓練信號</strong>。證明嘗試成功或失敗，反過來改進下一代模型。Axiom CEO Carina Hong 在六月接受 Latent Space 訪問時說得更直白：</p>
+
+<blockquote class="strong">
+「形式驗證、verified AI，對我們而言不只是處理或踢掉那些爛東西、幻覺、錯誤。它是要放大才華。它是要通往超智慧。」
+<span class="attribution">— Carina Hong（原文："Formal verification, or verified AI, to us it's not just about handling or kicking out the lousiness, the hallucinations, the mistakes. It's about scaling brilliance. It's about super-intelligence."）</span>
+</blockquote>
+
+<p>&amp;Truth 則選擇了最重的一條路：先建地圖。<strong>&amp;Atlas</strong> 的定位是「世界開源碼的地圖，由 C 語言起步」。為什麼是 C？因為記憶體安全問題在 C 裏最密集、後果最嚴重，而且存量最大。Barrett 描述最終目標：</p>
+
+<blockquote class="strong">
+「我們技術的一個非常強大的用法，是掃過全世界所有 C code，無論開源或閉源，確認它是記憶體安全的。如果不安全，我們可以指出：這段 code 這裏有問題，你必須修。」
+<span class="attribution">— Clark Barrett（原文："One really powerful use case for our technology is going through all the C code in the world… and trying to ensure that it's memory safe."）</span>
+</blockquote>
+
+<p>這是一個典型的「基礎設施先行」策略：不賣單點工具，先建一張所有人都會查詢的地圖。如果成功，它會成為一個收費站——不是因為它擁有 code，而是因為它擁有<strong>關於 code 的判定</strong>。</p>
+
+<h2 class="section-title">四、成本曲線：從 token 昂貴到 token 高效</h2>
+
+<p>形式驗證過去幾十年推不動，原因不只是難，而是<strong>貴</strong>。寫規格需要受過訓練的人，證明需要專家，維護需要持續投入。AI 改變的第一件事是生成成本；第二件事，是讓「驗證」本身變得 token 高效。</p>
+
+<p>文章引用的一組數字很關鍵：在 <strong>36 個小型驗證任務</strong>上，Anthropic 報告 <strong>Opus 5.5 達到 50% 解題率，比 Opus 5 少用約 40% token</strong>。趨勢預期會延續，因為更多模型開始「在長時程驗證任務上受訓」。</p>
+
+<div class="data-point">
+<span>成本</span> 同一解題率下，token 消耗一年內下降 40%。若此趨勢延續，單位驗證成本可能再降一個數量級——經濟門檻由「關鍵系統專用」下降到「CI 可默認開啟」。
+</div>
+
+<p>把這兩個數字放在一起看，會得到一個比「AI 會寫證明」更重要的結論：<strong>驗證正在從資本支出變成營運支出。</strong>過去你要養一個形式方法團隊；現在你可以在 CI 裏掛一個默認步驟。這個轉變對採用曲線的影響，遠大於任何單一 benchmark 的進步。</p>
+
+<p>當然，50% 解題率意味着還有一半失敗。而且「小型驗證任務」這個描述留下了很大的解釋空間：任務分佈是什麼？失敗的是最難的還是最無聊的？36 個樣本夠不夠？文章沒有回答，這是需要保留的疑問。</p>
+
+<h2 class="section-title">五、veri-coding：從寫 code 到寫規格</h2>
+
+<p>文章最後回到開發者體驗。&amp;Truth 官網提出一個對比：從 vibe-coding 到 <strong>veri-coding</strong>——驗證層成為工作流的一部分，而不是事後審計。</p>
+
+<p>Barrett 描述的使用體驗值得完整引用：</p>
+
+<blockquote class="strong">
+「如果你把驗證機器接上你的 agent，你仍然可以說：『嘿，我要你建這個。』也許需要一點功夫，跟 agent 把你要建的東西的規格真正定下來。但之後 agent 可以在底層與形式工具協作，而你看到的幾乎沒什麼不同——除了你的 code 第一次就能跑。」
+<span class="attribution">— Clark Barrett（原文："…essentially what you'll see is almost no difference except your code will work the first time."）</span>
+</blockquote>
+
+<p>「第一次就能跑」是一句很聰明的產品語言。它沒有承諾「不用改」，而是承諾「不用除錯」。對一個被 AI 生成代碼淹沒的工程師來說，這個差別就是一天。</p>
+
+<p>更深的變化在於人的時間分配。如果 agent 負責寫 code、驗證機器負責檢查，那麼人的工作會從<strong>寫 code／審 code</strong>轉移到<strong>寫規格／審規格</strong>。這是軟件工程史上的一次槓桿轉移：從「實現細節的正確」轉向「意圖表達的正確」。</p>
+
+<h2 class="section-title">六、outcome engineering：誰卡住 agent 時代的收費站</h2>
+
+<p>文章結尾引用了一條 tweet，來自 Cognition 的開發者關係負責人 Nader Dabit。它的邏輯很簡單：當你只告訴 agent 團隊「我要這個」、它們自己蓋完，人類唯一剩下的工作就是<strong>檢查交付物是否正確</strong>。</p>
+
+<p>Latent Space 把這稱為「outcome engineering」——不論這個詞會不會流行，它指向的方向是清楚的：<strong>當生成變便宜，驗證就變成瓶頸，也變成價值捕獲點。</strong></p>
+
+<p>這與本週另一條主線（Anthropic 的 IPO 定價）形成互補。市場買的是可信度，不只是 benchmark 分數。如果驗證層成熟，模型能力差距會被「可驗證性」重新定價——能產出可被機器檢查的輸出的模型，比「看起來很強」的模型更有商業價值。</p>
+
+<div class="highlight-box">
+<strong>一層更冷靜的推論：</strong>如果驗證成為默認步驟，那麼「模型出錯」的社會成本會下降，但「規格寫錯」的成本會上升。因為機器會忠實地證明你<em>說</em>的東西，包括你沒想清楚的部分。形式驗證消滅的是實作 bug，不是需求 bug。
+</div>
+
+<h2 class="section-title">七、安全：最大的商業場景，也是最難的承諾</h2>
+
+<p>文章把網絡安全放在很重要的位置。Barrett 明確說，&amp;Truth 的重點之一是掃過全世界的 C code，確認記憶體安全。Theorem 的口號則直接把對抗性寫進產品定位：</p>
+
+<blockquote class="strong">
+「當對手規模化，驗證是唯一守得住的防禦。」
+<span class="attribution">— Theorem 官網（原文："Verification is the only defense that holds while adversaries scale."）</span>
+</blockquote>
+
+<p>這句話的邏輯值得拆開。傳統防禦（簽名、掃描、模糊測試）的成本曲線跟攻擊者規模掛鈎：對手越多，你越需要更多規則、更多樣本、更多人力。形式驗證的成本曲線則與<strong>系統複雜度</strong>掛鈎，與對手數量無關。一旦證明成立，它對一萬個攻擊者和一個攻擊者同樣有效。</p>
+
+<p>但這裡有一個未被充分討論的張力：如果驗證器本身也是 AI 生成的一部分，我們只是把信任轉移到另一個模型上嗎？Harmonic 的答案是否定的——Lean 是獨立的檢查器，不依賴 AI。但整條管線的其他環節（規格生成、 proof 搜索策略、失敗時的重試）仍然大量使用模型。<strong>信任的邊界在哪裡，取決於你把哪一段放進 TCB（trusted computing base）。</strong></p>
+
+<h2 class="section-title">八、生態比文章標題更寬：Lean 不是唯一</h2>
+
+<p>一個容易被忽略的細節：Anthropic 那張「from code to a machine-checked guarantee」示意圖，用的是 <strong>Rocq</strong>（前 Coq），而不是 Lean。這說明生態並非只有 Lean 一家；Lean 的優勢是社群動能與數學形式化的規模，但在工業驗證領域，Rocq、Isabelle、TLA+ 各有地盤。</p>
+
+<p>文章也提到兩個規模數字，值得放在一起看：</p>
+
+<ul>
+  <li>Vals 認為 GPT-6.2 Astra 產出了<strong>首個 Smoktunowicz Gap Theorem 的 Lean 證明</strong>。</li>
+  <li>Anthropic 用 Lean 形式化<strong>費馬最後定理</strong>，專案規模 <strong>1,300 萬行</strong>。</li>
+</ul>
+
+<p>1,300 萬行是一個什麼概念？它比很多作業系統的核心還大。這說明形式化的瓶頸不只是智力，還有<strong>工程規模</strong>：把一個已知證明翻譯成機器可檢查的形式，本身是一個巨大的軟件工程項目。AI 在這裏的價值可能不是「想出證明」，而是「搬運與補洞」——把人類已經知道的數學，變成機器可以結算的資產。</p>
+
+<h2 class="section-title">九、行業 insight：驗證層是 agent 時代的結算層</h2>
+
+<p>把四家公司放在一起看，會發現一個共同的結構：<strong>它們都不賣「更聰明的模型」，它們賣「可以被信任的判定」。</strong></p>
+
+<p>這是因為 agent 經濟的核心問題不是生成，而是<strong>授權</strong>。你願意讓一個 agent 直接改 production 嗎？你願意讓它提交 PR 嗎？你願意讓它管預算嗎？這些問題的答案不取決於模型多強，而取決於<strong>失敗時誰能發現、誰能證明</strong>。驗證層提供的就是這個：一個不依賴模型自我報告的失敗檢測機制。</p>
+
+<p>從這個角度看，文章標題裡的「war against slop」其實是一場<strong>信任基礎設施</strong>的建設。Slop 不是品質問題，是<em>可核查性</em>問題：當產出速度快過人類審查速度，唯一的出路是讓機器去做機器能做的檢查。</p>
+
+<h2 class="section-title">十、前後脈絡：這條線埋了半年</h2>
+
+<p><strong>與 Axiom 的六月訪談。</strong>Carina Hong 當時提出「scaling brilliance」，把形式驗證從防守工具提升為能力放大器。這篇文章是把當時的口號落地成產品地圖：&amp;Atlas 之於 &amp;Truth、Aristotle 之於 Harmonic、AxiomProver + AXLE 之於 Axiom、企業驗證之於 Theorem。</p>
+
+<p><strong>與 Dwarkesh〈The avalanche that hit math〉（11-13）。</strong>數學能力外溢到 code 驗證，是 RSI 敘事中最<em>可測量</em>的一條支線——不同於模糊的「AGI 將至」，這裏有 50% 解題率、40% token 降幅、1,300 萬行形式化等硬指標。</p>
+
+<p><strong>與 Linear 的 GTM（287）。</strong>一個賣「人被調用的地方」，一個賣「機器被信任的地方」。兩者其實是同一條價值鏈的兩端：agent 做了更多工作之後，人類保留的兩個位置是<em>決定要做什麼</em>（規格）與<em>確認做對了</em>（驗證）。</p>
+
+<p><strong>與 Tomasello 的代理性（288）。</strong>那集說代理性的核心是「知道自己在做什麼」與「能被問責」。形式驗證給出的，正是一個可以被問責的機器介面：不是「我相信它」，而是「這裡有一份可檢查的證明」。</p>
+
+<h2 class="section-title">十一、爭議點與未解問題</h2>
+
+<ul>
+  <li><strong>50% 解題率是「小型任務」。</strong>文章沒有披露任務分佈、失敗模式、以及「小型」的定義。從 50% 到生產可用，中間可能還有一個數量級的工程差距。</li>
+  <li><strong>規格才是真正的地獄。</strong>形式驗證只能證明「實作符合規格」。如果規格寫錯，你會得到一個<em>被證明的錯誤系統</em>。Barrett 自己也承認，使用者需要花功夫「跟 agent 把規格真正定下來」。這部分的工作量被文章低估了。</li>
+  <li><strong>信任邊界沒有說清。</strong>整條管線中，哪些部分被形式化、哪些部分依賴模型判斷？如果規格由模型起草、proof 由模型搜索、只有最後一步用 Lean 檢查，那麼 TCB 其實比宣傳的大。</li>
+  <li><strong>&amp;Atlas 的商業模式未明。</strong>「世界 code 的地圖」聽起來像公共基礎設施，但它是一家公司。誰付費、付多少、資料如何更新，文章沒有回答。</li>
+  <li><strong>形式驗證不處理「意圖」。</strong>它可以證明你沒有寫出 buffer overflow，但不能證明這個功能應該存在。slop 的一大部分不是 bug，而是<em>做了不該做的事</em>——這一層仍然需要人。</li>
+</ul>
+
+<h2 class="section-title">結語</h2>
+
+<p>這篇文章最有力的地方，不是它介紹了四家公司，而是它把一個抽象的哲學問題變成了採購問題：<strong>你願意為「知道做完了」付多少錢？</strong></p>
+
+<p>測試文化的答案是「支付抽樣成本」；形式驗證的答案是「支付證明成本」。過去證明的成本高到只有核電、航天、晶片設計付得起；現在 AI 把生成與搜索的成本壓下來，證明開始進入 CI 的預算表。</p>
+
+<p>如果這個趨勢成立，未來幾年的軟件工程會出現一個新的分層：<strong>上面是意圖（規格），下面是實作（code），中間是結算（驗證）。</strong>模型可以在下面兩層之間來回，但中間那層必須獨立、可審計、不依賴模型的自我報告。</p>
+
+<blockquote class="strong">
+「你會看到的幾乎沒什麼不同——除了你的 code 第一次就能跑。」
+<span class="attribution">— Clark Barrett，論 veri-coding 的使用體驗</span>
+</blockquote>
+
+<p>這句話聽起來像營銷，但它其實是一個很深的承諾：軟件工程的重心，從「除錯」移到「表達」。而當表達成為瓶頸，寫得清楚的人——不是寫得快的人——會重新變得稀缺。</p>
+
+<hr>
+
+<footer>
+  <p><strong>來源：</strong>Latent Space〈The War Against Slop and an Emerging Weapon to Fight it: Formal Verification〉，2026-11-20 21:18 UTC 發布，約 9,200 字；核心受訪 Clark Barrett（&amp;Truth 共同創辦人兼共同 CEO、史丹佛 CS Corbel Professor (Research)、cvc5 共同創造者）。引語以英文原文為準，中文為譯述。</p>
+  <p><strong>相關資料：</strong>cvc5（cvc5.github.io）；Lean（lean-lang.org）；Harmonic Aristotle；Axiom Math 的 AxiomProver 與 AXLE；Theorem（theorem.dev）；&amp;Truth 的 &amp;Atlas；Amazon Science 關於 cvc5 與 Kiro 的案例；Nader Dabit 關於 outcome engineering 的帖文；Anthropic 36 任務驗證實驗。</p>
+  <p>生成時間：2026-11-21 06:10 UTC · 深度復述 #289 · ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
