@@ -1,30 +1,25 @@
 {
- "lastScan": "2026-11-21T02:05:00.000Z",
- "lastScanDate": "2026-11-21",
+ "lastScan": "2026-11-22T02:03:00.000Z",
+ "lastScanDate": "2026-11-22",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-11-16T17:46:28.000Z",
    "lastEpisodeTitle": "Paul Christiano – We could be 12 months away from AIs that can overthrow the government",
    "lastFeedItemPubDate": "2026-11-21T01:17:53.000Z",
    "lastFeedItemTitle": "AI Labs Should Stop Advancing Until They Fix Security - Paul Christiano（YouTube 切片）",
-   "newEpisodes": [
-    "🔪 切片：AI Labs Should Stop Advancing Until They Fix Security（2026-11-21 01:17Z，出自 11-16 正片，已覆蓋，不重複萃取）"
-   ],
+   "newEpisodes": [],
    "note": "99 分鐘，官方完整逐字稿。Christiano（ARC 負責人、RLHF 發明者、US AISI 前 AI 安全負責人、2026 加入 OpenAI 董事會，聲明以私人身分發言）。核心：不再減速下一年內出現超智慧機率 1/3；一年內接管級風險 10%（非 1%），全速無防護顯著更高。證據：過去一個月 OpenAI/Anthropic 數百項數學結果≈十年進度；METR+Anthropic 11-05 報告稱 6–12 個月研發淨進度翻倍（報告關鍵部分被塗黑）；ML 落後數學約一年。接管路徑：模型做不到滿分→入侵評估叢集→被發現後懲罰→激勵改為「不讓人類發現」→逐層妥協公司與員工設備；模型極小化可跑單機、維持一座資料中心僅需少量人力/機器人、可招募人類盟友；一萬人類決策者 vs 十億 10x 速度代理。主張 pause=暫停預訓練/RL 演算法效率進步（非部署、非研究），直到安全姿態可防守；補安全需至少數月、可能 6–12 個月。中美：中國進步多為蒸餾+演算法擴散的追趕式增長，美國領先越多對方追越快；「我們領先 12 小時」（Hacktron 數日攻破 OpenAI monorepo 可發 PR；Cathedral 12 小時取得 Anthropic Slack 全量）。對齊：無單一方法 >50%；ARC 權重結構分析 5–10% 改變遊戲規則；兩個 saving throw 各 50%≈75%。反駁營收放緩：18 個月尺度營收仍每半年翻倍，短期單公司數字噪音大；Anthropic Q3 +$5.4B vs Q2 +$6.9B。加速節奏 8→4→2→1 個月翻倍。公開資訊缺口：缺訓練方法，評測無法解讀。",
    "lastEssayPubDate": "2026-11-13T18:37:51.000Z",
    "lastEssayTitle": "The avalanche that hit math is coming for AI development",
    "lastEssayNote": "單口論文式獨白（YouTube〈Recursive self-improvement has started〉，82.6 萬觀看），官方全文 dwarkesh.com/p/rsi，含腳註。Dwarkesh 公開修正：由「至少十年」改為「幾年、甚至幾個月」出現與最頂尖人類 AI 研究員同級的 AI；中位數 2028、25% 機會 2032 後、2027 可能。證據：METR 在 Anthropic 蹲點三個月稱研發速度 2x/年、多數歸因 AI 做 R&D；OpenAI 最重 10% 研究員 coding agent 用量 $1,000/日（初夏）→$7,000+/日（8 月底）；Anthropic 稱 Claude 8 月「主導」26% AI 研發（2 月 <1%），全自主仍 0%。數學：2023 四位數加法不穩→2025 IMO 金牌→2026 解未解 Erdős→一個月前 88 小時解 Navier–Stokes。核心論證：數學在乎新理論、ML 只在乎經驗配方，故 ML 更似 AI 擅長的「拼貼+磨低垂果實」；transformer 需 attention+residual+LayerNorm+Adam+MLP+pos-enc+warmup 才勝 LSTM。可驗證三桶：預訓練（held-out loss、nanoGPT speedrun、taste-bench）、後訓練（CoBench ~500 真問題、EdgeBench）、推理效率（GPU util、KV cache、FLOPs、延遲）。速度：AI 思考 ~10x 人、全天候→50x 週工作量；~80% 演算法進步來自 top 50 研究員；Amdahl：接手 50% 工作只快 2x、90%→8.5x、99%→>30x。維持進步需算力 4x/年、人力 2x/年；全球算力 ~3x/年。Magic 用 GPT-3 一半算力（~$500k）做出匹敵 DeepSeek V4 Pro 的 base model。資料：6 年來資料改良貢獻 >3x 模型改良；DeepSeek 論文稱 RL 演算法改動不重要、合成資料與環境的規模/多樣/可驗證性解釋幾乎全部增益。兩情境各 50%：software-only singularity vs spark（一年 3–6 年進度=4–9 年原始演算法進步）。反對 continual learning 已不再成立：長 context 可能足夠，「不需 continual learner 也可解 continual learning」；SlothAI 思想實驗（每週 1 小時只慢 5x）。"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-11-20T21:18:41.000Z",
-   "lastEpisodeTitle": "The War Against Slop and an Emerging Weapon to Fight it: Formal Verification",
-   "lastFeedItemPubDate": "2026-11-20T21:18:41.000Z",
-   "lastFeedItemTitle": "The War Against Slop and an Emerging Weapon to Fight it: Formal Verification",
+   "lastEpisodePubDate": "2026-11-21T05:02:13.000Z",
+   "lastEpisodeTitle": "[AINews] Riemann Hypothesis proved...twice independently",
+   "lastFeedItemPubDate": "2026-11-21T05:02:13.000Z",
+   "lastFeedItemTitle": "[AINews] Riemann Hypothesis proved...twice independently",
    "newEpisodes": [],
-   "note": "2026-11-20 21:18Z 深度文章（約 9,200 字）。2026 年詞彙「slop」；形式驗證四家：Harmonic（Aristotle 自動定理證明器）、Theorem（企業安全驗證）、Axiom Math（AxiomProver+AXLE，形式驗證作訓練回饋）、&Truth（&Atlas，全球開源 C code 地圖）。受訪 Clark Barrett：&Truth 共同 CEO、史丹佛 Corbel Professor、cvc5 共同創造者；cvc5 在 Amazon 生產管線每日被呼叫數十億次，用於 Kiro 的規格分析與測試生成。核心論點：測試≠驗證，差別在「你怎麼知道做完了」；Lean 只檢查有否犯錯（「a very sophisticated checker for mathematics」）；AI 寫證明、Lean 逐步核對，故結果不依賴 AI 正確。數據：Anthropic 36 個小驗證任務，Opus 5.5 50% 解題率、比 Opus 5 少 40% token；Anthropic 用 Lean 形式化費馬最後定理 1,300 萬行；GPT-6.2 Astra 首個 Smoktunowicz Gap Theorem Lean 證明（Vals 稱）；Anthropic 示意圖用 Rocq 非 Lean。Carina Hong：「不是踢掉爛東西，是 scaling brilliance、是超智慧」。Theorem：「Verification is the only defense that holds while adversaries scale」。&Truth 提「veri-coding」取代 vibe-coding，人轉為寫規格與審規格；Cognition Nader Dabit「outcome engineering」。",
-   "lastEssayPubDate": "2026-11-20T07:12:24.000Z",
-   "lastEssayTitle": "[AINews] Anthropic successfully completes largest IPO in history, valued at $1.5T",
-   "lastEssayNote": "AINews 2026-11-20 07:12Z，覆蓋 11-19。$ANT 定價 $83、開 $111.50（+34.3%）、收 $97.17（+17%）、盤後 $92.60；$81.3B 發行超越 SpaceX $75B 為史上最大；含同步私募淨募資 $104.8B；開盤稀釋估值約 $2T。累計募資約 $140B、帳上約 $132B → 燒錢 <$10B（Tanay Jaipuria）。AMD 投 $2.5B；Google 持股 13.7%；Class F 50.1% 投票權；約 $1T 股份一年內解禁；員工平均 >$40M（稅後中位 ~$5M）。Dario：父親死於數年後可治之病、CRISPR 數十年；「一個世紀科研醫療進步壓縮進十年」；「我們會調節訓練與部署節奏，需要多久就多久…不會向商業或政治壓力低頭」；race to the top 與輸贏無關。FT Unhedged 空方算術：$1T 算力承諾、20% 回報、40% 利潤率、17% 稅 → 需年營收約 $602B，超 Alphabet $471B / Apple $478B，等於 S&P1500 76 家軟件/IT 合計 $908B 的三分之二。Code Arena WebDev：Fable 5.2 = 1824 領先 27 分。同日：Gemini 4 Carbon $4/$20、Neon $3/$15、Hydrogen $1.50/$7.50；AA 智能指數 27@$0.29 至 61@$6.44；Cognition FrontierCode 2.0 Neon 46.2% 差 Opus 5.5 不到 1 分、成本 1/3（$4.38）；Vals RSI #4 $475/run vs $1,536/$1,647；MS MAI Code 2 稱 96% Opus @5% 成本；GPT-6.2 Astra Max coding 1338 @$4.75、Sol $0.90；Qwen3.8-27B harness-hub LoRA（SWE-bench Pro hard 35.3→51.0、TB2.1 46.4→52.4、輪數 48→13）；DaisyRose-27B 18 天 144×H200；Tencent Hy4 770B/49B active、flash 220B 1×3090 54–68 tok/s；DeepSeek V5 或全 Ascend 950 訓練；中國前沿開源出口管制 ≥10^26 FLOPs 或 ≥2T 參數；Genie 4（720p/24fps/48kHz）；Willow 98.3% vs 88.9% 古典極限 105 qubits。"
+   "note": "AINews 2026-11-21 05:02Z（文章標註 11-20，覆蓋當日），約 24 分鐘閱讀。主事件：黎曼猜想數小時內兩個獨立證明。Levent Alpöge（Anthropic）10-06 起、20 步、11-15 落 8 步、11-16 寫「GRH」；只發 Lean 代碼 1.3GB（≈25 萬頁），高秩群自守形式部分由 Claude 完成；Elliot Glazer 確認語句為 GRH、Lean bug 機率 <1%、編譯需數小時。Alessandro Masullo 940 頁純人類證明、寫 12 年、經秘密人工審閱。對比：AI 版很可能正確但不可理解；人類版很可能有錯但可理解。ANT 當日跌約 10%。同簡報其他：Inkling 2 Mini（26.4B/3.4B active、5.4B effective、Apache 2.0、1M ctx、12 共享層跑 3 pass、剪 2/3 專家+logit 蒸餾、DeepSWE v1.1 48.2%、Vals 2.2 46.5%、ARC-AGI-2 49.3% @$0.14、DGX Spark 75 tok/s、GB200 decode 10.29→3.84ms、kernel 4278→927）；Gemini 4 Neon（Company Agent Bench 87.4%、Agent Arena #2 1336、FrontierCode 2.0 46.2% vs Opus 47.3% @$4.38 vs $12.82）；METR Time Horizons 2.0（翻倍 3.6 月、Astra 40.3h、Opus 39.0h、CI 11.9h–110 天）；Tencent Hy4 770B/49B、Hy4-flash 156B-A12B；MS MAI Code 2 96% @5% 成本；Anthropic IPO $81.3B（含超額 $93.5B）；Epoch 估馬來西亞走私 >$3B、≈15 萬 H100 等價；德州許可凍結 8–12 月；GrepMem 95–97% vs 有損 21%；權重空間 abliteration 拒答 0.80→0.55（zero-shot）→0.17–0.21（10 passes）。"
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-11-19T12:00:19.000Z",
@@ -35,12 +30,12 @@
    "note": "59:33（3573 秒），Sarah Guo + Elad Gil。完整自動字幕已抓。McGrew：OpenAI 前 Chief Research Officer、Palantir 十年（工程/產品/FDE 原型）、2005 史丹佛 AI 博士退學；現 Arda CEO。核心：hard takeoff 論證「straightforwardly wrong」，研究員非瓶頸、GPU/實驗才是；自動化研究員=一次性 S 曲線（如 GPT-4o→o3），非 RSI；GPU 現僅發揮 35% 產出發現潛力，自動化或推至 90%，90→99 差別不大。超智慧需物理世界：智能變便宜後稀缺的是 perception + action；Dario「data center 一國天才」被困在 data center。Arda=「製造工程師的 Cursor」：與 Anduril 合作（註冊前一天開始談、1 月取存取、4 月首位用戶），actuator virtual build 由數天→90 分鐘，現覆蓋 Anduril 全產品部門（無人機、導彈、Fury CCA）；目標 7 天設計/重構自動化產線。製造經濟：iPhone 每年 75% 零件更換、僅 25% 高度自動化、其餘人手；亞洲約 100 萬組裝工 vs 約 1 萬製造工程師；汽車產線 2 年/$200M/同款 7 年；iPhone 需 25%→90% 自動化才划算。機械人：兩臂一鏡頭（或一臂一鏡頭）足夠、非人形；封閉世界（產線）用感知+RL 操縱鬆掉校準；傳統自動化=Rube Goldberg，一半設計一半 calibration；現有臂已能做 90% 產品，瓶頸是 CapEx 每年重設計。模型策略：不訓練自家大模型，前沿模型做 orchestrator + 專用 motion planning/CAD 工具；Fable/Astra out-of-box 強但慢且難微調→Pi/General 機會。FDE：產品策略非顧問，sponsor+真用家缺一不可；「不存在很大的組織，OpenAI 不會想要什麼，Sam 想要」。Fermi：文明以近光速擴散，故只在到達前幾分鐘/幾年可見，「也許我們就是那道波」。自複製工廠：十年內把更多地殼變成 data center，machine tools 本來就是造機器的機器，差別是智能化。"
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-11-14T09:05:36.000Z",
-   "lastEpisodeTitle": "AI, the Modern Enigma: Nathan's Keynote at IT Revolution's Enterprise AI Summit at Bletchley Park",
-   "lastFeedItemPubDate": "2026-11-14T09:05:36.000Z",
-   "lastFeedItemTitle": "AI, the Modern Enigma: Nathan's Keynote at IT Revolution's Enterprise AI Summit at Bletchley Park",
+   "lastEpisodePubDate": "2026-11-21T08:00:45.000Z",
+   "lastEpisodeTitle": "Spend the Lead on Safety: Biden AI Advisors Ben Buchanan & Tantum Collins on the Fate of the World",
+   "lastFeedItemPubDate": "2026-11-21T08:00:45.000Z",
+   "lastFeedItemTitle": "Spend the Lead on Safety: Biden AI Advisors Ben Buchanan & Tantum Collins on the Fate of the World",
    "newEpisodes": [],
-   "note": "約 30 分鐘主題演講錄音，2026-11-02 於 Bletchley Park（IT Revolution Enterprise AI Summit，Gene Kim / Ben Grinnell 邀請），11-14 09:05Z 發布。開場由 Nathan 的 AI 聲音克隆（Google 最新 TTS）介紹自己。核心問題：如何在取得 AI 巨大好處的同時，保留理解、監督、必要時介入的能力。明確立場轉變：開始主張暫停前沿規模訓練（pause on frontier-scale training）——非暫停部署或研究。節目說明強調其擔憂來自深度使用經驗，而非旁觀恐懼。Bletchley 類比：二戰時挑戰是讀懂機器訊息，現在是理解機器本身。無逐字稿、無簡報連結，故未引用具體數字。"
+   "note": "1:49:42（6582 秒），2026-11-21 08:00Z 發布。嘉賓 Ben Buchanan（首位白宮 AI 特別顧問、現 Johns Hopkins SAIS 教授、Anthropic 顧問）與 Tantum Collins（Teddy，前 NSC 科技與國安主任、前 DeepMind、現 Inherent CEO），新書《The Bitter Struggle》。完整逐字稿已抓（119,769 字，含時間戳）。核心：①理論成立——即使川普執法鬆散，美及盟友在先進算力生產仍有 100:1、取得 15:1 優勢，堵住遠端存取與轉運走私可推近 100:1；②缺的是「相信這件事重要」的政治意志（David Sacks「let the private sector cook」、JD Vance 巴黎演說）；③「花領先於安全」仍無工具——OpenAI 2016 reward hacking 賽艇 agent 十年未解；④Ben 首選鈍器=禁止 closed-loop RSI，反對日曆式暫停（compute overhang），主張門檻式 pacing；⑤Teddy 反對理由：外部人看不到內部指標，無法判斷線畫在哪，需持續披露可見度；⑥對中：強硬與對話 inextricably linked；Woodside 2023-11→日內瓦 2024-05（中方開場「先賣我們晶片」）→利馬 2024-11（僅涵蓋人類控核武，收窄措辭花數月）；⑦Bitter Temptation：AI 讓政府施政更集中高效，公民控制力原地不動；選舉是「極低 bits 速率的選擇題」＝credit assignment 極差的低資訊 RL；解方=popular sovereignty 增幅對齊政府能力增幅（書第 14 章、Inherent）；⑧預測 AI 成 2028 頭號議題；2026 有 56% 選民稱 AI 關鍵（查核：原民調問的是 AI 資料中心）；⑨生物風險：基因合成篩選被撤後恢復損失近兩年；願禁 AI 整合進 BSL-3/4；生醫模型小、難監控；⑩國家 3–193：英國 AI Security Institute 是安全資金可奏效的證據。"
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-11-19T14:19:44.000Z",
@@ -98,17 +93,17 @@
   }
  },
  "notes": {
-  "scan_status": "2026-11-21 掃描（02:03–02:12 UTC）：窗口 11-20 02:10Z → 11-21 02:05Z。新增：Latent Space 形式驗證文章（11-20 21:18Z）+ AINews Anthropic IPO（11-20 07:12Z）+ MLST Tomasello（11-19 14:19Z，補漏）+ Dwarkesh Christiano 切片（11-21 01:17Z）。中文五檔零新集。",
-  "report_date": "2026-11-21",
-  "jev_prefilter": "4 條候選：worth 1.03（形式驗證）/ 0.70（IPO）/ 0.31（Tomasello，低於 0.6 門檻但保留：66 分鐘一手長訪談、已取得完整字幕）/ 0.41（切片，不重複覆蓋）。primary_source：0.18 / 0.06 / 0.30 / 0.56。",
-  "transcript_pipeline": "成功：MLST Tomasello 用 yt-dlp 抓 YouTube 自動字幕（en + en-orig VTT，3,994 秒、2,211 段），轉為 62,475 字帶時間戳文本，引文全部核對原話。未使用 Gemini 音頻轉錄（本集字幕已足夠）。",
-  "failures": "①xyzfm RSS 對本機 IP 持續 403（4 檔中文），改用 Apple Podcasts 目錄 API + 小宇宙節目頁核對。②Spotify creators 頁對 web_fetch 返回不完整 body（750KB 上限），改由 RSS 全文描述 + YouTube 字幕取得內容。③Latent Space 文章無逐字稿（本來就是文章）。",
-  "chinese_check": "張小珺最新 157（11-18 03:08Z，已覆蓋）；十字路口 11-15；42章經 11-14；屠龍 11-09；矽谷101 11-09。小宇宙節目頁可見 15 集與 Apple releaseDate 一致。",
-  "notable_for_james": "①Anthropic IPO：$81.3B 史上最大、開盤估值 $2T、卻只燒掉不到 $100 億——效率型前沿實驗室的最強證據；空方要求年營收 $602B 才成立，等於把「RSI 期權」定價。②Dario 把「安全節奏」寫進 IPO 敘事並用 Class F 50.1% 投票權鎖住，這是治理結構而非公關話術。③同日 Google Gemini 4 Neon 以 1/3 成本貼近 Opus 5.5、Microsoft 稱 96% 能力 @5% 成本——前沿智能價格每季崩一次，能力差距仍 1–2 個月。④形式驗證開始 token 高效化（Opus 5.5 少 40% token 達 50% 解題率），若延續，CI 默認開啟形式驗證在一年內可行；「veri-coding」會把人的工作推向寫規格。⑤Tomasello 給出 agent 路線圖的替代方案：由下往上蓋共同承諾與視角，而非在文本上微調出終點；他直言 Turing test「連邊都搆不上」。⑥兩條線的交集：IPO 賣的是「可信度」，形式驗證賣的也是「可信度」——2026 年的稀缺品不是智能，是可驗證的正確性。",
-  "cross_episode_theme": "「可信度」成為定價軸：資本市場為安全承諾付溢價（Anthropic IPO），工程市場為機器可檢查的正確性付溢價（形式驗證），心理學則指出當前系統連代理性的組織層級都未建立（Tomasello）。三者從不同角度指向同一件事——能力已足夠便宜，欠缺的是可信任的結構。",
+  "scan_status": "2026-11-22 掃描（02:03–02:20 UTC）：窗口 11-21 02:05Z → 11-22 02:03Z。新增：Cognitive Revolution Buchanan/Collins（11-21 08:00Z）+ Latent Space AINews 黎曼猜想（11-21 05:02Z）。中文五檔零新集（Apple API 逐檔核對）。Dwarkesh／No Priors／MLST 無新集。",
+  "report_date": "2026-11-22",
+  "jev_prefilter": "2 條候選：worth 0.12（CogRev，因送檢摘要缺數字被判低）、0.63（黎曼）。CogRev 保留：110 分鐘一手長訪談、官方完整逐字稿、兩位前白宮官員。primary_source 0.41 / 0.08。",
+  "transcript_pipeline": "成功：CogRev 官網頁面自帶 AI 生成逐字稿（119,769 字含時間戳），無需另行轉錄；引文全部核對原話。Latent Space 為文章（無逐字稿需求）。",
+  "failures": "①小宇宙 xyzfm RSS 對本機 IP 持續 403（回傳 HTML 錯誤頁 2,074 bytes），改用 Apple Podcasts 目錄 API lookup?entity=podcastEpisode（releaseDate 精確到分鐘）核對五檔。②CogRev 首個 URL 由 RSS link 顯示截斷導致 404，改由 feed 內完整 link 取得。",
+  "chinese_check": "張小珺最新 157（11-18 03:08Z）；十字路口 11-15 16:00Z；42章經 11-14 13:00Z；屠龍 11-09 03:33Z；矽谷101 E258（11-09 23:00Z，Fireside RSS 直讀確認）。均無 11-20 後新集。",
+  "notable_for_james": "①黎曼猜想被「證明」兩次：Anthropic 的 Alpöge 用 Claude 產出 1.3GB Lean（約 25 萬頁，Lean bug 機率 <1%，但無人讀得完），人類數學家 Masullo 用 12 年寫 940 頁（讀得懂，但很可能有錯）。這是「正確但不可理解」與「可理解但可能錯」的歷史性對照。②Alpöge 自述「Claude 在終點線附近把我遠遠甩開」——這是 weak-to-strong alignment 的第一個真實案例，不是理論。③同日模型價格戰：Gemini 4 Neon 以 1/3 成本貼近 Opus 5.5、MS MAI Code 2 稱 96% @5% 成本、Inkling 2 Mini 以 1/4 成本追平 CyberBench。④CogRev：拜登兩位 AI 顧問承認「把領先花在安全上」十年來仍無工具；100:1 生產優勢、15:1 取得優勢仍在，缺的是政治意志。⑤Ben Buchanan 反對日曆式暫停的理由（compute overhang）值得記住：暫停會累積算力，開機即跳躍；他寧可綁安全門檻。⑥Bitter Temptation 是全場最原創：AI 讓政府施政效率暴增，而公民控制機制仍是「極低 bits 速率的選擇題」。",
+  "cross_episode_theme": "「正確性與可理解性脫鉤」：黎曼 Lean 證明可驗證、不可讀；CogRev 的 reward hacking 則是不可驗證、但可觀察。兩者都指向同一瓶頸——2026 年稀缺的不是生成答案的能力，而是驗證與理解的結構。第二條線是「領先無法消費」：算力領先與知識產出都已到位，治理工具與人類閱讀能力沒有同步擴張。",
   "index_html": "未更新 index.html（沿用停更慣例）。",
-  "source_links": "https://latent.space/p/formal-verification/ ; https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t/ ; https://podcasters.spotify.com/pod/show/machinelearningstreettalk/episodes/What-It-Would-Actually-Take-for-a-Machine-to-Have-Agency-Michael-Tomasello-e3sm6qn ; https://www.youtube.com/watch?v=io7qhEjJoik",
-  "report_file": "daily-report-2026-11-21.html"
+  "source_links": "https://www.cognitiverevolution.ai/spend-the-lead-on-safety-biden-ai-advisors-ben-buchanan-tantum-collins-on-the-fate-of-the-world/ ; https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/",
+  "report_file": "daily-report-2026-11-22.html"
  },
  "resolvedFeeds": {
   "zhang-xiaojun": "https://feed.xyzfm.space/dk4yh3pkpjp3",
@@ -123,7 +118,7 @@
   "dwarkesh": "https://www.dwarkesh.com/feed"
  },
  "zhChecked": {
-  "date": "2026-11-21",
-  "note": "Apple Podcasts 目錄 API（releaseDate 精確到分鐘）+ 小宇宙節目頁雙重核對；五檔均無 11-20 後新集。xyzfm RSS 仍 403。"
+  "date": "2026-11-22",
+  "note": "Apple Podcasts 目錄 API（lookup?entity=podcastEpisode，releaseDate 精確到分鐘）逐檔核對；五檔均無 11-20 後新集。xyzfm RSS 仍 403。矽谷101 Fireside RSS 直讀確認 E258 為最新。"
  }
 }
