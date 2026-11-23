@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「市場不是 dataset，是一個永遠不會結束的 benchmark」——兩位量化研究員拆解：為什麼 GPT 再強，也改寫不了毫秒之間的價差</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: 0; border-top: 1px solid #e5e0d8; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.82rem; color: #888; line-height: 1.8; }
+  footer strong { color: #666; }
+  .toc { background: #f7f4ef; border: 1px solid #ebe4da; border-radius: 6px; padding: 1rem 1.4rem; margin: 1.5rem 0; font-size: 0.9rem; }
+  .toc p { margin: 0.2rem 0; color: #666; }
+  .toc a { color: #6b5b4a; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="../index.html">← 返回播客日報</a>
+  <div class="ep-num">硅谷 101（泓君 Jane）· E259 · Deep Dive #292</div>
+  <h1>「市場不是 dataset，是一個永遠不會結束的 benchmark」<br>——兩位量化研究員拆解：為什麼 GPT 再強，也改寫不了毫秒之間的價差</h1>
+  <div class="meta">
+    <span>主持：泓君</span>·<span>嘉賓：Atlas Wang（XTX Markets 研究總監）、Wei Wu（前 DRW AI 研究科學家）</span><br>
+    <span>時長 2:30:43（9,043 秒）</span>·<span>2026-11-22 23:00 UTC 發布</span>·<span>逐字稿約 15 萬字</span>
+  </div>
+</header>
+
+<div class="toc">
+  <p><strong>這篇在講什麼：</strong>華爾街最賺錢的一批公司，過去十年悄悄變成了大大小小的 AI 實驗室——囤 25,000 張 GPU、投資 Anthropic、和 DeepMind 共用園區。但這集最反潮流的地方在於：兩位行內人花了兩個半小時，非常客氣地證明「通用大模型改寫不了量化」。本文把這場訪談拆成十二個可以獨立思考的命題，重點不在他們說了什麼，而在他們為什麼敢這樣說。</p>
+</div>
+
+<p>如果只看標題——「機械神教與反人性策略」——你會以為這是一集關於 AI 如何顛覆金融的節目。</p>
+
+<p>事實相反。這是 2026 年我聽過<strong>最不客氣的一次「AI 祛魅」</strong>，而且是由兩個每天在用 AI 的人說的。</p>
+
+<p>Atlas Wang 是 XTX Markets 的研究總監，同時是德州大學奧斯汀分校的終身副教授，2024 年起學術休假、全職在 XTX。Wei Wu 曾任 DRW 的 AI 研究科學家，待過亞馬遜與學術機構，做過天氣預測，2023 年底進 DRW 之前完全沒有量化金融背景。兩個人都在「AI 與市場的交界處」工作，也都在用 Claude。</p>
+
+<p>但當主持人泓君問「生成式 AI 會不會改變量化」時，Atlas 的回答不是「會」或「不會」，而是一個更根本的判斷：<strong>市場這種數據結構，讓通用方法論失效。</strong></p>
+
+<p>這篇文章想做的，是把這個判斷背後的整套推理攤開——因為它不只關於金融。它其實在回答一個更大的問題：<em>當一個領域的 reward 又慢又吵、樣本又不獨立時，scaling law 到底還剩下什麼？</em></p>
+
+<h2 class="section-title">一、先把「量化」這個詞拆掉</h2>
+
+<p>節目開場沒多久，Wei 就糾正了主持人的用詞。他指出，「量化交易」這個中文詞容易被誤解成「高頻交易」的同義詞，更準確的說法是<strong>系統化交易（systematic trading）</strong>——輸入、模型、決策、執行全部由系統完成；相對的是主觀交易，最終決策由人做，機器只做輔助。</p>
+
+<p>這個區分不是學究式的定義潔癖，它決定了後面所有的推論。因為一旦「決策權歸機器」，你就必須回答一個工程問題：機器憑什麼做決定？而這個問題的答案，在金融和在其他領域完全不同。</p>
+
+<p>Atlas 補了一層時間尺度，這是我認為全集最有用的一個框架：</p>
+
+<ul>
+  <li><strong>主觀交易</strong>看月、看年，賺的是「我比你更懂這家公司」的錢。</li>
+  <li><strong>量化</strong>看毫秒到週；一個月以上的持倉在中頻裡已經「非常有挑戰性」。</li>
+</ul>
+
+<p>然後他給出那條分界線：<strong>中頻看趨勢，高頻看波動。</strong></p>
+
+<h2 class="section-title">二、F(t) 與 dF/dt：一個數學家如何解釋兩種賺錢方式</h2>
+
+<p>Atlas 用微積分的語言把這件事講得非常乾淨。中頻預測的是價格函數 F(t) 往上還是往下；高頻根本不在乎 F 本身，只在乎導數 dF/dt——</p>
+
+<blockquote class="strong">
+「只要短期內有大量價格波動，時漲時跌，高頻就有機會買跌賣漲，賺微小的價差，靠巨量交易把價差堆成利潤。」
+<span class="attribution">— Atlas Wang，談高頻與中頻的分野</span>
+</blockquote>
+
+<p>這句話解釋了一個外人常有的困惑：為什麼高頻公司不在乎「這隻股票會不會漲」？因為它賺的不是方向，是<em>震動</em>。方向對它來說甚至是噪音——它只希望價格在短時間內來回摆动。</p>
+
+<p>而中頻的難度完全不同。你要預測 F(t) 的方向，就得理解基本面、資金流、市場情緒；但這些東西的信號極弱，而且大部分已經被別人定價。這就是為什麼 Atlas 說，量化這一行「看起來很數學，其實是在跟一個非常吵的訊號源搏鬥」。</p>
+
+<h2 class="section-title">三、做市不是猜漲跌，是賣流動性</h2>
+
+<p>泓君問到做市商的本質，Atlas 用一個具體到不能再具體的例子拆開：</p>
+
+<p>假設做市商認為某股票合理價 100 美元，他願意在 <strong>99.95</strong> 買、<strong>100.05</strong> 賣，賺中間這 0.1 美元——雙邊各 5 美分。這 0.1 美元不是「猜對方向」的獎勵，是<strong>提供服務的收費</strong>：對「合理價」的研究，加上市場對他的信任。</p>
+
+<p>第二個功能更少人講：做市商是「永恆的買賣者」。你不需要在市場上找到一個剛好想賣的人，隨時可以把單賣給他。這也是為什麼交易所有時要花錢請做市商入駐——<strong>流動性本身就是一種公共品</strong>。</p>
+
+<div class="data-point">
+  <span>結構性成因</span>
+  2008 年後的沃爾克規則限制銀行自營交易，加上市場全面電子化，把這塊利潤「拱手送給」了量化公司。這不是技術創新的結果，是監管與基礎設施變遷的結果。
+</div>
+
+<p>把這段放在整集的最前面，是有用意的。它先建立了一個常識：量化賺的是<em>服務費與微小價差</em>，不是「聰明錢的眼光」。後面所有關於 AI 的討論，都建立在這個基礎上。</p>
+
+<h2 class="section-title">四、算力信仰：200 人、25,000 張 GPU、人均近 2,000 萬美元</h2>
+
+<p>節目的第一個震撼彈是數字。</p>
+
+<p>XTX Markets 2015 年在倫敦成立，創辦人 Alex Gerko 是俄羅斯數學家、外匯出身，曾是英國納稅最多的人。公司長期只有 200 多人；2024 年 12 月、只有 200 多人時，已持有 <strong>25,000 張 GPU</strong>（金融時報兩年前報導）。三家英國運營實體 2025 年淨營收 <strong>39.3 億英鎊</strong>，按公開備案估算，人均創收接近 <strong>2,000 萬美元</strong>。</p>
+
+<p>Atlas 自稱他們是「機械神教」——對算力有狂信，運營成本主要花在計算上。</p>
+
+<div class="data-point">
+  <span>對照</span>
+  Jane Street 2026 年簽下約 <strong>1.9 億美元</strong>的多年算力合同；人均薪酬約 <strong>268 萬美元</strong>（彭博），一街之隔的高盛約 40 萬美元；2026 年 7 月單月虧 <strong>150 億美元</strong>，是近十年第一個虧損月份。
+</div>
+
+<p>但這裡有一個很容易被誤讀的地方：<strong>算力多，不代表他們在做大模型。</strong>Atlas 說 XTX 的 GPU 使用者就是量化研究員，2026 年還可以再加上「有相當多數量的 token 讓我們嘗試」。Wei 稱這是「Agentic AI Native 公司」的早期版本。</p>
+
+<p>換句話說，他們的算力不是用來訓練一個通用大腦，而是用來<strong>跑大量的、彼此正交的小模型</strong>。這個差別，是後面第七、第八節的伏筆。</p>
+
+<h2 class="section-title">五、核心反潮流論點：通用大模型為什麼看不懂市場</h2>
+
+<p>這是全集最核心、也最容易被標題黨誤解的一段。Atlas 的論證分三層，我一層一層拆。</p>
+
+<h3 class="sub-title">第一層：模態不同</h3>
+
+<p>高頻看到的是交易所發出的多變量時間序列、帶時間戳的表格，是「以數字為中心」的數據，不是以語言或圖片為中心的數據。他給了一個很好懂的類比：</p>
+
+<blockquote>
+「一個能熟練讀寫中英文、會寫 Python 的人，並不因此就對市場有洞見——隔行如隔山。」
+<span class="attribution">— Atlas Wang</span>
+</blockquote>
+
+<p>這個類比的力量在於，它把「語言能力」和「領域能力」徹底解耦。你可以是全世界最會寫 code 的模型，但這不代表你能預測下一個 tick 的價格。</p>
+
+<h3 class="sub-title">第二層：數據質量不同</h3>
+
+<p>語言數據經過良好篩選與預處理；市場數據信噪比極低、不穩定、經常突發變化。Atlas 的原話很硬：把 LLM 的訓練配方拿過來改一改就能用？</p>
+
+<blockquote class="strong">
+「絕對不可能。」
+<span class="attribution">— Atlas Wang，談把 LLM 訓練配方搬到市場數據</span>
+</blockquote>
+
+<h3 class="sub-title">第三層：更像 FSD，不像 LLM</h3>
+
+<p>Wei 的類比更精準：量化模型更接近無人駕駛模型——大量 sensor data、特有數據，理解後做決策。你不會認為 Fable 或 Astra 這類通用模型能取代 FSD，因為速度、執行，以及「模型預測之外的能力」，不是同一個東西。</p>
+
+<p>Atlas 補了一個研究階段的定位，這句話在中文社群被引用最多次：</p>
+
+<blockquote class="strong">
+「我們其實很像 2016 年到 2021 年的 OpenAI……大家現在好像快要觸碰到 GPT-3 的那個點。我是說整個領域，不是評價各個公司。」
+<span class="attribution">— Atlas Wang</span>
+</blockquote>
+
+<p>注意他的限定詞：「整個領域」。這不是說某家公司快做出 GPT-3，而是說量化的<em>範式</em>還沒收斂——很多探索、很多試錯，但還沒有一個可以抄的作業。ChatGPT 之後 LLM 有了可抄的作業，量化還沒有。</p>
+
+<h2 class="section-title">六、數據飛輪為什麼在金融失效</h2>
+
+<p>這一節是全集技術含量最高的地方，也是對「市場數據很多，所以 scaling law 一定成立」最直接的反駁。Atlas 的論證可以拆成四個獨立的阻斷點。</p>
+
+<h3 class="sub-title">阻斷點一：中頻的有效樣本極小</h3>
+
+<p>你若持有某股票一週，一年只有 <strong>52 個</strong>獨立觀測點。而且同一週內，絕大多數股票的漲跌高度相關，不能當成獨立樣本。</p>
+
+<p>這是一個很容易被忽略的統計事實：你以為你有十年數據、幾千隻股票、上百萬個觀測；但扣掉相關性之後，「有效樣本量（effective sample size）」可能只剩幾百。</p>
+
+<h3 class="sub-title">阻斷點二：高頻的觀測也高度相關</h3>
+
+<p>一筆大單會被拆成上萬個小單。Atlas 舉例：想買 100 萬股，拆成 <strong>1 萬個</strong>小單，這些單反映的是<em>同一個交易決定</em>。交易所數據文件看起來巨大，但「獨立信息」遠沒有那麼多。</p>
+
+<div class="data-point">
+  <span>核心直覺</span>
+  數據量 ≠ 信息量。金融數據的維度看着高，但獨立的「決策事件」很少——這是 scaling law 在金融的第一道牆。
+</div>
+
+<h3 class="sub-title">阻斷點三：reward 又慢又吵</h3>
+
+<p>最常見的兩種「市場 reward」都不夠：</p>
+
+<ul>
+  <li><strong>單純預測漲跌（forecasting）</strong>：但好的預測離好的盈利變現還很遠。</li>
+  <li><strong>拿十萬塊錢實盤跑一個月</strong>：賺了就算數——但「市場賺錢很大程度上不是取決於你的策略，而是取決於老天爺賞不賞飯」。</li>
+</ul>
+
+<p>嚴肅的回測要以<strong>年</strong>為單位，且必須以接近真實的交易記錄為根基。</p>
+
+<h3 class="sub-title">阻斷點四：「賺錢」與「策略好」是兩件事</h3>
+
+<p>這是 Atlas 反覆強調的一句話。回測指標不能只看預測準確率或賺多少，要看最大回撤（max drawdown）、行為有沒有 bias、分布的各階統計量。</p>
+
+<blockquote class="strong">
+「所以我們經常說，賺錢和策略好是兩件事情。」
+<span class="attribution">— Atlas Wang</span>
+</blockquote>
+
+<p>把這四點放在一起，你會看到一個很漂亮的結構：<strong>金融不是「數據不夠」，而是「獨立的 reward 不夠」。</strong>而 scaling law 的前提，恰恰是大量獨立、可重複的信號。</p>
+
+<h2 class="section-title">七、護城河排序：infra &gt; 數據 &gt; 模型</h2>
+
+<p>泓君問到護城河，Atlas 給了一個排序，這個排序值得完整記下來。</p>
+
+<p>他對 infra 的定義很寬：不只是 GPU，還包括交易所數據的底層清洗、研究 infra（GPU/CPU），以及最關鍵的 <strong>execution infra</strong>——把預測信號轉成訂單、訂單轉成持倉與盈虧，再反饋回模型的整個閉環。</p>
+
+<blockquote>
+「如果你沒有一個直接對市場執行的 execution infra，我不認為你能拿到什麼有價值的關於市場本身的訓練數據；至少對高頻來說，沒有特別好的模擬器。」
+<span class="attribution">— Atlas Wang</span>
+</blockquote>
+
+<p>數據方面，他估計至少<strong>七成</strong>是大家都能看到的公開數據；真正的護城河是各家公司自己的持倉與交易記錄——什麼持股比例在什麼情況下賺錢、什麼情況下賠錢、賠錢是為什麼。這些買不到。</p>
+
+<p>至於模型，排最底。理由很簡單：模型會趨同，execution 的交易歷史不會。</p>
+
+<div class="highlight-box">
+  <strong>對讀者的實用推論：</strong>如果你要判斷一家量化公司有沒有真 AI 能力，看 infra 與 execution，不要看模型。同樣的邏輯也適用於評估 AI 交易產品——只講模型的，大概率沒有 execution 閉環。
+</div>
+
+<h2 class="section-title">八、Ensemble 與正交信號：量化公司的 AI 策略為何與 lab 相反</h2>
+
+<p>泓君問了一個很尖的問題：AI lab 把最聰明的十幾個人和所有算力押在一個預訓練上；量化公司算力多、可試錯，是不是在犧牲 scaling law？</p>
+
+<p>Atlas 回答「當然是」，但這是階段差異。更關鍵的是<strong>商業動機不同</strong>：AI lab 想讓下一代模型更好；量化則<em>必須</em>讓下一個模型和上一個「非常不一樣」，否則無法加入 ensemble。</p>
+
+<p>他對「微創新」這個詞很警惕：在現有模型上敲敲打打得到的提升，加上執行與市場噪聲後，「99% 的情況你就會看不見」。</p>
+
+<blockquote class="strong">
+「想要的信號必須同時滿足兩個條件：足夠好（comparably good），且與生產模型正交（orthogonal）。它自己又好，又能和別人分工合作，補充別人看不到的東西，這就是我們想要的最好的信號。」
+<span class="attribution">— Atlas Wang</span>
+</blockquote>
+
+<p>這段話解釋了為什麼量化公司看起來「什麼都試一點」：不是因為不專注，而是因為<strong>專注在單一模型上，在金融裡等於自殺</strong>。你需要一組彼此正交的信號，靠組合來降低方差。</p>
+
+<p>而這也解釋了為什麼 XTX 有 25,000 張 GPU：不是訓練一個巨模型，而是同時跑幾百個小模型，然後讓它們投票。</p>
+
+<h2 class="section-title">九、反人性：為什麼理想策略要求你什麼都不做</h2>
+
+<p>標題裡的「反人性」出自這裡。Atlas 先講盈虧不對稱：</p>
+
+<ul>
+  <li>100 塊虧到 50 塊只要跌 50%，但從 50 塊賺回 100 塊需要 <strong>100%</strong> 回報。</li>
+  <li>虧到 20 塊，則需要 <strong>5 倍</strong>（+400%）。</li>
+</ul>
+
+<p>「所以在考慮賺之前，你要先考慮虧，活得長是更加重要的。」</p>
+
+<p>然後是紀律。實盤連續回撤時，人的正常反應是手動干預、改參數、關程序，但這往往讓你「死在黎明前最後的黑暗裡」，因為你破壞了策略最後的統計分布。</p>
+
+<blockquote class="strong">
+「理想的量化策略其實就是一種反人性的策略。當實盤開始出現連續回撤的時候，人的正常反應是會手動干預、臨時修改參數、關閉程序，但這往往就會導致黎明前最後的黑暗，然後你死在最後的黑暗那裡，因為你在破壞策略最後的統計分布。」
+<span class="attribution">— Atlas Wang</span>
+</blockquote>
+
+<p>這裡有一個很深的張力，節目沒有完全展開：<strong>如果策略的統計分布本身已經失效（regime change），那「不干預」就是慢性死亡。</strong>Atlas 的答案其實是「回測要夠長、要 cover 不同市場狀態」，但這仍然是一個機率判斷，不是確定性。這也是為什麼他反覆說「活得長比賺得多重要」——因為你永遠無法區分「暫時回撤」和「策略已死」，只能靠生存機率來下注。</p>
+
+<h2 class="section-title">十、品味：Claude 寫五分鐘，我看兩小時</h2>
+
+<p>泓君問到「品味」——一個很少在量化訪談裡出現的詞。Atlas 把它拆成兩問：</p>
+
+<ol>
+  <li><strong>精力投在什麼地方</strong>：東西不 work 時，你是先跑 auto research 調 learning rate/batch size，還是去讀 P&amp;L 的 paper、寫出數學公式、提假設、上白板講清楚？</li>
+  <li><strong>你還有沒有能力審查 AI 的結論</strong>。</li>
+</ol>
+
+<p>他說自己仍堅持看 Claude 寫的 code、change log，以及做數學題時的中間 reasoning——「Claude 寫代碼寫五分鐘，我得看兩小時」。</p>
+
+<blockquote class="strong">
+「如果你一刻放棄了對這些 AI generated content 的審查能力，你只要放棄一刻，你就再也不可能跟得上了。因為之後就會變成我們說屎山代碼上再疊屎山代碼，你再也不可能看得懂這件事情了。」
+<span class="attribution">— Atlas Wang</span>
+</blockquote>
+
+<p>他的結論更刺人：</p>
+
+<blockquote>
+「一個好品味的研究者和其他人之間的差距，只會隨著 AI 越變越好而越變越大。」
+<span class="attribution">— Atlas Wang</span>
+</blockquote>
+
+<p>這句話值得停下來想。它與「AI 會拉平所有人」的直覺相反：<strong>AI 降低了入門門檻，但提高了「判斷力」的溢價</strong>。因為當生成變便宜，稀缺的就變成「知道該生成什麼」和「知道生成得對不對」。</p>
+
+<h2 class="section-title">十一、金融 RSI 的三個結構性障礙</h2>
+
+<p>泓君問金融領域有沒有 RSI（遞歸自我改進）。Atlas 說今年已見過很多公司來討論「金融 RSI」，但他提出三個結構性問題：</p>
+
+<table>
+  <tr><th>障礙</th><th>內容</th><th>後果</th></tr>
+  <tr>
+    <td><strong>私有域信息</strong></td>
+    <td>交易中大量知識在私有域；最好的 frontier model 也只會告訴你書本上的東西，而書本上的東西基本已不用在今天的交易現實。</td>
+    <td>模型再強，也拿不到關鍵輸入。</td>
+  </tr>
+  <tr>
+    <td><strong>reward 時鐘被拉長</strong></td>
+    <td>中頻決策要兩週後才有結果，你能拿到多少組有用結果來提升模型？</td>
+    <td>樣本效率要求遠高於 coding/math 的 RSI。</td>
+  </tr>
+  <tr>
+    <td><strong>場景比 reward 更快過期</strong></td>
+    <td>「假如你想要更新這個模型、獲得有用的獎勵需要花四周，但這個特定的金融場景只持續了兩週，你的 RSI 究竟是為了什麼？」</td>
+    <td>「你只不過是在永遠跟在時代後面跑步罷了。」</td>
+  </tr>
+</table>
+
+<p>Wei 補了一刀，這是我認為全集最精準的一句診斷：</p>
+
+<blockquote class="strong">
+「金融是一個 non-stationary、never-ending benchmark。RSI 在 stationary 的世界（語言、代碼、視覺）貢獻最大，金融恰恰不是。」
+<span class="attribution">— Wei Wu</span>
+</blockquote>
+
+<p>把這句話和 Atlas 的「永遠不要把市場看成同一個 dataset」並讀，你會得到一個很清楚的判準：</p>
+
+<div class="highlight-box">
+  <strong>任何金融 AI 專案都應該先問兩個問題：</strong>取得一個有效 reward 要多久？這個 regime 會存在多久？如果前者大於後者，RSI 在數學上就不成立——不是工程努力能解決的。
+</div>
+
+<h2 class="section-title">十二、華爾街與矽谷合流，但底層邏輯仍然不同</h2>
+
+<p>節目後半把兩個世界的差異攤開，這一段的價值在於它拒絕了「兩者正在變成一樣」的簡單敘事。</p>
+
+<ul>
+  <li><strong>財富來源不同。</strong>矽谷的財富多來自「坐上火箭」（股權、公司成敗、加入時點）；量化的財富來自<em>個人貢獻的線性歸因</em>——「量化不可能是你加入一個公司就能賺到很多錢；你賺到很多錢，確實是你非常厲害。」</li>
+  <li><strong>能力要求不同。</strong>矽谷要選對方向，量化要個人絕對強。</li>
+  <li><strong>制度環境不同。</strong>加州禁止競業禁止條款，人才自由流動造就矽谷繁榮；量化公司以苛刻競業保護與極低透明度著稱。</li>
+  <li><strong>但正在趨同。</strong>Atlas 觀察到 frontier lab 本質上越來越像 quant lab：高人才密度、創新驅動、拼命做貢獻——「整個生態都在變化。」</li>
+</ul>
+
+<p>泓君在開場就點出這種合流的物理證據：很多量化公司是前沿模型公司的早期投資人；XTX 曾與 DeepMind 在同一個園區辦公，也是 Anthropic 的早期投資人。「華爾街」與「矽谷」在搶同一批人、同一批芯片，邊界正在消失。</p>
+
+<h2 class="section-title">十三、散戶、信號容量與那個「人作為 tool」的設想</h2>
+
+<p>節目的最後三分之一轉向更實用的問題。</p>
+
+<p><strong>散戶有 edge 嗎？</strong>兩位的共識是「沒有」，但參與度在上升（Robinhood 等平台），且 AI 讓 informed investor 的工具變好。節目的語氣容易被讀成「散戶不該進場」，但兩人其實都補了「產業理解也是一種 edge」與「買大盤是顛撲不破的真理」，算是平衡。</p>
+
+<p><strong>把好信號做成消費級產品？</strong>Wei 的答案很直接：</p>
+
+<blockquote>
+「好的信號如果你發現了，你賣給一個 consumer，很多人在做這個就不存在了，所以這也不 make sense。」
+<span class="attribution">— Wei Wu，談信號容量（alpha capacity）</span>
+</blockquote>
+
+<p>這帶出一個經濟學問題：Alpha 是有容量上限的。一個信號能容納的資金有限，賣給越多人，它就越快失效。這也是為什麼真正的量化公司不賣信號，只賣基金。</p>
+
+<p>而全集最離經叛道的一段，是 Atlas 的設想：</p>
+
+<blockquote class="strong">
+「我願意 GPT 去 call tool……它現在可以去 call Excel，可以去 call Python，它可不可以去 call 一個人？讓這個人去史丹佛校園問一下。如果我願意放棄人類的主體性，我甘願成為 LLM 使用的 tool 的一種。」
+<span class="attribution">— Atlas Wang</span>
+</blockquote>
+
+<p>他把「human in the loop」翻了過來：不是人用 AI，而是 AI 調用人。這個設想原創、刺人，也立刻帶出倫理問題：誰來保證這個「人 tool」不會被剝削、被誤導、或被迫提供自己不想提供的社會關係？</p>
+
+<p>但如果你把它當成一個<em>關於資訊採集的隱喻</em>，它其實很準確：在一個私有域資訊決定勝負的市場裡，最值錢的數據往往存在於人的腦子和關係裡，而不是資料庫裡。</p>
+
+<h2 class="section-title">十四、爭議點：哪些地方需要保留態度</h2>
+
+<ul>
+  <li><strong>「scaling law 在量化已驗證」 vs 「有限智能」。</strong>主持人問「所以 scaling law 還沒驗證？」Atlas 先答「大家既然在堅持買卡，自然有買卡的理由」，Wei 立刻降級為「有驗證，但不像其他領域敢大膽 bet」，Atlas 再補「是有限智能」。三人來回之間，沒有人給出具體曲線或數字。這是全集最需要保留態度的地方：嘉賓相信 scaling，但證據是「大家還在買卡」。</li>
+  <li><strong>「AI 不會根本改變量化」 vs 「量化公司都變成 AI 實驗室」。</strong>兩個命題可以並存（工具改變工作方式，但不改變問題結構），但節目沒有把「改變」定義清楚——是改變模型、改變研究流程、還是改變利潤結構？界線模糊。</li>
+  <li><strong>「人作為 tool 被 LLM call」。</strong>原創但缺乏制度分析。誰來保障？誰來定價？如果人的社會關係成為可調用的 API，這其實是一個全新的勞動問題。</li>
+  <li><strong>資料與合規限制。</strong>節目明確不點名具體公司策略、不聊具體持倉，嘉賓多次聲明「不代表公司」。這讓某些關鍵問題（例如 XTX 的實際模型架構、GPU 用途分配）只能停在隱喻層面。</li>
+  <li><strong>「散戶沒有 edge」 vs 「散戶參與度上升」。</strong>兩者不矛盾（參與不等於有優勢），但節目的語氣容易被讀成單邊結論。</li>
+</ul>
+
+<h2 class="section-title">十五、把這集放回 2026 年的脈絡</h2>
+
+<p>這集與本月中文播客的 RSI 討論形成一個很有價值的對照組。11-08 十字路口莊明浩說「RSI 來了」；11-15 趙晨陽（Kimi/SGLang）說「評估是 RSI 唯一瓶頸」，並把好評估定義為客觀、自動化、低成本。硅谷 101 這兩位則從金融側給出一個更硬的限制條件：</p>
+
+<div class="highlight-box">
+  <strong>在非平穩、reward 時鐘以週/月計的系統裡，「評估」不是工程問題，而是物理問題</strong>——你等 reward 的時間比 regime 存在的時間還長。
+</div>
+
+<p>這正好接上 Dwarkesh 11-13 那篇 RSI 論文提出的「可驗證三桶」（預訓練 loss、後訓練 benchmark、推理效率）：金融的困境是三個桶都不好用，市場只給你一個從不重複的 held-out set。</p>
+
+<p>另一個脈絡是「量化 vs 主觀」的界限。Atlas 說未來是兩者更好的結合，並提出第三種形態：資訊採集由人做、決策由 AI 做——人作為 LLM 的 tool。這與 11-18 張小珺集裡蔡偉談 Personal Agent「重構服務業」的問題意識相通：當 AI 接管決策，人的獨特性剩下什麼？Atlas 的答案很具體：社會關係、線下資訊、沒有被數位化的東西。這比抽象的「人類更有創造力」有說服力。</p>
+
+<h2 class="section-title">結語：真正的護城河是「活著」</h2>
+
+<p>如果用一句話概括這兩個半小時，我會說：<strong>量化不是一個「AI 應用領域」，而是一個「AI 被限制得很厲害的領域」。</strong></p>
+
+<p>通用大模型在這裡撞上三堵牆：模態不對（數字時間序列不是語言）、樣本不獨立（有效樣本量極小）、reward 太慢太吵（市場永遠在變）。這三堵牆不是工程問題，是這個領域的物理常數。</p>
+
+<p>而量化公司的回應方式，不是發明更強的模型，而是<strong>建立更深的 infra、積累買不到的 execution 歷史、維持一組彼此正交的信號、然後活下去</strong>。Atlas 把這一切壓縮成一句很樸素的話：</p>
+
+<blockquote class="strong">
+「在考慮賺之前，你要先考慮虧，活得長是更加重要的。」
+<span class="attribution">— Atlas Wang</span>
+</blockquote>
+
+<p>這句話的適用範圍遠超金融。在任何一個 reward 又慢又吵、範式還沒收斂的領域裡，生存率都比單次回報重要。而「反人性」的真正含義，不是要你做違背直覺的事，而是<strong>要你在最想插手的時候，相信那個你已經驗證過的分布</strong>。</p>
+
+<p>這大概是 2026 年最不像 AI 的一課：當所有人都在問「模型能變多強」，這兩個每天用模型的人說的是——<em>先確保你不會死。</em></p>
+
+<hr>
+
+<footer>
+  <p><strong>來源：</strong>硅谷 101〈E259｜機械神教與反人性策略：華爾街量化巨頭的 AI 之路〉，2026-11-22 23:00 UTC（美西 15:00）發布，2:30:43（9,043 秒）；主持泓君（Jane），嘉賓 Atlas Wang（XTX Markets 研究總監、UT Austin 終身副教授）、Wei Wu（初創公司聯合創辦人，曾任 DRW AI 研究科學家）。逐字稿由音頻全文轉錄（12 段、約 15 萬字），引文均核對原話；章節時間戳取自 Fireside 官方 show notes。嘉賓以個人身份發言，不代表任職機構，內容不構成投資建議。</p>
+  <p><strong>相關資料：</strong>Fireside RSS 官方 show notes（章節 00:00–02:25:48）；Jane Street / XTX Markets / DRW 公開備案與媒體報導（Bloomberg、Financial Times）；沃爾克規則（Volcker Rule）；Knight Capital 2012 年事故；文藝復興大獎章基金公開資料。</p>
+  <p>生成時間：2026-11-23 06:10 UTC · 深度復述 #292 · ai-podcast-collection</p>
+</footer>
+
+</div>
+</body>
+</html>
