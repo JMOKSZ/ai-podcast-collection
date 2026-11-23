@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-11-22T02:03:00.000Z",
- "lastScanDate": "2026-11-22",
+ "lastScan": "2026-11-23T02:16:00.000Z",
+ "lastScanDate": "2026-11-23",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-11-16T17:46:28.000Z",
@@ -19,7 +19,7 @@
    "lastFeedItemPubDate": "2026-11-21T05:02:13.000Z",
    "lastFeedItemTitle": "[AINews] Riemann Hypothesis proved...twice independently",
    "newEpisodes": [],
-   "note": "AINews 2026-11-21 05:02Z（文章標註 11-20，覆蓋當日），約 24 分鐘閱讀。主事件：黎曼猜想數小時內兩個獨立證明。Levent Alpöge（Anthropic）10-06 起、20 步、11-15 落 8 步、11-16 寫「GRH」；只發 Lean 代碼 1.3GB（≈25 萬頁），高秩群自守形式部分由 Claude 完成；Elliot Glazer 確認語句為 GRH、Lean bug 機率 <1%、編譯需數小時。Alessandro Masullo 940 頁純人類證明、寫 12 年、經秘密人工審閱。對比：AI 版很可能正確但不可理解；人類版很可能有錯但可理解。ANT 當日跌約 10%。同簡報其他：Inkling 2 Mini（26.4B/3.4B active、5.4B effective、Apache 2.0、1M ctx、12 共享層跑 3 pass、剪 2/3 專家+logit 蒸餾、DeepSWE v1.1 48.2%、Vals 2.2 46.5%、ARC-AGI-2 49.3% @$0.14、DGX Spark 75 tok/s、GB200 decode 10.29→3.84ms、kernel 4278→927）；Gemini 4 Neon（Company Agent Bench 87.4%、Agent Arena #2 1336、FrontierCode 2.0 46.2% vs Opus 47.3% @$4.38 vs $12.82）；METR Time Horizons 2.0（翻倍 3.6 月、Astra 40.3h、Opus 39.0h、CI 11.9h–110 天）；Tencent Hy4 770B/49B、Hy4-flash 156B-A12B；MS MAI Code 2 96% @5% 成本；Anthropic IPO $81.3B（含超額 $93.5B）；Epoch 估馬來西亞走私 >$3B、≈15 萬 H100 等價；德州許可凍結 8–12 月；GrepMem 95–97% vs 有損 21%；權重空間 abliteration 拒答 0.80→0.55（zero-shot）→0.17–0.21（10 passes）。"
+   "note": "本輪補掃 11-20 21:18Z 長文《The War Against Slop and an Emerging Weapon to Fight it: Formal Verification》（latent.space/p/formal-verification）。主訪 Clark Barrett（&Truth 共同創辦人/共同 CEO、Stanford CS Corbel Professor Research、cvc5 共同創造者）。核心：①AI coding agent 的「verification」（跑測試/自評/模型當評審）不是真驗證，差別在 how do you know when you're done；②Lean 是「檢查你沒有寫錯」的精密數學檢查器，不保證 spec 對；③形式化驗證不只是防禦，是 scaling brilliance（Axiom CEO Carina Hong）；④資安首個 killer use case：&Truth 掃全球 C 代碼找 memory safety；Theorem「verification is the only defense that holds while adversaries scale」；⑤Anthropic+Theorem：36 小任務，Opus 5.5 少 40% token 達 50% solve（vs Opus 5），LLM-scaled verification 開始變便宜；⑥vibe-coding→veri-coding：時間轉向寫 spec/審 spec，「代碼第一次就能跑」；⑦outcome engineering 需要可檢查的 outcome（Cognition Nader Dabit）。數據：cvc5 在 Amazon 每天被呼叫數十億次、Kiro 用於 spec analysis/test generation；Anthropic 用 Lean 形式化費馬大定理 1300 萬行；Vals 稱 GPT-6.2 Astra 首個 Lean 證明 Smoktunowicz Gap Theorem；Theorem 用「每小時驗證多少 KB 機器碼」評測；Rocq 亦在 Anthropic 示意圖中。爭議：token 仍貴、spec 錯了形式化只證明錯誤系統、不必理解每一行與問責張力。"
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-11-19T12:00:19.000Z",
@@ -60,12 +60,12 @@
    "note": "2:43:20（9820 秒）。嘉賓蔡偉（螞蟻靈光負責人）。8 章：01:24 AI產品史／20:49 PA集中出現的根源／41:57 重構服務業／1:04:40 秉賦、不足和目標／1:28:21 產品設計、未來技術與格局推演／2:08:42「市場是打出來的」／2:23:21 需求真偽／2:32:03 終極想像。節目說明點名 PA 競品 Muse、Grok Bot、Instinct、OpenAI Dots、Town、Today、Cue，螞蟻靈光 2.0。推演春晚為 PA 補貼戰首個舞台。逐字稿嘗試：下載 152MB m4a 上傳 Gemini File API，transcribe/flash 連續 429/503，17 段 10 分鐘分段重試仍失敗；報告按章節骨架整理，未虛構對話。"
   },
   "silicon_valley_101": {
-   "lastEpisodePubDate": "2026-11-09T23:00:00.000Z",
-   "lastEpisodeTitle": "E258｜聊聊硅谷创业“修道院”HF0与OpenRouter早期故事",
-   "lastFeedItemPubDate": "2026-11-09T23:00:00.000Z",
-   "lastFeedItemTitle": "E258｜聊聊硅谷创业“修道院”HF0与OpenRouter早期故事",
+   "lastEpisodePubDate": "2026-11-22T23:00:00.000Z",
+   "lastEpisodeTitle": "E259｜机械神教与反人性策略：华尔街量化巨头的AI之路",
+   "lastFeedItemPubDate": "2026-11-22T23:00:00.000Z",
+   "lastFeedItemTitle": "E259｜机械神教与反人性策略：华尔街量化巨头的AI之路",
    "newEpisodes": [],
-   "note": "54:19。嘉賓郭靖 Joe（ACE Studio，HF0 2024 秋）。HF0：一年 3 期、每期 10 隊、12 週封閉、1904 年大主教府邸、入選率遠低於 YC。ACE Studio 月收入 8 萬→80 萬美元/3 個月。無公開逐字稿，依官方 10 個章節整理。"
+   "note": "2:30:43（9043 秒），2026-11-22 23:00Z（美西 15:00）。泓君主持；嘉宾 Atlas Wang（XTX Markets 研究总监、UT Austin 终身副教授，2024 起学术休假全职 XTX）与 Wei Wu（初创联合创始人，前 DRW AI 研究科学家、亚马逊、学术机构；天气预测/物理系统+DL 背景）。官方 30 章节。完整逐字稿：音频 217MB 下载→ffmpeg 切 12 段（13 分钟/段，16k mono 24kbps）→Gemini 2.5-flash/gemini-3-flash-preview 逐段转录，约 15 万字，引文为原话。核心：①量化=系统化交易，最终决策归机器；中频看趋势 F(t)、高频看波动 dF/dt；做市=定价+流动性（合理价 100，99.95 买/100.05 卖）。②通用大模型不改写量化：市场高维连续低信噪比、不可完全观测，更像 FSD/机器人模型；语言/代码能力不可迁移（会写 Python≠懂市场）；量化≈OpenAI 2016–2021，接近未到 GPT-3。③数据飞轮失效：中频一年仅 52 个独立观测（周频）；高频一单拆万单、观测高度相关→effective sample size 小；reward 慢且吵，回测以年计；赚钱≠策略好（老天爷赏饭）。④护城河 infra>数据>模型：数据七成公开相同，真正资产是自家 position/交易史；execution infra（风控/组合优化/market impact）不可云端复制。⑤量化靠分散试错+正交信号 ensemble，非集中押注；微创新 99% 被噪声吞掉；novelty 有商业动机。⑥风险与反人性：盈亏不对称（100→50 需 +100%；100→20 需 5 倍）；ideal 策略反人性，连续回撤手动干预=破坏统计分布、死在黎明前。⑦品味=研究习惯（精力投哪、是否审查 AI 产出）；Claude 写 5 分钟代码他看 2 小时；放弃审查一刻就永远跟不上，屎山叠屎山；差距随 AI 变强而扩大。⑧金融 RSI 卡在 reward 时钟：等 4 周 reward 而 regime 只 2 周→永远跟在时代后面；私有域知识、non-stationary。⑨黑盒：解释行为而非网络；回测多指标；今天市场 foundation model 达不到 frontier LLM 的涌现欺骗，且有合规。⑩创业：高频容量有限，小团队去预测市场/中低频，或把市场当训练环境；好信号卖给多人即消失；散户无 edge。数据：Jane Street 人均 268 万美元 vs 高盛 40 万；JS 1.9 亿美元算力合同；JS 2026-07 单月亏 150 亿美元；ETF 700 亿→24 万亿；XTX 2015 伦敦、200 多人、2024-12 有 25,000 GPU、2025 三实体净营收 39.3 亿英镑、人均近 2000 万美元、与 DeepMind 同园区、Anthropic 早期投资人、Alex Gerko 俄国数学家；DRW 2008 雷曼衍生品成名、Don Wilson 2012 BTC $12 买 7 万枚、判断十年内算力支出超原油、Silicon Data+CME 推算力期货；大奖章年化>60%、2007 Quant Quake 几天亏 10 亿美元；Knight Capital 2012 45 分钟亏 4.4 亿美元；量化年化极限 5–10%。"
   },
   "42zhangjing": {
    "lastEpisodePubDate": "2026-11-14T13:00:00.000Z",
@@ -93,17 +93,17 @@
   }
  },
  "notes": {
-  "scan_status": "2026-11-22 掃描（02:03–02:20 UTC）：窗口 11-21 02:05Z → 11-22 02:03Z。新增：Cognitive Revolution Buchanan/Collins（11-21 08:00Z）+ Latent Space AINews 黎曼猜想（11-21 05:02Z）。中文五檔零新集（Apple API 逐檔核對）。Dwarkesh／No Priors／MLST 無新集。",
-  "report_date": "2026-11-22",
-  "jev_prefilter": "2 條候選：worth 0.12（CogRev，因送檢摘要缺數字被判低）、0.63（黎曼）。CogRev 保留：110 分鐘一手長訪談、官方完整逐字稿、兩位前白宮官員。primary_source 0.41 / 0.08。",
-  "transcript_pipeline": "成功：CogRev 官網頁面自帶 AI 生成逐字稿（119,769 字含時間戳），無需另行轉錄；引文全部核對原話。Latent Space 為文章（無逐字稿需求）。",
-  "failures": "①小宇宙 xyzfm RSS 對本機 IP 持續 403（回傳 HTML 錯誤頁 2,074 bytes），改用 Apple Podcasts 目錄 API lookup?entity=podcastEpisode（releaseDate 精確到分鐘）核對五檔。②CogRev 首個 URL 由 RSS link 顯示截斷導致 404，改由 feed 內完整 link 取得。",
-  "chinese_check": "張小珺最新 157（11-18 03:08Z）；十字路口 11-15 16:00Z；42章經 11-14 13:00Z；屠龍 11-09 03:33Z；矽谷101 E258（11-09 23:00Z，Fireside RSS 直讀確認）。均無 11-20 後新集。",
-  "notable_for_james": "①黎曼猜想被「證明」兩次：Anthropic 的 Alpöge 用 Claude 產出 1.3GB Lean（約 25 萬頁，Lean bug 機率 <1%，但無人讀得完），人類數學家 Masullo 用 12 年寫 940 頁（讀得懂，但很可能有錯）。這是「正確但不可理解」與「可理解但可能錯」的歷史性對照。②Alpöge 自述「Claude 在終點線附近把我遠遠甩開」——這是 weak-to-strong alignment 的第一個真實案例，不是理論。③同日模型價格戰：Gemini 4 Neon 以 1/3 成本貼近 Opus 5.5、MS MAI Code 2 稱 96% @5% 成本、Inkling 2 Mini 以 1/4 成本追平 CyberBench。④CogRev：拜登兩位 AI 顧問承認「把領先花在安全上」十年來仍無工具；100:1 生產優勢、15:1 取得優勢仍在，缺的是政治意志。⑤Ben Buchanan 反對日曆式暫停的理由（compute overhang）值得記住：暫停會累積算力，開機即跳躍；他寧可綁安全門檻。⑥Bitter Temptation 是全場最原創：AI 讓政府施政效率暴增，而公民控制機制仍是「極低 bits 速率的選擇題」。",
-  "cross_episode_theme": "「正確性與可理解性脫鉤」：黎曼 Lean 證明可驗證、不可讀；CogRev 的 reward hacking 則是不可驗證、但可觀察。兩者都指向同一瓶頸——2026 年稀缺的不是生成答案的能力，而是驗證與理解的結構。第二條線是「領先無法消費」：算力領先與知識產出都已到位，治理工具與人類閱讀能力沒有同步擴張。",
+  "scan_status": "2026-11-23 掃描（02:03–02:18 UTC）：窗口 11-22 02:03Z → 11-23 02:16Z。新增：硅谷101 E259（11-22 23:00Z）。補掃：Latent Space 形式化驗證長文（11-20 21:18Z，上輪窗口外）。中文其餘四檔零新集（Apple API 逐檔核對）。Dwarkesh／No Priors／MLST／CogRev 無新集。",
+  "report_date": "2026-11-23",
+  "jev_prefilter": "2 條候選：worth 0.64（硅谷101 E259，原因：數字多但屬二手轉述/嘉賓個人觀點）、1.17（Latent Space 形式化驗證）。兩條均 keep（>=0.6）；primary_source 0.33/0.35。",
+  "transcript_pipeline": "硅谷101：RSS 取 mp3（217MB, 9043s）→ffmpeg 切 12 段（780s/段，16k mono 24kbps）→Gemini 轉錄。gemini-2.5-flash 免費層每日 20 次用盡（4 段後 429，retry 5h48m），改用 gemini-3-flash-preview 完成其餘 8 段，全部成功，共約 150,250 字。Latent Space 為官方文章全文，無需轉錄。",
+  "failures": "①xyzfm RSS 對本機 IP 持續 403（回傳 2,074 bytes HTML），改用 Apple Podcasts 目錄 API lookup?entity=podcastEpisode 核對五檔。②gemini-2.5-flash 免費層 20 req/day 用盡；gemini-3.5-transcribe 亦 429。改用 gemini-3-flash-preview 成功。③多個 background exec session 被環境終止，改為前台分段執行。",
+  "chinese_check": "张小珺最新 157（11-18 03:08Z）；十字路口 11-15 16:00Z；42章經 11-14 13:00Z；屠龍 11-09 03:33Z；矽谷101 E259（11-22 23:00Z）為新集。其餘四檔無 11-20 後新集。",
+  "notable_for_james": "①最反潮流的一句：通用大模型沒有、也不會直接改寫量化——因為市場的數據獨立性太差（中頻一年 52 個獨立觀測；高頻一單拆萬單），reward 又慢又吵。②金融 RSI 的死結是可計算的：取得 reward 要 4 週，regime 只存在 2 週→「永遠跟在時代後面跑步」。③護城河排序 infra>數據>模型，模型排最底；數據七成公開相同，真正資產是自家 position 與 execution 交易史。④XTX 200 多人、25,000 GPU、人均創收近 2000 萬美元，運營成本主要花在算力——「機械神教」。⑤「理想的量化策略是反人性的」：連續回撤時手動干預=破壞統計分布、死在黎明前。⑥Atlas 的品味定義：精力投哪＋是否審查 AI 產出；「Claude 寫 5 分鐘代碼我看 2 小時」；放棄審查一刻就永遠跟不上。⑦Latent Space：形式化驗證是 2026 的「反 slop」武器；Lean 只檢查你沒寫錯，不保證 spec 對；Opus 5.5 少 40% token 達 50% solve。",
+  "cross_episode_theme": "「reward 的時鐘」：量化中頻 reward 比 regime 慢，RSI 在數學上不成立；形式化驗證的 reward 是 Lean 即時檢查，所以可規模化。同一年，兩個領域分岔，差別不在算力，在回饋延遲。第二條線是「驗證成為稀缺資源」：金融用統計回測、代碼用 Lean/SMT、AI lab 用 benchmark，都在回答「你怎麼知道自己是對的」。",
   "index_html": "未更新 index.html（沿用停更慣例）。",
-  "source_links": "https://www.cognitiverevolution.ai/spend-the-lead-on-safety-biden-ai-advisors-ben-buchanan-tantum-collins-on-the-fate-of-the-world/ ; https://latent.space/p/ainews-riemann-hypothesis-proved-twice-independently/",
-  "report_file": "daily-report-2026-11-22.html"
+  "source_links": "https://sv101.fireside.fm/273 ; https://latent.space/p/formal-verification/",
+  "report_file": "daily-report-2026-11-23.html"
  },
  "resolvedFeeds": {
   "zhang-xiaojun": "https://feed.xyzfm.space/dk4yh3pkpjp3",
@@ -118,7 +118,7 @@
   "dwarkesh": "https://www.dwarkesh.com/feed"
  },
  "zhChecked": {
-  "date": "2026-11-22",
-  "note": "Apple Podcasts 目錄 API（lookup?entity=podcastEpisode，releaseDate 精確到分鐘）逐檔核對；五檔均無 11-20 後新集。xyzfm RSS 仍 403。矽谷101 Fireside RSS 直讀確認 E258 為最新。"
+  "date": "2026-11-23",
+  "note": "Apple Podcasts 目錄 API（lookup?entity=podcastEpisode，releaseDate 精確到分鐘）逐檔核對；张小珺/十字路口/42章經/屠龍之術均無 11-20 後新集。xyzfm RSS 仍 403。矽谷101 Fireside RSS 直讀確認 E259 為最新。"
  }
 }

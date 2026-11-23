@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 播客深度萃取 · 2026-11-23</title>
+<style>
+  :root{
+    --paper:#faf8f5;
+    --ink:#1f1c18;
+    --muted:#6b6459;
+    --rule:#ddd5c8;
+    --accent:#8c5a2b;
+    --soft:#f2ece2;
+  }
+  *{box-sizing:border-box}
+  html{background:var(--paper)}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:Georgia,"Noto Serif SC","Songti SC",serif;
+    font-size:17px;
+    line-height:1.78;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:56px 28px 90px}
+  header.top{border-bottom:2px solid var(--ink);padding-bottom:26px;margin-bottom:44px}
+  .kicker{font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  h1{font-size:38px;line-height:1.2;margin:0 0 14px;font-weight:600;letter-spacing:-.01em}
+  .meta{font-size:14px;color:var(--muted)}
+  .meta span{margin-right:18px;white-space:nowrap}
+  .lede{margin:26px 0 0;font-size:17.5px;color:#3a342c;border-left:3px solid var(--accent);padding-left:18px}
+  h2.section{
+    font-size:13px;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--accent);margin:58px 0 8px;font-weight:600;
+    border-bottom:1px solid var(--rule);padding-bottom:10px;
+  }
+  h3.show{font-size:26px;margin:40px 0 4px;font-weight:600;line-height:1.3}
+  .host{font-size:14.5px;color:var(--muted);margin-bottom:26px}
+  h4.ep{font-size:21px;margin:34px 0 6px;font-weight:600;line-height:1.35}
+  .epmeta{font-size:13.5px;color:var(--muted);margin-bottom:22px;letter-spacing:.02em}
+  h5{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:30px 0 8px;font-weight:600}
+  p{margin:0 0 14px}
+  ul{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:9px}
+  li::marker{color:var(--accent)}
+  strong{font-weight:600}
+  em{font-style:italic}
+  .num{font-variant-numeric:tabular-nums}
+  blockquote{
+    margin:20px 0;padding:16px 20px;background:var(--soft);
+    border-left:3px solid var(--accent);font-size:16.5px;color:#3d362d;
+  }
+  blockquote footer{font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.04em}
+  .box{background:#fff;border:1px solid var(--rule);padding:18px 22px;margin:22px 0;font-size:15.5px;color:#453e35}
+  .box h6{margin:0 0 8px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  table{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:15px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  footer.bottom{margin-top:70px;padding-top:22px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--muted)}
+  footer.bottom p{margin:0 0 8px}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(140,90,43,.3)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="kicker">AI Podcast Deep Dive · Daily Brief</div>
+  <h1>AI 播客深度萃取報告</h1>
+  <div class="meta">
+    <span>報告日期：2026-11-23（週一）</span>
+    <span>生成時間：2026-11-23 02:16 UTC</span>
+    <span>來源：RSS · Apple Podcasts API · 官方逐字稿</span>
+  </div>
+  <p class="lede">
+    今日只有兩集值得坐下來讀完：硅谷 101 用 2 小時 30 分把「華爾街量化巨頭＝偽裝成交易公司的 AI 實驗室」這件事拆到骨頭，兩位嘉賓（XTX Markets 研究總監、前 DRW AI 研究科學家）給出的結論比標題更冷靜——通用大模型沒有、也不會從根本上改寫量化；Latent Space 則接上了同一條線的另一端：當 AI 生成的代碼被稱為「slop」，人類手上真正的新武器是形式化驗證。兩集合起來，是同一個問題的兩面：<em>在一個 reward 又慢又吵的系統裡，你要怎麼知道自己是對的？</em>
+  </p>
+</header>
+
+<h2 class="section">中文播客</h2>
+
+<h3 class="show">硅谷 101（泓君 Jane）</h3>
+<p class="host">在矽谷現場用中文講科技 · 213+ 期 · 本集嘉賓以個人身份發言，不代表任職機構，內容不構成投資建議</p>
+
+<h4 class="ep">E259｜機械神教與反人性策略：華爾街量化巨頭的 AI 之路 🎙️</h4>
+<p class="epmeta">發布：2026-11-22 23:00 UTC（美西 15:00）· 時長 2:30:43（9,043 秒）· 來源：Fireside RSS + 官方章節 · 逐字稿：音頻全文轉錄（約 15 萬字，引文均為原話）</p>
+
+<h5>主題</h5>
+<p>
+  華爾街最低調、最賺錢的一批量化交易公司，如何在過去二十年從「交易所隔壁的機房」變成這一輪 AI 浪潮裡囤算力、搶人才、投 AI 實驗室最兇的一批人；以及一個更尖銳的問題：生成式 AI 到底能不能改變量化交易？兩位嘉賓的答案都不是「能」或「不能」，而是「市場這種數據結構，讓通用的那一套方法失效」。
+</p>
+<p>
+  節目一開始，泓君先把這批公司與矽谷的關係挑明：很多量化公司是前沿模型公司的早期投資人；XTX Markets 曾與 DeepMind 在同一個園區辦公，也是 Anthropic 的早期投資人。Jane Street 今年簽下約 <span class="num">1.9 億美元</span>的多年算力合同；XTX 在 2024 年 12 月、只有 200 多人時，已持有 <span class="num">25,000 張 GPU</span>（金融時報兩年前的報導）。「華爾街」與「矽谷」在搶同一批人、同一批芯片，邊界正在消失。
+</p>
+
+<h5>嘉賓背景</h5>
+<ul>
+  <li><strong>Atlas Wang</strong>：XTX Markets 研究總監；德州大學奧斯汀分校（UT Austin）終身副教授，2024 年起學術休假、全職在 XTX。研究風格偏「硬核科學」，在節目中反覆用統計與機器學習的第一原理拆問題。</li>
+  <li><strong>Wei Wu（吳偉）</strong>：初創公司聯合創始人；曾任 DRW 的 AI 研究科學家，也待過亞馬遜與學術機構。背景是物理系統與深度學習（做過天氣預測），2023 年底加入 DRW 前完全沒有量化金融背景——這正好成了節目裡「東西部差異」的第一手素材。</li>
+  <li><strong>XTX Markets</strong>：2015 年倫敦成立，創辦人 Alex Gerko 是俄羅斯數學家、外匯出身，曾是英國納稅最多的人。公司長期只有 200 多人，2025 年三家英國運營實體淨營收 <span class="num">39.3 億英鎊</span>，按公開備案估算人均創收接近 <span class="num">2,000 萬美元</span>，是人均創收最高的量化公司之一。Atlas 自稱他們是「機械神教」——對算力有狂信，運營成本主要花在計算上。</li>
+  <li><strong>DRW</strong>：從利率衍生品起家，2008 年雷曼兄弟倒下時從一堆銀行的競標中拿下雷曼的衍生品頭寸而成名。創辦人 Don Wilson 在 2012 年比特幣只有 12 美元時就盯上它，並從美國政府拍賣中拿到 7 萬枚比特幣。他現在的判斷是：十年內全世界花在算力上的錢會超過原油，算力會成為地球上最大的大宗商品；DRW 投資的 Silicon Data 已與 CME 合作，要推出首批受美國監管的算力期貨。</li>
+</ul>
+
+<h5>核心論點</h5>
+
+<p><strong>論點一：量化不是「高頻交易」的同義詞，而是「決策權歸機器」。</strong> Wei 一開場就糾正了節目的用詞：更準確的說法是系統化交易（systematic trading）——輸入、模型、決策、執行全部由系統完成；主觀交易則是最終決策由人做，機器只做輔助。Atlas 補了一層時間尺度：主觀看月、看年；量化看毫秒到週，中頻一個月以上就已「非常有挑戰性」。兩者沒有明確鴻溝，但有一個很實用的分界：<em>中頻看趨勢，高頻看波動</em>。用他的數學語言，中頻是預測函數 F(t) 往上還是往下；高頻根本不在乎 F，只在乎導數 dF/dt——「只要短期內有大量價格波動，時漲時跌，高頻就有機會買跌賣漲，賺微小的價差，靠巨量交易把價差堆成利潤」。</p>
+
+<p><strong>論點二：做市的本質是定價＋流動性，不是「猜漲跌」。</strong> Atlas 用一個具體例子把價差講清楚：做市商認為某股票合理價 100 美元，他願意在 99.95 買、100.05 賣，賺的是中間這 0.1 美元（雙邊各 5 美分）的差，靠的是對「合理價」的研究與市場聲譽。第二個功能是當「永恆的買賣者」：你不需要在市場上找到另一個剛好想賣的人，隨時可以把單賣給做市商。這也是為什麼交易所有時要花錢請做市商入駐——流動性本身就是一種公共品。節目把 2008 年後的沃爾克規則（限制銀行自營交易）與市場電子化，視為把這塊利潤「拱手送給」量化公司的結構性原因。</p>
+
+<p><strong>論點三：通用大模型沒有、也不會直接改寫量化，因為市場的數據結構根本不是語言的數據結構。</strong> 這是全集最核心、也最反潮流的一段。Atlas 的論證分三層：</p>
+<ul>
+  <li><strong>模態不同。</strong> 高頻看到的是交易所發出的多變量時間序列／帶時間戳的表格，是「以數字為中心」的模型，不是以語言或圖片為中心的模型。他給了一個很好懂的類比：一個能熟練讀寫中英文、會寫 Python 的人，並不因此就對市場有洞見——「隔行如隔山」，語言與代碼的能力不能簡單遷移。</li>
+  <li><strong>數據質量不同。</strong> 語言數據經過良好篩選與預處理；市場數據信噪比極低、不穩定、經常突發變化。把 LLM 的訓練配方拿過來改一改就能用？「絕對不可能。」</li>
+  <li><strong>更像 FSD，不像 LLM。</strong> Wei 說量化模型更接近無人駕駛模型：很多 sensor data、特有數據，理解後做決策。你不會認為 Fable 或 Astra 這類通用模型能取代 FSD，因為速度、執行與模型預測之外的能力，不是同一個東西。</li>
+</ul>
+<p>Atlas 用「研究階段」來定位：今天的量化大概像 <strong>2016 到 2021 年的 OpenAI</strong>——很多探索、很多試錯、範式還沒收斂；「大家現在好像快要觸碰到 GPT-3 的那個點」，但還沒到。 ChatGPT 之後 LLM 有了可抄的作業，量化還沒有。</p>
+
+<p><strong>論點四：金融的「數據飛輪」為什麼失效——問題不在數據量，在數據獨立性。</strong> 這一段是全集技術含量最高的地方，也是對「市場數據很多，所以 scaling law 一定成立」最直接的反駁：</p>
+<ul>
+  <li><strong>中頻的有效樣本極小。</strong> 你若持有某股票一週，一年只有 <span class="num">52 個</span>獨立觀測點；而且同一週內絕大多數股票的漲跌高度相關，不能當成獨立樣本。</li>
+  <li><strong>高頻的觀測高度相關。</strong> 一筆大單會被拆成上萬個小單（他舉例：想買 100 萬股，拆成 1 萬個單），這些單反映的是同一個交易決定；交易所數據文件看起來巨大，但「獨立信息」遠沒有那麼多。有效樣本量（effective sample size）很小。</li>
+  <li><strong>Reward 又慢又吵。</strong> 最常見的兩種「市場 reward」都不夠：一種是單純預測漲跌（forecasting），但好的預測離好的盈利變現還很遠；另一種是拿十萬塊錢實盤跑一個月，賺了就算數——但「市場賺錢很大程度上不是取決於你的策略，而是取決於老天爺賞不賞飯」。嚴肅的回測要以<strong>年</strong>為單位，且必須以接近真實的交易記錄為根基。</li>
+  <li><strong>「賺錢」與「策略好」是兩件事。</strong> 這是 Atlas 反覆強調的一句話。回測指標不能只看預測準確率或賺多少，要看最大回撤（max drawdown）、行為有沒有 bias、分布的各階統計量。</li>
+</ul>
+
+<p><strong>論點五：護城河排序是 infra &gt; 數據 &gt; 模型，模型排最底。</strong> Atlas 的定義很寬：infra 不只是 GPU，還包括交易所數據的底層清洗、研究 infra（GPU/CPU），以及最關鍵的 <strong>execution infra</strong>——把預測信號轉成訂單、訂單轉成持倉與盈虧，再反饋回模型的整個閉環。「如果你沒有一個直接對市場執行的 execution infra，我不認為你能拿到什麼有價值的關於市場本身的訓練數據；至少對高頻來說，沒有特別好的模擬器。」數據方面，他估計至少 <strong>七成</strong>是大家都能看到的公開數據；真正的護城河是各家公司自己的持倉與交易記錄（position）——什麼持股比例在什麼情況下賺錢、什麼情況下賠錢、賠錢是為什麼。這些買不到。</p>
+
+<p><strong>論點六：量化公司的 AI 策略是「分散試錯＋正交信號」，與 AI lab 的「集中押注」相反。</strong> 泓君問：AI lab 把最聰明的十幾個人和所有算力押在一個預訓練上，量化公司算力多、可試錯，是不是在犧牲 scaling law？Atlas 回答「當然是」，但這是階段差異：量化還在「勃勃生機、萬物競發」的早期。更關鍵的是商業動機不同——AI lab 想讓下一代模型更好；量化則<em>必須</em>讓下一個模型和上一個「非常不一樣」，否則無法加入 ensemble。他對「微創新」這個詞很警惕：在現有模型上敲敲打打得到的提升，加上執行與市場噪聲後，「99% 的情況你就會看不見」。想要的信號必須同時滿足兩個條件：<strong>足夠好（comparably good）</strong>，且<strong>與生產模型正交（orthogonal）</strong>——「它自己又好，又能和別人分工合作，補充別人看不到的東西，這就是我們想要的最好的信號。」</p>
+
+<p><strong>論點七：理想策略是反人性的；活得長比賺得多重要。</strong> 這是標題裡「反人性」的出處。Atlas 先講盈虧不對稱：100 塊虧到 50 塊只要跌 50%，但從 50 塊賺回 100 塊需要 100% 回報；虧到 20 塊，則需要 5 倍。「所以在考慮賺之前，你要先考慮虧，活得長是更加重要的。」然後是紀律：實盤連續回撤時，人的正常反應是手動干預、改參數、關程序，但這往往讓你「死在黎明前最後的黑暗裡」，因為你破壞了策略最後的統計分布。「理想的量化策略其實就是一種反人性的策略。」</p>
+
+<p><strong>論點八：所謂「品味」，其實是研究習慣的差異，而且 AI 會把這個差距拉大。</strong> Atlas 把品味拆成兩問：<em>精力投在什麼地方</em>（東西不 work 時，你是先跑 auto research 調 learning rate/batch size，還是去讀 P&amp;L 的 paper、寫出數學公式、提假設、上白板講清楚）；<em>你還有沒有能力審查 AI 的結論</em>。他說自己仍堅持看 Claude 寫的 code、change log、以及做數學題時的中間 reasoning——「Claude 寫代碼寫五分鐘，我得看兩小時」。理由很硬：「如果你一刻放棄了對這些 AI generated content 的審查能力，你只要放棄一刻，你就再也不可能跟得上了。之後就會變成屎山代碼上再疊屎山代碼。」結論：「一個好品味的研究者和其他人之間的差距，只會隨著 AI 越變越好而越變越大。」</p>
+
+<p><strong>論點九：金融 RSI 的真正障礙不是算力，是「時鐘」。</strong> 泓君問金融領域有沒有 RSI。Atlas 說今年已見過很多公司來討論「金融 RSI」，但他提出三個結構性問題：<strong>(1) 私有域信息</strong>——交易中大量知識在私有域，最好的 frontier model 也只會告訴你書本上的東西，而書本上的東西基本已不用在今天的交易現實；<strong>(2) reward 時鐘被拉長</strong>——中頻決策要兩週後才有結果，你能拿到多少組有用結果來提升模型？這對樣本效率的要求遠高於 coding/math 的 RSI；<strong>(3) 場景比 reward 更快過期</strong>——「假如你想要更新這個模型、獲得有用的獎勵需要花四周，但這個特定的金融場景只持續了兩週，你的 RSI 究竟是為了什麼？你只不過是在永遠跟在時代後面跑步罷了。」Wei 補了一刀：金融是 non-stationary、never-ending benchmark；RSI 在 stationary 的世界（語言、代碼、視覺）貢獻最大，金融恰恰不是。</p>
+
+<p><strong>論點十：華爾街與矽谷在合流，但底層邏輯仍然不同。</strong> 節目後半把兩個世界的差異攤開：矽谷的財富多來自「坐上火箭」（股權、公司成敗、加入時點）；量化的財富來自<strong>個人貢獻的線性歸因</strong>——「量化不可能是你加入一個公司就能賺到很多錢；你賺到很多錢，確實是你非常厲害。」矽谷要選對方向，量化要個人絕對強。另一個差異是競業與透明度：加州禁止競業禁止條款，人才自由流動造就矽谷繁榮；量化公司以苛刻競業保護與極低透明度著稱。但 Atlas 也觀察到 frontier lab 本質上越來越像 quant lab：高人才密度、創新驅動、拼命做貢獻——「整個生態都在變化。」</p>
+
+<h5>關鍵數據</h5>
+<table>
+  <tr><th>項目</th><th>數字 / 事實</th></tr>
+  <tr><td>Jane Street 人均薪酬</td><td>約 <span class="num">268 萬美元</span>（彭博）；一街之隔的高盛約 <span class="num">40 萬美元</span></td></tr>
+  <tr><td>Jane Street 算力合同</td><td>2026 年簽下約 <span class="num">1.9 億美元</span>的多年算力合約</td></tr>
+  <tr><td>Jane Street 單月虧損</td><td>2026 年 7 月單月虧 <span class="num">150 億美元</span>，近十年第一個虧損月份（主持人結尾補充，原因與本集機器交易不完全相同）</td></tr>
+  <tr><td>ETF 市場規模</td><td>Jane Street 進場時約 <span class="num">700 億</span>美元 → 今天約 <span class="num">24 兆</span>美元</td></tr>
+  <tr><td>XTX Markets</td><td>2015 年倫敦成立；200 多人；2024-12 已持有 <span class="num">25,000 張 GPU</span>（FT）；三家英國實體 2025 淨營收 <span class="num">39.3 億英鎊</span>；人均創收近 <span class="num">2,000 萬美元</span></td></tr>
+  <tr><td>做市價差示例</td><td>合理價 100 美元：<span class="num">99.95</span> 買 / <span class="num">100.05</span> 賣，賺中間約 0.1 美元</td></tr>
+  <tr><td>量化回報極限</td><td>Atlas：可預測的年化回報極限大約 <span class="num">5%–10%</span></td></tr>
+  <tr><td>中頻有效樣本</td><td>每週持倉 → 一年只有 <span class="num">52 個</span>獨立觀測</td></tr>
+  <tr><td>高頻拆單</td><td>100 萬股的單拆成 <span class="num">1 萬</span>個小單，彼此不獨立</td></tr>
+  <tr><td>文藝復興</td><td>大獎章基金多年年化 <span class="num">&gt;60%</span>；2007 年 Quant Quake 幾天內虧 <span class="num">10 億美元</span></td></tr>
+  <tr><td>Knight Capital</td><td>2012 年程序故障，<span class="num">45 分鐘</span>虧掉 <span class="num">4.4 億美元</span></td></tr>
+  <tr><td>盈虧不對稱</td><td>100 → 50 需 +100% 回本；100 → 20 需 <span class="num">5 倍</span>（+400%）</td></tr>
+  <tr><td>DRW / Don Wilson</td><td>2012 年比特幣 <span class="num">12 美元</span>時進場，從美國政府拍賣拿到 <span class="num">7 萬枚</span> BTC；判斷十年內算力支出超原油</td></tr>
+  <tr><td>研究階段定位</td><td>量化 ≈ OpenAI <span class="num">2016–2021</span>，接近但未到 GPT-3 時刻</td></tr>
+</table>
+
+<h5>重點引用</h5>
+<blockquote>
+  「我老闆問我說，你的個人投資水平怎麼樣？我說我每年會穩定的虧幾千，年份差一點的時候能虧得更多一些。然後我老闆說：很好，你就是我們需要的量化研究人才，因為你絕對不會用你的個人判斷干預模型的判斷，你知道你自己的個人判斷什麼都不是。」
+  <footer>— Atlas Wang，轉述他加入量化行業時與老闆的對話</footer>
+</blockquote>
+<blockquote>
+  「理想的量化策略其實就是一種反人性的策略。當實盤開始出現連續回撤的時候，人的正常反應是會手動干預、臨時修改參數、關閉程序，但這往往就會導致黎明前最後的黑暗，然後你死在最後的黑暗那裡，因為你在破壞策略最後的統計分布。」
+  <footer>— Atlas Wang</footer>
+</blockquote>
+<blockquote>
+  「永遠不要把市場本身看成是同一個 dataset 或者 benchmark。市場是一個 never-ending benchmark。你今天的信號解好了今天的問題，明天市場是會變的。」
+  <footer>— Atlas Wang</footer>
+</blockquote>
+<blockquote>
+  「如果你一刻放棄了對這些 AI generated content 的審查能力，你只要放棄一刻，你就再也不可能跟得上了。因為之後就會變成我們說屎山代碼上再疊屎山代碼，你再也不可能看得懂這件事情了。」
+  <footer>— Atlas Wang，談「品味」與 AI 辅助研究</footer>
+</blockquote>
+<blockquote>
+  「我們其實很像 2016 年到 2021 年的 OpenAI⋯⋯大家現在好像快要觸碰到 GPT-3 的那個點。我是說整個領域，不是評價各個公司。」
+  <footer>— Atlas Wang</footer>
+</blockquote>
+<blockquote>
+  「好的信號如果你發現了，你賣給一個 consumer，很多人在做這個就不存在了，所以這也不 make sense。」
+  <footer>— Wei Wu，談 AI 交易工具與信號容量</footer>
+</blockquote>
+<blockquote>
+  「我願意 GPT 去 call tool⋯⋯它現在可以去 call Excel，可以去 call Python，它可不可以去 call 一個人？讓這個人去史丹佛校園問一下。如果我願意放棄人類的主體性，我甘願成為 LLM 使用的 tool 的一種。」
+  <footer>— Atlas Wang，全集最離經叛道的一段設想</footer>
+</blockquote>
+
+<h5>技術詳情</h5>
+<ul>
+  <li><strong>Encoder 是共同瓶頸。</strong> Atlas 反覆把量化與 FSD 並置：兩者都是對「連續、高維、不可完全觀測」的自然信號做表徵。市場的維度沒有公認定義，但確定是高維且連續的，不是幾個離散特徵能表達；所以第一步永遠是「把自然信號 encoding 好」，再談監督學習、強化學習與後訓練。他每次看 FSD 升級——「換了一個更好的 encoder，再做更好的 RL 後訓練」——都覺得跟量化在做的事很像。</li>
+  <li><strong>Cross-sectional 相關性是神經網絡的意外收穫。</strong> 傳統量化模型處理「各股票之間的相关性」很吃力；把全部股票數據放進一個大網絡，網絡透過有效壓縮數據，能自己發現有意思的跨股票相關結構。這是「更大模型」在市場上能展現獨特優勢的具體機制之一。</li>
+  <li><strong>Ensemble 與正交性。</strong> 所有量化公司都會走「多信號迭代、不斷加入與現有信號正交的新信號」的路。正交性、創新性都是核心信號指標。與 AI lab 的「疊加優勢」相反：金融的邊際收益必須來自「跟別人不一樣」。</li>
+  <li><strong>Execution infra 的內容。</strong> 風控、組合優化（portfolio optimization）、市場影響（market impact）、下單演算法與硬體。Atlas 特別解釋 market impact：你認為股票被低估，但一次砸 200 萬股進去，做市商立刻改定價，「市場馬上意識到有一隻巨鯊進來了」，重定價完成後你的盈利空間就消失了。所以「知道哪隻股票漲跌」離賺錢還很遠。</li>
+  <li><strong>回測方法論。</strong> 以年為單位；必須 cover 不同市場狀態（他舉 2020 COVID、2024 年初國內黑天鵝踩踏）；指標包含 max drawdown、分布統計量、行為 bias，而不是單一準確率或收益率。</li>
+  <li><strong>Scaling law 在金融的狀態。</strong> Wei：有驗證，但「不像機器人或其他領域那樣敢大膽 bet 一些東西」；Atlas 補「是有限智能」。交易公司講 ROI：相信 scaling，但要先看到類似結果才迭代，不像矽谷願意把想像與現實的差距拉得很遠。</li>
+  <li><strong>黑盒與可解釋性。</strong> 行業的態度不是「解釋網絡」，而是「解釋行為」：用大量回測指標觀察模型是更激進還是更保守、偏愛哪類股票；execution engine 的風控會修正過於激進的預測。Atlas 判斷：以目前市場 foundation model 的訓練數據質量，要達到 frontier LLM 那種「高度智能、甚至偽裝與欺騙」的湧現能力，「還有很長的距离」；加上金融是高度監管市場，每家公司都有合規團隊。</li>
+</ul>
+
+<h5>行業 insight</h5>
+<ul>
+  <li><strong>「量化公司幾乎都變成大大小小的 AI 實驗室」是過去十年最有趣的結構變化。</strong> 但這不是 FOMO：「量化投資者不會因為 FOMO 去踹一件什麼事情，他們只會認為已經看到這東西在賺錢，被說服了，才會去試。」（Atlas 原話：不見兔子不撒鷹。）</li>
+  <li><strong>算力軍備競賽的分野：科技公司講敘事，量化公司算 ROI。</strong> XTX 的運營成本主要花在算力，人少、卡多，GPU 使用者就是量化研究員——「2026 年還可以再加上有相當多數量的 token 讓我們嘗試。」Wei 稱這是「Agentic AI Native 公司」的早期版本。</li>
+  <li><strong>速度的邊際收益在下降。</strong> 光纜、機房位置帶來的幾毫秒優勢仍是「還在牌桌上」的必要條件，但邊際收益越來越低，所以大家轉向「更慢、容量更大、更聰明的模型」。同時高頻與做市為整個市場提供了流動性，讓所有人以更低價差、更快速度交易——這是被低估的社會效益。</li>
+  <li><strong>K 型分化與小團隊的生存空間。</strong> 大公司有數據、算力、execution infra，明顯發展更快；但小團隊可 leverage 工具快速起步。真正的機會在「信號容量（alpha capacity）小、大公司嫌維護成本高」的角落，例如預測市場（Polymarket、Kalshi）；或「不以交易獲利為唯一目的」——把市場當訓練環境、數據環境。Atlas 指出結構矛盾：VC 要快速增長，但量化不控風險就會年內賠光。</li>
+  <li><strong>人才市場的合流。</strong> 華爾街與矽谷搶同一批數學、物理、計算機背景的人；量化招聘傳統上不看金融背景。Atlas 說 frontier lab 越來越像 quant lab，早年在 Google 那種 work-life balance 的故事「可能也不是那麼多可以講」。</li>
+  <li><strong>散戶與工具。</strong> 「散戶沒有 edge」是兩位的共識；但參與度在上升（Robinhood 等平台），且 AI 讓「informed investor」的工具變好。至於把好信號做成消費級產品——信號一旦賣給很多人就不存在了，商業上不 make sense。</li>
+</ul>
+
+<h5>前後脈絡</h5>
+<p>
+  這集與本月中文播客的 RSI 討論形成一個很有價值的對照組。11-08 十字路口莊明浩說「RSI 來了」；11-15 趙晨陽（Kimi/SGLang）說「評估是 RSI 唯一瓶頸」，並把好評估定義為客觀、自動化、低成本。硅谷 101 這兩位則從金融側給出一個更硬的限制條件：<strong>在非平穩、reward 時鐘以週/月計的系統裡，「評估」不是工程問題，而是物理問題</strong>——你等 reward 的時間比 regime 存在的時間還長。這正好接上 Dwarkesh 11-13 那篇 RSI 論文提出的「可驗證三桶」（預訓練 loss、後訓練 benchmark、推理效率）：金融的困境是三個桶都不好用，市場只給你一個從不重複的 held-out set。
+</p>
+<p>
+  另一個脈絡是「量化 vs 主觀」的界限。Atlas 說未來是兩者更好的結合，並提出第三種形態：資訊採集由人做、決策由 AI 做——人作為 LLM 的 tool。這與 11-18 張小珺集裡蔡偉談 Personal Agent「重構服務業」的問題意識相通：當 AI 接管決策，人的獨特性剩下什麼？Atlas 的答案很具體：社會關係、線下資訊、沒有被數位化的東西。這比抽象的「人類更有創造力」有說服力。
+</p>
+
+<h5>爭議點</h5>
+<ul>
+  <li><strong>「scaling law 在量化已驗證」 vs 「有限智能」。</strong> 主持人問「所以 scaling law 還沒驗證？」Atlas 先答「大家既然在堅持買卡，自然有買卡的理由」，Wei 立刻降級為「有驗證，但不像其他領域敢大膽 bet」，Atlas 再補「是有限智能」。三人來回之間，沒有人給出具體曲線或數字。這是全集最需要保留態度的地方：嘉賓相信 scaling，但證據是「大家還在買卡」。</li>
+  <li><strong>「AI 不會根本改變量化」 vs 「量化公司都變成 AI 實驗室」。</strong> 兩個命題可以並存（工具改變工作方式，但不改變問題結構），但節目沒有把「改變」定義清楚——是改變模型、改變研究流程、還是改變利潤結構？界線模糊。</li>
+  <li><strong>「人作為 tool 被 LLM call」。</strong> 這是全集最原創也最刺人的設想：自願放棄交易中的主體性，把自己變成模型的一個工具。它把「human in the loop」翻了過來，但也立刻帶出倫理問題：誰來保證這個「人 tool」不會被剝削、被誤導、或被迫提供自己不想提供的社會關係？</li>
+  <li><strong>「散戶沒有 edge」 vs 「散戶參與度上升」。</strong> 兩者不矛盾（參與不等於有優勢），但節目的語氣容易被讀成「散戶不該進場」。兩位嘉賓其實都補了「產業理解也是一種 edge」與「買大盤是顛撲不破的真理」，算是平衡。</li>
+  <li><strong>資料與合規限制。</strong> 節目明確不點名具體公司策略、不聊具體持倉，嘉賓多次聲明「不代表公司」。這讓某些關鍵問題（例如 XTX 的實際模型架構、GPU 用途分配）只能停在隱喻層面。</li>
+</ul>
+
+<h2 class="section">英文播客</h2>
+
+<h3 class="show">Latent Space（swyx + Alessio Fanelli）</h3>
+<p class="host">The deepest AI engineering podcast · 本篇為 Substack 深度文章（非音頻集），屬上一輪掃描窗口外的補掃</p>
+
+<h4 class="ep">The War Against Slop and an Emerging Weapon to Fight it: Formal Verification 📄</h4>
+<p class="epmeta">發布：2026-11-20 21:18 UTC · 形式：長文（約 1.6 萬字元）· 來源：latent.space RSS 全文 · 補掃原因：11-21 02:05Z 的掃描窗口起點之前發布，上輪漏收</p>
+
+<h5>主題</h5>
+<p>
+  2026 年 AI 行業的年度詞是「slop」——大型語言模型產出的低質量內容。當越來越多的代碼由 AI 生成，「避免 slop」成了軟件工程師每天的焦慮。Latent Space 這篇長文給出的答案是：<strong>形式化驗證（formal verification）</strong>——用數學證明與邏輯去驗證軟件或硬件的正確性。文章走訪了四家公司：Harmonic、Theorem、Axiom Math，以及新玩家 &amp;Truth，並以 &amp;Truth 共同創辦人 Clark Barrett 的訪談為主軸。
+</p>
+
+<h5>嘉賓背景</h5>
+<ul>
+  <li><strong>Clark Barrett</strong>：&amp;Truth 共同創辦人兼共同 CEO；史丹佛計算機科學 Corbel Professor (Research)；<strong>cvc5</strong> 的共同創造者。cvc5 是 satisfiability modulo theories（SMT）的求解器，Amazon 等公司在用——用於 Kiro（Amazon 的 agentic 開發環境）的規格分析與測試生成。Barrett 說：「看到我的工具從實驗室的一個好想法，變成 cvc5 在 Amazon 的生產管道每天被呼叫數十億次，很有趣。」</li>
+  <li><strong>&amp;Truth</strong>：在 Lean 之上建「verification machine」，目標是讀懂任何語言的代碼、證明它是否滿足精確陳述的需求、讓人類不必逐行理解也能信任。第一款工具叫 <strong>&amp;Atlas</strong>——「世界開源代碼的地圖，從 C 語言開始」。</li>
+  <li><strong>其他玩家</strong>：Harmonic 的 Aristotle（自動定理證明器，AI 寫證明、Lean 檢查每一步）；Theorem（主打安全，「Verification is the only defense that holds while adversaries scale」，與 Anthropic 合作）；Axiom Math（AxiomProver 生成 Lean 證明，AXLE 工具鏈；CEO Carina Hong 今年 6 月受訪 Latent Space）。</li>
+</ul>
+
+<h5>核心論點</h5>
+
+<p><strong>論點一：AI coding agent 所說的「verification」，幾乎都不是真驗證。</strong> 跑測試、自我批評、讓另一個模型當評審——Barrett 说這些工具「相當好，能找到一大堆問題」，但差別在一個問題：「<em>你怎麼知道你做完的時候，是真的做完了？</em>」測試、補丁、掃描永遠不能讓你確定「我是不是找到了全部問題，還是有一個藏在我的工具找不到的地方」。形式化驗證的價值不是找更多 bug，而是給出「沒有 bug」的證明（相對於精確陳述的規格）。</p>
+
+<p><strong>論點二：Lean 的角色是「檢查你沒有寫錯」，不是「保證你的需求是對的」。</strong> Barrett 的定位很清楚：「Lean 做的事，就是檢查你沒有犯錯。所以你可以把它想成一個非常精密的數學檢查器。」這句話同時是承諾也是限制：Lean 保證證明與語句一致，但不保證語句本身描述了你想解決的問題。這就是為什麼 &amp;Truth 強調「precisely stated requirements」——規格本身成為新的瓶頸。</p>
+
+<p><strong>論點三：形式化驗證不只是防守，是「scaling brilliance」。</strong> Axiom CEO Carina Hong 在 6 月訪談中的說法是全集最有力的一句：「形式化驗證，或說 verified AI，對我們來說不只是處理或踢掉那些糟糕的東西、幻覺、錯誤。<em>它是關於放大卓越。它是關於超智慧。</em>」這個框架把 verification 從「清理 slop 的拖把」變成「超智慧的腳手架」：只要能即時檢查正確性，模型就可以在一個可信任的搜索空間裡大幅提高嘗試的野心。</p>
+
+<p><strong>論點四：網絡安全是第一個 killer use case。</strong> Barrett 確認 &amp;Truth 的重點之一是資安：「一個非常強大的用例，是把世界上所有的 C 代碼——開源的、閉源的——都掃一遍，確保它是 memory safe；如果不安全，我們可以指出：這段代碼這裡有問題，你需要修。」Theorem 的首頁則把話說得更滿：「驗證是唯一在對手規模化時仍然成立的防禦。」在 Agent 能大規模生成攻擊面、也能大規模生成防禦的時代，這句話的份量不難理解。</p>
+
+<p><strong>論點五：LLM-scaled formal verification 已經開始變便宜。</strong> Anthropic 與 Theorem 合作的博客《LLMs are making formal software verification feasible at a much larger scale》給出了一個關鍵趨勢：形式化驗證目前很耗 token，但正在變得更省。在 36 個小型驗證任務上，<strong>Opus 5.5 用比 Opus 5 少約 40% 的 token 達到 50% 的解題率</strong>。文章預期這個趨勢會隨著更多模型「在長驗證任務上訓練」而持續。換句話說，verification 正在從「昂貴的專家活動」變成「可以規模化的模型能力」。</p>
+
+<p><strong>論點六：開發者流程從 vibe-coding 轉向 veri-coding。</strong> &amp;Truth 的設想是：驗證層成為工作流的一部分。Barrett 描述：「如果你的 verification machine 連著你的 agent，你還是可以說『嘿，我想要你建這個』。可能要花一點功夫跟 agent 把 spec 敲定。但之後 agent 可以在底層跟形式化工具協作，你看到的幾乎沒有差別——<em>除了你的代碼第一次就能跑</em>。」這意味著開發者的時間分配會改變：更多時間寫規格與審查規格，更少時間寫碼與審代碼。</p>
+
+<p><strong>論點七：outcome engineering 需要可檢查的 outcome。</strong> 文章結尾引用 Cognition 開發者關係 Nader Dabit 的 tweet：當你只告訴一群 agent 你要什麼、他們就去建，人類需要一個方法去<strong>檢查 agent 交付的東西是否正確</strong>。「Outcome engineering」這個詞會不會留下來不知道，但問題是真的。形式化驗證正好是「檢查 outcome」的一種候選答案。</p>
+
+<h5>關鍵數據</h5>
+<ul>
+  <li><strong>cvc5</strong>：在 Amazon 生產管道<strong>每天被呼叫數十億次</strong>；用於 Kiro 的規格分析與測試生成。</li>
+  <li><strong>36 個驗證任務</strong>：Opus 5.5 以約少 <strong>40% token</strong> 達到 <strong>50% solve rate</strong>（對比 Opus 5）。</li>
+  <li><strong>費馬大定理</strong>：Anthropic 用 Lean 形式化，專案規模 <strong>1,300 萬行</strong>。</li>
+  <li><strong>Smoktunowicz Gap Theorem</strong>：Vals 稱 GPT-6.2 Astra 產出「第一個 Lean 證明」（文章標註為 Vals 的判斷）。</li>
+  <li><strong>黎曼猜想</strong>：Anthropic 數學家 Levent Alpöge 稱用 Claude 證明，並以 Lean 發佈（文章寫於此消息同一週）。</li>
+  <li><strong>Theorem 的評測</strong>：以「每小時驗證多少 KB 機器碼」為指標，按模型發布日期畫出證明效率曲線（95% 區間）。</li>
+</ul>
+
+<h5>重點引用</h5>
+<blockquote>
+  「The main difference is really just, how do you know when you're done.」
+  <footer>— Clark Barrett，談形式化驗證與測試/掃描的差別</footer>
+</blockquote>
+<blockquote>
+  「What Lean does is it just checks that you didn't make a mistake. So you can think of it as a very sophisticated checker for mathematics.」
+  <footer>— Clark Barrett</footer>
+</blockquote>
+<blockquote>
+  「Formal verification, or verified AI, to us it's not just about handling or kicking out the lousiness, the hallucinations, the mistakes. It's about scaling brilliance. It's about super-intelligence.」
+  <footer>— Carina Hong，Axiom Math CEO（引自今年 6 月 Latent Space 訪談）</footer>
+</blockquote>
+<blockquote>
+  「…essentially what you'll see is almost no difference — except your code will work the first time.」
+  <footer>— Clark Barrett，談 veri-coding 的開發者體驗</footer>
+</blockquote>
+<blockquote>
+  「Verification is the only defense that holds while adversaries scale.」
+  <footer>— Theorem 官網標語（文章引用）</footer>
+</blockquote>
+
+<h5>技術詳情</h5>
+<ul>
+  <li><strong>SMT solver（cvc5）</strong>：satisfiability modulo theories，用於規格分析、測試生成、以及作為更高層證明的底層引擎。它的商業價值在於「在生產管道裡被呼叫數十億次」——不是研究 demo，是基礎設施。</li>
+  <li><strong>Lean 作為 proof assistant</strong>：開源語言與證明助手，前沿模型用它解數學難題。文章把它定位為「檢查器」：AI 寫證明，Lean 檢查每一步，所以「結果永遠不依賴 AI 是對的」（Harmonic 的表述）。</li>
+  <li><strong>Rocq</strong>：Anthropic 的示意圖用 Rocq 而非 Lean，展示「從代碼到機器檢查的保證」的流程。這說明生態不是只有 Lean，Coq/Rocq 仍是重要選項。</li>
+  <li><strong>Proof-efficiency eval</strong>：Theorem 用「每小時驗證的機器碼 KB 數」而非單純「證明成功率」來衡量模型，這是一種更接近工程成本的指標。</li>
+  <li><strong>規格（spec）作為新瓶頸</strong>：整篇文章反覆回到「precisely stated requirements」。形式化驗證把 bug 的問題轉化成「需求有沒有寫對」的問題——而需求是人寫的，人會寫錯。</li>
+</ul>
+
+<h5>行業 insight</h5>
+<ul>
+  <li><strong>驗證層正在成為 AI coding 的下一層護城河。</strong> 當生成代碼的成本趨近於零，稀缺的就不再是「寫」，而是「確認寫對了」。這與 2026 年模型價格戰（Gemini 4 Neon、MAI Code 2、Inkling 2 Mini 都在比每 token 成本）形成互補：生成變便宜，驗證變值錢。</li>
+  <li><strong>模型公司與驗證初創的關係是合作＋競爭。</strong> Anthropic 同時與 Theorem 合作、自己用 Lean 形式化費馬大定理、又被 &amp;Truth 這類公司建立在 Lean 之上。模型公司需要 verification 來賣「可信的代碼」；verification 公司需要模型來降低證明成本。誰吃掉誰，尚未定。</li>
+  <li><strong>「可理解性」被重新定義。</strong> &amp;Truth 的野心是「讓人類不必理解每一行也能信任」——這與本週黎曼猜想 Lean 證明的爭議是同一枚硬幣：可驗證性與可理解性脫鉤。代碼世界似乎比數學世界更願意接受這種脫鉤，因為代碼有明確的 spec 與測試文化。</li>
+  <li><strong>安全敘事成為融資與招聘的語言。</strong> 在 AGI 前夜的偏執氛圍裡，「verification」同時是技術方案、商業模式和道德立場。Theorem 的標語就是最好的例子：它賣的不是工具，是「在對手規模化時唯一站得住的防禦」。</li>
+</ul>
+
+<h5>前後脈絡</h5>
+<p>
+  這篇文章接上了三條線。第一，11-19 ML Street Talk 的 Kevin Buzzard 訪談：Annals 的 50 條定理被形式化後，4 位菲爾茲獎得主的定理按字面理解為假（缺少隱性假設）——形式化不是萬能，它會暴露「你以為你寫了什麼」與「你實際寫了什麼」的差距，這正是 spec 問題的數學版本。第二，11-21 AINews 的黎曼猜想雙證明：AI 版可驗證但不可讀，人類版可讀但很可能有錯。第三，本週稍早 Latent Space 自己的 AINews（11-20）報導 Anthropic 完成史上最大 IPO、估值 1.5 兆美元——驗證能力正好是 IPO 故事裡「可信的企業級 AI」那一章。
+</p>
+<p>
+  與硅谷 101 那集並讀，會看到一個漂亮的對稱：量化交易用「統計上的回測」來驗證策略，形式化驗證用「數學上的證明」來驗證代碼。兩者都在對抗同一個敵人——「看起來對」與「真的對」之間的鴻溝。只是一個的 reward 要等幾年，另一個的 reward 可以在幾秒內被 Lean 檢查。
+</p>
+
+<h5>爭議點</h5>
+<ul>
+  <li><strong>Token 成本仍是門檻。</strong> 文章自己承認形式化驗證「目前 token-expensive」，Opus 5.5 的 40% 降幅是進步，但 50% solve rate 意味著還有一半任務沒解。規模化什麼時候跨過經濟門檻，沒有時間表。</li>
+  <li><strong>Spec 錯了怎麼辦？</strong> Lean 只檢查「你沒有寫錯」，不檢查「你的需求對不對」。如果 spec 本身是錯的，形式化只會給你一個「經過數學證明的錯誤系統」。這是全集最大的未解問題，文章沒有給出答案。</li>
+  <li><strong>「不必理解每一行」與問責的張力。</strong> &amp;Truth 的願景是讓人類不必逐行理解也能信任；但在安全關鍵系統裡，「沒有人讀得懂」本身就是風險。誰來承擔理解責任？</li>
+  <li><strong>文章性質。</strong> 這是 Substack 長文而非訪談逐字稿，部分引文來自公司官網與既有訪談（Carina Hong 的話引自 6 月訪談，Nader Dabit 的話引自 tweet）。讀者需要區分「Barrett 親口說的」與「公司行銷語言」。</li>
+</ul>
+
+<h2 class="section">今日橫向觀察</h2>
+
+<div class="box">
+  <h6>三條線索的交點</h6>
+  <p><strong>一、reward 的時鐘，決定了一個領域能不能被 RSI 吃掉。</strong> 量化中頻要等四週才有 reward，而金融 regime 只持續兩週——Atlas 的結論是「你永遠在跟在時代後面跑步」。形式化驗證的 reward 是 Lean 的即時檢查，所以它可以被規模化、被訓練、被產品化。同一個 2026 年，兩個領域的命運分岔，差別不在算力，在<em>回饋延遲</em>。</p>
+  <p><strong>二、「驗證」是今年真正稀缺的資源。</strong> 金融用統計與回測，代碼用 Lean 與 SMT，AI lab 用 benchmark；三種驗證都在回答同一個問題：你怎麼知道自己是對的？當生成的成本崩塌，驗證的成本沒有同步崩塌——這就是為什麼 &amp;Truth、Theorem、Harmonic、Axiom 同時出現，也是為什麼量化公司仍然把 infra 排在模型前面。</p>
+  <p><strong>三、「反人性」與「反 slop」是同一種紀律。</strong> 量化交易員的紀律是：連續回撤時不要手動干預，相信統計分布。veri-coding 的紀律是：不要相信「看起來能跑」，要讓 Lean 檢查每一步。兩者都是把判斷權交給一個可檢查的程序——而人類最難的，正是在自己最想插手的時候不插手。</p>
+  <p style="margin-bottom:0"><strong>四、華爾街與矽谷合流，但 RSI 在金融撞上了非平穩性。</strong> 兩邊搶同一批人、同一批 GPU，frontier lab 越來越像 quant lab；但量化嘉賓對金融 RSI 的判斷是冷的：私有域資訊、慢 reward、快過期的 regime。這與本月中文本播客「評估是 RSI 唯一瓶頸」形成互文——評估不是工程問題，是資料生成過程的問題。</p>
+</div>
+
+<div class="box">
+  <h6>給 James 的三個 takeaway</h6>
+  <p><strong>1. 如果你要判斷一家量化公司有沒有真 AI 能力，看 infra 與 execution，不要看模型。</strong> Atlas 的排序是 infra &gt; 數據 &gt; 模型；模型會趨同，execution 的交易歷史買不到。這也適用於評估 AI 交易產品：只講模型的，大概率沒有 execution 閉環。</p>
+  <p><strong>2. 金融 RSI 的瓶頸是「reward 比 regime 慢」，這是可計算的。</strong> 任何金融 AI 專案都應該先問：取得一個有效 reward 要多久？這個 regime 會存在多久？如果前者大於後者，RSI 在數學上就不成立，不是工程努力能解決的。</p>
+  <p style="margin-bottom:0"><strong>3. 形式化驗證是 2026 年最值得放進工具箱的「非 AI」能力。</strong> 它不生成任何東西，只說「對或不對」。在 slop 泛滥的時代，能說「不對」的工具比能說「更多」的模型更稀缺。</p>
+</div>
+
+<footer class="bottom">
+  <p>掃描來源：Dwarkesh（Substack + YouTube）、Latent Space（Substack RSS）、The Cognitive Revolution（Megaphone RSS）、No Priors（Megaphone + YouTube）、ML Street Talk（Anchor RSS）、硅谷 101（Fireside RSS）、張小珺／十字路口／42 章經／屠龍之術（Apple Podcasts 目錄 API，releaseDate 精確到分鐘）。</p>
+  <p>本輪新增：硅谷 101 E259（2026-11-22 23:00 UTC）、Latent Space 形式化驗證長文（2026-11-20 21:18 UTC，補掃）。中文其餘四檔、Dwarkesh、No Priors、MLST、Cognitive Revolution 均無新集。</p>
+  <p>硅谷 101 逐字稿由音頻全文轉錄（12 段、約 15 萬字），引文均核對原話；Latent Space 為官方文章全文，非訪談逐字稿處已標註。嘉賓言論不代表任職機構，不構成投資建議。</p>
+  <p>Apache 2.0 · 生成於 2026-11-23 02:16 UTC</p>
+</footer>
+
+</div>
+</body>
+</html>
