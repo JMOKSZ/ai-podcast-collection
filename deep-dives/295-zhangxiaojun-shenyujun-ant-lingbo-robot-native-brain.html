@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「智能不夠！」——沈宇軍把具身智能的日曆翻回 GPT-1 之前</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  td { color: #444; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.55rem; }
+    table { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="../index.html">← 返回播客日報</a>
+  <div class="ep-num">張小珺 Jùn｜商業訪談錄 · #147 · 2026-07-21</div>
+  <h1>「智能不夠！」——沈宇軍把具身智能的日曆翻回 GPT-1 之前</h1>
+  <div class="meta">
+    <div>〈和螞蟻靈波沈宇軍聊：機器人原生基礎模型、大腦和本體的關係、預訓練與數據 scale up、老師湯曉鷗〉</div>
+    <div>出品：張小珺 Jùn｜商業訪談錄<span>·</span>主持：張小珺<span>·</span>嘉賓：沈宇軍（螞蟻靈波首席科學家）</div>
+    <div>發布：2026-07-21<span>·</span>中文訪談<span>·</span>議題：具身基礎模型、數據瓶頸、本體路線</div>
+    <div>來源：小宇宙單集簡介與節目內容整理；本文引語僅限節目中明確出現的說法，其餘為對論證結構的整理與分析</div>
+  </div>
+</header>
+
+<p>這一集最反直覺的地方，不是任何一句結論，而是它<strong>選的起點</strong>。2026 年年中，整個行業都在討論「本體什麼時候成熟」「靈巧手什麼時候便宜」，螞蟻靈波選擇先做腦——不是做一個能控制某款機器人的模型，而是做一套「機器人原生」的基礎模型，假設它要跨本體、跨場景、跨任務。</p>
+
+<p>沈宇軍在節目裡把當下的狀態說得很直白：不是模型不夠大，不是算力不夠多，是<strong>智能不夠</strong>。這四個字是全集最短的總結，也是最容易被誤讀的一句。它不是在說「再等一個更大的模型」，而是在說「這一層的東西還沒被造出來」。</p>
+
+<blockquote class="strong">
+  「智能不夠！」
+  <span class="attribution">—— 沈宇軍談具身智能當下核心瓶頸（節目原話，單集預告引用）</span>
+</blockquote>
+
+<div class="section-title">一、反直覺的起點：原本以為矽谷做腦、中國做本體</div>
+
+<p>節目開場先拆一個舊共識。過去幾年的默認分工是：<strong>矽谷做「腦」（模型、算法），中國做「本體」（硬件、供應鏈、量產）</strong>。這個分工有它的產業邏輯——美國有前沿模型人才與資本，中國有製造業密度與成本優勢。</p>
+
+<p>但 2025 到 2026 年，出現了一批反过来的公司：從機器人大腦出發，先做模型，再回頭定義硬件。螞蟻靈波是其中一個樣本——螞蟻集團孵化的具身智能子公司，剛發布第二代具身基礎模型，一次給出六個模型。</p>
+
+<p>為什麼這個方向值得注意？因為它改變了整個產業的<strong>瓶頸位置</strong>：</p>
+
+<ul>
+  <li>如果瓶頸在本體，競爭的關鍵是供應鏈、成本、可靠性、量產良率——這是製造業的遊戲。</li>
+  <li>如果瓶頸在腦，競爭的關鍵是資料、預訓練配方、跨本體遷移、評估——這是模型公司的遊戲。</li>
+  <li>如果兩者都缺，競爭的關鍵是<strong>節奏</strong>：先做哪一個，決定了你能積累哪一種資產。</li>
+</ul>
+
+<p>沈宇軍的答案很清楚：先做腦。理由不是「腦更難所以更有價值」，而是一個更工程師式的理由——<strong>通用</strong>。</p>
+
+<div class="section-title">二、為什麼從大腦開始：通用的三個維度</div>
+
+<p>節目把「通用」拆成三層，這三層同時也是三種遷移難題：</p>
+
+<table>
+  <tr><th>維度</th><th>要遷移什麼</th><th>難在哪裡</th></tr>
+  <tr><td>跨本體</td><td>同一個策略，換一副身體還能用</td><td>自由度、傳感器配置、動力學都不同；動作空間不是同構的</td></tr>
+  <tr><td>跨場景</td><td>同一個技能，換一個房間還能用</td><td>光照、遮擋、材質、雜物分佈全部改變；長尾幾乎無限</td></tr>
+  <tr><td>跨任務</td><td>同一個模型，換一個目標還能用</td><td>任務空間沒有自然語言那樣的共享表徵，reward 難以泛化</td></tr>
+</table>
+
+<p>語言模型之所以能吃下整個互聯網，是因為文字本身就是一個跨場景、跨任務的共享表徵：同一個詞在不同語境裡指向同一個概念。機器人沒有這個運氣——「抓住杯子」在一個廚房和另一個廚房裡，像素完全不同、力矩完全不同、成功率完全不同。</p>
+
+<p>所以「機器人原生基礎模型」這個詞的野心，本質上是<strong>要造一個屬於物理世界的共享表徵</strong>。這件事如果成立，它的價值會遠超任何單一機器人產品；如果不成立，它就只是一個很貴的自動化腳本庫。</p>
+
+<p>節目給出的方法論轉折點在 2026 年：2025 年還是「從真實傳感器出發解決問題」，2026 年變成「既然沒辦法 push 數字世界修改模型，就基於物理世界的需求重做一遍」。這句話值得抄下來，因為它承認了一件事：<strong>過去兩年試圖把數字世界的模型「搬」進物理世界，失敗了。</strong></p>
+
+<blockquote>
+  「既然沒辦法 push 數字世界修改模型，基於物理世界的需求重做一遍。」
+  <span class="attribution">—— 沈宇軍對 2026 年路線轉折的表述（節目內容整理）</span>
+</blockquote>
+
+<div class="section-title">三、六個模型不是六個產品，是一層樓的六根柱</div>
+
+<p>第二代發布一次給了六個模型：Depth、Vision、VLA（視覺—語言—行動）、Video、World、VA 2.0。外行看是「發了很多東西」，內行看是一套<strong>分層的感知—預測—行動堆疊</strong>：</p>
+
+<div class="data-point">
+  <span>Depth</span> 深度估計——把單目／多目圖像變成三維結構，是抓取與導航的地基。<br>
+  <span>Vision</span> 通用視覺表徵——不是「識別物體」，是為下游動作提供可遷移的特徵。<br>
+  <span>VLA</span> 視覺—語言—行動——把指令、畫面、動作綁在同一個序列裡，是「大腦」的主幹。<br>
+  <span>Video</span> 視頻生成／預測——學物理直覺：下一步會發生什麼。<br>
+  <span>World</span> 世界模型——不是生成好看的視頻，是生成「可以拿來規劃」的狀態轉移。<br>
+  <span>VA 2.0</span> 視覺—行動的升級版，把動作生成從「跟隨」推向「可控」。
+</div>
+
+<p>這六根柱的排列方式，透露了他們對「智能不夠」的具體診斷：</p>
+
+<ul>
+  <li><strong>感知層已經相對成熟</strong>（Depth、Vision），因為可以大量借用數字世界的預訓練。</li>
+  <li><strong>預測層是瓶頸</strong>（Video、World），因為物理一致性比像素逼真難得多：一個視頻模型可以生成很真的杯子掉落，但未必知道杯子的質量與摩擦係數。</li>
+  <li><strong>行動層最不成熟</strong>（VLA、VA 2.0），因為它同時要求語義理解、空間推理、實時控制，而且錯誤不可逆——語言模型說錯一句可以重說，機械臂抓錯一次可能摔壞東西。</li>
+</ul>
+
+<p>沈宇軍在節目裡補了一句更本質的話：真正還沒解決的，是「把和人的交互考慮進去」。這句話份量很重，因為它把問題從「機器人會不會動」推到「機器人懂不懂人」——後者不是控制問題，是社會認知問題。</p>
+
+<div class="section-title">四、不做本體：「沒有執念」是一種方法論</div>
+
+<p>主持人問了一個很自然的問題：為什麼不做本體？沈宇軍的回答有兩層。</p>
+
+<p><strong>第一層是工程理由：本體很難通用。</strong>場景選不準，本體設計就會錯——為倉庫設計的底盤進不了家庭，為家庭設計的高度上不了產線。硬件一旦開模，修改成本以月計；模型改一版只要幾天。先做硬件等於先把不確定性鎖死。</p>
+
+<p><strong>第二層是節奏理由：大腦開發落後於本體，未來會交替上升。</strong>現在的狀態不是「腦等身體」，也不是「身體等腦」，而是兩條曲線在不同的時間點交替成為瓶頸。誰先被卡住，資源就往那邊移。</p>
+
+<blockquote class="strong">
+  對人形機器人：「沒有執念。」
+  <span class="attribution">—— 沈宇軍談形態選擇（節目內容整理）</span>
+</blockquote>
+
+<p>「沒有執念」這四個字，在 2026 年的具身智能語境裡其實很罕見。因為人形是一個<strong>敘事資產</strong>：它讓投資人一眼看懂，讓媒體有畫面，讓公眾有想像。放棄人形敘事，等於放棄一部分融資便利。他願意放棄，說明他判斷「通用性」的估值高於「形態」的估值。</p>
+
+<div class="highlight-box">
+  <p><strong>我的補充：</strong>「不做本體」有一個隱藏成本，節目沒有展開——<strong>你無法控制資料的入口。</strong>如果本體是別人生的，那麼資料採集的主動權（傳感器配置、遙操作接口、日誌格式）也在別人手裡。這在早期是效率，在後期可能是依賴。這是「腦優先」路線最需要回答的一個問題：當你需要百萬小時資料時，誰替你採？</p>
+</div>
+
+<div class="section-title">五、數據：唯一的卡點，與「百萬小時」的門檻</div>
+
+<p>全集最硬的部分在這裡。沈宇軍的判斷是：具身智能還沒有到 GPT-1 moment，原因不是模型架構，而是<strong>沒有看到好的數據 scale up 方式</strong>。</p>
+
+<p>他把門檻量化了：要達到互聯網數據的量級，至少是「百萬小時起步」，時間點大約在明年中。</p>
+
+<p>這個數字值得停下來算一算，因為它是整個行業的時間表：</p>
+
+<ul>
+  <li><strong>語言模型的資料單位是 token</strong>，可以從網頁、書籍、代碼裡几乎免費地刮出來，規模以萬億計。</li>
+  <li><strong>機器人的資料單位是「小時」</strong>，而且必須是<em>帶動作標籤的、物理一致的、任務相關的</em>小時。一小時高質量遙操作資料的成本，與一小時文本的成本差了幾個數量級。</li>
+  <li><strong>百萬小時</strong>意味著：即使你有 1,000 台機器人全天候採集，也要 1,000 小時（約 42 天）不間斷；而現實中採集效率遠低於 100%。</li>
+</ul>
+
+<p>這就引出三條可能的解法，節目裡都觸及了但沒有系統化：</p>
+
+<table>
+  <tr><th>路線</th><th>邏輯</th><th>弱點</th></tr>
+  <tr><td>真機遙操作</td><td>資料最真，動作與感知嚴格對齊</td><td>成本最高、速度最慢、場景受限</td></tr>
+  <tr><td>仿真合成</td><td>可以無限生成、自動標註</td><td>sim-to-real gap：摩擦、形變、光照、傳感器噪聲都難以完全擬真</td></tr>
+  <tr><td>視頻預訓練</td><td>用海量人類視頻學物理直覺，再用少量動作資料對齊</td><td>視頻沒有動作標籤，學到的是「會發生什麼」，不是「該怎麼做」</td></tr>
+</table>
+
+<p>沈宇軍的說法是把重心放在「重做一遍」：不是把數字世界的模型魔改，而是按物理世界的需求重建預訓練流程。這句話的實質是——<strong>承認視頻預訓練只能解決表徵，解決不了控制。</strong></p>
+
+<blockquote>
+  「發完第一代模型就意識到，強行在數字模型上魔改不 work。」
+  <span class="attribution">—— 沈宇軍談第一代到第二代的教訓（節目內容整理）</span>
+</blockquote>
+
+<div class="section-title">六、兩條矽谷路線：zero-shot 與 post-training</div>
+
+<p>節目做了一個很有用的對照：Physical Intelligence 強調 zero-shot 泛化，Generalist 強調後訓練（post-training）。</p>
+
+<p>這不是技術細節之爭，是<strong>兩種商業模式</strong>之爭：</p>
+
+<ul>
+  <li><strong>Zero-shot 路線</strong>假設：一個足夠通用的策略，可以直接部署到新任務，不需要客戶自己調。賣的是「開箱即用」，價值在模型本身。</li>
+  <li><strong>Post-training 路線</strong>假設：通用策略只是起點，真正的工作在客戶現場的微調。賣的是「交付能力」，價值在工程團隊。</li>
+</ul>
+
+<p>兩條路線對資料的需求完全相反：前者需要<em>極其多樣</em>的資料來覆蓋分佈，後者需要<em>極其貼近</em>的資料來擬合場景。前者的護城河是模型，後者的護城河是客戶關係與現場工程。</p>
+
+<p>沈宇軍還提到一個變數：<strong>兩條靈巧手成熟後，資料採集路線可能變化。</strong>這句話很短，但指向一個關鍵：目前很多資料瓶頸，本質上是<em>硬件瓶頸</em>——手不夠靈巧，所以能採的動作空間很窄；手貴，所以採集規模上不去。一旦靈巧手變成標準件，資料成本曲線會突然下移，整個行業的節奏會重排。</p>
+
+<div class="section-title">七、產業格局會像大語言模型嗎</div>
+
+<p>節目的判斷是：最終產業格局可能貼近大語言模型的格局。這句話可以拆成三種可能的未來，而它們對「做腦的公司」意味著完全不同的命運：</p>
+
+<ol>
+  <li><strong>寡頭格局（像基礎模型）</strong>：兩三家通用大腦公司吃掉大部分價值，本體廠商變成代工。做腦的公司估值最高，但也最容易被資本與算力規模鎖死。</li>
+  <li><strong>分層格局（像手機）</strong>：大腦有少數通用層，但場景層（工業、物流、家庭）各自有自己的微調與整合商。做腦的公司賣授權，場景公司賣交付。</li>
+  <li><strong>垂直整合格局（像汽車）</strong>：每個大玩家都自己做腦＋本體＋場景，因為資料閉環不外流。做腦的獨立公司空間被壓縮。</li>
+</ol>
+
+<p>沈宇軍沒有明確選哪一個，但他的「智能不夠」暗示了第一種：如果智能本身還差得遠，那麼現在談格局分配太早，先把智能做出來的人會定義格局。</p>
+
+<div class="highlight-box">
+  <p><strong>一個反面觀察：</strong>語言模型的寡頭格局，是建立在「資料可以集中」之上的——網頁文本是公共的，誰都能爬。物理世界的資料不是公共的：它在工廠裡、在倉庫裡、在家庭裡，被場景所有者控制。這意味著具身智能的集中度<strong>天然低於</strong>語言模型，除非某一方能用硬件（本體）把資料入口鎖住。這是「不做本體」路線最長期的戰略風險，也是「做本體」路線最容易被低估的價值。</p>
+</div>
+
+<div class="section-title">八、湯曉鷗那一條線</div>
+
+<p>節目標題把「老師湯曉鷗」放在最後，這不是裝飾。沈宇軍的師承是已故 AI 學者湯曉鷗——商湯科技的創辦人、香港中文大學教授，2023 年 12 月去世。</p>
+
+<p>這條線解釋了兩件事：</p>
+
+<ul>
+  <li><strong>技術基因</strong>：湯曉鷗一系的核心遺產是視覺與深度學習的工程化——不是純理論，是把模型做到能落地。這與「先做感知層（Depth、Vision），再做行動層」的順序一致。</li>
+  <li><strong>組織基因</strong>：商湯是中國最早一批把實驗室成果做成公司的樣本，它的經驗是「研究—產品—場景」三段要同時在場。螞蟻靈波作為螞蟻集團的子公司，繼承的是另一種基因：<em>平台化的工程能力</em>與<em>場景入口</em>。</li>
+</ul>
+
+<p>把這兩種基因疊在一起，就能理解為什麼他們會選擇「六個模型一起發」：這不是學術團隊的發表節奏，是平台公司的交付節奏——先鋪滿一層能力，再等場景來選。</p>
+
+<div class="section-title">九、我的讀法：具身智能缺的不是模型，是「語料」</div>
+
+<p>整集聽完，我認為最準確的類比不是「GPT-1 moment」，而是<strong>「互聯網之前的語言模型」</strong>。</p>
+
+<p>GPT-1 之所以能出現，前提是互聯網已經把人類文本整理好了：維基、Reddit、書籍、代碼，全都在那裡，只等一個模型來吃。具身智能現在的處境是：<em>語料還沒被生產出來。</em>不是沒人寫，是沒有人「錄」。物理世界的動作資料，需要有人拿著遙操作設備，一小時一小時地演示。</p>
+
+<p>所以「百萬小時」不是一個模型指標，是一個<strong>基礎設施指標</strong>。它要求：便宜的硬件、標準化的採集流程、可複用的場景、以及一個願意為資料付錢的買方。這四件事缺一件，資料曲線就起不來。</p>
+
+<p>順著這個框架，沈宇軍的「智能不夠」可以翻譯成更精確的三句話：</p>
+
+<ol>
+  <li><strong>表徵不夠</strong>：我們還沒有一個跨本體、跨場景的物理表徵，等價於語言模型裡的「詞嵌入」。</li>
+  <li><strong>資料不夠</strong>：表徵需要資料來學，而物理資料的生產成本比文本高幾個數量級。</li>
+  <li><strong>評估不夠</strong>：沒有可靠的評估，就無法判斷「更通用」是不是真的更通用——這一點與語言模型完全不同，機器人的 benchmark 很難標準化，因為場景本身不可複製。</li>
+</ol>
+
+<p>第三點是節目沒有明說、但我認為最關鍵的。語言模型可以用 MMLU、HumanEval 這類靜態題庫比較；機器人的「題庫」是物理世界，每次評估都要重建場景、重置物體、重重重複。這使得<strong>迭代速度</strong>成為一個被低估的變數：不是誰的模型更好，是誰能更快地試錯。</p>
+
+<div class="section-title">十、爭議與薄弱處</div>
+
+<p><strong>一、「明年中到 GPT-1 moment」是一個很緊的時間表。</strong>節目給了自己一個期限，但沒有給出「如何判定達到了」的標準。如果標準是「百萬小時資料 ＋ 跨本體遷移成功」，那明年中可能太樂觀；如果標準只是「出現一個明顯的湧現」，那可能已經接近。</p>
+
+<p><strong>二、「不做本體」與「資料入口」之間有張力。</strong>如第四節所說，不碰硬件等於把資料入口交給別人。節目沒有解釋在需要百萬小時資料時，如何確保採集的主動權。這是這條路線最大的未解問題。</p>
+
+<p><strong>三、六個模型的分工，缺少一個「整合」的說明。</strong>Depth、Vision、VLA、Video、World、VA 2.0 各自能做什麼，節目講了；但六者如何組成一個閉環（感知→預測→規劃→控制→回饋），講得比較粗。對工程讀者來說，這是最想聽的一段。</p>
+
+<p><strong>四、「沒有執念」可能被誤讀為「沒有立場」。</strong>不押注人形是策略上的克制，但在一個靠敘事融資的行業裡，克制需要更強的資本來支撐。這一點節目沒有談，但它是所有「腦優先」公司共同的處境。</p>
+
+<div class="section-title">十一、把這一集放回 2026 年的具身智能地圖</div>
+
+<p>把它和同一時期其他幾集放在一起，會看到三種不同的下注方式：</p>
+
+<table>
+  <tr><th>路線</th><th>代表</th><th>核心賭注</th><th>風險</th></tr>
+  <tr><td>通用大腦</td><td>螞蟻靈波（本集）、Physical Intelligence</td><td>跨本體遷移會成立，模型價值高於硬件</td><td>資料入口不在自己手裡；場景方自建</td></tr>
+  <tr><td>本體＋場景</td><td>各類人形與工業機器人公司</td><td>硬件先落地，資料由部署反哺</td><td>硬件週期長；模型能力受制於外部供應</td></tr>
+  <tr><td>垂直整合</td><td>大廠自建（平台型）</td><td>腦＋本體＋場景閉環，資料不外流</td><td>組織成本高；路線切換慢</td></tr>
+</table>
+
+<p>三條路線不是互斥的，而是<strong>時間差</strong>：先做腦的人賭「通用會先到」，先做本體的人賭「部署會先到」。沈宇軍的判斷很明確——通用還沒到，所以現在做本體是把不確定性鎖死；但反過來說，正因為通用還沒到，做腦的人也需要一個能持續採資料的場景來活下去。</p>
+
+<div class="highlight-box">
+  <p><strong>如果只能帶走一句話：</strong>這一集真正說的不是「機器人快來了」，而是「機器人的語料還沒被寫出來」——而在語料出現之前，所有關於具身智能時間表的爭論，都只是在猜那個語料會由誰來生產。</p>
+</div>
+
+<hr>
+
+<footer>
+  <p>來源：張小珺 Jùn｜商業訪談錄 #147，〈和螞蟻靈波沈宇軍聊：機器人原生基礎模型、大腦和本體的關係、預訓練與數據 scale up、老師湯曉鷗〉，2026-07-21 前後發布，嘉賓沈宇軍（螞蟻靈波首席科學家）。<br>
+  本文依據單集簡介與節目內容整理；直接引語僅限節目中明確出現者（「智能不夠！」「沒有執念」及路線轉折的表述），其餘為對論證結構的整理與本文分析。節目未提供公開逐字稿的部分，未以推測補寫對話。「湯曉鷗為商湯科技創辦人、香港中文大學教授，2023 年 12 月去世」為公開資料。<br>
+  相關集數：張小珺 #146（Physical Intelligence，π0 系列）、#133（謝賽寧，世界模型）、#194（譚捷，Gemini Robotics）；硅谷 101 E256（Agent、機器人與製藥）。</p>
+  <p>生成時間：2026-11-24 06:00 UTC · 深度復述 #295</p>
+</footer>
+
+</div>
+</body>
+</html>
