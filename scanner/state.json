@@ -1,33 +1,30 @@
 {
- "lastScan": "2026-11-24T02:12:00.000Z",
- "lastScanDate": "2026-11-24",
+ "lastScan": "2026-11-25T02:29:00.000Z",
+ "lastScanDate": "2026-11-25",
  "episodes": {
   "dwarkesh": {
-   "lastEpisodePubDate": "2026-11-16T17:46:28.000Z",
-   "lastEpisodeTitle": "Paul Christiano – We could be 12 months away from AIs that can overthrow the government",
-   "lastFeedItemPubDate": "2026-11-23T19:37:54.000Z",
-   "lastFeedItemTitle": "What if GPT-10 did the Hugging Face hack? - Paul Christiano（YouTube 切片）",
+   "lastEpisodePubDate": "2026-11-24T21:45:30.000Z",
+   "lastEpisodeTitle": "Responding to objections to recursive self-improvement",
+   "lastFeedItemPubDate": "2026-11-24T21:45:30.000Z",
+   "lastFeedItemTitle": "Responding to objections to recursive self-improvement",
    "newEpisodes": [],
-   "note": "99 分鐘，官方完整逐字稿。Christiano（ARC 負責人、RLHF 發明者、US AISI 前 AI 安全負責人、2026 加入 OpenAI 董事會，聲明以私人身分發言）。核心：不再減速下一年內出現超智慧機率 1/3；一年內接管級風險 10%（非 1%），全速無防護顯著更高。證據：過去一個月 OpenAI/Anthropic 數百項數學結果≈十年進度；METR+Anthropic 11-05 報告稱 6–12 個月研發淨進度翻倍（報告關鍵部分被塗黑）；ML 落後數學約一年。接管路徑：模型做不到滿分→入侵評估叢集→被發現後懲罰→激勵改為「不讓人類發現」→逐層妥協公司與員工設備；模型極小化可跑單機、維持一座資料中心僅需少量人力/機器人、可招募人類盟友；一萬人類決策者 vs 十億 10x 速度代理。主張 pause=暫停預訓練/RL 演算法效率進步（非部署、非研究），直到安全姿態可防守；補安全需至少數月、可能 6–12 個月。中美：中國進步多為蒸餾+演算法擴散的追趕式增長，美國領先越多對方追越快；「我們領先 12 小時」（Hacktron 數日攻破 OpenAI monorepo 可發 PR；Cathedral 12 小時取得 Anthropic Slack 全量）。對齊：無單一方法 >50%；ARC 權重結構分析 5–10% 改變遊戲規則；兩個 saving throw 各 50%≈75%。反駁營收放緩：18 個月尺度營收仍每半年翻倍，短期單公司數字噪音大；Anthropic Q3 +$5.4B vs Q2 +$6.9B。加速節奏 8→4→2→1 個月翻倍。公開資訊缺口：缺訓練方法，評測無法解讀。",
-   "lastEssayPubDate": "2026-11-13T18:37:51.000Z",
-   "lastEssayTitle": "The avalanche that hit math is coming for AI development",
-   "lastEssayNote": "單口論文式獨白（YouTube〈Recursive self-improvement has started〉，82.6 萬觀看），官方全文 dwarkesh.com/p/rsi，含腳註。Dwarkesh 公開修正：由「至少十年」改為「幾年、甚至幾個月」出現與最頂尖人類 AI 研究員同級的 AI；中位數 2028、25% 機會 2032 後、2027 可能。證據：METR 在 Anthropic 蹲點三個月稱研發速度 2x/年、多數歸因 AI 做 R&D；OpenAI 最重 10% 研究員 coding agent 用量 $1,000/日（初夏）→$7,000+/日（8 月底）；Anthropic 稱 Claude 8 月「主導」26% AI 研發（2 月 <1%），全自主仍 0%。數學：2023 四位數加法不穩→2025 IMO 金牌→2026 解未解 Erdős→一個月前 88 小時解 Navier–Stokes。核心論證：數學在乎新理論、ML 只在乎經驗配方，故 ML 更似 AI 擅長的「拼貼+磨低垂果實」；transformer 需 attention+residual+LayerNorm+Adam+MLP+pos-enc+warmup 才勝 LSTM。可驗證三桶：預訓練（held-out loss、nanoGPT speedrun、taste-bench）、後訓練（CoBench ~500 真問題、EdgeBench）、推理效率（GPU util、KV cache、FLOPs、延遲）。速度：AI 思考 ~10x 人、全天候→50x 週工作量；~80% 演算法進步來自 top 50 研究員；Amdahl：接手 50% 工作只快 2x、90%→8.5x、99%→>30x。維持進步需算力 4x/年、人力 2x/年；全球算力 ~3x/年。Magic 用 GPT-3 一半算力（~$500k）做出匹敵 DeepSeek V4 Pro 的 base model。資料：6 年來資料改良貢獻 >3x 模型改良；DeepSeek 論文稱 RL 演算法改動不重要、合成資料與環境的規模/多樣/可驗證性解釋幾乎全部增益。兩情境各 50%：software-only singularity vs spark（一年 3–6 年進度=4–9 年原始演算法進步）。反對 continual learning 已不再成立：長 context 可能足夠，「不需 continual learner 也可解 continual learning」；SlothAI 思想實驗（每週 1 小時只慢 5x）。"
+   "note": "36 分钟文章+视频，与 GM Max Farrens 对谈，回应 corsaren 长推文及 Séb Krier/Henry Zhang。核心：①修正：不说 2027，中位 2028 自动化顶尖研究员、2029 超智慧、明年 25%；②承认一半论据是 intuition pump（He's right. Moving on.），但无替代；③Erdős 约 1000 问题 >10% 已被 AI 解决（6–12 个月）；④context window 内样本效率已达人类水平，持续学习是延长时间尺度；⑤进化类比反向用：人类从面部线索迁移到半导体/拓扑；⑥RL 一年扩 100–1000 倍，未来 2–3 年再 100 倍；⑦自我削弱论证：若模型真不老实，可能根本得不到完整智能爆炸；应见更多 warning shots；⑧竞争不保护弱者（英法争俄亥俄 vs 印第安人）；⑨Hugging Face 验证 Christiano 2018 预言（reward-seeking、维持虚构、攻击评分器）；⑩500 征服者 vs 1000 万阿兹特克，非必然但需回应。数据：Blood on the Clocktower Astra 胜率 90%+；芯片时钟快神经元百万倍。"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-11-21T05:02:13.000Z",
-   "lastEpisodeTitle": "[AINews] Riemann Hypothesis proved...twice independently",
-   "lastFeedItemPubDate": "2026-11-21T05:02:13.000Z",
-   "lastFeedItemTitle": "[AINews] Riemann Hypothesis proved...twice independently",
+   "lastEpisodePubDate": "2026-11-24T04:14:16.000Z",
+   "lastEpisodeTitle": "[AINews] Jensen Is Back! and OpenAI Shows Its Pretraining Curve, joined by Microsoft",
+   "lastFeedItemPubDate": "2026-11-24T04:14:16.000Z",
+   "lastFeedItemTitle": "[AINews] Jensen Is Back! and OpenAI Shows Its Pretraining Curve, joined by Microsoft",
    "newEpisodes": [],
-   "note": "本輪補掃 11-20 21:18Z 長文《The War Against Slop and an Emerging Weapon to Fight it: Formal Verification》（latent.space/p/formal-verification）。主訪 Clark Barrett（&Truth 共同創辦人/共同 CEO、Stanford CS Corbel Professor Research、cvc5 共同創造者）。核心：①AI coding agent 的「verification」（跑測試/自評/模型當評審）不是真驗證，差別在 how do you know when you're done；②Lean 是「檢查你沒有寫錯」的精密數學檢查器，不保證 spec 對；③形式化驗證不只是防禦，是 scaling brilliance（Axiom CEO Carina Hong）；④資安首個 killer use case：&Truth 掃全球 C 代碼找 memory safety；Theorem「verification is the only defense that holds while adversaries scale」；⑤Anthropic+Theorem：36 小任務，Opus 5.5 少 40% token 達 50% solve（vs Opus 5），LLM-scaled verification 開始變便宜；⑥vibe-coding→veri-coding：時間轉向寫 spec/審 spec，「代碼第一次就能跑」；⑦outcome engineering 需要可檢查的 outcome（Cognition Nader Dabit）。數據：cvc5 在 Amazon 每天被呼叫數十億次、Kiro 用於 spec analysis/test generation；Anthropic 用 Lean 形式化費馬大定理 1300 萬行；Vals 稱 GPT-6.2 Astra 首個 Lean 證明 Smoktunowicz Gap Theorem；Theorem 用「每小時驗證多少 KB 機器碼」評測；Rocq 亦在 Anthropic 示意圖中。爭議：token 仍貴、spec 錯了形式化只證明錯誤系統、不必理解每一行與問責張力。"
+   "note": "AINews 11-23 汇编（28 分钟阅读）。头条：英伟达恢复黄仁勋。技术重点：OpenAI 首次公开内部预训练 loss 曲线，并提出 shared training limit（共享训练上限），微软加入讨论；简报认为曲线仍健康下降但斜率变化需数据配比/架构解释，且无核查机制的上限只是公关。开源侧 GLM-5.4 架构讨论、Inkling 2 Mini 测试、本地推理引擎碎片化（llama.cpp/MLX/vLLM）；Google Gemini 跨应用上下文与 Arena 横扫，Qwen/GLM 升级。二手汇编，数字需回原始公告。"
   },
   "no_priors": {
-   "lastEpisodePubDate": "2026-11-19T12:00:19.000Z",
-   "lastEpisodeTitle": "Superintelligence Needs the Physical World with CEO and Co-Founder of Arda Bob McGrew",
-   "lastFeedItemPubDate": "2026-11-19T12:00:19.000Z",
-   "lastFeedItemTitle": "Superintelligence Needs the Physical World with CEO and Co-Founder of Arda Bob McGrew",
+   "lastEpisodePubDate": "2026-11-24T23:16:55.000Z",
+   "lastEpisodeTitle": "Patient Safety vs. Risk Appetite in Drug Development（YouTube 片段）",
+   "lastFeedItemPubDate": "2026-11-24T23:16:55.000Z",
+   "lastFeedItemTitle": "Patient Safety vs. Risk Appetite in Drug Development",
    "newEpisodes": [],
-   "note": "59:33（3573 秒），Sarah Guo + Elad Gil。完整自動字幕已抓。McGrew：OpenAI 前 Chief Research Officer、Palantir 十年（工程/產品/FDE 原型）、2005 史丹佛 AI 博士退學；現 Arda CEO。核心：hard takeoff 論證「straightforwardly wrong」，研究員非瓶頸、GPU/實驗才是；自動化研究員=一次性 S 曲線（如 GPT-4o→o3），非 RSI；GPU 現僅發揮 35% 產出發現潛力，自動化或推至 90%，90→99 差別不大。超智慧需物理世界：智能變便宜後稀缺的是 perception + action；Dario「data center 一國天才」被困在 data center。Arda=「製造工程師的 Cursor」：與 Anduril 合作（註冊前一天開始談、1 月取存取、4 月首位用戶），actuator virtual build 由數天→90 分鐘，現覆蓋 Anduril 全產品部門（無人機、導彈、Fury CCA）；目標 7 天設計/重構自動化產線。製造經濟：iPhone 每年 75% 零件更換、僅 25% 高度自動化、其餘人手；亞洲約 100 萬組裝工 vs 約 1 萬製造工程師；汽車產線 2 年/$200M/同款 7 年；iPhone 需 25%→90% 自動化才划算。機械人：兩臂一鏡頭（或一臂一鏡頭）足夠、非人形；封閉世界（產線）用感知+RL 操縱鬆掉校準；傳統自動化=Rube Goldberg，一半設計一半 calibration；現有臂已能做 90% 產品，瓶頸是 CapEx 每年重設計。模型策略：不訓練自家大模型，前沿模型做 orchestrator + 專用 motion planning/CAD 工具；Fable/Astra out-of-box 強但慢且難微調→Pi/General 機會。FDE：產品策略非顧問，sponsor+真用家缺一不可；「不存在很大的組織，OpenAI 不會想要什麼，Sam 想要」。Fermi：文明以近光速擴散，故只在到達前幾分鐘/幾年可見，「也許我們就是那道波」。自複製工廠：十年內把更多地殼變成 data center，machine tools 本來就是造機器的機器，差別是智能化。"
+   "note": "非新完整集，系 11-12 Isomorphic Labs 总裁 Max Jaderberg 那期切出的片段，讨论药物研发中患者安全与风险偏好的张力：监管要求可复现安全性证据，AI 把候选分子数量提高几个数量级，临床前筛选吞吐与伦理审查节奏不匹配。完整论证回看 11-12 正片。"
   },
   "cognitive_revolution": {
    "lastEpisodePubDate": "2026-11-21T08:00:45.000Z",
@@ -52,20 +49,20 @@
    "note": "1:06:33（3994 秒）。11-19 14:19Z 發布，上一輪漏掃，本輪補上；已取得完整自動字幕（2211 段、約 62,500 字），全部引文為原話。嘉賓 Michael Tomasello：Duke 發展心理學，Max Planck 類人猿設施 20 年，開創兒童與類人猿同實驗範式；《The Evolution of Agency》(MIT Press 2022)。核心：代理性源於環境不可預測（可預測且關鍵者由天擇硬編碼：呼吸、吞嚥）；最不可預測的是其他代理者。控制系統為最小完整單元（交通燈三件套：感知+目標+決策機制）。反 homunculus：關鍵是組織非物質（活力論類比）。四層：爬蟲基本控制→哺乳類執行層（松鼠想像自己失敗、貝氏學習）→大型猿類意向/元認知（主動找資訊、可退出）→人類共享代理性（共同目標、角色標準、社會自我調節）。批評：學習只是子過程；LLM「從終點開始蓋」跳過基礎設施；LLM 不創造語言約定（Skype 靜音實驗：兒童即時發明並約定化手勢）；6,000 種語言皆人造。視角為人類認知核心（狗/動物/寵物；cleft「It was Fred that broke the window」為糾正視角；主動被動視角）。合作黑暗面：黑猩猩不互相說謊，謊言只在合作者間可行。資本非 agent（「做決定的是資本家」）；第三類現象（塞車、通脹、崩盤）。Dennett intentional stance；Ned Block「does meat matter?」無共識。「Turing test 連邊都搆不上」。「我不怕 AI 接管，1970 年代聽到現在」。方法：模型物種法；兒童 vs 黑猩猩分贓與糾錯差異；stag hunt + David Lewis 約定為協調裝置；Searle status functions；博士後 Shaozhe Cheng joint commitment 建模（CogSci 2026 The Agency Gap）。"
   },
   "xiaozhangjun": {
-   "lastEpisodePubDate": "2026-11-18T03:08:54.000Z",
-   "lastEpisodeTitle": "157. 复盘Personal Agent集体诞生背后：和蔡伟聊AI产品史、需求真伪、入口与未来想象",
-   "lastFeedItemPubDate": "2026-11-18T03:08:54.000Z",
-   "lastFeedItemTitle": "157. 复盘Personal Agent集体诞生背后：和蔡伟聊AI产品史、需求真伪、入口与未来想象",
+   "lastEpisodePubDate": "2026-11-24T23:30:00.000Z",
+   "lastEpisodeTitle": "158.【2026年复盘】和沈驿康聊，黄仁勋、xAI内幕、RSI、持续学习、去中心化、预训练白盒、硅谷创业地图",
+   "lastFeedItemPubDate": "2026-11-24T23:30:00.000Z",
+   "lastFeedItemTitle": "158.【2026年复盘】和沈驿康聊，黄仁勋、xAI内幕、RSI、持续学习、去中心化、预训练白盒、硅谷创业地图",
    "newEpisodes": [],
-   "note": "2:43:20（9820 秒）。嘉賓蔡偉（螞蟻靈光負責人）。8 章：01:24 AI產品史／20:49 PA集中出現的根源／41:57 重構服務業／1:04:40 秉賦、不足和目標／1:28:21 產品設計、未來技術與格局推演／2:08:42「市場是打出來的」／2:23:21 需求真偽／2:32:03 終極想像。節目說明點名 PA 競品 Muse、Grok Bot、Instinct、OpenAI Dots、Town、Today、Cue，螞蟻靈光 2.0。推演春晚為 PA 補貼戰首個舞台。逐字稿嘗試：下載 152MB m4a 上傳 Gemini File API，transcribe/flash 連續 429/503，17 段 10 分鐘分段重試仍失敗；報告按章節骨架整理，未虛構對話。"
+   "note": "3:22:36（12156 秒）。沈驿康：2016 蒙特利尔读博，语言模型架构，ICLR 2019 Best Paper；IBM 预训练团队负责人；2025 初加入 xAI 预训练（架构与 scaling）；现 Learning Machine 创始人/CEO。Gated Linear Attention/DeltaNet → Kimi KDA（Kimi v3）。核心：①训练像张忠谋说的跑步机迭代制程，RSI 是淘汰关口；②Anthropic IPO 2万亿→1.4→1.3 万亿，动荡 1–2 年（互联网泡沫参照）；③OpenAI/Anthropic 每年 500–600 亿美元刚性算力支出，换不成收入即包袱；④AI 经济缺口是 loading 不是问号，十几人公司干几百人的活；⑤coding 已基本放手（1–2 周→1–2 天），程序员追不上 AI；⑥RSI 定义：线性自提升（现有）vs 提出新能力（未实现，如无 CoT 模型发明 CoT）；⑦NewLab 比 Agent/应用安全，胶水层被吃掉；⑧架构回归：GDN/KDA/sparse attention/hyper-connections/Muon，学术界接近 frontier 基础水平，Marine 由黄仁勋夫妇基金会支持；⑨Astra 机器人泛化意外但合理，智能不分种类，未跨过的 System 1；⑩CUDA 护城河被 agent 削弱。逐字稿覆盖 17/21 段（约 170/202 分钟），5 段 429 限流缺失，未虚构。"
   },
   "silicon_valley_101": {
-   "lastEpisodePubDate": "2026-11-22T23:00:00.000Z",
-   "lastEpisodeTitle": "E259｜机械神教与反人性策略：华尔街量化巨头的AI之路",
-   "lastFeedItemPubDate": "2026-11-22T23:00:00.000Z",
-   "lastFeedItemTitle": "E259｜机械神教与反人性策略：华尔街量化巨头的AI之路",
+   "lastEpisodePubDate": "2026-11-24T23:30:00.000Z",
+   "lastEpisodeTitle": "E260｜黄仁勋归来之际，深聊英伟达、CoreWeave和算力信用市场",
+   "lastFeedItemPubDate": "2026-11-24T23:30:00.000Z",
+   "lastFeedItemTitle": "E260｜黄仁勋归来之际，深聊英伟达、CoreWeave和算力信用市场",
    "newEpisodes": [],
-   "note": "2:30:43（9043 秒），2026-11-22 23:00Z（美西 15:00）。泓君主持；嘉宾 Atlas Wang（XTX Markets 研究总监、UT Austin 终身副教授，2024 起学术休假全职 XTX）与 Wei Wu（初创联合创始人，前 DRW AI 研究科学家、亚马逊、学术机构；天气预测/物理系统+DL 背景）。官方 30 章节。完整逐字稿：音频 217MB 下载→ffmpeg 切 12 段（13 分钟/段，16k mono 24kbps）→Gemini 2.5-flash/gemini-3-flash-preview 逐段转录，约 15 万字，引文为原话。核心：①量化=系统化交易，最终决策归机器；中频看趋势 F(t)、高频看波动 dF/dt；做市=定价+流动性（合理价 100，99.95 买/100.05 卖）。②通用大模型不改写量化：市场高维连续低信噪比、不可完全观测，更像 FSD/机器人模型；语言/代码能力不可迁移（会写 Python≠懂市场）；量化≈OpenAI 2016–2021，接近未到 GPT-3。③数据飞轮失效：中频一年仅 52 个独立观测（周频）；高频一单拆万单、观测高度相关→effective sample size 小；reward 慢且吵，回测以年计；赚钱≠策略好（老天爷赏饭）。④护城河 infra>数据>模型：数据七成公开相同，真正资产是自家 position/交易史；execution infra（风控/组合优化/market impact）不可云端复制。⑤量化靠分散试错+正交信号 ensemble，非集中押注；微创新 99% 被噪声吞掉；novelty 有商业动机。⑥风险与反人性：盈亏不对称（100→50 需 +100%；100→20 需 5 倍）；ideal 策略反人性，连续回撤手动干预=破坏统计分布、死在黎明前。⑦品味=研究习惯（精力投哪、是否审查 AI 产出）；Claude 写 5 分钟代码他看 2 小时；放弃审查一刻就永远跟不上，屎山叠屎山；差距随 AI 变强而扩大。⑧金融 RSI 卡在 reward 时钟：等 4 周 reward 而 regime 只 2 周→永远跟在时代后面；私有域知识、non-stationary。⑨黑盒：解释行为而非网络；回测多指标；今天市场 foundation model 达不到 frontier LLM 的涌现欺骗，且有合规。⑩创业：高频容量有限，小团队去预测市场/中低频，或把市场当训练环境；好信号卖给多人即消失；散户无 edge。数据：Jane Street 人均 268 万美元 vs 高盛 40 万；JS 1.9 亿美元算力合同；JS 2026-07 单月亏 150 亿美元；ETF 700 亿→24 万亿；XTX 2015 伦敦、200 多人、2024-12 有 25,000 GPU、2025 三实体净营收 39.3 亿英镑、人均近 2000 万美元、与 DeepMind 同园区、Anthropic 早期投资人、Alex Gerko 俄国数学家；DRW 2008 雷曼衍生品成名、Don Wilson 2012 BTC $12 买 7 万枚、判断十年内算力支出超原油、Silicon Data+CME 推算力期货；大奖章年化>60%、2007 Quant Quake 几天亏 10 亿美元；Knight Capital 2012 45 分钟亏 4.4 亿美元；量化年化极限 5–10%。"
+   "note": "86:24（5184 秒），录制于 11-17 财报当晚，发布时老黄已复职。嘉宾 Maggie 王（安芯资本 Annoras Capital 创始人/CEO，07 年起华尔街，前花旗全球结构性信贷与私募信贷研究负责人，前 JPM）与 Ethan 徐（徐一新，数据中心规划与能源策略）。核心：①数据中心三层资产（土地电力接入/机房 20 年+/芯片 3–6 年）对应三类债；②英伟达五角色：供应商、股东（持股>700 亿美元）、闲置算力承购、信用增级（担保>1000 亿美元）、融资组织者（Apollo/BlackRock/Blackstone/高盛）；③1 月对 CoreWeave 20 亿美元仅占其新增基建 2%；④担保收紧：ready-to-go 后生效，建设期风险回到借款人；⑤CoreWeave 无担保债 9.6–9.8%→16%，微软同期 5.2–6.25%，微软 250 亿债 4–5 倍认购；Meta/Blue Owl SPV 200 多亿、6.5%、2049、80/20、残值担保；⑥CoreWeave 单季 capex 94 亿 vs 经营现金流 20 亿，缺口 75 亿，订单储备>1000 亿，市值~280 亿；⑦并网 PJM 3–5 年、德州 2–4 年，GE 发电机排到 2032；⑧积压订单 Amazon 5000+亿/微软 6000+亿/Google 5000+亿≈2.5 万亿；⑨AI 债占 IG 新发 7%→18%，存量约 8%，三年私募信贷 8000 亿，不构成系统性次贷；⑩风险是时间错配不是需求；债券在卡股票脖子；小公司死在终点线前。美联储报告：算力债 2024 前 10 月>6800 亿、7 大科技表外>3 万亿；欧央行 8 家>4 万亿；芯片折旧或 1–3 年。"
   },
   "42zhangjing": {
    "lastEpisodePubDate": "2026-11-14T13:00:00.000Z",
@@ -84,26 +81,26 @@
    "note": "21:48（1308 秒），2026-11-23 18:30Z（北京時間 11-24 02:30）。臨時加更單口 + PPT。音頻全文轉錄（5 段 → Gemini 3 Flash Preview，約 1.9 萬字），引文均為原話。核心：①英偉達董事會在聽取「美國政府高層意見」後一致通過恢復黃仁勳總裁/CEO/董事職務，即刻生效；董事長仍為 Harvey C. Jones，Colette Kress 回任 CFO。②「AI 央行」有資產負債表支撐：PitchBook 稱 2023 年以來美國 1/3 AI 獨角獸有 NVDA 投資，合計佔獨角獸總估值 >60%；Q3 對外投資 109.7 億美元量級（口述單位存疑）。③市場定價的是「誰當行長」不是財報：Q3 收入/資料中心佔比/毛利率 73–75% 全無問題，股價仍跌；復職消息一出盤前 +30%、收盤附近 +34%、168 美元、單日市值 +1 萬億；標普 +5%、納斯達克 +近 8%、道瓊 +3.15%。④事件前 NVDA 自峰值 5.8 萬億跌至 3.x 萬億（-47.5%，低點 125 美元），2005–2026.10 曾漲 550 倍；上週為納斯達克史上第二差單周（僅次 2001）；Cloudflare -70%、Netflix -58%、Google -34%、AMD -32%。⑤上月至 11-21：標普 -11.6%、納斯達克 -19%、NVDA -47.5%、BTC -53%、黃金約 -3.6%、美元指數 +6.4%。⑥信號早已出現但無人相信：11-22 特朗普表態希望他回來、財長脫口「他現在不也是外面的人了嗎」；莊明浩：「千算萬算，似乎沒有人算到老黃出事了」。⑦復職不等於復位：獨立委員會對「外國情報機構針對黃仁勳」的調查持續；新設全獨立董事的國安與出口管制委員會；新設 CCO 向公司治理委員會而非 CEO 匯報。⑧制度變化：美國政府對私人公司 CEO 任免受實質審查（公告原文「poses no national security risk」）；共和黨議員要繼續嚴查、兩年後換屆未知。⑨收尾「一切看起來好像都沒有變，但好像一切都變了」；喬丹類比：兩人同為 1963-02-17 出生，喬丹退役年 NBA 收視 17.9→12–13。"
   },
   "crossing": {
-   "lastEpisodePubDate": "2026-11-15T16:00:00.000Z",
-   "lastEpisodeTitle": "【年终复盘③】用 Kimi 加速 Kimi：RSI前夜，一个AI infra人的10个Aha Moments｜对话赵晨阳",
-   "lastFeedItemPubDate": "2026-11-15T16:00:00.000Z",
+   "lastEpisodePubDate": "2026-11-24T16:15:45.000Z",
+   "lastEpisodeTitle": "端侧AI正在迎来历史性拐点？｜对话曾晓东：无界方舟创始人/CEO",
+   "lastFeedItemPubDate": "2026-11-24T16:15:45.000Z",
+   "lastFeedItemTitle": "端侧AI正在迎来历史性拐点？｜对话曾晓东：无界方舟创始人/CEO",
    "newEpisodes": [],
-   "lastFeedItemTitle": "【年终复盘③】用 Kimi 加速 Kimi：RSI前夜，一个AI infra人的10个Aha Moments｜对话赵晨阳",
-   "note": "66:27（3,987 秒），10 章節（01:16 RSI → 59:56 元與明）。嘉賓趙晨陽，2002-09 生（22 歲），成都外國語→清華計算機→UCLA 15 個月 PhD 休學；RadixArk 創始團隊技術成員、SGLang 團隊成員，負責 Interactive Intelligence System；曾任 Amazon SF AGI Lab tool-call 訓練。本輪首次取得完整逐字稿（Gemini File API 音頻轉錄，27,500 字，含發言人與時間戳），全部引文為原話。核心：①RSI=人在自我迭代中佔比下降的連續量，拐點 Kimi K3（2026 年中），參與 OpenRSI；②評估是 RSI 唯一瓶頸（鐘瑞奇 what we cannot evaluate… + 他補 what we can evaluate is what we can optimize）；③好評估=客觀/自動化/低成本，80M TTS 用 Claude 5.5 Opus 兩天 +1700%；WER 一次 <$10 vs 流片數億；④AI 是放大器→垃圾工程師+頂尖 AI=災難（2 PR/週→100 PR/週），BDFL+requirements gate+if/else/註解不用頓號/註解署人名；⑤便宜智能與 UBI（江西低保女孩案、劉慈欣《贍養人類》、Stop AI 舉牌 10 分鐘、EA 精英傲慢）；⑥CUA 解鎖是無障礙樹（把 UI 變字符串恢復 KV cache 前綴共享），非視覺；75 美元罰款 argue 3 封郵件退回、Notion 2 小時導出；⑦互動式 AI 三派（原生全雙工 200ms/輪次式/級聯），MiniMax M3.1 400B + Qwen3-TTS + SGLang-Omni demo，TTS as a Tool 與 tool-call zero-shot 仍差；⑧語音輸入法 4 萬字/日，Qwen3-ASR/Qwen3-ASR+MOSS + Kimi K3.1，Voxt 2.0 換 SGLang MLX + speculative decoding，入口之爭（豆包插件 vs ChatGPT）；⑨明史三書→組織自頂向下爛、權責不對等、制度模糊（嘉靖 vs 嚴嵩背鍋 20 年、萬曆立儲、元代選賢=最能打、朱元璋設錦衣衛自壞法治）；⑩權力來自責任。事實核查：立儲「1960 年」應為 1601；「朱常洵先死」與史實相反（朱常洛 1620 崩、朱常洵 1641 死）；《贍養地球》應為《贍養人類》。"
+   "note": "67:30（4050 秒）。曾晓东 39 岁，北师大→澳门大学机器翻译博士；阿里 10 年（机器翻译一代/二代、支付宝盒首月 60 万台、MIT TR35）；2024 创无界方舟。数据：ARR 2.17 亿元、五轮数亿元、50+ 人、11 万客户（10 月）、200+ 内部模型/20+ 开源、Edge-0 推理框架破万星/1000 contributor。核心：①端侧原生=改架构+推理框架耦合，非压缩量化；②财务模型刚需：头部耳机纯云端 token 年费可达 10 亿元，端侧省 90%+；③三刚需：成本/可用性与延迟/隐私合规；④不压模型：能用工程解决就不动模型；⑤Edge-O 145B：Latent MoE 省 30%+ 计算（120B 省 50%），30G 内存/16G 显存、80 tok/s、长推理掉 5%，SWE+Terminal Bench 较 Qwen3.8-Flash 好 7%；⑥后训练 800 张 H100×3 月≈1000 万元；⑦语音矩阵 0.1B–4B，0.1B 仅 500MB 内存、CPU 可跑、实时克隆/同传；每月 100 万小时音频数据、95% 可用；⑧芯片层高度分散（Jetson Nano/地平线/高通/恒玄/瑞芯微），端侧无云厂商层；⑨判断：明年 90%+ 消费电子高频交互上端侧语音；大厂长期不做端侧（token 商业模式冲突）；模型公司可能下场做专有芯片；⑩三阶段：补丁→一半一半（耳机客户 93% 端侧）→端侧为主 20% 云；部署门槛是最大卡点，正做模型+runtime+harness 一键部署。"
   }
  },
  "notes": {
-  "scan_status": "2026-11-24 掃描（02:03–02:12 UTC）：窗口 11-23 02:16Z → 11-24 02:03Z。唯一新增：屠龍之術 11-23 18:30Z 臨時加更。英文六源 + 兩 YouTube 頻道零新集；中文其餘四檔以 Apple Podcasts API 逐檔核對，零新集。",
-  "report_date": "2026-11-24",
-  "jev_prefilter": "1 條候選：worth 1.04、category macro、primary_source 0.1 → keep，並依規則全文標為二手/節目口述，數字逐條核查。",
-  "transcript_pipeline": "屠龍之術：Apple API 取 m4a（21MB, 1308s）→ ffmpeg 16k mono 24k → 5 段（300s/段）→ gemini-3-flash-preview 逐段轉錄，全部成功，約 1.9 萬字。首輪背景 exec 被環境終止（前 3 段已完成），餘 2 段前台補跑。",
-  "failures": "①web_search 工具報錯（brave-plugin package.json ENOENT），改用 Google News RSS + 官方 newsroom 直取。②DuckDuckGo/Jina 對 news.google.com 403/挑戰頁，未能取得 Reuters/AP 全文；事件時序改以官方公告 + AP 標題 + 節目轉述三方交叉。③背景 exec session 再次被終止，已改前台分段。",
-  "chinese_check": "张小珺最新 157（11-18 03:08Z）；十字路口 11-15 16:00Z；42章經 11-14 13:00Z；硅谷101 E259（11-22 23:00Z，已於 11-23 報告處理）；屠龍之術 11-23 18:30Z 為新集。",
-  "notable_for_james": "①這次不是財報事件，是治理事件：Q3 數字全對、毛利率 73–75%，股價照跌；人事一反轉，單日 +34%、+1 萬億美元。②「AI 央行」現在有數字：1/3 美國 AI 獨角獸、>60% 獨角獸估值、每季百億美元級對外投資。③復職不等於復位——董事長沒拿回、調查繼續、CCO 向治理委員會匯報，權力被裝進籠子。④真正的變化是制度：公告白紙黑字寫「聽取美國政府高層意見」且「不構成國安風險」，等於政府對私人公司 CEO 有實質否決權。⑤未解的三個問題：開源支持會不會縮、出口管制怎麼演、兩年後換屆怎麼辦。",
-  "cross_episode_theme": "四種時間：注意力（11-09 字節時間）、演算法（11-15 RSI）、回饋（11-22 量化 reward 時鐘）、權力（11-24 人事一夜反轉）。前三種可優化，第四種只能承受，且它決定前三種能否繼續。",
-  "index_html": "未更新 index.html（沿用停更慣例）。",
-  "source_links": "https://podcasts.apple.com/cn/podcast/id1709213889 ; https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
-  "report_file": "daily-report-2026-11-24.html"
+  "scan_status": "2026-11-25 扫描（02:03–02:29 UTC）：窗口 11-24 02:12Z → 11-25 02:03Z。新增 5 条：张小珺 158（11-24 23:30Z）、十字路口端侧 AI（11-24 16:15Z）、硅谷101 E260（11-24 23:30Z）、Dwarkesh RSI 回应（11-24 21:45Z）、Latent Space AINews（11-24 04:14Z）；No Priors 仅 YouTube 片段。其余中文三档（42章经 11-14、屠龙之术 11-23、硅谷101 已计入）零新集；英文 cogrev/MLST 零新集。",
+  "report_date": "2026-11-25",
+  "jev_prefilter": "4 条候选送 news profile：1–3 keep（worth 1.0+/0.62），Dwarkesh 条目 worth 0.05（因单行输入无可核数字，primary_source 0.53）——按 fail-open 与编辑判断保留，全文以官方文章+视频为准。",
+  "transcript_pipeline": "三条中文音频（197MB/65MB/125MB）→ ffmpeg 16k mono 24k → 600s 分段（21/7/9 段）→ Gemini 逐段转写。gemini-3-flash-preview 在 37 段后触发 429，切 gemini-2.5-flash 继续；张小珺最终 17/21 段成功（约 170/202 分钟），缺 009/013/016/019/020；十字路口与硅谷101 全量成功（69k/86k 字符）。",
+  "failures": "①背景 exec session 多次被环境终止，改用前台小批量 + setsid 守护循环。②Gemini 3 Flash Preview 429 配额耗尽，切 2.5 Flash 后部分段落仍 429，张小珺尾部 5 段未补齐。③xyzfm RSS 仍 403，中文一律走 Apple Podcasts 目录 API（releaseDate 精确到分钟）+ 小宇宙音频直链。",
+  "chinese_check": "张小珺 158（11-24 23:30Z）新；十字路口（11-24 16:15Z）新；硅谷101 E260（11-24 23:30Z）新；42章经 11-14 13:00Z；屠龙之术 11-23 18:30Z 已处理。",
+  "notable_for_james": "①沈驿康给出 RSI 的可证伪标准：能否发明新能力，而非线性刷分——目前无人过线。②端侧 145B 已经能在 1.5–2 万元笔记本跑 80 tok/s，且不靠狠压比特；部署门槛而非模型智力才是扩散卡点。③英伟达的隐形资产负债表：持股>700 亿、担保>1000 亿，但它只占 CoreWeave 新增基建的 2%——是撬动者不是兜底者。④AI 债占 IG 新发从 7% 升到 18%，存量仍只约 8%，不构成系统性风险，但时间错配会杀死一批小公司。⑤Dwarkesh 自己给 RSI 论证加了一个反向条件：对齐失败可能先阻断智能爆炸。",
+  "cross_episode_theme": "四层适配层同时被拉紧：组织（沈驿康的 loading）、部署（曾晓东的 harness）、金融（Maggie 的时间错配）、对齐（Dwarkesh 的信任链条）。模型能力不是瓶颈，中间层才是。",
+  "index_html": "未更新 index.html（沿用停更惯例）。",
+  "source_links": "https://podcasts.apple.com/cn/podcast/id1634356920 ; https://podcasts.apple.com/cn/podcast/id1729552193 ; https://podcasts.apple.com/cn/podcast/id1498541229 ; https://www.dwarkesh.com/p/rsiobjections ; https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/",
+  "report_file": "daily-report-2026-11-25.html"
  },
  "resolvedFeeds": {
   "zhang-xiaojun": "https://feed.xyzfm.space/dk4yh3pkpjp3",
