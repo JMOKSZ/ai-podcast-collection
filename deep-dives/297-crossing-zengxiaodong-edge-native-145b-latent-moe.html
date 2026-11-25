@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「145B 塞進 30G 記憶體」——曾曉東賭端側不是雲端的壓縮版</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  td { color: #444; }
+  hr { border: none; border-top: 1px solid #e0dbd4; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) {
+    html { font-size: 16px; }
+    .container { padding: 2rem 1.1rem; }
+    header h1 { font-size: 1.55rem; }
+    table { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a class="back-link" href="../index.html">← 返回播客日報</a>
+  <div class="ep-num">十字路口 Crossing · 2026-11-24</div>
+  <h1>「145B 塞進 30G 記憶體」——曾曉東賭端側不是雲端的壓縮版</h1>
+  <div class="meta">
+    <div>〈端側 AI 正在迎來歷史性拐點？｜對話曾曉東：無界方舟創始人 / CEO〉</div>
+    <div>出品：十字路口 Crossing<span>·</span>主持：楊遠騁（Koji）<span>·</span>嘉賓：曾曉東</div>
+    <div>發布：2026-11-24 16:15 UTC<span>·</span>時長：67 分 30 秒<span>·</span>中文訪談</div>
+    <div>來源：小宇宙單集音頻全量轉寫；引語以節目原話為準，數據按節目口徑記錄</div>
+  </div>
+</header>
+
+<p>這一集表面上在談一個產品問題——「千億參數的模型能不能跑在筆記本上」——但它真正回答的是一個更結構性的問題：<strong>如果雲端模型會越來越強，一家 50 人的端側公司憑什麼存在？</strong></p>
+
+<p>曾曉東的答案不是「我們也做一個小模型」，而是一句聽起來很工程、實際上很戰略的話：</p>
+
+<blockquote class="strong">
+  「傳統的端側模型方案，可能是雲端有一個大模型，然後走壓縮、走量化。它並沒有針對端側的硬件平台去做網絡架構的設計、推理架構的改造。」
+  <span class="attribution">—— 曾曉東，談「端側原生」與「雲端模型壓縮」的差別（節目原話）</span>
+</blockquote>
+
+<p>這句話是全集的分水嶺。端側不是雲端的縮小版；它是一個<strong>不同的計算環境</strong>，有電池、有能耗上限、有記憶體頻寬牆，運行時的限制和雲端完全不同。如果你從壓縮出發，你一開始就接受了雲端的形狀；如果你從硬件約束出發，你才有機會設計出一個在端上「原生」的模型。</p>
+
+<div class="section-title">一、先把人放進來：一個「做過十年翻譯」的硬件創業者</div>
+
+<p>曾曉東，39 歲，ENTJ、射手座。北師大本科、澳門大學機器翻譯博士；在阿里約十年，做過阿里機器翻譯第一代與第二代系統（Alibaba.com、AliExpress 的翻譯鏈路），後來做 IoT + AI 硬件創新——支付寶盒（「支付寶到賬 XX 元」）首月出貨 60 萬台，並因此入選 MIT TR35；大模型出現後帶團隊做預訓練、後訓練與 Agent 產品孵化；2024 年出來創立無界方舟。</p>
+
+<p>這條履歷解釋了他看端側的角度。他不是從「模型壓縮」進來的，也不是從「硬件供應鏈」進來的，而是從<strong>翻譯</strong>——一個對延遲、成本、離線可用性都極度敏感的場景——一路走到硬件，再走到預訓練。翻譯是最早被神經網絡吃掉的應用之一，也是最早上演「雲端 token 成本 vs 端側一次性成本」計算的場景。</p>
+
+<p>所以他在節目裡第一個談的不是模型，而是財務模型。這不是偶然。</p>
+
+<div class="section-title">二、第一個剛需是財務模型：賣得越多，虧得越多</div>
+
+<p>他給的例子很具體：一家頭部耳機公司，如果純用雲端模型，每年 token 費用可以高達 10 億元人民幣。注意這不是一次性投入，是<strong>隨著出貨量線性增長的營運成本</strong>。賣得越多，邊際成本不降反升。</p>
+
+<blockquote class="strong">
+  「賣得越多，邊際成本沒有下降，反而會導致賣得越多我虧得越多。」
+  <span class="attribution">—— 曾曉東，談雲端 token 成本對硬件公司的壓力（節目原話）</span>
+</blockquote>
+
+<p>他舉 Character.AI 作反例：越成功的 AI 應用，雲端 token 成本越是每月沉重的負擔。這個觀察在 2026 年已經不新鮮，但放到硬件語境裡，結論更硬：<strong>硬件公司賣的是一次性設備，付的卻是永續的推理帳單。</strong>這兩個現金流曲線天生不匹配。</p>
+
+<p>端側模型的經濟學意義，就是把這條永續帳單變成一次性成本：模型隨設備出貨，推理跑在用戶的 CPU / GPU / NPU 上，公司不再為每一次對話付費。用他的話說：</p>
+
+<blockquote>
+  「端側模型是可以讓這個負擔變成利潤。」
+  <span class="attribution">—— 曾曉東，談端側對硬件公司財務模型的改變（節目原話）</span>
+</blockquote>
+
+<div class="data-point">
+  <span>數字</span>頭部耳機公司純雲端方案的年度 token 費用可達 10 億元人民幣；無界方舟 ARR 2.17 億元人民幣，成立兩年、五輪融資、累計數億元人民幣，團隊 50 多人（主要在上海），截至今年 10 月客戶數突破 11 萬。
+</div>
+
+<p>這裡有一個很容易被忽略的推論：端側不是「便宜版雲端」，而是<strong>把推理的邊際成本轉移給用戶的資本支出</strong>。用戶買了一台筆記本，裡面的 GPU 本來就閒著；端側模型是把這部分閒置算力變現。對廠商來說，這是商業模式的重構，不是技術路線的偏好。</p>
+
+<div class="section-title">三、第二、三個剛需：可用性與合規</div>
+
+<p>財務模型之外，他給了兩個更「場景化」的理由。</p>
+
+<p><strong>可用性。</strong>海外（例如北美戶外）網絡差，端側能保證延遲穩定。這個理由聽起來樸素，但它決定了眼鏡、耳機、手錶這類產品的實際體驗：你不能要求用戶在跑步時等一個 RTT 800ms 的雲端回應。端側的價值不是「更快」，是<strong>延遲的方差更小</strong>。</p>
+
+<p><strong>合規。</strong>硬件出海與保險、醫療、生物製藥等垂直領域，數據不能出域。這裡的「不能」不是技術問題，是法律問題：資料留在設備上，是最簡單的合規架構。端側模型因此有了一個雲端模型無法用價格戰搶走的市場——<strong>不是因為它更好，而是因為雲端根本不能進場。</strong></p>
+
+<table>
+  <tr><th>剛需</th><th>誰在痛</th><th>端側解決了什麼</th></tr>
+  <tr><td>財務模型</td><td>硬件廠商 / 高頻 AI 應用</td><td>把永續 token 成本變成一次性模型成本</td></tr>
+  <tr><td>可用性</td><td>戶外、移動、弱網場景</td><td>延遲穩定、離線可用</td></tr>
+  <tr><td>合規</td><td>醫療、保險、生物製藥、出海硬件</td><td>資料不出設備，繞開跨境與行業監管</td></tr>
+</table>
+
+<div class="section-title">四、不妥協的技術路線：用工程解決，不要動模型</div>
+
+<p>這一集最有火氣的一段，是他對「壓縮路線」的批評：</p>
+
+<blockquote class="strong">
+  「如果我可以用工程去解決的問題，我不要去動模型。」
+  <span class="attribution">—— 曾曉東，談端側模型的設計原則（節目原話）</span>
+</blockquote>
+
+<p>他進一步解釋：以往端側模型為什麼不可用？「就是我先妥協這塊，先做壓縮，然後再看怎麼把它拔上來。因為你已經妥協了，所以就會存在很多應用的問題。」這是一個典型的<strong>路徑依賴</strong>批評：你先用低比特量化把模型塞進設備，模型的底子已經被削薄；之後幻覺、推理斷裂、長尾失效，你只能不斷打補丁，而不是從架構上解決。</p>
+
+<p>他的替代方案是：加速靠推理框架配合架構，不靠狠壓比特。原生 4bit / 8bit 訓練他們都試過並開源，但認為壓縮會讓底子變差、幻覺增多。這個選擇在商業上是有風險的——壓縮路線更便宜、更快上市——但他賭的是<strong>端側的競爭最終會從「能不能跑」變成「跑得好不好」</strong>。</p>
+
+<div class="highlight-box">
+  <strong>我的延伸：</strong>「不妥協」在這裡不是道德姿態，而是對競爭階段的判斷。當端側模型只能跑 1B–3B 的時候，壓縮是唯一解；當硬件記憶體與頻寬上來、35B–145B 可以跑的時候，壓縮就從「必要」變成「負債」。他賭的是第二個階段來得比市場預期快。
+</div>
+
+<div class="section-title">五、Latent MoE：把專家計算壓進潛空間</div>
+
+<p>技術上，這一集最硬的內容是 Latent MoE。名字裡的關鍵不是「MoE」，而是「latent」。</p>
+
+<p>傳統 MoE 的專家在全寬的表示空間裡計算：每個 token 選幾個 expert， expert 的權重仍然是完整維度。Latent MoE 則先把表示壓到一個更低維的潛空間（節目口徑：2000 多維壓到 1000 多維），在潛空間裡做專家計算，算完再還原。好處是減少顯存與記憶體之間的參數搬運——而搬運正是端側最貴的操作。</p>
+
+<ul>
+  <li>145B 模型：計算量節省 30% 以上；</li>
+  <li>120B 版本：計算量節省 50%；</li>
+  <li>配合預測下一個 token 需要抽哪些 expert 的預取機制，避免從 SSD 臨時加載導致「幾秒鐘一個 token」；</li>
+  <li>145B 在 30G 記憶體、16G 顯存的機器上跑到 80 token/s，長推理掉速約 5%。</li>
+</ul>
+
+<div class="data-point">
+  <span>規格</span>145B 跑 1.5–2 萬元價位筆記本（RTX 4080 級或 M4 Pro 以上、30–40G 統一記憶體）；35B 跑手機僅需 2.5G 記憶體；語音模型矩陣 0.1B / 0.3B / 0.6B / 4B，0.1B 最低 500MB 記憶體、純 CPU 可跑，支持實時聲音克隆與同聲傳譯。
+</div>
+
+<p>這些數字的意義不在於「跑分」，而在於它們把一個原本只存在於數據中心的模型尺寸，拉到了消費級硬件的記憶體預算裡。<strong>30G 記憶體是一個門檻</strong>：它剛好是高端筆記本統一記憶體的區間，也是 Apple Silicon 與 RTX 筆記本的分界線。越過這條線，端側模型就從「demo」變成「可交付的產品」。</p>
+
+<div class="section-title">六、彈性推理：硬盤、內存、顯存三層統一調度</div>
+
+<p>模型能放進記憶體是一回事，推理時不卡頓是另一回事。他的推理框架 Edge-0 做的是三層統一（硬盤 / 記憶體 / 顯存）與用戶可設的記憶體預算，類似 vLLM 早期的彈性調度思路。</p>
+
+<p>為什麼這件事在端側特別難？因為端側沒有「無限的顯存」可以假設。雲端推理可以把整個模型放進 HBM，端側必須在 SSD、RAM、VRAM 之間做取捨：</p>
+
+<table>
+  <tr><th>層級</th><th>容量</th><th>頻寬</th><th>端側策略</th></tr>
+  <tr><td>SSD</td><td>大（TB 級）</td><td>慢</td><td>存放不常用的 expert 權重，按需預取</td></tr>
+  <tr><td>RAM</td><td>中（16–64G）</td><td>中</td><td>存放活躍參數與 KV cache，用戶可設預算</td></tr>
+  <tr><td>VRAM / 統一記憶體</td><td>小（8–40G）</td><td>快</td><td>存放當前層與熱 expert，動態換入換出</td></tr>
+</table>
+
+<p>這套東西的難點不是「支援三層」，而是<strong>預測</strong>：你要在下一個 token 到來之前，知道它會激活哪些 expert，並把它們提前搬到快的層級。搬早了浪費頻寬，搬晚了用戶看到卡頓。Latent MoE 減少了單次搬運的資料量，預取機制減少了等待，兩者合起來才有所謂「80 token/s、長推理掉速 5%」。</p>
+
+<blockquote>
+  「以往的端側模型為什麼不可用？就是我先妥協這塊，先做壓縮，然後再看怎麼把它拔上來。」
+  <span class="attribution">—— 曾曉東，談端側模型的歷史包袱（節目原話）</span>
+</blockquote>
+
+<p>這句話其實也在說推理框架：很多端側方案不是模型不行，是<strong>調度不行</strong>。模型在紙面上能跑，實際部署時因為記憶體不足、頻寬不夠、expert 換入換出太頻繁，體驗直接崩掉。端側的護城河，一半在模型架構，一半在這種「看不見的調度」。</p>
+
+<div class="section-title">七、部署門檻就是護城河</div>
+
+<p>主持人問了一個很自然的問題：端側模型聽起來很好，為什麼不是所有人都做？他的回答不是「技術難」，而是「部署難」：</p>
+
+<blockquote class="strong">
+  「端側模型最大的卡點，除了智力水平之外，最大的問題就是部署的難度跟門檻還是高的。」
+  <span class="attribution">—— 曾曉東，談端側的現實瓶頸（節目原話）</span>
+</blockquote>
+
+<p>部署難在哪裡？模型要 OTA 到終端，涉及硬件平台、終端應用、體驗對齊；不同芯片（高通、地平線、恒玄、瑞芯微、Jetson）有不同的算子支援與記憶體架構；推理成本由用戶設備承擔，所以每一個性能回歸都會直接變成用戶投訴。</p>
+
+<p>但這也正是他說的「好生意」：</p>
+
+<blockquote>
+  「端側的模型需要你把模型 OTA 下去，你更換的成本要比雲端大很多。」
+  <span class="attribution">—— 曾曉東，談端側的轉換成本（節目原話）</span>
+</blockquote>
+
+<p>雲端的切換成本是改一個 API endpoint；端側的切換成本是重新適配硬件、重新認證、重新推 OTA、重新說服用戶。對客戶來說這是麻煩，對供應商來說這是<strong>鎖定</strong>。在一個模型能力差距逐漸縮小的市場裡，部署與整合的摩擦反而變成更持久的護城河。</p>
+
+<div class="highlight-box">
+  <strong>我的延伸：</strong>這是一個很反直覺的商業邏輯——端側的「重」不是劣勢，是壁壘。雲端模型的競爭是二元的（誰的 benchmark 高），端側的競爭是連續的（誰能在特定硬件上穩定跑、通過認證、說服品牌採用）。前者容易被一代模型抹平，後者需要時間與關係，反而更難被抄。
+</div>
+
+<div class="section-title">八、為什麼大廠不會認真做端側</div>
+
+<p>這是全集最具爭議、也最可證偽的判斷。他的理由不是技術，而是商業模式：</p>
+
+<blockquote class="strong">
+  「雲端的模型依然是大廠中模型往 AGI 去的，他的商業模式是 token 的付費方式。端側本質上，如果智力水平足夠強，我可能不會持續消耗雲端 token，跟他的商業模式其實是有點違背的。」
+  <span class="attribution">—— 曾曉東，談大廠做端側的動機衝突（節目原話）</span>
+</blockquote>
+
+<p>他的推論是：大廠的小模型更多是引流——把你留在它的生態裡，最終還是回到雲端付費。真正把端側當主業，等於自己侵蝕自己的 token 收入。這是一個典型的<strong>創新者窘境</strong>：不是大廠看不見端側，而是它的收入結構不允許它認真做。</p>
+
+<p>但他也承認反面：如果雲端需求足夠大，大廠隨時可以下場，屆時端側公司只能靠先發與場景落地防守。這句話很重要，因為它把一個「結構性判斷」變成了一個「時間窗口判斷」——大廠不是不會做，是現在不做；窗口有多長，取決於雲端 token 收入什麼時候見頂。</p>
+
+<div class="section-title">九、三階段與 93% 這個領先指標</div>
+
+<p>他給了一個很清楚的三階段：</p>
+
+<ol>
+  <li><strong>早期</strong>：端側是雲端的「小補丁」——離線喚醒、簡單指令、低延遲場景。</li>
+  <li><strong>今年</strong>：35B 級可跑 agent，一半端一半雲。某耳機客戶 93% 的高頻交互已經走端側。</li>
+  <li><strong>明年起</strong>：端側為主、20% 走雲。「明年可能會有超過 90% 以上的消費電子硬件，一定會用端側的語音模型。」</li>
+</ol>
+
+<p>那個 93% 是全集最值得記住的營運指標。它不是實驗室數字，而是一個已出貨客戶的實際流量分佈：高頻交互——喚醒、短指令、翻譯、簡單問答——幾乎全部在端上完成；雲端只留給低頻、複雜、需要大模型知識的請求。這正是端側最合理的產品形態：<strong>不是取代雲端，而是把 90% 的日常流量從 token 帳單上拿掉。</strong></p>
+
+<div class="data-point">
+  <span>營運</span>某耳機客戶 93% 高頻交互走端側；無界方舟內部模型 200 多個種類、開源 20 多個；Edge-0 推理框架 GitHub 破萬星、約 1,000 名 contributor；語音數據管線每月產出約 100 萬小時高質量音頻，95% 以上可用。
+</div>
+
+<p>如果 93% 可以複製到眼鏡、手錶、車機、機械人，端側的市場就不是「小模型市場」，而是<strong>消費電子的默認推理層</strong>。這也解釋了他為什麼敢說「90% 以上的消費電子硬件都會用端側語音模型」——他看到的不是模型能力曲線，而是 BOM 成本與用戶體驗的交叉點。</p>
+
+<div class="section-title">十、五層蛋糕，少一層雲廠商</div>
+
+<p>他把端側的產業鏈拆成五層，並指出它比雲端少一層「雲廠商」：</p>
+
+<table>
+  <tr><th>層</th><th>參與者</th><th>特徵</th></tr>
+  <tr><td>芯片</td><td>NVIDIA Jetson、地平線、高通、恒玄、瑞芯微等上百家</td><td>高度分散，各品類有各自的王者</td></tr>
+  <tr><td>推理 infra</td><td>llama.cpp、被高通收購的 Nexa、今年的 Stratos、Edge-0</td><td>碎片化，沒有事實標準</td></tr>
+  <tr><td>模型</td><td>2026 年前多在 10B 以下，今年出現 30B–40B</td><td>無界方舟 9 月首次把端側推到 35B</td></tr>
+  <tr><td>應用</td><td>硬件終端 + 軟件</td><td>場景碎片化，部署為王</td></tr>
+</table>
+
+<p>少掉雲廠商這一層，意味著端側沒有「平台稅」的收費點，也意味著沒有單一玩家能靠規模把整條鏈吃下來。這對初創公司是好事——你可以在某一層做到最好，而不必面對一個已經整合好的巨頭；但對想做大營收的公司是壞事——每一層都碎片化，規模效應難建立。</p>
+
+<p>他還有一個「爆料式」判斷：未來做得很好的專有芯片公司，可能來自模型公司——「因為他更懂模型」。目前正與一家芯片大廠合作，但對方很多能力尚未開放。這個判斷的邏輯是軟硬協同：如果你知道模型的記憶體訪問模式、expert 激活分佈、KV cache 的增長曲線，你就能設計出更適合它的芯片，而不是先做通用芯片再適配模型。</p>
+
+<div class="section-title">十一、把這一集放進 11 月的脈絡</div>
+
+<p>這一集與 11 月 15 日趙晨陽那期形成「雲 vs 端」的鏡像：趙晨陽談的是用 AI 加速 AI 訓練、評估是瓶頸；曾曉東談的是把智能搬到離用戶最近的設備、部署是瓶頸。兩期都指向同一件事——<strong>模型能力之外的工程鏈條，才是 2026 年的勝負手。</strong></p>
+
+<p>它也與同日的矽谷 101 E260 形成有趣的對照：矽谷 101 談的是雲端算力的資本來源與時間錯配，曾曉東談的是把推理從雲端移走、讓用戶的設備承擔成本。如果端側真的吃掉 90% 的高頻交互，雲端的算力需求結構會改變——不是變小，而是<strong>從「日常推理」轉向「訓練與低頻複雜任務」</strong>。這對 AI 基建的估值模型是一個長期變量，雖然不會在一年內顯現。</p>
+
+<div class="section-title">十二、矛盾與可證偽點</div>
+
+<p>這一集有兩個明顯的張力，值得標出來：</p>
+
+<ol>
+  <li><strong>「大廠不會認真做」vs「大廠隨時可以下場」</strong>：前者是結構判斷，後者是時間判斷。兩者可以同時為真，但投資含義完全不同。如果窗口只有兩年，端側公司必須在兩年內把部署摩擦變成客戶遷移成本；如果窗口有五年，它可以慢慢做生態。</li>
+  <li><strong>「不妥協」vs「35B 跑手機 2.5G 記憶體」</strong>：145B 的路線是不壓縮，但 35B 跑手機仍然需要極高的記憶體效率。他的答案是「架構 + 調度」而不是「量化」，但這條線在工程上能走多遠，取決於硬件頻寬的進步速度。</li>
+</ol>
+
+<p>可證偽的清單也很清楚：</p>
+
+<ul>
+  <li>明年是否真的有 90% 以上的消費電子硬件採用端側語音模型？</li>
+  <li>93% 的高頻交互端側比例，能否複製到第二、第三個客戶？</li>
+  <li>大廠是否在 2027 年前推出「認真」的端側模型（而不是引流小模型）？</li>
+  <li>端側模型的智力差距，是否會隨著 35B–145B 的普及縮小到用戶無感？</li>
+</ul>
+
+<blockquote class="strong">
+  「如果智力水平足夠強，我可能不會持續消耗雲端 token。」
+  <span class="attribution">—— 曾曉東，談端側與雲端的長期分工（節目原話）</span>
+</blockquote>
+
+<p>這句話是整集的戰略核心。端側的終局不是「取代雲端」，而是<strong>重新劃分哪些推理值得付費給雲</strong>。當本地模型足夠好，90% 的日常交互會留在設備上；雲端則變成一個「按需調用的重型工具」。對模型公司來說，這意味著 token 收入的增長曲線會比預期平；對硬件公司來說，這意味著毛利率可以從「賣一次虧一生」變成「賣一次賺一生」。</p>
+
+<p>曾曉東賭的，就是這條分界線會比所有人預期更快地往端側移動。他沒有說服你相信模型會變得多強，他只用一個 93% 的營運數字，告訴你那條線已經開始移動了。</p>
+
+<hr>
+
+<footer>
+  <p>來源：十字路口 Crossing，2026-11-24 發布，67 分 30 秒；小宇宙單集音頻全量轉寫。本文引語僅限節目中明確出現的說法；數據按節目口徑記錄，未另行核實。背景與數據另參考當日《AI 播客每日深讀》2026-11-25。</p>
+  <p>生成時間：2026-11-25 06:00 UTC · 深度復述 297 · <a href="../index.html">返回播客日報</a></p>
+</footer>
+
+</div>
+</body>
+</html>
