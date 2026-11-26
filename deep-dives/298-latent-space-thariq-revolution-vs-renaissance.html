@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「我去年全錯了」——Thariq 從 Anthropic 到 OpenAI，把 agent 編程的共識拆掉重練</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e8e2d8; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; text-align: center; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) { html { font-size: 16px; } .container { padding: 1.5rem 1rem; } header h1 { font-size: 1.6rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a href="../index.html" class="back-link">← 返回播客日報</a>
+  <div class="ep-num">Latent Space · 2026-11-25</div>
+  <h1>「我去年全錯了」——Thariq 從 Anthropic 到 OpenAI，把 agent 編程的共識拆掉重練</h1>
+  <div class="meta">
+    <span>主持：swyx、Alessio Fanelli</span><span>·</span>
+    <span>嘉賓：Thariq Shihipar（前 Anthropic Claude Code 核心成員，錄後宣布加入 OpenAI）</span><br>
+    <span>時長 54 分鐘</span><span>·</span>
+    <span>2026-11-25 22:28 UTC 發布</span>
+  </div>
+</header>
+
+<p>這是一集罕見的「當眾認錯」訪談。Thariq Shihipar 在 AI Engineer CODE 做閉幕 keynote，題目直接叫「我過去一年錯在哪」，然後坐下來和 swyx、Alessio 把每一條錯誤拆開。錄製結束之後，他才宣布離開 Anthropic、加入 OpenAI——swyx 的說法是，繼 Cat Wu 之後，又一位高知名度的人從 Anthropic 流向 OpenAI，而 OpenAI 內部的講法是「是時候重做 Codex 了」。</p>
+
+<p>所以這集的張力是雙重的：一個剛剛被證明「看錯了一年」的人，正在告訴你他現在看到的東西；而他剛剛換了東家，這套新判斷很快就會變成對手的產品路線。這比任何一份 model card 都更值得細讀，因為它暴露的不是能力分數，而是<strong>做產品的人怎麼理解模型</strong>。</p>
+
+<blockquote class="strong">
+  「AI 同時是一場工業革命和一場文藝復興。」
+  <span class="attribution">—— Thariq Shihipar，本集核心框架（節目原話）</span>
+</blockquote>
+
+<div class="section-title">一、認錯的清單：三條被證偽的圈內共識</div>
+
+<p>他去年公開相信、而且四處講的三件事，現在全部收回：</p>
+
+<ol>
+  <li><strong>「bash is all you need」</strong>——只要給模型一個 shell，什麼都能做，不需要別的。</li>
+  <li><strong>「CLI 就是一切」</strong>——不需要 MCP、不需要 tools，一切走命令列。</li>
+  <li><strong>「React 是終極語言」</strong>——因為模型只會寫 React，所以所有前端都該寫成 React。</li>
+</ol>
+
+<p>這三條的共同結構是：<strong>把「當下模型的能力邊界」誤認成「問題的正確形態」。</strong>模型當時只會寫 React，於是他推論 React 就是答案；模型當時只擅長 shell，於是他推論 CLI 就是架構。這在工程上很自然——你總要順著模型的能力設計系統——但它有一個致命的副作用：你會把暫時的權宜之計，寫進長期的技術選型。</p>
+
+<p>他自己的補充很誠實：他沒有公開寫過「React 是終極語言」這句話。這反而是更有意思的一點——<strong>圈內共識很多時候不是被論證出來的，是被幾個人反覆說出來的。</strong>當一個有信譽的人說「只有一種正確寫法」，其他人會省下自己驗證的成本，直接沿用。共識的形成速度，遠快於它被證偽的速度。</p>
+
+<div class="highlight-box">
+  <strong>我的延伸：</strong>這一段其實是對整個 2026 年 agent 工程話語的體檢。過去兩年大量「最佳實踐」——single-file agent、CLI-first、markdown as memory、skills over tools——都建立在同一個假設上：模型能力有限，所以要用外殼補。當模型變寬，這些外殼不會全部失效，但會從「必要」降級為「可選」。判斷一個架構好不好，应该問「它假設模型有多笨」，而不是「它現在跑得多順」。
+</div>
+
+<div class="section-title">二、模型不是在收窄，是在變寬</div>
+
+<p>他給出的關鍵觀察是：模型變強的方式，不是收窄成一種「外星格式」，而是<strong>變寬（broader）</strong>。能力在邊緣時，它只能用一種方式完成任務；能力上來之後，你讓它用 computer use 進 Figma 畫前端，它畫得一樣好。</p>
+
+<p>這個反轉的推論，比觀察本身重要得多：</p>
+
+<blockquote class="strong">
+  「你可以理解模型在做什么，你可以和它協作。」
+  <span class="attribution">—— Thariq 對「模型變寬」的推論（節目原話之意）</span>
+</blockquote>
+
+<p>如果模型只會一種寫法，人類就只能祈禱那一種寫法是可維護的；如果模型能用任何人類能用的介面，人類就可以<strong>選擇</strong>一個自己能讀懂的介面。這是整集的方法論地基——後面所有的 /human 目錄、腳本層、決策模型，都是從這一句長出來的。</p>
+
+<p>它同時否證了 2026 年另一條流行敘事：模型終將自己循環、產出人類無法維護的一坨，人類只負責按下開始。Thariq 的立場是，這不是必然，而是選擇；而選擇的前提，是你相信模型能配合你的可讀性要求，而不是只能配合它自己的內部表徵。</p>
+
+<div class="section-title">三、革命與文藝復興，可以在同一個專案裡共存</div>
+
+<p>「革命 vs 文藝復興」不是二選一的時代分期，而是<strong>兩種生產邏輯</strong>。工業革命式的軟件工廠負責把軟件變便宜、變可靠、變可規模化；文藝復興式的工藝負責把每一檔邊際質量做出來，讓人願意用。</p>
+
+<p>他正在做的格鬥遊戲就是樣板，而且分層分得很清楚：</p>
+
+<table>
+  <tr><th>層</th><th>技術選擇</th><th>優化目標</th></tr>
+  <tr><td>引擎</td><td>WebAssembly</td><td>性能、穩定、跨平台</td></tr>
+  <tr><td>腳本層</td><td>輕量腳本語言 + hook</td><td>可讀、可調、可被人改</td></tr>
+  <tr><td>平衡性</td><td>自動對局測試 + 模型建議 + 人工裁決</td><td>手感、方差、meta 深度</td></tr>
+</table>
+
+<p>這個架構的聰明之處，在於它把「模型擅長什麼」和「人需要什麼」分開擺放。底層交給工廠：WASM 快、穩、不用人管。上層交給工藝：腳本語言要能被人一眼讀懂，因為<strong>平衡性調整是品味問題，不是算力問題</strong>。中間那層自動對局，則是讓模型做它真正擅長的事——跑幾千局、統計勝率、指出哪個角色在哪個對局裡失衡。</p>
+
+<p>用他的話說，工廠化只解決了生產成本，沒有解決「做出來的東西有沒有人想用」。而後者只能靠人在環裡反覆試。</p>
+
+<div class="section-title">四、/human 目錄：給人類留一個可讀的接口</div>
+
+<p>全集最可複用的工程實踐，是他給模型生成的代碼單獨劃了一個目錄，叫 <code>/human</code>。裡面的規則和主代碼庫<strong>反向設定</strong>：</p>
+
+<ul>
+  <li>註釋密度要高，不是低；</li>
+  <li>禁止單字符變量名；</li>
+  <li>限制行長；</li>
+  <li>目標是「每個文件讀起來像 spec，但它就是真代碼」——不是文檔，不是產物。</li>
+</ul>
+
+<p>為什麼要這樣做？他描述了一個很具體的不適感：他跟模型描述一個機制，模型會自己做幾個合理假設；等他真的去玩，才發現「我根本不知道這個角色在這種情況下會這樣做」。這就是 vibe coding 最難受的地方——<strong>不是代碼跑不起來，是你失去了方向感。</strong></p>
+
+<blockquote class="strong">
+  「我改一塊石頭的尺寸，立刻試投擲，反饋閉環在我手上。」
+  <span class="attribution">—— Thariq 描述 /human 層的價值（節目原話之意）</span>
+</blockquote>
+
+<p>注意這句話裡的閉環長度。不是「改完 → 等 CI → 看報告」，而是「改完 → 立刻玩 → 感覺對不對」。這是工藝層的反饋節奏，和工廠層的批次節奏完全不同。/human 目錄的作用，就是把這個短閉環從模型的黑箱裡救出來，放回人手裡。</p>
+
+<div class="data-point">
+  <span>工程</span>/human 目錄：與主代碼庫分離的腳本層，lint 規則反向設定（高註釋密度、禁單字符標識符、限制行長）。語義目標是「可讀的 spec + 可執行的代碼」。工程含義：把「模型生成的底層原語」和「人類調參的界面」解耦，避免每次微調都要重新提示整個系統。
+</div>
+
+<p>這個做法值得抄的地方，不是 lint 規則本身，而是它背後的<strong>分層意識</strong>：模型生成的東西不一定要對人可讀，但人和模型之間的<strong>接觸面</strong>必須對人可讀。你可以接受 WASM 編譯產物是一坨二進制，但你不能接受「這個角色為什麼會這樣」是一個你答不上來的問題。</p>
+
+<div class="section-title">五、完美平衡是無聊的：方差比公平重要</div>
+
+<p>他對遊戲設計的判斷，直接可以推廣到 AI 生成內容：</p>
+
+<blockquote class="strong">
+  「一個完美平衡的遊戲是無聊的。（A perfectly balanced game is boring.）」
+  <span class="attribution">—— Thariq Shihipar（節目原話）</span>
+</blockquote>
+
+<p>他的例子是剪刀石頭布——完美平衡，所以沒有人想玩。他要的是「弱但高方差」的角色：你能 main 它、能靠理解 meta 贏。這在競技設計裡是常識，但推到 AI 生成內容上，會得出一個不舒服的結論：<strong>模型越擅長給默認值，產出的同質化越嚴重，而平台經濟恰恰獎勵同質化。</strong></p>
+
+<p>他觀察到的默認值清單很具體：按住 shift 就衝刺、生成的網站長得都一樣、客服機器人的語氣都一樣。默認值本身不是壞事——它讓第一次使用的人不會迷路。但默認值的價值，在於讓人意識到「還可以更多」，而不是讓人以為「這就是全部」。</p>
+
+<div class="highlight-box">
+  <strong>我的延伸：</strong>這條判斷對做 AI 產品的人是一個直接的設計約束。如果你的產品只提供默認值，你會很快被下一個模型抹平；如果你的產品提供「可調的方差」——讓用戶能選一個弱但有趣的策略、能偏離最佳解、能承擔一點風險——你才有非模型能力之外的護城河。這也解釋了為什麼「一鍵生成」類產品很難留住人：它把方差壓到零，也就把樂趣壓到零。
+</div>
+
+<div class="section-title">六、瓶頸不是智能，是工作方式</div>
+
+<p>這一節是全集最反焦慮的部分。他用的是 Codex 和 Claude 兩個 $200/月 訂閱，兩個都沒觸頂。</p>
+
+<blockquote class="strong">
+  「我不覺得自己被智能卡住（not bottlenecked by intelligence）——可能是被野心卡住，如果我有一個更大的東西要做的话。我真正卡住的是和模型一起工作的方式。」
+  <span class="attribution">—— Thariq Shihipar（節目原話）</span>
+</blockquote>
+
+<p>他還舉了一個對「外行」很有鼓勵作用的例子：他不懂 CUDA、不懂 PyTorch、不懂網絡架構細節，但能靠 Astra 做 RL 和可解釋性實驗——例如把 Qwen 改成相信「埃菲爾鐵塔在羅馬」，再看下游表徵怎麼變。他認為讓更多「有一定能力但天真的外行」進來試，對領域是好事。</p>
+
+<p>這句話在安全語境下是雙面的：外行試錯確實能帶來意想不到的角度，但也意味著大量實驗在沒有方法論約束的情況下被做出來。他自己也承認，他在 RL 上的想法「可能完全天真」。</p>
+
+<div class="data-point">
+  <span>成本</span>Codex + Claude 兩個 $200/月 訂閱並行，均未觸頂。原話：「不是 token 瓶頸。」<br>
+  <span>對照</span>Opus 5.5 相對 Opus 5：每 token 更便宜、token 效率更高、同時更聰明——用來反駁「便宜快就一定笨」的重力定律。
+</div>
+
+<div class="section-title">七、決策模型：把計算放在該花的地方</div>
+
+<p>他把 AI 的實現譜系畫成一條連續軸：一端是「全部硬編碼」，另一端是「每回合 tool-calling loop」。決策模型落在中間——你可以預先寫出行為，同時在任意時刻評估狀態再決定動作。</p>
+
+<p>他認為最適合兩類場景：</p>
+
+<ol>
+  <li><strong>用戶表達空間極大且不可預測的</strong>——遊戲 AI。</li>
+  <li><strong>本質是決策樹、但偶爾需要轉推理的</strong>——客服機器人：先判斷「用戶是在要更多信息、在引用需要調取的信息、還是在編造」。</li>
+</ol>
+
+<p>他給了一個很漂亮的直覺，用來反駁「決策模型比較笨」：</p>
+
+<blockquote class="strong">
+  「讀一本懸疑小說最後一句『兇手是 X』時，單次 forward pass 之後每個 token 的熵都是零——模型早就知道答案了，後面那些字是在做無用的解碼。」
+  <span class="attribution">—— Thariq 談決策模型與推理的計算分配（節目原話之意）</span>
+</blockquote>
+
+<p>這個論證的力度在於，它把「笨」重新定義成「把計算放錯地方」。如果答案在單次前向傳播後已經確定，再生成幾百個 reasoning token 就是浪費；如果答案需要外部狀態（「你訂的是哪班機」），那就必須先分類意圖，再路由到推理或工具。<strong>決策模型不一定更笨，它只是把計算挪到了該花的地方。</strong></p>
+
+<p>他也提到「優先級隊列模型（priority queue model）」是他自己感興趣的一種系統一形態，以及 Diego 提的 memory model、以及「do what I do, not what I said」（按意圖而非字面執行）這類模型。開源決策模型普遍在 20B 量級，可對照 decision eval index 的質量-規模曲線；他吐槽 Jev（TypeSafe 的系統一模型）「可能被定價過低」，希望它是個更大的模型。</p>
+
+<div class="section-title">八、RSI 的正確定義：把 AI 研究變成知識工作</div>
+
+<p>他反問了一個多數人不問的問題：我們真的要模型完全 headless 地自我改進嗎？他不確定那是最優解。</p>
+
+<p>他的版本是：模型負責效率、安全、正確性這類硬技術活；人類負責做決定、分配資源、爭取 buy-in、構想實驗——也就是<strong>知識工作</strong>。同樣的邏輯推到生物、機器人：濕實驗自動化之後，這些領域也變成知識工作，結果可能不是消滅白領，而是<strong>創造</strong>更多白領工作。連開餐廳都變成「菜單、毛利、排班」的知識工作。</p>
+
+<p>他把前沿能力和企業側分開判斷：</p>
+
+<ul>
+  <li><strong>前沿能力</strong>（算力、機器人、生物）是 obvious wins，一旦驗證就 all-in；</li>
+  <li><strong>企業側</strong>相反——「一家企業不可能真正 AI native」，因為它沒有前沿問題可解，只能拿 AI 當膠水。</li>
+</ul>
+
+<blockquote class="strong">
+  「一家企業不可能真正變成 AI native，因為它根本沒有那些機會；要找到機會，你得在做一個前沿的東西。」
+  <span class="attribution">—— Thariq Shihipar（節目原話）</span>
+</blockquote>
+
+<p>這個斷言很強，會被 enterprise AI 從業者反駁——它隱含「只有前沿研究才有真正的機會」這個前提。但它有一個可檢驗的推論：如果企業只能把 AI 當膠水，那麼企業 AI 的價值會集中在「流程整合」而不是「能力躍遷」，對應的商業模式應該是服務與諮詢，而不是模型或平台。這在 2026 年的 enterprise AI 市場裡，其實已經看得到——賣得最好的不是最強的模型，是最懂流程的整合商。</p>
+
+<p>他還做了一個很誠實的思想實驗：假設從沒有 speculative decoding 的相關論文，讓模型「把推理變快」，他判斷模型會寫自定義 kernel、暴力優化，而不會發明「訓練草稿模型 + 概率驗證」這種技巧。他的判斷隨時間在變——3 到 6 個月前會答「絕對不會」，現在不確定。結論是：<strong>算力分配（一次訓練幾十億美元、跑哪個實驗）應當留給人。</strong></p>
+
+<div class="section-title">九、2026：一切都很不一樣，同時又沒什麼不一樣</div>
+
+<p>他對這一年的總結，可能是整集最值得記住的一句話：</p>
+
+<blockquote class="strong">
+  「一切都很不一樣，同時又沒什麼不一樣。」
+  <span class="attribution">—— Thariq 對 2026 年的總結（節目原話之意）</span>
+</blockquote>
+
+<p>展開來說：agent 真的 work 了，coding 的日常工作流被重寫，一個 $200 訂閱能幹過去一個團隊的活。但宏觀上沒有 10% 的 GDP 增長，沒有勞動市場的劇變，人類問題還是人類問題——保姆遲到、你要開會、孩子沒人接。他的類比是 15 年前的智能手機普及：滲透率從少數到全員，但生活的形狀沒有斷裂。</p>
+
+<p>這個判斷和很多「AGI 已至」的敘事相反，但它有一個很重要的方法論優點：<strong>它是可證偽的。</strong>如果 2027 年真的出現 GDP 級別的躍遷，他就錯了；如果沒有，那麼「agent 很強但世界沒變」就是這一代技術的真實形狀。而這個形狀對產品人的含義是：不要賭宏觀斷裂，要賭微觀工作流的重寫。</p>
+
+<div class="section-title">十、他給模型做的那次「系統理解」eval</div>
+
+<p>他做了一個很原創的測試：用卡牌遊戲「Frontier Lab」讓 Claude 模擬數千局，看它能不能理解一個多勝利條件的耦合系統。四種勝利條件：經濟、科學（到 AGI）、文化（讓普通人喜歡 AI，他自己說這是最難的）、以及一種他當場忘了的。</p>
+
+<p>結果是失敗：模型永遠只走經濟勝利這一條路。</p>
+
+<blockquote class="strong">
+  「我讓它修平衡，它做得非常爛。（I was like okay this is imbalance can you fix it — and it tries to fix it. It's really bad at it.）」
+  <span class="attribution">—— Thariq Shihipar（節目原話）</span>
+</blockquote>
+
+<p>這比任何 benchmark 都直白：<strong>模型能不能理解數千回合的耦合系統並調參，目前不能。</strong>注意這不是「模型不夠聰明」的問題——它能跑幾千局、能統計、能提出建議。它缺的是「同時權衡多個互相牽制的目標」的能力，而這恰好是遊戲設計、組織設計、政策設計的共同核心。</p>
+
+<div class="highlight-box">
+  <strong>我的延伸：</strong>這個 eval 的價值，在於它測試的不是知識，是<strong>系統感</strong>。目前所有主流 benchmark 都在測「能不能答對」，很少測「能不能在一個會反饋的系統裡調到一個好狀態」。而後者才是大多數真實工作的形狀。如果要做下一個 eval，這是一個值得抄的方向：給模型一個有內生反饋的模擬環境，看它能不能在多目標衝突下找到非退化解。
+</div>
+
+<div class="section-title">十一、多 agent 互通與他的個人軟件棧</div>
+
+<p>他的臨時方案很土但很有效：把所有助手接到一個共享的 markdown/txt scratchpad 上，「先自我介紹」，30 秒建立共享上下文。他真正想要的是跨廠商互通——自己的不同助手互相說話——並明確反感「每家公司都抄一遍」的現狀。</p>
+
+<p>他的個人軟件棧也值得記一筆，因為它展示了一個「用決策模型重寫日常」的樣本：</p>
+
+<ul>
+  <li>舊智能燈／開關不支持 Siri，用 Shortcuts 當代理橋接；</li>
+  <li>用 computer use + iPhone 鏡像來「生成」快捷指令，省去學規則；</li>
+  <li>做過 macOS dock 模式切換器（寫作／編程／刷社媒分區），用完後停用——因為真實需求不是「為每種活動分區」，而是「我現在是不是在刷」；</li>
+  <li>現在做的是 to-do + 屏幕時間 + 睡眠提醒的三合一，用決策模型判斷「你在趕 AIE 的待辦時，現在刷 Twitter 合理嗎」。</li>
+</ul>
+
+<p>最後這一條是整集最好的隱喻：<strong>他要的不是更強的自動化，是更有判斷力的那一個小時。</strong></p>
+
+<div class="section-title">十二、把這一集放進脈絡：一年內的位移</div>
+
+<p>與他一年前在 Latent Space 談 Claude Code 的那期對照，最大的位移是從「怎麼讓 agent 更強、更自主」轉到「怎麼把人放回循環、並且讓循環變短」。他這次反覆講 dark factory／全自動不是目標，甚至可能不是最優解——這與 2026 年主流 agent 敘事的「無人化」形成明顯反差。</p>
+
+<p>同時，他對 RSI 的看法也比多數實驗室人士保守：不是「能不能」，而是「該不該全 headless」。這在一個剛剛加入 OpenAI、而 OpenAI 正在「重做 Codex」的時間點上，是一個耐人尋味的信號——下一輪 coding agent 的競爭點，可能不在模型分數，而在「誰能讓人真正參與、真正看懂、真正願意每天用」。</p>
+
+<div class="section-title">十三、矛盾與可證偽點</div>
+
+<ol>
+  <li><strong>「模型變寬」vs「模型仍有默認值」</strong>：他說模型能用任何介面，但也說模型擅長給默認值、產出同質化。兩者可以同時為真（寬度是能力上限，默認值是分佈中心），但產品含義相反：如果你只取默認值，你拿到的是同質化。</li>
+  <li><strong>「企業不可能 AI native」vs「企業 AI 市場很大」</strong>：前者是能力判斷，後者是需求判斷。兩者不矛盾，但意味著企業 AI 的錢會流向整合與服務，而不是模型。</li>
+  <li><strong>「外行試錯有價值」vs 安全</strong>：他承認自己可能天真。外行紅利和無方法論風險是同一枚硬幣。</li>
+  <li><strong>「不是 token 瓶頸」vs「$200×2 沒觸頂」</strong>：這是個人經驗，不是普遍結論。對大多數團隊，成本仍是硬約束。</li>
+</ol>
+
+<p>可證偽的清單：</p>
+<ul>
+  <li>2027 年是否出現 GDP 級別的 AI 躍遷？（他賭不會）</li>
+  <li>coding agent 的下一輪贏家，是否真的靠「可參與性」而非分數？</li>
+  <li>決策模型是否會成為 agent 架構的標準中間層，而不是被更強的模型直接吃掉？</li>
+  <li>企業側是否真的只能當膠水，還是會長出前沿問題？</li>
+</ul>
+
+<blockquote class="strong">
+  「我不覺得自己被智能卡住——可能是被野心卡住。我真正卡住的是和模型一起工作的方式。」
+  <span class="attribution">—— Thariq Shihipar，本集的方法論核心（節目原話）</span>
+</blockquote>
+
+<p>這句話是整集最實用的一條。它把「AI 時代的個人競爭力」從「會不會用模型」重新定義成「能不能設計一個讓自己看得懂、改得動、反饋夠短的協作介面」。/human 目錄是這個介面的一個具體形狀，但不是唯一形狀。真正的問題是：<strong>在你的工作裡，那個 30 秒的閉環在哪裡？</strong>找不到它，模型再強，你也只是在下指令，而不是在做東西。</p>
+
+<hr>
+
+<footer>
+  <p>來源：Latent Space（swyx + Alessio Fanelli），2026-11-25 22:28 UTC 發布，54 分鐘；嘉賓 Thariq Shihipar。本文依據當日《AI 播客每日深讀》2026-11-26 的節目要點與原話引用整理；未取得完整逐字稿，細節以節目口徑為準，引語只保留節目中明確出現的說法。</p>
+  <p>生成時間：2026-11-26 06:00 UTC · 深度復述 298 · <a href="../index.html">返回播客日報</a></p>
+</footer>
+
+</div>
+</body>
+</html>

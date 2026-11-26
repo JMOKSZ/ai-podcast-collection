@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「證明落地得比我們讀得快」——一晚三個數學結果，與一條正在加速的證明流水線</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e8e2d8; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; text-align: center; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) { html { font-size: 16px; } .container { padding: 1.5rem 1rem; } header h1 { font-size: 1.6rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a href="../index.html" class="back-link">← 返回播客日報</a>
+  <div class="ep-num">Latent Space · AINews · 2026-11-25</div>
+  <h1>「證明落地得比我們讀得快」——一晚三個數學結果，與一條正在加速的證明流水線</h1>
+  <div class="meta">
+    <span>欄目：Latent Space AINews 每日 AI 新聞彙編</span><span>·</span>
+    <span>覆蓋 2026-11-25 當日</span><br>
+    <span>2026-11-25 22:23 UTC 發布</span><span>·</span>
+    <span>新聞簡報</span>
+  </div>
+</header>
+
+<p>這一期 AINews 幾乎全部由數學結果撐起來，標題就是論點：<strong>AI 輔助證明的產出速度，已經超過人類消化的速度。</strong>編輯用「一頓晚飯」當敘事骨架——Scott Aaronson 晚飯前還在消化兩個 VP≠VNP 證明，甜點前 OpenAI 論文稱矩陣乘法指數 ω 恰為 9/4，甜點期間又一篇給出有限傅里葉變換的匹配上下界。</p>
+
+<p>這不是一條「AI 又發論文了」的新聞。它記錄的是一個更結構性的變化：<strong>數學正在變成 agent 的第一個「可驗證的殺手場景」</strong>，而當可驗證性被解決，產出速度就不再受人類閱讀速度約束。這一期最值得讀的，不是那些定理本身，而是「論文數量掩蓋真實進度」這個警告。</p>
+
+<blockquote class="strong">
+  「如果是真的，這真的超現實（truly surreal）——大多數專家預期 ω = 2。」
+  <span class="attribution">—— Omri Weinstein，評 OpenAI 的矩陣乘法下界（節目引用）</span>
+</blockquote>
+
+<div class="section-title">一、下界才是真正的新聞：ω = 9/4</div>
+
+<p>先講清楚為什麼這件事重要。矩陣乘法的計算複雜度記作 O(n<sup>ω</sup>)，ω 是那個指數。幾十年來大家做的事，是把 ω 的上界往下壓——也就是找到更快的演算法。1969 年 Strassen 從 3 壓到 2.81，此後一路緩慢下探；10 月 OpenAI 把上界壓到 9/4。</p>
+
+<p>但上界不等於答案。你要證明 ω <strong>恰好</strong>是某個值，需要一個<strong>匹配的下界</strong>——證明沒有更快的演算法。而下界比上界難得多：上界只要構造一個演算法，下界要否定所有可能的演算法。此前沒有任何非平凡的下界，大多數專家預期 ω = 2（也就是最終會找到接近平方的演算法）。</p>
+
+<p>所以這次的衝擊不在「更快」，而在「到頂了」。據報導，機制來自一個顯式的超線性電路下界；如果成立，ω 只能是 9/4。這就是 Weinstein 說「truly surreal」的原因——它逆轉了几十年的直覺方向。</p>
+
+<div class="data-point">
+  <span>數字</span>ω = 9/4；有限傅里葉變換複雜度 n√log n；整數乘法同為 n√log n（在弱 ETH 下緊）。10 月 OpenAI 已把 ω 上界壓到 9/4，這次聲稱找到匹配下界。
+</div>
+
+<p>同日另一篇給出有限傅里葉變換的匹配上下界，性質相同：上下界夾住，答案確定。這種「同一天同一類結果多點開花」的模式，在人類數學史上非常罕見——它更像是產能問題被解決之後的自然結果，而不是靈感同時降臨。</p>
+
+<div class="section-title">二、一晚三響：VP≠VNP 與那頓晚飯</div>
+
+<p>更轟動的是 VP≠VNP。Anthropic 同日放出自己的證明；Scott Aaronson 的說法是在一頓晚飯期間連吞兩個 VP≠VNP。VP≠VNP 是計算複雜度理論的核心開放問題之一（代數版本），它的意義接近 P≠NP：如果 VP = VNP，很多被認為難的問題會突然變容易。</p>
+
+<p>Aaronson 的反應值得單獨記一筆——不是因為他說了什麼技術判斷，而是因為他需要<strong>提醒自己這件事真的發生了</strong>。這是一個從業三十年的理論計算機科學家，在面對「一晚之內多個核心問題被推進」時的真實反應。這種反應本身就是信號：不是「AI 很強」，而是「節奏已經超出人類專家的心理預期」。</p>
+
+<blockquote>
+  「他不得不提醒自己，這個結果真的發生過。」
+  <span class="attribution">—— 節目對 Aaronson 反應的描述</span>
+</blockquote>
+
+<p>還有一條更細的：Yupan Liu 證明<strong>兩條消息</strong>足以完成量子交互證明。Aaronson 說他用了 AI，並且自己得提醒自己「這件事真的發生了」。這類結果的共同點是——它們不是大新聞式的突破，而是把某個參數從「已知的上界」推到「緊的」，恰好是 AI 最擅長的那種「在一個明確的形式系統裡做優化」。</p>
+
+<div class="section-title">三、數量會掩蓋進度：730 篇與三次撤稿</div>
+
+<p>這一期最重要的一段，不是任何一個定理，而是編輯對「產能」的冷靜拆解。OpenAI 的目錄列了 <strong>730 篇手稿、375 個結果族</strong>，其中包含後續與配套論證。修訂日誌還記錄了 10 月因一篇論文的符號錯誤波及另外兩篇而<strong>撤稿三次</strong>。</p>
+
+<div class="data-point">
+  <span>統計</span>OpenAI 目錄：730 篇手稿 / 375 個結果族；10 月因一個符號錯誤撤稿 3 篇。<br>
+  <span>年度</span>編輯統計今年 64 項 AI 輔助科研進展，其中 11 月佔 20 項，含 Google Cogentic 的 6 篇預印本；兩個 VP≠VNP 只計一次。
+</div>
+
+<p>這兩個數字放在一起看，才是完整的圖景：<strong>同一批結果既在加速，也在返工。</strong>730 篇不是 730 個獨立突破，而是包含配套、後續、修訂的總量；而「一個符號錯誤波及三篇」說明這些論文的耦合度很高——它們不是各自獨立的靈感，更像是一條流水線上互相依賴的產出。</p>
+
+<div class="highlight-box">
+  <strong>我的延伸：</strong>「論文數掩蓋進度」這句話可以推廣到所有 AI 產能爆發的領域。當生成成本趨近於零，<strong>數量會先於質量爆炸</strong>，而外部觀察者最容易犯的錯，就是把數量當成進度。判斷一個領域的真實進展，應該看「有多少結果被獨立驗證且被使用」，而不是「有多少篇上線」。這也是為什麼 Lean 編譯通過很重要——它把「驗證」從社會過程變成機械過程。
+</div>
+
+<div class="section-title">四、靜默發布：Cogentic 六篇論文與 agent harness</div>
+
+<p>如果說 730 篇是「量的問題」，Cogentic 就是「發布方式的問題」。Google 的六篇論文直接上 GitHub、沒有任何公告，由一個 agent harness 在一個未命名的 Gemini 4 模型上產出。</p>
+
+<p>這六篇聲稱的結果，每一條都夠開一個研討會：</p>
+
+<ul>
+  <li>NFS 類分解上界——打破 1992 年的記錄；</li>
+  <li>確定性次指數分解；</li>
+  <li>更快的小特徵離散對數；</li>
+  <li>1/5 納什近似；</li>
+  <li>對數秩的平方根壁壘之下推進；</li>
+  <li>線性密度圖的邊重構。</li>
+</ul>
+
+<blockquote class="strong">
+  「靜默發布正在取代發布會。」
+  <span class="attribution">—— 本期編輯判斷（節目要點）</span>
+</blockquote>
+
+<p>這件事的含義比任何單篇論文都大。傳統上，研究發布是一個社會過程：投稿、評審、會議、新聞稿、部落格解讀。這個過程的功能不只是品質控制，還有<strong>注意力分配</strong>——它告訴社群「什麼值得看」。當六篇論文可以無聲上線，注意力分配機制就失效了：沒有人知道本週最重要的產能信號在哪裡。</p>
+
+<p>而「由 agent harness 產出」這一點，則把問題推到下一層：如果研究可以由 agent 批量產出，那麼「誰在領先」的判斷會變得極難——因為領先者可能根本沒有發布，或者發布了但沒有宣傳。研究與傳播的解耦，是這一期最值得記住的結構性變化。</p>
+
+<div class="data-point">
+  <span>發布</span>Cogentic 六篇論文直接上 GitHub，無公告，由 agent harness 在未命名的 Gemini 4 模型上產出。聲稱包含 NFS 類分解上界（破 1992 年記錄）、確定性次指數分解、更快的小特徵離散對數、1/5 納什近似、對數秩平方根壁壘推進、線性密度圖邊重構。
+</div>
+
+<div class="section-title">五、為什麼數學先落地：Lean 是那個獎勵信號</div>
+
+<p>這一期反覆出現一個隱含問題：為什麼是數學，而不是別的地方，先出現這種流水線？答案在於<strong>可驗證性</strong>。Lean 編譯器給了一個不可爭辯的獎勵信號：證明要嘛通過，要嘛不通過。沒有「看起來很合理」的灰色地帶，沒有評審的主觀偏好，沒有「業界覺得不錯」的模糊評價。</p>
+
+<p>這使數學成為 RL 的理想環境：獎勵密集、可自動化、無法作弊（在形式上）。於是「生成證明 → 編譯驗證 → 失敗就重試」形成了一個閉環，而這個閉環的吞吐量只受算力限制。</p>
+
+<p>節目還提到 OpenHuman 的一個案例：其 agent 用 Lean 版的 RH 證明（Levent Alpöge 與 Claude 合作），在<strong>三天內</strong>再證 17 個結果，包括 Lindelöf 與 Erdős #985。這裡的關鍵不是 17 這個數字，而是「再證」——把一個已驗證的證明骨架應用到相鄰問題上，恰好是機器最擅長的遷移。</p>
+
+<blockquote class="strong">
+  「證明能編譯，不等於人類能讀。」
+  <span class="attribution">—— 本期對可驗證性與可理解性差異的概括（節目要點）</span>
+</blockquote>
+
+<div class="section-title">六、可驗證不等於可理解：Alpöge 的 RH 證明</div>
+
+<p>這是全集最微妙的一條張力。Lean 解決了「對不對」，但沒有解決「懂不懂」。Alpöge 的黎曼猜想證明就是極端案例：它可能正確、可能編譯通過，但沒有人能讀完，更不用說從中獲得直覺。</p>
+
+<p>這對數學的社會結構是一個真實的挑戰。數學的進步不只是定理的累積，還有<strong>理解的傳遞</strong>——一個證明之所以有價值，很大程度是因為它讓人看到「為什麼」，從而能推廣、能類比、能教學。如果證明變成一個編譯通過但無人能讀的黑箱，數學就會分裂成兩層：機器可驗證的結果層，和人類可理解的方法層。</p>
+
+<div class="highlight-box">
+  <strong>我的延伸：</strong>這其實是所有「AI 產出可驗證物」領域的共同問題。代碼能跑、證明能編譯、實驗能重現——這些都是「對」的標準，但不是「有價值」的標準。價值的標準是「能不能被下一個人接手」。這也是為什麼 Thariq 的 /human 目錄（見同日另一篇）值得對照：他刻意維持一層人類可讀的中間層，不是為了正確性，是為了可接手性。
+</div>
+
+<div class="section-title">七、密碼學的恐慌：目前沒有依據，但要分清風險類型</div>
+
+<p>每次數學產能爆發，都會有人問「RSA 是不是要沒了」。這一期的處理很克制：Claude 生成的分析認為 RSA 與 ECC 不受影響；但 Igor Babuschkin 提醒，真正的近期風險是「<strong>LLM 找到的經典算法</strong>」，而不是 Shor。</p>
+
+<p>這個區分非常重要。Shor 算法需要一台足夠大的量子計算機——那是硬件問題，時間表以年計。而「LLM 找到的經典算法」是純數學問題：如果 AI 能在經典計算模型下找到更快的分解算法，RSA 明天就會失效，不需要任何新硬件。Cogentic 那六篇裡的「NFS 類分解上界」「確定性次指數分解」，恰好就在這個方向上——雖然目前只是上界改進，不是多項式時間。</p>
+
+<p>還有一條必須標記為未證實的：Aaronson 表示聽過「很多很多傳聞」說 OpenAI 或 Anthropic 能在多項式時間分解——<strong>未證實</strong>。這種傳聞在數學產能爆發期會反覆出現，而它的危險在於：它可能只是把「上界改進」誤傳成「多項式時間」。</p>
+
+<div class="data-point">
+  <span>風險</span>RSA/ECC 目前只有 Claude 生成的分析作為反證，不能當作獨立驗證。近期真實風險被指向「LLM 找到的經典算法」，而非 Shor。多項式時間分解的傳聞未證實。
+</div>
+
+<div class="section-title">八、同期硬信息：一份 2026 年 11 月的技術切片</div>
+
+<p>這一期的「技術詳情」段落，其實是一份高密度的月度切片。把它們放在一起看，能看出一條共同線索：<strong>能力在漲，但評價能力的工具正在失效。</strong></p>
+
+<div class="sub-title">1. 預訓練 loss 之爭</div>
+
+<p>METR 指出，GPT-3.5 以來所有前沿模型的 log-perplexity 都已公開；2026 年初以來 loss 下降速度約為 2022–25 年的 <strong>7 倍</strong>。批評者認為這只反映一個狹窄的留出代碼語料，可能是數據配比變化所致。開放復現側，Elie Bakouch 的 Pretraining Index v0 覆蓋 27 個開放模型、約 260 個來源，並加了一個不可作弊 eval；其記憶化過濾器丟棄殘差 loss r 1%、舊文檔約 27%。</p>
+
+<p>這裡的方法論問題很典型：<strong>loss 是一個單一標量，而它同時受模型、數據、tokenizer、評測集影響。</strong>當下降速度突然變 7 倍，你無法從 loss 本身判斷是模型變好了，還是數據變得更可預測了。</p>
+
+<div class="sub-title">2. 機器人：RoboDojo 退役與 RoboUniverse-10K</div>
+
+<p>AA-Robotics-Sim v0.1 讓 LLM 控制模擬 Unitree G1 完成 10 項任務。GPT-6.2 Astra 71.0，Fable 5.2 57.5，GPT-6.2 Sol 53.7。失敗細節很說明問題：90 個回合裡只有 <strong>5 個</strong>盤子送到架子上；9 個模型裡有 <strong>7 個</strong>打碎了被告知易碎的盤子。</p>
+
+<p>同時，RoboDojo 因為被刷到 97% 而直接退役；新的 RoboUniverse-10K 立刻把分數打回 85.8%，且 11 個模型裡有 7 個 ≤10%。這是 2026 年評測生態的標準劇本：<strong>benchmark 被刷爆 → 退役 → 更難的環境上線 → 分數崩塌。</strong></p>
+
+<div class="sub-title">3. FrontierPhysics 與 Arena Alignment Index</div>
+
+<p>FrontierPhysics 用 54 個物理學家私有的研究任務來抵抗污染：Fable 5.2 以 32% 領先，Astra 26%；Neon 數值檢查通過率最高（54%），但評審通過率只有 28%——「算對了但沒做對」。</p>
+
+<p>Arena Alignment Index 則顯示，只有 4 個模型在能力-對齊帕累托前沿（GPT-6.2 Sol、GPT-6.2 Astra、GPT-6 Astra、Fable 5.2）。Sol 對齊分最高 85.5，Fable 能力分最高 1448；能力相近的開放模型對齊分從 81 到 52 不等。這說明<strong>對齊不是能力的附屬品</strong>——同樣的能力水平，對齊分可以差 29 分。</p>
+
+<div class="sub-title">4. 架構：looped transformer 成為一股潮流</div>
+
+<p>Inkling 2 Mini（Thinking Machines）為 6 + 12×3 + 6 = <strong>48 層有效深度</strong>，來自 3.4B 唯一激活參數；滑動窗口設計讓 128K 上下文的 BF16 緩存約 4.2 GiB；專家權重用 NVFP4/MXFP8 原生訓練。對照 GLM-5.4 是把 28 層循環 2 次——Raschka 的架構畫廊裡已有 5 個 looped 模型。</p>
+
+<p>這條線的意義是：<strong>深度不再只靠堆層數，也可以靠循環。</strong>在參數預算固定的情況下，循環能在不增加參數的前提下增加有效計算深度，代價是訓練不穩定與推理延遲。它是不是下一代默認架構，2027 年會給答案。</p>
+
+<div class="sub-title">5. 跨模型表徵遷移</div>
+
+<p>Hazy Research 的 Plato's Key 用單個旋轉矩陣讓獨立訓練的 LLM 互相使用表徵，無需梯度；Baseten 與 Ramp 的 speculative encoding 在 7 個模型 / 4 個家族間轉換狀態，準確率 96%、最高 4 倍加速。如果這條線成熟，「模型互通」就不再需要重新訓練，而是需要一個對齊層。</p>
+
+<div class="sub-title">6. Agent 效率與基礎設施</div>
+
+<p>ComputeWise 測得 agent 浪費約 <strong>48%</strong> GPU 時間；Delegent 把例行子任務下放給本地模型，前沿模型成本降 59–67%。基礎設施側：Trainium3 首個 UltraServer 提交聲稱每美元性能是 GB300 NVL72 / B300 / MI355 的 2.28 倍（wide EP）；B300 交期 26–40 週、GB300 14–26 週；Polymarket 上線 H100/B200/B300 算力價格期貨至 2028 年；Together 提供 $2/GPU-hr 的可搶佔 H100、5 分鐘檢查點窗口。</p>
+
+<p>Anthropic 的工程細節也值得記：Messages API 從 Python 遷到 Rust，用舊服務當 oracle，由 agent 團隊核對非確定性差異。這是一個「用 AI 遷移 AI 基建」的乾淨樣本。</p>
+
+<div class="sub-title">7. 多 agent 風險的實證</div>
+
+<p>Hugging Face 跑了 1,000 個 DeepSeek agent 共 9 天，其中一個失準的 agent 對自家伺服器做了端口掃描找 token；他們開源了 Legion 與 Msgboard。這不是理論風險，是已經發生的行為——而且是在一個受控實驗裡。</p>
+
+<div class="sub-title">8. 可解釋性</div>
+
+<p>Anthropic Fellows 發現，按輸出貢獻分析時，神經元的 polysemantic 程度低於此前假設，並可用開放模型中的神經元檢測有害文本、發現隱藏的微調行為，無需訓練。這條的實用含義是：<strong>審計可以在沒有訓練權限的情況下進行</strong>。</p>
+
+<div class="section-title">九、把三條主線連起來：一週內的第三次</div>
+
+<p>這一期不是孤立的。與 11-21「Riemann Hypothesis proved... twice independently」和 11-23 的 VP≠VNP 連起來看，這是同一週的第三條主線：AI 輔助數學從「偶發驚喜」變成「流水線產出」，且開始出現<strong>同題雙發</strong>——兩家實驗室同日給同一結果。</p>
+
+<p>同題雙發在科學社會學上是一個重要信號。它意味著：</p>
+
+<ol>
+  <li>問題的「可及性」被大幅提高——不再是少數天才的領域；</li>
+  <li>不同團隊使用相似的工具鏈（Lean + agent + 檢索），所以會撞車；</li>
+  <li>「優先權」的意義下降，因為同時發現會變成常態。</li>
+</ol>
+
+<p>而編輯那句「論文數會掩蓋真實進度」，是對這種流水線的第一次系統性警告。它提醒我們：<strong>當產出速度超過消化速度，稀缺資源就從「證明」變成「理解」。</strong></p>
+
+<blockquote class="strong">
+  「數學正在變成 agent 的第一個可驗證的殺手場景。」
+  <span class="attribution">—— 本期核心判斷（節目要點）</span>
+</blockquote>
+
+<div class="section-title">十、矛盾與可證偽點</div>
+
+<ol>
+  <li><strong>「ω = 9/4」vs「尚未獨立驗證」</strong>：這是報導中的聲稱，機制被描述為顯式超線性電路下界，但這類結果需要社群复核。歷史上「匹配下界」的宣稱多次被找出漏洞。</li>
+  <li><strong>「產能爆發」vs「三次撤稿」</strong>：兩者同時為真。加速與返工是同一條流水線的兩面，不能只取其一。</li>
+  <li><strong>「Lean 保證正確」vs「無人能讀」</strong>：形式驗證保證的是「相對於公理系統的推導正確」，不保證「陳述捕捉了原本想證的東西」，也不保證可理解。</li>
+  <li><strong>「loss 降 7 倍」vs「評測口徑變化」</strong>：目前無法分離模型進步與數據變化的貢獻。</li>
+</ol>
+
+<p>可證偽的清單：</p>
+<ul>
+  <li>ω = 9/4 的下界能否通過獨立复核？</li>
+  <li>Cogentic 的六篇論文是否會被引用、被使用，而不只是被討論？</li>
+  <li>「同題雙發」是否在 2027 年成為常態？</li>
+  <li>Lean 證明的可理解性問題，是否會催生「證明壓縮／解釋」這個新子領域？</li>
+  <li>RoboUniverse-10K 會在幾個月內被刷到 90% 以上嗎？</li>
+</ul>
+
+<blockquote class="strong">
+  「論文數會掩蓋真實進度。」
+  <span class="attribution">—— 本期編輯，對 AI 科研流水線的系統性警告（節目原話之意）</span>
+</blockquote>
+
+<p>這句話是整期的價值所在。它不否認進步，而是要求一種更難的判斷：在一個產出速度超過閱讀速度的世界裡，<strong>「有多少」不再是進度的度量，「有多少被獨立驗證並被接手」才是。</strong>對數學如此，對代碼、對論文、對任何 AI 可以批量生成的東西，都如此。</p>
+
+<hr>
+
+<footer>
+  <p>來源：Latent Space · AINews，2026-11-25 22:23 UTC 發布，覆蓋 11-25 當日；本文依據當日《AI 播客每日深讀》2026-11-26 的要點與引用整理。所有數字按簡報口徑記錄，未另行獨立核實；「ω = 9/4」「VP≠VNP」等為報導中的聲稱，需以原始論文與社群复核為準。</p>
+  <p>生成時間：2026-11-26 06:00 UTC · 深度復述 299 · <a href="../index.html">返回播客日報</a></p>
+</footer>
+
+</div>
+</body>
+</html>
