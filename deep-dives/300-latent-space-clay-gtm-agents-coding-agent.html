@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「我們不想自家 agent 贏過 Clay + Claude Code」——Clay 把 GTM 重寫成 coding agent</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e8e2d8; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; text-align: center; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) { html { font-size: 16px; } .container { padding: 1.5rem 1rem; } header h1 { font-size: 1.6rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a href="../index.html" class="back-link">← 返回播客日報</a>
+  <div class="ep-num">Latent Space · 2026-11-26</div>
+  <h1>「我們不想自家 agent 贏過 Clay + Claude Code」——Clay 把 GTM 重寫成 coding agent</h1>
+  <div class="meta">
+    <span>節目：Latent Space</span><span>·</span>
+    <span>主持：swyx + Alessio Fanelli（本文整理：Basil Chatha）</span><br>
+    <span>嘉賓：Jeff Barg（Clay Head of AI）</span><span>·</span>
+    <span>約 54 分鐘</span><br>
+    <span>2026-11-26 23:02 UTC 發布</span>
+  </div>
+</header>
+
+<p>這一集表面上在講一家 GTM（go-to-market）公司怎樣做 agent，實際上在回答一個更普遍的問題：<strong>當模型把「分類」變成白菜價，一家應用層公司的錢應該花在哪裡？</strong>Clay 的答案不是更大的模型，也不是更漂亮的介面，而是三樣很不時髦的東西：一個把 CRM 與通話紀錄對齊的資料層、一組暴露給任何 harness 的原語（primitives），以及一個按任務選模型的 router。</p>
+
+<p>Jeff Barg 是 Clay 的 Head of AI。2025 年 1 月，Clay 收購了他與高中同學創辦的 Avenue（市場營運的可觀測性產品，YC、Accel 投資，客戶含 Ramp、AngelList、Valon、DoorDash）。加入時 Clay 約 50 人、Avenue 5 人；此後生意規模約 10 倍、團隊約 600 人，2026 年 9 月完成 1.15 億美元 D 輪、由 Wellington 領投，估值 71 億美元。Clay 本身有七年歷史，起點是試算表裡的低程式碼工具；收購時年收入約 1,500–2,000 萬美元，以 PLG 為主，最大合約很小。</p>
+
+<p>整集最反直覺的一句話，是 Jeff 說他們<strong>明確不想要</strong>自家 agent 明顯強過「Clay + Claude Code」。這不是公關話術：實際用量已經是接近 50/50。一家估值 71 億美元的公司，主動把最值錢的入口讓出去，只為換一個位置——成為所有 agent 都會調用的 GTM 基礎設施。</p>
+
+<blockquote class="strong">
+  「我們明確不希望我們的 agent 明顯強過『Clay + Claude Code』。」
+  <span class="attribution">—— Jeff Barg，談為何把 CLI 與原語開放給外部 harness（原文："We explicitly don't want our agent to be markedly better than just using Clay and Claude Code."）</span>
+</blockquote>
+
+<div class="section-title">一、先講結論：71 億美元的公司，為什麼主動讓出介面</div>
+
+<p>Clay 的產品起點是一張試算表。你有一批公司與聯絡人，加上一欄一欄的資料：營收、融資輪、CEO、地點、職位變動。把這些欄位補齊、過濾、排序，就得到一份可以拿去外呼的名單。過去這件事靠 RevOps 團隊與一堆資料供應商；Clay 把它變成一個低程式碼平台，接上數百家資料夥伴。</p>
+
+<p>Jeff 把這個角色命名為「GTM engineer」，並拆成三層能力：</p>
+
+<ul>
+  <li><strong>Agent engineering</strong>：設計 prompt、理解 LLM 系統，讓 agent 能對「這家公司是否適合」做出判斷。</li>
+  <li><strong>Data engineering</strong>：建名單、轉換、擴充、過濾、做視圖；本質是資料管線與實體解析。</li>
+  <li><strong>一般軟體工程</strong>：有人填了表單，系統自動研究公司、丟給業務或進入外呼流程。</li>
+</ul>
+
+<p>這三層的交集，才是「GTM 已經變成工程問題」的意思。它不是把銷售流程包裝成一個 chatbot，而是把銷售的前置工作拆成可組合的資料與動作。成功的 GTM engineer 背景很雜，Jeff 觀察到很多傳統 SWE 轉進來，也有一批有企圖心的 RevOps 長成這個角色。</p>
+
+<p>這個定位解釋了 Clay 後來的所有選擇。如果價值在「幫客戶建系統」，那價值就不在畫布上；如果價值在資料與原語，那讓出介面不但不是自殺，反而是分發。這是整集的骨架。</p>
+
+<div class="section-title">二、Sculptor 第一版：工具迴圈的天花板</div>
+
+<p>Jeff 接手時，Clay 只有一個工程師在做所有 agent 工作，而且很快離職去創業。Claude Code 改變了他想做的東西。2025 年 9 月，第一版 Sculptor 上線，跑的是 Sonnet 3.5 世代的模型，本質是「一組工具 + 迴圈 + 大量調過的 system prompt 與 tool definition」。</p>
+
+<p>它很會「加一欄做這件事」，但完全不會「幫我建一個能帶來十場合格會議的外呼 campaign」。這不是模型不夠聰明，而是形態錯了。Jeff 從失敗裡帶走三個教訓：</p>
+
+<ol>
+  <li><strong>Coding agent 在 Bash 與 Python 上真的很強。</strong>模型已經被訓練成會用檔案系統、寫腳本、執行程式；這是比 function calling 更寬的介面。</li>
+  <li><strong>自家工具的 expressivity 太小。</strong>每個工具只能做一件窄事，串起來也做不了「一次建五欄、再依結果分支」這種長流程。</li>
+  <li><strong>Agent 看不到業務上下文。</strong>它看不到 CRM，也看不到 campaign 實際跑出什麼結果；等於矇著眼做決策。</li>
+</ol>
+
+<blockquote class="strong">
+  「事實證明 coding agent 真的很強……我們原本那些工具的表現力實在太小了。」
+  <span class="attribution">—— Jeff Barg，談 Sculptor 重寫的三個教訓（原文："the expressivity of some of the tools that we had was just too small"）</span>
+</blockquote>
+
+<p>更關鍵的是 eval 量錯了東西。第一版用 LLM-as-judge 看「它呼叫了哪些工具」：如果 prompt 是「建一張表做這些事」，就檢查它有沒有加上那些欄位。這漏掉了使用者真正在做的事——直接拿表格來分析、丟進百萬行的企業表格。這些用法是上線後在生產環境才看到的。</p>
+
+<p>這是一個很典型的 eval 陷阱：<strong>你量的是「agent 有沒有照你設計的路径走」，而不是「使用者有沒有得到他要的結果」。</strong>工具呼叫軌跡很容易量，因為它是結構化的；但真正有價值的東西往往在軌跡之外。</p>
+
+<div class="section-title">三、重寫：Pi harness + Clay CLI + Audiences</div>
+
+<p>Sculptor v2 不是「加更多工具」，而是換了一個物種：讓 agent 當 coding agent。它跑在 Pi harness 上，在雲端沙盒裡執行 Clay CLI，等於把整個平台的原語暴露給模型。模型可以在一個有檔案系統、可執行的環境裡操作平台，思維上更接近 Claude Code／Codex，而不是傳統的 function-calling agent。</p>
+
+<table>
+  <tr><th>維度</th><th>Sculptor v1（2025-09）</th><th>Sculptor v2（2026）</th></tr>
+  <tr><td>形態</td><td>工具迴圈 + 調過的 system prompt</td><td>Pi harness 上的 coding agent</td></tr>
+  <tr><td>執行環境</td><td>平台內部工具呼叫</td><td>雲端沙盒跑 Clay CLI</td></tr>
+  <tr><td>可組合性</td><td>工具太窄，長流程串不起來</td><td>可用 Bash／Python 自由組合原語</td></tr>
+  <tr><td>資料上下文</td><td>看不到 CRM 與 campaign 結果</td><td>Audiences 實體解析層</td></tr>
+  <tr><td>Eval 口徑</td><td>LLM 判斷呼叫了哪些工具</td><td>按 use case 分桶：軌跡 + 產物</td></tr>
+  <tr><td>擅長</td><td>加一欄、做小任務</td><td>建端到端 play、跨表分析</td></tr>
+</table>
+
+<p>第二個改動是資料層 Audiences。它把 CRM 與 Gong 的紀錄做 entity resolution，合成一份「權威版的客戶與聯絡人試算表」。這是單租戶（single tenant）設計，成本更高，但換來乾淨的上下文與更少的重複工作。Jeff 的說法是：下游查詢高度客製，所以「重複工作其實比外界想像少」。</p>
+
+<p>這一段值得放大。多數人談 vertical AI 的護城河，會直覺說「行業知識」或「工作流」。但 Clay 的答案更硬：<strong>護城河是一個乾淨的實體解析層。</strong>同一家公司在 CRM 裡叫 Acme Inc.、在 Gong 通話裡叫 Acme、在名單裡叫 Acme Corp；如果 agent 不能把這三個指到同一個實體，它再聰明也只能看到碎片。這個問題不性感，卻決定 agent 能不能做長流程。</p>
+
+<div class="section-title">四、1,500 美元的算術：分類商品化之後，錢去哪裡</div>
+
+<p>Jeff 用 Clay 的 4,000 萬家公司資料庫做了一個口算：每家公司抓一頁 LinkedIn 約 1,000 tokens，加一份 ICP（理想客戶輪廓）約 500 tokens，合計 1,500 tokens；用一個 classifier（他點名 TypeSafe 的 Jev）逐家問「這家公司適不適合我的產品」，全量掃一遍大約 1,500 美元。</p>
+
+<div class="data-point">
+  <span>算術</span>4,000 萬家公司 × 1,500 tokens ≈ 600 億 tokens；以 $42／十億 tokens 計，賬面約 $2,520。Jeff 口中的「約 $1,500」對應約 $25／十億，或約 2,400 萬家公司。數量級成立，但精確值對不上——這是口算，不是報價。
+</div>
+
+<p>這個數字的重要性不在於它精不精確，而在於它把一個產品前提整個拆掉。今天多數客戶只資格判定大約 1 萬家公司；不是因為他們不想掃全部，而是因為過去掃全部太貴。當成本降到「一個月軟件訂閱」的量級，<strong>「先鎖定 1 萬家」這個前置限制就消失了，起點可以變成整個市場。</strong></p>
+
+<p>Jeff 給的預算感也很具體：每條合格線索 1–10 美元；每場成功預約的通話 10–100 美元。這兩個數字之間的落差，就是 GTM 的真正瓶頸——不是找不到公司，而是<strong>把公司變成對話</strong>。所以價值分佈很清楚：</p>
+
+<ul>
+  <li><strong>分類（qualification）</strong>：接近飽和。Clay 的 eval 大約一年前就到頂；過去一年任何一個模型都能查出某公司最新一輪融資。</li>
+  <li><strong>深度研究與 orchestration</strong>：仍然值錢。最好的 play 與平均的 play 之間，產出差距可達 10–100 倍。</li>
+</ul>
+
+<blockquote class="strong">
+  「在 orchestration 這一層，最好的 play 與平均的 play 之間，產出可以差 10 倍到 100 倍。」
+  <span class="attribution">—— Jeff Barg（原文："the difference between the best and the average is, you know, a 10x, 100x in output"）</span>
+</blockquote>
+
+<p>這是整集最實用的一個判斷框架。當底層能力商品化，價值不會消失，而是<strong>往上游移動</strong>：從「能不能判斷」移到「知不知道自己該做什麼」。前者是模型問題，後者是產品與領域知識問題。這也是為什麼 Clay 願意把分類做得極便宜——它要把競爭拉到自己的主場。</p>
+
+<div class="section-title">五、客戶討厭 model selector：router 是產品問題，不是模型問題</div>
+
+<p>Clay 的 UI 裡有一個 model selector。Jeff 的說法很直白：使用者討厭它，看到就生氣。理由不難理解——客戶不可能每出一個新模型，就重新查一次自己 use case 的 eval；他們也不應該要這樣做。</p>
+
+<blockquote class="strong">
+  「我們的使用者討厭我們的 model selector。大多數客戶根本不想看到它，看到就煩。」
+  <span class="attribution">—— Jeff Barg（原文："Our users hate our model selector. I think most customers don't wanna see it. They're upset when they see it."）</span>
+</blockquote>
+
+<p>Clay 即將上線一個自動 router，不做花俏品牌，直接在任務層級選模型：找 Apple 的 CEO，與找一家不知名小公司的 CEO，是兩種完全不同的工作。selector 不會移除——agency owner 與 power user 要控制權（Jeff 估約 5%），其餘人只想把事做完。</p>
+
+<p>這裡有一個很誠實的張力。Router 本質上是「trust us mode」：客戶把選模型的權力交給你，但沒有能力驗證你有沒有把 token 花在刀口上。Jeff 承認客戶會懷疑，只能用分析數據補。而透明度本身又會壓縮 router 的定價空間——你越要證明自己省錢，客戶越會拿帳單來議價。</p>
+
+<div class="highlight-box">
+  <strong>我的讀法：</strong>Router 不是一個模型功能，而是一個<strong>責任轉移</strong>。過去客戶要為「選錯模型」負責；現在 Clay 要為「選錯模型」負責。這是一個產品公司才會做的賭注——模型公司不會替你的任務分佈負責，因為它看不到你的任務分佈。誰擁有任務，誰就擁有 router。
+</div>
+
+<p>把這一集和前一天 Latent Space 的 Thariq 訪談對讀，會看到同一件事的兩面。Thariq 說「決策模型是硬編碼與 tool-loop 之間的中間層」；Clay 的 router 就是那個中間層的商業化版本——不是一個更強的模型，而是一個按任務分配 intelligence 的調度器。</p>
+
+<div class="section-title">六、Post-training 的時機經濟學</div>
+
+<p>Jeff 在 Clay 的頭十八個月，團隊一直在談要不要訓自己的模型，但一直不可行。最近幾個月才開始看起來可行。他描述兩條降本路徑：</p>
+
+<ol>
+  <li>先用現成 open-weight 模型。他點名 K3 已經比 Opus 便宜一大截（即使 K3 本身也不算便宜）。</li>
+  <li>再把更小一級的模型 post-train 到在自家工具與查詢分布上「Opus 水準」。</li>
+</ol>
+
+<p>兩個常見錯誤：一是想在任何單一領域打贏前沿模型（仍然很難）；二是在推理支出還不夠大時就開始，因為省下的比例乘上太小的基數沒有意義。他把門檻放在 <strong>1,000 萬到 1 億美元</strong>的推理支出。</p>
+
+<div class="data-point">
+  <span>門檻</span>Jeff Barg 的經驗法則：年推理支出低於 $10M，post-training 省下的錢不足以抵消工程與維護成本；$10M–$100M 才開始「chunky」。這是經驗值，不是推導出來的公式。
+</div>
+
+<p>這個門檻的含義比表面更狠。它把 post-training 從「技術競賽」變成「規模遊戲」：只有少數應用層公司有資格玩。對大多數公司，正確策略是「open-weight + router」，而不是「自己訓一個」。這也解釋了為何市面上蒸餾創業滿地都是，真正省到錢的卻很少——大部分人省的是單價，不是總成本。</p>
+
+<p>值得注意的是，Jeff 對 post-training 的效果仍然是承諾多於數據。他說「這幾個月才開始可行」、「很快會推出」，但沒有給出任何已量測的品質或成本數字。這是本集最應該被追問、卻沒有被追問的地方。</p>
+
+<div class="section-title">七、BullMQ、50,000 行與公平性：規模化的真正難點</div>
+
+<p>Clay 的 agent stack 大部分是自己砌的：BullMQ 做 agent job 的耐久性；Postgres 與 ClickHouse 承载產品資料；Snowflake 做分析；部分內部資料集仍用 Dagster，正在重做。沒有 Temporal，沒有 LangGraph。</p>
+
+<blockquote class="strong">
+  「我不知道 BullMQ 還能不能再撐一個 10 倍，但到目前為止都還好。」
+  <span class="attribution">—— Jeff Barg（原文："I don't know if we'll survive another 10x on BullMQ"）</span>
+</blockquote>
+
+<p>真正的難點不是框架，而是尖峰與公平。Clay 的執行模型是 agent-per-row：有人對一張 5 萬行的表按下去，等於同時對每一行跑一個 agent，推理需求瞬間爆量。他們用 LangSmith 做可觀測性，自己寫節流、暫停／恢復、供應商降級。更難的是公平——企業客戶 enrichment 一百萬行時，不能把只跑十人 workflow 的小客戶餓死。</p>
+
+<p>這一段是整集最容易被略過、但對做 agent 產品的人最有用的部分。多數人談 agent infra 會談 orchestration framework；Clay 的經驗是，<strong>真正的問題在佇列動力學與租戶隔離</strong>。當你的工作單位是「一行一個 agent」，你的系統就同時是一個分散式排程器、一個速率限制器、一個多租戶公平排程器。這些東西沒有現成框架可以送給你。</p>
+
+<p>Jeff 也提到，他們最近一次推出 25–30 個新 integration，瓶頸是合約與測試，不是工程。這聽起來像抱怨，其實是一個重要信號：當工程不再是瓶頸，軟件公司的組織成本就會浮上來。</p>
+
+<div class="section-title">八、50/50：讓出介面，換取基礎設施的位置</div>
+
+<p>Clay 的原則是「自家 agent 不應該明顯強過 Clay + Claude Code」。實際用量比 Jeff 想像的更接近 50/50。推力來自內部：GTM 團隊住在 Cursor 不肯走，於是要求一個 CLI；MCP 團隊乾脆轉去做 CLI；sales 團隊現在用 Codex 做 deal prep。第一方 agent 仍然存在，只因為有一批客戶就是想留在 Clay UI 裡。</p>
+
+<blockquote class="strong">
+  「實際用量比我想像的更接近五十比五十。」
+  <span class="attribution">—— Jeff Barg（原文："it's much closer to fifty fifty than I would have thought"）</span>
+</blockquote>
+
+<p>這是一個可以檢驗的策略命題。Salesforce 的邏輯是「所有人都要進我的 UI」；Clay 的邏輯是「你在哪裡工作，我就在哪裡出現」。前者假設價值在畫布與工作流，後者假設價值在資料與原語。兩者都可能是對的，但它們不能同時對。</p>
+
+<p>檢驗方法很簡單：如果 Clay 把 CLI 與原語開放之後，客戶仍然回來用它的 UI，那價值就在資料與原語；如果客戶從此只在 Claude Code 裡调用 Clay，那 Clay 就變成一個 API 供應商，估值邏輯要重寫。Jeff 自己說 50/50「不是他預期的」，這意味著市場正在給出答案，只是答案還沒穩定。</p>
+
+<div class="highlight-box">
+  <strong>對所有 agent 時代 SaaS 的一句話：</strong>如果你的價值只剩 UI，讓出介面等於自殺；如果你的價值在 context layer，讓出介面反而是分發。中間沒有第三種狀態——而大多數公司不願意承認自己其實在第一種。
+</div>
+
+<div class="section-title">九、制度性勇氣：600 人的公司怎樣改計劃</div>
+
+<p>Jeff 說，在 600 人的公司改變計劃，比在 50 人時需要更多勇氣。Clay 是 ChatGPT apps 的 launch partner：季中抽調約 25% 工程團隊一個月做整合；發布前兩天，OpenAI 無限期延期；Clay 假設 OpenAI 會改變主意，繼續建；三、四天後，OpenAI 真的反轉。</p>
+
+<div class="data-point">
+  <span>數字</span>25% 工程團隊 × 1 個月；發布前 2 天被無限期延期；3–4 天後反轉。這不是一個關於 OpenAI 的故事，而是一個關於「計劃失效時還要繼續建」的故事。
+</div>
+
+<blockquote class="strong">
+  「我非常強烈地認為，『制度性的勇氣』大概是現在公司裡最重要的東西，而它非常難。」
+  <span class="attribution">—— Jeff Barg（原文："institutional courage is probably the most important thing right now at companies, and it's really hard"）</span>
+</blockquote>
+
+<p>他也提到 Workflows 第一次給客戶看時，客戶很困惑、有些人生氣，因為他們想要回他們的試算表。現在 agency owner 喜歡它，越來越多的工作從表格搬到 Workflows；多數 workflow 由 CLI 或 agent 建成。這是一個典型的「介面遷移」故事：使用者要的不是新範式，而是舊範式加新能力；你要先把舊範式還給他們，他們才願意往前走。</p>
+
+<div class="section-title">十、Agent 仍然不會 debug agent</div>
+
+<p>Jeff 最想要的模型能力，是讀完一條很長的 agent trace 後指出「在哪裡開始困惑」。現在的模型傾向把耗時最久的那一步標成錯誤，即使錯在別處。Clay 想從壞 trace 裡自動學習、改進 agent，但這個閉環「就是行不通」，所以技能仍大量手寫。</p>
+
+<blockquote class="strong">
+  「模型還是挺笨的。用同樣的輸入反覆敲同一個 CLI 指令，就是不會自我修正。」
+  <span class="attribution">—— Jeff Barg（原文："Trying CLI commands with the same inputs over and over again and just not correcting them."）</span>
+</blockquote>
+
+<p>這段話的份量被低估了。整個 agent 敘事都建立在「模型可以自己改自己」之上；但在一家每天跑大量 agent 的公司裡，最實際的瓶頸是<strong>錯誤歸因</strong>。模型可以生成程式碼，卻不能可靠地回答「這條軌跡為什麼失敗」。沒有錯誤歸因，就沒有自動改進；沒有自動改進，所謂的 RSI 就仍然要人手工把 skill 寫進去。</p>
+
+<p>對照的一面是能力真的在長：Jeff 問 agent「有多少 YC 公司用 Clay」，約 60 秒得到答案；一年前要抓 YC 批次、拿 Snowflake 權限、人工交叉比對。也就是說，<strong>agent 很會做「查得到答案」的事，很不會做「判斷哪裡出錯」的事。</strong>這兩種能力的差距，正好是當下 agent 產品的天花板。</p>
+
+<div class="section-title">十一、矛盾與可證偽點</div>
+
+<ol>
+  <li><strong>50/50 是策略還是無奈？</strong>Jeff 的框架是「不擁有介面」，但主持質疑：如果自家 harness 不打算贏，為何還要投入？他的答案是「有一批客戶想留在 UI 裡」。這在商業上成立，在資源配置上則可能有隱性成本。</li>
+  <li><strong>Router 的信任問題沒有解。</strong>「信任我們」模式與「把 token 花在刀口」之間的張力，最後只能用帳單透明度解決；而透明度本身會削弱 router 的定價空間。</li>
+  <li><strong>Post-training 的效果仍是承諾。</strong>沒有已量測的品質或成本數字；$10M–$100M 的門檻也是經驗法則。</li>
+  <li><strong>單租戶與規模化的張力。</strong>單租戶讓 context 乾淨，但面對 10 倍增長時，成本與營運複雜度會先撞牆；BullMQ 也一樣。這兩個「目前都還好」的基礎設施，正好是下一次跳躍的風險點。</li>
+  <li><strong>1,500 美元的算術對不上。</strong>以他給的單價與 token 數，賬面是約 $2,520，不是 $1,500。數量級不受影響，但這提醒我們：這是 napkin math，不是可審計的成本模型。</li>
+</ol>
+
+<p>可證偽的清單：</p>
+<ul>
+  <li>Clay 的 router 上線後，客戶是否真的把 selector 留在 auto？還是 power user 的比例遠高於 5%？</li>
+  <li>50/50 的分流在 12 個月後會往哪邊移動？如果外部 harness 佔比持續上升，Clay 的「基礎設施」敘事成立；如果回落，說明 UI 仍然是護城河。</li>
+  <li>Post-training 推出後，是否有可比較的品質與成本數據？</li>
+  <li>BullMQ 能否撐過下一個 10 倍？如果不行，Clay 會不會引入 Temporal 或自建排程層？</li>
+  <li>「agent 不會 debug agent」是否會在下一代模型被解決？如果解決，Clay 的手寫 skill 會大幅減少，整個 agent stack 的維護成本結構會改變。</li>
+</ul>
+
+<div class="section-title">十二、我的判斷</div>
+
+<p>這一集最值得帶走的，不是 Clay 的具體架構，而是一個<strong>價值遷移的路徑圖</strong>：</p>
+
+<p>模型商品化 → 分類變成按 token 計價的公用事業 → 應用層的差異化往兩個地方跑：<strong>乾淨的上下文（資料層）</strong>與<strong>任務層的調度（router + orchestration）</strong>。前者需要行業知識與苦工，後者需要產品判斷與規模。兩者都不在模型實驗室的手上。</p>
+
+<p>Clay 的選擇是把這兩件事都做重：自建 Audiences、自建 CLI、自建排程、自建 router。這是一條很重的路，但也是一條很難被 API 取代的路。它唯一的風險是：當模型本身越來越會做 orchestration，Clay 的中間層會不會被壓縮成一個很薄的殼？</p>
+
+<p>Jeff 的答案其實已經藏在 50/50 裡：如果外部 harness 也能得到一樣好的結果，那 Clay 的價值就必須在「外部 harness 拿不到的東西」——CRM 與 Gong 的實體解析、幾百個資料供應商的合約、以及對 GTM 任務分佈的理解。這些東西不會因為模型變強而消失，反而會因為模型變強而更值錢，因為它們是<strong>模型看不到的上下文</strong>。</p>
+
+<blockquote class="strong">
+  「不要執著擁有介面，要擁有資料與原語。」
+  <span class="attribution">—— 本集核心策略判斷（依據 Jeff Barg 對 CLI、Audiences 與 50/50 分流的描述整理）</span>
+</blockquote>
+
+<p>對做 vertical AI 的人，這集提供了一個很實用的自檢問題：<strong>如果明天 Claude Code 可以直接调用你所有的功能，你的客戶還會留下來嗎？</strong>如果答案是會，你的護城河在資料與原語；如果答案是不會，那你目前賣的其實是介面，而介面正在被 agent 吃掉。</p>
+
+<hr>
+
+<footer>
+  <p>來源：Latent Space〈How Clay Builds GTM Agents — Jeff Barg, Head of AI〉，2026-11-26 23:02 UTC 發布，約 54 分鐘；本文依據官方節目頁全文、RSS 內嵌文章與自動轉錄逐字稿整理，並對照當日《AI 播客每日深讀》2026-11-27 的要點。引文以英文原話為準，中文為本文翻譯；自動轉錄可能有人名與斷句誤差。所有數字按節目口徑記錄，未另行獨立核實；其中 $1,500 的口算與 $42／十億 tokens 的單價存在差額，本文已標註。</p>
+  <p>生成時間：2026-11-27 06:00 UTC · 深度復述 300 · <a href="../index.html">返回播客日報</a></p>
+</footer>
+
+</div>
+</body>
+</html>
