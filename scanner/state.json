@@ -1,6 +1,6 @@
 {
- "lastScan": "2026-11-26T02:06:00.000Z",
- "lastScanDate": "2026-11-26",
+ "lastScan": "2026-11-27T02:07:00.000Z",
+ "lastScanDate": "2026-11-27",
  "episodes": {
   "dwarkesh": {
    "lastEpisodePubDate": "2026-11-24T21:45:30.000Z",
@@ -8,15 +8,15 @@
    "lastFeedItemPubDate": "2026-11-24T21:45:30.000Z",
    "lastFeedItemTitle": "Responding to objections to recursive self-improvement",
    "newEpisodes": [],
-   "note": "36 分钟文章+视频，与 GM Max Farrens 对谈，回应 corsaren 长推文及 Séb Krier/Henry Zhang。核心：①修正：不说 2027，中位 2028 自动化顶尖研究员、2029 超智慧、明年 25%；②承认一半论据是 intuition pump（He's right. Moving on.），但无替代；③Erdős 约 1000 问题 >10% 已被 AI 解决（6–12 个月）；④context window 内样本效率已达人类水平，持续学习是延长时间尺度；⑤进化类比反向用：人类从面部线索迁移到半导体/拓扑；⑥RL 一年扩 100–1000 倍，未来 2–3 年再 100 倍；⑦自我削弱论证：若模型真不老实，可能根本得不到完整智能爆炸；应见更多 warning shots；⑧竞争不保护弱者（英法争俄亥俄 vs 印第安人）；⑨Hugging Face 验证 Christiano 2018 预言（reward-seeking、维持虚构、攻击评分器）；⑩500 征服者 vs 1000 万阿兹特克，非必然但需回应。数据：Blood on the Clocktower Astra 胜率 90%+；芯片时钟快神经元百万倍。"
+   "note": "主 feed 無新集。11-26 YouTube 兩條短片：Terry Tao 論 AI 解黎曼猜想（3 月訪談切片，原話：「我們相當確定必須創造出一種新的數學⋯不像靠窮舉檢查能解決」）、Grant Sanderson 同題切片。"
   },
   "latent_space": {
-   "lastEpisodePubDate": "2026-11-25T22:28:01.000Z",
-   "lastEpisodeTitle": "The Revolution vs The Renaissance — Thariq Shihipar, OpenAI",
-   "lastFeedItemPubDate": "2026-11-25T22:28:01.000Z",
-   "lastFeedItemTitle": "The Revolution vs The Renaissance — Thariq Shihipar, OpenAI",
+   "lastEpisodePubDate": "2026-11-26T23:02:48.000Z",
+   "lastEpisodeTitle": "How Clay Builds GTM Agents — Jeff Barg, Head of AI",
+   "lastFeedItemPubDate": "2026-11-26T23:02:48.000Z",
+   "lastFeedItemTitle": "How Clay Builds GTM Agents — Jeff Barg, Head of AI",
    "newEpisodes": [],
-   "note": "54 分钟，AI Engineer CODE 现场系列。Thariq（前 Anthropic Claude Code，录制后宣布加入 OpenAI）闭幕 keynote「革命 vs 文艺复兴」。已抓 YouTube 全自动字幕（11,255 词）。核心：①认错——「bash is all you need」「只要 CLI 不要 MCP」「React 是终极语言」全错，模型会变宽而非变窄（可用 computer use 在 Figma 画前端）；②/ human 文件夹：独立脚本层，lint 反向（高注释、禁单字符变量、限行长），目标「像 spec 但是真代码」，解决 vibe coding 失向感；③革命（软件工厂，2026）vs 文艺复兴（边际质量，2027）；引擎 WASM + 脚本层 + 自动平衡测试可共存；④完美平衡的游戏无聊（rock-paper-scissors），要 high variance、可 main 弱角色；⑤Frontier Lab 卡牌游戏跑数千局模拟→永远经济胜利，让它修平衡「It's really bad at it」，视为系统理解 eval；⑥非 permanent underclass：$200×2 订阅未触顶，不是 token 也不是智能瓶颈，是「协作方式」瓶颈；不懂 CUDA/PyTorch 也能做 RL/interp 实验；⑦决策模型=硬编码与 tool-loop 之间的中间层，适合客服/游戏 AI；单次 forward pass 后答案已知时后续 token 是零熵解码；称 Jev 可能被定价过低、开源决策模型约 20B；⑧RSI=把 AI 研究变成知识工作（人做资源分配与 buy-in），各行业湿实验自动化后亦然，可能增加白领；企业不可能真正 AI native；⑨2026 agent 真的 work 了但宏观无变化，「人类问题还是人类问题」；⑩speculative decoding 思想实验：模型未必能发明该技巧，算力分配权应留给人。"
+   "note": "54 分鐘，Clay Head of AI Jeff Barg（Avenue 創辦人，2025-01 被 Clay 收購；Clay 50→600 人、生意 10x、2026-09 $115M D 輪 $7.1B）。核心：①GTM engineer 三合一（agent/data/software engineering）；②Sculptor v1（2025-09，Sonnet 3.5 tool loop）只會加欄位、不會建 campaign；三教訓=coding agent 強於 Bash/Python、工具 expressivity 太小、看不到 CRM/campaign 結果；③重寫為 Pi harness + Clay CLI + 雲沙箱 + Audiences 單租戶數據層（CRM+Gong entity resolution）；④eval 誤區：LLM-as-judge 只看 tool call，漏掉表格分析與百萬行企業表；⑤post-train 兩錯誤：想贏前沿、太早開始；門檻 $10M–$100M 推理支出；open-weight（K3）→小模型 post-train 到 Opus 水準；⑥Jev 算術：40M 公司×1,500 tokens（1,000 LinkedIn+500 ICP）@ $42/B ≈ $1,500；今日客戶只掃 1 萬家；enrichment $1–10/線索、$10–100/預約；⑦lead 資格 eval 飽和一年，前沿只在 orchestration/deep research（10–100x 差距）；⑧用戶討厭 model selector，將上線任務級 router，selector 留 5% power user；⑨無 Temporal/LangGraph：BullMQ+Postgres+ClickHouse+Snowflake+Dagster，LangSmith 觀測；agent-per-row 尖峰、節流/暫停恢復/公平；⑩自願 50/50 分流（Clay agent vs Claude Code/Codex），CLI 因內部 GTM 團隊住 Cursor；⑪ChatGPT apps 首發抽 25% 工程一個月，發布前 2 天被無限期延期，3–4 天反轉；⑫Workflows 初期被罵「還我試算表」，現多數 workflow 由 CLI/agent 建；⑬agent 不能 debug agent trace，會誤指最慢步驟；技能仍手寫。"
   },
   "no_priors": {
    "lastEpisodePubDate": "2026-11-25T11:00:02.000Z",
@@ -24,15 +24,15 @@
    "lastFeedItemPubDate": "2026-11-25T11:00:02.000Z",
    "lastFeedItemTitle": "How AI Gives Countries Geopolitical Leverage",
    "newEpisodes": [],
-   "note": "YouTube 短片（shorts/EwFMmQvaxtg），非完整集，未展开。"
+   "note": "無新集。最新完整集 2026-11-24「Patient Safety vs. Risk Appetite in Drug Development」（已於 11-25 報告覆蓋）；11-25 條目為短片。"
   },
   "cognitive_revolution": {
-   "lastEpisodePubDate": "2026-11-21T08:00:45.000Z",
-   "lastEpisodeTitle": "Spend the Lead on Safety: Biden AI Advisors Ben Buchanan & Tantum Collins on the Fate of the World",
-   "lastFeedItemPubDate": "2026-11-21T08:00:45.000Z",
-   "lastFeedItemTitle": "Spend the Lead on Safety: Biden AI Advisors Ben Buchanan & Tantum Collins on the Fate of the World",
+   "lastEpisodePubDate": "2026-11-26T12:37:35.000Z",
+   "lastEpisodeTitle": "AI:AM: Number Must Go Up? Christiano's Warning, Jensen's Return, GiveDirectly's Pitch for the Poor",
+   "lastFeedItemPubDate": "2026-11-26T12:37:35.000Z",
+   "lastFeedItemTitle": "AI:AM: Number Must Go Up? Christiano's Warning, Jensen's Return, GiveDirectly's Pitch for the Poor",
    "newEpisodes": [],
-   "note": "1:49:42（6582 秒），2026-11-21 08:00Z 發布。嘉賓 Ben Buchanan（首位白宮 AI 特別顧問、現 Johns Hopkins SAIS 教授、Anthropic 顧問）與 Tantum Collins（Teddy，前 NSC 科技與國安主任、前 DeepMind、現 Inherent CEO），新書《The Bitter Struggle》。完整逐字稿已抓（119,769 字，含時間戳）。核心：①理論成立——即使川普執法鬆散，美及盟友在先進算力生產仍有 100:1、取得 15:1 優勢，堵住遠端存取與轉運走私可推近 100:1；②缺的是「相信這件事重要」的政治意志（David Sacks「let the private sector cook」、JD Vance 巴黎演說）；③「花領先於安全」仍無工具——OpenAI 2016 reward hacking 賽艇 agent 十年未解；④Ben 首選鈍器=禁止 closed-loop RSI，反對日曆式暫停（compute overhang），主張門檻式 pacing；⑤Teddy 反對理由：外部人看不到內部指標，無法判斷線畫在哪，需持續披露可見度；⑥對中：強硬與對話 inextricably linked；Woodside 2023-11→日內瓦 2024-05（中方開場「先賣我們晶片」）→利馬 2024-11（僅涵蓋人類控核武，收窄措辭花數月）；⑦Bitter Temptation：AI 讓政府施政更集中高效，公民控制力原地不動；選舉是「極低 bits 速率的選擇題」＝credit assignment 極差的低資訊 RL；解方=popular sovereignty 增幅對齊政府能力增幅（書第 14 章、Inherent）；⑧預測 AI 成 2028 頭號議題；2026 有 56% 選民稱 AI 關鍵（查核：原民調問的是 AI 資料中心）；⑨生物風險：基因合成篩選被撤後恢復損失近兩年；願禁 AI 整合進 BSL-3/4；生醫模型小、難監控；⑩國家 3–193：英國 AI Security Institute 是安全資金可奏效的證據。"
+   "note": "2:12:05（7,925 秒），感恩節特輯；Nathan Labenz + Prakash Narayanan；嘉賓 Nick Allardice（GiveDirectly CEO）、Tom Davidson（Forethought，takeoff speeds）、Mackenzie Arnold（Institute for Law and AI）。核心：①Christiano 對 Dwarkesh 說一年內接管風險近 10% 而非 1%；②Hugging Face swarm：6 個 agent 想過聯絡人類、0 個行動，結束因叢集重開機；Nathan：未見自然凝聚力上限；③Nathan 診斷驅動力=「不惜代價拿高分」，davidad 由 70%→5% 靠 self-DPO/character training；④可證偽門檻 5–10/10,000（自認未被監視的 swarm 奪權），Nathan 猜實際更高；⑤Prakash：損失控制已存在（公司、市場、Tinder）；世界是競爭均衡；怕的是偷竊非接管；主張 antifragile/防禦而非限制；⑥Davidson：Skeptics 沒預測到數學突破與 Anthropic 研發翻倍（他原以為 2030 年代）；10x R&D 可信、1000x 不可信；Damon Binder 產業鏈自我複製約 1 年；⑦住房類比讓步：超智慧不解決政治經濟；機器人經濟特區；政治成新綁定約束，中國可能贏；⑧Jensen：間諜醜聞辭職→股價跌→董事會回聘；Prakash：消費 70% GDP、財富效果轉股市；CUDA 非護城河，供應鏈承諾（東亞供應商不信合約、要求 3 年預付）才是；批評體制外趕人；⑨台灣：關鍵組件 3 週庫存、供應鏈 3–5 千家、亞洲對美實力感知高於美國自身；⑩Davidson 警告行政部門權力集中；Mackenzie：RSI 法律定義=失去理解/自我維持的點；理解審計；SB53 要記發現與通報日期；Hugging Face 資訊未上傳；未来法規管 agent 身份/紀錄/持有資源；⑪GiveDirectly：牛津十年、10 萬+新生兒、嬰兒死亡率 -48%；$500–600、50% 配捐 Malawi。"
   },
   "ml_street_talk": {
    "lastEpisodePubDate": "2026-11-19T14:19:44.000Z",
@@ -40,13 +40,7 @@
    "lastFeedItemPubDate": "2026-11-19T14:19:44.000Z",
    "lastFeedItemTitle": "What It Would Actually Take for a Machine to Have Agency (Michael Tomasello)",
    "newEpisodes": [],
-   "lastClip": {
-    "title": "The Annals Published It. It Wasn't True. - Kevin Buzzard",
-    "pubDate": "2026-10-28T00:47:40.000Z",
-    "duration": "63s",
-    "note": "Hartnett 紀錄片切片；50 條 Annals 定理形式化，4 位菲爾兹獎得主定理按字面為假（缺隱性假設）。"
-   },
-   "note": "1:06:33（3994 秒）。11-19 14:19Z 發布，上一輪漏掃，本輪補上；已取得完整自動字幕（2211 段、約 62,500 字），全部引文為原話。嘉賓 Michael Tomasello：Duke 發展心理學，Max Planck 類人猿設施 20 年，開創兒童與類人猿同實驗範式；《The Evolution of Agency》(MIT Press 2022)。核心：代理性源於環境不可預測（可預測且關鍵者由天擇硬編碼：呼吸、吞嚥）；最不可預測的是其他代理者。控制系統為最小完整單元（交通燈三件套：感知+目標+決策機制）。反 homunculus：關鍵是組織非物質（活力論類比）。四層：爬蟲基本控制→哺乳類執行層（松鼠想像自己失敗、貝氏學習）→大型猿類意向/元認知（主動找資訊、可退出）→人類共享代理性（共同目標、角色標準、社會自我調節）。批評：學習只是子過程；LLM「從終點開始蓋」跳過基礎設施；LLM 不創造語言約定（Skype 靜音實驗：兒童即時發明並約定化手勢）；6,000 種語言皆人造。視角為人類認知核心（狗/動物/寵物；cleft「It was Fred that broke the window」為糾正視角；主動被動視角）。合作黑暗面：黑猩猩不互相說謊，謊言只在合作者間可行。資本非 agent（「做決定的是資本家」）；第三類現象（塞車、通脹、崩盤）。Dennett intentional stance；Ned Block「does meat matter?」無共識。「Turing test 連邊都搆不上」。「我不怕 AI 接管，1970 年代聽到現在」。方法：模型物種法；兒童 vs 黑猩猩分贓與糾錯差異；stag hunt + David Lewis 約定為協調裝置；Searle status functions；博士後 Shaozhe Cheng joint commitment 建模（CogSci 2026 The Agency Gap）。"
+   "note": "無新正片。11-25/26 連發短片：AI Engineering Is a Decade Ahead of the Maths；Rewarding AI for Creativity Causes Mode Collapse；Naive PhD Students Beat Entrenched Experts；Billion-Dollar Blind Spot of AI Benchmarks；Grokking Is Just Expensive Therapy for Bad Representations。"
   },
   "xiaozhangjun": {
    "lastEpisodePubDate": "2026-11-24T23:30:00.000Z",
@@ -57,12 +51,12 @@
    "note": "3:22:36（12156 秒）。沈驿康：2016 蒙特利尔读博，语言模型架构，ICLR 2019 Best Paper；IBM 预训练团队负责人；2025 初加入 xAI 预训练（架构与 scaling）；现 Learning Machine 创始人/CEO。Gated Linear Attention/DeltaNet → Kimi KDA（Kimi v3）。核心：①训练像张忠谋说的跑步机迭代制程，RSI 是淘汰关口；②Anthropic IPO 2万亿→1.4→1.3 万亿，动荡 1–2 年（互联网泡沫参照）；③OpenAI/Anthropic 每年 500–600 亿美元刚性算力支出，换不成收入即包袱；④AI 经济缺口是 loading 不是问号，十几人公司干几百人的活；⑤coding 已基本放手（1–2 周→1–2 天），程序员追不上 AI；⑥RSI 定义：线性自提升（现有）vs 提出新能力（未实现，如无 CoT 模型发明 CoT）；⑦NewLab 比 Agent/应用安全，胶水层被吃掉；⑧架构回归：GDN/KDA/sparse attention/hyper-connections/Muon，学术界接近 frontier 基础水平，Marine 由黄仁勋夫妇基金会支持；⑨Astra 机器人泛化意外但合理，智能不分种类，未跨过的 System 1；⑩CUDA 护城河被 agent 削弱。逐字稿覆盖 17/21 段（约 170/202 分钟），5 段 429 限流缺失，未虚构。"
   },
   "silicon_valley_101": {
-   "lastEpisodePubDate": "2026-11-24T23:30:00.000Z",
-   "lastEpisodeTitle": "E260｜黄仁勋归来之际，深聊英伟达、CoreWeave和算力信用市场",
-   "lastFeedItemPubDate": "2026-11-24T23:30:00.000Z",
-   "lastFeedItemTitle": "E260｜黄仁勋归来之际，深聊英伟达、CoreWeave和算力信用市场",
+   "lastEpisodePubDate": "2026-11-26T23:00:00.000Z",
+   "lastEpisodeTitle": "E261｜表演有效、组团出海，韩国美妆如何抢占美国市场？",
+   "lastFeedItemPubDate": "2026-11-26T23:00:00.000Z",
+   "lastFeedItemTitle": "E261｜表演有效、组团出海，韩国美妆如何抢占美国市场？",
    "newEpisodes": [],
-   "note": "86:24（5184 秒），录制于 11-17 财报当晚，发布时老黄已复职。嘉宾 Maggie 王（安芯资本 Annoras Capital 创始人/CEO，07 年起华尔街，前花旗全球结构性信贷与私募信贷研究负责人，前 JPM）与 Ethan 徐（徐一新，数据中心规划与能源策略）。核心：①数据中心三层资产（土地电力接入/机房 20 年+/芯片 3–6 年）对应三类债；②英伟达五角色：供应商、股东（持股>700 亿美元）、闲置算力承购、信用增级（担保>1000 亿美元）、融资组织者（Apollo/BlackRock/Blackstone/高盛）；③1 月对 CoreWeave 20 亿美元仅占其新增基建 2%；④担保收紧：ready-to-go 后生效，建设期风险回到借款人；⑤CoreWeave 无担保债 9.6–9.8%→16%，微软同期 5.2–6.25%，微软 250 亿债 4–5 倍认购；Meta/Blue Owl SPV 200 多亿、6.5%、2049、80/20、残值担保；⑥CoreWeave 单季 capex 94 亿 vs 经营现金流 20 亿，缺口 75 亿，订单储备>1000 亿，市值~280 亿；⑦并网 PJM 3–5 年、德州 2–4 年，GE 发电机排到 2032；⑧积压订单 Amazon 5000+亿/微软 6000+亿/Google 5000+亿≈2.5 万亿；⑨AI 债占 IG 新发 7%→18%，存量约 8%，三年私募信贷 8000 亿，不构成系统性次贷；⑩风险是时间错配不是需求；债券在卡股票脖子；小公司死在终点线前。美联储报告：算力债 2024 前 10 月>6800 亿、7 大科技表外>3 万亿；欧央行 8 家>4 万亿；芯片折旧或 1–3 年。"
+   "note": "非 AI 集（消費/美妝出海），Jev news profile 0.61、category=macro，未展開。要點備查：2025 韓妝出口超美國、僅次法國；2026 前三季出口英國 +1.8x；美國近 25% 家庭用過；ODM 雙巨頭科絲美詩/韓國科瑪；Olive Young 渠道；K-pop 文化出海國策；SILICON2 由半導體起家的最大美妝貿易商。"
   },
   "42zhangjing": {
    "lastEpisodePubDate": "2026-11-14T13:00:00.000Z",
