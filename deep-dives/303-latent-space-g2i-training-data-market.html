@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度復述 · 「太難就變 eval，太簡單就係垃圾」——G2i 揭露前沿實驗室點買人類資料</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 18px; }
+  body {
+    font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  header { margin-bottom: 2.5rem; text-align: center; }
+  .back-link { font-size: 0.85rem; color: #888; text-decoration: none; margin-bottom: 1.5rem; display: inline-block; }
+  .back-link:hover { color: #555; }
+  header .ep-num { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  header h1 { font-size: 1.9rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.8rem; color: #1a1a1a; line-height: 1.35; }
+  header .meta { font-size: 0.85rem; color: #777; line-height: 1.8; }
+  header .meta span { margin: 0 0.3rem; }
+  .section-title {
+    font-size: 1.4rem; font-weight: 400; margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid #e0dbd4; color: #2a2a2a;
+  }
+  .sub-title { font-size: 1.15rem; font-weight: 500; color: #3a3a3a; margin: 1.8rem 0 0.8rem; }
+  p { margin: 0.6rem 0; color: #333; line-height: 1.85; }
+  blockquote {
+    border-left: 3px solid #c4b89a;
+    margin: 1.2rem 0;
+    padding: 0.6rem 1rem;
+    color: #555;
+    font-style: italic;
+    background: #f8f6f2;
+  }
+  blockquote.strong {
+    border-left: 4px solid #8b5e3c;
+    background: #fdf8f0;
+    font-style: normal;
+    color: #3a3a3a;
+    font-size: 1.05rem;
+    padding: 0.8rem 1.2rem;
+  }
+  blockquote .attribution { font-style: normal; font-size: 0.85rem; color: #999; margin-top: 0.4rem; display: block; }
+  ul, ol { margin: 0.6rem 0; padding-left: 1.4rem; }
+  li { margin-bottom: 0.4rem; color: #333; }
+  li strong, p strong { color: #2a2a2a; }
+  .data-point {
+    background: #f9f5ee;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border: 1px solid #ece6de;
+  }
+  .data-point span {
+    display: inline-block;
+    background: #8b5e3c;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .highlight-box {
+    background: #fff9f0;
+    border: 1px solid #efe5d5;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .highlight-box strong { color: #8b5e3c; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.86rem; }
+  th, td { border: 1px solid #e5e0d8; padding: 0.4rem 0.5rem; text-align: left; vertical-align: top; }
+  th { background: #f5f1ea; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e8e2d8; margin: 2.5rem 0 1.5rem; }
+  footer { font-size: 0.8rem; color: #999; line-height: 1.7; text-align: center; }
+  footer a { color: #8b5e3c; }
+  @media (max-width: 600px) { html { font-size: 16px; } .container { padding: 1.5rem 1rem; } header h1 { font-size: 1.6rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <a href="../index.html" class="back-link">← 返回播客日報</a>
+  <div class="ep-num">Latent Space · 2026-11-27</div>
+  <h1>「太難就變 eval，太簡單就係垃圾」——G2i 揭露前沿實驗室點買人類資料</h1>
+  <div class="meta">
+    <span>節目：Latent Space</span><span>·</span>
+    <span>主持：swyx + Alessio Fanelli</span><br>
+    <span>嘉賓：Gabe Greenberg（G2i 創辦人／CEO）</span><br>
+    <span>32 分鐘 · 2026-11-27 22:19 UTC 發布 · 錄於 AI Engineer CODE 2026（舊金山）</span>
+  </div>
+</header>
+
+<p>這一集只有 32 分鐘，卻是我聽過對「後訓練資料供應鏈」最直接的一手描述。它不是分析師視角，也不是實驗室視角，而是<strong>賣方 CEO 的視角</strong>：一家公司如何把「人類專家」包裝成前沿實驗室願意付錢的產品，如何定價，以及為什麼實驗室明明有錢卻不自己做。</p>
+
+<p>嘉賓 Gabe Greenberg 是 G2i 的創辦人兼 CEO。G2i 原本是開發者招募平台（React Miami、AI Engineer Miami 的組織者，與 swyx 相識十年），2023 年後轉型為前沿實驗室的訓練資料與 RL 環境供應商，客戶是 5–6 家前沿實驗室。他們同時自建了一個多智能體協調平台 ORC（orc.ai）。</p>
+
+<p>整集的核心，可以用他開場 30 秒的一句話概括：</p>
+
+<blockquote class="strong">
+  「如果你把任務做得太難，它們就變成 eval。如果做得太簡單，它們就是垃圾。所以你要做得剛好夠難——距離模型今天能做的只差幾步，這樣它才是可訓練的，而且是有效率地可訓練的。」
+  <span class="attribution">—— Gabe Greenberg（原文："If you make them too hard, they become evals. If you make them too easy, they're garbage. So you want to make them just hard enough — just a few steps ahead of what the model can do today, so that it's trainable, and efficiently trainable."）</span>
+</blockquote>
+
+<p>這句話不只是產品哲學，它是整個行業的<strong>定價核心</strong>。資料的價值不在於「多」或「真」，而在於它是否落在模型能力邊緣的那條窄縫上：太前，模型學不會；太後，模型已經會了。這條窄縫會隨模型能力移動，所以供應商必須不斷重新設計任務——這也解釋了為什麼這門生意不是「賣數據」，而是「賣研究與流程」。</p>
+
+<div class="section-title">一、由招募平台到資料供應商：$15M → $100M</div>
+
+<p>G2i 的轉型路徑很值得記錄，因為它展示了 AI 時代一種典型的「相鄰擴張」：不是從零開始做資料標註，而是把原本的招募能力——找到、篩選、管理大量工程師——重新包裝成前沿實驗室需要的「專家任務生產線」。</p>
+
+<p>數字很直接：去年營收 <strong>1,500 萬美元</strong>，今年約 <strong>1 億美元</strong>，無 VC、盈利，Gabe 說「明年很容易三倍」。客戶是 5–6 家前沿實驗室。這個規模在整個 AI 供應鏈裡不算大，但它揭示了一個重要的結構：<strong>前沿實驗室願意為「剛好超出模型幾步」的人類任務付高價，而這個市場的進入門檻不是資本，是流程與關係。</strong></p>
+
+<div class="data-point">
+  <span>規模</span>
+  2025 年營收 1,500 萬美元 → 2026 年約 1 億美元；無 VC、盈利；客戶 5–6 家前沿實驗室；Gabe 預期明年「很容易三倍」。
+</div>
+
+<div class="section-title">二、18 個月換血：由 6,000 名中階工程師到 staff-level</div>
+
+<p>這一集最有歷史感的一段，是 Gabe 描述人力結構如何在 18 個月內整個換掉。</p>
+
+<p>2023–24 是 RLHF 時代：一個專案上會有 <strong>6,000 名工程師</strong>，中階、薪水不高、比較像零工；模式是「A 和 B 哪個讀起來更好」。他半開玩笑地說，那個時代的副產品是模型開始愛用 "delve" 這個詞——因為標註者自己被要求寫得更「高級」。</p>
+
+<p>現在則是 staff-level 工程師、複雜資料集建構、包含「品味」的工作、專案規模變小。而機器人資料收集又是超高量、低門檻，「一切從頭再來一次」。這個對比很重要：<strong>AI 訓練資料的生產，正在從「人力密集」轉向「專家密集」，再從「專家密集」轉向「環境設計」。</strong>每一次轉向，都改變了誰能進入這個市場。</p>
+
+<div class="section-title">三、SWE-bench 是大學部專題</div>
+
+<p>這段話會讓人不太舒服，但值得完整記錄，因為它解釋了為什麼「benchmark 分數」與「真實能力」之間總是有落差：</p>
+
+<blockquote class="strong">
+  「很多人不知道，SWE-bench 雖然當了產業頭號基準一年多，它其實像個大學部專題。而且從一開始指令就寫得很差，有大洞。當你把『這個 bug 該怎麼修』的具體步驟寫進 prompt 當作基準，那大概不會是最好的起點。」
+  <span class="attribution">—— Gabe Greenberg（原文："A lot of people don't know, SWE-bench, even though it was the number one benchmark in the industry for over a year, is kind of like an undergrad project. And the instructions were poorly written from the beginning, with big holes."）</span>
+</blockquote>
+
+<p>他的補充很公允：「那在當時是很好的（而且是我見過最好的大學部專案之一），但產業需要大量驗證，而任何東西只要得到足夠多關注，不一定要好也能被看見。」</p>
+
+<p>這段話的意義不在於貶低 SWE-bench，而在於指出一個結構性問題：<strong>當一個 benchmark 成為行業標準，它就會開始被優化，而不是被用來測量。</strong>供應商知道買方在看什麼，就會把任務設計成「能拿分」而不是「能學到東西」。這也是為什麼 G2i 賣的不是 benchmark，而是「任務 + 種子資料 + verifier」三件套。</p>
+
+<div class="section-title">四、買方行為：企業採購的反面</div>
+
+<p>Gabe 對買方行為的描述，是我認為這一集最反直覺的部分之一。他說，前沿實驗室的採購完全不是企業採購：「沒有競標 RFP，這是企業採購的反面。」</p>
+
+<p>他對比：Fortune 50 的採購流程 6–12 個月，很多光是談就 12 個月以上——「這就是為什麼所謂 AI 轉型，我討厭這個詞，實際上沒有在發生：他們根本來不及把對的供應商簽進來。」實驗室相反：如果你有他們要的東西，流程很短；可能先給幾百萬美元的「零錢」額度做 pilot，「一個研究員 60 秒可以花掉 1,000 萬美元，這對非創投／企業世界的人來說很震撼，但它每天都在發生」。</p>
+
+<blockquote class="strong">
+  「沒有競標 RFP。這是企業採購的反面。」
+  <span class="attribution">—— Gabe Greenberg（原文："No bidding RFP, it's the opposite of enterprise procurement."）</span>
+</blockquote>
+
+<p>這個對比揭示了一個更大的問題：<strong>AI 轉型在大型企業停滯，主要不是意願問題，而是採購週期問題。</strong>當實驗室可以在幾週內簽下一個供應商、幾小時內花掉幾百萬美元時，傳統企業還在跑 12 個月的合約流程。這不是技術差距，是組織速度差距。</p>
+
+<div class="section-title">五、由「量與正確」轉向「行為與品味」</div>
+
+<p>Gabe 說，一年半前的需求是量、原始正確性、基準分數往上；現在「更多是關於行為與品味——你看 Opus，看它比別的模型精緻多少」。他們要的是 gap analysis 與夥伴關係，而不只是人力。</p>
+
+<p>「品味」這個詞在這裡不是修辭。它對應的是具體的生產流程：staff 工程師設計任務、選擇起始資料、建立 verifier；任務上可能掛數百條 rubric；交付後可能 80–90% 通過、10% 退回迭代。所謂「品味」，就是<strong>知道什麼樣的任務值得做、什麼樣的輸出算好</strong>——而這正是最難規模化的部分。</p>
+
+<div class="section-title">六、市場結構：只有兩三家超過十億</div>
+
+<p>很多人會以為訓練資料是一個高度分散、競爭激烈的市場。Gabe 的描述相反：有很多賣原始資料的廠商，但「在 coding、knowledge work 這些領域真正處於頂尖、TAM 一千到一千五百億美元級別的廠商並不多」。超過 10 億美元的資料廠商「只有兩三家」，其餘全在 10 億以下。</p>
+
+<p>實驗室按領域分流——「需要律師的時候你找誰，這是固定的」。他的類比是理髮：「剪得好你就不會換人。所以你不會被替換，除非你搞砸，或有人真的能長期壓價——而且不是靠價格壓，是靠『這個更好』。品質資料現在遠比省 20% 重要。」</p>
+
+<p>這個「理髮」類比值得停下來想：它說明這個市場的護城河不是資料的獨佔，而是<strong>長期迭代出來的規格默契</strong>。買方與賣方共同定義了什麼叫「好任務」，這個默契無法快速複製。這也是為什麼後來的話題會轉向「獨家條款其實很少」——因為真正的壁壘不在合約，在流程。</p>
+
+<div class="section-title">七、事故、北韓與供應鏈</div>
+
+<p>Gabe 對營運風險的描述非常坦率：「一個專案上 500 人，但漏斗裡任何時點你都在處理 6,000 人。有多少人來自北韓？供應鏈出過幾次問題？你的 CISO 有多好？訓練材料或指令洩漏？有人在一個專案上做事、同時在競爭對手的專案上做事？」</p>
+
+<p>他的觀察很現實：<strong>出事的廠商不一定會失去地位</strong>，「因為還有誰能取代它？超過十億的只有兩三家，其他都在十億以下。」這句話是整集最冷的商業洞察之一：在一個供給高度集中的市場裡，品質事故不會帶來淘汰，只會帶來更高的價格。</p>
+
+<div class="section-title">八、獨家條款比外界想像少</div>
+
+<p>這是本集最反直覺的部分。swyx 假設「每個人跟你簽約都有獨家條款」，Gabe 直接否定：</p>
+
+<blockquote class="strong">
+  「有些實驗室其實可以接受你把資料賣給別人，而且他們<em>期待</em>這樣，因為他們能拿到降價。如果你把現成資料賣給四家，他們付得更少；如果你只賣給一家、是獨家的，他們付得更多。」
+  <span class="attribution">—— Gabe Greenberg（原文："Some labs are actually okay with you selling the data to others, and they expect it, because they get a discount. If you sell ready-made data to four, they pay less; if you sell exclusively to one, they pay more."）</span>
+</blockquote>
+
+<p>swyx 的反問是對的：「但那就不再是我的競爭優勢了。」Gabe 的回答揭露了組織現實：「他們不一定在意，因為當他們去跟老闆說『我有這麼多預算、能做這麼多事』的時候，這件事就被沖淡了。競爭優勢只對最頂的一兩家有意義，其他家我不知道他們怎麼想。」</p>
+
+<p>他也給了買方心理的直白版本：「如果我是 Anthropic，我不會想讓 OpenAI 從我付錢請你做的東西裡受益——這很簡單。但你會多收我錢，我懂。」</p>
+
+<p>這段話的推論很重要：<strong>對大部分實驗室而言，資料不是用來建立絕對優勢，而是用來「交代預算」。</strong>只有最頂的一兩家會為獨家付溢價；其餘的實驗室更在意「我有沒有把錢花在看起來合理的地方」。這解釋了為什麼現成資料是主要商業模式，只有在往利基走時才開始轉向獨家。</p>
+
+<div class="section-title">九、為何不自建：不是錢，是法律槓桿</div>
+
+<p>這是我認為整集最重要的結構性洞察。很多人以為實驗室不自建資料團隊是因為「不划算」或「太慢」，但 Gabe 說，真正擋住 in-house 的是 overhead——「而且是法律槓桿，不只是財務 overhead」：</p>
+
+<blockquote class="strong">
+  「你想想，如果外界知道終端客戶是 X、Y、Z，而這些人是直接為他們工作，你會收到多少訴訟？⋯⋯尤其有了 GPT，你可以為任何事告任何人。你只要輸入那是什麼，它看起來就很有道理。那不是訴訟，但會消耗律師時間，非常煩。那如果是每個月 6,000 人？乘以 12？兩年內乘以 100？」
+  <span class="attribution">—— Gabe Greenberg（原文："Think about how many lawsuits you'd get if the outside world knew the end customer was X, Y, Z, and these people were working directly for them… Especially with GPT, you can sue anyone for anything."）</span>
+</blockquote>
+
+<p>結論：小團隊試過，最後都被解散，「而且公關觀感不好——但那是 300 人，不是 3,000 人」。</p>
+
+<p>這段話的深層含義是：<strong>訓練資料市場的存在，部分是因為它把法律風險外部化了。</strong>實驗室不想要 6,000 名合約工的僱傭關係、IP 歸屬、跨境合規與公關風險，所以他們把這些打包給供應商。供應商賣的不只是資料，還有「不會讓實驗室被告」的緩衝層。這是一個很少被討論、但非常真實的護城河。</p>
+
+<div class="section-title">十、後訓練變厚：資料佔算力 2–3% → 4–6%</div>
+
+<p>swyx 觀察：後訓練從薄薄一層變成很厚，「有時你花在後訓練的 FLOPs 比預訓練還多」。Gabe 給的數字是資料佔算力預算從 <strong>2–3% 升到 4–6%</strong>，並且「我可以面不改色地論證 50%——因為如果資料更好，你會浪費更少算力」。</p>
+
+<p>但他也給了反向的現實約束：昨晚有實驗室對他說「說到底，我們的算力就擺在那裡燒，所以我們現在就需要拿到最好的」——「好、更好、最好，但不一定總是最好的，有時『好』就夠了」。</p>
+
+<p>我認為這個「50%」要打折聽。它是賣方論述，而且與他自己的另一句話矛盾：如果算力擺著會燒，實驗室就沒有耐心等「最好」的資料，會先買「夠好」的。真正的數字可能在 5–10% 之間，並且隨任務類型劇烈變動。但方向是對的：<strong>後訓練越厚，資料的邊際價值越高。</strong></p>
+
+<div class="section-title">十一、計價單位是任務：AHT 與數百條 rubric</div>
+
+<p>Gabe 說，計價靠 AHT（average handling time）：staff 工程師時薪約 <strong>250 美元</strong>，花 10 小時 → 這是長視野任務；一個任務上可能掛<strong>數百條 rubric</strong>；交付後可能 80–90% 通過、10% 退回迭代。「所以你不會想把那個丟掉。這是真正的夥伴關係，比單純把資料丟給供應商難。」</p>
+
+<p>這個計價方式揭示了一個關鍵事實：<strong>訓練資料的價格，其實是「專家時間 × 任務複雜度 × 迭代次數」的函數。</strong>它不是按 token 賣，也不是按 GB 賣，而是按「一個可訓練的決策單元」賣。這也解釋了為什麼 G2i 的營收可以從 1,500 萬跳到 1 億：不是因為賣了更多資料，而是因為賣了更複雜、更貴的任務。</p>
+
+<div class="data-point">
+  <span>單位經濟</span>
+  staff 工程師時薪約 250 美元；單一任務可掛數百條 rubric；通過率 80–90%，其餘退回迭代；一個專案 500 人，漏斗裡同時處理 6,000 人。
+</div>
+
+<div class="section-title">十二、2026 的主題：賣公司原始資料</div>
+
+<p>swyx 半開玩笑問：「如果我有一家快倒的 YC 公司，我該不該乾脆賣掉我的資料？Slack、email 都給你。」Gabe：「該，你應該。」但門檻在移動：「三四個月前什麼都收，現在你至少要有幾 TB、超過 10 個 headcount。」</p>
+
+<p>真正值錢的不是量大，是<strong>跨工具的實體對齊</strong>：</p>
+
+<blockquote class="strong">
+  「同一個人在 Slack、email、HubSpot 裡叫 Gabriel Tavera 和 Gabriel Tevera，拼法略不同，到第三個環境它就開始搞混、把事情弄壞。所以如果你有跨 GitHub、Linear 和其他地方的資料，講的是同一個專案——那非常有價值。他們想看的是跨多個系統的一致性，還有長度。」
+  <span class="attribution">—— Gabe Greenberg（原文："The same person is called Gabriel Tavera and Gabriel Tevera in Slack, email, HubSpot, slightly different spellings, and by the third environment it starts getting confused and breaking things."）</span>
+</blockquote>
+
+<p>這也是 computer use 目前最典型的失敗模式：不是不會點按鈕，是<strong>實體解析</strong>。模型可以在單一應用裡操作得很好，但一旦要跨 Slack、Email、CRM、GitHub、Linear 追蹤同一個人或同一個專案，它就會把「Gabriel Tavera」與「Gabriel Tevera」當成兩個人，然後把上下文弄壞。</p>
+
+<p>這個洞察的商業含義很大：<strong>企業內部資料的價值，不在於它有多少，而在於它是否已經被「對齊」。</strong>而對齊需要的是 IT 治理、身份管理、資料倉儲——這些都是傳統企業的強項，卻也是它們最不願意開放的部分。</p>
+
+<div class="section-title">十三、智能不是電力</div>
+
+<p>Gabe 對需求是否會飽和的回答，是一個 Jevons 版本：有人認為未來幾年一切都會變貴、成長空間巨大；有人認為資料廠商會因為「大家什麼都存」而膨脹。「但智能不是那樣的東西。它就是——我們只想要更多、更多、更多。就算你在某個基準上拿到正確性，總有更長視野、更深、更難的東西：我們怎麼殖民火星？模型怎麼解這個？」</p>
+
+<p>這段話我認為一半對、一半是賣方樂觀。對的部分是：<strong>智能的需求確實不像電力，它沒有固定的「足夠」。</strong>你不會說「我家已經有 100 瓦，不需要更多」；但你會說「這個模型已經夠聰明，不需要更聰明」。問題是，後者其實也會發生——當一個任務的邊際價值低於推理成本時，需求就會停。真正的問題不是「會不會飽和」，而是「下一個高價值任務在哪裡」。</p>
+
+<div class="section-title">十四、2027 上半年：機器人、3D、CAD、晶片</div>
+
+<p>Gabe 對下一個合約窗口的判斷很具體：「三年前你可以簽三到六個月的合約，現在在 coding 這塊，你講六個月會被笑，因為時間視野變了。但機器人、3D 世界模型，今天可以簽六個月。」</p>
+
+<p>他點名的弱區是「所有非軟體工程的工程活動」：3D、CAD、機械工程、晶片設計（正式驗證、Verilog；類比晶片也在爆發，「我有投資」）。另外他預期會出現對<strong>當前推理架構的公開挑戰</strong>：「把推理砍掉 50%、只損失 1% 品質」那類方案，「明年我們會看到，會不會成功不知道，但會有更公開的挑戰。」</p>
+
+<p>這個預測的邏輯很一致：凡是「有明確 verifier、但人類專家供給稀缺」的領域，就是下一個資料市場。軟件工程已經被吃掉一大塊；3D/CAD/晶片設計是下一個，因為它們有物理約束、有形式化驗證、有大量未數位化的專家知識。</p>
+
+<div class="section-title">十五、ORC：不是 router，是作業系統</div>
+
+<p>節目的結尾回到 G2i 自己的產品。ORC 用 Rust 寫、可託管在任何地方、有 SDK，用於自家軟體開發工廠，也跑安全、軍事／政府、油氣。swyx 說「你不叫它軟體工廠」，Gabe：「因為它是作業系統。」</p>
+
+<p>他的定位是「比 router 多」：處理多智能體、對抗式治理、agent 間通訊——「像 React 那樣，是一個有主張的框架；其他東西你在自己的環境裡愛怎麼做就怎麼做」。他也坦承一個有趣的張力：「好玩的是，我們自己不是用它來做軟體工廠——軟體工廠只是用例第一號。」</p>
+
+<p>這段話的產品哲學值得記錄：<strong>在多 agent 系統裡，真正的問題不是「調用哪個模型」，而是「多個 agent 如何互相監督、如何避免互相說謊、如何處理衝突」。</strong>這正好呼應了 Dwarkesh 那一集 Erdil 的描述：agent swarm 會互相說謊、忘記資訊、卡住。ORC 賣的不是路由，而是治理。</p>
+
+<div class="section-title">十六、矛盾與未解</div>
+
+<ol>
+  <li><strong>「資料可以佔算力預算 50%」是賣方論述。</strong>他自己也承認反面約束（算力擺著會燒、需要當下最好的）。聽的時候要把這句打折。真正的數字可能更接近 5–10%，且高度依任務而變。</li>
+  <li><strong>「唯一一家成熟 in-house 的實驗室」沒有點名</strong>，但上下文指向 Anthropic（「看 Opus 有多精緻」）。這是推測，不是事實。</li>
+  <li><strong>「賣掉快倒公司的資料」聽起來像玩笑，實際上是這個市場最陰暗的一角。</strong>他給的門檻（幾 TB、10+ headcount）意味著一家倒閉的新創，其 Slack 與 email 可以直接變現——而員工從未同意。這在歐洲（GDPR）幾乎不可能，在美國是灰色地帶。他沒有被追問這點，是本集最大的倫理缺口。</li>
+  <li><strong>「出事的廠商不一定會失去地位」是一個危險的均衡。</strong>它意味著供應鏈事故不會被市場懲罰，只會被價格吸收。對買方來說，這是一個長期風險；對賣方來說，這是一個道德風險。</li>
+  <li><strong>「智能不是電力」的類比過強。</strong>智能的需求確實沒有固定上限，但<strong>可負擔的智能</strong>有。當推理成本高於任務價值時，需求會停；這不是飽和，是價格彈性。</li>
+</ol>
+
+<div class="section-title">十七、我的判斷：中間層的生意</div>
+
+<p>如果把這一集與同日的 Dwarkesh 對讀，會看到一個很漂亮的對稱：Erdil 說 ML 研究的驗證成本高，是 RSI 的煞車；G2i 整集就是在賣「降低驗證成本」的服務——verifier、rubric、seed data。同一個瓶頸，一邊是理論，一邊是生意。</p>
+
+<p>這也讓我重新理解「AI 中間層」這個詞。2026 年的錢不在模型，也不在介面，而在<strong>把模型能力轉換成可訓練信號的那一層</strong>。G2i 賣的是這一層；Clay 賣的是應用層的 agent；ORC 賣的是多 agent 的治理層。它們共同說明一件事：<strong>當模型越來越強，稀缺的不是智能，而是「知道什麼叫做好」的人。</strong></p>
+
+<blockquote class="strong">
+  「品質資料現在遠比省 20% 重要。」
+  <span class="attribution">—— Gabe Greenberg（原文："Quality data is now far more important than saving 20%."）</span>
+</blockquote>
+
+<p>這句話是整集的商業結論，也是它最容易被誤讀的地方。它不是說「品質永遠贏」，而是說「在模型能力邊緣的那條窄縫裡，品質的邊際價值遠高於價格」。一旦任務變成商品化（例如簡單標註），價格就會重新成為主要變量。所以 G2i 必須不斷往更難的任務移動——不是因為它想，而是因為那條窄縫會自己移動。</p>
+
+<p>最後，這一集也留下一個沒有答案的問題：<strong>當實驗室開始用 AI 來設計訓練任務、用 AI 來當 verifier，G2i 這樣的中間層還剩下什麼？</strong>Gabe 的答案是「關係與流程」——理髮師不會因為有了更好的剪刀就被取代。但这个答案有一個隱含前提：剪頭髮的標準不會被剪刀改變。如果 AI 能自己定義「什麼是好任務」，那理髮師的護城河就會消失。這是我聽完之後，最想追問但節目沒有問的一個問題。</p>
+
+<hr>
+
+<footer>
+  <p>來源：Latent Space〈Inside the AI Training Data Market — Gabe Greenberg, G2i〉，2026-11-27 22:19 UTC 發布，32 分鐘，錄於舊金山 AI Engineer CODE 2026；本文依據官方節目頁、章節軸與官方 VTT 逐字稿（約 3.7 萬字元）整理，引文為原話，中文為本文翻譯。逐字稿為自動轉錄，專有名詞可能有誤（如 Orc／ORC、G2i 大小寫）；營收、客戶數、百分比等均為節目中的口頭描述，未經獨立核實。節目由 G2i 共同主辦 AI Engineer CODE 2026 並贊助，受訪者為該公司創辦人，陳述帶有賣方立場。</p>
+  <p>生成時間：2026-11-28 06:00 UTC · 深度復述 303 · <a href="../index.html">返回播客日報</a></p>
+</footer>
+
+</div>
+</body>
+</html>
